@@ -1,0 +1,122 @@
+export type WorkspaceTab = 'basics' | 'weapons' | 'race' | 'clothing' | 'settings';
+export type NotificationType = 'info' | 'warning' | 'error' | 'tip';
+
+export interface NotificationAction {
+  label: string;
+  onClick: () => void;
+}
+
+export interface NotificationItem {
+  id: string;
+  key?: string;
+  type: NotificationType;
+  title: string;
+  message: string;
+  icon: string;
+  persistent?: boolean;
+  durationMs?: number;
+  actions?: NotificationAction[];
+}
+
+export interface WorkspaceTabDefinition {
+  key: WorkspaceTab;
+  label: string;
+  icon: string;
+}
+
+export interface RecentProject {
+  name: string;
+  path: string;
+  packageId: string;
+  lastOpened: string;
+}
+
+export interface ProjectSummary {
+  name: string;
+  path: string;
+  packageId: string;
+  author: string;
+  targetVersion: string;
+  hasRimStudioConfig: boolean;
+}
+
+export interface CompatibilityPatchEntry {
+  modId: string;
+  displayName: string;
+  notes: string;
+  generated: boolean;
+  userEdited: boolean;
+  lastModified?: string;
+}
+
+export interface CompatibilitySettings {
+  mode: 'all' | 'selected';
+  selectedModIds: string[];
+  patchEntries: Record<string, CompatibilityPatchEntry>;
+  lastGeneratedAt?: string;
+}
+
+export interface ProjectSettings {
+  targetVersion: string;
+  notes: string;
+  compatibility: CompatibilitySettings;
+}
+
+export interface ProjectState {
+  summary: ProjectSummary;
+  settings: ProjectSettings;
+}
+
+export interface ScannedModSummary {
+  id: string;
+  name: string;
+  packageId: string;
+  path: string;
+  source: string;
+}
+
+export interface GlobalSettings {
+  gamePath: string;
+  scanModsEnabled: boolean;
+  cachedModIndex: ScannedModSummary[];
+  recentProjects: RecentProject[];
+}
+
+export interface GameScanStatus {
+  state: 'idle' | 'scanning' | 'ready' | 'error';
+  message: string;
+  lastUpdated?: string;
+  scannedSources: number;
+  availableModCount: number;
+}
+
+export interface AppBootstrap {
+  settings: GlobalSettings;
+  recentProjects: RecentProject[];
+  currentProject?: ProjectSummary | null;
+  scanStatus: GameScanStatus;
+  availableMods: ScannedModSummary[];
+}
+
+export interface GameScanSnapshot {
+  scanStatus: GameScanStatus;
+  availableMods: ScannedModSummary[];
+}
+
+export interface CreateProjectInput {
+  name: string;
+  packageId: string;
+  author: string;
+  location: string;
+  targetVersion: string;
+}
+
+export interface UpdateProjectSettingsInput {
+  projectPath: string;
+  settings: ProjectSettings;
+}
+
+export interface UpdateGlobalSettingsInput {
+  gamePath: string;
+  scanModsEnabled: boolean;
+}
