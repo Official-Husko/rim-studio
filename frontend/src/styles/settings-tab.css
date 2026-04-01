@@ -1,0 +1,126 @@
+.theme-folder-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.theme-folder-heading h4 {
+  margin: 0;
+}
+
+.custom-theme-list {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.custom-theme-item {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  background: var(--surface-soft);
+  color: var(--ink);
+  padding: 0.95rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+  text-align: left;
+  flex-wrap: wrap;
+  cursor: pointer;
+  transition:
+    transform 140ms ease,
+    border-color 140ms ease,
+    background-color 140ms ease;
+}
+
+.custom-theme-item:hover {
+  transform: translateY(-1px);
+  border-color: var(--border-strong);
+}
+
+.custom-theme-item.is-active {
+  background: var(--active-tab-bg);
+  border-color: var(--accent);
+}
+
+.custom-theme-item strong,
+.custom-theme-item code,
+.custom-theme-item span {
+  display: block;
+}
+
+.custom-theme-item code {
+  margin-top: 0.35rem;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.toggle-card,
+.mod-item {
+  display: flex;
+  gap: 0.85rem;
+  align-items: flex-start;
+  padding: 1rem;
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  background: rgba(255, 248, 232, 0.03);
+}
+
+.toggle-card input,
+.mod-item input {
+  width: auto;
+  margin-top: 0.2rem;
+}
+
+.scan-strip {
+  display: flex;
+  gap: 0.85rem;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0.95rem 1rem;
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  background: rgba(255, 248, 232, 0.03);
+}
+
+.scan-strip p,
+.mod-item span {
+  color: var(--muted);
+}
+
+.selection-mode {
+  display: flex;
+  gap: 0.85rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.mode-button {
+  background: rgba(255, 248, 232, 0.04);
+  color: var(--ink);
+  border-color: var(--border);
+}
+
+.mode-button.is-active {
+  background: rgba(209, 154, 84, 0.18);
+  border-color: var(--border-strong);
+}
+
+.mod-list {
+  display: grid;
+  gap: 0.85rem;
+  min-width: 0;
+  max-height: 360px;
+  overflow: auto;
+  padding-right: 0.2rem;
+}
+
+.mod-item.is-checked {
+  border-color: var(--border-strong);
+  background: rgba(209, 154, 84, 0.12);
+}

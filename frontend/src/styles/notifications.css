@@ -1,0 +1,297 @@
+.notification-center {
+  position: fixed;
+  top: 1.1rem;
+  right: 1.1rem;
+  z-index: 30;
+  width: min(100%, 380px);
+  display: grid;
+  gap: 0.8rem;
+  pointer-events: none;
+}
+
+.notification-bubble {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.9rem;
+  padding: 1rem 1.05rem;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  box-shadow: 0 22px 40px rgba(0, 0, 0, 0.38);
+  background: rgba(26, 21, 16, 0.96);
+  pointer-events: auto;
+  animation: notification-enter 220ms ease forwards;
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.notification-bubble.is-leaving {
+  animation: notification-leave 240ms ease forwards;
+}
+
+.notification-icon {
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: 16px;
+  display: grid;
+  place-items: center;
+  background: var(--surface-soft-emphasis);
+  font-size: 1.1rem;
+}
+
+.notification-body {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.notification-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+}
+
+.notification-header strong,
+.notification-body p {
+  margin: 0;
+}
+
+.notification-body p {
+  color: var(--muted);
+}
+
+.notification-close {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  transition: border-color 140ms ease, color 140ms ease, background-color 140ms ease;
+}
+
+.notification-close:hover {
+  border-color: var(--border-strong);
+  background: var(--surface-soft-line);
+  color: var(--ink);
+}
+
+.notification-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 0.1rem;
+}
+
+.notification-action {
+  padding: 0.55rem 0.85rem;
+}
+
+.notification-progress {
+  position: relative;
+  width: 100%;
+  height: 0.28rem;
+  border-radius: 999px;
+  overflow: hidden;
+  background: var(--surface-soft-emphasis);
+  margin-top: 0.1rem;
+}
+
+.notification-progress-bar {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  transform-origin: left center;
+  animation: notification-progress-shrink var(--notification-duration, 10000ms) linear forwards;
+}
+
+.notification-bubble.is-leaving .notification-progress-bar {
+  animation-play-state: paused;
+}
+
+.notification-progress-info {
+  background: linear-gradient(90deg, rgba(144, 200, 255, 0.95), rgba(118, 167, 214, 0.7));
+}
+
+.notification-progress-warning {
+  background: linear-gradient(90deg, rgba(244, 194, 107, 0.95), rgba(217, 167, 79, 0.72));
+}
+
+.notification-progress-error {
+  background: linear-gradient(90deg, rgba(255, 159, 143, 0.96), rgba(214, 107, 92, 0.72));
+}
+
+.notification-progress-tip {
+  background: linear-gradient(90deg, rgba(168, 221, 177, 0.96), rgba(111, 159, 116, 0.72));
+}
+
+.notification-info {
+  border-color: rgba(118, 167, 214, 0.32);
+  background: rgba(23, 34, 49, 0.96);
+}
+
+.notification-info .notification-icon,
+.notification-info i {
+  color: #90c8ff;
+}
+
+.notification-warning {
+  border-color: rgba(217, 167, 79, 0.34);
+  background: rgba(52, 37, 20, 0.96);
+}
+
+.notification-warning .notification-icon,
+.notification-warning i {
+  color: #f4c26b;
+}
+
+.notification-error {
+  border-color: rgba(214, 107, 92, 0.4);
+  background: rgba(57, 25, 22, 0.97);
+}
+
+.notification-error .notification-icon,
+.notification-error i {
+  color: #ff9f8f;
+}
+
+.notification-tip {
+  border-color: rgba(111, 159, 116, 0.34);
+  background: rgba(24, 43, 29, 0.96);
+}
+
+.notification-tip .notification-icon,
+.notification-tip i {
+  color: #a8ddb1;
+}
+
+@keyframes notification-enter {
+  from {
+    opacity: 0;
+    transform: translateX(28px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes notification-leave {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateX(28px);
+  }
+}
+
+@keyframes notification-progress-shrink {
+  from {
+    transform: scaleX(1);
+  }
+
+  to {
+    transform: scaleX(0);
+  }
+}
+
+.flash-banner {
+  padding: 0.85rem 1rem;
+  border-radius: 18px;
+  border: 1px solid;
+}
+
+.flash-banner.error {
+  border-color: rgba(214, 107, 92, 0.4);
+  background: rgba(214, 107, 92, 0.12);
+  color: #ffd8d2;
+}
+
+.flash-banner.notice {
+  border-color: rgba(111, 159, 116, 0.35);
+  background: rgba(111, 159, 116, 0.12);
+  color: #ddf5df;
+}
+
+.system-message {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.9rem;
+  padding: 1rem 1.05rem;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  background: rgba(255, 248, 232, 0.045);
+}
+
+.system-message-icon {
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: 16px;
+  display: grid;
+  place-items: center;
+  background: rgba(255, 248, 232, 0.08);
+  font-size: 1.1rem;
+}
+
+.system-message-content {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.system-message-content h3,
+.system-message-content p {
+  margin: 0;
+}
+
+.system-message-content p {
+  color: var(--muted);
+}
+
+.system-message-action {
+  justify-self: start;
+  margin-top: 0.4rem;
+}
+
+.system-message-default {
+  border-color: rgba(111, 159, 116, 0.26);
+  background: rgba(111, 159, 116, 0.08);
+}
+
+.system-message-default .system-message-icon,
+.system-message-default i {
+  color: #a8ddb1;
+}
+
+.system-message-info {
+  border-color: rgba(118, 167, 214, 0.28);
+  background: rgba(118, 167, 214, 0.1);
+}
+
+.system-message-info .system-message-icon,
+.system-message-info i {
+  color: #90c8ff;
+}
+
+.system-message-warning {
+  border-color: rgba(217, 167, 79, 0.32);
+  background: rgba(217, 167, 79, 0.11);
+}
+
+.system-message-warning .system-message-icon,
+.system-message-warning i {
+  color: #f4c26b;
+}
+
+.system-message-error {
+  border-color: rgba(214, 107, 92, 0.38);
+  background: rgba(214, 107, 92, 0.13);
+}
+
+.system-message-error .system-message-icon,
+.system-message-error i {
+  color: #ff9f8f;
+}

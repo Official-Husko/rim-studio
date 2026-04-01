@@ -1,0 +1,82 @@
+* {
+  box-sizing: border-box;
+}
+
+#app {
+  min-height: 100vh;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: inherit;
+  color: inherit;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+code {
+  font-family: 'Fira Sans', 'Nunito', sans-serif;
+}
+
+.app-shell {
+  position: relative;
+  min-height: 100vh;
+  color: var(--ink);
+  overflow: hidden;
+}
+
+.app-backdrop {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.72), transparent 88%);
+  pointer-events: none;
+}
+
+.loading-shell,
+.start-layout,
+.workspace-layout {
+  position: relative;
+  z-index: 1;
+}
+
+.loading-shell {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  gap: 1rem;
+}
+
+.start-layout {
+  display: grid;
+  place-items: center;
+  padding: 2rem 1rem;
+  min-height: 100vh;
+}
+
+.compact-start-layout {
+  align-content: center;
+}
+
+.workspace-shell {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.workspace-layout {
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr);
+  min-height: 0;
+  overflow: hidden;
+}
