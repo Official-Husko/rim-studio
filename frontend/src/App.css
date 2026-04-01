@@ -1144,24 +1144,106 @@ code {
   min-width: 0;
   color: var(--muted);
   white-space: nowrap;
+  font-size: 0.8rem;
+  letter-spacing: 0.01em;
+}
+
+.bottom-task-indicator {
+  width: 0.82rem;
+  height: 0.82rem;
+  flex: 0 0 auto;
+  border-radius: 999px;
+  border: 2px solid var(--surface-soft-emphasis);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.16);
+}
+
+.bottom-task-indicator.is-active {
+  border-color: transparent;
+  background:
+    radial-gradient(circle at center, transparent 48%, var(--panel-strong) 50%),
+    conic-gradient(
+      from 0deg,
+      rgba(0, 0, 0, 0) 0deg,
+      rgba(0, 0, 0, 0) 185deg,
+      var(--accent) 250deg,
+      var(--accent-strong) 330deg,
+      rgba(0, 0, 0, 0) 360deg
+    );
+  animation:
+    bottom-task-spin 1.25s linear infinite,
+    bottom-task-breathe 1.7s ease-in-out infinite;
+}
+
+.bottom-task-text {
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+
+.bottom-task-text.is-active {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.35) 0%,
+    var(--accent-strong) 25%,
+    rgba(255, 255, 255, 0.35) 48%,
+    rgba(255, 255, 255, 0.35) 100%
+  );
+  background-size: 220% 100%;
+  background-position: 120% 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: bottom-task-shimmer 2.6s linear infinite;
 }
 
 .bottom-bar-text {
   color: var(--muted);
-  font-size: 0.84rem;
+  font-size: 0.8rem;
   white-space: nowrap;
 }
 
-.bottom-bar-text strong {
-  color: var(--ink);
+.bottom-bar-text strong,
+.bottom-status-value {
+  color: var(--muted-deep);
   font-weight: 700;
   margin-left: 0.2rem;
 }
 
 .bottom-version {
   color: var(--muted);
-  font-size: 0.84rem;
+  font-size: 0.8rem;
   white-space: nowrap;
+}
+
+@keyframes bottom-task-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes bottom-task-breathe {
+  0%,
+  100% {
+    opacity: 0.72;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes bottom-task-shimmer {
+  from {
+    background-position: 130% 0;
+  }
+
+  to {
+    background-position: -120% 0;
+  }
 }
 
 .notification-center {

@@ -9,6 +9,13 @@ interface Props {
 }
 
 export function WorkspaceBottomBar({ appInfo, contentCounts, scanStatus, activeTaskLabel }: Props) {
+  const scanStatusLabel = scanStatus.state === 'scanning'
+    ? 'processing'
+    : scanStatus.state === 'ready'
+      ? 'indexed'
+      : 'unindexed';
+  const hasActiveTask = Boolean(activeTaskLabel);
+
   return (
     <footer className="workspace-bottom-bar">
       <div className="bottom-bar-group bottom-bar-group-left">
@@ -23,20 +30,22 @@ export function WorkspaceBottomBar({ appInfo, contentCounts, scanStatus, activeT
         </span>
       </div>
 
-      <div className="bottom-bar-task">
-        <i className={`fa-solid ${activeTaskLabel ? 'fa-loader fa-spin' : 'fa-circle-dot'}`} aria-hidden="true" />
-        <span>{activeTaskLabel || 'Idle'}</span>
+      <div className={`bottom-bar-task ${hasActiveTask ? 'is-active' : ''}`}>
+        <span className={`bottom-task-indicator ${hasActiveTask ? 'is-active' : ''}`} aria-hidden="true" />
+        <span className={`bottom-task-text ${hasActiveTask ? 'is-active' : ''}`}>
+          {activeTaskLabel || 'No background task'}
+        </span>
       </div>
 
       <div className="bottom-bar-group bottom-bar-group-right">
         <span className="bottom-bar-text">
-          status <strong className={`status-${scanStatus.state}`}>{scanStatus.state}</strong>
+          status <strong className={`bottom-status-value status-${scanStatus.state}`}>{scanStatusLabel}</strong>
         </span>
         <span className="bottom-bar-text">
-          mods <strong className="status-ready">{scanStatus.availableModCount}</strong>
+          mods <strong className="bottom-status-value status-ready">{scanStatus.availableModCount}</strong>
         </span>
         <span className="bottom-bar-text">
-          dlcs <strong className="status-scanning">{scanStatus.dlcLoadedCount}</strong>
+          dlcs <strong className="bottom-status-value status-scanning">{scanStatus.dlcLoadedCount}</strong>
         </span>
         <span className="bottom-version">
           {appInfo.version} (h{appInfo.commitShort})
