@@ -152,3 +152,36 @@ func TestUpdateProjectSettingsPersistsCompatibilitySelection(t *testing.T) {
 		t.Fatalf("expected compatibility patch entry to persist")
 	}
 }
+
+func TestUpdateGlobalSettingsPersistsThemeSettings(t *testing.T) {
+	app := NewAppWithConfigDir(t.TempDir())
+	gameRoot := t.TempDir()
+	if err := os.MkdirAll(filepath.Join(gameRoot, "Data", "Core"), 0o755); err != nil {
+		t.Fatalf("mkdir Core: %v", err)
+	}
+
+	bootstrap, err := app.UpdateGlobalSettings(UpdateGlobalSettingsInput{
+		GamePath:        gameRoot,
+		ScanModsEnabled: true,
+		ThemeID:         "archive",
+		CustomCSSPath:   "/tmp/custom-theme.css",
+	})
+	if err != nil {
+		t.Fatalf("UpdateGlobalSettings returned error: %v", err)
+	}
+
+	if bootstrap.Settings.ThemeID != "archive" {
+		t.Fatalf("expected theme to persist, got %s", bootstrap.Settings.ThemeID)
+	}
+	if bootstrap.Settings.CustomCSSPath != "/tmp/custom-theme.css" {
+		t.Fatalf("expected custom css path to persist, got %s", bootstrap.Settings.CustomCSSPath)
+	}
+
+	reloaded, err := app.GetAppBootstrap()
+	if err != nil {
+		t.Fatalf("GetAppBootstrap returned error: %v", err)
+	}
+	if reloaded.Settings.ThemeID != "archive" {
+		t.Fatalf("expected reloaded theme to persist, got %s", reloaded.Settings.ThemeID)
+	}
+}

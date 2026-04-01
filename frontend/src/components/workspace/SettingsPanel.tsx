@@ -1,11 +1,22 @@
 import { h } from 'preact';
-import type { GameScanStatus, GlobalSettings, ProjectSettings, ScannedModSummary } from '../../types';
+import { builtInThemes } from '../../constants';
+import type {
+  CustomThemeSummary,
+  GameScanStatus,
+  GlobalSettings,
+  ProjectSettings,
+  ScannedModSummary,
+  ThemeID,
+} from '../../types';
 import { getInputValue } from '../../utils/ui';
+
+const themeScrollerThemes = [...builtInThemes, ...builtInThemes];
 
 interface Props {
   projectDraft: ProjectSettings;
   globalDraft: GlobalSettings;
   availableMods: ScannedModSummary[];
+  availableCustomThemes: CustomThemeSummary[];
   busy: boolean;
   scanStatus: GameScanStatus;
   onProjectSettingsChange: (settings: ProjectSettings) => void;
@@ -13,7 +24,10 @@ interface Props {
   onSaveProjectSettings: () => void;
   onGlobalGamePathChange: (value: string) => void;
   onGlobalScanModsEnabledChange: (enabled: boolean) => void;
+  onGlobalThemeIDChange: (themeId: ThemeID) => void;
+  onGlobalCustomCSSPathChange: (value: string) => void;
   onBrowseGamePath: () => void;
+  onClearCustomCSSPath: () => void;
   onSaveGlobalSettings: () => void;
   onTriggerRescan: () => void;
 }
@@ -22,6 +36,7 @@ export function SettingsPanel({
   projectDraft,
   globalDraft,
   availableMods,
+  availableCustomThemes,
   busy,
   scanStatus,
   onProjectSettingsChange,
@@ -29,12 +44,96 @@ export function SettingsPanel({
   onSaveProjectSettings,
   onGlobalGamePathChange,
   onGlobalScanModsEnabledChange,
+  onGlobalThemeIDChange,
+  onGlobalCustomCSSPathChange,
   onBrowseGamePath,
+  onClearCustomCSSPath,
   onSaveGlobalSettings,
   onTriggerRescan,
 }: Props) {
   return (
     <div className="content-stack">
+      <section className="panel-card">
+        <div className="panel-heading">
+          <div>
+            <p className="eyebrow">Appearance</p>
+            <h3>Theme Library</h3>
+          </div>
+        </div>
+
+        <div className="theme-scroller">
+          <div className="theme-track">
+            {themeScrollerThemes.map((theme, index) => (
+              <button
+                key={`${theme.id}-${index}`}
+                className={`theme-option ${globalDraft.themeId === theme.id ? 'is-active' : ''}`}
+                onClick={() => onGlobalThemeIDChange(theme.id)}
+                type="button"
+              >
+                <div className={`theme-preview ${theme.previewClassName}`} aria-hidden="true" />
+                <div className="theme-option-copy">
+                  <strong>{theme.name}</strong>
+                  <p>{theme.description}</p>
+                </div>
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div className="empty-card">
+          <h4>Six built-in palettes are available now</h4>
+          <p>
+            The first three follow the Rim-like neutral, workshop, and blueprint directions directly. The rest give you
+            warmer, archivist, and relay-style variants without changing the theme system again later.
+          </p>
+        </div>
+
+        <div className="theme-folder-heading">
+          <div>
+            <p className="eyebrow">External Themes</p>
+            <h4>Loaded From `data/themes`</h4>
+          </div>
+          <button
+            className="ghost-button"
+            disabled={!globalDraft.customCssPath}
+            onClick={onClearCustomCSSPath}
+            type="button"
+          >
+            Clear Override
+          </button>
+        </div>
+
+        {availableCustomThemes.length === 0 ? (
+          <div className="empty-card">
+            <h4>No external theme files found</h4>
+            <p>
+              Place `.css` files in the app&apos;s `data/themes` folder next to the executable. Rim-Studio will discover
+              them automatically and load them as optional overrides on top of the selected built-in palette.
+            </p>
+          </div>
+        ) : (
+          <div className="custom-theme-list">
+            {availableCustomThemes.map((theme) => {
+              const isActive = globalDraft.customCssPath === theme.path;
+              return (
+                <button
+                  key={theme.path}
+                  className={`custom-theme-item ${isActive ? 'is-active' : ''}`}
+                  onClick={() => onGlobalCustomCSSPathChange(isActive ? '' : theme.path)}
+                  type="button"
+                >
+                  <div>
+                    <strong>{theme.name}</strong>
+                    <code>{theme.path}</code>
+                  </div>
+                  <span>{isActive ? 'Active' : 'Load'}</span>
+                </button>
+              );
+            })}
+          </div>
+        )}
+      </section>
+
       <section className="panel-card">
         <div className="panel-heading">
           <div>

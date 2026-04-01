@@ -1,4 +1,5 @@
 import {
+  ChooseCSSFile,
   ChooseDirectory,
   CloseProject,
   CreateProject,
@@ -6,6 +7,7 @@ import {
   GetAvailableMods,
   GetProjectState,
   OpenProject,
+  ReadCustomCSSFile,
   RescanGameData,
   UpdateGlobalSettings,
   UpdateProjectSettings,
@@ -15,6 +17,7 @@ import { main } from '../wailsjs/go/models';
 import type {
   AppBootstrap,
   CompatibilityPatchEntry,
+  CustomThemeSummary,
   CompatibilitySettings,
   CreateProjectInput,
   GameScanSnapshot,
@@ -24,11 +27,15 @@ import type {
   ScannedModSummary,
   UpdateGlobalSettingsInput,
   UpdateProjectSettingsInput,
+  ThemeID,
 } from './types';
 
 export const api = {
   chooseDirectory(title: string, defaultPath = ''): Promise<string> {
     return ChooseDirectory(title, defaultPath);
+  },
+  chooseCSSFile(title: string, defaultPath = ''): Promise<string> {
+    return ChooseCSSFile(title, defaultPath);
   },
   async closeProject(): Promise<AppBootstrap> {
     return normalizeAppBootstrap(await CloseProject());
@@ -47,6 +54,9 @@ export const api = {
   },
   async openProject(projectPath: string): Promise<ProjectState> {
     return normalizeProjectState(await OpenProject(projectPath));
+  },
+  readCustomCSSFile(path: string): Promise<string> {
+    return ReadCustomCSSFile(path);
   },
   async rescanGameData(): Promise<GameScanSnapshot> {
     return normalizeGameScanSnapshot(await RescanGameData());
@@ -76,6 +86,8 @@ function normalizeAppBootstrap(source: main.AppBootstrap): AppBootstrap {
     settings: {
       gamePath: source.settings?.gamePath ?? '',
       scanModsEnabled: Boolean(source.settings?.scanModsEnabled),
+      themeId: normalizeThemeID(source.settings?.themeId),
+      customCssPath: source.settings?.customCssPath ?? '',
       cachedModIndex: normalizeScannedMods(source.settings?.cachedModIndex ?? []),
       recentProjects: normalizeRecentProjects(source.settings?.recentProjects ?? []),
     },
@@ -83,6 +95,7 @@ function normalizeAppBootstrap(source: main.AppBootstrap): AppBootstrap {
     currentProject: source.currentProject ? normalizeProjectSummary(source.currentProject) : null,
     scanStatus: normalizeGameScanStatus(source.scanStatus),
     availableMods: normalizeScannedMods(source.availableMods ?? []),
+    availableCustomThemes: normalizeCustomThemes(source.availableCustomThemes ?? []),
   };
 }
 
@@ -172,4 +185,31 @@ function normalizeRecentProjects(source: main.RecentProject[]) {
     packageId: project.packageId ?? '',
     lastOpened: project.lastOpened ?? '',
   }));
+}
+
+function normalizeCustomThemes(source: main.CustomThemeSummary[]): CustomThemeSummary[] {
+  return source.map((theme) => ({
+    id: theme.id ?? '',
+    name: theme.name ?? '',
+    path: theme.path ?? '',
+  }));
+}
+
+function normalizeThemeID(source: string | undefined): ThemeID {
+  switch (source) {
+    case 'workshop':
+    case 'blueprint':
+    case 'foundry':
+    case 'archive':
+    case 'relay':
+      return source;
+    case 'ashfall':
+      return 'workshop';
+    case 'scribe':
+      return 'archive';
+    case 'embers':
+      return 'foundry';
+    default:
+      return 'rim-neutral';
+  }
 }

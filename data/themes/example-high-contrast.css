@@ -1,0 +1,23 @@
+:root {
+  --panel: rgba(12, 16, 20, 0.92);
+  --panel-strong: rgba(18, 24, 30, 0.98);
+  --border: rgba(174, 226, 255, 0.28);
+  --border-strong: rgba(174, 226, 255, 0.44);
+  --accent: #9fdcff;
+  --accent-strong: #d8f3ff;
+  --ink: #f7fbff;
+  --muted: #c8d7e3;
+  --muted-deep: #a1b2bf;
+  --accent-gradient-start: #9fdcff;
+  --accent-gradient-end: #4d86b7;
+  --active-tab-bg: linear-gradient(135deg, rgba(159, 220, 255, 0.22), rgba(255, 255, 255, 0.06));
+}
+
+.app-backdrop {
+  opacity: 0.7;
+}
+
+.workspace-main,
+.splash-panel {
+  backdrop-filter: blur(18px);
+}

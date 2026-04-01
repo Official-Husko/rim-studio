@@ -1,5 +1,12 @@
 export type WorkspaceTab = 'basics' | 'weapons' | 'race' | 'clothing' | 'settings';
 export type NotificationType = 'info' | 'warning' | 'error' | 'tip';
+export type ThemeID =
+  | 'rim-neutral'
+  | 'workshop'
+  | 'blueprint'
+  | 'foundry'
+  | 'archive'
+  | 'relay';
 
 export interface NotificationAction {
   label: string;
@@ -22,6 +29,19 @@ export interface WorkspaceTabDefinition {
   key: WorkspaceTab;
   label: string;
   icon: string;
+}
+
+export interface ThemeDefinition {
+  id: ThemeID;
+  name: string;
+  description: string;
+  previewClassName: string;
+}
+
+export interface CustomThemeSummary {
+  id: string;
+  name: string;
+  path: string;
 }
 
 export interface RecentProject {
@@ -78,6 +98,8 @@ export interface ScannedModSummary {
 export interface GlobalSettings {
   gamePath: string;
   scanModsEnabled: boolean;
+  themeId: ThemeID;
+  customCssPath: string;
   cachedModIndex: ScannedModSummary[];
   recentProjects: RecentProject[];
 }
@@ -96,6 +118,7 @@ export interface AppBootstrap {
   currentProject?: ProjectSummary | null;
   scanStatus: GameScanStatus;
   availableMods: ScannedModSummary[];
+  availableCustomThemes: CustomThemeSummary[];
 }
 
 export interface GameScanSnapshot {
@@ -119,4 +142,6 @@ export interface UpdateProjectSettingsInput {
 export interface UpdateGlobalSettingsInput {
   gamePath: string;
   scanModsEnabled: boolean;
+  themeId: ThemeID;
+  customCssPath: string;
 }

@@ -1,5 +1,21 @@
 export namespace main {
 	
+	export class CustomThemeSummary {
+	    id: string;
+	    name: string;
+	    path: string;
+	
+	    static createFrom(source: any = {}) {
+	        return new CustomThemeSummary(source);
+	    }
+	
+	    constructor(source: any = {}) {
+	        if ('string' === typeof source) source = JSON.parse(source);
+	        this.id = source["id"];
+	        this.name = source["name"];
+	        this.path = source["path"];
+	    }
+	}
 	export class GameScanStatus {
 	    state: string;
 	    message: string;
@@ -83,6 +99,8 @@ export namespace main {
 	export class GlobalSettings {
 	    gamePath: string;
 	    scanModsEnabled: boolean;
+	    themeId: string;
+	    customCssPath: string;
 	    cachedModIndex: ScannedModSummary[];
 	    recentProjects: RecentProject[];
 	
@@ -94,6 +112,8 @@ export namespace main {
 	        if ('string' === typeof source) source = JSON.parse(source);
 	        this.gamePath = source["gamePath"];
 	        this.scanModsEnabled = source["scanModsEnabled"];
+	        this.themeId = source["themeId"];
+	        this.customCssPath = source["customCssPath"];
 	        this.cachedModIndex = this.convertValues(source["cachedModIndex"], ScannedModSummary);
 	        this.recentProjects = this.convertValues(source["recentProjects"], RecentProject);
 	    }
@@ -122,6 +142,7 @@ export namespace main {
 	    currentProject?: ProjectSummary;
 	    scanStatus: GameScanStatus;
 	    availableMods: ScannedModSummary[];
+	    availableCustomThemes: CustomThemeSummary[];
 	
 	    static createFrom(source: any = {}) {
 	        return new AppBootstrap(source);
@@ -134,6 +155,7 @@ export namespace main {
 	        this.currentProject = this.convertValues(source["currentProject"], ProjectSummary);
 	        this.scanStatus = this.convertValues(source["scanStatus"], GameScanStatus);
 	        this.availableMods = this.convertValues(source["availableMods"], ScannedModSummary);
+	        this.availableCustomThemes = this.convertValues(source["availableCustomThemes"], CustomThemeSummary);
 	    }
 	
 		convertValues(a: any, classs: any, asMap: boolean = false): any {
@@ -232,6 +254,7 @@ export namespace main {
 	        this.targetVersion = source["targetVersion"];
 	    }
 	}
+	
 	export class GameScanSnapshot {
 	    scanStatus: GameScanStatus;
 	    availableMods: ScannedModSummary[];
@@ -338,6 +361,8 @@ export namespace main {
 	export class UpdateGlobalSettingsInput {
 	    gamePath: string;
 	    scanModsEnabled: boolean;
+	    themeId: string;
+	    customCssPath: string;
 	
 	    static createFrom(source: any = {}) {
 	        return new UpdateGlobalSettingsInput(source);
@@ -347,6 +372,8 @@ export namespace main {
 	        if ('string' === typeof source) source = JSON.parse(source);
 	        this.gamePath = source["gamePath"];
 	        this.scanModsEnabled = source["scanModsEnabled"];
+	        this.themeId = source["themeId"];
+	        this.customCssPath = source["customCssPath"];
 	    }
 	}
 	export class UpdateProjectSettingsInput {

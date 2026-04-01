@@ -11,6 +11,7 @@ import type {
   ProjectSettings,
   ProjectState,
   ScannedModSummary,
+  ThemeID,
   WorkspaceTab,
 } from '../types';
 import { buildPatchPlaceholder, getErrorMessage } from '../utils/ui';
@@ -267,6 +268,8 @@ export function useStudioApp({ notify, notifyError, removeNotificationByKey, ups
       const result = await api.updateGlobalSettings({
         gamePath: path,
         scanModsEnabled: bootstrap.settings.scanModsEnabled,
+        themeId: globalDraft.themeId,
+        customCssPath: globalDraft.customCssPath,
       });
 
       setBootstrap(result);
@@ -290,6 +293,8 @@ export function useStudioApp({ notify, notifyError, removeNotificationByKey, ups
       const result = await api.updateGlobalSettings({
         gamePath: globalDraft.gamePath,
         scanModsEnabled: globalDraft.scanModsEnabled,
+        themeId: globalDraft.themeId,
+        customCssPath: globalDraft.customCssPath,
       });
 
       setBootstrap(result);
@@ -382,6 +387,37 @@ export function useStudioApp({ notify, notifyError, removeNotificationByKey, ups
     }));
   }
 
+  function updateGlobalThemeID(themeId: ThemeID) {
+    setGlobalDraft((current) => ({
+      ...current,
+      themeId,
+    }));
+  }
+
+  function updateGlobalCustomCSSPath(value: string) {
+    setGlobalDraft((current) => ({
+      ...current,
+      customCssPath: value,
+    }));
+  }
+
+  async function browseCustomCSSPath() {
+    try {
+      const path = await api.chooseCSSFile('Choose Custom Theme CSS', globalDraft.customCssPath);
+      if (!path) {
+        return;
+      }
+
+      updateGlobalCustomCSSPath(path);
+    } catch (error) {
+      notifyError('CSS file selection failed', getErrorMessage(error));
+    }
+  }
+
+  function clearCustomCSSPath() {
+    updateGlobalCustomCSSPath('');
+  }
+
   function toggleSelectedMod(mod: ScannedModSummary) {
     const selected = new Set(projectDraft.compatibility.selectedModIds);
     const patches = { ...projectDraft.compatibility.patchEntries };
@@ -429,7 +465,11 @@ export function useStudioApp({ notify, notifyError, removeNotificationByKey, ups
       toggleSelectedMod,
       triggerRescan,
       browseGamePath,
+      browseCustomCSSPath,
+      clearCustomCSSPath,
       updateGlobalGamePath,
+      updateGlobalThemeID,
+      updateGlobalCustomCSSPath,
       updateGlobalScanModsEnabled,
       updateNewProjectField,
       updateProjectSettings,

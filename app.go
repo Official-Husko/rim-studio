@@ -21,6 +21,7 @@ const (
 	projectConfigRelPath = "Config/rimstudio.project.json"
 	supportedVersion     = "1.6"
 	eventScanStatus      = "rimstudio:scan-status"
+	defaultThemeID       = "rim-neutral"
 )
 
 type App struct {
@@ -37,11 +38,12 @@ type App struct {
 }
 
 type AppBootstrap struct {
-	Settings       GlobalSettings      `json:"settings"`
-	RecentProjects []RecentProject     `json:"recentProjects"`
-	CurrentProject *ProjectSummary     `json:"currentProject,omitempty"`
-	ScanStatus     GameScanStatus      `json:"scanStatus"`
-	AvailableMods  []ScannedModSummary `json:"availableMods"`
+	Settings              GlobalSettings       `json:"settings"`
+	RecentProjects        []RecentProject      `json:"recentProjects"`
+	CurrentProject        *ProjectSummary      `json:"currentProject,omitempty"`
+	ScanStatus            GameScanStatus       `json:"scanStatus"`
+	AvailableMods         []ScannedModSummary  `json:"availableMods"`
+	AvailableCustomThemes []CustomThemeSummary `json:"availableCustomThemes"`
 }
 
 type GameScanSnapshot struct {
@@ -52,6 +54,8 @@ type GameScanSnapshot struct {
 type GlobalSettings struct {
 	GamePath        string              `json:"gamePath"`
 	ScanModsEnabled bool                `json:"scanModsEnabled"`
+	ThemeID         string              `json:"themeId"`
+	CustomCSSPath   string              `json:"customCssPath"`
 	CachedModIndex  []ScannedModSummary `json:"cachedModIndex"`
 	RecentProjects  []RecentProject     `json:"recentProjects"`
 }
@@ -115,6 +119,8 @@ type UpdateProjectSettingsInput struct {
 type UpdateGlobalSettingsInput struct {
 	GamePath        string `json:"gamePath"`
 	ScanModsEnabled bool   `json:"scanModsEnabled"`
+	ThemeID         string `json:"themeId"`
+	CustomCSSPath   string `json:"customCssPath"`
 }
 
 type GameScanStatus struct {
@@ -131,6 +137,12 @@ type ScannedModSummary struct {
 	PackageID string `json:"packageId"`
 	Path      string `json:"path"`
 	Source    string `json:"source"`
+}
+
+type CustomThemeSummary struct {
+	ID   string `json:"id"`
+	Name string `json:"name"`
+	Path string `json:"path"`
 }
 
 type projectFile struct {
@@ -179,15 +191,21 @@ func (a *App) GetAppBootstrap() (AppBootstrap, error) {
 		return AppBootstrap{}, err
 	}
 
+	customThemes, err := discoverCustomThemes()
+	if err != nil {
+		return AppBootstrap{}, err
+	}
+
 	a.mu.RLock()
 	defer a.mu.RUnlock()
 
 	return AppBootstrap{
-		Settings:       cloneGlobalSettings(a.settings),
-		RecentProjects: cloneRecentProjects(a.settings.RecentProjects),
-		CurrentProject: cloneProjectSummaryPtr(a.currentProject),
-		ScanStatus:     a.scanStatus,
-		AvailableMods:  cloneScannedMods(a.availableMods),
+		Settings:              cloneGlobalSettings(a.settings),
+		RecentProjects:        cloneRecentProjects(a.settings.RecentProjects),
+		CurrentProject:        cloneProjectSummaryPtr(a.currentProject),
+		ScanStatus:            a.scanStatus,
+		AvailableMods:         cloneScannedMods(a.availableMods),
+		AvailableCustomThemes: cloneCustomThemes(customThemes),
 	}, nil
 }
 
@@ -317,6 +335,8 @@ func (a *App) UpdateGlobalSettings(input UpdateGlobalSettingsInput) (AppBootstra
 
 	settings.GamePath = strings.TrimSpace(input.GamePath)
 	settings.ScanModsEnabled = input.ScanModsEnabled
+	settings.ThemeID = normalizeThemeID(input.ThemeID)
+	settings.CustomCSSPath = strings.TrimSpace(input.CustomCSSPath)
 
 	if err := validateGamePathOrEmpty(settings.GamePath); err != nil {
 		return AppBootstrap{}, err
@@ -381,6 +401,52 @@ func (a *App) ChooseDirectory(title string, defaultPath string) (string, error) 
 	}
 
 	return path, nil
+}
+
+func (a *App) ChooseCSSFile(title string, defaultPath string) (string, error) {
+	if a.ctx == nil {
+		return "", errors.New("desktop dialog is not available before startup")
+	}
+
+	path, err := wruntime.OpenFileDialog(a.ctx, wruntime.OpenDialogOptions{
+		Title: title,
+		Filters: []wruntime.FileFilter{
+			{
+				DisplayName: "CSS Stylesheet",
+				Pattern:     "*.css",
+			},
+		},
+		DefaultDirectory: filepath.Dir(strings.TrimSpace(defaultPath)),
+		DefaultFilename:  filepath.Base(strings.TrimSpace(defaultPath)),
+	})
+	if err != nil {
+		return "", err
+	}
+
+	return path, nil
+}
+
+func (a *App) ReadCustomCSSFile(path string) (string, error) {
+	cleanPath := strings.TrimSpace(path)
+	if cleanPath == "" {
+		return "", nil
+	}
+
+	if strings.ToLower(filepath.Ext(cleanPath)) != ".css" {
+		return "", errors.New("custom theme file must be a .css file")
+	}
+
+	absPath, err := filepath.Abs(cleanPath)
+	if err != nil {
+		return "", fmt.Errorf("resolve custom css path: %w", err)
+	}
+
+	data, err := os.ReadFile(absPath)
+	if err != nil {
+		return "", fmt.Errorf("read custom css file: %w", err)
+	}
+
+	return string(data), nil
 }
 
 func (a *App) ensureStateLoaded() error {
@@ -597,8 +663,7 @@ func (a *App) loadSettings() (GlobalSettings, error) {
 		return GlobalSettings{}, fmt.Errorf("decode settings: %w", err)
 	}
 
-	settings.CachedModIndex = cloneScannedMods(settings.CachedModIndex)
-	settings.RecentProjects = cloneRecentProjects(settings.RecentProjects)
+	settings = cloneGlobalSettings(settings)
 	return settings, nil
 }
 
@@ -619,6 +684,8 @@ func defaultGlobalSettings() GlobalSettings {
 	return GlobalSettings{
 		GamePath:        "",
 		ScanModsEnabled: false,
+		ThemeID:         defaultThemeID,
+		CustomCSSPath:   "",
 		CachedModIndex:  []ScannedModSummary{},
 		RecentProjects:  []RecentProject{},
 	}
@@ -657,6 +724,103 @@ func normalizeCompatibilityMode(value string) string {
 		return "selected"
 	}
 	return "all"
+}
+
+func normalizeThemeID(value string) string {
+	switch strings.TrimSpace(value) {
+	case "workshop", "blueprint", "foundry", "archive", "relay":
+		return strings.TrimSpace(value)
+	case "ashfall":
+		return "workshop"
+	case "scribe":
+		return "archive"
+	case "embers":
+		return "foundry"
+	default:
+		return defaultThemeID
+	}
+}
+
+func discoverCustomThemes() ([]CustomThemeSummary, error) {
+	roots, err := customThemeDirectories()
+	if err != nil {
+		return nil, err
+	}
+
+	themes := []CustomThemeSummary{}
+	seen := map[string]struct{}{}
+
+	for _, root := range roots {
+		entries, err := os.ReadDir(root)
+		if err != nil {
+			if errors.Is(err, os.ErrNotExist) {
+				continue
+			}
+			return nil, fmt.Errorf("read theme directory %s: %w", root, err)
+		}
+
+		for _, entry := range entries {
+			if entry.IsDir() || strings.ToLower(filepath.Ext(entry.Name())) != ".css" {
+				continue
+			}
+
+			themePath := filepath.Join(root, entry.Name())
+			absPath, err := filepath.Abs(themePath)
+			if err != nil {
+				return nil, fmt.Errorf("resolve theme path %s: %w", themePath, err)
+			}
+			if _, exists := seen[absPath]; exists {
+				continue
+			}
+
+			seen[absPath] = struct{}{}
+			baseName := strings.TrimSuffix(entry.Name(), filepath.Ext(entry.Name()))
+			themes = append(themes, CustomThemeSummary{
+				ID:   baseName,
+				Name: displayThemeName(baseName),
+				Path: absPath,
+			})
+		}
+	}
+
+	sort.Slice(themes, func(i, j int) bool {
+		return strings.ToLower(themes[i].Name) < strings.ToLower(themes[j].Name)
+	})
+
+	return themes, nil
+}
+
+func customThemeDirectories() ([]string, error) {
+	exePath, err := os.Executable()
+	if err != nil {
+		return nil, fmt.Errorf("locate executable path: %w", err)
+	}
+
+	paths := []string{
+		filepath.Join(filepath.Dir(exePath), "data", "themes"),
+	}
+
+	workingDir, err := os.Getwd()
+	if err == nil {
+		devPath := filepath.Join(workingDir, "data", "themes")
+		if devPath != paths[0] {
+			paths = append(paths, devPath)
+		}
+	}
+
+	return paths, nil
+}
+
+func displayThemeName(value string) string {
+	replacer := strings.NewReplacer("-", " ", "_", " ")
+	parts := strings.Fields(replacer.Replace(strings.TrimSpace(value)))
+	for index, part := range parts {
+		if part == "" {
+			continue
+		}
+		parts[index] = strings.ToUpper(part[:1]) + strings.ToLower(part[1:])
+	}
+	return strings.Join(parts, " ")
 }
 
 func writeProjectSettings(projectPath string, settings ProjectSettings) error {
@@ -932,6 +1096,8 @@ func cloneGlobalSettings(settings GlobalSettings) GlobalSettings {
 	return GlobalSettings{
 		GamePath:        settings.GamePath,
 		ScanModsEnabled: settings.ScanModsEnabled,
+		ThemeID:         normalizeThemeID(settings.ThemeID),
+		CustomCSSPath:   settings.CustomCSSPath,
 		CachedModIndex:  cloneScannedMods(settings.CachedModIndex),
 		RecentProjects:  cloneRecentProjects(settings.RecentProjects),
 	}
@@ -943,6 +1109,10 @@ func cloneRecentProjects(items []RecentProject) []RecentProject {
 
 func cloneScannedMods(items []ScannedModSummary) []ScannedModSummary {
 	return append([]ScannedModSummary(nil), items...)
+}
+
+func cloneCustomThemes(items []CustomThemeSummary) []CustomThemeSummary {
+	return append([]CustomThemeSummary(nil), items...)
 }
 
 func cloneProjectSummaryPtr(summary *ProjectSummary) *ProjectSummary {

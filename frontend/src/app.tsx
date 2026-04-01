@@ -7,11 +7,14 @@ import { NotificationCenter } from './components/notifications/NotificationCente
 import { WorkspaceShell } from './components/workspace/WorkspaceShell';
 import { useNotifications } from './hooks/useNotifications';
 import { useStudioApp } from './hooks/useStudioApp';
+import { useThemeAppearance } from './hooks/useThemeAppearance';
 
 export function App() {
   const notifications = useNotifications();
   const studio = useStudioApp(notifications);
   const { state, actions } = studio;
+
+  useThemeAppearance(state.globalDraft, notifications);
 
   if (state.loading) {
     return <LoadingScreen />;
@@ -25,6 +28,7 @@ export function App() {
       {state.projectState ? (
         <WorkspaceShell
           activeTab={state.activeTab}
+          availableCustomThemes={state.bootstrap.availableCustomThemes}
           availableMods={state.bootstrap.availableMods}
           busy={state.busy}
           globalDraft={state.globalDraft}
@@ -33,9 +37,12 @@ export function App() {
           scanStatus={state.bootstrap.scanStatus}
           selectedMods={state.selectedMods}
           onBrowseGamePath={actions.browseGamePath}
+          onClearCustomCSSPath={actions.clearCustomCSSPath}
           onCloseProject={actions.closeProjectWorkspace}
+          onGlobalCustomCSSPathChange={actions.updateGlobalCustomCSSPath}
           onGlobalGamePathChange={actions.updateGlobalGamePath}
           onGlobalScanModsEnabledChange={actions.updateGlobalScanModsEnabled}
+          onGlobalThemeIDChange={actions.updateGlobalThemeID}
           onProjectSettingsChange={actions.updateProjectSettings}
           onSaveGlobalSettings={actions.saveGlobalSettings}
           onSaveProjectSettings={actions.saveProjectSettings}

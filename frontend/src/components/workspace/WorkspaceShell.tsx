@@ -3,10 +3,12 @@ import logo from '../../assets/images/logo-universal.png';
 import { workspaceTabs } from '../../constants';
 import type {
   AppBootstrap,
+  CustomThemeSummary,
   GlobalSettings,
   ProjectSettings,
   ProjectState,
   ScannedModSummary,
+  ThemeID,
   WorkspaceTab,
 } from '../../types';
 import { BasicsPanel } from './BasicsPanel';
@@ -25,6 +27,7 @@ interface Props {
   projectDraft: ProjectSettings;
   selectedMods: ScannedModSummary[];
   availableMods: ScannedModSummary[];
+  availableCustomThemes: CustomThemeSummary[];
   globalDraft: GlobalSettings;
   busy: boolean;
   scanStatus: AppBootstrap['scanStatus'];
@@ -35,7 +38,10 @@ interface Props {
   onSaveProjectSettings: () => void;
   onGlobalGamePathChange: (value: string) => void;
   onGlobalScanModsEnabledChange: (enabled: boolean) => void;
+  onGlobalThemeIDChange: (themeId: ThemeID) => void;
+  onGlobalCustomCSSPathChange: (value: string) => void;
   onBrowseGamePath: () => void;
+  onClearCustomCSSPath: () => void;
   onSaveGlobalSettings: () => void;
   onTriggerRescan: () => void;
 }
@@ -46,6 +52,7 @@ export function WorkspaceShell({
   projectDraft,
   selectedMods,
   availableMods,
+  availableCustomThemes,
   globalDraft,
   busy,
   scanStatus,
@@ -56,7 +63,10 @@ export function WorkspaceShell({
   onSaveProjectSettings,
   onGlobalGamePathChange,
   onGlobalScanModsEnabledChange,
+  onGlobalThemeIDChange,
+  onGlobalCustomCSSPathChange,
   onBrowseGamePath,
+  onClearCustomCSSPath,
   onSaveGlobalSettings,
   onTriggerRescan,
 }: Props) {
@@ -119,13 +129,17 @@ export function WorkspaceShell({
         {activeTab === 'settings' ? (
           <SettingsPanel
             availableMods={availableMods}
+            availableCustomThemes={availableCustomThemes}
             busy={busy}
             globalDraft={globalDraft}
             projectDraft={projectDraft}
             scanStatus={scanStatus}
             onBrowseGamePath={onBrowseGamePath}
+            onClearCustomCSSPath={onClearCustomCSSPath}
+            onGlobalCustomCSSPathChange={onGlobalCustomCSSPathChange}
             onGlobalGamePathChange={onGlobalGamePathChange}
             onGlobalScanModsEnabledChange={onGlobalScanModsEnabledChange}
+            onGlobalThemeIDChange={onGlobalThemeIDChange}
             onProjectSettingsChange={onProjectSettingsChange}
             onSaveGlobalSettings={onSaveGlobalSettings}
             onSaveProjectSettings={onSaveProjectSettings}
