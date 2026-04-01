@@ -4,7 +4,6 @@ import type { RecentProject } from '../types';
 
 interface Props {
   recentProjects: RecentProject[];
-  placeholderProjects: RecentProject[];
   busy: boolean;
   onNewProject: () => void;
   onLoadProject: () => void;
@@ -13,14 +12,12 @@ interface Props {
 
 export function StartScreen({
   recentProjects,
-  placeholderProjects,
   busy,
   onNewProject,
   onLoadProject,
   onOpenRecentProject,
 }: Props) {
   const hasRecentProjects = recentProjects.length > 0;
-  const projectsToDisplay = hasRecentProjects ? recentProjects : placeholderProjects;
 
   return (
     <main className="start-layout compact-start-layout">
@@ -42,27 +39,38 @@ export function StartScreen({
         <div className="splash-section">
           <div className="compact-heading">
             <p className="eyebrow">Recent Projects</p>
-            <span className="small-muted">{hasRecentProjects ? 'Latest projects' : 'Placeholder examples'}</span>
+            <span className="small-muted">{hasRecentProjects ? 'Latest projects' : 'Nothing opened yet'}</span>
           </div>
 
-          <div className="recent-list compact-recent-list">
-            {projectsToDisplay.map((project) => (
-              <button
-                key={project.path}
-                className={`recent-item compact-recent-item ${!hasRecentProjects ? 'is-placeholder' : ''}`}
-                onClick={() => onOpenRecentProject(project.path)}
-                type="button"
-                disabled={!hasRecentProjects || busy}
-              >
-                <div className="recent-item-header">
-                  <strong>{project.name}</strong>
-                  {!hasRecentProjects ? <span className="placeholder-tag">Example</span> : null}
-                </div>
-                <span>{project.packageId || 'No package ID'}</span>
-                <code>{project.path}</code>
-              </button>
-            ))}
-          </div>
+          {hasRecentProjects ? (
+            <div className="recent-list compact-recent-list">
+              {recentProjects.map((project) => (
+                <button
+                  key={project.path}
+                  className="recent-item compact-recent-item"
+                  onClick={() => onOpenRecentProject(project.path)}
+                  type="button"
+                  disabled={busy}
+                >
+                  <div className="recent-item-header">
+                    <strong>{project.name}</strong>
+                  </div>
+                  <span>{project.packageId || 'No package ID'}</span>
+                  <code>{project.path}</code>
+                </button>
+              ))}
+            </div>
+          ) : (
+            <div className="empty-recent-state">
+              <div className="empty-recent-icon">
+                <i className="fa-solid fa-folder-open" aria-hidden="true" />
+              </div>
+              <div>
+                <strong>No recent projects</strong>
+                <p>Create a new mod project or load an existing RimWorld mod folder to get started.</p>
+              </div>
+            </div>
+          )}
         </div>
       </section>
     </main>

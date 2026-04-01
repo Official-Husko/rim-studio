@@ -1,7 +1,6 @@
 import type {
   AppBootstrap,
   ProjectSettings,
-  RecentProject,
   WorkspaceTabDefinition,
 } from './types';
 
@@ -13,27 +12,6 @@ export const workspaceTabs: WorkspaceTabDefinition[] = [
   { key: 'race', label: 'Race', icon: 'Ra' },
   { key: 'clothing', label: 'Clothing', icon: 'Cl' },
   { key: 'settings', label: 'Settings', icon: 'Se' },
-];
-
-export const placeholderRecentProjects: RecentProject[] = [
-  {
-    name: 'Frontier Firearms',
-    packageId: 'example.frontierfirearms',
-    path: '/mods/FrontierFirearms',
-    lastOpened: '',
-  },
-  {
-    name: 'Dustborn Apparel',
-    packageId: 'example.dustbornapparel',
-    path: '/mods/DustbornApparel',
-    lastOpened: '',
-  },
-  {
-    name: 'Geneforge Colonists',
-    packageId: 'example.geneforgecolonists',
-    path: '/mods/GeneforgeColonists',
-    lastOpened: '',
-  },
 ];
 
 export const emptyProjectSettings = (): ProjectSettings => ({

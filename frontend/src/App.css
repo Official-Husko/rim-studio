@@ -357,15 +357,6 @@ code {
   padding: 0.85rem 0.95rem;
 }
 
-.compact-recent-item.is-placeholder {
-  cursor: default;
-  opacity: 0.82;
-}
-
-.compact-recent-item.is-placeholder:hover {
-  transform: none;
-}
-
 .recent-item-header {
   display: flex;
   justify-content: space-between;
@@ -373,14 +364,36 @@ code {
   align-items: center;
 }
 
-.placeholder-tag {
-  border-radius: 999px;
-  padding: 0.2rem 0.55rem;
+.empty-recent-state {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.9rem;
+  align-items: center;
+  padding: 1rem 1.05rem;
+  border-radius: 18px;
   border: 1px solid var(--border);
+  background: rgba(255, 248, 232, 0.04);
+}
+
+.empty-recent-icon {
+  width: 2.7rem;
+  height: 2.7rem;
+  border-radius: 16px;
+  display: grid;
+  place-items: center;
+  background: rgba(255, 248, 232, 0.08);
+  color: var(--accent-strong);
+  font-size: 1.05rem;
+}
+
+.empty-recent-state strong,
+.empty-recent-state p {
+  margin: 0;
+}
+
+.empty-recent-state p {
   color: var(--muted);
-  font-size: 0.72rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+  margin-top: 0.28rem;
 }
 
 .recent-item span,
