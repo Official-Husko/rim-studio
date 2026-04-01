@@ -22,6 +22,7 @@ export namespace main {
 	    lastUpdated?: string;
 	    scannedSources: number;
 	    availableModCount: number;
+	    dlcLoadedCount: number;
 	
 	    static createFrom(source: any = {}) {
 	        return new GameScanStatus(source);
@@ -34,6 +35,7 @@ export namespace main {
 	        this.lastUpdated = source["lastUpdated"];
 	        this.scannedSources = source["scannedSources"];
 	        this.availableModCount = source["availableModCount"];
+	        this.dlcLoadedCount = source["dlcLoadedCount"];
 	    }
 	}
 	export class ProjectSummary {
@@ -136,7 +138,22 @@ export namespace main {
 		    return a;
 		}
 	}
+	export class AppInfo {
+	    version: string;
+	    commitShort: string;
+	
+	    static createFrom(source: any = {}) {
+	        return new AppInfo(source);
+	    }
+	
+	    constructor(source: any = {}) {
+	        if ('string' === typeof source) source = JSON.parse(source);
+	        this.version = source["version"];
+	        this.commitShort = source["commitShort"];
+	    }
+	}
 	export class AppBootstrap {
+	    appInfo: AppInfo;
 	    settings: GlobalSettings;
 	    recentProjects: RecentProject[];
 	    currentProject?: ProjectSummary;
@@ -150,6 +167,7 @@ export namespace main {
 	
 	    constructor(source: any = {}) {
 	        if ('string' === typeof source) source = JSON.parse(source);
+	        this.appInfo = this.convertValues(source["appInfo"], AppInfo);
 	        this.settings = this.convertValues(source["settings"], GlobalSettings);
 	        this.recentProjects = this.convertValues(source["recentProjects"], RecentProject);
 	        this.currentProject = this.convertValues(source["currentProject"], ProjectSummary);
@@ -176,6 +194,7 @@ export namespace main {
 		    return a;
 		}
 	}
+	
 	export class CompatibilityPatchEntry {
 	    modId: string;
 	    displayName: string;
@@ -289,6 +308,22 @@ export namespace main {
 	}
 	
 	
+	export class ProjectContentCounts {
+	    defs: number;
+	    textures: number;
+	    patches: number;
+	
+	    static createFrom(source: any = {}) {
+	        return new ProjectContentCounts(source);
+	    }
+	
+	    constructor(source: any = {}) {
+	        if ('string' === typeof source) source = JSON.parse(source);
+	        this.defs = source["defs"];
+	        this.textures = source["textures"];
+	        this.patches = source["patches"];
+	    }
+	}
 	export class ProjectSettings {
 	    targetVersion: string;
 	    notes: string;
@@ -326,6 +361,7 @@ export namespace main {
 	export class ProjectState {
 	    summary: ProjectSummary;
 	    settings: ProjectSettings;
+	    contentCounts: ProjectContentCounts;
 	
 	    static createFrom(source: any = {}) {
 	        return new ProjectState(source);
@@ -335,6 +371,7 @@ export namespace main {
 	        if ('string' === typeof source) source = JSON.parse(source);
 	        this.summary = this.convertValues(source["summary"], ProjectSummary);
 	        this.settings = this.convertValues(source["settings"], ProjectSettings);
+	        this.contentCounts = this.convertValues(source["contentCounts"], ProjectContentCounts);
 	    }
 	
 		convertValues(a: any, classs: any, asMap: boolean = false): any {

@@ -83,6 +83,10 @@ export const api = {
 
 function normalizeAppBootstrap(source: main.AppBootstrap): AppBootstrap {
   return {
+    appInfo: {
+      version: source.appInfo?.version ?? 'v0.1.0',
+      commitShort: source.appInfo?.commitShort ?? 'dev000',
+    },
     settings: {
       gamePath: source.settings?.gamePath ?? '',
       scanModsEnabled: Boolean(source.settings?.scanModsEnabled),
@@ -110,6 +114,11 @@ function normalizeProjectState(source: main.ProjectState): ProjectState {
   return {
     summary: normalizeProjectSummary(source.summary),
     settings: normalizeProjectSettings(source.settings),
+    contentCounts: {
+      defs: source.contentCounts?.defs ?? 0,
+      textures: source.contentCounts?.textures ?? 0,
+      patches: source.contentCounts?.patches ?? 0,
+    },
   };
 }
 
@@ -165,6 +174,7 @@ function normalizeGameScanStatus(source: main.GameScanStatus | undefined): GameS
     lastUpdated: source?.lastUpdated,
     scannedSources: source?.scannedSources ?? 0,
     availableModCount: source?.availableModCount ?? 0,
+    dlcLoadedCount: source?.dlcLoadedCount ?? 0,
   };
 }
 
@@ -202,6 +212,8 @@ function normalizeThemeID(source: string | undefined): ThemeID {
     case 'foundry':
     case 'archive':
     case 'relay':
+    case 'daylight':
+    case 'halloween':
       return source;
     case 'ashfall':
       return 'workshop';

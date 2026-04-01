@@ -9,8 +9,7 @@ import type {
   ThemeID,
 } from '../../types';
 import { getInputValue } from '../../utils/ui';
-
-const themeScrollerThemes = [...builtInThemes, ...builtInThemes];
+import { ThemeCarousel } from './ThemeCarousel';
 
 interface Props {
   projectDraft: ProjectSettings;
@@ -61,32 +60,11 @@ export function SettingsPanel({
           </div>
         </div>
 
-        <div className="theme-scroller">
-          <div className="theme-track">
-            {themeScrollerThemes.map((theme, index) => (
-              <button
-                key={`${theme.id}-${index}`}
-                className={`theme-option ${globalDraft.themeId === theme.id ? 'is-active' : ''}`}
-                onClick={() => onGlobalThemeIDChange(theme.id)}
-                type="button"
-              >
-                <div className={`theme-preview ${theme.previewClassName}`} aria-hidden="true" />
-                <div className="theme-option-copy">
-                  <strong>{theme.name}</strong>
-                  <p>{theme.description}</p>
-                </div>
-              </button>
-            ))}
-          </div>
-        </div>
-
-        <div className="empty-card">
-          <h4>Six built-in palettes are available now</h4>
-          <p>
-            The first three follow the Rim-like neutral, workshop, and blueprint directions directly. The rest give you
-            warmer, archivist, and relay-style variants without changing the theme system again later.
-          </p>
-        </div>
+        <ThemeCarousel
+          activeThemeID={globalDraft.themeId}
+          themes={builtInThemes}
+          onSelectTheme={onGlobalThemeIDChange}
+        />
 
         <div className="theme-folder-heading">
           <div>

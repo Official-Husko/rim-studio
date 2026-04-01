@@ -6,7 +6,9 @@ export type ThemeID =
   | 'blueprint'
   | 'foundry'
   | 'archive'
-  | 'relay';
+  | 'relay'
+  | 'daylight'
+  | 'halloween';
 
 export interface NotificationAction {
   label: string;
@@ -34,7 +36,6 @@ export interface WorkspaceTabDefinition {
 export interface ThemeDefinition {
   id: ThemeID;
   name: string;
-  description: string;
   previewClassName: string;
 }
 
@@ -42,6 +43,17 @@ export interface CustomThemeSummary {
   id: string;
   name: string;
   path: string;
+}
+
+export interface AppInfo {
+  version: string;
+  commitShort: string;
+}
+
+export interface ProjectContentCounts {
+  defs: number;
+  textures: number;
+  patches: number;
 }
 
 export interface RecentProject {
@@ -85,6 +97,7 @@ export interface ProjectSettings {
 export interface ProjectState {
   summary: ProjectSummary;
   settings: ProjectSettings;
+  contentCounts: ProjectContentCounts;
 }
 
 export interface ScannedModSummary {
@@ -110,9 +123,11 @@ export interface GameScanStatus {
   lastUpdated?: string;
   scannedSources: number;
   availableModCount: number;
+  dlcLoadedCount: number;
 }
 
 export interface AppBootstrap {
+  appInfo: AppInfo;
   settings: GlobalSettings;
   recentProjects: RecentProject[];
   currentProject?: ProjectSummary | null;

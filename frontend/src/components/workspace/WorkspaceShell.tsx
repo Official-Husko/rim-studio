@@ -2,6 +2,7 @@ import { h } from 'preact';
 import logo from '../../assets/images/logo-universal.png';
 import { workspaceTabs } from '../../constants';
 import type {
+  AppInfo,
   AppBootstrap,
   CustomThemeSummary,
   GlobalSettings,
@@ -13,6 +14,7 @@ import type {
 } from '../../types';
 import { BasicsPanel } from './BasicsPanel';
 import { PlaceholderPanel } from './PlaceholderPanel';
+import { WorkspaceBottomBar } from './WorkspaceBottomBar';
 import { SettingsPanel } from './SettingsPanel';
 
 const placeholderCopy: Record<'weapons' | 'race' | 'clothing', string> = {
@@ -23,6 +25,7 @@ const placeholderCopy: Record<'weapons' | 'race' | 'clothing', string> = {
 
 interface Props {
   activeTab: WorkspaceTab;
+  appInfo: AppInfo;
   projectState: ProjectState;
   projectDraft: ProjectSettings;
   selectedMods: ScannedModSummary[];
@@ -31,6 +34,7 @@ interface Props {
   globalDraft: GlobalSettings;
   busy: boolean;
   scanStatus: AppBootstrap['scanStatus'];
+  activeTaskLabel: string;
   onTabChange: (tab: WorkspaceTab) => void;
   onCloseProject: () => void;
   onProjectSettingsChange: (settings: ProjectSettings) => void;
@@ -48,6 +52,7 @@ interface Props {
 
 export function WorkspaceShell({
   activeTab,
+  appInfo,
   projectState,
   projectDraft,
   selectedMods,
@@ -56,6 +61,7 @@ export function WorkspaceShell({
   globalDraft,
   busy,
   scanStatus,
+  activeTaskLabel,
   onTabChange,
   onCloseProject,
   onProjectSettingsChange,
@@ -71,90 +77,104 @@ export function WorkspaceShell({
   onTriggerRescan,
 }: Props) {
   return (
-    <main className="workspace-layout">
-      <aside className="workspace-sidebar">
-        <div className="sidebar-brand">
-          <img className="sidebar-logo" src={logo} alt="RimStudio" />
-          <div>
-            <p className="eyebrow">RimStudio</p>
-            <h1>{projectState.summary.name}</h1>
-          </div>
-        </div>
-
-        <nav className="tab-list" aria-label="Workspace Sections">
-          {workspaceTabs.map((tab) => (
-            <button
-              key={tab.key}
-              className={`tab-button ${activeTab === tab.key ? 'is-active' : ''}`}
-              onClick={() => onTabChange(tab.key)}
-              type="button"
-            >
-              <span className="tab-icon">{tab.icon}</span>
-              <span>{tab.label}</span>
-            </button>
-          ))}
-        </nav>
-
-        <div className="sidebar-foot">
-          <button className="ghost-button" onClick={onCloseProject} type="button">
-            Return To Start
-          </button>
-        </div>
-      </aside>
-
-      <section className="workspace-main">
-        <header className="workspace-header">
-          <div>
-            <p className="eyebrow">Current Project</p>
+    <main className="workspace-shell">
+      <header className="workspace-topbar">
+        <div>
+          <p className="eyebrow">Current Project</p>
+          <div className="workspace-title-row">
             <h2>{projectState.summary.name}</h2>
-            <p className="muted-path">{projectState.summary.path}</p>
+            <span className="workspace-package-id">{projectState.summary.packageId || 'No package ID'}</span>
+          </div>
+          <p className="muted-path">{projectState.summary.path}</p>
+        </div>
+
+        <div className="workspace-topbar-status">
+          <span className={`status-pill status-${scanStatus.state}`}>{scanStatus.state}</span>
+          <p>{scanStatus.message}</p>
+        </div>
+      </header>
+
+      <div className="workspace-layout">
+        <aside className="workspace-sidebar">
+          <div className="sidebar-brand">
+            <img className="sidebar-logo" src={logo} alt="RimStudio" />
+            <div>
+              <p className="eyebrow">RimStudio</p>
+              <h1>{projectState.summary.name}</h1>
+            </div>
           </div>
 
-          <div className="status-panel">
-            <span className={`status-pill status-${scanStatus.state}`}>{scanStatus.state}</span>
-            <p>{scanStatus.message}</p>
+          <nav className="tab-list" aria-label="Workspace Sections">
+            {workspaceTabs.map((tab) => (
+              <button
+                key={tab.key}
+                className={`tab-button ${activeTab === tab.key ? 'is-active' : ''}`}
+                onClick={() => onTabChange(tab.key)}
+                type="button"
+              >
+                <span className="tab-icon">{tab.icon}</span>
+                <span>{tab.label}</span>
+              </button>
+            ))}
+          </nav>
+
+          <div className="sidebar-foot">
+            <button className="ghost-button" onClick={onCloseProject} type="button">
+              Return To Start
+            </button>
           </div>
-        </header>
+        </aside>
 
-        {activeTab === 'basics' ? (
-          <BasicsPanel
-            busy={busy}
-            projectDraft={projectDraft}
-            projectState={projectState}
-            selectedMods={selectedMods}
-            onSaveProjectSettings={onSaveProjectSettings}
-          />
-        ) : null}
+        <section className="workspace-main">
+          <div className="workspace-content">
+            {activeTab === 'basics' ? (
+              <BasicsPanel
+                busy={busy}
+                projectDraft={projectDraft}
+                projectState={projectState}
+                selectedMods={selectedMods}
+                onSaveProjectSettings={onSaveProjectSettings}
+              />
+            ) : null}
 
-        {activeTab === 'settings' ? (
-          <SettingsPanel
-            availableMods={availableMods}
-            availableCustomThemes={availableCustomThemes}
-            busy={busy}
-            globalDraft={globalDraft}
-            projectDraft={projectDraft}
-            scanStatus={scanStatus}
-            onBrowseGamePath={onBrowseGamePath}
-            onClearCustomCSSPath={onClearCustomCSSPath}
-            onGlobalCustomCSSPathChange={onGlobalCustomCSSPathChange}
-            onGlobalGamePathChange={onGlobalGamePathChange}
-            onGlobalScanModsEnabledChange={onGlobalScanModsEnabledChange}
-            onGlobalThemeIDChange={onGlobalThemeIDChange}
-            onProjectSettingsChange={onProjectSettingsChange}
-            onSaveGlobalSettings={onSaveGlobalSettings}
-            onSaveProjectSettings={onSaveProjectSettings}
-            onToggleSelectedMod={onToggleSelectedMod}
-            onTriggerRescan={onTriggerRescan}
-          />
-        ) : null}
+            {activeTab === 'settings' ? (
+              <SettingsPanel
+                availableMods={availableMods}
+                availableCustomThemes={availableCustomThemes}
+                busy={busy}
+                globalDraft={globalDraft}
+                projectDraft={projectDraft}
+                scanStatus={scanStatus}
+                onBrowseGamePath={onBrowseGamePath}
+                onClearCustomCSSPath={onClearCustomCSSPath}
+                onGlobalCustomCSSPathChange={onGlobalCustomCSSPathChange}
+                onGlobalGamePathChange={onGlobalGamePathChange}
+                onGlobalScanModsEnabledChange={onGlobalScanModsEnabledChange}
+                onGlobalThemeIDChange={onGlobalThemeIDChange}
+                onProjectSettingsChange={onProjectSettingsChange}
+                onSaveGlobalSettings={onSaveGlobalSettings}
+                onSaveProjectSettings={onSaveProjectSettings}
+                onToggleSelectedMod={onToggleSelectedMod}
+                onTriggerRescan={onTriggerRescan}
+              />
+            ) : null}
 
-        {activeTab !== 'basics' && activeTab !== 'settings' ? (
-          <PlaceholderPanel
-            label={workspaceTabs.find((tab) => tab.key === activeTab)?.label ?? activeTab}
-            copy={placeholderCopy[activeTab as 'weapons' | 'race' | 'clothing']}
-          />
-        ) : null}
-      </section>
+            {activeTab !== 'basics' && activeTab !== 'settings' ? (
+              <PlaceholderPanel
+                label={workspaceTabs.find((tab) => tab.key === activeTab)?.label ?? activeTab}
+                copy={placeholderCopy[activeTab as 'weapons' | 'race' | 'clothing']}
+              />
+            ) : null}
+          </div>
+        </section>
+      </div>
+
+      <WorkspaceBottomBar
+        activeTaskLabel={activeTaskLabel}
+        appInfo={appInfo}
+        contentCounts={projectState.contentCounts}
+        scanStatus={scanStatus}
+      />
     </main>
   );
 }

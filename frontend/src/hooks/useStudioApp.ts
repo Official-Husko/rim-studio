@@ -30,6 +30,7 @@ export function useStudioApp({ notify, notifyError, removeNotificationByKey, ups
   const [activeTab, setActiveTab] = useState<WorkspaceTab>('basics');
   const [loading, setLoading] = useState(true);
   const [busy, setBusy] = useState(false);
+  const [currentTaskLabel, setCurrentTaskLabel] = useState('');
   const [showNewProject, setShowNewProject] = useState(false);
   const [newProject, setNewProject] = useState<CreateProjectInput>({
     name: '',
@@ -128,6 +129,27 @@ export function useStudioApp({ notify, notifyError, removeNotificationByKey, ups
     return bootstrap.availableMods.filter((mod) => selectedIds.has(mod.id));
   }, [bootstrap.availableMods, projectDraft.compatibility.selectedModIds, projectState]);
 
+  const activeTaskLabel = useMemo(() => {
+    if (currentTaskLabel) {
+      return currentTaskLabel;
+    }
+    if (bootstrap.scanStatus.state === 'scanning') {
+      return 'Indexing game data';
+    }
+    return '';
+  }, [bootstrap.scanStatus.state, currentTaskLabel]);
+
+  async function runBusyTask(label: string, action: () => Promise<void>) {
+    setBusy(true);
+    setCurrentTaskLabel(label);
+    try {
+      await action();
+    } finally {
+      setBusy(false);
+      setCurrentTaskLabel('');
+    }
+  }
+
   async function loadBootstrap() {
     setLoading(true);
 
@@ -148,30 +170,28 @@ export function useStudioApp({ notify, notifyError, removeNotificationByKey, ups
 
   async function openProject(projectPath?: string) {
     try {
-      setBusy(true);
+      await runBusyTask('Opening project', async () => {
+        const targetPath = projectPath ?? await api.chooseDirectory('Open RimWorld Mod Folder');
+        if (!targetPath) {
+          return;
+        }
 
-      const targetPath = projectPath ?? await api.chooseDirectory('Open RimWorld Mod Folder');
-      if (!targetPath) {
-        return;
-      }
+        const result = await api.openProject(targetPath);
+        setProjectState(result);
+        setProjectDraft(result.settings);
+        setActiveTab('basics');
+        notify({
+          type: 'tip',
+          title: 'Project opened',
+          message: result.summary.name,
+          icon: 'fa-folder-open',
+        });
 
-      const result = await api.openProject(targetPath);
-      setProjectState(result);
-      setProjectDraft(result.settings);
-      setActiveTab('basics');
-      notify({
-        type: 'tip',
-        title: 'Project opened',
-        message: result.summary.name,
-        icon: 'fa-folder-open',
+        const freshBootstrap = await api.getAppBootstrap();
+        setBootstrap(freshBootstrap);
       });
-
-      const freshBootstrap = await api.getAppBootstrap();
-      setBootstrap(freshBootstrap);
     } catch (error) {
       notifyError('Open project failed', getErrorMessage(error));
-    } finally {
-      setBusy(false);
     }
   }
 
@@ -192,54 +212,51 @@ export function useStudioApp({ notify, notifyError, removeNotificationByKey, ups
     event.preventDefault();
 
     try {
-      setBusy(true);
+      await runBusyTask('Creating project', async () => {
+        const result = await api.createProject(newProject);
+        setProjectState(result);
+        setProjectDraft(result.settings);
+        setShowNewProject(false);
+        setActiveTab('basics');
+        notify({
+          type: 'tip',
+          title: 'Project created',
+          message: result.summary.name,
+          icon: 'fa-hammer',
+        });
+        setNewProject({
+          name: '',
+          packageId: '',
+          author: '',
+          location: '',
+          targetVersion: '1.6',
+        });
 
-      const result = await api.createProject(newProject);
-      setProjectState(result);
-      setProjectDraft(result.settings);
-      setShowNewProject(false);
-      setActiveTab('basics');
-      notify({
-        type: 'tip',
-        title: 'Project created',
-        message: result.summary.name,
-        icon: 'fa-hammer',
+        const freshBootstrap = await api.getAppBootstrap();
+        setBootstrap(freshBootstrap);
       });
-      setNewProject({
-        name: '',
-        packageId: '',
-        author: '',
-        location: '',
-        targetVersion: '1.6',
-      });
-
-      const freshBootstrap = await api.getAppBootstrap();
-      setBootstrap(freshBootstrap);
     } catch (error) {
       notifyError('Create project failed', getErrorMessage(error));
-    } finally {
-      setBusy(false);
     }
   }
 
   async function closeProjectWorkspace() {
     try {
-      setBusy(true);
-      const result = await api.closeProject();
-      setBootstrap(result);
-      setProjectState(null);
-      setProjectDraft(emptyProjectSettings());
-      setActiveTab('basics');
-      notify({
-        type: 'info',
-        title: 'Workspace closed',
-        message: 'Returned to the start screen.',
-        icon: 'fa-house',
+      await runBusyTask('Closing workspace', async () => {
+        const result = await api.closeProject();
+        setBootstrap(result);
+        setProjectState(null);
+        setProjectDraft(emptyProjectSettings());
+        setActiveTab('basics');
+        notify({
+          type: 'info',
+          title: 'Workspace closed',
+          message: 'Returned to the start screen.',
+          icon: 'fa-house',
+        });
       });
     } catch (error) {
       notifyError('Close workspace failed', getErrorMessage(error));
-    } finally {
-      setBusy(false);
     }
   }
 
@@ -258,79 +275,73 @@ export function useStudioApp({ notify, notifyError, removeNotificationByKey, ups
 
   async function quickSetGamePath() {
     try {
-      setBusy(true);
+      await runBusyTask('Updating game path', async () => {
+        const path = await api.chooseDirectory('Choose RimWorld Install Folder', bootstrap.settings.gamePath);
+        if (!path) {
+          return;
+        }
 
-      const path = await api.chooseDirectory('Choose RimWorld Install Folder', bootstrap.settings.gamePath);
-      if (!path) {
-        return;
-      }
+        const result = await api.updateGlobalSettings({
+          gamePath: path,
+          scanModsEnabled: bootstrap.settings.scanModsEnabled,
+          themeId: globalDraft.themeId,
+          customCssPath: globalDraft.customCssPath,
+        });
 
-      const result = await api.updateGlobalSettings({
-        gamePath: path,
-        scanModsEnabled: bootstrap.settings.scanModsEnabled,
-        themeId: globalDraft.themeId,
-        customCssPath: globalDraft.customCssPath,
-      });
-
-      setBootstrap(result);
-      notify({
-        type: 'tip',
-        title: 'RimWorld path updated',
-        message: path,
-        icon: 'fa-check',
+        setBootstrap(result);
+        notify({
+          type: 'tip',
+          title: 'RimWorld path updated',
+          message: path,
+          icon: 'fa-check',
+        });
       });
     } catch (error) {
       notifyError('Set path failed', getErrorMessage(error));
-    } finally {
-      setBusy(false);
     }
   }
 
   async function saveGlobalSettings() {
     try {
-      setBusy(true);
+      await runBusyTask('Saving settings', async () => {
+        const result = await api.updateGlobalSettings({
+          gamePath: globalDraft.gamePath,
+          scanModsEnabled: globalDraft.scanModsEnabled,
+          themeId: globalDraft.themeId,
+          customCssPath: globalDraft.customCssPath,
+        });
 
-      const result = await api.updateGlobalSettings({
-        gamePath: globalDraft.gamePath,
-        scanModsEnabled: globalDraft.scanModsEnabled,
-        themeId: globalDraft.themeId,
-        customCssPath: globalDraft.customCssPath,
-      });
-
-      setBootstrap(result);
-      notify({
-        type: 'tip',
-        title: 'Settings saved',
-        message: 'Global settings updated successfully.',
-        icon: 'fa-sliders',
+        setBootstrap(result);
+        notify({
+          type: 'tip',
+          title: 'Settings saved',
+          message: 'Global settings updated successfully.',
+          icon: 'fa-sliders',
+        });
       });
     } catch (error) {
       notifyError('Save settings failed', getErrorMessage(error));
-    } finally {
-      setBusy(false);
     }
   }
 
   async function triggerRescan() {
     try {
-      setBusy(true);
-
-      const result = await api.rescanGameData();
-      setBootstrap((current) => ({
-        ...current,
-        scanStatus: result.scanStatus,
-        availableMods: result.availableMods,
-      }));
-      notify({
-        type: 'info',
-        title: 'Rescan started',
-        message: 'RimWorld data is being indexed again.',
-        icon: 'fa-rotate-right',
+      await runBusyTask('Indexing game data', async () => {
+        const result = await api.rescanGameData();
+        setBootstrap((current) => ({
+          ...current,
+          scanStatus: result.scanStatus,
+          availableMods: result.availableMods,
+        }));
+        notify({
+          type: 'info',
+          title: 'Rescan started',
+          message: 'RimWorld data is being indexed again.',
+          icon: 'fa-rotate-right',
+        });
       });
     } catch (error) {
       notifyError('Rescan failed', getErrorMessage(error));
-    } finally {
-      setBusy(false);
     }
   }
 
@@ -340,25 +351,23 @@ export function useStudioApp({ notify, notifyError, removeNotificationByKey, ups
     }
 
     try {
-      setBusy(true);
+      await runBusyTask('Saving project', async () => {
+        const result = await api.updateProjectSettings({
+          projectPath: projectState.summary.path,
+          settings: projectDraft,
+        });
 
-      const result = await api.updateProjectSettings({
-        projectPath: projectState.summary.path,
-        settings: projectDraft,
-      });
-
-      setProjectState(result);
-      setProjectDraft(result.settings);
-      notify({
-        type: 'tip',
-        title: 'Project settings saved',
-        message: 'Compatibility settings were updated.',
-        icon: 'fa-floppy-disk',
+        setProjectState(result);
+        setProjectDraft(result.settings);
+        notify({
+          type: 'tip',
+          title: 'Project settings saved',
+          message: 'Compatibility settings were updated.',
+          icon: 'fa-floppy-disk',
+        });
       });
     } catch (error) {
       notifyError('Save project settings failed', getErrorMessage(error));
-    } finally {
-      setBusy(false);
     }
   }
 
@@ -452,6 +461,7 @@ export function useStudioApp({ notify, notifyError, removeNotificationByKey, ups
       newProject,
       globalDraft,
       selectedMods,
+      activeTaskLabel,
     },
     actions: {
       setActiveTab,

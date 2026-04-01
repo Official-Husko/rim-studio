@@ -19,38 +19,42 @@ export const builtInThemes: ThemeDefinition[] = [
   {
     id: 'rim-neutral',
     name: 'Rim Neutral',
-    description: 'Charcoal, gunmetal, silver, and off-white with a muted Rim-style blue accent.',
     previewClassName: 'theme-preview-rim-neutral',
   },
   {
     id: 'workshop',
     name: 'Workshop',
-    description: 'Dark graphite and steel with amber and pale cyan for warnings, builds, and diagnostics.',
     previewClassName: 'theme-preview-workshop',
   },
   {
     id: 'blueprint',
     name: 'Blueprint',
-    description: 'Deep navy, slate grey, white linework, and electric cyan for technical editing.',
     previewClassName: 'theme-preview-blueprint',
   },
   {
     id: 'foundry',
     name: 'Foundry',
-    description: 'Burnt metal and brass for a hotter toolbench-style workspace.',
     previewClassName: 'theme-preview-foundry',
   },
   {
     id: 'archive',
     name: 'Archive',
-    description: 'Dusty parchment, iron ink, and subdued brass for XML-heavy reference work.',
     previewClassName: 'theme-preview-archive',
   },
   {
     id: 'relay',
     name: 'Relay',
-    description: 'Cold relay greens and signal blues for a cleaner terminal-inspired cockpit.',
     previewClassName: 'theme-preview-relay',
+  },
+  {
+    id: 'daylight',
+    name: 'Daylight',
+    previewClassName: 'theme-preview-daylight',
+  },
+  {
+    id: 'halloween',
+    name: 'Halloween',
+    previewClassName: 'theme-preview-halloween',
   },
 ];
 
@@ -65,6 +69,10 @@ export const emptyProjectSettings = (): ProjectSettings => ({
 });
 
 export const emptyBootstrap: AppBootstrap = {
+  appInfo: {
+    version: 'v0.1.0',
+    commitShort: 'dev000',
+  },
   settings: {
     gamePath: '',
     scanModsEnabled: false,
@@ -80,6 +88,7 @@ export const emptyBootstrap: AppBootstrap = {
     message: 'Set a RimWorld install path in Settings to index game data.',
     scannedSources: 0,
     availableModCount: 0,
+    dlcLoadedCount: 0,
   },
   availableMods: [],
   availableCustomThemes: [],

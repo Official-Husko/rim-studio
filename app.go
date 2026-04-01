@@ -24,6 +24,11 @@ const (
 	defaultThemeID       = "rim-neutral"
 )
 
+var (
+	buildVersion = "v0.1.0"
+	buildCommit  = "dev000"
+)
+
 type App struct {
 	ctx context.Context
 
@@ -38,6 +43,7 @@ type App struct {
 }
 
 type AppBootstrap struct {
+	AppInfo               AppInfo              `json:"appInfo"`
 	Settings              GlobalSettings       `json:"settings"`
 	RecentProjects        []RecentProject      `json:"recentProjects"`
 	CurrentProject        *ProjectSummary      `json:"currentProject,omitempty"`
@@ -77,8 +83,20 @@ type ProjectSummary struct {
 }
 
 type ProjectState struct {
-	Summary  ProjectSummary  `json:"summary"`
-	Settings ProjectSettings `json:"settings"`
+	Summary       ProjectSummary       `json:"summary"`
+	Settings      ProjectSettings      `json:"settings"`
+	ContentCounts ProjectContentCounts `json:"contentCounts"`
+}
+
+type AppInfo struct {
+	Version     string `json:"version"`
+	CommitShort string `json:"commitShort"`
+}
+
+type ProjectContentCounts struct {
+	Defs     int `json:"defs"`
+	Textures int `json:"textures"`
+	Patches  int `json:"patches"`
 }
 
 type ProjectSettings struct {
@@ -129,6 +147,7 @@ type GameScanStatus struct {
 	LastUpdated       string `json:"lastUpdated,omitempty"`
 	ScannedSources    int    `json:"scannedSources"`
 	AvailableModCount int    `json:"availableModCount"`
+	DLCLoadedCount    int    `json:"dlcLoadedCount"`
 }
 
 type ScannedModSummary struct {
@@ -200,6 +219,7 @@ func (a *App) GetAppBootstrap() (AppBootstrap, error) {
 	defer a.mu.RUnlock()
 
 	return AppBootstrap{
+		AppInfo:               buildAppInfo(),
 		Settings:              cloneGlobalSettings(a.settings),
 		RecentProjects:        cloneRecentProjects(a.settings.RecentProjects),
 		CurrentProject:        cloneProjectSummaryPtr(a.currentProject),
@@ -505,6 +525,7 @@ func (a *App) startBackgroundScanIfConfigured() {
 		LastUpdated:       nowRFC3339(),
 		ScannedSources:    0,
 		AvailableModCount: len(a.availableMods),
+		DLCLoadedCount:    0,
 	}
 	a.mu.Unlock()
 
@@ -580,8 +601,9 @@ func (a *App) loadProjectState(projectPath string) (ProjectState, error) {
 	a.mu.Unlock()
 
 	return ProjectState{
-		Summary:  summary,
-		Settings: projectSettings,
+		Summary:       summary,
+		Settings:      projectSettings,
+		ContentCounts: countProjectContent(absPath),
 	}, nil
 }
 
@@ -698,7 +720,26 @@ func defaultScanStatus() GameScanStatus {
 		LastUpdated:       nowRFC3339(),
 		ScannedSources:    0,
 		AvailableModCount: 0,
+		DLCLoadedCount:    0,
 	}
+}
+
+func buildAppInfo() AppInfo {
+	return AppInfo{
+		Version:     fallbackString(strings.TrimSpace(buildVersion), "v0.1.0"),
+		CommitShort: shortenCommit(buildCommit),
+	}
+}
+
+func shortenCommit(value string) string {
+	trimmed := strings.TrimSpace(value)
+	if trimmed == "" {
+		return "dev000"
+	}
+	if len(trimmed) > 6 {
+		return trimmed[:6]
+	}
+	return trimmed
 }
 
 func normalizeProjectSettings(settings ProjectSettings) ProjectSettings {
@@ -728,7 +769,7 @@ func normalizeCompatibilityMode(value string) string {
 
 func normalizeThemeID(value string) string {
 	switch strings.TrimSpace(value) {
-	case "workshop", "blueprint", "foundry", "archive", "relay":
+	case "workshop", "blueprint", "foundry", "archive", "relay", "daylight", "halloween":
 		return strings.TrimSpace(value)
 	case "ashfall":
 		return "workshop"
@@ -739,6 +780,29 @@ func normalizeThemeID(value string) string {
 	default:
 		return defaultThemeID
 	}
+}
+
+func countProjectContent(projectPath string) ProjectContentCounts {
+	return ProjectContentCounts{
+		Defs:     countFilesRecursive(filepath.Join(projectPath, "Defs")),
+		Textures: countFilesRecursive(filepath.Join(projectPath, "Textures")),
+		Patches:  countFilesRecursive(filepath.Join(projectPath, "Patches")),
+	}
+}
+
+func countFilesRecursive(root string) int {
+	count := 0
+	_ = filepath.WalkDir(root, func(path string, entry os.DirEntry, err error) error {
+		if err != nil {
+			return nil
+		}
+		if path == root || entry.IsDir() {
+			return nil
+		}
+		count++
+		return nil
+	})
+	return count
 }
 
 func discoverCustomThemes() ([]CustomThemeSummary, error) {
@@ -986,6 +1050,7 @@ func runGameScan(settings GlobalSettings) scanResult {
 				LastUpdated:       nowRFC3339(),
 				ScannedSources:    0,
 				AvailableModCount: len(settings.CachedModIndex),
+				DLCLoadedCount:    0,
 			},
 			mods: cloneScannedMods(settings.CachedModIndex),
 		}
@@ -1000,15 +1065,20 @@ func runGameScan(settings GlobalSettings) scanResult {
 				LastUpdated:       nowRFC3339(),
 				ScannedSources:    0,
 				AvailableModCount: len(settings.CachedModIndex),
+				DLCLoadedCount:    0,
 			},
 			mods: cloneScannedMods(settings.CachedModIndex),
 		}
 	}
 
 	scannedSources := 0
+	dlcLoadedCount := 0
 	for _, entry := range dataEntries {
 		if entry.IsDir() {
 			scannedSources++
+			if !strings.EqualFold(entry.Name(), "Core") {
+				dlcLoadedCount++
+			}
 		}
 	}
 
@@ -1020,6 +1090,7 @@ func runGameScan(settings GlobalSettings) scanResult {
 				LastUpdated:       nowRFC3339(),
 				ScannedSources:    scannedSources,
 				AvailableModCount: len(settings.CachedModIndex),
+				DLCLoadedCount:    dlcLoadedCount,
 			},
 			mods: cloneScannedMods(settings.CachedModIndex),
 		}
@@ -1034,6 +1105,7 @@ func runGameScan(settings GlobalSettings) scanResult {
 				LastUpdated:       nowRFC3339(),
 				ScannedSources:    scannedSources,
 				AvailableModCount: len(settings.CachedModIndex),
+				DLCLoadedCount:    dlcLoadedCount,
 			},
 			mods: cloneScannedMods(settings.CachedModIndex),
 		}
@@ -1046,6 +1118,7 @@ func runGameScan(settings GlobalSettings) scanResult {
 			LastUpdated:       nowRFC3339(),
 			ScannedSources:    scannedSources,
 			AvailableModCount: len(mods),
+			DLCLoadedCount:    dlcLoadedCount,
 		},
 		mods: mods,
 	}

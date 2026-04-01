@@ -28,6 +28,8 @@ export function App() {
       {state.projectState ? (
         <WorkspaceShell
           activeTab={state.activeTab}
+          activeTaskLabel={state.activeTaskLabel}
+          appInfo={state.bootstrap.appInfo}
           availableCustomThemes={state.bootstrap.availableCustomThemes}
           availableMods={state.bootstrap.availableMods}
           busy={state.busy}
