@@ -64,9 +64,9 @@ export function WorkspaceShell({
     <main className="workspace-layout">
       <aside className="workspace-sidebar">
         <div className="sidebar-brand">
-          <img className="sidebar-logo" src={logo} alt="Rim-Studio" />
+          <img className="sidebar-logo" src={logo} alt="RimStudio" />
           <div>
-            <p className="eyebrow">Rim-Studio</p>
+            <p className="eyebrow">RimStudio</p>
             <h1>{projectState.summary.name}</h1>
           </div>
         </div>

@@ -25,7 +25,7 @@ export function StartScreen({
   return (
     <main className="start-layout compact-start-layout">
       <section className="splash-panel">
-        <img className="splash-logo" src={logo} alt="Rim-Studio" />
+        <img className="splash-logo" src={logo} alt="RimStudio" />
         <p className="eyebrow splash-eyebrow">RimWorld Mod Toolkit</p>
 
         <div className="splash-actions">

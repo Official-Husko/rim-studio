@@ -66,7 +66,7 @@ func TestOpenProjectImportsExistingModAndCreatesConfig(t *testing.T) {
 	}
 
 	if _, err := os.Stat(filepath.Join(projectPath, "Config", "rimstudio.project.json")); err != nil {
-		t.Fatalf("expected Rim-Studio config to be created: %v", err)
+		t.Fatalf("expected RimStudio config to be created: %v", err)
 	}
 }
 

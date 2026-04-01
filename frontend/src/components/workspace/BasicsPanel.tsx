@@ -32,7 +32,7 @@ export function BasicsPanel({ projectState, projectDraft, selectedMods, busy, on
             </div>
             <div>
               <dt>Config State</dt>
-              <dd>{projectState.summary.hasRimStudioConfig ? 'Managed by Rim-Studio' : 'Imported mod'}</dd>
+              <dd>{projectState.summary.hasRimStudioConfig ? 'Managed by RimStudio' : 'Imported mod'}</dd>
             </div>
           </dl>
         </div>
@@ -85,7 +85,7 @@ export function BasicsPanel({ projectState, projectDraft, selectedMods, busy, on
         <div className="empty-card">
           <h4>Auto-generation and editing are reserved for the next compatibility pass</h4>
           <p>
-            Rim-Studio already stores selected external mods and placeholder patch entries in project metadata so the
+            RimStudio already stores selected external mods and placeholder patch entries in project metadata so the
             generator and editor can be added later without reshaping your project format.
           </p>
           <div className="placeholder-actions">

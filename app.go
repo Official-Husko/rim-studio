@@ -17,7 +17,7 @@ import (
 )
 
 const (
-	appConfigFolderName  = "Rim-Studio"
+	appConfigFolderName  = "RimStudio"
 	projectConfigRelPath = "Config/rimstudio.project.json"
 	supportedVersion     = "1.6"
 	eventScanStatus      = "rimstudio:scan-status"

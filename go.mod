@@ -1,4 +1,4 @@
-module rim-studio
+module rimstudio
 
 go 1.23
 

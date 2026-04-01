@@ -141,7 +141,7 @@ export function App() {
         setProjectState(current);
       }
     } catch (error) {
-      notifyError('Failed to load Rim-Studio', getErrorMessage(error));
+      notifyError('Failed to load RimStudio', getErrorMessage(error));
     } finally {
       setLoading(false);
     }
