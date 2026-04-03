@@ -41,7 +41,6 @@ export function App() {
           selectedMods={state.selectedMods}
           onBrowseGamePath={actions.browseGamePath}
           onClearCustomCSSPath={actions.clearCustomCSSPath}
-          onCloseProject={actions.closeProjectWorkspace}
           onGlobalCustomCSSPathChange={actions.updateGlobalCustomCSSPath}
           onGlobalGamePathChange={actions.updateGlobalGamePath}
           onGlobalScanModsEnabledChange={actions.updateGlobalScanModsEnabled}

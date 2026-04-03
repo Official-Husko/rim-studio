@@ -1,5 +1,4 @@
 import { h } from 'preact';
-import logo from '../../assets/images/logo-universal.png';
 import { workspaceTabs } from '../../constants';
 import { TestLabPanel } from '../../features/tests/TestLabPanel';
 import type { SimulatedTaskPlan } from '../../features/tests/taskSimulator';
@@ -19,6 +18,7 @@ import { BasicsPanel } from './BasicsPanel';
 import { PlaceholderPanel } from './PlaceholderPanel';
 import { WorkspaceBottomBar } from './WorkspaceBottomBar';
 import { SettingsPanel } from './SettingsPanel';
+import { WorkspaceSidebar } from './WorkspaceSidebar';
 
 const placeholderCopy: Record<'weapons' | 'race' | 'clothing', string> = {
   weapons: 'Weapon editors will live here once the workplace shell is stable.',
@@ -40,7 +40,6 @@ interface Props {
   backgroundTasks: BackgroundTask[];
   activeDemoTaskCount: number;
   onTabChange: (tab: WorkspaceTab) => void;
-  onCloseProject: () => void;
   onProjectSettingsChange: (settings: ProjectSettings) => void;
   onToggleSelectedMod: (mod: ScannedModSummary) => void;
   onSaveProjectSettings: () => void;
@@ -70,7 +69,6 @@ export function WorkspaceShell({
   backgroundTasks,
   activeDemoTaskCount,
   onTabChange,
-  onCloseProject,
   onProjectSettingsChange,
   onToggleSelectedMod,
   onSaveProjectSettings,
@@ -104,35 +102,7 @@ export function WorkspaceShell({
       </header>
 
       <div className="workspace-layout">
-        <aside className="workspace-sidebar">
-          <div className="sidebar-brand">
-            <img className="sidebar-logo" src={logo} alt="RimStudio" />
-            <div>
-              <p className="eyebrow">RimStudio</p>
-              <h1>{projectState.summary.name}</h1>
-            </div>
-          </div>
-
-          <nav className="tab-list" aria-label="Workspace Sections">
-            {workspaceTabs.map((tab) => (
-              <button
-                key={tab.key}
-                className={`tab-button ${activeTab === tab.key ? 'is-active' : ''}`}
-                onClick={() => onTabChange(tab.key)}
-                type="button"
-              >
-                <span className="tab-icon">{tab.icon}</span>
-                <span>{tab.label}</span>
-              </button>
-            ))}
-          </nav>
-
-          <div className="sidebar-foot">
-            <button className="ghost-button" onClick={onCloseProject} type="button">
-              Return To Start
-            </button>
-          </div>
-        </aside>
+        <WorkspaceSidebar activeTab={activeTab} onTabChange={onTabChange} />
 
         <section className="workspace-main">
           <div className="workspace-content">
