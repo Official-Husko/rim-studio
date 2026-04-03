@@ -1,5 +1,5 @@
 import { h } from 'preact';
-import { useEffect, useState } from 'preact/hooks';
+import { useEffect, useRef, useState } from 'preact/hooks';
 import { workspaceTabs } from '../../constants';
 import type { WorkspaceTab } from '../../types';
 import { SidebarIconButton } from './SidebarIconButton';
@@ -11,6 +11,7 @@ interface Props {
 
 export function WorkspaceSidebar({ activeTab, onTabChange }: Props) {
   const [tooltip, setTooltip] = useState<{ label: string; top: number; left: number } | null>(null);
+  const tooltipTimeoutRef = useRef<number | null>(null);
   const settingsTab = workspaceTabs.find((tab) => tab.key === 'settings');
   const primaryTabs = workspaceTabs.filter((tab) => tab.key !== 'settings');
 
@@ -23,10 +24,29 @@ export function WorkspaceSidebar({ activeTab, onTabChange }: Props) {
     window.addEventListener('resize', hideTooltipOnViewportChange);
 
     return () => {
+      if (tooltipTimeoutRef.current !== null) {
+        window.clearTimeout(tooltipTimeoutRef.current);
+      }
       window.removeEventListener('scroll', hideTooltipOnViewportChange, true);
       window.removeEventListener('resize', hideTooltipOnViewportChange);
     };
   }, []);
+
+  useEffect(() => {
+    if (tooltipTimeoutRef.current !== null) {
+      window.clearTimeout(tooltipTimeoutRef.current);
+      tooltipTimeoutRef.current = null;
+    }
+
+    if (!tooltip) {
+      return;
+    }
+
+    tooltipTimeoutRef.current = window.setTimeout(() => {
+      setTooltip(null);
+      tooltipTimeoutRef.current = null;
+    }, 5000); // Auto-hide tooltip after 5 seconds
+  }, [tooltip]);
 
   function showTooltip(label: string, element: HTMLElement) {
     const rect = element.getBoundingClientRect();
@@ -38,6 +58,10 @@ export function WorkspaceSidebar({ activeTab, onTabChange }: Props) {
   }
 
   function hideTooltip() {
+    if (tooltipTimeoutRef.current !== null) {
+      window.clearTimeout(tooltipTimeoutRef.current);
+      tooltipTimeoutRef.current = null;
+    }
     setTooltip(null);
   }
 
