@@ -1,9 +1,12 @@
 import { h } from 'preact';
 import logo from '../../assets/images/logo-universal.png';
 import { workspaceTabs } from '../../constants';
+import { TestLabPanel } from '../../features/tests/TestLabPanel';
+import type { SimulatedTaskPlan } from '../../features/tests/taskSimulator';
 import type {
   AppInfo,
   AppBootstrap,
+  BackgroundTask,
   CustomThemeSummary,
   GlobalSettings,
   ProjectSettings,
@@ -34,7 +37,8 @@ interface Props {
   globalDraft: GlobalSettings;
   busy: boolean;
   scanStatus: AppBootstrap['scanStatus'];
-  activeTaskLabel: string;
+  backgroundTasks: BackgroundTask[];
+  activeDemoTaskCount: number;
   onTabChange: (tab: WorkspaceTab) => void;
   onCloseProject: () => void;
   onProjectSettingsChange: (settings: ProjectSettings) => void;
@@ -48,6 +52,8 @@ interface Props {
   onClearCustomCSSPath: () => void;
   onSaveGlobalSettings: () => void;
   onTriggerRescan: () => void;
+  onRunSimulatedTasks: (plans: SimulatedTaskPlan[]) => void;
+  onClearSimulatedTasks: () => void;
 }
 
 export function WorkspaceShell({
@@ -61,7 +67,8 @@ export function WorkspaceShell({
   globalDraft,
   busy,
   scanStatus,
-  activeTaskLabel,
+  backgroundTasks,
+  activeDemoTaskCount,
   onTabChange,
   onCloseProject,
   onProjectSettingsChange,
@@ -75,6 +82,8 @@ export function WorkspaceShell({
   onClearCustomCSSPath,
   onSaveGlobalSettings,
   onTriggerRescan,
+  onRunSimulatedTasks,
+  onClearSimulatedTasks,
 }: Props) {
   return (
     <main className="workspace-shell">
@@ -159,7 +168,16 @@ export function WorkspaceShell({
               />
             ) : null}
 
-            {activeTab !== 'basics' && activeTab !== 'settings' ? (
+            {activeTab === 'tests' ? (
+              <TestLabPanel
+                activeDemoTaskCount={activeDemoTaskCount}
+                totalActiveTaskCount={backgroundTasks.length}
+                onClearSimulatedTasks={onClearSimulatedTasks}
+                onRunSimulatedTasks={onRunSimulatedTasks}
+              />
+            ) : null}
+
+            {activeTab !== 'basics' && activeTab !== 'settings' && activeTab !== 'tests' ? (
               <PlaceholderPanel
                 label={workspaceTabs.find((tab) => tab.key === activeTab)?.label ?? activeTab}
                 copy={placeholderCopy[activeTab as 'weapons' | 'race' | 'clothing']}
@@ -170,8 +188,8 @@ export function WorkspaceShell({
       </div>
 
       <WorkspaceBottomBar
-        activeTaskLabel={activeTaskLabel}
         appInfo={appInfo}
+        backgroundTasks={backgroundTasks}
         contentCounts={projectState.contentCounts}
         scanStatus={scanStatus}
       />

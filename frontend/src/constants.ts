@@ -13,6 +13,7 @@ export const workspaceTabs: WorkspaceTabDefinition[] = [
   { key: 'race', label: 'Race', icon: 'Ra' },
   { key: 'clothing', label: 'Clothing', icon: 'Cl' },
   { key: 'settings', label: 'Settings', icon: 'Se' },
+  { key: 'tests', label: 'Tests', icon: 'Ts' },
 ];
 
 export const builtInThemes: ThemeDefinition[] = [

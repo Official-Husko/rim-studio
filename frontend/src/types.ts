@@ -1,4 +1,4 @@
-export type WorkspaceTab = 'basics' | 'weapons' | 'race' | 'clothing' | 'settings';
+export type WorkspaceTab = 'basics' | 'weapons' | 'race' | 'clothing' | 'settings' | 'tests';
 export type NotificationType = 'info' | 'warning' | 'error' | 'tip';
 export type ThemeID =
   | 'rim-neutral'
@@ -48,6 +48,14 @@ export interface CustomThemeSummary {
 export interface AppInfo {
   version: string;
   commitShort: string;
+}
+
+export interface BackgroundTask {
+  id: string;
+  label: string;
+  progress?: number;
+  details?: string;
+  startedAt: number;
 }
 
 export interface ProjectContentCounts {

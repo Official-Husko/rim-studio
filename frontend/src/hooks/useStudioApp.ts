@@ -1,7 +1,7 @@
 import { EventsOn } from '../../wailsjs/runtime/runtime';
-import { useEffect, useMemo, useState } from 'preact/hooks';
 import { api } from '../api';
 import { emptyBootstrap, emptyProjectSettings } from '../constants';
+import type { SimulatedTaskPlan } from '../features/tests/taskSimulator';
 import type {
   AppBootstrap,
   CreateProjectInput,
@@ -14,7 +14,9 @@ import type {
   ThemeID,
   WorkspaceTab,
 } from '../types';
+import { useBackgroundTasks } from './useBackgroundTasks';
 import { buildPatchPlaceholder, getErrorMessage } from '../utils/ui';
+import { useEffect, useMemo, useRef, useState } from 'preact/hooks';
 
 interface NotificationTools {
   notify: (notification: Omit<NotificationItem, 'id'>) => void;
@@ -24,13 +26,14 @@ interface NotificationTools {
 }
 
 export function useStudioApp({ notify, notifyError, removeNotificationByKey, upsertNotification }: NotificationTools) {
+  const backgroundTasks = useBackgroundTasks();
+  const simulatedTaskHandlesRef = useRef<Map<string, { intervalID: number; timeoutID: number }>>(new Map());
   const [bootstrap, setBootstrap] = useState<AppBootstrap>(emptyBootstrap);
   const [projectState, setProjectState] = useState<ProjectState | null>(null);
   const [projectDraft, setProjectDraft] = useState<ProjectSettings>(emptyProjectSettings());
   const [activeTab, setActiveTab] = useState<WorkspaceTab>('basics');
   const [loading, setLoading] = useState(true);
   const [busy, setBusy] = useState(false);
-  const [currentTaskLabel, setCurrentTaskLabel] = useState('');
   const [showNewProject, setShowNewProject] = useState(false);
   const [newProject, setNewProject] = useState<CreateProjectInput>({
     name: '',
@@ -43,6 +46,14 @@ export function useStudioApp({ notify, notifyError, removeNotificationByKey, ups
 
   useEffect(() => {
     void loadBootstrap();
+  }, []);
+
+  useEffect(() => () => {
+    simulatedTaskHandlesRef.current.forEach((handle) => {
+      window.clearInterval(handle.intervalID);
+      window.clearTimeout(handle.timeoutID);
+    });
+    simulatedTaskHandlesRef.current.clear();
   }, []);
 
   useEffect(() => {
@@ -101,6 +112,8 @@ export function useStudioApp({ notify, notifyError, removeNotificationByKey, ups
           cachedModIndex: payload.availableMods,
         },
       }));
+
+      syncScanBackgroundTask(payload.scanStatus);
     });
 
     return () => {
@@ -129,24 +142,27 @@ export function useStudioApp({ notify, notifyError, removeNotificationByKey, ups
     return bootstrap.availableMods.filter((mod) => selectedIds.has(mod.id));
   }, [bootstrap.availableMods, projectDraft.compatibility.selectedModIds, projectState]);
 
-  const activeTaskLabel = useMemo(() => {
-    if (currentTaskLabel) {
-      return currentTaskLabel;
+  function syncScanBackgroundTask(scanStatus: AppBootstrap['scanStatus']) {
+    if (scanStatus.state === 'scanning') {
+      backgroundTasks.upsertTask({
+        id: 'scan:index',
+        label: 'Indexing game data',
+        details: scanStatus.message,
+      });
+      return;
     }
-    if (bootstrap.scanStatus.state === 'scanning') {
-      return 'Indexing game data';
-    }
-    return '';
-  }, [bootstrap.scanStatus.state, currentTaskLabel]);
+
+    backgroundTasks.finishTask('scan:index');
+  }
 
   async function runBusyTask(label: string, action: () => Promise<void>) {
     setBusy(true);
-    setCurrentTaskLabel(label);
     try {
-      await action();
+      await backgroundTasks.runTask({ label }, async () => {
+        await action();
+      });
     } finally {
       setBusy(false);
-      setCurrentTaskLabel('');
     }
   }
 
@@ -156,6 +172,7 @@ export function useStudioApp({ notify, notifyError, removeNotificationByKey, ups
     try {
       const result = await api.getAppBootstrap();
       setBootstrap(result);
+      syncScanBackgroundTask(result.scanStatus);
 
       if (result.currentProject?.path) {
         const current = await api.getProjectState(result.currentProject.path);
@@ -326,13 +343,14 @@ export function useStudioApp({ notify, notifyError, removeNotificationByKey, ups
 
   async function triggerRescan() {
     try {
-      await runBusyTask('Indexing game data', async () => {
+      await runBusyTask('Requesting rescan', async () => {
         const result = await api.rescanGameData();
         setBootstrap((current) => ({
           ...current,
           scanStatus: result.scanStatus,
           availableMods: result.availableMods,
         }));
+        syncScanBackgroundTask(result.scanStatus);
         notify({
           type: 'info',
           title: 'Rescan started',
@@ -427,6 +445,51 @@ export function useStudioApp({ notify, notifyError, removeNotificationByKey, ups
     updateGlobalCustomCSSPath('');
   }
 
+  function runSimulatedBackgroundTasks(plans: SimulatedTaskPlan[]) {
+    plans.forEach((plan) => {
+      const startedAt = Date.now();
+      backgroundTasks.startTask({
+        id: plan.id,
+        label: plan.label,
+        progress: 0,
+        details: 'Queued artificial task',
+      });
+
+      const intervalID = window.setInterval(() => {
+        const elapsed = Date.now() - startedAt;
+        const progress = Math.min(99, Math.round((elapsed / plan.durationMs) * 100));
+
+        backgroundTasks.updateTask(plan.id, {
+          progress,
+          details: progress >= 92 ? 'Wrapping up simulated work' : `Simulated progress ${progress}%`,
+        });
+      }, plan.tickMs);
+
+      const timeoutID = window.setTimeout(() => {
+        window.clearInterval(intervalID);
+        simulatedTaskHandlesRef.current.delete(plan.id);
+        backgroundTasks.finishTask(plan.id);
+      }, plan.durationMs);
+
+      simulatedTaskHandlesRef.current.set(plan.id, { intervalID, timeoutID });
+    });
+  }
+
+  function clearSimulatedBackgroundTasks() {
+    simulatedTaskHandlesRef.current.forEach((handle, id) => {
+      window.clearInterval(handle.intervalID);
+      window.clearTimeout(handle.timeoutID);
+      backgroundTasks.finishTask(id);
+    });
+
+    simulatedTaskHandlesRef.current.clear();
+  }
+
+  const activeDemoTaskCount = useMemo(
+    () => backgroundTasks.tasks.filter((task) => task.id.startsWith('demo-task-')).length,
+    [backgroundTasks.tasks],
+  );
+
   function toggleSelectedMod(mod: ScannedModSummary) {
     const selected = new Set(projectDraft.compatibility.selectedModIds);
     const patches = { ...projectDraft.compatibility.patchEntries };
@@ -461,7 +524,8 @@ export function useStudioApp({ notify, notifyError, removeNotificationByKey, ups
       newProject,
       globalDraft,
       selectedMods,
-      activeTaskLabel,
+      backgroundTasks: backgroundTasks.tasks,
+      activeDemoTaskCount,
     },
     actions: {
       setActiveTab,
@@ -477,12 +541,14 @@ export function useStudioApp({ notify, notifyError, removeNotificationByKey, ups
       browseGamePath,
       browseCustomCSSPath,
       clearCustomCSSPath,
+      clearSimulatedBackgroundTasks,
       updateGlobalGamePath,
       updateGlobalThemeID,
       updateGlobalCustomCSSPath,
       updateGlobalScanModsEnabled,
       updateNewProjectField,
       updateProjectSettings,
+      runSimulatedBackgroundTasks,
     },
   };
 }

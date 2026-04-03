@@ -139,6 +139,11 @@
   justify-content: flex-end;
 }
 
+.background-task-status {
+  position: relative;
+  min-width: 0;
+}
+
 .bottom-bar-task {
   display: inline-flex;
   align-items: center;
@@ -149,6 +154,12 @@
   white-space: nowrap;
   font-size: 0.8rem;
   letter-spacing: 0.01em;
+}
+
+.bottom-bar-task:focus-visible {
+  outline: 1px solid var(--border-strong);
+  outline-offset: 4px;
+  border-radius: 10px;
 }
 
 .bottom-task-indicator {
@@ -199,6 +210,143 @@
   animation: bottom-task-shimmer 2.6s linear infinite;
 }
 
+.bottom-task-extra-count {
+  color: var(--muted-deep);
+  font-size: 0.74rem;
+  white-space: nowrap;
+}
+
+.background-task-popover {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 0.55rem);
+  width: min(420px, calc(100vw - 2rem), 52vw);
+  max-width: calc(100vw - 2rem);
+  min-width: 260px;
+  padding: 0.8rem;
+  display: grid;
+  gap: 0.7rem;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--panel-strong) 94%, black 6%);
+  box-shadow: 0 18px 34px rgba(0, 0, 0, 0.32);
+  transform: translateX(-50%) translateY(0.45rem);
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    transform 160ms ease,
+    opacity 160ms ease;
+  z-index: 4;
+}
+
+.background-task-popover.is-scrollable {
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 0.55rem;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-strong) transparent;
+}
+
+.background-task-popover.is-scrollable::-webkit-scrollbar {
+  width: 0.45rem;
+}
+
+.background-task-popover.is-scrollable::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.background-task-popover.is-scrollable::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: var(--surface-soft-emphasis);
+}
+
+.background-task-popover.is-open {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.background-task-popover-item {
+  display: grid;
+  gap: 0.42rem;
+  min-width: 0;
+}
+
+.background-task-popover-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.8rem;
+  min-width: 0;
+  flex-wrap: wrap;
+}
+
+.background-task-popover-copy {
+  display: grid;
+  gap: 0.15rem;
+  min-width: 0;
+  flex: 1 1 220px;
+}
+
+.background-task-popover-label {
+  min-width: 0;
+  font-size: 0.78rem;
+  font-weight: 400;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.background-task-popover-label.is-active {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.35) 0%,
+    var(--accent-strong) 25%,
+    rgba(255, 255, 255, 0.35) 48%,
+    rgba(255, 255, 255, 0.35) 100%
+  );
+  background-size: 220% 100%;
+  background-position: 120% 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: bottom-task-shimmer 2.6s linear infinite;
+}
+
+.background-task-popover-detail {
+  color: var(--muted);
+  font-size: 0.72rem;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.background-task-popover-metric {
+  color: var(--muted-deep);
+  font-size: 0.72rem;
+  white-space: nowrap;
+  flex: 0 0 auto;
+}
+
+.background-task-popover-progress {
+  width: 100%;
+  height: 0.24rem;
+  border-radius: 999px;
+  background: var(--surface-soft-emphasis);
+  overflow: hidden;
+}
+
+.background-task-popover-fill {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--accent), var(--accent-strong));
+}
+
+.background-task-popover-fill.is-indeterminate {
+  width: 38%;
+  animation: background-task-progress 1.4s linear infinite;
+}
+
 .bottom-bar-text {
   color: var(--muted);
   font-size: 0.8rem;
@@ -246,6 +394,16 @@
 
   to {
     background-position: -120% 0;
+  }
+}
+
+@keyframes background-task-progress {
+  from {
+    transform: translateX(-125%);
+  }
+
+  to {
+    transform: translateX(320%);
   }
 }
 

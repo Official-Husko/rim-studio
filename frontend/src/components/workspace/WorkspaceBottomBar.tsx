@@ -1,20 +1,20 @@
 import { h } from 'preact';
-import type { AppInfo, GameScanStatus, ProjectContentCounts } from '../../types';
+import type { AppInfo, BackgroundTask, GameScanStatus, ProjectContentCounts } from '../../types';
+import { BackgroundTaskStatus } from '../background-tasks/BackgroundTaskStatus';
 
 interface Props {
   appInfo: AppInfo;
   contentCounts: ProjectContentCounts;
   scanStatus: GameScanStatus;
-  activeTaskLabel: string;
+  backgroundTasks: BackgroundTask[];
 }
 
-export function WorkspaceBottomBar({ appInfo, contentCounts, scanStatus, activeTaskLabel }: Props) {
+export function WorkspaceBottomBar({ appInfo, contentCounts, scanStatus, backgroundTasks }: Props) {
   const scanStatusLabel = scanStatus.state === 'scanning'
     ? 'processing'
     : scanStatus.state === 'ready'
       ? 'indexed'
       : 'unindexed';
-  const hasActiveTask = Boolean(activeTaskLabel);
 
   return (
     <footer className="workspace-bottom-bar">
@@ -30,12 +30,7 @@ export function WorkspaceBottomBar({ appInfo, contentCounts, scanStatus, activeT
         </span>
       </div>
 
-      <div className={`bottom-bar-task ${hasActiveTask ? 'is-active' : ''}`}>
-        <span className={`bottom-task-indicator ${hasActiveTask ? 'is-active' : ''}`} aria-hidden="true" />
-        <span className={`bottom-task-text ${hasActiveTask ? 'is-active' : ''}`}>
-          {activeTaskLabel || 'No background task'}
-        </span>
-      </div>
+      <BackgroundTaskStatus tasks={backgroundTasks} />
 
       <div className="bottom-bar-group bottom-bar-group-right">
         <span className="bottom-bar-text">

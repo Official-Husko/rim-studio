@@ -28,10 +28,11 @@ export function App() {
       {state.projectState ? (
         <WorkspaceShell
           activeTab={state.activeTab}
-          activeTaskLabel={state.activeTaskLabel}
+          activeDemoTaskCount={state.activeDemoTaskCount}
           appInfo={state.bootstrap.appInfo}
           availableCustomThemes={state.bootstrap.availableCustomThemes}
           availableMods={state.bootstrap.availableMods}
+          backgroundTasks={state.backgroundTasks}
           busy={state.busy}
           globalDraft={state.globalDraft}
           projectDraft={state.projectDraft}
@@ -49,8 +50,10 @@ export function App() {
           onSaveGlobalSettings={actions.saveGlobalSettings}
           onSaveProjectSettings={actions.saveProjectSettings}
           onTabChange={actions.setActiveTab}
+          onClearSimulatedTasks={actions.clearSimulatedBackgroundTasks}
           onToggleSelectedMod={actions.toggleSelectedMod}
           onTriggerRescan={actions.triggerRescan}
+          onRunSimulatedTasks={actions.runSimulatedBackgroundTasks}
         />
       ) : (
         <StartScreen
