@@ -1,4 +1,5 @@
 import { h } from 'preact';
+import { Button } from '../ui/Button';
 import { supportedVersions } from '../../constants';
 import type { ProjectSettings, ProjectState, ScannedModSummary } from '../../types';
 
@@ -62,9 +63,9 @@ export function BasicsPanel({ projectState, projectDraft, selectedMods, busy, on
             <p className="eyebrow">Compatibility Scaffold</p>
             <h3>Patch Workflow Placeholder</h3>
           </div>
-          <button className="primary-button" disabled={busy} onClick={onSaveProjectSettings} type="button">
+          <Button disabled={busy} onClick={onSaveProjectSettings} variant="primary">
             Save Project Settings
-          </button>
+          </Button>
         </div>
 
         <div className="compat-overview">
@@ -89,12 +90,12 @@ export function BasicsPanel({ projectState, projectDraft, selectedMods, busy, on
             generator and editor can be added later without reshaping your project format.
           </p>
           <div className="placeholder-actions">
-            <button className="secondary-button" disabled type="button">
+            <Button disabled variant="secondary">
               Generate Patch
-            </button>
-            <button className="secondary-button" disabled type="button">
+            </Button>
+            <Button disabled variant="secondary">
               Edit Compatibility
-            </button>
+            </Button>
           </div>
         </div>
 

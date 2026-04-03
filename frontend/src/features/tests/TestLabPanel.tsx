@@ -1,5 +1,6 @@
 import { h } from 'preact';
 import { useState } from 'preact/hooks';
+import { Button } from '../../components/ui/Button';
 import type { SimulatedTaskPlan } from './taskSimulator';
 import { buildSimulatedTaskPlans } from './taskSimulator';
 import './test-lab.css';
@@ -36,17 +37,12 @@ export function TestLabPanel({
             <h3>Background Task Playground</h3>
           </div>
           <div className="test-lab-actions">
-            <button className="primary-button" onClick={() => runBatch(taskCount)} type="button">
+            <Button onClick={() => runBatch(taskCount)} variant="primary">
               Start Batch
-            </button>
-            <button
-              className="ghost-button"
-              disabled={activeDemoTaskCount === 0}
-              onClick={onClearSimulatedTasks}
-              type="button"
-            >
+            </Button>
+            <Button disabled={activeDemoTaskCount === 0} onClick={onClearSimulatedTasks} variant="ghost">
               Clear Simulated Tasks
-            </button>
+            </Button>
           </div>
         </div>
 
@@ -64,9 +60,9 @@ export function TestLabPanel({
 
           <div className="test-lab-presets">
             {[1, 3, 5, 8].map((count) => (
-              <button className="secondary-button" key={count} onClick={() => runBatch(count)} type="button">
+              <Button key={count} onClick={() => runBatch(count)} variant="secondary">
                 Run {count}
-              </button>
+              </Button>
             ))}
           </div>
         </div>

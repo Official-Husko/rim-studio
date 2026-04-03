@@ -1,5 +1,6 @@
 import { h } from 'preact';
 import { useEffect, useRef, useState } from 'preact/hooks';
+import { Button } from '../ui/Button';
 import type { NotificationItem } from '../../types';
 
 interface Props {
@@ -74,9 +75,9 @@ export function NotificationBubble({ notification, onDismiss }: Props) {
         {notification.actions && notification.actions.length > 0 ? (
           <div className="notification-actions">
             {notification.actions.map((action) => (
-              <button className="secondary-button notification-action" onClick={action.onClick} type="button">
+              <Button className="notification-action" onClick={action.onClick} variant="secondary">
                 {action.label}
-              </button>
+              </Button>
             ))}
           </div>
         ) : null}

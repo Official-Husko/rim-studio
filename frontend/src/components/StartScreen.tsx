@@ -1,5 +1,6 @@
 import { h } from 'preact';
 import logo from '../assets/images/logo-universal.png';
+import { Button } from '../components/ui/Button';
 import type { RecentProject } from '../types';
 
 interface Props {
@@ -26,12 +27,12 @@ export function StartScreen({
         <p className="eyebrow splash-eyebrow">RimWorld Mod Toolkit</p>
 
         <div className="splash-actions">
-          <button className="primary-button" disabled={busy} onClick={onNewProject} type="button">
+          <Button disabled={busy} onClick={onNewProject} variant="primary">
             New Project
-          </button>
-          <button className="secondary-button" disabled={busy} onClick={onLoadProject} type="button">
+          </Button>
+          <Button disabled={busy} onClick={onLoadProject} variant="secondary">
             Load Project
-          </button>
+          </Button>
         </div>
 
         <div className="splash-divider" />

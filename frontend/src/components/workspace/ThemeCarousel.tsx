@@ -1,5 +1,6 @@
 import { h } from 'preact';
 import { useEffect, useRef, useState } from 'preact/hooks';
+import { Button } from '../ui/Button';
 import type { ThemeDefinition, ThemeID } from '../../types';
 
 interface Props {
@@ -65,24 +66,24 @@ export function ThemeCarousel({ activeThemeID, themes, onSelectTheme }: Props) {
   return (
     <div className="theme-carousel">
       <div className="theme-carousel-controls" aria-label="Theme carousel controls">
-        <button
+        <Button
           aria-label="Scroll themes left"
-          className="ghost-button theme-carousel-button"
+          className="theme-carousel-button"
           disabled={!canScrollPrev}
           onClick={() => scrollByDirection(-1)}
-          type="button"
+          variant="ghost"
         >
           <i className="fa-solid fa-chevron-left" aria-hidden="true" />
-        </button>
-        <button
+        </Button>
+        <Button
           aria-label="Scroll themes right"
-          className="ghost-button theme-carousel-button"
+          className="theme-carousel-button"
           disabled={!canScrollNext}
           onClick={() => scrollByDirection(1)}
-          type="button"
+          variant="ghost"
         >
           <i className="fa-solid fa-chevron-right" aria-hidden="true" />
-        </button>
+        </Button>
       </div>
 
       <div className="theme-carousel-track" ref={trackRef}>

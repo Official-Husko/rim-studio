@@ -1,4 +1,5 @@
 import { h } from 'preact';
+import { Button } from '../ui/Button';
 import { builtInThemes } from '../../constants';
 import type {
   CustomThemeSummary,
@@ -71,14 +72,9 @@ export function SettingsPanel({
             <p className="eyebrow">External Themes</p>
             <h4>Loaded From `data/themes`</h4>
           </div>
-          <button
-            className="ghost-button"
-            disabled={!globalDraft.customCssPath}
-            onClick={onClearCustomCSSPath}
-            type="button"
-          >
+          <Button disabled={!globalDraft.customCssPath} onClick={onClearCustomCSSPath} variant="ghost">
             Clear Override
-          </button>
+          </Button>
         </div>
 
         {availableCustomThemes.length === 0 ? (
@@ -118,9 +114,9 @@ export function SettingsPanel({
             <p className="eyebrow">Game Data</p>
             <h3>RimWorld Install And Scan Controls</h3>
           </div>
-          <button className="secondary-button" disabled={busy} onClick={onTriggerRescan} type="button">
+          <Button disabled={busy} onClick={onTriggerRescan} variant="secondary">
             Rescan Data
-          </button>
+          </Button>
         </div>
 
         <label>
@@ -131,9 +127,9 @@ export function SettingsPanel({
               onInput={(event) => onGlobalGamePathChange(getInputValue(event))}
               placeholder="/path/to/RimWorld"
             />
-            <button className="secondary-button" onClick={onBrowseGamePath} type="button">
+            <Button onClick={onBrowseGamePath} variant="secondary">
               Browse
-            </button>
+            </Button>
           </div>
         </label>
 
@@ -160,9 +156,9 @@ export function SettingsPanel({
           </p>
         </div>
 
-        <button className="primary-button" disabled={busy} onClick={onSaveGlobalSettings} type="button">
+        <Button disabled={busy} onClick={onSaveGlobalSettings} variant="primary">
           Save Global Settings
-        </button>
+        </Button>
       </section>
 
       <section className="panel-card">
@@ -171,14 +167,14 @@ export function SettingsPanel({
             <p className="eyebrow">Compatibility Targets</p>
             <h3>Project Mod Selection Scaffold</h3>
           </div>
-          <button className="primary-button" disabled={busy} onClick={onSaveProjectSettings} type="button">
+          <Button disabled={busy} onClick={onSaveProjectSettings} variant="primary">
             Save Project Settings
-          </button>
+          </Button>
         </div>
 
         <div className="selection-mode">
-          <button
-            className={`mode-button ${projectDraft.compatibility.mode === 'all' ? 'is-active' : ''}`}
+          <Button
+            active={projectDraft.compatibility.mode === 'all'}
             onClick={() =>
               onProjectSettingsChange({
                 ...projectDraft,
@@ -188,12 +184,12 @@ export function SettingsPanel({
                 },
               })
             }
-            type="button"
+            variant="mode"
           >
             All Mods
-          </button>
-          <button
-            className={`mode-button ${projectDraft.compatibility.mode === 'selected' ? 'is-active' : ''}`}
+          </Button>
+          <Button
+            active={projectDraft.compatibility.mode === 'selected'}
             onClick={() =>
               onProjectSettingsChange({
                 ...projectDraft,
@@ -203,10 +199,10 @@ export function SettingsPanel({
                 },
               })
             }
-            type="button"
+            variant="mode"
           >
             Selected Mods Only
-          </button>
+          </Button>
         </div>
 
         <p className="small-muted">

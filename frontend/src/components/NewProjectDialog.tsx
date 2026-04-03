@@ -1,4 +1,5 @@
 import { h } from 'preact';
+import { Button } from '../components/ui/Button';
 import type { CreateProjectInput } from '../types';
 import { getInputValue } from '../utils/ui';
 
@@ -33,9 +34,9 @@ export function NewProjectDialog({
             <p className="eyebrow">New Project</p>
             <h2>Create A RimWorld Mod Skeleton</h2>
           </div>
-          <button className="ghost-button" onClick={onClose} type="button">
+          <Button onClick={onClose} variant="ghost">
             Close
-          </button>
+          </Button>
         </div>
 
         <label>
@@ -73,9 +74,9 @@ export function NewProjectDialog({
               onInput={(event) => onChange('location', getInputValue(event))}
               placeholder="/path/to/mods/folder"
             />
-            <button className="secondary-button" onClick={onBrowseLocation} type="button">
+            <Button onClick={onBrowseLocation} variant="secondary">
               Browse
-            </button>
+            </Button>
           </div>
         </label>
 
@@ -87,9 +88,9 @@ export function NewProjectDialog({
         </label>
 
         <div className="dialog-actions">
-          <button className="primary-button" disabled={busy} type="submit">
+          <Button disabled={busy} type="submit" variant="primary">
             Create Project
-          </button>
+          </Button>
         </div>
       </form>
     </section>
