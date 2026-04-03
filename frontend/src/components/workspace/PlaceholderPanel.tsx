@@ -1,16 +1,14 @@
 import { h } from 'preact';
 
 interface Props {
-  label: string;
-  copy: string;
+  icon?: string;
 }
 
-export function PlaceholderPanel({ label, copy }: Props) {
+export function PlaceholderPanel({ icon = 'fa-person-digging' }: Props) {
   return (
-    <section className="panel-card placeholder-panel">
-      <p className="eyebrow">Workspace Placeholder</p>
-      <h3>{label}</h3>
-      <p>{copy}</p>
+    <section className="panel-card placeholder-panel coming-soon-panel">
+      <i className={`fa-solid ${icon} coming-soon-icon`} aria-hidden="true" />
+      <p>Coming soon</p>
     </section>
   );
 }

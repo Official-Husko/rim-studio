@@ -20,12 +20,6 @@ import { WorkspaceBottomBar } from './WorkspaceBottomBar';
 import { SettingsPanel } from './SettingsPanel';
 import { WorkspaceSidebar } from './WorkspaceSidebar';
 
-const placeholderCopy: Record<'weapons' | 'race' | 'clothing', string> = {
-  weapons: 'Weapon editors will live here once the workplace shell is stable.',
-  race: 'Race authoring and inherited defs will slot into this workspace panel next.',
-  clothing: 'Clothing item editors and textile helpers are reserved for this panel.',
-};
-
 interface Props {
   activeTab: WorkspaceTab;
   appInfo: AppInfo;
@@ -148,10 +142,7 @@ export function WorkspaceShell({
             ) : null}
 
             {activeTab !== 'basics' && activeTab !== 'settings' && activeTab !== 'tests' ? (
-              <PlaceholderPanel
-                label={workspaceTabs.find((tab) => tab.key === activeTab)?.label ?? activeTab}
-                copy={placeholderCopy[activeTab as 'weapons' | 'race' | 'clothing']}
-              />
+              <PlaceholderPanel />
             ) : null}
           </div>
         </section>
