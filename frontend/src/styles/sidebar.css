@@ -9,7 +9,10 @@
   border-top: none;
   border-bottom: none;
   border-left: none;
+  flex: 0 0 78px;
   width: 78px;
+  min-width: 78px;
+  max-width: 78px;
   padding: 0.8rem 0.55rem;
   display: flex;
   flex-direction: column;
