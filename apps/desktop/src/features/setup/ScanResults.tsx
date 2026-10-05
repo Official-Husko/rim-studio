@@ -1,8 +1,9 @@
-import { KeyValueList, Table, type TableColumn } from 'rimstudio-ui';
+import { Banner, KeyValueList, Table, type TableColumn } from 'rimstudio-ui';
 import type { LibraryScanResult, SourceReportDto } from 'rimstudio-ipc-types';
-import { t } from '~/shared/i18n';
+import { t, tn } from '~/shared/i18n';
 import { formatBytes, formatDuration, formatNumber } from '~/shared/format';
 import { DiagnosticGroups } from './DiagnosticGroups';
+import { DuplicateGroups } from './DuplicateGroups';
 import { SOURCE_KIND_KEYS, SOURCE_STATUS_KEYS } from './model';
 
 const COLUMNS: TableColumn<SourceReportDto>[] = [
@@ -19,6 +20,20 @@ const COLUMNS: TableColumn<SourceReportDto>[] = [
     align: 'right',
     mono: true,
   },
+  {
+    key: 'loadable',
+    header: t('setup.scan.col.loadable'),
+    render: (r) => (r.loadable === undefined ? '-' : formatNumber(r.loadable, 0)),
+    align: 'right',
+    mono: true,
+  },
+  {
+    key: 'custom-only',
+    header: t('setup.scan.col.custom-only'),
+    render: (r) => (r.customOnly === undefined ? '-' : formatNumber(r.customOnly, 0)),
+    align: 'right',
+    mono: true,
+  },
 ];
 
 /** The result of a finished scan: counts, timings, sources and diagnostics. */
@@ -31,6 +46,20 @@ export function ScanResults({ result }: { result: LibraryScanResult }) {
         items={[
           { key: t('setup.scan.mods'), value: formatNumber(stats.modsFound, 0), mono: true },
           { key: t('setup.scan.indexed'), value: formatNumber(stats.modsIndexed, 0), mono: true },
+          ...(result.counts
+            ? [
+                {
+                  key: t('setup.scan.loadable'),
+                  value: formatNumber(result.counts.loadable, 0),
+                  mono: true,
+                },
+                {
+                  key: t('setup.scan.custom-only'),
+                  value: formatNumber(result.counts.customOnly, 0),
+                  mono: true,
+                },
+              ]
+            : []),
           { key: t('setup.scan.defs'), value: formatNumber(stats.defs, 0), mono: true },
           {
             key: t('setup.scan.deffiles'),
@@ -53,6 +82,11 @@ export function ScanResults({ result }: { result: LibraryScanResult }) {
           },
         ]}
       />
+      {result.counts && result.counts.customOnly > 0 ? (
+        <Banner tone="info" title={tn('setup.scan.custom-only.title', result.counts.customOnly)}>
+          {t('setup.scan.custom-only.body')}
+        </Banner>
+      ) : null}
       <div class="overflow-x-auto">
         <Table
           label={t('setup.scan.sources')}
@@ -62,6 +96,12 @@ export function ScanResults({ result }: { result: LibraryScanResult }) {
           dense
         />
       </div>
+      {result.duplicates ? (
+        <div class="flex flex-col gap-2">
+          <h3 class="m-0 text-small font-semibold text-muted">{t('setup.dup.title')}</h3>
+          <DuplicateGroups duplicates={result.duplicates} />
+        </div>
+      ) : null}
       <div class="flex flex-col gap-2">
         <h3 class="m-0 text-small font-semibold text-muted">
           {t('setup.scan.diag.title')}

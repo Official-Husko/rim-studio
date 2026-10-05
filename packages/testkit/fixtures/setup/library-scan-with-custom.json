@@ -1,26 +1,26 @@
 {
-  "rev": 2,
+  "rev": 3,
   "stats": {
     "foldersProbed": 775,
     "modsFound": 763,
     "modsIndexed": 763,
-    "aboutParsed": 19,
-    "aboutReused": 744,
-    "loadFoldersParsed": 0,
-    "loadFoldersReused": 291,
-    "defFilesParsed": 32,
-    "defFilesReused": 17398,
-    "defs": 78320,
+    "aboutParsed": 763,
+    "aboutReused": 0,
+    "loadFoldersParsed": 291,
+    "loadFoldersReused": 0,
+    "defFilesParsed": 17431,
+    "defFilesReused": 0,
+    "defs": 78321,
     "filesHashed": 0,
-    "bytesRead": 226798,
+    "bytesRead": 176335058,
     "dirErrors": 0,
     "nonUtf8": 0
   },
   "timings": {
-    "discoverMs": 5,
-    "metadataMs": 4,
-    "definitionsMs": 30,
-    "totalMs": 54
+    "discoverMs": 4,
+    "metadataMs": 14,
+    "definitionsMs": 789,
+    "totalMs": 824
   },
   "sources": [
     {
@@ -28,28 +28,36 @@
       "kind": "game-data",
       "path": "/home/pawbeans/.local/share/Steam/steamapps/common/RimWorld/Data",
       "status": "ready",
-      "mods": 6
+      "mods": 6,
+      "loadable": 6,
+      "customOnly": 0
     },
     {
       "id": "game-mods",
       "kind": "game-mods",
       "path": "/home/pawbeans/.local/share/Steam/steamapps/common/RimWorld/Mods",
       "status": "ready",
-      "mods": 47
+      "mods": 47,
+      "loadable": 47,
+      "customOnly": 0
     },
     {
       "id": "workshop-0",
       "kind": "workshop",
       "path": "/home/pawbeans/.local/share/Steam/steamapps/workshop/content/294100",
       "status": "ready",
-      "mods": 691
+      "mods": 691,
+      "loadable": 691,
+      "customOnly": 0
     },
     {
-      "id": "cf_a4f98cb5",
+      "id": "cf_9b1f7956",
       "kind": "custom",
       "path": "/run/media/pawbeans/project_drive/pawbeans/Projects/RimWorld Mods",
       "status": "ready",
-      "mods": 19
+      "mods": 19,
+      "loadable": 0,
+      "customOnly": 19
     }
   ],
   "diagnostics": {
@@ -132,5 +140,163 @@
     "infos": 0,
     "hints": 0
   },
-  "cancelled": false
+  "cancelled": false,
+  "counts": {
+    "mods": 763,
+    "loadable": 744,
+    "customOnly": 19,
+    "unavailable": 0,
+    "unparsedAbout": 0,
+    "syntheticIds": 0,
+    "defs": 78321,
+    "duplicateGroups": 6
+  },
+  "duplicates": {
+    "total": 6,
+    "skippedTotal": 6,
+    "groups": [
+      {
+        "packageId": "Husko.ATR",
+        "sameSource": true,
+        "reason": "newer",
+        "kept": {
+          "path": "/run/media/pawbeans/project_drive/pawbeans/Projects/RimWorld Mods/[OH] Android Tiers Retexture og",
+          "name": "[OH] Android Tiers Retextures",
+          "source": "cf_9b1f7956",
+          "sourceKind": "custom",
+          "game": "not-visible"
+        },
+        "skipped": [
+          {
+            "path": "/run/media/pawbeans/project_drive/pawbeans/Projects/RimWorld Mods/[OH] Android Tiers Retexture - Copy",
+            "name": "[OH] Android Tiers Retextures",
+            "source": "cf_9b1f7956",
+            "sourceKind": "custom",
+            "game": "not-visible",
+            "why": "the About file of the kept copy is newer; the game does not see this folder"
+          }
+        ]
+      },
+      {
+        "packageId": "Mlie.researchtree",
+        "sameSource": false,
+        "reason": "source-priority",
+        "kept": {
+          "path": "/home/pawbeans/.local/share/Steam/steamapps/common/RimWorld/Mods/ResearchTreePlusPlus",
+          "name": "Research Tree (Continued)",
+          "source": "game-mods",
+          "sourceKind": "game-mods",
+          "game": "loaded"
+        },
+        "skipped": [
+          {
+            "path": "/home/pawbeans/.local/share/Steam/steamapps/workshop/content/294100/3030499331",
+            "name": "Research Tree (Continued)",
+            "source": "workshop-0",
+            "sourceKind": "workshop",
+            "game": "loaded",
+            "why": "the kept copy comes from a source of higher priority"
+          }
+        ]
+      },
+      {
+        "packageId": "oh.weapons.gewehr41",
+        "sameSource": true,
+        "reason": "path-order",
+        "kept": {
+          "path": "/run/media/pawbeans/project_drive/pawbeans/Projects/RimWorld Mods/[OH] Gewehr 41",
+          "name": "Huskos's Gewehr 41",
+          "source": "cf_9b1f7956",
+          "sourceKind": "custom",
+          "game": "not-visible"
+        },
+        "skipped": [
+          {
+            "path": "/run/media/pawbeans/project_drive/pawbeans/Projects/RimWorld Mods/[OH] Third Reich Armory",
+            "name": "Huskos's Gewehr 41",
+            "source": "cf_9b1f7956",
+            "sourceKind": "custom",
+            "game": "not-visible",
+            "why": "nothing else differed, so the path order decided; the game does not see this folder"
+          }
+        ]
+      },
+      {
+        "packageId": "TLWWP.Base",
+        "sameSource": true,
+        "reason": "path-order",
+        "kept": {
+          "path": "/run/media/pawbeans/project_drive/pawbeans/Projects/RimWorld Mods/The Lone Wolf Weapon Package - Copy",
+          "name": "The Lone Wolf Weapon Package",
+          "source": "cf_9b1f7956",
+          "sourceKind": "custom",
+          "game": "not-visible"
+        },
+        "skipped": [
+          {
+            "path": "/run/media/pawbeans/project_drive/pawbeans/Projects/RimWorld Mods/[OH] The Lone Wolf Weapon Package",
+            "name": "The Lone Wolf Weapon Package",
+            "source": "cf_9b1f7956",
+            "sourceKind": "custom",
+            "game": "not-visible",
+            "why": "nothing else differed, so the path order decided; the game does not see this folder"
+          }
+        ]
+      },
+      {
+        "packageId": "vr.missilegirl",
+        "sameSource": false,
+        "reason": "source-priority",
+        "kept": {
+          "path": "/home/pawbeans/.local/share/Steam/steamapps/common/RimWorld/Mods/MissileGirl",
+          "name": "Missile Girl - Performance Mod",
+          "source": "game-mods",
+          "sourceKind": "game-mods",
+          "game": "loaded"
+        },
+        "skipped": [
+          {
+            "path": "/home/pawbeans/.local/share/Steam/steamapps/workshop/content/294100/3712928623",
+            "name": "Missile Girl - Performance Mod",
+            "source": "workshop-0",
+            "sourceKind": "workshop",
+            "game": "loaded",
+            "why": "the kept copy comes from a source of higher priority"
+          }
+        ]
+      },
+      {
+        "packageId": "yanzihko.LDW",
+        "sameSource": false,
+        "reason": "source-priority",
+        "kept": {
+          "path": "/run/media/pawbeans/project_drive/pawbeans/Projects/RimWorld Mods/[OH] Croco Faction",
+          "name": "Lombax - Desert Warriors [1.2]",
+          "source": "cf_9b1f7956",
+          "sourceKind": "custom",
+          "game": "not-visible"
+        },
+        "skipped": [
+          {
+            "path": "/home/pawbeans/.local/share/Steam/steamapps/workshop/content/294100/2384986421",
+            "name": "Lombax - Desert Warriors [1.6]",
+            "source": "workshop-0",
+            "sourceKind": "workshop",
+            "game": "loaded",
+            "why": "the kept copy comes from a source of higher priority"
+          }
+        ]
+      }
+    ]
+  },
+  "ceInLibrary": {
+    "present": true,
+    "packageId": "CETeam.CombatExtended",
+    "name": "Combat Extended",
+    "path": "/home/pawbeans/.local/share/Steam/steamapps/workshop/content/294100/2890901044",
+    "source": "workshop-0",
+    "sourceKind": "workshop",
+    "version": "16.7.3.0",
+    "loadable": true
+  }
 }

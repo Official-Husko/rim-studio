@@ -8,7 +8,23 @@
       "reason": "the def already carries a Combat Extended conversion; update mode applies",
       "file": "Defs/ThingDefs_Misc/Weapons/RangedIndustrial.xml",
       "asks": [],
-      "family": "ranged/Gun/Bullet_792x57mmMauser_FMJ"
+      "family": "ranged/Gun/Bullet_792x57mmMauser_FMJ",
+      "tags": [
+        "Gun",
+        "CE_AI_SR",
+        "CE_AI_Default"
+      ],
+      "weaponClasses": [
+        "Ranged",
+        "LongShots"
+      ],
+      "vanilla": {
+        "damage": 21,
+        "range": 55,
+        "cooldown": 0.8,
+        "warmup": 0.9,
+        "mass": 4.6
+      }
     },
     {
       "defName": "OH_G41w",
@@ -18,7 +34,23 @@
       "reason": "the def already carries a Combat Extended conversion; update mode applies",
       "file": "Defs/ThingDefs_Misc/Weapons/RangedIndustrial.xml",
       "asks": [],
-      "family": "ranged/Gun/Bullet_792x57mmMauser_FMJ"
+      "family": "ranged/Gun/Bullet_792x57mmMauser_FMJ",
+      "tags": [
+        "Gun",
+        "CE_AI_SR",
+        "CE_AI_Default"
+      ],
+      "weaponClasses": [
+        "Ranged",
+        "LongShots"
+      ],
+      "vanilla": {
+        "damage": 21,
+        "range": 57,
+        "cooldown": 0.8,
+        "warmup": 0.9,
+        "mass": 4.6
+      }
     },
     {
       "defName": "OH_G41w_25r",
@@ -28,7 +60,23 @@
       "reason": "the def already carries a Combat Extended conversion; update mode applies",
       "file": "Defs/ThingDefs_Misc/Weapons/RangedIndustrial.xml",
       "asks": [],
-      "family": "ranged/Gun/Bullet_792x57mmMauser_FMJ"
+      "family": "ranged/Gun/Bullet_792x57mmMauser_FMJ",
+      "tags": [
+        "Gun",
+        "CE_AI_SR",
+        "CE_AI_Default"
+      ],
+      "weaponClasses": [
+        "Ranged",
+        "LongShots"
+      ],
+      "vanilla": {
+        "damage": 21,
+        "range": 57,
+        "cooldown": 0.8,
+        "warmup": 0.9,
+        "mass": 4.7
+      }
     },
     {
       "defName": "OH_G41w_25r_sniper",
@@ -38,7 +86,24 @@
       "reason": "the def already carries a Combat Extended conversion; update mode applies",
       "file": "Defs/ThingDefs_Misc/Weapons/RangedIndustrial.xml",
       "asks": [],
-      "family": "ranged/SniperRifle/Bullet_792x57mmMauser_FMJ"
+      "family": "ranged/SniperRifle/Bullet_792x57mmMauser_FMJ",
+      "tags": [
+        "SniperRifle",
+        "CE_AI_SR",
+        "CE_AI_Default"
+      ],
+      "weaponClasses": [
+        "Ranged",
+        "LongShots",
+        "RangedHeavy"
+      ],
+      "vanilla": {
+        "damage": 21,
+        "range": 68,
+        "cooldown": 0.8,
+        "warmup": 0.9,
+        "mass": 4.8
+      }
     },
     {
       "defName": "OH_G41w_sniper",
@@ -48,7 +113,24 @@
       "reason": "the def already carries a Combat Extended conversion; update mode applies",
       "file": "Defs/ThingDefs_Misc/Weapons/RangedIndustrial.xml",
       "asks": [],
-      "family": "ranged/SniperRifle/Bullet_792x57mmMauser_FMJ"
+      "family": "ranged/SniperRifle/Bullet_792x57mmMauser_FMJ",
+      "tags": [
+        "SniperRifle",
+        "CE_AI_SR",
+        "CE_AI_Default"
+      ],
+      "weaponClasses": [
+        "Ranged",
+        "LongShots",
+        "RangedHeavy"
+      ],
+      "vanilla": {
+        "damage": 21,
+        "range": 68,
+        "cooldown": 0.8,
+        "warmup": 0.9,
+        "mass": 4.7
+      }
     }
   ],
   "counts": {

@@ -1,0 +1,143 @@
+{
+  "files": [
+    {
+      "path": "Patches/ce_patch.xml",
+      "status": "checked",
+      "bytes": 9141,
+      "operations": 1,
+      "findings": [
+        {
+          "ruleId": "CEP023",
+          "code": "ce.cep023-makegun-unguarded",
+          "severity": "warning",
+          "message": "the gun conversion of OH_G41m is not guarded: applied twice, or on a def another patch already converted, it appends a second verb, ammo component and set of tags",
+          "explanation": "A gun conversion that nothing guards runs again when another patch or a second copy of the file has already converted the def, and appends a second verb, ammo component and set of tags. Guard it with a conditional operation that tests for the ammo user.",
+          "field": "/Patch/Operation[1]/operations/li[3]",
+          "operation": 1,
+          "file": "Patches/ce_patch.xml"
+        },
+        {
+          "ruleId": "CEP016",
+          "code": "ce.cep016-unknown-ce-tag",
+          "severity": "warning",
+          "message": "the weapon tag CE_AI_Default is not known to the installed Combat Extended",
+          "explanation": "A weapon tag that the installed Combat Extended does not use has no effect on its AI class or on the ammunition pawns carry. Pick a tag from the converted weapons of the same class.",
+          "field": "/Patch/Operation[1]/operations/li[3]/weaponTags/li[2]",
+          "operation": 1,
+          "file": "Patches/ce_patch.xml"
+        },
+        {
+          "ruleId": "CEP023",
+          "code": "ce.cep023-makegun-unguarded",
+          "severity": "warning",
+          "message": "the gun conversion of OH_G41w is not guarded: applied twice, or on a def another patch already converted, it appends a second verb, ammo component and set of tags",
+          "explanation": "A gun conversion that nothing guards runs again when another patch or a second copy of the file has already converted the def, and appends a second verb, ammo component and set of tags. Guard it with a conditional operation that tests for the ammo user.",
+          "field": "/Patch/Operation[1]/operations/li[4]",
+          "operation": 1,
+          "file": "Patches/ce_patch.xml"
+        },
+        {
+          "ruleId": "CEP016",
+          "code": "ce.cep016-unknown-ce-tag",
+          "severity": "warning",
+          "message": "the weapon tag CE_AI_Default is not known to the installed Combat Extended",
+          "explanation": "A weapon tag that the installed Combat Extended does not use has no effect on its AI class or on the ammunition pawns carry. Pick a tag from the converted weapons of the same class.",
+          "field": "/Patch/Operation[1]/operations/li[4]/weaponTags/li[2]",
+          "operation": 1,
+          "file": "Patches/ce_patch.xml"
+        },
+        {
+          "ruleId": "CEP023",
+          "code": "ce.cep023-makegun-unguarded",
+          "severity": "warning",
+          "message": "the gun conversion of OH_G41w_25r is not guarded: applied twice, or on a def another patch already converted, it appends a second verb, ammo component and set of tags",
+          "explanation": "A gun conversion that nothing guards runs again when another patch or a second copy of the file has already converted the def, and appends a second verb, ammo component and set of tags. Guard it with a conditional operation that tests for the ammo user.",
+          "field": "/Patch/Operation[1]/operations/li[5]",
+          "operation": 1,
+          "file": "Patches/ce_patch.xml"
+        },
+        {
+          "ruleId": "CEP016",
+          "code": "ce.cep016-unknown-ce-tag",
+          "severity": "warning",
+          "message": "the weapon tag CE_AI_Default is not known to the installed Combat Extended",
+          "explanation": "A weapon tag that the installed Combat Extended does not use has no effect on its AI class or on the ammunition pawns carry. Pick a tag from the converted weapons of the same class.",
+          "field": "/Patch/Operation[1]/operations/li[5]/weaponTags/li[2]",
+          "operation": 1,
+          "file": "Patches/ce_patch.xml"
+        },
+        {
+          "ruleId": "CEP023",
+          "code": "ce.cep023-makegun-unguarded",
+          "severity": "warning",
+          "message": "the gun conversion of OH_G41w_sniper is not guarded: applied twice, or on a def another patch already converted, it appends a second verb, ammo component and set of tags",
+          "explanation": "A gun conversion that nothing guards runs again when another patch or a second copy of the file has already converted the def, and appends a second verb, ammo component and set of tags. Guard it with a conditional operation that tests for the ammo user.",
+          "field": "/Patch/Operation[1]/operations/li[6]",
+          "operation": 1,
+          "file": "Patches/ce_patch.xml"
+        },
+        {
+          "ruleId": "CEP016",
+          "code": "ce.cep016-unknown-ce-tag",
+          "severity": "warning",
+          "message": "the weapon tag CE_AI_Default is not known to the installed Combat Extended",
+          "explanation": "A weapon tag that the installed Combat Extended does not use has no effect on its AI class or on the ammunition pawns carry. Pick a tag from the converted weapons of the same class.",
+          "field": "/Patch/Operation[1]/operations/li[6]/weaponTags/li[2]",
+          "operation": 1,
+          "file": "Patches/ce_patch.xml"
+        },
+        {
+          "ruleId": "CEP023",
+          "code": "ce.cep023-makegun-unguarded",
+          "severity": "warning",
+          "message": "the gun conversion of OH_G41w_25r_sniper is not guarded: applied twice, or on a def another patch already converted, it appends a second verb, ammo component and set of tags",
+          "explanation": "A gun conversion that nothing guards runs again when another patch or a second copy of the file has already converted the def, and appends a second verb, ammo component and set of tags. Guard it with a conditional operation that tests for the ammo user.",
+          "field": "/Patch/Operation[1]/operations/li[7]",
+          "operation": 1,
+          "file": "Patches/ce_patch.xml"
+        },
+        {
+          "ruleId": "CEP016",
+          "code": "ce.cep016-unknown-ce-tag",
+          "severity": "warning",
+          "message": "the weapon tag CE_AI_Default is not known to the installed Combat Extended",
+          "explanation": "A weapon tag that the installed Combat Extended does not use has no effect on its AI class or on the ammunition pawns carry. Pick a tag from the converted weapons of the same class.",
+          "field": "/Patch/Operation[1]/operations/li[7]/weaponTags/li[2]",
+          "operation": 1,
+          "file": "Patches/ce_patch.xml"
+        },
+        {
+          "ruleId": "CEP004",
+          "code": "ce.cep004-ce-class-ungated",
+          "severity": "error",
+          "message": "the operation uses the Combat Extended class CombatExtended.PatchOperationFindMod in a file that loads when Combat Extended is absent",
+          "explanation": "A file that loads without Combat Extended cannot use a Combat Extended class: the class does not resolve and the game logs an error on every start. Put the file in a folder that LoadFolders.xml loads only when Combat Extended is active, or guard the operation.",
+          "field": "/Patch/Operation[1]/operations[1]/li[1]",
+          "operation": 1,
+          "file": "Patches/ce_patch.xml"
+        }
+      ]
+    }
+  ],
+  "project": [],
+  "notChecked": [
+    {
+      "ruleId": "CEP010",
+      "reason": "the type table of the installed Combat Extended was not supplied"
+    },
+    {
+      "ruleId": "CEP015",
+      "reason": "the field tables of the installed Combat Extended were not supplied"
+    }
+  ],
+  "ceData": true,
+  "gameVersion": "1.4",
+  "counts": {
+    "files": 1,
+    "checked": 1,
+    "errors": 1,
+    "warnings": 10,
+    "notes": 0
+  },
+  "diagnostics": []
+}

@@ -1,5 +1,5 @@
 {
-  "rev": 1,
+  "rev": 2,
   "stats": {
     "foldersProbed": 747,
     "modsFound": 744,
@@ -8,19 +8,19 @@
     "aboutReused": 0,
     "loadFoldersParsed": 291,
     "loadFoldersReused": 0,
-    "defFilesParsed": 17398,
+    "defFilesParsed": 17399,
     "defFilesReused": 0,
-    "defs": 78162,
+    "defs": 78163,
     "filesHashed": 0,
-    "bytesRead": 176108021,
+    "bytesRead": 176108260,
     "dirErrors": 0,
     "nonUtf8": 0
   },
   "timings": {
     "discoverMs": 4,
-    "metadataMs": 15,
-    "definitionsMs": 898,
-    "totalMs": 932
+    "metadataMs": 14,
+    "definitionsMs": 963,
+    "totalMs": 998
   },
   "sources": [
     {
@@ -28,21 +28,27 @@
       "kind": "game-data",
       "path": "/home/pawbeans/.local/share/Steam/steamapps/common/RimWorld/Data",
       "status": "ready",
-      "mods": 6
+      "mods": 6,
+      "loadable": 6,
+      "customOnly": 0
     },
     {
       "id": "game-mods",
       "kind": "game-mods",
       "path": "/home/pawbeans/.local/share/Steam/steamapps/common/RimWorld/Mods",
       "status": "ready",
-      "mods": 47
+      "mods": 47,
+      "loadable": 47,
+      "customOnly": 0
     },
     {
       "id": "workshop-0",
       "kind": "workshop",
       "path": "/home/pawbeans/.local/share/Steam/steamapps/workshop/content/294100",
       "status": "ready",
-      "mods": 691
+      "mods": 691,
+      "loadable": 691,
+      "customOnly": 0
     }
   ],
   "diagnostics": {
@@ -118,5 +124,75 @@
     "infos": 0,
     "hints": 0
   },
-  "cancelled": false
+  "cancelled": false,
+  "counts": {
+    "mods": 744,
+    "loadable": 744,
+    "customOnly": 0,
+    "unavailable": 0,
+    "unparsedAbout": 0,
+    "syntheticIds": 0,
+    "defs": 78163,
+    "duplicateGroups": 2
+  },
+  "duplicates": {
+    "total": 2,
+    "skippedTotal": 2,
+    "groups": [
+      {
+        "packageId": "Mlie.researchtree",
+        "sameSource": false,
+        "reason": "source-priority",
+        "kept": {
+          "path": "/home/pawbeans/.local/share/Steam/steamapps/common/RimWorld/Mods/ResearchTreePlusPlus",
+          "name": "Research Tree (Continued)",
+          "source": "game-mods",
+          "sourceKind": "game-mods",
+          "game": "loaded"
+        },
+        "skipped": [
+          {
+            "path": "/home/pawbeans/.local/share/Steam/steamapps/workshop/content/294100/3030499331",
+            "name": "Research Tree (Continued)",
+            "source": "workshop-0",
+            "sourceKind": "workshop",
+            "game": "loaded",
+            "why": "the kept copy comes from a source of higher priority"
+          }
+        ]
+      },
+      {
+        "packageId": "vr.missilegirl",
+        "sameSource": false,
+        "reason": "source-priority",
+        "kept": {
+          "path": "/home/pawbeans/.local/share/Steam/steamapps/common/RimWorld/Mods/MissileGirl",
+          "name": "Missile Girl - Performance Mod",
+          "source": "game-mods",
+          "sourceKind": "game-mods",
+          "game": "loaded"
+        },
+        "skipped": [
+          {
+            "path": "/home/pawbeans/.local/share/Steam/steamapps/workshop/content/294100/3712928623",
+            "name": "Missile Girl - Performance Mod",
+            "source": "workshop-0",
+            "sourceKind": "workshop",
+            "game": "loaded",
+            "why": "the kept copy comes from a source of higher priority"
+          }
+        ]
+      }
+    ]
+  },
+  "ceInLibrary": {
+    "present": true,
+    "packageId": "CETeam.CombatExtended",
+    "name": "Combat Extended",
+    "path": "/home/pawbeans/.local/share/Steam/steamapps/workshop/content/294100/2890901044",
+    "source": "workshop-0",
+    "sourceKind": "workshop",
+    "version": "16.7.3.0",
+    "loadable": true
+  }
 }

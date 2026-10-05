@@ -47,12 +47,17 @@ describe('DetailPane', () => {
     render(
       <DetailPane
         project={{ projectId: p.projectId, path: p.path, name: p.name }}
-        candidate={{ ...first, status: 'unsupported-kind', reason: 'a bow', asks: [] }}
+        candidate={{
+          ...first,
+          status: 'unsupported-kind',
+          reason: 'a weapon with a beam verb and no projectile',
+          asks: [],
+        }}
         familySize={1}
       />,
     );
     expect(screen.queryByRole('tab', { name: /Questions/ })).toBeNull();
     expect(screen.queryByRole('tab', { name: 'Plan' })).toBeNull();
-    expect(screen.getByText('a bow')).toBeTruthy();
+    expect(screen.getByText('a weapon with a beam verb and no projectile')).toBeTruthy();
   });
 });

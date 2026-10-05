@@ -6,12 +6,14 @@ import type { ProjectRef } from '~/shared/project';
 import { familyAnswers, ownAnswers } from './answerStore';
 import { devLink } from './devLinks';
 import { DefinitionView } from './DefinitionView';
-import { familyOf, familyParts, isConvertible } from './model';
+import { familyOf, isConvertible, projectileOf } from './model';
 import { PlanView } from './PlanView';
 import { loadPlan, plans } from './planStore';
 import { OptionsForm } from './OptionsForm';
 import { QuestionsForm } from './QuestionsForm';
+import { chipsOf } from './candidateView';
 import { StatusChip } from './StatusChip';
+import { TagChips } from './TagChips';
 import { loadChoices } from './suggestStore';
 
 export interface DetailPaneProps {
@@ -52,7 +54,7 @@ export function DetailPane({ project, candidate, familySize }: DetailPaneProps) 
     // oxlint-disable-next-line react-hooks/exhaustive-deps
   }, [candidate.defName, project.path, answersKey, planned]);
 
-  const parts = familyParts(familyOf(candidate));
+  const projectile = projectileOf(candidate);
   const open = entry?.plan
     ? entry.plan.diagnostics.filter((d) => d.code === 'designer.convert-needs-answer').length
     : undefined;
@@ -94,9 +96,21 @@ export function DetailPane({ project, candidate, familySize }: DetailPaneProps) 
                   },
                 ]
               : []),
-            ...(parts.tag ? [{ key: t('patches.detail.tag'), value: parts.tag, mono: true }] : []),
-            ...(parts.projectile
-              ? [{ key: t('patches.detail.projectile'), value: parts.projectile, mono: true }]
+            ...(chipsOf(candidate).length > 0
+              ? [
+                  {
+                    key: t('patches.detail.tag'),
+                    value: (
+                      <TagChips
+                        tags={candidate.tags ?? []}
+                        classes={candidate.weaponClasses ?? []}
+                      />
+                    ),
+                  },
+                ]
+              : []),
+            ...(projectile
+              ? [{ key: t('patches.detail.projectile'), value: projectile, mono: true }]
               : []),
             ...(candidate.file
               ? [{ key: t('patches.detail.file'), value: candidate.file, mono: true }]

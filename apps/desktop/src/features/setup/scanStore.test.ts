@@ -1,8 +1,7 @@
 import { describe, expect, it } from 'vitest';
-import { groupDiagnostics, joinPath } from './model';
+import { groupDiagnostics } from './model';
 import { runScan, scanError, scanResult, scanning } from './scanStore';
 import { installTransport } from './testSupport';
-import { checkCombatExtended, ce } from './ceStore';
 import { loadFixture } from 'rimstudio-testkit';
 import type { LibraryScanResult } from 'rimstudio-ipc-types';
 
@@ -46,37 +45,13 @@ describe('diagnostic groups', () => {
   });
 });
 
-describe('Combat Extended lookup', () => {
-  it('finds the workshop item of Combat Extended', async () => {
-    const transport = installTransport({
-      sources_probe_folder: () => loadFixture('probe-ce-workshop-item'),
-    });
-    await checkCombatExtended('/steam/workshop/content/294100');
-    expect(ce.value).toMatchObject({ status: 'found', mods: 1 });
-    expect(transport.calls[0]?.request).toEqual({
-      path: '/steam/workshop/content/294100/2890901044',
-    });
-  });
-
-  it('reports it missing when the folder is not there', async () => {
-    installTransport({
-      sources_probe_folder: () => ({
-        kind: 'missing',
-        modCount: 0,
-        suggestedDepth: 1,
-        suggestedLayout: 'auto',
-        warnings: [],
-        overlaps: [],
-        diagnostics: [],
-        canSave: false,
-      }),
-    });
-    await checkCombatExtended('/w');
-    expect(ce.value.status).toBe('missing');
-  });
-
-  it('joins paths with the separator in use', () => {
-    expect(joinPath('C:\\steam\\content', '1')).toBe('C:\\steam\\content\\1');
-    expect(joinPath('/a/b/', 'c')).toBe('/a/b/c');
+describe('scan facts', () => {
+  it('keeps the counts, the duplicate groups and the Combat Extended entry of the result', async () => {
+    installTransport({ library_scan: () => loadFixture('library-scan-with-custom') });
+    await runScan(false);
+    const result = scanResult.value;
+    expect(result?.counts).toMatchObject({ mods: 763, loadable: 744, customOnly: 19 });
+    expect(result?.duplicates?.total).toBe(6);
+    expect(result?.ceInLibrary).toMatchObject({ present: true, version: '16.7.3.0' });
   });
 });

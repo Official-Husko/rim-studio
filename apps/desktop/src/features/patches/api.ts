@@ -4,6 +4,7 @@ import type {
   CeSuggestionDto,
   ConvertRequestDto,
   ConvertScanDto,
+  DesignerLintFilesResult,
   DraftDto,
   ItemKindDto,
   ProjectFileDto,
@@ -66,16 +67,16 @@ export function applyConversion(
 }
 
 /**
- * The ranked caliber and weapon class choices for a family of weapons. The scan carries no tags beyond
- * the family key, so the request holds the kind and the first tag only.
+ * The ranked caliber and weapon class choices for a weapon, from its kind and the weapon tags of the scan.
+ * The request holds no damage, so the ranking is approximate.
  */
 export function suggestChoices(
   kind: ItemKindDto,
   defName: string,
-  firstTag: string,
+  tags: readonly string[],
 ): Promise<CeSuggestionDto> {
   const draft = placeholderDraft(kind, defName);
-  draft.spec.weaponTags = firstTag ? [firstTag] : [];
+  draft.spec.weaponTags = [...tags];
   return callCommand('designer_ce_suggest', { draft });
 }
 
@@ -93,6 +94,17 @@ export function suggestWithBlock(
   draft.spec.weaponTags = [...tags];
   draft.spec.ce = ce;
   return callCommand('designer_ce_suggest', { draft });
+}
+
+/** The lint of every patch file of the project (or of the given files); reads, writes nothing. */
+export function lintProjectFiles(
+  projectId: string,
+  paths?: readonly string[],
+): Promise<DesignerLintFilesResult> {
+  return callCommand('designer_lint_files', {
+    projectId,
+    ...(paths && paths.length > 0 ? { paths: [...paths] } : {}),
+  });
 }
 
 /** The text of one project file. */

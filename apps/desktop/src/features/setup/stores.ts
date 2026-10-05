@@ -1,4 +1,3 @@
-import { resetCe } from './ceStore';
 import { resetDetect } from './detectStore';
 import { resetScan } from './scanStore';
 import { resetSettings } from './settingsStore';
@@ -9,6 +8,5 @@ export function resetSetupStores(): void {
   resetDetect();
   resetSources();
   resetScan();
-  resetCe();
   resetSettings();
 }

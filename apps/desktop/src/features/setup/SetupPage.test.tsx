@@ -1,5 +1,6 @@
 import { fireEvent, screen, waitFor } from '@testing-library/preact';
-import { renderWithProviders } from 'rimstudio-testkit';
+import { loadFixture, renderWithProviders } from 'rimstudio-testkit';
+import type { LibraryScanResult } from 'rimstudio-ipc-types';
 import { describe, expect, it } from 'vitest';
 import SetupPage from './SetupPage';
 import { installTransport } from './testSupport';
@@ -28,26 +29,37 @@ describe('SetupPage', () => {
     fireEvent.click(screen.getByRole('button', { name: 'Scan' }));
     await screen.findByText('Diagnostics');
     await waitFor(() => expect(screen.getByText('loadfolders.ignored-attribute')).toBeTruthy());
-    expect(screen.getByText('78,162')).toBeTruthy();
+    expect(screen.getByText('78,163')).toBeTruthy();
     expect(transport.calls.some((c) => c.name === 'library_scan')).toBe(true);
   });
 
-  it('finds Combat Extended in the workshop folder', async () => {
-    installTransport({
-      sources_probe_folder: () => ({
-        kind: 'single-mod',
-        modCount: 1,
-        suggestedDepth: 1,
-        suggestedLayout: 'single-mod',
-        warnings: [],
-        overlaps: [],
-        diagnostics: [],
-        canSave: false,
-      }),
-    });
+  it('asks for a scan before it says anything about Combat Extended', async () => {
+    const transport = installTransport();
     renderWithProviders(<SetupPage />);
+    await screen.findByText('Scan the library to find out whether Combat Extended is in it.');
+    expect(transport.calls.some((c) => c.name === 'sources_probe_folder')).toBe(false);
+  });
+
+  it('reads Combat Extended, the counts and the duplicates from the scan', async () => {
+    installTransport({ library_scan: () => loadFixture('library-scan-with-custom') });
+    renderWithProviders(<SetupPage />);
+    await screen.findByText('1.6.4871 rev598');
+    fireEvent.click(screen.getByRole('button', { name: 'Scan' }));
     await screen.findByText('In your library');
-    expect(screen.getByText('ceteam.combatextended')).toBeTruthy();
+    expect(screen.getByText('16.7.3.0')).toBeTruthy();
+    expect(screen.getByText('CETeam.CombatExtended')).toBeTruthy();
+    expect(screen.getByText('19 mods exist only in your own folders')).toBeTruthy();
+    expect(screen.getByRole('table', { name: 'Duplicate package ids' })).toBeTruthy();
+    expect(screen.getByText('Husko.ATR')).toBeTruthy();
+  });
+
+  it('says Combat Extended is missing when the scan does not find it', async () => {
+    const scan = loadFixture<LibraryScanResult>('library-scan');
+    installTransport({ library_scan: () => ({ ...scan, ceInLibrary: { present: false } }) });
+    renderWithProviders(<SetupPage />);
+    await screen.findByText('1.6.4871 rev598');
+    fireEvent.click(screen.getByRole('button', { name: 'Scan' }));
+    await screen.findByText('Combat Extended was not found');
   });
 
   it('clears an override only when one is active', async () => {

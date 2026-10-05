@@ -41,17 +41,12 @@ export function familyOf(candidate: ConvertCandidateDto): string {
   return candidate.family ?? '';
 }
 
-/** The parts of a family key (`ranged/<first tag>/<default projectile>`; melee has no projectile). */
-export interface FamilyParts {
-  kind: string;
-  tag: string;
-  projectile: string;
-}
-
-/** Split a family key for display. An empty key gives empty parts. */
-export function familyParts(family: string): FamilyParts {
-  const [kind = '', tag = '', ...rest] = family.split('/');
-  return { kind, tag, projectile: rest.join('/') };
+/**
+ * The default projectile that the family key ends with (`ranged/<first tag>/<default projectile>`); empty
+ * for a melee weapon. The tags themselves come from the scan, not from the key.
+ */
+export function projectileOf(candidate: ConvertCandidateDto): string {
+  return familyOf(candidate).split('/').slice(2).join('/');
 }
 
 /** The ask field pointer split into its path segments, without the leading `ce`. */

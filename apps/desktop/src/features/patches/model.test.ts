@@ -4,7 +4,7 @@ import {
   answerOf,
   buildRequest,
   emptyAnswers,
-  familyParts,
+  projectileOf,
   isEmptyAnswers,
   parseDerived,
   splitDiagnostics,
@@ -30,14 +30,11 @@ const candidate: ConvertCandidateDto = {
   family: 'ranged/Gun/Bullet_MauserRifle',
 };
 
-describe('familyParts', () => {
-  it('splits kind, first tag and projectile', () => {
-    expect(familyParts('ranged/Gun/Bullet_MauserRifle')).toEqual({
-      kind: 'ranged',
-      tag: 'Gun',
-      projectile: 'Bullet_MauserRifle',
-    });
-    expect(familyParts('')).toEqual({ kind: '', tag: '', projectile: '' });
+describe('projectileOf', () => {
+  it('reads the default projectile of the family key', () => {
+    expect(projectileOf(candidate)).toBe('Bullet_MauserRifle');
+    expect(projectileOf({ ...candidate, family: 'melee/Knife' })).toBe('');
+    expect(projectileOf({ ...candidate, family: undefined })).toBe('');
   });
 });
 

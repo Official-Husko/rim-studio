@@ -1,21 +1,15 @@
 import type {
   DiagnosticDto,
   DiagnosticSummaryDto,
+  DuplicateGameDto,
+  DuplicateReasonDto,
   SourceKindDto,
   SourceStatusDto,
 } from 'rimstudio-ipc-types';
 import type { MessageKey } from '~/shared/i18n';
 
-/** Steam item id of Combat Extended; a name for a folder, not data. */
-export const CE_WORKSHOP_ID = '2890901044';
 /** Package id of Combat Extended. */
 export const CE_PACKAGE_ID = 'ceteam.combatextended';
-
-/** Join a folder and a child with the separator the folder already uses. */
-export function joinPath(folder: string, child: string): string {
-  const sep = folder.includes('\\') && !folder.includes('/') ? '\\' : '/';
-  return folder.endsWith(sep) ? `${folder}${child}` : `${folder}${sep}${child}`;
-}
 
 export const SOURCE_KIND_KEYS: Record<SourceKindDto, MessageKey> = {
   'game-data': 'setup.source.kind.game-data',
@@ -29,6 +23,23 @@ export const SOURCE_STATUS_KEYS: Record<SourceStatusDto, MessageKey> = {
   disabled: 'setup.source.status.disabled',
   offline: 'setup.source.status.offline',
   'not-directory': 'setup.source.status.not-directory',
+};
+
+/** What the game does with a copy of a duplicated mod. */
+export const DUPLICATE_GAME_KEYS: Record<DuplicateGameDto, MessageKey> = {
+  loaded: 'setup.dup.game.loaded',
+  rejected: 'setup.dup.game.rejected',
+  'not-visible': 'setup.dup.game.not-visible',
+};
+
+/** The rung of the choice ladder that decided which copy is kept. */
+export const DUPLICATE_REASON_KEYS: Record<DuplicateReasonDto, MessageKey> = {
+  available: 'setup.dup.reason.available',
+  pinned: 'setup.dup.reason.pinned',
+  'source-priority': 'setup.dup.reason.source-priority',
+  'version-match': 'setup.dup.reason.version-match',
+  newer: 'setup.dup.reason.newer',
+  'path-order': 'setup.dup.reason.path-order',
 };
 
 /** One group of the diagnostics list: a code, its total and the samples the backend kept. */

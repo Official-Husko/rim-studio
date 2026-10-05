@@ -1,7 +1,7 @@
 import { signal } from '@preact/signals';
 import type { CeChoiceDto, ConvertCandidateDto } from 'rimstudio-ipc-types';
 import { suggestChoices } from './api';
-import { familyOf, familyParts } from './model';
+import { familyOf } from './model';
 
 /** The ranked choices known for a family: absent while loading, empty when the backend has none. */
 export type Choices = Readonly<Record<string, CeChoiceDto>>;
@@ -20,11 +20,7 @@ export async function loadChoices(candidate: ConvertCandidateDto): Promise<void>
   if (asked.has(key) || candidate.kind === undefined) return;
   asked.add(key);
   try {
-    const result = await suggestChoices(
-      candidate.kind,
-      candidate.defName,
-      familyParts(familyOf(candidate)).tag,
-    );
+    const result = await suggestChoices(candidate.kind, candidate.defName, candidate.tags ?? []);
     const byField: Record<string, CeChoiceDto> = {};
     for (const choice of result.choices) byField[choice.field] = choice;
     suggestions.value = { ...suggestions.peek(), [key]: byField };

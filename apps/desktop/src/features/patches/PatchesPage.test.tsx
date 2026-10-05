@@ -38,7 +38,7 @@ describe('PatchesPage scan', () => {
     const table = await screen.findByRole('grid', { name: 'Weapons of the mod' });
     expect(within(table).getAllByText('Not converted')).toHaveLength(5);
     expect(within(table).getByText('OH_G41w_25r_sniper')).toBeTruthy();
-    expect(within(table).getAllByText('Ranged / SniperRifle')).toHaveLength(2);
+    expect(within(table).getAllByText('SniperRifle')).toHaveLength(2);
     expect(screen.getByText('5 not converted')).toBeTruthy();
     expect(screen.getByText('0 already CE')).toBeTruthy();
   });
@@ -62,7 +62,12 @@ describe('PatchesPage scan', () => {
     const synthetic: ConvertScanDto = {
       ...scan,
       candidates: [
-        { ...a, status: 'unsupported-kind', reason: 'a bow is not supported', asks: [] },
+        {
+          ...a,
+          status: 'unsupported-kind',
+          reason: 'a weapon with a beam verb and no projectile is not supported',
+          asks: [],
+        },
         {
           ...b,
           status: 'target-not-found',
@@ -76,11 +81,14 @@ describe('PatchesPage scan', () => {
     installTransport({ designer_convert_scan: () => synthetic });
     openFixtureProject();
     renderPage();
-    expect(await screen.findByText('Unsupported kind')).toBeTruthy();
-    expect(screen.getByText('Target not found')).toBeTruthy();
+    const table = await screen.findByRole('grid', { name: 'Weapons of the mod' });
+    expect(within(table).getByText('Unsupported kind')).toBeTruthy();
+    expect(within(table).getByText('Target not found')).toBeTruthy();
     expect(screen.getByText('1 unsupported')).toBeTruthy();
     fireEvent.click(screen.getByText('OH_G41m'));
-    expect(await screen.findByText('a bow is not supported')).toBeTruthy();
+    expect(
+      await screen.findByText('a weapon with a beam verb and no projectile is not supported'),
+    ).toBeTruthy();
     expect(
       screen.getByText('This weapon cannot be converted. The reason is given above.'),
     ).toBeTruthy();
@@ -270,14 +278,14 @@ describe('PatchesPage lint', () => {
   it('switches to the lint view', async () => {
     installTransport({
       designer_convert_scan: () => loadFixture('patches-scan-converted'),
-      designer_export_plan: () => loadFixture('patches-lint-plan'),
+      designer_lint_files: () => loadFixture('designer_lint_files'),
     });
     openFixtureProject('patches-project-converted');
     renderPage();
     await screen.findByRole('grid', { name: 'Weapons of the mod' });
     fireEvent.click(screen.getByRole('radio', { name: 'Lint' }));
     expect(
-      await screen.findByText('Converted weapons checked: 5. Errors: 0. Warnings: 0.'),
+      await screen.findByText('Files checked: 1. Errors: 1. Warnings: 10. Notes: 0.'),
     ).toBeTruthy();
     expect(currentProject.value?.name).toBe("Huskos's Gewehr 41");
   });
