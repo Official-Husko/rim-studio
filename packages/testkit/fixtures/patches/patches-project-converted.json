@@ -1,0 +1,14 @@
+{
+  "projectId": "p-7c0418da",
+  "name": "Huskos's Gewehr 41",
+  "path": "/home/user/mods/G41-ce",
+  "packageId": "oh.weapons.gewehr41",
+  "supportedVersions": [
+    "1.4"
+  ],
+  "hasAbout": true,
+  "hasLoadFolders": false,
+  "hasCeGate": false,
+  "defFiles": 1,
+  "diagnostics": []
+}

@@ -1,0 +1,122 @@
+{
+  "planId": "21ddbfca3bb317c5d4241eb4082fcbc8",
+  "written": [
+    {
+      "path": "Compat/CombatExtended/Patches/gewehr41_Weapons_Ranged.xml",
+      "action": "create",
+      "bytes": 2286,
+      "verified": true
+    },
+    {
+      "path": "LoadFolders.xml",
+      "action": "create",
+      "bytes": 173,
+      "verified": true
+    }
+  ],
+  "unchanged": [],
+  "dryApplyOk": true,
+  "diagnostics": [
+    {
+      "code": "designer.convert-derived",
+      "severity": "info",
+      "message": "ce.bulk = 12.49 was predicted (Ratio) from 4 of your converted weapons; check it",
+      "field": "ce.bulk"
+    },
+    {
+      "code": "designer.convert-derived",
+      "severity": "info",
+      "message": "ce.swayFactor = 1.275 was predicted (Median) from 4 of your converted weapons; check it",
+      "field": "ce.swayFactor"
+    },
+    {
+      "code": "designer.convert-derived",
+      "severity": "info",
+      "message": "ce.sightsEfficiency = 1.3 was predicted (Median) from 4 of your converted weapons; check it",
+      "field": "ce.sightsEfficiency"
+    },
+    {
+      "code": "designer.convert-derived",
+      "severity": "info",
+      "message": "ce.recoilAmount = 1.77 was predicted (Median) from 4 of your converted weapons; check it",
+      "field": "ce.recoilAmount"
+    },
+    {
+      "code": "designer.convert-derived",
+      "severity": "info",
+      "message": "ce.reloadTime = 4 was predicted (Median) from 4 of your converted weapons; check it",
+      "field": "ce.reloadTime"
+    },
+    {
+      "code": "ce.derived-value",
+      "severity": "info",
+      "message": "mass = 4.6 was predicted (Identity) from 18 of the converted weapons in the library, rated reliable, typical error about 12 percent; check it",
+      "field": "mass",
+      "args": {
+        "how": "predicted (Identity) from 18 of the converted weapons in the library, rated reliable, typical error about 12 percent; check it",
+        "value": "4.6"
+      }
+    },
+    {
+      "code": "ce.derived-value",
+      "severity": "info",
+      "message": "range = 52.92 was predicted (Ratio) from 4 of the converted weapons in the library, rated rough, typical error about 31 percent; check it",
+      "field": "range",
+      "args": {
+        "how": "predicted (Ratio) from 4 of the converted weapons in the library, rated rough, typical error about 31 percent; check it",
+        "value": "52.92"
+      }
+    },
+    {
+      "code": "ce.derived-value",
+      "severity": "info",
+      "message": "warmup = 0.8101 was predicted (Ratio) from 4 of the converted weapons in the library, rated rough, typical error about 31 percent; check it",
+      "field": "warmup",
+      "args": {
+        "how": "predicted (Ratio) from 4 of the converted weapons in the library, rated rough, typical error about 31 percent; check it",
+        "value": "0.8101"
+      }
+    },
+    {
+      "code": "ce.derived-value",
+      "severity": "info",
+      "message": "cooldown = 0.835 was predicted (Median) from 4 of the converted weapons in the library, rated reliable, typical error about 9 percent; check it",
+      "field": "cooldown",
+      "args": {
+        "how": "predicted (Median) from 4 of the converted weapons in the library, rated reliable, typical error about 9 percent; check it",
+        "value": "0.835"
+      }
+    },
+    {
+      "code": "ce.about-suggestion",
+      "severity": "hint",
+      "message": "About file: add loadAfter ceteam.combatextended (Combat Extended)",
+      "field": "",
+      "args": {
+        "suggestion": "add loadAfter ceteam.combatextended (Combat Extended)"
+      }
+    },
+    {
+      "code": "ce.not-checked",
+      "severity": "info",
+      "message": "CEP010 was not checked: the type table of the installed Combat Extended was not supplied",
+      "field": "",
+      "args": {
+        "reason": "the type table of the installed Combat Extended was not supplied",
+        "rule": "CEP010",
+        "ruleId": "CEP010"
+      }
+    },
+    {
+      "code": "ce.not-checked",
+      "severity": "info",
+      "message": "CEP015 was not checked: the field tables of the installed Combat Extended were not supplied",
+      "field": "",
+      "args": {
+        "reason": "the field tables of the installed Combat Extended were not supplied",
+        "rule": "CEP015",
+        "ruleId": "CEP015"
+      }
+    }
+  ]
+}

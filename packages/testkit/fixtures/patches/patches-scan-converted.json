@@ -1,0 +1,61 @@
+{
+  "candidates": [
+    {
+      "defName": "OH_G41m",
+      "label": "Gewehr 41 (m)",
+      "kind": "ranged",
+      "status": "already-ce",
+      "reason": "the def already carries a Combat Extended conversion; update mode applies",
+      "file": "Defs/ThingDefs_Misc/Weapons/RangedIndustrial.xml",
+      "asks": [],
+      "family": "ranged/Gun/Bullet_792x57mmMauser_FMJ"
+    },
+    {
+      "defName": "OH_G41w",
+      "label": "Gewehr 41 (w)",
+      "kind": "ranged",
+      "status": "already-ce",
+      "reason": "the def already carries a Combat Extended conversion; update mode applies",
+      "file": "Defs/ThingDefs_Misc/Weapons/RangedIndustrial.xml",
+      "asks": [],
+      "family": "ranged/Gun/Bullet_792x57mmMauser_FMJ"
+    },
+    {
+      "defName": "OH_G41w_25r",
+      "label": "Gewehr 41 (w) 25c Round Magazine",
+      "kind": "ranged",
+      "status": "already-ce",
+      "reason": "the def already carries a Combat Extended conversion; update mode applies",
+      "file": "Defs/ThingDefs_Misc/Weapons/RangedIndustrial.xml",
+      "asks": [],
+      "family": "ranged/Gun/Bullet_792x57mmMauser_FMJ"
+    },
+    {
+      "defName": "OH_G41w_25r_sniper",
+      "label": "Gewehr 41 (w) 25 Round Magazine ZF41",
+      "kind": "ranged",
+      "status": "already-ce",
+      "reason": "the def already carries a Combat Extended conversion; update mode applies",
+      "file": "Defs/ThingDefs_Misc/Weapons/RangedIndustrial.xml",
+      "asks": [],
+      "family": "ranged/SniperRifle/Bullet_792x57mmMauser_FMJ"
+    },
+    {
+      "defName": "OH_G41w_sniper",
+      "label": "Gewehr 41 (w) ZF41",
+      "kind": "ranged",
+      "status": "already-ce",
+      "reason": "the def already carries a Combat Extended conversion; update mode applies",
+      "file": "Defs/ThingDefs_Misc/Weapons/RangedIndustrial.xml",
+      "asks": [],
+      "family": "ranged/SniperRifle/Bullet_792x57mmMauser_FMJ"
+    }
+  ],
+  "counts": {
+    "notConverted": 0,
+    "alreadyCe": 5,
+    "unsupportedKind": 0,
+    "targetNotFound": 0
+  },
+  "diagnostics": []
+}

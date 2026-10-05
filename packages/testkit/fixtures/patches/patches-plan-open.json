@@ -1,0 +1,91 @@
+{
+  "planId": "af1349b9f5f9a1a6a0404dea36dcc949",
+  "files": [],
+  "diagnostics": [
+    {
+      "code": "designer.convert-needs-answer",
+      "severity": "error",
+      "message": "Which caliber (ammo set) does the weapon use?",
+      "field": "/ce/ammoSet"
+    },
+    {
+      "code": "designer.convert-needs-answer",
+      "severity": "error",
+      "message": "Which weapon class tag does the weapon get?",
+      "field": "/ce/weaponTagClass"
+    },
+    {
+      "code": "designer.convert-needs-answer",
+      "severity": "error",
+      "message": "Is the weapon held in one hand?",
+      "field": "/ce/oneHanded"
+    },
+    {
+      "code": "designer.convert-needs-answer",
+      "severity": "error",
+      "message": "Is the weapon belt fed?",
+      "field": "/ce/beltFed"
+    },
+    {
+      "code": "designer.convert-needs-answer",
+      "severity": "error",
+      "message": "CE shot spread (asked because the estimate 0.15 is not written: it is rated unreliable: the typical error was about 30 percent when each of 19 converted weapons was predicted from the others)",
+      "field": "/ce/shotSpread"
+    },
+    {
+      "code": "designer.convert-needs-answer",
+      "severity": "error",
+      "message": "CE magazine size (asked because the estimate 7 is not written: it is rated unreliable: the typical error was about 62 percent when each of 16 converted weapons was predicted from the others)",
+      "field": "/ce/magazineSize"
+    },
+    {
+      "code": "designer.convert-needs-answer",
+      "severity": "error",
+      "message": "Blunt penetration of the tool stock (asked because the estimate 2.56 is not written: the ratio of penetration to power is rated unreliable: the typical error was about 64 percent when each of 19 converted weapons was predicted from the others)",
+      "field": "/ce/toolPenetration/stock/blunt"
+    },
+    {
+      "code": "designer.convert-needs-answer",
+      "severity": "error",
+      "message": "Blunt penetration of the tool barrel (asked because the estimate 1.706 is not written: the ratio of penetration to power is rated unreliable: the typical error was about 64 percent when each of 19 converted weapons was predicted from the others)",
+      "field": "/ce/toolPenetration/barrel/blunt"
+    },
+    {
+      "code": "designer.convert-needs-answer",
+      "severity": "error",
+      "message": "Blunt penetration of the tool muzzle (asked because the estimate 2.56 is not written: the ratio of penetration to power is rated unreliable: the typical error was about 64 percent when each of 19 converted weapons was predicted from the others)",
+      "field": "/ce/toolPenetration/muzzle/blunt"
+    },
+    {
+      "code": "designer.convert-derived",
+      "severity": "info",
+      "message": "ce.bulk = 10.21 was predicted (Ratio) from 4 of your converted weapons; check it",
+      "field": "ce.bulk"
+    },
+    {
+      "code": "designer.convert-derived",
+      "severity": "info",
+      "message": "ce.swayFactor = 1.35 was predicted (Median) from 4 of your converted weapons; check it",
+      "field": "ce.swayFactor"
+    },
+    {
+      "code": "designer.convert-derived",
+      "severity": "info",
+      "message": "ce.sightsEfficiency = 0.85 was predicted (Median) from 4 of your converted weapons; check it",
+      "field": "ce.sightsEfficiency"
+    },
+    {
+      "code": "designer.convert-derived",
+      "severity": "info",
+      "message": "ce.recoilAmount = 2.72 was predicted (Median) from 4 of your converted weapons; check it",
+      "field": "ce.recoilAmount"
+    },
+    {
+      "code": "designer.convert-derived",
+      "severity": "info",
+      "message": "ce.reloadTime = 4.15 was predicted (Median) from 4 of your converted weapons; check it",
+      "field": "ce.reloadTime"
+    }
+  ],
+  "hasErrors": true
+}

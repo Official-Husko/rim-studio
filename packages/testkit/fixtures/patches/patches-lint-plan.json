@@ -1,0 +1,25 @@
+{
+  "planId": "af1349b9f5f9a1a6a0404dea36dcc949",
+  "files": [],
+  "diagnostics": [
+    {
+      "code": "ce.already-converted",
+      "severity": "info",
+      "message": "OH_G41m already carries a Combat Extended conversion; update mode is used",
+      "field": "",
+      "args": {
+        "target": "OH_G41m"
+      }
+    },
+    {
+      "code": "ce.update-nothing",
+      "severity": "info",
+      "message": "OH_G41m already holds these values; no operation was written",
+      "field": "",
+      "args": {
+        "target": "OH_G41m"
+      }
+    }
+  ],
+  "hasErrors": false
+}

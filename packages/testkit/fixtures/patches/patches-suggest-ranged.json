@@ -1,0 +1,437 @@
+{
+  "kind": "ranged",
+  "defName": "OH_G41m",
+  "available": true,
+  "toggleOn": false,
+  "classLabel": "based on the 4 nearest of 20 converted weapons",
+  "pool": 20,
+  "fields": [
+    {
+      "field": "/ce/bulk",
+      "label": "CE bulk",
+      "required": true,
+      "status": "ask",
+      "rating": "unreliable",
+      "error": 0.4584801152099257,
+      "reference": 6.395,
+      "reason": "the estimate 6.395 is not written: it is rated unreliable: the typical error was about 46 percent when each of 20 converted weapons was predicted from the others"
+    },
+    {
+      "field": "/ce/swayFactor",
+      "label": "CE sway factor",
+      "required": true,
+      "status": "derived",
+      "value": 1.35,
+      "source": {
+        "kind": "predicted",
+        "predictor": "median",
+        "n": 4
+      },
+      "band": {
+        "p50": {
+          "low": 1.0839416058394162,
+          "high": 1.6813636363636364
+        },
+        "p80": {
+          "low": 0.866850011271804,
+          "high": 2.102439841150961
+        }
+      },
+      "rating": "rough",
+      "error": 0.19708029197080293
+    },
+    {
+      "field": "/ce/shotSpread",
+      "label": "CE shot spread",
+      "required": true,
+      "status": "ask",
+      "rating": "unreliable",
+      "error": 0.3,
+      "reference": 0.15,
+      "reason": "the estimate 0.15 is not written: it is rated unreliable: the typical error was about 30 percent when each of 19 converted weapons was predicted from the others"
+    },
+    {
+      "field": "/ce/sightsEfficiency",
+      "label": "CE sights efficiency",
+      "required": false,
+      "status": "derived",
+      "value": 0.85,
+      "source": {
+        "kind": "predicted",
+        "predictor": "median",
+        "n": 4
+      },
+      "band": {
+        "p50": {
+          "low": 0.7224999999999999,
+          "high": 1
+        },
+        "p80": {
+          "low": 0.595,
+          "high": 1.2142857142857142
+        }
+      },
+      "rating": "rough",
+      "error": 0.15000000000000002
+    },
+    {
+      "field": "/ce/recoilAmount",
+      "label": "CE recoil",
+      "required": false,
+      "status": "derived",
+      "value": 2.72,
+      "source": {
+        "kind": "predicted",
+        "predictor": "median",
+        "n": 4
+      },
+      "band": {
+        "p50": {
+          "low": 2.286507047932099,
+          "high": 3.2356777586542154
+        },
+        "p80": {
+          "low": 1.808411349884035,
+          "high": 4.091104604311639
+        }
+      },
+      "rating": "rough",
+      "error": 0.18958991174803663
+    },
+    {
+      "field": "/ce/magazineSize",
+      "label": "CE magazine size",
+      "required": true,
+      "status": "ask",
+      "rating": "unreliable",
+      "error": 0.6207142857142858,
+      "reference": 7,
+      "reason": "the estimate 7 is not written: it is rated unreliable: the typical error was about 62 percent when each of 16 converted weapons was predicted from the others"
+    },
+    {
+      "field": "/ce/reloadTime",
+      "label": "CE reload time",
+      "required": true,
+      "status": "derived",
+      "value": 4.15,
+      "source": {
+        "kind": "predicted",
+        "predictor": "median",
+        "n": 4
+      },
+      "band": {
+        "p50": {
+          "low": 3.3008888722492276,
+          "high": 5.217534023877811
+        },
+        "p80": {
+          "low": 2.796739130434783,
+          "high": 6.1580645161290315
+        }
+      },
+      "rating": "rough",
+      "error": 0.2043367346938776
+    }
+  ],
+  "choices": [
+    {
+      "field": "/ce/ammoSet",
+      "label": "Which caliber (ammo set) does the weapon use?",
+      "kind": "choice",
+      "required": true,
+      "status": "ask",
+      "candidates": [
+        {
+          "name": "AmmoSet_303British",
+          "usedBy": 2,
+          "score": 1.5,
+          "firstDamage": 20
+        },
+        {
+          "name": "AmmoSet_45ACP",
+          "usedBy": 3,
+          "score": 1.1666666666666665,
+          "firstDamage": 12
+        },
+        {
+          "name": "AmmoSet_12Gauge",
+          "usedBy": 2,
+          "score": 0.6666666666666666,
+          "firstDamage": 8
+        },
+        {
+          "name": "AmmoSet_6x24mmCharged",
+          "usedBy": 1,
+          "score": 0.5,
+          "firstDamage": 13
+        },
+        {
+          "name": "AmmoSet_762x51mmNATO",
+          "usedBy": 2,
+          "score": 0.3333333333333333,
+          "firstDamage": 20
+        },
+        {
+          "name": "AmmoSet_44Magnum",
+          "usedBy": 1,
+          "score": 0.3333333333333333,
+          "firstDamage": 15
+        },
+        {
+          "name": "AmmoSet_556x45mmNATO",
+          "usedBy": 1,
+          "score": 0.3333333333333333,
+          "firstDamage": 14
+        },
+        {
+          "name": "AmmoSet_556x45mmNATO_SB",
+          "usedBy": 1,
+          "score": 0.3333333333333333,
+          "firstDamage": 12
+        },
+        {
+          "name": "AmmoSet_BeamRepeater",
+          "usedBy": 1,
+          "score": 0.3333333333333333,
+          "firstDamage": 12
+        },
+        {
+          "name": "AmmoSet_Arrow",
+          "usedBy": 1,
+          "score": 0,
+          "firstDamage": 6
+        },
+        {
+          "name": "AmmoSet_Flare",
+          "usedBy": 1,
+          "score": 0
+        },
+        {
+          "name": "AmmoSet_GreatArrow",
+          "usedBy": 1,
+          "score": 0,
+          "firstDamage": 9
+        }
+      ],
+      "reason": "the caliber is never chosen for you: pick one of the candidates, best fit first"
+    },
+    {
+      "field": "/ce/defaultProjectile",
+      "label": "Which projectile of the ammo set is the default?",
+      "kind": "choice",
+      "required": true,
+      "status": "ask",
+      "candidates": [],
+      "reason": "it follows the ammo set: choose the caliber first"
+    },
+    {
+      "field": "/ce/weaponTagClass",
+      "label": "Which weapon class tag does the weapon get?",
+      "kind": "choice",
+      "required": true,
+      "status": "ask",
+      "candidates": [
+        {
+          "name": "CE_AI_BROOM",
+          "usedBy": 6,
+          "score": 2.1666666666666665
+        },
+        {
+          "name": "CE_AI_SR",
+          "usedBy": 2,
+          "score": 1
+        },
+        {
+          "name": "CE_AI_AR",
+          "usedBy": 2,
+          "score": 0.8333333333333333
+        },
+        {
+          "name": "CE_AI_LMG",
+          "usedBy": 1,
+          "score": 0.5
+        },
+        {
+          "name": "CE_AI_Rifle",
+          "usedBy": 1,
+          "score": 0.3333333333333333
+        },
+        {
+          "name": "CE_AI_Suppressive",
+          "usedBy": 1,
+          "score": 0.3333333333333333
+        },
+        {
+          "name": "CE_AI_AOE",
+          "usedBy": 0,
+          "score": 0
+        },
+        {
+          "name": "CE_AI_EMP",
+          "usedBy": 0,
+          "score": 0
+        },
+        {
+          "name": "CE_AI_Grenade",
+          "usedBy": 0,
+          "score": 0
+        },
+        {
+          "name": "CE_AI_Launcher",
+          "usedBy": 0,
+          "score": 0
+        },
+        {
+          "name": "CE_AI_SMOKE",
+          "usedBy": 0,
+          "score": 0
+        }
+      ],
+      "reason": "the class tag is never chosen for you; answering it also sharpens the estimates of the numbers below"
+    },
+    {
+      "field": "/ce/oneHanded",
+      "label": "Is the weapon held in one hand?",
+      "kind": "flag",
+      "required": false,
+      "status": "ask",
+      "candidates": [],
+      "reason": "a flag of the block; it is false until you set it"
+    },
+    {
+      "field": "/ce/beltFed",
+      "label": "Is the weapon belt fed?",
+      "kind": "flag",
+      "required": false,
+      "status": "ask",
+      "candidates": [],
+      "reason": "a flag of the block; it is false until you set it"
+    }
+  ],
+  "patchNumbers": [
+    {
+      "field": "cooldown",
+      "label": "Cooldown in the patch",
+      "required": false,
+      "status": "derived",
+      "value": 0.74,
+      "source": {
+        "kind": "predicted",
+        "predictor": "median",
+        "n": 4
+      },
+      "band": {
+        "p50": {
+          "low": 0.6780799509092367,
+          "high": 0.807574385978709
+        },
+        "p80": {
+          "low": 0.4912260534015264,
+          "high": 1.114761719595507
+        }
+      },
+      "rating": "reliable",
+      "error": 0.08574263038548754
+    }
+  ],
+  "asks": {
+    "items": [
+      {
+        "field": "/ce/ammoSet",
+        "label": "Which caliber (ammo set) does the weapon use?",
+        "kind": "choice",
+        "options": [
+          "AmmoSet_303British",
+          "AmmoSet_45ACP",
+          "AmmoSet_12Gauge",
+          "AmmoSet_6x24mmCharged",
+          "AmmoSet_762x51mmNATO",
+          "AmmoSet_44Magnum",
+          "AmmoSet_556x45mmNATO",
+          "AmmoSet_556x45mmNATO_SB",
+          "AmmoSet_BeamRepeater",
+          "AmmoSet_Arrow",
+          "AmmoSet_Flare",
+          "AmmoSet_GreatArrow"
+        ],
+        "reason": "the caliber is never chosen for you: pick one of the candidates, best fit first"
+      },
+      {
+        "field": "/ce/weaponTagClass",
+        "label": "Which weapon class tag does the weapon get?",
+        "kind": "choice",
+        "options": [
+          "CE_AI_BROOM",
+          "CE_AI_SR",
+          "CE_AI_AR",
+          "CE_AI_LMG",
+          "CE_AI_Rifle",
+          "CE_AI_Suppressive",
+          "CE_AI_AOE",
+          "CE_AI_EMP",
+          "CE_AI_Grenade",
+          "CE_AI_Launcher",
+          "CE_AI_SMOKE"
+        ],
+        "reason": "the class tag is never chosen for you; answering it also sharpens the estimates of the numbers below"
+      },
+      {
+        "field": "/ce/oneHanded",
+        "label": "Is the weapon held in one hand?",
+        "kind": "flag",
+        "options": [],
+        "reason": "a flag of the block; it is false until you set it"
+      },
+      {
+        "field": "/ce/beltFed",
+        "label": "Is the weapon belt fed?",
+        "kind": "flag",
+        "options": [],
+        "reason": "a flag of the block; it is false until you set it"
+      },
+      {
+        "field": "/ce/bulk",
+        "label": "CE bulk",
+        "kind": "number",
+        "options": [],
+        "reason": "the estimate 6.395 is not written: it is rated unreliable: the typical error was about 46 percent when each of 20 converted weapons was predicted from the others",
+        "suggestion": 6.395
+      },
+      {
+        "field": "/ce/shotSpread",
+        "label": "CE shot spread",
+        "kind": "number",
+        "options": [],
+        "reason": "the estimate 0.15 is not written: it is rated unreliable: the typical error was about 30 percent when each of 19 converted weapons was predicted from the others",
+        "suggestion": 0.15
+      },
+      {
+        "field": "/ce/magazineSize",
+        "label": "CE magazine size",
+        "kind": "number",
+        "options": [],
+        "reason": "the estimate 7 is not written: it is rated unreliable: the typical error was about 62 percent when each of 16 converted weapons was predicted from the others",
+        "suggestion": 7
+      }
+    ]
+  },
+  "missing": [
+    "/ce/bulk",
+    "/ce/swayFactor",
+    "/ce/shotSpread",
+    "/ce/magazineSize",
+    "/ce/reloadTime",
+    "/ce/ammoSet",
+    "/ce/defaultProjectile",
+    "/ce/weaponTagClass"
+  ],
+  "stillMissingAfterAccept": [
+    "/ce/bulk",
+    "/ce/shotSpread",
+    "/ce/magazineSize",
+    "/ce/ammoSet",
+    "/ce/defaultProjectile",
+    "/ce/weaponTagClass"
+  ],
+  "notes": []
+}
