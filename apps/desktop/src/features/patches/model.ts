@@ -8,7 +8,9 @@ import type {
   DiagnosticDto,
   SeverityDto,
 } from 'rimstudio-ipc-types';
+import type { CeBlockPatch } from '~/shared/ce';
 import type { MessageKey } from '~/shared/i18n';
+import { blockMembers, isNestedPointer, overridesOf } from './blockAnswers';
 
 // Display helpers and the request builders of the page. The numbers, the questions and the plan come from
 // the backend; nothing here decides what a conversion contains.
@@ -65,6 +67,12 @@ export interface AnswerSet {
   beltFed?: boolean;
   /** Numeric answers by ask field pointer, for example `/ce/shotSpread`. */
   numbers: Record<string, number>;
+  /** Text and flag answers of nested asks by pointer, for example `/ce/underBarrel/ammoSet`. */
+  values?: Record<string, string | boolean>;
+  /** The optional members of the block (bows, platforms, tool list, extras) set in the options tab. */
+  block?: CeBlockPatch;
+  /** Leave the under barrel unit of the weapon out of the conversion. */
+  skipUnderBarrel?: boolean;
 }
 
 /** An empty set. */
@@ -80,7 +88,10 @@ export function isEmptyAnswers(set: AnswerSet | undefined): boolean {
       set.weaponTagClass === undefined &&
       set.oneHanded === undefined &&
       set.beltFed === undefined &&
-      Object.keys(set.numbers).length === 0)
+      Object.keys(set.numbers).length === 0 &&
+      Object.keys(set.values ?? {}).length === 0 &&
+      Object.keys(blockMembers(set.block)).length === 0 &&
+      set.skipUnderBarrel !== true)
   );
 }
 
@@ -100,7 +111,7 @@ export function answerOf(
     case '/ce/beltFed':
       return set.beltFed;
     default:
-      return set.numbers[ask.field];
+      return set.numbers[ask.field] ?? set.values?.[ask.field];
   }
 }
 
@@ -129,10 +140,21 @@ export function withAnswer(
       else delete next.beltFed;
       break;
     default:
-      if (typeof value === 'number' && Number.isFinite(value)) next.numbers[ask.field] = value;
-      else delete next.numbers[ask.field];
+      if (typeof value === 'string' || typeof value === 'boolean') {
+        next.values = { ...(next.values ?? {}), [ask.field]: value };
+        delete next.numbers[ask.field];
+      } else {
+        if (next.values) next.values = withoutKey(next.values, ask.field);
+        if (typeof value === 'number' && Number.isFinite(value)) next.numbers[ask.field] = value;
+        else delete next.numbers[ask.field];
+      }
   }
   return next;
+}
+
+function withoutKey<T>(map: Record<string, T>, key: string): Record<string, T> {
+  const { [key]: _removed, ...rest } = map;
+  return rest;
 }
 
 type Sourced = { value: number; source: 'answered' };
@@ -157,7 +179,7 @@ function numberMembers(numbers: Record<string, number>) {
       const entry = tools.get(tool) ?? { tool };
       entry[side] = sourced(value);
       tools.set(tool, entry);
-    } else if (first !== '') {
+    } else if (first !== '' && !isNestedPointer(field)) {
       overrides[first] = sourced(value);
     }
   }
@@ -173,20 +195,31 @@ export function toAnswersDto(set: AnswerSet | undefined): ConvertAnswersDto {
     ...(set?.oneHanded !== undefined ? { oneHanded: set.oneHanded } : {}),
     ...(set?.beltFed !== undefined ? { beltFed: set.beltFed } : {}),
     ...(toolPenetration.length > 0 ? { toolPenetration } : {}),
-    overrides: { oneHanded: false, beltFed: false, ...overrides },
+    ...(set?.skipUnderBarrel === true ? { skipUnderBarrel: true } : {}),
+    overrides: {
+      oneHanded: false,
+      beltFed: false,
+      ...overrides,
+      ...overridesOf(set?.block, set?.numbers ?? {}, set?.values ?? {}),
+    },
   };
 }
 
 /** The answers of a family as the raw object of an answer group, holding only what was answered. */
 export function toGroupAnswers(set: AnswerSet): Record<string, unknown> {
   const { toolPenetration, overrides } = numberMembers(set.numbers);
+  const groupOverrides = {
+    ...overrides,
+    ...overridesOf(set.block, set.numbers, set.values ?? {}),
+  };
   return {
     ...(set.ammoSet !== undefined ? { ammoSet: set.ammoSet } : {}),
     ...(set.weaponTagClass !== undefined ? { weaponTagClass: set.weaponTagClass } : {}),
     ...(set.oneHanded !== undefined ? { oneHanded: set.oneHanded } : {}),
     ...(set.beltFed !== undefined ? { beltFed: set.beltFed } : {}),
     ...(toolPenetration.length > 0 ? { toolPenetration } : {}),
-    ...(Object.keys(overrides).length > 0 ? { overrides } : {}),
+    ...(set.skipUnderBarrel === true ? { skipUnderBarrel: true } : {}),
+    ...(Object.keys(groupOverrides).length > 0 ? { overrides: groupOverrides } : {}),
   };
 }
 

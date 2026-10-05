@@ -1,0 +1,1872 @@
+{
+  "available": true,
+  "total": 307,
+  "matching": 307,
+  "page": 0,
+  "pageSize": 200,
+  "entries": [
+    {
+      "defName": "AmmoSet_12Gauge",
+      "label": "12 Gauge",
+      "caliber": "12 gauge",
+      "family": "shotgun",
+      "similarTo": "AmmoSet_Shotgun",
+      "generic": false,
+      "similarSets": 0,
+      "types": [
+        {
+          "ammoDef": "Ammo_12Gauge_Buck",
+          "ammoLabel": "12 gauge shell (Buck)",
+          "ammoClass": "BuckShot",
+          "ammoClassLabel": "buck",
+          "projectileDef": "Bullet_12Gauge_Buck",
+          "damageDef": "Bullet",
+          "damage": 8,
+          "armorPenetrationSharp": 4,
+          "armorPenetrationBlunt": 4.52,
+          "speed": 83,
+          "pellets": 9,
+          "secondaryDamage": []
+        },
+        {
+          "ammoDef": "Ammo_12Gauge_Slug",
+          "ammoLabel": "12 gauge shell (Slug)",
+          "ammoClass": "Slug",
+          "ammoClassLabel": "slug",
+          "projectileDef": "Bullet_12Gauge_Slug",
+          "damageDef": "Bullet",
+          "damage": 28,
+          "armorPenetrationSharp": 6,
+          "armorPenetrationBlunt": 85.2,
+          "speed": 114,
+          "secondaryDamage": []
+        },
+        {
+          "ammoDef": "Ammo_12Gauge_Beanbag",
+          "ammoLabel": "12 gauge shell (Bean)",
+          "ammoClass": "Beanbag",
+          "ammoClassLabel": "bean",
+          "projectileDef": "Bullet_12Gauge_Beanbag",
+          "damageDef": "Beanbag",
+          "damage": 9,
+          "armorPenetrationSharp": 0,
+          "armorPenetrationBlunt": 3.24,
+          "speed": 30,
+          "secondaryDamage": []
+        },
+        {
+          "ammoDef": "Ammo_12Gauge_ElectroSlug",
+          "ammoLabel": "12 gauge shell (EMP)",
+          "ammoClass": "ElectroSlug",
+          "ammoClassLabel": "EMP",
+          "projectileDef": "Bullet_12Gauge_ElectroSlug",
+          "damageDef": "EMP",
+          "damage": 12,
+          "armorPenetrationSharp": 0,
+          "armorPenetrationBlunt": 0,
+          "speed": 43,
+          "secondaryDamage": []
+        }
+      ],
+      "weaponCount": 3,
+      "exampleWeapons": [
+        "chain shotgun",
+        "pump shotgun",
+        "unique chain shotgun"
+      ],
+      "suggested": false
+    },
+    {
+      "defName": "AmmoSet_12x64mmCharged",
+      "label": "12x64mm Charged",
+      "caliber": "12x64mm Charged",
+      "family": "advanced",
+      "similarTo": "AmmoSet_MechCharged",
+      "generic": false,
+      "similarSets": 0,
+      "types": [
+        {
+          "ammoDef": "Ammo_12x64mmCharged",
+          "ammoLabel": "12x64mm Charged",
+          "ammoClass": "Charged",
+          "ammoClassLabel": "charge",
+          "projectileDef": "Bullet_12x64mmCharged",
+          "damageDef": "Bullet",
+          "damage": 39,
+          "armorPenetrationSharp": 30,
+          "armorPenetrationBlunt": 324,
+          "speed": 165,
+          "secondaryDamage": [
+            {
+              "def": "Bomb_Secondary",
+              "amount": 12
+            }
+          ]
+        }
+      ],
+      "weaponCount": 2,
+      "exampleWeapons": [
+        "heavy charge blaster",
+        "light charge blaster"
+      ],
+      "suggested": false
+    },
+    {
+      "defName": "AmmoSet_145x114mm",
+      "label": "14.5x114mm",
+      "caliber": "14.5x114mm",
+      "family": "high caliber",
+      "similarTo": "AmmoSet_AntiMateriel",
+      "generic": false,
+      "similarSets": 0,
+      "types": [
+        {
+          "ammoDef": "Ammo_145x114mm_FMJ",
+          "ammoLabel": "14.5x114mm (FMJ)",
+          "ammoClass": "FullMetalJacket",
+          "ammoClassLabel": "FMJ",
+          "projectileDef": "Bullet_145x114mm_FMJ",
+          "damageDef": "Bullet",
+          "damage": 53,
+          "armorPenetrationSharp": 18,
+          "armorPenetrationBlunt": 634,
+          "speed": 178,
+          "secondaryDamage": []
+        },
+        {
+          "ammoDef": "Ammo_145x114mm_AP",
+          "ammoLabel": "14.5x114mm (AP)",
+          "ammoClass": "ArmorPiercing",
+          "ammoClassLabel": "AP",
+          "projectileDef": "Bullet_145x114mm_AP",
+          "damageDef": "Bullet",
+          "damage": 33,
+          "armorPenetrationSharp": 36,
+          "armorPenetrationBlunt": 634,
+          "speed": 178,
+          "secondaryDamage": []
+        },
+        {
+          "ammoDef": "Ammo_145x114mm_Incendiary",
+          "ammoLabel": "14.5x114mm (AP-I)",
+          "ammoClass": "IncendiaryAP",
+          "ammoClassLabel": "AP-I",
+          "projectileDef": "Bullet_145x114mm_Incendiary",
+          "damageDef": "Bullet",
+          "damage": 33,
+          "armorPenetrationSharp": 36,
+          "armorPenetrationBlunt": 634,
+          "speed": 178,
+          "secondaryDamage": [
+            {
+              "def": "Flame_Secondary",
+              "amount": 17
+            }
+          ]
+        },
+        {
+          "ammoDef": "Ammo_145x114mm_HE",
+          "ammoLabel": "14.5x114mm (AP-HE)",
+          "ammoClass": "ExplosiveAP",
+          "ammoClassLabel": "AP-HE",
+          "projectileDef": "Bullet_145x114mm_HE",
+          "damageDef": "Bullet",
+          "damage": 53,
+          "armorPenetrationSharp": 18,
+          "armorPenetrationBlunt": 634,
+          "speed": 178,
+          "secondaryDamage": [
+            {
+              "def": "Bomb_Secondary",
+              "amount": 24
+            }
+          ]
+        },
+        {
+          "ammoDef": "Ammo_145x114mm_Sabot",
+          "ammoLabel": "14.5x114mm (Sabot)",
+          "ammoClass": "Sabot",
+          "ammoClassLabel": "Sabot",
+          "projectileDef": "Bullet_145x114mm_Sabot",
+          "damageDef": "Bullet",
+          "damage": 27,
+          "armorPenetrationSharp": 63,
+          "armorPenetrationBlunt": 820.36,
+          "speed": 242,
+          "secondaryDamage": []
+        }
+      ],
+      "weaponCount": 2,
+      "exampleWeapons": [
+        "KPV machine gun",
+        "heavy turret gun"
+      ],
+      "suggested": false
+    },
+    {
+      "defName": "AmmoSet_164x284mmDemo",
+      "label": "164x284mm Demolition Shell",
+      "caliber": "164x284mm Demolition Shell",
+      "family": "advanced",
+      "similarTo": "AmmoSet_MechShell_Demo",
+      "generic": false,
+      "similarSets": 0,
+      "types": [
+        {
+          "ammoDef": "Ammo_164x284mmDemo",
+          "ammoLabel": "164x284mm demolition shell",
+          "ammoClass": "Demolition",
+          "ammoClassLabel": "demolition",
+          "projectileDef": "Bullet_164x284mmDemo",
+          "damageDef": "Thump",
+          "damage": 40,
+          "armorPenetrationSharp": 0,
+          "armorPenetrationBlunt": 0,
+          "speed": 61,
+          "explosionRadius": 3.9,
+          "secondaryDamage": []
+        }
+      ],
+      "weaponCount": 1,
+      "exampleWeapons": [
+        "thump cannon"
+      ],
+      "suggested": false
+    },
+    {
+      "defName": "AmmoSet_17HMR",
+      "label": ".17 HMR",
+      "caliber": ".17 HMR",
+      "family": "rifle",
+      "similarTo": "AmmoSet_Rifle",
+      "generic": false,
+      "similarSets": 0,
+      "types": [
+        {
+          "ammoDef": "Ammo_17HMR_FMJ",
+          "ammoLabel": ".17 HMR (FMJ)",
+          "ammoClass": "FullMetalJacket",
+          "ammoClassLabel": "FMJ",
+          "projectileDef": "Bullet_17HMR_FMJ",
+          "damageDef": "Bullet",
+          "damage": 7,
+          "armorPenetrationSharp": 3,
+          "armorPenetrationBlunt": 6.44,
+          "speed": 146,
+          "secondaryDamage": []
+        },
+        {
+          "ammoDef": "Ammo_17HMR_AP",
+          "ammoLabel": ".17 HMR (AP)",
+          "ammoClass": "ArmorPiercing",
+          "ammoClassLabel": "AP",
+          "projectileDef": "Bullet_17HMR_AP",
+          "damageDef": "Bullet",
+          "damage": 4,
+          "armorPenetrationSharp": 6,
+          "armorPenetrationBlunt": 6.44,
+          "speed": 146,
+          "secondaryDamage": []
+        },
+        {
+          "ammoDef": "Ammo_17HMR_HP",
+          "ammoLabel": ".17 HMR (HP)",
+          "ammoClass": "HollowPoint",
+          "ammoClassLabel": "HP",
+          "projectileDef": "Bullet_17HMR_HP",
+          "damageDef": "Bullet",
+          "damage": 9,
+          "armorPenetrationSharp": 2,
+          "armorPenetrationBlunt": 6.44,
+          "speed": 146,
+          "secondaryDamage": []
+        }
+      ],
+      "weaponCount": 0,
+      "exampleWeapons": [],
+      "suggested": false
+    },
+    {
+      "defName": "AmmoSet_22Hornet",
+      "label": ".22 Hornet",
+      "caliber": ".22 Hornet",
+      "family": "rifle",
+      "similarTo": "AmmoSet_Rifle",
+      "generic": false,
+      "similarSets": 0,
+      "types": [
+        {
+          "ammoDef": "Ammo_22Hornet_FMJ",
+          "ammoLabel": ".22 Hornet (FMJ)",
+          "ammoClass": "FullMetalJacket",
+          "ammoClassLabel": "FMJ",
+          "projectileDef": "Bullet_22Hornet_FMJ",
+          "damageDef": "Bullet",
+          "damage": 12,
+          "armorPenetrationSharp": 3.5,
+          "armorPenetrationBlunt": 20.09,
+          "speed": 158,
+          "secondaryDamage": []
+        },
+        {
+          "ammoDef": "Ammo_22Hornet_AP",
+          "ammoLabel": ".22 Hornet (AP)",
+          "ammoClass": "ArmorPiercing",
+          "ammoClassLabel": "AP",
+          "projectileDef": "Bullet_22Hornet_AP",
+          "damageDef": "Bullet",
+          "damage": 7,
+          "armorPenetrationSharp": 7,
+          "armorPenetrationBlunt": 20.09,
+          "speed": 158,
+          "secondaryDamage": []
+        },
+        {
+          "ammoDef": "Ammo_22Hornet_HP",
+          "ammoLabel": ".22 Hornet (HP)",
+          "ammoClass": "HollowPoint",
+          "ammoClassLabel": "HP",
+          "projectileDef": "Bullet_22Hornet_HP",
+          "damageDef": "Bullet",
+          "damage": 15,
+          "armorPenetrationSharp": 2,
+          "armorPenetrationBlunt": 20.09,
+          "speed": 158,
+          "secondaryDamage": []
+        }
+      ],
+      "weaponCount": 0,
+      "exampleWeapons": [],
+      "suggested": false
+    },
+    {
+      "defName": "AmmoSet_22LR",
+      "label": ".22 LR",
+      "caliber": ".22 LR",
+      "family": "pistol",
+      "similarTo": "AmmoSet_Pistol",
+      "generic": false,
+      "similarSets": 0,
+      "types": [
+        {
+          "ammoDef": "Ammo_22LR_FMJ",
+          "ammoLabel": ".22 LR (FMJ)",
+          "ammoClass": "FullMetalJacket",
+          "ammoClassLabel": "FMJ",
+          "projectileDef": "Bullet_22LR_FMJ",
+          "damageDef": "Bullet",
+          "damage": 7,
+          "armorPenetrationSharp": 3,
+          "armorPenetrationBlunt": 4.06,
+          "speed": 97,
+          "secondaryDamage": []
+        },
+        {
+          "ammoDef": "Ammo_22LR_AP",
+          "ammoLabel": ".22 LR (AP)",
+          "ammoClass": "ArmorPiercing",
+          "ammoClassLabel": "AP",
+          "projectileDef": "Bullet_22LR_AP",
+          "damageDef": "Bullet",
+          "damage": 4,
+          "armorPenetrationSharp": 6,
+          "armorPenetrationBlunt": 4.06,
+          "speed": 97,
+          "secondaryDamage": []
+        },
+        {
+          "ammoDef": "Ammo_22LR_HP",
+          "ammoLabel": ".22 LR (HP)",
+          "ammoClass": "HollowPoint",
+          "ammoClassLabel": "HP",
+          "projectileDef": "Bullet_22LR_HP",
+          "damageDef": "Bullet",
+          "damage": 8,
+          "armorPenetrationSharp": 2,
+          "armorPenetrationBlunt": 4.06,
+          "speed": 97,
+          "secondaryDamage": []
+        }
+      ],
+      "weaponCount": 0,
+      "exampleWeapons": [],
+      "suggested": false
+    },
+    {
+      "defName": "AmmoSet_22Short",
+      "label": ".22 Short",
+      "caliber": ".22 Short",
+      "family": "pistol",
+      "similarTo": "AmmoSet_Pistol",
+      "generic": false,
+      "similarSets": 0,
+      "types": [
+        {
+          "ammoDef": "Ammo_22Short_FMJ",
+          "ammoLabel": ".22 Short (FMJ)",
+          "ammoClass": "FullMetalJacket",
+          "ammoClassLabel": "FMJ",
+          "projectileDef": "Bullet_22Short_FMJ",
+          "damageDef": "Bullet",
+          "damage": 4,
+          "armorPenetrationSharp": 1,
+          "armorPenetrationBlunt": 1.18,
+          "speed": 63,
+          "secondaryDamage": []
+        },
+        {
+          "ammoDef": "Ammo_22Short_AP",
+          "ammoLabel": ".22 Short (AP)",
+          "ammoClass": "ArmorPiercing",
+          "ammoClassLabel": "AP",
+          "projectileDef": "Bullet_22Short_AP",
+          "damageDef": "Bullet",
+          "damage": 3,
+          "armorPenetrationSharp": 2,
+          "armorPenetrationBlunt": 1.18,
+          "speed": 63,
+          "secondaryDamage": []
+        },
+        {
+          "ammoDef": "Ammo_22Short_HP",
+          "ammoLabel": ".22 Short (HP)",
+          "ammoClass": "HollowPoint",
+          "ammoClassLabel": "HP",
+          "projectileDef": "Bullet_22Short_HP",
+          "damageDef": "Bullet",
+          "damage": 5,
+          "armorPenetrationSharp": 1,
+          "armorPenetrationBlunt": 1.18,
+          "speed": 63,
+          "secondaryDamage": []
+        }
+      ],
+      "weaponCount": 0,
+      "exampleWeapons": [],
+      "suggested": false
+    },
+    {
+      "defName": "AmmoSet_22WMR",
+      "label": ".22 WMR",
+      "caliber": ".22 WMR",
+      "family": "rifle",
+      "similarTo": "AmmoSet_Rifle",
+      "generic": false,
+      "similarSets": 0,
+      "types": [
+        {
+          "ammoDef": "Ammo_22WMR_FMJ",
+          "ammoLabel": ".22 WMR (FMJ)",
+          "ammoClass": "FullMetalJacket",
+          "ammoClassLabel": "FMJ",
+          "projectileDef": "Bullet_22WMR_FMJ",
+          "damageDef": "Bullet",
+          "damage": 9,
+          "armorPenetrationSharp": 3.5,
+          "armorPenetrationBlunt": 8.5,
+          "speed": 117,
+          "secondaryDamage": []
+        },
+        {
+          "ammoDef": "Ammo_22WMR_AP",
+          "ammoLabel": ".22 WMR (AP)",
+          "ammoClass": "ArmorPiercing",
+          "ammoClassLabel": "AP",
+          "projectileDef": "Bullet_22WMR_AP",
+          "damageDef": "Bullet",
+          "damage": 5,
+          "armorPenetrationSharp": 7,
+          "armorPenetrationBlunt": 8.5,
+          "speed": 117,
+          "secondaryDamage": []
+        },
+        {
+          "ammoDef": "Ammo_22WMR_HP",
+          "ammoLabel": ".22 WMR (HP)",
+          "ammoClass": "HollowPoint",
+          "ammoClassLabel": "HP",
+          "projectileDef": "Bullet_22WMR_HP",
+          "damageDef": "Bullet",
+          "damage": 11,
+          "armorPenetrationSharp": 2,
+          "armorPenetrationBlunt": 8.5,
+          "speed": 117,
+          "secondaryDamage": []
+        }
+      ],
+      "weaponCount": 0,
+      "exampleWeapons": [],
+      "suggested": false
+    },
+    {
+      "defName": "AmmoSet_243Winchester",
+      "label": ".243 Winchester",
+      "caliber": ".243 Winchester",
+      "family": "rifle",
+      "similarTo": "AmmoSet_Rifle",
+      "generic": false,
+      "similarSets": 0,
+      "types": [
+        {
+          "ammoDef": "Ammo_243Winchester_FMJ",
+          "ammoLabel": ".243 Winchester (FMJ)",
+          "ammoClass": "FullMetalJacket",
+          "ammoClassLabel": "FMJ",
+          "projectileDef": "Bullet_243Winchester_FMJ",
+          "damageDef": "Bullet",
+          "damage": 16,
+          "armorPenetrationSharp": 6.5,
+          "armorPenetrationBlunt": 50.7,
+          "speed": 199,
+          "secondaryDamage": []
+        },
+        {
+          "ammoDef": "Ammo_243Winchester_AP",
+          "ammoLabel": ".243 Winchester (AP)",
+          "ammoClass": "ArmorPiercing",
+          "ammoClassLabel": "AP",
+          "projectileDef": "Bullet_243Winchester_AP",
+          "damageDef": "Bullet",
+          "damage": 10,
+          "armorPenetrationSharp": 13,
+          "armorPenetrationBlunt": 50.7,
+          "speed": 199,
+          "secondaryDamage": []
+        },
+        {
+          "ammoDef": "Ammo_243Winchester_HP",
+          "ammoLabel": ".243 Winchester (HP)",
+          "ammoClass": "HollowPoint",
+          "ammoClassLabel": "HP",
+          "projectileDef": "Bullet_243Winchester_HP",
+          "damageDef": "Bullet",
+          "damage": 22,
+          "armorPenetrationSharp": 3,
+          "armorPenetrationBlunt": 50.7,
+          "speed": 199,
+          "secondaryDamage": []
+        },
+        {
+          "ammoDef": "Ammo_243Winchester_Incendiary",
+          "ammoLabel": ".243 Winchester (AP-I)",
+          "ammoClass": "IncendiaryAP",
+          "ammoClassLabel": "AP-I",
+          "projectileDef": "Bullet_243Winchester_Incendiary",
+          "damageDef": "Bullet",
+          "damage": 11,
+          "armorPenetrationSharp": 13,
+          "armorPenetrationBlunt": 50.7,
+          "speed": 199,
+          "secondaryDamage": [
+            {
+              "def": "Flame_Secondary",
+              "amount": 4
+            }
+          ]
+        },
+        {
+          "ammoDef": "Ammo_243Winchester_HE",
+          "ammoLabel": ".243 Winchester (AP-HE)",
+          "ammoClass": "ExplosiveAP",
+          "ammoClassLabel": "AP-HE",
+          "projectileDef": "Bullet_243Winchester_HE",
+          "damageDef": "Bullet",
+          "damage": 16,
+          "armorPenetrationSharp": 6.5,
+          "armorPenetrationBlunt": 50.7,
+          "speed": 199,
+          "secondaryDamage": [
+            {
+              "def": "Bomb_Secondary",
+              "amount": 6
+            }
+          ]
+        },
+        {
+          "ammoDef": "Ammo_243Winchester_Sabot",
+          "ammoLabel": ".243 Winchester (Sabot)",
+          "ammoClass": "Sabot",
+          "ammoClassLabel": "Sabot",
+          "projectileDef": "Bullet_243Winchester_Sabot",
+          "damageDef": "Bullet",
+          "damage": 9,
+          "armorPenetrationSharp": 23,
+          "armorPenetrationBlunt": 65.12,
+          "speed": 225,
+          "secondaryDamage": []
+        }
+      ],
+      "weaponCount": 0,
+      "exampleWeapons": [],
+      "suggested": false
+    },
+    {
+      "defName": "AmmoSet_277Fury",
+      "label": ".277 Fury",
+      "caliber": ".277 Fury",
+      "family": "rifle",
+      "similarTo": "AmmoSet_Rifle",
+      "generic": false,
+      "similarSets": 0,
+      "types": [
+        {
+          "ammoDef": "Ammo_277Fury_FMJ",
+          "ammoLabel": ".277 Fury (FMJ)",
+          "ammoClass": "FullMetalJacket",
+          "ammoClassLabel": "FMJ",
+          "projectileDef": "Bullet_277Fury_FMJ",
+          "damageDef": "Bullet",
+          "damage": 19,
+          "armorPenetrationSharp": 7.5,
+          "armorPenetrationBlunt": 73.1,
+          "speed": 167,
+          "secondaryDamage": []
+        },
+        {
+          "ammoDef": "Ammo_277Fury_AP",
+          "ammoLabel": ".277 Fury (AP)",
+          "ammoClass": "ArmorPiercing",
+          "ammoClassLabel": "AP",
+          "projectileDef": "Bullet_277Fury_AP",
+          "damageDef": "Bullet",
+          "damage": 12,
+          "armorPenetrationSharp": 15,
+          "armorPenetrationBlunt": 73.1,
+          "speed": 167,
+          "secondaryDamage": []
+        },
+        {
+          "ammoDef": "Ammo_277Fury_HP",
+          "ammoLabel": ".277 Fury (HP)",
+          "ammoClass": "HollowPoint",
+          "ammoClassLabel": "HP",
+          "projectileDef": "Bullet_277Fury_HP",
+          "damageDef": "Bullet",
+          "damage": 25,
+          "armorPenetrationSharp": 4,
+          "armorPenetrationBlunt": 73.1,
+          "speed": 167,
+          "secondaryDamage": []
+        },
+        {
+          "ammoDef": "Ammo_277Fury_Incendiary",
+          "ammoLabel": ".277 Fury (AP-I)",
+          "ammoClass": "IncendiaryAP",
+          "ammoClassLabel": "AP-I",
+          "projectileDef": "Bullet_277Fury_Incendiary",
+          "damageDef": "Bullet",
+          "damage": 12,
+          "armorPenetrationSharp": 15,
+          "armorPenetrationBlunt": 73.1,
+          "speed": 167,
+          "secondaryDamage": [
+            {
+              "def": "Flame_Secondary",
+              "amount": 5
+            }
+          ]
+        },
+        {
+          "ammoDef": "Ammo_277Fury_HE",
+          "ammoLabel": ".277 Fury (AP-HE)",
+          "ammoClass": "ExplosiveAP",
+          "ammoClassLabel": "AP-HE",
+          "projectileDef": "Bullet_277Fury_HE",
+          "damageDef": "Bullet",
+          "damage": 19,
+          "armorPenetrationSharp": 7.5,
+          "armorPenetrationBlunt": 73.1,
+          "speed": 167,
+          "secondaryDamage": [
+            {
+              "def": "Bomb_Secondary",
+              "amount": 7
+            }
+          ]
+        },
+        {
+          "ammoDef": "Ammo_277Fury_Sabot",
+          "ammoLabel": ".277 Fury (Sabot)",
+          "ammoClass": "Sabot",
+          "ammoClassLabel": "Sabot",
+          "projectileDef": "Bullet_277Fury_Sabot",
+          "damageDef": "Bullet",
+          "damage": 10,
+          "armorPenetrationSharp": 26.25,
+          "armorPenetrationBlunt": 93.98,
+          "speed": 226,
+          "secondaryDamage": []
+        }
+      ],
+      "weaponCount": 0,
+      "exampleWeapons": [],
+      "suggested": false
+    },
+    {
+      "defName": "AmmoSet_280British",
+      "label": ".280 British",
+      "caliber": ".280 British",
+      "family": "rifle",
+      "similarTo": "AmmoSet_Rifle",
+      "generic": false,
+      "similarSets": 0,
+      "types": [
+        {
+          "ammoDef": "Ammo_280British_FMJ",
+          "ammoLabel": ".280 British (FMJ)",
+          "ammoClass": "FullMetalJacket",
+          "ammoClassLabel": "FMJ",
+          "projectileDef": "Bullet_280British_FMJ",
+          "damageDef": "Bullet",
+          "damage": 18,
+          "armorPenetrationSharp": 6,
+          "armorPenetrationBlunt": 54.76,
+          "speed": 148,
+          "secondaryDamage": []
+        },
+        {
+          "ammoDef": "Ammo_280British_AP",
+          "ammoLabel": ".280 British (AP)",
+          "ammoClass": "ArmorPiercing",
+          "ammoClassLabel": "AP",
+          "projectileDef": "Bullet_280British_AP",
+          "damageDef": "Bullet",
+          "damage": 11,
+          "armorPenetrationSharp": 12,
+          "armorPenetrationBlunt": 54.76,
+          "speed": 148,
+          "secondaryDamage": []
+        },
+        {
+          "ammoDef": "Ammo_280British_HP",
+          "ammoLabel": ".280 British (HP)",
+          "ammoClass": "HollowPoint",
+          "ammoClassLabel": "HP",
+          "projectileDef": "Bullet_280British_HP",
+          "damageDef": "Bullet",
+          "damage": 23,
+          "armorPenetrationSharp": 3,
+          "armorPenetrationBlunt": 54.76,
+          "speed": 148,
+          "secondaryDamage": []
+        },
+        {
+          "ammoDef": "Ammo_280British_Incendiary",
+          "ammoLabel": ".280 British (AP-I)",
+          "ammoClass": "IncendiaryAP",
+          "ammoClassLabel": "AP-I",
+          "projectileDef": "Bullet_280British_Incendiary",
+          "damageDef": "Bullet",
+          "damage": 11,
+          "armorPenetrationSharp": 12,
+          "armorPenetrationBlunt": 54.76,
+          "speed": 148,
+          "secondaryDamage": [
+            {
+              "def": "Flame_Secondary",
+              "amount": 5
+            }
+          ]
+        },
+        {
+          "ammoDef": "Ammo_280British_HE",
+          "ammoLabel": ".280 British (AP-HE)",
+          "ammoClass": "ExplosiveAP",
+          "ammoClassLabel": "AP-HE",
+          "projectileDef": "Bullet_280British_HE",
+          "damageDef": "Bullet",
+          "damage": 18,
+          "armorPenetrationSharp": 6,
+          "armorPenetrationBlunt": 54.76,
+          "speed": 148,
+          "secondaryDamage": [
+            {
+              "def": "Bomb_Secondary",
+              "amount": 7
+            }
+          ]
+        },
+        {
+          "ammoDef": "Ammo_280British_Sabot",
+          "ammoLabel": ".280 British (Sabot)",
+          "ammoClass": "Sabot",
+          "ammoClassLabel": "Sabot",
+          "projectileDef": "Bullet_280British_Sabot",
+          "damageDef": "Bullet",
+          "damage": 9,
+          "armorPenetrationSharp": 21,
+          "armorPenetrationBlunt": 70.3,
+          "speed": 200,
+          "secondaryDamage": []
+        }
+      ],
+      "weaponCount": 0,
+      "exampleWeapons": [],
+      "suggested": false
+    },
+    {
+      "defName": "AmmoSet_303British",
+      "label": ".303 British",
+      "caliber": ".303 British",
+      "family": "rifle",
+      "similarTo": "AmmoSet_Rifle",
+      "generic": false,
+      "similarSets": 0,
+      "types": [
+        {
+          "ammoDef": "Ammo_303British_FMJ",
+          "ammoLabel": ".303 British (FMJ)",
+          "ammoClass": "FullMetalJacket",
+          "ammoClassLabel": "FMJ",
+          "projectileDef": "Bullet_303British_FMJ",
+          "damageDef": "Bullet",
+          "damage": 20,
+          "armorPenetrationSharp": 6.5,
+          "armorPenetrationBlunt": 67,
+          "speed": 147,
+          "secondaryDamage": []
+        },
+        {
+          "ammoDef": "Ammo_303British_AP",
+          "ammoLabel": ".303 British (AP)",
+          "ammoClass": "ArmorPiercing",
+          "ammoClassLabel": "AP",
+          "projectileDef": "Bullet_303British_AP",
+          "damageDef": "Bullet",
+          "damage": 12,
+          "armorPenetrationSharp": 13,
+          "armorPenetrationBlunt": 67,
+          "speed": 147,
+          "secondaryDamage": []
+        },
+        {
+          "ammoDef": "Ammo_303British_HP",
+          "ammoLabel": ".303 British (HP)",
+          "ammoClass": "HollowPoint",
+          "ammoClassLabel": "HP",
+          "projectileDef": "Bullet_303British_HP",
+          "damageDef": "Bullet",
+          "damage": 25,
+          "armorPenetrationSharp": 3.5,
+          "armorPenetrationBlunt": 67,
+          "speed": 147,
+          "secondaryDamage": []
+        },
+        {
+          "ammoDef": "Ammo_303British_Incendiary",
+          "ammoLabel": ".303 British (AP-I)",
+          "ammoClass": "IncendiaryAP",
+          "ammoClassLabel": "AP-I",
+          "projectileDef": "Bullet_303British_Incendiary",
+          "damageDef": "Bullet",
+          "damage": 12,
+          "armorPenetrationSharp": 13,
+          "armorPenetrationBlunt": 67,
+          "speed": 147,
+          "secondaryDamage": [
+            {
+              "def": "Flame_Secondary",
+              "amount": 6
+            }
+          ]
+        },
+        {
+          "ammoDef": "Ammo_303British_HE",
+          "ammoLabel": ".303 British (AP-HE)",
+          "ammoClass": "ExplosiveAP",
+          "ammoClassLabel": "AP-HE",
+          "projectileDef": "Bullet_303British_HE",
+          "damageDef": "Bullet",
+          "damage": 20,
+          "armorPenetrationSharp": 6.5,
+          "armorPenetrationBlunt": 67,
+          "speed": 147,
+          "secondaryDamage": [
+            {
+              "def": "Bomb_Secondary",
+              "amount": 8
+            }
+          ]
+        },
+        {
+          "ammoDef": "Ammo_303British_Sabot",
+          "ammoLabel": ".303 British (Sabot)",
+          "ammoClass": "Sabot",
+          "ammoClassLabel": "Sabot",
+          "projectileDef": "Bullet_303British_Sabot",
+          "damageDef": "Bullet",
+          "damage": 10,
+          "armorPenetrationSharp": 23,
+          "armorPenetrationBlunt": 86.72,
+          "speed": 199,
+          "secondaryDamage": []
+        }
+      ],
+      "weaponCount": 4,
+      "exampleWeapons": [
+        "LMG",
+        "bolt-action rifle",
+        "unique LMG"
+      ],
+      "suggested": false
+    },
+    {
+      "defName": "AmmoSet_410Bore",
+      "label": ".410 bore",
+      "caliber": ".410 Bore",
+      "family": "shotgun",
+      "similarTo": "AmmoSet_Shotgun",
+      "generic": false,
+      "similarSets": 0,
+      "types": [
+        {
+          "ammoDef": "Ammo_410Bore_Buck",
+          "ammoLabel": ".410 Bore shell (Buck)",
+          "ammoClass": "BuckShot",
+          "ammoClassLabel": "buck",
+          "projectileDef": "Bullet_410Bore_Buck",
+          "damageDef": "Bullet",
+          "damage": 9,
+          "armorPenetrationSharp": 3,
+          "armorPenetrationBlunt": 6.3,
+          "speed": 85,
+          "pellets": 4,
+          "secondaryDamage": []
+        },
+        {
+          "ammoDef": "Ammo_410Bore_Slug",
+          "ammoLabel": ".410 Bore shell (Slug)",
+          "ammoClass": "Slug",
+          "ammoClassLabel": "slug",
+          "projectileDef": "Bullet_410Bore_Slug",
+          "damageDef": "Bullet",
+          "damage": 15,
+          "armorPenetrationSharp": 4.5,
+          "armorPenetrationBlunt": 21.36,
+          "speed": 114,
+          "secondaryDamage": []
+        },
+        {
+          "ammoDef": "Ammo_410Bore_Beanbag",
+          "ammoLabel": ".410 Bore shell (Bean)",
+          "ammoClass": "Beanbag",
+          "ammoClassLabel": "bean",
+          "projectileDef": "Bullet_410Bore_Beanbag",
+          "damageDef": "Beanbag",
+          "damage": 5,
+          "armorPenetrationSharp": 0,
+          "armorPenetrationBlunt": 0.86,
+          "speed": 30,
+          "secondaryDamage": []
+        },
+        {
+          "ammoDef": "Ammo_410Bore_ElectroSlug",
+          "ammoLabel": ".410 Bore shell (EMP)",
+          "ammoClass": "ElectroSlug",
+          "ammoClassLabel": "EMP",
+          "projectileDef": "Bullet_410Bore_ElectroSlug",
+          "damageDef": "EMP",
+          "damage": 7,
+          "armorPenetrationSharp": 0,
+          "armorPenetrationBlunt": 0,
+          "speed": 43,
+          "secondaryDamage": []
+        }
+      ],
+      "weaponCount": 1,
+      "exampleWeapons": [
+        "mini-shotgun"
+      ],
+      "suggested": false
+    },
+    {
+      "defName": "AmmoSet_410Bore_SB",
+      "label": ".410 bore",
+      "caliber": ".410 Bore",
+      "family": "shotgun",
+      "similarTo": "AmmoSet_RevolverShotgun",
+      "generic": false,
+      "similarSets": 0,
+      "types": [
+        {
+          "ammoDef": "Ammo_410Bore_Buck",
+          "ammoLabel": ".410 Bore shell (Buck)",
+          "ammoClass": "BuckShot",
+          "ammoClassLabel": "buck",
+          "projectileDef": "Bullet_410Bore_Buck_SB",
+          "damageDef": "Bullet",
+          "damage": 7,
+          "armorPenetrationSharp": 2.1,
+          "armorPenetrationBlunt": 3.16,
+          "speed": 66,
+          "pellets": 4,
+          "secondaryDamage": []
+        },
+        {
+          "ammoDef": "Ammo_410Bore_Slug",
+          "ammoLabel": ".410 Bore shell (Slug)",
+          "ammoClass": "Slug",
+          "ammoClassLabel": "slug",
+          "projectileDef": "Bullet_410Bore_Slug_SB",
+          "damageDef": "Bullet",
+          "damage": 11,
+          "armorPenetrationSharp": 3.2,
+          "armorPenetrationBlunt": 10.72,
+          "speed": 88,
+          "secondaryDamage": []
+        },
+        {
+          "ammoDef": "Ammo_410Bore_Beanbag",
+          "ammoLabel": ".410 Bore shell (Bean)",
+          "ammoClass": "Beanbag",
+          "ammoClassLabel": "bean",
+          "projectileDef": "Bullet_410Bore_Beanbag_SB",
+          "damageDef": "Beanbag",
+          "damage": 4,
+          "armorPenetrationSharp": 0,
+          "armorPenetrationBlunt": 0.44,
+          "speed": 23,
+          "secondaryDamage": []
+        },
+        {
+          "ammoDef": "Ammo_410Bore_ElectroSlug",
+          "ammoLabel": ".410 Bore shell (EMP)",
+          "ammoClass": "ElectroSlug",
+          "ammoClassLabel": "EMP",
+          "projectileDef": "Bullet_410Bore_ElectroSlug_SB",
+          "damageDef": "EMP",
+          "damage": 7,
+          "armorPenetrationSharp": 0,
+          "armorPenetrationBlunt": 0,
+          "speed": 33,
+          "secondaryDamage": []
+        }
+      ],
+      "weaponCount": 0,
+      "exampleWeapons": [],
+      "suggested": false
+    },
+    {
+      "defName": "AmmoSet_44Magnum",
+      "label": ".44 Magnum",
+      "caliber": ".44 Magnum",
+      "family": "pistol",
+      "similarTo": "AmmoSet_PistolMagnum",
+      "generic": false,
+      "similarSets": 0,
+      "types": [
+        {
+          "ammoDef": "Ammo_44Magnum_FMJ",
+          "ammoLabel": ".44 Magnum (FMJ)",
+          "ammoClass": "FullMetalJacket",
+          "ammoClassLabel": "FMJ",
+          "projectileDef": "Bullet_44Magnum_FMJ",
+          "damageDef": "Bullet",
+          "damage": 15,
+          "armorPenetrationSharp": 6,
+          "armorPenetrationBlunt": 23.28,
+          "speed": 88,
+          "secondaryDamage": []
+        },
+        {
+          "ammoDef": "Ammo_44Magnum_AP",
+          "ammoLabel": ".44 Magnum (AP)",
+          "ammoClass": "ArmorPiercing",
+          "ammoClassLabel": "AP",
+          "projectileDef": "Bullet_44Magnum_AP",
+          "damageDef": "Bullet",
+          "damage": 10,
+          "armorPenetrationSharp": 12,
+          "armorPenetrationBlunt": 23.28,
+          "speed": 88,
+          "secondaryDamage": []
+        },
+        {
+          "ammoDef": "Ammo_44Magnum_HP",
+          "ammoLabel": ".44 Magnum (HP)",
+          "ammoClass": "HollowPoint",
+          "ammoClassLabel": "HP",
+          "projectileDef": "Bullet_44Magnum_HP",
+          "damageDef": "Bullet",
+          "damage": 19,
+          "armorPenetrationSharp": 3,
+          "armorPenetrationBlunt": 23.28,
+          "speed": 88,
+          "secondaryDamage": []
+        }
+      ],
+      "weaponCount": 2,
+      "exampleWeapons": [
+        "revolver",
+        "unique revolver"
+      ],
+      "suggested": false
+    },
+    {
+      "defName": "AmmoSet_45ACP",
+      "label": ".45 ACP",
+      "caliber": ".45 ACP",
+      "family": "pistol",
+      "similarTo": "AmmoSet_Pistol",
+      "generic": false,
+      "similarSets": 0,
+      "types": [
+        {
+          "ammoDef": "Ammo_45ACP_FMJ",
+          "ammoLabel": ".45 ACP (FMJ)",
+          "ammoClass": "FullMetalJacket",
+          "ammoClassLabel": "FMJ",
+          "projectileDef": "Bullet_45ACP_FMJ",
+          "damageDef": "Bullet",
+          "damage": 12,
+          "armorPenetrationSharp": 3.5,
+          "armorPenetrationBlunt": 10.86,
+          "speed": 67,
+          "secondaryDamage": []
+        },
+        {
+          "ammoDef": "Ammo_45ACP_AP",
+          "ammoLabel": ".45 ACP (AP)",
+          "ammoClass": "ArmorPiercing",
+          "ammoClassLabel": "AP",
+          "projectileDef": "Bullet_45ACP_AP",
+          "damageDef": "Bullet",
+          "damage": 7,
+          "armorPenetrationSharp": 7,
+          "armorPenetrationBlunt": 10.86,
+          "speed": 67,
+          "secondaryDamage": []
+        },
+        {
+          "ammoDef": "Ammo_45ACP_HP",
+          "ammoLabel": ".45 ACP (HP)",
+          "ammoClass": "HollowPoint",
+          "ammoClassLabel": "HP",
+          "projectileDef": "Bullet_45ACP_HP",
+          "damageDef": "Bullet",
+          "damage": 15,
+          "armorPenetrationSharp": 2,
+          "armorPenetrationBlunt": 10.86,
+          "speed": 67,
+          "secondaryDamage": []
+        }
+      ],
+      "weaponCount": 4,
+      "exampleWeapons": [
+        "autopistol",
+        "heavy SMG",
+        "machine pistol"
+      ],
+      "suggested": false
+    },
+    {
+      "defName": "AmmoSet_45ACP410Bore_SB",
+      "label": ".45 ACP/.410 bore",
+      "caliber": ".45 ACP",
+      "family": "pistol",
+      "similarTo": "AmmoSet_RevolverShotgun",
+      "generic": false,
+      "similarSets": 0,
+      "types": [
+        {
+          "ammoDef": "Ammo_45ACP_FMJ",
+          "ammoLabel": ".45 ACP (FMJ)",
+          "ammoClass": "FullMetalJacket",
+          "ammoClassLabel": "FMJ",
+          "projectileDef": "Bullet_45ACP_FMJ",
+          "damageDef": "Bullet",
+          "damage": 12,
+          "armorPenetrationSharp": 3.5,
+          "armorPenetrationBlunt": 10.86,
+          "speed": 67,
+          "secondaryDamage": []
+        },
+        {
+          "ammoDef": "Ammo_45ACP_AP",
+          "ammoLabel": ".45 ACP (AP)",
+          "ammoClass": "ArmorPiercing",
+          "ammoClassLabel": "AP",
+          "projectileDef": "Bullet_45ACP_AP",
+          "damageDef": "Bullet",
+          "damage": 7,
+          "armorPenetrationSharp": 7,
+          "armorPenetrationBlunt": 10.86,
+          "speed": 67,
+          "secondaryDamage": []
+        },
+        {
+          "ammoDef": "Ammo_45ACP_HP",
+          "ammoLabel": ".45 ACP (HP)",
+          "ammoClass": "HollowPoint",
+          "ammoClassLabel": "HP",
+          "projectileDef": "Bullet_45ACP_HP",
+          "damageDef": "Bullet",
+          "damage": 15,
+          "armorPenetrationSharp": 2,
+          "armorPenetrationBlunt": 10.86,
+          "speed": 67,
+          "secondaryDamage": []
+        },
+        {
+          "ammoDef": "Ammo_410Bore_Buck",
+          "ammoLabel": ".410 Bore shell (Buck)",
+          "ammoClass": "BuckShot",
+          "ammoClassLabel": "buck",
+          "projectileDef": "Bullet_410Bore_Buck_SB",
+          "damageDef": "Bullet",
+          "damage": 7,
+          "armorPenetrationSharp": 2.1,
+          "armorPenetrationBlunt": 3.16,
+          "speed": 66,
+          "pellets": 4,
+          "secondaryDamage": []
+        },
+        {
+          "ammoDef": "Ammo_410Bore_Slug",
+          "ammoLabel": ".410 Bore shell (Slug)",
+          "ammoClass": "Slug",
+          "ammoClassLabel": "slug",
+          "projectileDef": "Bullet_410Bore_Slug_SB",
+          "damageDef": "Bullet",
+          "damage": 11,
+          "armorPenetrationSharp": 3.2,
+          "armorPenetrationBlunt": 10.72,
+          "speed": 88,
+          "secondaryDamage": []
+        },
+        {
+          "ammoDef": "Ammo_410Bore_Beanbag",
+          "ammoLabel": ".410 Bore shell (Bean)",
+          "ammoClass": "Beanbag",
+          "ammoClassLabel": "bean",
+          "projectileDef": "Bullet_410Bore_Beanbag_SB",
+          "damageDef": "Beanbag",
+          "damage": 4,
+          "armorPenetrationSharp": 0,
+          "armorPenetrationBlunt": 0.44,
+          "speed": 23,
+          "secondaryDamage": []
+        },
+        {
+          "ammoDef": "Ammo_410Bore_ElectroSlug",
+          "ammoLabel": ".410 Bore shell (EMP)",
+          "ammoClass": "ElectroSlug",
+          "ammoClassLabel": "EMP",
+          "projectileDef": "Bullet_410Bore_ElectroSlug_SB",
+          "damageDef": "EMP",
+          "damage": 7,
+          "armorPenetrationSharp": 0,
+          "armorPenetrationBlunt": 0,
+          "speed": 33,
+          "secondaryDamage": []
+        }
+      ],
+      "weaponCount": 0,
+      "exampleWeapons": [],
+      "suggested": false
+    },
+    {
+      "defName": "AmmoSet_81mmMortarShell",
+      "label": "81mm mortar shells",
+      "caliber": "81mm mortar shell",
+      "family": "shell",
+      "generic": true,
+      "similarSets": 2,
+      "types": [
+        {
+          "ammoDef": "Shell_HighExplosive",
+          "ammoLabel": "81mm mortar shell (HE)",
+          "ammoClass": "GrenadeHE",
+          "ammoClassLabel": "HE",
+          "projectileDef": "Bullet_81mmMortarShell_HE",
+          "damageDef": "Bomb",
+          "damage": 156,
+          "speed": 0,
+          "explosionRadius": 2.5,
+          "secondaryDamage": []
+        },
+        {
+          "ammoDef": "Shell_HighExplosive_HFuzed",
+          "ammoLabel": "81mm mortar shell (Airburst)",
+          "ammoClass": "GrenadeHETF",
+          "ammoClassLabel": "Airburst",
+          "projectileDef": "Bullet_81mmMortarShell_HE_HFuzed",
+          "damageDef": "Smoke",
+          "damage": 0,
+          "speed": 0,
+          "explosionRadius": 1,
+          "secondaryDamage": []
+        },
+        {
+          "ammoDef": "Shell_Incendiary",
+          "ammoLabel": "81mm mortar shell (Incendiary)",
+          "ammoClass": "GrenadeIncendiary",
+          "ammoClassLabel": "Incendiary",
+          "projectileDef": "Bullet_81mmMortarShell_Incendiary",
+          "damageDef": "PrometheumFlame",
+          "damage": 11,
+          "speed": 0,
+          "explosionRadius": 6.5,
+          "secondaryDamage": []
+        },
+        {
+          "ammoDef": "Shell_EMP",
+          "ammoLabel": "81mm mortar shell (EMP)",
+          "ammoClass": "GrenadeEMP",
+          "ammoClassLabel": "EMP",
+          "projectileDef": "Bullet_81mmMortarShell_EMP",
+          "damageDef": "EMP",
+          "damage": 156,
+          "speed": 0,
+          "explosionRadius": 5.5,
+          "secondaryDamage": []
+        },
+        {
+          "ammoDef": "Shell_Firefoam",
+          "ammoLabel": "81mm mortar shell (Foam)",
+          "ammoClass": "FoamFuel",
+          "ammoClassLabel": "foam",
+          "projectileDef": "Bullet_81mmMortarShell_Firefoam",
+          "damageDef": "Extinguish",
+          "speed": 0,
+          "explosionRadius": 5,
+          "secondaryDamage": []
+        },
+        {
+          "ammoDef": "Shell_Smoke",
+          "ammoLabel": "81mm mortar shell (Smoke)",
+          "ammoClass": "Smoke",
+          "ammoClassLabel": "Smoke",
+          "projectileDef": "Bullet_81mmMortarShell_Smoke",
+          "damageDef": "Smoke",
+          "speed": 0,
+          "explosionRadius": 6,
+          "secondaryDamage": []
+        },
+        {
+          "ammoDef": "Shell_AntigrainWarhead",
+          "ammoLabel": "81mm mortar shell (Anti)",
+          "ammoClass": "Antigrain",
+          "ammoClassLabel": "antigrain warhead",
+          "projectileDef": "Bullet_81mmMortarShell_Antigrain",
+          "damageDef": "BombSuper",
+          "damage": 800,
+          "speed": 0,
+          "explosionRadius": 50,
+          "secondaryDamage": []
+        },
+        {
+          "ammoDef": "Shell_Toxic",
+          "ammoLabel": "81mm mortar shell (Toxic)",
+          "ammoClass": "Toxic",
+          "ammoClassLabel": "Toxic",
+          "projectileDef": "Bullet_81mmMortarShell_Tox",
+          "damageDef": "ToxGas",
+          "armorPenetrationSharp": 0,
+          "armorPenetrationBlunt": 0,
+          "speed": 0,
+          "explosionRadius": 0.1,
+          "secondaryDamage": []
+        },
+        {
+          "ammoDef": "Shell_Deadlife",
+          "ammoLabel": "81mm mortar shell (Deadlife)",
+          "ammoClass": "Deadlife",
+          "ammoClassLabel": "Deadlife",
+          "projectileDef": "Bullet_81mmMortarShell_Deadlife",
+          "damageDef": "DeadlifeDust",
+          "armorPenetrationSharp": 0,
+          "armorPenetrationBlunt": 0,
+          "speed": 0,
+          "explosionRadius": 0.1,
+          "secondaryDamage": []
+        }
+      ],
+      "weaponCount": 0,
+      "exampleWeapons": [],
+      "suggested": false
+    },
+    {
+      "defName": "AmmoSet_AntiMateriel",
+      "label": "anti-materiel",
+      "caliber": "anti-materiel",
+      "family": "high caliber",
+      "generic": true,
+      "similarSets": 9,
+      "types": [
+        {
+          "ammoDef": "Ammo_AntiMateriel_FMJ",
+          "ammoLabel": "anti-materiel cartridge (FMJ)",
+          "ammoClass": "FullMetalJacket",
+          "ammoClassLabel": "FMJ",
+          "projectileDef": "Bullet_50BMG_FMJ",
+          "damageDef": "Bullet",
+          "damage": 42,
+          "armorPenetrationSharp": 14,
+          "armorPenetrationBlunt": 360.34,
+          "speed": 163,
+          "secondaryDamage": []
+        },
+        {
+          "ammoDef": "Ammo_AntiMateriel_AP",
+          "ammoLabel": "anti-materiel cartridge (AP)",
+          "ammoClass": "ArmorPiercing",
+          "ammoClassLabel": "AP",
+          "projectileDef": "Bullet_50BMG_AP",
+          "damageDef": "Bullet",
+          "damage": 26,
+          "armorPenetrationSharp": 28,
+          "armorPenetrationBlunt": 360.34,
+          "speed": 163,
+          "secondaryDamage": []
+        },
+        {
+          "ammoDef": "Ammo_AntiMateriel_Incendiary",
+          "ammoLabel": "anti-materiel cartridge (AP-I)",
+          "ammoClass": "IncendiaryAP",
+          "ammoClassLabel": "AP-I",
+          "projectileDef": "Bullet_50BMG_Incendiary",
+          "damageDef": "Bullet",
+          "damage": 26,
+          "armorPenetrationSharp": 28,
+          "armorPenetrationBlunt": 360.34,
+          "speed": 163,
+          "secondaryDamage": [
+            {
+              "def": "Flame_Secondary",
+              "amount": 14
+            }
+          ]
+        },
+        {
+          "ammoDef": "Ammo_AntiMateriel_HE",
+          "ammoLabel": "anti-materiel cartridge (AP-HE)",
+          "ammoClass": "ExplosiveAP",
+          "ammoClassLabel": "AP-HE",
+          "projectileDef": "Bullet_50BMG_HE",
+          "damageDef": "Bullet",
+          "damage": 42,
+          "armorPenetrationSharp": 14,
+          "armorPenetrationBlunt": 360.34,
+          "speed": 163,
+          "secondaryDamage": [
+            {
+              "def": "Bomb_Secondary",
+              "amount": 20
+            }
+          ]
+        },
+        {
+          "ammoDef": "Ammo_AntiMateriel_Sabot",
+          "ammoLabel": "anti-materiel cartridge (Sabot)",
+          "ammoClass": "Sabot",
+          "ammoClassLabel": "Sabot",
+          "projectileDef": "Bullet_50BMG_Sabot",
+          "damageDef": "Bullet",
+          "damage": 22,
+          "armorPenetrationSharp": 49,
+          "armorPenetrationBlunt": 462.92,
+          "speed": 221,
+          "secondaryDamage": []
+        }
+      ],
+      "weaponCount": 0,
+      "exampleWeapons": [],
+      "suggested": false
+    },
+    {
+      "defName": "AmmoSet_ArtilleryShell",
+      "label": "artillery shell",
+      "caliber": "artillery shell",
+      "family": "shell",
+      "generic": true,
+      "similarSets": 4,
+      "types": [
+        {
+          "ammoDef": "Ammo_ArtilleryShell_HE",
+          "ammoLabel": "artillery shell (HE)",
+          "ammoClass": "GrenadeHE",
+          "ammoClassLabel": "HE",
+          "projectileDef": "Bullet_155mmHowitzerShell_HE",
+          "damageDef": "Bomb",
+          "damage": 546,
+          "speed": 0,
+          "explosionRadius": 5.5,
+          "secondaryDamage": []
+        },
+        {
+          "ammoDef": "Ammo_ArtilleryShell_HE_HFuzed",
+          "ammoLabel": "artillery shell (Airburst)",
+          "ammoClass": "GrenadeHETF",
+          "ammoClassLabel": "Airburst",
+          "projectileDef": "Bullet_155mmHowitzerShell_HE_HFuzed",
+          "damageDef": "Smoke",
+          "damage": 0,
+          "speed": 0,
+          "explosionRadius": 5.5,
+          "secondaryDamage": []
+        },
+        {
+          "ammoDef": "Ammo_ArtilleryShell_Incendiary",
+          "ammoLabel": "artillery shell (Incendiary)",
+          "ammoClass": "GrenadeIncendiary",
+          "ammoClassLabel": "Incendiary",
+          "projectileDef": "Bullet_155mmHowitzerShell_Incendiary",
+          "damageDef": "PrometheumFlame",
+          "damage": 31,
+          "speed": 0,
+          "explosionRadius": 11.5,
+          "secondaryDamage": []
+        },
+        {
+          "ammoDef": "Ammo_ArtilleryShell_EMP",
+          "ammoLabel": "artillery shell (EMP)",
+          "ammoClass": "GrenadeEMP",
+          "ammoClassLabel": "EMP",
+          "projectileDef": "Bullet_155mmHowitzerShell_EMP",
+          "damageDef": "EMP",
+          "damage": 452,
+          "speed": 0,
+          "explosionRadius": 9.5,
+          "secondaryDamage": []
+        },
+        {
+          "ammoDef": "Ammo_ArtilleryShell_Smoke",
+          "ammoLabel": "artillery shell (Smoke)",
+          "ammoClass": "Smoke",
+          "ammoClassLabel": "Smoke",
+          "projectileDef": "Bullet_155mmHowitzerShell_Smoke",
+          "damageDef": "Smoke",
+          "speed": 0,
+          "explosionRadius": 10.5,
+          "secondaryDamage": []
+        },
+        {
+          "ammoDef": "Ammo_ArtilleryShell_Anti",
+          "ammoLabel": "artillery shell (Anti)",
+          "ammoClass": "Antigrain",
+          "ammoClassLabel": "antigrain warhead",
+          "projectileDef": "Bullet_155mmHowitzerShell_Anti",
+          "damageDef": "BombSuper",
+          "damage": 1310,
+          "speed": 0,
+          "explosionRadius": 56,
+          "secondaryDamage": []
+        }
+      ],
+      "weaponCount": 0,
+      "exampleWeapons": [],
+      "suggested": false
+    },
+    {
+      "defName": "AmmoSet_Rifle",
+      "label": "full power rifle",
+      "caliber": "full power rifle ammo",
+      "family": "rifle",
+      "generic": true,
+      "similarSets": 35,
+      "types": [
+        {
+          "ammoDef": "Ammo_Rifle_FMJ",
+          "ammoLabel": "rifle cartridge (FMJ)",
+          "ammoClass": "FullMetalJacket",
+          "ammoClassLabel": "FMJ",
+          "projectileDef": "Bullet_762x51mmNATO_FMJ",
+          "damageDef": "Bullet",
+          "damage": 20,
+          "armorPenetrationSharp": 7,
+          "armorPenetrationBlunt": 66.72,
+          "speed": 156,
+          "secondaryDamage": []
+        },
+        {
+          "ammoDef": "Ammo_Rifle_AP",
+          "ammoLabel": "rifle cartridge (AP)",
+          "ammoClass": "ArmorPiercing",
+          "ammoClassLabel": "AP",
+          "projectileDef": "Bullet_762x51mmNATO_AP",
+          "damageDef": "Bullet",
+          "damage": 12,
+          "armorPenetrationSharp": 14,
+          "armorPenetrationBlunt": 66.72,
+          "speed": 156,
+          "secondaryDamage": []
+        },
+        {
+          "ammoDef": "Ammo_Rifle_HP",
+          "ammoLabel": "rifle cartridge (HP)",
+          "ammoClass": "HollowPoint",
+          "ammoClassLabel": "HP",
+          "projectileDef": "Bullet_762x51mmNATO_HP",
+          "damageDef": "Bullet",
+          "damage": 25,
+          "armorPenetrationSharp": 4,
+          "armorPenetrationBlunt": 66.72,
+          "speed": 156,
+          "secondaryDamage": []
+        },
+        {
+          "ammoDef": "Ammo_Rifle_Incendiary",
+          "ammoLabel": "rifle cartridge (AP-I)",
+          "ammoClass": "IncendiaryAP",
+          "ammoClassLabel": "AP-I",
+          "projectileDef": "Bullet_762x51mmNATO_Incendiary",
+          "damageDef": "Bullet",
+          "damage": 12,
+          "armorPenetrationSharp": 14,
+          "armorPenetrationBlunt": 66.72,
+          "speed": 156,
+          "secondaryDamage": [
+            {
+              "def": "Flame_Secondary",
+              "amount": 6
+            }
+          ]
+        },
+        {
+          "ammoDef": "Ammo_Rifle_HE",
+          "ammoLabel": "rifle cartridge (AP-HE)",
+          "ammoClass": "ExplosiveAP",
+          "ammoClassLabel": "AP-HE",
+          "projectileDef": "Bullet_762x51mmNATO_HE",
+          "damageDef": "Bullet",
+          "damage": 20,
+          "armorPenetrationSharp": 7,
+          "armorPenetrationBlunt": 66.72,
+          "speed": 156,
+          "secondaryDamage": [
+            {
+              "def": "Bomb_Secondary",
+              "amount": 8
+            }
+          ]
+        },
+        {
+          "ammoDef": "Ammo_Rifle_Sabot",
+          "ammoLabel": "rifle cartridge (Sabot)",
+          "ammoClass": "Sabot",
+          "ammoClassLabel": "Sabot",
+          "projectileDef": "Bullet_762x51mmNATO_Sabot",
+          "damageDef": "Bullet",
+          "damage": 10,
+          "armorPenetrationSharp": 25,
+          "armorPenetrationBlunt": 86.28,
+          "speed": 212,
+          "secondaryDamage": []
+        }
+      ],
+      "weaponCount": 0,
+      "exampleWeapons": [],
+      "suggested": false
+    }
+  ],
+  "calibers": [
+    {
+      "name": ".17 HMR",
+      "label": ".17 HMR",
+      "count": 1
+    },
+    {
+      "name": ".22 Hornet",
+      "label": ".22 Hornet",
+      "count": 1
+    },
+    {
+      "name": ".22 LR",
+      "label": ".22 LR",
+      "count": 1
+    },
+    {
+      "name": ".22 Short",
+      "label": ".22 Short",
+      "count": 1
+    },
+    {
+      "name": ".22 WMR",
+      "label": ".22 WMR",
+      "count": 1
+    },
+    {
+      "name": ".243 Winchester",
+      "label": ".243 Winchester",
+      "count": 1
+    },
+    {
+      "name": ".277 Fury",
+      "label": ".277 Fury",
+      "count": 1
+    },
+    {
+      "name": ".280 British",
+      "label": ".280 British",
+      "count": 1
+    },
+    {
+      "name": ".303 British",
+      "label": ".303 British",
+      "count": 2
+    },
+    {
+      "name": ".410 Bore",
+      "label": ".410 Bore",
+      "count": 3
+    },
+    {
+      "name": ".44 Magnum",
+      "label": ".44 Magnum",
+      "count": 4
+    },
+    {
+      "name": ".45 ACP",
+      "label": ".45 ACP",
+      "count": 2
+    },
+    {
+      "name": "12 gauge",
+      "label": "12 gauge",
+      "count": 3
+    },
+    {
+      "name": "12x64mm Charged",
+      "label": "12x64mm Charged",
+      "count": 1
+    },
+    {
+      "name": "14.5x114mm",
+      "label": "14.5x114mm",
+      "count": 1
+    },
+    {
+      "name": "164x284mm Demolition Shell",
+      "label": "164x284mm Demolition Shell",
+      "count": 1
+    },
+    {
+      "name": "81mm mortar shell",
+      "label": "81mm mortar shell",
+      "count": 1
+    },
+    {
+      "name": "anti-materiel",
+      "label": "anti-materiel",
+      "count": 1
+    },
+    {
+      "name": "artillery shell",
+      "label": "artillery shell",
+      "count": 1
+    },
+    {
+      "name": "full power rifle ammo",
+      "label": "full power rifle ammo",
+      "count": 1
+    }
+  ],
+  "classes": [
+    {
+      "name": "Antigrain",
+      "label": "antigrain warhead",
+      "count": 4
+    },
+    {
+      "name": "ArmorPiercing",
+      "label": "AP",
+      "count": 160
+    },
+    {
+      "name": "Beanbag",
+      "label": "bean",
+      "count": 20
+    },
+    {
+      "name": "BuckShot",
+      "label": "buck",
+      "count": 21
+    },
+    {
+      "name": "Charged",
+      "label": "charge",
+      "count": 17
+    },
+    {
+      "name": "Deadlife",
+      "label": "Deadlife",
+      "count": 1
+    },
+    {
+      "name": "Demolition",
+      "label": "demolition",
+      "count": 2
+    },
+    {
+      "name": "ElectroSlug",
+      "label": "EMP",
+      "count": 21
+    },
+    {
+      "name": "ExplosiveAP",
+      "label": "AP-HE",
+      "count": 93
+    },
+    {
+      "name": "FoamFuel",
+      "label": "foam",
+      "count": 4
+    },
+    {
+      "name": "FullMetalJacket",
+      "label": "FMJ",
+      "count": 130
+    },
+    {
+      "name": "GrenadeEMP",
+      "label": "EMP",
+      "count": 33
+    },
+    {
+      "name": "GrenadeHE",
+      "label": "HE",
+      "count": 51
+    },
+    {
+      "name": "GrenadeHETF",
+      "label": "Airburst",
+      "count": 22
+    },
+    {
+      "name": "GrenadeIncendiary",
+      "label": "Incendiary",
+      "count": 17
+    },
+    {
+      "name": "HollowPoint",
+      "label": "HP",
+      "count": 112
+    },
+    {
+      "name": "IncendiaryAP",
+      "label": "AP-I",
+      "count": 92
+    },
+    {
+      "name": "Sabot",
+      "label": "Sabot",
+      "count": 100
+    },
+    {
+      "name": "Slug",
+      "label": "slug",
+      "count": 23
+    },
+    {
+      "name": "Smoke",
+      "label": "Smoke",
+      "count": 26
+    },
+    {
+      "name": "Toxic",
+      "label": "Toxic",
+      "count": 3
+    }
+  ]
+}

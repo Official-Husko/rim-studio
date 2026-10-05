@@ -1,0 +1,124 @@
+{
+  "planId": "9ee0674e1141c117fe6c4ad3aca449b5",
+  "files": [
+    {
+      "path": "Defs/ThingDefs_Misc/Weapons/RangedIndustrial/UC_PlatformRifle.xml",
+      "kind": "vanilla-defs",
+      "action": "unchanged",
+      "rendered": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<Defs>\n  <!-- ====== Bullet_UC_PlatformRifle ====== -->\n  <ThingDef ParentName=\"BaseBullet\">\n    <defName>Bullet_UC_PlatformRifle</defName>\n    <label>bolt-action rifle bullet</label>\n    <graphicData>\n      <texPath>Things/Projectile/Bullet_big</texPath>\n      <graphicClass>Graphic_Single</graphicClass>\n    </graphicData>\n    <projectile>\n      <damageDef>Bullet</damageDef>\n      <damageAmountBase>18</damageAmountBase>\n      <stoppingPower>1.5</stoppingPower>\n      <speed>70</speed>\n    </projectile>\n  </ThingDef>\n  <!-- ====== UC_PlatformRifle ====== -->\n  <ThingDef ParentName=\"BaseHumanMakeableGun\">\n    <defName>UC_PlatformRifle</defName>\n    <label>uc platform rifle</label>\n    <description>An ancient pattern bolt-action rifle. With its long range, and low fire rate, it is unlikely to drive animals to revenge, which makes it a favorite weapon for hunting.</description>\n    <graphicData>\n      <texPath>Things/Item/Equipment/WeaponRanged/BoltActionRifle</texPath>\n      <graphicClass>Graphic_Single</graphicClass>\n    </graphicData>\n    <statBases>\n      <WorkToMake>12000</WorkToMake>\n      <Mass>3.5</Mass>\n      <AccuracyTouch>0.65</AccuracyTouch>\n      <AccuracyShort>0.8</AccuracyShort>\n      <AccuracyMedium>0.9</AccuracyMedium>\n      <AccuracyLong>0.8</AccuracyLong>\n      <RangedWeapon_Cooldown>1.5</RangedWeapon_Cooldown>\n    </statBases>\n    <costList>\n      <Steel>60</Steel>\n      <ComponentIndustrial>3</ComponentIndustrial>\n    </costList>\n    <recipeMaker>\n      <skillRequirements>\n        <Crafting>5</Crafting>\n      </skillRequirements>\n      <displayPriority>415</displayPriority>\n    </recipeMaker>\n    <soundInteract>Interact_Rifle</soundInteract>\n    <verbs>\n      <li>\n        <verbClass>Verb_Shoot</verbClass>\n        <hasStandardCommand>true</hasStandardCommand>\n        <defaultProjectile>Bullet_UC_PlatformRifle</defaultProjectile>\n        <warmupTime>1.7</warmupTime>\n        <range>36.9</range>\n        <soundCast>Shot_BoltActionRifle</soundCast>\n        <soundCastTail>GunTail_Heavy</soundCastTail>\n        <muzzleFlashScale>9</muzzleFlashScale>\n      </li>\n    </verbs>\n    <tools>\n      <li>\n        <label>stock</label>\n        <capacities>\n          <li>Blunt</li>\n        </capacities>\n        <power>9</power>\n        <cooldownTime>2</cooldownTime>\n      </li>\n      <li>\n        <label>barrel</label>\n        <capacities>\n          <li>Blunt</li>\n          <li>Poke</li>\n        </capacities>\n        <power>9</power>\n        <cooldownTime>2</cooldownTime>\n      </li>\n    </tools>\n    <weaponClasses>\n      <li>LongShots</li>\n    </weaponClasses>\n  </ThingDef>\n</Defs>\n",
+      "bytes": 2663
+    }
+  ],
+  "diagnostics": [
+    {
+      "code": "ce.derived-value",
+      "severity": "info",
+      "message": "/ce/defaultProjectile = Bullet_303British_FMJ_SB was taken from the Combat Extended suggestion: the first projectile of the ammo set",
+      "field": "/ce/defaultProjectile",
+      "args": {
+        "how": "taken from the Combat Extended suggestion: the first projectile of the ammo set",
+        "value": "Bullet_303British_FMJ_SB"
+      }
+    },
+    {
+      "code": "designer.ce-suggestion-rejected",
+      "severity": "info",
+      "message": "Blunt penetration of the tool stock: the estimate 2.56 is not written: the ratio of penetration to power is rated unreliable: the typical error was about 64 percent when each of 19 converted weapons was predicted from the others",
+      "field": "/ce/toolPenetration/stock/blunt",
+      "args": {
+        "reference": "2.56"
+      }
+    },
+    {
+      "code": "designer.ce-suggestion-rejected",
+      "severity": "info",
+      "message": "Blunt penetration of the tool barrel: the estimate 2.56 is not written: the ratio of penetration to power is rated unreliable: the typical error was about 64 percent when each of 19 converted weapons was predicted from the others",
+      "field": "/ce/toolPenetration/barrel/blunt",
+      "args": {
+        "reference": "2.56"
+      }
+    },
+    {
+      "code": "design.duplicate-capacity",
+      "severity": "warning",
+      "message": "tool barrel lists 2 capacities; the stat panel counts its attack once per capacity",
+      "field": "/tools/1/capacities",
+      "args": {
+        "count": "2",
+        "tool": "barrel"
+      }
+    },
+    {
+      "code": "design.texture-shared",
+      "severity": "info",
+      "message": "uc platform rifle uses the texture Things/Item/Equipment/WeaponRanged/BoltActionRifle; the art is not copied, so it must exist in the game or in your mod (your own art goes to Textures/Things/Item/Equipment/WeaponRanged/UC_PlatformRifle.png)",
+      "field": "/texturePath",
+      "args": {
+        "file": "Textures/Things/Item/Equipment/WeaponRanged/UC_PlatformRifle.png",
+        "label": "uc platform rifle",
+        "path": "Things/Item/Equipment/WeaponRanged/BoltActionRifle"
+      }
+    },
+    {
+      "code": "design.texture-shared",
+      "severity": "info",
+      "message": "bolt-action rifle bullet uses the texture Things/Projectile/Bullet_big; the art is not copied, so it must exist in the game or in your mod (your own art goes to Textures/Things/Projectile/Bullet_UC_PlatformRifle.png)",
+      "field": "/ranged/projectile/def/texturePath",
+      "args": {
+        "file": "Textures/Things/Projectile/Bullet_UC_PlatformRifle.png",
+        "label": "bolt-action rifle bullet",
+        "path": "Things/Projectile/Bullet_big"
+      }
+    },
+    {
+      "code": "ce.cep016-unknown-ce-tag",
+      "severity": "warning",
+      "message": "the weapon tag CE_AI_AssaultWeapon is not known to the installed Combat Extended",
+      "field": "/ce/extraTags",
+      "args": {
+        "value": "CE_AI_AssaultWeapon"
+      }
+    },
+    {
+      "code": "ce.derived-value",
+      "severity": "info",
+      "message": "the fire modes of the under barrel unit = AimedShot, no single shot true was taken from the units of your converted weapons",
+      "field": "/ce/underBarrel/fireModes",
+      "args": {
+        "how": "taken from the units of your converted weapons",
+        "value": "AimedShot, no single shot true"
+      }
+    },
+    {
+      "code": "ce.tool-plan-invalid",
+      "severity": "error",
+      "message": "the tool plan entry stock cannot be written: a blunt penetration is missing and the vanilla tool stock has none",
+      "field": "/ce/toolPlan/0",
+      "args": {
+        "reason": "a blunt penetration is missing and the vanilla tool stock has none",
+        "tool": "stock"
+      }
+    },
+    {
+      "code": "ce.tool-plan-invalid",
+      "severity": "error",
+      "message": "the tool plan entry muzzle cannot be written: cooldown is missing and no vanilla tool to start from",
+      "field": "/ce/toolPlan/1",
+      "args": {
+        "reason": "cooldown is missing and no vanilla tool to start from",
+        "tool": "muzzle"
+      }
+    },
+    {
+      "code": "ce.tool-plan-invalid",
+      "severity": "error",
+      "message": "the tool plan entry muzzle cannot be written: a blunt penetration is missing and no vanilla tool to start from",
+      "field": "/ce/toolPlan/1",
+      "args": {
+        "reason": "a blunt penetration is missing and no vanilla tool to start from",
+        "tool": "muzzle"
+      }
+    }
+  ],
+  "hasErrors": true
+}

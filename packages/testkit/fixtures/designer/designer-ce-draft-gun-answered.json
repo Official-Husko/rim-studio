@@ -1,0 +1,193 @@
+{
+  "schemaVersion": 2,
+  "kind": "ranged",
+  "calibration": "anchored",
+  "spec": {
+    "kind": "ranged",
+    "identity": {
+      "defName": "UC_PlatformRifle",
+      "label": "uc platform rifle",
+      "description": "An ancient pattern bolt-action rifle. With its long range, and low fire rate, it is unlikely to drive animals to revenge, which makes it a favorite weapon for hunting.",
+      "modPrefix": ""
+    },
+    "parent": {
+      "defName": "BaseHumanMakeableGun",
+      "inheritedStats": {
+        "Beauty": -3,
+        "DeteriorationRate": 2,
+        "Flammability": 0.5,
+        "MaxHitPoints": 100,
+        "SellPriceFactor": 0.2
+      },
+      "inheritedTechLevel": "industrial"
+    },
+    "techLevel": "industrial",
+    "role": "sniper",
+    "mass": {
+      "value": 3.5,
+      "source": "anchor"
+    },
+    "workToMake": {
+      "value": 12000,
+      "source": "anchor"
+    },
+    "costList": [
+      {
+        "defName": "Steel",
+        "count": 60
+      },
+      {
+        "defName": "ComponentIndustrial",
+        "count": 3
+      }
+    ],
+    "weaponClasses": [
+      "LongShots"
+    ],
+    "texturePath": "Things/Item/Equipment/WeaponRanged/BoltActionRifle",
+    "graphicClass": "Graphic_Single",
+    "tools": [
+      {
+        "label": "stock",
+        "capacities": [
+          "Blunt"
+        ],
+        "power": {
+          "value": 9,
+          "source": "anchor"
+        },
+        "cooldownTime": {
+          "value": 2,
+          "source": "anchor"
+        }
+      },
+      {
+        "label": "barrel",
+        "capacities": [
+          "Blunt",
+          "Poke"
+        ],
+        "power": {
+          "value": 9,
+          "source": "anchor"
+        },
+        "cooldownTime": {
+          "value": 2,
+          "source": "anchor"
+        }
+      }
+    ],
+    "ranged": {
+      "verbClass": "Verb_Shoot",
+      "damage": {
+        "value": 18,
+        "source": "anchor"
+      },
+      "range": {
+        "value": 36.9,
+        "source": "anchor"
+      },
+      "warmup": {
+        "value": 1.7,
+        "source": "anchor"
+      },
+      "cooldown": {
+        "value": 1.5,
+        "source": "anchor"
+      },
+      "accuracy": {
+        "touch": {
+          "value": 0.65,
+          "source": "anchor"
+        },
+        "short": {
+          "value": 0.8,
+          "source": "anchor"
+        },
+        "medium": {
+          "value": 0.9,
+          "source": "anchor"
+        },
+        "long": {
+          "value": 0.8,
+          "source": "anchor"
+        }
+      },
+      "projectile": {
+        "mode": "inline",
+        "def": {
+          "defName": "Bullet_UC_PlatformRifle",
+          "label": "bolt-action rifle bullet",
+          "parent": "BaseBullet",
+          "damageDef": "Bullet",
+          "texturePath": "Things/Projectile/Bullet_big",
+          "graphicClass": "Graphic_Single",
+          "speed": {
+            "value": 70,
+            "source": "anchor"
+          },
+          "stoppingPower": {
+            "value": 1.5,
+            "source": "anchor"
+          },
+          "omitDefaults": [
+            "armorPenetrationBase"
+          ],
+          "copiedFrom": "Bullet_BoltActionRifle"
+        }
+      },
+      "soundCast": "Shot_BoltActionRifle",
+      "soundCastTail": "GunTail_Heavy",
+      "muzzleFlashScale": 9
+    },
+    "previewQuality": "normal",
+    "soundInteract": "Interact_Rifle",
+    "recipe": {
+      "skillRequirements": {
+        "Crafting": 5
+      },
+      "displayPriority": 415
+    },
+    "ce": {
+      "oneHanded": false,
+      "beltFed": false,
+      "ammoSet": "AmmoSet_303British_SB",
+      "weaponTagClass": "CE_AI_Rifle",
+      "bulk": {
+        "value": 5,
+        "source": "answered"
+      },
+      "swayFactor": {
+        "value": 1.1,
+        "source": "answered"
+      },
+      "shotSpread": {
+        "value": 0.2,
+        "source": "answered"
+      },
+      "sightsEfficiency": {
+        "value": 1,
+        "source": "answered"
+      },
+      "recoilAmount": {
+        "value": 1.5,
+        "source": "answered"
+      },
+      "magazineSize": {
+        "value": 8,
+        "source": "answered"
+      },
+      "reloadTime": {
+        "value": 2,
+        "source": "answered"
+      }
+    }
+  },
+  "anchors": [
+    {
+      "defName": "Gun_BoltActionRifle",
+      "label": "bolt-action rifle"
+    }
+  ],
+  "clonedFrom": "Gun_BoltActionRifle"
+}

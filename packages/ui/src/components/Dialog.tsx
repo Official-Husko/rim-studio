@@ -12,8 +12,8 @@ export interface DialogProps {
   footer?: ComponentChildren;
   /** Accessible name of the close button. */
   closeLabel?: string;
-  /** Wider dialog for browsers and previews. */
-  size?: 'md' | 'lg';
+  /** Wider dialog for browsers and previews; full fills most of the window and lets the content fill it. */
+  size?: 'md' | 'lg' | 'full';
   /** Closing by a click on the backdrop; off by default so a destructive confirm is deliberate. */
   closeOnBackdrop?: boolean;
 }
@@ -103,8 +103,10 @@ export function Dialog({
     >
       <div
         class={cx(
-          'bp-ticks flex max-h-[80vh] flex-col border border-line-strong bg-raised',
-          size === 'md' ? 'w-dialog' : 'w-[min(90vw,calc(var(--rs-dialog-w)*1.6))]',
+          'bp-ticks flex flex-col border border-line-strong bg-raised',
+          size === 'full' ? 'h-[92vh] max-h-[92vh] w-[96vw]' : 'max-h-[80vh]',
+          size === 'md' && 'w-dialog',
+          size === 'lg' && 'w-[min(90vw,calc(var(--rs-dialog-w)*1.6))]',
         )}
       >
         <header class="flex items-center justify-between gap-3 border-b border-line px-4 py-3">
@@ -113,7 +115,11 @@ export function Dialog({
           </h2>
           <IconButton icon="close" label={closeLabel} onClick={onClose} noTooltip />
         </header>
-        <div class="min-h-0 flex-1 overflow-auto px-4 py-3">{children}</div>
+        <div
+          class={cx('min-h-0 flex-1 overflow-auto px-4 py-3', size === 'full' && 'flex flex-col')}
+        >
+          {children}
+        </div>
         {footer ? (
           <footer class="flex justify-end gap-2 border-t border-line px-4 py-3">{footer}</footer>
         ) : null}

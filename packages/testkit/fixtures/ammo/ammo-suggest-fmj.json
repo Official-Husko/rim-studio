@@ -1,0 +1,334 @@
+{
+  "available": true,
+  "class": "FullMetalJacket",
+  "classLabel": "FMJ",
+  "nearest": [
+    {
+      "ammoDef": "Ammo_5x23mmCaseless_FMJ",
+      "ammoLabel": "5x23mm Caseless cartridge (FMJ)",
+      "set": "AmmoSet_5x23mmCaseless",
+      "projectileDef": "Bullet_5x23mmCaseless_FMJ",
+      "damage": 11,
+      "speed": 129,
+      "energy": 1419,
+      "distance": 0.013480161556692672
+    },
+    {
+      "ammoDef": "Ammo_44Magnum_FMJ",
+      "ammoLabel": ".44 Magnum (FMJ)",
+      "set": "AmmoSet_44Magnum",
+      "projectileDef": "Bullet_44Magnum_FMJ",
+      "damage": 15,
+      "speed": 88,
+      "energy": 1320,
+      "distance": 0.058840500022933465
+    },
+    {
+      "ammoDef": "Ammo_127x55mm_FMJ",
+      "ammoLabel": "12.7x55mm (FMJ)",
+      "set": "AmmoSet_127x55mm",
+      "projectileDef": "Bullet_127x55mm_FMJ",
+      "damage": 21,
+      "speed": 72,
+      "energy": 1512,
+      "distance": 0.0769610411361284
+    },
+    {
+      "ammoDef": "Ammo_5656Spencer_FMJ",
+      "ammoLabel": "56-56 Spencer (FMJ)",
+      "set": "AmmoSet_5656Spencer",
+      "projectileDef": "Bullet_5656Spencer_FMJ",
+      "damage": 18,
+      "speed": 84,
+      "energy": 1512,
+      "distance": 0.0769610411361284
+    },
+    {
+      "ammoDef": "Ammo_10mmAuto_FMJ",
+      "ammoLabel": "10mm Auto (FMJ)",
+      "set": "AmmoSet_10mmAuto",
+      "projectileDef": "Bullet_10mmAuto_FMJ",
+      "damage": 14,
+      "speed": 90,
+      "energy": 1260,
+      "distance": 0.10536051565782628
+    }
+  ],
+  "fields": [
+    {
+      "field": "/projectile/armorPenetrationSharp",
+      "label": "sharp penetration",
+      "value": 6,
+      "source": "nearest",
+      "rating": "unreliable",
+      "n": 5,
+      "from": [
+        "Ammo_5x23mmCaseless_FMJ",
+        "Ammo_44Magnum_FMJ",
+        "Ammo_127x55mm_FMJ",
+        "Ammo_5656Spencer_FMJ",
+        "Ammo_10mmAuto_FMJ"
+      ],
+      "range": [
+        4,
+        7
+      ]
+    },
+    {
+      "field": "/projectile/armorPenetrationBlunt",
+      "label": "blunt penetration",
+      "value": 24.5,
+      "source": "nearest",
+      "rating": "unreliable",
+      "n": 5,
+      "from": [
+        "Ammo_5x23mmCaseless_FMJ",
+        "Ammo_44Magnum_FMJ",
+        "Ammo_127x55mm_FMJ",
+        "Ammo_5656Spencer_FMJ",
+        "Ammo_10mmAuto_FMJ"
+      ],
+      "range": [
+        19.2,
+        51.34
+      ]
+    },
+    {
+      "field": "/item/mass",
+      "label": "mass",
+      "value": 0.024,
+      "source": "nearest",
+      "rating": "unreliable",
+      "n": 5,
+      "from": [
+        "Ammo_5x23mmCaseless_FMJ",
+        "Ammo_44Magnum_FMJ",
+        "Ammo_127x55mm_FMJ",
+        "Ammo_5656Spencer_FMJ",
+        "Ammo_10mmAuto_FMJ"
+      ],
+      "range": [
+        0.008,
+        0.08
+      ]
+    },
+    {
+      "field": "/item/bulk",
+      "label": "bulk",
+      "value": 0.02,
+      "source": "nearest",
+      "rating": "unreliable",
+      "n": 5,
+      "from": [
+        "Ammo_5x23mmCaseless_FMJ",
+        "Ammo_44Magnum_FMJ",
+        "Ammo_127x55mm_FMJ",
+        "Ammo_5656Spencer_FMJ",
+        "Ammo_10mmAuto_FMJ"
+      ],
+      "range": [
+        0.009,
+        0.04
+      ]
+    },
+    {
+      "field": "/recipe/workAmount",
+      "label": "work amount",
+      "value": 2400,
+      "source": "nearest",
+      "rating": "unreliable",
+      "n": 5,
+      "from": [
+        "Ammo_5x23mmCaseless_FMJ",
+        "Ammo_44Magnum_FMJ",
+        "Ammo_127x55mm_FMJ",
+        "Ammo_5656Spencer_FMJ",
+        "Ammo_10mmAuto_FMJ"
+      ],
+      "range": [
+        1500,
+        8200
+      ]
+    },
+    {
+      "field": "/recipe/products",
+      "label": "products per craft",
+      "value": 500,
+      "source": "nearest",
+      "rating": "reliable",
+      "n": 5,
+      "from": [
+        "Ammo_5x23mmCaseless_FMJ",
+        "Ammo_44Magnum_FMJ",
+        "Ammo_127x55mm_FMJ",
+        "Ammo_5656Spencer_FMJ",
+        "Ammo_10mmAuto_FMJ"
+      ],
+      "range": [
+        500,
+        500
+      ]
+    },
+    {
+      "field": "/projectile/parent",
+      "label": "projectile parent",
+      "text": "BaseFN57x28mmBullet",
+      "source": "nearest",
+      "rating": "rough",
+      "n": 1,
+      "from": [
+        "Ammo_5x23mmCaseless_FMJ"
+      ]
+    },
+    {
+      "field": "/projectile/thingClass",
+      "label": "projectile class",
+      "text": "CombatExtended.BulletCE",
+      "source": "nearest",
+      "rating": "rough",
+      "n": 1,
+      "from": [
+        "Ammo_5x23mmCaseless_FMJ"
+      ]
+    },
+    {
+      "field": "/projectile/damageDef",
+      "label": "damage def",
+      "text": "Bullet",
+      "source": "nearest",
+      "rating": "rough",
+      "n": 1,
+      "from": [
+        "Ammo_5x23mmCaseless_FMJ"
+      ]
+    },
+    {
+      "field": "/item/parent",
+      "label": "ammo parent",
+      "text": "5x23mmCaselessBase",
+      "source": "nearest",
+      "rating": "rough",
+      "n": 1,
+      "from": [
+        "Ammo_5x23mmCaseless_FMJ"
+      ]
+    },
+    {
+      "field": "/recipe/parent",
+      "label": "recipe parent",
+      "text": "UNAmmoRecipeBase",
+      "source": "nearest",
+      "rating": "rough",
+      "n": 1,
+      "from": [
+        "Ammo_5x23mmCaseless_FMJ"
+      ]
+    },
+    {
+      "field": "/recipe/researchPrerequisite",
+      "label": "research",
+      "text": "MicroelectronicsBasics",
+      "source": "nearest",
+      "rating": "rough",
+      "n": 1,
+      "from": [
+        "Ammo_5x23mmCaseless_FMJ"
+      ]
+    },
+    {
+      "field": "/projectile/damage",
+      "label": "damage",
+      "value": 10,
+      "source": "hint",
+      "rating": "reliable",
+      "n": 0,
+      "from": []
+    },
+    {
+      "field": "/projectile/speed",
+      "label": "speed",
+      "value": 140,
+      "source": "hint",
+      "rating": "reliable",
+      "n": 0,
+      "from": []
+    }
+  ],
+  "ammoType": {
+    "key": "FMJ",
+    "ammoClass": "FullMetalJacket",
+    "projectile": {
+      "parent": "BaseFN57x28mmBullet",
+      "thingClass": "CombatExtended.BulletCE",
+      "damageDef": "Bullet",
+      "damage": {
+        "value": 10,
+        "source": "answered"
+      },
+      "armorPenetrationSharp": {
+        "value": 6,
+        "source": "suggested"
+      },
+      "armorPenetrationBlunt": {
+        "value": 24.5,
+        "source": "suggested"
+      },
+      "speed": {
+        "value": 140,
+        "source": "answered"
+      },
+      "dropsCasings": false,
+      "casingMote": "Fleck_PistolAmmoCasings",
+      "casingFilth": "Filth_PistolAmmoCasings",
+      "texPath": "Things/Projectile/Bullet_Small",
+      "graphicClass": "Graphic_Single"
+    },
+    "item": {
+      "parent": "5x23mmCaselessBase",
+      "mass": {
+        "value": 0.024,
+        "source": "suggested"
+      },
+      "bulk": {
+        "value": 0.02,
+        "source": "suggested"
+      },
+      "stackLimit": {
+        "value": 5000,
+        "source": "suggested"
+      },
+      "tradeTags": [
+        "CE_AmmoInjector",
+        "CE_Ammo",
+        "CE_AutoEnableTrade",
+        "CE_AutoEnableCrafting"
+      ],
+      "texPath": "Things/Ammo/Rifle/FMJ",
+      "graphicClass": "Graphic_StackCount",
+      "techLevel": "Industrial",
+      "cookOff": "projectile"
+    },
+    "recipe": {
+      "parent": "UNAmmoRecipeBase",
+      "ingredients": [
+        {
+          "thing": "Steel",
+          "count": {
+            "value": 10,
+            "source": "suggested"
+          }
+        }
+      ],
+      "products": {
+        "value": 500,
+        "source": "suggested"
+      },
+      "workAmount": {
+        "value": 2400,
+        "source": "suggested"
+      },
+      "researchPrerequisite": "MicroelectronicsBasics"
+    }
+  },
+  "notes": []
+}

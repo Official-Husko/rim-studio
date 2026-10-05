@@ -1,0 +1,242 @@
+{
+  "kind": "ranged",
+  "defName": "UC_ShortBow",
+  "available": true,
+  "toggleOn": true,
+  "classLabel": "based on the 4 nearest of 4 converted weapons",
+  "pool": 4,
+  "fields": [
+    {
+      "field": "/ce/bulk",
+      "label": "CE bulk",
+      "required": true,
+      "status": "held",
+      "held": 2,
+      "heldSource": {
+        "kind": "answered"
+      },
+      "rating": "unmeasured",
+      "reference": 2.717
+    },
+    {
+      "field": "/ce/swayFactor",
+      "label": "CE sway factor",
+      "required": true,
+      "status": "held",
+      "held": 1.2,
+      "heldSource": {
+        "kind": "answered"
+      },
+      "rating": "unmeasured",
+      "reference": 2
+    },
+    {
+      "field": "/ce/shotSpread",
+      "label": "CE shot spread",
+      "required": true,
+      "status": "held",
+      "held": 0.1,
+      "heldSource": {
+        "kind": "answered"
+      },
+      "rating": "unmeasured",
+      "reference": 1
+    },
+    {
+      "field": "/ce/sightsEfficiency",
+      "label": "CE sights efficiency",
+      "required": false,
+      "status": "held",
+      "held": 1,
+      "heldSource": {
+        "kind": "answered"
+      },
+      "rating": "unmeasured",
+      "reference": 0.8
+    },
+    {
+      "field": "/ce/toolPenetration/limb/blunt",
+      "label": "Blunt penetration of the tool limb",
+      "required": true,
+      "status": "held",
+      "held": 1,
+      "heldSource": {
+        "kind": "answered"
+      },
+      "rating": "unreliable",
+      "error": 0.6434630278443666,
+      "reference": 2.359
+    }
+  ],
+  "choices": [
+    {
+      "field": "/ce/ammoSet",
+      "label": "Which arrow or bolt set (ammo set) does the bow use?",
+      "kind": "choice",
+      "required": true,
+      "status": "held",
+      "held": "AmmoSet_Arrow",
+      "candidates": [
+        {
+          "name": "AmmoSet_Arrow",
+          "usedBy": 1,
+          "score": 0,
+          "firstDamage": 6
+        },
+        {
+          "name": "AmmoSet_GreatArrow",
+          "usedBy": 1,
+          "score": 0,
+          "firstDamage": 9
+        },
+        {
+          "name": "AmmoSet_NerveSpikerBolt",
+          "usedBy": 1,
+          "score": 0,
+          "firstDamage": 11
+        },
+        {
+          "name": "AmmoSet_StreamlinedArrow",
+          "usedBy": 1,
+          "score": 0,
+          "firstDamage": 8
+        },
+        {
+          "name": "AmmoSet_66mmThermalBolt",
+          "usedBy": 0,
+          "score": 0,
+          "firstDamage": 6
+        },
+        {
+          "name": "AmmoSet_CrossbowBolt",
+          "usedBy": 0,
+          "score": 0,
+          "firstDamage": 10
+        }
+      ]
+    },
+    {
+      "field": "/ce/defaultProjectile",
+      "label": "Which projectile of the ammo set is the default?",
+      "kind": "choice",
+      "required": true,
+      "status": "derived",
+      "value": "Projectile_Arrow_Stone",
+      "source": {
+        "kind": "first-of-set"
+      },
+      "candidates": [
+        {
+          "name": "Projectile_Arrow_Stone",
+          "usedBy": 0,
+          "score": 0
+        },
+        {
+          "name": "Projectile_Arrow_Steel",
+          "usedBy": 0,
+          "score": 0
+        },
+        {
+          "name": "Projectile_Arrow_Plasteel",
+          "usedBy": 0,
+          "score": 0
+        },
+        {
+          "name": "Projectile_Arrow_Venom",
+          "usedBy": 0,
+          "score": 0
+        },
+        {
+          "name": "Projectile_Arrow_Flame",
+          "usedBy": 0,
+          "score": 0
+        }
+      ]
+    },
+    {
+      "field": "/ce/weaponTagClass",
+      "label": "Which bow tag does the weapon get?",
+      "kind": "choice",
+      "required": true,
+      "status": "derived",
+      "value": "CE_Bow",
+      "source": {
+        "kind": "vanilla"
+      },
+      "candidates": [
+        {
+          "name": "CE_Bow",
+          "usedBy": 4,
+          "score": 0
+        }
+      ],
+      "reason": "the converted bows of the library carry this tag"
+    }
+  ],
+  "patchNumbers": [
+    {
+      "field": "mass",
+      "label": "Mass in the patch",
+      "required": false,
+      "status": "derived",
+      "value": 0.8,
+      "source": {
+        "kind": "vanilla"
+      },
+      "rating": "unmeasured",
+      "reference": 0.8,
+      "reason": "the vanilla number is carried over: the estimate 0.8 is not used: it is rated unmeasured: 4 converted weapons are too few to measure an error"
+    },
+    {
+      "field": "range",
+      "label": "Range in the patch",
+      "required": false,
+      "status": "derived",
+      "value": 22.9,
+      "source": {
+        "kind": "vanilla"
+      },
+      "rating": "unmeasured",
+      "reference": 20.42,
+      "reason": "the vanilla number is carried over: the estimate 20.42 is not used: it is rated unmeasured: 4 converted weapons are too few to measure an error"
+    },
+    {
+      "field": "warmup",
+      "label": "Warmup in the patch",
+      "required": false,
+      "status": "derived",
+      "value": 1.35,
+      "source": {
+        "kind": "vanilla"
+      },
+      "rating": "unmeasured",
+      "reference": 0.9649,
+      "reason": "the vanilla number is carried over: the estimate 0.9649 is not used: it is rated unmeasured: 4 converted weapons are too few to measure an error"
+    },
+    {
+      "field": "cooldown",
+      "label": "Cooldown in the patch",
+      "required": false,
+      "status": "derived",
+      "value": 1.65,
+      "source": {
+        "kind": "vanilla"
+      },
+      "rating": "unmeasured",
+      "reference": 1,
+      "reason": "the vanilla number is carried over: the estimate 1 is not used: it is rated unmeasured: 4 converted weapons are too few to measure an error"
+    }
+  ],
+  "asks": {
+    "items": []
+  },
+  "missing": [
+    "/ce/defaultProjectile",
+    "/ce/weaponTagClass"
+  ],
+  "stillMissingAfterAccept": [],
+  "notes": [
+    "magazine: only 1 of 4 converted weapons carry it; at least 3 are needed for a class",
+    "reload: only 1 of 4 converted weapons carry it; at least 3 are needed for a class"
+  ]
+}

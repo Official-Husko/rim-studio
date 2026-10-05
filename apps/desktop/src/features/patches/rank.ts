@@ -25,7 +25,8 @@ export function rankedOptions(ask: AskItemDto, choice: CeChoiceDto | undefined):
 }
 
 /** The line under a ranked choice: how the candidates were found and why the choice is open. */
-export function rankNote(choice: CeChoiceDto | undefined): string | undefined {
-  if (!choice || choice.candidates.length === 0) return undefined;
-  return t('patches.rank.note', { n: choice.candidates.length });
+export function rankNote(choice: CeChoiceDto | undefined, ranked?: number): string | undefined {
+  const n = ranked ?? choice?.candidates.length ?? 0;
+  if (!choice || n === 0) return undefined;
+  return t('patches.rank.note', { n });
 }

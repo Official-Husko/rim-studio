@@ -9,6 +9,7 @@ import { DefinitionView } from './DefinitionView';
 import { familyOf, familyParts, isConvertible } from './model';
 import { PlanView } from './PlanView';
 import { loadPlan, plans } from './planStore';
+import { OptionsForm } from './OptionsForm';
 import { QuestionsForm } from './QuestionsForm';
 import { StatusChip } from './StatusChip';
 import { loadChoices } from './suggestStore';
@@ -65,6 +66,7 @@ export function DetailPane({ project, candidate, familySize }: DetailPaneProps) 
           },
         ]
       : []),
+    ...(convertible ? [{ id: 'options', label: t('patches.tab.options') }] : []),
     ...(planned ? [{ id: 'plan', label: t('patches.tab.plan') }] : []),
     { id: 'definition', label: t('patches.tab.definition') },
   ];
@@ -107,7 +109,10 @@ export function DetailPane({ project, candidate, familySize }: DetailPaneProps) 
         {(id) => (
           <div class="pt-3">
             {id === 'questions' ? (
-              <QuestionsForm candidate={candidate} familySize={familySize} />
+              <QuestionsForm candidate={candidate} familySize={familySize} project={project} />
+            ) : null}
+            {id === 'options' ? (
+              <OptionsForm candidate={candidate} familySize={familySize} />
             ) : null}
             {id === 'plan' ? (
               <PlanView

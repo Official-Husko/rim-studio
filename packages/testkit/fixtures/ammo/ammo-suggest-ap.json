@@ -1,0 +1,320 @@
+{
+  "available": true,
+  "class": "ArmorPiercing",
+  "classLabel": "AP",
+  "nearest": [
+    {
+      "ammoDef": "Ammo_30Carbine_AP",
+      "ammoLabel": ".30 Carbine (AP)",
+      "set": "AmmoSet_30Carbine",
+      "projectileDef": "Bullet_30Carbine_AP",
+      "damage": 9,
+      "speed": 123,
+      "energy": 1107,
+      "distance": 0.011675031580503308
+    },
+    {
+      "ammoDef": "Ammo_22Hornet_AP",
+      "ammoLabel": ".22 Hornet (AP)",
+      "set": "AmmoSet_22Hornet",
+      "projectileDef": "Bullet_22Hornet_AP",
+      "damage": 7,
+      "speed": 158,
+      "energy": 1106,
+      "distance": 0.012578782206860073
+    },
+    {
+      "ammoDef": "Ammo_50AE_AP",
+      "ammoLabel": ".50 AE (AP)",
+      "set": "AmmoSet_50AE",
+      "projectileDef": "Bullet_50AE_AP",
+      "damage": 12,
+      "speed": 98,
+      "energy": 1176,
+      "distance": 0.04879016416943205
+    },
+    {
+      "ammoDef": "Ammo_4570Gov_AP",
+      "ammoLabel": ".45-70 Government (AP)",
+      "set": "AmmoSet_4570Gov",
+      "projectileDef": "Bullet_4570Gov_AP",
+      "damage": 13,
+      "speed": 94,
+      "energy": 1222,
+      "distance": 0.08716017544240032
+    },
+    {
+      "ammoDef": "Ammo_44-40Winchester_AP",
+      "ammoLabel": ".44-40 Winchester (AP)",
+      "set": "AmmoSet_44-40Winchester",
+      "projectileDef": "Bullet_44-40Winchester_AP",
+      "damage": 10,
+      "speed": 101,
+      "energy": 1010,
+      "distance": 0.10337835445383507
+    }
+  ],
+  "fields": [
+    {
+      "field": "/projectile/armorPenetrationSharp",
+      "label": "sharp penetration",
+      "value": 13,
+      "source": "nearest",
+      "rating": "unreliable",
+      "n": 5,
+      "from": [
+        "Ammo_30Carbine_AP",
+        "Ammo_22Hornet_AP",
+        "Ammo_50AE_AP",
+        "Ammo_4570Gov_AP",
+        "Ammo_44-40Winchester_AP"
+      ],
+      "range": [
+        7,
+        18
+      ]
+    },
+    {
+      "field": "/projectile/armorPenetrationBlunt",
+      "label": "blunt penetration",
+      "value": 28.6,
+      "source": "nearest",
+      "rating": "unreliable",
+      "n": 5,
+      "from": [
+        "Ammo_30Carbine_AP",
+        "Ammo_22Hornet_AP",
+        "Ammo_50AE_AP",
+        "Ammo_4570Gov_AP",
+        "Ammo_44-40Winchester_AP"
+      ],
+      "range": [
+        20.09,
+        47.32
+      ]
+    },
+    {
+      "field": "/item/mass",
+      "label": "mass",
+      "value": 0.024,
+      "source": "nearest",
+      "rating": "unreliable",
+      "n": 5,
+      "from": [
+        "Ammo_30Carbine_AP",
+        "Ammo_22Hornet_AP",
+        "Ammo_50AE_AP",
+        "Ammo_4570Gov_AP",
+        "Ammo_44-40Winchester_AP"
+      ],
+      "range": [
+        0.007,
+        0.037
+      ]
+    },
+    {
+      "field": "/item/bulk",
+      "label": "bulk",
+      "value": 0.02,
+      "source": "nearest",
+      "rating": "unreliable",
+      "n": 5,
+      "from": [
+        "Ammo_30Carbine_AP",
+        "Ammo_22Hornet_AP",
+        "Ammo_50AE_AP",
+        "Ammo_4570Gov_AP",
+        "Ammo_44-40Winchester_AP"
+      ],
+      "range": [
+        0.01,
+        0.03
+      ]
+    },
+    {
+      "field": "/recipe/workAmount",
+      "label": "work amount",
+      "value": 3120,
+      "source": "nearest",
+      "rating": "unreliable",
+      "n": 5,
+      "from": [
+        "Ammo_30Carbine_AP",
+        "Ammo_22Hornet_AP",
+        "Ammo_50AE_AP",
+        "Ammo_4570Gov_AP",
+        "Ammo_44-40Winchester_AP"
+      ],
+      "range": [
+        960,
+        4560
+      ]
+    },
+    {
+      "field": "/recipe/products",
+      "label": "products per craft",
+      "value": 500,
+      "source": "nearest",
+      "rating": "reliable",
+      "n": 5,
+      "from": [
+        "Ammo_30Carbine_AP",
+        "Ammo_22Hornet_AP",
+        "Ammo_50AE_AP",
+        "Ammo_4570Gov_AP",
+        "Ammo_44-40Winchester_AP"
+      ],
+      "range": [
+        500,
+        500
+      ]
+    },
+    {
+      "field": "/projectile/parent",
+      "label": "projectile parent",
+      "text": "Base30CarbineBullet",
+      "source": "nearest",
+      "rating": "rough",
+      "n": 1,
+      "from": [
+        "Ammo_30Carbine_AP"
+      ]
+    },
+    {
+      "field": "/projectile/thingClass",
+      "label": "projectile class",
+      "text": "CombatExtended.BulletCE",
+      "source": "nearest",
+      "rating": "rough",
+      "n": 1,
+      "from": [
+        "Ammo_30Carbine_AP"
+      ]
+    },
+    {
+      "field": "/projectile/damageDef",
+      "label": "damage def",
+      "text": "Bullet",
+      "source": "nearest",
+      "rating": "rough",
+      "n": 1,
+      "from": [
+        "Ammo_30Carbine_AP"
+      ]
+    },
+    {
+      "field": "/item/parent",
+      "label": "ammo parent",
+      "text": "30CarbineBase",
+      "source": "nearest",
+      "rating": "rough",
+      "n": 1,
+      "from": [
+        "Ammo_30Carbine_AP"
+      ]
+    },
+    {
+      "field": "/recipe/parent",
+      "label": "recipe parent",
+      "text": "AmmoRecipeBase",
+      "source": "nearest",
+      "rating": "rough",
+      "n": 1,
+      "from": [
+        "Ammo_30Carbine_AP"
+      ]
+    },
+    {
+      "field": "/projectile/damage",
+      "label": "damage",
+      "value": 8,
+      "source": "hint",
+      "rating": "reliable",
+      "n": 0,
+      "from": []
+    },
+    {
+      "field": "/projectile/speed",
+      "label": "speed",
+      "value": 140,
+      "source": "hint",
+      "rating": "reliable",
+      "n": 0,
+      "from": []
+    }
+  ],
+  "ammoType": {
+    "key": "AP",
+    "ammoClass": "ArmorPiercing",
+    "projectile": {
+      "parent": "Base30CarbineBullet",
+      "thingClass": "CombatExtended.BulletCE",
+      "damageDef": "Bullet",
+      "damage": {
+        "value": 8,
+        "source": "answered"
+      },
+      "armorPenetrationSharp": {
+        "value": 13,
+        "source": "suggested"
+      },
+      "armorPenetrationBlunt": {
+        "value": 28.6,
+        "source": "suggested"
+      },
+      "speed": {
+        "value": 140,
+        "source": "answered"
+      },
+      "dropsCasings": true,
+      "texPath": "Things/Projectile/Bullet_Small",
+      "graphicClass": "Graphic_Single"
+    },
+    "item": {
+      "parent": "30CarbineBase",
+      "mass": {
+        "value": 0.024,
+        "source": "suggested"
+      },
+      "bulk": {
+        "value": 0.02,
+        "source": "suggested"
+      },
+      "stackLimit": {
+        "value": 5000,
+        "source": "suggested"
+      },
+      "tradeTags": [
+        "CE_AmmoInjector",
+        "CE_Ammo",
+        "CE_AutoEnableTrade",
+        "CE_AutoEnableCrafting"
+      ],
+      "texPath": "Things/Ammo/Rifle/Clip/AP",
+      "graphicClass": "Graphic_StackCount",
+      "techLevel": "Industrial",
+      "cookOff": "projectile"
+    },
+    "recipe": {
+      "parent": "AmmoRecipeBase",
+      "ingredients": [
+        {
+          "thing": "Steel",
+          "count": {
+            "value": 14,
+            "source": "suggested"
+          }
+        }
+      ],
+      "products": {
+        "value": 500,
+        "source": "suggested"
+      },
+      "workAmount": {
+        "value": 3120,
+        "source": "suggested"
+      }
+    }
+  },
+  "notes": []
+}

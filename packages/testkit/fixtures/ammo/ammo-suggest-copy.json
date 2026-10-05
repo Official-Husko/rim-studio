@@ -1,0 +1,181 @@
+{
+  "available": true,
+  "class": "FullMetalJacket",
+  "classLabel": "FMJ",
+  "copiedFrom": "Ammo_303British_FMJ",
+  "nearest": [
+    {
+      "ammoDef": "Ammo_303British_FMJ",
+      "ammoLabel": ".303 British (FMJ)",
+      "projectileDef": "",
+      "damage": 20,
+      "speed": 147,
+      "distance": 0
+    }
+  ],
+  "fields": [
+    {
+      "field": "/projectile/damage",
+      "label": "damage",
+      "value": 20,
+      "source": "copied",
+      "rating": "reliable",
+      "n": 1,
+      "from": [
+        "Ammo_303British_FMJ"
+      ]
+    },
+    {
+      "field": "/projectile/armorPenetrationSharp",
+      "label": "sharp penetration",
+      "value": 6.5,
+      "source": "copied",
+      "rating": "reliable",
+      "n": 1,
+      "from": [
+        "Ammo_303British_FMJ"
+      ]
+    },
+    {
+      "field": "/projectile/armorPenetrationBlunt",
+      "label": "blunt penetration",
+      "value": 67,
+      "source": "copied",
+      "rating": "reliable",
+      "n": 1,
+      "from": [
+        "Ammo_303British_FMJ"
+      ]
+    },
+    {
+      "field": "/projectile/speed",
+      "label": "speed",
+      "value": 147,
+      "source": "copied",
+      "rating": "reliable",
+      "n": 1,
+      "from": [
+        "Ammo_303British_FMJ"
+      ]
+    },
+    {
+      "field": "/projectile/damageDef",
+      "label": "damage def",
+      "text": "Bullet",
+      "source": "copied",
+      "rating": "reliable",
+      "n": 1,
+      "from": [
+        "Ammo_303British_FMJ"
+      ]
+    },
+    {
+      "field": "/item/mass",
+      "label": "mass",
+      "value": 0.026,
+      "source": "copied",
+      "rating": "reliable",
+      "n": 1,
+      "from": [
+        "Ammo_303British_FMJ"
+      ]
+    },
+    {
+      "field": "/item/bulk",
+      "label": "bulk",
+      "value": 0.03,
+      "source": "copied",
+      "rating": "reliable",
+      "n": 1,
+      "from": [
+        "Ammo_303British_FMJ"
+      ]
+    },
+    {
+      "field": "/recipe/workAmount",
+      "label": "work amount",
+      "value": 2800,
+      "source": "copied",
+      "rating": "reliable",
+      "n": 1,
+      "from": [
+        "Ammo_303British_FMJ"
+      ]
+    }
+  ],
+  "ammoType": {
+    "key": "FMJ",
+    "ammoClass": "FullMetalJacket",
+    "copiedFrom": "Ammo_303British_FMJ",
+    "projectile": {
+      "parent": "Base303BritishBullet",
+      "thingClass": "CombatExtended.BulletCE",
+      "damageDef": "Bullet",
+      "damage": {
+        "value": 20,
+        "source": "suggested"
+      },
+      "armorPenetrationSharp": {
+        "value": 6.5,
+        "source": "suggested"
+      },
+      "armorPenetrationBlunt": {
+        "value": 67,
+        "source": "suggested"
+      },
+      "speed": {
+        "value": 147,
+        "source": "suggested"
+      },
+      "dropsCasings": true,
+      "texPath": "Things/Projectile/Bullet_Small",
+      "graphicClass": "Graphic_Single"
+    },
+    "item": {
+      "parent": "303BritishBase",
+      "mass": {
+        "value": 0.026,
+        "source": "suggested"
+      },
+      "bulk": {
+        "value": 0.03,
+        "source": "suggested"
+      },
+      "stackLimit": {
+        "value": 5000,
+        "source": "suggested"
+      },
+      "tradeTags": [
+        "CE_AmmoInjector",
+        "CE_Ammo",
+        "CE_AutoEnableTrade",
+        "CE_AutoEnableCrafting"
+      ],
+      "texPath": "Things/Ammo/Rifle/Clip/FMJ",
+      "graphicClass": "Graphic_StackCount",
+      "techLevel": "Industrial",
+      "cookOff": "projectile"
+    },
+    "recipe": {
+      "parent": "AmmoRecipeBase",
+      "ingredients": [
+        {
+          "thing": "Steel",
+          "count": {
+            "value": 28,
+            "source": "suggested"
+          }
+        }
+      ],
+      "products": {
+        "value": 500,
+        "source": "suggested"
+      },
+      "workAmount": {
+        "value": 2800,
+        "source": "suggested"
+      }
+    }
+  },
+  "notes": []
+}

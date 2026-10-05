@@ -60,13 +60,18 @@ describe('CeSection: off', () => {
 describe('CeSection: on', () => {
   it('shows the suggestion: ratings, the choices and what is still needed', async () => {
     await show('ce-on');
-    expect(screen.getByRole('switch').getAttribute('aria-checked')).toBe('true');
+    expect(
+      screen
+        .getByRole('switch', { name: 'Add a Combat Extended patch (optional)' })
+        .getAttribute('aria-checked'),
+    ).toBe('true');
     expect(
       screen.getByText('Numbers based on the 4 nearest of 20 converted weapons.'),
     ).toBeTruthy();
     expect(screen.getAllByText('Rough').length).toBeGreaterThan(0);
     expect(screen.getAllByText('Unreliable').length).toBeGreaterThan(0);
-    expect(screen.getByRole('combobox', { name: /Which caliber/ })).toBeTruthy();
+    expect(screen.getByRole('button', { name: 'Browse all ammo' })).toBeTruthy();
+    expect(screen.getByRole('group', { name: 'Quick picks, best fit first' })).toBeTruthy();
     expect(screen.getByRole('combobox', { name: /Which weapon class tag/ })).toBeTruthy();
     expect(screen.getByRole('checkbox', { name: 'Is the weapon held in one hand?' })).toBeTruthy();
   });
@@ -107,9 +112,7 @@ describe('CeSection: on', () => {
 
   it('writes the chosen ammo set and a typed answer into the draft', async () => {
     const setup = await show('ce-on');
-    fireEvent.change(screen.getByRole('combobox', { name: /Which caliber/ }), {
-      target: { value: 'AmmoSet_280British' },
-    });
+    fireEvent.click(screen.getByRole('button', { name: /^AmmoSet_280British/ }));
     expect(setup.editor.draft.value?.spec.ce?.ammoSet).toBe('AmmoSet_280British');
     const spread = screen.getByRole('spinbutton', { name: /CE shot spread/ });
     fireEvent.input(spread, { target: { value: '0.2' } });

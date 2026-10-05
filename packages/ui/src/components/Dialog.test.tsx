@@ -88,4 +88,16 @@ describe('Dialog', () => {
     fireEvent.click(screen.getByRole('dialog', { hidden: true }));
     expect(onClose).toHaveBeenCalledTimes(1);
   });
+
+  it('fills most of the window with the full size and lets its content fill the body', () => {
+    render(
+      <Dialog open title="Wide" onClose={() => {}} size="full">
+        <p>Content</p>
+      </Dialog>,
+    );
+    const panel = screen.getByRole('dialog', { hidden: true }).firstElementChild as HTMLElement;
+    expect(panel.className).toContain('h-[92vh]');
+    expect(panel.className).not.toContain('w-dialog');
+    expect(screen.getByText('Content').parentElement?.className).toContain('flex-col');
+  });
 });

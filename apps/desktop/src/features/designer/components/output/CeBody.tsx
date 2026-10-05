@@ -1,9 +1,11 @@
 import type { CeSuggestionDto, DesignSpecDto } from 'rimstudio-ipc-types';
 import { SegmentedControl } from 'rimstudio-ui';
+import { CeExtrasEditor } from '~/shared/ce';
 import { t } from '~/shared/i18n';
 import { getAt } from '../../model/pointer';
 import type { OutputStore } from '../../output-store';
 import { sourced } from '../../output-model';
+import { AmmoSetAsk } from './ce/AmmoSetAsk';
 import { CeChecklist } from './CeChecklist';
 import { CeChoiceRow } from './CeChoiceRow';
 import { CeFieldRow } from './CeFieldRow';
@@ -32,8 +34,14 @@ export function CeBody({ store, suggestion, spec, onGoTo }: CeBodyProps) {
     ...suggestion.fields.map((f) => [f.field, f.label] as const),
     ...suggestion.choices.map((c) => [c.field, c.label] as const),
   ]);
+  const ammoSets = (
+    suggestion.choices.find((c) => c.field === '/ce/ammoSet')?.candidates ?? []
+  ).map((c) => ({ value: c.name, label: c.name }));
   const flags = suggestion.choices.filter((c) => c.kind === 'flag');
-  const choices = suggestion.choices.filter((c) => c.kind !== 'flag');
+  // custom ammunition brings its own default projectile, so that question is not asked
+  const choices = suggestion.choices.filter(
+    (c) => c.kind !== 'flag' && !(spec.ce?.customAmmo && c.field === '/ce/defaultProjectile'),
+  );
   return (
     <div class="flex flex-col gap-3">
       {suggestion.classLabel ? (
@@ -66,16 +74,20 @@ export function CeBody({ store, suggestion, spec, onGoTo }: CeBodyProps) {
       <div class="flex flex-col gap-1">
         <Heading>{t('designer.output.ce.choicesHeading')}</Heading>
         <div class="flex flex-col gap-3">
-          {choices.map((choice) => (
-            <CeChoiceRow
-              key={choice.field}
-              choice={choice}
-              value={getAt(spec, choice.field) as string | undefined}
-              accepted={accepted.has(choice.field)}
-              onAccept={(on) => store.setAccepted(choice.field, on)}
-              onChoose={(v) => store.answer(choice.field, v)}
-            />
-          ))}
+          {choices.map((choice) =>
+            choice.field === '/ce/ammoSet' ? (
+              <AmmoSetAsk key={choice.field} store={store} spec={spec} choice={choice} />
+            ) : (
+              <CeChoiceRow
+                key={choice.field}
+                choice={choice}
+                value={getAt(spec, choice.field) as string | undefined}
+                accepted={accepted.has(choice.field)}
+                onAccept={(on) => store.setAccepted(choice.field, on)}
+                onChoose={(v) => store.answer(choice.field, v)}
+              />
+            ),
+          )}
           {flags.map((choice) => (
             <CeChoiceRow
               key={choice.field}
@@ -105,6 +117,18 @@ export function CeBody({ store, suggestion, spec, onGoTo }: CeBodyProps) {
         </div>
       </div>
       <CePatchNumbers numbers={suggestion.patchNumbers} />
+      {spec.ce ? (
+        <div class="flex flex-col gap-1">
+          <Heading>{t('designer.output.ce.extrasHeading')}</Heading>
+          <p class="text-small text-muted">{t('designer.output.ce.extrasHelp')}</p>
+          <CeExtrasEditor
+            block={spec.ce}
+            onChange={store.patchBlock}
+            options={suggestion.options ?? []}
+            ammoSets={ammoSets}
+          />
+        </div>
+      ) : null}
       {suggestion.notes.length > 0 ? (
         <ul class="flex flex-col gap-1">
           {suggestion.notes.map((note) => (

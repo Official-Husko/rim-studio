@@ -1,0 +1,1622 @@
+{
+  "available": true,
+  "total": 307,
+  "matching": 307,
+  "page": 0,
+  "pageSize": 1,
+  "entries": [],
+  "calibers": [
+    {
+      "name": ".17 HMR",
+      "label": ".17 HMR",
+      "count": 1
+    },
+    {
+      "name": ".22 Hornet",
+      "label": ".22 Hornet",
+      "count": 1
+    },
+    {
+      "name": ".22 LR",
+      "label": ".22 LR",
+      "count": 1
+    },
+    {
+      "name": ".22 Short",
+      "label": ".22 Short",
+      "count": 1
+    },
+    {
+      "name": ".22 WMR",
+      "label": ".22 WMR",
+      "count": 1
+    },
+    {
+      "name": ".243 Winchester",
+      "label": ".243 Winchester",
+      "count": 1
+    },
+    {
+      "name": ".25 ACP",
+      "label": ".25 ACP",
+      "count": 1
+    },
+    {
+      "name": ".277 Fury",
+      "label": ".277 Fury",
+      "count": 1
+    },
+    {
+      "name": ".280 British",
+      "label": ".280 British",
+      "count": 1
+    },
+    {
+      "name": ".30 Carbine",
+      "label": ".30 Carbine",
+      "count": 2
+    },
+    {
+      "name": ".30-06 Springfield",
+      "label": ".30-06 Springfield",
+      "count": 1
+    },
+    {
+      "name": ".30-30 Winchester",
+      "label": ".30-30 Winchester",
+      "count": 2
+    },
+    {
+      "name": ".300 AAC Blackout",
+      "label": ".300 AAC Blackout",
+      "count": 1
+    },
+    {
+      "name": ".300 Winchester Magnum",
+      "label": ".300 Winchester Magnum",
+      "count": 1
+    },
+    {
+      "name": ".303 British",
+      "label": ".303 British",
+      "count": 2
+    },
+    {
+      "name": ".32 ACP",
+      "label": ".32 ACP",
+      "count": 1
+    },
+    {
+      "name": ".338 Lapua Magnum",
+      "label": ".338 Lapua Magnum",
+      "count": 1
+    },
+    {
+      "name": ".338 Norma Magnum",
+      "label": ".338 Norma Magnum",
+      "count": 1
+    },
+    {
+      "name": ".357 Magnum",
+      "label": ".357 Magnum",
+      "count": 4
+    },
+    {
+      "name": ".357 SIG",
+      "label": ".357 SIG",
+      "count": 1
+    },
+    {
+      "name": ".38 ACP",
+      "label": ".38 ACP",
+      "count": 1
+    },
+    {
+      "name": ".38 S&W",
+      "label": ".38 S&W",
+      "count": 1
+    },
+    {
+      "name": ".38 Special",
+      "label": ".38 Special",
+      "count": 1
+    },
+    {
+      "name": ".38 Super",
+      "label": ".38 Super",
+      "count": 1
+    },
+    {
+      "name": ".38-55 Winchester",
+      "label": ".38-55 Winchester",
+      "count": 1
+    },
+    {
+      "name": ".380 ACP",
+      "label": ".380 ACP",
+      "count": 1
+    },
+    {
+      "name": ".40 SW",
+      "label": ".40 SW",
+      "count": 1
+    },
+    {
+      "name": ".408 Cheyenne Tactical",
+      "label": ".408 Cheyenne Tactical",
+      "count": 1
+    },
+    {
+      "name": ".410 Bore",
+      "label": ".410 Bore",
+      "count": 3
+    },
+    {
+      "name": ".44 Magnum",
+      "label": ".44 Magnum",
+      "count": 4
+    },
+    {
+      "name": ".44 Special",
+      "label": ".44 Special",
+      "count": 1
+    },
+    {
+      "name": ".44-40 Winchester",
+      "label": ".44-40 Winchester",
+      "count": 2
+    },
+    {
+      "name": ".45 ACP",
+      "label": ".45 ACP",
+      "count": 2
+    },
+    {
+      "name": ".45 Colt",
+      "label": ".45 Colt",
+      "count": 4
+    },
+    {
+      "name": ".45 Schofield",
+      "label": ".45 Schofield",
+      "count": 1
+    },
+    {
+      "name": ".45-70 Government",
+      "label": ".45-70 Government",
+      "count": 2
+    },
+    {
+      "name": ".454 Casull",
+      "label": ".454 Casull",
+      "count": 2
+    },
+    {
+      "name": ".455 Webley",
+      "label": ".455 Webley",
+      "count": 1
+    },
+    {
+      "name": ".458 SOCOM",
+      "label": ".458 SOCOM",
+      "count": 1
+    },
+    {
+      "name": ".460 S&W Magnum",
+      "label": ".460 S&W Magnum",
+      "count": 2
+    },
+    {
+      "name": ".470 Nitro Express",
+      "label": ".470 Nitro Express",
+      "count": 1
+    },
+    {
+      "name": ".50 AE",
+      "label": ".50 AE",
+      "count": 1
+    },
+    {
+      "name": ".50 BMG",
+      "label": ".50 BMG",
+      "count": 1
+    },
+    {
+      "name": ".50 Beowulf",
+      "label": ".50 Beowulf",
+      "count": 1
+    },
+    {
+      "name": ".50 Cal Bolter",
+      "label": ".50 Cal Bolter",
+      "count": 1
+    },
+    {
+      "name": ".500 S&W Magnum",
+      "label": ".500 S&W Magnum",
+      "count": 1
+    },
+    {
+      "name": ".55 Boys",
+      "label": ".55 Boys",
+      "count": 1
+    },
+    {
+      "name": ".56-56 Spencer",
+      "label": ".56-56 Spencer",
+      "count": 1
+    },
+    {
+      "name": ".600 Nitro Express",
+      "label": ".600 Nitro Express",
+      "count": 1
+    },
+    {
+      "name": ".75 Cal Bolter",
+      "label": ".75 Cal Bolter",
+      "count": 2
+    },
+    {
+      "name": ".950 JDJ",
+      "label": ".950 JDJ",
+      "count": 1
+    },
+    {
+      "name": ".998 Cal Bolter",
+      "label": ".998 Cal Bolter",
+      "count": 1
+    },
+    {
+      "name": "10 gauge",
+      "label": "10 gauge",
+      "count": 2
+    },
+    {
+      "name": "100x695mmR cannon shell",
+      "label": "100x695mmR cannon shell",
+      "count": 1
+    },
+    {
+      "name": "105mm Howitzer shell",
+      "label": "105mm Howitzer shell",
+      "count": 2
+    },
+    {
+      "name": "105x607mmR shell",
+      "label": "105x607mmR shell",
+      "count": 1
+    },
+    {
+      "name": "105x617mmR cannon shell",
+      "label": "105x617mmR cannon shell",
+      "count": 1
+    },
+    {
+      "name": "10mm Auto",
+      "label": "10mm Auto",
+      "count": 1
+    },
+    {
+      "name": "10x18mm Charged",
+      "label": "10x18mm Charged",
+      "count": 1
+    },
+    {
+      "name": "12 gauge",
+      "label": "12 gauge",
+      "count": 3
+    },
+    {
+      "name": "12.7x108mm Soviet",
+      "label": "12.7x108mm Soviet",
+      "count": 1
+    },
+    {
+      "name": "12.7x40mm",
+      "label": "12.7x40mm",
+      "count": 2
+    },
+    {
+      "name": "12.7x55mm",
+      "label": "12.7x55mm",
+      "count": 1
+    },
+    {
+      "name": "12.7x99mm",
+      "label": "12.7x99mm",
+      "count": 1
+    },
+    {
+      "name": "120mm mortar shell",
+      "label": "120mm mortar shell",
+      "count": 1
+    },
+    {
+      "name": "120x570mmR cannon shell",
+      "label": "120x570mmR cannon shell",
+      "count": 1
+    },
+    {
+      "name": "12Gauge Charged",
+      "label": "12Gauge Charged",
+      "count": 1
+    },
+    {
+      "name": "12mm Railgun",
+      "label": "12mm Railgun",
+      "count": 1
+    },
+    {
+      "name": "12x64mm Charged",
+      "label": "12x64mm Charged",
+      "count": 1
+    },
+    {
+      "name": "12x72mm Charged",
+      "label": "12x72mm Charged",
+      "count": 1
+    },
+    {
+      "name": "13.2x92mmSR TuF",
+      "label": "13.2x92mmSR TuF",
+      "count": 1
+    },
+    {
+      "name": "130mm Type 63 Rocket",
+      "label": "130mm Type 63 Rocket",
+      "count": 1
+    },
+    {
+      "name": "132mm M13 Rocket",
+      "label": "132mm M13 Rocket",
+      "count": 1
+    },
+    {
+      "name": "13mm Gyrojet",
+      "label": "13mm Gyrojet",
+      "count": 1
+    },
+    {
+      "name": "14.5x114mm",
+      "label": "14.5x114mm",
+      "count": 1
+    },
+    {
+      "name": "14.5x114mmUNSC",
+      "label": "14.5x114mmUNSC",
+      "count": 1
+    },
+    {
+      "name": "15.2x169mm",
+      "label": "15.2x169mm",
+      "count": 1
+    },
+    {
+      "name": "152mm ATGM",
+      "label": "152mm ATGM",
+      "count": 1
+    },
+    {
+      "name": "152mm Howitzer shell",
+      "label": "152mm Howitzer shell",
+      "count": 2
+    },
+    {
+      "name": "155mm Howitzer shell",
+      "label": "155mm Howitzer shell",
+      "count": 2
+    },
+    {
+      "name": "15cm Nebelwerfer Rocket",
+      "label": "15cm Nebelwerfer Rocket",
+      "count": 1
+    },
+    {
+      "name": "15x65mm Diffusing Charged",
+      "label": "15x65mm Diffusing Charged",
+      "count": 1
+    },
+    {
+      "name": "16 gauge",
+      "label": "16 gauge",
+      "count": 2
+    },
+    {
+      "name": "164x284mm Demolition Shell",
+      "label": "164x284mm Demolition Shell",
+      "count": 1
+    },
+    {
+      "name": "16x65mm",
+      "label": "16x65mm",
+      "count": 1
+    },
+    {
+      "name": "2-Bore",
+      "label": "2-Bore",
+      "count": 1
+    },
+    {
+      "name": "20 gauge",
+      "label": "20 gauge",
+      "count": 2
+    },
+    {
+      "name": "20mm Fliegerfaust",
+      "label": "20mm Fliegerfaust",
+      "count": 1
+    },
+    {
+      "name": "20x102mm NATO",
+      "label": "20x102mm NATO",
+      "count": 1
+    },
+    {
+      "name": "20x105mm Charged",
+      "label": "20x105mm Charged",
+      "count": 1
+    },
+    {
+      "name": "20x110mm Hispano",
+      "label": "20x110mm Hispano",
+      "count": 1
+    },
+    {
+      "name": "20x128mm Oerlikon",
+      "label": "20x128mm Oerlikon",
+      "count": 1
+    },
+    {
+      "name": "20x138mmB",
+      "label": "20x138mmB",
+      "count": 1
+    },
+    {
+      "name": "20x139mm",
+      "label": "20x139mm",
+      "count": 1
+    },
+    {
+      "name": "20x42mm Cartridge",
+      "label": "20x42mm Cartridge",
+      "count": 1
+    },
+    {
+      "name": "20x82mm Mauser",
+      "label": "20x82mm Mauser",
+      "count": 1
+    },
+    {
+      "name": "20x99mmR ShVAK",
+      "label": "20x99mmR ShVAK",
+      "count": 1
+    },
+    {
+      "name": "23x115mm",
+      "label": "23x115mm",
+      "count": 1
+    },
+    {
+      "name": "23x152mmB",
+      "label": "23x152mmB",
+      "count": 1
+    },
+    {
+      "name": "23x75mmR",
+      "label": "23x75mmR",
+      "count": 2
+    },
+    {
+      "name": "25x137mm NATO",
+      "label": "25x137mm NATO",
+      "count": 1
+    },
+    {
+      "name": "25x40mm Grenade",
+      "label": "25x40mm Grenade",
+      "count": 1
+    },
+    {
+      "name": "25x59mm Grenade",
+      "label": "25x59mm Grenade",
+      "count": 1
+    },
+    {
+      "name": "27x145mm Mauser",
+      "label": "27x145mm Mauser",
+      "count": 1
+    },
+    {
+      "name": "28cm Spgr. shell",
+      "label": "28cm Spgr. shell",
+      "count": 1
+    },
+    {
+      "name": "30x113mmB",
+      "label": "30x113mmB",
+      "count": 2
+    },
+    {
+      "name": "30x165mm",
+      "label": "30x165mm",
+      "count": 1
+    },
+    {
+      "name": "30x170mm",
+      "label": "30x170mm",
+      "count": 1
+    },
+    {
+      "name": "30x173mm NATO",
+      "label": "30x173mm NATO",
+      "count": 1
+    },
+    {
+      "name": "30x29mm Grenade",
+      "label": "30x29mm Grenade",
+      "count": 1
+    },
+    {
+      "name": "30x64mm Fuel Cell",
+      "label": "30x64mm Fuel Cell",
+      "count": 1
+    },
+    {
+      "name": "35x228mm NATO",
+      "label": "35x228mm NATO",
+      "count": 1
+    },
+    {
+      "name": "35x32mmSR Grenade",
+      "label": "35x32mmSR Grenade",
+      "count": 1
+    },
+    {
+      "name": "37x223mmR",
+      "label": "37x223mmR",
+      "count": 1
+    },
+    {
+      "name": "4.6x30mm",
+      "label": "4.6x30mm",
+      "count": 1
+    },
+    {
+      "name": "4.73x33mm Caseless",
+      "label": "4.73x33mm Caseless",
+      "count": 1
+    },
+    {
+      "name": "4.85x49mm",
+      "label": "4.85x49mm",
+      "count": 1
+    },
+    {
+      "name": "40x311mmR",
+      "label": "40x311mmR",
+      "count": 1
+    },
+    {
+      "name": "40x365mm Bofors",
+      "label": "40x365mm Bofors",
+      "count": 1
+    },
+    {
+      "name": "40x46mm Grenade",
+      "label": "40x46mm Grenade",
+      "count": 3
+    },
+    {
+      "name": "40x47mm Grenade",
+      "label": "40x47mm Grenade",
+      "count": 1
+    },
+    {
+      "name": "40x53mm Grenade",
+      "label": "40x53mm Grenade",
+      "count": 1
+    },
+    {
+      "name": "40x53mm VOG-25 Grenade",
+      "label": "40x53mm VOG-25 Grenade",
+      "count": 1
+    },
+    {
+      "name": "5.45x39mm Soviet",
+      "label": "5.45x39mm Soviet",
+      "count": 2
+    },
+    {
+      "name": "5.56x45mm NATO",
+      "label": "5.56x45mm NATO",
+      "count": 2
+    },
+    {
+      "name": "5.8x21mm DAP92",
+      "label": "5.8x21mm DAP92",
+      "count": 1
+    },
+    {
+      "name": "5.8x42mm DBP10",
+      "label": "5.8x42mm DBP10",
+      "count": 1
+    },
+    {
+      "name": "50mm GS-50 Grenade",
+      "label": "50mm GS-50 Grenade",
+      "count": 1
+    },
+    {
+      "name": "50mm Rockets",
+      "label": "50mm Rockets",
+      "count": 3
+    },
+    {
+      "name": "50mm type 89 mortar shell",
+      "label": "50mm type 89 mortar shell",
+      "count": 1
+    },
+    {
+      "name": "57x307mmR",
+      "label": "57x307mmR",
+      "count": 1
+    },
+    {
+      "name": "57x348mmSR",
+      "label": "57x348mmSR",
+      "count": 1
+    },
+    {
+      "name": "57x438mm Bofors",
+      "label": "57x438mm Bofors",
+      "count": 1
+    },
+    {
+      "name": "5x16mm Charged",
+      "label": "5x16mm Charged",
+      "count": 1
+    },
+    {
+      "name": "5x23mm Caseless",
+      "label": "5x23mm Caseless",
+      "count": 1
+    },
+    {
+      "name": "5x35mm Charged",
+      "label": "5x35mm Charged",
+      "count": 1
+    },
+    {
+      "name": "5x50mm Caseless",
+      "label": "5x50mm Caseless",
+      "count": 4
+    },
+    {
+      "name": "6.5mm Creedmoor",
+      "label": "6.5mm Creedmoor",
+      "count": 1
+    },
+    {
+      "name": "6.5x50mmSR Arisaka",
+      "label": "6.5x50mmSR Arisaka",
+      "count": 2
+    },
+    {
+      "name": "6.5x52mm Carcano",
+      "label": "6.5x52mm Carcano",
+      "count": 1
+    },
+    {
+      "name": "60mm mortar shell",
+      "label": "60mm mortar shell",
+      "count": 1
+    },
+    {
+      "name": "60x225mm Gamma Shell",
+      "label": "60x225mm Gamma Shell",
+      "count": 1
+    },
+    {
+      "name": "66mm Thermal Bolt",
+      "label": "66mm Thermal Bolt",
+      "count": 1
+    },
+    {
+      "name": "6mm Railgun",
+      "label": "6mm Railgun",
+      "count": 1
+    },
+    {
+      "name": "6x18mm Charged",
+      "label": "6x18mm Charged",
+      "count": 1
+    },
+    {
+      "name": "6x22mm Charged",
+      "label": "6x22mm Charged",
+      "count": 1
+    },
+    {
+      "name": "6x24mm Charged",
+      "label": "6x24mm Charged",
+      "count": 1
+    },
+    {
+      "name": "7.5 FK",
+      "label": "7.5 FK",
+      "count": 1
+    },
+    {
+      "name": "7.5x54mm French",
+      "label": "7.5x54mm French",
+      "count": 1
+    },
+    {
+      "name": "7.62x25mm Tokarev",
+      "label": "7.62x25mm Tokarev",
+      "count": 1
+    },
+    {
+      "name": "7.62x38mmR",
+      "label": "7.62x38mmR",
+      "count": 1
+    },
+    {
+      "name": "7.62x39mm Soviet",
+      "label": "7.62x39mm Soviet",
+      "count": 2
+    },
+    {
+      "name": "7.62x51mm NATO",
+      "label": "7.62x51mm NATO",
+      "count": 2
+    },
+    {
+      "name": "7.62x51mm UNSC",
+      "label": "7.62x51mm UNSC",
+      "count": 3
+    },
+    {
+      "name": "7.62x54mmR",
+      "label": "7.62x54mmR",
+      "count": 2
+    },
+    {
+      "name": "7.63x25mm Mauser",
+      "label": "7.63x25mm Mauser",
+      "count": 1
+    },
+    {
+      "name": "7.65x20mm Longue",
+      "label": "7.65x20mm Longue",
+      "count": 1
+    },
+    {
+      "name": "7.7x58mm Arisaka",
+      "label": "7.7x58mm Arisaka",
+      "count": 1
+    },
+    {
+      "name": "7.92x33mm Kurz",
+      "label": "7.92x33mm Kurz",
+      "count": 1
+    },
+    {
+      "name": "7.92x57mm Mauser",
+      "label": "7.92x57mm Mauser",
+      "count": 1
+    },
+    {
+      "name": "7.92x94mm Patronen",
+      "label": "7.92x94mm Patronen",
+      "count": 1
+    },
+    {
+      "name": "70mm APKWS rocket",
+      "label": "70mm APKWS rocket",
+      "count": 1
+    },
+    {
+      "name": "70mm Mechanoid Grenade",
+      "label": "70mm Mechanoid Grenade",
+      "count": 1
+    },
+    {
+      "name": "75x350mmR",
+      "label": "75x350mmR",
+      "count": 1
+    },
+    {
+      "name": "76.2x385mmR Cannon shell",
+      "label": "76.2x385mmR Cannon shell",
+      "count": 1
+    },
+    {
+      "name": "76.2x539mmR Cannon shell",
+      "label": "76.2x539mmR Cannon shell",
+      "count": 1
+    },
+    {
+      "name": "8 gauge",
+      "label": "8 gauge",
+      "count": 1
+    },
+    {
+      "name": "8.25mm Long",
+      "label": "8.25mm Long",
+      "count": 1
+    },
+    {
+      "name": "8.6mm Blackout",
+      "label": "8.6mm Blackout",
+      "count": 1
+    },
+    {
+      "name": "80mm S8 Rocket",
+      "label": "80mm S8 Rocket",
+      "count": 2
+    },
+    {
+      "name": "80x256mm Fuel Cell",
+      "label": "80x256mm Fuel Cell",
+      "count": 1
+    },
+    {
+      "name": "81mm mortar shell",
+      "label": "81mm mortar shell",
+      "count": 1
+    },
+    {
+      "name": "83mm PIAT Grenade",
+      "label": "83mm PIAT Grenade",
+      "count": 1
+    },
+    {
+      "name": "83mm SMAW Rockets",
+      "label": "83mm SMAW Rockets",
+      "count": 1
+    },
+    {
+      "name": "84x246mmR",
+      "label": "84x246mmR",
+      "count": 1
+    },
+    {
+      "name": "88mm RPzB Rockets",
+      "label": "88mm RPzB Rockets",
+      "count": 1
+    },
+    {
+      "name": "8mm Railgun",
+      "label": "8mm Railgun",
+      "count": 1
+    },
+    {
+      "name": "8x22mm Nambu",
+      "label": "8x22mm Nambu",
+      "count": 1
+    },
+    {
+      "name": "8x35mm Charged",
+      "label": "8x35mm Charged",
+      "count": 1
+    },
+    {
+      "name": "8x40mm Charged",
+      "label": "8x40mm Charged",
+      "count": 1
+    },
+    {
+      "name": "8x50mm Charged",
+      "label": "8x50mm Charged",
+      "count": 1
+    },
+    {
+      "name": "8x50mmR Lebel",
+      "label": "8x50mmR Lebel",
+      "count": 2
+    },
+    {
+      "name": "8x50mmR Mannlicher",
+      "label": "8x50mmR Mannlicher",
+      "count": 1
+    },
+    {
+      "name": "9.5x40mm UNSC",
+      "label": "9.5x40mm UNSC",
+      "count": 1
+    },
+    {
+      "name": "90mm cannon shell",
+      "label": "90mm cannon shell",
+      "count": 1
+    },
+    {
+      "name": "90mm recoilless rockets",
+      "label": "90mm recoilless rockets",
+      "count": 1
+    },
+    {
+      "name": "9x18mm Makarov",
+      "label": "9x18mm Makarov",
+      "count": 1
+    },
+    {
+      "name": "9x19mm Parabellum",
+      "label": "9x19mm Parabellum",
+      "count": 3
+    },
+    {
+      "name": "9x21mm Gyurza",
+      "label": "9x21mm Gyurza",
+      "count": 1
+    },
+    {
+      "name": "9x39mm Soviet",
+      "label": "9x39mm Soviet",
+      "count": 1
+    },
+    {
+      "name": "Blunderbuss Shot",
+      "label": "Blunderbuss Shot",
+      "count": 1
+    },
+    {
+      "name": "Cannon Ball",
+      "label": "Cannon Ball",
+      "count": 2
+    },
+    {
+      "name": "Charged Pistol Ammo",
+      "label": "Charged Pistol Ammo",
+      "count": 1
+    },
+    {
+      "name": "Charged Rifle Ammo",
+      "label": "Charged Rifle Ammo",
+      "count": 1
+    },
+    {
+      "name": "Charged Shotgun Ammo",
+      "label": "Charged Shotgun Ammo",
+      "count": 1
+    },
+    {
+      "name": "Charged rockets",
+      "label": "Charged rockets",
+      "count": 1
+    },
+    {
+      "name": "FN 5.7x28mm",
+      "label": "FN 5.7x28mm",
+      "count": 1
+    },
+    {
+      "name": "Heavy Charged Ammo",
+      "label": "Heavy Charged Ammo",
+      "count": 1
+    },
+    {
+      "name": "M41 rockets",
+      "label": "M41 rockets",
+      "count": 1
+    },
+    {
+      "name": "M6 Rockets",
+      "label": "M6 Rockets",
+      "count": 1
+    },
+    {
+      "name": "M74 Rockets",
+      "label": "M74 Rockets",
+      "count": 1
+    },
+    {
+      "name": "Mini Cannon Ball",
+      "label": "Mini Cannon Ball",
+      "count": 1
+    },
+    {
+      "name": "Mortar Grenade",
+      "label": "Mortar Grenade",
+      "count": 1
+    },
+    {
+      "name": "Musket ball",
+      "label": "Musket ball",
+      "count": 2
+    },
+    {
+      "name": "Plasma Heavy Power Cell",
+      "label": "Plasma Heavy Power Cell",
+      "count": 1
+    },
+    {
+      "name": "Plasma Pistol Power Cell",
+      "label": "Plasma Pistol Power Cell",
+      "count": 1
+    },
+    {
+      "name": "Plasma Rifle Power Cell",
+      "label": "Plasma Rifle Power Cell",
+      "count": 1
+    },
+    {
+      "name": "Plasma canister",
+      "label": "Plasma canister",
+      "count": 6
+    },
+    {
+      "name": "RPG-32 rockets",
+      "label": "RPG-32 rockets",
+      "count": 1
+    },
+    {
+      "name": "RPG-7 grenades",
+      "label": "RPG-7 grenades",
+      "count": 1
+    },
+    {
+      "name": "SPG9 rocket",
+      "label": "SPG9 rocket",
+      "count": 1
+    },
+    {
+      "name": "advanced",
+      "label": "advanced",
+      "count": 52
+    },
+    {
+      "name": "ammunition",
+      "label": "ammunition",
+      "count": 1
+    },
+    {
+      "name": "anti-materiel",
+      "label": "anti-materiel",
+      "count": 1
+    },
+    {
+      "name": "arrows",
+      "label": "arrows",
+      "count": 3
+    },
+    {
+      "name": "artillery shell",
+      "label": "artillery shell",
+      "count": 1
+    },
+    {
+      "name": "autocannon shell",
+      "label": "autocannon shell",
+      "count": 1
+    },
+    {
+      "name": "catapult ammo",
+      "label": "catapult ammo",
+      "count": 1
+    },
+    {
+      "name": "crossbow bolts",
+      "label": "crossbow bolts",
+      "count": 2
+    },
+    {
+      "name": "flamethrower fuel",
+      "label": "flamethrower fuel",
+      "count": 2
+    },
+    {
+      "name": "flare",
+      "label": "flare",
+      "count": 1
+    },
+    {
+      "name": "full power rifle ammo",
+      "label": "full power rifle ammo",
+      "count": 1
+    },
+    {
+      "name": "great arrows",
+      "label": "great arrows",
+      "count": 1
+    },
+    {
+      "name": "grenade",
+      "label": "grenade",
+      "count": 15
+    },
+    {
+      "name": "heavy cannon shell",
+      "label": "heavy cannon shell",
+      "count": 1
+    },
+    {
+      "name": "high caliber",
+      "label": "high caliber",
+      "count": 35
+    },
+    {
+      "name": "intermediate rifle ammo",
+      "label": "intermediate rifle ammo",
+      "count": 1
+    },
+    {
+      "name": "laser charge pack",
+      "label": "laser charge pack",
+      "count": 2
+    },
+    {
+      "name": "lasgun power pack",
+      "label": "lasgun power pack",
+      "count": 5
+    },
+    {
+      "name": "launcher Grenade",
+      "label": "launcher Grenade",
+      "count": 1
+    },
+    {
+      "name": "light cannon shell",
+      "label": "light cannon shell",
+      "count": 1
+    },
+    {
+      "name": "magnum pistol ammo",
+      "label": "magnum pistol ammo",
+      "count": 2
+    },
+    {
+      "name": "magnum rifle ammo",
+      "label": "magnum rifle ammo",
+      "count": 1
+    },
+    {
+      "name": "mech charged ammo",
+      "label": "mech charged ammo",
+      "count": 1
+    },
+    {
+      "name": "mech shell",
+      "label": "mech shell",
+      "count": 2
+    },
+    {
+      "name": "melta canister",
+      "label": "melta canister",
+      "count": 1
+    },
+    {
+      "name": "missile",
+      "label": "missile",
+      "count": 1
+    },
+    {
+      "name": "nail",
+      "label": "nail",
+      "count": 2
+    },
+    {
+      "name": "neolithic",
+      "label": "neolithic",
+      "count": 8
+    },
+    {
+      "name": "pistol",
+      "label": "pistol",
+      "count": 54
+    },
+    {
+      "name": "pistol ammo",
+      "label": "pistol ammo",
+      "count": 1
+    },
+    {
+      "name": "ranged weapons",
+      "label": "ranged weapons",
+      "count": 1
+    },
+    {
+      "name": "rifle",
+      "label": "rifle",
+      "count": 72
+    },
+    {
+      "name": "rocket",
+      "label": "rocket",
+      "count": 22
+    },
+    {
+      "name": "shell",
+      "label": "shell",
+      "count": 30
+    },
+    {
+      "name": "shotgun",
+      "label": "shotgun",
+      "count": 17
+    },
+    {
+      "name": "shotgun ammo",
+      "label": "shotgun ammo",
+      "count": 1
+    },
+    {
+      "name": "sling bullets",
+      "label": "sling bullets",
+      "count": 1
+    },
+    {
+      "name": "weapons",
+      "label": "weapons",
+      "count": 1
+    }
+  ],
+  "classes": [
+    {
+      "name": "Antigrain",
+      "label": "antigrain warhead",
+      "count": 4
+    },
+    {
+      "name": "ArmorPiercing",
+      "label": "AP",
+      "count": 160
+    },
+    {
+      "name": "Beanbag",
+      "label": "bean",
+      "count": 20
+    },
+    {
+      "name": "Bioferrite",
+      "label": "bioferrite",
+      "count": 2
+    },
+    {
+      "name": "BuckShot",
+      "label": "buck",
+      "count": 21
+    },
+    {
+      "name": "BurstingShell",
+      "label": "Bursting Shell",
+      "count": 3
+    },
+    {
+      "name": "CannonBall",
+      "label": "Round Shot",
+      "count": 2
+    },
+    {
+      "name": "Catapult_Boulder",
+      "label": "boulder",
+      "count": 1
+    },
+    {
+      "name": "Charged",
+      "label": "charge",
+      "count": 17
+    },
+    {
+      "name": "ChargedAP",
+      "label": "conc.",
+      "count": 10
+    },
+    {
+      "name": "ChargedRocketBB",
+      "label": "BB",
+      "count": 1
+    },
+    {
+      "name": "ChargedRocketHEC",
+      "label": "HE-C",
+      "count": 1
+    },
+    {
+      "name": "ChargedRocketICP",
+      "label": "ICP",
+      "count": 1
+    },
+    {
+      "name": "CompositeRigidAP",
+      "label": "APCR",
+      "count": 5
+    },
+    {
+      "name": "Deadlife",
+      "label": "Deadlife",
+      "count": 1
+    },
+    {
+      "name": "Demolition",
+      "label": "demolition",
+      "count": 2
+    },
+    {
+      "name": "DisruptorFlare",
+      "label": "Disruptor flare",
+      "count": 1
+    },
+    {
+      "name": "ElectroSlug",
+      "label": "EMP",
+      "count": 21
+    },
+    {
+      "name": "ExplosiveAP",
+      "label": "AP-HE",
+      "count": 93
+    },
+    {
+      "name": "FireShell",
+      "label": "Fire Shell",
+      "count": 2
+    },
+    {
+      "name": "FlameArrow",
+      "label": "flame",
+      "count": 3
+    },
+    {
+      "name": "FlameCrossbowBolt",
+      "label": "flame",
+      "count": 1
+    },
+    {
+      "name": "Flare",
+      "label": "flare",
+      "count": 1
+    },
+    {
+      "name": "FoamFuel",
+      "label": "foam",
+      "count": 4
+    },
+    {
+      "name": "FullMetalJacket",
+      "label": "FMJ",
+      "count": 130
+    },
+    {
+      "name": "Grapeshot",
+      "label": "Grapeshot",
+      "count": 2
+    },
+    {
+      "name": "GrenadeEMP",
+      "label": "EMP",
+      "count": 33
+    },
+    {
+      "name": "GrenadeHE",
+      "label": "HE",
+      "count": 51
+    },
+    {
+      "name": "GrenadeHEDP",
+      "label": "HEDP",
+      "count": 10
+    },
+    {
+      "name": "GrenadeHETF",
+      "label": "Airburst",
+      "count": 22
+    },
+    {
+      "name": "GrenadeIncendiary",
+      "label": "Incendiary",
+      "count": 17
+    },
+    {
+      "name": "HollowPoint",
+      "label": "HP",
+      "count": 112
+    },
+    {
+      "name": "IncendiaryAP",
+      "label": "AP-I",
+      "count": 92
+    },
+    {
+      "name": "IncendiaryFuel",
+      "label": "incendiary",
+      "count": 1
+    },
+    {
+      "name": "Inferno",
+      "label": "Inferno",
+      "count": 4
+    },
+    {
+      "name": "Ionized",
+      "label": "ion",
+      "count": 12
+    },
+    {
+      "name": "Javelin",
+      "label": "javelin",
+      "count": 1
+    },
+    {
+      "name": "JelliedPrometheumFuel",
+      "label": "jellied prometheum",
+      "count": 2
+    },
+    {
+      "name": "Kraken",
+      "label": "Kraken",
+      "count": 4
+    },
+    {
+      "name": "Laser",
+      "label": "laser",
+      "count": 6
+    },
+    {
+      "name": "Laser_Mech",
+      "label": "laser (mech)",
+      "count": 1
+    },
+    {
+      "name": "Melta",
+      "label": "Melta",
+      "count": 1
+    },
+    {
+      "name": "MetalStorm",
+      "label": "Metal Storm",
+      "count": 3
+    },
+    {
+      "name": "MusketBall",
+      "label": "Ball",
+      "count": 2
+    },
+    {
+      "name": "Nail",
+      "label": "nail",
+      "count": 2
+    },
+    {
+      "name": "NapalmFuel",
+      "label": "jellied chemfuel",
+      "count": 2
+    },
+    {
+      "name": "Nerve",
+      "label": "nerve",
+      "count": 1
+    },
+    {
+      "name": "Plasma",
+      "label": "plasma",
+      "count": 9
+    },
+    {
+      "name": "PlasteelArrow",
+      "label": "plasteel",
+      "count": 3
+    },
+    {
+      "name": "PlasteelCrossbowBolt",
+      "label": "plasteel",
+      "count": 1
+    },
+    {
+      "name": "RadiationIonising",
+      "label": "radiation",
+      "count": 1
+    },
+    {
+      "name": "RailgunSabot",
+      "label": "Sabot",
+      "count": 3
+    },
+    {
+      "name": "RocketFrag",
+      "label": "Frag",
+      "count": 3
+    },
+    {
+      "name": "RocketHE",
+      "label": "HE",
+      "count": 4
+    },
+    {
+      "name": "RocketHEAT",
+      "label": "HEAT",
+      "count": 25
+    },
+    {
+      "name": "RocketThermobaric",
+      "label": "thermobaric",
+      "count": 9
+    },
+    {
+      "name": "Sabot",
+      "label": "Sabot",
+      "count": 100
+    },
+    {
+      "name": "Shredder",
+      "label": "Shredder",
+      "count": 3
+    },
+    {
+      "name": "Slug",
+      "label": "slug",
+      "count": 23
+    },
+    {
+      "name": "Smoke",
+      "label": "Smoke",
+      "count": 26
+    },
+    {
+      "name": "Standard",
+      "label": "Standard",
+      "count": 4
+    },
+    {
+      "name": "SteelArrow",
+      "label": "steel",
+      "count": 3
+    },
+    {
+      "name": "SteelCrossbowBolt",
+      "label": "steel",
+      "count": 1
+    },
+    {
+      "name": "SteelSlingBullet",
+      "label": "steel",
+      "count": 1
+    },
+    {
+      "name": "StoneArrow",
+      "label": "stone",
+      "count": 3
+    },
+    {
+      "name": "StoneCrossbowBolt",
+      "label": "stone",
+      "count": 1
+    },
+    {
+      "name": "StoneSlingBullet",
+      "label": "stone",
+      "count": 1
+    },
+    {
+      "name": "Tempest",
+      "label": "Tempest",
+      "count": 4
+    },
+    {
+      "name": "ThermobaricFuel",
+      "label": "thermobaric",
+      "count": 1
+    },
+    {
+      "name": "TomahawkLAM",
+      "label": "Tomahawk Missile",
+      "count": 1
+    },
+    {
+      "name": "Toxic",
+      "label": "Toxic",
+      "count": 3
+    },
+    {
+      "name": "VenomArrow",
+      "label": "venom",
+      "count": 4
+    },
+    {
+      "name": "VenomCrossbowBolt",
+      "label": "venom",
+      "count": 1
+    }
+  ]
+}

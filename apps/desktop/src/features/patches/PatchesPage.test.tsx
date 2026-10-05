@@ -171,17 +171,11 @@ describe('PatchesPage conversion', () => {
     await screen.findByRole('grid', { name: 'Weapons of the mod' });
     expect(await screen.findByText('0 of 9 answered')).toBeTruthy();
     // the ranked ammo sets come first
-    const ammo = screen.getByRole('combobox', {
-      name: 'Which caliber (ammo set) does the weapon use?',
-    });
-    fireEvent.focus(ammo);
-    await waitFor(() => {
-      const first = screen.getAllByRole('option')[0];
-      expect(first?.textContent).toContain('AmmoSet_303British');
-      expect(first?.textContent).toContain('used by 2 converted weapons');
-    });
-    fireEvent.keyDown(ammo, { key: 'ArrowDown' });
-    fireEvent.keyDown(ammo, { key: 'Enter' });
+    const picks = await screen.findByRole('group', { name: 'Quick picks, best fit first' });
+    const first = within(picks).getAllByRole('button')[0];
+    expect(first?.textContent).toContain('AmmoSet_303British');
+    expect(first?.textContent).toContain('used by 2 converted weapons');
+    fireEvent.click(first as HTMLElement);
     await waitFor(() => expect(screen.getByText('1 of 9 answered')).toBeTruthy());
     await waitFor(() => {
       const plans = transport.calls.filter((c) => c.name === 'designer_export_plan');

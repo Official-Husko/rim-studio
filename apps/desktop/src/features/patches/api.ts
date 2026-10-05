@@ -1,5 +1,6 @@
 import type {
   ApplyReportDto,
+  CePatchSpecDto,
   CeSuggestionDto,
   ConvertRequestDto,
   ConvertScanDto,
@@ -75,6 +76,22 @@ export function suggestChoices(
 ): Promise<CeSuggestionDto> {
   const draft = placeholderDraft(kind, defName);
   draft.spec.weaponTags = firstTag ? [firstTag] : [];
+  return callCommand('designer_ce_suggest', { draft });
+}
+
+/**
+ * The suggestion for a weapon whose block holds the given members (the weapon tag class answered, for
+ * example). Only the optional additions it offers are read from the result.
+ */
+export function suggestWithBlock(
+  kind: ItemKindDto,
+  defName: string,
+  tags: readonly string[],
+  ce: CePatchSpecDto,
+): Promise<CeSuggestionDto> {
+  const draft = placeholderDraft(kind, defName);
+  draft.spec.weaponTags = [...tags];
+  draft.spec.ce = ce;
   return callCommand('designer_ce_suggest', { draft });
 }
 

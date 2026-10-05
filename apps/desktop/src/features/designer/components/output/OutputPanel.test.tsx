@@ -112,9 +112,7 @@ describe('OutputPanel', () => {
     fireEvent.click(screen.getByRole('switch'));
     await setup.flush();
     fireEvent.click(screen.getByRole('radio', { name: 'All derived' }));
-    fireEvent.change(screen.getByRole('combobox', { name: /Which caliber/ }), {
-      target: { value: 'AmmoSet_303British_SB' },
-    });
+    fireEvent.click(screen.getByRole('button', { name: /^AmmoSet_280British/ }));
     fireEvent.change(screen.getByRole('combobox', { name: /Which weapon class tag/ }), {
       target: { value: 'CE_AI_SR' },
     });

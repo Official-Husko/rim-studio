@@ -4,6 +4,7 @@ import { clearQueries, connection, setTransport } from '~/shared/ipc';
 import { resetProjectStore, setCurrentProject } from '~/shared/project';
 import { resetAnswers } from './answerStore';
 import { resetLint } from './lintStore';
+import { resetOptions } from './optionsStore';
 import { resetPlans } from './planStore';
 import { resetScan, includeConverted } from './scanStore';
 import { resetChoices } from './suggestStore';
@@ -62,6 +63,7 @@ export function resetPage(): void {
   resetAnswers();
   resetPlans();
   resetChoices();
+  resetOptions();
   resetLint();
   resetApply();
   includeConverted.value = true;

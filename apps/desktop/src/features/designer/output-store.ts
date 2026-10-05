@@ -7,10 +7,12 @@ import type {
   DraftDto,
   WritePlanDto,
 } from 'rimstudio-ipc-types';
+import { applyPatch, type CeBlockPatch } from '~/shared/ce';
 import { normalizeError } from '~/shared/ipc';
 import type { MessageKey } from '~/shared/i18n';
 import type { EditorStore } from './editor-store';
 import * as api from './output-api';
+import { createAmmoPlanner } from './output-ammo';
 import { createApplyFlow } from './output-apply';
 import {
   acceptedFor,
@@ -56,6 +58,11 @@ export function createOutputStore(deps: OutputDeps) {
   const acceptMode = signal<AcceptMode>('none');
   const customFields = signal<string[]>([]);
   const selectedPath = signal<string | undefined>(undefined);
+  const ammo = createAmmoPlanner({
+    editor,
+    projectId: deps.projectId,
+    accepted: () => acceptedFor(true, acceptMode.peek(), customFields.peek(), suggestion.peek()),
+  });
 
   /** The request that made the current plan; Apply sends it back so the backend can compare. */
   let planRequest: DesignerExportPlanRequest | undefined;
@@ -230,6 +237,13 @@ export function createOutputStore(deps: OutputDeps) {
     editor.update((d) => ({ ...d, spec: setCeValue(d.spec, pointer, value) }));
   }
 
+  /** Change members of the Combat Extended block as one edit: an undefined member is removed. */
+  function patchBlock(patch: CeBlockPatch): void {
+    editor.update((d) =>
+      d.spec.ce ? { ...d, spec: { ...d.spec, ce: applyPatch(d.spec.ce, patch) } } : d,
+    );
+  }
+
   /** Choose which derived values the plan takes. */
   function setAcceptMode(mode: AcceptMode): void {
     acceptMode.value = mode;
@@ -268,6 +282,8 @@ export function createOutputStore(deps: OutputDeps) {
     start,
     setCeEnabled,
     answer,
+    patchBlock,
+    ...ammo,
     setAcceptMode,
     setAccepted,
     select,

@@ -1,0 +1,162 @@
+{
+  "schemaVersion": 2,
+  "kind": "ranged",
+  "calibration": "anchored",
+  "spec": {
+    "kind": "ranged",
+    "identity": {
+      "defName": "UC_ShortBow",
+      "label": "uc shortbow",
+      "description": "A simple short selfbow made from a single piece of wood.",
+      "modPrefix": ""
+    },
+    "parent": {
+      "defName": "BaseWeaponNeolithic",
+      "inheritedStats": {
+        "Beauty": -3,
+        "DeteriorationRate": 2,
+        "Flammability": 1,
+        "MaxHitPoints": 100,
+        "SellPriceFactor": 0.2
+      },
+      "inheritedTechLevel": "neolithic"
+    },
+    "techLevel": "neolithic",
+    "role": "bow",
+    "mass": {
+      "value": 0.8,
+      "source": "anchor"
+    },
+    "workToMake": {
+      "value": 2400,
+      "source": "anchor"
+    },
+    "costList": [
+      {
+        "defName": "WoodLog",
+        "count": 30
+      }
+    ],
+    "weaponTags": [
+      "NeolithicRangedBasic"
+    ],
+    "weaponClasses": [
+      "Ranged",
+      "RangedLight"
+    ],
+    "texturePath": "Things/Item/Equipment/WeaponRanged/BowShort",
+    "graphicClass": "Graphic_Single",
+    "tools": [
+      {
+        "label": "limb",
+        "capacities": [
+          "Blunt",
+          "Poke"
+        ],
+        "power": {
+          "value": 9,
+          "source": "anchor"
+        },
+        "cooldownTime": {
+          "value": 2,
+          "source": "anchor"
+        }
+      }
+    ],
+    "ranged": {
+      "verbClass": "Verb_Shoot",
+      "damage": {
+        "value": 11,
+        "source": "anchor"
+      },
+      "range": {
+        "value": 22.9,
+        "source": "anchor"
+      },
+      "warmup": {
+        "value": 1.35,
+        "source": "anchor"
+      },
+      "cooldown": {
+        "value": 1.65,
+        "source": "anchor"
+      },
+      "accuracy": {
+        "touch": {
+          "value": 0.75,
+          "source": "anchor"
+        },
+        "short": {
+          "value": 0.65,
+          "source": "anchor"
+        },
+        "medium": {
+          "value": 0.45,
+          "source": "anchor"
+        },
+        "long": {
+          "value": 0.25,
+          "source": "anchor"
+        }
+      },
+      "projectile": {
+        "mode": "inline",
+        "def": {
+          "defName": "Bullet_UC_ShortBow",
+          "label": "shortbow arrow",
+          "parent": "BaseProjectileNeolithic",
+          "damageDef": "Arrow",
+          "texturePath": "Things/Projectile/Arrow_Small",
+          "graphicClass": "Graphic_Single",
+          "speed": {
+            "value": 44,
+            "source": "anchor"
+          },
+          "omitDefaults": [
+            "armorPenetrationBase"
+          ],
+          "copiedFrom": "Arrow_Short"
+        }
+      },
+      "soundCast": "Bow_Small"
+    },
+    "previewQuality": "normal",
+    "soundInteract": "Bow_Small",
+    "recipe": {
+      "skillRequirements": {
+        "Crafting": 2
+      },
+      "displayPriority": 510,
+      "recipeUsers": [
+        "CraftingSpot"
+      ]
+    },
+    "extraFields": [
+      {
+        "tag": "possessionCount",
+        "attrs": [],
+        "children": [
+          "1"
+        ]
+      },
+      {
+        "tag": "rotateInShelves",
+        "attrs": [],
+        "children": [
+          "false"
+        ]
+      }
+    ],
+    "ce": {
+      "oneHanded": false,
+      "beltFed": false
+    }
+  },
+  "anchors": [
+    {
+      "defName": "Bow_Short",
+      "label": "short bow"
+    }
+  ],
+  "clonedFrom": "Bow_Short"
+}

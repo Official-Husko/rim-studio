@@ -143,6 +143,27 @@ describe('output store: Combat Extended', () => {
     expect(setup.editor.draft.value?.spec.ce?.ammoSet).toBe('AmmoSet_303British_SB');
   });
 
+  it('patches the block as one edit and ignores a patch while the switch is off', async () => {
+    const setup = await opened();
+    setup.output.patchBlock({ bow: true });
+    expect(setup.editor.draft.value?.spec.ce).toBeUndefined();
+    setup.output.setCeEnabled(true);
+    setup.output.patchBlock({ bow: true, extraTags: ['A'], reloadOneAtATime: true });
+    expect(setup.editor.draft.value?.spec.ce).toEqual({
+      oneHanded: false,
+      beltFed: false,
+      bow: true,
+      extraTags: ['A'],
+      reloadOneAtATime: true,
+    });
+    setup.output.patchBlock({ bow: undefined, extraTags: [] });
+    expect(setup.editor.draft.value?.spec.ce).toEqual({
+      oneHanded: false,
+      beltFed: false,
+      reloadOneAtATime: true,
+    });
+  });
+
   it('sends no accepted values until the user takes some', async () => {
     const setup = await opened('ce-on');
     expect(lastRequest(setup, 'designer_export_plan')?.acceptSuggestions).toBeUndefined();

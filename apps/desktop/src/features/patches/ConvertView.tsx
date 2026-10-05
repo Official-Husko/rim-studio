@@ -82,9 +82,9 @@ export function ConvertView({ project }: ConvertViewProps) {
       <SplitPane
         label={t('patches.split.label')}
         direction={wide ? 'horizontal' : 'vertical'}
-        defaultSize={wide ? 640 : 340}
+        defaultSize={wide ? 940 : 340}
         min={wide ? 440 : 200}
-        max={wide ? 900 : 560}
+        max={wide ? 1100 : 560}
         first={
           <div class="flex flex-col">
             <ScanBar
