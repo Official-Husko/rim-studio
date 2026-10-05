@@ -33,6 +33,7 @@ Without the bridge, `pnpm dev:ui` starts only Vite. The app then shows recorded 
 | `pnpm typecheck`                    | `tsc` in every package (strict, `noUncheckedIndexedAccess`) |
 | `pnpm test`                         | Vitest in every package (happy-dom)                         |
 | `pnpm lint`                         | oxlint with the import boundary rules of `.oxlintrc.json`   |
+| `pnpm e2e`                          | Playwright (Firefox) against the real bridge and your install |
 | `pnpm build`                        | Type check and production build of the desktop app          |
 | `pnpm format`                       | Prettier over the frontend sources                          |
 | `cargo test -p rimstudio-devserver` | The bridge tests (Rust side)                                |

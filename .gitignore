@@ -34,3 +34,4 @@ lint_report.json
 .vite/
 node_modules/.cache/
 *.tsbuildinfo
+tests/e2e/.results/

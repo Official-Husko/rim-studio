@@ -1,6 +1,7 @@
 packages:
   - "apps/*"
   - "packages/*"
+  - "tests/e2e"
 
 # Exact pins everywhere (docs/architecture/frontend-architecture.md section 2).
 savePrefix: ""

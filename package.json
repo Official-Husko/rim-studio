@@ -14,9 +14,10 @@
     "typecheck": "pnpm -r --if-present typecheck",
     "test": "pnpm -r --if-present test",
     "build": "pnpm --filter rimstudio-desktop build",
-    "lint": "oxlint -c .oxlintrc.json apps packages",
+    "lint": "oxlint -c .oxlintrc.json apps packages tests/e2e",
     "format": "prettier --write \"apps/**/*.{ts,tsx,css,json,html}\" \"packages/ui/**/*.{ts,tsx,json}\" \"packages/testkit/**/*.{ts,tsx,json}\" \"*.json\" README.md",
-    "check": "pnpm typecheck && pnpm test && pnpm lint"
+    "check": "pnpm typecheck && pnpm test && pnpm lint",
+    "e2e": "pnpm --filter rimstudio-e2e e2e"
   },
   "devDependencies": {
     "oxlint": "1.86.0",
