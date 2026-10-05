@@ -51,6 +51,13 @@ export function projectHandlers(): Record<string, MockHandler> {
       files: [],
       skipped: [],
     }),
+    project_layout_fix_plan: (request) =>
+      loadFixture(
+        idOf(request) === LONE_WOLF_ID ? 'layout-fix-plan-lonewolf' : 'layout-fix-plan-gewehr',
+      ),
+    project_layout_fix_apply: () => loadFixture('layout-fix-apply-gewehr'),
+    project_layout_fix_undo: () => loadFixture('layout-fix-undo-gewehr'),
+    project_layout_fix_history: () => loadFixture('layout-fix-history-gewehr'),
     project_create: () => loadFixture('project-create-new'),
     sources_list: () => loadFixture('sources-list-default'),
   };

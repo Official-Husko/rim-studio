@@ -1,0 +1,9 @@
+{
+  "code": "designer.plan-stale",
+  "message": "the plan changed since it was reviewed (expected d7de5c6eec8ee83cd216240d6011a361, now 444c7899c8ca01ed558ed9504ecebe90)",
+  "errorId": "e-5b497c0d",
+  "details": {
+    "expected": "d7de5c6eec8ee83cd216240d6011a361",
+    "found": "444c7899c8ca01ed558ed9504ecebe90"
+  }
+}

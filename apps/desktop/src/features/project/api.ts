@@ -1,7 +1,12 @@
 import type {
   ProjectCreateRequest,
   ProjectFileDto,
+  LayoutFixSelectionDto,
   ProjectLayoutCheckDto,
+  ProjectLayoutFixApplyDto,
+  ProjectLayoutFixHistoryDto,
+  ProjectLayoutFixPlanDto,
+  ProjectLayoutFixUndoDto,
   ProjectScaffoldMissingDto,
   ProjectSummaryDto,
   ProjectTreeDto,
@@ -47,4 +52,37 @@ export function readProjectFile(projectId: string, path: string): Promise<Projec
 /** The mod folders the app knows, in scan order; the open dialog starts the picker in them. */
 export async function listSources(): Promise<SourceDto[]> {
   return (await callCommand('sources_list', {})).sources;
+}
+
+/** The fix plan of the layout findings, optionally only for some issue codes. Writes nothing. */
+export function planLayoutFix(
+  projectId: string,
+  codes?: readonly string[],
+): Promise<ProjectLayoutFixPlanDto> {
+  return callCommand('project_layout_fix_plan', {
+    projectId,
+    ...(codes && codes.length > 0 ? { fixes: [...codes] } : {}),
+  });
+}
+
+/** Carry out the selected items of a reviewed plan (a job). */
+export function applyLayoutFix(
+  projectId: string,
+  planId: string,
+  items: LayoutFixSelectionDto[],
+): Promise<ProjectLayoutFixApplyDto> {
+  return callCommand('project_layout_fix_apply', { projectId, planId, items });
+}
+
+/** Reverse one apply from its journal. */
+export function undoLayoutFix(
+  projectId: string,
+  applyId: string,
+): Promise<ProjectLayoutFixUndoDto> {
+  return callCommand('project_layout_fix_undo', { projectId, applyId });
+}
+
+/** The applies of a project, newest first, with whether each can still be undone. */
+export function layoutFixHistory(projectId: string): Promise<ProjectLayoutFixHistoryDto> {
+  return callCommand('project_layout_fix_history', { projectId });
 }

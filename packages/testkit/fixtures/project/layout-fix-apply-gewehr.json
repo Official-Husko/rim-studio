@@ -1,0 +1,52 @@
+{
+  "projectId": "p-c36c596a",
+  "applyId": "fix-1791197154034-7df56cd4",
+  "planId": "d7de5c6eec8ee83cd216240d6011a361",
+  "done": [
+    {
+      "id": "fix-001-3614c6",
+      "kind": "create-folder",
+      "from": "Defs/SoundDefs",
+      "to": "Defs/SoundDefs",
+      "copied": false
+    },
+    {
+      "id": "fix-002-95fc62",
+      "kind": "create-folder",
+      "from": "Sounds",
+      "to": "Sounds",
+      "copied": false
+    },
+    {
+      "id": "fix-003-385f9f",
+      "kind": "create-load-folders",
+      "from": "",
+      "to": "LoadFolders.xml",
+      "copied": false
+    },
+    {
+      "id": "fix-004-0c324d",
+      "kind": "move-file",
+      "from": "Patches/ce_patch.xml",
+      "to": "Compat/CombatExtended/Patches/ce_patch.xml",
+      "copied": false
+    }
+  ],
+  "edited": [
+    {
+      "path": "LoadFolders.xml",
+      "created": true
+    }
+  ],
+  "skipped": [],
+  "cancelled": false,
+  "check": {
+    "projectId": "p-c36c596a",
+    "profile": "core-style",
+    "issues": [],
+    "errors": 0,
+    "warnings": 0,
+    "infos": 0,
+    "autoFixable": 0
+  }
+}

@@ -1,8 +1,13 @@
 import { Badge, Banner, Button, EmptyState } from 'rimstudio-ui';
-import type { ProjectLayoutCheckDto, ProjectScaffoldMissingDto } from 'rimstudio-ipc-types';
+import type {
+  LayoutIssueDto,
+  ProjectLayoutCheckDto,
+  ProjectScaffoldMissingDto,
+} from 'rimstudio-ipc-types';
 import type { ApiError } from 'rimstudio-ipc-types';
 import { t, tn } from '~/shared/i18n';
 import { IssueRow } from './IssueRow';
+import { hasPlannedFix } from './model';
 
 export interface LayoutPanelProps {
   check: ProjectLayoutCheckDto;
@@ -11,6 +16,12 @@ export interface LayoutPanelProps {
   fixError: ApiError | undefined;
   onFix: () => void;
   onShowPath: (path: string) => void;
+  /** Open the fix plan for one finding. */
+  onFixIssue?: (issue: LayoutIssueDto) => void;
+  /** Open the fix plan for every fixable finding. */
+  onFixAll?: () => void;
+  /** Open the list of applied fixes. */
+  onHistory?: () => void;
 }
 
 /** The issues of the layout check, worst first, with the one automatic fix. */
@@ -21,6 +32,9 @@ export function LayoutPanel({
   fixError,
   onFix,
   onShowPath,
+  onFixIssue,
+  onFixAll,
+  onHistory,
 }: LayoutPanelProps) {
   const created = fixResult && !fixResult.dryRun ? fixResult.folders : [];
   return (
@@ -36,6 +50,16 @@ export function LayoutPanel({
           <Badge tone="info">{tn('project.layout.infos', check.infos)}</Badge>
         ) : null}
         <span class="flex-1" />
+        {onHistory ? (
+          <Button size="sm" variant="ghost" icon="tasks" onClick={onHistory}>
+            {t('project.fix.history')}
+          </Button>
+        ) : null}
+        {onFixAll && check.issues.some(hasPlannedFix) ? (
+          <Button size="sm" variant="primary" icon="check" onClick={onFixAll}>
+            {t('project.fix.all')}
+          </Button>
+        ) : null}
         {check.autoFixable > 0 ? (
           <Button size="sm" icon="plus" loading={fixing} onClick={onFix}>
             {tn('project.layout.fix', check.autoFixable)}
@@ -64,8 +88,13 @@ export function LayoutPanel({
           class="m-0 flex list-none flex-col divide-y divide-line-subtle border border-line p-0"
           aria-label={t('project.layout.list')}
         >
-          {check.issues.map((issue) => (
-            <IssueRow key={`${issue.code}:${issue.path}`} issue={issue} onShowPath={onShowPath} />
+          {check.issues.map((issue, index) => (
+            <IssueRow
+              key={`${index}:${issue.code}:${issue.path}`}
+              issue={issue}
+              onShowPath={onShowPath}
+              {...(onFixIssue ? { onFix: onFixIssue } : {})}
+            />
           ))}
         </ul>
       )}

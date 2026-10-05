@@ -4,6 +4,8 @@ import { t } from '~/shared/i18n';
 import { pickFolder } from '~/shared/platform';
 import { currentProject, projectRevision, setCurrentProject } from '~/shared/project';
 import { devLink } from './devLinks';
+import { FixDialog } from './FixDialog';
+import { FixHistoryDialog } from './FixHistoryDialog';
 import { ModHub } from './hub/ModHub';
 import { ModView } from './ModView';
 import { NewModDialog } from './NewModDialog';
@@ -70,6 +72,8 @@ export default function ProjectPage() {
           onClose={() => setCurrentProject(undefined)}
         />
       ) : null}
+      <FixDialog />
+      <FixHistoryDialog />
       <NewModDialog
         open={creatingMod}
         startParent={devLink('parent')}

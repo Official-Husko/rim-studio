@@ -4,6 +4,7 @@ import { t } from '~/shared/i18n';
 import { LayoutFacts } from './LayoutFacts';
 import { LayoutGuide } from './LayoutGuide';
 import { LayoutPanel } from './LayoutPanel';
+import { openFix, openHistory } from './fixStore';
 import { findNode } from './model';
 import { fixError, fixMissingFolders, fixResult, fixing, type ProjectView } from './store';
 
@@ -25,6 +26,9 @@ export function LayoutTab({ view, onShowNode }: LayoutTabProps) {
           fixResult={fixResult.value}
           fixError={fixError.value}
           onFix={() => void fixMissingFolders()}
+          onFixIssue={(issue) => void openFix({ codes: [issue.code], path: issue.path })}
+          onFixAll={() => void openFix()}
+          onHistory={() => void openHistory()}
           onShowPath={(target) => {
             const hit = findNode(view.tree.root, target);
             if (hit) onShowNode(hit);

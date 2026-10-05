@@ -1,0 +1,108 @@
+{
+  "projectId": "p-c36c596a",
+  "planId": "83a9ba5ea8cd3f6af595e7d96bf4ce87",
+  "items": [
+    {
+      "id": "fix-001-39c36e",
+      "kind": "create-folder",
+      "issueCode": "layout.missing-folder",
+      "from": "",
+      "to": "1.4/Defs/SoundDefs",
+      "why": "The standard folder 1.4/Defs/SoundDefs does not exist.",
+      "risk": "safe",
+      "applicable": true,
+      "references": [],
+      "requires": []
+    },
+    {
+      "id": "fix-002-dd78b4",
+      "kind": "create-folder",
+      "issueCode": "layout.missing-folder",
+      "from": "",
+      "to": "1.4/Defs/ThingDefs_Misc/Weapons",
+      "why": "The standard folder 1.4/Defs/ThingDefs_Misc/Weapons does not exist.",
+      "risk": "safe",
+      "applicable": true,
+      "references": [],
+      "requires": []
+    },
+    {
+      "id": "fix-003-e6eb10",
+      "kind": "create-folder",
+      "issueCode": "layout.missing-folder",
+      "from": "",
+      "to": "1.4/Patches",
+      "why": "The standard folder 1.4/Patches does not exist.",
+      "risk": "safe",
+      "applicable": true,
+      "references": [],
+      "requires": []
+    },
+    {
+      "id": "fix-004-93df21",
+      "kind": "create-folder",
+      "issueCode": "layout.missing-folder",
+      "from": "",
+      "to": "1.4/Sounds",
+      "why": "The standard folder 1.4/Sounds does not exist.",
+      "risk": "safe",
+      "applicable": true,
+      "references": [],
+      "requires": []
+    },
+    {
+      "id": "fix-005-6a77f1",
+      "kind": "move-file",
+      "issueCode": "layout.weapon-misplaced",
+      "from": "1.4/Defs/ThingDefs_Weapons/Weapons_Melee.xml",
+      "to": "1.4/Defs/ThingDefs_Misc/Weapons/MeleeMedieval/RC_OmniWrench_8K.xml",
+      "why": "The file defines RC_OmniWrench_8K, RC_OmniWrench_10K, RC_OmniWrench_12K, RC_OmniWrench_12K_Millenium, RC_Combat_Bot_Wrench outside the weapon folder 1.4/Defs/ThingDefs_Misc/Weapons.",
+      "risk": "needs-review",
+      "applicable": false,
+      "reviewReason": "the file defines 5 weapons; moving one of them means splitting the file, which RimStudio does not do",
+      "references": [],
+      "requires": []
+    },
+    {
+      "id": "fix-006-3906c0",
+      "kind": "move-file",
+      "issueCode": "layout.weapon-misplaced",
+      "from": "1.4/Defs/ThingDefs_Weapons/Weapons_Ranged.xml",
+      "to": "1.4/Defs/ThingDefs_Misc/Weapons/RangedIndustrial/RC_Blaster.xml",
+      "why": "The file defines RC_Blaster outside the weapon folder 1.4/Defs/ThingDefs_Misc/Weapons.",
+      "risk": "safe",
+      "applicable": true,
+      "references": [],
+      "requires": []
+    },
+    {
+      "id": "fix-007-a11d9a",
+      "kind": "move-file",
+      "issueCode": "layout.ce-outside-gate",
+      "from": "1.2/Patches/Factions_Lombax_Player.xml",
+      "to": "1.4/Compat/CombatExtended/Patches/Factions_Lombax_Player.xml",
+      "why": "1.2/Patches/Factions_Lombax_Player.xml uses Combat Extended classes outside the gated folder; it moves into 1.4/Compat/CombatExtended/Patches.",
+      "risk": "needs-review",
+      "applicable": false,
+      "reviewReason": "the file belongs to the game version folder 1.2 and the destination is in 1.4",
+      "references": [],
+      "requires": []
+    },
+    {
+      "id": "fix-008-010a15",
+      "kind": "move-file",
+      "issueCode": "layout.ce-outside-gate",
+      "from": "1.2/Patches/Weapons_Melee.xml",
+      "to": "1.4/Compat/CombatExtended/Patches/Weapons_Melee.xml",
+      "why": "1.2/Patches/Weapons_Melee.xml uses Combat Extended classes outside the gated folder; it moves into 1.4/Compat/CombatExtended/Patches.",
+      "risk": "needs-review",
+      "applicable": false,
+      "reviewReason": "the file belongs to the game version folder 1.2 and the destination is in 1.4",
+      "references": [],
+      "requires": []
+    }
+  ],
+  "safe": 5,
+  "needsReview": 3,
+  "conflicts": 0
+}

@@ -15,6 +15,17 @@ describe('LayoutPanel', () => {
     expect(screen.getAllByRole('listitem')).toHaveLength(3);
   });
 
+  it('lists several findings of the same code and path without a duplicate key', () => {
+    const first = check.issues[0];
+    if (!first) throw new Error('fixture has no issue');
+    const twice = { ...check, issues: [first, first] };
+    const errors = vi.spyOn(console, 'error').mockImplementation(() => undefined);
+    renderWithProviders(<LayoutPanel check={twice} onFix={vi.fn()} {...base} />);
+    expect(screen.getAllByRole('listitem')).toHaveLength(2);
+    expect(errors).not.toHaveBeenCalled();
+    errors.mockRestore();
+  });
+
   it('offers the automatic fix once, for every fixable folder', () => {
     const onFix = vi.fn();
     renderWithProviders(<LayoutPanel check={check} onFix={onFix} {...base} />);
@@ -60,5 +71,42 @@ describe('LayoutPanel', () => {
       />,
     );
     expect(screen.getByText('refused')).toBeTruthy();
+  });
+
+  it('offers Fix all safe and History when the findings have fixes', () => {
+    const onFixAll = vi.fn();
+    const onHistory = vi.fn();
+    renderWithProviders(
+      <LayoutPanel
+        check={check}
+        onFix={vi.fn()}
+        onFixAll={onFixAll}
+        onHistory={onHistory}
+        {...base}
+      />,
+    );
+    fireEvent.click(screen.getByRole('button', { name: 'Fix all safe' }));
+    fireEvent.click(screen.getByRole('button', { name: 'History' }));
+    expect(onFixAll).toHaveBeenCalledTimes(1);
+    expect(onHistory).toHaveBeenCalledTimes(1);
+  });
+
+  it('opens the fix of one finding from its row only for findings the plan can fix', () => {
+    const onFixIssue = vi.fn();
+    renderWithProviders(
+      <LayoutPanel check={check} onFix={vi.fn()} onFixIssue={onFixIssue} {...base} />,
+    );
+    const buttons = screen.getAllByRole('button', { name: /^Fix / });
+    expect(buttons).toHaveLength(1);
+    fireEvent.click(buttons[0] as HTMLElement);
+    expect(onFixIssue).toHaveBeenCalledWith(
+      expect.objectContaining({ code: 'layout.ce-outside-gate' }),
+    );
+  });
+
+  it('hides Fix all safe when no finding has a planned fix', () => {
+    const clean = loadFixture<ProjectLayoutCheckDto>('layout-check-new');
+    renderWithProviders(<LayoutPanel check={clean} onFix={vi.fn()} onFixAll={vi.fn()} {...base} />);
+    expect(screen.queryByRole('button', { name: 'Fix all safe' })).toBeNull();
   });
 });

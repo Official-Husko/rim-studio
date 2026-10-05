@@ -1,0 +1,5 @@
+{
+  "code": "project.fix-undo-refused",
+  "message": "the layout fix cannot be undone: Compat/CombatExtended/Patches/ce_patch.xml was changed after the fix; its content is no longer what was moved",
+  "errorId": "e-881ce9e5"
+}

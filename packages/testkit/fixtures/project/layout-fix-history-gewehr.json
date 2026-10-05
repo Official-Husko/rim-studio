@@ -1,0 +1,27 @@
+{
+  "projectId": "p-c36c596a",
+  "journals": [
+    {
+      "applyId": "fix-1791197163382-2b65b8e7",
+      "planId": "d7de5c6eec8ee83cd216240d6011a361",
+      "createdMs": 1791197163382,
+      "itemsTotal": 4,
+      "itemsDone": 4,
+      "itemsSkipped": 0,
+      "undone": false,
+      "undoPossible": false,
+      "undoBlocker": "the layout fix cannot be undone: Compat/CombatExtended/Patches/ce_patch.xml was changed after the fix; its content is no longer what was moved"
+    },
+    {
+      "applyId": "fix-1791197154034-7df56cd4",
+      "planId": "d7de5c6eec8ee83cd216240d6011a361",
+      "createdMs": 1791197154034,
+      "itemsTotal": 4,
+      "itemsDone": 4,
+      "itemsSkipped": 0,
+      "undone": true,
+      "undoPossible": false,
+      "undoBlocker": "already undone"
+    }
+  ]
+}

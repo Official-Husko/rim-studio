@@ -2,6 +2,7 @@ import { Badge, Button, type BadgeTone } from 'rimstudio-ui';
 import type { LayoutIssueDto, SeverityDto } from 'rimstudio-ipc-types';
 import type { MessageKey } from '~/shared/i18n';
 import { t } from '~/shared/i18n';
+import { hasPlannedFix } from './model';
 
 const TONES: Record<SeverityDto, BadgeTone> = {
   error: 'danger',
@@ -36,10 +37,12 @@ export const ISSUE_TITLES: Record<string, MessageKey> = {
 export interface IssueRowProps {
   issue: LayoutIssueDto;
   onShowPath: (path: string) => void;
+  /** Opens the fix plan for this finding; when absent no Fix button is shown. */
+  onFix?: (issue: LayoutIssueDto) => void;
 }
 
 /** One layout issue: severity, title, the path, the explanation and the suggested fix. */
-export function IssueRow({ issue, onShowPath }: IssueRowProps) {
+export function IssueRow({ issue, onShowPath, onFix }: IssueRowProps) {
   const titleKey = ISSUE_TITLES[issue.code];
   const hasFix = issue.fix.kind !== 'none';
   return (
@@ -55,6 +58,19 @@ export function IssueRow({ issue, onShowPath }: IssueRowProps) {
           </Button>
         )}
         {issue.fix.automatic ? <Badge tone="success">{t('project.issue.automatic')}</Badge> : null}
+        {onFix && hasPlannedFix(issue) ? (
+          <>
+            <span class="flex-1" />
+            <Button
+              size="sm"
+              icon="check"
+              aria-label={t('project.fix.issueLabel', { path: issue.path })}
+              onClick={() => onFix(issue)}
+            >
+              {t('project.fix.issue')}
+            </Button>
+          </>
+        ) : null}
       </div>
       <p class="m-0 text-small">{issue.message}</p>
       {hasFix ? (

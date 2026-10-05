@@ -1,0 +1,60 @@
+{
+  "projectId": "p-c36c596a",
+  "planId": "d7de5c6eec8ee83cd216240d6011a361",
+  "items": [
+    {
+      "id": "fix-001-3614c6",
+      "kind": "create-folder",
+      "issueCode": "layout.missing-folder",
+      "from": "",
+      "to": "Defs/SoundDefs",
+      "why": "The standard folder Defs/SoundDefs does not exist.",
+      "risk": "safe",
+      "applicable": true,
+      "references": [],
+      "requires": []
+    },
+    {
+      "id": "fix-002-95fc62",
+      "kind": "create-folder",
+      "issueCode": "layout.missing-folder",
+      "from": "",
+      "to": "Sounds",
+      "why": "The standard folder Sounds does not exist.",
+      "risk": "safe",
+      "applicable": true,
+      "references": [],
+      "requires": []
+    },
+    {
+      "id": "fix-003-385f9f",
+      "kind": "create-load-folders",
+      "issueCode": "layout.ce-outside-gate",
+      "from": "",
+      "to": "LoadFolders.xml",
+      "why": "A new LoadFolders.xml lists Compat/CombatExtended so that it loads only when Combat Extended is active.",
+      "risk": "safe",
+      "applicable": true,
+      "diff": "--- a/LoadFolders.xml\n+++ b/LoadFolders.xml\n@@ -0,0 +1,11 @@\n+<?xml version=\"1.0\" encoding=\"utf-8\"?>\n+<loadFolders>\n+  <v1.4>\n+    <li>/</li>\n+    <li IfModActive=\"ceteam.combatextended\">Compat/CombatExtended</li>\n+  </v1.4>\n+  <default>\n+    <li>/</li>\n+    <li IfModActive=\"ceteam.combatextended\">Compat/CombatExtended</li>\n+  </default>\n+</loadFolders>\n",
+      "references": [],
+      "requires": []
+    },
+    {
+      "id": "fix-004-0c324d",
+      "kind": "move-file",
+      "issueCode": "layout.ce-outside-gate",
+      "from": "Patches/ce_patch.xml",
+      "to": "Compat/CombatExtended/Patches/ce_patch.xml",
+      "why": "Patches/ce_patch.xml uses Combat Extended classes outside the gated folder; it moves into Compat/CombatExtended/Patches.",
+      "risk": "safe",
+      "applicable": true,
+      "references": [],
+      "requires": [
+        "fix-003-385f9f"
+      ]
+    }
+  ],
+  "safe": 4,
+  "needsReview": 0,
+  "conflicts": 0
+}
