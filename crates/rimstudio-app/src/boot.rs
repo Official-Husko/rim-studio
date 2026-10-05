@@ -79,6 +79,15 @@ impl BootInput {
         self
     }
 
+    /// Puts the four data roots under `base/{config,data,cache,logs}` in portable style, so a tool
+    /// that runs next to a real installation (the development bridge, tests) never mixes its data with
+    /// the standard folders.
+    #[must_use]
+    pub fn with_data_base(mut self, base: &str) -> Self {
+        self.roots = Some(DataRoots::under_base(Utf8Path::new(base)));
+        self
+    }
+
     /// Sets the logging configuration.
     #[must_use]
     pub fn with_log(mut self, log: LogConfig) -> Self {

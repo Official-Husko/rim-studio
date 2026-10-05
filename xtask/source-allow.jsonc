@@ -6,13 +6,14 @@
     "cfg-target-os": { "paths": ["crates/rimstudio-platform/"] },
 
     // I-05: file system writes go through rimstudio-io (the testing crate writes temp dirs).
-    "fs-write": { "paths": ["crates/rimstudio-io/", "crates/rimstudio-testing/"] },
+    // The development bridge writes its token file (a development tool, never packaged, ADR 0040).
+    "fs-write": { "paths": ["crates/rimstudio-io/", "crates/rimstudio-testing/", "crates/rimstudio-devserver/"] },
 
     // I-02: markup strings are built by the XML boundary crate only.
     "xml-string": { "paths": ["crates/rimstudio-xml/"] },
 
-    // Only the headless CLI prints.
-    "print": { "paths": ["crates/rimstudio-cli/"] },
+    // Only the headless CLI and the development bridge (its start banner) print.
+    "print": { "paths": ["crates/rimstudio-cli/", "crates/rimstudio-devserver/"] },
 
     // IT-061: vanilla and Combat Extended identifiers only inside the optional CE module.
     "vanilla-name": { "paths": ["crates/rimstudio-design/src/ce"] },
