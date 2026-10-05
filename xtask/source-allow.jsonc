@@ -12,8 +12,9 @@
     // I-02: markup strings are built by the XML boundary crate only.
     "xml-string": { "paths": ["crates/rimstudio-xml/"] },
 
-    // Only the headless CLI and the development bridge (its start banner) print.
-    "print": { "paths": ["crates/rimstudio-cli/", "crates/rimstudio-devserver/"] },
+    // Only the headless CLI, the development bridge (its start banner) and the shell's headless
+    // self test and start failure message print.
+    "print": { "paths": ["crates/rimstudio-cli/", "crates/rimstudio-devserver/", "apps/desktop/src-tauri/src/smoke.rs", "apps/desktop/src-tauri/src/app.rs"] },
 
     // IT-061: vanilla and Combat Extended identifiers only inside the optional CE module.
     "vanilla-name": { "paths": ["crates/rimstudio-design/src/ce"] },

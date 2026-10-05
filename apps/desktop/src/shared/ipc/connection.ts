@@ -22,8 +22,18 @@ async function healthy(transport: Transport, timeoutMs: number): Promise<boolean
   return Promise.race([probe, timeout]);
 }
 
+/** Tell the job store which commands are jobs; without the listing jobs still show up from events. */
+async function rememberJobCommands(transport: Transport): Promise<void> {
+  try {
+    const rows = (await transport.dev('/dev/commands')) as DevCommandRow[];
+    setJobCommands(rows.filter((r) => r.kind === 'job').map((r) => r.name));
+  } catch {
+    /* the listing is optional */
+  }
+}
+
 /**
- * Choose the transport at boot: the Tauri runtime when present, else the bridge when it answers
+ * Choose the transport at boot: the Tauri runtime when present (the desktop shell), else the bridge when it answers
  * /dev/health, else the fixture backed mock. Returns the transport kind that was installed.
  */
 export async function connect(
@@ -34,8 +44,11 @@ export async function connect(
   connection.value = 'connecting';
 
   if (typeof window !== 'undefined' && '__TAURI_INTERNALS__' in window) {
-    setTransport(createTauriTransport());
+    const desktop = createTauriTransport();
+    setTransport(desktop);
     connection.value = 'tauri';
+    stopStream = startJobStream(desktop);
+    await rememberJobCommands(desktop);
     return 'tauri';
   }
 
@@ -44,12 +57,7 @@ export async function connect(
     setTransport(http);
     connection.value = 'bridge';
     stopStream = startJobStream(http);
-    try {
-      const rows = (await http.dev('/dev/commands')) as DevCommandRow[];
-      setJobCommands(rows.filter((r) => r.kind === 'job').map((r) => r.name));
-    } catch {
-      /* without the listing jobs still show up from the event stream */
-    }
+    await rememberJobCommands(http);
     return 'bridge';
   }
 

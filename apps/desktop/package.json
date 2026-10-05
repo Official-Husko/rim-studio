@@ -13,6 +13,9 @@
   },
   "dependencies": {
     "@preact/signals": "2.11.3",
+    "@tauri-apps/api": "2.12.1",
+    "@tauri-apps/plugin-dialog": "2.8.1",
+    "@tauri-apps/plugin-opener": "2.7.0",
     "preact": "10.29.8",
     "rimstudio-ipc-types": "workspace:*",
     "rimstudio-ui": "workspace:*"
@@ -21,6 +24,7 @@
     "@babel/core": "7.29.7",
     "@preact/preset-vite": "2.10.6",
     "@tailwindcss/vite": "4.3.3",
+    "@tauri-apps/cli": "2.12.1",
     "@testing-library/dom": "10.4.2",
     "@testing-library/preact": "3.2.4",
     "@types/node": "24.19.1",

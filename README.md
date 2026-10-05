@@ -2,7 +2,7 @@
 
 A cross-platform desktop app for RimWorld modders: a fast mod manager plus a modding toolkit (def explorer, patch tester, item designer for weapons and apparel with optional Combat Extended patches, Steam Workshop publisher). The Rust workspace holds the backend; the frontend is a Preact, TypeScript and Tailwind app. The documentation index is [docs/README.md](docs/README.md).
 
-Status: the 0.1.0 backend slice is built ([status](docs/status/0.1.0-backend.md)); the desktop shell does not exist yet. A temporary browser UI, served by Vite and backed by a development bridge, lets you try the designer against your own install.
+Status: the 0.1.0 backend slice is built ([status](docs/status/0.1.0-backend.md)); the Tauri desktop shell runs the same UI with native dialogs and the backend in process ([ADR 0043](docs/adr/0043-tauri-desktop-shell.md)). A temporary browser UI, served by Vite and backed by a development bridge, lets you try the designer in a plain browser against your own install.
 
 ## Quick start
 
@@ -21,6 +21,14 @@ What `pnpm dev` does:
 
 Arguments after `--` go to the bridge, for example `pnpm dev -- --data-dir /tmp/rs-dev --port 0`. The bridge finds your game through the usual detection; the environment variables `RIMSTUDIO_GAME_DIR`, `RIMSTUDIO_WORKSHOP_DIR` and `RIMSTUDIO_CE_DIR` point it at a specific install, workshop folder and Combat Extended copy.
 
+### Desktop app
+
+```sh
+pnpm tauri:dev               # window with live reload: Vite for the UI, cargo for Rust
+```
+
+`pnpm tauri:dev` needs the Tauri system libraries (on Linux WebKitGTK 4.1, libsoup 3 and GTK 3). It starts Vite (hot module reload of the UI), builds the shell and opens the window; an edit under `crates/rimstudio-*` rebuilds and restarts the app. The backend runs inside the app, so no bridge is needed. `RIMSTUDIO_DATA_BASE=/some/folder` puts the app's data folders under one folder, `RIMSTUDIO_DEV_PORT=5390` moves Vite to another port, and `CARGO_TARGET_DIR` defaults to `$HOME/.cache/rimstudio-target-tauri`. `pnpm tauri:build` makes a debug build without bundles, `pnpm tauri:check` runs cargo check and clippy for the shell, and `pnpm tauri:smoke` runs a headless self test (boot, a few commands, exit code 0 or 1; no display needed). Details are in section 18.11 of [docs/architecture/frontend-architecture.md](docs/architecture/frontend-architecture.md).
+
 Without the bridge, `pnpm dev:ui` starts only Vite. The app then shows recorded fixtures (the chip in the top bar reads "Mock data") and the component gallery works fully: `pnpm gallery` opens it.
 
 ## Commands
@@ -35,6 +43,10 @@ Without the bridge, `pnpm dev:ui` starts only Vite. The app then shows recorded 
 | `pnpm lint`                         | oxlint with the import boundary rules of `.oxlintrc.json`   |
 | `pnpm e2e`                          | Playwright (Firefox) against the real bridge and your install |
 | `pnpm build`                        | Type check and production build of the desktop app          |
+| `pnpm tauri:dev`                    | Desktop window with live reload (Vite and cargo)            |
+| `pnpm tauri:build`                  | Debug build of the desktop app, no bundles                  |
+| `pnpm tauri:check`                  | cargo check and clippy for `rimstudio-shell`                |
+| `pnpm tauri:smoke`                  | Headless self test of the shell                             |
 | `pnpm format`                       | Prettier over the frontend sources                          |
 | `cargo test -p rimstudio-devserver` | The bridge tests (Rust side)                                |
 
@@ -46,6 +58,7 @@ Rust commands set `CARGO_TARGET_DIR` first when your default target folder is sm
 | ----------------- | ---------------------------- | ------------------------------------------------------------------------------------- |
 | Backend crates    | `crates/`                    | Business rules, file formats, the command registry (`rimstudio-app`)                  |
 | Bridge            | `crates/rimstudio-devserver` | Development only, never packaged; loopback, token and origin checked                  |
+| Desktop shell     | `apps/desktop/src-tauri`     | Crate `rimstudio-shell`: Tauri window, native dialogs, the backend in process         |
 | Desktop app       | `apps/desktop`               | Vite, Preact; features in `src/features`, shell in `src/app`, IPC in `src/shared/ipc` |
 | Component library | `packages/ui`                | `rimstudio-ui`, presentational components and the icon set                            |
 | Test kit          | `packages/testkit`           | Mock transport, fixtures, render helpers; never shipped                               |

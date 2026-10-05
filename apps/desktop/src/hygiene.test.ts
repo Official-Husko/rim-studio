@@ -57,12 +57,31 @@ describe('project text rules', () => {
     expect(missing).toEqual([]);
   });
 
-  it('does not import an XML library or Tauri outside shared/platform', () => {
+  it('does not import an XML library or Tauri outside shared/platform and the Tauri transport', () => {
     const offenders = files
       .filter((f) => /\.tsx?$/.test(f) && !f.includes('shared/platform'))
+      .filter((f) => !f.endsWith('shared/ipc/transports/tauri.ts'))
+      .filter((f) => !f.endsWith('.test.ts') && !f.endsWith('.test.tsx'))
       .filter((f) =>
         /from ['"](@tauri-apps\/|fast-xml-parser|xml2js|@xmldom)/.test(readFileSync(f, 'utf8')),
       );
     expect(offenders).toEqual([]);
+  });
+
+  it('lets the Tauri transport import only the core and event APIs', () => {
+    const source = readFileSync(join(ROOT, 'src/shared/ipc/transports/tauri.ts'), 'utf8');
+    const imported = [...source.matchAll(/from ['"](@tauri-apps\/[^'"]+)['"]/g)].map((m) => m[1]);
+    expect(imported.sort()).toEqual(['@tauri-apps/api/core', '@tauri-apps/api/event']);
+  });
+
+  it('keeps the Tauri packages out of every module but the two that need them', () => {
+    const importers = files
+      .filter((f) => /\.tsx?$/.test(f) && !/\.test\.tsx?$/.test(f))
+      .filter((f) => /@tauri-apps\//.test(readFileSync(f, 'utf8')))
+      .map((f) => f.slice(ROOT.length + 1));
+    expect(importers.sort()).toEqual([
+      'src/shared/ipc/transports/tauri.ts',
+      'src/shared/platform/dialogs.ts',
+    ]);
   });
 });

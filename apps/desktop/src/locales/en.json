@@ -13,7 +13,7 @@
   "connection.connecting": "Connecting",
   "connection.bridge": "Bridge ok",
   "connection.mock": "Mock data",
-  "connection.tauri": "Desktop shell",
+  "connection.tauri": "Desktop",
   "connection.lost": "Bridge lost",
   "connection.label": "Connection",
   "tasks.open": "Tasks",

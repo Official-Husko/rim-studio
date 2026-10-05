@@ -81,7 +81,9 @@ deny = [
     { crate = "openssl-sys" },
 
     # Duplication or security decisions (D-047, D-061).
-    { crate = "tauri-plugin-fs" },
+    # Pulled in by tauri-plugin-dialog (its file scope helper); the shell never registers it, so the
+    # webview gets no file system command (security and privacy, section 4.1).
+    { crate = "tauri-plugin-fs", wrappers = ["tauri-plugin-dialog"] },
     { crate = "tauri-plugin-store" },
     { crate = "tauri-plugin-sql" },
     { crate = "tauri-plugin-log" },

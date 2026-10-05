@@ -1,0 +1,19 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "main",
+  "description": "What the main window may do: call the app commands, listen to job events, pick a folder or file and reveal a path in the file manager. No fs, shell, http or window creation permission is granted.",
+  "windows": ["main"],
+  "permissions": [
+    "core:default",
+    "allow-rs-call",
+    "allow-rs-cancel",
+    "allow-rs-info",
+    "allow-rs-commands",
+    "dialog:allow-open",
+    "opener:allow-reveal-item-in-dir",
+    {
+      "identifier": "opener:allow-open-url",
+      "allow": [{ "url": "https://*" }]
+    }
+  ]
+}

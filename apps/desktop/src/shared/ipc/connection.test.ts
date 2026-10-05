@@ -2,10 +2,13 @@ import { afterEach, describe, expect, it, vi } from 'vitest';
 import { connect, connection } from './connection';
 import { transportKind } from './client';
 import { createHttpTransport } from './transports/http';
-import { createTauriTransport } from './transports/tauri';
+
+vi.mock('@tauri-apps/api/core', () => ({ invoke: vi.fn() }));
+vi.mock('@tauri-apps/api/event', () => ({ listen: vi.fn(async () => () => undefined) }));
 
 afterEach(() => {
   vi.unstubAllGlobals();
+  Reflect.deleteProperty(window, '__TAURI_INTERNALS__');
 });
 
 describe('connect', () => {
@@ -38,6 +41,18 @@ describe('connect', () => {
     vi.stubGlobal('EventSource', FakeEventSource);
     expect(await connect()).toBe('bridge');
     expect(connection.value).toBe('bridge');
+  });
+});
+
+describe('connect in the desktop shell', () => {
+  it('uses the Tauri transport when the runtime exists, without asking the bridge', async () => {
+    const fetchMock = vi.fn();
+    vi.stubGlobal('fetch', fetchMock);
+    Object.defineProperty(window, '__TAURI_INTERNALS__', { value: {}, configurable: true });
+    expect(await connect()).toBe('tauri');
+    expect(connection.value).toBe('tauri');
+    expect(transportKind.value).toBe('tauri');
+    expect(fetchMock).not.toHaveBeenCalled();
   });
 });
 
@@ -91,15 +106,5 @@ describe('http transport', () => {
   it('reads dev routes as plain JSON', async () => {
     vi.stubGlobal('fetch', respond({ bridgeVersion: '0.1.0' }));
     expect(await createHttpTransport().dev('/dev/info')).toEqual({ bridgeVersion: '0.1.0' });
-  });
-});
-
-describe('tauri stub', () => {
-  it('fails with a clear message', async () => {
-    const t = createTauriTransport();
-    await expect(t.call('x', {})).rejects.toMatchObject({
-      code: 'ipc.transport',
-      message: expect.stringContaining('shell'),
-    });
   });
 });

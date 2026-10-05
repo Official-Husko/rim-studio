@@ -1,0 +1,44 @@
+[package]
+name = "rimstudio-shell"
+description = "The Tauri desktop shell: window, native dialogs and the in process backend"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+publish.workspace = true
+build = "build.rs"
+
+[package.metadata.rimstudio]
+layer = "l4-shell"
+
+[lints]
+workspace = true
+
+[lib]
+name = "rimstudio_shell"
+path = "src/lib.rs"
+
+[[bin]]
+name = "rimstudio"
+path = "src/main.rs"
+
+[features]
+# The Tauri CLI turns this on for builds that load the bundled frontend instead of the dev server.
+custom-protocol = ["tauri/custom-protocol"]
+# DevTools in a release build (debug builds always have them).
+diagnostics = ["tauri/devtools"]
+
+[dependencies]
+rimstudio-app.workspace = true
+rimstudio-ipc-types.workspace = true
+tauri.workspace = true
+tauri-plugin-dialog.workspace = true
+tauri-plugin-opener.workspace = true
+serde_json.workspace = true
+tracing.workspace = true
+
+[build-dependencies]
+tauri-build.workspace = true
+
+[dev-dependencies]
+rimstudio-testing.workspace = true
+tempfile.workspace = true

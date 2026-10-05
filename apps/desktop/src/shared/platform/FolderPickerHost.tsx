@@ -20,11 +20,21 @@ import {
   type DevFsListing,
 } from '~/shared/ipc';
 import { t } from '~/shared/i18n';
-import { pickerRequest, type PickerRequest } from './dialogs';
+import { pickerRequest, type FileFilter, type PickerRequest } from './dialogs';
 
 function joinPath(base: string, name: string): string {
   const sep = base.includes('\\') && !base.includes('/') ? '\\' : '/';
   return base.endsWith(sep) ? `${base}${name}` : `${base}${sep}${name}`;
+}
+
+/** True when a file name has one of the extensions of the filters (no filters: every file). */
+function matchesFilters(name: string, filters: FileFilter[] | undefined): boolean {
+  if (!filters || filters.length === 0) return true;
+  const dot = name.lastIndexOf('.');
+  const extension = dot >= 0 ? name.slice(dot + 1).toLowerCase() : '';
+  return filters.some((f) =>
+    f.extensions.some((e) => e === '*' || e.toLowerCase().replace(/^\./, '') === extension),
+  );
 }
 
 /** The dialog behind pickFolder and pickFile in browser mode; built on /dev/fs/list and /dev/fs/home. */
@@ -35,6 +45,7 @@ function PickerDialog({ request }: { request: PickerRequest }) {
   const [pathText, setPathText] = useState(request.start ?? '');
   const [listing, setListing] = useState<DevFsListing>();
   const [error, setError] = useState<ApiError>();
+  const [loading, setLoading] = useState(false);
   const [selected, setSelected] = useState<Set<string>>(new Set());
 
   useEffect(() => {
@@ -56,14 +67,20 @@ function PickerDialog({ request }: { request: PickerRequest }) {
     if (!path) return undefined;
     let live = true;
     setError(undefined);
+    setLoading(true);
     devFsList(path, fileMode).then(
       (l) => {
         if (!live) return;
         setListing(l);
         setPathText(l.path);
         setSelected(new Set());
+        setLoading(false);
       },
-      (e: unknown) => live && setError(normalizeError(e)),
+      (e: unknown) => {
+        if (!live) return;
+        setError(normalizeError(e));
+        setLoading(false);
+      },
     );
     return () => {
       live = false;
@@ -98,8 +115,18 @@ function PickerDialog({ request }: { request: PickerRequest }) {
     [],
   );
 
+  const visibleEntries = useMemo(
+    () =>
+      (listing?.entries ?? []).filter(
+        (e) => e.kind === 'dir' || !fileMode || matchesFilters(e.name, request.filters),
+      ),
+    [listing, fileMode, request.filters],
+  );
+
   const chosenFile = fileMode ? [...selected][0] : undefined;
-  const canChoose = fileMode ? Boolean(chosenFile) : Boolean(listing);
+  // While a typed or opened path is still being listed the old listing is on screen: choosing now
+  // would return that folder instead of the one the user asked for.
+  const canChoose = !loading && (fileMode ? Boolean(chosenFile) : Boolean(listing));
 
   const activate = (entry: DevFsEntry): void => {
     if (!listing) return;
@@ -171,7 +198,7 @@ function PickerDialog({ request }: { request: PickerRequest }) {
           <Table
             label={t('picker.title')}
             columns={columns}
-            rows={listing?.entries ?? []}
+            rows={visibleEntries}
             getKey={(e) => e.name}
             selection={fileMode ? 'single' : 'none'}
             selectedKeys={selected}

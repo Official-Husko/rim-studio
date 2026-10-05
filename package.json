@@ -17,7 +17,11 @@
     "lint": "oxlint -c .oxlintrc.json apps packages tests/e2e",
     "format": "prettier --write \"apps/**/*.{ts,tsx,css,json,html}\" \"packages/ui/**/*.{ts,tsx,json}\" \"packages/testkit/**/*.{ts,tsx,json}\" \"*.json\" README.md",
     "check": "pnpm typecheck && pnpm test && pnpm lint",
-    "e2e": "pnpm --filter rimstudio-e2e e2e"
+    "e2e": "pnpm --filter rimstudio-e2e e2e",
+    "tauri:dev": "node scripts/tauri.mjs dev",
+    "tauri:build": "node scripts/tauri.mjs build",
+    "tauri:check": "node scripts/tauri.mjs check",
+    "tauri:smoke": "node scripts/tauri.mjs smoke"
   },
   "devDependencies": {
     "oxlint": "1.86.0",

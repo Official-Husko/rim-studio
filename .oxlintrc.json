@@ -137,6 +137,35 @@
       }
     },
     {
+      "files": ["apps/desktop/src/shared/ipc/transports/tauri.ts"],
+      "rules": {
+        "no-restricted-imports": [
+          "error",
+          {
+            "patterns": [
+              {
+                "group": [
+                  "@tauri-apps/plugin-**",
+                  "@tauri-apps/api/*",
+                  "!@tauri-apps/api/core",
+                  "!@tauri-apps/api/event"
+                ],
+                "message": "The Tauri transport may import only the core and event APIs; dialogs and the opener belong to shared/platform."
+              },
+              {
+                "group": ["~/features/**", "**/features/**"],
+                "message": "shared never imports a feature."
+              },
+              {
+                "group": ["~/app/**", "**/app/**"],
+                "message": "shared never imports app."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
       "files": ["apps/desktop/src/shared/platform/**"],
       "rules": {
         "no-restricted-imports": "off"
