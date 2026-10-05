@@ -1,0 +1,30 @@
+[package]
+name = "rimstudio-cli"
+description = "Headless commands over the same registry"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+publish.workspace = true
+
+[package.metadata.rimstudio]
+layer = "l4-cli"
+
+[lints]
+workspace = true
+
+[[bin]]
+name = "rimstudio-cli"
+path = "src/main.rs"
+
+[dependencies]
+rimstudio-core.workspace = true
+rimstudio-app.workspace = true
+rimstudio-ipc-types.workspace = true
+clap.workspace = true
+serde_json.workspace = true
+anyhow.workspace = true
+
+[dev-dependencies]
+rimstudio-testing.workspace = true
+tempfile.workspace = true
+rstest.workspace = true
