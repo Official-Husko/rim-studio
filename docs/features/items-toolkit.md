@@ -21,6 +21,7 @@ Status: draft, section 15 records the 0.1.0 backend as built | Last updated: 202
 13. [Phasing](#13-phasing)
 14. [Owner decisions, conflicts and open points](#14-owner-decisions-conflicts-and-open-points)
 15. [As built in the 0.1.0 backend](#15-as-built-in-the-010-backend)
+16. [Weapon archetypes](#16-weapon-archetypes)
 
 ## 1. Purpose and scope
 
@@ -329,6 +330,15 @@ Validation is a pure function (`rimstudio-validate` hosts the code registry; `ri
 | design.name-invalid, design.defname-prefix, design.value-invalid, design.text-invalid | error or warning | an invalid name, a defName without the project's prefix, a value that is not a number or a whole number where the game parses an integer, or text with forbidden characters |
 | design.draft-inconsistent, design.ce-in-vanilla, design.ignored-input, design.duplicate-entry | error, warning or info | a draft whose parts disagree, a CE value found in the vanilla spec, an input that does not apply to the kind (for example a ranged block on a melee item), a duplicated list entry |
 | design.plan-path-invalid, design.plan-path-conflict | error | a planned path that is unsafe or listed twice |
+| design.asset-unchecked, design.asset-refused | error | an imported source file that was not inspected, or that is a link, a folder or unreadable (section 8.6) |
+| design.texture-missing, design.texture-not-png, design.texture-too-large | error | an imported texture that does not exist, is not a PNG by its signature and header, or is above 8 MiB or 4096 pixels on a side |
+| design.texture-large, design.texture-not-square | warning, info | an imported texture above 1024 pixels on a side or 2 MiB, one that is not square |
+| design.texture-needs-own-projectile | error | a projectile texture import on a weapon that has no projectile of its own |
+| design.sound-needs-ranged, design.sound-no-clips | error | a custom shot sound on a melee weapon, or without a clip |
+| design.sound-clip-missing, design.sound-clip-not-audio, design.sound-clip-too-large | error | a clip that does not exist, is not WAV or OGG by signature and header, or is above 20 MiB |
+| design.sound-stereo | warning | a clip with more than one channel (a sound heard on the map plays without position) |
+| design.sound-range-invalid, design.sound-duplicate | error | a volume, pitch or distance range that is not valid (minimum above maximum, negative, not finite) or a simultaneous limit of 0; a sound def name that a loaded def already uses |
+| design.sound-cast-replaced | info | a typed or cloned `soundCast` is replaced by the custom sound |
 | design.deferred | info | the requested kind (apparel) is not implemented yet |
 | designer.ce-unavailable | warning | the item has the CE block on but no CE data is loaded; the plan stays vanilla |
 | designer.ce-outside-gate | error | a CE class would be written outside the gated CE folder (IT-052) |
@@ -366,6 +376,8 @@ Requirements:
 | --- | --- |
 | Vanilla (always, the default) | one file holding the weapon and its own projectile (projectile first): `Defs/ThingDefs_Misc/Weapons/<Category>/<DefName>.xml` in the RimStudio layout, the matching category file (`RangedIndustrial.xml`, a marked section appended) in a project in the game's own style, `<its weapon folder>/<DefName>.xml` in a flat project; inside the content folder (`1.6`, `Common`) when the project has one. The category follows kind and tech level ([mod layout](mod-layout.md) sections 5 to 7) |
 | CE patch toggle on for the item | the above, unchanged, plus `Compat/CombatExtended/Patches/<ModSlug>_Weapons_Ranged.xml`, `Weapons_Melee.xml` or `Apparel.xml` (the project's own Combat Extended folder when it has another one, for example `CE`), plus `LoadFolders.xml` |
+| Texture import (section 8.6) | `Textures/Things/Item/Equipment/WeaponRanged/<DefName>.png` (or `WeaponMelee`), `Textures/Things/Projectile/<ProjectileDefName>.png` for an own projectile; copied, never converted |
+| Custom shot sound (section 8.6) | `Sounds/Weapons/<DefName>_Shot/<clip>.wav` or `.ogg`, one per clip, and a marked section `====== <SoundDefName> ======` in `Defs/SoundDefs/World_Oneshots_Weapons.xml` |
 | Convert flow or update mode | `Compat/CombatExtended/Patches/...` (or the project's own Combat Extended folder) and `LoadFolders.xml` only; no vanilla file is touched |
 
 Paths and the recognition of a project's convention are specified in [mod layout](mod-layout.md) (D-104 to D-107). File names of patches use the category names of the conventions note (`Weapons_Ranged.xml`, `Weapons_Melee.xml`, `Apparel.xml`, `Ammo.xml`), with `<!-- ====== Name ====== -->` section comments and a stable defName order.
@@ -396,7 +408,7 @@ If the target already carries a CE conversion (a CE verb class, a CE tool class 
 
 ### 8.5 The write plan
 
-`WritePlan { files: [{path, action (create | update-region | unchanged), tree, rendered, diff}], diagnostics }` is the engine form, with `kind` (`vanilla-defs`, `ce-patch`, `load-folders`, `about`) and `sections` (comment headers) as extra fields of each file. The DTO form `WritePlanDto { planId, files, diagnostics, hasErrors }` carries rendered text, a diff and a byte size, not node trees (section 15); sizes are small (a few files, under 100 KB). No file outside the project root is ever in a plan (RootGuard). The game install and config folders are never written by the designer (I-05).
+`WritePlan { files: [{path, action (create | update-region | unchanged | replace), tree, rendered, diff, copy}], diagnostics }` is the engine form, with `kind` (`vanilla-defs`, `ce-patch`, `load-folders`, `about`, `copy`) and `sections` (comment headers) as extra fields of each file. The DTO form `WritePlanDto { planId, files, diagnostics, hasErrors }` carries rendered text, a diff and a byte size, not node trees (section 15); sizes are small (a few files, under 100 KB). No file outside the project root is ever in a plan (RootGuard). The game install and config folders are never written by the designer (I-05).
 
 Requirements:
 
@@ -411,6 +423,39 @@ Requirements:
 | IT-056 | After writing, a dry apply of the patch in the app's engine succeeds or reports the failing operation | test with a fixture def lacking `statBases` |
 | IT-057 | Update mode is selected automatically for already converted targets and never emits a second `MakeGun` | test |
 | IT-058 | The designer never writes under the game install or config folders | test with a fake fence |
+
+### 8.6 Imported assets: textures and custom sounds
+
+Owner decision D-130 to D-134, [ADR 0047](../adr/0047-asset-import-copies-and-sound-defs.md). Until now a weapon without art got a reserved `texPath` and a hint, and the sound fields only named existing `SoundDef`s. A design can now bring its own files. Nothing in this section changes the vanilla default or the Combat Extended rules: the output is vanilla definitions plus plain files, and a Combat Extended patch never touches sounds or textures.
+
+**Inputs.** The spec has two optional members, both absent by default. `assets` holds `texture` (a PNG for the weapon) and `projectileTexture` (a PNG for its own projectile). `sounds.shot` is a custom sound: `clips` (one or more WAV or OGG files), `volume`, `pitch` and `distance` ranges, `maxSimultaneous` and an optional `defName`. Every source is a path on the user's machine (absolute, or relative to the project root for art kept in `Source/Art`). The draft stores only the paths and the settings, never hashes or sizes, so a draft cannot go stale; the toolkit reads the files at planning time. A vanilla sound is still chosen by name (`soundCast`, `soundCastTail`, `soundInteract`; candidates come from `defs_search` with type `SoundDef`). A custom shot sound replaces a typed or cloned `soundCast` (info `design.sound-cast-replaced`). A clone keeps every sound reference of its source, as before.
+
+**Reading a source.** `rimstudio-toolkit::shared::assets` resolves the path, refuses a link (the final path component is checked with `symlink_metadata`, and again on the opened handle), a folder or any entry that is not a regular file, reads the file under its size limit (texture 8 MiB, clip 20 MiB), hashes it with SHA-256 (`rimstudio_io::sha256`) and hands the bytes to `rimstudio_design::assets::detect`, which recognises the format by signature and reads the header in house: PNG (signature, `IHDR` with its checksum, valid bit depth and colour type pairs, dimensions above zero, the closing `IEND` chunk that a cut off file lacks), WAV (a `RIFF` container of type `WAVE`, a walk over the chunks with every size checked against the file, the `fmt ` chunk, the `data` chunk, the encodings PCM, ADPCM, float and extensible) and Ogg (the capture pattern, structure version, the beginning of stream flag, the segment table, and for Vorbis and Opus the channel count and sample rate). Nothing is decoded and no image or audio library is used. The design crate stays pure: it receives the result as `AssetFacts`.
+
+**The plan.** `export_vanilla_plan_with(spec, layout, facts)` (and `export_vanilla_plan`, which passes no facts and therefore refuses a spec that has imports) adds:
+
+1. For a texture import: a planned file of kind `copy` at `Textures/<texPath>.png` (inside the content folder when the project has one), where `<texPath>` is the reserved path of the layout (`Things/Item/Equipment/WeaponRanged/<DefName>` or `WeaponMelee`, `Things/Projectile/<ProjectileDefName>`); `graphicData.texPath` is set to it, replacing a typed path, and the hint `design.texture-reserved` is not given. The copy carries the source path, the SHA-256, the byte size and the width and height.
+2. For a custom shot sound: one `copy` file per clip at `Sounds/Weapons/<DefName>_Shot/<name>.<ext>` (the name is the sanitised stem of the source file, made unique with a numeric suffix; the extension follows the detected format), and a `SoundDef` in `Defs/SoundDefs/World_Oneshots_Weapons.xml`: `defName` (the explicit name, else `<DefName>_Shot`, with the mod prefix in front when the weapon's name does not start with it), `context` `MapOnly`, `maxSimultaneous` when set, and one sub sound whose `grains` are `AudioGrain_Clip` entries with `clipPath` `Weapons/<DefName>_Shot/<name>` (relative to `Sounds`, no extension) and whose `volumeRange`, `pitchRange` and `distRange` are written as `min~max` only when set. The file is one per mod with a marked section per sound, merged by the update-region mechanism of section 8.4 like a weapon file in a project that keeps one file per category; the verb's `soundCast` is set to the new def.
+3. A source that is missing, damaged or over its limit is an error diagnostic and the plan has no files.
+
+**The copy kind.** A planned file of kind `copy` has no tree. The toolkit compares the SHA-256 of what is at the target with the source's: no file gives action `create`, the same bytes `unchanged`, other bytes `replace`. The DTO (`PlannedFileDto.copy`) carries the source, the hash, the size, the dimensions and the hash of the file that would be replaced. The plan id includes them, so a changed source or target makes a reviewed plan stale (`designer.plan-stale`). Copies are written before the definitions that name them.
+
+**Apply.** Before the first write every copy is preflighted: the target path (the guarded writer's rules), the read only flag, that the target still holds the file the plan saw, and that the source still has the planned hash. Then each copy runs `GuardedWriter::copy_in`: a different existing file is backed up into the data root (D-090), never into the mod folder; the bytes are written atomically (`rimstudio_io::copy::copy_verified`) and read back and compared with the hash. Nothing is written outside the project root. The apply report lists each copy with `kind` `copy`, the byte count, the backup path and the `sha256` of the written file.
+
+**Facts query.** `designer_asset_info {path, projectId?}` returns `status` (`found`, `missing`, `refused`, `too-large`), `kind` (`png`, `wav`, `ogg`, `unknown`), `bytes`, `sha256`, `width` and `height`, `channels`, `sampleRate`, `durationMs`, the diagnostics the designer would give if the file were imported, and, for a valid PNG of at most 256 KiB, a `data:image/png;base64,...` URL as a thumbnail, so the page needs no file access. The CLI offers `designer asset DRAFT --project DIR --texture PNG --projectile-texture PNG --shot-clip FILE ... --shot-volume MIN~MAX --shot-pitch MIN~MAX --shot-distance MIN~MAX --shot-max N --shot-name NAME` (and `--clear-texture`, `--clear-projectile-texture`, `--clear-shot-sound`) and `designer asset info PATH [--project DIR]`.
+
+**Limits.** Only the shot sound has a custom form (reload and impact sounds keep the reserved paths and are chosen by name). A texture is copied as the PNG it is; the tool makes no `.dds`, no resizing and no check of the image content beyond the header. A WAV with more than one channel is allowed with a warning. The facts of a source are read and hashed on every plan; there is no cache. A source on a network share that changes while it is read is caught by the hash. A sound def name is checked against the loaded definitions (the install and the reference mods), not against other files of the project: a hand written `SoundDef` of the same name in another file of the project is not detected. `designer_asset_info` reads any regular file the caller names and returns facts about it (size, hash, format) and, for a small valid PNG, its bytes as a thumbnail; it returns no other content, and it is a local tool of a person who chooses the files.
+
+Requirements:
+
+| id | requirement | acceptance |
+| --- | --- | --- |
+| IT-090 | A texture import plans a copy of the PNG to the layout's path, sets `texPath`, and refuses a missing file, a file that is not a PNG, a cut off PNG, a file above 8 MiB or 4096 pixels, and a link | `plan_assets.rs`, `assets_flow.rs`, header unit tests and proptests |
+| IT-091 | A custom shot sound plans one copy per clip, a `SoundDef` section in the sound file and `soundCast`; it refuses a missing clip, a file that is not WAV or OGG, a WAV with a bad chunk size, a clip above 20 MiB, a duplicate def name and a melee weapon; a mono requirement is a warning | `plan_assets.rs`, `assets_flow.rs`, `validation::assets` tests, golden XML |
+| IT-092 | Apply copies with a verified hash, backs up a different file at the target outside the project, refuses a source or a target that changed after planning, writes nothing outside the project root and reports each copy | `assets_flow.rs`, `rimstudio-io` copy tests |
+| IT-093 | `designer_asset_info` describes a PNG, WAV or OGG file without decoding it, gives a thumbnail for a small PNG and refuses a link | `assets_flow.rs`, dispatch test |
+| IT-094 | The CLI stores imports in a draft, shows the facts and applies the copies | `cli_assets.rs` |
+| IT-095 | A weapon with real art and a real clip applies, and the resulting mod loads through the def engine with the `SoundDef` and the weapon resolving | `real_assets.rs` (ignored, needs the install and the owner's Lone Wolf mod) |
 
 ## 9. What is disabled without Combat Extended
 
@@ -445,6 +490,8 @@ Commands (declared once in the registry; names `<area>_<verb>`; the catalog list
 | designer_preview | query | exact readouts, suggestions, bands for a draft state; at most 1 ms |
 | designer_fit | query | fit meter data: bands, ranks, typicality |
 | designer_ce_suggest | query | suggestions for the optional CE block of a draft: value, source, band, rating, asks; the toggle may be off and stays off |
+| designer_ce_ammo_catalog | query | every ammo set of the installed CE with ammo types and projectile numbers, searchable, filterable, paged; the draft only ranks the sets |
+| designer_ce_ammo_suggest | query | defaults for a new custom ammo type from the nearest of the user's own ammunition, or a copy of an existing one |
 | designer_quiz_next | query | next question for a draft |
 | designer_quiz_answer | action | apply an answer, return the updated estimate |
 | designer_material_matrix | query | stuff by quality grid for the item |
@@ -557,6 +604,8 @@ The backend of release 0.1.0 (weapons, ranged and melee, plus the optional CE pa
 3. The plan id is a blake3 hash of path, kind, action and final text of every file. `WritePlanDto` carries the id, the rendered text, a unified diff and a byte size per file and `hasErrors`; the apply request re-sends the export inputs plus the plan id, the toolkit rebuilds the plan and refuses a different hash (`designer.plan-stale`) or any error diagnostic (`designer.apply-failed`).
 4. Apply checks every path with the guarded writer before the first write (relative, inside the project root, not under the protected paths: the game install of Core and the DLC, the reference mod roots and explicit folders; the optional `GameWriteFence` also applies), writes definitions, then patches, then `LoadFolders.xml` last, each with a backup and a read back check, then dry applies the patch in the app's engine with the gun conversion simulated (IT-056). Backups of replaced project files go to `<data root>/project-backups/<projectId>/<folder of the file>/`, not into the mod folder, and the reported backup path is absolute. Cancellation is observed between files: cancelled after at least one file apply returns the written list with the warning `designer.apply-cancelled`; cancelled before the first file it is cancelled. Before the first write every pending file is preflighted: its path, its read only flag and that it still holds exactly the text the plan was made from (a file edited by another program after planning, or one that appeared since, refuses the apply with `designer.apply-failed` and nothing is written); two plan paths that differ only by letter case, or one that is the folder of another, refuse the whole plan. The writer also refuses Windows device names, trailing dots and spaces, segments over 255 bytes, paths over 200 bytes, a name that differs only by case from an existing entry, a target file that is a link, a read only file, a project folder that is a link and any project inside a Steam library. A write error after at least one file was written returns the report of what was written with the error diagnostic `designer.apply-write-failed` and writes nothing further (the `LoadFolders.xml` gate is last, so it never lists a patch that was not written). A regenerated patch section ends at the first element that does not mention the item name, so operations written by hand after it are kept. `project_create` writes `About/About.xml` last, checks the folder name like any path component and can be repeated to complete a scaffold that stopped (identical existing files are kept while the About file is missing, anything else that exists refuses). The review that produced these rules is section 19 of the [security and privacy](../architecture/security-and-privacy.md) document.
 
+5. Imported assets (section 8.6) add planned files of kind `copy` (action `create`, `unchanged` or `replace`) that are written first, with a hash checked source and a backup of a replaced file; the plan id covers their hashes.
+
 ### 15.4 Convert flow
 
 `designer_convert_scan` reads the project through a session that has the project folder as its last pack (preferring the session that has CE loaded) and lists each project weapon as not converted, already CE, unsupported kind (bows, launchers and grenades are not converted in 0.1.0) or target not found, with the questions (asks) that the conversion would need. `convert_plan` feeds the same plan path: open questions become error diagnostics `designer.convert-needs-answer` of an empty plan (the scan carries the asks, the plan DTO has no ask list); a conversion never changes a vanilla definition (a test shows the file byte identical); derived numbers carry their origin and rest on few twins on real data, so they are suggestions. Gun bash tools use the median blunt ratio of the melee conversions, which no research number backs.
@@ -635,3 +684,73 @@ Requirement ids IT-072 to IT-077. Decisions D-110 to D-114, [ADR 0042](../adr/00
 6. **Validation.** New codes: `design.accepted-missing` (info, the source lacks the field too), `design.extra-field-conflict` and `design.extra-field-invalid` (errors), `design.texture-shared` (info). A clone lists in `acceptedMissing` every required field the source lacks (57 of the 86 vanilla weapons lack a cost list, work to make, accuracy, role or tier). Numbers of carried fields are checked like the others (finite, positive scale, element names).
 7. **Schema.** `Draft::VERSION` is 2. The shape only gained optional fields, so version 1 documents read unchanged; `Draft::migrate` and `migrate_value` stamp the version, `DraftRecord` has the migration step 1 to 2 for the store, and `draft_from_dto` upgrades a draft sent with the old version.
 8. **Limits.** A source changed by a patch carries no raw fields. A projectile whose def has no `ParentName` cannot be copied. The raw fields are a mirror of the source: the designer does not know what `relicChance` means and checks only that the node is valid XML and not a duplicate of a modelled field.
+
+### 15.13 Convert scan facts for the Patches table
+
+Each candidate of `designer_convert_scan` also carries what the Patches table shows, read from the resolved definition of the load (parents merged, the project's own patches applied) by `designer::convert_facts`:
+
+- `tags`: the `weaponTags` of the definition, in definition order (omitted when none);
+- `weaponClasses`: the `weaponClasses` of the definition (omitted when none);
+- `file`: the project file that holds the definition (this field existed before; it is absent for a definition that comes from another mod);
+- `vanilla`: `damage`, `range`, `cooldown`, `warmup`, `mass`, `burst` and `marketValue`, each present only when the definition gives it. For a gun `damage` is the `damageAmountBase` of the default projectile of the shooting verb, `range`, `warmup` and `burst` come from that verb, `cooldown` is the stat `RangedWeapon_Cooldown`. For a melee weapon `damage` and `cooldown` are the `power` and `cooldownTime` of the strongest tool (the first one wins a tie) and `range`, `warmup` and `burst` are absent. `mass` and `marketValue` are the stats `Mass` and `MarketValue`. No number is computed or looked up in a table: a projectile that is not defined or a number that is not a number is absent, never zero.
+
+The name `vanilla` is kept for the contract; for a definition that already carries a Combat Extended conversion the numbers are the converted ones, because the resolved definition includes the project's own patches. An abstract base and a definition that is not among the resolved definitions have no `vanilla` block and no tags. All fields are optional additions, so a client built before them still reads the result.
+
+### 15.14 The lint of existing patch files
+
+`designer_lint_files { projectId, paths? }` (a query, `designer::lint_files`) runs the Combat Extended lint over the patch files of a project, whoever wrote them. Without `paths` it checks every XML file below a `Patches` folder at any depth (version folders included) and every patch file of the gated Combat Extended folder (a file there whose root is not `Patch` is listed as `not-a-patch` and gets no findings; definition files of that folder are not listed); with `paths` it checks exactly those files, given relative to the project root.
+
+- **Reading.** The files go through the guarded project reader (a safe relative path, inside the project, no link out of it, outside the protected game folders) with a limit of 2,000,000 bytes, and are parsed by `rimstudio-xml` in game mode, so a file the game would skip is a finding. A named path that leaves the project, a folder, a file that does not exist, a file over the limit, text that is not XML and a document type declaration each give one error finding of rule CEP017 and a file status (`unreadable`, `missing`, `too-large`, `parse-failed`, `doctype`); the call still succeeds. At most 1000 files are checked per call; a longer list is cut and a warning says so.
+- **Rules.** The structural rules (CEP001 to CEP005, CEP007 to CEP009, CEP011, CEP012, CEP017 to CEP024 and the bow and platform rules) run on the raw nodes. CEP013, CEP014 and CEP016 run when Combat Extended data is loaded. CEP010 and CEP015 need the type and field tables of the installed Combat Extended, which are not supplied yet, so they are always listed in `notChecked` with that reason. Without Combat Extended data every data dependent rule is listed in `notChecked` and `ceData` is false.
+- **Findings.** Each finding has the rule id, the diagnostic code, the severity, the English message, an explanation of the rule (what it checks and how to fix it), the pointer of the element (`/Patch/Operation[3]/AmmoUser/ammoSet`, one based positions), the one based index of the top level operation, the xpath of the innermost operation that has one (an operation such as the Combat Extended gun conversion has no xpath), and the file. A finding about the project itself, such as a `LoadFolders.xml` entry that cannot match, has no file and is listed under `project`.
+- **Context.** The lint gets the project's `LoadFolders.xml`, the game version of the project (the newest `supportedVersions` entry) and the def names that exist (the thing defs of the reference set and every def of the project), so CEP018, CEP013 and CEP014 judge a hand written patch the way the generator judges its own.
+- **CLI.** `lint ce PATH...` takes mod folders (every patch file of the mod) or single files (checked inside the nearest parent folder that has `About/About.xml`; outside any mod it is a usage error), prints every finding with its operation and xpath and, with `--explain`, the explanation, and exits 1 when an error finding exists. It no longer needs Combat Extended data to run.
+
+On the owner's install the hand written Gewehr 41 patch gives 1 error (CEP004: the Combat Extended find mod class in a file that loads without it) and 10 warnings (five unguarded conversions, CEP023, and the unknown tag `CE_AI_Default`, CEP016); the Lone Wolf weapon package patch gives 1 error (CEP004).
+
+## 16. Weapon archetypes
+
+Owner request (2026-10-05): the stats of a weapon should be calculated roughly from its category, then its kind (sniper, bolt action), speed of fire and calibre, for balancing and automatic numbers that fit the game, so that a first mod can be tried within the hour. The model and the math are in [item balance math](item-balance-math.md) section 15; this section is the contract of the commands and the flow.
+
+### 16.1 The flow
+
+1. The modder picks a family and an archetype (rifle, assault rifle), the action, the rate of fire (a class or rounds per minute), the calibre class, the handling, the tier and where the strength should land among the install's weapons of the class (weaker, typical, stronger, a percentile, or the strength of a chosen reference weapon).
+2. `designer_archetype_propose` returns every number of the weapon with its plain reason and the fit meter's verdict. It is read only and cheap: it can run on every change of a descriptor.
+3. `designer_archetype_apply` writes the proposal into the draft: the empty and derived fields are filled, typed values are kept (IT-003), the choice is recorded in the draft (`archetype`), and when the target changes the same call proposes again and replaces the numbers an earlier proposal wrote. The structure that is still empty (the parent base and, for a gun, a projectile of its own) is completed from the nearest reference weapon so the draft can be planned.
+4. The result is an ordinary vanilla draft. Combat Extended stays off unless the request is in Combat Extended mode and says `includeCe`: then the calibre is one of the user's ammo sets and the optional block is filled by the existing predictors (D-085).
+
+### 16.2 Commands
+
+| Command | Request | Response | Notes |
+| --- | --- | --- | --- |
+| `designer_archetype_catalog` | `{ kind?, includeCalibres }` | `ArchetypeCatalogDto { families, rof, actions, calibres, handlings, tiers, balance, poolSizes, proposalsAvailable, ce }` | Each archetype lists the descriptors that apply to it (`applies`), its allowed actions, rate of fire classes, calibre classes and handlings with the defaults, its typical rounds per minute, the pool role it is compared with in this install and the Combat Extended ammo families that fit. `tiers` gives the six tech levels with the number of reference weapons the install has at each. Works without a game install (nothing can then be proposed). `ce.calibres` lists the ammo sets of the user's Combat Extended when asked. |
+| `designer_archetype_propose` | `{ kind, archetype, descriptors, balanceTarget, mode, strength?, draft? }` | `ArchetypeProposalDto` | Numbers (`values`, `tools`, `costList`, `stuff`, `weaponTags`, `weaponClasses`, `marketValue`), the strength report, notes, `ce` in Combat Extended mode, the fit report and its verdict. With a draft, the fields it decided are marked `locked`. |
+| `designer_archetype_apply` | `{ draft, proposal, includeCe?, refreshStructure?, completeStructure? }` | `{ draft, filled, kept, proposal, notes }` | The numbers are derived again from the choice the proposal carries. Not saved; the caller saves the draft. |
+
+The command line has `designer archetypes` (the catalogue), `designer propose ARCHETYPE [--action --rof --caliber --handling --tier --balance --match-strength --ce]` (the proposal table with reasons, nothing changed) and `designer new KIND --name N --project DIR --archetype FAMILY/TYPE ...` (a draft filled from the archetype).
+
+### 16.3 What the proposal never does
+
+It never overwrites a typed, answered or anchored number, never turns Combat Extended on by itself, never reads a value table (the pools, the cost lists and the ammo sets are read from the install at run time), and never writes a market value (the price is shown from the price math; the work and the cost list are the inputs). A thin pool is not an error: the class widens along the fallback chain and the proposal says so.
+
+### 16.4 The weapon wizard on the Weapons page
+
+The Weapons page has a button "New weapon wizard" at the top of the drafts panel. It opens a full dialog with four steps and a live summary on the side from the second step on. The two older buttons (New ranged, New melee) still make a blank draft, and the first step has a link to the same blank dialog.
+
+1. **Type.** A list of families (guns and bows, melee) and the types of the chosen family, each with the one line description from the catalogue. Nothing is chosen until the user picks a type; Next stays off until then.
+2. **Describe.** Only the descriptors the type lists in `applies`: action, rate of fire, calibre, handling, tier and strength (weaker, typical, stronger). The rate of fire of a gun is a slider in rounds per minute with the three classes marked and the effect written out ("650 rounds per minute, one shot every 0.09 seconds"); for a melee weapon it is the swing speed class. The tier list shows how many reference weapons the install has at each tier. The calibre is a class from tiny to huge, or, when the user turns the switch on and Combat Extended is loaded, one of the install's ammo sets (searchable, the sets of the families that suit the type first). Every change asks `designer_archetype_propose` again after a short idle; answers that arrive late are dropped.
+3. **Numbers.** The strength control again (changing it moves the numbers and shows "was X" beside each moved number), the typicality of the proposal with the verdict word, the strength rank in the class, the class the comparison used and, when the backend marks the class as rough, a plain notice. The numbers are in groups (damage and penetration, range and accuracy, firing, attacks, weight and cost), each row with its value, the derived chip and the plain reason of the backend, and a table "Compared with your install" with the typical value and the middle half range of the class next to every stat.
+4. **Name.** Label, an optional def name prefix (remembered between sessions) and the def name, which follows the label until the user types one. The step says what will be created and that Combat Extended is off.
+
+Create calls `designer_archetype_apply` on a blank draft with `includeCe` false, stores the draft and opens it in the editor. The numbers are stored as suggestions (nothing is typed), so every field stays editable with its chip. The Combat Extended patch stays off even when an ammo set was chosen: the presence of the optional block is what switches the patch on, so the wizard never fills it. The ammo set is kept in the choice of the draft (`archetype.descriptors.ammoSet`, mode Combat Extended) and shapes the numbers.
+
+A draft made by the wizard shows a line above the editor with a button "Propose again". It opens the wizard on the Describe and Numbers steps with the stored choice and the open draft: the proposal marks the numbers the user typed, the rows show the typed number and say it stays, and Apply to draft keeps them (IT-003). When the draft already has the optional Combat Extended block and the choice is in Combat Extended mode, the block's suggestions are refreshed the same way; otherwise the block is left alone.
+
+| id | requirement | acceptance |
+| --- | --- | --- |
+| IT-120 | The wizard shows only the descriptors that apply to the chosen type and asks for new numbers after every change | component and store tests on the recorded catalogue; Playwright: a melee type shows swing speed and no calibre |
+| IT-121 | Every proposed number is shown with its derived chip, its reason and, in the table, the class typical value and range | component tests on the recorded proposals |
+| IT-122 | A rough class and a target out of reach are said plainly | component test on the recorded thin proposal |
+| IT-123 | Create stores a vanilla draft with the proposal applied, typed values none, Combat Extended off whatever the calibre choice | store test (`includeCe` false) and Playwright (switch off after a Combat Extended calibre) |
+| IT-124 | Propose again keeps typed numbers and shows them as typed | store and component tests; Playwright: type 33, propose again, the written file holds 33 |
+| IT-125 | The wizard works with the keyboard and passes the automated accessibility check on each step | Playwright with axe on the type, describe, numbers, name steps and the ammo list |

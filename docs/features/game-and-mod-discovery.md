@@ -23,6 +23,7 @@ Milestone numbering follows the [roadmap, section 1.1](../roadmap.md#11-mapping-
 13. [Commands, events and diagnostics](#13-commands-events-and-diagnostics)
 14. [Test plan](#14-test-plan)
 15. [Owner decisions and open points](#15-owner-decisions-and-open-points)
+16. [As built: the facts of a scan](#16-as-built-the-facts-of-a-scan)
 
 ## 1. Scope and principles
 
@@ -491,3 +492,46 @@ Diagnostic codes used here: existing `deploy.override-invalid`, `deploy.source-o
 4. macOS default: this document assumes symlink farm with a copy fallback, but the [packaging research](../research/cross-platform-packaging-research.md) section 2.3 judges link farms inside the app bundle fragile, since updates can wipe them. If S-03 confirms that, the macOS default should become copy with a re-check at every launch.
 5. Itch.io and Epic layouts are not supported beyond manual selection (open question 9 of the research).
 6. Open research questions that affect this document: whether the Steam integrity check removes unknown entries in `Mods` (not tested), the exact macOS user data path produced by the game, which Flatpak config path RimWorld writes, whether `HKCU` `SteamPath` exists on current Windows, and the value of the app-running flag (all unverified; each has a fallback above).
+
+## 16. As built: the facts of a scan
+
+The result of the `library_scan` job carries the numbers that the Setup page shows next to the statistics. They are computed once per scan by `rimstudio_manager::facts::gather` from the index the scan just built and from the duplicate report of that same index. Nothing is guessed from a folder name or a Workshop item id, and nothing is read again from disk except one `About.xml` (see `ceInLibrary`).
+
+| Field of `LibraryScanResult` | Where the number comes from |
+|---|---|
+| `counts.mods`, `counts.defs` | the number of mods and of indexed definitions of the index |
+| `counts.loadable` | mods whose loadability flag is `loadable`: the game sees the folder (install `Data`, install `Mods`, a Workshop folder, or a custom folder mod that is linked into `Mods`) |
+| `counts.customOnly` | mods whose flag is `needs-link`: the mod exists only in a custom folder, so the game cannot see it until it is linked or copied into `Mods`. `loadable + customOnly` is always `mods` |
+| `counts.unavailable`, `unparsedAbout`, `syntheticIds` | rows restored from the cache of an offline source, `About.xml` files that could not be parsed, and mods with a made up package id |
+| `counts.duplicateGroups` | the number of package ids that appear more than once, compared ignoring case |
+| `sources[].mods`, `loadable`, `customOnly` | the same flags counted per source of the mod. A source with no mods reports zeros; the sums over all sources equal the totals |
+| `duplicates.total`, `skippedTotal` | every duplicate group and every skipped copy of the scan |
+| `duplicates.groups` | the first 50 groups, sorted by package id (the cap keeps the result small; compare with `total`). Each group names the package id as the kept copy spells it, whether all copies share one source, the rung of the choice ladder that decided (`available`, `pinned`, `source-priority`, `version-match`, `newer` or `path-order`), the kept copy and the skipped copies |
+| `duplicates.groups[].kept`, `skipped[]` | the folder, display name, source id and kind of the copy, what the game does with it (`loaded`, `rejected` or `not-visible`) and, for a skipped copy, an English reason built from the deciding rung |
+| `ceInLibrary` | the index entry with the package id `ceteam.combatextended`, compared ignoring case; with several copies the kept copy of the duplicate group. `present` is false when there is none. `version` is the `modVersion` of that copy's `About.xml`, read when the copy's source is online; it is absent when the file has none |
+
+The library keeps the copy of a duplicate group that ranks first in its ladder (a custom folder ranks first by default), which need not be the copy the game loads: a custom folder copy that is not linked is `not-visible` to the game, and the copy the game loads is then one of the skipped ones. Both entries say what the game does, so the page can show both facts.
+
+On the owner's machine (read only run of `real_install_detects_adds_the_custom_folder_and_scans`): 763 mods, 744 loadable, 19 custom only, 6 duplicate groups with 6 skipped copies, Combat Extended 16.7.3.0 in the Workshop folder, loadable.
+
+## 17. As built: linking one project for testing
+
+Requirement ids GD-090 to GD-093. The link farm of section 10 stays deferred; this is its smallest useful part ([ADR 0050](../adr/0050-link-one-project-into-the-game.md), D-170, D-171).
+
+### GD-090 The entry and its states
+
+`project_link_status {projectId}` reads `<install>/Mods/<project folder name>` and answers one of: `not-linked` (free), `linked` (a link RimStudio made, pointing at the project), `linked-by-hand` (a link RimStudio did not make that points at the project, never removed), `stale` (a link RimStudio made that points elsewhere or nowhere), `foreign-link`, `foreign-folder`, `copy` (a marked copy RimStudio made), `in-mods` (the project folder is inside `Mods`) and `unavailable` (no game, no `Mods` folder or no project folder). It also gives the game folder, the entry path, where a link points, whether the game is running (`running`, `not-running`, `unknown`), what the link backend can create, `canCreate`, `canRemove`, the manual command and diagnostics.
+
+### GD-091 Create and remove
+
+`project_link_create {projectId, mode?, confirmGameRunning?}` creates the entry through the write fence (a symbolic link by default; `junction` where the backend offers one; `copy` only on request). It never replaces anything. A refused call changes nothing and answers `done: false` with a `refusal` (`deploy.name-taken`, `deploy.already-linked`, `deploy.game-running`, `deploy.mods-missing`, `deploy.mods-read-only`, `deploy.mode-unsupported`, `deploy.target-refused`, `deploy.game-not-found`, `deploy.manifest`, `deploy.io`) and the status after the call. `project_link_remove {projectId}` removes only what the manifest says RimStudio made, and is not blocked by a running game.
+
+### GD-092 Manual command and the active list
+
+The status carries the command that makes the same link by hand: `ln -s '<project>' '<entry>'` on Linux and macOS, `mklink /J "<entry>" "<project>"` on Windows. The page shows it, with a copy button, when the automatic way is refused or impossible. The status reads `Config/ModsConfig.xml` (read only, through the codec of `rimstudio-xml`) and says whether the project's package id, and Combat Extended's when the project has a gated Combat Extended folder, are in the active list (`active`, `inactive`, `unknown`).
+
+### GD-093 The page card
+
+"Test in RimWorld" on the Project page: the state and its sentence, Link into the game (with a confirmation that names the entry and the target, the mode, and the running game check), Remove link, the manual command, the active list hints, and the short steps to find the mod in the game, with the Combat Extended step and its load order note when the project has a Combat Extended patch. The CLI has `project link status|create|remove` (create changes nothing without `--yes`).
+
+Checked on the owner's machine with a temporary game folder (the real `Data` linked in, a temporary `Mods`): status, create, status, remove, a refusal because a folder of that name existed, and a missing `Mods` folder, all through the bridge; the owner's real `Mods` folder was never used.

@@ -172,6 +172,17 @@ These rules restate D-039 and D-040 as testable requirements. A violation of any
 3. Staging never follows links out of the project root and never includes files outside it; links inside a project are copied as the files they refer to only when the target is inside the project root, otherwise they are reported and skipped.
 4. The staging folder is in the cache root and is deleted by removing the files that the plan created, not by recursive removal of an arbitrary path.
 
+### 9.6 Linking one project for testing
+
+D-170 and D-171 ([ADR 0050](../adr/0050-link-one-project-into-the-game.md)). This is the one write under the install that a person triggers from the project page, and it is the entry kind of rule 9.1 (a): a link (or, on request, a marked copy) directly inside `<install>/Mods`, recorded in the ownership manifest before it is made.
+
+1. The name is the project folder name made safe as one path component; names that start with a dot, contain a separator or traversal, or are device names never reach the fence (they are changed or refused), and the fence refuses them again.
+2. The target is the canonical real folder of the project. A target inside the game folder, equal to it or containing `Mods` is refused. A project folder that is a link is followed to its real folder and checked as such.
+3. An existing entry is never replaced. A removal needs a manifest record, a link that still points at the recorded target and the link primitive; a real folder is never removed, a marked copy only after the fence verified the marker.
+4. A running game refuses the create unless confirmed; the remove is never blocked.
+5. A refusal because the `Mods` folder is missing or read only shows the command to run by hand; the app never changes permissions and never creates the `Mods` folder.
+6. Tests: `rimstudio-io/tests/fence_link_allowance.rs` (every other write under the install is refused, no name leaves `Mods`, no target inside the game folder), `rimstudio-library/tests/deploy_links.rs` (foreign entries, stale and retargeted links, a link into the install, a read only folder, a running game, a record without an entry, a damaged record) and the CLI and toolkit tests.
+
 ## 10. Sidecar isolation
 
 `rimstudio-steam-helper` exists so that Valve's native library never loads into the main process (I-15).
@@ -384,3 +395,36 @@ Checked by `cargo check --all-targets --target x86_64-pc-windows-gnu` for `rimst
 4. The project environment does not install the optional `GameWriteFence`; project writes rely on the protected folder list and the `steamapps` check. Without a loaded game (no reference set) the list holds only the explicitly protected folders.
 5. `case_twin` compares with Unicode lower casing; a name that differs only in Unicode normal form is not caught on macOS.
 6. A very large `LoadFolders.xml` or def file costs one full re-index per edit.
+
+## 20. Layout fixes: moves, edits and the undo journal
+
+`project_layout_fix_apply` is the one command that moves existing files of a mod ([mod layout](../features/mod-layout.md) section 14, [ADR 0046](../adr/0046-layout-fixes-with-an-undo-journal.md)). Where each threat is stopped:
+
+| Threat | Stopped by |
+|---|---|
+| A plan reviewed earlier no longer matches the project (a file edited by another program) | The apply builds the plan again and refuses a different plan id (`designer.plan-stale`); a hash taken just before each move must still match |
+| A destination outside the mod (`..`, an absolute path, a link in the path, a case twin, a device name, a protected folder) | Every source and destination goes through the guarded writer and the `RootGuard` of `rimstudio-io::rename::move_path`, before the move and again after the parent folders exist |
+| A move overwrites a file | `move_path` never overwrites: a hard link first (it fails when the name exists), the existence check otherwise; a conflict is refused unless the caller accepts a free numbered name |
+| A link is moved or followed | A link is refused as a source, never followed in a path, and a folder that holds a link is refused by the copy fallback; the scan lists links as empty files and plans nothing for them |
+| A move across volumes leaves half a copy | Copy, byte for byte verification, then removal; a failed copy removes the partial destination and leaves the source |
+| A crash between two items | The journal is written to the data root before the first change and updated before each edit and after each item; an undo infers the state of an interrupted item from the disk |
+| A tampered or forged journal | A checksum against damage; the journal is also checked against the project root, every path (same rules as the apply), the recorded hashes against the disk, and only `LoadFolders.xml` can be restored from it, so a forged journal can move back only content that matches what it records, inside the project |
+| An undo overwrites work done since | The undo checks every moved path, the original places and `LoadFolders.xml` before it changes anything and refuses, naming the path |
+| Loss of `LoadFolders.xml` | The previous text is backed up in the data root before it is replaced and is also kept in the journal |
+
+Residual: the journal is not secret, so an attacker who can write the data folder can forge a journal that passes the checksum; the checks above bound what such a journal can do. The window between a path check and the rename is the one of section 19.7 item 1.
+
+## 21. Editing the basics of a mod
+
+The commands of [mod layout](../features/mod-layout.md) section 15 change `About/About.xml`, `LoadFolders.xml` and `About/Preview.png`, create version folders and remove the preview image. They add no new way to write: every path goes through the guarded writer of section 19 (safe relative path, inside the root, no link, no case twin, outside the protected folders, the optional fence).
+
+| Threat | Stopped by |
+|---|---|
+| An edit made against an old text overwrites a change made since (another editor, the game's uploader) | The form passes the SHA-256 of the file it read; a different file is refused (`project.file-stale`), and the write compares the old bytes again right before the bytes go down (`Expect::Previous`) |
+| A hostile About or LoadFolders file (not XML, UTF-16, a document type declaration with entities, 2 MiB of text, nesting) | Read through `read_limited` (1 MiB); a file that is not UTF-8, not well formed or larger is shown and never rewritten (`project.file-not-editable`); the editor splices bytes and never expands an entity, and re-indexes the result before committing |
+| A form value breaks the document (a line break in a name, markup in a value, a control character) | Single line fields refuse line breaks and control characters; every value is written escaped by the span editor; element names come from enums, never from the request |
+| An edit loses the author's work | Byte span edits keep comments, order, unknown elements, line endings and the byte order mark; the replaced file is copied to `<data root>/project-backups/<project id>/` before the write; a change of no byte writes nothing |
+| The preview source is a link, a folder, a huge file or not an image | The source must be an absolute regular file, never a link, at most 8 MiB, a complete PNG header with at most 4096 pixels a side; the copy is hash checked and read back; a different file at the target is backed up first |
+| Removing the preview deletes something else | `GuardedWriter::remove_file` refuses a folder, a link and a read only file, checks the path again after the backup, and removes nothing without a verified backup; `rimstudio_io::remove::remove_regular_file` is the only removal and is not recursive |
+| A version folder name escapes the mod | The version must be `major.minor` numbers; the folder is made through `make_dir` of the guarded writer; `LoadFolders.xml` is written last |
+| A scan from the form leaks or stalls | None starts: the library scan is an input of the findings, never run by these commands |

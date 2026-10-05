@@ -517,4 +517,27 @@ Limits: 16 KiB for the request line and headers, 8 MiB for a body, 30 seconds in
 
 `crates/rimstudio-devserver/tests/protocol.rs` runs over a real loopback socket against an application booted with fake ports and a temporary data folder: a query, an action and a job (final result and the `job-finished` event on the stream), the unknown command and shape errors, a bad token, `Host`, `Origin` and content type, a header and a body over the limit, a slow client, a client that trickles bytes, too many connections, malformed request lines, a relative and a traversing path in the folder listing, and a listing of a fixture tree. The parser, the token comparison and the flags have unit tests.
 
+## 15. The Tauri transport as built
+
+The desktop shell ([ADR 0043](../adr/0043-tauri-desktop-shell.md), crate `rimstudio-shell`) carries the same semantics as the bridge of section 14, over the Tauri IPC instead of HTTP.
+
+### 15.1 Commands and event
+
+| Name | Arguments | Answer |
+| --- | --- | --- |
+| `rs_call` | `name` (snake case registry name), `request` (JSON, optional), `jobId` (optional, used by job commands only) | the response DTO, or the `ApiError` envelope as the rejection; a job command resolves when the job ends |
+| `rs_cancel` | `jobId` | the answer of `cancel_job` (`{state}`), idempotent |
+| `rs_info` | none | `{bridgeVersion, shellVersion, platform, home, dataDir, commandCount, contractHash, roots}`, the keys of `/dev/info` |
+| `rs_commands` | none | the registry rows `{name, kind, request, response}`, like `/dev/commands` |
+
+The event `rs-job` carries `{"type":"job-progress","jobId","command","message","done","total"}` and `{"type":"job-finished","jobId","command","ok"}`, exactly the events of `/dev/events`, so `shared/ipc/jobs.ts` reads both transports with the same code. `rs_call` runs the command on the blocking pool (`dispatch_blocking_with`), so a long query never blocks the window.
+
+### 15.2 Frontend mapping
+
+`shared/ipc/transports/tauri.ts` implements the `Transport` interface: `call` is `invoke('rs_call', {name, request})` (an abort signal stops the wait and rejects with an `AbortError`, as `fetch` does; the job keeps running, as with the bridge), `dev('/dev/health')` answers `{ok:true}`, `dev('/dev/info')` and `dev('/dev/commands')` call `rs_info` and `rs_commands`, and the folder browser routes (`/dev/fs/*`) reject with `platform.unavailable` because the desktop uses the native dialog (`shared/platform`). `events` is `listen('rs-job')` and unsubscribes cleanly even when the listener was not ready yet. A rejected `invoke` is already the `ApiError` envelope.
+
+### 15.3 Limits and policy
+
+The capability file grants `allow-rs-call`, `allow-rs-cancel`, `allow-rs-info` and `allow-rs-commands` (the list in `build.rs` makes every other app command unreachable), `core:default` (event listening), `dialog:allow-open` and the two opener permissions of section 8.2. `apps/desktop/src-tauri/tests/policy.rs` checks the capability file, the content security policy and the window configuration, and that `build.rs`, the handler list and the capability name the same four commands. The registry has no per command permission: the four commands carry every row, so the capability coverage test of section 8.3 reduces to this check.
+
 Related documents: [command catalog](command-catalog.md), [architecture overview](overview.md), [crate catalog](crate-catalog.md), [decision register](decision-register.md), [workspace layout](workspace-layout.md), [reference architectures](../research/reference-architectures.md), [RimCrow analysis](../research/rimcrow-analysis.md).

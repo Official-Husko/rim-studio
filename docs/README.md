@@ -53,7 +53,7 @@ Read in this order; each document links to the next level of detail.
 
 ### Architecture decision records ([adr/](adr/))
 
-40 short records (0001 to 0040) in the [ADR index](adr/README.md), each with context, decision, consequences, rejected alternatives and evidence.
+43 short records (0001 to 0043) in the [ADR index](adr/README.md), each with context, decision, consequences, rejected alternatives and evidence.
 
 ### Feature specifications ([features/](features/))
 
