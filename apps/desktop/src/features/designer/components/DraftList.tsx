@@ -12,6 +12,8 @@ export interface DraftListProps {
   openState: SaveState;
   onOpen: (entry: DraftEntryDto) => void;
   onNew: (kind: ItemKindDto) => void;
+  /** Opens the new weapon wizard. */
+  onWizard?: () => void;
   onDelete: (entry: DraftEntryDto) => void;
 }
 
@@ -30,7 +32,15 @@ function statusOf(entry: DraftEntryDto, openId: string | undefined, state: SaveS
 }
 
 /** The drafts of the project: open one, start a ranged or melee weapon, delete. */
-export function DraftList({ store, openId, openState, onOpen, onNew, onDelete }: DraftListProps) {
+export function DraftList({
+  store,
+  openId,
+  openState,
+  onOpen,
+  onNew,
+  onWizard,
+  onDelete,
+}: DraftListProps) {
   const [confirm, setConfirm] = useState<DraftEntryDto | undefined>(undefined);
   const entries = store.entries.value;
   const error = store.error.value;
@@ -49,6 +59,11 @@ export function DraftList({ store, openId, openState, onOpen, onNew, onDelete }:
       }
     >
       <div class="flex flex-col gap-2">
+        {onWizard ? (
+          <Button variant="primary" icon="plus" onClick={onWizard}>
+            {t('designer.wizard.open')}
+          </Button>
+        ) : null}
         {error ? (
           <Banner tone="error" title={error.code}>
             {error.message}

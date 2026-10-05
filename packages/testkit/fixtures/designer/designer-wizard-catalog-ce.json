@@ -1,0 +1,4881 @@
+{
+ "families": [
+  {
+   "id": "pistol",
+   "label": "Pistol",
+   "kind": "ranged",
+   "archetypes": [
+    {
+     "id": "pistol/light",
+     "label": "Light pistol",
+     "summary": "A small self loading pistol: quick to bring up, short effective range, light damage.",
+     "kind": "ranged",
+     "applies": [
+      "action",
+      "rof",
+      "calibre",
+      "handling",
+      "tier",
+      "balance"
+     ],
+     "actions": [
+      "semi",
+      "burst"
+     ],
+     "defaultAction": "semi",
+     "rofClasses": [
+      "slow",
+      "medium",
+      "fast"
+     ],
+     "defaultRof": "medium",
+     "refRpm": 400,
+     "calibres": [
+      "tiny",
+      "small",
+      "medium"
+     ],
+     "defaultCalibre": "small",
+     "handlings": [
+      "compact",
+      "standard"
+     ],
+     "defaultHandling": "standard",
+     "defaultTier": "industrial",
+     "poolRole": "pistol",
+     "ammoFamilies": [
+      "pistol"
+     ]
+    },
+    {
+     "id": "pistol/revolver",
+     "label": "Revolver",
+     "summary": "A double action revolver: slower cycle than an autopistol, a little more damage per shot.",
+     "kind": "ranged",
+     "applies": [
+      "action",
+      "rof",
+      "calibre",
+      "handling",
+      "tier",
+      "balance"
+     ],
+     "actions": [
+      "semi"
+     ],
+     "defaultAction": "semi",
+     "rofClasses": [
+      "slow",
+      "medium",
+      "fast"
+     ],
+     "defaultRof": "medium",
+     "refRpm": 150,
+     "calibres": [
+      "small",
+      "medium",
+      "large"
+     ],
+     "defaultCalibre": "medium",
+     "handlings": [
+      "compact",
+      "standard"
+     ],
+     "defaultHandling": "standard",
+     "defaultTier": "industrial",
+     "poolRole": "pistol",
+     "ammoFamilies": [
+      "pistol"
+     ]
+    },
+    {
+     "id": "pistol/heavy",
+     "label": "Heavy or magnum pistol",
+     "summary": "A large frame pistol with a hard hitting round: slow to settle, heavy in the hand.",
+     "kind": "ranged",
+     "applies": [
+      "action",
+      "rof",
+      "calibre",
+      "handling",
+      "tier",
+      "balance"
+     ],
+     "actions": [
+      "semi"
+     ],
+     "defaultAction": "semi",
+     "rofClasses": [
+      "slow",
+      "medium"
+     ],
+     "defaultRof": "slow",
+     "refRpm": 100,
+     "calibres": [
+      "medium",
+      "large",
+      "huge"
+     ],
+     "defaultCalibre": "large",
+     "handlings": [
+      "standard",
+      "heavy"
+     ],
+     "defaultHandling": "standard",
+     "defaultTier": "industrial",
+     "poolRole": "pistol",
+     "ammoFamilies": [
+      "pistol"
+     ]
+    },
+    {
+     "id": "pistol/machine",
+     "label": "Machine pistol",
+     "summary": "A pistol that fires in bursts: very light rounds, short range, quick cycle.",
+     "kind": "ranged",
+     "applies": [
+      "action",
+      "rof",
+      "calibre",
+      "handling",
+      "tier",
+      "balance"
+     ],
+     "actions": [
+      "burst",
+      "full-auto"
+     ],
+     "defaultAction": "burst",
+     "rofClasses": [
+      "slow",
+      "medium",
+      "fast"
+     ],
+     "defaultRof": "medium",
+     "refRpm": 900,
+     "calibres": [
+      "tiny",
+      "small",
+      "medium"
+     ],
+     "defaultCalibre": "small",
+     "handlings": [
+      "compact",
+      "standard"
+     ],
+     "defaultHandling": "standard",
+     "defaultTier": "industrial",
+     "poolRole": "pistol",
+     "ammoFamilies": [
+      "pistol"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "smg",
+   "label": "Submachine gun",
+   "kind": "ranged",
+   "archetypes": [
+    {
+     "id": "smg/light",
+     "label": "Light SMG",
+     "summary": "A compact automatic weapon firing pistol rounds: fast cycle, short range, low damage per shot.",
+     "kind": "ranged",
+     "applies": [
+      "action",
+      "rof",
+      "calibre",
+      "handling",
+      "tier",
+      "balance"
+     ],
+     "actions": [
+      "burst",
+      "full-auto",
+      "semi"
+     ],
+     "defaultAction": "burst",
+     "rofClasses": [
+      "slow",
+      "medium",
+      "fast"
+     ],
+     "defaultRof": "medium",
+     "refRpm": 800,
+     "calibres": [
+      "tiny",
+      "small",
+      "medium"
+     ],
+     "defaultCalibre": "small",
+     "handlings": [
+      "compact",
+      "standard"
+     ],
+     "defaultHandling": "standard",
+     "defaultTier": "industrial",
+     "poolRole": "smg",
+     "ammoFamilies": [
+      "pistol"
+     ]
+    },
+    {
+     "id": "smg/heavy",
+     "label": "Heavy SMG",
+     "summary": "A larger submachine gun with a stronger pistol round: more damage per burst, a slower cycle.",
+     "kind": "ranged",
+     "applies": [
+      "action",
+      "rof",
+      "calibre",
+      "handling",
+      "tier",
+      "balance"
+     ],
+     "actions": [
+      "burst",
+      "full-auto"
+     ],
+     "defaultAction": "burst",
+     "rofClasses": [
+      "slow",
+      "medium",
+      "fast"
+     ],
+     "defaultRof": "medium",
+     "refRpm": 700,
+     "calibres": [
+      "small",
+      "medium",
+      "large"
+     ],
+     "defaultCalibre": "medium",
+     "handlings": [
+      "standard",
+      "heavy"
+     ],
+     "defaultHandling": "standard",
+     "defaultTier": "industrial",
+     "poolRole": "smg",
+     "ammoFamilies": [
+      "pistol"
+     ]
+    },
+    {
+     "id": "smg/pdw",
+     "label": "Personal defence weapon",
+     "summary": "A compact weapon with a small armor piercing round: modest damage, better penetration, steady handling.",
+     "kind": "ranged",
+     "applies": [
+      "action",
+      "rof",
+      "calibre",
+      "handling",
+      "tier",
+      "balance"
+     ],
+     "actions": [
+      "burst",
+      "full-auto",
+      "semi"
+     ],
+     "defaultAction": "burst",
+     "rofClasses": [
+      "slow",
+      "medium",
+      "fast"
+     ],
+     "defaultRof": "medium",
+     "refRpm": 850,
+     "calibres": [
+      "tiny",
+      "small"
+     ],
+     "defaultCalibre": "small",
+     "handlings": [
+      "compact",
+      "standard"
+     ],
+     "defaultHandling": "standard",
+     "defaultTier": "industrial",
+     "poolRole": "smg",
+     "ammoFamilies": [
+      "pistol",
+      "rifle"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "shotgun",
+   "label": "Shotgun",
+   "kind": "ranged",
+   "archetypes": [
+    {
+     "id": "shotgun/pump",
+     "label": "Pump shotgun",
+     "summary": "A hard hitting short range weapon with a deliberate cycle.",
+     "kind": "ranged",
+     "applies": [
+      "action",
+      "rof",
+      "calibre",
+      "handling",
+      "tier",
+      "balance"
+     ],
+     "actions": [
+      "pump",
+      "lever",
+      "semi"
+     ],
+     "defaultAction": "pump",
+     "rofClasses": [
+      "slow",
+      "medium",
+      "fast"
+     ],
+     "defaultRof": "medium",
+     "refRpm": 60,
+     "calibres": [
+      "small",
+      "medium",
+      "large"
+     ],
+     "defaultCalibre": "medium",
+     "handlings": [
+      "compact",
+      "standard",
+      "heavy"
+     ],
+     "defaultHandling": "standard",
+     "defaultTier": "industrial",
+     "poolRole": "shotgun",
+     "ammoFamilies": [
+      "shotgun"
+     ]
+    },
+    {
+     "id": "shotgun/semi",
+     "label": "Semi automatic shotgun",
+     "summary": "A shotgun that reloads itself: faster follow up shots, a little less punch.",
+     "kind": "ranged",
+     "applies": [
+      "action",
+      "rof",
+      "calibre",
+      "handling",
+      "tier",
+      "balance"
+     ],
+     "actions": [
+      "semi",
+      "pump"
+     ],
+     "defaultAction": "semi",
+     "rofClasses": [
+      "slow",
+      "medium",
+      "fast"
+     ],
+     "defaultRof": "medium",
+     "refRpm": 150,
+     "calibres": [
+      "small",
+      "medium",
+      "large"
+     ],
+     "defaultCalibre": "medium",
+     "handlings": [
+      "standard",
+      "heavy"
+     ],
+     "defaultHandling": "standard",
+     "defaultTier": "industrial",
+     "poolRole": "shotgun",
+     "ammoFamilies": [
+      "shotgun"
+     ]
+    },
+    {
+     "id": "shotgun/auto",
+     "label": "Automatic shotgun",
+     "summary": "A heavy shotgun firing bursts: very short range, large damage per burst.",
+     "kind": "ranged",
+     "applies": [
+      "action",
+      "rof",
+      "calibre",
+      "handling",
+      "tier",
+      "balance"
+     ],
+     "actions": [
+      "burst",
+      "full-auto"
+     ],
+     "defaultAction": "burst",
+     "rofClasses": [
+      "slow",
+      "medium",
+      "fast"
+     ],
+     "defaultRof": "medium",
+     "refRpm": 300,
+     "calibres": [
+      "medium",
+      "large"
+     ],
+     "defaultCalibre": "medium",
+     "handlings": [
+      "standard",
+      "heavy"
+     ],
+     "defaultHandling": "standard",
+     "defaultTier": "industrial",
+     "poolRole": "shotgun",
+     "ammoFamilies": [
+      "shotgun"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "rifle",
+   "label": "Rifle",
+   "kind": "ranged",
+   "archetypes": [
+    {
+     "id": "rifle/carbine",
+     "label": "Carbine",
+     "summary": "A short rifle: handy and quick to bring up, a little less damage and reach than a full rifle.",
+     "kind": "ranged",
+     "applies": [
+      "action",
+      "rof",
+      "calibre",
+      "handling",
+      "tier",
+      "balance"
+     ],
+     "actions": [
+      "semi",
+      "burst",
+      "full-auto",
+      "bolt",
+      "lever"
+     ],
+     "defaultAction": "burst",
+     "rofClasses": [
+      "slow",
+      "medium",
+      "fast"
+     ],
+     "defaultRof": "medium",
+     "refRpm": 600,
+     "calibres": [
+      "small",
+      "medium",
+      "large"
+     ],
+     "defaultCalibre": "medium",
+     "handlings": [
+      "compact",
+      "standard"
+     ],
+     "defaultHandling": "standard",
+     "defaultTier": "industrial",
+     "poolRole": "rifle",
+     "ammoFamilies": [
+      "rifle"
+     ]
+    },
+    {
+     "id": "rifle/assault",
+     "label": "Assault rifle",
+     "summary": "A balanced automatic rifle: medium damage, good reach, bursts of three.",
+     "kind": "ranged",
+     "applies": [
+      "action",
+      "rof",
+      "calibre",
+      "handling",
+      "tier",
+      "balance"
+     ],
+     "actions": [
+      "burst",
+      "full-auto",
+      "semi"
+     ],
+     "defaultAction": "burst",
+     "rofClasses": [
+      "slow",
+      "medium",
+      "fast"
+     ],
+     "defaultRof": "medium",
+     "refRpm": 650,
+     "calibres": [
+      "small",
+      "medium",
+      "large"
+     ],
+     "defaultCalibre": "medium",
+     "handlings": [
+      "compact",
+      "standard",
+      "heavy"
+     ],
+     "defaultHandling": "standard",
+     "defaultTier": "industrial",
+     "poolRole": "rifle",
+     "ammoFamilies": [
+      "rifle"
+     ]
+    },
+    {
+     "id": "rifle/battle",
+     "label": "Battle rifle",
+     "summary": "A full power self loading rifle: more damage and penetration than an assault rifle, a slower cycle.",
+     "kind": "ranged",
+     "applies": [
+      "action",
+      "rof",
+      "calibre",
+      "handling",
+      "tier",
+      "balance"
+     ],
+     "actions": [
+      "semi",
+      "burst",
+      "full-auto"
+     ],
+     "defaultAction": "semi",
+     "rofClasses": [
+      "slow",
+      "medium",
+      "fast"
+     ],
+     "defaultRof": "medium",
+     "refRpm": 500,
+     "calibres": [
+      "medium",
+      "large",
+      "huge"
+     ],
+     "defaultCalibre": "large",
+     "handlings": [
+      "standard",
+      "heavy"
+     ],
+     "defaultHandling": "standard",
+     "defaultTier": "industrial",
+     "poolRole": "rifle",
+     "ammoFamilies": [
+      "rifle"
+     ]
+    },
+    {
+     "id": "rifle/bolt",
+     "label": "Bolt action hunting rifle",
+     "summary": "A single shot rifle with long reach and strong rounds: slow to aim, accurate far away.",
+     "kind": "ranged",
+     "applies": [
+      "action",
+      "rof",
+      "calibre",
+      "handling",
+      "tier",
+      "balance"
+     ],
+     "actions": [
+      "bolt",
+      "lever"
+     ],
+     "defaultAction": "bolt",
+     "rofClasses": [
+      "slow",
+      "medium",
+      "fast"
+     ],
+     "defaultRof": "medium",
+     "refRpm": 20,
+     "calibres": [
+      "small",
+      "medium",
+      "large",
+      "huge"
+     ],
+     "defaultCalibre": "large",
+     "handlings": [
+      "compact",
+      "standard",
+      "heavy"
+     ],
+     "defaultHandling": "standard",
+     "defaultTier": "industrial",
+     "poolRole": "sniper",
+     "ammoFamilies": [
+      "rifle"
+     ]
+    },
+    {
+     "id": "rifle/dmr",
+     "label": "Designated marksman rifle",
+     "summary": "A self loading rifle tuned for single aimed shots: long reach, long aim time.",
+     "kind": "ranged",
+     "applies": [
+      "action",
+      "rof",
+      "calibre",
+      "handling",
+      "tier",
+      "balance"
+     ],
+     "actions": [
+      "semi",
+      "bolt"
+     ],
+     "defaultAction": "semi",
+     "rofClasses": [
+      "slow",
+      "medium",
+      "fast"
+     ],
+     "defaultRof": "medium",
+     "refRpm": 60,
+     "calibres": [
+      "medium",
+      "large",
+      "huge"
+     ],
+     "defaultCalibre": "large",
+     "handlings": [
+      "standard",
+      "heavy"
+     ],
+     "defaultHandling": "standard",
+     "defaultTier": "industrial",
+     "poolRole": "sniper",
+     "ammoFamilies": [
+      "rifle"
+     ]
+    },
+    {
+     "id": "rifle/sniper",
+     "label": "Sniper rifle",
+     "summary": "The longest reach and hardest hit of the single shot rifles, with a long warmup and a slow cooldown.",
+     "kind": "ranged",
+     "applies": [
+      "action",
+      "rof",
+      "calibre",
+      "handling",
+      "tier",
+      "balance"
+     ],
+     "actions": [
+      "bolt",
+      "semi"
+     ],
+     "defaultAction": "bolt",
+     "rofClasses": [
+      "slow",
+      "medium",
+      "fast"
+     ],
+     "defaultRof": "medium",
+     "refRpm": 15,
+     "calibres": [
+      "large",
+      "huge"
+     ],
+     "defaultCalibre": "huge",
+     "handlings": [
+      "standard",
+      "heavy"
+     ],
+     "defaultHandling": "standard",
+     "defaultTier": "industrial",
+     "poolRole": "sniper",
+     "ammoFamilies": [
+      "rifle"
+     ]
+    },
+    {
+     "id": "rifle/anti-materiel",
+     "label": "Anti materiel rifle",
+     "summary": "A very heavy single shot rifle: huge damage and penetration, long warmup, slow cooldown, heavy to carry.",
+     "kind": "ranged",
+     "applies": [
+      "action",
+      "rof",
+      "calibre",
+      "handling",
+      "tier",
+      "balance"
+     ],
+     "actions": [
+      "bolt",
+      "semi"
+     ],
+     "defaultAction": "semi",
+     "rofClasses": [
+      "slow",
+      "medium",
+      "fast"
+     ],
+     "defaultRof": "medium",
+     "refRpm": 10,
+     "calibres": [
+      "huge"
+     ],
+     "defaultCalibre": "huge",
+     "handlings": [
+      "standard",
+      "heavy"
+     ],
+     "defaultHandling": "standard",
+     "defaultTier": "industrial",
+     "poolRole": "sniper",
+     "ammoFamilies": [
+      "rifle"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "machine-gun",
+   "label": "Machine gun",
+   "kind": "ranged",
+   "archetypes": [
+    {
+     "id": "machine-gun/lmg",
+     "label": "Light machine gun",
+     "summary": "A belt or box fed automatic weapon: long bursts, a long warmup, heavy to carry.",
+     "kind": "ranged",
+     "applies": [
+      "action",
+      "rof",
+      "calibre",
+      "handling",
+      "tier",
+      "balance"
+     ],
+     "actions": [
+      "full-auto",
+      "burst"
+     ],
+     "defaultAction": "full-auto",
+     "rofClasses": [
+      "slow",
+      "medium",
+      "fast"
+     ],
+     "defaultRof": "medium",
+     "refRpm": 700,
+     "calibres": [
+      "medium",
+      "large"
+     ],
+     "defaultCalibre": "medium",
+     "handlings": [
+      "standard",
+      "heavy"
+     ],
+     "defaultHandling": "standard",
+     "defaultTier": "industrial",
+     "poolRole": "heavy",
+     "ammoFamilies": [
+      "rifle",
+      "machine"
+     ]
+    },
+    {
+     "id": "machine-gun/gpmg",
+     "label": "General purpose machine gun",
+     "summary": "A full power machine gun: more damage per round than a light machine gun, heavier, longer reach.",
+     "kind": "ranged",
+     "applies": [
+      "action",
+      "rof",
+      "calibre",
+      "handling",
+      "tier",
+      "balance"
+     ],
+     "actions": [
+      "full-auto",
+      "burst"
+     ],
+     "defaultAction": "full-auto",
+     "rofClasses": [
+      "slow",
+      "medium",
+      "fast"
+     ],
+     "defaultRof": "medium",
+     "refRpm": 650,
+     "calibres": [
+      "large",
+      "huge"
+     ],
+     "defaultCalibre": "large",
+     "handlings": [
+      "standard",
+      "heavy"
+     ],
+     "defaultHandling": "standard",
+     "defaultTier": "industrial",
+     "poolRole": "heavy",
+     "ammoFamilies": [
+      "rifle",
+      "machine"
+     ]
+    },
+    {
+     "id": "machine-gun/heavy",
+     "label": "Heavy machine gun or minigun",
+     "summary": "A rotary or heavy weapon: very long bursts of light damage, a long spin up, very heavy.",
+     "kind": "ranged",
+     "applies": [
+      "action",
+      "rof",
+      "calibre",
+      "handling",
+      "tier",
+      "balance"
+     ],
+     "actions": [
+      "full-auto"
+     ],
+     "defaultAction": "full-auto",
+     "rofClasses": [
+      "slow",
+      "medium",
+      "fast"
+     ],
+     "defaultRof": "medium",
+     "refRpm": 3000,
+     "calibres": [
+      "small",
+      "medium",
+      "large"
+     ],
+     "defaultCalibre": "small",
+     "handlings": [
+      "standard",
+      "heavy"
+     ],
+     "defaultHandling": "standard",
+     "defaultTier": "industrial",
+     "poolRole": "heavy",
+     "ammoFamilies": [
+      "rifle",
+      "machine"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "bow",
+   "label": "Bow and crossbow",
+   "kind": "ranged",
+   "archetypes": [
+    {
+     "id": "bow/short",
+     "label": "Short bow",
+     "summary": "A simple bow: light arrows, short reach, quick to draw.",
+     "kind": "ranged",
+     "applies": [
+      "action",
+      "rof",
+      "calibre",
+      "handling",
+      "tier",
+      "balance"
+     ],
+     "actions": [
+      "draw"
+     ],
+     "defaultAction": "draw",
+     "rofClasses": [
+      "slow",
+      "medium",
+      "fast"
+     ],
+     "defaultRof": "medium",
+     "refRpm": 10,
+     "calibres": [
+      "tiny",
+      "small",
+      "medium"
+     ],
+     "defaultCalibre": "small",
+     "handlings": [
+      "compact",
+      "standard"
+     ],
+     "defaultHandling": "standard",
+     "defaultTier": "neolithic",
+     "poolRole": "bow",
+     "ammoFamilies": [
+      "arrow",
+      "bow"
+     ]
+    },
+    {
+     "id": "bow/recurve",
+     "label": "Recurve bow",
+     "summary": "A better bow: more damage and reach than a short bow, a little slower.",
+     "kind": "ranged",
+     "applies": [
+      "action",
+      "rof",
+      "calibre",
+      "handling",
+      "tier",
+      "balance"
+     ],
+     "actions": [
+      "draw"
+     ],
+     "defaultAction": "draw",
+     "rofClasses": [
+      "slow",
+      "medium",
+      "fast"
+     ],
+     "defaultRof": "medium",
+     "refRpm": 9,
+     "calibres": [
+      "small",
+      "medium",
+      "large"
+     ],
+     "defaultCalibre": "medium",
+     "handlings": [
+      "compact",
+      "standard"
+     ],
+     "defaultHandling": "standard",
+     "defaultTier": "neolithic",
+     "poolRole": "bow",
+     "ammoFamilies": [
+      "arrow",
+      "bow"
+     ]
+    },
+    {
+     "id": "bow/great",
+     "label": "Great bow",
+     "summary": "A war bow: heavy arrows, the longest reach of the bows, a long draw.",
+     "kind": "ranged",
+     "applies": [
+      "action",
+      "rof",
+      "calibre",
+      "handling",
+      "tier",
+      "balance"
+     ],
+     "actions": [
+      "draw"
+     ],
+     "defaultAction": "draw",
+     "rofClasses": [
+      "slow",
+      "medium",
+      "fast"
+     ],
+     "defaultRof": "medium",
+     "refRpm": 7,
+     "calibres": [
+      "medium",
+      "large",
+      "huge"
+     ],
+     "defaultCalibre": "large",
+     "handlings": [
+      "standard",
+      "heavy"
+     ],
+     "defaultHandling": "standard",
+     "defaultTier": "neolithic",
+     "poolRole": "bow",
+     "ammoFamilies": [
+      "arrow",
+      "bow"
+     ]
+    },
+    {
+     "id": "bow/crossbow",
+     "label": "Crossbow",
+     "summary": "A mechanical bow: strong bolts, good penetration, a long cranking cooldown.",
+     "kind": "ranged",
+     "applies": [
+      "action",
+      "rof",
+      "calibre",
+      "handling",
+      "tier",
+      "balance"
+     ],
+     "actions": [
+      "draw"
+     ],
+     "defaultAction": "draw",
+     "rofClasses": [
+      "slow",
+      "medium",
+      "fast"
+     ],
+     "defaultRof": "medium",
+     "refRpm": 5,
+     "calibres": [
+      "medium",
+      "large"
+     ],
+     "defaultCalibre": "medium",
+     "handlings": [
+      "standard",
+      "heavy"
+     ],
+     "defaultHandling": "standard",
+     "defaultTier": "medieval",
+     "poolRole": "bow",
+     "ammoFamilies": [
+      "bolt",
+      "arrow",
+      "bow"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "knife",
+   "label": "Knife",
+   "kind": "melee",
+   "archetypes": [
+    {
+     "id": "knife/knife",
+     "label": "Knife",
+     "summary": "A small blade: quick swings, modest damage, very light.",
+     "kind": "melee",
+     "applies": [
+      "rof",
+      "handling",
+      "tier",
+      "balance"
+     ],
+     "actions": [],
+     "rofClasses": [
+      "slow",
+      "medium",
+      "fast"
+     ],
+     "defaultRof": "medium",
+     "calibres": [],
+     "handlings": [
+      "compact",
+      "standard",
+      "heavy"
+     ],
+     "defaultHandling": "standard",
+     "defaultTier": "neolithic",
+     "poolRole": "blade",
+     "ammoFamilies": []
+    }
+   ]
+  },
+  {
+   "id": "sword",
+   "label": "Sword",
+   "kind": "melee",
+   "archetypes": [
+    {
+     "id": "sword/short",
+     "label": "Short sword",
+     "summary": "A one handed blade: a stab and a cut of equal power, an even tempo.",
+     "kind": "melee",
+     "applies": [
+      "rof",
+      "handling",
+      "tier",
+      "balance"
+     ],
+     "actions": [],
+     "rofClasses": [
+      "slow",
+      "medium",
+      "fast"
+     ],
+     "defaultRof": "medium",
+     "calibres": [],
+     "handlings": [
+      "compact",
+      "standard",
+      "heavy"
+     ],
+     "defaultHandling": "standard",
+     "defaultTier": "medieval",
+     "poolRole": "blade",
+     "ammoFamilies": []
+    },
+    {
+     "id": "sword/long",
+     "label": "Long sword",
+     "summary": "A two handed or bastard blade: much harder hitting than a short sword, with a slower swing.",
+     "kind": "melee",
+     "applies": [
+      "rof",
+      "handling",
+      "tier",
+      "balance"
+     ],
+     "actions": [],
+     "rofClasses": [
+      "slow",
+      "medium",
+      "fast"
+     ],
+     "defaultRof": "medium",
+     "calibres": [],
+     "handlings": [
+      "compact",
+      "standard",
+      "heavy"
+     ],
+     "defaultHandling": "standard",
+     "defaultTier": "medieval",
+     "poolRole": "blade",
+     "ammoFamilies": []
+    }
+   ]
+  },
+  {
+   "id": "axe",
+   "label": "Axe",
+   "kind": "melee",
+   "archetypes": [
+    {
+     "id": "axe/axe",
+     "label": "Axe",
+     "summary": "A single edge on a haft: one strong cut, a blunt haft.",
+     "kind": "melee",
+     "applies": [
+      "rof",
+      "handling",
+      "tier",
+      "balance"
+     ],
+     "actions": [],
+     "rofClasses": [
+      "slow",
+      "medium",
+      "fast"
+     ],
+     "defaultRof": "medium",
+     "calibres": [],
+     "handlings": [
+      "compact",
+      "standard",
+      "heavy"
+     ],
+     "defaultHandling": "standard",
+     "defaultTier": "medieval",
+     "poolRole": "blade",
+     "ammoFamilies": []
+    }
+   ]
+  },
+  {
+   "id": "mace-hammer",
+   "label": "Mace and hammer",
+   "kind": "melee",
+   "archetypes": [
+    {
+     "id": "mace-hammer/mace",
+     "label": "Mace",
+     "summary": "A blunt head on a haft: one heavy blunt attack, a poking haft.",
+     "kind": "melee",
+     "applies": [
+      "rof",
+      "handling",
+      "tier",
+      "balance"
+     ],
+     "actions": [],
+     "rofClasses": [
+      "slow",
+      "medium",
+      "fast"
+     ],
+     "defaultRof": "medium",
+     "calibres": [],
+     "handlings": [
+      "compact",
+      "standard",
+      "heavy"
+     ],
+     "defaultHandling": "standard",
+     "defaultTier": "medieval",
+     "poolRole": "blunt",
+     "ammoFamilies": []
+    },
+    {
+     "id": "mace-hammer/hammer",
+     "label": "War hammer",
+     "summary": "A heavy blunt head: the hardest blunt hit of the one handed weapons, a slow swing.",
+     "kind": "melee",
+     "applies": [
+      "rof",
+      "handling",
+      "tier",
+      "balance"
+     ],
+     "actions": [],
+     "rofClasses": [
+      "slow",
+      "medium",
+      "fast"
+     ],
+     "defaultRof": "medium",
+     "calibres": [],
+     "handlings": [
+      "compact",
+      "standard",
+      "heavy"
+     ],
+     "defaultHandling": "standard",
+     "defaultTier": "medieval",
+     "poolRole": "blunt",
+     "ammoFamilies": []
+    }
+   ]
+  },
+  {
+   "id": "spear",
+   "label": "Spear and polearm",
+   "kind": "melee",
+   "archetypes": [
+    {
+     "id": "spear/spear",
+     "label": "Spear",
+     "summary": "A thrusting weapon: a strong stab with extra penetration, a slow tempo.",
+     "kind": "melee",
+     "applies": [
+      "rof",
+      "handling",
+      "tier",
+      "balance"
+     ],
+     "actions": [],
+     "rofClasses": [
+      "slow",
+      "medium",
+      "fast"
+     ],
+     "defaultRof": "medium",
+     "calibres": [],
+     "handlings": [
+      "compact",
+      "standard",
+      "heavy"
+     ],
+     "defaultHandling": "standard",
+     "defaultTier": "neolithic",
+     "poolRole": "piercing",
+     "ammoFamilies": []
+    },
+    {
+     "id": "spear/polearm",
+     "label": "Polearm",
+     "summary": "A long hafted weapon with a blade or hook: heavy damage and a very slow swing.",
+     "kind": "melee",
+     "applies": [
+      "rof",
+      "handling",
+      "tier",
+      "balance"
+     ],
+     "actions": [],
+     "rofClasses": [
+      "slow",
+      "medium",
+      "fast"
+     ],
+     "defaultRof": "medium",
+     "calibres": [],
+     "handlings": [
+      "compact",
+      "standard",
+      "heavy"
+     ],
+     "defaultHandling": "standard",
+     "defaultTier": "medieval",
+     "poolRole": "piercing",
+     "ammoFamilies": []
+    }
+   ]
+  },
+  {
+   "id": "club-staff",
+   "label": "Club and staff",
+   "kind": "melee",
+   "archetypes": [
+    {
+     "id": "club-staff/club",
+     "label": "Club",
+     "summary": "A simple blunt weapon: easy to make, a modest blunt hit, a quick tempo.",
+     "kind": "melee",
+     "applies": [
+      "rof",
+      "handling",
+      "tier",
+      "balance"
+     ],
+     "actions": [],
+     "rofClasses": [
+      "slow",
+      "medium",
+      "fast"
+     ],
+     "defaultRof": "medium",
+     "calibres": [],
+     "handlings": [
+      "compact",
+      "standard",
+      "heavy"
+     ],
+     "defaultHandling": "standard",
+     "defaultTier": "neolithic",
+     "poolRole": "blunt",
+     "ammoFamilies": []
+    },
+    {
+     "id": "club-staff/staff",
+     "label": "Staff",
+     "summary": "A single blunt attack: light and slow.",
+     "kind": "melee",
+     "applies": [
+      "rof",
+      "handling",
+      "tier",
+      "balance"
+     ],
+     "actions": [],
+     "rofClasses": [
+      "slow",
+      "medium",
+      "fast"
+     ],
+     "defaultRof": "medium",
+     "calibres": [],
+     "handlings": [
+      "compact",
+      "standard",
+      "heavy"
+     ],
+     "defaultHandling": "standard",
+     "defaultTier": "neolithic",
+     "poolRole": "blunt",
+     "ammoFamilies": []
+    }
+   ]
+  }
+ ],
+ "rof": [
+  {
+   "id": "slow",
+   "label": "Slow",
+   "rate": 0.75
+  },
+  {
+   "id": "medium",
+   "label": "Medium",
+   "rate": 1
+  },
+  {
+   "id": "fast",
+   "label": "Fast",
+   "rate": 1.35
+  }
+ ],
+ "actions": [
+  {
+   "id": "bolt",
+   "label": "Bolt action",
+   "summary": "One round per cycle, worked by hand between shots."
+  },
+  {
+   "id": "lever",
+   "label": "Lever action",
+   "summary": "One round per cycle, a little quicker than a bolt."
+  },
+  {
+   "id": "pump",
+   "label": "Pump action",
+   "summary": "One round per cycle, pumped between shots."
+  },
+  {
+   "id": "semi",
+   "label": "Semi automatic",
+   "summary": "One round per trigger pull, no manual cycling."
+  },
+  {
+   "id": "burst",
+   "label": "Burst fire",
+   "summary": "A short burst per trigger pull."
+  },
+  {
+   "id": "full-auto",
+   "label": "Full automatic",
+   "summary": "A long burst while the trigger is held."
+  },
+  {
+   "id": "draw",
+   "label": "Draw and loose",
+   "summary": "One shot per draw, as bows and crossbows work."
+  }
+ ],
+ "calibres": [
+  {
+   "id": "tiny",
+   "label": "Tiny",
+   "summary": "rimfire, small darts"
+  },
+  {
+   "id": "small",
+   "label": "Small",
+   "summary": "9 mm class pistol rounds, light arrows"
+  },
+  {
+   "id": "medium",
+   "label": "Medium",
+   "summary": "intermediate rifle rounds, 12 gauge"
+  },
+  {
+   "id": "large",
+   "label": "Large",
+   "summary": "full power rifle rounds, magnum pistol rounds"
+  },
+  {
+   "id": "huge",
+   "label": "Huge",
+   "summary": "heavy and anti materiel rounds"
+  }
+ ],
+ "handlings": [
+  {
+   "id": "compact",
+   "label": "Compact"
+  },
+  {
+   "id": "standard",
+   "label": "Standard"
+  },
+  {
+   "id": "heavy",
+   "label": "Heavy"
+  }
+ ],
+ "tiers": [
+  {
+   "tier": "neolithic",
+   "label": "Neolithic",
+   "rangedCount": 5,
+   "meleeCount": 5
+  },
+  {
+   "tier": "medieval",
+   "label": "Medieval",
+   "rangedCount": 1,
+   "meleeCount": 5
+  },
+  {
+   "tier": "industrial",
+   "label": "Industrial",
+   "rangedCount": 12,
+   "meleeCount": 0
+  },
+  {
+   "tier": "spacer",
+   "label": "Spacer",
+   "rangedCount": 2,
+   "meleeCount": 0
+  },
+  {
+   "tier": "ultra",
+   "label": "Ultra",
+   "rangedCount": 0,
+   "meleeCount": 7
+  },
+  {
+   "tier": "archotech",
+   "label": "Archotech",
+   "rangedCount": 0,
+   "meleeCount": 0
+  }
+ ],
+ "balance": [
+  {
+   "target": "weaker",
+   "label": "Weaker than most of its class",
+   "percentile": 0.16666666666666666
+  },
+  {
+   "target": "typical",
+   "label": "Typical for its class",
+   "percentile": 0.5
+  },
+  {
+   "target": "stronger",
+   "label": "Stronger than most of its class",
+   "percentile": 0.8333333333333334
+  }
+ ],
+ "poolSizes": [
+  20,
+  17
+ ],
+ "proposalsAvailable": true,
+ "ce": {
+  "available": true,
+  "calibres": [
+   {
+    "set": "AmmoSet_17HMR",
+    "label": ".17 HMR",
+    "caliber": ".17 HMR",
+    "family": "rifle",
+    "projectile": "Bullet_17HMR_FMJ",
+    "damage": 7,
+    "apSharp": 3,
+    "ratio": 0.4,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_22Hornet",
+    "label": ".22 Hornet",
+    "caliber": ".22 Hornet",
+    "family": "rifle",
+    "projectile": "Bullet_22Hornet_FMJ",
+    "damage": 12,
+    "apSharp": 3.5,
+    "ratio": 0.6857142857142857,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_22LR",
+    "label": ".22 LR",
+    "caliber": ".22 LR",
+    "family": "pistol",
+    "projectile": "Bullet_22LR_FMJ",
+    "damage": 7,
+    "apSharp": 3,
+    "ratio": 0.5833333333333334,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_22Short",
+    "label": ".22 Short",
+    "caliber": ".22 Short",
+    "family": "pistol",
+    "projectile": "Bullet_22Short_FMJ",
+    "damage": 4,
+    "apSharp": 1,
+    "ratio": 0.3333333333333333,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_22WMR",
+    "label": ".22 WMR",
+    "caliber": ".22 WMR",
+    "family": "rifle",
+    "projectile": "Bullet_22WMR_FMJ",
+    "damage": 9,
+    "apSharp": 3.5,
+    "ratio": 0.5142857142857142,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_243Winchester",
+    "label": ".243 Winchester",
+    "caliber": ".243 Winchester",
+    "family": "rifle",
+    "projectile": "Bullet_243Winchester_FMJ",
+    "damage": 16,
+    "apSharp": 6.5,
+    "ratio": 0.9142857142857143,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_25ACP",
+    "label": ".25 ACP",
+    "caliber": ".25 ACP",
+    "family": "pistol",
+    "projectile": "Bullet_25ACP_FMJ",
+    "damage": 5,
+    "apSharp": 2.5,
+    "ratio": 0.4166666666666667,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_277Fury",
+    "label": ".277 Fury",
+    "caliber": ".277 Fury",
+    "family": "rifle",
+    "projectile": "Bullet_277Fury_FMJ",
+    "damage": 19,
+    "apSharp": 7.5,
+    "ratio": 1.0857142857142856,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_280British",
+    "label": ".280 British",
+    "caliber": ".280 British",
+    "family": "rifle",
+    "projectile": "Bullet_280British_FMJ",
+    "damage": 18,
+    "apSharp": 6,
+    "ratio": 1.0285714285714285,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_30Carbine",
+    "label": ".30 Carbine",
+    "caliber": ".30 Carbine",
+    "family": "rifle",
+    "projectile": "Bullet_30Carbine_FMJ",
+    "damage": 14,
+    "apSharp": 5,
+    "ratio": 0.8,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_30Carbine_SB",
+    "label": ".30 Carbine",
+    "caliber": ".30 Carbine",
+    "family": "rifle",
+    "projectile": "Bullet_30Carbine_FMJ_SB",
+    "damage": 12,
+    "apSharp": 4,
+    "ratio": 0.6857142857142857,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_3006Springfield",
+    "label": ".30-06 Springfield",
+    "caliber": ".30-06 Springfield",
+    "family": "rifle",
+    "projectile": "Bullet_3006Springfield_FMJ",
+    "damage": 21,
+    "apSharp": 8,
+    "ratio": 1.2,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_3030Winchester",
+    "label": ".30-30 Winchester",
+    "caliber": ".30-30 Winchester",
+    "family": "rifle",
+    "projectile": "Bullet_3030Winchester_FMJ",
+    "damage": 18,
+    "apSharp": 5,
+    "ratio": 1.0285714285714285,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_3030Winchester_SB",
+    "label": ".30-30 Winchester",
+    "caliber": ".30-30 Winchester",
+    "family": "rifle",
+    "projectile": "Bullet_3030Winchester_FMJ_SB",
+    "damage": 16,
+    "apSharp": 4,
+    "ratio": 0.9142857142857143,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_300AACBlackout",
+    "label": ".300 AAC Blackout",
+    "caliber": ".300 AAC Blackout",
+    "family": "rifle",
+    "projectile": "Bullet_300AACBlackout_FMJ",
+    "damage": 16,
+    "apSharp": 5.5,
+    "ratio": 0.9142857142857143,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_300WinchesterMagnum",
+    "label": ".300 Winchester Magnum",
+    "caliber": ".300 Winchester Magnum",
+    "family": "high caliber",
+    "projectile": "Bullet_300WinchesterMagnum_FMJ",
+    "damage": 23,
+    "apSharp": 10,
+    "ratio": 0.5227272727272727,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_303British",
+    "label": ".303 British",
+    "caliber": ".303 British",
+    "family": "rifle",
+    "projectile": "Bullet_303British_FMJ",
+    "damage": 20,
+    "apSharp": 6.5,
+    "ratio": 1.1428571428571428,
+    "weaponCount": 4
+   },
+   {
+    "set": "AmmoSet_303British_SB",
+    "label": ".303 British",
+    "caliber": ".303 British",
+    "family": "rifle",
+    "projectile": "Bullet_303British_FMJ_SB",
+    "damage": 18,
+    "apSharp": 6,
+    "ratio": 1.0285714285714285,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_32ACP",
+    "label": ".32 ACP",
+    "caliber": ".32 ACP",
+    "family": "pistol",
+    "projectile": "Bullet_32ACP_FMJ",
+    "damage": 8,
+    "apSharp": 3,
+    "ratio": 0.6666666666666666,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_338Lapua",
+    "label": ".338 Lapua Magnum",
+    "caliber": ".338 Lapua Magnum",
+    "family": "high caliber",
+    "projectile": "Bullet_338Lapua_FMJ",
+    "damage": 26,
+    "apSharp": 11,
+    "ratio": 0.5909090909090909,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_338Norma",
+    "label": ".338 Norma Magnum",
+    "caliber": ".338 Norma Magnum",
+    "family": "high caliber",
+    "projectile": "Bullet_338Norma_FMJ",
+    "damage": 25,
+    "apSharp": 11,
+    "ratio": 0.5681818181818182,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_357Magnum",
+    "label": ".357 Magnum",
+    "caliber": ".357 Magnum",
+    "family": "pistol",
+    "projectile": "Bullet_357Magnum_FMJ",
+    "damage": 13,
+    "apSharp": 6,
+    "ratio": 1.0833333333333333,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_357Magnum_HV",
+    "label": ".357 Magnum",
+    "caliber": ".357 Magnum",
+    "family": "pistol",
+    "projectile": "Bullet_357Magnum_HV_FMJ",
+    "damage": 15,
+    "apSharp": 7.3,
+    "ratio": 1.25,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_357Magnum_Lever",
+    "label": ".357 Magnum/.38 Special",
+    "caliber": ".357 Magnum",
+    "family": "pistol",
+    "projectile": "Bullet_357Magnum_HV_FMJ",
+    "damage": 15,
+    "apSharp": 7.3,
+    "ratio": 1.25,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_357Magnum_Revolver",
+    "label": ".357 Magnum/.38 Special",
+    "caliber": ".357 Magnum",
+    "family": "pistol",
+    "projectile": "Bullet_357Magnum_FMJ",
+    "damage": 13,
+    "apSharp": 6,
+    "ratio": 1.0833333333333333,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_357SIG",
+    "label": ".357 SIG",
+    "caliber": ".357 SIG",
+    "family": "pistol",
+    "projectile": "Bullet_357SIG_FMJ",
+    "damage": 12,
+    "apSharp": 4.5,
+    "ratio": 1,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_38ACP",
+    "label": ".38 ACP",
+    "caliber": ".38 ACP",
+    "family": "pistol",
+    "projectile": "Bullet_38ACP_FMJ",
+    "damage": 10,
+    "apSharp": 3.5,
+    "ratio": 0.8333333333333334,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_38SW",
+    "label": ".38 S&W",
+    "caliber": ".38 S&W",
+    "family": "pistol",
+    "projectile": "Bullet_38SW_FMJ",
+    "damage": 9,
+    "apSharp": 3,
+    "ratio": 0.75,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_38Special",
+    "label": ".38 Special",
+    "caliber": ".38 Special",
+    "family": "pistol",
+    "projectile": "Bullet_38Special_FMJ",
+    "damage": 9,
+    "apSharp": 3.5,
+    "ratio": 0.75,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_38Super",
+    "label": ".38 Super",
+    "caliber": ".38 Super",
+    "family": "pistol",
+    "projectile": "Bullet_38Super_FMJ",
+    "damage": 12,
+    "apSharp": 4,
+    "ratio": 1,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_3855Winchester",
+    "label": ".38-55 Winchester",
+    "caliber": ".38-55 Winchester",
+    "family": "rifle",
+    "projectile": "Bullet_3855Winchester_FMJ",
+    "damage": 20,
+    "apSharp": 5.5,
+    "ratio": 1.1428571428571428,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_380ACP",
+    "label": ".380 ACP",
+    "caliber": ".380 ACP",
+    "family": "pistol",
+    "projectile": "Bullet_380ACP_FMJ",
+    "damage": 9,
+    "apSharp": 3,
+    "ratio": 0.75,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_40SW",
+    "label": ".40 SW",
+    "caliber": ".40 SW",
+    "family": "pistol",
+    "projectile": "Bullet_40SW_FMJ",
+    "damage": 12,
+    "apSharp": 4,
+    "ratio": 1,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_408CheyenneTactical",
+    "label": ".408 Cheyenne Tactical",
+    "caliber": ".408 Cheyenne Tactical",
+    "family": "high caliber",
+    "projectile": "Bullet_408CheyenneTactical_FMJ",
+    "damage": 34,
+    "apSharp": 12,
+    "ratio": 0.7727272727272727,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_41Rimfire",
+    "label": ".41 Rimfire",
+    "caliber": "9x19mm Parabellum",
+    "family": "pistol",
+    "projectile": "Bullet_41Rimfire_FMJ",
+    "damage": 6,
+    "apSharp": 1,
+    "ratio": 0.5,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_410Bore",
+    "label": ".410 bore",
+    "caliber": ".410 Bore",
+    "family": "shotgun",
+    "projectile": "Bullet_410Bore_Buck",
+    "damage": 36,
+    "apSharp": 3,
+    "ratio": 0.7128712871287128,
+    "weaponCount": 1
+   },
+   {
+    "set": "AmmoSet_410Bore_SB",
+    "label": ".410 bore",
+    "caliber": ".410 Bore",
+    "family": "shotgun",
+    "projectile": "Bullet_410Bore_Buck_SB",
+    "damage": 28,
+    "apSharp": 2.1,
+    "ratio": 0.5544554455445545,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_410Bore_Slug",
+    "label": ".410 bore",
+    "caliber": ".410 Bore",
+    "family": "shotgun",
+    "projectile": "Bullet_410Bore_Slug",
+    "damage": 15,
+    "apSharp": 4.5,
+    "ratio": 0.297029702970297,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_44Magnum",
+    "label": ".44 Magnum",
+    "caliber": ".44 Magnum",
+    "family": "pistol",
+    "projectile": "Bullet_44Magnum_FMJ",
+    "damage": 15,
+    "apSharp": 6,
+    "ratio": 1.25,
+    "weaponCount": 2
+   },
+   {
+    "set": "AmmoSet_44Magnum_HV",
+    "label": ".44 Magnum",
+    "caliber": ".44 Magnum",
+    "family": "pistol",
+    "projectile": "Bullet_44Magnum_HV_FMJ",
+    "damage": 19,
+    "apSharp": 7,
+    "ratio": 1.5833333333333333,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_44Magnum_Lever",
+    "label": ".44 Magnum/.44 Special",
+    "caliber": ".44 Magnum",
+    "family": "pistol",
+    "projectile": "Bullet_44Magnum_HV_FMJ",
+    "damage": 19,
+    "apSharp": 7,
+    "ratio": 1.5833333333333333,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_44Magnum_Revolver",
+    "label": ".44 Magnum/.44 Special",
+    "caliber": ".44 Magnum",
+    "family": "pistol",
+    "projectile": "Bullet_44Magnum_FMJ",
+    "damage": 15,
+    "apSharp": 6,
+    "ratio": 1.25,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_44SWSpecial",
+    "label": ".44 Special",
+    "caliber": ".44 Special",
+    "family": "pistol",
+    "projectile": "Bullet_44SWSpecial_FMJ",
+    "damage": 11,
+    "apSharp": 3,
+    "ratio": 0.9166666666666666,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_44-40Winchester",
+    "label": ".44-40 Winchester",
+    "caliber": ".44-40 Winchester",
+    "family": "rifle",
+    "projectile": "Bullet_44-40Winchester_FMJ",
+    "damage": 16,
+    "apSharp": 7.5,
+    "ratio": 0.9142857142857143,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_44-40Winchester_SB",
+    "label": ".44-40 Winchester",
+    "caliber": ".44-40 Winchester",
+    "family": "rifle",
+    "projectile": "Bullet_44-40Winchester_FMJ_SB",
+    "damage": 12,
+    "apSharp": 4.5,
+    "ratio": 0.6857142857142857,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_45ACP",
+    "label": ".45 ACP",
+    "caliber": ".45 ACP",
+    "family": "pistol",
+    "projectile": "Bullet_45ACP_FMJ",
+    "damage": 12,
+    "apSharp": 3.5,
+    "ratio": 1,
+    "weaponCount": 4
+   },
+   {
+    "set": "AmmoSet_45ACP410Bore_SB",
+    "label": ".45 ACP/.410 bore",
+    "caliber": ".45 ACP",
+    "family": "pistol",
+    "projectile": "Bullet_45ACP_FMJ",
+    "damage": 12,
+    "apSharp": 3.5,
+    "ratio": 1,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_45Colt",
+    "label": ".45 Colt",
+    "caliber": ".45 Colt",
+    "family": "pistol",
+    "projectile": "Bullet_45Colt_FMJ",
+    "damage": 12,
+    "apSharp": 3.5,
+    "ratio": 1,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_45Colt_HV",
+    "label": ".45 Colt",
+    "caliber": ".45 Colt",
+    "family": "pistol",
+    "projectile": "Bullet_45Colt_HV_FMJ",
+    "damage": 16,
+    "apSharp": 4,
+    "ratio": 1.3333333333333333,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_45Colt410Bore",
+    "label": ".45 Colt/.410 bore",
+    "caliber": ".45 Colt",
+    "family": "pistol",
+    "projectile": "Bullet_45Colt_HV_FMJ",
+    "damage": 16,
+    "apSharp": 4,
+    "ratio": 1.3333333333333333,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_45Colt410Bore_SB",
+    "label": ".45 Colt/.410 bore",
+    "caliber": ".45 Colt",
+    "family": "pistol",
+    "projectile": "Bullet_45Colt_FMJ",
+    "damage": 12,
+    "apSharp": 3.5,
+    "ratio": 1,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_45Schofield",
+    "label": ".45 Schofield",
+    "caliber": ".45 Schofield",
+    "family": "pistol",
+    "projectile": "Bullet_45Schofield_FMJ",
+    "damage": 10,
+    "apSharp": 2.5,
+    "ratio": 0.8333333333333334,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_4570Gov",
+    "label": ".45-70 Government",
+    "caliber": ".45-70 Government",
+    "family": "rifle",
+    "projectile": "Bullet_4570Gov_FMJ",
+    "damage": 20,
+    "apSharp": 9,
+    "ratio": 1.1428571428571428,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_4570Gov_SB",
+    "label": ".45-70 Government",
+    "caliber": ".45-70 Government",
+    "family": "rifle",
+    "projectile": "Bullet_4570Gov_FMJ_SB",
+    "damage": 16,
+    "apSharp": 6,
+    "ratio": 0.9142857142857143,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_454Casull",
+    "label": ".454 Casull/.45 Colt",
+    "caliber": ".454 Casull",
+    "family": "pistol",
+    "projectile": "Bullet_454Casull_FMJ",
+    "damage": 20,
+    "apSharp": 7,
+    "ratio": 1.6666666666666667,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_454Casull410Bore",
+    "label": ".454 Casull/.45 Colt/.410 bore",
+    "caliber": ".454 Casull",
+    "family": "pistol",
+    "projectile": "Bullet_454Casull_FMJ",
+    "damage": 20,
+    "apSharp": 7,
+    "ratio": 1.6666666666666667,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_455Webley",
+    "label": ".455 Webley",
+    "caliber": ".455 Webley",
+    "family": "pistol",
+    "projectile": "Bullet_455Webley_FMJ",
+    "damage": 9,
+    "apSharp": 2,
+    "ratio": 0.75,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_458SOCOM",
+    "label": ".458 SOCOM",
+    "caliber": ".458 SOCOM",
+    "family": "rifle",
+    "projectile": "Bullet_458SOCOM_FMJ",
+    "damage": 22,
+    "apSharp": 6.5,
+    "ratio": 1.2571428571428571,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_460SWMagnum",
+    "label": ".460 S&W Magnum",
+    "caliber": ".460 S&W Magnum",
+    "family": "pistol",
+    "projectile": "Bullet_460SWMagnum_FMJ",
+    "damage": 21,
+    "apSharp": 7,
+    "ratio": 1.75,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_460SWMagnum_Revolver",
+    "label": ".460 S&W Magnum",
+    "caliber": ".460 S&W Magnum",
+    "family": "pistol",
+    "projectile": "Bullet_460SWMagnum_FMJ",
+    "damage": 21,
+    "apSharp": 7,
+    "ratio": 1.75,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_470NitroExpress",
+    "label": ".470 Nitro Express",
+    "caliber": ".470 Nitro Express",
+    "family": "high caliber",
+    "projectile": "Bullet_470NitroExpress_FMJ",
+    "damage": 29,
+    "apSharp": 11,
+    "ratio": 0.6590909090909091,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_50AE",
+    "label": ".50 AE",
+    "caliber": ".50 AE",
+    "family": "pistol",
+    "projectile": "Bullet_50AE_FMJ",
+    "damage": 19,
+    "apSharp": 6.5,
+    "ratio": 1.5833333333333333,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_50Beowulf",
+    "label": ".50 Beowulf",
+    "caliber": ".50 Beowulf",
+    "family": "rifle",
+    "projectile": "Bullet_50Beowulf_FMJ",
+    "damage": 23,
+    "apSharp": 6.5,
+    "ratio": 1.3142857142857143,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_50BMG",
+    "label": ".50 BMG",
+    "caliber": ".50 BMG",
+    "family": "high caliber",
+    "projectile": "Bullet_50BMG_FMJ",
+    "damage": 42,
+    "apSharp": 14,
+    "ratio": 0.9545454545454546,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_Bolter50",
+    "label": ".50 Cal Bolter",
+    "caliber": ".50 Cal Bolter",
+    "family": "advanced",
+    "projectile": "Bullet_Bolter50_Standard",
+    "damage": 30,
+    "apSharp": 20,
+    "ratio": 1.0714285714285714,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_500SWMagnum",
+    "label": ".500 S&W Magnum",
+    "caliber": ".500 S&W Magnum",
+    "family": "pistol",
+    "projectile": "Bullet_500SWMagnum_FMJ",
+    "damage": 21,
+    "apSharp": 7,
+    "ratio": 1.75,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_55Boys",
+    "label": ".55 Boys",
+    "caliber": ".55 Boys",
+    "family": "rifle",
+    "projectile": "Bullet_55Boys_FMJ",
+    "damage": 48,
+    "apSharp": 12,
+    "ratio": 2.742857142857143,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_5656Spencer",
+    "label": ".56-56 Spencer rimfire",
+    "caliber": ".56-56 Spencer",
+    "family": "rifle",
+    "projectile": "Bullet_5656Spencer_FMJ",
+    "damage": 18,
+    "apSharp": 5,
+    "ratio": 1.0285714285714285,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_600NitroExpress",
+    "label": ".600 Nitro Express",
+    "caliber": ".600 Nitro Express",
+    "family": "high caliber",
+    "projectile": "Bullet_600NitroExpress_FMJ",
+    "damage": 38,
+    "apSharp": 11,
+    "ratio": 0.8636363636363636,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_Bolter75",
+    "label": ".75 Cal Bolter",
+    "caliber": ".75 Cal Bolter",
+    "family": "advanced",
+    "projectile": "Bullet_Bolter75_Standard",
+    "damage": 49,
+    "apSharp": 30,
+    "ratio": 1.75,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_Bolter75_Relic",
+    "label": ".75 Cal Bolter",
+    "caliber": ".75 Cal Bolter",
+    "family": "advanced",
+    "projectile": "Bullet_Bolter75_Standard_Relic",
+    "damage": 49,
+    "apSharp": 33,
+    "ratio": 1.75,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_950JDJ",
+    "label": ".950 JDJ",
+    "caliber": ".950 JDJ",
+    "family": "rifle",
+    "projectile": "Bullet_950JDJ_FMJ",
+    "damage": 75,
+    "apSharp": 18,
+    "ratio": 4.285714285714286,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_Bolter998",
+    "label": ".998 Cal Bolter",
+    "caliber": ".998 Cal Bolter",
+    "family": "advanced",
+    "projectile": "Bullet_Bolter998_Standard",
+    "damage": 72,
+    "apSharp": 35,
+    "ratio": 2.5714285714285716,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_10Gauge",
+    "label": "10 Gauge",
+    "caliber": "10 gauge",
+    "family": "shotgun",
+    "projectile": "Bullet_10Gauge_Buck",
+    "damage": 144,
+    "apSharp": 4,
+    "ratio": 2.8514851485148514,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_10Gauge_Slug",
+    "label": "10 Gauge",
+    "caliber": "10 gauge",
+    "family": "shotgun",
+    "projectile": "Bullet_10Gauge_Slug",
+    "damage": 33,
+    "apSharp": 6,
+    "ratio": 0.6534653465346535,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_100x695mmRCannonShell",
+    "label": "100x695mmR cannon shells",
+    "caliber": "100x695mmR cannon shell",
+    "family": "shell",
+    "projectile": "Bullet_100x695mmRCannonShell_HEAT",
+    "damage": 341,
+    "apSharp": 380,
+    "ratio": 1.3040152963671128,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_105mmHowitzerShell",
+    "label": "105mm howitzer shells",
+    "caliber": "105mm Howitzer shell",
+    "family": "shell",
+    "projectile": "Bullet_105mmHowitzerShell_HE",
+    "damage": 217,
+    "ratio": 0.8298279158699808,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_105mmHowitzerShell_directfire",
+    "label": "105mm howitzer shells",
+    "caliber": "105mm Howitzer shell",
+    "family": "shell",
+    "projectile": "Bullet_105mmHowitzerShell_HEAT_directfire",
+    "damage": 352,
+    "apSharp": 375,
+    "ratio": 1.3460803059273423,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_105x607mmRShell",
+    "label": "105x607mmR recoilless rifle shells",
+    "caliber": "105x607mmR shell",
+    "family": "shell",
+    "projectile": "Bullet_105x607mmRShell_HEAT",
+    "damage": 341,
+    "apSharp": 410,
+    "ratio": 1.3040152963671128,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_105x617mmRCannonShell",
+    "label": "105x617mmR shells",
+    "caliber": "105x617mmR cannon shell",
+    "family": "shell",
+    "projectile": "Bullet_105x617mmRCannonShell_HEAT",
+    "damage": 316,
+    "apSharp": 390,
+    "ratio": 1.2084130019120458,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_10mmAuto",
+    "label": "10mm Auto",
+    "caliber": "10mm Auto",
+    "family": "pistol",
+    "projectile": "Bullet_10mmAuto_FMJ",
+    "damage": 14,
+    "apSharp": 4,
+    "ratio": 1.1666666666666667,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_10x18mmCharged",
+    "label": "10x18mm Charged",
+    "caliber": "10x18mm Charged",
+    "family": "advanced",
+    "projectile": "Bullet_10x18mmCharged",
+    "damage": 15,
+    "apSharp": 12,
+    "ratio": 0.5357142857142857,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_12Gauge",
+    "label": "12 Gauge",
+    "caliber": "12 gauge",
+    "family": "shotgun",
+    "projectile": "Bullet_12Gauge_Buck",
+    "damage": 72,
+    "apSharp": 4,
+    "ratio": 1.4257425742574257,
+    "weaponCount": 3
+   },
+   {
+    "set": "AmmoSet_12Gauge_SB",
+    "label": "12 Gauge",
+    "caliber": "12 gauge",
+    "family": "shotgun",
+    "projectile": "Bullet_12Gauge_Buck_SB",
+    "damage": 63,
+    "apSharp": 3.5,
+    "ratio": 1.2475247524752475,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_12Gauge_Slug",
+    "label": "12 Gauge",
+    "caliber": "12 gauge",
+    "family": "shotgun",
+    "projectile": "Bullet_12Gauge_Slug",
+    "damage": 28,
+    "apSharp": 6,
+    "ratio": 0.5544554455445545,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_12GaugeCharged",
+    "label": "12 Gauge Charged",
+    "caliber": "12Gauge Charged",
+    "family": "advanced",
+    "projectile": "Bullet_12GaugeCharged",
+    "damage": 60,
+    "apSharp": 10,
+    "ratio": 2.142857142857143,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_127x108mm",
+    "label": "12.7x108mm Soviet",
+    "caliber": "12.7x108mm Soviet",
+    "family": "high caliber",
+    "projectile": "Bullet_127x108mm_FMJ",
+    "damage": 42,
+    "apSharp": 14,
+    "ratio": 0.9545454545454546,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_127x40mmUNSC",
+    "label": "12.7x40mm",
+    "caliber": "12.7x40mm",
+    "family": "pistol",
+    "projectile": "Bullet_127x40mm_FMJ",
+    "damage": 19,
+    "apSharp": 9,
+    "ratio": 1.5833333333333333,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_127x40mmUNSCLight",
+    "label": "12.7x40mm",
+    "caliber": "12.7x40mm",
+    "family": "pistol",
+    "projectile": "Bullet_127x40mm_FMJ_Light",
+    "damage": 17,
+    "apSharp": 8,
+    "ratio": 1.4166666666666667,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_127x55mm",
+    "label": "12.7x55mm",
+    "caliber": "12.7x55mm",
+    "family": "rifle",
+    "projectile": "Bullet_127x55mm_FMJ",
+    "damage": 21,
+    "apSharp": 7,
+    "ratio": 1.2,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_127x99mm",
+    "label": "12.7x99mm",
+    "caliber": "12.7x99mm",
+    "family": "high caliber",
+    "projectile": "Bullet_127x99mm_FMJ",
+    "damage": 40,
+    "apSharp": 18,
+    "ratio": 0.9090909090909091,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_120mmMortarShell",
+    "label": "120mm mortar shells",
+    "caliber": "120mm mortar shell",
+    "family": "shell",
+    "projectile": "Bullet_120mmMortarShell_HE",
+    "damage": 237,
+    "ratio": 0.9063097514340345,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_120mmCannonShell",
+    "label": "120x570mmR cannon shells",
+    "caliber": "120x570mmR cannon shell",
+    "family": "shell",
+    "projectile": "Bullet_120mmCannonShell_HEAT",
+    "damage": 405,
+    "apSharp": 420,
+    "ratio": 1.5487571701720841,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_12mmRailgun",
+    "label": "12mm Railgun",
+    "caliber": "12mm Railgun",
+    "family": "advanced",
+    "projectile": "Bullet_12mmRailgun_Sabot",
+    "damage": 73,
+    "apSharp": 130,
+    "ratio": 2.607142857142857,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_12x64mmCharged",
+    "label": "12x64mm Charged",
+    "caliber": "12x64mm Charged",
+    "family": "advanced",
+    "projectile": "Bullet_12x64mmCharged",
+    "damage": 39,
+    "apSharp": 30,
+    "ratio": 1.3928571428571428,
+    "weaponCount": 2
+   },
+   {
+    "set": "AmmoSet_12x72mmCharged",
+    "label": "12x72mm Charged",
+    "caliber": "12x72mm Charged",
+    "family": "advanced",
+    "projectile": "Bullet_12x72mmCharged",
+    "damage": 39,
+    "apSharp": 30,
+    "ratio": 1.3928571428571428,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_132x92mmSRTuF",
+    "label": "13.2x92mmSR TuF",
+    "caliber": "13.2x92mmSR TuF",
+    "family": "rifle",
+    "projectile": "Bullet_132x92mmSRTuF_FMJ",
+    "damage": 40,
+    "apSharp": 13,
+    "ratio": 2.2857142857142856,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_130mmType63",
+    "label": "130mm Type 63 Rockets",
+    "caliber": "130mm Type 63 Rocket",
+    "family": "rocket",
+    "projectile": "Bullet_130mmType63_HE",
+    "damage": 254,
+    "ratio": 1.0431211498973305,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_132mmM13",
+    "label": "132mm M13 Rockets",
+    "caliber": "132mm M13 Rocket",
+    "family": "rocket",
+    "projectile": "Bullet_132mmM13_HE",
+    "damage": 337,
+    "ratio": 1.3839835728952772,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_13mmGyrojet",
+    "label": "13mm Gyrojet",
+    "caliber": "13mm Gyrojet",
+    "family": "pistol",
+    "projectile": "Bullet_13mmGyrojet_FMJ",
+    "damage": 12,
+    "apSharp": 3,
+    "ratio": 1,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_145x114mm",
+    "label": "14.5x114mm",
+    "caliber": "14.5x114mm",
+    "family": "high caliber",
+    "projectile": "Bullet_145x114mm_FMJ",
+    "damage": 53,
+    "apSharp": 18,
+    "ratio": 1.2045454545454546,
+    "weaponCount": 2
+   },
+   {
+    "set": "AmmoSet_145x114mmUNSC",
+    "label": "14.5x114mmUNSC",
+    "caliber": "14.5x114mmUNSC",
+    "family": "high caliber",
+    "projectile": "Bullet_145x114mmUNSC_FMJ",
+    "damage": 52,
+    "apSharp": 24,
+    "ratio": 1.1818181818181819,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_152x169mm",
+    "label": "15.2x169mm",
+    "caliber": "15.2x169mm",
+    "family": "high caliber",
+    "projectile": "Bullet_152x169mm_Sabot",
+    "damage": 26,
+    "apSharp": 60,
+    "ratio": 0.5909090909090909,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_BGM71",
+    "label": "152mm ATGM",
+    "caliber": "152mm ATGM",
+    "family": "rocket",
+    "projectile": "Bullet_BGM71_HEAT",
+    "damage": 286,
+    "apSharp": 900,
+    "ratio": 1.1745379876796715,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_152mmHowitzerShell",
+    "label": "152mm howitzer shells",
+    "caliber": "152mm Howitzer shell",
+    "family": "shell",
+    "projectile": "Bullet_152mmHowitzerShell_HE",
+    "damage": 578,
+    "ratio": 2.210325047801147,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_152mmHowitzerShell_directfire",
+    "label": "152mm howitzer shells",
+    "caliber": "152mm Howitzer shell",
+    "family": "shell",
+    "projectile": "Bullet_152mmHowitzerShell_HEAT_directfire",
+    "damage": 410,
+    "apSharp": 250,
+    "ratio": 1.5678776290630976,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_155mmHowitzerShell",
+    "label": "155mm howitzer shells",
+    "caliber": "155mm Howitzer shell",
+    "family": "shell",
+    "projectile": "Bullet_155mmHowitzerShell_HE",
+    "damage": 546,
+    "ratio": 2.0879541108986617,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_155mmHowitzerShell_directfire",
+    "label": "155mm howitzer shells",
+    "caliber": "155mm Howitzer shell",
+    "family": "shell",
+    "projectile": "Bullet_155mmHowitzerShell_HE_directfire",
+    "damage": 546,
+    "ratio": 2.0879541108986617,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_15cmNebelwerfer",
+    "label": "15cm Nebelwerfer Rockets",
+    "caliber": "15cm Nebelwerfer Rocket",
+    "family": "rocket",
+    "projectile": "Bullet_15cmNebelwerfer_HE",
+    "damage": 228,
+    "ratio": 0.9363449691991786,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_15x65mmDiffusingCharged",
+    "label": "15x65mm Diffusing Charged",
+    "caliber": "15x65mm Diffusing Charged",
+    "family": "advanced",
+    "projectile": "Bullet_15x65mmDiffusingCharged",
+    "damage": 110,
+    "apSharp": 8,
+    "ratio": 3.9285714285714284,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_16Gauge",
+    "label": "16 Gauge",
+    "caliber": "16 gauge",
+    "family": "shotgun",
+    "projectile": "Bullet_16Gauge_Buck",
+    "damage": 84,
+    "apSharp": 3.5,
+    "ratio": 1.6633663366336633,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_16Gauge_Slug",
+    "label": "16 Gauge",
+    "caliber": "16 gauge",
+    "family": "shotgun",
+    "projectile": "Bullet_16Gauge_Slug",
+    "damage": 23,
+    "apSharp": 5,
+    "ratio": 0.45544554455445546,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_164x284mmDemo",
+    "label": "164x284mm Demolition Shell",
+    "caliber": "164x284mm Demolition Shell",
+    "family": "advanced",
+    "projectile": "Bullet_164x284mmDemo",
+    "damage": 40,
+    "apSharp": 0,
+    "ratio": 1.4285714285714286,
+    "weaponCount": 1
+   },
+   {
+    "set": "AmmoSet_16x65mm",
+    "label": "16x65mm",
+    "caliber": "16x65mm",
+    "family": "high caliber",
+    "projectile": "Bullet_16x65mm_HE",
+    "damage": 72,
+    "apSharp": 300,
+    "ratio": 1.6363636363636365,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_2Bore",
+    "label": "2-Bore",
+    "caliber": "2-Bore",
+    "family": "rifle",
+    "projectile": "Bullet_2Bore_FMJ",
+    "damage": 57,
+    "apSharp": 12,
+    "ratio": 3.257142857142857,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_20Gauge",
+    "label": "20 Gauge",
+    "caliber": "20 gauge",
+    "family": "shotgun",
+    "projectile": "Bullet_20Gauge_Buck",
+    "damage": 100,
+    "apSharp": 2,
+    "ratio": 1.9801980198019802,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_20Gauge_Slug",
+    "label": "20 Gauge",
+    "caliber": "20 gauge",
+    "family": "shotgun",
+    "projectile": "Bullet_20Gauge_Slug",
+    "damage": 21,
+    "apSharp": 4,
+    "ratio": 0.4158415841584158,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_20mmFliegerfaust",
+    "label": "20mm Fliegerfaust",
+    "caliber": "20mm Fliegerfaust",
+    "family": "rocket",
+    "projectile": "Bullet_20mmFliegerfaust_HE",
+    "damage": 16,
+    "ratio": 0.06570841889117043,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_20x102mmNATO",
+    "label": "20x102mm NATO",
+    "caliber": "20x102mm NATO",
+    "family": "high caliber",
+    "projectile": "Bullet_20x102mmNATO_AP",
+    "damage": 44,
+    "apSharp": 30,
+    "ratio": 1,
+    "weaponCount": 1
+   },
+   {
+    "set": "AmmoSet_20x105mmCharged",
+    "label": "20x105mm Charged",
+    "caliber": "20x105mm Charged",
+    "family": "advanced",
+    "projectile": "Bullet_20x105mmCharged",
+    "damage": 74,
+    "apSharp": 40,
+    "ratio": 2.642857142857143,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_20x110mmHispano",
+    "label": "20x110mm Hispano",
+    "caliber": "20x110mm Hispano",
+    "family": "high caliber",
+    "projectile": "Bullet_20x110mmHispano_AP",
+    "damage": 41,
+    "apSharp": 28,
+    "ratio": 0.9318181818181818,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_20x128mmOerlikon",
+    "label": "20x128mm Oerlikon",
+    "caliber": "20x128mm Oerlikon",
+    "family": "high caliber",
+    "projectile": "Bullet_20x128mmOerlikon_AP",
+    "damage": 47,
+    "apSharp": 36,
+    "ratio": 1.0681818181818181,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_20x138mmB",
+    "label": "20x138mmB",
+    "caliber": "20x138mmB",
+    "family": "high caliber",
+    "projectile": "Bullet_20x138mmB_AP",
+    "damage": 43,
+    "apSharp": 34,
+    "ratio": 0.9772727272727273,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_20x139mm",
+    "label": "20x139mm",
+    "caliber": "20x139mm",
+    "family": "high caliber",
+    "projectile": "Bullet_20x139mm_AP",
+    "damage": 48,
+    "apSharp": 38,
+    "ratio": 1.0909090909090908,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_20x42mmGrenade",
+    "label": "20x42mm Grenades",
+    "caliber": "20x42mm Cartridge",
+    "family": "high caliber",
+    "projectile": "Bullet_20x42mm_AP",
+    "damage": 20,
+    "apSharp": 12,
+    "ratio": 0.45454545454545453,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_20x82mmMauser",
+    "label": "20x82mm Mauser",
+    "caliber": "20x82mm Mauser",
+    "family": "high caliber",
+    "projectile": "Bullet_20x82mmMauser_AP",
+    "damage": 36,
+    "apSharp": 26,
+    "ratio": 0.8181818181818182,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_20x99mmRShVAK",
+    "label": "20x99mmR ShVAK",
+    "caliber": "20x99mmR ShVAK",
+    "family": "high caliber",
+    "projectile": "Bullet_20x99mmRShVAK_AP",
+    "damage": 35,
+    "apSharp": 27,
+    "ratio": 0.7954545454545454,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_23x115mm",
+    "label": "23x115mm",
+    "caliber": "23x115mm",
+    "family": "high caliber",
+    "projectile": "Bullet_23x115mm_AP",
+    "damage": 44,
+    "apSharp": 29,
+    "ratio": 1,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_23x152mmB",
+    "label": "23x152mmB",
+    "caliber": "23x152mmB",
+    "family": "high caliber",
+    "projectile": "Bullet_23x152mmB_AP",
+    "damage": 56,
+    "apSharp": 45,
+    "ratio": 1.2727272727272727,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_23x75mmR",
+    "label": "23x75mmR",
+    "caliber": "23x75mmR",
+    "family": "shotgun",
+    "projectile": "Bullet_23x75mmR_Buck",
+    "damage": 140,
+    "apSharp": 5,
+    "ratio": 2.772277227722772,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_23x75mmR_Slug",
+    "label": "23x75mmR",
+    "caliber": "23x75mmR",
+    "family": "shotgun",
+    "projectile": "Bullet_23x75mmR_Slug",
+    "damage": 38,
+    "apSharp": 8,
+    "ratio": 0.7524752475247525,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_25x137mmNATO",
+    "label": "25x137mm NATO",
+    "caliber": "25x137mm NATO",
+    "family": "high caliber",
+    "projectile": "Bullet_25x137mmNATO_AP",
+    "damage": 62,
+    "apSharp": 56,
+    "ratio": 1.4090909090909092,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_25x40mmGrenade",
+    "label": "25x40mm Grenades",
+    "caliber": "25x40mm Grenade",
+    "family": "grenade",
+    "projectile": "Bullet_25x40mmGrenade_HE",
+    "damage": 18,
+    "ratio": 0.8181818181818182,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_25x59mmGrenade",
+    "label": "25x59mm Grenades",
+    "caliber": "25x59mm Grenade",
+    "family": "grenade",
+    "projectile": "Bullet_25x59mmGrenade_HE",
+    "damage": 19,
+    "ratio": 0.8636363636363636,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_27x145mmMauser",
+    "label": "27x145mm Mauser",
+    "caliber": "27x145mm Mauser",
+    "family": "high caliber",
+    "projectile": "Bullet_27x145mmMauser_AP",
+    "damage": 72,
+    "apSharp": 60,
+    "ratio": 1.6363636363636365,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_28cmSpgrShell",
+    "label": "28cm Spgr. shells",
+    "caliber": "28cm Spgr. shell",
+    "family": "shell",
+    "projectile": "Bullet_28cmSpgrShell_HE",
+    "damage": 837,
+    "ratio": 3.2007648183556405,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_30x113mm",
+    "label": "30x113mm",
+    "caliber": "30x113mmB",
+    "family": "high caliber",
+    "projectile": "Bullet_30x113mmB_AP",
+    "damage": 61,
+    "apSharp": 40,
+    "ratio": 1.3863636363636365,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_30x113mmB",
+    "label": "30x113mmB",
+    "caliber": "30x113mmB",
+    "family": "high caliber",
+    "projectile": "Bullet_30x113mmB_AP",
+    "damage": 61,
+    "apSharp": 40,
+    "ratio": 1.3863636363636365,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_30x165mm",
+    "label": "30x165mm",
+    "caliber": "30x165mm",
+    "family": "high caliber",
+    "projectile": "Bullet_30x165mm_AP",
+    "damage": 74,
+    "apSharp": 57,
+    "ratio": 1.6818181818181819,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_30x170mm",
+    "label": "30x170mm",
+    "caliber": "30x170mm",
+    "family": "high caliber",
+    "projectile": "Bullet_30x170mm_AP",
+    "damage": 82,
+    "apSharp": 72,
+    "ratio": 1.8636363636363635,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_30x173mmNATO",
+    "label": "30x173mm NATO",
+    "caliber": "30x173mm NATO",
+    "family": "high caliber",
+    "projectile": "Bullet_30x173mmNATO_AP",
+    "damage": 80,
+    "apSharp": 70,
+    "ratio": 1.8181818181818181,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_30x29mmGrenade",
+    "label": "30x29mm Grenades",
+    "caliber": "30x29mm Grenade",
+    "family": "grenade",
+    "projectile": "Bullet_30x29mmGrenade_HE",
+    "damage": 22,
+    "ratio": 1,
+    "weaponCount": 1
+   },
+   {
+    "set": "AmmoSet_30x64mmFuel",
+    "label": "30x64mm Fuel Cell",
+    "caliber": "30x64mm Fuel Cell",
+    "family": "advanced",
+    "projectile": "Bullet_30x64mmFuel_Incendiary",
+    "damage": 10,
+    "ratio": 0.35714285714285715,
+    "weaponCount": 1
+   },
+   {
+    "set": "AmmoSet_35x228mm",
+    "label": "35x228mm NATO",
+    "caliber": "35x228mm NATO",
+    "family": "high caliber",
+    "projectile": "Bullet_35x228mmNATO_AP",
+    "damage": 106,
+    "apSharp": 80,
+    "ratio": 2.409090909090909,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_35x32mmSRGrenade",
+    "label": "35x32mmSR Grenades",
+    "caliber": "35x32mmSR Grenade",
+    "family": "grenade",
+    "projectile": "Bullet_35x32mmSRGrenade_HE",
+    "damage": 20,
+    "ratio": 0.9090909090909091,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_37x223mmR",
+    "label": "37x223mmR",
+    "caliber": "37x223mmR",
+    "family": "shell",
+    "projectile": "Bullet_37x223mmR_AP",
+    "damage": 82,
+    "apSharp": 71,
+    "ratio": 0.3135755258126195,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_46x30mm",
+    "label": "4.6x30mm",
+    "caliber": "4.6x30mm",
+    "family": "pistol",
+    "projectile": "Bullet_46x30mm_FMJ",
+    "damage": 8,
+    "apSharp": 5,
+    "ratio": 0.6666666666666666,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_473x33mmCaseless",
+    "label": "4.73x33mm Caseless",
+    "caliber": "4.73x33mm Caseless",
+    "family": "rifle",
+    "projectile": "Bullet_473x33mmCaseless_FMJ",
+    "damage": 12,
+    "apSharp": 6,
+    "ratio": 0.6857142857142857,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_485x49mm",
+    "label": "4.85x49mm",
+    "caliber": "4.85x49mm",
+    "family": "rifle",
+    "projectile": "Bullet_485x49mm_FMJ",
+    "damage": 13,
+    "apSharp": 6,
+    "ratio": 0.7428571428571429,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_40x311mmR",
+    "label": "40x311mmR",
+    "caliber": "40x311mmR",
+    "family": "high caliber",
+    "projectile": "Bullet_40x311mmR_AP",
+    "damage": 105,
+    "apSharp": 70,
+    "ratio": 2.3863636363636362,
+    "weaponCount": 1
+   },
+   {
+    "set": "AmmoSet_40x365mmBofors",
+    "label": "40x365mm Bofors",
+    "caliber": "40x365mm Bofors",
+    "family": "shell",
+    "projectile": "Bullet_40x365mmBofors_AP",
+    "damage": 122,
+    "apSharp": 100,
+    "ratio": 0.4665391969407266,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_40mmGrenade",
+    "label": "40x46mm Grenades",
+    "caliber": "40x46mm Grenade",
+    "family": "grenade",
+    "projectile": "Bullet_40mmGrenade_UNSCHEDP",
+    "damage": 48,
+    "apSharp": 50,
+    "ratio": 2.1818181818181817,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_40x46mmGrenade",
+    "label": "40x46mm Grenades",
+    "caliber": "40x46mm Grenade",
+    "family": "grenade",
+    "projectile": "Bullet_40x46mmGrenade_HE",
+    "damage": 22,
+    "ratio": 1,
+    "weaponCount": 1
+   },
+   {
+    "set": "AmmoSet_40x46mmOnlyEMP",
+    "label": "40x46mm Grenades",
+    "caliber": "40x46mm Grenade",
+    "family": "grenade",
+    "projectile": "Bullet_40x46mmGrenade_EMP",
+    "damage": 22,
+    "ratio": 1,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_40x47mmGrenade",
+    "label": "40x47mm Grenades",
+    "caliber": "40x47mm Grenade",
+    "family": "grenade",
+    "projectile": "Bullet_40x47mmGrenade_HE",
+    "damage": 22,
+    "ratio": 1,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_40x53mmGrenade",
+    "label": "40x53mm Grenades",
+    "caliber": "40x53mm Grenade",
+    "family": "grenade",
+    "projectile": "Bullet_40x53mmGrenade_HE",
+    "damage": 23,
+    "ratio": 1.0454545454545454,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_40x53mmVOG25Grenade",
+    "label": "40x53mm VOG-25 Grenades",
+    "caliber": "40x53mm VOG-25 Grenade",
+    "family": "grenade",
+    "projectile": "Bullet_40x53mmVOG25Grenade_HE",
+    "damage": 26,
+    "ratio": 1.1818181818181819,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_545x39mmSoviet",
+    "label": "5.45x39mm Soviet",
+    "caliber": "5.45x39mm Soviet",
+    "family": "rifle",
+    "projectile": "Bullet_545x39mmSoviet_FMJ",
+    "damage": 13,
+    "apSharp": 5.5,
+    "ratio": 0.7428571428571429,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_545x39mmSoviet_SB",
+    "label": "5.45x39mm Soviet",
+    "caliber": "5.45x39mm Soviet",
+    "family": "rifle",
+    "projectile": "Bullet_545x39mmSoviet_FMJ_SB",
+    "damage": 11,
+    "apSharp": 5,
+    "ratio": 0.6285714285714286,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_556x45mmNATO",
+    "label": "5.56x45mm NATO",
+    "caliber": "5.56x45mm NATO",
+    "family": "rifle",
+    "projectile": "Bullet_556x45mmNATO_FMJ",
+    "damage": 14,
+    "apSharp": 6,
+    "ratio": 0.8,
+    "weaponCount": 5
+   },
+   {
+    "set": "AmmoSet_556x45mmNATO_SB",
+    "label": "5.56x45mm NATO",
+    "caliber": "5.56x45mm NATO",
+    "family": "rifle",
+    "projectile": "Bullet_556x45mmNATO_FMJ_SB",
+    "damage": 12,
+    "apSharp": 5,
+    "ratio": 0.6857142857142857,
+    "weaponCount": 3
+   },
+   {
+    "set": "AmmoSet_58x21mmDAP92",
+    "label": "5.8x21mm DAP92",
+    "caliber": "5.8x21mm DAP92",
+    "family": "pistol",
+    "projectile": "Bullet_58x21mmDAP92_FMJ",
+    "damage": 11,
+    "apSharp": 4,
+    "ratio": 0.9166666666666666,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_58x42mmDBP10",
+    "label": "5.8x42mm DBP10",
+    "caliber": "5.8x42mm DBP10",
+    "family": "rifle",
+    "projectile": "Bullet_58x42mmDBP10_FMJ",
+    "damage": 14,
+    "apSharp": 6,
+    "ratio": 0.8,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_50mmGS50Grenade",
+    "label": "50mm GS-50 Grenades",
+    "caliber": "50mm GS-50 Grenade",
+    "family": "grenade",
+    "projectile": "Bullet_50mmGS50Grenade_HE",
+    "damage": 25,
+    "ratio": 1.1363636363636365,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_50mmRocket",
+    "label": "50mm rocket",
+    "caliber": "50mm Rockets",
+    "family": "rocket",
+    "projectile": "Bullet_50mmRocket_HE",
+    "damage": 147,
+    "ratio": 0.6036960985626283,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_50mmType89MortarShell",
+    "label": "50mm type 89 mortar shells",
+    "caliber": "50mm type 89 mortar shell",
+    "family": "shell",
+    "projectile": "Bullet_50mmType89MortarShell_HE",
+    "damage": 42,
+    "ratio": 0.16061185468451242,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_57mmRocket_direct",
+    "label": "57mm Rocket",
+    "caliber": "50mm Rockets",
+    "family": "rocket",
+    "projectile": "Bullet_57mmRocket_HE",
+    "damage": 187,
+    "ratio": 0.7679671457905544,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_57mmRocket_indirect",
+    "label": "57mm Rocket",
+    "caliber": "50mm Rockets",
+    "family": "rocket",
+    "projectile": "Bullet_57mmRocket_HE_indirect",
+    "damage": 187,
+    "ratio": 0.7679671457905544,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_57x307mmR",
+    "label": "57x307mmR",
+    "caliber": "57x307mmR",
+    "family": "shell",
+    "projectile": "Bullet_57x307mmR_AP",
+    "damage": 105,
+    "apSharp": 32,
+    "ratio": 0.40152963671128106,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_57x348mmSR",
+    "label": "57x348mmSR",
+    "caliber": "57x348mmSR",
+    "family": "shell",
+    "projectile": "Bullet_57x348mmSR_AP",
+    "damage": 198,
+    "apSharp": 147,
+    "ratio": 0.7571701720841301,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_57x438mmBofors",
+    "label": "57x438mm Bofors",
+    "caliber": "57x438mm Bofors",
+    "family": "shell",
+    "projectile": "Bullet_57x438mmBofors_AP",
+    "damage": 192,
+    "apSharp": 120,
+    "ratio": 0.734225621414914,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_5x16mmCharged",
+    "label": "5x16mm Charged",
+    "caliber": "5x16mm Charged",
+    "family": "advanced",
+    "projectile": "Bullet_5x16mmCharged",
+    "damage": 9,
+    "apSharp": 8,
+    "ratio": 0.32142857142857145,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_5x23mmCaseless",
+    "label": "5x23mm Caseless",
+    "caliber": "5x23mm Caseless",
+    "family": "rifle",
+    "projectile": "Bullet_5x23mmCaseless_FMJ",
+    "damage": 11,
+    "apSharp": 7,
+    "ratio": 0.6285714285714286,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_5x35mmCharged",
+    "label": "5x35mm Charged",
+    "caliber": "5x35mm Charged",
+    "family": "advanced",
+    "projectile": "Bullet_5x35mmCharged",
+    "damage": 13,
+    "apSharp": 33,
+    "ratio": 0.4642857142857143,
+    "weaponCount": 2
+   },
+   {
+    "set": "AmmoSet_5x50mmCaseless",
+    "label": "5x50mm Caseless",
+    "caliber": "5x50mm Caseless",
+    "family": "rifle",
+    "projectile": "Bullet_5x50mmCaseless_Sabot",
+    "damage": 10,
+    "apSharp": 21,
+    "ratio": 0.5714285714285714,
+    "weaponCount": 1
+   },
+   {
+    "set": "AmmoSet_5x50mmCaseless_HV",
+    "label": "5x50mm Caseless",
+    "caliber": "5x50mm Caseless",
+    "family": "rifle",
+    "projectile": "Bullet_5x50mmCaseless_Sabot_HV",
+    "damage": 11,
+    "apSharp": 26,
+    "ratio": 0.6285714285714286,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_5x50mmCaseless_LV",
+    "label": "5x50mm Caseless",
+    "caliber": "5x50mm Caseless",
+    "family": "rifle",
+    "projectile": "Bullet_5x50mmCaseless_Sabot_LV",
+    "damage": 7,
+    "apSharp": 16,
+    "ratio": 0.4,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_5x50mmCaselessToxic",
+    "label": "5x50mm Caseless (Toxic)",
+    "caliber": "5x50mm Caseless",
+    "family": "rifle",
+    "projectile": "Bullet_5x50mmCaseless_Toxic",
+    "damage": 11,
+    "apSharp": 26,
+    "ratio": 0.6285714285714286,
+    "weaponCount": 1
+   },
+   {
+    "set": "AmmoSet_65x48mmCreedmoor",
+    "label": "6.5mm Creedmoor",
+    "caliber": "6.5mm Creedmoor",
+    "family": "rifle",
+    "projectile": "Bullet_65x48mmCreedmoor_FMJ",
+    "damage": 20,
+    "apSharp": 6.5,
+    "ratio": 1.1428571428571428,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_65x50mmSRArisaka",
+    "label": "6.5x50mmSR Arisaka",
+    "caliber": "6.5x50mmSR Arisaka",
+    "family": "rifle",
+    "projectile": "Bullet_65x50mmSRArisaka_FMJ",
+    "damage": 17,
+    "apSharp": 6,
+    "ratio": 0.9714285714285714,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_65x50mmSRArisaka_SB",
+    "label": "6.5x50mmSR Arisaka",
+    "caliber": "6.5x50mmSR Arisaka",
+    "family": "rifle",
+    "projectile": "Bullet_65x50mmSRArisaka_FMJ_SB",
+    "damage": 15,
+    "apSharp": 5,
+    "ratio": 0.8571428571428571,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_65x52mmCarcano",
+    "label": "6.5x52mm Carcano",
+    "caliber": "6.5x52mm Carcano",
+    "family": "rifle",
+    "projectile": "Bullet_65x52mmCarcano_FMJ",
+    "damage": 17,
+    "apSharp": 6,
+    "ratio": 0.9714285714285714,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_60mmMortarShell",
+    "label": "60mm mortar shells",
+    "caliber": "60mm mortar shell",
+    "family": "shell",
+    "projectile": "Bullet_60mmMortarShell_HE",
+    "damage": 76,
+    "ratio": 0.29063097514340347,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_60x225mmGamma",
+    "label": "60x225mm Gamma Shell",
+    "caliber": "60x225mm Gamma Shell",
+    "family": "advanced",
+    "projectile": "Bullet_60x225mmGamma_Standard",
+    "damage": 33,
+    "ratio": 1.1785714285714286,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_66mmThermalBolt",
+    "label": "66mm thermal bolts",
+    "caliber": "66mm Thermal Bolt",
+    "family": "advanced",
+    "projectile": "Bullet_66mmThermalBolt_Incendiary",
+    "damage": 6,
+    "ratio": 0.21428571428571427,
+    "weaponCount": 2
+   },
+   {
+    "set": "AmmoSet_6mmRailgun",
+    "label": "6mm Railgun",
+    "caliber": "6mm Railgun",
+    "family": "advanced",
+    "projectile": "Bullet_6mmRailgun_Sabot",
+    "damage": 19,
+    "apSharp": 59,
+    "ratio": 0.6785714285714286,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_6x18mmCharged",
+    "label": "6x18mm Charged",
+    "caliber": "6x18mm Charged",
+    "family": "advanced",
+    "projectile": "Bullet_6x18mmCharged",
+    "damage": 10,
+    "apSharp": 12,
+    "ratio": 0.35714285714285715,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_6x22mmCharged",
+    "label": "6x22mm Charged",
+    "caliber": "6x22mm Charged",
+    "family": "advanced",
+    "projectile": "Bullet_6x22mmCharged",
+    "damage": 13,
+    "apSharp": 15,
+    "ratio": 0.4642857142857143,
+    "weaponCount": 1
+   },
+   {
+    "set": "AmmoSet_6x24mmCharged",
+    "label": "6x24mm Charged",
+    "caliber": "6x24mm Charged",
+    "family": "advanced",
+    "projectile": "Bullet_6x24mmCharged",
+    "damage": 13,
+    "apSharp": 15,
+    "ratio": 0.4642857142857143,
+    "weaponCount": 2
+   },
+   {
+    "set": "AmmoSet_75FK",
+    "label": "7.5 FK",
+    "caliber": "7.5 FK",
+    "family": "pistol",
+    "projectile": "Bullet_75FK_FMJ",
+    "damage": 13,
+    "apSharp": 6,
+    "ratio": 1.0833333333333333,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_75x54mmFrench",
+    "label": "7.5x54mm French",
+    "caliber": "7.5x54mm French",
+    "family": "rifle",
+    "projectile": "Bullet_75x54mmFrench_FMJ",
+    "damage": 19,
+    "apSharp": 6.5,
+    "ratio": 1.0857142857142856,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_762x25mmTokarev",
+    "label": "7.62x25mm Tokarev",
+    "caliber": "7.62x25mm Tokarev",
+    "family": "pistol",
+    "projectile": "Bullet_762x25mmTokarev_FMJ",
+    "damage": 11,
+    "apSharp": 4.25,
+    "ratio": 0.9166666666666666,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_762x38mmR",
+    "label": "7.62x38mmR",
+    "caliber": "7.62x38mmR",
+    "family": "pistol",
+    "projectile": "Bullet_762x38mmR_FMJ",
+    "damage": 9,
+    "apSharp": 3,
+    "ratio": 0.75,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_762x39mmSoviet",
+    "label": "7.62x39 Soviet",
+    "caliber": "7.62x39mm Soviet",
+    "family": "rifle",
+    "projectile": "Bullet_762x39mmSoviet_FMJ",
+    "damage": 17,
+    "apSharp": 5.5,
+    "ratio": 0.9714285714285714,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_762x39mmSoviet_SB",
+    "label": "7.62x39 Soviet",
+    "caliber": "7.62x39mm Soviet",
+    "family": "rifle",
+    "projectile": "Bullet_762x39mmSoviet_FMJ_SB",
+    "damage": 15,
+    "apSharp": 4.5,
+    "ratio": 0.8571428571428571,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_762x51mmNATO",
+    "label": "7.62x51mm NATO",
+    "caliber": "7.62x51mm NATO",
+    "family": "rifle",
+    "projectile": "Bullet_762x51mmNATO_FMJ",
+    "damage": 20,
+    "apSharp": 7,
+    "ratio": 1.1428571428571428,
+    "weaponCount": 7
+   },
+   {
+    "set": "AmmoSet_762x51mmNATO_SB",
+    "label": "7.62x51mm NATO",
+    "caliber": "7.62x51mm NATO",
+    "family": "rifle",
+    "projectile": "Bullet_762x51mmNATO_FMJ_SB",
+    "damage": 16,
+    "apSharp": 6,
+    "ratio": 0.9142857142857143,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_762x51mmUNSC",
+    "label": "7.62x51mm UNSC",
+    "caliber": "7.62x51mm UNSC",
+    "family": "rifle",
+    "projectile": "Bullet_762x51mmUNSC_FMJ",
+    "damage": 19,
+    "apSharp": 10,
+    "ratio": 1.0857142857142856,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_762x51mmUNSC_DMR",
+    "label": "7.62x51mm UNSC",
+    "caliber": "7.62x51mm UNSC",
+    "family": "rifle",
+    "projectile": "Bullet_762x51mmUNSC_FMJ_DMR",
+    "damage": 21,
+    "apSharp": 11,
+    "ratio": 1.2,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_762x51mmExtra",
+    "label": "7.62x51mm UNSC Extra",
+    "caliber": "7.62x51mm UNSC",
+    "family": "rifle",
+    "projectile": "Bullet_762x51mmUNSC_FMJ",
+    "damage": 19,
+    "apSharp": 10,
+    "ratio": 1.0857142857142856,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_762x54mmR",
+    "label": "7.62x54mmR",
+    "caliber": "7.62x54mmR",
+    "family": "rifle",
+    "projectile": "Bullet_762x54mmR_FMJ",
+    "damage": 20,
+    "apSharp": 7,
+    "ratio": 1.1428571428571428,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_762x54mmR_SB",
+    "label": "7.62x54mmR",
+    "caliber": "7.62x54mmR",
+    "family": "rifle",
+    "projectile": "Bullet_762x54mmR_FMJ_SB",
+    "damage": 18,
+    "apSharp": 6,
+    "ratio": 1.0285714285714285,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_763x25mmMauser",
+    "label": "7.63x25mm Mauser",
+    "caliber": "7.63x25mm Mauser",
+    "family": "pistol",
+    "projectile": "Bullet_763x25mmMauser_FMJ",
+    "damage": 10,
+    "apSharp": 4,
+    "ratio": 0.8333333333333334,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_765x20mmLongue",
+    "label": "7.65x20mm Longue",
+    "caliber": "7.65x20mm Longue",
+    "family": "pistol",
+    "projectile": "Bullet_765x20mmLongue_FMJ",
+    "damage": 9,
+    "apSharp": 3,
+    "ratio": 0.75,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_77x58mmArisaka",
+    "label": "7.7x58mm Arisaka",
+    "caliber": "7.7x58mm Arisaka",
+    "family": "rifle",
+    "projectile": "Bullet_77x58mmArisaka_FMJ",
+    "damage": 19,
+    "apSharp": 6.5,
+    "ratio": 1.0857142857142856,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_792x33mmKurz",
+    "label": "7.92x33mm Kurz",
+    "caliber": "7.92x33mm Kurz",
+    "family": "rifle",
+    "projectile": "Bullet_792x33mmKurz_FMJ",
+    "damage": 16,
+    "apSharp": 5,
+    "ratio": 0.9142857142857143,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_792x57mmMauser",
+    "label": "7.92x57mm Mauser",
+    "caliber": "7.92x57mm Mauser",
+    "family": "rifle",
+    "projectile": "Bullet_792x57mmMauser_FMJ",
+    "damage": 21,
+    "apSharp": 7.5,
+    "ratio": 1.2,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_792x94mmPatronen",
+    "label": "7.92x94mm Patronen",
+    "caliber": "7.92x94mm Patronen",
+    "family": "high caliber",
+    "projectile": "Bullet_792x94mmPatronen_FMJ",
+    "damage": 30,
+    "apSharp": 15,
+    "ratio": 0.6818181818181818,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_70mmAPKWS",
+    "label": "70mm APKWS Rockets",
+    "caliber": "70mm APKWS rocket",
+    "family": "rocket",
+    "projectile": "Bullet_70mmAPKWS_HEAT",
+    "damage": 248,
+    "apSharp": 300,
+    "ratio": 1.0184804928131417,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_70mmMechanoidGrenade",
+    "label": "70mm Mechanoid Grenades",
+    "caliber": "70mm Mechanoid Grenade",
+    "family": "grenade",
+    "projectile": "Bullet_70mmMechanoidGrenade_HE",
+    "damage": 132,
+    "ratio": 6,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_75x350mmR",
+    "label": "75x350mmR",
+    "caliber": "75x350mmR",
+    "family": "shell",
+    "projectile": "Bullet_75x350mmR_AP",
+    "damage": 206,
+    "apSharp": 88,
+    "ratio": 0.7877629063097514,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_762x385mmRCannonShell",
+    "label": "76.2x385mmR Cannon shells",
+    "caliber": "76.2x385mmR Cannon shell",
+    "family": "shell",
+    "projectile": "Bullet_762x385mmRCannonShell_HEAT",
+    "damage": 264,
+    "apSharp": 300,
+    "ratio": 1.0095602294455066,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_762x539mmR",
+    "label": "76.2x539mmR Cannon shells",
+    "caliber": "76.2x539mmR Cannon shell",
+    "family": "shell",
+    "projectile": "Bullet_762x539mmR_AP",
+    "damage": 259,
+    "apSharp": 132,
+    "ratio": 0.9904397705544933,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_8GaugeUNSC",
+    "label": "8 Gauge",
+    "caliber": "8 gauge",
+    "family": "shotgun",
+    "projectile": "Bullet_8Gauge_Buck",
+    "damage": 135,
+    "apSharp": 5.5,
+    "ratio": 2.6732673267326734,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_825mmLong",
+    "label": "8.25mm Long",
+    "caliber": "8.25mm Long",
+    "family": "rifle",
+    "projectile": "Bullet_825mmLong_FMJ",
+    "damage": 22,
+    "apSharp": 6,
+    "ratio": 1.2571428571428571,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_86x43mmBlackout",
+    "label": "8.6mm Blackout",
+    "caliber": "8.6mm Blackout",
+    "family": "rifle",
+    "projectile": "Bullet_86x43mmBlackout_FMJ",
+    "damage": 21,
+    "apSharp": 6,
+    "ratio": 1.2,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_80mmRocket_direct",
+    "label": "80mm S8 Rocket",
+    "caliber": "80mm S8 Rocket",
+    "family": "rocket",
+    "projectile": "Bullet_80mmRocket_HE",
+    "damage": 200,
+    "ratio": 0.8213552361396304,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_80mmRocket_indirect",
+    "label": "80mm S8 Rocket",
+    "caliber": "80mm S8 Rocket",
+    "family": "rocket",
+    "projectile": "Bullet_80mmRocket_HE_indirect",
+    "damage": 200,
+    "ratio": 0.8213552361396304,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_80x256mmFuel",
+    "label": "80x256mm Fuel Cell",
+    "caliber": "80x256mm Fuel Cell",
+    "family": "advanced",
+    "projectile": "Bullet_80x256mmFuel_Incendiary",
+    "damage": 11,
+    "ratio": 0.39285714285714285,
+    "weaponCount": 2
+   },
+   {
+    "set": "AmmoSet_81mmMortarShell",
+    "label": "81mm mortar shells",
+    "caliber": "81mm mortar shell",
+    "family": "shell",
+    "projectile": "Bullet_81mmMortarShell_HE",
+    "damage": 156,
+    "ratio": 0.5965583173996176,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_83mmPIATGrenade",
+    "label": "83mm PIAT Grenades",
+    "caliber": "83mm PIAT Grenade",
+    "family": "grenade",
+    "projectile": "Bullet_83mmPIATGrenade_HEAT",
+    "damage": 268,
+    "apSharp": 100,
+    "ratio": 12.181818181818182,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_83mmSMAW",
+    "label": "83mm SMAW Rockets",
+    "caliber": "83mm SMAW Rockets",
+    "family": "rocket",
+    "projectile": "Bullet_83mmSMAW_HEAT",
+    "damage": 248,
+    "apSharp": 600,
+    "ratio": 1.0184804928131417,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_84x246mmR",
+    "label": "84x246mmR",
+    "caliber": "84x246mmR",
+    "family": "rocket",
+    "projectile": "Bullet_84x246mmR_HEAT",
+    "damage": 248,
+    "apSharp": 400,
+    "ratio": 1.0184804928131417,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_88mmRPzBRocket",
+    "label": "88mmRPzB Rockets",
+    "caliber": "88mm RPzB Rockets",
+    "family": "rocket",
+    "projectile": "Bullet_88mmRPzB_HEAT",
+    "damage": 208,
+    "apSharp": 220,
+    "ratio": 0.8542094455852156,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_8mmRailgun",
+    "label": "8mm Railgun",
+    "caliber": "8mm Railgun",
+    "family": "advanced",
+    "projectile": "Bullet_8mmRailgun_Sabot",
+    "damage": 20,
+    "apSharp": 55,
+    "ratio": 0.7142857142857143,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_8x22mmNambu",
+    "label": "8x22mm Nambu",
+    "caliber": "8x22mm Nambu",
+    "family": "rifle",
+    "projectile": "Bullet_8x22mmNambu_FMJ",
+    "damage": 9,
+    "apSharp": 3,
+    "ratio": 0.5142857142857142,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_8x35mmCharged",
+    "label": "8x35mm Charged",
+    "caliber": "8x35mm Charged",
+    "family": "advanced",
+    "projectile": "Bullet_8x35mmCharged",
+    "damage": 19,
+    "apSharp": 16,
+    "ratio": 0.6785714285714286,
+    "weaponCount": 1
+   },
+   {
+    "set": "AmmoSet_8x40mmCharged",
+    "label": "8x40mm Charged",
+    "caliber": "8x40mm Charged",
+    "family": "advanced",
+    "projectile": "Bullet_8x40mmCharged",
+    "damage": 22,
+    "apSharp": 16,
+    "ratio": 0.7857142857142857,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_8x50mmCharged",
+    "label": "8x50mm Charged",
+    "caliber": "8x50mm Charged",
+    "family": "advanced",
+    "projectile": "Bullet_8x50mmCharged",
+    "damage": 24,
+    "apSharp": 18,
+    "ratio": 0.8571428571428571,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_8x50mmRLebel",
+    "label": "8x50mmR Lebel",
+    "caliber": "8x50mmR Lebel",
+    "family": "rifle",
+    "projectile": "Bullet_8x50mmRLebel_FMJ",
+    "damage": 20,
+    "apSharp": 6,
+    "ratio": 1.1428571428571428,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_8x50mmRLebel_SB",
+    "label": "8x50mmR Lebel",
+    "caliber": "8x50mmR Lebel",
+    "family": "rifle",
+    "projectile": "Bullet_8x50mmRLebel_FMJ_SB",
+    "damage": 18,
+    "apSharp": 5,
+    "ratio": 1.0285714285714285,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_8x50mmRMannlicher",
+    "label": "8x50mmR Mannlicher",
+    "caliber": "8x50mmR Mannlicher",
+    "family": "rifle",
+    "projectile": "Bullet_8x50mmRMannlicher_FMJ",
+    "damage": 19,
+    "apSharp": 5.5,
+    "ratio": 1.0857142857142856,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_95x40mmUNSC",
+    "label": "9.5x40mm UNSC",
+    "caliber": "9.5x40mm UNSC",
+    "family": "rifle",
+    "projectile": "Bullet_95x40mmUNSC_FMJ",
+    "damage": 23,
+    "apSharp": 12,
+    "ratio": 1.3142857142857143,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_90mmCannonShell",
+    "label": "90mm cannon shells",
+    "caliber": "90mm cannon shell",
+    "family": "shell",
+    "projectile": "Bullet_90mmCannonShell_HEAT",
+    "damage": 304,
+    "apSharp": 500,
+    "ratio": 1.1625239005736139,
+    "weaponCount": 1
+   },
+   {
+    "set": "AmmoSet_90mmRecoilless",
+    "label": "90mm Recoilless Rockets",
+    "caliber": "90mm recoilless rockets",
+    "family": "rocket",
+    "projectile": "Bullet_90mmRCR_HEAT",
+    "damage": 239,
+    "apSharp": 350,
+    "ratio": 0.9815195071868583,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_9x18mmMakarov",
+    "label": "9x18mm Makarov",
+    "caliber": "9x18mm Makarov",
+    "family": "pistol",
+    "projectile": "Bullet_9x18mmMakarov_FMJ",
+    "damage": 9,
+    "apSharp": 3,
+    "ratio": 0.75,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_9x19mmPara",
+    "label": "9x19mm Para",
+    "caliber": "9x19mm Parabellum",
+    "family": "pistol",
+    "projectile": "Bullet_9x19mmPara_FMJ",
+    "damage": 11,
+    "apSharp": 4,
+    "ratio": 0.9166666666666666,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_9x19mmParaSD",
+    "label": "9x19mm Para",
+    "caliber": "9x19mm Parabellum",
+    "family": "pistol",
+    "projectile": "Bullet_9x19mmParaSD_FMJ",
+    "damage": 9,
+    "apSharp": 3.3,
+    "ratio": 0.75,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_9x21mmGyurza",
+    "label": "9x21mm Gyurza",
+    "caliber": "9x21mm Gyurza",
+    "family": "pistol",
+    "projectile": "Bullet_9x21mmGyurza_FMJ",
+    "damage": 11,
+    "apSharp": 3,
+    "ratio": 0.9166666666666666,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_9x39mmSoviet",
+    "label": "9x39mm Soviet",
+    "caliber": "9x39mm Soviet",
+    "family": "rifle",
+    "projectile": "Bullet_9x39mmSoviet_FMJ",
+    "damage": 13,
+    "apSharp": 4,
+    "ratio": 0.7428571428571429,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_AntiMateriel",
+    "label": "anti-materiel",
+    "caliber": "anti-materiel",
+    "family": "high caliber",
+    "projectile": "Bullet_50BMG_FMJ",
+    "damage": 42,
+    "apSharp": 14,
+    "ratio": 0.9545454545454546,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_Arrow",
+    "label": "arrows",
+    "caliber": "arrows",
+    "family": "neolithic",
+    "projectile": "Projectile_Arrow_Stone",
+    "damage": 6,
+    "apSharp": 0.2,
+    "ratio": 0.7058823529411765,
+    "weaponCount": 1
+   },
+   {
+    "set": "AmmoSet_StreamlinedArrow",
+    "label": "arrows",
+    "caliber": "arrows",
+    "family": "neolithic",
+    "projectile": "Projectile_StreamlinedArrow_Stone",
+    "damage": 8,
+    "apSharp": 0.5,
+    "ratio": 0.9411764705882353,
+    "weaponCount": 1
+   },
+   {
+    "set": "AmmoSet_ArtilleryShell",
+    "label": "artillery shell",
+    "caliber": "artillery shell",
+    "family": "shell",
+    "projectile": "Bullet_155mmHowitzerShell_HE",
+    "damage": 546,
+    "ratio": 2.0879541108986617,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_Autocannon",
+    "label": "autocannon shell",
+    "caliber": "autocannon shell",
+    "family": "high caliber",
+    "projectile": "Bullet_20x102mmNATO_AP",
+    "damage": 44,
+    "apSharp": 30,
+    "ratio": 1,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_Blowdart",
+    "label": "blowgun darts",
+    "caliber": "arrows",
+    "family": "neolithic",
+    "projectile": "Projectile_Dart_Venom",
+    "damage": 3,
+    "apSharp": 0.35,
+    "ratio": 0.35294117647058826,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_BlunderbussShot",
+    "label": "Blunderbuss Shot",
+    "caliber": "Blunderbuss Shot",
+    "family": "rifle",
+    "projectile": "Bullet_BlunderbussShot",
+    "damage": 140,
+    "apSharp": 3,
+    "ratio": 8,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_CannonBall",
+    "label": "Cannon Ball",
+    "caliber": "Cannon Ball",
+    "family": "shell",
+    "projectile": "Bullet_CannonBall_Round",
+    "damage": 293,
+    "apSharp": 20,
+    "ratio": 1.1204588910133844,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_CannonBall_Mortar",
+    "label": "Cannon Ball",
+    "caliber": "Cannon Ball",
+    "family": "shell",
+    "projectile": "Bullet_CannonBall_Bursting_Mortar",
+    "damage": 79,
+    "ratio": 0.30210325047801145,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_ChargedPistol",
+    "label": "charged pistol",
+    "caliber": "Charged Pistol Ammo",
+    "family": "advanced",
+    "projectile": "Bullet_6x18mmCharged",
+    "damage": 10,
+    "apSharp": 12,
+    "ratio": 0.35714285714285715,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_ChargedRifle",
+    "label": "charged rifle",
+    "caliber": "Charged Rifle Ammo",
+    "family": "advanced",
+    "projectile": "Bullet_6x24mmCharged",
+    "damage": 13,
+    "apSharp": 15,
+    "ratio": 0.4642857142857143,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_ChargedRockets",
+    "label": "Charged rockets",
+    "caliber": "Charged rockets",
+    "family": "rocket",
+    "projectile": "Bullet_AntiGrainRocket",
+    "damage": 300,
+    "ratio": 1.2320328542094456,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_ChargedShotgun",
+    "label": "charged shotgun",
+    "caliber": "Charged Shotgun Ammo",
+    "family": "advanced",
+    "projectile": "Bullet_12GaugeCharged",
+    "damage": 60,
+    "apSharp": 10,
+    "ratio": 2.142857142857143,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_CrossbowBolt",
+    "label": "crossbow bolts",
+    "caliber": "crossbow bolts",
+    "family": "neolithic",
+    "projectile": "Projectile_CrossbowBolt_Stone",
+    "damage": 10,
+    "apSharp": 1.5,
+    "ratio": 1.1764705882352942,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_Flamethrower",
+    "label": "flamethrower fuel",
+    "caliber": "flamethrower fuel",
+    "family": "advanced",
+    "projectile": "Bullet_Flamethrower_Napalm",
+    "damage": 3,
+    "ratio": 0.10714285714285714,
+    "weaponCount": 2
+   },
+   {
+    "set": "AmmoSet_Incinerator_Burst",
+    "label": "flamethrower fuel",
+    "caliber": "flamethrower fuel",
+    "family": "advanced",
+    "projectile": "Bullet_Incinerator_Burst_Napalm",
+    "damage": 60,
+    "ratio": 2.142857142857143,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_FN57x28mm",
+    "label": "FN 5.7x28mm",
+    "caliber": "FN 5.7x28mm",
+    "family": "pistol",
+    "projectile": "Bullet_FN57x28mm_FMJ",
+    "damage": 9,
+    "apSharp": 5,
+    "ratio": 0.75,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_Rifle",
+    "label": "full power rifle",
+    "caliber": "full power rifle ammo",
+    "family": "rifle",
+    "projectile": "Bullet_762x51mmNATO_FMJ",
+    "damage": 20,
+    "apSharp": 7,
+    "ratio": 1.1428571428571428,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_GreatArrow",
+    "label": "great arrows",
+    "caliber": "great arrows",
+    "family": "neolithic",
+    "projectile": "Projectile_GreatArrow_Stone",
+    "damage": 9,
+    "apSharp": 1,
+    "ratio": 1.0588235294117647,
+    "weaponCount": 2
+   },
+   {
+    "set": "AmmoSet_HeavyCannon",
+    "label": "heavy cannon shell",
+    "caliber": "heavy cannon shell",
+    "family": "shell",
+    "projectile": "Bullet_90mmCannonShell_HEAT",
+    "damage": 304,
+    "apSharp": 500,
+    "ratio": 1.1625239005736139,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_ChargedHeavy",
+    "label": "heavy charged",
+    "caliber": "Heavy Charged Ammo",
+    "family": "advanced",
+    "projectile": "Bullet_12x72mmCharged",
+    "damage": 39,
+    "apSharp": 30,
+    "ratio": 1.3928571428571428,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_RifleIntermediate",
+    "label": "intermediate rifle",
+    "caliber": "intermediate rifle ammo",
+    "family": "rifle",
+    "projectile": "Bullet_556x45mmNATO_FMJ",
+    "damage": 14,
+    "apSharp": 6,
+    "ratio": 0.8,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_Javelins",
+    "label": "javelins",
+    "caliber": "ranged weapons",
+    "family": "weapons",
+    "projectile": "Pilum_Fired",
+    "damage": 28,
+    "apSharp": 9,
+    "ratio": 1.2727272727272727,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_BeamRepeater",
+    "label": "laser charge",
+    "caliber": "laser charge pack",
+    "family": "advanced",
+    "projectile": "Bullet_Laser_BeamRepeater",
+    "damage": 12,
+    "ratio": 0.42857142857142855,
+    "weaponCount": 2
+   },
+   {
+    "set": "AmmoSet_Lasgun_Cannon",
+    "label": "lasgun power pack",
+    "caliber": "lasgun power pack",
+    "family": "advanced",
+    "projectile": "Bullet_Lasgun_Cannon",
+    "damage": 80,
+    "apSharp": 558,
+    "ratio": 2.857142857142857,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_Lasgun_CannonDouble",
+    "label": "lasgun power pack",
+    "caliber": "lasgun power pack",
+    "family": "advanced",
+    "projectile": "Bullet_Lasgun_CannonDouble",
+    "damage": 160,
+    "apSharp": 558,
+    "ratio": 5.714285714285714,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_Lasgun_HellGun",
+    "label": "lasgun power pack",
+    "caliber": "lasgun power pack",
+    "family": "advanced",
+    "projectile": "Bullet_Lasgun_HellGun",
+    "damage": 26,
+    "apSharp": 20,
+    "ratio": 0.9285714285714286,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_Lasgun_Pistol",
+    "label": "lasgun power pack",
+    "caliber": "lasgun power pack",
+    "family": "advanced",
+    "projectile": "Bullet_Lasgun_Pistol",
+    "damage": 12,
+    "apSharp": 8,
+    "ratio": 0.42857142857142855,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_Lasgun_Rifle",
+    "label": "lasgun power pack",
+    "caliber": "lasgun power pack",
+    "family": "advanced",
+    "projectile": "Bullet_Lasgun_Rifle",
+    "damage": 20,
+    "apSharp": 14,
+    "ratio": 0.7142857142857143,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_LauncherGrenade",
+    "label": "launcher grenade",
+    "caliber": "launcher Grenade",
+    "family": "grenade",
+    "projectile": "Bullet_40x46mmGrenade_HE",
+    "damage": 22,
+    "ratio": 1,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_LightCannon",
+    "label": "light cannon shell",
+    "caliber": "light cannon shell",
+    "family": "shell",
+    "projectile": "Bullet_40x365mmBofors_AP",
+    "damage": 122,
+    "apSharp": 100,
+    "ratio": 0.4665391969407266,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_M41Rocket",
+    "label": "M41 Rockets",
+    "caliber": "M41 rockets",
+    "family": "rocket",
+    "projectile": "Bullet_M41Rocket_HEAT",
+    "damage": 264,
+    "apSharp": 650,
+    "ratio": 1.0841889117043122,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_M6Rocket",
+    "label": "M6 Rockets",
+    "caliber": "M6 Rockets",
+    "family": "rocket",
+    "projectile": "Bullet_M6_HEAT",
+    "damage": 208,
+    "apSharp": 76,
+    "ratio": 0.8542094455852156,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_M74",
+    "label": "M74 Rockets",
+    "caliber": "M74 Rockets",
+    "family": "rocket",
+    "projectile": "Bullet_M74_Incendiary",
+    "damage": 9,
+    "ratio": 0.03696098562628337,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_PistolMagnum",
+    "label": "magnum pistol",
+    "caliber": "magnum pistol ammo",
+    "family": "pistol",
+    "projectile": "Bullet_44Magnum_FMJ",
+    "damage": 15,
+    "apSharp": 6,
+    "ratio": 1.25,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_RifleMagnum",
+    "label": "magnum rifle",
+    "caliber": "magnum rifle ammo",
+    "family": "rifle",
+    "projectile": "Bullet_338Lapua_FMJ",
+    "damage": 26,
+    "apSharp": 11,
+    "ratio": 1.4857142857142858,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_MechCharged",
+    "label": "mech charged ammo",
+    "caliber": "mech charged ammo",
+    "family": "advanced",
+    "projectile": "Bullet_8x40mmCharged",
+    "damage": 22,
+    "apSharp": 16,
+    "ratio": 0.7857142857142857,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_MechShell_Demo",
+    "label": "mech shell (Demo)",
+    "caliber": "mech shell",
+    "family": "advanced",
+    "projectile": "Bullet_164x284mmDemo",
+    "damage": 40,
+    "apSharp": 0,
+    "ratio": 1.4285714285714286,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_MechShell_Incendiary",
+    "label": "mech shell (Incendiary)",
+    "caliber": "mech shell",
+    "family": "advanced",
+    "projectile": "Bullet_80x256mmFuel_Incendiary",
+    "damage": 11,
+    "ratio": 0.39285714285714285,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_MeltaCharge",
+    "label": "melta charge",
+    "caliber": "melta canister",
+    "family": "advanced",
+    "projectile": "Bullet_Laser_MeltaCharge",
+    "damage": 150,
+    "apSharp": 500,
+    "ratio": 5.357142857142857,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_MiniCannonBall",
+    "label": "Mini Cannon Ball",
+    "caliber": "Mini Cannon Ball",
+    "family": "shell",
+    "projectile": "Bullet_MiniCannonBall_Round",
+    "damage": 50,
+    "apSharp": 6,
+    "ratio": 0.19120458891013384,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_MortarGrenade",
+    "label": "Mortar Grenades",
+    "caliber": "Mortar Grenade",
+    "family": "grenade",
+    "projectile": "Bullet_MortarGrenade",
+    "damage": 30,
+    "ratio": 1.3636363636363635,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_FastMusketBall",
+    "label": "Musket Ball",
+    "caliber": "Musket ball",
+    "family": "rifle",
+    "projectile": "Bullet_FastMusketBall",
+    "damage": 26,
+    "apSharp": 5,
+    "ratio": 1.4857142857142858,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_SlowMusketBall",
+    "label": "Musket Ball",
+    "caliber": "Musket ball",
+    "family": "rifle",
+    "projectile": "Bullet_SlowMusketBall",
+    "damage": 17,
+    "apSharp": 3.5,
+    "ratio": 0.9714285714285714,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_Nail",
+    "label": "nail",
+    "caliber": "nail",
+    "family": "rifle",
+    "projectile": "Bullet_Nail",
+    "damage": 1,
+    "apSharp": 0.2,
+    "ratio": 0.05714285714285714,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_Nail_HV",
+    "label": "nail",
+    "caliber": "nail",
+    "family": "rifle",
+    "projectile": "Bullet_Nail_HV",
+    "damage": 3,
+    "apSharp": 3,
+    "ratio": 0.17142857142857143,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_NerveSpikerBolt",
+    "label": "nerve spiker bolts",
+    "caliber": "crossbow bolts",
+    "family": "neolithic",
+    "projectile": "Projectile_NerveSpikerBolt",
+    "damage": 11,
+    "apSharp": 5,
+    "ratio": 1.2941176470588236,
+    "weaponCount": 1
+   },
+   {
+    "set": "AmmoSet_Pistol",
+    "label": "pistol",
+    "caliber": "pistol ammo",
+    "family": "pistol",
+    "projectile": "Bullet_45ACP_FMJ",
+    "damage": 12,
+    "apSharp": 3.5,
+    "ratio": 1,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_PlasmaCanister_Cannon",
+    "label": "plasma canister",
+    "caliber": "Plasma canister",
+    "family": "advanced",
+    "projectile": "Bullet_PlasmaCannon",
+    "damage": 88,
+    "apSharp": 80,
+    "ratio": 3.142857142857143,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_PlasmaCanister_Destroyer",
+    "label": "plasma canister",
+    "caliber": "Plasma canister",
+    "family": "advanced",
+    "projectile": "Bullet_Laser_PlasmaDestroyer",
+    "damage": 250,
+    "apSharp": 500,
+    "ratio": 8.928571428571429,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_PlasmaCanister_Pistol",
+    "label": "plasma canister",
+    "caliber": "Plasma canister",
+    "family": "advanced",
+    "projectile": "Bullet_PlasmaPistol",
+    "damage": 36,
+    "apSharp": 40,
+    "ratio": 1.2857142857142858,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_PlasmaCanister_Pistol_Relic",
+    "label": "plasma canister",
+    "caliber": "Plasma canister",
+    "family": "advanced",
+    "projectile": "Bullet_PlasmaPistol_Relic",
+    "damage": 40,
+    "apSharp": 40,
+    "ratio": 1.4285714285714286,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_PlasmaCanister_Rifle",
+    "label": "plasma canister",
+    "caliber": "Plasma canister",
+    "family": "advanced",
+    "projectile": "Bullet_PlasmaRifle",
+    "damage": 48,
+    "apSharp": 50,
+    "ratio": 1.7142857142857142,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_PlasmaCanister_Rifle_Relic",
+    "label": "plasma canister",
+    "caliber": "Plasma canister",
+    "family": "advanced",
+    "projectile": "Bullet_PlasmaRifle_Relic",
+    "damage": 52,
+    "apSharp": 54,
+    "ratio": 1.8571428571428572,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_PlasmaCellHeavy",
+    "label": "Plasma Heavy Power Cell",
+    "caliber": "Plasma Heavy Power Cell",
+    "family": "advanced",
+    "projectile": "Bullet_PlasmaCellHeavy",
+    "damage": 18,
+    "ratio": 0.6428571428571429,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_PlasmaCellPistol",
+    "label": "Plasma Pistol Power Cell",
+    "caliber": "Plasma Pistol Power Cell",
+    "family": "advanced",
+    "projectile": "Bullet_PlasmaCellPistol",
+    "damage": 2,
+    "ratio": 0.07142857142857142,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_PlasmaCellRifle",
+    "label": "Plasma Rifle Power Cell",
+    "caliber": "Plasma Rifle Power Cell",
+    "family": "advanced",
+    "projectile": "Bullet_PlasmaCellRifle",
+    "damage": 2,
+    "ratio": 0.07142857142857142,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_RevolverShotgun",
+    "label": "revolver shotgun",
+    "caliber": "magnum pistol ammo",
+    "family": "pistol",
+    "projectile": "Bullet_45Colt_FMJ",
+    "damage": 12,
+    "apSharp": 3.5,
+    "ratio": 1,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_RPG32Rocket",
+    "label": "RPG-32 Rockets",
+    "caliber": "RPG-32 rockets",
+    "family": "rocket",
+    "projectile": "Bullet_RPG32Rocket_HEAT",
+    "damage": 264,
+    "apSharp": 650,
+    "ratio": 1.0841889117043122,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_RPG7Grenade",
+    "label": "RPG-7 Grenades",
+    "caliber": "RPG-7 grenades",
+    "family": "rocket",
+    "projectile": "Bullet_RPG7Grenade_HEAT",
+    "damage": 304,
+    "apSharp": 500,
+    "ratio": 1.2484599589322383,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_Shotgun",
+    "label": "shotgun shell",
+    "caliber": "shotgun ammo",
+    "family": "shotgun",
+    "projectile": "Bullet_12Gauge_Buck",
+    "damage": 72,
+    "apSharp": 4,
+    "ratio": 1.4257425742574257,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_Catapult",
+    "label": "siege engine ammunition",
+    "caliber": "catapult ammo",
+    "family": "neolithic",
+    "projectile": "Projectile_CatapultBullet_Boulder",
+    "damage": 250,
+    "ratio": 29.41176470588235,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_SlingBullet",
+    "label": "sling bullets",
+    "caliber": "sling bullets",
+    "family": "neolithic",
+    "projectile": "Projectile_SlingBullet_Stone",
+    "damage": 5,
+    "ratio": 0.5882352941176471,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_SpartanLaser",
+    "label": "Spartan laser battery cell",
+    "caliber": "laser charge pack",
+    "family": "advanced",
+    "projectile": "Bullet_Laser_SpartanLaserInf",
+    "damage": 100,
+    "apSharp": 600,
+    "ratio": 3.5714285714285716,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_SPG9Rocket",
+    "label": "SPG9 Rocket",
+    "caliber": "SPG9 rocket",
+    "family": "rocket",
+    "projectile": "Bullet_SPG9Rocket_HEAT",
+    "damage": 248,
+    "apSharp": 400,
+    "ratio": 1.0184804928131417,
+    "weaponCount": 0
+   },
+   {
+    "set": "AmmoSet_TomahawkLAM",
+    "label": "Tomahawk Missile",
+    "caliber": "missile",
+    "family": "ammunition",
+    "projectile": "Bullet_TomahawkLAM",
+    "damage": 5653,
+    "ratio": 256.95454545454544,
+    "weaponCount": 0
+   }
+  ],
+  "aiClassTags": [
+   "CE_AI_AOE",
+   "CE_AI_AR",
+   "CE_AI_BROOM",
+   "CE_AI_EMP",
+   "CE_AI_Grenade",
+   "CE_AI_LMG",
+   "CE_AI_Launcher",
+   "CE_AI_Rifle",
+   "CE_AI_SMOKE",
+   "CE_AI_SR",
+   "CE_AI_Suppressive"
+  ]
+ }
+}

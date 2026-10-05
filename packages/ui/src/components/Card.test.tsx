@@ -23,4 +23,23 @@ describe('Card', () => {
     expect(onSelect).toHaveBeenCalledTimes(1);
     press(card, 'Enter');
   });
+
+  it('uses the selected look without the surface look, so the two never compete', () => {
+    render(
+      <Card selected onSelect={() => undefined} label="On">
+        On
+      </Card>,
+    );
+    render(
+      <Card onSelect={() => undefined} label="Off">
+        Off
+      </Card>,
+    );
+    const on = screen.getByRole('button', { name: 'On' }).className;
+    const off = screen.getByRole('button', { name: 'Off' }).className;
+    expect(on).toContain('bg-accent-tint');
+    expect(on).not.toContain('bg-surface');
+    expect(off).toContain('bg-surface');
+    expect(off).not.toContain('bg-accent-tint');
+  });
 });

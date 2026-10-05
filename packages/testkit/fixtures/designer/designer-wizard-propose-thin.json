@@ -1,0 +1,750 @@
+{
+ "choice": {
+  "archetype": "rifle/assault",
+  "descriptors": {
+   "action": "full-auto",
+   "rof": {
+    "rpm": 780
+   },
+   "calibre": "medium",
+   "handling": "standard",
+   "tier": "archotech"
+  },
+  "balance": "typical",
+  "mode": "vanilla"
+ },
+ "label": "Assault rifle",
+ "kind": "ranged",
+ "source": "archetype",
+ "resolved": {
+  "action": "full-auto",
+  "rof": "fast",
+  "rate": 1.2,
+  "calibre": "medium",
+  "handling": "standard",
+  "tier": "archotech"
+ },
+ "role": "rifle",
+ "values": [
+  {
+   "field": "/ranged/damage",
+   "stat": "damage",
+   "value": 26,
+   "write": true,
+   "source": "archetype",
+   "reason": "damage 26: the install's median is 12 (20 reference weapons). Assault rifle x0.92, strength scale x2.37.",
+   "median": 12,
+   "medianN": 20,
+   "terms": [
+    {
+     "label": "Assault rifle",
+     "factor": 0.92
+    },
+    {
+     "label": "medium calibre",
+     "factor": 1
+    },
+    {
+     "label": "strength scale",
+     "factor": 2.3707959692749996
+    }
+   ],
+   "locked": false
+  },
+  {
+   "field": "/ranged/armorPenetration",
+   "stat": "ap",
+   "value": 0.39,
+   "write": false,
+   "source": "archetype",
+   "reason": "armor penetration 0.39: left to the game, which implies 0.015 per damage point.",
+   "terms": [
+    {
+     "label": "Assault rifle against the implied 0.015 per damage point",
+     "factor": 1
+    }
+   ],
+   "locked": false
+  },
+  {
+   "field": "/ranged/range",
+   "stat": "range",
+   "value": 30.9,
+   "write": true,
+   "source": "archetype",
+   "reason": "range 30.9: the install's median is 25.9 (20 reference weapons). Assault rifle x1.19.",
+   "median": 25.9,
+   "medianN": 20,
+   "terms": [
+    {
+     "label": "Assault rifle",
+     "factor": 1.19
+    },
+    {
+     "label": "medium calibre",
+     "factor": 1
+    },
+    {
+     "label": "standard handling",
+     "factor": 1
+    }
+   ],
+   "locked": false
+  },
+  {
+   "field": "/ranged/burstCount",
+   "stat": "burst",
+   "value": 5,
+   "write": true,
+   "source": "archetype",
+   "reason": "burst count 5: full automatic fires 5 shots per cycle, scaled by the fast rate of fire (x1.20).",
+   "terms": [
+    {
+     "label": "fast rate of fire",
+     "factor": 1.2
+    }
+   ],
+   "locked": false
+  },
+  {
+   "field": "/ranged/ticksBetweenBurstShots",
+   "stat": "ticks_between",
+   "value": 8,
+   "write": true,
+   "source": "archetype",
+   "reason": "ticks between burst shots 8: the install's median is 10 (9 reference weapons). Full automatic x0.90.",
+   "median": 10,
+   "medianN": 9,
+   "terms": [
+    {
+     "label": "Assault rifle",
+     "factor": 1
+    },
+    {
+     "label": "Full automatic",
+     "factor": 0.9
+    }
+   ],
+   "locked": false
+  },
+  {
+   "field": "/ranged/warmup",
+   "stat": "warmup",
+   "value": 1.05,
+   "write": true,
+   "source": "archetype",
+   "reason": "warmup 1.05: the install's median is 1.35 (20 reference weapons). Assault rifle x0.87, Full automatic x1.10, strength scale x0.82.",
+   "median": 1.35,
+   "medianN": 20,
+   "terms": [
+    {
+     "label": "Assault rifle",
+     "factor": 0.87
+    },
+    {
+     "label": "Full automatic",
+     "factor": 1.1
+    },
+    {
+     "label": "standard handling",
+     "factor": 1
+    },
+    {
+     "label": "strength scale",
+     "factor": 0.8193811305681421
+    }
+   ],
+   "locked": false
+  },
+  {
+   "field": "/ranged/cooldown",
+   "stat": "cooldown",
+   "value": 1.15,
+   "write": true,
+   "source": "archetype",
+   "reason": "cooldown 1.15: the install's median is 1.63 (20 reference weapons). Assault rifle x1.06, fast rate of fire x0.86, strength scale x0.77.",
+   "median": 1.625,
+   "medianN": 20,
+   "terms": [
+    {
+     "label": "Assault rifle",
+     "factor": 1.06
+    },
+    {
+     "label": "Full automatic",
+     "factor": 1
+    },
+    {
+     "label": "medium calibre",
+     "factor": 1
+    },
+    {
+     "label": "fast rate of fire",
+     "factor": 0.8642810744472068
+    },
+    {
+     "label": "strength scale",
+     "factor": 0.7667396893306119
+    }
+   ],
+   "locked": false
+  },
+  {
+   "field": "/ranged/accuracy/touch",
+   "stat": "touch",
+   "value": 0.58,
+   "write": true,
+   "source": "archetype",
+   "reason": "touch accuracy 0.58: the install's median is 0.68 (20 reference weapons). Assault rifle x0.86.",
+   "median": 0.675,
+   "medianN": 20,
+   "terms": [
+    {
+     "label": "Assault rifle",
+     "factor": 0.86
+    },
+    {
+     "label": "standard handling",
+     "factor": 1
+    }
+   ],
+   "locked": false
+  },
+  {
+   "field": "/ranged/accuracy/short",
+   "stat": "short",
+   "value": 0.7,
+   "write": true,
+   "source": "archetype",
+   "reason": "short accuracy 0.7: the install's median is 0.7 (20 reference weapons).",
+   "median": 0.7,
+   "medianN": 20,
+   "terms": [
+    {
+     "label": "Assault rifle",
+     "factor": 1
+    }
+   ],
+   "locked": false
+  },
+  {
+   "field": "/ranged/accuracy/medium",
+   "stat": "medium",
+   "value": 0.65,
+   "write": true,
+   "source": "archetype",
+   "reason": "medium accuracy 0.65: the install's median is 0.55 (20 reference weapons). Assault rifle x1.18.",
+   "median": 0.55,
+   "medianN": 20,
+   "terms": [
+    {
+     "label": "Assault rifle",
+     "factor": 1.18
+    }
+   ],
+   "locked": false
+  },
+  {
+   "field": "/ranged/accuracy/long",
+   "stat": "long",
+   "value": 0.51,
+   "write": true,
+   "source": "archetype",
+   "reason": "long accuracy 0.51: the install's median is 0.38 (20 reference weapons). Assault rifle x1.37.",
+   "median": 0.375,
+   "medianN": 20,
+   "terms": [
+    {
+     "label": "Assault rifle",
+     "factor": 1.37
+    },
+    {
+     "label": "standard handling",
+     "factor": 1
+    }
+   ],
+   "locked": false
+  },
+  {
+   "field": "/mass",
+   "stat": "mass",
+   "value": 5,
+   "write": true,
+   "source": "archetype",
+   "reason": "mass 5: the install's median is 3.5 (20 reference weapons). Assault rifle x1.03, strength scale x1.39.",
+   "median": 3.5,
+   "medianN": 20,
+   "terms": [
+    {
+     "label": "Assault rifle",
+     "factor": 1.03
+    },
+    {
+     "label": "medium calibre",
+     "factor": 1
+    },
+    {
+     "label": "standard handling",
+     "factor": 1
+    },
+    {
+     "label": "strength scale",
+     "factor": 1.393766652510722
+    }
+   ],
+   "locked": false
+  },
+  {
+   "field": "/workToMake",
+   "stat": "work",
+   "value": 80000,
+   "write": true,
+   "source": "archetype",
+   "reason": "work to make 80000: the install's median is 12000 (19 reference weapons). Assault rifle x3.30.",
+   "median": 12000,
+   "medianN": 19,
+   "terms": [
+    {
+     "label": "Assault rifle",
+     "factor": 3.3
+    }
+   ],
+   "locked": false
+  }
+ ],
+ "tools": [
+  {
+   "label": "stock",
+   "capacities": [
+    "Blunt"
+   ],
+   "power": {
+    "field": "/tools/0/power",
+    "stat": "bash_power",
+    "value": 9,
+    "write": true,
+    "source": "archetype",
+    "reason": "stock power 9: the median of the 15 tools of guns with the same attack in your install.",
+    "median": 9,
+    "medianN": 15,
+    "terms": [],
+    "locked": false
+   },
+   "cooldown": {
+    "field": "/tools/0/cooldownTime",
+    "stat": "bash_cooldown",
+    "value": 2,
+    "write": true,
+    "source": "archetype",
+    "reason": "stock cooldown 2: the median of the 15 tools of guns with the same attack in your install.",
+    "median": 2,
+    "medianN": 15,
+    "terms": [],
+    "locked": false
+   }
+  },
+  {
+   "label": "barrel",
+   "capacities": [
+    "Blunt",
+    "Poke"
+   ],
+   "power": {
+    "field": "/tools/1/power",
+    "stat": "bash_power",
+    "value": 9,
+    "write": true,
+    "source": "archetype",
+    "reason": "barrel power 9: the median of the 17 tools of guns with the same attack in your install.",
+    "median": 9,
+    "medianN": 17,
+    "terms": [],
+    "locked": false
+   },
+   "cooldown": {
+    "field": "/tools/1/cooldownTime",
+    "stat": "bash_cooldown",
+    "value": 2,
+    "write": true,
+    "source": "archetype",
+    "reason": "barrel cooldown 2: the median of the 17 tools of guns with the same attack in your install.",
+    "median": 2,
+    "medianN": 17,
+    "terms": [],
+    "locked": false
+   }
+  }
+ ],
+ "costList": [
+  {
+   "defName": "Steel",
+   "count": 160,
+   "reason": "Steel of 68% of the 20 reference weapons of the same kind (too few of the tier) need it; median 60 scaled by x2.67 for size and strength."
+  },
+  {
+   "defName": "ComponentIndustrial",
+   "count": 12,
+   "reason": "ComponentIndustrial of 63% of the 20 reference weapons of the same kind (too few of the tier) need it; median 4.5 scaled by x2.67 for size and strength."
+  }
+ ],
+ "weaponTags": [
+  "Gun",
+  "AssaultRifle",
+  "IndustrialGunAdvanced"
+ ],
+ "weaponClasses": [
+  "Ranged"
+ ],
+ "marketValue": 975,
+ "strength": {
+  "percentile": 0.5,
+  "target": 23.891144985958828,
+  "achieved": 23.73479079901947,
+  "error": -0.006544440922829291,
+  "scale": 3.7736383535210276,
+  "clamped": false,
+  "classLabel": "based on 3 items of role rifle (widened from role and tier: fewer than 3 items qualify)",
+  "classN": 3,
+  "achievedPercentile": 1
+ },
+ "notes": [
+  "the class was widened past the tier (Archotech): the target follows the trend of strength with tier (+308 percent)",
+  "the archetype is typically +28 percent in strength against the middle of its class"
+ ],
+ "fit": {
+  "perStat": [
+   {
+    "stat": "ap",
+    "value": 0.39,
+    "predicted": 0.16499999999999998,
+    "p50": {
+     "low": 0.10999999999999999,
+     "high": 0.24749999999999997
+    },
+    "p80": {
+     "low": 0.06599999999999999,
+     "high": 0.4125
+    },
+    "rank": {
+     "below": 3,
+     "equal": 0,
+     "total": 3
+    },
+    "level": "plausible",
+    "nearestReference": 0.35,
+    "defaultBand": true
+   },
+   {
+    "stat": "burst",
+    "value": 5,
+    "predicted": 3,
+    "p50": {
+     "low": 2,
+     "high": 4.5
+    },
+    "p80": {
+     "low": 1.2,
+     "high": 7.5
+    },
+    "rank": {
+     "below": 3,
+     "equal": 0,
+     "total": 3
+    },
+    "level": "plausible",
+    "nearestReference": 3,
+    "defaultBand": true
+   },
+   {
+    "stat": "cooldown",
+    "value": 1.15,
+    "predicted": 1.7,
+    "p50": {
+     "low": 1.1333333333333333,
+     "high": 2.55
+    },
+    "p80": {
+     "low": 0.6799999999999999,
+     "high": 4.25
+    },
+    "rank": {
+     "below": 0,
+     "equal": 0,
+     "total": 3
+    },
+    "level": "typical",
+    "nearestReference": 1.7,
+    "defaultBand": true
+   },
+   {
+    "stat": "damage",
+    "value": 26,
+    "predicted": 11,
+    "p50": {
+     "low": 7.333333333333333,
+     "high": 16.5
+    },
+    "p80": {
+     "low": 4.4,
+     "high": 27.5
+    },
+    "rank": {
+     "below": 3,
+     "equal": 0,
+     "total": 3
+    },
+    "level": "plausible",
+    "nearestReference": 16,
+    "defaultBand": true
+   },
+   {
+    "stat": "dps",
+    "value": 47.5609756097561,
+    "predicted": 11.580188610624191,
+    "p50": {
+     "low": 7.720125740416127,
+     "high": 17.370282915936286
+    },
+    "p80": {
+     "low": 4.6320754442496765,
+     "high": 28.950471526560477
+    },
+    "rank": {
+     "below": 3,
+     "equal": 0,
+     "total": 3
+    },
+    "level": "unusual",
+    "nearestReference": 14.117647058823529,
+    "defaultBand": true
+   },
+   {
+    "stat": "long",
+    "value": 0.51,
+    "predicted": 0.48419535588496987,
+    "p50": {
+     "low": 0.3227969039233132,
+     "high": 0.7262930338274548
+    },
+    "p80": {
+     "low": 0.19367814235398795,
+     "high": 1.2104883897124248
+    },
+    "rank": {
+     "below": 1,
+     "equal": 0,
+     "total": 3
+    },
+    "level": "typical",
+    "nearestReference": 0.55,
+    "defaultBand": true
+   },
+   {
+    "stat": "market_value",
+    "value": 975,
+    "predicted": 497,
+    "p50": {
+     "low": 331.3333333333333,
+     "high": 745.5
+    },
+    "p80": {
+     "low": 198.8,
+     "high": 1242.5
+    },
+    "rank": {
+     "below": 2,
+     "equal": 0,
+     "total": 3
+    },
+    "level": "plausible",
+    "nearestReference": 1012,
+    "defaultBand": true
+   },
+   {
+    "stat": "mass",
+    "value": 5,
+    "predicted": 3.8173936212401087,
+    "p50": {
+     "low": 2.5449290808267393,
+     "high": 5.726090431860163
+    },
+    "p80": {
+     "low": 1.5269574484960435,
+     "high": 9.543484053100272
+    },
+    "rank": {
+     "below": 3,
+     "equal": 0,
+     "total": 3
+    },
+    "level": "typical",
+    "nearestReference": 4.6,
+    "defaultBand": true
+   },
+   {
+    "stat": "medium",
+    "value": 0.65,
+    "predicted": 0.5861518746277541,
+    "p50": {
+     "low": 0.3907679164185027,
+     "high": 0.8792278119416311
+    },
+    "p80": {
+     "low": 0.23446074985110163,
+     "high": 1.4653796865693853
+    },
+    "rank": {
+     "below": 1,
+     "equal": 2,
+     "total": 3
+    },
+    "level": "typical",
+    "nearestReference": 0.65,
+    "defaultBand": true
+   },
+   {
+    "stat": "range",
+    "value": 30.9,
+    "predicted": 28.97792586069103,
+    "p50": {
+     "low": 19.318617240460686,
+     "high": 43.466888791036546
+    },
+    "p80": {
+     "low": 11.591170344276412,
+     "high": 72.44481465172757
+    },
+    "rank": {
+     "below": 2,
+     "equal": 1,
+     "total": 3
+    },
+    "level": "typical",
+    "nearestReference": 30.9,
+    "defaultBand": true
+   },
+   {
+    "stat": "short",
+    "value": 0.7,
+    "predicted": 0.6647353349873006,
+    "p50": {
+     "low": 0.44315688999153374,
+     "high": 0.997103002480951
+    },
+    "p80": {
+     "low": 0.26589413399492023,
+     "high": 1.6618383374682515
+    },
+    "rank": {
+     "below": 1,
+     "equal": 2,
+     "total": 3
+    },
+    "level": "typical",
+    "nearestReference": 0.7,
+    "defaultBand": true
+   },
+   {
+    "stat": "ticks_between",
+    "value": 8,
+    "predicted": 10,
+    "p50": {
+     "low": 6.666666666666667,
+     "high": 15
+    },
+    "p80": {
+     "low": 4,
+     "high": 25
+    },
+    "rank": {
+     "below": 0,
+     "equal": 0,
+     "total": 3
+    },
+    "level": "typical",
+    "nearestReference": 10,
+    "defaultBand": true
+   },
+   {
+    "stat": "touch",
+    "value": 0.58,
+    "predicted": 0.5792387659737752,
+    "p50": {
+     "low": 0.38615917731585014,
+     "high": 0.8688581489606628
+    },
+    "p80": {
+     "low": 0.2316955063895101,
+     "high": 1.448096914934438
+    },
+    "rank": {
+     "below": 1,
+     "equal": 0,
+     "total": 3
+    },
+    "level": "typical",
+    "nearestReference": 0.6,
+    "defaultBand": true
+   },
+   {
+    "stat": "warmup",
+    "value": 1.05,
+    "predicted": 1,
+    "p50": {
+     "low": 0.6666666666666666,
+     "high": 1.5
+    },
+    "p80": {
+     "low": 0.4,
+     "high": 2.5
+    },
+    "rank": {
+     "below": 2,
+     "equal": 0,
+     "total": 3
+    },
+    "level": "typical",
+    "nearestReference": 1,
+    "defaultBand": true
+   },
+   {
+    "stat": "work",
+    "value": 80000,
+    "predicted": 40000,
+    "p50": {
+     "low": 26666.666666666668,
+     "high": 60000
+    },
+    "p80": {
+     "low": 16000,
+     "high": 100000
+    },
+    "rank": {
+     "below": 3,
+     "equal": 0,
+     "total": 3
+    },
+    "level": "plausible",
+    "nearestReference": 45000,
+    "defaultBand": true
+   }
+  ],
+  "typicality": 46.26647765869192,
+  "summary": {
+   "scored": 15,
+   "typical": 9,
+   "plausible": 5,
+   "unusual": 1,
+   "shareInP80": 0.9333333333333333
+  },
+  "notices": {
+   "poolSize": 20,
+   "classLabel": "based on 3 items of role rifle (widened from role and tier: fewer than 3 items qualify)",
+   "classN": 3,
+   "rough": true,
+   "optimistic": false
+  },
+  "unscored": []
+ },
+ "verdict": "typical"
+}

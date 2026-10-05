@@ -8,13 +8,19 @@ import { Editor } from './components/editor/Editor';
 import { NewDraftDialog } from './components/NewDraftDialog';
 import { OutputPanel } from './components/output/OutputPanel';
 import { ProjectPrompt } from './components/ProjectPrompt';
+import { ArchetypeBar } from './components/wizard/ArchetypeBar';
+import { WeaponWizard } from './components/wizard/WeaponWizard';
 import { ReferenceBrowser } from './components/ReferenceBrowser';
 import { applyDevLinks, readDevLinks } from './dev-links';
 import { currentProject } from './project-source';
 import { designer, type Designer } from './stores';
 
 type Dialog =
-  { type: 'new'; kind: ItemKindDto } | { type: 'clone'; item: ReferenceItemDto } | undefined;
+  | { type: 'new'; kind: ItemKindDto }
+  | { type: 'clone'; item: ReferenceItemDto }
+  | { type: 'wizard' }
+  | { type: 'retune' }
+  | undefined;
 
 export interface DesignerPageProps {
   /** The stores to use; the running app uses the shared instance. */
@@ -99,6 +105,7 @@ export default function DesignerPage({ stores = designer }: DesignerPageProps) {
             openState={editor.saveState.value}
             onOpen={(entry) => void stores.select(entry)}
             onNew={(kind) => setDialog({ type: 'new', kind })}
+            onWizard={() => setDialog({ type: 'wizard' })}
             onDelete={(entry) => void stores.remove(entry.id)}
           />
         ) : (
@@ -119,7 +126,15 @@ export default function DesignerPage({ stores = designer }: DesignerPageProps) {
           aria-label={t('designer.region.centre')}
         >
           {openDraft ? (
-            <Editor key={editor.entryId.value} designer={stores} />
+            <>
+              {openDraft.archetype ? (
+                <ArchetypeBar
+                  choice={openDraft.archetype}
+                  onRetune={() => setDialog({ type: 'retune' })}
+                />
+              ) : null}
+              <Editor key={editor.entryId.value} designer={stores} />
+            </>
           ) : (
             <div class="p-6">
               <EmptyState
@@ -142,6 +157,16 @@ export default function DesignerPage({ stores = designer }: DesignerPageProps) {
           />
         </section>
       </div>
+      {dialog?.type === 'wizard' ? (
+        <WeaponWizard
+          stores={stores}
+          onClose={() => setDialog(undefined)}
+          onBlank={() => setDialog({ type: 'new', kind: 'ranged' })}
+        />
+      ) : null}
+      {dialog?.type === 'retune' && openDraft ? (
+        <WeaponWizard stores={stores} retune={openDraft} onClose={() => setDialog(undefined)} />
+      ) : null}
       {dialog?.type === 'new' ? (
         <NewDraftDialog
           key={`new-${dialog.kind}`}

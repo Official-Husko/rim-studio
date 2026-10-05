@@ -17,6 +17,8 @@ const BASE = 'block w-full rounded-md border p-3 text-left';
 /** A bordered block. Selectable cards are real buttons, so keyboard and screen readers work. */
 export function Card({ tone = 'flat', selected, onSelect, label, children }: CardProps) {
   const surface = tone === 'raised' ? 'bg-raised border-line-strong' : 'bg-surface border-line';
+  // a selected card drops the surface classes: two background or border utilities on one element
+  // are resolved by the order of the style sheet, not by the order of the class names
   if (onSelect) {
     return (
       <button
@@ -26,9 +28,8 @@ export function Card({ tone = 'flat', selected, onSelect, label, children }: Car
         onClick={onSelect}
         class={cx(
           BASE,
-          surface,
+          selected ? 'border-accent bg-accent-tint' : surface,
           'transition-colors duration-(--rs-dur-fast) hover:border-accent',
-          selected && 'border-accent bg-accent-tint',
         )}
       >
         {children}

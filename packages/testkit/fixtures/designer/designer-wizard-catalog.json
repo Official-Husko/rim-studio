@@ -1,0 +1,1563 @@
+{
+ "families": [
+  {
+   "id": "pistol",
+   "label": "Pistol",
+   "kind": "ranged",
+   "archetypes": [
+    {
+     "id": "pistol/light",
+     "label": "Light pistol",
+     "summary": "A small self loading pistol: quick to bring up, short effective range, light damage.",
+     "kind": "ranged",
+     "applies": [
+      "action",
+      "rof",
+      "calibre",
+      "handling",
+      "tier",
+      "balance"
+     ],
+     "actions": [
+      "semi",
+      "burst"
+     ],
+     "defaultAction": "semi",
+     "rofClasses": [
+      "slow",
+      "medium",
+      "fast"
+     ],
+     "defaultRof": "medium",
+     "refRpm": 400,
+     "calibres": [
+      "tiny",
+      "small",
+      "medium"
+     ],
+     "defaultCalibre": "small",
+     "handlings": [
+      "compact",
+      "standard"
+     ],
+     "defaultHandling": "standard",
+     "defaultTier": "industrial",
+     "poolRole": "pistol",
+     "ammoFamilies": [
+      "pistol"
+     ]
+    },
+    {
+     "id": "pistol/revolver",
+     "label": "Revolver",
+     "summary": "A double action revolver: slower cycle than an autopistol, a little more damage per shot.",
+     "kind": "ranged",
+     "applies": [
+      "action",
+      "rof",
+      "calibre",
+      "handling",
+      "tier",
+      "balance"
+     ],
+     "actions": [
+      "semi"
+     ],
+     "defaultAction": "semi",
+     "rofClasses": [
+      "slow",
+      "medium",
+      "fast"
+     ],
+     "defaultRof": "medium",
+     "refRpm": 150,
+     "calibres": [
+      "small",
+      "medium",
+      "large"
+     ],
+     "defaultCalibre": "medium",
+     "handlings": [
+      "compact",
+      "standard"
+     ],
+     "defaultHandling": "standard",
+     "defaultTier": "industrial",
+     "poolRole": "pistol",
+     "ammoFamilies": [
+      "pistol"
+     ]
+    },
+    {
+     "id": "pistol/heavy",
+     "label": "Heavy or magnum pistol",
+     "summary": "A large frame pistol with a hard hitting round: slow to settle, heavy in the hand.",
+     "kind": "ranged",
+     "applies": [
+      "action",
+      "rof",
+      "calibre",
+      "handling",
+      "tier",
+      "balance"
+     ],
+     "actions": [
+      "semi"
+     ],
+     "defaultAction": "semi",
+     "rofClasses": [
+      "slow",
+      "medium"
+     ],
+     "defaultRof": "slow",
+     "refRpm": 100,
+     "calibres": [
+      "medium",
+      "large",
+      "huge"
+     ],
+     "defaultCalibre": "large",
+     "handlings": [
+      "standard",
+      "heavy"
+     ],
+     "defaultHandling": "standard",
+     "defaultTier": "industrial",
+     "poolRole": "pistol",
+     "ammoFamilies": [
+      "pistol"
+     ]
+    },
+    {
+     "id": "pistol/machine",
+     "label": "Machine pistol",
+     "summary": "A pistol that fires in bursts: very light rounds, short range, quick cycle.",
+     "kind": "ranged",
+     "applies": [
+      "action",
+      "rof",
+      "calibre",
+      "handling",
+      "tier",
+      "balance"
+     ],
+     "actions": [
+      "burst",
+      "full-auto"
+     ],
+     "defaultAction": "burst",
+     "rofClasses": [
+      "slow",
+      "medium",
+      "fast"
+     ],
+     "defaultRof": "medium",
+     "refRpm": 900,
+     "calibres": [
+      "tiny",
+      "small",
+      "medium"
+     ],
+     "defaultCalibre": "small",
+     "handlings": [
+      "compact",
+      "standard"
+     ],
+     "defaultHandling": "standard",
+     "defaultTier": "industrial",
+     "poolRole": "pistol",
+     "ammoFamilies": [
+      "pistol"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "smg",
+   "label": "Submachine gun",
+   "kind": "ranged",
+   "archetypes": [
+    {
+     "id": "smg/light",
+     "label": "Light SMG",
+     "summary": "A compact automatic weapon firing pistol rounds: fast cycle, short range, low damage per shot.",
+     "kind": "ranged",
+     "applies": [
+      "action",
+      "rof",
+      "calibre",
+      "handling",
+      "tier",
+      "balance"
+     ],
+     "actions": [
+      "burst",
+      "full-auto",
+      "semi"
+     ],
+     "defaultAction": "burst",
+     "rofClasses": [
+      "slow",
+      "medium",
+      "fast"
+     ],
+     "defaultRof": "medium",
+     "refRpm": 800,
+     "calibres": [
+      "tiny",
+      "small",
+      "medium"
+     ],
+     "defaultCalibre": "small",
+     "handlings": [
+      "compact",
+      "standard"
+     ],
+     "defaultHandling": "standard",
+     "defaultTier": "industrial",
+     "poolRole": "smg",
+     "ammoFamilies": [
+      "pistol"
+     ]
+    },
+    {
+     "id": "smg/heavy",
+     "label": "Heavy SMG",
+     "summary": "A larger submachine gun with a stronger pistol round: more damage per burst, a slower cycle.",
+     "kind": "ranged",
+     "applies": [
+      "action",
+      "rof",
+      "calibre",
+      "handling",
+      "tier",
+      "balance"
+     ],
+     "actions": [
+      "burst",
+      "full-auto"
+     ],
+     "defaultAction": "burst",
+     "rofClasses": [
+      "slow",
+      "medium",
+      "fast"
+     ],
+     "defaultRof": "medium",
+     "refRpm": 700,
+     "calibres": [
+      "small",
+      "medium",
+      "large"
+     ],
+     "defaultCalibre": "medium",
+     "handlings": [
+      "standard",
+      "heavy"
+     ],
+     "defaultHandling": "standard",
+     "defaultTier": "industrial",
+     "poolRole": "smg",
+     "ammoFamilies": [
+      "pistol"
+     ]
+    },
+    {
+     "id": "smg/pdw",
+     "label": "Personal defence weapon",
+     "summary": "A compact weapon with a small armor piercing round: modest damage, better penetration, steady handling.",
+     "kind": "ranged",
+     "applies": [
+      "action",
+      "rof",
+      "calibre",
+      "handling",
+      "tier",
+      "balance"
+     ],
+     "actions": [
+      "burst",
+      "full-auto",
+      "semi"
+     ],
+     "defaultAction": "burst",
+     "rofClasses": [
+      "slow",
+      "medium",
+      "fast"
+     ],
+     "defaultRof": "medium",
+     "refRpm": 850,
+     "calibres": [
+      "tiny",
+      "small"
+     ],
+     "defaultCalibre": "small",
+     "handlings": [
+      "compact",
+      "standard"
+     ],
+     "defaultHandling": "standard",
+     "defaultTier": "industrial",
+     "poolRole": "smg",
+     "ammoFamilies": [
+      "pistol",
+      "rifle"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "shotgun",
+   "label": "Shotgun",
+   "kind": "ranged",
+   "archetypes": [
+    {
+     "id": "shotgun/pump",
+     "label": "Pump shotgun",
+     "summary": "A hard hitting short range weapon with a deliberate cycle.",
+     "kind": "ranged",
+     "applies": [
+      "action",
+      "rof",
+      "calibre",
+      "handling",
+      "tier",
+      "balance"
+     ],
+     "actions": [
+      "pump",
+      "lever",
+      "semi"
+     ],
+     "defaultAction": "pump",
+     "rofClasses": [
+      "slow",
+      "medium",
+      "fast"
+     ],
+     "defaultRof": "medium",
+     "refRpm": 60,
+     "calibres": [
+      "small",
+      "medium",
+      "large"
+     ],
+     "defaultCalibre": "medium",
+     "handlings": [
+      "compact",
+      "standard",
+      "heavy"
+     ],
+     "defaultHandling": "standard",
+     "defaultTier": "industrial",
+     "poolRole": "shotgun",
+     "ammoFamilies": [
+      "shotgun"
+     ]
+    },
+    {
+     "id": "shotgun/semi",
+     "label": "Semi automatic shotgun",
+     "summary": "A shotgun that reloads itself: faster follow up shots, a little less punch.",
+     "kind": "ranged",
+     "applies": [
+      "action",
+      "rof",
+      "calibre",
+      "handling",
+      "tier",
+      "balance"
+     ],
+     "actions": [
+      "semi",
+      "pump"
+     ],
+     "defaultAction": "semi",
+     "rofClasses": [
+      "slow",
+      "medium",
+      "fast"
+     ],
+     "defaultRof": "medium",
+     "refRpm": 150,
+     "calibres": [
+      "small",
+      "medium",
+      "large"
+     ],
+     "defaultCalibre": "medium",
+     "handlings": [
+      "standard",
+      "heavy"
+     ],
+     "defaultHandling": "standard",
+     "defaultTier": "industrial",
+     "poolRole": "shotgun",
+     "ammoFamilies": [
+      "shotgun"
+     ]
+    },
+    {
+     "id": "shotgun/auto",
+     "label": "Automatic shotgun",
+     "summary": "A heavy shotgun firing bursts: very short range, large damage per burst.",
+     "kind": "ranged",
+     "applies": [
+      "action",
+      "rof",
+      "calibre",
+      "handling",
+      "tier",
+      "balance"
+     ],
+     "actions": [
+      "burst",
+      "full-auto"
+     ],
+     "defaultAction": "burst",
+     "rofClasses": [
+      "slow",
+      "medium",
+      "fast"
+     ],
+     "defaultRof": "medium",
+     "refRpm": 300,
+     "calibres": [
+      "medium",
+      "large"
+     ],
+     "defaultCalibre": "medium",
+     "handlings": [
+      "standard",
+      "heavy"
+     ],
+     "defaultHandling": "standard",
+     "defaultTier": "industrial",
+     "poolRole": "shotgun",
+     "ammoFamilies": [
+      "shotgun"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "rifle",
+   "label": "Rifle",
+   "kind": "ranged",
+   "archetypes": [
+    {
+     "id": "rifle/carbine",
+     "label": "Carbine",
+     "summary": "A short rifle: handy and quick to bring up, a little less damage and reach than a full rifle.",
+     "kind": "ranged",
+     "applies": [
+      "action",
+      "rof",
+      "calibre",
+      "handling",
+      "tier",
+      "balance"
+     ],
+     "actions": [
+      "semi",
+      "burst",
+      "full-auto",
+      "bolt",
+      "lever"
+     ],
+     "defaultAction": "burst",
+     "rofClasses": [
+      "slow",
+      "medium",
+      "fast"
+     ],
+     "defaultRof": "medium",
+     "refRpm": 600,
+     "calibres": [
+      "small",
+      "medium",
+      "large"
+     ],
+     "defaultCalibre": "medium",
+     "handlings": [
+      "compact",
+      "standard"
+     ],
+     "defaultHandling": "standard",
+     "defaultTier": "industrial",
+     "poolRole": "rifle",
+     "ammoFamilies": [
+      "rifle"
+     ]
+    },
+    {
+     "id": "rifle/assault",
+     "label": "Assault rifle",
+     "summary": "A balanced automatic rifle: medium damage, good reach, bursts of three.",
+     "kind": "ranged",
+     "applies": [
+      "action",
+      "rof",
+      "calibre",
+      "handling",
+      "tier",
+      "balance"
+     ],
+     "actions": [
+      "burst",
+      "full-auto",
+      "semi"
+     ],
+     "defaultAction": "burst",
+     "rofClasses": [
+      "slow",
+      "medium",
+      "fast"
+     ],
+     "defaultRof": "medium",
+     "refRpm": 650,
+     "calibres": [
+      "small",
+      "medium",
+      "large"
+     ],
+     "defaultCalibre": "medium",
+     "handlings": [
+      "compact",
+      "standard",
+      "heavy"
+     ],
+     "defaultHandling": "standard",
+     "defaultTier": "industrial",
+     "poolRole": "rifle",
+     "ammoFamilies": [
+      "rifle"
+     ]
+    },
+    {
+     "id": "rifle/battle",
+     "label": "Battle rifle",
+     "summary": "A full power self loading rifle: more damage and penetration than an assault rifle, a slower cycle.",
+     "kind": "ranged",
+     "applies": [
+      "action",
+      "rof",
+      "calibre",
+      "handling",
+      "tier",
+      "balance"
+     ],
+     "actions": [
+      "semi",
+      "burst",
+      "full-auto"
+     ],
+     "defaultAction": "semi",
+     "rofClasses": [
+      "slow",
+      "medium",
+      "fast"
+     ],
+     "defaultRof": "medium",
+     "refRpm": 500,
+     "calibres": [
+      "medium",
+      "large",
+      "huge"
+     ],
+     "defaultCalibre": "large",
+     "handlings": [
+      "standard",
+      "heavy"
+     ],
+     "defaultHandling": "standard",
+     "defaultTier": "industrial",
+     "poolRole": "rifle",
+     "ammoFamilies": [
+      "rifle"
+     ]
+    },
+    {
+     "id": "rifle/bolt",
+     "label": "Bolt action hunting rifle",
+     "summary": "A single shot rifle with long reach and strong rounds: slow to aim, accurate far away.",
+     "kind": "ranged",
+     "applies": [
+      "action",
+      "rof",
+      "calibre",
+      "handling",
+      "tier",
+      "balance"
+     ],
+     "actions": [
+      "bolt",
+      "lever"
+     ],
+     "defaultAction": "bolt",
+     "rofClasses": [
+      "slow",
+      "medium",
+      "fast"
+     ],
+     "defaultRof": "medium",
+     "refRpm": 20,
+     "calibres": [
+      "small",
+      "medium",
+      "large",
+      "huge"
+     ],
+     "defaultCalibre": "large",
+     "handlings": [
+      "compact",
+      "standard",
+      "heavy"
+     ],
+     "defaultHandling": "standard",
+     "defaultTier": "industrial",
+     "poolRole": "sniper",
+     "ammoFamilies": [
+      "rifle"
+     ]
+    },
+    {
+     "id": "rifle/dmr",
+     "label": "Designated marksman rifle",
+     "summary": "A self loading rifle tuned for single aimed shots: long reach, long aim time.",
+     "kind": "ranged",
+     "applies": [
+      "action",
+      "rof",
+      "calibre",
+      "handling",
+      "tier",
+      "balance"
+     ],
+     "actions": [
+      "semi",
+      "bolt"
+     ],
+     "defaultAction": "semi",
+     "rofClasses": [
+      "slow",
+      "medium",
+      "fast"
+     ],
+     "defaultRof": "medium",
+     "refRpm": 60,
+     "calibres": [
+      "medium",
+      "large",
+      "huge"
+     ],
+     "defaultCalibre": "large",
+     "handlings": [
+      "standard",
+      "heavy"
+     ],
+     "defaultHandling": "standard",
+     "defaultTier": "industrial",
+     "poolRole": "sniper",
+     "ammoFamilies": [
+      "rifle"
+     ]
+    },
+    {
+     "id": "rifle/sniper",
+     "label": "Sniper rifle",
+     "summary": "The longest reach and hardest hit of the single shot rifles, with a long warmup and a slow cooldown.",
+     "kind": "ranged",
+     "applies": [
+      "action",
+      "rof",
+      "calibre",
+      "handling",
+      "tier",
+      "balance"
+     ],
+     "actions": [
+      "bolt",
+      "semi"
+     ],
+     "defaultAction": "bolt",
+     "rofClasses": [
+      "slow",
+      "medium",
+      "fast"
+     ],
+     "defaultRof": "medium",
+     "refRpm": 15,
+     "calibres": [
+      "large",
+      "huge"
+     ],
+     "defaultCalibre": "huge",
+     "handlings": [
+      "standard",
+      "heavy"
+     ],
+     "defaultHandling": "standard",
+     "defaultTier": "industrial",
+     "poolRole": "sniper",
+     "ammoFamilies": [
+      "rifle"
+     ]
+    },
+    {
+     "id": "rifle/anti-materiel",
+     "label": "Anti materiel rifle",
+     "summary": "A very heavy single shot rifle: huge damage and penetration, long warmup, slow cooldown, heavy to carry.",
+     "kind": "ranged",
+     "applies": [
+      "action",
+      "rof",
+      "calibre",
+      "handling",
+      "tier",
+      "balance"
+     ],
+     "actions": [
+      "bolt",
+      "semi"
+     ],
+     "defaultAction": "semi",
+     "rofClasses": [
+      "slow",
+      "medium",
+      "fast"
+     ],
+     "defaultRof": "medium",
+     "refRpm": 10,
+     "calibres": [
+      "huge"
+     ],
+     "defaultCalibre": "huge",
+     "handlings": [
+      "standard",
+      "heavy"
+     ],
+     "defaultHandling": "standard",
+     "defaultTier": "industrial",
+     "poolRole": "sniper",
+     "ammoFamilies": [
+      "rifle"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "machine-gun",
+   "label": "Machine gun",
+   "kind": "ranged",
+   "archetypes": [
+    {
+     "id": "machine-gun/lmg",
+     "label": "Light machine gun",
+     "summary": "A belt or box fed automatic weapon: long bursts, a long warmup, heavy to carry.",
+     "kind": "ranged",
+     "applies": [
+      "action",
+      "rof",
+      "calibre",
+      "handling",
+      "tier",
+      "balance"
+     ],
+     "actions": [
+      "full-auto",
+      "burst"
+     ],
+     "defaultAction": "full-auto",
+     "rofClasses": [
+      "slow",
+      "medium",
+      "fast"
+     ],
+     "defaultRof": "medium",
+     "refRpm": 700,
+     "calibres": [
+      "medium",
+      "large"
+     ],
+     "defaultCalibre": "medium",
+     "handlings": [
+      "standard",
+      "heavy"
+     ],
+     "defaultHandling": "standard",
+     "defaultTier": "industrial",
+     "poolRole": "heavy",
+     "ammoFamilies": [
+      "rifle",
+      "machine"
+     ]
+    },
+    {
+     "id": "machine-gun/gpmg",
+     "label": "General purpose machine gun",
+     "summary": "A full power machine gun: more damage per round than a light machine gun, heavier, longer reach.",
+     "kind": "ranged",
+     "applies": [
+      "action",
+      "rof",
+      "calibre",
+      "handling",
+      "tier",
+      "balance"
+     ],
+     "actions": [
+      "full-auto",
+      "burst"
+     ],
+     "defaultAction": "full-auto",
+     "rofClasses": [
+      "slow",
+      "medium",
+      "fast"
+     ],
+     "defaultRof": "medium",
+     "refRpm": 650,
+     "calibres": [
+      "large",
+      "huge"
+     ],
+     "defaultCalibre": "large",
+     "handlings": [
+      "standard",
+      "heavy"
+     ],
+     "defaultHandling": "standard",
+     "defaultTier": "industrial",
+     "poolRole": "heavy",
+     "ammoFamilies": [
+      "rifle",
+      "machine"
+     ]
+    },
+    {
+     "id": "machine-gun/heavy",
+     "label": "Heavy machine gun or minigun",
+     "summary": "A rotary or heavy weapon: very long bursts of light damage, a long spin up, very heavy.",
+     "kind": "ranged",
+     "applies": [
+      "action",
+      "rof",
+      "calibre",
+      "handling",
+      "tier",
+      "balance"
+     ],
+     "actions": [
+      "full-auto"
+     ],
+     "defaultAction": "full-auto",
+     "rofClasses": [
+      "slow",
+      "medium",
+      "fast"
+     ],
+     "defaultRof": "medium",
+     "refRpm": 3000,
+     "calibres": [
+      "small",
+      "medium",
+      "large"
+     ],
+     "defaultCalibre": "small",
+     "handlings": [
+      "standard",
+      "heavy"
+     ],
+     "defaultHandling": "standard",
+     "defaultTier": "industrial",
+     "poolRole": "heavy",
+     "ammoFamilies": [
+      "rifle",
+      "machine"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "bow",
+   "label": "Bow and crossbow",
+   "kind": "ranged",
+   "archetypes": [
+    {
+     "id": "bow/short",
+     "label": "Short bow",
+     "summary": "A simple bow: light arrows, short reach, quick to draw.",
+     "kind": "ranged",
+     "applies": [
+      "action",
+      "rof",
+      "calibre",
+      "handling",
+      "tier",
+      "balance"
+     ],
+     "actions": [
+      "draw"
+     ],
+     "defaultAction": "draw",
+     "rofClasses": [
+      "slow",
+      "medium",
+      "fast"
+     ],
+     "defaultRof": "medium",
+     "refRpm": 10,
+     "calibres": [
+      "tiny",
+      "small",
+      "medium"
+     ],
+     "defaultCalibre": "small",
+     "handlings": [
+      "compact",
+      "standard"
+     ],
+     "defaultHandling": "standard",
+     "defaultTier": "neolithic",
+     "poolRole": "bow",
+     "ammoFamilies": [
+      "arrow",
+      "bow"
+     ]
+    },
+    {
+     "id": "bow/recurve",
+     "label": "Recurve bow",
+     "summary": "A better bow: more damage and reach than a short bow, a little slower.",
+     "kind": "ranged",
+     "applies": [
+      "action",
+      "rof",
+      "calibre",
+      "handling",
+      "tier",
+      "balance"
+     ],
+     "actions": [
+      "draw"
+     ],
+     "defaultAction": "draw",
+     "rofClasses": [
+      "slow",
+      "medium",
+      "fast"
+     ],
+     "defaultRof": "medium",
+     "refRpm": 9,
+     "calibres": [
+      "small",
+      "medium",
+      "large"
+     ],
+     "defaultCalibre": "medium",
+     "handlings": [
+      "compact",
+      "standard"
+     ],
+     "defaultHandling": "standard",
+     "defaultTier": "neolithic",
+     "poolRole": "bow",
+     "ammoFamilies": [
+      "arrow",
+      "bow"
+     ]
+    },
+    {
+     "id": "bow/great",
+     "label": "Great bow",
+     "summary": "A war bow: heavy arrows, the longest reach of the bows, a long draw.",
+     "kind": "ranged",
+     "applies": [
+      "action",
+      "rof",
+      "calibre",
+      "handling",
+      "tier",
+      "balance"
+     ],
+     "actions": [
+      "draw"
+     ],
+     "defaultAction": "draw",
+     "rofClasses": [
+      "slow",
+      "medium",
+      "fast"
+     ],
+     "defaultRof": "medium",
+     "refRpm": 7,
+     "calibres": [
+      "medium",
+      "large",
+      "huge"
+     ],
+     "defaultCalibre": "large",
+     "handlings": [
+      "standard",
+      "heavy"
+     ],
+     "defaultHandling": "standard",
+     "defaultTier": "neolithic",
+     "poolRole": "bow",
+     "ammoFamilies": [
+      "arrow",
+      "bow"
+     ]
+    },
+    {
+     "id": "bow/crossbow",
+     "label": "Crossbow",
+     "summary": "A mechanical bow: strong bolts, good penetration, a long cranking cooldown.",
+     "kind": "ranged",
+     "applies": [
+      "action",
+      "rof",
+      "calibre",
+      "handling",
+      "tier",
+      "balance"
+     ],
+     "actions": [
+      "draw"
+     ],
+     "defaultAction": "draw",
+     "rofClasses": [
+      "slow",
+      "medium",
+      "fast"
+     ],
+     "defaultRof": "medium",
+     "refRpm": 5,
+     "calibres": [
+      "medium",
+      "large"
+     ],
+     "defaultCalibre": "medium",
+     "handlings": [
+      "standard",
+      "heavy"
+     ],
+     "defaultHandling": "standard",
+     "defaultTier": "medieval",
+     "poolRole": "bow",
+     "ammoFamilies": [
+      "bolt",
+      "arrow",
+      "bow"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "knife",
+   "label": "Knife",
+   "kind": "melee",
+   "archetypes": [
+    {
+     "id": "knife/knife",
+     "label": "Knife",
+     "summary": "A small blade: quick swings, modest damage, very light.",
+     "kind": "melee",
+     "applies": [
+      "rof",
+      "handling",
+      "tier",
+      "balance"
+     ],
+     "actions": [],
+     "rofClasses": [
+      "slow",
+      "medium",
+      "fast"
+     ],
+     "defaultRof": "medium",
+     "calibres": [],
+     "handlings": [
+      "compact",
+      "standard",
+      "heavy"
+     ],
+     "defaultHandling": "standard",
+     "defaultTier": "neolithic",
+     "poolRole": "blade",
+     "ammoFamilies": []
+    }
+   ]
+  },
+  {
+   "id": "sword",
+   "label": "Sword",
+   "kind": "melee",
+   "archetypes": [
+    {
+     "id": "sword/short",
+     "label": "Short sword",
+     "summary": "A one handed blade: a stab and a cut of equal power, an even tempo.",
+     "kind": "melee",
+     "applies": [
+      "rof",
+      "handling",
+      "tier",
+      "balance"
+     ],
+     "actions": [],
+     "rofClasses": [
+      "slow",
+      "medium",
+      "fast"
+     ],
+     "defaultRof": "medium",
+     "calibres": [],
+     "handlings": [
+      "compact",
+      "standard",
+      "heavy"
+     ],
+     "defaultHandling": "standard",
+     "defaultTier": "medieval",
+     "poolRole": "blade",
+     "ammoFamilies": []
+    },
+    {
+     "id": "sword/long",
+     "label": "Long sword",
+     "summary": "A two handed or bastard blade: much harder hitting than a short sword, with a slower swing.",
+     "kind": "melee",
+     "applies": [
+      "rof",
+      "handling",
+      "tier",
+      "balance"
+     ],
+     "actions": [],
+     "rofClasses": [
+      "slow",
+      "medium",
+      "fast"
+     ],
+     "defaultRof": "medium",
+     "calibres": [],
+     "handlings": [
+      "compact",
+      "standard",
+      "heavy"
+     ],
+     "defaultHandling": "standard",
+     "defaultTier": "medieval",
+     "poolRole": "blade",
+     "ammoFamilies": []
+    }
+   ]
+  },
+  {
+   "id": "axe",
+   "label": "Axe",
+   "kind": "melee",
+   "archetypes": [
+    {
+     "id": "axe/axe",
+     "label": "Axe",
+     "summary": "A single edge on a haft: one strong cut, a blunt haft.",
+     "kind": "melee",
+     "applies": [
+      "rof",
+      "handling",
+      "tier",
+      "balance"
+     ],
+     "actions": [],
+     "rofClasses": [
+      "slow",
+      "medium",
+      "fast"
+     ],
+     "defaultRof": "medium",
+     "calibres": [],
+     "handlings": [
+      "compact",
+      "standard",
+      "heavy"
+     ],
+     "defaultHandling": "standard",
+     "defaultTier": "medieval",
+     "poolRole": "blade",
+     "ammoFamilies": []
+    }
+   ]
+  },
+  {
+   "id": "mace-hammer",
+   "label": "Mace and hammer",
+   "kind": "melee",
+   "archetypes": [
+    {
+     "id": "mace-hammer/mace",
+     "label": "Mace",
+     "summary": "A blunt head on a haft: one heavy blunt attack, a poking haft.",
+     "kind": "melee",
+     "applies": [
+      "rof",
+      "handling",
+      "tier",
+      "balance"
+     ],
+     "actions": [],
+     "rofClasses": [
+      "slow",
+      "medium",
+      "fast"
+     ],
+     "defaultRof": "medium",
+     "calibres": [],
+     "handlings": [
+      "compact",
+      "standard",
+      "heavy"
+     ],
+     "defaultHandling": "standard",
+     "defaultTier": "medieval",
+     "poolRole": "blunt",
+     "ammoFamilies": []
+    },
+    {
+     "id": "mace-hammer/hammer",
+     "label": "War hammer",
+     "summary": "A heavy blunt head: the hardest blunt hit of the one handed weapons, a slow swing.",
+     "kind": "melee",
+     "applies": [
+      "rof",
+      "handling",
+      "tier",
+      "balance"
+     ],
+     "actions": [],
+     "rofClasses": [
+      "slow",
+      "medium",
+      "fast"
+     ],
+     "defaultRof": "medium",
+     "calibres": [],
+     "handlings": [
+      "compact",
+      "standard",
+      "heavy"
+     ],
+     "defaultHandling": "standard",
+     "defaultTier": "medieval",
+     "poolRole": "blunt",
+     "ammoFamilies": []
+    }
+   ]
+  },
+  {
+   "id": "spear",
+   "label": "Spear and polearm",
+   "kind": "melee",
+   "archetypes": [
+    {
+     "id": "spear/spear",
+     "label": "Spear",
+     "summary": "A thrusting weapon: a strong stab with extra penetration, a slow tempo.",
+     "kind": "melee",
+     "applies": [
+      "rof",
+      "handling",
+      "tier",
+      "balance"
+     ],
+     "actions": [],
+     "rofClasses": [
+      "slow",
+      "medium",
+      "fast"
+     ],
+     "defaultRof": "medium",
+     "calibres": [],
+     "handlings": [
+      "compact",
+      "standard",
+      "heavy"
+     ],
+     "defaultHandling": "standard",
+     "defaultTier": "neolithic",
+     "poolRole": "piercing",
+     "ammoFamilies": []
+    },
+    {
+     "id": "spear/polearm",
+     "label": "Polearm",
+     "summary": "A long hafted weapon with a blade or hook: heavy damage and a very slow swing.",
+     "kind": "melee",
+     "applies": [
+      "rof",
+      "handling",
+      "tier",
+      "balance"
+     ],
+     "actions": [],
+     "rofClasses": [
+      "slow",
+      "medium",
+      "fast"
+     ],
+     "defaultRof": "medium",
+     "calibres": [],
+     "handlings": [
+      "compact",
+      "standard",
+      "heavy"
+     ],
+     "defaultHandling": "standard",
+     "defaultTier": "medieval",
+     "poolRole": "piercing",
+     "ammoFamilies": []
+    }
+   ]
+  },
+  {
+   "id": "club-staff",
+   "label": "Club and staff",
+   "kind": "melee",
+   "archetypes": [
+    {
+     "id": "club-staff/club",
+     "label": "Club",
+     "summary": "A simple blunt weapon: easy to make, a modest blunt hit, a quick tempo.",
+     "kind": "melee",
+     "applies": [
+      "rof",
+      "handling",
+      "tier",
+      "balance"
+     ],
+     "actions": [],
+     "rofClasses": [
+      "slow",
+      "medium",
+      "fast"
+     ],
+     "defaultRof": "medium",
+     "calibres": [],
+     "handlings": [
+      "compact",
+      "standard",
+      "heavy"
+     ],
+     "defaultHandling": "standard",
+     "defaultTier": "neolithic",
+     "poolRole": "blunt",
+     "ammoFamilies": []
+    },
+    {
+     "id": "club-staff/staff",
+     "label": "Staff",
+     "summary": "A single blunt attack: light and slow.",
+     "kind": "melee",
+     "applies": [
+      "rof",
+      "handling",
+      "tier",
+      "balance"
+     ],
+     "actions": [],
+     "rofClasses": [
+      "slow",
+      "medium",
+      "fast"
+     ],
+     "defaultRof": "medium",
+     "calibres": [],
+     "handlings": [
+      "compact",
+      "standard",
+      "heavy"
+     ],
+     "defaultHandling": "standard",
+     "defaultTier": "neolithic",
+     "poolRole": "blunt",
+     "ammoFamilies": []
+    }
+   ]
+  }
+ ],
+ "rof": [
+  {
+   "id": "slow",
+   "label": "Slow",
+   "rate": 0.75
+  },
+  {
+   "id": "medium",
+   "label": "Medium",
+   "rate": 1
+  },
+  {
+   "id": "fast",
+   "label": "Fast",
+   "rate": 1.35
+  }
+ ],
+ "actions": [
+  {
+   "id": "bolt",
+   "label": "Bolt action",
+   "summary": "One round per cycle, worked by hand between shots."
+  },
+  {
+   "id": "lever",
+   "label": "Lever action",
+   "summary": "One round per cycle, a little quicker than a bolt."
+  },
+  {
+   "id": "pump",
+   "label": "Pump action",
+   "summary": "One round per cycle, pumped between shots."
+  },
+  {
+   "id": "semi",
+   "label": "Semi automatic",
+   "summary": "One round per trigger pull, no manual cycling."
+  },
+  {
+   "id": "burst",
+   "label": "Burst fire",
+   "summary": "A short burst per trigger pull."
+  },
+  {
+   "id": "full-auto",
+   "label": "Full automatic",
+   "summary": "A long burst while the trigger is held."
+  },
+  {
+   "id": "draw",
+   "label": "Draw and loose",
+   "summary": "One shot per draw, as bows and crossbows work."
+  }
+ ],
+ "calibres": [
+  {
+   "id": "tiny",
+   "label": "Tiny",
+   "summary": "rimfire, small darts"
+  },
+  {
+   "id": "small",
+   "label": "Small",
+   "summary": "9 mm class pistol rounds, light arrows"
+  },
+  {
+   "id": "medium",
+   "label": "Medium",
+   "summary": "intermediate rifle rounds, 12 gauge"
+  },
+  {
+   "id": "large",
+   "label": "Large",
+   "summary": "full power rifle rounds, magnum pistol rounds"
+  },
+  {
+   "id": "huge",
+   "label": "Huge",
+   "summary": "heavy and anti materiel rounds"
+  }
+ ],
+ "handlings": [
+  {
+   "id": "compact",
+   "label": "Compact"
+  },
+  {
+   "id": "standard",
+   "label": "Standard"
+  },
+  {
+   "id": "heavy",
+   "label": "Heavy"
+  }
+ ],
+ "tiers": [
+  {
+   "tier": "neolithic",
+   "label": "Neolithic",
+   "rangedCount": 5,
+   "meleeCount": 5
+  },
+  {
+   "tier": "medieval",
+   "label": "Medieval",
+   "rangedCount": 1,
+   "meleeCount": 5
+  },
+  {
+   "tier": "industrial",
+   "label": "Industrial",
+   "rangedCount": 12,
+   "meleeCount": 0
+  },
+  {
+   "tier": "spacer",
+   "label": "Spacer",
+   "rangedCount": 2,
+   "meleeCount": 0
+  },
+  {
+   "tier": "ultra",
+   "label": "Ultra",
+   "rangedCount": 0,
+   "meleeCount": 7
+  },
+  {
+   "tier": "archotech",
+   "label": "Archotech",
+   "rangedCount": 0,
+   "meleeCount": 0
+  }
+ ],
+ "balance": [
+  {
+   "target": "weaker",
+   "label": "Weaker than most of its class",
+   "percentile": 0.16666666666666666
+  },
+  {
+   "target": "typical",
+   "label": "Typical for its class",
+   "percentile": 0.5
+  },
+  {
+   "target": "stronger",
+   "label": "Stronger than most of its class",
+   "percentile": 0.8333333333333334
+  }
+ ],
+ "poolSizes": [
+  20,
+  17
+ ],
+ "proposalsAvailable": true,
+ "ce": {
+  "available": true,
+  "calibres": [],
+  "aiClassTags": [
+   "CE_AI_AOE",
+   "CE_AI_AR",
+   "CE_AI_BROOM",
+   "CE_AI_EMP",
+   "CE_AI_Grenade",
+   "CE_AI_LMG",
+   "CE_AI_Launcher",
+   "CE_AI_Rifle",
+   "CE_AI_SMOKE",
+   "CE_AI_SR",
+   "CE_AI_Suppressive"
+  ]
+ }
+}

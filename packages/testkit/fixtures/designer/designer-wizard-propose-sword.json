@@ -1,0 +1,469 @@
+{
+ "choice": {
+  "archetype": "sword/long",
+  "descriptors": {
+   "rof": {
+    "class": "fast"
+   },
+   "handling": "standard",
+   "tier": "medieval"
+  },
+  "balance": "stronger",
+  "mode": "vanilla"
+ },
+ "label": "Long sword",
+ "kind": "melee",
+ "source": "archetype",
+ "resolved": {
+  "rof": "fast",
+  "rate": 1.35,
+  "handling": "standard",
+  "tier": "medieval"
+ },
+ "role": "blade",
+ "values": [
+  {
+   "field": "/mass",
+   "stat": "mass",
+   "value": 2.4,
+   "write": true,
+   "source": "archetype",
+   "reason": "mass 2.4: the install's median mass is 2 (17 reference weapons). Long sword x1.30, strength scale x0.91.",
+   "median": 2,
+   "medianN": 17,
+   "terms": [
+    {
+     "label": "Long sword",
+     "factor": 1.3
+    },
+    {
+     "label": "standard handling",
+     "factor": 1
+    },
+    {
+     "label": "strength scale",
+     "factor": 0.908836197377193
+    }
+   ],
+   "locked": false
+  },
+  {
+   "field": "/workToMake",
+   "stat": "work",
+   "value": 18000,
+   "write": true,
+   "source": "archetype",
+   "reason": "work to make 18000: the install's median work is 6500 (10 reference weapons). Long sword x2.50.",
+   "median": 6500,
+   "medianN": 10,
+   "terms": [
+    {
+     "label": "Long sword",
+     "factor": 2.5
+    }
+   ],
+   "locked": false
+  }
+ ],
+ "tools": [
+  {
+   "label": "handle",
+   "capacities": [
+    "Blunt"
+   ],
+   "power": {
+    "field": "/tools/0/power",
+    "stat": "swing_damage",
+    "value": 9,
+    "write": true,
+    "source": "archetype",
+    "reason": "handle power 9: the install's median swing damage is 17.91 (17 reference weapons). Long sword handle x0.67, strength scale x0.77.",
+    "median": 17.90978886756238,
+    "medianN": 17,
+    "terms": [
+     {
+      "label": "Long sword handle",
+      "factor": 0.67
+     },
+     {
+      "label": "standard handling",
+      "factor": 1
+     },
+     {
+      "label": "strength scale",
+      "factor": 0.7651731541648428
+     }
+    ],
+    "locked": false
+   },
+   "cooldown": {
+    "field": "/tools/0/cooldownTime",
+    "stat": "cooldown",
+    "value": 1.8,
+    "write": true,
+    "source": "archetype",
+    "reason": "handle cooldown 1.8: the install's median cooldown is 2 (17 reference weapons). fast swing speed x0.79, strength scale x1.12.",
+    "median": 2,
+    "medianN": 17,
+    "terms": [
+     {
+      "label": "Long sword handle",
+      "factor": 1
+     },
+     {
+      "label": "standard handling",
+      "factor": 1
+     },
+     {
+      "label": "fast swing speed",
+      "factor": 0.7865620435518033
+     },
+     {
+      "label": "strength scale",
+      "factor": 1.1215464393150683
+     }
+    ],
+    "locked": false
+   }
+  },
+  {
+   "label": "point",
+   "capacities": [
+    "Stab"
+   ],
+   "power": {
+    "field": "/tools/1/power",
+    "stat": "swing_damage",
+    "value": 23,
+    "write": true,
+    "source": "archetype",
+    "reason": "point power 23: the install's median swing damage is 17.91 (17 reference weapons). Long sword point x1.70, strength scale x0.77.",
+    "median": 17.90978886756238,
+    "medianN": 17,
+    "terms": [
+     {
+      "label": "Long sword point",
+      "factor": 1.7
+     },
+     {
+      "label": "standard handling",
+      "factor": 1
+     },
+     {
+      "label": "strength scale",
+      "factor": 0.7651731541648428
+     }
+    ],
+    "locked": false
+   },
+   "cooldown": {
+    "field": "/tools/1/cooldownTime",
+    "stat": "cooldown",
+    "value": 2.3,
+    "write": true,
+    "source": "archetype",
+    "reason": "point cooldown 2.3: the install's median cooldown is 2 (17 reference weapons). Long sword point x1.30, fast swing speed x0.79, strength scale x1.12.",
+    "median": 2,
+    "medianN": 17,
+    "terms": [
+     {
+      "label": "Long sword point",
+      "factor": 1.3
+     },
+     {
+      "label": "standard handling",
+      "factor": 1
+     },
+     {
+      "label": "fast swing speed",
+      "factor": 0.7865620435518033
+     },
+     {
+      "label": "strength scale",
+      "factor": 1.1215464393150683
+     }
+    ],
+    "locked": false
+   }
+  },
+  {
+   "label": "edge",
+   "capacities": [
+    "Cut"
+   ],
+   "power": {
+    "field": "/tools/2/power",
+    "stat": "swing_damage",
+    "value": 23,
+    "write": true,
+    "source": "archetype",
+    "reason": "edge power 23: the install's median swing damage is 17.91 (17 reference weapons). Long sword edge x1.70, strength scale x0.77.",
+    "median": 17.90978886756238,
+    "medianN": 17,
+    "terms": [
+     {
+      "label": "Long sword edge",
+      "factor": 1.7
+     },
+     {
+      "label": "standard handling",
+      "factor": 1
+     },
+     {
+      "label": "strength scale",
+      "factor": 0.7651731541648428
+     }
+    ],
+    "locked": false
+   },
+   "cooldown": {
+    "field": "/tools/2/cooldownTime",
+    "stat": "cooldown",
+    "value": 2.3,
+    "write": true,
+    "source": "archetype",
+    "reason": "edge cooldown 2.3: the install's median cooldown is 2 (17 reference weapons). Long sword edge x1.30, fast swing speed x0.79, strength scale x1.12.",
+    "median": 2,
+    "medianN": 17,
+    "terms": [
+     {
+      "label": "Long sword edge",
+      "factor": 1.3
+     },
+     {
+      "label": "standard handling",
+      "factor": 1
+     },
+     {
+      "label": "fast swing speed",
+      "factor": 0.7865620435518033
+     },
+     {
+      "label": "strength scale",
+      "factor": 1.1215464393150683
+     }
+    ],
+    "locked": false
+   }
+  }
+ ],
+ "costList": [],
+ "stuff": {
+  "categories": [
+   "Metallic"
+  ],
+  "count": 88,
+  "reason": "the median stuff count of the 5 reference weapons of the same tier is 50, times 1.50 for the archetype and x1.17 for strength."
+ },
+ "weaponTags": [
+  "MedievalMeleeDecent"
+ ],
+ "weaponClasses": [
+  "Melee",
+  "MeleePiercer"
+ ],
+ "marketValue": 240,
+ "strength": {
+  "percentile": 0.8333333333333334,
+  "target": 11.858497128412003,
+  "achieved": 11.587931034482759,
+  "error": -0.022816221229331753,
+  "scale": 0.6822483022924456,
+  "clamped": false,
+  "classLabel": "based on 3 items of role blade at Medieval",
+  "classN": 3,
+  "achievedPercentile": 1
+ },
+ "notes": [
+  "the archetype is typically +22 percent in strength against the middle of its class"
+ ],
+ "fit": {
+  "perStat": [
+   {
+    "stat": "ap",
+    "value": 0.3300658472344161,
+    "predicted": 0.28493670518396774,
+    "p50": {
+     "low": 0.18995780345597849,
+     "high": 0.4274050577759516
+    },
+    "p80": {
+     "low": 0.1139746820735871,
+     "high": 0.7123417629599194
+    },
+    "rank": {
+     "below": 2,
+     "equal": 1,
+     "total": 3
+    },
+    "level": "typical",
+    "nearestReference": 0.3300658472344161,
+    "defaultBand": true
+   },
+   {
+    "stat": "cooldown",
+    "value": 2.2644424934152765,
+    "predicted": 2.2989646034231637,
+    "p50": {
+     "low": 1.5326430689487758,
+     "high": 3.4484469051347455
+    },
+    "p80": {
+     "low": 0.9195858413692655,
+     "high": 5.747411508557909
+    },
+    "rank": {
+     "below": 2,
+     "equal": 0,
+     "total": 3
+    },
+    "level": "typical",
+    "nearestReference": 2,
+    "defaultBand": true
+   },
+   {
+    "stat": "dps",
+    "value": 9.717354218362283,
+    "predicted": 8.212799240504017,
+    "p50": {
+     "low": 5.475199493669344,
+     "high": 12.319198860756025
+    },
+    "p80": {
+     "low": 3.285119696201607,
+     "high": 20.531998101260044
+    },
+    "rank": {
+     "below": 3,
+     "equal": 0,
+     "total": 3
+    },
+    "level": "typical",
+    "nearestReference": 8.604435594616863,
+    "defaultBand": true
+   },
+   {
+    "stat": "fight_dps",
+    "value": 8.965517241379311,
+    "predicted": 7.665686249200487,
+    "p50": {
+     "low": 5.110457499466992,
+     "high": 11.49852937380073
+    },
+    "p80": {
+     "low": 3.066274499680195,
+     "high": 19.16421562300122
+    },
+    "rank": {
+     "below": 3,
+     "equal": 0,
+     "total": 3
+    },
+    "level": "typical",
+    "nearestReference": 7.959183673469387,
+    "defaultBand": true
+   },
+   {
+    "stat": "market_value",
+    "value": 240,
+    "predicted": 143.2,
+    "p50": {
+     "low": 95.46666666666665,
+     "high": 214.79999999999998
+    },
+    "p80": {
+     "low": 57.279999999999994,
+     "high": 358
+    },
+    "rank": {
+     "below": 2,
+     "equal": 0,
+     "total": 3
+    },
+    "level": "plausible",
+    "nearestReference": 264.8,
+    "defaultBand": true
+   },
+   {
+    "stat": "mass",
+    "value": 2.4,
+    "predicted": 1.587719298245614,
+    "p50": {
+     "low": 1.0584795321637428,
+     "high": 2.3815789473684212
+    },
+    "p80": {
+     "low": 0.6350877192982456,
+     "high": 3.969298245614035
+    },
+    "rank": {
+     "below": 3,
+     "equal": 0,
+     "total": 3
+    },
+    "level": "plausible",
+    "nearestReference": 2,
+    "defaultBand": true
+   },
+   {
+    "stat": "swing_damage",
+    "value": 22.004389815627743,
+    "predicted": 22.320454875245463,
+    "p50": {
+     "low": 14.880303250163642,
+     "high": 33.4806823128682
+    },
+    "p80": {
+     "low": 8.928181950098185,
+     "high": 55.80113718811366
+    },
+    "rank": {
+     "below": 2,
+     "equal": 1,
+     "total": 3
+    },
+    "level": "typical",
+    "nearestReference": 22.004389815627743,
+    "defaultBand": true
+   },
+   {
+    "stat": "work",
+    "value": 18000,
+    "predicted": 12000,
+    "p50": {
+     "low": 8000,
+     "high": 18000
+    },
+    "p80": {
+     "low": 4800,
+     "high": 30000
+    },
+    "rank": {
+     "below": 2,
+     "equal": 1,
+     "total": 3
+    },
+    "level": "typical",
+    "nearestReference": 18000,
+    "defaultBand": true
+   }
+  ],
+  "typicality": 85.07522609020299,
+  "summary": {
+   "scored": 8,
+   "typical": 6,
+   "plausible": 2,
+   "unusual": 0,
+   "shareInP80": 1
+  },
+  "notices": {
+   "poolSize": 17,
+   "classLabel": "based on 3 items of role blade at Medieval",
+   "classN": 3,
+   "rough": true,
+   "optimistic": false
+  },
+  "unscored": []
+ },
+ "verdict": "typical"
+}
