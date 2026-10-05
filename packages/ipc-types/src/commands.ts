@@ -39,6 +39,8 @@ import type {
   DesignerDraftSaveResponse,
   DesignerExportPlanRequest,
   DesignerFitRequest,
+  DesignerLintFilesRequest,
+  DesignerLintFilesResult,
   DesignerPreviewRequest,
   DesignerProjectileOwnRequest,
   DesignerProjectileOwnResponse,
@@ -154,6 +156,7 @@ export interface CommandTable {
   designer_structure_defaults: { kind: "query"; request: DesignerStructureDefaultsRequest; response: DesignerStructureDefaultsResponse };
   designer_projectile_own: { kind: "query"; request: DesignerProjectileOwnRequest; response: DesignerProjectileOwnResponse };
   designer_asset_info: { kind: "query"; request: DesignerAssetInfoRequest; response: DesignerAssetInfoResponse };
+  designer_lint_files: { kind: "query"; request: DesignerLintFilesRequest; response: DesignerLintFilesResult };
 }
 
 export type CommandName = keyof CommandTable;
@@ -222,6 +225,7 @@ export const commands = {
   designerStructureDefaults: { name: "designer_structure_defaults", kind: "query" },
   designerProjectileOwn: { name: "designer_projectile_own", kind: "query" },
   designerAssetInfo: { name: "designer_asset_info", kind: "query" },
+  designerLintFiles: { name: "designer_lint_files", kind: "query" },
 } as const satisfies Record<string, CommandEntry>;
 
 /** Every wire name, in registry order. */
@@ -276,4 +280,5 @@ export const commandNames = [
   "designer_structure_defaults",
   "designer_projectile_own",
   "designer_asset_info",
+  "designer_lint_files",
 ] as const satisfies readonly CommandName[];

@@ -210,6 +210,26 @@ fn every_command_of_the_slice_dispatches_in_one_session() {
     assert_eq!(scan["rev"], json!(1));
     assert!(scan["stats"]["modsFound"].as_u64().unwrap() >= 2, "{scan}");
     assert_eq!(scan["cancelled"], json!(false));
+    // the facts of the scan: counts, per source counts, duplicates and Combat Extended
+    let counts = &scan["counts"];
+    assert_eq!(
+        counts["mods"].as_u64().unwrap(),
+        counts["loadable"].as_u64().unwrap() + counts["customOnly"].as_u64().unwrap(),
+        "{scan}"
+    );
+    let per_source: u64 = scan["sources"]
+        .as_array()
+        .unwrap()
+        .iter()
+        .map(|x| x["loadable"].as_u64().unwrap() + x["customOnly"].as_u64().unwrap())
+        .sum();
+    assert_eq!(per_source, counts["mods"].as_u64().unwrap(), "{scan}");
+    assert_eq!(
+        scan["duplicates"]["total"], counts["duplicateGroups"],
+        "{scan}"
+    );
+    assert!(scan["duplicates"]["groups"].is_array());
+    assert!(scan["ceInLibrary"]["present"].is_boolean(), "{scan}");
     let present = rimstudio_app::tools::present_capabilities(&f.app);
     assert!(
         present.contains(&rimstudio_ipc_types::tools::Capability::CombatExtended),
@@ -490,6 +510,18 @@ fn every_command_of_the_slice_dispatches_in_one_session() {
     );
     assert_eq!(no_project.code, "project.not-open");
 
+    // designer: the lint over the patch files of a project (a new project has none; a named file is a finding)
+    let lint = run.ok("designer_lint_files", json!({"projectId": pid.clone()}));
+    assert_eq!(lint["counts"]["files"], json!(0), "{lint}");
+    assert!(lint["notChecked"].is_array());
+    let lint = run.ok(
+        "designer_lint_files",
+        json!({"projectId": pid.clone(), "paths": ["Patches/none.xml", "../escape.xml"]}),
+    );
+    assert_eq!(lint["files"][0]["status"], json!("unreadable"), "{lint}");
+    assert_eq!(lint["files"][1]["status"], json!("missing"), "{lint}");
+    let no_project = run.err("designer_lint_files", json!({"projectId": "p-nope"}));
+    assert_eq!(no_project.code, "project.not-open");
 
     // designer: vanilla plan and apply
     let request = json!({"projectId": pid.clone(), "draft": draft.clone()});

@@ -37,6 +37,7 @@ use rimstudio_xml::modes::ParseMode;
 use rimstudio_xml::reader::parse_top_level;
 use serde_json::Value;
 
+use super::convert_facts::facts_of;
 use super::ctx::{Ctx, Engine};
 use super::dto::kind_to_dto;
 use super::plan::{CONVERT_ASK, CONVERT_DERIVED, finish_ce};
@@ -415,6 +416,7 @@ pub fn convert_scan(
         } else {
             Vec::new()
         };
+        let facts = facts_of(&snapshot.databases, &c.def);
         candidates.push(ConvertCandidateDto {
             def_name: c.def.clone(),
             label: c.label.clone(),
@@ -424,6 +426,9 @@ pub fn convert_scan(
             file: w.defs.files.get(&c.def).cloned(),
             asks,
             family: c.family.clone(),
+            tags: facts.tags,
+            weapon_classes: facts.weapon_classes,
+            vanilla: facts.numbers,
         });
     }
     progress.report(

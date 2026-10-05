@@ -14,12 +14,14 @@
 //! - [`library`]: the `library_scan` job.
 //! - [`defs`]: `defs_search`, `defs_get_resolved`.
 //! - [`project`]: `project_open`, `project_create`, `project_close`.
-//! - [`designer`]: every `designer_*` command the toolkit implements.
 //! - [`project_fix`]: the `project_layout_fix_*` commands (plan, apply, undo, history).
+//! - [`designer`]: every `designer_*` command the toolkit implements, except the lint of patch files,
+//!   which is `designer_lint::designer_lint_files`.
 
 pub mod app;
 pub mod defs;
 pub mod designer;
+pub mod designer_lint;
 pub mod detect;
 pub mod jobs;
 pub mod library;

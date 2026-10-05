@@ -108,6 +108,58 @@ pub struct ConvertCandidateDto {
     #[serde(default, skip_serializing_if = "String::is_empty")]
     #[cfg_attr(feature = "ts", ts(as = "Option<String>", optional))]
     pub family: String,
+    /// The weapon tags of the resolved definition, in definition order. Omitted when there are none.
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    #[cfg_attr(feature = "ts", ts(as = "Option<Vec<String>>", optional))]
+    pub tags: Vec<String>,
+    /// The weapon classes of the resolved definition, in definition order. Omitted when there are none.
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    #[cfg_attr(feature = "ts", ts(as = "Option<Vec<String>>", optional))]
+    pub weapon_classes: Vec<String>,
+    /// A few numbers of the resolved definition, for the table. Absent for a definition that is not a
+    /// listed weapon (an abstract base, an unresolved definition).
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
+    pub vanilla: Option<ConvertVanillaDto>,
+}
+
+/// The numbers of a weapon definition as the game loads it, read from the resolved definition (parents
+/// merged, the project's own patches applied). For a definition that already carries a Combat Extended
+/// conversion these are the converted numbers, not the vanilla ones. A number the definition does not give
+/// is absent.
+#[derive(Debug, Clone, Default, PartialEq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
+#[serde(rename_all = "camelCase")]
+pub struct ConvertVanillaDto {
+    /// Damage of one shot (the default projectile's damage) for a gun, or of the strongest tool for a melee
+    /// weapon.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
+    pub damage: Option<f64>,
+    /// Range of the shooting verb in tiles. Absent for a melee weapon.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
+    pub range: Option<f64>,
+    /// The cooldown in seconds: the stat of a gun, or the cooldown of the strongest tool of a melee weapon.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
+    pub cooldown: Option<f64>,
+    /// The warm up of the shooting verb in seconds. Absent for a melee weapon.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
+    pub warmup: Option<f64>,
+    /// Mass in kilograms.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
+    pub mass: Option<f64>,
+    /// Shots of one burst. Absent for a melee weapon.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
+    pub burst: Option<u32>,
+    /// The market value stat.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
+    pub market_value: Option<f64>,
 }
 
 /// Counts of a scan.
@@ -169,6 +221,10 @@ pub struct ConvertAnswersDto {
     pub tool_penetration: Vec<CeToolPenetrationDto>,
     /// Explicit overrides of any Combat Extended field.
     pub overrides: CePatchSpecDto,
+    /// Leave the under barrel unit of the weapon out of the conversion. Omitted when false.
+    #[serde(skip_serializing_if = "std::ops::Not::not")]
+    #[cfg_attr(feature = "ts", ts(as = "Option<bool>", optional))]
+    pub skip_under_barrel: bool,
 }
 
 /// One answer set that applies to several weapons of a conversion.

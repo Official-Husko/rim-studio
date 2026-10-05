@@ -72,4 +72,36 @@ fn real_install_detects_adds_the_custom_folder_and_scans() {
     println!("counts: {:?}", scan.counts);
     println!("timings: {:?}", scan.timings);
     assert!(scan.counts.mods > 0);
+
+    let facts = &scan.facts;
+    println!(
+        "loadable {} custom only {} duplicate groups {} (skipped copies {})",
+        scan.counts.loadable,
+        scan.counts.needs_link,
+        facts.duplicates.total,
+        facts.duplicates.skipped_total
+    );
+    for s in &facts.per_source {
+        println!(
+            "source {}: {} mods, {} loadable, {} custom only",
+            s.source, s.mods, s.loadable, s.custom_only
+        );
+    }
+    for g in facts.duplicates.groups.iter().take(8) {
+        println!(
+            "duplicate {}: kept {} ({:?}); skipped {}",
+            g.package_id,
+            g.kept.path,
+            g.reason,
+            g.skipped
+                .iter()
+                .map(|e| format!("{} [{}]", e.path, e.source))
+                .collect::<Vec<_>>()
+                .join("; ")
+        );
+    }
+    println!("combat extended in library: {:?}", facts.ce);
+    let per_source: usize = facts.per_source.iter().map(|s| s.mods).sum();
+    assert_eq!(per_source, scan.counts.mods);
+    assert_eq!(facts.duplicates.total, scan.counts.duplicate_groups);
 }

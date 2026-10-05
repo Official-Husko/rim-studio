@@ -9,6 +9,7 @@
 //! - [`reference`]: the reference weapon list.
 //! - [`preview`]: readouts, suggestions and the material matrix.
 //! - [`fit`]: the fit report.
+//! - [`lint_files`]: the Combat Extended lint over the patch files of a project.
 //! - [`quiz`]: the quiz prompts and answers.
 //! - [`calibrate`]: the calibration job.
 //! - [`convert`]: the scan and ask list of the automatic conversion.
@@ -29,6 +30,7 @@ pub mod clone;
 pub mod convert;
 pub mod draft;
 pub mod fit;
+pub mod lint_files;
 pub mod plan;
 pub mod preview;
 pub mod quiz;
@@ -46,6 +48,7 @@ pub use clone::*;
 pub use convert::*;
 pub use draft::*;
 pub use fit::*;
+pub use lint_files::*;
 pub use plan::*;
 pub use preview::*;
 pub use quiz::*;

@@ -27,6 +27,7 @@ const TYPES = {
   "fix-plan": "ProjectLayoutFixPlanDto",
   "fix-undo": "ProjectLayoutFixUndoDto",
   "job-finished-scan": "JobResultEnvelope<LibraryScanResult>",
+  "lint-files": "DesignerLintFilesResult",
   preview: "PreviewDto",
   "project-file": "ProjectFileDto",
   "project-layout-check": "ProjectLayoutCheckDto",

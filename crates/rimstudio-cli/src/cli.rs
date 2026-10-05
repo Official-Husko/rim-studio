@@ -623,11 +623,14 @@ pub(crate) enum ConvertCmd {
 /// The `lint` commands.
 #[derive(Debug, Subcommand)]
 pub(crate) enum LintCmd {
-    /// Check the Combat Extended conversions of one or more mod folders.
+    /// Check the Combat Extended patch files of one or more mod folders, or single patch files.
     Ce {
-        /// Mod folders.
+        /// Mod folders (every patch file of the mod is checked) or single patch files.
         #[arg(required = true)]
         paths: Vec<String>,
+        /// Print what each rule checks below each finding.
+        #[arg(long)]
+        explain: bool,
     },
 }
 

@@ -8,6 +8,7 @@
 use serde::{Deserialize, Serialize};
 
 use crate::diagnostic::{DiagnosticDto, DiagnosticSummaryDto};
+use crate::library_facts::{CeInLibraryDto, DuplicateGroupsDto, LibraryCountsDto};
 use crate::settings::FolderLayoutDto;
 
 /// Operating system of the machine.
@@ -747,6 +748,15 @@ pub struct SourceReportDto {
     pub status: SourceStatusDto,
     /// Mods found.
     pub mods: u32,
+    /// Mods of this source that the game can load as they are. Absent in a result of an older backend.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
+    pub loadable: Option<u32>,
+    /// Mods of this source that exist only in a custom folder and need a link. Absent in a result of an
+    /// older backend.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
+    pub custom_only: Option<u32>,
 }
 
 /// Result of the `library_scan` job.
@@ -766,6 +776,20 @@ pub struct LibraryScanResult {
     pub diagnostics: DiagnosticSummaryDto,
     /// True when the scan was cancelled and the index is partial.
     pub cancelled: bool,
+    /// Counts over the library: loadable, custom only, duplicates and the rest. Absent in a result of an
+    /// older backend.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
+    pub counts: Option<LibraryCountsDto>,
+    /// The duplicate groups, capped; `total` says how many there are. Absent in a result of an older
+    /// backend.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
+    pub duplicates: Option<DuplicateGroupsDto>,
+    /// Whether Combat Extended is in the scanned library. Absent in a result of an older backend.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
+    pub ce_in_library: Option<CeInLibraryDto>,
 }
 
 #[cfg(test)]
@@ -872,9 +896,14 @@ mod tests {
                 path: "/fiction/mods".into(),
                 status: SourceStatusDto::Ready,
                 mods: 12,
+                loadable: Some(10),
+                custom_only: Some(2),
             }],
             diagnostics: DiagnosticSummaryDto::default(),
             cancelled: false,
+            counts: Some(LibraryCountsDto::default()),
+            duplicates: Some(DuplicateGroupsDto::default()),
+            ce_in_library: Some(CeInLibraryDto::default()),
         };
         let text = serde_json::to_string(&result).unwrap_or_default();
         let back: Result<LibraryScanResult, _> = serde_json::from_str(&text);

@@ -90,6 +90,11 @@ fn golden_asset_info() {
 }
 
 #[test]
+fn golden_lint_files() {
+    check("lint-files", &common::lint_files_result());
+}
+
+#[test]
 fn golden_convert_scan() {
     check("convert-scan", &common::convert_scan());
 }

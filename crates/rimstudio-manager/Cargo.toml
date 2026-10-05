@@ -17,6 +17,7 @@ rimstudio-core.workspace = true
 rimstudio-io.workspace = true
 rimstudio-steam.workspace = true
 rimstudio-library.workspace = true
+rimstudio-xml.workspace = true
 serde.workspace = true
 serde_json.workspace = true
 camino.workspace = true

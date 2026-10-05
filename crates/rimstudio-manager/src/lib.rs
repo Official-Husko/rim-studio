@@ -13,6 +13,7 @@
 pub mod ctx;
 pub mod detect;
 pub mod error;
+pub mod facts;
 pub mod scan;
 pub mod settings;
 pub mod sources;

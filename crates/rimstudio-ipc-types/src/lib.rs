@@ -23,6 +23,7 @@ pub mod diagnostic;
 pub mod error;
 pub mod jobs;
 pub mod library;
+pub mod library_facts;
 pub mod mods;
 pub mod project;
 pub mod project_fix;

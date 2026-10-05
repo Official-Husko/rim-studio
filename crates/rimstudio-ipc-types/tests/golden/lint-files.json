@@ -1,0 +1,53 @@
+{
+  "files": [
+    {
+      "path": "Patches/RS_hand.xml",
+      "status": "checked",
+      "bytes": 812,
+      "operations": 2,
+      "findings": [
+        {
+          "ruleId": "CEP001",
+          "code": "ce.cep001-findmod-looks-like-packageid",
+          "severity": "error",
+          "message": "the FindMod entry rs.fiction.combat looks like a package id",
+          "explanation": "FindMod compares the display name of a mod.",
+          "field": "/Patch/Operation[1]/mods/li[1]",
+          "operation": 1,
+          "xpath": "Defs/ThingDef[defName=\"RS_Old\"]",
+          "file": "Patches/RS_hand.xml"
+        },
+        {
+          "code": "ce.derived-value",
+          "severity": "info",
+          "message": "a note",
+          "file": "Patches/RS_hand.xml"
+        }
+      ]
+    },
+    {
+      "path": "Patches/RS_broken.xml",
+      "status": "parse-failed",
+      "bytes": 20,
+      "operations": 0,
+      "findings": []
+    }
+  ],
+  "project": [],
+  "notChecked": [
+    {
+      "ruleId": "CEP010",
+      "reason": "the type table of the installed Combat Extended was not supplied"
+    }
+  ],
+  "ceData": true,
+  "gameVersion": "1.6",
+  "counts": {
+    "files": 2,
+    "checked": 1,
+    "errors": 1,
+    "warnings": 0,
+    "notes": 1
+  },
+  "diagnostics": []
+}

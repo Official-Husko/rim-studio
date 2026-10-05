@@ -31,7 +31,9 @@
         "kind": "custom",
         "path": "/fiction/mods",
         "status": "ready",
-        "mods": 12
+        "mods": 12,
+        "loadable": 10,
+        "customOnly": 2
       }
     ],
     "diagnostics": {
@@ -55,7 +57,55 @@
       "infos": 0,
       "hints": 0
     },
-    "cancelled": false
+    "cancelled": false,
+    "counts": {
+      "mods": 12,
+      "loadable": 10,
+      "customOnly": 2,
+      "unavailable": 0,
+      "unparsedAbout": 0,
+      "syntheticIds": 0,
+      "defs": 40,
+      "duplicateGroups": 1
+    },
+    "duplicates": {
+      "total": 1,
+      "skippedTotal": 1,
+      "groups": [
+        {
+          "packageId": "rs.fictional.mod",
+          "sameSource": false,
+          "reason": "source-priority",
+          "kept": {
+            "path": "/fiction/Mods/RS_Mod",
+            "name": "RS Mod",
+            "source": "game-mods",
+            "sourceKind": "game-mods",
+            "game": "loaded"
+          },
+          "skipped": [
+            {
+              "path": "/fiction/mods/RS_Mod",
+              "name": "RS Mod",
+              "source": "custom-1",
+              "sourceKind": "custom",
+              "game": "not-visible",
+              "why": "the kept copy comes from a source of higher priority"
+            }
+          ]
+        }
+      ]
+    },
+    "ceInLibrary": {
+      "present": true,
+      "packageId": "RS.CombatExtended",
+      "name": "RS Combat",
+      "path": "/fiction/workshop/1",
+      "source": "workshop-1",
+      "sourceKind": "workshop",
+      "version": "9.9.9.0",
+      "loadable": true
+    }
   },
   "elapsedMs": 40
 }

@@ -360,12 +360,17 @@ pub fn source_reports_dto(result: &LibraryScanResult) -> Vec<SourceReportDto> {
     result
         .sources
         .iter()
-        .map(|s| SourceReportDto {
-            id: s.id.to_string(),
-            kind: source_kind_dto(s.kind),
-            path: s.path.as_str().to_owned(),
-            status: source_status_dto(s.status),
-            mods: count(s.mods),
+        .map(|s| {
+            let counts = result.facts.source(s.id.as_str());
+            SourceReportDto {
+                id: s.id.to_string(),
+                kind: source_kind_dto(s.kind),
+                path: s.path.as_str().to_owned(),
+                status: source_status_dto(s.status),
+                mods: count(s.mods),
+                loadable: counts.map(|c| count(c.loadable)),
+                custom_only: counts.map(|c| count(c.custom_only)),
+            }
         })
         .collect()
 }
@@ -380,6 +385,11 @@ pub fn scan_result_dto(result: &LibraryScanResult, rev: u64) -> LibraryScanResul
         sources: source_reports_dto(result),
         diagnostics: DiagnosticSummaryDto::from(&result.diagnostics),
         cancelled: result.cancelled,
+        counts: Some(crate::convert_facts::counts_dto(&result.counts)),
+        duplicates: Some(crate::convert_facts::duplicates_dto(
+            &result.facts.duplicates,
+        )),
+        ce_in_library: Some(crate::convert_facts::ce_dto(&result.facts.ce)),
     }
 }
 

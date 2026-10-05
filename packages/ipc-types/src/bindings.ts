@@ -905,6 +905,43 @@ outlineGraphic?: RawNodeDto,
 slotTags?: Array<string>, };
 
 /**
+ * Whether Combat Extended is in the scanned library, found by its package id in the scan index.
+ */
+export type CeInLibraryDto = { 
+/**
+ * True when a mod with the Combat Extended package id is in the index.
+ */
+present: boolean, 
+/**
+ * The package id as the mod writes it.
+ */
+packageId?: string, 
+/**
+ * The display name.
+ */
+name?: string, 
+/**
+ * The mod folder.
+ */
+path?: string, 
+/**
+ * The id of the source it was found in.
+ */
+source?: string, 
+/**
+ * The kind of that source.
+ */
+sourceKind?: SourceKindDto, 
+/**
+ * The `modVersion` of its `About.xml`. Absent when the file gives none or cannot be read.
+ */
+version?: string, 
+/**
+ * True when the game can load this copy as it stands.
+ */
+loadable?: boolean, };
+
+/**
  * A closed interval.
  */
 export type CeIntervalDto = { 
@@ -1563,7 +1600,11 @@ toolPenetration?: Array<CeToolPenetrationDto>,
 /**
  * Explicit overrides of any Combat Extended field.
  */
-overrides: CePatchSpecDto, };
+overrides: CePatchSpecDto, 
+/**
+ * Leave the under barrel unit of the weapon out of the conversion. Omitted when false.
+ */
+skipUnderBarrel?: boolean, };
 
 /**
  * One weapon definition of the project.
@@ -1601,7 +1642,20 @@ asks: Array<AskItemDto>,
  * The weapon family key: weapons with the same key (kind, first weapon tag and, for guns, the default
  * projectile) can share one answer group. Empty for a definition that is not a listed weapon.
  */
-family?: string, };
+family?: string, 
+/**
+ * The weapon tags of the resolved definition, in definition order. Omitted when there are none.
+ */
+tags?: Array<string>, 
+/**
+ * The weapon classes of the resolved definition, in definition order. Omitted when there are none.
+ */
+weaponClasses?: Array<string>, 
+/**
+ * A few numbers of the resolved definition, for the table. Absent for a definition that is not a
+ * listed weapon (an abstract base, an unresolved definition).
+ */
+vanilla?: ConvertVanillaDto, };
 
 /**
  * Counts of a scan.
@@ -1663,6 +1717,43 @@ diagnostics: Array<DiagnosticDto>, };
  * The conversion status of a weapon definition.
  */
 export type ConvertStatusDto = "not-converted" | "already-ce" | "unsupported-kind" | "target-not-found";
+
+/**
+ * The numbers of a weapon definition as the game loads it, read from the resolved definition (parents
+ * merged, the project's own patches applied). For a definition that already carries a Combat Extended
+ * conversion these are the converted numbers, not the vanilla ones. A number the definition does not give
+ * is absent.
+ */
+export type ConvertVanillaDto = { 
+/**
+ * Damage of one shot (the default projectile's damage) for a gun, or of the strongest tool for a melee
+ * weapon.
+ */
+damage?: number, 
+/**
+ * Range of the shooting verb in tiles. Absent for a melee weapon.
+ */
+range?: number, 
+/**
+ * The cooldown in seconds: the stat of a gun, or the cooldown of the strongest tool of a melee weapon.
+ */
+cooldown?: number, 
+/**
+ * The warm up of the shooting verb in seconds. Absent for a melee weapon.
+ */
+warmup?: number, 
+/**
+ * Mass in kilograms.
+ */
+mass?: number, 
+/**
+ * Shots of one burst. Absent for a melee weapon.
+ */
+burst?: number, 
+/**
+ * The market value stat.
+ */
+marketValue?: number, };
 
 /**
  * What a burning ammo item does.
@@ -2799,6 +2890,54 @@ export type DesignerFitRequest = {
 draft: DraftDto, };
 
 /**
+ * Request of `designer_lint_files`.
+ */
+export type DesignerLintFilesRequest = { 
+/**
+ * The open project.
+ */
+projectId: string, 
+/**
+ * Files to check, relative to the project root with `/` separators. Omitted or empty checks every
+ * patch file of the project: any XML file below a `Patches` folder and every patch file of the gated
+ * Combat Extended folder.
+ */
+paths?: Array<string>, };
+
+/**
+ * Result of `designer_lint_files`.
+ */
+export type DesignerLintFilesResult = { 
+/**
+ * One entry per file, sorted by path.
+ */
+files: Array<LintedFileDto>, 
+/**
+ * Findings about the project itself, such as a `LoadFolders.xml` entry that cannot match.
+ */
+project: Array<LintFindingDto>, 
+/**
+ * The rules that did not run, with the reason (Combat Extended data is not loaded, for example).
+ */
+notChecked: Array<LintNotCheckedDto>, 
+/**
+ * True when Combat Extended data was loaded, so the data dependent rules ran.
+ */
+ceData: boolean, 
+/**
+ * The game version whose `LoadFolders.xml` block was used.
+ */
+gameVersion: string, 
+/**
+ * Totals.
+ */
+counts: LintCountsDto, 
+/**
+ * Problems found while reading the project (About quirks, an unreadable `LoadFolders.xml`).
+ */
+diagnostics: Array<DiagnosticDto>, };
+
+/**
  * Request of `designer_material_matrix`.
  */
 export type DesignerMaterialMatrixRequest = { 
@@ -3209,6 +3348,87 @@ updatedAtMs: number,
  * The draft.
  */
 draft: DraftDto, };
+
+/**
+ * One copy of a duplicated mod.
+ */
+export type DuplicateEntryDto = { 
+/**
+ * The mod folder.
+ */
+path: string, 
+/**
+ * The display name of the copy.
+ */
+name: string, 
+/**
+ * The id of the source the copy was found in.
+ */
+source: string, 
+/**
+ * The kind of that source.
+ */
+sourceKind: SourceKindDto, 
+/**
+ * What the game does with the copy.
+ */
+game: DuplicateGameDto, 
+/**
+ * Why the copy was skipped, in English. Absent for the kept copy.
+ */
+why?: string, };
+
+/**
+ * What the game does with a copy.
+ */
+export type DuplicateGameDto = "loaded" | "rejected" | "not-visible";
+
+/**
+ * A set of mods that share a package id: the copy that is kept and the copies that are skipped.
+ */
+export type DuplicateGroupDto = { 
+/**
+ * The package id, spelled as the kept copy writes it.
+ */
+packageId: string, 
+/**
+ * True when the copies are all in one source.
+ */
+sameSource: boolean, 
+/**
+ * The rung of the choice ladder that decided which copy is kept.
+ */
+reason: DuplicateReasonDto, 
+/**
+ * The copy that is kept.
+ */
+kept: DuplicateEntryDto, 
+/**
+ * The copies that are skipped, each with its source and the reason.
+ */
+skipped: Array<DuplicateEntryDto>, };
+
+/**
+ * The duplicate groups of a scan, capped to a readable number.
+ */
+export type DuplicateGroupsDto = { 
+/**
+ * All groups of the scan, including the ones that are not listed.
+ */
+total: number, 
+/**
+ * All skipped copies of all groups.
+ */
+skippedTotal: number, 
+/**
+ * The listed groups, sorted by package id. At most the cap of the backend; compare with `total`.
+ */
+groups: Array<DuplicateGroupDto>, };
+
+/**
+ * Why a copy of a duplicated mod was not kept.
+ */
+export type DuplicateReasonDto = "available" | "pinned" | "source-priority" | "version-match" | "newer" | "path-order";
 
 /**
  * Summary of the estimate behind the suggestions.
@@ -3983,6 +4203,43 @@ fix: LayoutFixDto, };
 export type LayoutProfileDto = "rimstudio" | "core-style" | "flat";
 
 /**
+ * Counts over the scanned library.
+ */
+export type LibraryCountsDto = { 
+/**
+ * Mods in the index.
+ */
+mods: number, 
+/**
+ * Mods the game can load as they are.
+ */
+loadable: number, 
+/**
+ * Mods that exist only in a custom folder and need a link or a copy before the game sees them.
+ */
+customOnly: number, 
+/**
+ * Rows restored from the cache because their source is offline.
+ */
+unavailable: number, 
+/**
+ * Mods whose `About.xml` could not be parsed.
+ */
+unparsedAbout: number, 
+/**
+ * Mods with a made up package id.
+ */
+syntheticIds: number, 
+/**
+ * Definitions in the index.
+ */
+defs: number, 
+/**
+ * Package ids that appear more than once.
+ */
+duplicateGroups: number, };
+
+/**
  * Patch of the library section; absent members stay unchanged.
  */
 export type LibraryPatch = { 
@@ -4047,7 +4304,21 @@ diagnostics: DiagnosticSummaryDto,
 /**
  * True when the scan was cancelled and the index is partial.
  */
-cancelled: boolean, };
+cancelled: boolean, 
+/**
+ * Counts over the library: loadable, custom only, duplicates and the rest. Absent in a result of an
+ * older backend.
+ */
+counts?: LibraryCountsDto, 
+/**
+ * The duplicate groups, capped; `total` says how many there are. Absent in a result of an older
+ * backend.
+ */
+duplicates?: DuplicateGroupsDto, 
+/**
+ * Whether Combat Extended is in the scanned library. Absent in a result of an older backend.
+ */
+ceInLibrary?: CeInLibraryDto, };
 
 /**
  * Library settings.
@@ -4086,6 +4357,116 @@ autoLoadPlayerLog: boolean, };
  * How a source is deployed into the game.
  */
 export type LinkModeDto = "auto" | "links" | "copy" | "none";
+
+/**
+ * Totals over the findings.
+ */
+export type LintCountsDto = { 
+/**
+ * Files listed.
+ */
+files: number, 
+/**
+ * Files that were read and checked.
+ */
+checked: number, 
+/**
+ * Findings of error severity.
+ */
+errors: number, 
+/**
+ * Findings of warning severity.
+ */
+warnings: number, 
+/**
+ * Findings of hint or info severity.
+ */
+notes: number, };
+
+/**
+ * What happened to one file.
+ */
+export type LintFileStatusDto = "checked" | "parse-failed" | "doctype" | "too-large" | "missing" | "unreadable" | "not-a-patch";
+
+/**
+ * One finding of the lint.
+ */
+export type LintFindingDto = { 
+/**
+ * The stable rule id (`CEP013`). Absent for a finding that belongs to no numbered rule.
+ */
+ruleId?: string, 
+/**
+ * The stable diagnostic code.
+ */
+code: string, 
+/**
+ * How serious it is.
+ */
+severity: SeverityDto, 
+/**
+ * English text of the finding.
+ */
+message: string, 
+/**
+ * What the rule checks and how to fix it, in English. Absent for a code without an explanation.
+ */
+explanation?: string, 
+/**
+ * The pointer of the element, for example `/Patch/Operation[3]/value/ammoSet`. One based positions.
+ */
+field?: string, 
+/**
+ * The one based index of the top level operation the finding is in. Absent for a finding about the
+ * file or the project.
+ */
+operation?: number, 
+/**
+ * The xpath of the operation (the innermost one that has an xpath). Absent when there is none.
+ */
+xpath?: string, 
+/**
+ * The file, relative to the project root. Absent for a finding about the project (`LoadFolders.xml`).
+ */
+file?: string, };
+
+/**
+ * A rule that was not run, with the reason.
+ */
+export type LintNotCheckedDto = { 
+/**
+ * The rule id (`CEP013`).
+ */
+ruleId: string, 
+/**
+ * Why the rule did not run, in English.
+ */
+reason: string, };
+
+/**
+ * The result for one file.
+ */
+export type LintedFileDto = { 
+/**
+ * The file, relative to the project root.
+ */
+path: string, 
+/**
+ * What happened to it.
+ */
+status: LintFileStatusDto, 
+/**
+ * Size in bytes; 0 when the file was not found.
+ */
+bytes: number, 
+/**
+ * Top level operations of the file; 0 when it was not read as a patch file.
+ */
+operations: number, 
+/**
+ * The findings of this file, in file order.
+ */
+findings: Array<LintFindingDto>, };
 
 /**
  * Log level.
@@ -5844,7 +6225,16 @@ status: SourceStatusDto,
 /**
  * Mods found.
  */
-mods: number, };
+mods: number, 
+/**
+ * Mods of this source that the game can load as they are. Absent in a result of an older backend.
+ */
+loadable?: number, 
+/**
+ * Mods of this source that exist only in a custom folder and need a link. Absent in a result of an
+ * older backend.
+ */
+customOnly?: number, };
 
 /**
  * Status of a source.

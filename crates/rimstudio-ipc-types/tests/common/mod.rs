@@ -12,6 +12,7 @@ use rimstudio_ipc_types::diagnostic::*;
 use rimstudio_ipc_types::error::ApiError;
 use rimstudio_ipc_types::jobs::*;
 use rimstudio_ipc_types::library::*;
+use rimstudio_ipc_types::library_facts::*;
 use rimstudio_ipc_types::mods::*;
 use rimstudio_ipc_types::project::*;
 use rimstudio_ipc_types::settings::*;
@@ -558,6 +559,17 @@ pub fn convert_scan() -> ConvertScanDto {
                 reason: "A conversion can be generated.".into(),
                 file: Some("Defs/Weapons.xml".into()),
                 family: "ranged/RS_Rifle/RS_Shot1".into(),
+                tags: vec!["RS_Rifle".into(), "RS_Common".into()],
+                weapon_classes: vec!["RS_Ranged".into()],
+                vanilla: Some(ConvertVanillaDto {
+                    damage: Some(12.0),
+                    range: Some(25.9),
+                    cooldown: Some(1.5),
+                    warmup: Some(1.0),
+                    mass: Some(3.5),
+                    burst: Some(1),
+                    market_value: Some(450.0),
+                }),
                 asks: vec![
                     AskItemDto {
                         field: "/ce/ammoSet".into(),
@@ -594,6 +606,9 @@ pub fn convert_scan() -> ConvertScanDto {
                 file: None,
                 asks: vec![],
                 family: String::new(),
+                tags: vec![],
+                weapon_classes: vec![],
+                vanilla: None,
             },
         ],
         counts: ConvertCountsDto {
@@ -704,6 +719,66 @@ pub fn asset_plan() -> WritePlanDto {
         ],
         diagnostics: vec![],
         has_errors: false,
+    }
+}
+
+pub fn lint_files_result() -> DesignerLintFilesResult {
+    DesignerLintFilesResult {
+        files: vec![
+            LintedFileDto {
+                path: "Patches/RS_hand.xml".into(),
+                status: LintFileStatusDto::Checked,
+                bytes: 812,
+                operations: 2,
+                findings: vec![
+                    LintFindingDto {
+                        rule_id: Some("CEP001".into()),
+                        code: "ce.cep001-findmod-looks-like-packageid".into(),
+                        severity: SeverityDto::Error,
+                        message: "the FindMod entry rs.fiction.combat looks like a package id"
+                            .into(),
+                        explanation: Some("FindMod compares the display name of a mod.".into()),
+                        field: Some("/Patch/Operation[1]/mods/li[1]".into()),
+                        operation: Some(1),
+                        xpath: Some("Defs/ThingDef[defName=\"RS_Old\"]".into()),
+                        file: Some("Patches/RS_hand.xml".into()),
+                    },
+                    LintFindingDto {
+                        rule_id: None,
+                        code: "ce.derived-value".into(),
+                        severity: SeverityDto::Info,
+                        message: "a note".into(),
+                        explanation: None,
+                        field: None,
+                        operation: None,
+                        xpath: None,
+                        file: Some("Patches/RS_hand.xml".into()),
+                    },
+                ],
+            },
+            LintedFileDto {
+                path: "Patches/RS_broken.xml".into(),
+                status: LintFileStatusDto::ParseFailed,
+                bytes: 20,
+                operations: 0,
+                findings: vec![],
+            },
+        ],
+        project: vec![],
+        not_checked: vec![LintNotCheckedDto {
+            rule_id: "CEP010".into(),
+            reason: "the type table of the installed Combat Extended was not supplied".into(),
+        }],
+        ce_data: true,
+        game_version: "1.6".into(),
+        counts: LintCountsDto {
+            files: 2,
+            checked: 1,
+            errors: 1,
+            warnings: 0,
+            notes: 1,
+        },
+        diagnostics: vec![],
     }
 }
 
@@ -852,6 +927,8 @@ pub fn scan_result() -> LibraryScanResult {
             path: "/fiction/mods".into(),
             status: SourceStatusDto::Ready,
             mods: 12,
+            loadable: Some(10),
+            custom_only: Some(2),
         }],
         diagnostics: DiagnosticSummaryDto {
             counts: BTreeMap::from([("scan.about-missing".to_owned(), 2)]),
@@ -863,6 +940,49 @@ pub fn scan_result() -> LibraryScanResult {
             hints: 0,
         },
         cancelled: false,
+        counts: Some(LibraryCountsDto {
+            mods: 12,
+            loadable: 10,
+            custom_only: 2,
+            defs: 40,
+            duplicate_groups: 1,
+            ..LibraryCountsDto::default()
+        }),
+        duplicates: Some(DuplicateGroupsDto {
+            total: 1,
+            skipped_total: 1,
+            groups: vec![DuplicateGroupDto {
+                package_id: "rs.fictional.mod".into(),
+                same_source: false,
+                reason: DuplicateReasonDto::SourcePriority,
+                kept: DuplicateEntryDto {
+                    path: "/fiction/Mods/RS_Mod".into(),
+                    name: "RS Mod".into(),
+                    source: "game-mods".into(),
+                    source_kind: SourceKindDto::GameMods,
+                    game: DuplicateGameDto::Loaded,
+                    why: None,
+                },
+                skipped: vec![DuplicateEntryDto {
+                    path: "/fiction/mods/RS_Mod".into(),
+                    name: "RS Mod".into(),
+                    source: "custom-1".into(),
+                    source_kind: SourceKindDto::Custom,
+                    game: DuplicateGameDto::NotVisible,
+                    why: Some("the kept copy comes from a source of higher priority".into()),
+                }],
+            }],
+        }),
+        ce_in_library: Some(CeInLibraryDto {
+            present: true,
+            package_id: Some("RS.CombatExtended".into()),
+            name: Some("RS Combat".into()),
+            path: Some("/fiction/workshop/1".into()),
+            source: Some("workshop-1".into()),
+            source_kind: Some(SourceKindDto::Workshop),
+            version: Some("9.9.9.0".into()),
+            loadable: Some(true),
+        }),
     }
 }
 
@@ -1455,6 +1575,7 @@ pub fn all_samples() -> Vec<(&'static str, Value)> {
     add!("WritePlanDto(assets)", asset_plan());
     add!("DesignSpecDto(assets)", asset_spec());
     add!("DesignerAssetInfoResponse", asset_info());
+    add!("DesignerLintFilesResult", lint_files_result());
     add!(
         "DesignerAssetInfoRequest",
         DesignerAssetInfoRequest {

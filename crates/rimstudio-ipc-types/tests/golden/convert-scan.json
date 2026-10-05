@@ -32,7 +32,23 @@
           "suggestion": 1.25
         }
       ],
-      "family": "ranged/RS_Rifle/RS_Shot1"
+      "family": "ranged/RS_Rifle/RS_Shot1",
+      "tags": [
+        "RS_Rifle",
+        "RS_Common"
+      ],
+      "weaponClasses": [
+        "RS_Ranged"
+      ],
+      "vanilla": {
+        "damage": 12.0,
+        "range": 25.9,
+        "cooldown": 1.5,
+        "warmup": 1.0,
+        "mass": 3.5,
+        "burst": 1,
+        "marketValue": 450.0
+      }
     },
     {
       "defName": "RS_Grenade",

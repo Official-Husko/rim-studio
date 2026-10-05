@@ -24,6 +24,7 @@ pub mod api;
 pub mod boot;
 pub mod context;
 pub mod convert;
+pub mod convert_facts;
 pub mod dispatch;
 pub mod dto;
 pub mod error;

@@ -22,6 +22,7 @@ use serde::{Deserialize, Serialize};
 use crate::ctx::Ctx;
 use crate::detect::{DetectRunRequest, current_report, run, select_install};
 use crate::error::{ManagerError, ManagerResult};
+use crate::facts::{LibraryFacts, gather};
 use crate::sources::effective_sources;
 
 /// A request to scan the library.
@@ -105,6 +106,8 @@ pub struct LibraryScanResult {
     pub manifest_before: ManifestState,
     /// True when the manifest was written after the scan.
     pub manifest_saved: bool,
+    /// Counts per source, the duplicate groups and the Combat Extended entry (see [`crate::facts`]).
+    pub facts: LibraryFacts,
 }
 
 /// Scans every enabled source.
@@ -172,9 +175,16 @@ pub fn library_scan(
     } else {
         save_manifest(ctx, outcome.manifest.clone())
     };
-    let counts = count(&outcome.index, &set, game_version.as_ref());
+    let mut policy = DuplicatePolicy::from_sources(&set);
+    if let Some(v) = &game_version {
+        policy = policy.with_game_version(v.clone());
+    }
+    let duplicates = resolve(&outcome.index, &policy);
+    let counts = count(&outcome.index, duplicates.group_count());
+    let facts = gather(&outcome.index, &duplicates, &set);
     Ok(LibraryScanResult {
         counts,
+        facts,
         diagnostics: outcome.diagnostics,
         timings: outcome.timings,
         stats: outcome.stats,
@@ -199,15 +209,12 @@ fn save_manifest(ctx: &Ctx, manifest: Manifest) -> bool {
     }
 }
 
-fn count(
-    index: &LibraryIndex,
-    set: &rimstudio_core::mods::SourceSet,
-    version: Option<&GameVersion>,
-) -> LibraryCounts {
+fn count(index: &LibraryIndex, duplicate_groups: usize) -> LibraryCounts {
     let mut c = LibraryCounts {
         mods: index.len(),
         loadable: index.loadable_count(),
         defs: index.def_count(),
+        duplicate_groups,
         ..LibraryCounts::default()
     };
     for (_, _, info, _) in index.iter_full() {
@@ -224,10 +231,5 @@ fn count(
             c.synthetic_ids += 1;
         }
     }
-    let mut policy = DuplicatePolicy::from_sources(set);
-    if let Some(v) = version {
-        policy = policy.with_game_version(v.clone());
-    }
-    c.duplicate_groups = resolve(index, &policy).group_count();
     c
 }
