@@ -1,0 +1,5598 @@
+{
+ "active_set_budget": {
+  "active_entries": 610,
+  "duplicate_package_id_errors_in_library": 0,
+  "effective_defs_plus_patches_files_per_active_mod": {
+   "max": 2200,
+   "mean": 29.185,
+   "min": 0,
+   "n": 610,
+   "p50": 3,
+   "p90": 52,
+   "p95": 132,
+   "p99": 458,
+   "sum": 17803
+  },
+  "effective_load_folder_source": {
+   "explicit_exact_minor": 221,
+   "explicit_lower_version": 11,
+   "implicit_exact_version_dir": 256,
+   "implicit_nearest_lower": 10,
+   "implicit_root_only": 112
+  },
+  "effective_totals": {
+   "defs_bytes": 147216713,
+   "defs_files": 14829,
+   "dll_bytes": 123395840,
+   "dll_files": 579,
+   "ignored_hidden_xml": 0,
+   "ignored_nonlower_ext": 1,
+   "overshadowed_xml": 86,
+   "patches_bytes": 26172918,
+   "patches_files": 2974,
+   "snd_bytes": 330083554,
+   "snd_files": 1966,
+   "tex_bytes": 16555398801,
+   "tex_files": 145353
+  },
+  "matched_by_root": {
+   "install_mods": 33,
+   "official": 6,
+   "workshop": 571
+  },
+  "matched_to_installed_mods": 610,
+  "modsconfig_version_string": "1.6.4633 rev1270",
+  "unmatched_entries": 0,
+  "unmatched_examples": [],
+  "workshop_copies_that_get_the_steam_postfix": 2
+ },
+ "all_requested_roots": {
+  "about": {
+   "about_xml_parse_fail": 0,
+   "about_xml_parse_ok_gamelike": 756,
+   "about_xml_raw_fail_but_game_like_ok": 0,
+   "ghost_mod_examples": [
+    "owner_mods:ResearchPowl",
+    "owner_mods:[OH] Calico Pack",
+    "owner_mods:[OH] German Empire Armory",
+    "owner_mods:[OH] Ratchet & Clank",
+    "owner_mods:[OH] SCP Industries",
+    "owner_mods:[OH] WWII Addons",
+    "owner_mods:[OH] Warbonds Lite",
+    "owner_mods:[OH] Weapons Package"
+   ],
+   "mod_dirs": 764,
+   "path_variants": {
+    "About/About.xml": 751,
+    "About/about.xml": 5
+   },
+   "root_tag": {
+    "ModMetaData": 756
+   },
+   "with_about_dir_any_case": 756,
+   "with_about_dir_exact_case": 756,
+   "with_about_xml_any_case": 756,
+   "without_about_xml": 8
+  },
+  "about_xml_bytes": {
+   "max": 37144,
+   "mean": 1603.589,
+   "min": 272,
+   "n": 756,
+   "p50": 1148,
+   "p90": 2996,
+   "p95": 4178,
+   "p99": 6848,
+   "sum": 1212313
+  },
+  "dependencies": {
+   "byVersion_keys": {
+    "1.1": 4,
+    "1.2": 7,
+    "1.3": 12,
+    "1.4": 16,
+    "1.5": 21,
+    "1.6": 16
+   },
+   "drop_reasons": {
+    "no_downloadUrl_or_steamWorkshopUrl": 3
+   },
+   "entries_per_mod_effective_after_game_validation": {
+    "max": 4,
+    "mean": 1.008,
+    "min": 0,
+    "n": 756,
+    "p50": 1,
+    "p90": 2,
+    "p95": 3,
+    "p99": 3,
+    "sum": 762
+   },
+   "entries_per_mod_raw": {
+    "max": 4,
+    "mean": 1.012,
+    "min": 0,
+    "n": 756,
+    "p50": 1,
+    "p90": 2,
+    "p95": 3,
+    "p99": 3,
+    "sum": 765
+   },
+   "forceLoadAfter_per_mod": {
+    "max": 7,
+    "mean": 0.021,
+    "min": 0,
+    "n": 756,
+    "p50": 0,
+    "p90": 0,
+    "p95": 0,
+    "p99": 0,
+    "sum": 16
+   },
+   "forceLoadBefore_per_mod": {
+    "max": 0,
+    "mean": 0.0,
+    "min": 0,
+    "n": 756,
+    "p50": 0,
+    "p90": 0,
+    "p95": 0,
+    "p99": 0,
+    "sum": 0
+   },
+   "incompatibleWith_per_mod": {
+    "max": 22,
+    "mean": 0.216,
+    "min": 0,
+    "n": 756,
+    "p50": 0,
+    "p90": 0,
+    "p95": 1,
+    "p99": 5,
+    "sum": 163
+   },
+   "loadAfter_per_mod": {
+    "max": 979,
+    "mean": 4.644,
+    "min": 0,
+    "n": 756,
+    "p50": 1,
+    "p90": 7,
+    "p95": 10,
+    "p99": 25,
+    "sum": 3511
+   },
+   "loadBefore_per_mod": {
+    "max": 15,
+    "mean": 0.139,
+    "min": 0,
+    "n": 756,
+    "p50": 0,
+    "p90": 0,
+    "p95": 1,
+    "p99": 3,
+    "sum": 105
+   },
+   "mods_using_alternativePackageIds": 0,
+   "mods_using_authors_list": 20,
+   "mods_using_byVersion_fields": 27,
+   "mods_with_any_dependency": 535,
+   "mods_with_any_dropped_entry": 2,
+   "total_entries_dropped_by_game": 3,
+   "total_entries_raw": 765
+  },
+  "dependency_child_tag_case_variants": {},
+  "dependency_child_unknown_tags": {},
+  "duplicate_field_in_one_file": {},
+  "encodings": {
+   "bom": {
+    "none": 517,
+    "utf-8-bom": 239
+   },
+   "declared_encoding": {
+    "(none)": 30,
+    "utf-8": 726
+   },
+   "declared_non_utf8_but_bytes_valid_utf8": 0,
+   "eol": {
+    "crlf": 557,
+    "lf": 151,
+    "mixed": 48
+   },
+   "leading_whitespace_before_declaration": 0,
+   "utf16_or_utf32_bom": 0,
+   "utf8_strict_invalid": 0,
+   "utf8_strict_invalid_examples": []
+  },
+  "extension_histogram_by_area_top": {
+   "about": {
+    "(none)": 6,
+    ".dds": 9,
+    ".jpeg": 5,
+    ".jpg": 10,
+    ".png": 1097,
+    ".psd": 3,
+    ".txt": 776,
+    ".xml": 971
+   },
+   "assemblies": {
+    "(none)": 3,
+    ".config": 6,
+    ".dll": 2306,
+    ".lnk": 2,
+    ".pdb": 208,
+    ".png": 6,
+    ".txt": 5,
+    ".xml": 107
+   },
+   "assetbundles": {
+    "(none)": 61,
+    ".manifest": 57,
+    ".shader": 12
+   },
+   "defs": {
+    "(none)": 18,
+    ".bak": 24,
+    ".dds": 145,
+    ".dis": 32,
+    ".png": 145,
+    ".txt": 42,
+    ".xml": 30499,
+    ".zip": 6
+   },
+   "languages": {
+    "(none)": 38,
+    ".bat": 1,
+    ".md": 4,
+    ".png": 20,
+    ".txt": 439,
+    ".xml": 21015,
+    ".xmlold": 3,
+    ".zip": 1
+   },
+   "materials": {
+    "(none)": 18,
+    ".manifest": 18,
+    ".shader": 1
+   },
+   "other": {
+    "(none)": 342,
+    ".dds": 310,
+    ".dll": 82,
+    ".json": 228,
+    ".md": 296,
+    ".png": 1034,
+    ".txt": 99,
+    ".xml": 926
+   },
+   "patches": {
+    "(none)": 4,
+    ".7z": 1,
+    ".b": 1,
+    ".dis": 29,
+    ".disabled": 3,
+    ".old": 2,
+    ".txt": 23,
+    ".xml": 11087
+   },
+   "sounds": {
+    ".bat": 1,
+    ".mp3": 243,
+    ".ogg": 2778,
+    ".sfk": 1,
+    ".txt": 1,
+    ".wav": 741
+   },
+   "source": {
+    ".cache": 649,
+    ".cs": 10704,
+    ".csproj": 369,
+    ".dll": 502,
+    ".json": 317,
+    ".sln": 245,
+    ".txt": 183,
+    ".xml": 229
+   },
+   "textures": {
+    ".dds": 124424,
+    ".jpg": 23,
+    ".png": 113174,
+    ".png~": 95,
+    ".psd": 46,
+    ".txt": 142,
+    ".zip": 26,
+    ".zstd": 64
+   }
+  },
+  "field_usage": {
+   "author": {
+    "case_variant": 0,
+    "exact": 735,
+    "mods": 735,
+    "nonempty": 735
+   },
+   "authors": {
+    "case_variant": 0,
+    "exact": 20,
+    "mods": 20,
+    "nonempty": 20
+   },
+   "description": {
+    "case_variant": 0,
+    "exact": 754,
+    "mods": 754,
+    "nonempty": 740
+   },
+   "descriptionsByVersion": {
+    "case_variant": 0,
+    "exact": 1,
+    "mods": 1,
+    "nonempty": 1
+   },
+   "forceLoadAfter": {
+    "case_variant": 0,
+    "exact": 6,
+    "mods": 6,
+    "nonempty": 6
+   },
+   "forceLoadBefore": {
+    "case_variant": 0,
+    "exact": 0,
+    "mods": 0,
+    "nonempty": 0
+   },
+   "incompatibleWith": {
+    "case_variant": 0,
+    "exact": 73,
+    "mods": 73,
+    "nonempty": 55
+   },
+   "incompatibleWithByVersion": {
+    "case_variant": 0,
+    "exact": 3,
+    "mods": 3,
+    "nonempty": 3
+   },
+   "loadAfter": {
+    "case_variant": 0,
+    "exact": 576,
+    "mods": 576,
+    "nonempty": 557
+   },
+   "loadAfterByVersion": {
+    "case_variant": 0,
+    "exact": 0,
+    "mods": 0,
+    "nonempty": 0
+   },
+   "loadBefore": {
+    "case_variant": 0,
+    "exact": 55,
+    "mods": 55,
+    "nonempty": 44
+   },
+   "loadBeforeByVersion": {
+    "case_variant": 0,
+    "exact": 0,
+    "mods": 0,
+    "nonempty": 0
+   },
+   "modDependencies": {
+    "case_variant": 0,
+    "exact": 564,
+    "mods": 564,
+    "nonempty": 535
+   },
+   "modDependenciesByVersion": {
+    "case_variant": 0,
+    "exact": 24,
+    "mods": 24,
+    "nonempty": 24
+   },
+   "modIconPath": {
+    "case_variant": 0,
+    "exact": 162,
+    "mods": 162,
+    "nonempty": 162
+   },
+   "modVersion": {
+    "case_variant": 0,
+    "exact": 131,
+    "mods": 131,
+    "nonempty": 131
+   },
+   "name": {
+    "case_variant": 0,
+    "exact": 756,
+    "mods": 756,
+    "nonempty": 756
+   },
+   "packageId": {
+    "case_variant": 0,
+    "exact": 756,
+    "mods": 756,
+    "nonempty": 756
+   },
+   "shortName": {
+    "case_variant": 0,
+    "exact": 0,
+    "mods": 0,
+    "nonempty": 0
+   },
+   "steamAppId": {
+    "case_variant": 0,
+    "exact": 3,
+    "mods": 3,
+    "nonempty": 3
+   },
+   "supportedVersions": {
+    "case_variant": 0,
+    "exact": 756,
+    "mods": 756,
+    "nonempty": 756
+   },
+   "targetVersion": {
+    "case_variant": 0,
+    "exact": 0,
+    "mods": 0,
+    "nonempty": 0
+   },
+   "url": {
+    "case_variant": 0,
+    "exact": 284,
+    "mods": 284,
+    "nonempty": 210
+   }
+  },
+  "folder_anatomy": {
+   "about_other_files_top": {
+    ".DS_Store": 1,
+    "1.png": 2,
+    "Big-preview-1.png": 2,
+    "Big-preview-2.png": 2,
+    "Big-preview-3.png": 2,
+    "Changelog.txt": 49,
+    "Changelog.xml": 4,
+    "Credits.txt": 2,
+    "ModSync.xml": 44,
+    "Preview - Copy.png": 2,
+    "Preview2.png": 4,
+    "Preview3.png": 3,
+    "Preview4.png": 2,
+    "Preview_old.png": 5,
+    "README.txt": 2,
+    "Version.txt": 2,
+    "Version.xml": 7,
+    "WorkshopTags.xml": 2,
+    "old.png": 3,
+    "timestamp.txt": 2
+   },
+   "area_dir_case_variants_inside_version_common_loadfolders_dirs": {},
+   "area_dir_case_variants_toplevel": {},
+   "area_dirs_exact_case": {
+    "Assemblies": 77,
+    "AssetBundles": 5,
+    "Defs": 168,
+    "Languages": 306,
+    "Materials": 3,
+    "Patches": 150,
+    "Sounds": 94,
+    "Textures": 486
+   },
+   "common_dir_case_variants": {
+    "Common": 84
+   },
+   "load_folder_source_when_no_other_mod_active": {
+    "explicit_exact_minor": 237,
+    "explicit_lower_version": 54,
+    "implicit_exact_version_dir": 270,
+    "implicit_nearest_lower": 41,
+    "implicit_root_only": 154
+   },
+   "modicon_variants": {
+    "ModIcon.dds": 4,
+    "ModIcon.png": 178,
+    "Modicon.png": 1,
+    "modIcon.png": 1,
+    "modicon.png": 9
+   },
+   "mods_with_common_dir_exact": 84,
+   "mods_with_language_tar": 0,
+   "mods_with_manifest_xml": 121,
+   "mods_with_modicon_png_exact": 178,
+   "mods_with_nested_about_xml_below_root": 6,
+   "mods_with_preview_not_exact_png": 186,
+   "mods_with_preview_png_exact": 570,
+   "mods_with_version_like_dirs": 542,
+   "nested_about_xml_examples": [
+    "workshop:1552146295 -> 1.1/About/About.xml",
+    "workshop:2289854459 -> Obsolete/About/About.xml",
+    "install_mods:RJWPE -> 1.3/Ideology/About/About.xml",
+    "install_mods:rjw_menstruation -> 1.2/RJW Menstruation Race Support/About/About.xml",
+    "owner_mods:[OH] Ratchet & Clank -> Ratchet & Clank Lombax Tech DEV/About/About.xml",
+    "owner_mods:[OH] WWII Addons -> Misc Items/Tire Prop/About/About.xml"
+   ],
+   "preview_variants": {
+    "Preview.PNG": 3,
+    "Preview.dds": 5,
+    "Preview.jpg": 2,
+    "Preview.png": 570,
+    "Preview.png~": 1,
+    "Preview.psd": 2,
+    "Preview.xcf": 1,
+    "preview.jpg": 1,
+    "preview.png": 170
+   },
+   "top_level_dir_names_top40": {
+    ".git": 130,
+    ".github": 16,
+    ".vs": 8,
+    ".vscode": 25,
+    "1.0": 38,
+    "1.1": 76,
+    "1.2": 117,
+    "1.3": 205,
+    "1.4": 348,
+    "1.5": 444,
+    "1.6": 450,
+    "1.6NotOdyssey": 5,
+    "About": 756,
+    "Assemblies": 77,
+    "AssetBundles": 5,
+    "Assets": 7,
+    "CE": 39,
+    "Common": 84,
+    "Common_Old": 15,
+    "Core": 4,
+    "Defs": 168,
+    "Ideology": 14,
+    "Languages": 306,
+    "LegacyAssets": 6,
+    "MVCF": 4,
+    "ModPatches": 6,
+    "Mods": 12,
+    "News": 15,
+    "Patches": 150,
+    "Sounds": 94,
+    "Source": 84,
+    "Textures": 486,
+    "WeaponTweakData": 8,
+    "XMLExtensions": 7,
+    "v1.1": 10,
+    "v1.2": 11,
+    "v1.3": 14,
+    "v1.4": 13,
+    "v1.5": 13,
+    "v1.6": 13
+   },
+   "version_dirs_recognized_by_game_implicit_rule": {
+    "0.19": 1,
+    "1.0": 38,
+    "1.1": 76,
+    "1.2": 117,
+    "1.3": 205,
+    "1.3.3311": 1,
+    "1.4": 348,
+    "1.5": 444,
+    "1.6": 450
+   },
+   "version_like_dir_names": {
+    "0.19": 1,
+    "1.0": 38,
+    "1.1": 76,
+    "1.2": 117,
+    "1.3": 205,
+    "1.3.3311": 1,
+    "1.3FlyingAndAquaticAnimals": 1,
+    "1.3VBgE": 1,
+    "1.3VEFPatch": 1,
+    "1.4": 348,
+    "1.4- Content": 1,
+    "1.4FlyingAndAquaticAnimals": 1,
+    "1.4VBgE": 1,
+    "1.4VEFPatch": 1,
+    "1.5": 444,
+    "1.5 Content": 1,
+    "1.5_And_1.6_Shared": 1,
+    "1.6": 450,
+    "1.6 Content": 1,
+    "1.6NotOdyssey": 5,
+    "1.6Odyssey": 3,
+    "v1.0": 1,
+    "v1.1": 10,
+    "v1.2": 11,
+    "v1.3": 14,
+    "v1.4": 13,
+    "v1.5": 13,
+    "v1.6": 13
+   },
+   "version_like_dir_names_not_plain_major_minor": {
+    "1.3.3311": 1,
+    "1.3FlyingAndAquaticAnimals": 1,
+    "1.3VBgE": 1,
+    "1.3VEFPatch": 1,
+    "1.4- Content": 1,
+    "1.4FlyingAndAquaticAnimals": 1,
+    "1.4VBgE": 1,
+    "1.4VEFPatch": 1,
+    "1.5 Content": 1,
+    "1.5_And_1.6_Shared": 1,
+    "1.6 Content": 1,
+    "1.6NotOdyssey": 5,
+    "1.6Odyssey": 3,
+    "v1.0": 1,
+    "v1.1": 10,
+    "v1.2": 11,
+    "v1.3": 14,
+    "v1.4": 13,
+    "v1.5": 13,
+    "v1.6": 13
+   },
+   "xml_extension_case_variants_files": {
+    ".XML": 1
+   }
+  },
+  "label": "workshop+install_mods+owner_mods",
+  "list_structure_issues": {},
+  "load_folders": {
+   "condition_attribute_usage_entries": {
+    "IfModActive": 3832,
+    "IfModActiveAll": 10,
+    "IfModNotActive": 75
+   },
+   "entry_issues_total": {
+    "empty_path": 18,
+    "path_has_backslash_(windows_only)": 2,
+    "path_trailing_slash": 11,
+    "root_slash": 671,
+    "unknown_li_attribute:IfModActiveAny": 9
+   },
+   "li_element_names": {
+    "li": 5600
+   },
+   "mods_defining_current_minor": 237,
+   "mods_with_backslash_paths": 1,
+   "mods_with_dangling_first_component": 6,
+   "mods_with_default_key": 0,
+   "mods_with_whitespace_padded_paths": 0,
+   "name_variants": {
+    "LoadFolders.xml": 238,
+    "loadFolders.xml": 50,
+    "loadfolders.xml": 3
+   },
+   "parse_fail": 0,
+   "parse_fail_examples": [],
+   "parse_ok": 291,
+   "present_any_case": 291,
+   "root_tag": {
+    "LoadFolders": 7,
+    "loadFolders": 284
+   },
+   "structural_variants_distinct": 195,
+   "structural_variants_top": [
+    {
+     "example": "workshop:2949339248",
+     "mods": 12,
+     "signature": "v1.6:[/,<dir>?A,<dir>?A]"
+    },
+    {
+     "example": "workshop:1880253632",
+     "mods": 11,
+     "signature": "v1.4:[/,<ver>]|v1.5:[/,<ver>]|v1.6:[/,<ver>]"
+    },
+    {
+     "example": "workshop:3280682589",
+     "mods": 9,
+     "signature": "v1.5:[/,<ver>]|v1.6:[/,<ver>]"
+    },
+    {
+     "example": "workshop:1195427067",
+     "mods": 7,
+     "signature": "v1.1:[/,<dir>]|v1.2:[/,<dir>]|v1.3:[/,<dir>]|v1.4:[/,<dir>]|v1.5:[/,<dir>]|v1.6:[/,<dir>]"
+    },
+    {
+     "example": "workshop:2599784515",
+     "mods": 7,
+     "signature": "v1.3:[/,<ver>]|v1.4:[/,<ver>]|v1.5:[/,<ver>]|v1.6:[/,<ver>]"
+    },
+    {
+     "example": "workshop:2208576613",
+     "mods": 6,
+     "signature": "v1.4:[/,<dir>?A,<dir>?A]|v1.5:[/,<dir>?A,<dir>?A]"
+    },
+    {
+     "example": "workshop:2409637032",
+     "mods": 5,
+     "signature": "v1.4:[/,<dir>?A,<dir>?A,<dir>?A,<dir>?A,<dir>?A,<dir>?A]|v1.5:[/,<dir>?A,<dir>?A,<dir>?A,<dir>?A,<dir>?A,<dir>?A]"
+    },
+    {
+     "example": "workshop:3301872053",
+     "mods": 5,
+     "signature": "v1.5:[/,<ver>,<ver>/<dir>?A]"
+    },
+    {
+     "example": "workshop:3568552579",
+     "mods": 5,
+     "signature": "v1.6:[/,<ver>]"
+    },
+    {
+     "example": "workshop:2014616487",
+     "mods": 4,
+     "signature": "v1.0:[/,<ver>,<dir>]|v1.1:[/,<ver>,<dir>]|v1.2:[/,<ver>,<dir>]|v1.3:[/,<ver>,<dir>]|v1.4:[/,<ver>,<dir>]|v1.5:[/,<ver>,<dir>]|v1.6:[/,<ver>,<dir>]"
+    },
+    {
+     "example": "workshop:2919249903",
+     "mods": 4,
+     "signature": "v1.4:[/,<dir>,<ver>]|v1.5:[/,<dir>,<ver>]|v1.6:[/,Common,<ver>]"
+    },
+    {
+     "example": "workshop:2985153870",
+     "mods": 4,
+     "signature": "v1.4:[/,<ver>,<ver>/<dir>?A]|v1.5:[/,<ver>,<ver>/<dir>?A]|v1.6:[/,<ver>,<ver>/<dir>?A]"
+    },
+    {
+     "example": "workshop:2006605356",
+     "mods": 3,
+     "signature": "v1.1:[/,<ver>]|v1.2:[/,<ver>]|v1.3:[/,<ver>]|v1.4:[/,<ver>]|v1.5:[/,<ver>]|v1.6:[/,<ver>]"
+    },
+    {
+     "example": "workshop:2430129276",
+     "mods": 3,
+     "signature": "v1.4:[/,<dir>?A,<dir>?A]"
+    },
+    {
+     "example": "workshop:2275449762",
+     "mods": 3,
+     "signature": "v1.4:[/,<ver>,<ver>/<dir>?A,<ver>/<dir>?A]|v1.5:[/,<ver>,<ver>/<dir>?A,<ver>/<dir>?A]|v1.6:[/,<ver>,<ver>/<dir>?A,<ver>/<dir>?A]"
+    },
+    {
+     "example": "workshop:2016436324",
+     "mods": 3,
+     "signature": "v1.4:[/,<ver>,<ver>/<dir>?A,<ver>/<dir>?N]|v1.5:[/,<ver>,<ver>/<dir>?A,<ver>/<dir>?N]|v1.6:[/,<ver>,<ver>/<dir>?A,<ver>/<dir>?N]"
+    },
+    {
+     "example": "workshop:1914064942",
+     "mods": 3,
+     "signature": "v1.4:[/,<ver>]|v1.5:[/,<ver>]|v1.6:[/,<dir>?A,<dir>?N]"
+    },
+    {
+     "example": "workshop:3361943312",
+     "mods": 3,
+     "signature": "v1.5:[/,<dir>?A,<dir>?A]"
+    },
+    {
+     "example": "workshop:3365473553",
+     "mods": 3,
+     "signature": "v1.5:[<ver>,Common]|v1.6:[<ver>,Common]"
+    },
+    {
+     "example": "workshop:1671814939",
+     "mods": 2,
+     "signature": "v1.1:[Common,<ver>]|v1.2:[Common,<ver>]|v1.3:[Common,<ver>]|v1.4:[Common,<ver>]|v1.5:[Common,<ver>]|v1.6:[Common,<ver>]"
+    },
+    {
+     "example": "workshop:3340459422",
+     "mods": 2,
+     "signature": "v1.2:[<ver>]|v1.3:[<ver>]|v1.4:[<ver>]|v1.5:[<ver>]|v1.6:[/]"
+    },
+    {
+     "example": "workshop:1516158345",
+     "mods": 2,
+     "signature": "v1.3:[/,<dir>/<ver>]|v1.4:[/,<dir>/<ver>]|v1.5:[/,<dir>/<ver>]|v1.6:[/]"
+    },
+    {
+     "example": "workshop:2683622537",
+     "mods": 2,
+     "signature": "v1.3:[/,<dir>]|v1.4:[/,<dir>]|v1.5:[/,<dir>]|v1.6:[/,<dir>]"
+    },
+    {
+     "example": "workshop:2501069852",
+     "mods": 2,
+     "signature": "v1.4:[/,<dir>?A,<dir>?A,<dir>?A,<dir>?A,<dir>?A,<dir>?A,<dir>?A,<dir>?A]|v1.5:[/,<dir>?A,<dir>?A,<dir>?A,<dir>?A,<dir>?A,<dir>?A,<dir>?A,<dir>?A]"
+    },
+    {
+     "example": "workshop:3167957110",
+     "mods": 2,
+     "signature": "v1.4:[/,<dir>?A,<dir>?A,<dir>?A]"
+    }
+   ],
+   "version_keys": {
+    "1.0": 12,
+    "1.1": 40,
+    "1.2": 55,
+    "1.3": 93,
+    "1.3.3311": 1,
+    "1.4": 200,
+    "1.5": 236,
+    "1.6": 237
+   }
+  },
+  "malformed_about_xml": {
+   "by_category": {},
+   "count": 0,
+   "examples": []
+  },
+  "mod_size": {
+   "bytes": {
+    "max": 2805658807,
+    "mean": 44935022.852,
+    "min": 0,
+    "n": 764,
+    "p50": 3346545,
+    "p90": 98233917,
+    "p95": 176100731,
+    "p99": 824771879,
+    "sum": 34330357459
+   },
+   "dirs": {
+    "max": 4366,
+    "mean": 79.037,
+    "min": 0,
+    "n": 764,
+    "p50": 28,
+    "p90": 146,
+    "p95": 266,
+    "p99": 807,
+    "sum": 60384
+   },
+   "files": {
+    "max": 22030,
+    "mean": 431.334,
+    "min": 0,
+    "n": 764,
+    "p50": 78,
+    "p90": 843,
+    "p95": 1840,
+    "p99": 5645,
+    "sum": 329539
+   },
+   "git_files_total": 24069,
+   "mods_with_git_dir": 134,
+   "xml_bytes": {
+    "max": 46740480,
+    "mean": 611036.25,
+    "min": 0,
+    "n": 764,
+    "p50": 43589,
+    "p90": 870586,
+    "p95": 2171186,
+    "p99": 11301277,
+    "sum": 466831695
+   },
+   "xml_files": {
+    "max": 9074,
+    "mean": 84.869,
+    "min": 0,
+    "n": 764,
+    "p50": 11,
+    "p90": 135,
+    "p95": 280,
+    "p99": 1058,
+    "sum": 64840
+   }
+  },
+  "mods": 764,
+  "package_id_references": {
+   "by_field": {
+    "forceLoadAfter": 16,
+    "incompatibleWith": 163,
+    "loadAfter": 3511,
+    "loadBefore": 105,
+    "modDependencies": 765
+   },
+   "ending_with__steam": {},
+   "ending_with_dot_steam": {
+    "incompatibleWith": 1,
+    "loadAfter": 1
+   },
+   "spelling_differs_from_declared_spelling_of_target": 228,
+   "total": 4560,
+   "with_surrounding_whitespace": 0
+  },
+  "package_ids": {
+   "case_conflict_ids": 1,
+   "case_conflicts": [
+    {
+     "id": "mlie.researchtree",
+     "mods": [
+      "workshop:3030499331",
+      "install_mods:ResearchTreePlusPlus"
+     ],
+     "spellings": [
+      "Mlie.ResearchTree",
+      "Mlie.researchtree"
+     ]
+    }
+   ],
+   "declared_unique_lowercase": 750,
+   "duplicate_ids": 6,
+   "duplicates": [
+    {
+     "entries": [
+      "owner_mods:[OH] Android Tiers Retexture - Copy",
+      "owner_mods:[OH] Android Tiers Retexture og"
+     ],
+     "id": "husko.atr"
+    },
+    {
+     "entries": [
+      "workshop:3030499331",
+      "install_mods:ResearchTreePlusPlus"
+     ],
+     "id": "mlie.researchtree"
+    },
+    {
+     "entries": [
+      "owner_mods:[OH] Gewehr 41",
+      "owner_mods:[OH] Third Reich Armory"
+     ],
+     "id": "oh.weapons.gewehr41"
+    },
+    {
+     "entries": [
+      "owner_mods:The Lone Wolf Weapon Package - Copy",
+      "owner_mods:[OH] The Lone Wolf Weapon Package"
+     ],
+     "id": "tlwwp.base"
+    },
+    {
+     "entries": [
+      "workshop:3712928623",
+      "install_mods:MissileGirl"
+     ],
+     "id": "vr.missilegirl"
+    },
+    {
+     "entries": [
+      "workshop:2384986421",
+      "owner_mods:[OH] Croco Faction"
+     ],
+     "id": "yanzihko.ldw"
+    }
+   ],
+   "missing_examples": [],
+   "missing_or_empty_count": 0,
+   "mods_not_in_any_duplicate_group": 744,
+   "problem_examples": {
+    "steam_suffix_declared": [
+     "workshop:2038874626 -> 'Dubwise.DubsPerformanceAnalyzer.steam'"
+    ]
+   },
+   "problems": {
+    "steam_suffix_declared": 1
+   }
+  },
+  "path_length": {
+   "entries_reaching_windows_max_path_with_default_prefix": 0,
+   "examples": [],
+   "max_relative_path_bytes_utf8_inside_mod": 160,
+   "max_relative_path_chars_inside_mod": 160,
+   "max_relative_path_example": "workshop:2890901044 -> ModPatches/VFE Pirates unofficial add-on - Warcasket Melee Armory Continued/Patches/VFE Pirates unofficial add-on - Warcasket Melee Armory Continued/Weapons.xml",
+   "mods_with_such_entries": 0,
+   "relative_path_len_per_mod_max": {
+    "max": 160,
+    "mean": 71.705,
+    "min": 0,
+    "n": 764,
+    "p50": 69,
+    "p90": 110,
+    "p95": 118,
+    "p99": 144,
+    "sum": 54783
+   }
+  },
+  "published_file_id": {
+   "content_class": {
+    "digits": 706
+   },
+   "content_shape": {
+    "clean": 702,
+    "trailing_newline": 4
+   },
+   "files_present_any_case": 706,
+   "files_present_exact_case": 706,
+   "name_variants": {
+    "PublishedFileId.txt": 706
+   },
+   "workshop_folder_differs_from_file_value": 0,
+   "workshop_folder_equals_file_value": 689,
+   "workshop_mismatch_examples": [],
+   "workshop_mods_without_file": 1
+  },
+  "string_fields_dropped_by_game_due_to_comment_or_child_nodes": {
+   "description": 1
+  },
+  "supported_versions": {
+   "entries_per_mod": {
+    "max": 10,
+    "mean": 3.144,
+    "min": 1,
+    "n": 756,
+    "p50": 3,
+    "p90": 6,
+    "p95": 7,
+    "p99": 7,
+    "sum": 2377
+   },
+   "mods_only_newer": 0,
+   "mods_only_older": 120,
+   "mods_per_version": {
+    "0.19": 2,
+    "1.0": 64,
+    "1.1": 107,
+    "1.2": 168,
+    "1.3": 274,
+    "1.4": 507,
+    "1.5": 615,
+    "1.6": 636,
+    "1.7": 1,
+    "1.8": 1,
+    "1.9": 1
+   },
+   "mods_supporting_current": 636,
+   "mods_with_any_malformed_entry": 0,
+   "mods_with_any_unparsable_entry": 0,
+   "mods_with_targetVersion_field": 0,
+   "odd_raw_entries": {},
+   "state": {
+    "has_entries": 756
+   }
+  },
+  "symlinks": {
+   "examples": [],
+   "mod_roots_that_are_symlinks": 0,
+   "symlinked_dirs_inside_mods": 0,
+   "symlinked_files_inside_mods": 0
+  },
+  "tag_case_variants": {},
+  "unknown_root_tags_logged_as_error": {},
+  "unknown_root_tags_silenced_by_IgnoreIfNoMatchingField": {
+   "modLatestUpdateDate": 1
+  },
+  "windows_invalid_names": {
+   "case_collision_examples": [
+    "workshop:2772559481 -> ('Textures/LogButton', ['Log.DDS', 'Log.dds'])",
+    "workshop:3253550009 -> ('LegacyAssets/Textures', ['DestroyThisDesignation.DDS', 'DestroyThisDesignation.dds'])",
+    "workshop:3532359201 -> ('Textures/UI/Buttons/MainButtons', ['Rimocracy.DDS', 'Rimocracy.dds'])"
+   ],
+   "entries_by_issue_inside_mods": {},
+   "examples": [],
+   "hidden_files_total": 659,
+   "mod_folder_names_by_issue": {},
+   "mods_with_any_issue": 0,
+   "mods_with_case_only_name_collisions_in_a_dir": 3,
+   "mods_with_non_ascii_names": 45,
+   "non_ascii_name_entries": 418
+  },
+  "xml_hygiene": {
+   "defs": {
+    "bom": {
+     "none": 18832,
+     "utf-8-bom": 11667
+    },
+    "bytes": 294560767,
+    "bytes_per_mod": {
+     "max": 46341983,
+     "mean": 385550.742,
+     "min": 0,
+     "n": 764,
+     "p50": 9183,
+     "p90": 459434,
+     "p95": 1236739,
+     "p99": 6178420,
+     "sum": 294560767
+    },
+    "declared_encoding": {
+     "(none)": 416,
+     "utf-16": 8,
+     "utf-8": 30075
+    },
+    "declared_non_utf8_but_valid_utf8": 8,
+    "def_element_names_top30": {
+     "AnimationDef": 8369,
+     "BackstoryDef": 2420,
+     "BionicIconsIconDef": 751,
+     "CombatExtended.AmmoSetDef": 1148,
+     "FleckDef": 668,
+     "GeneDef": 4416,
+     "HairDef": 1065,
+     "HeadTypeDef": 1375,
+     "HediffDef": 3993,
+     "IdeoIconDef": 2257,
+     "IncidentDef": 770,
+     "InteractionDef": 1230,
+     "JobDef": 1260,
+     "KCSG.StructureLayoutDef": 1732,
+     "KCSG.SymbolDef": 1465,
+     "PawnKindDef": 6974,
+     "PreceptDef": 1948,
+     "RecipeDef": 7629,
+     "ResearchProjectDef": 1035,
+     "Rimworld_Animations.GroupAnimationDef": 1540,
+     "RulePackDef": 1654,
+     "SoundDef": 4478,
+     "TerrainDef": 1216,
+     "ThingCategoryDef": 968,
+     "ThingDef": 38342,
+     "ThingStyleDef": 4555,
+     "ThoughtDef": 4256,
+     "VFEProps.PropDef": 5052,
+     "XenotypeIconDef": 742,
+     "rjw.RaceGroupDef": 1607
+    },
+    "def_nodes_per_mod": {
+     "max": 11249,
+     "mean": 190.616,
+     "min": 0,
+     "n": 764,
+     "p50": 11,
+     "p90": 397,
+     "p95": 760,
+     "p99": 3700,
+     "sum": 145631
+    },
+    "distinct_def_element_names": 541,
+    "doctype_files": 0,
+    "files": 30499,
+    "files_per_mod": {
+     "max": 2199,
+     "mean": 39.92,
+     "min": 0,
+     "n": 764,
+     "p50": 3,
+     "p90": 82,
+     "p95": 166,
+     "p99": 638,
+     "sum": 30499
+    },
+    "hidden_name_files_ignored_by_game": 0,
+    "invalid_utf8_files": 1,
+    "leading_whitespace_before_declaration": 0,
+    "nodes_Abstract_true": 6103,
+    "nodes_with_MayRequire": 3258,
+    "nodes_with_MayRequireAnyOf": 170,
+    "nodes_with_Name": 6970,
+    "nodes_with_ParentName": 73349,
+    "nodes_with_defName_child": 139750,
+    "parse_fail_categories": {
+     "bad_entity_or_ampersand": 1,
+     "malformed_tag": 1
+    },
+    "parse_fail_examples": [
+     {
+      "category": "malformed_tag",
+      "file": "1.5/Defs_NOARC2version/Defs/GroupAnimationDefs/WargBeastDoggyAboveWithCunni/Stage2_Variant3.xml",
+      "line": 83,
+      "message": "expected '>', line 83, column 15 (<string>, line 83)",
+      "mod": "install_mods:canines-animations"
+     },
+     {
+      "category": "bad_entity_or_ampersand",
+      "file": "Ratchet & Clank Weapons BK/Defs/ResearchProjectDefs/ResearchProject.xml",
+      "line": 4,
+      "message": "EntityRef: expecting ';', line 4, column 28 (<string>, line 4)",
+      "mod": "owner_mods:[OH] Ratchet & Clank"
+     }
+    ],
+    "parse_fail_files": 2,
+    "parse_fail_mods": 2,
+    "top_level_def_nodes": 145631,
+    "unreadable_files": 0,
+    "utf16_or_utf32_files": 0,
+    "wrong_root_element": {}
+   },
+   "languages": {
+    "bom": {
+     "none": 5086,
+     "utf-8-bom": 15929
+    },
+    "bytes": 42256705,
+    "bytes_per_mod": {
+     "max": 15019873,
+     "mean": 55309.823,
+     "min": 0,
+     "n": 764,
+     "p50": 126,
+     "p90": 66369,
+     "p95": 139831,
+     "p99": 630263,
+     "sum": 42256705
+    },
+    "declared_encoding": {
+     "(none)": 67,
+     "utf-8": 20948
+    },
+    "declared_non_utf8_but_valid_utf8": 0,
+    "doctype_files": 0,
+    "files": 21015,
+    "files_per_mod": {
+     "max": 7808,
+     "mean": 27.507,
+     "min": 0,
+     "n": 764,
+     "p50": 1,
+     "p90": 22,
+     "p95": 45,
+     "p99": 292,
+     "sum": 21015
+    },
+    "hidden_name_files_ignored_by_game": 89,
+    "invalid_utf8_files": 2,
+    "leading_whitespace_before_declaration": 6,
+    "parse_fail_categories": {
+     "invalid_element_name": 2,
+     "malformed_tag": 1,
+     "tag_mismatch": 62,
+     "xml_decl_not_first": 6
+    },
+    "parse_fail_examples": [
+     {
+      "category": "tag_mismatch",
+      "file": "Languages/Polish/DefInjected/PawnKindDef/Races_Animal_Megafauna.xml",
+      "line": 5,
+      "message": "Opening and ending tag mismatch: Arthropleura.lifeStages.0.labelMale line 5 and Arthropleura.lifeStages.0.label, line 5, column 90 (<string>, line 5)",
+      "mod": "workshop:1055485938"
+     },
+     {
+      "category": "tag_mismatch",
+      "file": "Languages/French/Keyed/RealRuins_Options.xml",
+      "line": 87,
+      "message": "Opening and ending tag mismatch: LanguageData line 2 and RealRuins.MaterialBlacklistTT, line 87, column 280 (<string>, line 87)",
+      "mod": "workshop:1552146295"
+     },
+     {
+      "category": "invalid_element_name",
+      "file": "Languages/ChineseTraditional/Keyed/RealRuins_Options.xml",
+      "line": 145,
+      "message": "StartTag: invalid element name, line 145, column 67 (<string>, line 145)",
+      "mod": "workshop:1552146295"
+     },
+     {
+      "category": "tag_mismatch",
+      "file": "Languages/French/DefInjected/JobDef/Jobs_Misc.xml",
+      "line": 3,
+      "message": "Opening and ending tag mismatch: UnloadMarkedItems.reportString line 3 and HaulToInventory.UnloadMarkedItems, line 3, column 92 (<string>, line 3)",
+      "mod": "workshop:1561769193"
+     },
+     {
+      "category": "tag_mismatch",
+      "file": "Languages/Dutch/DefInjected/InteractionDefs/PrisonerInteractionModeDef.xml",
+      "line": 3,
+      "message": "Opening and ending tag mismatch: PrisonLabor_workOption.label line 3 and PrisonLabor_Revolt.label, line 3, column 78 (<string>, line 3)",
+      "mod": "workshop:1899474310"
+     },
+     {
+      "category": "tag_mismatch",
+      "file": "Languages/PortugueseBrazilian/DefInjected/ThingDefs/Items_BodyPartsBasic.xml",
+      "line": 13,
+      "message": "Opening and ending tag mismatch: Denture.label line 13 and denture.label, line 13, column 42 (<string>, line 13)",
+      "mod": "workshop:1949064302"
+     },
+     {
+      "category": "tag_mismatch",
+      "file": "Languages/Portuguese/DefInjected/ThingDefs/Items_BodyPartsBasic.xml",
+      "line": 13,
+      "message": "Opening and ending tag mismatch: Denture.label line 13 and denture.label, line 13, column 42 (<string>, line 13)",
+      "mod": "workshop:1949064302"
+     },
+     {
+      "category": "tag_mismatch",
+      "file": "Languages/Polish/DefInjected/ThingCategoryDefs/ProsthesesCategories.xml",
+      "line": 12,
+      "message": "Opening and ending tag mismatch: SurrogateOrgans.label line 9 and LanguageData, line 12, column 16 (<string>, line 12)",
+      "mod": "workshop:1949064302"
+     }
+    ],
+    "parse_fail_files": 71,
+    "parse_fail_mods": 11,
+    "unreadable_files": 0,
+    "utf16_or_utf32_files": 0,
+    "wrong_root_element": {}
+   },
+   "patches": {
+    "bom": {
+     "none": 10556,
+     "utf-8-bom": 531
+    },
+    "bytes": 62036779,
+    "bytes_per_mod": {
+     "max": 20061215,
+     "mean": 81199.973,
+     "min": 0,
+     "n": 764,
+     "p50": 1000,
+     "p90": 75358,
+     "p95": 189803,
+     "p99": 813941,
+     "sum": 62036779
+    },
+    "declared_encoding": {
+     "(none)": 226,
+     "utf-8": 10861
+    },
+    "declared_non_utf8_but_valid_utf8": 0,
+    "distinct_operation_classes": 129,
+    "doctype_files": 0,
+    "files": 11087,
+    "files_per_mod": {
+     "max": 3762,
+     "mean": 14.512,
+     "min": 0,
+     "n": 764,
+     "p50": 1,
+     "p90": 19,
+     "p95": 38,
+     "p99": 173,
+     "sum": 11087
+    },
+    "hidden_name_files_ignored_by_game": 0,
+    "invalid_utf8_files": 0,
+    "leading_whitespace_before_declaration": 0,
+    "operation_class_usage_top40": {
+     "CombatExtended.PatchOperationMakeGunCECompatible": 6554,
+     "CombatExtended.PatchOperationSettingsConditional": 67,
+     "LWM.DeepStorage.PatchMessage": 54,
+     "ModSettingsFramework.PatchOperationModOption": 65,
+     "NQualityOfLife.XML.Add": 254,
+     "NQualityOfLife.XML.AddDeep": 89,
+     "NQualityOfLife.XML.AddOrReplace": 179,
+     "NQualityOfLife.XML.AddTextVariable": 54,
+     "NQualityOfLife.XML.ClearVariable": 54,
+     "NQualityOfLife.XML.PatchIfEnabled": 109,
+     "NQualityOfLife.XML.PatchIfExists": 128,
+     "NQualityOfLife.XML.PatchIfModsLoaded": 112,
+     "NQualityOfLife.XML.Profiler": 210,
+     "NQualityOfLife.XML.Replace": 45,
+     "PatchOperationAdd": 50340,
+     "PatchOperationAddModExtension": 7651,
+     "PatchOperationAttributeSet": 414,
+     "PatchOperationConditional": 25185,
+     "PatchOperationFindMod": 4679,
+     "PatchOperationInsert": 282,
+     "PatchOperationRemove": 11513,
+     "PatchOperationReplace": 50434,
+     "PatchOperationSequence": 5744,
+     "PatchOperationTest": 331,
+     "SafePatcher.PatchOperationSetModExtension": 370,
+     "TweaksGalore.PatchOperation_SettingActive": 90,
+     "TweaksGalore.PatchOperation_TweakBool": 137,
+     "XmlExtensions.Conditional": 170,
+     "XmlExtensions.CreateVariable": 82,
+     "XmlExtensions.FindMod": 113,
+     "XmlExtensions.Log": 283,
+     "XmlExtensions.OptionalPatch": 764,
+     "XmlExtensions.OptionalPatchExternal": 155,
+     "XmlExtensions.PatchOperationAdd": 221,
+     "XmlExtensions.PatchOperationAddOrReplace": 195,
+     "XmlExtensions.PatchOperationRemove": 59,
+     "XmlExtensions.PatchOperationReplace": 293,
+     "XmlExtensions.PatchOperationSafeAdd": 620,
+     "XmlExtensions.PatchOperationSafeRemove": 119,
+     "XmlExtensions.UseSetting": 60
+    },
+    "operations_list_li_with_MayRequire_honoured": 600,
+    "operations_top_level": 83533,
+    "parse_fail_categories": {
+     "empty_or_no_root": 6
+    },
+    "parse_fail_examples": [
+     {
+      "category": "empty_or_no_root",
+      "file": "ConditionalPatches/RT_Patch_RimWorld_Royalty/Patches/RT_Patch_VTC_RT_Royalty_Common.xml",
+      "line": 12,
+      "message": "Start tag expected, '<' not found, line 12, column 1 (<string>, line 12)",
+      "mod": "workshop:2244594116"
+     },
+     {
+      "category": "empty_or_no_root",
+      "file": "ConditionalPatches/RT_Patch_RimWorld_Royalty/Patches/RT_Patch_VTC_RT_Royalty_Rare.xml",
+      "line": 12,
+      "message": "Start tag expected, '<' not found, line 12, column 1 (<string>, line 12)",
+      "mod": "workshop:2244594116"
+     },
+     {
+      "category": "empty_or_no_root",
+      "file": "ConditionalPatches/RT_Patch_RimWorld_Royalty/Patches/RT_Patch_VTC_RT_Royalty_Uncommon.xml",
+      "line": 12,
+      "message": "Start tag expected, '<' not found, line 12, column 1 (<string>, line 12)",
+      "mod": "workshop:2244594116"
+     }
+    ],
+    "parse_fail_files": 6,
+    "parse_fail_mods": 1,
+    "root_children_not_named_Operation": 0,
+    "top_level_Operation_with_MayRequire_ignored_by_game": 90,
+    "unreadable_files": 0,
+    "utf16_or_utf32_files": 0,
+    "wrong_root_element": {}
+   }
+  }
+ },
+ "duplicate_package_ids_by_root_combination": {
+  "install_mods+workshop": 2,
+  "owner_mods+owner_mods": 3,
+  "owner_mods+workshop": 1
+ },
+ "game_version_assumed": "1.6.4871 rev598",
+ "owner_mods_structure": {
+  "children_with_git_dir": 14,
+  "children_with_rimstudio_project_json": 1,
+  "children_without_about_that_contain_nested_about_xml": [
+   {
+    "folder": "[OH] Ratchet & Clank",
+    "nested": [
+     "Ratchet & Clank Lombax Tech DEV/About/About.xml",
+     "Ratchet & Clank Lombax Tech/About/About.xml",
+     "Ratchet & Clank Weapons BK/About/About.xml"
+    ]
+   },
+   {
+    "folder": "[OH] WWII Addons",
+    "nested": [
+     "Misc Items/Tire Prop/About/About.xml",
+     "Wehrmacht Faction/Faction Mod/About/About.xml",
+     "Wehrmacht Faction/Faction Mod/New folder/About/About.xml"
+    ]
+   }
+  ],
+  "direct_children": 27,
+  "direct_children_with_about_xml": 19,
+  "direct_children_without_about_xml": [
+   "ResearchPowl",
+   "[OH] Calico Pack",
+   "[OH] German Empire Armory",
+   "[OH] Ratchet & Clank",
+   "[OH] SCP Industries",
+   "[OH] WWII Addons",
+   "[OH] Warbonds Lite",
+   "[OH] Weapons Package"
+  ]
+ },
+ "per_root": {
+  "install_mods": {
+   "about": {
+    "about_xml_parse_fail": 0,
+    "about_xml_parse_ok_gamelike": 47,
+    "about_xml_raw_fail_but_game_like_ok": 0,
+    "ghost_mod_examples": [],
+    "mod_dirs": 47,
+    "path_variants": {
+     "About/About.xml": 47
+    },
+    "root_tag": {
+     "ModMetaData": 47
+    },
+    "with_about_dir_any_case": 47,
+    "with_about_dir_exact_case": 47,
+    "with_about_xml_any_case": 47,
+    "without_about_xml": 0
+   },
+   "about_xml_bytes": {
+    "max": 5468,
+    "mean": 1753.128,
+    "min": 432,
+    "n": 47,
+    "p50": 1357,
+    "p90": 3761,
+    "p95": 4565,
+    "p99": 5468,
+    "sum": 82397
+   },
+   "dependencies": {
+    "byVersion_keys": {
+     "1.1": 1,
+     "1.2": 1,
+     "1.3": 1,
+     "1.4": 3,
+     "1.5": 1,
+     "1.6": 1
+    },
+    "drop_reasons": {},
+    "entries_per_mod_effective_after_game_validation": {
+     "max": 4,
+     "mean": 1.681,
+     "min": 0,
+     "n": 47,
+     "p50": 2,
+     "p90": 3,
+     "p95": 3,
+     "p99": 4,
+     "sum": 79
+    },
+    "entries_per_mod_raw": {
+     "max": 4,
+     "mean": 1.681,
+     "min": 0,
+     "n": 47,
+     "p50": 2,
+     "p90": 3,
+     "p95": 3,
+     "p99": 4,
+     "sum": 79
+    },
+    "forceLoadAfter_per_mod": {
+     "max": 0,
+     "mean": 0.0,
+     "min": 0,
+     "n": 47,
+     "p50": 0,
+     "p90": 0,
+     "p95": 0,
+     "p99": 0,
+     "sum": 0
+    },
+    "forceLoadBefore_per_mod": {
+     "max": 0,
+     "mean": 0.0,
+     "min": 0,
+     "n": 47,
+     "p50": 0,
+     "p90": 0,
+     "p95": 0,
+     "p99": 0,
+     "sum": 0
+    },
+    "incompatibleWith_per_mod": {
+     "max": 7,
+     "mean": 0.574,
+     "min": 0,
+     "n": 47,
+     "p50": 0,
+     "p90": 2,
+     "p95": 3,
+     "p99": 7,
+     "sum": 27
+    },
+    "loadAfter_per_mod": {
+     "max": 17,
+     "mean": 3.787,
+     "min": 0,
+     "n": 47,
+     "p50": 3,
+     "p90": 8,
+     "p95": 11,
+     "p99": 17,
+     "sum": 178
+    },
+    "loadBefore_per_mod": {
+     "max": 9,
+     "mean": 0.404,
+     "min": 0,
+     "n": 47,
+     "p50": 0,
+     "p90": 1,
+     "p95": 2,
+     "p99": 9,
+     "sum": 19
+    },
+    "mods_using_alternativePackageIds": 0,
+    "mods_using_authors_list": 3,
+    "mods_using_byVersion_fields": 3,
+    "mods_with_any_dependency": 43,
+    "mods_with_any_dropped_entry": 0,
+    "total_entries_dropped_by_game": 0,
+    "total_entries_raw": 79
+   },
+   "dependency_child_tag_case_variants": {},
+   "dependency_child_unknown_tags": {},
+   "duplicate_field_in_one_file": {},
+   "encodings": {
+    "bom": {
+     "none": 33,
+     "utf-8-bom": 14
+    },
+    "declared_encoding": {
+     "(none)": 3,
+     "utf-8": 44
+    },
+    "declared_non_utf8_but_bytes_valid_utf8": 0,
+    "eol": {
+     "crlf": 4,
+     "lf": 43
+    },
+    "leading_whitespace_before_declaration": 0,
+    "utf16_or_utf32_bom": 0,
+    "utf8_strict_invalid": 0,
+    "utf8_strict_invalid_examples": []
+   },
+   "extension_histogram_by_area_top": {
+    "about": {
+     "(none)": 1,
+     ".dds": 4,
+     ".jpeg": 2,
+     ".jpg": 1,
+     ".png": 58,
+     ".txt": 6,
+     ".xml": 90
+    },
+    "assemblies": {
+     "(none)": 2,
+     ".config": 5,
+     ".dll": 181,
+     ".pdb": 10,
+     ".xml": 28
+    },
+    "assetbundles": {
+     "(none)": 2,
+     ".manifest": 2
+    },
+    "defs": {
+     "(none)": 13,
+     ".6": 4,
+     ".dds": 145,
+     ".png": 145,
+     ".txt": 15,
+     ".xml": 8030,
+     ".xsd": 4,
+     ".zip": 6
+    },
+    "languages": {
+     "(none)": 38,
+     ".txt": 153,
+     ".xml": 8927,
+     ".xmlold": 3
+    },
+    "materials": {
+     "(none)": 6,
+     ".manifest": 6,
+     ".shader": 1
+    },
+    "other": {
+     "(none)": 70,
+     ".cs": 23,
+     ".csproj": 11,
+     ".md": 60,
+     ".meta": 15,
+     ".sln": 10,
+     ".txt": 21,
+     ".xml": 44
+    },
+    "patches": {
+     ".7z": 1,
+     ".b": 1,
+     ".bak": 1,
+     ".dis": 21,
+     ".txt": 3,
+     ".xml": 794,
+     ".zip": 1
+    },
+    "sounds": {
+     ".ogg": 1,
+     ".wav": 436
+    },
+    "source": {
+     ".cache": 34,
+     ".cs": 5562,
+     ".csproj": 114,
+     ".dll": 130,
+     ".json": 30,
+     ".png": 55,
+     ".sln": 48,
+     ".xml": 60
+    },
+    "textures": {
+     ".7z": 9,
+     ".dds": 5528,
+     ".jpg": 7,
+     ".pdn": 4,
+     ".png": 9525,
+     ".psd": 39,
+     ".xcf": 12,
+     ".zip": 23
+    }
+   },
+   "field_usage": {
+    "author": {
+     "case_variant": 0,
+     "exact": 44,
+     "mods": 44,
+     "nonempty": 44
+    },
+    "authors": {
+     "case_variant": 0,
+     "exact": 3,
+     "mods": 3,
+     "nonempty": 3
+    },
+    "description": {
+     "case_variant": 0,
+     "exact": 47,
+     "mods": 47,
+     "nonempty": 47
+    },
+    "descriptionsByVersion": {
+     "case_variant": 0,
+     "exact": 0,
+     "mods": 0,
+     "nonempty": 0
+    },
+    "forceLoadAfter": {
+     "case_variant": 0,
+     "exact": 0,
+     "mods": 0,
+     "nonempty": 0
+    },
+    "forceLoadBefore": {
+     "case_variant": 0,
+     "exact": 0,
+     "mods": 0,
+     "nonempty": 0
+    },
+    "incompatibleWith": {
+     "case_variant": 0,
+     "exact": 14,
+     "mods": 14,
+     "nonempty": 11
+    },
+    "incompatibleWithByVersion": {
+     "case_variant": 0,
+     "exact": 1,
+     "mods": 1,
+     "nonempty": 1
+    },
+    "loadAfter": {
+     "case_variant": 0,
+     "exact": 45,
+     "mods": 45,
+     "nonempty": 44
+    },
+    "loadAfterByVersion": {
+     "case_variant": 0,
+     "exact": 0,
+     "mods": 0,
+     "nonempty": 0
+    },
+    "loadBefore": {
+     "case_variant": 0,
+     "exact": 10,
+     "mods": 10,
+     "nonempty": 8
+    },
+    "loadBeforeByVersion": {
+     "case_variant": 0,
+     "exact": 0,
+     "mods": 0,
+     "nonempty": 0
+    },
+    "modDependencies": {
+     "case_variant": 0,
+     "exact": 43,
+     "mods": 43,
+     "nonempty": 43
+    },
+    "modDependenciesByVersion": {
+     "case_variant": 0,
+     "exact": 2,
+     "mods": 2,
+     "nonempty": 2
+    },
+    "modIconPath": {
+     "case_variant": 0,
+     "exact": 6,
+     "mods": 6,
+     "nonempty": 6
+    },
+    "modVersion": {
+     "case_variant": 0,
+     "exact": 18,
+     "mods": 18,
+     "nonempty": 18
+    },
+    "name": {
+     "case_variant": 0,
+     "exact": 47,
+     "mods": 47,
+     "nonempty": 47
+    },
+    "packageId": {
+     "case_variant": 0,
+     "exact": 47,
+     "mods": 47,
+     "nonempty": 47
+    },
+    "shortName": {
+     "case_variant": 0,
+     "exact": 0,
+     "mods": 0,
+     "nonempty": 0
+    },
+    "steamAppId": {
+     "case_variant": 0,
+     "exact": 0,
+     "mods": 0,
+     "nonempty": 0
+    },
+    "supportedVersions": {
+     "case_variant": 0,
+     "exact": 47,
+     "mods": 47,
+     "nonempty": 47
+    },
+    "targetVersion": {
+     "case_variant": 0,
+     "exact": 0,
+     "mods": 0,
+     "nonempty": 0
+    },
+    "url": {
+     "case_variant": 0,
+     "exact": 33,
+     "mods": 33,
+     "nonempty": 30
+    }
+   },
+   "folder_anatomy": {
+    "about_other_files_top": {
+     ".gitkeep": 1,
+     "Changelog_v2.0.8.txt": 1,
+     "Description.png": 1,
+     "Description2.png": 1,
+     "Description3.png": 1,
+     "Extra anims": 1,
+     "Some previews": 1,
+     "modicon2.png": 1,
+     "preview2.jpeg": 1,
+     "preview3.jpeg": 1
+    },
+    "area_dir_case_variants_inside_version_common_loadfolders_dirs": {},
+    "area_dir_case_variants_toplevel": {},
+    "area_dirs_exact_case": {
+     "Assemblies": 2,
+     "Defs": 9,
+     "Languages": 10,
+     "Materials": 1,
+     "Patches": 6,
+     "Sounds": 3,
+     "Textures": 17
+    },
+    "common_dir_case_variants": {
+     "Common": 9
+    },
+    "load_folder_source_when_no_other_mod_active": {
+     "explicit_exact_minor": 25,
+     "explicit_lower_version": 5,
+     "implicit_exact_version_dir": 6,
+     "implicit_nearest_lower": 7,
+     "implicit_root_only": 4
+    },
+    "modicon_variants": {
+     "ModIcon.dds": 2,
+     "ModIcon.png": 14,
+     "Modicon.png": 1,
+     "modicon.png": 1
+    },
+    "mods_with_common_dir_exact": 9,
+    "mods_with_language_tar": 0,
+    "mods_with_manifest_xml": 24,
+    "mods_with_modicon_png_exact": 14,
+    "mods_with_nested_about_xml_below_root": 2,
+    "mods_with_preview_not_exact_png": 25,
+    "mods_with_preview_png_exact": 22,
+    "mods_with_version_like_dirs": 38,
+    "nested_about_xml_examples": [
+     "install_mods:RJWPE -> 1.3/Ideology/About/About.xml",
+     "install_mods:rjw_menstruation -> 1.2/RJW Menstruation Race Support/About/About.xml"
+    ],
+    "preview_variants": {
+     "Preview.PNG": 1,
+     "Preview.dds": 2,
+     "Preview.jpg": 1,
+     "Preview.png": 22,
+     "preview.png": 11
+    },
+    "top_level_dir_names_top40": {
+     ".git": 46,
+     ".github": 4,
+     ".gitlab": 1,
+     ".idea": 1,
+     ".vscode": 2,
+     "1.1": 4,
+     "1.2": 7,
+     "1.3": 12,
+     "1.4": 19,
+     "1.4- Content": 1,
+     "1.5": 23,
+     "1.5 Content": 1,
+     "1.6": 28,
+     "1.6 Content": 1,
+     "About": 47,
+     "AllYourBase": 1,
+     "Assemblies": 2,
+     "Assets": 1,
+     "Biotech": 1,
+     "Bird's-Eye View Animations": 1,
+     "CRIALactation": 1,
+     "CRIAOrgy": 1,
+     "Common": 9,
+     "Common_Old": 1,
+     "Defs": 9,
+     "Deploy": 1,
+     "Dev Stuff": 1,
+     "Docs": 1,
+     "Egg_basket": 1,
+     "Examples": 1,
+     "Extra": 2,
+     "Ideology": 2,
+     "Languages": 10,
+     "Materials": 1,
+     "Mod Compatibility": 2,
+     "Mods": 3,
+     "Patches": 6,
+     "Sounds": 3,
+     "Source": 14,
+     "Textures": 17
+    },
+    "version_dirs_recognized_by_game_implicit_rule": {
+     "1.1": 4,
+     "1.2": 7,
+     "1.3": 12,
+     "1.4": 19,
+     "1.5": 23,
+     "1.6": 28
+    },
+    "version_like_dir_names": {
+     "1.1": 4,
+     "1.2": 7,
+     "1.3": 12,
+     "1.4": 19,
+     "1.4- Content": 1,
+     "1.5": 23,
+     "1.5 Content": 1,
+     "1.6": 28,
+     "1.6 Content": 1
+    },
+    "version_like_dir_names_not_plain_major_minor": {
+     "1.4- Content": 1,
+     "1.5 Content": 1,
+     "1.6 Content": 1
+    },
+    "xml_extension_case_variants_files": {}
+   },
+   "label": "install_mods",
+   "list_structure_issues": {},
+   "load_folders": {
+    "condition_attribute_usage_entries": {
+     "IfModActive": 187,
+     "IfModNotActive": 19
+    },
+    "entry_issues_total": {
+     "empty_path": 2,
+     "root_slash": 41
+    },
+    "li_element_names": {
+     "li": 344
+    },
+    "mods_defining_current_minor": 25,
+    "mods_with_backslash_paths": 0,
+    "mods_with_dangling_first_component": 4,
+    "mods_with_default_key": 0,
+    "mods_with_whitespace_padded_paths": 0,
+    "name_variants": {
+     "LoadFolders.xml": 28,
+     "loadFolders.xml": 2
+    },
+    "parse_fail": 0,
+    "parse_fail_examples": [],
+    "parse_ok": 30,
+    "present_any_case": 30,
+    "root_tag": {
+     "loadFolders": 30
+    },
+    "structural_variants_distinct": 28,
+    "structural_variants_top": [
+     {
+      "example": "install_mods:knotphile",
+      "mods": 2,
+      "signature": "v1.5:[/,<ver>]|v1.6:[/,<ver>]"
+     },
+     {
+      "example": "install_mods:Hawk_Anims",
+      "mods": 2,
+      "signature": "v1.5:[<ver>,Common]|v1.6:[<ver>,Common]"
+     },
+     {
+      "example": "install_mods:rimworld-animations",
+      "mods": 1,
+      "signature": "v1.1:[/,<ver>]|v1.2:[/,<ver>,<dir>/<ver>?A]|v1.3:[/,<ver>,<dir>/<ver>?A,<dir>?A,<dir>/<ver>?A]|v1.4:[/,<ver>,<dir>/<ver>?A,<dir>/<ver>?A,<dir>?A,<dir>/<ver>?A]|v1.5:[/,<ver>,<dir>/<ver>?A,<dir>/<ver>?A,<dir>/<ver>?N,<dir>/<ver>?N]|v1.6:[/,<ver>,<dir>/<ver>?A,<dir>/<ver>?A,<dir>/<ver>?N,<dir>/<ver>?N]"
+     },
+     {
+      "example": "install_mods:animaddons-voicepatch",
+      "mods": 1,
+      "signature": "v1.1:[<dir>/<ver>,Common]|v1.2:[<dir>,Common]|v1.3:[<dir>,Common]|v1.4:[<dir>,Common]"
+     },
+     {
+      "example": "install_mods:rjwanimaddons-xtraanims",
+      "mods": 1,
+      "signature": "v1.1:[<dir>/<ver>]|v1.2:[<dir>,<dir>]|v1.3:[<dir>,<dir>?N]|v1.4:[<dir>,<dir>?N,<dir>?N]"
+     },
+     {
+      "example": "install_mods:SpeakUp",
+      "mods": 1,
+      "signature": "v1.2:[/,<ver>]|v1.3:[/,<ver>]|v1.4:[/,<ver>]"
+     },
+     {
+      "example": "install_mods:rjw_menstruation",
+      "mods": 1,
+      "signature": "v1.2:[<ver>,<ver>/<dir>?A,<ver>/<dir>?A]|v1.3:[<ver>,<ver>/<dir>?A,<ver>/<dir>?A]|v1.4:[<ver>,<ver>/<dir>?A]|v1.5:[<ver>,<ver>/<dir>?A]|v1.6:[<ver>,<ver>/<dir>?A,<ver>/<dir>?A,<ver>/<dir>?A,<ver>/<dir>?A,<ver>/<dir>?A,<ver>/<dir>?A]"
+     },
+     {
+      "example": "install_mods:coffees-rjw-ideology-addons",
+      "mods": 1,
+      "signature": "v1.3:[/,<ver>,<dir>?A,<dir>/<ver>?A,<dir>?A,<dir>/<ver>?A]|v1.4:[/,<ver>,<dir>?A,<dir>/<ver>?A,<dir>?A,<dir>/<ver>?A]|v1.5:[/,<ver>,<dir>?A,<dir>/<ver>?A,<dir>?A,<dir>/<ver>?A]|v1.6:[/,<ver>,<dir>?A,<dir>/<ver>?A,<dir>?A,<dir>/<ver>?A]"
+     },
+     {
+      "example": "install_mods:rjw-sexperience",
+      "mods": 1,
+      "signature": "v1.3:[/,<ver>,<dir>?A,<dir>?A]|v1.4:[/,<ver>,<dir>?A,<dir>?A,<dir>?A,<dir>?A]|v1.5:[/,<ver>,<dir>?A,<dir>?A,<dir>?A,<dir>?AN,<dir>?A,<dir>?N]|v1.6:[/,<ver>,<dir>?A,<dir>?A,<dir>?A,<dir>?A]"
+     },
+     {
+      "example": "install_mods:rjw-sexperience-ideology",
+      "mods": 1,
+      "signature": "v1.3:[/,<ver>]|v1.4:[/,<ver>]|v1.5:[/,<ver>,<dir>/<ver>?A]|v1.6:[/,<ver>,<dir>/<ver>?A]"
+     },
+     {
+      "example": "install_mods:rjw-race-support",
+      "mods": 1,
+      "signature": "v1.3:[<dir>,<dir>?A,<dir>?A,<dir>?A,<dir>?A,<dir>?A,<dir>?A]|v1.4:[<dir>,<dir>?A,<dir>?A,<dir>?A,<dir>?A,<dir>?A,<dir>?A,<dir>?A]|v1.5:[<dir>,<dir>?A,<dir>?A,<dir>?A]|v1.6:[<dir>,<dir>?A,<dir>?A,<dir>?A]"
+     },
+     {
+      "example": "install_mods:RJWPE",
+      "mods": 1,
+      "signature": "v1.3:[<ver>,<ver>/<dir>?A,<ver>/<dir>?A,<ver>/<dir>?A,<ver>/<dir>?A]|v1.4:[<ver>,<ver>/<dir>?A,<ver>/<dir>?A,<ver>/<dir>?A,<ver>/<dir>?A,<ver>/<dir>?A,<ver>/<dir>?A]|v1.5:[<ver>,<ver>/<dir>?A,<ver>/<dir>?A,<ver>/<dir>?A,<ver>/<dir>?A,<ver>/<dir>?A,<ver>/<dir>?A]|v1.6:[<ver>,<ver>/<dir>?A,<ver>/<dir>?A,<ver>/<dir>?A,<ver>/<dir>?A,<ver>/<dir>?A,<ver>/<dir>?A,<ver>/<dir>?A]"
+     },
+     {
+      "example": "install_mods:Outer-Rim-Galactic-Republic",
+      "mods": 1,
+      "signature": "v1.4:[/,<dir>,<ver>,<ver>/<dir>?N,<ver>/<dir>?A]|v1.5:[/,<dir>,<ver>,<ver>/<dir>?N,<ver>/<dir>?A,<ver>/<dir>?N]|v1.6:[/,Common,<ver>,<ver>/<dir>?N,<ver>/<dir>?A,<ver>/<dir>?N]"
+     },
+     {
+      "example": "install_mods:rjw-brothel-colony",
+      "mods": 1,
+      "signature": "v1.4:[/,<ver>,<dir>/<ver>?A,<dir>/<ver>?A]|v1.5:[/,<ver>,<dir>/<ver>?A,<dir>/<ver>?A]|v1.6:[/,<ver>,<dir>/<ver>?A,<dir>/<ver>?A]"
+     },
+     {
+      "example": "install_mods:BEV-Animation-Pack",
+      "mods": 1,
+      "signature": "v1.4:[<dir>]"
+     },
+     {
+      "example": "install_mods:RJW-Genes",
+      "mods": 1,
+      "signature": "v1.4:[<ver>,Common]|v1.5:[<ver>,Common,<ver>/<dir>?A,<ver>/<dir>?A,<ver>/<dir>?A,<ver>/<dir>?A,<ver>/<dir>?A,<ver>/<dir>?A,<ver>/<dir>?A,<ver>/<dir>?A,<ver>/<dir>?A,<ver>/<dir>?A,<ver>/<dir>?A,<ver>/<dir>?A,<ver>/<dir>?A]|v1.6:[<ver>,Common,<ver>/<dir>?A,<ver>/<dir>?A,<ver>/<dir>?A,<ver>/<dir>?A,<ver>/<dir>?A,<ver>/<dir>?A,<ver>/<dir>?A,<ver>/<dir>?A,<ver>/<dir>?A,<ver>/<dir>?A,<ver>/<dir>?A,<ver>/<dir>?A]"
+     },
+     {
+      "example": "install_mods:rimjobworld-onahole-extension",
+      "mods": 1,
+      "signature": "v1.5:[/,<dir>/<ver>,<dir>?A,<dir>?A,<dir>?A,<dir>?A,<dir>?A,<dir>?A,<dir>?A,<dir>?A,<dir>?A,<dir>?A,<dir>?A,<dir>?A]|v1.6:[/,<dir>/<ver>,<dir>?A,<dir>?A,<dir>?A,<dir>?A,<dir>?A,<dir>?A,<dir>?A,<dir>?A,<dir>?A,<dir>?A,<dir>?A,<dir>?A]"
+     },
+     {
+      "example": "install_mods:sized-apparel-zero",
+      "mods": 1,
+      "signature": "v1.5:[/,<ver>,<dir>?A,<dir>?A,<dir>?A,<dir>?A,<dir>?A,<dir>?A,<dir>?A,<dir>,<dir>?N]"
+     },
+     {
+      "example": "install_mods:canines-animations",
+      "mods": 1,
+      "signature": "v1.5:[/,<ver>,<ver>/<dir>?N,<ver>/<dir>?A]|v1.6:[/,<ver>,<ver>/<dir>?N,<ver>/<dir>?A]"
+     },
+     {
+      "example": "install_mods:rjw-elt-baddon",
+      "mods": 1,
+      "signature": "v1.5:[/,<ver>]|v1.6:[/,<ver>,<dir>/<ver>?A,<dir>/<ver>?A,<dir>/<ver>?A,<dir>/<ver>?A]"
+     },
+     {
+      "example": "install_mods:Cumpilation",
+      "mods": 1,
+      "signature": "v1.5:[Common,<ver>,<ver>/<dir>?A,<ver>/<dir>?A,<ver>/<dir>?A,<ver>/<dir>?N]|v1.6:[Common,<ver>,<ver>/<dir>?A,<ver>/<dir>?A,<ver>/<dir>?A,<ver>/<dir>?N]"
+     },
+     {
+      "example": "install_mods:UAP",
+      "mods": 1,
+      "signature": "v1.6:[/,<dir>,<dir>?A,<dir>?A,<dir>?A,<dir>?A,<dir>?A,<dir>?A,<dir>?A]"
+     },
+     {
+      "example": "install_mods:human-cattle-yet-another-milk-mod",
+      "mods": 1,
+      "signature": "v1.6:[/,<ver>,<dir>/<ver>?A,<dir>/<ver>?A]"
+     },
+     {
+      "example": "install_mods:rjw-menstruation-fluids",
+      "mods": 1,
+      "signature": "v1.6:[/,<ver>,<dir>/<ver>?A]"
+     },
+     {
+      "example": "install_mods:ResearchTreePlusPlus",
+      "mods": 1,
+      "signature": "v1.6:[/,<ver>,<dir>]"
+     }
+    ],
+    "version_keys": {
+     "1.1": 3,
+     "1.2": 5,
+     "1.3": 10,
+     "1.4": 14,
+     "1.5": 19,
+     "1.6": 25
+    }
+   },
+   "malformed_about_xml": {
+    "by_category": {},
+    "count": 0,
+    "examples": []
+   },
+   "mod_size": {
+    "bytes": {
+     "max": 824771879,
+     "mean": 50960319.298,
+     "min": 27099,
+     "n": 47,
+     "p50": 3407713,
+     "p90": 124340496,
+     "p95": 251213502,
+     "p99": 824771879,
+     "sum": 2395135007
+    },
+    "dirs": {
+     "max": 3264,
+     "mean": 194.723,
+     "min": 4,
+     "n": 47,
+     "p50": 65,
+     "p90": 372,
+     "p95": 603,
+     "p99": 3264,
+     "sum": 9152
+    },
+    "files": {
+     "max": 12407,
+     "mean": 869.191,
+     "min": 9,
+     "n": 47,
+     "p50": 214,
+     "p90": 2577,
+     "p95": 3797,
+     "p99": 12407,
+     "sum": 40852
+    },
+    "git_files_total": 1294,
+    "mods_with_git_dir": 46,
+    "xml_bytes": {
+     "max": 31723699,
+     "mean": 2387754.362,
+     "min": 432,
+     "n": 47,
+     "p50": 327257,
+     "p90": 3281711,
+     "p95": 18260421,
+     "p99": 31723699,
+     "sum": 112224455
+    },
+    "xml_files": {
+     "max": 9074,
+     "mean": 382.404,
+     "min": 1,
+     "n": 47,
+     "p50": 54,
+     "p90": 367,
+     "p95": 1998,
+     "p99": 9074,
+     "sum": 17973
+    }
+   },
+   "mods": 47,
+   "package_id_references": {
+    "by_field": {
+     "incompatibleWith": 27,
+     "loadAfter": 178,
+     "loadBefore": 19,
+     "modDependencies": 79
+    },
+    "ending_with__steam": {},
+    "ending_with_dot_steam": {},
+    "spelling_differs_from_declared_spelling_of_target": 2,
+    "total": 303,
+    "with_surrounding_whitespace": 0
+   },
+   "package_ids": {
+    "case_conflict_ids": 0,
+    "case_conflicts": [],
+    "declared_unique_lowercase": 47,
+    "duplicate_ids": 0,
+    "duplicates": [],
+    "missing_examples": [],
+    "missing_or_empty_count": 0,
+    "mods_not_in_any_duplicate_group": 47,
+    "problem_examples": {},
+    "problems": {}
+   },
+   "path_length": {
+    "entries_reaching_windows_max_path_with_default_prefix": 0,
+    "examples": [],
+    "max_relative_path_bytes_utf8_inside_mod": 157,
+    "max_relative_path_chars_inside_mod": 157,
+    "max_relative_path_example": "install_mods:UAP -> Defs/AnimationDefs/A Doggystyle Tree/D Rape BEV/Doggystyle Cum Outside/White Clothes/2 Main/Doggystyle3 Variations/D/Doggystyle3dLeftHandOnBackTransition.xml",
+    "mods_with_such_entries": 0,
+    "relative_path_len_per_mod_max": {
+     "max": 157,
+     "mean": 92.787,
+     "min": 38,
+     "n": 47,
+     "p50": 89,
+     "p90": 124,
+     "p95": 148,
+     "p99": 157,
+     "sum": 4361
+    }
+   },
+   "published_file_id": {
+    "content_class": {
+     "digits": 5
+    },
+    "content_shape": {
+     "clean": 5
+    },
+    "files_present_any_case": 5,
+    "files_present_exact_case": 5,
+    "name_variants": {
+     "PublishedFileId.txt": 5
+    },
+    "workshop_folder_differs_from_file_value": 0,
+    "workshop_folder_equals_file_value": 0,
+    "workshop_mismatch_examples": [],
+    "workshop_mods_without_file": 0
+   },
+   "string_fields_dropped_by_game_due_to_comment_or_child_nodes": {},
+   "supported_versions": {
+    "entries_per_mod": {
+     "max": 6,
+     "mean": 2.617,
+     "min": 1,
+     "n": 47,
+     "p50": 2,
+     "p90": 4,
+     "p95": 6,
+     "p99": 6,
+     "sum": 123
+    },
+    "mods_only_newer": 0,
+    "mods_only_older": 14,
+    "mods_per_version": {
+     "1.1": 6,
+     "1.2": 11,
+     "1.3": 18,
+     "1.4": 27,
+     "1.5": 28,
+     "1.6": 33
+    },
+    "mods_supporting_current": 33,
+    "mods_with_any_malformed_entry": 0,
+    "mods_with_any_unparsable_entry": 0,
+    "mods_with_targetVersion_field": 0,
+    "odd_raw_entries": {},
+    "state": {
+     "has_entries": 47
+    }
+   },
+   "symlinks": {
+    "examples": [],
+    "mod_roots_that_are_symlinks": 0,
+    "symlinked_dirs_inside_mods": 0,
+    "symlinked_files_inside_mods": 0
+   },
+   "tag_case_variants": {},
+   "unknown_root_tags_logged_as_error": {},
+   "unknown_root_tags_silenced_by_IgnoreIfNoMatchingField": {},
+   "windows_invalid_names": {
+    "case_collision_examples": [],
+    "entries_by_issue_inside_mods": {},
+    "examples": [],
+    "hidden_files_total": 136,
+    "mod_folder_names_by_issue": {},
+    "mods_with_any_issue": 0,
+    "mods_with_case_only_name_collisions_in_a_dir": 0,
+    "mods_with_non_ascii_names": 2,
+    "non_ascii_name_entries": 5
+   },
+   "xml_hygiene": {
+    "defs": {
+     "bom": {
+      "none": 2677,
+      "utf-8-bom": 5353
+     },
+     "bytes": 83882874,
+     "bytes_per_mod": {
+      "max": 31719305,
+      "mean": 1784742.0,
+      "min": 0,
+      "n": 47,
+      "p50": 174619,
+      "p90": 2705782,
+      "p95": 3278625,
+      "p99": 31719305,
+      "sum": 83882874
+     },
+     "declared_encoding": {
+      "(none)": 134,
+      "utf-16": 8,
+      "utf-8": 7888
+     },
+     "declared_non_utf8_but_valid_utf8": 8,
+     "def_element_names_top30": {
+      "AnimationDef": 8367,
+      "GeneDef": 380,
+      "HediffDef": 593,
+      "HistoryEventDef": 173,
+      "InteractionDef": 1168,
+      "IssueDef": 99,
+      "JobDef": 349,
+      "PawnColumnDef": 117,
+      "PawnKindDef": 205,
+      "PawnRelationDef": 112,
+      "PawnRenderNodeTagDef": 185,
+      "PreceptDef": 442,
+      "RecipeDef": 1239,
+      "RecordDef": 226,
+      "Rimworld_Animations.AnimationDef": 275,
+      "Rimworld_Animations.AnimationOffsetDef": 368,
+      "Rimworld_Animations.AnimationPropDef": 181,
+      "Rimworld_Animations.GroupAnimationDef": 1540,
+      "Rimworld_Animations.TexPathVariantsDef": 80,
+      "RulePackDef": 610,
+      "SizedApparel.SizedApparelHediffDef": 154,
+      "SoundDef": 160,
+      "ThingDef": 1052,
+      "ThingStyleDef": 94,
+      "ThinkTreeDef": 110,
+      "ThoughtDef": 1316,
+      "rjw.HediffDef_PartBase": 327,
+      "rjw.HediffDef_SexPart": 289,
+      "rjw.RaceGroupDef": 1607,
+      "rjw.RacePartDef": 588
+     },
+     "def_nodes_per_mod": {
+      "max": 5480,
+      "mean": 510.681,
+      "min": 0,
+      "n": 47,
+      "p50": 98,
+      "p90": 956,
+      "p95": 3700,
+      "p99": 5480,
+      "sum": 24002
+     },
+     "distinct_def_element_names": 153,
+     "doctype_files": 0,
+     "files": 8030,
+     "files_per_mod": {
+      "max": 2199,
+      "mean": 170.851,
+      "min": 0,
+      "n": 47,
+      "p50": 20,
+      "p90": 355,
+      "p95": 1147,
+      "p99": 2199,
+      "sum": 8030
+     },
+     "hidden_name_files_ignored_by_game": 0,
+     "invalid_utf8_files": 0,
+     "leading_whitespace_before_declaration": 0,
+     "nodes_Abstract_true": 553,
+     "nodes_with_MayRequire": 29,
+     "nodes_with_MayRequireAnyOf": 0,
+     "nodes_with_Name": 675,
+     "nodes_with_ParentName": 5072,
+     "nodes_with_defName_child": 23473,
+     "parse_fail_categories": {
+      "malformed_tag": 1
+     },
+     "parse_fail_examples": [
+      {
+       "category": "malformed_tag",
+       "file": "1.5/Defs_NOARC2version/Defs/GroupAnimationDefs/WargBeastDoggyAboveWithCunni/Stage2_Variant3.xml",
+       "line": 83,
+       "message": "expected '>', line 83, column 15 (<string>, line 83)",
+       "mod": "install_mods:canines-animations"
+      }
+     ],
+     "parse_fail_files": 1,
+     "parse_fail_mods": 1,
+     "top_level_def_nodes": 24002,
+     "unreadable_files": 0,
+     "utf16_or_utf32_files": 0,
+     "wrong_root_element": {}
+    },
+    "languages": {
+     "bom": {
+      "none": 2345,
+      "utf-8-bom": 6582
+     },
+     "bytes": 17116364,
+     "bytes_per_mod": {
+      "max": 15019873,
+      "mean": 364177.957,
+      "min": 0,
+      "n": 47,
+      "p50": 3285,
+      "p90": 307053,
+      "p95": 354384,
+      "p99": 15019873,
+      "sum": 17116364
+     },
+     "declared_encoding": {
+      "(none)": 30,
+      "utf-8": 8897
+     },
+     "declared_non_utf8_but_valid_utf8": 0,
+     "doctype_files": 0,
+     "files": 8927,
+     "files_per_mod": {
+      "max": 7808,
+      "mean": 189.936,
+      "min": 0,
+      "n": 47,
+      "p50": 1,
+      "p90": 167,
+      "p95": 210,
+      "p99": 7808,
+      "sum": 8927
+     },
+     "hidden_name_files_ignored_by_game": 0,
+     "invalid_utf8_files": 0,
+     "leading_whitespace_before_declaration": 0,
+     "parse_fail_categories": {
+      "invalid_element_name": 1,
+      "malformed_tag": 1,
+      "tag_mismatch": 50
+     },
+     "parse_fail_examples": [
+      {
+       "category": "tag_mismatch",
+       "file": "1.6/Languages/SpanishLatin/DefInjected/rjw.HediffDef_PartBase/Hediffs_PrivateParts_Implants.xml",
+       "line": 151,
+       "message": "Opening and ending tag mismatch: ArchotechAnus.description line 129 and LanguageData, line 151, column 16 (<string>, line 151)",
+       "mod": "install_mods:rjw"
+      },
+      {
+       "category": "tag_mismatch",
+       "file": "1.6/Languages/Spanish/DefInjected/rjw.HediffDef_PartBase/Hediffs_PrivateParts_Implants.xml",
+       "line": 151,
+       "message": "Opening and ending tag mismatch: ArchotechAnus.description line 129 and LanguageData, line 151, column 16 (<string>, line 151)",
+       "mod": "install_mods:rjw"
+      },
+      {
+       "category": "tag_mismatch",
+       "file": "1.6/Languages/Russian/DefInjected/rjw.HediffDef_PartBase/Hediffs_PrivateParts_Insect.xml",
+       "line": 37,
+       "message": "Opening and ending tag mismatch: OvipositorM.labelNoun line 17 and LanguageData, line 37, column 16 (<string>, line 37)",
+       "mod": "install_mods:rjw"
+      },
+      {
+       "category": "invalid_element_name",
+       "file": "Languages/French/DefInjected/RitualOutcomeEffectDef/Ritual_Outcomes_sex.xml",
+       "line": 77,
+       "message": "StartTag: invalid element name, line 77, column 2 (<string>, line 77)",
+       "mod": "install_mods:rjw-sexperience-ideology"
+      },
+      {
+       "category": "tag_mismatch",
+       "file": "Languages/French/DefInjected/MemeDef/Memes_Sexual.xml",
+       "line": 174,
+       "message": "Opening and ending tag mismatch: li line 173 and Zoophile.descriptionMaker.rules.rulesStrings, line 174, column 48 (<string>, line 174)",
+       "mod": "install_mods:rjw-sexperience-ideology"
+      }
+     ],
+     "parse_fail_files": 52,
+     "parse_fail_mods": 2,
+     "unreadable_files": 0,
+     "utf16_or_utf32_files": 0,
+     "wrong_root_element": {}
+    },
+    "patches": {
+     "bom": {
+      "none": 725,
+      "utf-8-bom": 69
+     },
+     "bytes": 2372883,
+     "bytes_per_mod": {
+      "max": 644965,
+      "mean": 50486.872,
+      "min": 0,
+      "n": 47,
+      "p50": 4496,
+      "p90": 168160,
+      "p95": 280740,
+      "p99": 644965,
+      "sum": 2372883
+     },
+     "declared_encoding": {
+      "(none)": 40,
+      "utf-8": 754
+     },
+     "declared_non_utf8_but_valid_utf8": 0,
+     "distinct_operation_classes": 11,
+     "doctype_files": 0,
+     "files": 794,
+     "files_per_mod": {
+      "max": 121,
+      "mean": 16.894,
+      "min": 0,
+      "n": 47,
+      "p50": 3,
+      "p90": 56,
+      "p95": 112,
+      "p99": 121,
+      "sum": 794
+     },
+     "hidden_name_files_ignored_by_game": 0,
+     "invalid_utf8_files": 0,
+     "leading_whitespace_before_declaration": 0,
+     "operation_class_usage_top40": {
+      "OuterRimGalacticRepublic.PatchOperation_SettingActive": 15,
+      "PatchOPerationSequence": 13,
+      "PatchOperationAdd": 2804,
+      "PatchOperationAddModExtension": 412,
+      "PatchOperationConditional": 895,
+      "PatchOperationFindMod": 486,
+      "PatchOperationInsert": 82,
+      "PatchOperationRemove": 45,
+      "PatchOperationReplace": 223,
+      "PatchOperationSequence": 635,
+      "PatchOperationTest": 26
+     },
+     "operations_list_li_with_MayRequire_honoured": 2,
+     "operations_top_level": 2315,
+     "parse_fail_categories": {},
+     "parse_fail_examples": [],
+     "parse_fail_files": 0,
+     "parse_fail_mods": 0,
+     "root_children_not_named_Operation": 0,
+     "top_level_Operation_with_MayRequire_ignored_by_game": 4,
+     "unreadable_files": 0,
+     "utf16_or_utf32_files": 0,
+     "wrong_root_element": {}
+    }
+   }
+  },
+  "official": {
+   "about": {
+    "about_xml_parse_fail": 0,
+    "about_xml_parse_ok_gamelike": 6,
+    "about_xml_raw_fail_but_game_like_ok": 0,
+    "ghost_mod_examples": [],
+    "mod_dirs": 6,
+    "path_variants": {
+     "About/About.xml": 6
+    },
+    "root_tag": {
+     "ModMetaData": 6
+    },
+    "with_about_dir_any_case": 6,
+    "with_about_dir_exact_case": 6,
+    "with_about_xml_any_case": 6,
+    "without_about_xml": 0
+   },
+   "about_xml_bytes": {
+    "max": 489,
+    "mean": 444.667,
+    "min": 269,
+    "n": 6,
+    "p50": 488,
+    "p90": 489,
+    "p95": 489,
+    "p99": 489,
+    "sum": 2668
+   },
+   "dependencies": {
+    "byVersion_keys": {},
+    "drop_reasons": {},
+    "entries_per_mod_effective_after_game_validation": {
+     "max": 0,
+     "mean": 0.0,
+     "min": 0,
+     "n": 6,
+     "p50": 0,
+     "p90": 0,
+     "p95": 0,
+     "p99": 0,
+     "sum": 0
+    },
+    "entries_per_mod_raw": {
+     "max": 0,
+     "mean": 0.0,
+     "min": 0,
+     "n": 6,
+     "p50": 0,
+     "p90": 0,
+     "p95": 0,
+     "p99": 0,
+     "sum": 0
+    },
+    "forceLoadAfter_per_mod": {
+     "max": 5,
+     "mean": 2.5,
+     "min": 0,
+     "n": 6,
+     "p50": 2,
+     "p90": 5,
+     "p95": 5,
+     "p99": 5,
+     "sum": 15
+    },
+    "forceLoadBefore_per_mod": {
+     "max": 4,
+     "mean": 2.0,
+     "min": 0,
+     "n": 6,
+     "p50": 2,
+     "p90": 4,
+     "p95": 4,
+     "p99": 4,
+     "sum": 12
+    },
+    "incompatibleWith_per_mod": {
+     "max": 0,
+     "mean": 0.0,
+     "min": 0,
+     "n": 6,
+     "p50": 0,
+     "p90": 0,
+     "p95": 0,
+     "p99": 0,
+     "sum": 0
+    },
+    "loadAfter_per_mod": {
+     "max": 0,
+     "mean": 0.0,
+     "min": 0,
+     "n": 6,
+     "p50": 0,
+     "p90": 0,
+     "p95": 0,
+     "p99": 0,
+     "sum": 0
+    },
+    "loadBefore_per_mod": {
+     "max": 0,
+     "mean": 0.0,
+     "min": 0,
+     "n": 6,
+     "p50": 0,
+     "p90": 0,
+     "p95": 0,
+     "p99": 0,
+     "sum": 0
+    },
+    "mods_using_alternativePackageIds": 0,
+    "mods_using_authors_list": 0,
+    "mods_using_byVersion_fields": 0,
+    "mods_with_any_dependency": 0,
+    "mods_with_any_dropped_entry": 0,
+    "total_entries_dropped_by_game": 0,
+    "total_entries_raw": 0
+   },
+   "dependency_child_tag_case_variants": {},
+   "dependency_child_unknown_tags": {},
+   "duplicate_field_in_one_file": {},
+   "encodings": {
+    "bom": {
+     "utf-8-bom": 6
+    },
+    "declared_encoding": {
+     "utf-8": 6
+    },
+    "declared_non_utf8_but_bytes_valid_utf8": 0,
+    "eol": {
+     "crlf": 6
+    },
+    "leading_whitespace_before_declaration": 0,
+    "utf16_or_utf32_bom": 0,
+    "utf8_strict_invalid": 0,
+    "utf8_strict_invalid_examples": []
+   },
+   "extension_histogram_by_area_top": {
+    "about": {
+     ".png": 6,
+     ".xml": 6
+    },
+    "assetbundles": {
+     "(none)": 5,
+     ".manifest": 5
+    },
+    "defs": {
+     ".xml": 1558
+    },
+    "languages": {
+     ".png": 1,
+     ".tar": 122,
+     ".txt": 74,
+     ".xml": 94
+    },
+    "patches": {
+     ".xml": 14
+    }
+   },
+   "field_usage": {
+    "author": {
+     "case_variant": 0,
+     "exact": 6,
+     "mods": 6,
+     "nonempty": 6
+    },
+    "authors": {
+     "case_variant": 0,
+     "exact": 0,
+     "mods": 0,
+     "nonempty": 0
+    },
+    "description": {
+     "case_variant": 0,
+     "exact": 0,
+     "mods": 0,
+     "nonempty": 0
+    },
+    "descriptionsByVersion": {
+     "case_variant": 0,
+     "exact": 0,
+     "mods": 0,
+     "nonempty": 0
+    },
+    "forceLoadAfter": {
+     "case_variant": 0,
+     "exact": 5,
+     "mods": 5,
+     "nonempty": 5
+    },
+    "forceLoadBefore": {
+     "case_variant": 0,
+     "exact": 5,
+     "mods": 5,
+     "nonempty": 5
+    },
+    "incompatibleWith": {
+     "case_variant": 0,
+     "exact": 0,
+     "mods": 0,
+     "nonempty": 0
+    },
+    "incompatibleWithByVersion": {
+     "case_variant": 0,
+     "exact": 0,
+     "mods": 0,
+     "nonempty": 0
+    },
+    "loadAfter": {
+     "case_variant": 0,
+     "exact": 0,
+     "mods": 0,
+     "nonempty": 0
+    },
+    "loadAfterByVersion": {
+     "case_variant": 0,
+     "exact": 0,
+     "mods": 0,
+     "nonempty": 0
+    },
+    "loadBefore": {
+     "case_variant": 0,
+     "exact": 0,
+     "mods": 0,
+     "nonempty": 0
+    },
+    "loadBeforeByVersion": {
+     "case_variant": 0,
+     "exact": 0,
+     "mods": 0,
+     "nonempty": 0
+    },
+    "modDependencies": {
+     "case_variant": 0,
+     "exact": 0,
+     "mods": 0,
+     "nonempty": 0
+    },
+    "modDependenciesByVersion": {
+     "case_variant": 0,
+     "exact": 0,
+     "mods": 0,
+     "nonempty": 0
+    },
+    "modIconPath": {
+     "case_variant": 0,
+     "exact": 0,
+     "mods": 0,
+     "nonempty": 0
+    },
+    "modVersion": {
+     "case_variant": 0,
+     "exact": 0,
+     "mods": 0,
+     "nonempty": 0
+    },
+    "name": {
+     "case_variant": 0,
+     "exact": 0,
+     "mods": 0,
+     "nonempty": 0
+    },
+    "packageId": {
+     "case_variant": 0,
+     "exact": 6,
+     "mods": 6,
+     "nonempty": 6
+    },
+    "shortName": {
+     "case_variant": 0,
+     "exact": 0,
+     "mods": 0,
+     "nonempty": 0
+    },
+    "steamAppId": {
+     "case_variant": 0,
+     "exact": 0,
+     "mods": 0,
+     "nonempty": 0
+    },
+    "supportedVersions": {
+     "case_variant": 0,
+     "exact": 5,
+     "mods": 5,
+     "nonempty": 5
+    },
+    "targetVersion": {
+     "case_variant": 0,
+     "exact": 0,
+     "mods": 0,
+     "nonempty": 0
+    },
+    "url": {
+     "case_variant": 0,
+     "exact": 0,
+     "mods": 0,
+     "nonempty": 0
+    }
+   },
+   "folder_anatomy": {
+    "about_other_files_top": {},
+    "area_dir_case_variants_inside_version_common_loadfolders_dirs": {},
+    "area_dir_case_variants_toplevel": {},
+    "area_dirs_exact_case": {
+     "AssetBundles": 5,
+     "Defs": 6,
+     "Languages": 6,
+     "Patches": 4
+    },
+    "common_dir_case_variants": {},
+    "load_folder_source_when_no_other_mod_active": {
+     "implicit_root_only": 6
+    },
+    "modicon_variants": {},
+    "mods_with_common_dir_exact": 0,
+    "mods_with_language_tar": 6,
+    "mods_with_manifest_xml": 0,
+    "mods_with_modicon_png_exact": 0,
+    "mods_with_nested_about_xml_below_root": 0,
+    "mods_with_preview_not_exact_png": 0,
+    "mods_with_preview_png_exact": 6,
+    "mods_with_version_like_dirs": 0,
+    "nested_about_xml_examples": [],
+    "preview_variants": {
+     "Preview.png": 6
+    },
+    "top_level_dir_names_top40": {
+     "About": 6,
+     "AssetBundles": 5,
+     "Defs": 6,
+     "Languages": 6,
+     "Patches": 4
+    },
+    "version_dirs_recognized_by_game_implicit_rule": {},
+    "version_like_dir_names": {},
+    "version_like_dir_names_not_plain_major_minor": {},
+    "xml_extension_case_variants_files": {}
+   },
+   "label": "official",
+   "list_structure_issues": {},
+   "load_folders": {
+    "condition_attribute_usage_entries": {},
+    "entry_issues_total": {},
+    "li_element_names": {},
+    "mods_defining_current_minor": 0,
+    "mods_with_backslash_paths": 0,
+    "mods_with_dangling_first_component": 0,
+    "mods_with_default_key": 0,
+    "mods_with_whitespace_padded_paths": 0,
+    "name_variants": {},
+    "parse_fail": 0,
+    "parse_fail_examples": [],
+    "parse_ok": 0,
+    "present_any_case": 0,
+    "root_tag": {},
+    "structural_variants_distinct": 0,
+    "structural_variants_top": [],
+    "version_keys": {}
+   },
+   "malformed_about_xml": {
+    "by_category": {},
+    "count": 0,
+    "examples": []
+   },
+   "mod_size": {
+    "bytes": {
+     "max": 121707485,
+     "mean": 84713523.167,
+     "min": 57132277,
+     "n": 6,
+     "p50": 69278499,
+     "p90": 121707485,
+     "p95": 121707485,
+     "p99": 121707485,
+     "sum": 508281139
+    },
+    "dirs": {
+     "max": 170,
+     "mean": 92.5,
+     "min": 63,
+     "n": 6,
+     "p50": 79,
+     "p90": 170,
+     "p95": 170,
+     "p99": 170,
+     "sum": 555
+    },
+    "files": {
+     "max": 683,
+     "mean": 314.167,
+     "min": 186,
+     "n": 6,
+     "p50": 248,
+     "p90": 683,
+     "p95": 683,
+     "p99": 683,
+     "sum": 1885
+    },
+    "git_files_total": 0,
+    "mods_with_git_dir": 0,
+    "xml_bytes": {
+     "max": 5947192,
+     "mean": 2257492.0,
+     "min": 1150445,
+     "n": 6,
+     "p50": 1653402,
+     "p90": 5947192,
+     "p95": 5947192,
+     "p99": 5947192,
+     "sum": 13544952
+    },
+    "xml_files": {
+     "max": 582,
+     "mean": 278.667,
+     "min": 163,
+     "n": 6,
+     "p50": 225,
+     "p90": 582,
+     "p95": 582,
+     "p99": 582,
+     "sum": 1672
+    }
+   },
+   "mods": 6,
+   "package_id_references": {
+    "by_field": {
+     "forceLoadAfter": 15,
+     "forceLoadBefore": 12
+    },
+    "ending_with__steam": {},
+    "ending_with_dot_steam": {},
+    "spelling_differs_from_declared_spelling_of_target": 0,
+    "total": 27,
+    "with_surrounding_whitespace": 0
+   },
+   "package_ids": {
+    "case_conflict_ids": 0,
+    "case_conflicts": [],
+    "declared_unique_lowercase": 6,
+    "duplicate_ids": 0,
+    "duplicates": [],
+    "missing_examples": [],
+    "missing_or_empty_count": 0,
+    "mods_not_in_any_duplicate_group": 6,
+    "problem_examples": {},
+    "problems": {}
+   },
+   "path_length": {
+    "entries_reaching_windows_max_path_with_default_prefix": 0,
+    "examples": [],
+    "max_relative_path_bytes_utf8_inside_mod": 76,
+    "max_relative_path_chars_inside_mod": 76,
+    "max_relative_path_example": "official:Royalty -> Defs/QuestScriptDefs/BuildMonument/Script_BuildMonument_Root_TimeProtect.xml",
+    "mods_with_such_entries": 0,
+    "relative_path_len_per_mod_max": {
+     "max": 76,
+     "mean": 65.333,
+     "min": 59,
+     "n": 6,
+     "p50": 64,
+     "p90": 76,
+     "p95": 76,
+     "p99": 76,
+     "sum": 392
+    }
+   },
+   "published_file_id": {
+    "content_class": {},
+    "content_shape": {},
+    "files_present_any_case": 0,
+    "files_present_exact_case": 0,
+    "name_variants": {},
+    "workshop_folder_differs_from_file_value": 0,
+    "workshop_folder_equals_file_value": 0,
+    "workshop_mismatch_examples": [],
+    "workshop_mods_without_file": 0
+   },
+   "string_fields_dropped_by_game_due_to_comment_or_child_nodes": {},
+   "supported_versions": {
+    "entries_per_mod": {
+     "max": 1,
+     "mean": 0.833,
+     "min": 0,
+     "n": 6,
+     "p50": 1,
+     "p90": 1,
+     "p95": 1,
+     "p99": 1,
+     "sum": 5
+    },
+    "mods_only_newer": 0,
+    "mods_only_older": 0,
+    "mods_per_version": {
+     "1.6": 5
+    },
+    "mods_supporting_current": 5,
+    "mods_with_any_malformed_entry": 0,
+    "mods_with_any_unparsable_entry": 0,
+    "mods_with_targetVersion_field": 0,
+    "odd_raw_entries": {},
+    "state": {
+     "has_entries": 5,
+     "missing_list": 1
+    }
+   },
+   "symlinks": {
+    "examples": [],
+    "mod_roots_that_are_symlinks": 0,
+    "symlinked_dirs_inside_mods": 0,
+    "symlinked_files_inside_mods": 0
+   },
+   "tag_case_variants": {},
+   "unknown_root_tags_logged_as_error": {},
+   "unknown_root_tags_silenced_by_IgnoreIfNoMatchingField": {},
+   "windows_invalid_names": {
+    "case_collision_examples": [],
+    "entries_by_issue_inside_mods": {},
+    "examples": [],
+    "hidden_files_total": 0,
+    "mod_folder_names_by_issue": {},
+    "mods_with_any_issue": 0,
+    "mods_with_case_only_name_collisions_in_a_dir": 0,
+    "mods_with_non_ascii_names": 6,
+    "non_ascii_name_entries": 91
+   },
+   "xml_hygiene": {
+    "defs": {
+     "bom": {
+      "none": 726,
+      "utf-8-bom": 832
+     },
+     "bytes": 12681666,
+     "bytes_per_mod": {
+      "max": 5494853,
+      "mean": 2113611.0,
+      "min": 1103792,
+      "n": 6,
+      "p50": 1553423,
+      "p90": 5494853,
+      "p95": 5494853,
+      "p99": 5494853,
+      "sum": 12681666
+     },
+     "declared_encoding": {
+      "(none)": 9,
+      "utf-8": 1549
+     },
+     "declared_non_utf8_but_valid_utf8": 0,
+     "def_element_names_top30": {
+      "AbilityDef": 107,
+      "BackstoryDef": 845,
+      "BodyPartDef": 147,
+      "ColorDef": 140,
+      "DutyDef": 108,
+      "EffecterDef": 285,
+      "FleckDef": 327,
+      "GenStepDef": 170,
+      "GeneDef": 203,
+      "HediffDef": 345,
+      "HistoryEventDef": 172,
+      "IncidentDef": 139,
+      "JobDef": 321,
+      "LayoutRoomDef": 145,
+      "PawnKindDef": 333,
+      "PreceptDef": 223,
+      "PrefabDef": 176,
+      "QuestScriptDef": 156,
+      "RecipeDef": 214,
+      "ResearchProjectDef": 168,
+      "RuleDef": 112,
+      "RulePackDef": 340,
+      "ShaderTypeDef": 122,
+      "SoundDef": 1233,
+      "StatDef": 256,
+      "TerrainDef": 137,
+      "ThingDef": 2055,
+      "ThingStyleDef": 126,
+      "ThoughtDef": 934,
+      "WorkGiverDef": 154
+     },
+     "def_nodes_per_mod": {
+      "max": 6394,
+      "mean": 2301.333,
+      "min": 757,
+      "n": 6,
+      "p50": 1482,
+      "p90": 6394,
+      "p95": 6394,
+      "p99": 6394,
+      "sum": 13808
+     },
+     "distinct_def_element_names": 252,
+     "doctype_files": 0,
+     "files": 1558,
+     "files_per_mod": {
+      "max": 550,
+      "mean": 259.667,
+      "min": 148,
+      "n": 6,
+      "p50": 212,
+      "p90": 550,
+      "p95": 550,
+      "p99": 550,
+      "sum": 1558
+     },
+     "hidden_name_files_ignored_by_game": 0,
+     "invalid_utf8_files": 0,
+     "leading_whitespace_before_declaration": 0,
+     "nodes_Abstract_true": 596,
+     "nodes_with_MayRequire": 28,
+     "nodes_with_MayRequireAnyOf": 11,
+     "nodes_with_Name": 837,
+     "nodes_with_ParentName": 4553,
+     "nodes_with_defName_child": 13164,
+     "parse_fail_categories": {},
+     "parse_fail_examples": [],
+     "parse_fail_files": 0,
+     "parse_fail_mods": 0,
+     "top_level_def_nodes": 13808,
+     "unreadable_files": 0,
+     "utf16_or_utf32_files": 0,
+     "wrong_root_element": {}
+    },
+    "languages": {
+     "bom": {
+      "none": 76,
+      "utf-8-bom": 18
+     },
+     "bytes": 849441,
+     "bytes_per_mod": {
+      "max": 452070,
+      "mean": 141573.5,
+      "min": 40795,
+      "n": 6,
+      "p50": 98865,
+      "p90": 452070,
+      "p95": 452070,
+      "p99": 452070,
+      "sum": 849441
+     },
+     "declared_encoding": {
+      "utf-8": 94
+     },
+     "declared_non_utf8_but_valid_utf8": 0,
+     "doctype_files": 0,
+     "files": 94,
+     "files_per_mod": {
+      "max": 31,
+      "mean": 15.667,
+      "min": 11,
+      "n": 6,
+      "p50": 12,
+      "p90": 31,
+      "p95": 31,
+      "p99": 31,
+      "sum": 94
+     },
+     "hidden_name_files_ignored_by_game": 0,
+     "invalid_utf8_files": 0,
+     "leading_whitespace_before_declaration": 0,
+     "parse_fail_categories": {},
+     "parse_fail_examples": [],
+     "parse_fail_files": 0,
+     "parse_fail_mods": 0,
+     "unreadable_files": 0,
+     "utf16_or_utf32_files": 0,
+     "wrong_root_element": {}
+    },
+    "patches": {
+     "bom": {
+      "none": 9,
+      "utf-8-bom": 5
+     },
+     "bytes": 11177,
+     "bytes_per_mod": {
+      "max": 4661,
+      "mean": 1862.833,
+      "min": 0,
+      "n": 6,
+      "p50": 626,
+      "p90": 4661,
+      "p95": 4661,
+      "p99": 4661,
+      "sum": 11177
+     },
+     "declared_encoding": {
+      "utf-8": 14
+     },
+     "declared_non_utf8_but_valid_utf8": 0,
+     "distinct_operation_classes": 3,
+     "doctype_files": 0,
+     "files": 14,
+     "files_per_mod": {
+      "max": 6,
+      "mean": 2.333,
+      "min": 0,
+      "n": 6,
+      "p50": 1,
+      "p90": 6,
+      "p95": 6,
+      "p99": 6,
+      "sum": 14
+     },
+     "hidden_name_files_ignored_by_game": 0,
+     "invalid_utf8_files": 0,
+     "leading_whitespace_before_declaration": 0,
+     "operation_class_usage_top40": {
+      "PatchOperationAdd": 3,
+      "PatchOperationAttributeSet": 3,
+      "PatchOperationReplace": 23
+     },
+     "operations_list_li_with_MayRequire_honoured": 0,
+     "operations_top_level": 29,
+     "parse_fail_categories": {},
+     "parse_fail_examples": [],
+     "parse_fail_files": 0,
+     "parse_fail_mods": 0,
+     "root_children_not_named_Operation": 0,
+     "top_level_Operation_with_MayRequire_ignored_by_game": 0,
+     "unreadable_files": 0,
+     "utf16_or_utf32_files": 0,
+     "wrong_root_element": {}
+    }
+   }
+  },
+  "owner_mods": {
+   "about": {
+    "about_xml_parse_fail": 0,
+    "about_xml_parse_ok_gamelike": 19,
+    "about_xml_raw_fail_but_game_like_ok": 0,
+    "ghost_mod_examples": [
+     "owner_mods:ResearchPowl",
+     "owner_mods:[OH] Calico Pack",
+     "owner_mods:[OH] German Empire Armory",
+     "owner_mods:[OH] Ratchet & Clank",
+     "owner_mods:[OH] SCP Industries",
+     "owner_mods:[OH] WWII Addons",
+     "owner_mods:[OH] Warbonds Lite",
+     "owner_mods:[OH] Weapons Package"
+    ],
+    "mod_dirs": 27,
+    "path_variants": {
+     "About/About.xml": 19
+    },
+    "root_tag": {
+     "ModMetaData": 19
+    },
+    "with_about_dir_any_case": 19,
+    "with_about_dir_exact_case": 19,
+    "with_about_xml_any_case": 19,
+    "without_about_xml": 8
+   },
+   "about_xml_bytes": {
+    "max": 1997,
+    "mean": 900.211,
+    "min": 365,
+    "n": 19,
+    "p50": 835,
+    "p90": 1388,
+    "p95": 1997,
+    "p99": 1997,
+    "sum": 17104
+   },
+   "dependencies": {
+    "byVersion_keys": {},
+    "drop_reasons": {},
+    "entries_per_mod_effective_after_game_validation": {
+     "max": 2,
+     "mean": 0.421,
+     "min": 0,
+     "n": 19,
+     "p50": 0,
+     "p90": 1,
+     "p95": 2,
+     "p99": 2,
+     "sum": 8
+    },
+    "entries_per_mod_raw": {
+     "max": 2,
+     "mean": 0.421,
+     "min": 0,
+     "n": 19,
+     "p50": 0,
+     "p90": 1,
+     "p95": 2,
+     "p99": 2,
+     "sum": 8
+    },
+    "forceLoadAfter_per_mod": {
+     "max": 0,
+     "mean": 0.0,
+     "min": 0,
+     "n": 19,
+     "p50": 0,
+     "p90": 0,
+     "p95": 0,
+     "p99": 0,
+     "sum": 0
+    },
+    "forceLoadBefore_per_mod": {
+     "max": 0,
+     "mean": 0.0,
+     "min": 0,
+     "n": 19,
+     "p50": 0,
+     "p90": 0,
+     "p95": 0,
+     "p99": 0,
+     "sum": 0
+    },
+    "incompatibleWith_per_mod": {
+     "max": 1,
+     "mean": 0.105,
+     "min": 0,
+     "n": 19,
+     "p50": 0,
+     "p90": 1,
+     "p95": 1,
+     "p99": 1,
+     "sum": 2
+    },
+    "loadAfter_per_mod": {
+     "max": 5,
+     "mean": 2.053,
+     "min": 0,
+     "n": 19,
+     "p50": 2,
+     "p90": 5,
+     "p95": 5,
+     "p99": 5,
+     "sum": 39
+    },
+    "loadBefore_per_mod": {
+     "max": 0,
+     "mean": 0.0,
+     "min": 0,
+     "n": 19,
+     "p50": 0,
+     "p90": 0,
+     "p95": 0,
+     "p99": 0,
+     "sum": 0
+    },
+    "mods_using_alternativePackageIds": 0,
+    "mods_using_authors_list": 0,
+    "mods_using_byVersion_fields": 0,
+    "mods_with_any_dependency": 7,
+    "mods_with_any_dropped_entry": 0,
+    "total_entries_dropped_by_game": 0,
+    "total_entries_raw": 8
+   },
+   "dependency_child_tag_case_variants": {},
+   "dependency_child_unknown_tags": {},
+   "duplicate_field_in_one_file": {},
+   "encodings": {
+    "bom": {
+     "none": 15,
+     "utf-8-bom": 4
+    },
+    "declared_encoding": {
+     "utf-8": 19
+    },
+    "declared_non_utf8_but_bytes_valid_utf8": 0,
+    "eol": {
+     "crlf": 14,
+     "lf": 4,
+     "mixed": 1
+    },
+    "leading_whitespace_before_declaration": 0,
+    "utf16_or_utf32_bom": 0,
+    "utf8_strict_invalid": 0,
+    "utf8_strict_invalid_examples": []
+   },
+   "extension_histogram_by_area_top": {
+    "about": {
+     ".md": 1,
+     ".png": 27,
+     ".psd": 3,
+     ".txt": 17,
+     ".xml": 38
+    },
+    "assemblies": {
+     ".dll": 10
+    },
+    "defs": {
+     ".unused": 5,
+     ".xml": 70
+    },
+    "languages": {
+     ".txt": 11,
+     ".xml": 22
+    },
+    "other": {
+     ".ai": 38,
+     ".cs": 18,
+     ".dds": 188,
+     ".jpg": 52,
+     ".md": 18,
+     ".mtl": 27,
+     ".obj": 27,
+     ".png": 192
+    },
+    "patches": {
+     "(none)": 3,
+     ".xml": 36
+    },
+    "sounds": {
+     ".ogg": 327,
+     ".wav": 17
+    },
+    "source": {
+     ".ai": 10,
+     ".cache": 8,
+     ".cs": 28,
+     ".dds": 3,
+     ".dll": 7,
+     ".json": 3,
+     ".png": 9,
+     ".xcf": 4
+    },
+    "textures": {
+     ".dds": 928,
+     ".png": 1212,
+     ".png~": 7
+    }
+   },
+   "field_usage": {
+    "author": {
+     "case_variant": 0,
+     "exact": 19,
+     "mods": 19,
+     "nonempty": 19
+    },
+    "authors": {
+     "case_variant": 0,
+     "exact": 0,
+     "mods": 0,
+     "nonempty": 0
+    },
+    "description": {
+     "case_variant": 0,
+     "exact": 19,
+     "mods": 19,
+     "nonempty": 18
+    },
+    "descriptionsByVersion": {
+     "case_variant": 0,
+     "exact": 0,
+     "mods": 0,
+     "nonempty": 0
+    },
+    "forceLoadAfter": {
+     "case_variant": 0,
+     "exact": 0,
+     "mods": 0,
+     "nonempty": 0
+    },
+    "forceLoadBefore": {
+     "case_variant": 0,
+     "exact": 0,
+     "mods": 0,
+     "nonempty": 0
+    },
+    "incompatibleWith": {
+     "case_variant": 0,
+     "exact": 4,
+     "mods": 4,
+     "nonempty": 2
+    },
+    "incompatibleWithByVersion": {
+     "case_variant": 0,
+     "exact": 0,
+     "mods": 0,
+     "nonempty": 0
+    },
+    "loadAfter": {
+     "case_variant": 0,
+     "exact": 16,
+     "mods": 16,
+     "nonempty": 15
+    },
+    "loadAfterByVersion": {
+     "case_variant": 0,
+     "exact": 0,
+     "mods": 0,
+     "nonempty": 0
+    },
+    "loadBefore": {
+     "case_variant": 0,
+     "exact": 0,
+     "mods": 0,
+     "nonempty": 0
+    },
+    "loadBeforeByVersion": {
+     "case_variant": 0,
+     "exact": 0,
+     "mods": 0,
+     "nonempty": 0
+    },
+    "modDependencies": {
+     "case_variant": 0,
+     "exact": 12,
+     "mods": 12,
+     "nonempty": 7
+    },
+    "modDependenciesByVersion": {
+     "case_variant": 0,
+     "exact": 0,
+     "mods": 0,
+     "nonempty": 0
+    },
+    "modIconPath": {
+     "case_variant": 0,
+     "exact": 1,
+     "mods": 1,
+     "nonempty": 1
+    },
+    "modVersion": {
+     "case_variant": 0,
+     "exact": 4,
+     "mods": 4,
+     "nonempty": 4
+    },
+    "name": {
+     "case_variant": 0,
+     "exact": 19,
+     "mods": 19,
+     "nonempty": 19
+    },
+    "packageId": {
+     "case_variant": 0,
+     "exact": 19,
+     "mods": 19,
+     "nonempty": 19
+    },
+    "shortName": {
+     "case_variant": 0,
+     "exact": 0,
+     "mods": 0,
+     "nonempty": 0
+    },
+    "steamAppId": {
+     "case_variant": 0,
+     "exact": 0,
+     "mods": 0,
+     "nonempty": 0
+    },
+    "supportedVersions": {
+     "case_variant": 0,
+     "exact": 19,
+     "mods": 19,
+     "nonempty": 19
+    },
+    "targetVersion": {
+     "case_variant": 0,
+     "exact": 0,
+     "mods": 0,
+     "nonempty": 0
+    },
+    "url": {
+     "case_variant": 0,
+     "exact": 11,
+     "mods": 11,
+     "nonempty": 5
+    }
+   },
+   "folder_anatomy": {
+    "about_other_files_top": {
+     "About.md": 1,
+     "Changelog.txt": 1,
+     "ModSync.xml": 1
+    },
+    "area_dir_case_variants_inside_version_common_loadfolders_dirs": {},
+    "area_dir_case_variants_toplevel": {},
+    "area_dirs_exact_case": {
+     "Assemblies": 1,
+     "Defs": 2,
+     "Languages": 1,
+     "Patches": 11,
+     "Sounds": 2,
+     "Textures": 14
+    },
+    "common_dir_case_variants": {
+     "Common": 3
+    },
+    "load_folder_source_when_no_other_mod_active": {
+     "implicit_nearest_lower": 6,
+     "implicit_root_only": 13
+    },
+    "modicon_variants": {
+     "ModIcon.png": 2
+    },
+    "mods_with_common_dir_exact": 3,
+    "mods_with_language_tar": 0,
+    "mods_with_manifest_xml": 10,
+    "mods_with_modicon_png_exact": 2,
+    "mods_with_nested_about_xml_below_root": 2,
+    "mods_with_preview_not_exact_png": 1,
+    "mods_with_preview_png_exact": 18,
+    "mods_with_version_like_dirs": 7,
+    "nested_about_xml_examples": [
+     "owner_mods:[OH] Ratchet & Clank -> Ratchet & Clank Lombax Tech DEV/About/About.xml",
+     "owner_mods:[OH] WWII Addons -> Misc Items/Tire Prop/About/About.xml"
+    ],
+    "preview_variants": {
+     "Preview.png": 18,
+     "Preview.psd": 2,
+     "preview.png": 1
+    },
+    "top_level_dir_names_top40": {
+     ".git": 13,
+     ".vscode": 1,
+     "1.2": 2,
+     "1.4": 3,
+     "1.5": 4,
+     "About": 19,
+     "Additional Stuff": 1,
+     "Assemblies": 1,
+     "Common": 3,
+     "Config": 1,
+     "Content": 1,
+     "Defs": 2,
+     "Languages": 1,
+     "Misc Items": 1,
+     "Models": 1,
+     "Patches": 11,
+     "Pistols": 1,
+     "Ratchet & Clank Lombax Tech": 1,
+     "Ratchet & Clank Lombax Tech DEV": 1,
+     "Ratchet & Clank Weapons BK": 1,
+     "Raw Assets": 2,
+     "SMG's": 1,
+     "SVG": 1,
+     "Sounds": 2,
+     "Source": 7,
+     "Sources": 1,
+     "Textures": 14,
+     "Wehrmacht Faction": 1,
+     "Wehrmacht Uniforms": 1,
+     "Wehrmacht Weaponry": 1,
+     "bin": 1,
+     "obj": 1,
+     "rimstocks": 1,
+     "rimstocksReferences": 1
+    },
+    "version_dirs_recognized_by_game_implicit_rule": {
+     "1.2": 2,
+     "1.4": 3,
+     "1.5": 4
+    },
+    "version_like_dir_names": {
+     "1.2": 2,
+     "1.4": 3,
+     "1.5": 4
+    },
+    "version_like_dir_names_not_plain_major_minor": {},
+    "xml_extension_case_variants_files": {}
+   },
+   "label": "owner_mods",
+   "list_structure_issues": {},
+   "load_folders": {
+    "condition_attribute_usage_entries": {},
+    "entry_issues_total": {},
+    "li_element_names": {},
+    "mods_defining_current_minor": 0,
+    "mods_with_backslash_paths": 0,
+    "mods_with_dangling_first_component": 0,
+    "mods_with_default_key": 0,
+    "mods_with_whitespace_padded_paths": 0,
+    "name_variants": {},
+    "parse_fail": 0,
+    "parse_fail_examples": [],
+    "parse_ok": 0,
+    "present_any_case": 0,
+    "root_tag": {},
+    "structural_variants_distinct": 0,
+    "structural_variants_top": [],
+    "version_keys": {}
+   },
+   "malformed_about_xml": {
+    "by_category": {},
+    "count": 0,
+    "examples": []
+   },
+   "mod_size": {
+    "bytes": {
+     "max": 280544927,
+     "mean": 26886747.37,
+     "min": 0,
+     "n": 27,
+     "p50": 5835127,
+     "p90": 113009367,
+     "p95": 126143039,
+     "p99": 280544927,
+     "sum": 725942179
+    },
+    "dirs": {
+     "max": 163,
+     "mean": 26.185,
+     "min": 0,
+     "n": 27,
+     "p50": 12,
+     "p90": 65,
+     "p95": 85,
+     "p99": 163,
+     "sum": 707
+    },
+    "files": {
+     "max": 1214,
+     "mean": 129.148,
+     "min": 0,
+     "n": 27,
+     "p50": 28,
+     "p90": 378,
+     "p95": 626,
+     "p99": 1214,
+     "sum": 3487
+    },
+    "git_files_total": 1749,
+    "mods_with_git_dir": 14,
+    "xml_bytes": {
+     "max": 152282,
+     "mean": 28881.37,
+     "min": 0,
+     "n": 27,
+     "p50": 5384,
+     "p90": 111563,
+     "p95": 149928,
+     "p99": 152282,
+     "sum": 779797
+    },
+    "xml_files": {
+     "max": 33,
+     "mean": 6.296,
+     "min": 0,
+     "n": 27,
+     "p50": 4,
+     "p90": 21,
+     "p95": 27,
+     "p99": 33,
+     "sum": 170
+    }
+   },
+   "mods": 27,
+   "package_id_references": {
+    "by_field": {
+     "incompatibleWith": 2,
+     "loadAfter": 39,
+     "modDependencies": 8
+    },
+    "ending_with__steam": {},
+    "ending_with_dot_steam": {},
+    "spelling_differs_from_declared_spelling_of_target": 0,
+    "total": 49,
+    "with_surrounding_whitespace": 0
+   },
+   "package_ids": {
+    "case_conflict_ids": 0,
+    "case_conflicts": [],
+    "declared_unique_lowercase": 16,
+    "duplicate_ids": 3,
+    "duplicates": [
+     {
+      "entries": [
+       "owner_mods:[OH] Android Tiers Retexture - Copy",
+       "owner_mods:[OH] Android Tiers Retexture og"
+      ],
+      "id": "husko.atr"
+     },
+     {
+      "entries": [
+       "owner_mods:[OH] Gewehr 41",
+       "owner_mods:[OH] Third Reich Armory"
+      ],
+      "id": "oh.weapons.gewehr41"
+     },
+     {
+      "entries": [
+       "owner_mods:The Lone Wolf Weapon Package - Copy",
+       "owner_mods:[OH] The Lone Wolf Weapon Package"
+      ],
+      "id": "tlwwp.base"
+     }
+    ],
+    "missing_examples": [],
+    "missing_or_empty_count": 0,
+    "mods_not_in_any_duplicate_group": 13,
+    "problem_examples": {},
+    "problems": {}
+   },
+   "path_length": {
+    "entries_reaching_windows_max_path_with_default_prefix": 0,
+    "examples": [],
+    "max_relative_path_bytes_utf8_inside_mod": 124,
+    "max_relative_path_chars_inside_mod": 124,
+    "max_relative_path_example": "owner_mods:ResearchWolf -> Source/obj/Release/PublicizedAssemblies/UnityEngine.IMGUIModule.D766516776E05584E59948B1C54026D0/UnityEngine.IMGUIModule.dll",
+    "mods_with_such_entries": 0,
+    "relative_path_len_per_mod_max": {
+     "max": 124,
+     "mean": 60.407,
+     "min": 0,
+     "n": 27,
+     "p50": 66,
+     "p90": 99,
+     "p95": 111,
+     "p99": 124,
+     "sum": 1631
+    }
+   },
+   "published_file_id": {
+    "content_class": {
+     "digits": 12
+    },
+    "content_shape": {
+     "clean": 12
+    },
+    "files_present_any_case": 12,
+    "files_present_exact_case": 12,
+    "name_variants": {
+     "PublishedFileId.txt": 12
+    },
+    "workshop_folder_differs_from_file_value": 0,
+    "workshop_folder_equals_file_value": 0,
+    "workshop_mismatch_examples": [],
+    "workshop_mods_without_file": 0
+   },
+   "string_fields_dropped_by_game_due_to_comment_or_child_nodes": {
+    "description": 1
+   },
+   "supported_versions": {
+    "entries_per_mod": {
+     "max": 5,
+     "mean": 1.947,
+     "min": 1,
+     "n": 19,
+     "p50": 2,
+     "p90": 4,
+     "p95": 5,
+     "p99": 5,
+     "sum": 37
+    },
+    "mods_only_newer": 0,
+    "mods_only_older": 19,
+    "mods_per_version": {
+     "1.0": 2,
+     "1.1": 3,
+     "1.2": 8,
+     "1.3": 8,
+     "1.4": 13,
+     "1.5": 3
+    },
+    "mods_supporting_current": 0,
+    "mods_with_any_malformed_entry": 0,
+    "mods_with_any_unparsable_entry": 0,
+    "mods_with_targetVersion_field": 0,
+    "odd_raw_entries": {},
+    "state": {
+     "has_entries": 19
+    }
+   },
+   "symlinks": {
+    "examples": [],
+    "mod_roots_that_are_symlinks": 0,
+    "symlinked_dirs_inside_mods": 0,
+    "symlinked_files_inside_mods": 0
+   },
+   "tag_case_variants": {},
+   "unknown_root_tags_logged_as_error": {},
+   "unknown_root_tags_silenced_by_IgnoreIfNoMatchingField": {},
+   "windows_invalid_names": {
+    "case_collision_examples": [],
+    "entries_by_issue_inside_mods": {},
+    "examples": [],
+    "hidden_files_total": 18,
+    "mod_folder_names_by_issue": {},
+    "mods_with_any_issue": 0,
+    "mods_with_case_only_name_collisions_in_a_dir": 0,
+    "mods_with_non_ascii_names": 2,
+    "non_ascii_name_entries": 3
+   },
+   "xml_hygiene": {
+    "defs": {
+     "bom": {
+      "none": 30,
+      "utf-8-bom": 40
+     },
+     "bytes": 469545,
+     "bytes_per_mod": {
+      "max": 148332,
+      "mean": 17390.556,
+      "min": 0,
+      "n": 27,
+      "p50": 0,
+      "p90": 73610,
+      "p95": 101964,
+      "p99": 148332,
+      "sum": 469545
+     },
+     "declared_encoding": {
+      "utf-8": 70
+     },
+     "declared_non_utf8_but_valid_utf8": 0,
+     "def_element_names_top30": {
+      "AlienRace.BackstoryDef": 24,
+      "AlienRace.RaceSettings": 1,
+      "AlienRace.ThingDef_AlienRace": 1,
+      "ApparelLayerDef": 1,
+      "BodyDef": 1,
+      "BodyPartGroupDef": 1,
+      "FactionDef": 7,
+      "HairDef": 1,
+      "HediffDef": 1,
+      "LetterDef": 1,
+      "MainButtonDef": 2,
+      "PawnKindDef": 55,
+      "RecipeDef": 1,
+      "ResearchProjectDef": 15,
+      "ResearchTabDef": 1,
+      "RulePackDef": 3,
+      "ScenarioDef": 1,
+      "SoundDef": 23,
+      "ThingCategoryDef": 5,
+      "ThingDef": 165,
+      "ThoughtDef": 2,
+      "TraderKindDef": 3,
+      "TraitDef": 1
+     },
+     "def_nodes_per_mod": {
+      "max": 95,
+      "mean": 11.704,
+      "min": 0,
+      "n": 27,
+      "p50": 0,
+      "p90": 51,
+      "p95": 85,
+      "p99": 95,
+      "sum": 316
+     },
+     "distinct_def_element_names": 23,
+     "doctype_files": 0,
+     "files": 70,
+     "files_per_mod": {
+      "max": 17,
+      "mean": 2.593,
+      "min": 0,
+      "n": 27,
+      "p50": 0,
+      "p90": 15,
+      "p95": 16,
+      "p99": 17,
+      "sum": 70
+     },
+     "hidden_name_files_ignored_by_game": 0,
+     "invalid_utf8_files": 0,
+     "leading_whitespace_before_declaration": 0,
+     "nodes_Abstract_true": 21,
+     "nodes_with_MayRequire": 0,
+     "nodes_with_MayRequireAnyOf": 0,
+     "nodes_with_Name": 23,
+     "nodes_with_ParentName": 241,
+     "nodes_with_defName_child": 297,
+     "parse_fail_categories": {
+      "bad_entity_or_ampersand": 1
+     },
+     "parse_fail_examples": [
+      {
+       "category": "bad_entity_or_ampersand",
+       "file": "Ratchet & Clank Weapons BK/Defs/ResearchProjectDefs/ResearchProject.xml",
+       "line": 4,
+       "message": "EntityRef: expecting ';', line 4, column 28 (<string>, line 4)",
+       "mod": "owner_mods:[OH] Ratchet & Clank"
+      }
+     ],
+     "parse_fail_files": 1,
+     "parse_fail_mods": 1,
+     "top_level_def_nodes": 316,
+     "unreadable_files": 0,
+     "utf16_or_utf32_files": 0,
+     "wrong_root_element": {}
+    },
+    "languages": {
+     "bom": {
+      "none": 9,
+      "utf-8-bom": 13
+     },
+     "bytes": 64239,
+     "bytes_per_mod": {
+      "max": 35309,
+      "mean": 2379.222,
+      "min": 0,
+      "n": 27,
+      "p50": 0,
+      "p90": 70,
+      "p95": 28860,
+      "p99": 35309,
+      "sum": 64239
+     },
+     "declared_encoding": {
+      "utf-8": 22
+     },
+     "declared_non_utf8_but_valid_utf8": 0,
+     "doctype_files": 0,
+     "files": 22,
+     "files_per_mod": {
+      "max": 11,
+      "mean": 0.815,
+      "min": 0,
+      "n": 27,
+      "p50": 0,
+      "p90": 1,
+      "p95": 10,
+      "p99": 11,
+      "sum": 22
+     },
+     "hidden_name_files_ignored_by_game": 0,
+     "invalid_utf8_files": 0,
+     "leading_whitespace_before_declaration": 0,
+     "parse_fail_categories": {},
+     "parse_fail_examples": [],
+     "parse_fail_files": 0,
+     "parse_fail_mods": 0,
+     "unreadable_files": 0,
+     "utf16_or_utf32_files": 0,
+     "wrong_root_element": {}
+    },
+    "patches": {
+     "bom": {
+      "none": 25,
+      "utf-8-bom": 11
+     },
+     "bytes": 215738,
+     "bytes_per_mod": {
+      "max": 57061,
+      "mean": 7990.296,
+      "min": 0,
+      "n": 27,
+      "p50": 616,
+      "p90": 32911,
+      "p95": 57061,
+      "p99": 57061,
+      "sum": 215738
+     },
+     "declared_encoding": {
+      "(none)": 2,
+      "utf-8": 34
+     },
+     "declared_non_utf8_but_valid_utf8": 0,
+     "distinct_operation_classes": 9,
+     "doctype_files": 0,
+     "files": 36,
+     "files_per_mod": {
+      "max": 6,
+      "mean": 1.333,
+      "min": 0,
+      "n": 27,
+      "p50": 1,
+      "p90": 5,
+      "p95": 5,
+      "p99": 6,
+      "sum": 36
+     },
+     "hidden_name_files_ignored_by_game": 0,
+     "invalid_utf8_files": 0,
+     "leading_whitespace_before_declaration": 0,
+     "operation_class_usage_top40": {
+      "CombatExtended.PatchOperationFindMod": 2,
+      "CombatExtended.PatchOperationMakeGunCECompatible": 20,
+      "PatchOperationAdd": 59,
+      "PatchOperationAddModExtension": 7,
+      "PatchOperationConditional": 6,
+      "PatchOperationFindMod": 23,
+      "PatchOperationRemove": 10,
+      "PatchOperationReplace": 78,
+      "PatchOperationSequence": 21
+     },
+     "operations_list_li_with_MayRequire_honoured": 0,
+     "operations_top_level": 70,
+     "parse_fail_categories": {},
+     "parse_fail_examples": [],
+     "parse_fail_files": 0,
+     "parse_fail_mods": 0,
+     "root_children_not_named_Operation": 0,
+     "top_level_Operation_with_MayRequire_ignored_by_game": 0,
+     "unreadable_files": 0,
+     "utf16_or_utf32_files": 0,
+     "wrong_root_element": {}
+    }
+   }
+  },
+  "workshop": {
+   "about": {
+    "about_xml_parse_fail": 0,
+    "about_xml_parse_ok_gamelike": 690,
+    "about_xml_raw_fail_but_game_like_ok": 0,
+    "ghost_mod_examples": [],
+    "mod_dirs": 690,
+    "path_variants": {
+     "About/About.xml": 685,
+     "About/about.xml": 5
+    },
+    "root_tag": {
+     "ModMetaData": 690
+    },
+    "with_about_dir_any_case": 690,
+    "with_about_dir_exact_case": 690,
+    "with_about_xml_any_case": 690,
+    "without_about_xml": 0
+   },
+   "about_xml_bytes": {
+    "max": 37144,
+    "mean": 1612.771,
+    "min": 272,
+    "n": 690,
+    "p50": 1134,
+    "p90": 2996,
+    "p95": 4178,
+    "p99": 7195,
+    "sum": 1112812
+   },
+   "dependencies": {
+    "byVersion_keys": {
+     "1.1": 3,
+     "1.2": 6,
+     "1.3": 11,
+     "1.4": 13,
+     "1.5": 20,
+     "1.6": 15
+    },
+    "drop_reasons": {
+     "no_downloadUrl_or_steamWorkshopUrl": 3
+    },
+    "entries_per_mod_effective_after_game_validation": {
+     "max": 3,
+     "mean": 0.978,
+     "min": 0,
+     "n": 690,
+     "p50": 1,
+     "p90": 2,
+     "p95": 2,
+     "p99": 3,
+     "sum": 675
+    },
+    "entries_per_mod_raw": {
+     "max": 3,
+     "mean": 0.983,
+     "min": 0,
+     "n": 690,
+     "p50": 1,
+     "p90": 2,
+     "p95": 3,
+     "p99": 3,
+     "sum": 678
+    },
+    "forceLoadAfter_per_mod": {
+     "max": 7,
+     "mean": 0.023,
+     "min": 0,
+     "n": 690,
+     "p50": 0,
+     "p90": 0,
+     "p95": 0,
+     "p99": 0,
+     "sum": 16
+    },
+    "forceLoadBefore_per_mod": {
+     "max": 0,
+     "mean": 0.0,
+     "min": 0,
+     "n": 690,
+     "p50": 0,
+     "p90": 0,
+     "p95": 0,
+     "p99": 0,
+     "sum": 0
+    },
+    "incompatibleWith_per_mod": {
+     "max": 22,
+     "mean": 0.194,
+     "min": 0,
+     "n": 690,
+     "p50": 0,
+     "p90": 0,
+     "p95": 1,
+     "p99": 4,
+     "sum": 134
+    },
+    "loadAfter_per_mod": {
+     "max": 979,
+     "mean": 4.774,
+     "min": 0,
+     "n": 690,
+     "p50": 1,
+     "p90": 7,
+     "p95": 10,
+     "p99": 27,
+     "sum": 3294
+    },
+    "loadBefore_per_mod": {
+     "max": 15,
+     "mean": 0.125,
+     "min": 0,
+     "n": 690,
+     "p50": 0,
+     "p90": 0,
+     "p95": 1,
+     "p99": 3,
+     "sum": 86
+    },
+    "mods_using_alternativePackageIds": 0,
+    "mods_using_authors_list": 17,
+    "mods_using_byVersion_fields": 24,
+    "mods_with_any_dependency": 485,
+    "mods_with_any_dropped_entry": 2,
+    "total_entries_dropped_by_game": 3,
+    "total_entries_raw": 678
+   },
+   "dependency_child_tag_case_variants": {},
+   "dependency_child_unknown_tags": {},
+   "duplicate_field_in_one_file": {},
+   "encodings": {
+    "bom": {
+     "none": 469,
+     "utf-8-bom": 221
+    },
+    "declared_encoding": {
+     "(none)": 27,
+     "utf-8": 663
+    },
+    "declared_non_utf8_but_bytes_valid_utf8": 0,
+    "eol": {
+     "crlf": 539,
+     "lf": 104,
+     "mixed": 47
+    },
+    "leading_whitespace_before_declaration": 0,
+    "utf16_or_utf32_bom": 0,
+    "utf8_strict_invalid": 0,
+    "utf8_strict_invalid_examples": []
+   },
+   "extension_histogram_by_area_top": {
+    "about": {
+     "(none)": 5,
+     ".dds": 5,
+     ".gif": 2,
+     ".jpeg": 3,
+     ".jpg": 9,
+     ".png": 1012,
+     ".txt": 753,
+     ".xml": 843
+    },
+    "assemblies": {
+     "(none)": 1,
+     ".dll": 2115,
+     ".lnk": 2,
+     ".old": 2,
+     ".pdb": 198,
+     ".png": 6,
+     ".txt": 5,
+     ".xml": 79
+    },
+    "assetbundles": {
+     "(none)": 59,
+     ".manifest": 55,
+     ".shader": 12
+    },
+    "defs": {
+     "(none)": 5,
+     ".bak": 21,
+     ".dis": 29,
+     ".disabled": 5,
+     ".obsolete": 3,
+     ".pl": 4,
+     ".txt": 27,
+     ".xml": 22399
+    },
+    "languages": {
+     ".bat": 1,
+     ".md": 4,
+     ".png": 20,
+     ".txt": 275,
+     ".xml": 12066,
+     ".zip": 1
+    },
+    "materials": {
+     "(none)": 12,
+     ".manifest": 12
+    },
+    "other": {
+     "(none)": 255,
+     ".dds": 122,
+     ".dll": 72,
+     ".json": 214,
+     ".md": 218,
+     ".png": 840,
+     ".txt": 62,
+     ".xml": 878
+    },
+    "patches": {
+     "(none)": 1,
+     ".bu": 1,
+     ".dis": 8,
+     ".disabled": 3,
+     ".old": 2,
+     ".txt": 20,
+     ".xml": 10257
+    },
+    "sounds": {
+     ".bat": 1,
+     ".mp3": 243,
+     ".ogg": 2450,
+     ".sfk": 1,
+     ".txt": 1,
+     ".wav": 288
+    },
+    "source": {
+     ".cache": 607,
+     ".cs": 5114,
+     ".csproj": 254,
+     ".dll": 365,
+     ".json": 284,
+     ".sln": 197,
+     ".txt": 169,
+     ".xml": 169
+    },
+    "textures": {
+     ".dds": 117968,
+     ".jpg": 16,
+     ".meta": 21,
+     ".png": 102437,
+     ".png~": 88,
+     ".svg": 14,
+     ".txt": 138,
+     ".zstd": 64
+    }
+   },
+   "field_usage": {
+    "author": {
+     "case_variant": 0,
+     "exact": 672,
+     "mods": 672,
+     "nonempty": 672
+    },
+    "authors": {
+     "case_variant": 0,
+     "exact": 17,
+     "mods": 17,
+     "nonempty": 17
+    },
+    "description": {
+     "case_variant": 0,
+     "exact": 688,
+     "mods": 688,
+     "nonempty": 675
+    },
+    "descriptionsByVersion": {
+     "case_variant": 0,
+     "exact": 1,
+     "mods": 1,
+     "nonempty": 1
+    },
+    "forceLoadAfter": {
+     "case_variant": 0,
+     "exact": 6,
+     "mods": 6,
+     "nonempty": 6
+    },
+    "forceLoadBefore": {
+     "case_variant": 0,
+     "exact": 0,
+     "mods": 0,
+     "nonempty": 0
+    },
+    "incompatibleWith": {
+     "case_variant": 0,
+     "exact": 55,
+     "mods": 55,
+     "nonempty": 42
+    },
+    "incompatibleWithByVersion": {
+     "case_variant": 0,
+     "exact": 2,
+     "mods": 2,
+     "nonempty": 2
+    },
+    "loadAfter": {
+     "case_variant": 0,
+     "exact": 515,
+     "mods": 515,
+     "nonempty": 498
+    },
+    "loadAfterByVersion": {
+     "case_variant": 0,
+     "exact": 0,
+     "mods": 0,
+     "nonempty": 0
+    },
+    "loadBefore": {
+     "case_variant": 0,
+     "exact": 45,
+     "mods": 45,
+     "nonempty": 36
+    },
+    "loadBeforeByVersion": {
+     "case_variant": 0,
+     "exact": 0,
+     "mods": 0,
+     "nonempty": 0
+    },
+    "modDependencies": {
+     "case_variant": 0,
+     "exact": 509,
+     "mods": 509,
+     "nonempty": 485
+    },
+    "modDependenciesByVersion": {
+     "case_variant": 0,
+     "exact": 22,
+     "mods": 22,
+     "nonempty": 22
+    },
+    "modIconPath": {
+     "case_variant": 0,
+     "exact": 155,
+     "mods": 155,
+     "nonempty": 155
+    },
+    "modVersion": {
+     "case_variant": 0,
+     "exact": 109,
+     "mods": 109,
+     "nonempty": 109
+    },
+    "name": {
+     "case_variant": 0,
+     "exact": 690,
+     "mods": 690,
+     "nonempty": 690
+    },
+    "packageId": {
+     "case_variant": 0,
+     "exact": 690,
+     "mods": 690,
+     "nonempty": 690
+    },
+    "shortName": {
+     "case_variant": 0,
+     "exact": 0,
+     "mods": 0,
+     "nonempty": 0
+    },
+    "steamAppId": {
+     "case_variant": 0,
+     "exact": 3,
+     "mods": 3,
+     "nonempty": 3
+    },
+    "supportedVersions": {
+     "case_variant": 0,
+     "exact": 690,
+     "mods": 690,
+     "nonempty": 690
+    },
+    "targetVersion": {
+     "case_variant": 0,
+     "exact": 0,
+     "mods": 0,
+     "nonempty": 0
+    },
+    "url": {
+     "case_variant": 0,
+     "exact": 240,
+     "mods": 240,
+     "nonempty": 175
+    }
+   },
+   "folder_anatomy": {
+    "about_other_files_top": {
+     ".DS_Store": 1,
+     "1.png": 2,
+     "Big-preview-1.png": 2,
+     "Big-preview-2.png": 2,
+     "Big-preview-3.png": 2,
+     "Changelog.txt": 48,
+     "Changelog.xml": 4,
+     "Credits.txt": 2,
+     "ModSync.xml": 43,
+     "Preview - Copy.png": 2,
+     "Preview2.png": 4,
+     "Preview3.png": 3,
+     "Preview4.png": 2,
+     "Preview_old.png": 5,
+     "README.txt": 2,
+     "Version.txt": 2,
+     "Version.xml": 7,
+     "WorkshopTags.xml": 2,
+     "old.png": 3,
+     "timestamp.txt": 2
+    },
+    "area_dir_case_variants_inside_version_common_loadfolders_dirs": {},
+    "area_dir_case_variants_toplevel": {},
+    "area_dirs_exact_case": {
+     "Assemblies": 74,
+     "AssetBundles": 5,
+     "Defs": 157,
+     "Languages": 295,
+     "Materials": 2,
+     "Patches": 133,
+     "Sounds": 89,
+     "Textures": 455
+    },
+    "common_dir_case_variants": {
+     "Common": 72
+    },
+    "load_folder_source_when_no_other_mod_active": {
+     "explicit_exact_minor": 212,
+     "explicit_lower_version": 49,
+     "implicit_exact_version_dir": 264,
+     "implicit_nearest_lower": 28,
+     "implicit_root_only": 137
+    },
+    "modicon_variants": {
+     "ModIcon.dds": 2,
+     "ModIcon.png": 162,
+     "modIcon.png": 1,
+     "modicon.png": 8
+    },
+    "mods_with_common_dir_exact": 72,
+    "mods_with_language_tar": 0,
+    "mods_with_manifest_xml": 87,
+    "mods_with_modicon_png_exact": 162,
+    "mods_with_nested_about_xml_below_root": 2,
+    "mods_with_preview_not_exact_png": 160,
+    "mods_with_preview_png_exact": 530,
+    "mods_with_version_like_dirs": 497,
+    "nested_about_xml_examples": [
+     "workshop:1552146295 -> 1.1/About/About.xml",
+     "workshop:2289854459 -> Obsolete/About/About.xml"
+    ],
+    "preview_variants": {
+     "Preview.PNG": 2,
+     "Preview.dds": 3,
+     "Preview.jpg": 1,
+     "Preview.png": 530,
+     "Preview.png~": 1,
+     "Preview.xcf": 1,
+     "preview.jpg": 1,
+     "preview.png": 158
+    },
+    "top_level_dir_names_top40": {
+     ".git": 71,
+     ".github": 12,
+     ".vs": 8,
+     ".vscode": 22,
+     "1.0": 38,
+     "1.1": 72,
+     "1.2": 108,
+     "1.3": 193,
+     "1.4": 326,
+     "1.5": 417,
+     "1.6": 422,
+     "1.6NotOdyssey": 5,
+     "About": 690,
+     "Assemblies": 74,
+     "AssetBundles": 5,
+     "Assets": 6,
+     "CE": 39,
+     "Common": 72,
+     "Common_Old": 14,
+     "Core": 4,
+     "Defs": 157,
+     "Ideology": 12,
+     "Languages": 295,
+     "LegacyAssets": 6,
+     "MVCF": 4,
+     "ModPatches": 6,
+     "Mods": 9,
+     "News": 15,
+     "Patches": 133,
+     "Sounds": 89,
+     "Source": 63,
+     "Textures": 455,
+     "WeaponTweakData": 8,
+     "XMLExtensions": 7,
+     "v1.1": 10,
+     "v1.2": 11,
+     "v1.3": 14,
+     "v1.4": 13,
+     "v1.5": 13,
+     "v1.6": 13
+    },
+    "version_dirs_recognized_by_game_implicit_rule": {
+     "0.19": 1,
+     "1.0": 38,
+     "1.1": 72,
+     "1.2": 108,
+     "1.3": 193,
+     "1.3.3311": 1,
+     "1.4": 326,
+     "1.5": 417,
+     "1.6": 422
+    },
+    "version_like_dir_names": {
+     "0.19": 1,
+     "1.0": 38,
+     "1.1": 72,
+     "1.2": 108,
+     "1.3": 193,
+     "1.3.3311": 1,
+     "1.3FlyingAndAquaticAnimals": 1,
+     "1.3VBgE": 1,
+     "1.3VEFPatch": 1,
+     "1.4": 326,
+     "1.4FlyingAndAquaticAnimals": 1,
+     "1.4VBgE": 1,
+     "1.4VEFPatch": 1,
+     "1.5": 417,
+     "1.5_And_1.6_Shared": 1,
+     "1.6": 422,
+     "1.6NotOdyssey": 5,
+     "1.6Odyssey": 3,
+     "v1.0": 1,
+     "v1.1": 10,
+     "v1.2": 11,
+     "v1.3": 14,
+     "v1.4": 13,
+     "v1.5": 13,
+     "v1.6": 13
+    },
+    "version_like_dir_names_not_plain_major_minor": {
+     "1.3.3311": 1,
+     "1.3FlyingAndAquaticAnimals": 1,
+     "1.3VBgE": 1,
+     "1.3VEFPatch": 1,
+     "1.4FlyingAndAquaticAnimals": 1,
+     "1.4VBgE": 1,
+     "1.4VEFPatch": 1,
+     "1.5_And_1.6_Shared": 1,
+     "1.6NotOdyssey": 5,
+     "1.6Odyssey": 3,
+     "v1.0": 1,
+     "v1.1": 10,
+     "v1.2": 11,
+     "v1.3": 14,
+     "v1.4": 13,
+     "v1.5": 13,
+     "v1.6": 13
+    },
+    "xml_extension_case_variants_files": {
+     ".XML": 1
+    }
+   },
+   "label": "workshop",
+   "list_structure_issues": {},
+   "load_folders": {
+    "condition_attribute_usage_entries": {
+     "IfModActive": 3645,
+     "IfModActiveAll": 10,
+     "IfModNotActive": 56
+    },
+    "entry_issues_total": {
+     "empty_path": 16,
+     "path_has_backslash_(windows_only)": 2,
+     "path_trailing_slash": 11,
+     "root_slash": 630,
+     "unknown_li_attribute:IfModActiveAny": 9
+    },
+    "li_element_names": {
+     "li": 5256
+    },
+    "mods_defining_current_minor": 212,
+    "mods_with_backslash_paths": 1,
+    "mods_with_dangling_first_component": 2,
+    "mods_with_default_key": 0,
+    "mods_with_whitespace_padded_paths": 0,
+    "name_variants": {
+     "LoadFolders.xml": 210,
+     "loadFolders.xml": 48,
+     "loadfolders.xml": 3
+    },
+    "parse_fail": 0,
+    "parse_fail_examples": [],
+    "parse_ok": 261,
+    "present_any_case": 261,
+    "root_tag": {
+     "LoadFolders": 7,
+     "loadFolders": 254
+    },
+    "structural_variants_distinct": 171,
+    "structural_variants_top": [
+     {
+      "example": "workshop:2949339248",
+      "mods": 12,
+      "signature": "v1.6:[/,<dir>?A,<dir>?A]"
+     },
+     {
+      "example": "workshop:1880253632",
+      "mods": 11,
+      "signature": "v1.4:[/,<ver>]|v1.5:[/,<ver>]|v1.6:[/,<ver>]"
+     },
+     {
+      "example": "workshop:1195427067",
+      "mods": 7,
+      "signature": "v1.1:[/,<dir>]|v1.2:[/,<dir>]|v1.3:[/,<dir>]|v1.4:[/,<dir>]|v1.5:[/,<dir>]|v1.6:[/,<dir>]"
+     },
+     {
+      "example": "workshop:2599784515",
+      "mods": 7,
+      "signature": "v1.3:[/,<ver>]|v1.4:[/,<ver>]|v1.5:[/,<ver>]|v1.6:[/,<ver>]"
+     },
+     {
+      "example": "workshop:3280682589",
+      "mods": 7,
+      "signature": "v1.5:[/,<ver>]|v1.6:[/,<ver>]"
+     },
+     {
+      "example": "workshop:2208576613",
+      "mods": 6,
+      "signature": "v1.4:[/,<dir>?A,<dir>?A]|v1.5:[/,<dir>?A,<dir>?A]"
+     },
+     {
+      "example": "workshop:2409637032",
+      "mods": 5,
+      "signature": "v1.4:[/,<dir>?A,<dir>?A,<dir>?A,<dir>?A,<dir>?A,<dir>?A]|v1.5:[/,<dir>?A,<dir>?A,<dir>?A,<dir>?A,<dir>?A,<dir>?A]"
+     },
+     {
+      "example": "workshop:3301872053",
+      "mods": 5,
+      "signature": "v1.5:[/,<ver>,<ver>/<dir>?A]"
+     },
+     {
+      "example": "workshop:2014616487",
+      "mods": 4,
+      "signature": "v1.0:[/,<ver>,<dir>]|v1.1:[/,<ver>,<dir>]|v1.2:[/,<ver>,<dir>]|v1.3:[/,<ver>,<dir>]|v1.4:[/,<ver>,<dir>]|v1.5:[/,<ver>,<dir>]|v1.6:[/,<ver>,<dir>]"
+     },
+     {
+      "example": "workshop:2919249903",
+      "mods": 4,
+      "signature": "v1.4:[/,<dir>,<ver>]|v1.5:[/,<dir>,<ver>]|v1.6:[/,Common,<ver>]"
+     },
+     {
+      "example": "workshop:2985153870",
+      "mods": 4,
+      "signature": "v1.4:[/,<ver>,<ver>/<dir>?A]|v1.5:[/,<ver>,<ver>/<dir>?A]|v1.6:[/,<ver>,<ver>/<dir>?A]"
+     },
+     {
+      "example": "workshop:3568552579",
+      "mods": 4,
+      "signature": "v1.6:[/,<ver>]"
+     },
+     {
+      "example": "workshop:2006605356",
+      "mods": 3,
+      "signature": "v1.1:[/,<ver>]|v1.2:[/,<ver>]|v1.3:[/,<ver>]|v1.4:[/,<ver>]|v1.5:[/,<ver>]|v1.6:[/,<ver>]"
+     },
+     {
+      "example": "workshop:2430129276",
+      "mods": 3,
+      "signature": "v1.4:[/,<dir>?A,<dir>?A]"
+     },
+     {
+      "example": "workshop:2275449762",
+      "mods": 3,
+      "signature": "v1.4:[/,<ver>,<ver>/<dir>?A,<ver>/<dir>?A]|v1.5:[/,<ver>,<ver>/<dir>?A,<ver>/<dir>?A]|v1.6:[/,<ver>,<ver>/<dir>?A,<ver>/<dir>?A]"
+     },
+     {
+      "example": "workshop:2016436324",
+      "mods": 3,
+      "signature": "v1.4:[/,<ver>,<ver>/<dir>?A,<ver>/<dir>?N]|v1.5:[/,<ver>,<ver>/<dir>?A,<ver>/<dir>?N]|v1.6:[/,<ver>,<ver>/<dir>?A,<ver>/<dir>?N]"
+     },
+     {
+      "example": "workshop:1914064942",
+      "mods": 3,
+      "signature": "v1.4:[/,<ver>]|v1.5:[/,<ver>]|v1.6:[/,<dir>?A,<dir>?N]"
+     },
+     {
+      "example": "workshop:3361943312",
+      "mods": 3,
+      "signature": "v1.5:[/,<dir>?A,<dir>?A]"
+     },
+     {
+      "example": "workshop:1671814939",
+      "mods": 2,
+      "signature": "v1.1:[Common,<ver>]|v1.2:[Common,<ver>]|v1.3:[Common,<ver>]|v1.4:[Common,<ver>]|v1.5:[Common,<ver>]|v1.6:[Common,<ver>]"
+     },
+     {
+      "example": "workshop:3340459422",
+      "mods": 2,
+      "signature": "v1.2:[<ver>]|v1.3:[<ver>]|v1.4:[<ver>]|v1.5:[<ver>]|v1.6:[/]"
+     },
+     {
+      "example": "workshop:1516158345",
+      "mods": 2,
+      "signature": "v1.3:[/,<dir>/<ver>]|v1.4:[/,<dir>/<ver>]|v1.5:[/,<dir>/<ver>]|v1.6:[/]"
+     },
+     {
+      "example": "workshop:2683622537",
+      "mods": 2,
+      "signature": "v1.3:[/,<dir>]|v1.4:[/,<dir>]|v1.5:[/,<dir>]|v1.6:[/,<dir>]"
+     },
+     {
+      "example": "workshop:2501069852",
+      "mods": 2,
+      "signature": "v1.4:[/,<dir>?A,<dir>?A,<dir>?A,<dir>?A,<dir>?A,<dir>?A,<dir>?A,<dir>?A]|v1.5:[/,<dir>?A,<dir>?A,<dir>?A,<dir>?A,<dir>?A,<dir>?A,<dir>?A,<dir>?A]"
+     },
+     {
+      "example": "workshop:3167957110",
+      "mods": 2,
+      "signature": "v1.4:[/,<dir>?A,<dir>?A,<dir>?A]"
+     },
+     {
+      "example": "workshop:3099795181",
+      "mods": 2,
+      "signature": "v1.4:[/,<ver>,<ver>/<dir>?A]|v1.5:[/,<ver>,<ver>/<dir>?A]"
+     }
+    ],
+    "version_keys": {
+     "1.0": 12,
+     "1.1": 37,
+     "1.2": 50,
+     "1.3": 83,
+     "1.3.3311": 1,
+     "1.4": 186,
+     "1.5": 217,
+     "1.6": 212
+    }
+   },
+   "malformed_about_xml": {
+    "by_category": {},
+    "count": 0,
+    "examples": []
+   },
+   "mod_size": {
+    "bytes": {
+     "max": 2805658807,
+     "mean": 45230840.975,
+     "min": 14034,
+     "n": 690,
+     "p50": 3040419,
+     "p90": 94466531,
+     "p95": 176100731,
+     "p99": 836209294,
+     "sum": 31209280273
+    },
+    "dirs": {
+     "max": 4366,
+     "mean": 73.225,
+     "min": 2,
+     "n": 690,
+     "p50": 28,
+     "p90": 135,
+     "p95": 229,
+     "p99": 714,
+     "sum": 50525
+    },
+    "files": {
+     "max": 22030,
+     "mean": 413.333,
+     "min": 4,
+     "n": 690,
+     "p50": 75,
+     "p90": 843,
+     "p95": 1729,
+     "p99": 5645,
+     "sum": 285200
+    },
+    "git_files_total": 21026,
+    "mods_with_git_dir": 74,
+    "xml_bytes": {
+     "max": 46740480,
+     "mean": 512793.396,
+     "min": 272,
+     "n": 690,
+     "p50": 41705,
+     "p90": 778859,
+     "p95": 1739500,
+     "p99": 11110349,
+     "sum": 353827443
+    },
+    "xml_files": {
+     "max": 8045,
+     "mean": 67.677,
+     "min": 1,
+     "n": 690,
+     "p50": 10,
+     "p90": 131,
+     "p95": 237,
+     "p99": 911,
+     "sum": 46697
+    }
+   },
+   "mods": 690,
+   "package_id_references": {
+    "by_field": {
+     "forceLoadAfter": 16,
+     "incompatibleWith": 134,
+     "loadAfter": 3294,
+     "loadBefore": 86,
+     "modDependencies": 678
+    },
+    "ending_with__steam": {},
+    "ending_with_dot_steam": {
+     "incompatibleWith": 1,
+     "loadAfter": 1
+    },
+    "spelling_differs_from_declared_spelling_of_target": 212,
+    "total": 4208,
+    "with_surrounding_whitespace": 0
+   },
+   "package_ids": {
+    "case_conflict_ids": 0,
+    "case_conflicts": [],
+    "declared_unique_lowercase": 690,
+    "duplicate_ids": 0,
+    "duplicates": [],
+    "missing_examples": [],
+    "missing_or_empty_count": 0,
+    "mods_not_in_any_duplicate_group": 690,
+    "problem_examples": {
+     "steam_suffix_declared": [
+      "workshop:2038874626 -> 'Dubwise.DubsPerformanceAnalyzer.steam'"
+     ]
+    },
+    "problems": {
+     "steam_suffix_declared": 1
+    }
+   },
+   "path_length": {
+    "entries_reaching_windows_max_path_with_default_prefix": 0,
+    "examples": [],
+    "max_relative_path_bytes_utf8_inside_mod": 160,
+    "max_relative_path_chars_inside_mod": 160,
+    "max_relative_path_example": "workshop:2890901044 -> ModPatches/VFE Pirates unofficial add-on - Warcasket Melee Armory Continued/Patches/VFE Pirates unofficial add-on - Warcasket Melee Armory Continued/Weapons.xml",
+    "mods_with_such_entries": 0,
+    "relative_path_len_per_mod_max": {
+     "max": 160,
+     "mean": 70.712,
+     "min": 25,
+     "n": 690,
+     "p50": 67,
+     "p90": 108,
+     "p95": 118,
+     "p99": 140,
+     "sum": 48791
+    }
+   },
+   "published_file_id": {
+    "content_class": {
+     "digits": 689
+    },
+    "content_shape": {
+     "clean": 685,
+     "trailing_newline": 4
+    },
+    "files_present_any_case": 689,
+    "files_present_exact_case": 689,
+    "name_variants": {
+     "PublishedFileId.txt": 689
+    },
+    "workshop_folder_differs_from_file_value": 0,
+    "workshop_folder_equals_file_value": 689,
+    "workshop_mismatch_examples": [],
+    "workshop_mods_without_file": 1
+   },
+   "string_fields_dropped_by_game_due_to_comment_or_child_nodes": {},
+   "supported_versions": {
+    "entries_per_mod": {
+     "max": 10,
+     "mean": 3.213,
+     "min": 1,
+     "n": 690,
+     "p50": 3,
+     "p90": 6,
+     "p95": 7,
+     "p99": 7,
+     "sum": 2217
+    },
+    "mods_only_newer": 0,
+    "mods_only_older": 87,
+    "mods_per_version": {
+     "0.19": 2,
+     "1.0": 62,
+     "1.1": 98,
+     "1.2": 149,
+     "1.3": 248,
+     "1.4": 467,
+     "1.5": 584,
+     "1.6": 603,
+     "1.7": 1,
+     "1.8": 1,
+     "1.9": 1
+    },
+    "mods_supporting_current": 603,
+    "mods_with_any_malformed_entry": 0,
+    "mods_with_any_unparsable_entry": 0,
+    "mods_with_targetVersion_field": 0,
+    "odd_raw_entries": {},
+    "state": {
+     "has_entries": 690
+    }
+   },
+   "symlinks": {
+    "examples": [],
+    "mod_roots_that_are_symlinks": 0,
+    "symlinked_dirs_inside_mods": 0,
+    "symlinked_files_inside_mods": 0
+   },
+   "tag_case_variants": {},
+   "unknown_root_tags_logged_as_error": {},
+   "unknown_root_tags_silenced_by_IgnoreIfNoMatchingField": {
+    "modLatestUpdateDate": 1
+   },
+   "windows_invalid_names": {
+    "case_collision_examples": [
+     "workshop:2772559481 -> ('Textures/LogButton', ['Log.DDS', 'Log.dds'])",
+     "workshop:3253550009 -> ('LegacyAssets/Textures', ['DestroyThisDesignation.DDS', 'DestroyThisDesignation.dds'])",
+     "workshop:3532359201 -> ('Textures/UI/Buttons/MainButtons', ['Rimocracy.DDS', 'Rimocracy.dds'])"
+    ],
+    "entries_by_issue_inside_mods": {},
+    "examples": [],
+    "hidden_files_total": 505,
+    "mod_folder_names_by_issue": {},
+    "mods_with_any_issue": 0,
+    "mods_with_case_only_name_collisions_in_a_dir": 3,
+    "mods_with_non_ascii_names": 41,
+    "non_ascii_name_entries": 410
+   },
+   "xml_hygiene": {
+    "defs": {
+     "bom": {
+      "none": 16125,
+      "utf-8-bom": 6274
+     },
+     "bytes": 210208348,
+     "bytes_per_mod": {
+      "max": 46341983,
+      "mean": 304649.78,
+      "min": 0,
+      "n": 690,
+      "p50": 7786,
+      "p90": 388582,
+      "p95": 1018364,
+      "p99": 5365743,
+      "sum": 210208348
+     },
+     "declared_encoding": {
+      "(none)": 282,
+      "utf-8": 22117
+     },
+     "declared_non_utf8_but_valid_utf8": 0,
+     "def_element_names_top30": {
+      "AlienRace.AlienBackstoryDef": 621,
+      "BackstoryDef": 2387,
+      "BionicIconsIconDef": 751,
+      "BodyPartDef": 632,
+      "CombatExtended.AmmoSetDef": 1148,
+      "FleckDef": 659,
+      "GenStepDef": 627,
+      "GeneDef": 4036,
+      "HairDef": 1064,
+      "HeadTypeDef": 1375,
+      "HediffDef": 3399,
+      "IdeoIconDef": 2254,
+      "IncidentDef": 738,
+      "JobDef": 911,
+      "KCSG.StructureLayoutDef": 1732,
+      "KCSG.SymbolDef": 1465,
+      "LifeStageDef": 644,
+      "PawnKindDef": 6714,
+      "PreceptDef": 1506,
+      "RecipeDef": 6389,
+      "ResearchProjectDef": 1019,
+      "RulePackDef": 1041,
+      "SoundDef": 4295,
+      "TerrainDef": 1202,
+      "ThingCategoryDef": 955,
+      "ThingDef": 37125,
+      "ThingStyleDef": 4461,
+      "ThoughtDef": 2938,
+      "VFEProps.PropDef": 5052,
+      "XenotypeIconDef": 742
+     },
+     "def_nodes_per_mod": {
+      "max": 11249,
+      "mean": 175.816,
+      "min": 0,
+      "n": 690,
+      "p50": 9,
+      "p90": 353,
+      "p95": 733,
+      "p99": 3073,
+      "sum": 121313
+     },
+     "distinct_def_element_names": 475,
+     "doctype_files": 0,
+     "files": 22399,
+     "files_per_mod": {
+      "max": 1040,
+      "mean": 32.462,
+      "min": 0,
+      "n": 690,
+      "p50": 3,
+      "p90": 77,
+      "p95": 158,
+      "p99": 587,
+      "sum": 22399
+     },
+     "hidden_name_files_ignored_by_game": 0,
+     "invalid_utf8_files": 1,
+     "leading_whitespace_before_declaration": 0,
+     "nodes_Abstract_true": 5529,
+     "nodes_with_MayRequire": 3229,
+     "nodes_with_MayRequireAnyOf": 170,
+     "nodes_with_Name": 6272,
+     "nodes_with_ParentName": 68036,
+     "nodes_with_defName_child": 115980,
+     "parse_fail_categories": {},
+     "parse_fail_examples": [],
+     "parse_fail_files": 0,
+     "parse_fail_mods": 0,
+     "top_level_def_nodes": 121313,
+     "unreadable_files": 0,
+     "utf16_or_utf32_files": 0,
+     "wrong_root_element": {}
+    },
+    "languages": {
+     "bom": {
+      "none": 2732,
+      "utf-8-bom": 9334
+     },
+     "bytes": 25076102,
+     "bytes_per_mod": {
+      "max": 3593809,
+      "mean": 36342.177,
+      "min": 0,
+      "n": 690,
+      "p50": 286,
+      "p90": 64336,
+      "p95": 132969,
+      "p99": 630263,
+      "sum": 25076102
+     },
+     "declared_encoding": {
+      "(none)": 37,
+      "utf-8": 12029
+     },
+     "declared_non_utf8_but_valid_utf8": 0,
+     "doctype_files": 0,
+     "files": 12066,
+     "files_per_mod": {
+      "max": 3470,
+      "mean": 17.487,
+      "min": 0,
+      "n": 690,
+      "p50": 1,
+      "p90": 22,
+      "p95": 44,
+      "p99": 260,
+      "sum": 12066
+     },
+     "hidden_name_files_ignored_by_game": 89,
+     "invalid_utf8_files": 2,
+     "leading_whitespace_before_declaration": 6,
+     "parse_fail_categories": {
+      "invalid_element_name": 1,
+      "tag_mismatch": 12,
+      "xml_decl_not_first": 6
+     },
+     "parse_fail_examples": [
+      {
+       "category": "tag_mismatch",
+       "file": "Languages/Polish/DefInjected/PawnKindDef/Races_Animal_Megafauna.xml",
+       "line": 5,
+       "message": "Opening and ending tag mismatch: Arthropleura.lifeStages.0.labelMale line 5 and Arthropleura.lifeStages.0.label, line 5, column 90 (<string>, line 5)",
+       "mod": "workshop:1055485938"
+      },
+      {
+       "category": "tag_mismatch",
+       "file": "Languages/French/Keyed/RealRuins_Options.xml",
+       "line": 87,
+       "message": "Opening and ending tag mismatch: LanguageData line 2 and RealRuins.MaterialBlacklistTT, line 87, column 280 (<string>, line 87)",
+       "mod": "workshop:1552146295"
+      },
+      {
+       "category": "invalid_element_name",
+       "file": "Languages/ChineseTraditional/Keyed/RealRuins_Options.xml",
+       "line": 145,
+       "message": "StartTag: invalid element name, line 145, column 67 (<string>, line 145)",
+       "mod": "workshop:1552146295"
+      },
+      {
+       "category": "tag_mismatch",
+       "file": "Languages/French/DefInjected/JobDef/Jobs_Misc.xml",
+       "line": 3,
+       "message": "Opening and ending tag mismatch: UnloadMarkedItems.reportString line 3 and HaulToInventory.UnloadMarkedItems, line 3, column 92 (<string>, line 3)",
+       "mod": "workshop:1561769193"
+      },
+      {
+       "category": "tag_mismatch",
+       "file": "Languages/Dutch/DefInjected/InteractionDefs/PrisonerInteractionModeDef.xml",
+       "line": 3,
+       "message": "Opening and ending tag mismatch: PrisonLabor_workOption.label line 3 and PrisonLabor_Revolt.label, line 3, column 78 (<string>, line 3)",
+       "mod": "workshop:1899474310"
+      },
+      {
+       "category": "tag_mismatch",
+       "file": "Languages/PortugueseBrazilian/DefInjected/ThingDefs/Items_BodyPartsBasic.xml",
+       "line": 13,
+       "message": "Opening and ending tag mismatch: Denture.label line 13 and denture.label, line 13, column 42 (<string>, line 13)",
+       "mod": "workshop:1949064302"
+      },
+      {
+       "category": "tag_mismatch",
+       "file": "Languages/Portuguese/DefInjected/ThingDefs/Items_BodyPartsBasic.xml",
+       "line": 13,
+       "message": "Opening and ending tag mismatch: Denture.label line 13 and denture.label, line 13, column 42 (<string>, line 13)",
+       "mod": "workshop:1949064302"
+      },
+      {
+       "category": "tag_mismatch",
+       "file": "Languages/Polish/DefInjected/ThingCategoryDefs/ProsthesesCategories.xml",
+       "line": 12,
+       "message": "Opening and ending tag mismatch: SurrogateOrgans.label line 9 and LanguageData, line 12, column 16 (<string>, line 12)",
+       "mod": "workshop:1949064302"
+      }
+     ],
+     "parse_fail_files": 19,
+     "parse_fail_mods": 9,
+     "unreadable_files": 0,
+     "utf16_or_utf32_files": 0,
+     "wrong_root_element": {}
+    },
+    "patches": {
+     "bom": {
+      "none": 9806,
+      "utf-8-bom": 451
+     },
+     "bytes": 59448158,
+     "bytes_per_mod": {
+      "max": 20061215,
+      "mean": 86156.751,
+      "min": 0,
+      "n": 690,
+      "p50": 864,
+      "p90": 74193,
+      "p95": 189803,
+      "p99": 868291,
+      "sum": 59448158
+     },
+     "declared_encoding": {
+      "(none)": 184,
+      "utf-8": 10073
+     },
+     "declared_non_utf8_but_valid_utf8": 0,
+     "distinct_operation_classes": 126,
+     "doctype_files": 0,
+     "files": 10257,
+     "files_per_mod": {
+      "max": 3762,
+      "mean": 14.865,
+      "min": 0,
+      "n": 690,
+      "p50": 1,
+      "p90": 17,
+      "p95": 33,
+      "p99": 194,
+      "sum": 10257
+     },
+     "hidden_name_files_ignored_by_game": 0,
+     "invalid_utf8_files": 0,
+     "leading_whitespace_before_declaration": 0,
+     "operation_class_usage_top40": {
+      "CombatExtended.PatchOperationMakeGunCECompatible": 6534,
+      "CombatExtended.PatchOperationSettingsConditional": 67,
+      "LWM.DeepStorage.PatchMessage": 54,
+      "ModSettingsFramework.PatchOperationModOption": 65,
+      "NQualityOfLife.XML.Add": 254,
+      "NQualityOfLife.XML.AddDeep": 89,
+      "NQualityOfLife.XML.AddOrReplace": 179,
+      "NQualityOfLife.XML.AddTextVariable": 54,
+      "NQualityOfLife.XML.ClearVariable": 54,
+      "NQualityOfLife.XML.PatchIfEnabled": 109,
+      "NQualityOfLife.XML.PatchIfExists": 128,
+      "NQualityOfLife.XML.PatchIfModsLoaded": 112,
+      "NQualityOfLife.XML.Profiler": 210,
+      "NQualityOfLife.XML.Replace": 45,
+      "PatchOperationAdd": 47477,
+      "PatchOperationAddModExtension": 7232,
+      "PatchOperationAttributeSet": 414,
+      "PatchOperationConditional": 24284,
+      "PatchOperationFindMod": 4170,
+      "PatchOperationInsert": 200,
+      "PatchOperationRemove": 11458,
+      "PatchOperationReplace": 50133,
+      "PatchOperationSequence": 5088,
+      "PatchOperationTest": 305,
+      "SafePatcher.PatchOperationSetModExtension": 370,
+      "TweaksGalore.PatchOperation_SettingActive": 90,
+      "TweaksGalore.PatchOperation_TweakBool": 137,
+      "XmlExtensions.Conditional": 170,
+      "XmlExtensions.CreateVariable": 82,
+      "XmlExtensions.FindMod": 113,
+      "XmlExtensions.Log": 283,
+      "XmlExtensions.OptionalPatch": 764,
+      "XmlExtensions.OptionalPatchExternal": 155,
+      "XmlExtensions.PatchOperationAdd": 221,
+      "XmlExtensions.PatchOperationAddOrReplace": 195,
+      "XmlExtensions.PatchOperationRemove": 59,
+      "XmlExtensions.PatchOperationReplace": 293,
+      "XmlExtensions.PatchOperationSafeAdd": 620,
+      "XmlExtensions.PatchOperationSafeRemove": 119,
+      "XmlExtensions.UseSetting": 60
+     },
+     "operations_list_li_with_MayRequire_honoured": 598,
+     "operations_top_level": 81148,
+     "parse_fail_categories": {
+      "empty_or_no_root": 6
+     },
+     "parse_fail_examples": [
+      {
+       "category": "empty_or_no_root",
+       "file": "ConditionalPatches/RT_Patch_RimWorld_Royalty/Patches/RT_Patch_VTC_RT_Royalty_Common.xml",
+       "line": 12,
+       "message": "Start tag expected, '<' not found, line 12, column 1 (<string>, line 12)",
+       "mod": "workshop:2244594116"
+      },
+      {
+       "category": "empty_or_no_root",
+       "file": "ConditionalPatches/RT_Patch_RimWorld_Royalty/Patches/RT_Patch_VTC_RT_Royalty_Rare.xml",
+       "line": 12,
+       "message": "Start tag expected, '<' not found, line 12, column 1 (<string>, line 12)",
+       "mod": "workshop:2244594116"
+      },
+      {
+       "category": "empty_or_no_root",
+       "file": "ConditionalPatches/RT_Patch_RimWorld_Royalty/Patches/RT_Patch_VTC_RT_Royalty_Uncommon.xml",
+       "line": 12,
+       "message": "Start tag expected, '<' not found, line 12, column 1 (<string>, line 12)",
+       "mod": "workshop:2244594116"
+      }
+     ],
+     "parse_fail_files": 6,
+     "parse_fail_mods": 1,
+     "root_children_not_named_Operation": 0,
+     "top_level_Operation_with_MayRequire_ignored_by_game": 86,
+     "unreadable_files": 0,
+     "utf16_or_utf32_files": 0,
+     "wrong_root_element": {}
+    }
+   }
+  }
+ },
+ "roots": {
+  "install_mods": {
+   "mod_dirs": 47,
+   "present": true
+  },
+  "official": {
+   "mod_dirs": 6,
+   "present": true
+  },
+  "owner_mods": {
+   "mod_dirs": 27,
+   "present": true
+  },
+  "workshop": {
+   "mod_dirs": 690,
+   "present": true
+  }
+ },
+ "scan_budget": {
+  "all_requested_roots": {
+   "label": "workshop+install_mods+owner_mods",
+   "level0_metadata_only": {
+    "bytes_read": 1609748,
+    "directory_entries_listed": 8858,
+    "files_opened": 1753,
+    "readdir_calls": 1520,
+    "what": "list each mod root, read About/About.xml + LoadFolders.xml + PublishedFileId.txt, stat Preview.png/ModIcon.png"
+   },
+   "level1_defs_patches_index": {
+    "bytes_read": 358207294,
+    "files_opened": 43339,
+    "what": "level 0 + a def index over every Defs/** and Patches/** XML file in any folder (no load-order logic)",
+    "xml_bytes_defs_and_patches": 356597546,
+    "xml_files_defs_and_patches": 41586
+   },
+   "level2_plus_languages": {
+    "bytes_read": 400463999,
+    "files_opened": 64354,
+    "what": "level 1 + Languages/** XML (translation index)"
+   },
+   "level3_full_walk": {
+    "dirs_listed": 61148,
+    "extra_files_if_git_dirs_are_not_skipped": 24069,
+    "files_stat": 329539,
+    "total_bytes_on_disk_apparent": 34330357459,
+    "what": "full recursive walk with stat of every entry (size accounting, path checks), no content reads beyond level 0"
+   },
+   "mods": 764
+  },
+  "install_mods": {
+   "label": "install_mods",
+   "level0_metadata_only": {
+    "bytes_read": 104981,
+    "directory_entries_listed": 682,
+    "files_opened": 82,
+    "readdir_calls": 94,
+    "what": "list each mod root, read About/About.xml + LoadFolders.xml + PublishedFileId.txt, stat Preview.png/ModIcon.png"
+   },
+   "level1_defs_patches_index": {
+    "bytes_read": 86360738,
+    "files_opened": 8906,
+    "what": "level 0 + a def index over every Defs/** and Patches/** XML file in any folder (no load-order logic)",
+    "xml_bytes_defs_and_patches": 86255757,
+    "xml_files_defs_and_patches": 8824
+   },
+   "level2_plus_languages": {
+    "bytes_read": 103477102,
+    "files_opened": 17833,
+    "what": "level 1 + Languages/** XML (translation index)"
+   },
+   "level3_full_walk": {
+    "dirs_listed": 9199,
+    "extra_files_if_git_dirs_are_not_skipped": 1294,
+    "files_stat": 40852,
+    "total_bytes_on_disk_apparent": 2395135007,
+    "what": "full recursive walk with stat of every entry (size accounting, path checks), no content reads beyond level 0"
+   },
+   "mods": 47
+  },
+  "official": {
+   "label": "official",
+   "level0_metadata_only": {
+    "bytes_read": 2668,
+    "directory_entries_listed": 51,
+    "files_opened": 6,
+    "readdir_calls": 12,
+    "what": "list each mod root, read About/About.xml + LoadFolders.xml + PublishedFileId.txt, stat Preview.png/ModIcon.png"
+   },
+   "level1_defs_patches_index": {
+    "bytes_read": 12695511,
+    "files_opened": 1578,
+    "what": "level 0 + a def index over every Defs/** and Patches/** XML file in any folder (no load-order logic)",
+    "xml_bytes_defs_and_patches": 12692843,
+    "xml_files_defs_and_patches": 1572
+   },
+   "level2_plus_languages": {
+    "bytes_read": 13544952,
+    "files_opened": 1672,
+    "what": "level 1 + Languages/** XML (translation index)"
+   },
+   "level3_full_walk": {
+    "dirs_listed": 561,
+    "extra_files_if_git_dirs_are_not_skipped": 0,
+    "files_stat": 1885,
+    "total_bytes_on_disk_apparent": 508281139,
+    "what": "full recursive walk with stat of every entry (size accounting, path checks), no content reads beyond level 0"
+   },
+   "mods": 6
+  },
+  "owner_mods": {
+   "label": "owner_mods",
+   "level0_metadata_only": {
+    "bytes_read": 17248,
+    "directory_entries_listed": 232,
+    "files_opened": 31,
+    "readdir_calls": 46,
+    "what": "list each mod root, read About/About.xml + LoadFolders.xml + PublishedFileId.txt, stat Preview.png/ModIcon.png"
+   },
+   "level1_defs_patches_index": {
+    "bytes_read": 702531,
+    "files_opened": 137,
+    "what": "level 0 + a def index over every Defs/** and Patches/** XML file in any folder (no load-order logic)",
+    "xml_bytes_defs_and_patches": 685283,
+    "xml_files_defs_and_patches": 106
+   },
+   "level2_plus_languages": {
+    "bytes_read": 766770,
+    "files_opened": 159,
+    "what": "level 1 + Languages/** XML (translation index)"
+   },
+   "level3_full_walk": {
+    "dirs_listed": 734,
+    "extra_files_if_git_dirs_are_not_skipped": 1749,
+    "files_stat": 3487,
+    "total_bytes_on_disk_apparent": 725942179,
+    "what": "full recursive walk with stat of every entry (size accounting, path checks), no content reads beyond level 0"
+   },
+   "mods": 27
+  },
+  "workshop": {
+   "label": "workshop",
+   "level0_metadata_only": {
+    "bytes_read": 1487519,
+    "directory_entries_listed": 7944,
+    "files_opened": 1640,
+    "readdir_calls": 1380,
+    "what": "list each mod root, read About/About.xml + LoadFolders.xml + PublishedFileId.txt, stat Preview.png/ModIcon.png"
+   },
+   "level1_defs_patches_index": {
+    "bytes_read": 271144025,
+    "files_opened": 34296,
+    "what": "level 0 + a def index over every Defs/** and Patches/** XML file in any folder (no load-order logic)",
+    "xml_bytes_defs_and_patches": 269656506,
+    "xml_files_defs_and_patches": 32656
+   },
+   "level2_plus_languages": {
+    "bytes_read": 296220127,
+    "files_opened": 46362,
+    "what": "level 1 + Languages/** XML (translation index)"
+   },
+   "level3_full_walk": {
+    "dirs_listed": 51215,
+    "extra_files_if_git_dirs_are_not_skipped": 21026,
+    "files_stat": 285200,
+    "total_bytes_on_disk_apparent": 31209280273,
+    "what": "full recursive walk with stat of every entry (size accounting, path checks), no content reads beyond level 0"
+   },
+   "mods": 690
+  }
+ },
+ "schema": "rimstudio.mod-corpus.summary/1",
+ "totals_all_requested_roots": {
+  "bytes": 34330357459,
+  "dirs": 60384,
+  "files": 329539,
+  "mod_dirs": 764,
+  "xml_bytes": 466831695,
+  "xml_files": 64840
+ },
+ "workshop_acf_cross_check": {
+  "acf_declared_bytes_total": 6792220215,
+  "folders_on_disk": 690,
+  "folders_without_acf_entry": [],
+  "ids_in_acf_without_folder": [
+   "2971930101",
+   "3309790710"
+  ],
+  "installed_item_ids_in_acf": 692,
+  "note": "only item ids and sizes are read; the details section (account data) is never parsed"
+ }
+}

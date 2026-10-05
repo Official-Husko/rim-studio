@@ -1,0 +1,397 @@
+[
+ {
+  "name": "inherit-basic-merge",
+  "doc": "Child over parent: scalar replaced, nested elements merged by name, li appended, new elements appended at the end; attributes of the parent (Name, Abstract, Foo) are NOT inherited.",
+  "game_version": "1.6.4871",
+  "mods": [
+   {
+    "id": "ludeon.rimworld",
+    "files": {
+     "Defs/a.xml": "<Defs><ThingDef Name=\"Base\" Abstract=\"True\" Foo=\"p\"><defName>BaseX</defName><label>base</label><statBases><MaxHitPoints>100</MaxHitPoints><Mass>2</Mass></statBases><comps><li>a</li></comps></ThingDef><ThingDef ParentName=\"Base\"><defName>C</defName><statBases><Mass>5</Mass></statBases><comps><li>b</li></comps><extra>1</extra></ThingDef></Defs>"
+    }
+   }
+  ],
+  "expect": {
+   "defs": {
+    "ThingDef/C": "<ThingDef ParentName=\"Base\"><defName>C</defName><label>base</label><statBases><MaxHitPoints>100</MaxHitPoints><Mass>5</Mass></statBases><comps><li>a</li><li>b</li></comps><extra>1</extra></ThingDef>"
+   },
+   "absent": [
+    "ThingDef/BaseX"
+   ],
+   "stats": {
+    "abstract": 1,
+    "defs": 1
+   },
+   "provenance": {
+    "ThingDef/C": {
+     "parents": [
+      "ludeon.rimworld:Base"
+     ]
+    }
+   }
+  }
+ },
+ {
+  "name": "inherit-allow-duplicate-nodes",
+  "doc": "Children of fields marked XmlInheritanceAllowDuplicateNodes (here forcedTraits) are appended like li; the same shape under another name is merged.",
+  "game_version": "1.6.4871",
+  "mods": [
+   {
+    "id": "ludeon.rimworld",
+    "files": {
+     "Defs/a.xml": "<Defs><ThingDef Name=\"P\" Abstract=\"True\"><forcedTraits><Brawler>1</Brawler></forcedTraits><other><Brawler>1</Brawler></other></ThingDef><ThingDef ParentName=\"P\"><defName>C</defName><forcedTraits><Brawler>2</Brawler></forcedTraits><other><Brawler>2</Brawler></other></ThingDef></Defs>"
+    }
+   }
+  ],
+  "expect": {
+   "defs": {
+    "ThingDef/C": "<ThingDef ParentName=\"P\"><forcedTraits><Brawler>1</Brawler><Brawler>2</Brawler></forcedTraits><other><Brawler>2</Brawler></other><defName>C</defName></ThingDef>"
+   }
+  }
+ },
+ {
+  "name": "inherit-false-nested",
+  "doc": "Inherit=\"False\" on a nested node discards the parent's content of that node; the Inherit attribute itself is dropped.",
+  "game_version": "1.6.4871",
+  "mods": [
+   {
+    "id": "ludeon.rimworld",
+    "files": {
+     "Defs/a.xml": "<Defs><ThingDef Name=\"P\" Abstract=\"True\"><comps><li>a</li><li>b</li></comps><statBases><A>1</A></statBases></ThingDef><ThingDef ParentName=\"P\"><defName>C</defName><comps Inherit=\"False\"><li>z</li></comps><statBases Inherit=\"false\"><B>2</B></statBases></ThingDef></Defs>"
+    }
+   }
+  ],
+  "expect": {
+   "defs": {
+    "ThingDef/C": "<ThingDef ParentName=\"P\"><comps><li>z</li></comps><statBases><B>2</B></statBases><defName>C</defName></ThingDef>"
+   }
+  }
+ },
+ {
+  "name": "inherit-false-root-keeps-parent-attrs",
+  "doc": "Quirk: with Inherit=\"false\" on the def node the cloned parent's attributes survive (Name, Abstract) and the child's are appended.",
+  "game_version": "1.6.4871",
+  "mods": [
+   {
+    "id": "ludeon.rimworld",
+    "files": {
+     "Defs/a.xml": "<Defs><ThingDef Name=\"P\" Abstract=\"True\"><label>p</label><x>1</x></ThingDef><ThingDef ParentName=\"P\" Inherit=\"false\"><defName>C</defName></ThingDef></Defs>"
+    }
+   }
+  ],
+  "expect": {
+   "defs": {
+    "ThingDef/C": "<ThingDef Name=\"P\" Abstract=\"True\" ParentName=\"P\"><defName>C</defName></ThingDef>"
+   }
+  }
+ },
+ {
+  "name": "inherit-empty-element",
+  "doc": "An empty child element: removes the parent's text (no element children) but keeps the parent's element children.",
+  "game_version": "1.6.4871",
+  "mods": [
+   {
+    "id": "ludeon.rimworld",
+    "files": {
+     "Defs/a.xml": "<Defs><ThingDef Name=\"P\" Abstract=\"True\"><label>x</label><statBases><A>1</A></statBases><tags><li>t</li></tags></ThingDef><ThingDef ParentName=\"P\"><defName>C</defName><label/><statBases/><tags></tags></ThingDef></Defs>"
+    }
+   }
+  ],
+  "expect": {
+   "defs": {
+    "ThingDef/C": "<ThingDef ParentName=\"P\"><label/><statBases><A>1</A></statBases><tags><li>t</li></tags><defName>C</defName></ThingDef>"
+   }
+  }
+ },
+ {
+  "name": "inherit-text-over-multichild-quirk",
+  "doc": "Quirk (Mono probe): a child that holds text replaces the parent's content, but only the FIRST child node of the parent is removed (live list).",
+  "game_version": "1.6.4871",
+  "mods": [
+   {
+    "id": "ludeon.rimworld",
+    "files": {
+     "Defs/a.xml": "<Defs><ThingDef Name=\"P\" Abstract=\"True\"><x><a/><b/><c/></x></ThingDef><ThingDef ParentName=\"P\"><defName>C</defName><x>t</x></ThingDef></Defs>"
+    }
+   }
+  ],
+  "expect": {
+   "defs": {
+    "ThingDef/C": "<ThingDef ParentName=\"P\"><x><b/><c/>t</x><defName>C</defName></ThingDef>"
+   }
+  }
+ },
+ {
+  "name": "inherit-chain-three-levels",
+  "doc": "Grandparent, parent, child in any file order: resolved top-down; the parent chain is recorded.",
+  "game_version": "1.6.4871",
+  "mods": [
+   {
+    "id": "ludeon.rimworld",
+    "files": {
+     "Defs/a.xml": "<Defs><ThingDef ParentName=\"P\"><defName>C</defName><c>c</c></ThingDef><ThingDef Name=\"P\" ParentName=\"G\" Abstract=\"True\"><b>p</b></ThingDef><ThingDef Name=\"G\" Abstract=\"True\"><a>g</a><b>g</b><c>g</c></ThingDef></Defs>"
+    }
+   }
+  ],
+  "expect": {
+   "defs": {
+    "ThingDef/C": "<ThingDef ParentName=\"P\"><a>g</a><b>p</b><c>c</c><defName>C</defName></ThingDef>"
+   },
+   "provenance": {
+    "ThingDef/C": {
+     "parents": [
+      "ludeon.rimworld:P",
+      "ludeon.rimworld:G"
+     ]
+    }
+   }
+  }
+ },
+ {
+  "name": "inherit-cycle",
+  "doc": "A cycle is reported for every member; the members stay unresolved and the defs are built from the raw nodes (with a not-resolved error each).",
+  "game_version": "1.6.4871",
+  "mods": [
+   {
+    "id": "ludeon.rimworld",
+    "files": {
+     "Defs/a.xml": "<Defs><ThingDef Name=\"A\" ParentName=\"B\"><defName>DA</defName></ThingDef><ThingDef Name=\"B\" ParentName=\"A\"><defName>DB</defName></ThingDef><ThingDef><defName>N</defName></ThingDef></Defs>"
+    }
+   }
+  ],
+  "expect": {
+   "defs": {
+    "ThingDef/DA": "<ThingDef Name=\"A\" ParentName=\"B\"><defName>DA</defName></ThingDef>"
+   },
+   "diag": {
+    "inherit_cycle": 2,
+    "inherit_not_resolved": 2
+   },
+   "stats": {
+    "defs": 3
+   }
+  }
+ },
+ {
+  "name": "inherit-missing-parent",
+  "doc": "A missing parent is an error; the node still becomes a def, unmerged.",
+  "game_version": "1.6.4871",
+  "mods": [
+   {
+    "id": "ludeon.rimworld",
+    "files": {
+     "Defs/a.xml": "<Defs><ThingDef ParentName=\"Nope\"><defName>M</defName></ThingDef></Defs>"
+    }
+   }
+  ],
+  "expect": {
+   "defs": {
+    "ThingDef/M": "<ThingDef ParentName=\"Nope\"><defName>M</defName></ThingDef>"
+   },
+   "diag": {
+    "inherit_missing_parent": 1,
+    "inherit_not_resolved": 0
+   }
+  }
+ },
+ {
+  "name": "inherit-parent-by-load-order",
+  "doc": "A child sees the parent with the highest load order that is not after its own mod; a parent that only exists in a LATER mod is invisible.",
+  "game_version": "1.6.4871",
+  "mods": [
+   {
+    "id": "ludeon.rimworld",
+    "files": {
+     "Defs/a.xml": "<Defs><ThingDef ParentName=\"P\"><defName>InCore</defName></ThingDef></Defs>"
+    }
+   },
+   {
+    "id": "test.a",
+    "files": {
+     "Defs/a.xml": "<Defs><ThingDef Name=\"P\" Abstract=\"True\"><label>A</label></ThingDef></Defs>"
+    }
+   },
+   {
+    "id": "test.b",
+    "files": {
+     "Defs/a.xml": "<Defs><ThingDef ParentName=\"P\"><defName>InB</defName></ThingDef></Defs>"
+    }
+   },
+   {
+    "id": "test.c",
+    "files": {
+     "Defs/a.xml": "<Defs><ThingDef Name=\"P\" Abstract=\"True\"><label>C</label></ThingDef><ThingDef ParentName=\"P\"><defName>InC</defName></ThingDef></Defs>"
+    }
+   }
+  ],
+  "expect": {
+   "defs": {
+    "ThingDef/InB": "<ThingDef ParentName=\"P\"><label>A</label><defName>InB</defName></ThingDef>",
+    "ThingDef/InC": "<ThingDef ParentName=\"P\"><label>C</label><defName>InC</defName></ThingDef>",
+    "ThingDef/InCore": "<ThingDef ParentName=\"P\"><defName>InCore</defName></ThingDef>"
+   },
+   "diag": {
+    "inherit_missing_parent": 1
+   }
+  }
+ },
+ {
+  "name": "inherit-duplicate-name-same-mod",
+  "doc": "A Name used twice inside one mod: the second is not registered (error); the same Name in another mod is fine and wins for that mod's children.",
+  "game_version": "1.6.4871",
+  "mods": [
+   {
+    "id": "test.a",
+    "files": {
+     "Defs/a.xml": "<Defs><ThingDef Name=\"X\" Abstract=\"True\"><label>1</label></ThingDef><ThingDef Name=\"X\" Abstract=\"True\"><label>2</label></ThingDef><ThingDef ParentName=\"X\"><defName>CA</defName></ThingDef></Defs>"
+    }
+   },
+   {
+    "id": "test.b",
+    "files": {
+     "Defs/a.xml": "<Defs><ThingDef Name=\"X\" Abstract=\"True\"><label>3</label></ThingDef><ThingDef ParentName=\"X\"><defName>CB</defName></ThingDef></Defs>"
+    }
+   }
+  ],
+  "expect": {
+   "defs": {
+    "ThingDef/CA": "<ThingDef ParentName=\"X\"><label>1</label><defName>CA</defName></ThingDef>",
+    "ThingDef/CB": "<ThingDef ParentName=\"X\"><label>3</label><defName>CB</defName></ThingDef>"
+   },
+   "diag": {
+    "inherit_duplicate_name": 1
+   }
+  }
+ },
+ {
+  "name": "inherit-duplicate-node-name-error",
+  "doc": "Two non-list nodes with one name in a child: reported; the merge applies both in order, the last text wins.",
+  "game_version": "1.6.4871",
+  "mods": [
+   {
+    "id": "ludeon.rimworld",
+    "files": {
+     "Defs/a.xml": "<Defs><ThingDef Name=\"P\" Abstract=\"True\"><label>p</label></ThingDef><ThingDef ParentName=\"P\"><defName>C</defName><label>1</label><label>2</label></ThingDef></Defs>"
+    }
+   }
+  ],
+  "expect": {
+   "defs": {
+    "ThingDef/C": "<ThingDef ParentName=\"P\"><label>2</label><defName>C</defName></ThingDef>"
+   },
+   "diag": {
+    "inherit_duplicate_node_name": 1
+   }
+  }
+ },
+ {
+  "name": "abstract-not-created",
+  "doc": "Abstract is read on the ORIGINAL node, case-insensitively as a value, case-sensitively as an attribute name; it is never inherited.",
+  "game_version": "1.6.4871",
+  "mods": [
+   {
+    "id": "ludeon.rimworld",
+    "files": {
+     "Defs/a.xml": "<Defs><ThingDef Abstract=\"True\"><defName>A1</defName></ThingDef><ThingDef Abstract=\"true\"><defName>A2</defName></ThingDef><ThingDef Abstract=\"TRUE\"><defName>A3</defName></ThingDef><ThingDef Abstract=\"False\"><defName>Y1</defName></ThingDef><ThingDef abstract=\"true\"><defName>Y2</defName></ThingDef><ThingDef Name=\"P\" Abstract=\"True\"><label>p</label></ThingDef><ThingDef ParentName=\"P\"><defName>Y3</defName></ThingDef></Defs>"
+    }
+   }
+  ],
+  "expect": {
+   "absent": [
+    "ThingDef/A1",
+    "ThingDef/A2",
+    "ThingDef/A3"
+   ],
+   "db_order": {
+    "ThingDef": [
+     "Y1",
+     "Y2",
+     "Y3"
+    ]
+   },
+   "stats": {
+    "abstract": 4
+   }
+  }
+ },
+ {
+  "name": "class-attribute-and-type-names",
+  "doc": "Type resolution: element name or Class attribute (not inherited), case-insensitive for namespace-qualified and ignored-namespace names, short names of non-ignored namespaces fail; a subclass def lives in the databases of all its ancestors.",
+  "game_version": "1.6.4871",
+  "mods": [
+   {
+    "id": "ludeon.rimworld",
+    "files": {
+     "Defs/a.xml": "<Defs><ThingDef Class=\"CombatExtended.AmmoDef\"><defName>T1</defName></ThingDef><CombatExtended.AmmoDef><defName>T2</defName></CombatExtended.AmmoDef><ThingDef Class=\"combatextended.ammodef\"><defName>T3</defName></ThingDef><AmmoDef><defName>T4</defName></AmmoDef><thingdef><defName>T5</defName></thingdef><ThingDef Name=\"CB\" Abstract=\"True\" Class=\"CombatExtended.AmmoDef\"><label>l</label></ThingDef><ThingDef ParentName=\"CB\"><defName>T6</defName></ThingDef></Defs>"
+    }
+   }
+  ],
+  "expect": {
+   "db_order": {
+    "CombatExtended.AmmoDef": [
+     "T1",
+     "T2",
+     "T3"
+    ],
+    "ThingDef": [
+     "T1",
+     "T2",
+     "T3",
+     "T5",
+     "T6"
+    ]
+   },
+   "diag": {
+    "def_unknown_type": 1
+   }
+  },
+  "extra_types": {
+   "CombatExtended.AmmoDef": "Verse.ThingDef"
+  }
+ },
+ {
+  "name": "duplicates-across-types",
+  "doc": "Databases are per type and include subclasses: an AmmoDef named like a ThingDef replaces it in DefDatabase<ThingDef>; inside one mod the second def of a name is skipped in the ancestor database.",
+  "game_version": "1.6.4871",
+  "mods": [
+   {
+    "id": "ludeon.rimworld",
+    "files": {
+     "Defs/a.xml": "<Defs><ThingDef><defName>X</defName><label>core</label></ThingDef></Defs>"
+    }
+   },
+   {
+    "id": "test.a",
+    "files": {
+     "Defs/a.xml": "<Defs><CombatExtended.AmmoDef><defName>X</defName><label>ammo</label></CombatExtended.AmmoDef><ThingDef><defName>Y</defName></ThingDef><CombatExtended.AmmoDef><defName>Y</defName></CombatExtended.AmmoDef></Defs>"
+    }
+   }
+  ],
+  "expect": {
+   "db_order": {
+    "ThingDef": [
+     "X",
+     "Y"
+    ],
+    "CombatExtended.AmmoDef": [
+     "X",
+     "Y"
+    ]
+   },
+   "provenance": {
+    "ThingDef/X": {
+     "mod": "test.a"
+    }
+   },
+   "defs": {
+    "ThingDef/X": "<CombatExtended.AmmoDef><defName>X</defName><label>ammo</label></CombatExtended.AmmoDef>"
+   },
+   "diag": {
+    "def_duplicate_in_mod": 1
+   }
+  },
+  "extra_types": {
+   "CombatExtended.AmmoDef": "Verse.ThingDef"
+  }
+ }
+]

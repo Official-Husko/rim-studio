@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  TEMPLATE 05: apparel. Three shapes: (a) stuffable cloth, (b) fixed-material armour, (c) partial armour via mod extension.
+  CE armour units: ArmorRating_Sharp is millimetres of RHA equivalent, ArmorRating_Blunt uses CE-specific blunt units (see CE wiki);
+  both are far larger than vanilla 0..2 fractions. Heat and Electric stay fractions.
+-->
+<Patch>
+  <!-- (a) stuffable apparel: only the multiplier is replaced, plus Bulk and WornBulk added. -->
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="{{defName}}"]/statBases/StuffEffectMultiplierArmor</xpath>
+    <value><StuffEffectMultiplierArmor>{{mult}}</StuffEffectMultiplierArmor></value>  <!-- fails when the def lacks the stat: use Conditional (09) -->
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="{{defName}}"]/statBases</xpath>
+    <value>
+      <Bulk>{{bulk}}</Bulk>                                  <!-- [REQ] volume when carried -->
+      <WornBulk>{{worn_bulk}}</WornBulk>                     <!-- [REQ] volume when worn; lower than Bulk -->
+    </value>
+  </Operation>
+
+  <!-- (b) fixed-material armour: replace the two ratings with absolute values, raise hit points. -->
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="{{armor_defName}}"]/statBases/ArmorRating_Sharp</xpath>
+    <value><ArmorRating_Sharp>{{sharp_mm_rha}}</ArmorRating_Sharp></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="{{armor_defName}}"]/statBases/ArmorRating_Blunt</xpath>
+    <value><ArmorRating_Blunt>{{blunt}}</ArmorRating_Blunt></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="{{armor_defName}}"]/statBases/MaxHitPoints</xpath>
+    <value><MaxHitPoints>{{hp}}</MaxHitPoints></value>
+  </Operation>
+
+  <!-- (c) partial coverage: modifies the rating on named body parts. Adds a mod extension; list the Class exactly. -->
+  <Operation Class="PatchOperationAddModExtension">
+    <xpath>Defs/ThingDef[defName="{{armor_defName}}"]</xpath>
+    <value>
+      <li Class="CombatExtended.PartialArmorExt">
+        <stats>
+          <li><ArmorRating_Sharp>{{neck_sharp}}</ArmorRating_Sharp><parts><li>Neck</li></parts></li>
+          <li><ArmorRating_Blunt>{{neck_blunt}}</ArmorRating_Blunt><parts><li>Neck</li></parts></li>
+        </stats>
+      </li>
+    </value>
+  </Operation>
+  <!-- Optional extras seen in the corpus: equippedStatOffsets (CarryBulk, CarryWeight, ShootingAccuracyPawn,
+       SmokeSensitivity), NightVisionEfficiency_Apparel, and CompProperties_ArmorDurability for plate durability. -->
+</Patch>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  TEMPLATE 03: bow, crossbow, or other mechanical launcher. Same operation as a gun with three differences:
+  an arrow/bolt AmmoSet, an empty FireModes element, and (for bows) AllowWithRunAndGun false.
+-->
+<Patch>
+  <Operation Class="CombatExtended.PatchOperationMakeGunCECompatible">
+    <defName>{{defName}}</defName>
+    <statBases>
+      <SightsEfficiency>0.8</SightsEfficiency>
+      <ShotSpread>1</ShotSpread>
+      <SwayFactor>2</SwayFactor>
+      <Bulk>{{bulk}}</Bulk>
+      <RangedWeapon_Cooldown>1</RangedWeapon_Cooldown>
+    </statBases>
+    <costList><WoodLog>{{wood}}</WoodLog></costList>
+    <Properties>
+      <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>{{arrow_projectile_defName}}</defaultProjectile>
+      <warmupTime>{{warmup}}</warmupTime>
+      <range>{{range}}</range>
+      <soundCast>{{bow_sound}}</soundCast>
+    </Properties>
+    <AmmoUser>
+      <ammoSet>{{AmmoSet_Arrow_or_Bolt}}</ammoSet>           <!-- CE ships arrow, great arrow, streamlined arrow and bolt sets -->
+      <AmmoGenPerMagOverride>{{spawn_count}}</AmmoGenPerMagOverride> <!-- [OPT] how many arrows pawns spawn with; magazineSize is not needed -->
+    </AmmoUser>
+    <FireModes />                                            <!-- empty element is valid and is the bow idiom -->
+    <weaponTags><li>CE_Bow</li></weaponTags>
+    <AllowWithRunAndGun>false</AllowWithRunAndGun>
+  </Operation>
+  <Operation Class="PatchOperationReplace">                  <!-- bows only need one blunt tool -->
+    <xpath>Defs/ThingDef[defName="{{defName}}"]/tools</xpath>
+    <value>
+      <tools>
+        <li Class="CombatExtended.ToolCE">
+          <capacities><li>Blunt</li></capacities>
+          <power>7</power><cooldownTime>1.6</cooldownTime>
+          <armorPenetrationBlunt>0.65</armorPenetrationBlunt>
+        </li>
+      </tools>
+    </value>
+  </Operation>
+</Patch>

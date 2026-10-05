@@ -1,0 +1,29 @@
+{
+  "$comment": "R10: RimStudio stores a CE template as a JSON node tree and renders XML only on output. This shows template 01 in that form. Keys beginning with @ are XML attributes, #text is element text, children is an ordered list.",
+  "template": "ce.ranged-gun",
+  "version": 1,
+  "params": {
+    "defName": { "from": "vanilla", "type": "defName" },
+    "bulk": { "from": "computed", "type": "number", "formula": "ce.bulk.gun" },
+    "ammoSet": { "from": "user", "type": "defRef", "defType": "CombatExtended.AmmoSetDef" }
+  },
+  "operations": [
+    {
+      "name": "Operation",
+      "@Class": "CombatExtended.PatchOperationMakeGunCECompatible",
+      "requires": { "mod": "ceteam.combatextended" },
+      "children": [
+        { "name": "defName", "#text": "{{defName}}" },
+        { "name": "statBases", "children": [
+          { "name": "Bulk", "#text": "{{bulk}}" },
+          { "name": "RangedWeapon_Cooldown", "#text": "{{cooldown_s}}" }
+        ] },
+        { "name": "AmmoUser", "children": [
+          { "name": "ammoSet", "#text": "{{ammoSet}}" }
+        ] },
+        { "name": "FireModes", "children": [] }
+      ]
+    }
+  ],
+  "output": { "folder": "CE/Patches", "file": "{{modSlug}}_guns.xml", "gate": "loadFolders" }
+}

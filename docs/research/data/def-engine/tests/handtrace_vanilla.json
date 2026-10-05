@@ -1,0 +1,604 @@
+[
+ {
+  "def": "ThingDef/Gun_AssaultRifle",
+  "mod": "Ludeon.RimWorld",
+  "parents": [
+   "Ludeon.RimWorld:BaseHumanMakeableGun",
+   "Ludeon.RimWorld:BaseMakeableGun",
+   "Ludeon.RimWorld:BaseGunWithQuality",
+   "Ludeon.RimWorld:BaseGun",
+   "Ludeon.RimWorld:BaseWeapon"
+  ],
+  "checks": [
+   {
+    "text": "statBases/Flammability",
+    "expect": "0.5"
+   },
+   {
+    "text": "statBases/MaxHitPoints",
+    "expect": "100"
+   },
+   {
+    "text": "statBases/Mass",
+    "expect": "3.5"
+   },
+   {
+    "count": "statBases/*",
+    "expect": 12
+   },
+   {
+    "names": "statBases/*",
+    "expect": [
+     "MaxHitPoints",
+     "Flammability",
+     "DeteriorationRate",
+     "Beauty",
+     "SellPriceFactor",
+     "WorkToMake",
+     "Mass",
+     "AccuracyTouch",
+     "AccuracyShort",
+     "AccuracyMedium",
+     "AccuracyLong",
+     "RangedWeapon_Cooldown"
+    ]
+   },
+   {
+    "count": "comps/li",
+    "expect": 6
+   },
+   {
+    "count": "weaponTags/li",
+    "expect": 3
+   },
+   {
+    "count": "tools/li",
+    "expect": 2
+   },
+   {
+    "text": "techLevel",
+    "expect": "Industrial"
+   },
+   {
+    "names": "*[position()<=3]",
+    "expect": [
+     "thingClass",
+     "category",
+     "drawerType"
+    ]
+   },
+   {
+    "attrs": {
+     "ParentName": "BaseHumanMakeableGun"
+    }
+   }
+  ]
+ },
+ {
+  "def": "ThingDef/Gun_Revolver",
+  "mod": "Ludeon.RimWorld",
+  "parents": [
+   "Ludeon.RimWorld:BaseHumanMakeableGun",
+   "Ludeon.RimWorld:BaseMakeableGun",
+   "Ludeon.RimWorld:BaseGunWithQuality",
+   "Ludeon.RimWorld:BaseGun",
+   "Ludeon.RimWorld:BaseWeapon"
+  ],
+  "checks": [
+   {
+    "texts": "weaponTags/li",
+    "expect": [
+     "Gun",
+     "SimpleGun",
+     "Revolver"
+    ]
+   },
+   {
+    "text": "costList/Steel",
+    "expect": "30"
+   },
+   {
+    "text": "costList/ComponentIndustrial",
+    "expect": "2"
+   },
+   {
+    "text": "statBases/Mass",
+    "expect": "1.4"
+   },
+   {
+    "count": "comps/li",
+    "expect": 6
+   },
+   {
+    "text": "statBases/Flammability",
+    "expect": "0.5"
+   }
+  ]
+ },
+ {
+  "def": "ThingDef/MeleeWeapon_LongSword",
+  "mod": "Ludeon.RimWorld",
+  "parents": [
+   "Ludeon.RimWorld:BaseMeleeWeapon_Sharp_Quality",
+   "Ludeon.RimWorld:BaseMeleeWeapon_Sharp",
+   "Ludeon.RimWorld:BaseMeleeWeapon",
+   "Ludeon.RimWorld:BaseWeapon"
+  ],
+  "checks": [
+   {
+    "text": "techLevel",
+    "expect": "Medieval"
+   },
+   {
+    "text": "relicChance",
+    "expect": "2"
+   },
+   {
+    "text": "statBases/WorkToMake",
+    "expect": "18000"
+   },
+   {
+    "text": "statBases/Mass",
+    "expect": "2"
+   },
+   {
+    "text": "statBases/Flammability",
+    "expect": "1.0"
+   },
+   {
+    "count": "comps/li",
+    "expect": 5
+   },
+   {
+    "count": "weaponClasses/li",
+    "expect": 2
+   },
+   {
+    "count": "tools/li",
+    "expect": 3
+   },
+   {
+    "text": "burnableByRecipe",
+    "expect": "true"
+   }
+  ]
+ },
+ {
+  "def": "ThingDef/MeleeWeapon_Knife",
+  "mod": "Ludeon.RimWorld",
+  "parents": [
+   "Ludeon.RimWorld:BaseMeleeWeapon_Sharp_Quality",
+   "Ludeon.RimWorld:BaseMeleeWeapon_Sharp",
+   "Ludeon.RimWorld:BaseMeleeWeapon",
+   "Ludeon.RimWorld:BaseWeapon"
+  ],
+  "checks": [
+   {
+    "text": "techLevel",
+    "expect": "Neolithic"
+   },
+   {
+    "text": "burnableByRecipe",
+    "expect": "false"
+   },
+   {
+    "text": "costStuffCount",
+    "expect": "30"
+   },
+   {
+    "text": "statBases/WorkToMake",
+    "expect": "1800"
+   },
+   {
+    "text": "relicChance",
+    "expect": "1"
+   },
+   {
+    "count": "comps/li",
+    "expect": 5
+   }
+  ]
+ },
+ {
+  "def": "ThingDef/Apparel_FlakVest",
+  "mod": "Ludeon.RimWorld",
+  "parents": [
+   "Ludeon.RimWorld:ArmorMachineableBase",
+   "Ludeon.RimWorld:ApparelBase",
+   "Ludeon.RimWorld:ApparelNoQualityBase"
+  ],
+  "checks": [
+   {
+    "text": "statBases/MaxHitPoints",
+    "expect": "200"
+   },
+   {
+    "text": "statBases/Flammability",
+    "expect": "0.6"
+   },
+   {
+    "count": "statBases/*",
+    "expect": 11
+   },
+   {
+    "names": "statBases/*[position()<=4]",
+    "expect": [
+     "MaxHitPoints",
+     "Flammability",
+     "DeteriorationRate",
+     "Beauty"
+    ]
+   },
+   {
+    "count": "comps/li",
+    "expect": 4
+   },
+   {
+    "texts": "apparel/layers/li",
+    "expect": [
+     "Middle"
+    ]
+   },
+   {
+    "count": "apparel/bodyPartGroups/li",
+    "expect": 2
+   },
+   {
+    "text": "techLevel",
+    "expect": "Industrial"
+   },
+   {
+    "text": "thingClass",
+    "expect": "Apparel"
+   },
+   {
+    "text": "equippedStatOffsets/MoveSpeed",
+    "expect": "-0.12"
+   }
+  ]
+ },
+ {
+  "def": "ThingDef/Apparel_PlateArmor",
+  "mod": "Ludeon.RimWorld",
+  "parents": [
+   "Ludeon.RimWorld:ArmorSmithableBase",
+   "Ludeon.RimWorld:ApparelBase",
+   "Ludeon.RimWorld:ApparelNoQualityBase"
+  ],
+  "checks": [
+   {
+    "text": "statBases/MaxHitPoints",
+    "expect": "290"
+   },
+   {
+    "text": "statBases/Mass",
+    "expect": "15"
+   },
+   {
+    "count": "statBases/*",
+    "expect": 10
+   },
+   {
+    "count": "comps/li",
+    "expect": 4
+   },
+   {
+    "texts": "apparel/layers/li",
+    "expect": [
+     "Middle",
+     "Shell"
+    ]
+   },
+   {
+    "count": "apparel/bodyPartGroups/li",
+    "expect": 5
+   },
+   {
+    "text": "costStuffCount",
+    "expect": "170"
+   },
+   {
+    "text": "smeltable",
+    "expect": "true"
+   },
+   {
+    "count": "tradeTags/li",
+    "expect": 2
+   },
+   {
+    "text": "techLevel",
+    "expect": "Medieval"
+   }
+  ]
+ },
+ {
+  "def": "ThingDef/Apparel_Parka",
+  "mod": "Ludeon.RimWorld",
+  "parents": [
+   "Ludeon.RimWorld:ApparelMakeableBase",
+   "Ludeon.RimWorld:ApparelBase",
+   "Ludeon.RimWorld:ApparelNoQualityBase"
+  ],
+  "checks": [
+   {
+    "text": "techLevel",
+    "expect": "Neolithic"
+   },
+   {
+    "text": "statBases/MaxHitPoints",
+    "expect": "180"
+   },
+   {
+    "text": "statBases/Flammability",
+    "expect": "1.0"
+   },
+   {
+    "count": "tradeTags/li",
+    "expect": 2
+   },
+   {
+    "texts": "apparel/layers/li",
+    "expect": [
+     "Shell"
+    ]
+   },
+   {
+    "count": "apparel/tags/li",
+    "expect": 2
+   },
+   {
+    "text": "apparel/canBeDesiredForIdeo",
+    "expect": "false"
+   },
+   {
+    "text": "costStuffCount",
+    "expect": "80"
+   }
+  ]
+ },
+ {
+  "def": "ThingDef/Apparel_CowboyHat",
+  "mod": "Ludeon.RimWorld",
+  "parents": [
+   "Ludeon.RimWorld:HatMakeableBase",
+   "Ludeon.RimWorld:ApparelMakeableBase",
+   "Ludeon.RimWorld:ApparelBase",
+   "Ludeon.RimWorld:ApparelNoQualityBase"
+  ],
+  "checks": [
+   {
+    "names": "apparel/*[position()<=2]",
+    "expect": [
+     "parentTagDef",
+     "countsAsClothingForNudity"
+    ]
+   },
+   {
+    "text": "apparel/parentTagDef",
+    "expect": "ApparelHead"
+   },
+   {
+    "text": "costStuffCount",
+    "expect": "25"
+   },
+   {
+    "text": "equippedStatOffsets/SocialImpact",
+    "expect": "0.10"
+   },
+   {
+    "count": "thingCategories/li",
+    "expect": 1
+   },
+   {
+    "text": "statBases/MaxHitPoints",
+    "expect": "80"
+   }
+  ]
+ },
+ {
+  "def": "ThingDef/Steel",
+  "mod": "Ludeon.RimWorld",
+  "parents": [
+   "Ludeon.RimWorld:ResourceBase"
+  ],
+  "checks": [
+   {
+    "names": "statBases/*[position()<=3]",
+    "expect": [
+     "Beauty",
+     "MarketValue",
+     "Mass"
+    ]
+   },
+   {
+    "text": "statBases/Beauty",
+    "expect": "-4"
+   },
+   {
+    "count": "statBases/*",
+    "expect": 10
+   },
+   {
+    "text": "stackLimit",
+    "expect": "75"
+   },
+   {
+    "text": "useHitPoints",
+    "expect": "false"
+   },
+   {
+    "text": "allowedArchonexusCount",
+    "expect": "80"
+   },
+   {
+    "count": "comps/li",
+    "expect": 1
+   }
+  ]
+ },
+ {
+  "def": "ThingDef/Bullet_Revolver",
+  "mod": "Ludeon.RimWorld",
+  "parents": [
+   "Ludeon.RimWorld:BaseBullet"
+  ],
+  "checks": [
+   {
+    "text": "category",
+    "expect": "Projectile"
+   },
+   {
+    "text": "label",
+    "expect": "revolver bullet"
+   },
+   {
+    "text": "useHitPoints",
+    "expect": "False"
+   },
+   {
+    "count": "projectile/*",
+    "expect": 4
+   },
+   {
+    "text": "thingClass",
+    "expect": "Bullet"
+   }
+  ]
+ },
+ {
+  "def": "ThingDef/Gun_ChargeRifle",
+  "mod": "Ludeon.RimWorld",
+  "parents": [
+   "Ludeon.RimWorld:BaseHumanMakeableGun",
+   "Ludeon.RimWorld:BaseMakeableGun",
+   "Ludeon.RimWorld:BaseGunWithQuality",
+   "Ludeon.RimWorld:BaseGun",
+   "Ludeon.RimWorld:BaseWeapon"
+  ],
+  "checks": [
+   {
+    "text": "techLevel",
+    "expect": "Spacer"
+   },
+   {
+    "count": "weaponTags/li",
+    "expect": 2
+   },
+   {
+    "count": "tradeTags/li",
+    "expect": 2
+   },
+   {
+    "text": "costList/Plasteel",
+    "expect": "50"
+   },
+   {
+    "text": "costList/ComponentSpacer",
+    "expect": "2"
+   },
+   {
+    "text": "statBases/Flammability",
+    "expect": "0.5"
+   },
+   {
+    "count": "comps/li",
+    "expect": 6
+   }
+  ]
+ },
+ {
+  "def": "ThingDef/Apparel_ArmorRecon",
+  "mod": "Ludeon.RimWorld",
+  "parents": [
+   "Ludeon.RimWorld:ApparelArmorReconBase",
+   "Ludeon.RimWorld:ArmorMachineableBase",
+   "Ludeon.RimWorld:ApparelBase",
+   "Ludeon.RimWorld:ApparelNoQualityBase"
+  ],
+  "checks": [
+   {
+    "text": "statBases/WorkToMake",
+    "expect": "45000"
+   },
+   {
+    "count": "apparel/tags/li",
+    "expect": 1
+   },
+   {
+    "texts": "apparel/tags/li",
+    "expect": [
+     "SpacerMilitary"
+    ]
+   },
+   {
+    "texts": "apparel/layers/li",
+    "expect": [
+     "Middle",
+     "Shell"
+    ]
+   },
+   {
+    "count": "comps/li",
+    "expect": 5
+   },
+   {
+    "text": "techLevel",
+    "expect": "Spacer"
+   }
+  ]
+ },
+ {
+  "def": "ThingDef/Apparel_ArmorReconPrestige",
+  "mod": "Ludeon.RimWorld.Royalty",
+  "parents": [
+   "Ludeon.RimWorld:ApparelArmorReconBase",
+   "Ludeon.RimWorld:ArmorMachineableBase",
+   "Ludeon.RimWorld:ApparelBase",
+   "Ludeon.RimWorld:ApparelNoQualityBase"
+  ],
+  "checks": [
+   {
+    "text": "statBases/WorkToMake",
+    "expect": "90000"
+   },
+   {
+    "text": "statBases/MaxHitPoints",
+    "expect": "280"
+   },
+   {
+    "count": "equippedStatOffsets/*",
+    "expect": 4
+   },
+   {
+    "count": "costList/*",
+    "expect": 4
+   },
+   {
+    "text": "costList/Plasteel",
+    "expect": "100"
+   },
+   {
+    "text": "costList/Gold",
+    "expect": "9"
+   },
+   {
+    "texts": "apparel/tags/li",
+    "expect": [
+     "PrestigeCombatGear"
+    ]
+   },
+   {
+    "text": "apparel/wornGraphicPath",
+    "expect": "Things/Pawn/Humanlike/Apparel/PrestigeReconArmor/PrestigeReconArmor"
+   },
+   {
+    "text": "label",
+    "expect": "prestige recon armor"
+   },
+   {
+    "count": "comps/li",
+    "expect": 5
+   }
+  ]
+ }
+]

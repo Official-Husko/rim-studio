@@ -1,0 +1,1388 @@
+defName,stuff,kind,coverage,sharp,blunt,heat,ins_cold,ins_heat,hp,mass,flammability,work,market_value,stuff_units,api
+Apparel_CowboyHat,Cloth,helmet,0.0366,0.072,0,0.036,1.8,9.0,80,0.14,1.2,1800,43.98,25,0.054
+Apparel_CowboyHat,Synthread,helmet,0.0366,0.188,0.052,0.18,2.2,11.0,104,0.14,0.7,1800,106.48,25,0.234
+Apparel_CowboyHat,DevilstrandCloth,helmet,0.0366,0.28,0.072,0.6,2.0,12.0,104,0.14,0.4,1800,143.98,25,0.522
+Apparel_CowboyHat,Hyperweave,helmet,0.0366,0.4,0.108,0.576,2.6,13.0,192,0.14,0.4,1800,230,25,0.723
+Apparel_CowboyHat,WoolSheep,helmet,0.0366,0.072,0,0.22,2.6,5.0,80,0.14,1.7,1800,73.98,25,0.13
+Apparel_CowboyHat,WoolAlpaca,helmet,0.0366,0.072,0,0.22,3.0,8.0,80,0.14,1.7,1800,101.48,25,0.13
+Apparel_CowboyHat,WoolMegasloth,helmet,0.0366,0.16,0,0.22,3.4,6.0,80,0.14,1.7,1800,73.98,25,0.184
+Apparel_CowboyHat,WoolMuffalo,helmet,0.0366,0.072,0,0.22,2.8,6.0,80,0.14,1.7,1800,73.98,25,0.13
+Apparel_CowboyHat,WoolBison,helmet,0.0366,0.072,0,0.22,2.6,6.0,80,0.14,1.7,1800,73.98,25,0.13
+Apparel_CowboyHat,Leather_Plain,helmet,0.0366,0.162,0.048,0.3,1.6,8.0,104,0.14,1.0,1800,58.98,25,0.252
+Apparel_CowboyHat,Leather_Dog,helmet,0.0366,0.162,0.048,0.3,1.4,8.0,104,0.14,1.0,1800,56.48,25,0.252
+Apparel_CowboyHat,Leather_Wolf,helmet,0.0366,0.204,0.048,0.3,2.4,8.0,104,0.14,1.0,1800,81.48,25,0.298
+Apparel_CowboyHat,Leather_Panthera,helmet,0.0366,0.186,0.048,0.3,1.6,12.0,104,0.14,1.0,1800,81.48,25,0.278
+Apparel_CowboyHat,Leather_Camel,helmet,0.0366,0.162,0.048,0.3,1.6,12.0,104,0.14,1.0,1800,63.98,25,0.252
+Apparel_CowboyHat,Leather_Bluefur,helmet,0.0366,0.162,0.048,0.3,2.0,8.0,104,0.14,1.0,1800,63.98,25,0.252
+Apparel_CowboyHat,Leather_Bear,helmet,0.0366,0.224,0.048,0.3,2.0,10.0,104,0.14,1.0,1800,91.48,25,0.32
+Apparel_CowboyHat,Leather_GuineaPig,helmet,0.0366,0.134,0.028,0.3,3.8,9.0,48,0.14,1.0,1800,131.48,25,0.216
+Apparel_CowboyHat,Leather_Human,helmet,0.0366,0.128,0.048,0.3,1.2,6.0,104,0.14,1.0,1800,111.48,25,0.227
+Apparel_CowboyHat,Leather_Pig,helmet,0.0366,0.128,0.048,0.3,1.2,6.0,104,0.14,1.0,1800,53.98,25,0.227
+Apparel_CowboyHat,Leather_Light,helmet,0.0366,0.108,0.028,0.3,1.2,6.0,80,0.14,1.0,1800,53.98,25,0.202
+Apparel_CowboyHat,Leather_Bird,helmet,0.0366,0.134,0.028,0.3,1.0,5.0,80,0.14,1.0,1800,51.48,25,0.216
+Apparel_CowboyHat,Leather_Chinchilla,helmet,0.0366,0.134,0.028,0.3,3.0,8.0,80,0.14,1.0,1800,168.98,25,0.216
+Apparel_CowboyHat,Leather_Fox,helmet,0.0366,0.162,0.042,0.3,2.0,8.0,80,0.14,1.0,1800,93.98,25,0.248
+Apparel_CowboyHat,Leather_Lizard,helmet,0.0366,0.162,0.054,0.3,1.2,6.0,80,0.14,1.0,1800,58.98,25,0.256
+Apparel_CowboyHat,Leather_Elephant,helmet,0.0366,0.224,0.048,0.3,1.4,6.0,120,0.14,1.0,1800,81.48,25,0.32
+Apparel_CowboyHat,Leather_Heavy,helmet,0.0366,0.248,0.048,0.3,3.0,7.0,120,0.14,1.0,1800,88.98,25,0.346
+Apparel_CowboyHat,Leather_Rhinoceros,helmet,0.0366,0.258,0.048,0.3,1.4,7.0,120,0.14,1.0,1800,111.48,25,0.357
+Apparel_CowboyHat,Leather_Thrumbo,helmet,0.0366,0.416,0.072,0.3,3.4,11.0,160,0.14,1.0,1800,355,25,0.611
+Apparel_CowboyHat,Leather_Patch,helmet,0.0366,0.09,0.038,0.18,0.9,4.5,80,0.14,1.0,1800,43.98,25,0.15
+Apparel_CowboyHat,Leather_Dread,helmet,0.0366,0.254,0.048,0.3,2.0,6.0,104,0.14,1.0,1800,93.98,25,0.353
+Apparel_CowboyHat,WoolMastodon,helmet,0.0366,0.072,0,0.22,3.2,7.0,80,0.14,1.7,1800,73.98,25,0.13
+Apparel_CowboyHat,WoolMuskox,helmet,0.0366,0.072,0,0.22,3.0,5.0,80,0.14,1.7,1800,73.98,25,0.13
+Apparel_CowboyHat,Leather_Mastodon,helmet,0.0366,0.224,0.048,0.3,3.0,6.0,120,0.14,1.0,1800,81.48,25,0.32
+Apparel_CowboyHat,Leather_Sealskin,helmet,0.0366,0.162,0.048,0.3,3.6,10.0,80,0.14,1.0,1800,106.48,25,0.252
+Apparel_CowboyHat,Leather_AlphaThrumbo,helmet,0.0366,0.424,0.08,0.3,3.6,12.0,176,0.14,1.0,1800,505,25,0.63
+Apparel_CowboyHat,Leather_Mink,helmet,0.0366,0.134,0.028,0.3,3.2,6.0,80,0.14,1.0,1800,136.48,25,0.216
+Apparel_CowboyHat,Leather_Hippo,helmet,0.0366,0.224,0.048,0.3,1.4,8.0,120,0.14,1.0,1800,98.98,25,0.32
+Apparel_CowboyHat,Leather_Armadillo,helmet,0.0366,0.248,0.048,0.3,1.6,9.0,104,0.14,1.0,1800,86.48,25,0.346
+Apparel_BowlerHat,Cloth,helmet,0.0366,0.072,0,0.036,1.8,7.2,80,0.14,1.2,1800,36.48,20,0.054
+Apparel_BowlerHat,Synthread,helmet,0.0366,0.188,0.052,0.18,2.2,8.8,104,0.14,0.7,1800,86.48,20,0.234
+Apparel_BowlerHat,DevilstrandCloth,helmet,0.0366,0.28,0.072,0.6,2.0,9.6,104,0.14,0.4,1800,116.48,20,0.522
+Apparel_BowlerHat,Hyperweave,helmet,0.0366,0.4,0.108,0.576,2.6,10.4,192,0.14,0.4,1800,186.48,20,0.723
+Apparel_BowlerHat,WoolSheep,helmet,0.0366,0.072,0,0.22,2.6,4.0,80,0.14,1.7,1800,60.48,20,0.13
+Apparel_BowlerHat,WoolAlpaca,helmet,0.0366,0.072,0,0.22,3.0,6.4,80,0.14,1.7,1800,82.48,20,0.13
+Apparel_BowlerHat,WoolMegasloth,helmet,0.0366,0.16,0,0.22,3.4,4.8,80,0.14,1.7,1800,60.48,20,0.184
+Apparel_BowlerHat,WoolMuffalo,helmet,0.0366,0.072,0,0.22,2.8,4.8,80,0.14,1.7,1800,60.48,20,0.13
+Apparel_BowlerHat,WoolBison,helmet,0.0366,0.072,0,0.22,2.6,4.8,80,0.14,1.7,1800,60.48,20,0.13
+Apparel_BowlerHat,Leather_Plain,helmet,0.0366,0.162,0.048,0.3,1.6,6.4,104,0.14,1.0,1800,48.48,20,0.252
+Apparel_BowlerHat,Leather_Dog,helmet,0.0366,0.162,0.048,0.3,1.4,6.4,104,0.14,1.0,1800,46.48,20,0.252
+Apparel_BowlerHat,Leather_Wolf,helmet,0.0366,0.204,0.048,0.3,2.4,6.4,104,0.14,1.0,1800,66.48,20,0.298
+Apparel_BowlerHat,Leather_Panthera,helmet,0.0366,0.186,0.048,0.3,1.6,9.6,104,0.14,1.0,1800,66.48,20,0.278
+Apparel_BowlerHat,Leather_Camel,helmet,0.0366,0.162,0.048,0.3,1.6,9.6,104,0.14,1.0,1800,52.48,20,0.252
+Apparel_BowlerHat,Leather_Bluefur,helmet,0.0366,0.162,0.048,0.3,2.0,6.4,104,0.14,1.0,1800,52.48,20,0.252
+Apparel_BowlerHat,Leather_Bear,helmet,0.0366,0.224,0.048,0.3,2.0,8.0,104,0.14,1.0,1800,74.48,20,0.32
+Apparel_BowlerHat,Leather_GuineaPig,helmet,0.0366,0.134,0.028,0.3,3.8,7.2,48,0.14,1.0,1800,106.48,20,0.216
+Apparel_BowlerHat,Leather_Human,helmet,0.0366,0.128,0.048,0.3,1.2,4.8,104,0.14,1.0,1800,90.48,20,0.227
+Apparel_BowlerHat,Leather_Pig,helmet,0.0366,0.128,0.048,0.3,1.2,4.8,104,0.14,1.0,1800,44.48,20,0.227
+Apparel_BowlerHat,Leather_Light,helmet,0.0366,0.108,0.028,0.3,1.2,4.8,80,0.14,1.0,1800,44.48,20,0.202
+Apparel_BowlerHat,Leather_Bird,helmet,0.0366,0.134,0.028,0.3,1.0,4.0,80,0.14,1.0,1800,42.48,20,0.216
+Apparel_BowlerHat,Leather_Chinchilla,helmet,0.0366,0.134,0.028,0.3,3.0,6.4,80,0.14,1.0,1800,136.48,20,0.216
+Apparel_BowlerHat,Leather_Fox,helmet,0.0366,0.162,0.042,0.3,2.0,6.4,80,0.14,1.0,1800,76.48,20,0.248
+Apparel_BowlerHat,Leather_Lizard,helmet,0.0366,0.162,0.054,0.3,1.2,4.8,80,0.14,1.0,1800,48.48,20,0.256
+Apparel_BowlerHat,Leather_Elephant,helmet,0.0366,0.224,0.048,0.3,1.4,4.8,120,0.14,1.0,1800,66.48,20,0.32
+Apparel_BowlerHat,Leather_Heavy,helmet,0.0366,0.248,0.048,0.3,3.0,5.6,120,0.14,1.0,1800,72.48,20,0.346
+Apparel_BowlerHat,Leather_Rhinoceros,helmet,0.0366,0.258,0.048,0.3,1.4,5.6,120,0.14,1.0,1800,90.48,20,0.357
+Apparel_BowlerHat,Leather_Thrumbo,helmet,0.0366,0.416,0.072,0.3,3.4,8.8,160,0.14,1.0,1800,285,20,0.611
+Apparel_BowlerHat,Leather_Patch,helmet,0.0366,0.09,0.038,0.18,0.9,3.6,80,0.14,1.0,1800,36.48,20,0.15
+Apparel_BowlerHat,Leather_Dread,helmet,0.0366,0.254,0.048,0.3,2.0,4.8,104,0.14,1.0,1800,76.48,20,0.353
+Apparel_BowlerHat,WoolMastodon,helmet,0.0366,0.072,0,0.22,3.2,5.6,80,0.14,1.7,1800,60.48,20,0.13
+Apparel_BowlerHat,WoolMuskox,helmet,0.0366,0.072,0,0.22,3.0,4.0,80,0.14,1.7,1800,60.48,20,0.13
+Apparel_BowlerHat,Leather_Mastodon,helmet,0.0366,0.224,0.048,0.3,3.0,4.8,120,0.14,1.0,1800,66.48,20,0.32
+Apparel_BowlerHat,Leather_Sealskin,helmet,0.0366,0.162,0.048,0.3,3.6,8.0,80,0.14,1.0,1800,86.48,20,0.252
+Apparel_BowlerHat,Leather_AlphaThrumbo,helmet,0.0366,0.424,0.08,0.3,3.6,9.6,176,0.14,1.0,1800,405,20,0.63
+Apparel_BowlerHat,Leather_Mink,helmet,0.0366,0.134,0.028,0.3,3.2,4.8,80,0.14,1.0,1800,110.48,20,0.216
+Apparel_BowlerHat,Leather_Hippo,helmet,0.0366,0.224,0.048,0.3,1.4,6.4,120,0.14,1.0,1800,80.48,20,0.32
+Apparel_BowlerHat,Leather_Armadillo,helmet,0.0366,0.248,0.048,0.3,1.6,7.2,104,0.14,1.0,1800,70.48,20,0.346
+Apparel_TribalHeaddress,Cloth,helmet,0.0366,0.072,0,0.036,1.8,2.7,100,0.11,1.2,6000,96.6,50,0.054
+Apparel_TribalHeaddress,Synthread,helmet,0.0366,0.188,0.052,0.18,2.2,3.3,130,0.11,0.7,6000,220,50,0.234
+Apparel_TribalHeaddress,DevilstrandCloth,helmet,0.0366,0.28,0.072,0.6,2.0,3.6,130,0.11,0.4,6000,295,50,0.522
+Apparel_TribalHeaddress,Hyperweave,helmet,0.0366,0.4,0.108,0.576,2.6,3.9,240,0.11,0.4,6000,470,50,0.723
+Apparel_TribalHeaddress,WoolSheep,helmet,0.0366,0.072,0,0.22,2.6,1.5,100,0.11,1.7,6000,156.6,50,0.13
+Apparel_TribalHeaddress,WoolAlpaca,helmet,0.0366,0.072,0,0.22,3.0,2.4,100,0.11,1.7,6000,210,50,0.13
+Apparel_TribalHeaddress,WoolMegasloth,helmet,0.0366,0.16,0,0.22,3.4,1.8,100,0.11,1.7,6000,156.6,50,0.184
+Apparel_TribalHeaddress,WoolMuffalo,helmet,0.0366,0.072,0,0.22,2.8,1.8,100,0.11,1.7,6000,156.6,50,0.13
+Apparel_TribalHeaddress,WoolBison,helmet,0.0366,0.072,0,0.22,2.6,1.8,100,0.11,1.7,6000,156.6,50,0.13
+Apparel_TribalHeaddress,WoolMastodon,helmet,0.0366,0.072,0,0.22,3.2,2.1,100,0.11,1.7,6000,156.6,50,0.13
+Apparel_TribalHeaddress,WoolMuskox,helmet,0.0366,0.072,0,0.22,3.0,1.5,100,0.11,1.7,6000,156.6,50,0.13
+Apparel_Tuque,Cloth,helmet,0.0366,0.072,0,0.036,9.0,0.0,80,0.07,1.2,1200,34.32,20,0.054
+Apparel_Tuque,Synthread,helmet,0.0366,0.188,0.052,0.18,11.0,0.0,104,0.07,0.7,1200,84.32,20,0.234
+Apparel_Tuque,DevilstrandCloth,helmet,0.0366,0.28,0.072,0.6,10.0,0.0,104,0.07,0.4,1200,114.32,20,0.522
+Apparel_Tuque,Hyperweave,helmet,0.0366,0.4,0.108,0.576,13.0,0.0,192,0.07,0.4,1200,184.32,20,0.723
+Apparel_Tuque,WoolSheep,helmet,0.0366,0.072,0,0.22,13.0,0.0,80,0.07,1.7,1200,58.32,20,0.13
+Apparel_Tuque,WoolAlpaca,helmet,0.0366,0.072,0,0.22,15.0,0.0,80,0.07,1.7,1200,80.32,20,0.13
+Apparel_Tuque,WoolMegasloth,helmet,0.0366,0.16,0,0.22,17.0,0.0,80,0.07,1.7,1200,58.32,20,0.184
+Apparel_Tuque,WoolMuffalo,helmet,0.0366,0.072,0,0.22,14.0,0.0,80,0.07,1.7,1200,58.32,20,0.13
+Apparel_Tuque,WoolBison,helmet,0.0366,0.072,0,0.22,13.0,0.0,80,0.07,1.7,1200,58.32,20,0.13
+Apparel_Tuque,WoolMastodon,helmet,0.0366,0.072,0,0.22,16.0,0.0,80,0.07,1.7,1200,58.32,20,0.13
+Apparel_Tuque,WoolMuskox,helmet,0.0366,0.072,0,0.22,15.0,0.0,80,0.07,1.7,1200,58.32,20,0.13
+Apparel_WarMask,WoodLog,helmet,0.06,0.162,0.162,0.12,0.4,0.2,52,1.4,1.0,2100,37.56,25,0.42
+Apparel_WarVeil,Cloth,helmet,0.06,0.072,0,0.036,0.9,0.9,80,0.08,1.2,1400,35.04,20,0.089
+Apparel_WarVeil,Synthread,helmet,0.06,0.188,0.052,0.18,1.1,1.1,104,0.08,0.7,1400,85.04,20,0.383
+Apparel_WarVeil,DevilstrandCloth,helmet,0.06,0.28,0.072,0.6,1.0,1.2,104,0.08,0.4,1400,115.04,20,0.855
+Apparel_WarVeil,Hyperweave,helmet,0.06,0.4,0.108,0.576,1.3,1.3,192,0.08,0.4,1400,185.04,20,1.185
+Apparel_WarVeil,WoolSheep,helmet,0.06,0.072,0,0.22,1.3,0.5,80,0.08,1.7,1400,59.04,20,0.213
+Apparel_WarVeil,WoolAlpaca,helmet,0.06,0.072,0,0.22,1.5,0.8,80,0.08,1.7,1400,81.04,20,0.213
+Apparel_WarVeil,WoolMegasloth,helmet,0.06,0.16,0,0.22,1.7,0.6,80,0.08,1.7,1400,59.04,20,0.302
+Apparel_WarVeil,WoolMuffalo,helmet,0.06,0.072,0,0.22,1.4,0.6,80,0.08,1.7,1400,59.04,20,0.213
+Apparel_WarVeil,WoolBison,helmet,0.06,0.072,0,0.22,1.3,0.6,80,0.08,1.7,1400,59.04,20,0.213
+Apparel_WarVeil,WoolMastodon,helmet,0.06,0.072,0,0.22,1.6,0.7,80,0.08,1.7,1400,59.04,20,0.213
+Apparel_WarVeil,WoolMuskox,helmet,0.06,0.072,0,0.22,1.5,0.5,80,0.08,1.7,1400,59.04,20,0.213
+Apparel_SimpleHelmet,Silver,helmet,0.0366,0.36,0.18,0.18,0.45,0.0,70,2.0,0.4,3200,410,400,0.544
+Apparel_SimpleHelmet,Gold,helmet,0.0366,0.36,0.18,0.18,0.45,0.0,60,2.0,0.4,2880,4010,400,0.544
+Apparel_SimpleHelmet,Steel,helmet,0.0366,0.45,0.225,0.3,0.45,0.0,100,2.0,0.4,3200,87.52,40,0.772
+Apparel_SimpleHelmet,Plasteel,helmet,0.0366,0.57,0.275,0.325,0.45,0.0,280,2.0,0,7040,385,40,1.014
+Apparel_SimpleHelmet,Uranium,helmet,0.0366,0.54,0.27,0.325,0.45,0.0,250,2.0,0,6080,260,40,0.961
+Apparel_SimpleHelmet,Bioferrite,helmet,0.0366,0.55,0.25,0.25,0.38,0.0,200,2.0,0.75,8000,58.8,40,0.933
+Apparel_SimpleHelmet,Obsidian,helmet,0.0366,0.425,0.2,0.35,0.45,0.0,50,2.0,0,4800,215,40,0.734
+Apparel_AdvancedHelmet,Silver,helmet,0.0366,0.504,0.252,0.252,0.45,0.0,84,1.2,0.4,8000,585,400,0.86
+Apparel_AdvancedHelmet,Gold,helmet,0.0366,0.504,0.252,0.252,0.45,0.0,72,1.2,0.4,7200,4180,400,0.86
+Apparel_AdvancedHelmet,Steel,helmet,0.0366,0.63,0.315,0.42,0.45,0.0,120,1.2,0.4,8000,260,40,1.18
+Apparel_AdvancedHelmet,Plasteel,helmet,0.0366,0.798,0.385,0.455,0.45,0.0,335,1.2,0,17600,575,40,1.519
+Apparel_AdvancedHelmet,Uranium,helmet,0.0366,0.756,0.378,0.455,0.45,0.0,300,1.2,0,15200,450,40,1.445
+Apparel_AdvancedHelmet,Bioferrite,helmet,0.0366,0.77,0.35,0.35,0.38,0.0,240,1.2,0.75,20000,255,40,1.405
+Apparel_AdvancedHelmet,Obsidian,helmet,0.0366,0.595,0.28,0.49,0.45,0.0,60,1.2,0,12000,395,40,1.127
+Apparel_HatHood,Cloth,helmet,0.0366,0.072,0,0.036,1.8,4.5,80,0.1,1.2,6000,96.6,50,0.054
+Apparel_HatHood,Synthread,helmet,0.0366,0.188,0.052,0.18,2.2,5.5,104,0.1,0.7,6000,220,50,0.234
+Apparel_HatHood,DevilstrandCloth,helmet,0.0366,0.28,0.072,0.6,2.0,6.0,104,0.1,0.4,6000,295,50,0.522
+Apparel_HatHood,Hyperweave,helmet,0.0366,0.4,0.108,0.576,2.6,6.5,192,0.1,0.4,6000,470,50,0.723
+Apparel_HatHood,WoolSheep,helmet,0.0366,0.072,0,0.22,2.6,2.5,80,0.1,1.7,6000,156.6,50,0.13
+Apparel_HatHood,WoolAlpaca,helmet,0.0366,0.072,0,0.22,3.0,4.0,80,0.1,1.7,6000,210,50,0.13
+Apparel_HatHood,WoolMegasloth,helmet,0.0366,0.16,0,0.22,3.4,3.0,80,0.1,1.7,6000,156.6,50,0.184
+Apparel_HatHood,WoolMuffalo,helmet,0.0366,0.072,0,0.22,2.8,3.0,80,0.1,1.7,6000,156.6,50,0.13
+Apparel_HatHood,WoolBison,helmet,0.0366,0.072,0,0.22,2.6,3.0,80,0.1,1.7,6000,156.6,50,0.13
+Apparel_HatHood,Leather_Plain,helmet,0.0366,0.162,0.048,0.3,1.6,4.0,104,0.1,1.0,6000,126.6,50,0.252
+Apparel_HatHood,Leather_Dog,helmet,0.0366,0.162,0.048,0.3,1.4,4.0,104,0.1,1.0,6000,121.6,50,0.252
+Apparel_HatHood,Leather_Wolf,helmet,0.0366,0.204,0.048,0.3,2.4,4.0,104,0.1,1.0,6000,171.6,50,0.298
+Apparel_HatHood,Leather_Panthera,helmet,0.0366,0.186,0.048,0.3,1.6,6.0,104,0.1,1.0,6000,171.6,50,0.278
+Apparel_HatHood,Leather_Camel,helmet,0.0366,0.162,0.048,0.3,1.6,6.0,104,0.1,1.0,6000,136.6,50,0.252
+Apparel_HatHood,Leather_Bluefur,helmet,0.0366,0.162,0.048,0.3,2.0,4.0,104,0.1,1.0,6000,136.6,50,0.252
+Apparel_HatHood,Leather_Bear,helmet,0.0366,0.224,0.048,0.3,2.0,5.0,104,0.1,1.0,6000,191.6,50,0.32
+Apparel_HatHood,Leather_GuineaPig,helmet,0.0366,0.134,0.028,0.3,3.8,4.5,48,0.1,1.0,6000,270,50,0.216
+Apparel_HatHood,Leather_Human,helmet,0.0366,0.128,0.048,0.3,1.2,3.0,104,0.1,1.0,6000,230,50,0.227
+Apparel_HatHood,Leather_Pig,helmet,0.0366,0.128,0.048,0.3,1.2,3.0,104,0.1,1.0,6000,116.6,50,0.227
+Apparel_HatHood,Leather_Light,helmet,0.0366,0.108,0.028,0.3,1.2,3.0,80,0.1,1.0,6000,116.6,50,0.202
+Apparel_HatHood,Leather_Bird,helmet,0.0366,0.134,0.028,0.3,1.0,2.5,80,0.1,1.0,6000,111.6,50,0.216
+Apparel_HatHood,Leather_Chinchilla,helmet,0.0366,0.134,0.028,0.3,3.0,4.0,80,0.1,1.0,6000,345,50,0.216
+Apparel_HatHood,Leather_Fox,helmet,0.0366,0.162,0.042,0.3,2.0,4.0,80,0.1,1.0,6000,196.6,50,0.248
+Apparel_HatHood,Leather_Lizard,helmet,0.0366,0.162,0.054,0.3,1.2,3.0,80,0.1,1.0,6000,126.6,50,0.256
+Apparel_HatHood,Leather_Elephant,helmet,0.0366,0.224,0.048,0.3,1.4,3.0,120,0.1,1.0,6000,171.6,50,0.32
+Apparel_HatHood,Leather_Heavy,helmet,0.0366,0.248,0.048,0.3,3.0,3.5,120,0.1,1.0,6000,186.6,50,0.346
+Apparel_HatHood,Leather_Rhinoceros,helmet,0.0366,0.258,0.048,0.3,1.4,3.5,120,0.1,1.0,6000,230,50,0.357
+Apparel_HatHood,Leather_Thrumbo,helmet,0.0366,0.416,0.072,0.3,3.4,5.5,160,0.1,1.0,6000,720,50,0.611
+Apparel_HatHood,Leather_Patch,helmet,0.0366,0.09,0.038,0.18,0.9,2.25,80,0.1,1.0,6000,96.6,50,0.15
+Apparel_HatHood,Leather_Dread,helmet,0.0366,0.254,0.048,0.3,2.0,3.0,104,0.1,1.0,6000,196.6,50,0.353
+Apparel_HatHood,WoolMastodon,helmet,0.0366,0.072,0,0.22,3.2,3.5,80,0.1,1.7,6000,156.6,50,0.13
+Apparel_HatHood,WoolMuskox,helmet,0.0366,0.072,0,0.22,3.0,2.5,80,0.1,1.7,6000,156.6,50,0.13
+Apparel_HatHood,Leather_Mastodon,helmet,0.0366,0.224,0.048,0.3,3.0,3.0,120,0.1,1.0,6000,171.6,50,0.32
+Apparel_HatHood,Leather_Sealskin,helmet,0.0366,0.162,0.048,0.3,3.6,5.0,80,0.1,1.0,6000,220,50,0.252
+Apparel_HatHood,Leather_AlphaThrumbo,helmet,0.0366,0.424,0.08,0.3,3.6,6.0,176,0.1,1.0,6000,1020,50,0.63
+Apparel_HatHood,Leather_Mink,helmet,0.0366,0.134,0.028,0.3,3.2,3.0,80,0.1,1.0,6000,280,50,0.216
+Apparel_HatHood,Leather_Hippo,helmet,0.0366,0.224,0.048,0.3,1.4,4.0,120,0.1,1.0,6000,205,50,0.32
+Apparel_HatHood,Leather_Armadillo,helmet,0.0366,0.248,0.048,0.3,1.6,4.5,104,0.1,1.0,6000,181.6,50,0.346
+Apparel_ClothMask,Cloth,helmet,0.009,0.072,0,0.036,0.36,0.36,40,0.04,1.2,800,17.88,10,0.013
+Apparel_ClothMask,Synthread,helmet,0.009,0.188,0.052,0.18,0.44,0.44,52,0.04,0.7,800,42.88,10,0.057
+Apparel_ClothMask,DevilstrandCloth,helmet,0.009,0.28,0.072,0.6,0.4,0.48,52,0.04,0.4,800,57.88,10,0.128
+Apparel_ClothMask,Hyperweave,helmet,0.009,0.4,0.108,0.576,0.52,0.52,96,0.04,0.4,800,92.88,10,0.178
+Apparel_ClothMask,WoolSheep,helmet,0.009,0.072,0,0.22,0.52,0.2,40,0.04,1.7,800,29.88,10,0.032
+Apparel_ClothMask,WoolAlpaca,helmet,0.009,0.072,0,0.22,0.6,0.32,40,0.04,1.7,800,40.88,10,0.032
+Apparel_ClothMask,WoolMegasloth,helmet,0.009,0.16,0,0.22,0.68,0.24,40,0.04,1.7,800,29.88,10,0.045
+Apparel_ClothMask,WoolMuffalo,helmet,0.009,0.072,0,0.22,0.56,0.24,40,0.04,1.7,800,29.88,10,0.032
+Apparel_ClothMask,WoolBison,helmet,0.009,0.072,0,0.22,0.52,0.24,40,0.04,1.7,800,29.88,10,0.032
+Apparel_ClothMask,WoolMastodon,helmet,0.009,0.072,0,0.22,0.64,0.28,40,0.04,1.7,800,29.88,10,0.032
+Apparel_ClothMask,WoolMuskox,helmet,0.009,0.072,0,0.22,0.6,0.2,40,0.04,1.7,800,29.88,10,0.032
+Apparel_TribalA,Cloth,base clothing,0.6786,0.072,0,0.036,9.9,9.9,100,0.5,1.2,1800,96.48,60,1.008
+Apparel_TribalA,Synthread,base clothing,0.6786,0.188,0.052,0.18,12.1,12.1,130,0.5,0.7,1800,245,60,4.336
+Apparel_TribalA,DevilstrandCloth,base clothing,0.6786,0.28,0.072,0.6,11.0,13.2,130,0.5,0.4,1800,335,60,9.67
+Apparel_TribalA,Hyperweave,base clothing,0.6786,0.4,0.108,0.576,14.3,14.3,240,0.5,0.4,1800,545,60,13.406
+Apparel_TribalA,WoolSheep,base clothing,0.6786,0.072,0,0.22,14.3,5.5,100,0.5,1.7,1800,168.48,60,2.412
+Apparel_TribalA,WoolAlpaca,base clothing,0.6786,0.072,0,0.22,16.5,8.8,100,0.5,1.7,1800,235,60,2.412
+Apparel_TribalA,WoolMegasloth,base clothing,0.6786,0.16,0,0.22,18.7,6.6,100,0.5,1.7,1800,168.48,60,3.41
+Apparel_TribalA,WoolMuffalo,base clothing,0.6786,0.072,0,0.22,15.4,6.6,100,0.5,1.7,1800,168.48,60,2.412
+Apparel_TribalA,WoolBison,base clothing,0.6786,0.072,0,0.22,14.3,6.6,100,0.5,1.7,1800,168.48,60,2.412
+Apparel_TribalA,Leather_Plain,base clothing,0.6786,0.162,0.048,0.3,8.8,8.8,130,0.5,1.0,1800,132.48,60,4.672
+Apparel_TribalA,Leather_Dog,base clothing,0.6786,0.162,0.048,0.3,7.7,8.8,130,0.5,1.0,1800,126.48,60,4.672
+Apparel_TribalA,Leather_Wolf,base clothing,0.6786,0.204,0.048,0.3,13.2,8.8,130,0.5,1.0,1800,186.48,60,5.527
+Apparel_TribalA,Leather_Panthera,base clothing,0.6786,0.186,0.048,0.3,8.8,13.2,130,0.5,1.0,1800,186.48,60,5.161
+Apparel_TribalA,Leather_Camel,base clothing,0.6786,0.162,0.048,0.3,8.8,13.2,130,0.5,1.0,1800,144.48,60,4.672
+Apparel_TribalA,Leather_Bluefur,base clothing,0.6786,0.162,0.048,0.3,11.0,8.8,130,0.5,1.0,1800,144.48,60,4.672
+Apparel_TribalA,Leather_Bear,base clothing,0.6786,0.224,0.048,0.3,11.0,11.0,130,0.5,1.0,1800,210,60,5.934
+Apparel_TribalA,Leather_GuineaPig,base clothing,0.6786,0.134,0.028,0.3,20.9,9.9,60,0.5,1.0,1800,305,60,4.011
+Apparel_TribalA,Leather_Human,base clothing,0.6786,0.128,0.048,0.3,6.6,6.6,130,0.5,1.0,1800,260,60,4.204
+Apparel_TribalA,Leather_Pig,base clothing,0.6786,0.128,0.048,0.3,6.6,6.6,130,0.5,1.0,1800,120.48,60,4.204
+Apparel_TribalA,Leather_Light,base clothing,0.6786,0.108,0.028,0.3,6.6,6.6,100,0.5,1.0,1800,120.48,60,3.746
+Apparel_TribalA,Leather_Bird,base clothing,0.6786,0.134,0.028,0.3,5.5,5.5,100,0.5,1.0,1800,114.48,60,4.011
+Apparel_TribalA,Leather_Chinchilla,base clothing,0.6786,0.134,0.028,0.3,16.5,8.8,100,0.5,1.0,1800,395,60,4.011
+Apparel_TribalA,Leather_Fox,base clothing,0.6786,0.162,0.042,0.3,11.0,8.8,100,0.5,1.0,1800,215,60,4.596
+Apparel_TribalA,Leather_Lizard,base clothing,0.6786,0.162,0.054,0.3,6.6,6.6,100,0.5,1.0,1800,132.48,60,4.749
+Apparel_TribalA,Leather_Elephant,base clothing,0.6786,0.224,0.048,0.3,7.7,6.6,150,0.5,1.0,1800,186.48,60,5.934
+Apparel_TribalA,Leather_Heavy,base clothing,0.6786,0.248,0.048,0.3,16.5,7.7,150,0.5,1.0,1800,205,60,6.423
+Apparel_TribalA,Leather_Rhinoceros,base clothing,0.6786,0.258,0.048,0.3,7.7,7.7,150,0.5,1.0,1800,260,60,6.627
+Apparel_TribalA,Leather_Thrumbo,base clothing,0.6786,0.416,0.072,0.3,18.7,12.1,200,0.5,1.0,1800,845,60,11.329
+Apparel_TribalA,Leather_Patch,base clothing,0.6786,0.09,0.038,0.18,4.95,4.95,100,0.5,1.0,1800,96.48,60,2.774
+Apparel_TribalA,Leather_Dread,base clothing,0.6786,0.254,0.048,0.3,11.0,6.6,130,0.5,1.0,1800,215,60,6.545
+Apparel_TribalA,WoolMastodon,base clothing,0.6786,0.072,0,0.22,17.6,7.7,100,0.5,1.7,1800,168.48,60,2.412
+Apparel_TribalA,WoolMuskox,base clothing,0.6786,0.072,0,0.22,16.5,5.5,100,0.5,1.7,1800,168.48,60,2.412
+Apparel_TribalA,Leather_Mastodon,base clothing,0.6786,0.224,0.048,0.3,16.5,6.6,150,0.5,1.0,1800,186.48,60,5.934
+Apparel_TribalA,Leather_Sealskin,base clothing,0.6786,0.162,0.048,0.3,19.8,11.0,100,0.5,1.0,1800,245,60,4.672
+Apparel_TribalA,Leather_AlphaThrumbo,base clothing,0.6786,0.424,0.08,0.3,19.8,13.2,220,0.5,1.0,1800,1205,60,11.675
+Apparel_TribalA,Leather_Mink,base clothing,0.6786,0.134,0.028,0.3,17.6,6.6,100,0.5,1.0,1800,320,60,4.011
+Apparel_TribalA,Leather_Hippo,base clothing,0.6786,0.224,0.048,0.3,7.7,8.8,150,0.5,1.0,1800,230,60,5.934
+Apparel_TribalA,Leather_Armadillo,base clothing,0.6786,0.248,0.048,0.3,8.8,9.9,130,0.5,1.0,1800,198.48,60,6.423
+Apparel_Parka,Cloth,torso outer,0.6341,0.072,0,0.036,36.0,0.0,180,2.0,1.2,8000,148.8,80,0.942
+Apparel_Parka,Synthread,torso outer,0.6341,0.188,0.052,0.18,44.0,0.0,235,2.0,0.7,8000,350,80,4.052
+Apparel_Parka,DevilstrandCloth,torso outer,0.6341,0.28,0.072,0.6,40.0,0.0,235,2.0,0.4,8000,470,80,9.036
+Apparel_Parka,Hyperweave,torso outer,0.6341,0.4,0.108,0.576,52.0,0.0,430,2.0,0.4,8000,750,80,12.527
+Apparel_Parka,WoolSheep,torso outer,0.6341,0.072,0,0.22,52.0,0.0,180,2.0,1.7,8000,245,80,2.254
+Apparel_Parka,WoolAlpaca,torso outer,0.6341,0.072,0,0.22,60.0,0.0,180,2.0,1.7,8000,335,80,2.254
+Apparel_Parka,WoolMegasloth,torso outer,0.6341,0.16,0,0.22,68.0,0.0,180,2.0,1.7,8000,245,80,3.186
+Apparel_Parka,WoolMuffalo,torso outer,0.6341,0.072,0,0.22,56.0,0.0,180,2.0,1.7,8000,245,80,2.254
+Apparel_Parka,WoolBison,torso outer,0.6341,0.072,0,0.22,52.0,0.0,180,2.0,1.7,8000,245,80,2.254
+Apparel_Parka,Leather_Plain,torso outer,0.6341,0.162,0.048,0.3,32.0,0.0,235,2.0,1.0,8000,196.8,80,4.366
+Apparel_Parka,Leather_Dog,torso outer,0.6341,0.162,0.048,0.3,28.0,0.0,235,2.0,1.0,8000,188.8,80,4.366
+Apparel_Parka,Leather_Wolf,torso outer,0.6341,0.204,0.048,0.3,48.0,0.0,235,2.0,1.0,8000,270,80,5.165
+Apparel_Parka,Leather_Panthera,torso outer,0.6341,0.186,0.048,0.3,32.0,0.0,235,2.0,1.0,8000,270,80,4.823
+Apparel_Parka,Leather_Camel,torso outer,0.6341,0.162,0.048,0.3,32.0,0.0,235,2.0,1.0,8000,215,80,4.366
+Apparel_Parka,Leather_Bluefur,torso outer,0.6341,0.162,0.048,0.3,40.0,0.0,235,2.0,1.0,8000,215,80,4.366
+Apparel_Parka,Leather_Bear,torso outer,0.6341,0.224,0.048,0.3,40.0,0.0,235,2.0,1.0,8000,300,80,5.545
+Apparel_Parka,Leather_GuineaPig,torso outer,0.6341,0.134,0.028,0.3,76.0,0.0,108,2.0,1.0,8000,430,80,3.748
+Apparel_Parka,Leather_Human,torso outer,0.6341,0.128,0.048,0.3,24.0,0.0,235,2.0,1.0,8000,365,80,3.928
+Apparel_Parka,Leather_Pig,torso outer,0.6341,0.128,0.048,0.3,24.0,0.0,235,2.0,1.0,8000,180.8,80,3.928
+Apparel_Parka,Leather_Light,torso outer,0.6341,0.108,0.028,0.3,24.0,0.0,180,2.0,1.0,8000,180.8,80,3.5
+Apparel_Parka,Leather_Bird,torso outer,0.6341,0.134,0.028,0.3,20.0,0.0,180,2.0,1.0,8000,172.8,80,3.748
+Apparel_Parka,Leather_Chinchilla,torso outer,0.6341,0.134,0.028,0.3,60.0,0.0,180,2.0,1.0,8000,550,80,3.748
+Apparel_Parka,Leather_Fox,torso outer,0.6341,0.162,0.042,0.3,40.0,0.0,180,2.0,1.0,8000,310,80,4.295
+Apparel_Parka,Leather_Lizard,torso outer,0.6341,0.162,0.054,0.3,24.0,0.0,180,2.0,1.0,8000,196.8,80,4.437
+Apparel_Parka,Leather_Elephant,torso outer,0.6341,0.224,0.048,0.3,28.0,0.0,270,2.0,1.0,8000,270,80,5.545
+Apparel_Parka,Leather_Heavy,torso outer,0.6341,0.248,0.048,0.3,60.0,0.0,270,2.0,1.0,8000,295,80,6.002
+Apparel_Parka,Leather_Rhinoceros,torso outer,0.6341,0.258,0.048,0.3,28.0,0.0,270,2.0,1.0,8000,365,80,6.192
+Apparel_Parka,Leather_Thrumbo,torso outer,0.6341,0.416,0.072,0.3,68.0,0.0,360,2.0,1.0,8000,1150,80,10.587
+Apparel_Parka,Leather_Patch,torso outer,0.6341,0.09,0.038,0.18,18.0,0.0,180,2.0,1.0,8000,148.8,80,2.592
+Apparel_Parka,Leather_Dread,torso outer,0.6341,0.254,0.048,0.3,40.0,0.0,235,2.0,1.0,8000,310,80,6.116
+Apparel_Parka,WoolMastodon,torso outer,0.6341,0.072,0,0.22,64.0,0.0,180,2.0,1.7,8000,245,80,2.254
+Apparel_Parka,WoolMuskox,torso outer,0.6341,0.072,0,0.22,60.0,0.0,180,2.0,1.7,8000,245,80,2.254
+Apparel_Parka,Leather_Mastodon,torso outer,0.6341,0.224,0.048,0.3,60.0,0.0,270,2.0,1.0,8000,270,80,5.545
+Apparel_Parka,Leather_Sealskin,torso outer,0.6341,0.162,0.048,0.3,72.0,0.0,180,2.0,1.0,8000,350,80,4.366
+Apparel_Parka,Leather_AlphaThrumbo,torso outer,0.6341,0.424,0.08,0.3,72.0,0.0,395,2.0,1.0,8000,1630,80,10.91
+Apparel_Parka,Leather_Mink,torso outer,0.6341,0.134,0.028,0.3,64.0,0.0,180,2.0,1.0,8000,445,80,3.748
+Apparel_Parka,Leather_Hippo,torso outer,0.6341,0.224,0.048,0.3,28.0,0.0,270,2.0,1.0,8000,325,80,5.545
+Apparel_Parka,Leather_Armadillo,torso outer,0.6341,0.248,0.048,0.3,32.0,0.0,235,2.0,1.0,8000,285,80,6.002
+Apparel_Pants,Cloth,legwear,0.252,0.072,0,0.036,3.6,1.44,100,0.5,1.2,1600,65.76,40,0.374
+Apparel_Pants,Synthread,legwear,0.252,0.188,0.052,0.18,4.4,1.76,130,0.5,0.7,1600,165.76,40,1.61
+Apparel_Pants,DevilstrandCloth,legwear,0.252,0.28,0.072,0.6,4.0,1.92,130,0.5,0.4,1600,225,40,3.591
+Apparel_Pants,Hyperweave,legwear,0.252,0.4,0.108,0.576,5.2,2.08,240,0.5,0.4,1600,365,40,4.978
+Apparel_Pants,WoolSheep,legwear,0.252,0.072,0,0.22,5.2,0.8,100,0.5,1.7,1600,113.76,40,0.896
+Apparel_Pants,WoolAlpaca,legwear,0.252,0.072,0,0.22,6.0,1.28,100,0.5,1.7,1600,157.76,40,0.896
+Apparel_Pants,WoolMegasloth,legwear,0.252,0.16,0,0.22,6.8,0.96,100,0.5,1.7,1600,113.76,40,1.266
+Apparel_Pants,WoolMuffalo,legwear,0.252,0.072,0,0.22,5.6,0.96,100,0.5,1.7,1600,113.76,40,0.896
+Apparel_Pants,WoolBison,legwear,0.252,0.072,0,0.22,5.2,0.96,100,0.5,1.7,1600,113.76,40,0.896
+Apparel_Pants,Leather_Plain,legwear,0.252,0.162,0.048,0.3,3.2,1.28,130,0.5,1.0,1600,89.76,40,1.735
+Apparel_Pants,Leather_Dog,legwear,0.252,0.162,0.048,0.3,2.8,1.28,130,0.5,1.0,1600,85.76,40,1.735
+Apparel_Pants,Leather_Wolf,legwear,0.252,0.204,0.048,0.3,4.8,1.28,130,0.5,1.0,1600,125.76,40,2.053
+Apparel_Pants,Leather_Panthera,legwear,0.252,0.186,0.048,0.3,3.2,1.92,130,0.5,1.0,1600,125.76,40,1.916
+Apparel_Pants,Leather_Camel,legwear,0.252,0.162,0.048,0.3,3.2,1.92,130,0.5,1.0,1600,97.76,40,1.735
+Apparel_Pants,Leather_Bluefur,legwear,0.252,0.162,0.048,0.3,4.0,1.28,130,0.5,1.0,1600,97.76,40,1.735
+Apparel_Pants,Leather_Bear,legwear,0.252,0.224,0.048,0.3,4.0,1.6,130,0.5,1.0,1600,141.76,40,2.204
+Apparel_Pants,Leather_GuineaPig,legwear,0.252,0.134,0.028,0.3,7.6,1.44,60,0.5,1.0,1600,205,40,1.489
+Apparel_Pants,Leather_Human,legwear,0.252,0.128,0.048,0.3,2.4,0.96,130,0.5,1.0,1600,173.76,40,1.561
+Apparel_Pants,Leather_Pig,legwear,0.252,0.128,0.048,0.3,2.4,0.96,130,0.5,1.0,1600,81.76,40,1.561
+Apparel_Pants,Leather_Light,legwear,0.252,0.108,0.028,0.3,2.4,0.96,100,0.5,1.0,1600,81.76,40,1.391
+Apparel_Pants,Leather_Bird,legwear,0.252,0.134,0.028,0.3,2.0,0.8,100,0.5,1.0,1600,77.76,40,1.489
+Apparel_Pants,Leather_Chinchilla,legwear,0.252,0.134,0.028,0.3,6.0,1.28,100,0.5,1.0,1600,265,40,1.489
+Apparel_Pants,Leather_Fox,legwear,0.252,0.162,0.042,0.3,4.0,1.28,100,0.5,1.0,1600,145.76,40,1.707
+Apparel_Pants,Leather_Lizard,legwear,0.252,0.162,0.054,0.3,2.4,0.96,100,0.5,1.0,1600,89.76,40,1.763
+Apparel_Pants,Leather_Elephant,legwear,0.252,0.224,0.048,0.3,2.8,0.96,150,0.5,1.0,1600,125.76,40,2.204
+Apparel_Pants,Leather_Heavy,legwear,0.252,0.248,0.048,0.3,6.0,1.12,150,0.5,1.0,1600,137.76,40,2.385
+Apparel_Pants,Leather_Rhinoceros,legwear,0.252,0.258,0.048,0.3,2.8,1.12,150,0.5,1.0,1600,173.76,40,2.461
+Apparel_Pants,Leather_Thrumbo,legwear,0.252,0.416,0.072,0.3,6.8,1.76,200,0.5,1.0,1600,565,40,4.207
+Apparel_Pants,Leather_Patch,legwear,0.252,0.09,0.038,0.18,1.8,0.72,100,0.5,1.0,1600,65.76,40,1.03
+Apparel_Pants,Leather_Dread,legwear,0.252,0.254,0.048,0.3,4.0,0.96,130,0.5,1.0,1600,145.76,40,2.431
+Apparel_Pants,WoolMastodon,legwear,0.252,0.072,0,0.22,6.4,1.12,100,0.5,1.7,1600,113.76,40,0.896
+Apparel_Pants,WoolMuskox,legwear,0.252,0.072,0,0.22,6.0,0.8,100,0.5,1.7,1600,113.76,40,0.896
+Apparel_Pants,Leather_Mastodon,legwear,0.252,0.224,0.048,0.3,6.0,0.96,150,0.5,1.0,1600,125.76,40,2.204
+Apparel_Pants,Leather_Sealskin,legwear,0.252,0.162,0.048,0.3,7.2,1.6,100,0.5,1.0,1600,165.76,40,1.735
+Apparel_Pants,Leather_AlphaThrumbo,legwear,0.252,0.424,0.08,0.3,7.2,1.92,220,0.5,1.0,1600,805,40,4.336
+Apparel_Pants,Leather_Mink,legwear,0.252,0.134,0.028,0.3,6.4,0.96,100,0.5,1.0,1600,215,40,1.489
+Apparel_Pants,Leather_Hippo,legwear,0.252,0.224,0.048,0.3,2.8,1.28,150,0.5,1.0,1600,153.76,40,2.204
+Apparel_Pants,Leather_Armadillo,legwear,0.252,0.248,0.048,0.3,3.2,1.44,130,0.5,1.0,1600,133.76,40,2.385
+Apparel_BasicShirt,Cloth,base clothing,0.4602,0.072,0,0.036,3.96,1.8,100,0.25,1.2,1600,65.76,40,0.683
+Apparel_BasicShirt,Synthread,base clothing,0.4602,0.188,0.052,0.18,4.84,2.2,130,0.25,0.7,1600,165.76,40,2.941
+Apparel_BasicShirt,DevilstrandCloth,base clothing,0.4602,0.28,0.072,0.6,4.4,2.4,130,0.25,0.4,1600,225,40,6.558
+Apparel_BasicShirt,Hyperweave,base clothing,0.4602,0.4,0.108,0.576,5.72,2.6,240,0.25,0.4,1600,365,40,9.091
+Apparel_BasicShirt,WoolSheep,base clothing,0.4602,0.072,0,0.22,5.72,1.0,100,0.25,1.7,1600,113.76,40,1.636
+Apparel_BasicShirt,WoolAlpaca,base clothing,0.4602,0.072,0,0.22,6.6,1.6,100,0.25,1.7,1600,157.76,40,1.636
+Apparel_BasicShirt,WoolMegasloth,base clothing,0.4602,0.16,0,0.22,7.48,1.2,100,0.25,1.7,1600,113.76,40,2.313
+Apparel_BasicShirt,WoolMuffalo,base clothing,0.4602,0.072,0,0.22,6.16,1.2,100,0.25,1.7,1600,113.76,40,1.636
+Apparel_BasicShirt,WoolBison,base clothing,0.4602,0.072,0,0.22,5.72,1.2,100,0.25,1.7,1600,113.76,40,1.636
+Apparel_BasicShirt,Leather_Plain,base clothing,0.4602,0.162,0.048,0.3,3.52,1.6,130,0.25,1.0,1600,89.76,40,3.168
+Apparel_BasicShirt,Leather_Dog,base clothing,0.4602,0.162,0.048,0.3,3.08,1.6,130,0.25,1.0,1600,85.76,40,3.168
+Apparel_BasicShirt,Leather_Wolf,base clothing,0.4602,0.204,0.048,0.3,5.28,1.6,130,0.25,1.0,1600,125.76,40,3.748
+Apparel_BasicShirt,Leather_Panthera,base clothing,0.4602,0.186,0.048,0.3,3.52,2.4,130,0.25,1.0,1600,125.76,40,3.5
+Apparel_BasicShirt,Leather_Camel,base clothing,0.4602,0.162,0.048,0.3,3.52,2.4,130,0.25,1.0,1600,97.76,40,3.168
+Apparel_BasicShirt,Leather_Bluefur,base clothing,0.4602,0.162,0.048,0.3,4.4,1.6,130,0.25,1.0,1600,97.76,40,3.168
+Apparel_BasicShirt,Leather_Bear,base clothing,0.4602,0.224,0.048,0.3,4.4,2.0,130,0.25,1.0,1600,141.76,40,4.024
+Apparel_BasicShirt,Leather_GuineaPig,base clothing,0.4602,0.134,0.028,0.3,8.36,1.8,60,0.25,1.0,1600,205,40,2.72
+Apparel_BasicShirt,Leather_Human,base clothing,0.4602,0.128,0.048,0.3,2.64,1.2,130,0.25,1.0,1600,173.76,40,2.851
+Apparel_BasicShirt,Leather_Pig,base clothing,0.4602,0.128,0.048,0.3,2.64,1.2,130,0.25,1.0,1600,81.76,40,2.851
+Apparel_BasicShirt,Leather_Light,base clothing,0.4602,0.108,0.028,0.3,2.64,1.2,100,0.25,1.0,1600,81.76,40,2.54
+Apparel_BasicShirt,Leather_Bird,base clothing,0.4602,0.134,0.028,0.3,2.2,1.0,100,0.25,1.0,1600,77.76,40,2.72
+Apparel_BasicShirt,Leather_Chinchilla,base clothing,0.4602,0.134,0.028,0.3,6.6,1.6,100,0.25,1.0,1600,265,40,2.72
+Apparel_BasicShirt,Leather_Fox,base clothing,0.4602,0.162,0.042,0.3,4.4,1.6,100,0.25,1.0,1600,145.76,40,3.117
+Apparel_BasicShirt,Leather_Lizard,base clothing,0.4602,0.162,0.054,0.3,2.64,1.2,100,0.25,1.0,1600,89.76,40,3.22
+Apparel_BasicShirt,Leather_Elephant,base clothing,0.4602,0.224,0.048,0.3,3.08,1.2,150,0.25,1.0,1600,125.76,40,4.024
+Apparel_BasicShirt,Leather_Heavy,base clothing,0.4602,0.248,0.048,0.3,6.6,1.4,150,0.25,1.0,1600,137.76,40,4.356
+Apparel_BasicShirt,Leather_Rhinoceros,base clothing,0.4602,0.258,0.048,0.3,3.08,1.4,150,0.25,1.0,1600,173.76,40,4.494
+Apparel_BasicShirt,Leather_Thrumbo,base clothing,0.4602,0.416,0.072,0.3,7.48,2.2,200,0.25,1.0,1600,565,40,7.683
+Apparel_BasicShirt,Leather_Patch,base clothing,0.4602,0.09,0.038,0.18,1.98,0.9,100,0.25,1.0,1600,65.76,40,1.881
+Apparel_BasicShirt,Leather_Dread,base clothing,0.4602,0.254,0.048,0.3,4.4,1.2,130,0.25,1.0,1600,145.76,40,4.439
+Apparel_BasicShirt,WoolMastodon,base clothing,0.4602,0.072,0,0.22,7.04,1.4,100,0.25,1.7,1600,113.76,40,1.636
+Apparel_BasicShirt,WoolMuskox,base clothing,0.4602,0.072,0,0.22,6.6,1.0,100,0.25,1.7,1600,113.76,40,1.636
+Apparel_BasicShirt,Leather_Mastodon,base clothing,0.4602,0.224,0.048,0.3,6.6,1.2,150,0.25,1.0,1600,125.76,40,4.024
+Apparel_BasicShirt,Leather_Sealskin,base clothing,0.4602,0.162,0.048,0.3,7.92,2.0,100,0.25,1.0,1600,165.76,40,3.168
+Apparel_BasicShirt,Leather_AlphaThrumbo,base clothing,0.4602,0.424,0.08,0.3,7.92,2.4,220,0.25,1.0,1600,805,40,7.918
+Apparel_BasicShirt,Leather_Mink,base clothing,0.4602,0.134,0.028,0.3,7.04,1.2,100,0.25,1.0,1600,215,40,2.72
+Apparel_BasicShirt,Leather_Hippo,base clothing,0.4602,0.224,0.048,0.3,3.08,1.6,150,0.25,1.0,1600,153.76,40,4.024
+Apparel_BasicShirt,Leather_Armadillo,base clothing,0.4602,0.248,0.048,0.3,3.52,1.8,130,0.25,1.0,1600,133.76,40,4.356
+Apparel_CollarShirt,Cloth,base clothing,0.6341,0.072,0,0.036,4.68,1.8,100,0.3,1.2,2700,77.22,45,0.942
+Apparel_CollarShirt,Synthread,base clothing,0.6341,0.188,0.052,0.18,5.72,2.2,130,0.3,0.7,2700,189.72,45,4.052
+Apparel_CollarShirt,DevilstrandCloth,base clothing,0.6341,0.28,0.072,0.6,5.2,2.4,130,0.3,0.4,2700,255,45,9.036
+Apparel_CollarShirt,Hyperweave,base clothing,0.6341,0.4,0.108,0.576,6.76,2.6,240,0.3,0.4,2700,415,45,12.527
+Apparel_CollarShirt,WoolSheep,base clothing,0.6341,0.072,0,0.22,6.76,1.0,100,0.3,1.7,2700,131.22,45,2.254
+Apparel_CollarShirt,WoolAlpaca,base clothing,0.6341,0.072,0,0.22,7.8,1.6,100,0.3,1.7,2700,180.72,45,2.254
+Apparel_CollarShirt,WoolMegasloth,base clothing,0.6341,0.16,0,0.22,8.84,1.2,100,0.3,1.7,2700,131.22,45,3.186
+Apparel_CollarShirt,WoolMuffalo,base clothing,0.6341,0.072,0,0.22,7.28,1.2,100,0.3,1.7,2700,131.22,45,2.254
+Apparel_CollarShirt,WoolBison,base clothing,0.6341,0.072,0,0.22,6.76,1.2,100,0.3,1.7,2700,131.22,45,2.254
+Apparel_CollarShirt,Leather_Plain,base clothing,0.6341,0.162,0.048,0.3,4.16,1.6,130,0.3,1.0,2700,104.22,45,4.366
+Apparel_CollarShirt,Leather_Dog,base clothing,0.6341,0.162,0.048,0.3,3.64,1.6,130,0.3,1.0,2700,99.72,45,4.366
+Apparel_CollarShirt,Leather_Wolf,base clothing,0.6341,0.204,0.048,0.3,6.24,1.6,130,0.3,1.0,2700,144.72,45,5.165
+Apparel_CollarShirt,Leather_Panthera,base clothing,0.6341,0.186,0.048,0.3,4.16,2.4,130,0.3,1.0,2700,144.72,45,4.823
+Apparel_CollarShirt,Leather_Camel,base clothing,0.6341,0.162,0.048,0.3,4.16,2.4,130,0.3,1.0,2700,113.22,45,4.366
+Apparel_CollarShirt,Leather_Bluefur,base clothing,0.6341,0.162,0.048,0.3,5.2,1.6,130,0.3,1.0,2700,113.22,45,4.366
+Apparel_CollarShirt,Leather_Bear,base clothing,0.6341,0.224,0.048,0.3,5.2,2.0,130,0.3,1.0,2700,162.72,45,5.545
+Apparel_CollarShirt,Leather_GuineaPig,base clothing,0.6341,0.134,0.028,0.3,9.88,1.8,60,0.3,1.0,2700,235,45,3.748
+Apparel_CollarShirt,Leather_Human,base clothing,0.6341,0.128,0.048,0.3,3.12,1.2,130,0.3,1.0,2700,198.72,45,3.928
+Apparel_CollarShirt,Leather_Pig,base clothing,0.6341,0.128,0.048,0.3,3.12,1.2,130,0.3,1.0,2700,95.22,45,3.928
+Apparel_CollarShirt,Leather_Light,base clothing,0.6341,0.108,0.028,0.3,3.12,1.2,100,0.3,1.0,2700,95.22,45,3.5
+Apparel_CollarShirt,Leather_Bird,base clothing,0.6341,0.134,0.028,0.3,2.6,1.0,100,0.3,1.0,2700,90.72,45,3.748
+Apparel_CollarShirt,Leather_Chinchilla,base clothing,0.6341,0.134,0.028,0.3,7.8,1.6,100,0.3,1.0,2700,300,45,3.748
+Apparel_CollarShirt,Leather_Fox,base clothing,0.6341,0.162,0.042,0.3,5.2,1.6,100,0.3,1.0,2700,167.22,45,4.295
+Apparel_CollarShirt,Leather_Lizard,base clothing,0.6341,0.162,0.054,0.3,3.12,1.2,100,0.3,1.0,2700,104.22,45,4.437
+Apparel_CollarShirt,Leather_Elephant,base clothing,0.6341,0.224,0.048,0.3,3.64,1.2,150,0.3,1.0,2700,144.72,45,5.545
+Apparel_CollarShirt,Leather_Heavy,base clothing,0.6341,0.248,0.048,0.3,7.8,1.4,150,0.3,1.0,2700,158.22,45,6.002
+Apparel_CollarShirt,Leather_Rhinoceros,base clothing,0.6341,0.258,0.048,0.3,3.64,1.4,150,0.3,1.0,2700,198.72,45,6.192
+Apparel_CollarShirt,Leather_Thrumbo,base clothing,0.6341,0.416,0.072,0.3,8.84,2.2,200,0.3,1.0,2700,640,45,10.587
+Apparel_CollarShirt,Leather_Patch,base clothing,0.6341,0.09,0.038,0.18,2.34,0.9,100,0.3,1.0,2700,77.22,45,2.592
+Apparel_CollarShirt,Leather_Dread,base clothing,0.6341,0.254,0.048,0.3,5.2,1.2,130,0.3,1.0,2700,167.22,45,6.116
+Apparel_CollarShirt,WoolMastodon,base clothing,0.6341,0.072,0,0.22,8.32,1.4,100,0.3,1.7,2700,131.22,45,2.254
+Apparel_CollarShirt,WoolMuskox,base clothing,0.6341,0.072,0,0.22,7.8,1.0,100,0.3,1.7,2700,131.22,45,2.254
+Apparel_CollarShirt,Leather_Mastodon,base clothing,0.6341,0.224,0.048,0.3,7.8,1.2,150,0.3,1.0,2700,144.72,45,5.545
+Apparel_CollarShirt,Leather_Sealskin,base clothing,0.6341,0.162,0.048,0.3,9.36,2.0,100,0.3,1.0,2700,189.72,45,4.366
+Apparel_CollarShirt,Leather_AlphaThrumbo,base clothing,0.6341,0.424,0.08,0.3,9.36,2.4,220,0.3,1.0,2700,910,45,10.91
+Apparel_CollarShirt,Leather_Mink,base clothing,0.6341,0.134,0.028,0.3,8.32,1.2,100,0.3,1.0,2700,245,45,3.748
+Apparel_CollarShirt,Leather_Hippo,base clothing,0.6341,0.224,0.048,0.3,3.64,1.6,150,0.3,1.0,2700,176.22,45,5.545
+Apparel_CollarShirt,Leather_Armadillo,base clothing,0.6341,0.248,0.048,0.3,4.16,1.8,130,0.3,1.0,2700,153.72,45,6.002
+Apparel_Duster,Cloth,full body,0.8861,0.108,0,0.054,10.8,15.3,200,2.0,1.2,10000,156.0,80,1.974
+Apparel_Duster,Synthread,full body,0.8861,0.282,0.078,0.27,13.2,18.7,260,2.0,0.7,10000,355,80,9.49
+Apparel_Duster,DevilstrandCloth,full body,0.8861,0.42,0.108,0.9,12.0,20.4,260,2.0,0.4,10000,475,80,21.533
+Apparel_Duster,Hyperweave,full body,0.8861,0.6,0.162,0.864,15.6,22.1,480,2.0,0.4,10000,755,80,29.249
+Apparel_Duster,WoolSheep,full body,0.8861,0.108,0,0.33,15.6,8.5,200,2.0,1.7,10000,250,80,4.725
+Apparel_Duster,WoolAlpaca,full body,0.8861,0.108,0,0.33,18.0,13.6,200,2.0,1.7,10000,340,80,4.725
+Apparel_Duster,WoolMegasloth,full body,0.8861,0.24,0,0.33,20.4,10.2,200,2.0,1.7,10000,250,80,7.676
+Apparel_Duster,WoolMuffalo,full body,0.8861,0.108,0,0.33,16.8,10.2,200,2.0,1.7,10000,250,80,4.725
+Apparel_Duster,WoolBison,full body,0.8861,0.108,0,0.33,15.6,10.2,200,2.0,1.7,10000,250,80,4.725
+Apparel_Duster,Leather_Plain,full body,0.8861,0.243,0.072,0.45,9.6,13.6,260,2.0,1.0,10000,205,80,10.148
+Apparel_Duster,Leather_Dog,full body,0.8861,0.243,0.072,0.45,8.4,13.6,260,2.0,1.0,10000,196.0,80,10.148
+Apparel_Duster,Leather_Wolf,full body,0.8861,0.306,0.072,0.45,14.4,13.6,260,2.0,1.0,10000,275,80,11.903
+Apparel_Duster,Leather_Panthera,full body,0.8861,0.279,0.072,0.45,9.6,20.4,260,2.0,1.0,10000,275,80,11.105
+Apparel_Duster,Leather_Camel,full body,0.8861,0.243,0.072,0.45,9.6,20.4,260,2.0,1.0,10000,220,80,10.148
+Apparel_Duster,Leather_Bluefur,full body,0.8861,0.243,0.072,0.45,12.0,13.6,260,2.0,1.0,10000,220,80,10.148
+Apparel_Duster,Leather_Bear,full body,0.8861,0.336,0.072,0.45,12.0,17.0,260,2.0,1.0,10000,310,80,13.099
+Apparel_Duster,Leather_GuineaPig,full body,0.8861,0.201,0.042,0.45,22.8,15.3,120,2.0,1.0,10000,435,80,8.533
+Apparel_Duster,Leather_Human,full body,0.8861,0.192,0.072,0.45,7.2,10.2,260,2.0,1.0,10000,370,80,8.793
+Apparel_Duster,Leather_Pig,full body,0.8861,0.192,0.072,0.45,7.2,10.2,260,2.0,1.0,10000,188.0,80,8.793
+Apparel_Duster,Leather_Light,full body,0.8861,0.162,0.042,0.45,7.2,10.2,200,2.0,1.0,10000,188.0,80,7.497
+Apparel_Duster,Leather_Bird,full body,0.8861,0.201,0.042,0.45,6.0,8.5,200,2.0,1.0,10000,180.0,80,8.533
+Apparel_Duster,Leather_Chinchilla,full body,0.8861,0.201,0.042,0.45,18.0,13.6,200,2.0,1.0,10000,555,80,8.533
+Apparel_Duster,Leather_Fox,full body,0.8861,0.243,0.063,0.45,12.0,13.6,200,2.0,1.0,10000,315,80,9.999
+Apparel_Duster,Leather_Lizard,full body,0.8861,0.243,0.081,0.45,7.2,10.2,200,2.0,1.0,10000,205,80,10.298
+Apparel_Duster,Leather_Elephant,full body,0.8861,0.336,0.072,0.45,8.4,10.2,300,2.0,1.0,10000,275,80,13.099
+Apparel_Duster,Leather_Heavy,full body,0.8861,0.372,0.072,0.45,18.0,11.9,300,2.0,1.0,10000,300,80,14.535
+Apparel_Duster,Leather_Rhinoceros,full body,0.8861,0.387,0.072,0.45,8.4,11.9,300,2.0,1.0,10000,370,80,15.133
+Apparel_Duster,Leather_Thrumbo,full body,0.8861,0.624,0.108,0.45,20.4,18.7,400,2.0,1.0,10000,1155,80,25.182
+Apparel_Duster,Leather_Patch,full body,0.8861,0.135,0.057,0.27,5.4,7.65,200,2.0,1.0,10000,156.0,80,5.433
+Apparel_Duster,Leather_Dread,full body,0.8861,0.381,0.072,0.45,12.0,10.2,260,2.0,1.0,10000,315,80,14.894
+Apparel_Duster,WoolMastodon,full body,0.8861,0.108,0,0.33,19.2,11.9,200,2.0,1.7,10000,250,80,4.725
+Apparel_Duster,WoolMuskox,full body,0.8861,0.108,0,0.33,18.0,8.5,200,2.0,1.7,10000,250,80,4.725
+Apparel_Duster,Leather_Mastodon,full body,0.8861,0.336,0.072,0.45,18.0,10.2,300,2.0,1.0,10000,275,80,13.099
+Apparel_Duster,Leather_Sealskin,full body,0.8861,0.243,0.072,0.45,21.6,17.0,200,2.0,1.0,10000,355,80,10.148
+Apparel_Duster,Leather_AlphaThrumbo,full body,0.8861,0.636,0.12,0.45,21.6,20.4,440,2.0,1.0,10000,1635,80,25.859
+Apparel_Duster,Leather_Mink,full body,0.8861,0.201,0.042,0.45,19.2,10.2,200,2.0,1.0,10000,450,80,8.533
+Apparel_Duster,Leather_Hippo,full body,0.8861,0.336,0.072,0.45,8.4,13.6,300,2.0,1.0,10000,330,80,13.099
+Apparel_Duster,Leather_Armadillo,full body,0.8861,0.372,0.072,0.45,9.6,15.3,260,2.0,1.0,10000,290,80,14.535
+Apparel_Jacket,Cloth,torso outer,0.6341,0.108,0,0.054,14.4,5.4,160,1.7,1.2,7000,130.2,70,1.413
+Apparel_Jacket,Synthread,torso outer,0.6341,0.282,0.078,0.27,17.6,6.6,210,1.7,0.7,7000,305,70,6.792
+Apparel_Jacket,DevilstrandCloth,torso outer,0.6341,0.42,0.108,0.9,16.0,7.2,210,1.7,0.4,7000,410,70,15.409
+Apparel_Jacket,Hyperweave,torso outer,0.6341,0.6,0.162,0.864,20.8,7.8,385,1.7,0.4,7000,655,70,20.931
+Apparel_Jacket,WoolSheep,torso outer,0.6341,0.108,0,0.33,20.8,3.0,160,1.7,1.7,7000,215,70,3.381
+Apparel_Jacket,WoolAlpaca,torso outer,0.6341,0.108,0,0.33,24.0,4.8,160,1.7,1.7,7000,290,70,3.381
+Apparel_Jacket,WoolMegasloth,torso outer,0.6341,0.24,0,0.33,27.2,3.6,160,1.7,1.7,7000,215,70,5.493
+Apparel_Jacket,WoolMuffalo,torso outer,0.6341,0.108,0,0.33,22.4,3.6,160,1.7,1.7,7000,215,70,3.381
+Apparel_Jacket,WoolBison,torso outer,0.6341,0.108,0,0.33,20.8,3.6,160,1.7,1.7,7000,215,70,3.381
+Apparel_Jacket,Leather_Plain,torso outer,0.6341,0.243,0.072,0.45,12.8,4.8,210,1.7,1.0,7000,172.2,70,7.262
+Apparel_Jacket,Leather_Dog,torso outer,0.6341,0.243,0.072,0.45,11.2,4.8,210,1.7,1.0,7000,165.2,70,7.262
+Apparel_Jacket,Leather_Wolf,torso outer,0.6341,0.306,0.072,0.45,19.2,4.8,210,1.7,1.0,7000,235,70,8.518
+Apparel_Jacket,Leather_Panthera,torso outer,0.6341,0.279,0.072,0.45,12.8,7.2,210,1.7,1.0,7000,235,70,7.947
+Apparel_Jacket,Leather_Camel,torso outer,0.6341,0.243,0.072,0.45,12.8,7.2,210,1.7,1.0,7000,186.2,70,7.262
+Apparel_Jacket,Leather_Bluefur,torso outer,0.6341,0.243,0.072,0.45,16.0,4.8,210,1.7,1.0,7000,186.2,70,7.262
+Apparel_Jacket,Leather_Bear,torso outer,0.6341,0.336,0.072,0.45,16.0,6.0,210,1.7,1.0,7000,265,70,9.374
+Apparel_Jacket,Leather_GuineaPig,torso outer,0.6341,0.201,0.042,0.45,30.4,5.4,96,1.7,1.0,7000,375,70,6.107
+Apparel_Jacket,Leather_Human,torso outer,0.6341,0.192,0.072,0.45,9.6,3.6,210,1.7,1.0,7000,320,70,6.292
+Apparel_Jacket,Leather_Pig,torso outer,0.6341,0.192,0.072,0.45,9.6,3.6,210,1.7,1.0,7000,158.2,70,6.292
+Apparel_Jacket,Leather_Light,torso outer,0.6341,0.162,0.042,0.45,9.6,3.6,160,1.7,1.0,7000,158.2,70,5.365
+Apparel_Jacket,Leather_Bird,torso outer,0.6341,0.201,0.042,0.45,8.0,3.0,160,1.7,1.0,7000,151.2,70,6.107
+Apparel_Jacket,Leather_Chinchilla,torso outer,0.6341,0.201,0.042,0.45,24.0,4.8,160,1.7,1.0,7000,480,70,6.107
+Apparel_Jacket,Leather_Fox,torso outer,0.6341,0.243,0.063,0.45,16.0,4.8,160,1.7,1.0,7000,270,70,7.155
+Apparel_Jacket,Leather_Lizard,torso outer,0.6341,0.243,0.081,0.45,9.6,3.6,160,1.7,1.0,7000,172.2,70,7.369
+Apparel_Jacket,Leather_Elephant,torso outer,0.6341,0.336,0.072,0.45,11.2,3.6,240,1.7,1.0,7000,235,70,9.374
+Apparel_Jacket,Leather_Heavy,torso outer,0.6341,0.372,0.072,0.45,24.0,4.2,240,1.7,1.0,7000,255,70,10.401
+Apparel_Jacket,Leather_Rhinoceros,torso outer,0.6341,0.387,0.072,0.45,11.2,4.2,240,1.7,1.0,7000,320,70,10.829
+Apparel_Jacket,Leather_Thrumbo,torso outer,0.6341,0.624,0.108,0.45,27.2,6.6,320,1.7,1.0,7000,1005,70,18.02
+Apparel_Jacket,Leather_Patch,torso outer,0.6341,0.135,0.057,0.27,7.2,2.7,160,1.7,1.0,7000,130.2,70,3.888
+Apparel_Jacket,Leather_Dread,torso outer,0.6341,0.381,0.072,0.45,16.0,3.6,210,1.7,1.0,7000,270,70,10.658
+Apparel_Jacket,WoolMastodon,torso outer,0.6341,0.108,0,0.33,25.6,4.2,160,1.7,1.7,7000,215,70,3.381
+Apparel_Jacket,WoolMuskox,torso outer,0.6341,0.108,0,0.33,24.0,3.0,160,1.7,1.7,7000,215,70,3.381
+Apparel_Jacket,Leather_Mastodon,torso outer,0.6341,0.336,0.072,0.45,24.0,3.6,240,1.7,1.0,7000,235,70,9.374
+Apparel_Jacket,Leather_Sealskin,torso outer,0.6341,0.243,0.072,0.45,28.8,6.0,160,1.7,1.0,7000,305,70,7.262
+Apparel_Jacket,Leather_AlphaThrumbo,torso outer,0.6341,0.636,0.12,0.45,28.8,7.2,350,1.7,1.0,7000,1425,70,18.505
+Apparel_Jacket,Leather_Mink,torso outer,0.6341,0.201,0.042,0.45,25.6,3.6,160,1.7,1.0,7000,390,70,6.107
+Apparel_Jacket,Leather_Hippo,torso outer,0.6341,0.336,0.072,0.45,11.2,4.8,240,1.7,1.0,7000,285,70,9.374
+Apparel_Jacket,Leather_Armadillo,torso outer,0.6341,0.372,0.072,0.45,12.8,5.4,210,1.7,1.0,7000,250,70,10.401
+Apparel_PlateArmor,Silver,full body,0.8861,0.648,0.324,0.324,3.0,0.0,205,15.0,0.4,38000,1835,1700,28.471
+Apparel_PlateArmor,Gold,full body,0.8861,0.648,0.324,0.324,3.0,0.0,174,15.0,0.4,34200,17125,1700,28.471
+Apparel_PlateArmor,Steel,full body,0.8861,0.81,0.405,0.54,3.0,0.0,290,15.0,0.4,38000,460,170,38.43
+Apparel_PlateArmor,Plasteel,full body,0.8861,1.026,0.495,0.585,3.0,0.0,810,15.0,0,83600,1830,170,48.757
+Apparel_PlateArmor,WoodLog,full body,0.8861,0.486,0.486,0.36,8.0,0.0,189,15.0,1.0,26600,300,170,25.062
+Apparel_PlateArmor,Uranium,full body,0.8861,0.972,0.486,0.585,3.0,0.0,725,15.0,0,72200,1280,170,46.685
+Apparel_PlateArmor,Bioferrite,full body,0.8861,0.99,0.45,0.45,2.5,0.0,580,15.0,0.75,95000,470,170,45.458
+Apparel_PlateArmor,Obsidian,full body,0.8861,0.765,0.36,0.63,3.0,0.0,145,15.0,0,57000,1055,170,36.785
+Apparel_Cape,Cloth,full body,0.8861,0.108,0,0.054,10.8,15.3,200,2.0,1.2,16000,177.6,80,1.974
+Apparel_Cape,Synthread,full body,0.8861,0.282,0.078,0.27,13.2,18.7,260,2.0,0.7,16000,380,80,9.49
+Apparel_Cape,DevilstrandCloth,full body,0.8861,0.42,0.108,0.9,12.0,20.4,260,2.0,0.4,16000,500,80,21.533
+Apparel_Cape,Hyperweave,full body,0.8861,0.6,0.162,0.864,15.6,22.1,480,2.0,0.4,16000,780,80,29.249
+Apparel_Cape,WoolSheep,full body,0.8861,0.108,0,0.33,15.6,8.5,200,2.0,1.7,16000,275,80,4.725
+Apparel_Cape,WoolAlpaca,full body,0.8861,0.108,0,0.33,18.0,13.6,200,2.0,1.7,16000,360,80,4.725
+Apparel_Cape,WoolMegasloth,full body,0.8861,0.24,0,0.33,20.4,10.2,200,2.0,1.7,16000,275,80,7.676
+Apparel_Cape,WoolMuffalo,full body,0.8861,0.108,0,0.33,16.8,10.2,200,2.0,1.7,16000,275,80,4.725
+Apparel_Cape,WoolBison,full body,0.8861,0.108,0,0.33,15.6,10.2,200,2.0,1.7,16000,275,80,4.725
+Apparel_Cape,Leather_Plain,full body,0.8861,0.243,0.072,0.45,9.6,13.6,260,2.0,1.0,16000,225,80,10.148
+Apparel_Cape,Leather_Dog,full body,0.8861,0.243,0.072,0.45,8.4,13.6,260,2.0,1.0,16000,220,80,10.148
+Apparel_Cape,Leather_Wolf,full body,0.8861,0.306,0.072,0.45,14.4,13.6,260,2.0,1.0,16000,300,80,11.903
+Apparel_Cape,Leather_Panthera,full body,0.8861,0.279,0.072,0.45,9.6,20.4,260,2.0,1.0,16000,300,80,11.105
+Apparel_Cape,Leather_Camel,full body,0.8861,0.243,0.072,0.45,9.6,20.4,260,2.0,1.0,16000,240,80,10.148
+Apparel_Cape,Leather_Bluefur,full body,0.8861,0.243,0.072,0.45,12.0,13.6,260,2.0,1.0,16000,240,80,10.148
+Apparel_Cape,Leather_Bear,full body,0.8861,0.336,0.072,0.45,12.0,17.0,260,2.0,1.0,16000,330,80,13.099
+Apparel_Cape,Leather_GuineaPig,full body,0.8861,0.201,0.042,0.45,22.8,15.3,120,2.0,1.0,16000,460,80,8.533
+Apparel_Cape,Leather_Human,full body,0.8861,0.192,0.072,0.45,7.2,10.2,260,2.0,1.0,16000,395,80,8.793
+Apparel_Cape,Leather_Pig,full body,0.8861,0.192,0.072,0.45,7.2,10.2,260,2.0,1.0,16000,210,80,8.793
+Apparel_Cape,Leather_Light,full body,0.8861,0.162,0.042,0.45,7.2,10.2,200,2.0,1.0,16000,210,80,7.497
+Apparel_Cape,Leather_Bird,full body,0.8861,0.201,0.042,0.45,6.0,8.5,200,2.0,1.0,16000,200,80,8.533
+Apparel_Cape,Leather_Chinchilla,full body,0.8861,0.201,0.042,0.45,18.0,13.6,200,2.0,1.0,16000,580,80,8.533
+Apparel_Cape,Leather_Fox,full body,0.8861,0.243,0.063,0.45,12.0,13.6,200,2.0,1.0,16000,340,80,9.999
+Apparel_Cape,Leather_Lizard,full body,0.8861,0.243,0.081,0.45,7.2,10.2,200,2.0,1.0,16000,225,80,10.298
+Apparel_Cape,Leather_Elephant,full body,0.8861,0.336,0.072,0.45,8.4,10.2,300,2.0,1.0,16000,300,80,13.099
+Apparel_Cape,Leather_Heavy,full body,0.8861,0.372,0.072,0.45,18.0,11.9,300,2.0,1.0,16000,320,80,14.535
+Apparel_Cape,Leather_Rhinoceros,full body,0.8861,0.387,0.072,0.45,8.4,11.9,300,2.0,1.0,16000,395,80,15.133
+Apparel_Cape,Leather_Thrumbo,full body,0.8861,0.624,0.108,0.45,20.4,18.7,400,2.0,1.0,16000,1180,80,25.182
+Apparel_Cape,Leather_Patch,full body,0.8861,0.135,0.057,0.27,5.4,7.65,200,2.0,1.0,16000,177.6,80,5.433
+Apparel_Cape,Leather_Dread,full body,0.8861,0.381,0.072,0.45,12.0,10.2,260,2.0,1.0,16000,340,80,14.894
+Apparel_Cape,WoolMastodon,full body,0.8861,0.108,0,0.33,19.2,11.9,200,2.0,1.7,16000,275,80,4.725
+Apparel_Cape,WoolMuskox,full body,0.8861,0.108,0,0.33,18.0,8.5,200,2.0,1.7,16000,275,80,4.725
+Apparel_Cape,Leather_Mastodon,full body,0.8861,0.336,0.072,0.45,18.0,10.2,300,2.0,1.0,16000,300,80,13.099
+Apparel_Cape,Leather_Sealskin,full body,0.8861,0.243,0.072,0.45,21.6,17.0,200,2.0,1.0,16000,380,80,10.148
+Apparel_Cape,Leather_AlphaThrumbo,full body,0.8861,0.636,0.12,0.45,21.6,20.4,440,2.0,1.0,16000,1660,80,25.859
+Apparel_Cape,Leather_Mink,full body,0.8861,0.201,0.042,0.45,19.2,10.2,200,2.0,1.0,16000,475,80,8.533
+Apparel_Cape,Leather_Hippo,full body,0.8861,0.336,0.072,0.45,8.4,13.6,300,2.0,1.0,16000,355,80,13.099
+Apparel_Cape,Leather_Armadillo,full body,0.8861,0.372,0.072,0.45,9.6,15.3,260,2.0,1.0,16000,315,80,14.535
+Apparel_Robe,Cloth,full body,0.8711,0.072,0,0.036,14.4,4.5,100,0.75,1.2,5000,138.0,80,1.294
+Apparel_Robe,Synthread,full body,0.8711,0.188,0.052,0.18,17.6,5.5,130,0.75,0.7,5000,340,80,5.567
+Apparel_Robe,DevilstrandCloth,full body,0.8711,0.28,0.072,0.6,16.0,6.0,130,0.75,0.4,5000,460,80,12.414
+Apparel_Robe,Hyperweave,full body,0.8711,0.4,0.108,0.576,20.8,6.5,240,0.75,0.4,5000,740,80,17.209
+Apparel_Robe,WoolSheep,full body,0.8711,0.072,0,0.22,20.8,2.5,100,0.75,1.7,5000,235,80,3.097
+Apparel_Robe,WoolAlpaca,full body,0.8711,0.072,0,0.22,24.0,4.0,100,0.75,1.7,5000,320,80,3.097
+Apparel_Robe,WoolMegasloth,full body,0.8711,0.16,0,0.22,27.2,3.0,100,0.75,1.7,5000,235,80,4.377
+Apparel_Robe,WoolMuffalo,full body,0.8711,0.072,0,0.22,22.4,3.0,100,0.75,1.7,5000,235,80,3.097
+Apparel_Robe,WoolBison,full body,0.8711,0.072,0,0.22,20.8,3.0,100,0.75,1.7,5000,235,80,3.097
+Apparel_Robe,Leather_Plain,full body,0.8711,0.162,0.048,0.3,12.8,4.0,130,0.75,1.0,5000,186.0,80,5.998
+Apparel_Robe,Leather_Dog,full body,0.8711,0.162,0.048,0.3,11.2,4.0,130,0.75,1.0,5000,178.0,80,5.998
+Apparel_Robe,Leather_Wolf,full body,0.8711,0.204,0.048,0.3,19.2,4.0,130,0.75,1.0,5000,260,80,7.095
+Apparel_Robe,Leather_Panthera,full body,0.8711,0.186,0.048,0.3,12.8,6.0,130,0.75,1.0,5000,260,80,6.625
+Apparel_Robe,Leather_Camel,full body,0.8711,0.162,0.048,0.3,12.8,6.0,130,0.75,1.0,5000,200,80,5.998
+Apparel_Robe,Leather_Bluefur,full body,0.8711,0.162,0.048,0.3,16.0,4.0,130,0.75,1.0,5000,200,80,5.998
+Apparel_Robe,Leather_Bear,full body,0.8711,0.224,0.048,0.3,16.0,5.0,130,0.75,1.0,5000,290,80,7.618
+Apparel_Robe,Leather_GuineaPig,full body,0.8711,0.134,0.028,0.3,30.4,4.5,60,0.75,1.0,5000,420,80,5.148
+Apparel_Robe,Leather_Human,full body,0.8711,0.128,0.048,0.3,9.6,3.0,130,0.75,1.0,5000,355,80,5.397
+Apparel_Robe,Leather_Pig,full body,0.8711,0.128,0.048,0.3,9.6,3.0,130,0.75,1.0,5000,170.0,80,5.397
+Apparel_Robe,Leather_Light,full body,0.8711,0.108,0.028,0.3,9.6,3.0,100,0.75,1.0,5000,170.0,80,4.809
+Apparel_Robe,Leather_Bird,full body,0.8711,0.134,0.028,0.3,8.0,2.5,100,0.75,1.0,5000,162.0,80,5.148
+Apparel_Robe,Leather_Chinchilla,full body,0.8711,0.134,0.028,0.3,24.0,4.0,100,0.75,1.0,5000,540,80,5.148
+Apparel_Robe,Leather_Fox,full body,0.8711,0.162,0.042,0.3,16.0,4.0,100,0.75,1.0,5000,300,80,5.9
+Apparel_Robe,Leather_Lizard,full body,0.8711,0.162,0.054,0.3,9.6,3.0,100,0.75,1.0,5000,186.0,80,6.096
+Apparel_Robe,Leather_Elephant,full body,0.8711,0.224,0.048,0.3,11.2,3.0,150,0.75,1.0,5000,260,80,7.618
+Apparel_Robe,Leather_Heavy,full body,0.8711,0.248,0.048,0.3,24.0,3.5,150,0.75,1.0,5000,280,80,8.245
+Apparel_Robe,Leather_Rhinoceros,full body,0.8711,0.258,0.048,0.3,11.2,3.5,150,0.75,1.0,5000,355,80,8.507
+Apparel_Robe,Leather_Thrumbo,full body,0.8711,0.416,0.072,0.3,27.2,5.5,200,0.75,1.0,5000,1140,80,14.543
+Apparel_Robe,Leather_Patch,full body,0.8711,0.09,0.038,0.18,7.2,2.25,100,0.75,1.0,5000,138.0,80,3.561
+Apparel_Robe,Leather_Dread,full body,0.8711,0.254,0.048,0.3,16.0,3.0,130,0.75,1.0,5000,300,80,8.402
+Apparel_Robe,WoolMastodon,full body,0.8711,0.072,0,0.22,25.6,3.5,100,0.75,1.7,5000,235,80,3.097
+Apparel_Robe,WoolMuskox,full body,0.8711,0.072,0,0.22,24.0,2.5,100,0.75,1.7,5000,235,80,3.097
+Apparel_Robe,Leather_Mastodon,full body,0.8711,0.224,0.048,0.3,24.0,3.0,150,0.75,1.0,5000,260,80,7.618
+Apparel_Robe,Leather_Sealskin,full body,0.8711,0.162,0.048,0.3,28.8,5.0,100,0.75,1.0,5000,340,80,5.998
+Apparel_Robe,Leather_AlphaThrumbo,full body,0.8711,0.424,0.08,0.3,28.8,6.0,220,0.75,1.0,5000,1620,80,14.988
+Apparel_Robe,Leather_Mink,full body,0.8711,0.134,0.028,0.3,25.6,3.0,100,0.75,1.0,5000,435,80,5.148
+Apparel_Robe,Leather_Hippo,full body,0.8711,0.224,0.048,0.3,11.2,4.0,150,0.75,1.0,5000,315,80,7.618
+Apparel_Robe,Leather_Armadillo,full body,0.8711,0.248,0.048,0.3,12.8,4.5,130,0.75,1.0,5000,275,80,8.245
+Apparel_ShirtRuffle,Cloth,base clothing,0.6341,0.072,0,0.036,3.96,1.8,100,0.25,1.2,6000,119.1,65,0.942
+Apparel_ShirtRuffle,Synthread,base clothing,0.6341,0.188,0.052,0.18,4.84,2.2,130,0.25,0.7,6000,280,65,4.052
+Apparel_ShirtRuffle,DevilstrandCloth,base clothing,0.6341,0.28,0.072,0.6,4.4,2.4,130,0.25,0.4,6000,380,65,9.036
+Apparel_ShirtRuffle,Hyperweave,base clothing,0.6341,0.4,0.108,0.576,5.72,2.6,240,0.25,0.4,6000,605,65,12.527
+Apparel_ShirtRuffle,WoolSheep,base clothing,0.6341,0.072,0,0.22,5.72,1.0,100,0.25,1.7,6000,197.1,65,2.254
+Apparel_ShirtRuffle,WoolAlpaca,base clothing,0.6341,0.072,0,0.22,6.6,1.6,100,0.25,1.7,6000,270,65,2.254
+Apparel_ShirtRuffle,WoolMegasloth,base clothing,0.6341,0.16,0,0.22,7.48,1.2,100,0.25,1.7,6000,197.1,65,3.186
+Apparel_ShirtRuffle,WoolMuffalo,base clothing,0.6341,0.072,0,0.22,6.16,1.2,100,0.25,1.7,6000,197.1,65,2.254
+Apparel_ShirtRuffle,WoolBison,base clothing,0.6341,0.072,0,0.22,5.72,1.2,100,0.25,1.7,6000,197.1,65,2.254
+Apparel_ShirtRuffle,Leather_Plain,base clothing,0.6341,0.162,0.048,0.3,3.52,1.6,130,0.25,1.0,6000,158.1,65,4.366
+Apparel_ShirtRuffle,Leather_Dog,base clothing,0.6341,0.162,0.048,0.3,3.08,1.6,130,0.25,1.0,6000,151.6,65,4.366
+Apparel_ShirtRuffle,Leather_Wolf,base clothing,0.6341,0.204,0.048,0.3,5.28,1.6,130,0.25,1.0,6000,215,65,5.165
+Apparel_ShirtRuffle,Leather_Panthera,base clothing,0.6341,0.186,0.048,0.3,3.52,2.4,130,0.25,1.0,6000,215,65,4.823
+Apparel_ShirtRuffle,Leather_Camel,base clothing,0.6341,0.162,0.048,0.3,3.52,2.4,130,0.25,1.0,6000,171.1,65,4.366
+Apparel_ShirtRuffle,Leather_Bluefur,base clothing,0.6341,0.162,0.048,0.3,4.4,1.6,130,0.25,1.0,6000,171.1,65,4.366
+Apparel_ShirtRuffle,Leather_Bear,base clothing,0.6341,0.224,0.048,0.3,4.4,2.0,130,0.25,1.0,6000,245,65,5.545
+Apparel_ShirtRuffle,Leather_GuineaPig,base clothing,0.6341,0.134,0.028,0.3,8.36,1.8,60,0.25,1.0,6000,345,65,3.748
+Apparel_ShirtRuffle,Leather_Human,base clothing,0.6341,0.128,0.048,0.3,2.64,1.2,130,0.25,1.0,6000,295,65,3.928
+Apparel_ShirtRuffle,Leather_Pig,base clothing,0.6341,0.128,0.048,0.3,2.64,1.2,130,0.25,1.0,6000,145.1,65,3.928
+Apparel_ShirtRuffle,Leather_Light,base clothing,0.6341,0.108,0.028,0.3,2.64,1.2,100,0.25,1.0,6000,145.1,65,3.5
+Apparel_ShirtRuffle,Leather_Bird,base clothing,0.6341,0.134,0.028,0.3,2.2,1.0,100,0.25,1.0,6000,138.6,65,3.748
+Apparel_ShirtRuffle,Leather_Chinchilla,base clothing,0.6341,0.134,0.028,0.3,6.6,1.6,100,0.25,1.0,6000,445,65,3.748
+Apparel_ShirtRuffle,Leather_Fox,base clothing,0.6341,0.162,0.042,0.3,4.4,1.6,100,0.25,1.0,6000,250,65,4.295
+Apparel_ShirtRuffle,Leather_Lizard,base clothing,0.6341,0.162,0.054,0.3,2.64,1.2,100,0.25,1.0,6000,158.1,65,4.437
+Apparel_ShirtRuffle,Leather_Elephant,base clothing,0.6341,0.224,0.048,0.3,3.08,1.2,150,0.25,1.0,6000,215,65,5.545
+Apparel_ShirtRuffle,Leather_Heavy,base clothing,0.6341,0.248,0.048,0.3,6.6,1.4,150,0.25,1.0,6000,235,65,6.002
+Apparel_ShirtRuffle,Leather_Rhinoceros,base clothing,0.6341,0.258,0.048,0.3,3.08,1.4,150,0.25,1.0,6000,295,65,6.192
+Apparel_ShirtRuffle,Leather_Thrumbo,base clothing,0.6341,0.416,0.072,0.3,7.48,2.2,200,0.25,1.0,6000,930,65,10.587
+Apparel_ShirtRuffle,Leather_Patch,base clothing,0.6341,0.09,0.038,0.18,1.98,0.9,100,0.25,1.0,6000,119.1,65,2.592
+Apparel_ShirtRuffle,Leather_Dread,base clothing,0.6341,0.254,0.048,0.3,4.4,1.2,130,0.25,1.0,6000,250,65,6.116
+Apparel_ShirtRuffle,WoolMastodon,base clothing,0.6341,0.072,0,0.22,7.04,1.4,100,0.25,1.7,6000,197.1,65,2.254
+Apparel_ShirtRuffle,WoolMuskox,base clothing,0.6341,0.072,0,0.22,6.6,1.0,100,0.25,1.7,6000,197.1,65,2.254
+Apparel_ShirtRuffle,Leather_Mastodon,base clothing,0.6341,0.224,0.048,0.3,6.6,1.2,150,0.25,1.0,6000,215,65,5.545
+Apparel_ShirtRuffle,Leather_Sealskin,base clothing,0.6341,0.162,0.048,0.3,7.92,2.0,100,0.25,1.0,6000,280,65,4.366
+Apparel_ShirtRuffle,Leather_AlphaThrumbo,base clothing,0.6341,0.424,0.08,0.3,7.92,2.4,220,0.25,1.0,6000,1320,65,10.91
+Apparel_ShirtRuffle,Leather_Mink,base clothing,0.6341,0.134,0.028,0.3,7.04,1.2,100,0.25,1.0,6000,360,65,3.748
+Apparel_ShirtRuffle,Leather_Hippo,base clothing,0.6341,0.224,0.048,0.3,3.08,1.6,150,0.25,1.0,6000,260,65,5.545
+Apparel_ShirtRuffle,Leather_Armadillo,base clothing,0.6341,0.248,0.048,0.3,3.52,1.8,130,0.25,1.0,6000,230,65,6.002
+Apparel_Corset,Cloth,torso vest,0.4266,0.072,0,0.036,7.2,1.8,100,0.75,1.2,12000,110.7,45,0.634
+Apparel_Corset,Synthread,torso vest,0.4266,0.188,0.052,0.18,8.8,2.2,130,0.75,0.7,12000,225,45,2.726
+Apparel_Corset,DevilstrandCloth,torso vest,0.4266,0.28,0.072,0.6,8.0,2.4,130,0.75,0.4,12000,290,45,6.079
+Apparel_Corset,Hyperweave,torso vest,0.4266,0.4,0.108,0.576,10.4,2.6,240,0.75,0.4,12000,450,45,8.427
+Apparel_Corset,WoolSheep,torso vest,0.4266,0.072,0,0.22,10.4,1.0,100,0.75,1.7,12000,164.7,45,1.517
+Apparel_Corset,WoolAlpaca,torso vest,0.4266,0.072,0,0.22,12.0,1.6,100,0.75,1.7,12000,215,45,1.517
+Apparel_Corset,WoolMegasloth,torso vest,0.4266,0.16,0,0.22,13.6,1.2,100,0.75,1.7,12000,164.7,45,2.144
+Apparel_Corset,WoolMuffalo,torso vest,0.4266,0.072,0,0.22,11.2,1.2,100,0.75,1.7,12000,164.7,45,1.517
+Apparel_Corset,WoolBison,torso vest,0.4266,0.072,0,0.22,10.4,1.2,100,0.75,1.7,12000,164.7,45,1.517
+Apparel_Corset,Leather_Plain,torso vest,0.4266,0.162,0.048,0.3,6.4,1.6,130,0.75,1.0,12000,137.7,45,2.937
+Apparel_Corset,Leather_Dog,torso vest,0.4266,0.162,0.048,0.3,5.6,1.6,130,0.75,1.0,12000,133.2,45,2.937
+Apparel_Corset,Leather_Wolf,torso vest,0.4266,0.204,0.048,0.3,9.6,1.6,130,0.75,1.0,12000,178.2,45,3.475
+Apparel_Corset,Leather_Panthera,torso vest,0.4266,0.186,0.048,0.3,6.4,2.4,130,0.75,1.0,12000,178.2,45,3.244
+Apparel_Corset,Leather_Camel,torso vest,0.4266,0.162,0.048,0.3,6.4,2.4,130,0.75,1.0,12000,146.7,45,2.937
+Apparel_Corset,Leather_Bluefur,torso vest,0.4266,0.162,0.048,0.3,8.0,1.6,130,0.75,1.0,12000,146.7,45,2.937
+Apparel_Corset,Leather_Bear,torso vest,0.4266,0.224,0.048,0.3,8.0,2.0,130,0.75,1.0,12000,196.2,45,3.731
+Apparel_Corset,Leather_GuineaPig,torso vest,0.4266,0.134,0.028,0.3,15.2,1.8,60,0.75,1.0,12000,270,45,2.521
+Apparel_Corset,Leather_Human,torso vest,0.4266,0.128,0.048,0.3,4.8,1.2,130,0.75,1.0,12000,230,45,2.643
+Apparel_Corset,Leather_Pig,torso vest,0.4266,0.128,0.048,0.3,4.8,1.2,130,0.75,1.0,12000,128.7,45,2.643
+Apparel_Corset,Leather_Light,torso vest,0.4266,0.108,0.028,0.3,4.8,1.2,100,0.75,1.0,12000,128.7,45,2.355
+Apparel_Corset,Leather_Bird,torso vest,0.4266,0.134,0.028,0.3,4.0,1.0,100,0.75,1.0,12000,124.2,45,2.521
+Apparel_Corset,Leather_Chinchilla,torso vest,0.4266,0.134,0.028,0.3,12.0,1.6,100,0.75,1.0,12000,335,45,2.521
+Apparel_Corset,Leather_Fox,torso vest,0.4266,0.162,0.042,0.3,8.0,1.6,100,0.75,1.0,12000,200,45,2.889
+Apparel_Corset,Leather_Lizard,torso vest,0.4266,0.162,0.054,0.3,4.8,1.2,100,0.75,1.0,12000,137.7,45,2.985
+Apparel_Corset,Leather_Elephant,torso vest,0.4266,0.224,0.048,0.3,5.6,1.2,150,0.75,1.0,12000,178.2,45,3.731
+Apparel_Corset,Leather_Heavy,torso vest,0.4266,0.248,0.048,0.3,12.0,1.4,150,0.75,1.0,12000,191.7,45,4.038
+Apparel_Corset,Leather_Rhinoceros,torso vest,0.4266,0.258,0.048,0.3,5.6,1.4,150,0.75,1.0,12000,230,45,4.166
+Apparel_Corset,Leather_Thrumbo,torso vest,0.4266,0.416,0.072,0.3,13.6,2.2,200,0.75,1.0,12000,675,45,7.122
+Apparel_Corset,Leather_Patch,torso vest,0.4266,0.09,0.038,0.18,3.6,0.9,100,0.75,1.0,12000,110.7,45,1.744
+Apparel_Corset,Leather_Dread,torso vest,0.4266,0.254,0.048,0.3,8.0,1.2,130,0.75,1.0,12000,200,45,4.115
+Apparel_Corset,WoolMastodon,torso vest,0.4266,0.072,0,0.22,12.8,1.4,100,0.75,1.7,12000,164.7,45,1.517
+Apparel_Corset,WoolMuskox,torso vest,0.4266,0.072,0,0.22,12.0,1.0,100,0.75,1.7,12000,164.7,45,1.517
+Apparel_Corset,Leather_Mastodon,torso vest,0.4266,0.224,0.048,0.3,12.0,1.2,150,0.75,1.0,12000,178.2,45,3.731
+Apparel_Corset,Leather_Sealskin,torso vest,0.4266,0.162,0.048,0.3,14.4,2.0,100,0.75,1.0,12000,225,45,2.937
+Apparel_Corset,Leather_AlphaThrumbo,torso vest,0.4266,0.424,0.08,0.3,14.4,2.4,220,0.75,1.0,12000,945,45,7.34
+Apparel_Corset,Leather_Mink,torso vest,0.4266,0.134,0.028,0.3,12.8,1.2,100,0.75,1.0,12000,275,45,2.521
+Apparel_Corset,Leather_Hippo,torso vest,0.4266,0.224,0.048,0.3,5.6,1.6,150,0.75,1.0,12000,210,45,3.731
+Apparel_Corset,Leather_Armadillo,torso vest,0.4266,0.248,0.048,0.3,6.4,1.8,130,0.75,1.0,12000,187.2,45,4.038
+Apparel_VestRoyal,Cloth,torso vest,0.4266,0.072,0,0.036,7.2,1.8,100,0.75,1.2,12000,110.7,45,0.634
+Apparel_VestRoyal,Synthread,torso vest,0.4266,0.188,0.052,0.18,8.8,2.2,130,0.75,0.7,12000,225,45,2.726
+Apparel_VestRoyal,DevilstrandCloth,torso vest,0.4266,0.28,0.072,0.6,8.0,2.4,130,0.75,0.4,12000,290,45,6.079
+Apparel_VestRoyal,Hyperweave,torso vest,0.4266,0.4,0.108,0.576,10.4,2.6,240,0.75,0.4,12000,450,45,8.427
+Apparel_VestRoyal,WoolSheep,torso vest,0.4266,0.072,0,0.22,10.4,1.0,100,0.75,1.7,12000,164.7,45,1.517
+Apparel_VestRoyal,WoolAlpaca,torso vest,0.4266,0.072,0,0.22,12.0,1.6,100,0.75,1.7,12000,215,45,1.517
+Apparel_VestRoyal,WoolMegasloth,torso vest,0.4266,0.16,0,0.22,13.6,1.2,100,0.75,1.7,12000,164.7,45,2.144
+Apparel_VestRoyal,WoolMuffalo,torso vest,0.4266,0.072,0,0.22,11.2,1.2,100,0.75,1.7,12000,164.7,45,1.517
+Apparel_VestRoyal,WoolBison,torso vest,0.4266,0.072,0,0.22,10.4,1.2,100,0.75,1.7,12000,164.7,45,1.517
+Apparel_VestRoyal,Leather_Plain,torso vest,0.4266,0.162,0.048,0.3,6.4,1.6,130,0.75,1.0,12000,137.7,45,2.937
+Apparel_VestRoyal,Leather_Dog,torso vest,0.4266,0.162,0.048,0.3,5.6,1.6,130,0.75,1.0,12000,133.2,45,2.937
+Apparel_VestRoyal,Leather_Wolf,torso vest,0.4266,0.204,0.048,0.3,9.6,1.6,130,0.75,1.0,12000,178.2,45,3.475
+Apparel_VestRoyal,Leather_Panthera,torso vest,0.4266,0.186,0.048,0.3,6.4,2.4,130,0.75,1.0,12000,178.2,45,3.244
+Apparel_VestRoyal,Leather_Camel,torso vest,0.4266,0.162,0.048,0.3,6.4,2.4,130,0.75,1.0,12000,146.7,45,2.937
+Apparel_VestRoyal,Leather_Bluefur,torso vest,0.4266,0.162,0.048,0.3,8.0,1.6,130,0.75,1.0,12000,146.7,45,2.937
+Apparel_VestRoyal,Leather_Bear,torso vest,0.4266,0.224,0.048,0.3,8.0,2.0,130,0.75,1.0,12000,196.2,45,3.731
+Apparel_VestRoyal,Leather_GuineaPig,torso vest,0.4266,0.134,0.028,0.3,15.2,1.8,60,0.75,1.0,12000,270,45,2.521
+Apparel_VestRoyal,Leather_Human,torso vest,0.4266,0.128,0.048,0.3,4.8,1.2,130,0.75,1.0,12000,230,45,2.643
+Apparel_VestRoyal,Leather_Pig,torso vest,0.4266,0.128,0.048,0.3,4.8,1.2,130,0.75,1.0,12000,128.7,45,2.643
+Apparel_VestRoyal,Leather_Light,torso vest,0.4266,0.108,0.028,0.3,4.8,1.2,100,0.75,1.0,12000,128.7,45,2.355
+Apparel_VestRoyal,Leather_Bird,torso vest,0.4266,0.134,0.028,0.3,4.0,1.0,100,0.75,1.0,12000,124.2,45,2.521
+Apparel_VestRoyal,Leather_Chinchilla,torso vest,0.4266,0.134,0.028,0.3,12.0,1.6,100,0.75,1.0,12000,335,45,2.521
+Apparel_VestRoyal,Leather_Fox,torso vest,0.4266,0.162,0.042,0.3,8.0,1.6,100,0.75,1.0,12000,200,45,2.889
+Apparel_VestRoyal,Leather_Lizard,torso vest,0.4266,0.162,0.054,0.3,4.8,1.2,100,0.75,1.0,12000,137.7,45,2.985
+Apparel_VestRoyal,Leather_Elephant,torso vest,0.4266,0.224,0.048,0.3,5.6,1.2,150,0.75,1.0,12000,178.2,45,3.731
+Apparel_VestRoyal,Leather_Heavy,torso vest,0.4266,0.248,0.048,0.3,12.0,1.4,150,0.75,1.0,12000,191.7,45,4.038
+Apparel_VestRoyal,Leather_Rhinoceros,torso vest,0.4266,0.258,0.048,0.3,5.6,1.4,150,0.75,1.0,12000,230,45,4.166
+Apparel_VestRoyal,Leather_Thrumbo,torso vest,0.4266,0.416,0.072,0.3,13.6,2.2,200,0.75,1.0,12000,675,45,7.122
+Apparel_VestRoyal,Leather_Patch,torso vest,0.4266,0.09,0.038,0.18,3.6,0.9,100,0.75,1.0,12000,110.7,45,1.744
+Apparel_VestRoyal,Leather_Dread,torso vest,0.4266,0.254,0.048,0.3,8.0,1.2,130,0.75,1.0,12000,200,45,4.115
+Apparel_VestRoyal,WoolMastodon,torso vest,0.4266,0.072,0,0.22,12.8,1.4,100,0.75,1.7,12000,164.7,45,1.517
+Apparel_VestRoyal,WoolMuskox,torso vest,0.4266,0.072,0,0.22,12.0,1.0,100,0.75,1.7,12000,164.7,45,1.517
+Apparel_VestRoyal,Leather_Mastodon,torso vest,0.4266,0.224,0.048,0.3,12.0,1.2,150,0.75,1.0,12000,178.2,45,3.731
+Apparel_VestRoyal,Leather_Sealskin,torso vest,0.4266,0.162,0.048,0.3,14.4,2.0,100,0.75,1.0,12000,225,45,2.937
+Apparel_VestRoyal,Leather_AlphaThrumbo,torso vest,0.4266,0.424,0.08,0.3,14.4,2.4,220,0.75,1.0,12000,945,45,7.34
+Apparel_VestRoyal,Leather_Mink,torso vest,0.4266,0.134,0.028,0.3,12.8,1.2,100,0.75,1.0,12000,275,45,2.521
+Apparel_VestRoyal,Leather_Hippo,torso vest,0.4266,0.224,0.048,0.3,5.6,1.6,150,0.75,1.0,12000,210,45,3.731
+Apparel_VestRoyal,Leather_Armadillo,torso vest,0.4266,0.248,0.048,0.3,6.4,1.8,130,0.75,1.0,12000,187.2,45,4.038
+Apparel_RobeRoyal,Cloth,full body,0.8861,0.072,0,0.036,14.4,4.5,100,0.75,1.2,20000,220,100,1.316
+Apparel_RobeRoyal,Synthread,full body,0.8861,0.188,0.052,0.18,17.6,5.5,130,0.75,0.7,20000,470,100,5.662
+Apparel_RobeRoyal,DevilstrandCloth,full body,0.8861,0.28,0.072,0.6,16.0,6.0,130,0.75,0.4,20000,620,100,12.627
+Apparel_RobeRoyal,Hyperweave,full body,0.8861,0.4,0.108,0.576,20.8,6.5,240,0.75,0.4,20000,970,100,17.505
+Apparel_RobeRoyal,WoolSheep,full body,0.8861,0.072,0,0.22,20.8,2.5,100,0.75,1.7,20000,340,100,3.15
+Apparel_RobeRoyal,WoolAlpaca,full body,0.8861,0.072,0,0.22,24.0,4.0,100,0.75,1.7,20000,450,100,3.15
+Apparel_RobeRoyal,WoolMegasloth,full body,0.8861,0.16,0,0.22,27.2,3.0,100,0.75,1.7,20000,340,100,4.453
+Apparel_RobeRoyal,WoolMuffalo,full body,0.8861,0.072,0,0.22,22.4,3.0,100,0.75,1.7,20000,340,100,3.15
+Apparel_RobeRoyal,WoolBison,full body,0.8861,0.072,0,0.22,20.8,3.0,100,0.75,1.7,20000,340,100,3.15
+Apparel_RobeRoyal,Leather_Plain,full body,0.8861,0.162,0.048,0.3,12.8,4.0,130,0.75,1.0,20000,280,100,6.101
+Apparel_RobeRoyal,Leather_Dog,full body,0.8861,0.162,0.048,0.3,11.2,4.0,130,0.75,1.0,20000,270,100,6.101
+Apparel_RobeRoyal,Leather_Wolf,full body,0.8861,0.204,0.048,0.3,19.2,4.0,130,0.75,1.0,20000,370,100,7.218
+Apparel_RobeRoyal,Leather_Panthera,full body,0.8861,0.186,0.048,0.3,12.8,6.0,130,0.75,1.0,20000,370,100,6.739
+Apparel_RobeRoyal,Leather_Camel,full body,0.8861,0.162,0.048,0.3,12.8,6.0,130,0.75,1.0,20000,300,100,6.101
+Apparel_RobeRoyal,Leather_Bluefur,full body,0.8861,0.162,0.048,0.3,16.0,4.0,130,0.75,1.0,20000,300,100,6.101
+Apparel_RobeRoyal,Leather_Bear,full body,0.8861,0.224,0.048,0.3,16.0,5.0,130,0.75,1.0,20000,410,100,7.749
+Apparel_RobeRoyal,Leather_GuineaPig,full body,0.8861,0.134,0.028,0.3,30.4,4.5,60,0.75,1.0,20000,570,100,5.237
+Apparel_RobeRoyal,Leather_Human,full body,0.8861,0.128,0.048,0.3,9.6,3.0,130,0.75,1.0,20000,490,100,5.49
+Apparel_RobeRoyal,Leather_Pig,full body,0.8861,0.128,0.048,0.3,9.6,3.0,130,0.75,1.0,20000,260,100,5.49
+Apparel_RobeRoyal,Leather_Light,full body,0.8861,0.108,0.028,0.3,9.6,3.0,100,0.75,1.0,20000,260,100,4.891
+Apparel_RobeRoyal,Leather_Bird,full body,0.8861,0.134,0.028,0.3,8.0,2.5,100,0.75,1.0,20000,250,100,5.237
+Apparel_RobeRoyal,Leather_Chinchilla,full body,0.8861,0.134,0.028,0.3,24.0,4.0,100,0.75,1.0,20000,720,100,5.237
+Apparel_RobeRoyal,Leather_Fox,full body,0.8861,0.162,0.042,0.3,16.0,4.0,100,0.75,1.0,20000,420,100,6.001
+Apparel_RobeRoyal,Leather_Lizard,full body,0.8861,0.162,0.054,0.3,9.6,3.0,100,0.75,1.0,20000,280,100,6.201
+Apparel_RobeRoyal,Leather_Elephant,full body,0.8861,0.224,0.048,0.3,11.2,3.0,150,0.75,1.0,20000,370,100,7.749
+Apparel_RobeRoyal,Leather_Heavy,full body,0.8861,0.248,0.048,0.3,24.0,3.5,150,0.75,1.0,20000,400,100,8.387
+Apparel_RobeRoyal,Leather_Rhinoceros,full body,0.8861,0.258,0.048,0.3,11.2,3.5,150,0.75,1.0,20000,490,100,8.653
+Apparel_RobeRoyal,Leather_Thrumbo,full body,0.8861,0.416,0.072,0.3,27.2,5.5,200,0.75,1.0,20000,1470,100,14.794
+Apparel_RobeRoyal,Leather_Patch,full body,0.8861,0.09,0.038,0.18,7.2,2.25,100,0.75,1.0,20000,220,100,3.622
+Apparel_RobeRoyal,Leather_Dread,full body,0.8861,0.254,0.048,0.3,16.0,3.0,130,0.75,1.0,20000,420,100,8.547
+Apparel_RobeRoyal,WoolMastodon,full body,0.8861,0.072,0,0.22,25.6,3.5,100,0.75,1.7,20000,340,100,3.15
+Apparel_RobeRoyal,WoolMuskox,full body,0.8861,0.072,0,0.22,24.0,2.5,100,0.75,1.7,20000,340,100,3.15
+Apparel_RobeRoyal,Leather_Mastodon,full body,0.8861,0.224,0.048,0.3,24.0,3.0,150,0.75,1.0,20000,370,100,7.749
+Apparel_RobeRoyal,Leather_Sealskin,full body,0.8861,0.162,0.048,0.3,28.8,5.0,100,0.75,1.0,20000,470,100,6.101
+Apparel_RobeRoyal,Leather_AlphaThrumbo,full body,0.8861,0.424,0.08,0.3,28.8,6.0,220,0.75,1.0,20000,2070,100,15.246
+Apparel_RobeRoyal,Leather_Mink,full body,0.8861,0.134,0.028,0.3,25.6,3.0,100,0.75,1.0,20000,590,100,5.237
+Apparel_RobeRoyal,Leather_Hippo,full body,0.8861,0.224,0.048,0.3,11.2,4.0,150,0.75,1.0,20000,440,100,7.749
+Apparel_RobeRoyal,Leather_Armadillo,full body,0.8861,0.248,0.048,0.3,12.8,4.5,130,0.75,1.0,20000,390,100,8.387
+Apparel_HatLadies,Cloth,helmet,0.0366,0,0,0,1.8,4.5,80,0.1,1.2,6000,96.6,50,0.0
+Apparel_HatLadies,Synthread,helmet,0.0366,0,0,0,2.2,5.5,104,0.1,0.7,6000,220,50,0.0
+Apparel_HatLadies,DevilstrandCloth,helmet,0.0366,0,0,0,2.0,6.0,104,0.1,0.4,6000,295,50,0.0
+Apparel_HatLadies,Hyperweave,helmet,0.0366,0,0,0,2.6,6.5,192,0.1,0.4,6000,470,50,0.0
+Apparel_HatLadies,WoolSheep,helmet,0.0366,0,0,0,2.6,2.5,80,0.1,1.7,6000,156.6,50,0.0
+Apparel_HatLadies,WoolAlpaca,helmet,0.0366,0,0,0,3.0,4.0,80,0.1,1.7,6000,210,50,0.0
+Apparel_HatLadies,WoolMegasloth,helmet,0.0366,0,0,0,3.4,3.0,80,0.1,1.7,6000,156.6,50,0.0
+Apparel_HatLadies,WoolMuffalo,helmet,0.0366,0,0,0,2.8,3.0,80,0.1,1.7,6000,156.6,50,0.0
+Apparel_HatLadies,WoolBison,helmet,0.0366,0,0,0,2.6,3.0,80,0.1,1.7,6000,156.6,50,0.0
+Apparel_HatLadies,Leather_Plain,helmet,0.0366,0,0,0,1.6,4.0,104,0.1,1.0,6000,126.6,50,0.0
+Apparel_HatLadies,Leather_Dog,helmet,0.0366,0,0,0,1.4,4.0,104,0.1,1.0,6000,121.6,50,0.0
+Apparel_HatLadies,Leather_Wolf,helmet,0.0366,0,0,0,2.4,4.0,104,0.1,1.0,6000,171.6,50,0.0
+Apparel_HatLadies,Leather_Panthera,helmet,0.0366,0,0,0,1.6,6.0,104,0.1,1.0,6000,171.6,50,0.0
+Apparel_HatLadies,Leather_Camel,helmet,0.0366,0,0,0,1.6,6.0,104,0.1,1.0,6000,136.6,50,0.0
+Apparel_HatLadies,Leather_Bluefur,helmet,0.0366,0,0,0,2.0,4.0,104,0.1,1.0,6000,136.6,50,0.0
+Apparel_HatLadies,Leather_Bear,helmet,0.0366,0,0,0,2.0,5.0,104,0.1,1.0,6000,191.6,50,0.0
+Apparel_HatLadies,Leather_GuineaPig,helmet,0.0366,0,0,0,3.8,4.5,48,0.1,1.0,6000,270,50,0.0
+Apparel_HatLadies,Leather_Human,helmet,0.0366,0,0,0,1.2,3.0,104,0.1,1.0,6000,230,50,0.0
+Apparel_HatLadies,Leather_Pig,helmet,0.0366,0,0,0,1.2,3.0,104,0.1,1.0,6000,116.6,50,0.0
+Apparel_HatLadies,Leather_Light,helmet,0.0366,0,0,0,1.2,3.0,80,0.1,1.0,6000,116.6,50,0.0
+Apparel_HatLadies,Leather_Bird,helmet,0.0366,0,0,0,1.0,2.5,80,0.1,1.0,6000,111.6,50,0.0
+Apparel_HatLadies,Leather_Chinchilla,helmet,0.0366,0,0,0,3.0,4.0,80,0.1,1.0,6000,345,50,0.0
+Apparel_HatLadies,Leather_Fox,helmet,0.0366,0,0,0,2.0,4.0,80,0.1,1.0,6000,196.6,50,0.0
+Apparel_HatLadies,Leather_Lizard,helmet,0.0366,0,0,0,1.2,3.0,80,0.1,1.0,6000,126.6,50,0.0
+Apparel_HatLadies,Leather_Elephant,helmet,0.0366,0,0,0,1.4,3.0,120,0.1,1.0,6000,171.6,50,0.0
+Apparel_HatLadies,Leather_Heavy,helmet,0.0366,0,0,0,3.0,3.5,120,0.1,1.0,6000,186.6,50,0.0
+Apparel_HatLadies,Leather_Rhinoceros,helmet,0.0366,0,0,0,1.4,3.5,120,0.1,1.0,6000,230,50,0.0
+Apparel_HatLadies,Leather_Thrumbo,helmet,0.0366,0,0,0,3.4,5.5,160,0.1,1.0,6000,720,50,0.0
+Apparel_HatLadies,Leather_Patch,helmet,0.0366,0,0,0,0.9,2.25,80,0.1,1.0,6000,96.6,50,0.0
+Apparel_HatLadies,Leather_Dread,helmet,0.0366,0,0,0,2.0,3.0,104,0.1,1.0,6000,196.6,50,0.0
+Apparel_HatLadies,WoolMastodon,helmet,0.0366,0,0,0,3.2,3.5,80,0.1,1.7,6000,156.6,50,0.0
+Apparel_HatLadies,WoolMuskox,helmet,0.0366,0,0,0,3.0,2.5,80,0.1,1.7,6000,156.6,50,0.0
+Apparel_HatLadies,Leather_Mastodon,helmet,0.0366,0,0,0,3.0,3.0,120,0.1,1.0,6000,171.6,50,0.0
+Apparel_HatLadies,Leather_Sealskin,helmet,0.0366,0,0,0,3.6,5.0,80,0.1,1.0,6000,220,50,0.0
+Apparel_HatLadies,Leather_AlphaThrumbo,helmet,0.0366,0,0,0,3.6,6.0,176,0.1,1.0,6000,1020,50,0.0
+Apparel_HatLadies,Leather_Mink,helmet,0.0366,0,0,0,3.2,3.0,80,0.1,1.0,6000,280,50,0.0
+Apparel_HatLadies,Leather_Hippo,helmet,0.0366,0,0,0,1.4,4.0,120,0.1,1.0,6000,205,50,0.0
+Apparel_HatLadies,Leather_Armadillo,helmet,0.0366,0,0,0,1.6,4.5,104,0.1,1.0,6000,181.6,50,0.0
+Apparel_HatTop,Cloth,helmet,0.0366,0,0,0,1.8,4.5,80,0.1,1.2,6000,96.6,50,0.0
+Apparel_HatTop,Synthread,helmet,0.0366,0,0,0,2.2,5.5,104,0.1,0.7,6000,220,50,0.0
+Apparel_HatTop,DevilstrandCloth,helmet,0.0366,0,0,0,2.0,6.0,104,0.1,0.4,6000,295,50,0.0
+Apparel_HatTop,Hyperweave,helmet,0.0366,0,0,0,2.6,6.5,192,0.1,0.4,6000,470,50,0.0
+Apparel_HatTop,WoolSheep,helmet,0.0366,0,0,0,2.6,2.5,80,0.1,1.7,6000,156.6,50,0.0
+Apparel_HatTop,WoolAlpaca,helmet,0.0366,0,0,0,3.0,4.0,80,0.1,1.7,6000,210,50,0.0
+Apparel_HatTop,WoolMegasloth,helmet,0.0366,0,0,0,3.4,3.0,80,0.1,1.7,6000,156.6,50,0.0
+Apparel_HatTop,WoolMuffalo,helmet,0.0366,0,0,0,2.8,3.0,80,0.1,1.7,6000,156.6,50,0.0
+Apparel_HatTop,WoolBison,helmet,0.0366,0,0,0,2.6,3.0,80,0.1,1.7,6000,156.6,50,0.0
+Apparel_HatTop,Leather_Plain,helmet,0.0366,0,0,0,1.6,4.0,104,0.1,1.0,6000,126.6,50,0.0
+Apparel_HatTop,Leather_Dog,helmet,0.0366,0,0,0,1.4,4.0,104,0.1,1.0,6000,121.6,50,0.0
+Apparel_HatTop,Leather_Wolf,helmet,0.0366,0,0,0,2.4,4.0,104,0.1,1.0,6000,171.6,50,0.0
+Apparel_HatTop,Leather_Panthera,helmet,0.0366,0,0,0,1.6,6.0,104,0.1,1.0,6000,171.6,50,0.0
+Apparel_HatTop,Leather_Camel,helmet,0.0366,0,0,0,1.6,6.0,104,0.1,1.0,6000,136.6,50,0.0
+Apparel_HatTop,Leather_Bluefur,helmet,0.0366,0,0,0,2.0,4.0,104,0.1,1.0,6000,136.6,50,0.0
+Apparel_HatTop,Leather_Bear,helmet,0.0366,0,0,0,2.0,5.0,104,0.1,1.0,6000,191.6,50,0.0
+Apparel_HatTop,Leather_GuineaPig,helmet,0.0366,0,0,0,3.8,4.5,48,0.1,1.0,6000,270,50,0.0
+Apparel_HatTop,Leather_Human,helmet,0.0366,0,0,0,1.2,3.0,104,0.1,1.0,6000,230,50,0.0
+Apparel_HatTop,Leather_Pig,helmet,0.0366,0,0,0,1.2,3.0,104,0.1,1.0,6000,116.6,50,0.0
+Apparel_HatTop,Leather_Light,helmet,0.0366,0,0,0,1.2,3.0,80,0.1,1.0,6000,116.6,50,0.0
+Apparel_HatTop,Leather_Bird,helmet,0.0366,0,0,0,1.0,2.5,80,0.1,1.0,6000,111.6,50,0.0
+Apparel_HatTop,Leather_Chinchilla,helmet,0.0366,0,0,0,3.0,4.0,80,0.1,1.0,6000,345,50,0.0
+Apparel_HatTop,Leather_Fox,helmet,0.0366,0,0,0,2.0,4.0,80,0.1,1.0,6000,196.6,50,0.0
+Apparel_HatTop,Leather_Lizard,helmet,0.0366,0,0,0,1.2,3.0,80,0.1,1.0,6000,126.6,50,0.0
+Apparel_HatTop,Leather_Elephant,helmet,0.0366,0,0,0,1.4,3.0,120,0.1,1.0,6000,171.6,50,0.0
+Apparel_HatTop,Leather_Heavy,helmet,0.0366,0,0,0,3.0,3.5,120,0.1,1.0,6000,186.6,50,0.0
+Apparel_HatTop,Leather_Rhinoceros,helmet,0.0366,0,0,0,1.4,3.5,120,0.1,1.0,6000,230,50,0.0
+Apparel_HatTop,Leather_Thrumbo,helmet,0.0366,0,0,0,3.4,5.5,160,0.1,1.0,6000,720,50,0.0
+Apparel_HatTop,Leather_Patch,helmet,0.0366,0,0,0,0.9,2.25,80,0.1,1.0,6000,96.6,50,0.0
+Apparel_HatTop,Leather_Dread,helmet,0.0366,0,0,0,2.0,3.0,104,0.1,1.0,6000,196.6,50,0.0
+Apparel_HatTop,WoolMastodon,helmet,0.0366,0,0,0,3.2,3.5,80,0.1,1.7,6000,156.6,50,0.0
+Apparel_HatTop,WoolMuskox,helmet,0.0366,0,0,0,3.0,2.5,80,0.1,1.7,6000,156.6,50,0.0
+Apparel_HatTop,Leather_Mastodon,helmet,0.0366,0,0,0,3.0,3.0,120,0.1,1.0,6000,171.6,50,0.0
+Apparel_HatTop,Leather_Sealskin,helmet,0.0366,0,0,0,3.6,5.0,80,0.1,1.0,6000,220,50,0.0
+Apparel_HatTop,Leather_AlphaThrumbo,helmet,0.0366,0,0,0,3.6,6.0,176,0.1,1.0,6000,1020,50,0.0
+Apparel_HatTop,Leather_Mink,helmet,0.0366,0,0,0,3.2,3.0,80,0.1,1.0,6000,280,50,0.0
+Apparel_HatTop,Leather_Hippo,helmet,0.0366,0,0,0,1.4,4.0,120,0.1,1.0,6000,205,50,0.0
+Apparel_HatTop,Leather_Armadillo,helmet,0.0366,0,0,0,1.6,4.5,104,0.1,1.0,6000,181.6,50,0.0
+Apparel_Coronet,Silver,helmet,0.0366,0,0,0,0.0,0.0,56,0.7,0.4,8000,530,500,0.0
+Apparel_Coronet,Gold,helmet,0.0366,0,0,0,0.0,0.0,48,0.7,0.4,7200,5025,500,0.0
+Apparel_Coronet,Steel,helmet,0.0366,0,0,0,0.0,0.0,80,0.7,0.4,8000,123.8,50,0.0
+Apparel_Coronet,Plasteel,helmet,0.0366,0,0,0,0.0,0.0,225,0.7,0,17600,515,50,0.0
+Apparel_Coronet,Uranium,helmet,0.0366,0,0,0,0.0,0.0,200,0.7,0,15200,355,50,0.0
+Apparel_Coronet,Bioferrite,helmet,0.0366,0,0,0,0.0,0.0,160,0.7,0.75,20000,109.5,50,0.0
+Apparel_Coronet,Obsidian,helmet,0.0366,0,0,0,0.0,0.0,40,0.7,0,12000,295,50,0.0
+Apparel_Crown,Silver,helmet,0.0366,0,0,0,0.0,0.0,56,0.9,0.4,12000,795,750,0.0
+Apparel_Crown,Gold,helmet,0.0366,0,0,0,0.0,0.0,48,0.9,0.4,10800,7540,750,0.0
+Apparel_Crown,Steel,helmet,0.0366,0,0,0,0.0,0.0,80,0.9,0.4,12000,185.7,75,0.0
+Apparel_Crown,Plasteel,helmet,0.0366,0,0,0,0.0,0.0,225,0.9,0,26400,770,75,0.0
+Apparel_Crown,Uranium,helmet,0.0366,0,0,0,0.0,0.0,200,0.9,0,22800,530,75,0.0
+Apparel_Crown,Bioferrite,helmet,0.0366,0,0,0,0.0,0.0,160,0.9,0.75,30000,164.25,75,0.0
+Apparel_Crown,Obsidian,helmet,0.0366,0,0,0,0.0,0.0,40,0.9,0,18000,440,75,0.0
+Apparel_CrownStellic,Silver,helmet,0.0366,0,0,0,0.0,0.0,56,0.9,0.4,1.0,850,850,0.0
+Apparel_CrownStellic,Gold,helmet,0.0366,0,0,0,0.0,0.0,48,0.9,0.4,0.9,8500,850,0.0
+Apparel_CrownStellic,Steel,helmet,0.0366,0,0,0,0.0,0.0,80,0.9,0.4,1.0,161.5,85,0.0
+Apparel_CrownStellic,Plasteel,helmet,0.0366,0,0,0,0.0,0.0,225,0.9,0,2.2,765,85,0.0
+Apparel_CrownStellic,Uranium,helmet,0.0366,0,0,0,0.0,0.0,200,0.9,0,1.9,510,85,0.0
+Apparel_CrownStellic,Bioferrite,helmet,0.0366,0,0,0,0.0,0.0,160,0.9,0.75,2.5,63.75,85,0.0
+Apparel_CrownStellic,Obsidian,helmet,0.0366,0,0,0,0.0,0.0,40,0.9,0,1.5,425,85,0.0
+Apparel_Beret,Cloth,helmet,0.0366,0,0,0,1.26,2.7,80,0.1,1.2,4000,66.9,35,0.0
+Apparel_Beret,Synthread,helmet,0.0366,0,0,0,1.54,3.3,104,0.1,0.7,4000,154.4,35,0.0
+Apparel_Beret,DevilstrandCloth,helmet,0.0366,0,0,0,1.4,3.6,104,0.1,0.4,4000,205,35,0.0
+Apparel_Beret,Hyperweave,helmet,0.0366,0,0,0,1.82,3.9,192,0.1,0.4,4000,330,35,0.0
+Apparel_Beret,WoolSheep,helmet,0.0366,0,0,0,1.82,1.5,80,0.1,1.7,4000,108.9,35,0.0
+Apparel_Beret,WoolAlpaca,helmet,0.0366,0,0,0,2.1,2.4,80,0.1,1.7,4000,147.4,35,0.0
+Apparel_Beret,WoolMegasloth,helmet,0.0366,0,0,0,2.38,1.8,80,0.1,1.7,4000,108.9,35,0.0
+Apparel_Beret,WoolMuffalo,helmet,0.0366,0,0,0,1.96,1.8,80,0.1,1.7,4000,108.9,35,0.0
+Apparel_Beret,WoolBison,helmet,0.0366,0,0,0,1.82,1.8,80,0.1,1.7,4000,108.9,35,0.0
+Apparel_Beret,Leather_Plain,helmet,0.0366,0,0,0,1.12,2.4,104,0.1,1.0,4000,87.9,35,0.0
+Apparel_Beret,Leather_Dog,helmet,0.0366,0,0,0,0.98,2.4,104,0.1,1.0,4000,84.4,35,0.0
+Apparel_Beret,Leather_Wolf,helmet,0.0366,0,0,0,1.68,2.4,104,0.1,1.0,4000,119.4,35,0.0
+Apparel_Beret,Leather_Panthera,helmet,0.0366,0,0,0,1.12,3.6,104,0.1,1.0,4000,119.4,35,0.0
+Apparel_Beret,Leather_Camel,helmet,0.0366,0,0,0,1.12,3.6,104,0.1,1.0,4000,94.9,35,0.0
+Apparel_Beret,Leather_Bluefur,helmet,0.0366,0,0,0,1.4,2.4,104,0.1,1.0,4000,94.9,35,0.0
+Apparel_Beret,Leather_Bear,helmet,0.0366,0,0,0,1.4,3.0,104,0.1,1.0,4000,133.4,35,0.0
+Apparel_Beret,Leather_GuineaPig,helmet,0.0366,0,0,0,2.66,2.7,48,0.1,1.0,4000,189.4,35,0.0
+Apparel_Beret,Leather_Human,helmet,0.0366,0,0,0,0.84,1.8,104,0.1,1.0,4000,161.4,35,0.0
+Apparel_Beret,Leather_Pig,helmet,0.0366,0,0,0,0.84,1.8,104,0.1,1.0,4000,80.9,35,0.0
+Apparel_Beret,Leather_Light,helmet,0.0366,0,0,0,0.84,1.8,80,0.1,1.0,4000,80.9,35,0.0
+Apparel_Beret,Leather_Bird,helmet,0.0366,0,0,0,0.7,1.5,80,0.1,1.0,4000,77.4,35,0.0
+Apparel_Beret,Leather_Chinchilla,helmet,0.0366,0,0,0,2.1,2.4,80,0.1,1.0,4000,240,35,0.0
+Apparel_Beret,Leather_Fox,helmet,0.0366,0,0,0,1.4,2.4,80,0.1,1.0,4000,136.9,35,0.0
+Apparel_Beret,Leather_Lizard,helmet,0.0366,0,0,0,0.84,1.8,80,0.1,1.0,4000,87.9,35,0.0
+Apparel_Beret,Leather_Elephant,helmet,0.0366,0,0,0,0.98,1.8,120,0.1,1.0,4000,119.4,35,0.0
+Apparel_Beret,Leather_Heavy,helmet,0.0366,0,0,0,2.1,2.1,120,0.1,1.0,4000,129.9,35,0.0
+Apparel_Beret,Leather_Rhinoceros,helmet,0.0366,0,0,0,0.98,2.1,120,0.1,1.0,4000,161.4,35,0.0
+Apparel_Beret,Leather_Thrumbo,helmet,0.0366,0,0,0,2.38,3.3,160,0.1,1.0,4000,505,35,0.0
+Apparel_Beret,Leather_Patch,helmet,0.0366,0,0,0,0.63,1.35,80,0.1,1.0,4000,66.9,35,0.0
+Apparel_Beret,Leather_Dread,helmet,0.0366,0,0,0,1.4,1.8,104,0.1,1.0,4000,136.9,35,0.0
+Apparel_Beret,WoolMastodon,helmet,0.0366,0,0,0,2.24,2.1,80,0.1,1.7,4000,108.9,35,0.0
+Apparel_Beret,WoolMuskox,helmet,0.0366,0,0,0,2.1,1.5,80,0.1,1.7,4000,108.9,35,0.0
+Apparel_Beret,Leather_Mastodon,helmet,0.0366,0,0,0,2.1,1.8,120,0.1,1.0,4000,119.4,35,0.0
+Apparel_Beret,Leather_Sealskin,helmet,0.0366,0,0,0,2.52,3.0,80,0.1,1.0,4000,154.4,35,0.0
+Apparel_Beret,Leather_AlphaThrumbo,helmet,0.0366,0,0,0,2.52,3.6,176,0.1,1.0,4000,715,35,0.0
+Apparel_Beret,Leather_Mink,helmet,0.0366,0,0,0,2.24,1.8,80,0.1,1.0,4000,196.4,35,0.0
+Apparel_Beret,Leather_Hippo,helmet,0.0366,0,0,0,0.98,2.4,120,0.1,1.0,4000,143.9,35,0.0
+Apparel_Beret,Leather_Armadillo,helmet,0.0366,0,0,0,1.12,2.7,104,0.1,1.0,4000,126.4,35,0.0
+Apparel_Headwrap,Cloth,helmet,0.0366,0.09,0,0.045,1.8,1.8,80,0.08,1.2,1400,35.04,20,0.068
+Apparel_Headwrap,Synthread,helmet,0.0366,0.235,0.065,0.225,2.2,2.2,104,0.08,0.7,1400,85.04,20,0.313
+Apparel_Headwrap,DevilstrandCloth,helmet,0.0366,0.35,0.09,0.75,2.0,2.4,104,0.08,0.4,1400,115.04,20,0.7
+Apparel_Headwrap,Hyperweave,helmet,0.0366,0.5,0.135,0.72,2.6,2.6,192,0.08,0.4,1400,185.04,20,0.966
+Apparel_Headwrap,WoolSheep,helmet,0.0366,0.09,0,0.275,2.6,1.0,80,0.08,1.7,1400,59.04,20,0.163
+Apparel_Headwrap,WoolAlpaca,helmet,0.0366,0.09,0,0.275,3.0,1.6,80,0.08,1.7,1400,81.04,20,0.163
+Apparel_Headwrap,WoolMegasloth,helmet,0.0366,0.2,0,0.275,3.4,1.2,80,0.08,1.7,1400,59.04,20,0.25
+Apparel_Headwrap,WoolMuffalo,helmet,0.0366,0.09,0,0.275,2.8,1.2,80,0.08,1.7,1400,59.04,20,0.163
+Apparel_Headwrap,WoolBison,helmet,0.0366,0.09,0,0.275,2.6,1.2,80,0.08,1.7,1400,59.04,20,0.163
+Apparel_Headwrap,WoolMastodon,helmet,0.0366,0.09,0,0.275,3.2,1.4,80,0.08,1.7,1400,59.04,20,0.163
+Apparel_Headwrap,WoolMuskox,helmet,0.0366,0.09,0,0.275,3.0,1.0,80,0.08,1.7,1400,59.04,20,0.163
+Apparel_Broadwrap,Cloth,helmet,0.1086,0.09,0,0.045,3.6,3.6,80,0.1,1.2,1800,51.48,30,0.202
+Apparel_Broadwrap,Synthread,helmet,0.1086,0.235,0.065,0.225,4.4,4.4,104,0.1,0.7,1800,126.48,30,0.929
+Apparel_Broadwrap,DevilstrandCloth,helmet,0.1086,0.35,0.09,0.75,4.0,4.8,104,0.1,0.4,1800,171.48,30,2.077
+Apparel_Broadwrap,Hyperweave,helmet,0.1086,0.5,0.135,0.72,5.2,5.2,192,0.1,0.4,1800,275,30,2.865
+Apparel_Broadwrap,WoolSheep,helmet,0.1086,0.09,0,0.275,5.2,2.0,80,0.1,1.7,1800,87.48,30,0.483
+Apparel_Broadwrap,WoolAlpaca,helmet,0.1086,0.09,0,0.275,6.0,3.2,80,0.1,1.7,1800,120.48,30,0.483
+Apparel_Broadwrap,WoolMegasloth,helmet,0.1086,0.2,0,0.275,6.8,2.4,80,0.1,1.7,1800,87.48,30,0.743
+Apparel_Broadwrap,WoolMuffalo,helmet,0.1086,0.09,0,0.275,5.6,2.4,80,0.1,1.7,1800,87.48,30,0.483
+Apparel_Broadwrap,WoolBison,helmet,0.1086,0.09,0,0.275,5.2,2.4,80,0.1,1.7,1800,87.48,30,0.483
+Apparel_Broadwrap,WoolMastodon,helmet,0.1086,0.09,0,0.275,6.4,2.8,80,0.1,1.7,1800,87.48,30,0.483
+Apparel_Broadwrap,WoolMuskox,helmet,0.1086,0.09,0,0.275,6.0,2.0,80,0.1,1.7,1800,87.48,30,0.483
+Apparel_VisageMask,Silver,helmet,0.06,0.216,0.108,0.108,0.15,0.0,63,0.1,0.4,2000,157.2,150,0.448
+Apparel_VisageMask,Gold,helmet,0.06,0.216,0.108,0.108,0.15,0.0,54,0.1,0.4,1800,1505,150,0.448
+Apparel_VisageMask,Steel,helmet,0.06,0.27,0.135,0.18,0.15,0.0,90,0.1,0.4,2000,35.7,15,0.624
+Apparel_VisageMask,Plasteel,helmet,0.06,0.342,0.165,0.195,0.15,0.0,250,0.1,0,4400,150.84,15,0.836
+Apparel_VisageMask,WoodLog,helmet,0.06,0.162,0.162,0.12,0.4,0.2,59,0.1,1.0,1400,23.04,15,0.42
+Apparel_VisageMask,Uranium,helmet,0.06,0.324,0.162,0.195,0.15,0.0,225,0.1,0,3800,103.68,15,0.784
+Apparel_VisageMask,Bioferrite,helmet,0.06,0.33,0.15,0.15,0.12,0.0,180,0.1,0.75,5000,29.25,15,0.756
+Apparel_VisageMask,Obsidian,helmet,0.06,0.255,0.12,0.21,0.15,0.0,45,0.1,0,3000,85.8,15,0.601
+Apparel_Slicecap,Silver,helmet,0.0366,0.072,0.036,0.036,0.0,0.0,56,0.8,0.4,2000,157.2,150,0.079
+Apparel_Slicecap,Gold,helmet,0.0366,0.072,0.036,0.036,0.0,0.0,48,0.8,0.4,1800,1505,150,0.079
+Apparel_Slicecap,Steel,helmet,0.0366,0.09,0.045,0.06,0.0,0.0,80,0.8,0.4,2000,35.7,15,0.105
+Apparel_Slicecap,Plasteel,helmet,0.0366,0.114,0.055,0.065,0.0,0.0,225,0.8,0,4400,150.84,15,0.127
+Apparel_Slicecap,WoodLog,helmet,0.0366,0.054,0.054,0.04,0.0,0.4,52,0.8,1.0,1400,23.04,15,0.083
+Apparel_Slicecap,Uranium,helmet,0.0366,0.108,0.054,0.065,0.0,0.0,200,0.8,0,3800,103.68,15,0.123
+Apparel_Slicecap,Bioferrite,helmet,0.0366,0.11,0.05,0.05,0.0,0.0,160,0.8,0.75,5000,29.25,15,0.115
+Apparel_Slicecap,Obsidian,helmet,0.0366,0.085,0.04,0.07,0.0,0.0,40,0.8,0,3000,85.8,15,0.103
+Apparel_Collar,Silver,helmet,0.015,0,0,0,0.0,0.0,56,0.14,0.4,1800,255,250,0.0
+Apparel_Collar,Gold,helmet,0.015,0,0,0,0.0,0.0,48,0.14,0.4,1620,2505,250,0.0
+Apparel_Collar,Steel,helmet,0.015,0,0,0,0.0,0.0,80,0.14,0.4,1800,53.98,25,0.0
+Apparel_Collar,Plasteel,helmet,0.015,0,0,0,0.0,0.0,225,0.14,0,3960,240,25,0.0
+Apparel_Collar,Uranium,helmet,0.015,0,0,0,0.0,0.0,200,0.14,0,3420,162.31,25,0.0
+Apparel_Collar,Leather_Plain,helmet,0.015,0,0,0,0.0,0.0,104,0.14,1.0,1800,58.98,25,0.0
+Apparel_Collar,Leather_Dog,helmet,0.015,0,0,0,0.0,0.0,104,0.14,1.0,1800,56.48,25,0.0
+Apparel_Collar,Leather_Wolf,helmet,0.015,0,0,0,0.0,0.0,104,0.14,1.0,1800,81.48,25,0.0
+Apparel_Collar,Leather_Panthera,helmet,0.015,0,0,0,0.0,0.0,104,0.14,1.0,1800,81.48,25,0.0
+Apparel_Collar,Leather_Camel,helmet,0.015,0,0,0,0.0,0.0,104,0.14,1.0,1800,63.98,25,0.0
+Apparel_Collar,Leather_Bluefur,helmet,0.015,0,0,0,0.0,0.0,104,0.14,1.0,1800,63.98,25,0.0
+Apparel_Collar,Leather_Bear,helmet,0.015,0,0,0,0.0,0.0,104,0.14,1.0,1800,91.48,25,0.0
+Apparel_Collar,Leather_GuineaPig,helmet,0.015,0,0,0,0.0,0.0,48,0.14,1.0,1800,131.48,25,0.0
+Apparel_Collar,Leather_Human,helmet,0.015,0,0,0,0.0,0.0,104,0.14,1.0,1800,111.48,25,0.0
+Apparel_Collar,Leather_Pig,helmet,0.015,0,0,0,0.0,0.0,104,0.14,1.0,1800,53.98,25,0.0
+Apparel_Collar,Leather_Light,helmet,0.015,0,0,0,0.0,0.0,80,0.14,1.0,1800,53.98,25,0.0
+Apparel_Collar,Leather_Bird,helmet,0.015,0,0,0,0.0,0.0,80,0.14,1.0,1800,51.48,25,0.0
+Apparel_Collar,Leather_Chinchilla,helmet,0.015,0,0,0,0.0,0.0,80,0.14,1.0,1800,168.98,25,0.0
+Apparel_Collar,Leather_Fox,helmet,0.015,0,0,0,0.0,0.0,80,0.14,1.0,1800,93.98,25,0.0
+Apparel_Collar,Leather_Lizard,helmet,0.015,0,0,0,0.0,0.0,80,0.14,1.0,1800,58.98,25,0.0
+Apparel_Collar,Leather_Elephant,helmet,0.015,0,0,0,0.0,0.0,120,0.14,1.0,1800,81.48,25,0.0
+Apparel_Collar,Leather_Heavy,helmet,0.015,0,0,0,0.0,0.0,120,0.14,1.0,1800,88.98,25,0.0
+Apparel_Collar,Leather_Rhinoceros,helmet,0.015,0,0,0,0.0,0.0,120,0.14,1.0,1800,111.48,25,0.0
+Apparel_Collar,Leather_Thrumbo,helmet,0.015,0,0,0,0.0,0.0,160,0.14,1.0,1800,355,25,0.0
+Apparel_Collar,Leather_Patch,helmet,0.015,0,0,0,0.0,0.0,80,0.14,1.0,1800,43.98,25,0.0
+Apparel_Collar,Bioferrite,helmet,0.015,0,0,0,0.0,0.0,160,0.14,0.75,4500,34.95,25,0.0
+Apparel_Collar,Leather_Dread,helmet,0.015,0,0,0,0.0,0.0,104,0.14,1.0,1800,93.98,25,0.0
+Apparel_Collar,Obsidian,helmet,0.015,0,0,0,0.0,0.0,40,0.14,0,2700,134.72,25,0.0
+Apparel_Collar,Leather_Mastodon,helmet,0.015,0,0,0,0.0,0.0,120,0.14,1.0,1800,81.48,25,0.0
+Apparel_Collar,Leather_Sealskin,helmet,0.015,0,0,0,0.0,0.0,80,0.14,1.0,1800,106.48,25,0.0
+Apparel_Collar,Leather_AlphaThrumbo,helmet,0.015,0,0,0,0.0,0.0,176,0.14,1.0,1800,505,25,0.0
+Apparel_Collar,Leather_Mink,helmet,0.015,0,0,0,0.0,0.0,80,0.14,1.0,1800,136.48,25,0.0
+Apparel_Collar,Leather_Hippo,helmet,0.015,0,0,0,0.0,0.0,120,0.14,1.0,1800,98.98,25,0.0
+Apparel_Collar,Leather_Armadillo,helmet,0.015,0,0,0,0.0,0.0,104,0.14,1.0,1800,86.48,25,0.0
+Apparel_AuthorityCap,Cloth,helmet,0.0366,0.072,0,0.036,1.8,1.8,80,0.1,1.2,1500,42.9,25,0.054
+Apparel_AuthorityCap,Synthread,helmet,0.0366,0.188,0.052,0.18,2.2,2.2,104,0.1,0.7,1500,105.4,25,0.234
+Apparel_AuthorityCap,DevilstrandCloth,helmet,0.0366,0.28,0.072,0.6,2.0,2.4,104,0.1,0.4,1500,142.9,25,0.522
+Apparel_AuthorityCap,Hyperweave,helmet,0.0366,0.4,0.108,0.576,2.6,2.6,192,0.1,0.4,1500,230,25,0.723
+Apparel_AuthorityCap,WoolSheep,helmet,0.0366,0.072,0,0.22,2.6,1.0,80,0.1,1.7,1500,72.9,25,0.13
+Apparel_AuthorityCap,WoolAlpaca,helmet,0.0366,0.072,0,0.22,3.0,1.6,80,0.1,1.7,1500,100.4,25,0.13
+Apparel_AuthorityCap,WoolMegasloth,helmet,0.0366,0.16,0,0.22,3.4,1.2,80,0.1,1.7,1500,72.9,25,0.184
+Apparel_AuthorityCap,WoolMuffalo,helmet,0.0366,0.072,0,0.22,2.8,1.2,80,0.1,1.7,1500,72.9,25,0.13
+Apparel_AuthorityCap,WoolBison,helmet,0.0366,0.072,0,0.22,2.6,1.2,80,0.1,1.7,1500,72.9,25,0.13
+Apparel_AuthorityCap,Leather_Plain,helmet,0.0366,0.162,0.048,0.3,1.6,1.6,104,0.1,1.0,1500,57.9,25,0.252
+Apparel_AuthorityCap,Leather_Dog,helmet,0.0366,0.162,0.048,0.3,1.4,1.6,104,0.1,1.0,1500,55.4,25,0.252
+Apparel_AuthorityCap,Leather_Wolf,helmet,0.0366,0.204,0.048,0.3,2.4,1.6,104,0.1,1.0,1500,80.4,25,0.298
+Apparel_AuthorityCap,Leather_Panthera,helmet,0.0366,0.186,0.048,0.3,1.6,2.4,104,0.1,1.0,1500,80.4,25,0.278
+Apparel_AuthorityCap,Leather_Camel,helmet,0.0366,0.162,0.048,0.3,1.6,2.4,104,0.1,1.0,1500,62.9,25,0.252
+Apparel_AuthorityCap,Leather_Bluefur,helmet,0.0366,0.162,0.048,0.3,2.0,1.6,104,0.1,1.0,1500,62.9,25,0.252
+Apparel_AuthorityCap,Leather_Bear,helmet,0.0366,0.224,0.048,0.3,2.0,2.0,104,0.1,1.0,1500,90.4,25,0.32
+Apparel_AuthorityCap,Leather_GuineaPig,helmet,0.0366,0.134,0.028,0.3,3.8,1.8,48,0.1,1.0,1500,130.4,25,0.216
+Apparel_AuthorityCap,Leather_Human,helmet,0.0366,0.128,0.048,0.3,1.2,1.2,104,0.1,1.0,1500,110.4,25,0.227
+Apparel_AuthorityCap,Leather_Pig,helmet,0.0366,0.128,0.048,0.3,1.2,1.2,104,0.1,1.0,1500,52.9,25,0.227
+Apparel_AuthorityCap,Leather_Light,helmet,0.0366,0.108,0.028,0.3,1.2,1.2,80,0.1,1.0,1500,52.9,25,0.202
+Apparel_AuthorityCap,Leather_Bird,helmet,0.0366,0.134,0.028,0.3,1.0,1.0,80,0.1,1.0,1500,50.4,25,0.216
+Apparel_AuthorityCap,Leather_Chinchilla,helmet,0.0366,0.134,0.028,0.3,3.0,1.6,80,0.1,1.0,1500,167.9,25,0.216
+Apparel_AuthorityCap,Leather_Fox,helmet,0.0366,0.162,0.042,0.3,2.0,1.6,80,0.1,1.0,1500,92.9,25,0.248
+Apparel_AuthorityCap,Leather_Lizard,helmet,0.0366,0.162,0.054,0.3,1.2,1.2,80,0.1,1.0,1500,57.9,25,0.256
+Apparel_AuthorityCap,Leather_Elephant,helmet,0.0366,0.224,0.048,0.3,1.4,1.2,120,0.1,1.0,1500,80.4,25,0.32
+Apparel_AuthorityCap,Leather_Heavy,helmet,0.0366,0.248,0.048,0.3,3.0,1.4,120,0.1,1.0,1500,87.9,25,0.346
+Apparel_AuthorityCap,Leather_Rhinoceros,helmet,0.0366,0.258,0.048,0.3,1.4,1.4,120,0.1,1.0,1500,110.4,25,0.357
+Apparel_AuthorityCap,Leather_Thrumbo,helmet,0.0366,0.416,0.072,0.3,3.4,2.2,160,0.1,1.0,1500,355,25,0.611
+Apparel_AuthorityCap,Leather_Patch,helmet,0.0366,0.09,0.038,0.18,0.9,0.9,80,0.1,1.0,1500,42.9,25,0.15
+Apparel_AuthorityCap,Leather_Dread,helmet,0.0366,0.254,0.048,0.3,2.0,1.2,104,0.1,1.0,1500,92.9,25,0.353
+Apparel_AuthorityCap,WoolMastodon,helmet,0.0366,0.072,0,0.22,3.2,1.4,80,0.1,1.7,1500,72.9,25,0.13
+Apparel_AuthorityCap,WoolMuskox,helmet,0.0366,0.072,0,0.22,3.0,1.0,80,0.1,1.7,1500,72.9,25,0.13
+Apparel_AuthorityCap,Leather_Mastodon,helmet,0.0366,0.224,0.048,0.3,3.0,1.2,120,0.1,1.0,1500,80.4,25,0.32
+Apparel_AuthorityCap,Leather_Sealskin,helmet,0.0366,0.162,0.048,0.3,3.6,2.0,80,0.1,1.0,1500,105.4,25,0.252
+Apparel_AuthorityCap,Leather_AlphaThrumbo,helmet,0.0366,0.424,0.08,0.3,3.6,2.4,176,0.1,1.0,1500,505,25,0.63
+Apparel_AuthorityCap,Leather_Mink,helmet,0.0366,0.134,0.028,0.3,3.2,1.2,80,0.1,1.0,1500,135.4,25,0.216
+Apparel_AuthorityCap,Leather_Hippo,helmet,0.0366,0.224,0.048,0.3,1.4,1.6,120,0.1,1.0,1500,97.9,25,0.32
+Apparel_AuthorityCap,Leather_Armadillo,helmet,0.0366,0.248,0.048,0.3,1.6,1.8,104,0.1,1.0,1500,85.4,25,0.346
+Apparel_Tailcap,Leather_Plain,helmet,0.0366,0.162,0.048,0.3,8.0,0.0,104,0.1,1.0,1400,47.04,20,0.252
+Apparel_Tailcap,Leather_Dog,helmet,0.0366,0.162,0.048,0.3,7.0,0.0,104,0.1,1.0,1400,45.04,20,0.252
+Apparel_Tailcap,Leather_Wolf,helmet,0.0366,0.204,0.048,0.3,12.0,0.0,104,0.1,1.0,1400,65.04,20,0.298
+Apparel_Tailcap,Leather_Panthera,helmet,0.0366,0.186,0.048,0.3,8.0,0.0,104,0.1,1.0,1400,65.04,20,0.278
+Apparel_Tailcap,Leather_Camel,helmet,0.0366,0.162,0.048,0.3,8.0,0.0,104,0.1,1.0,1400,51.04,20,0.252
+Apparel_Tailcap,Leather_Bluefur,helmet,0.0366,0.162,0.048,0.3,10.0,0.0,104,0.1,1.0,1400,51.04,20,0.252
+Apparel_Tailcap,Leather_Bear,helmet,0.0366,0.224,0.048,0.3,10.0,0.0,104,0.1,1.0,1400,73.04,20,0.32
+Apparel_Tailcap,Leather_GuineaPig,helmet,0.0366,0.134,0.028,0.3,19.0,0.0,48,0.1,1.0,1400,105.04,20,0.216
+Apparel_Tailcap,Leather_Human,helmet,0.0366,0.128,0.048,0.3,6.0,0.0,104,0.1,1.0,1400,89.04,20,0.227
+Apparel_Tailcap,Leather_Pig,helmet,0.0366,0.128,0.048,0.3,6.0,0.0,104,0.1,1.0,1400,43.04,20,0.227
+Apparel_Tailcap,Leather_Light,helmet,0.0366,0.108,0.028,0.3,6.0,0.0,80,0.1,1.0,1400,43.04,20,0.202
+Apparel_Tailcap,Leather_Bird,helmet,0.0366,0.134,0.028,0.3,5.0,0.0,80,0.1,1.0,1400,41.04,20,0.216
+Apparel_Tailcap,Leather_Chinchilla,helmet,0.0366,0.134,0.028,0.3,15.0,0.0,80,0.1,1.0,1400,135.04,20,0.216
+Apparel_Tailcap,Leather_Fox,helmet,0.0366,0.162,0.042,0.3,10.0,0.0,80,0.1,1.0,1400,75.04,20,0.248
+Apparel_Tailcap,Leather_Lizard,helmet,0.0366,0.162,0.054,0.3,6.0,0.0,80,0.1,1.0,1400,47.04,20,0.256
+Apparel_Tailcap,Leather_Elephant,helmet,0.0366,0.224,0.048,0.3,7.0,0.0,120,0.1,1.0,1400,65.04,20,0.32
+Apparel_Tailcap,Leather_Heavy,helmet,0.0366,0.248,0.048,0.3,15.0,0.0,120,0.1,1.0,1400,71.04,20,0.346
+Apparel_Tailcap,Leather_Rhinoceros,helmet,0.0366,0.258,0.048,0.3,7.0,0.0,120,0.1,1.0,1400,89.04,20,0.357
+Apparel_Tailcap,Leather_Thrumbo,helmet,0.0366,0.416,0.072,0.3,17.0,0.0,160,0.1,1.0,1400,285,20,0.611
+Apparel_Tailcap,Leather_Patch,helmet,0.0366,0.09,0.038,0.18,4.5,0.0,80,0.1,1.0,1400,35.04,20,0.15
+Apparel_Tailcap,Leather_Dread,helmet,0.0366,0.254,0.048,0.3,10.0,0.0,104,0.1,1.0,1400,75.04,20,0.353
+Apparel_Tailcap,Leather_Mastodon,helmet,0.0366,0.224,0.048,0.3,15.0,0.0,120,0.1,1.0,1400,65.04,20,0.32
+Apparel_Tailcap,Leather_Sealskin,helmet,0.0366,0.162,0.048,0.3,18.0,0.0,80,0.1,1.0,1400,85.04,20,0.252
+Apparel_Tailcap,Leather_AlphaThrumbo,helmet,0.0366,0.424,0.08,0.3,18.0,0.0,176,0.1,1.0,1400,405,20,0.63
+Apparel_Tailcap,Leather_Mink,helmet,0.0366,0.134,0.028,0.3,16.0,0.0,80,0.1,1.0,1400,109.04,20,0.216
+Apparel_Tailcap,Leather_Hippo,helmet,0.0366,0.224,0.048,0.3,7.0,0.0,120,0.1,1.0,1400,79.04,20,0.32
+Apparel_Tailcap,Leather_Armadillo,helmet,0.0366,0.248,0.048,0.3,8.0,0.0,104,0.1,1.0,1400,69.04,20,0.346
+Apparel_Shadecone,Cloth,helmet,0.0366,0.072,0,0.036,1.8,9.0,80,0.14,1.2,1800,43.98,25,0.054
+Apparel_Shadecone,Synthread,helmet,0.0366,0.188,0.052,0.18,2.2,11.0,104,0.14,0.7,1800,106.48,25,0.234
+Apparel_Shadecone,DevilstrandCloth,helmet,0.0366,0.28,0.072,0.6,2.0,12.0,104,0.14,0.4,1800,143.98,25,0.522
+Apparel_Shadecone,Hyperweave,helmet,0.0366,0.4,0.108,0.576,2.6,13.0,192,0.14,0.4,1800,230,25,0.723
+Apparel_Shadecone,WoolSheep,helmet,0.0366,0.072,0,0.22,2.6,5.0,80,0.14,1.7,1800,73.98,25,0.13
+Apparel_Shadecone,WoolAlpaca,helmet,0.0366,0.072,0,0.22,3.0,8.0,80,0.14,1.7,1800,101.48,25,0.13
+Apparel_Shadecone,WoolMegasloth,helmet,0.0366,0.16,0,0.22,3.4,6.0,80,0.14,1.7,1800,73.98,25,0.184
+Apparel_Shadecone,WoolMuffalo,helmet,0.0366,0.072,0,0.22,2.8,6.0,80,0.14,1.7,1800,73.98,25,0.13
+Apparel_Shadecone,WoolBison,helmet,0.0366,0.072,0,0.22,2.6,6.0,80,0.14,1.7,1800,73.98,25,0.13
+Apparel_Shadecone,Leather_Plain,helmet,0.0366,0.162,0.048,0.3,1.6,8.0,104,0.14,1.0,1800,58.98,25,0.252
+Apparel_Shadecone,Leather_Dog,helmet,0.0366,0.162,0.048,0.3,1.4,8.0,104,0.14,1.0,1800,56.48,25,0.252
+Apparel_Shadecone,Leather_Wolf,helmet,0.0366,0.204,0.048,0.3,2.4,8.0,104,0.14,1.0,1800,81.48,25,0.298
+Apparel_Shadecone,Leather_Panthera,helmet,0.0366,0.186,0.048,0.3,1.6,12.0,104,0.14,1.0,1800,81.48,25,0.278
+Apparel_Shadecone,Leather_Camel,helmet,0.0366,0.162,0.048,0.3,1.6,12.0,104,0.14,1.0,1800,63.98,25,0.252
+Apparel_Shadecone,Leather_Bluefur,helmet,0.0366,0.162,0.048,0.3,2.0,8.0,104,0.14,1.0,1800,63.98,25,0.252
+Apparel_Shadecone,Leather_Bear,helmet,0.0366,0.224,0.048,0.3,2.0,10.0,104,0.14,1.0,1800,91.48,25,0.32
+Apparel_Shadecone,Leather_GuineaPig,helmet,0.0366,0.134,0.028,0.3,3.8,9.0,48,0.14,1.0,1800,131.48,25,0.216
+Apparel_Shadecone,Leather_Human,helmet,0.0366,0.128,0.048,0.3,1.2,6.0,104,0.14,1.0,1800,111.48,25,0.227
+Apparel_Shadecone,Leather_Pig,helmet,0.0366,0.128,0.048,0.3,1.2,6.0,104,0.14,1.0,1800,53.98,25,0.227
+Apparel_Shadecone,Leather_Light,helmet,0.0366,0.108,0.028,0.3,1.2,6.0,80,0.14,1.0,1800,53.98,25,0.202
+Apparel_Shadecone,Leather_Bird,helmet,0.0366,0.134,0.028,0.3,1.0,5.0,80,0.14,1.0,1800,51.48,25,0.216
+Apparel_Shadecone,Leather_Chinchilla,helmet,0.0366,0.134,0.028,0.3,3.0,8.0,80,0.14,1.0,1800,168.98,25,0.216
+Apparel_Shadecone,Leather_Fox,helmet,0.0366,0.162,0.042,0.3,2.0,8.0,80,0.14,1.0,1800,93.98,25,0.248
+Apparel_Shadecone,Leather_Lizard,helmet,0.0366,0.162,0.054,0.3,1.2,6.0,80,0.14,1.0,1800,58.98,25,0.256
+Apparel_Shadecone,Leather_Elephant,helmet,0.0366,0.224,0.048,0.3,1.4,6.0,120,0.14,1.0,1800,81.48,25,0.32
+Apparel_Shadecone,Leather_Heavy,helmet,0.0366,0.248,0.048,0.3,3.0,7.0,120,0.14,1.0,1800,88.98,25,0.346
+Apparel_Shadecone,Leather_Rhinoceros,helmet,0.0366,0.258,0.048,0.3,1.4,7.0,120,0.14,1.0,1800,111.48,25,0.357
+Apparel_Shadecone,Leather_Thrumbo,helmet,0.0366,0.416,0.072,0.3,3.4,11.0,160,0.14,1.0,1800,355,25,0.611
+Apparel_Shadecone,Leather_Patch,helmet,0.0366,0.09,0.038,0.18,0.9,4.5,80,0.14,1.0,1800,43.98,25,0.15
+Apparel_Shadecone,Leather_Dread,helmet,0.0366,0.254,0.048,0.3,2.0,6.0,104,0.14,1.0,1800,93.98,25,0.353
+Apparel_Shadecone,WoolMastodon,helmet,0.0366,0.072,0,0.22,3.2,7.0,80,0.14,1.7,1800,73.98,25,0.13
+Apparel_Shadecone,WoolMuskox,helmet,0.0366,0.072,0,0.22,3.0,5.0,80,0.14,1.7,1800,73.98,25,0.13
+Apparel_Shadecone,Leather_Mastodon,helmet,0.0366,0.224,0.048,0.3,3.0,6.0,120,0.14,1.0,1800,81.48,25,0.32
+Apparel_Shadecone,Leather_Sealskin,helmet,0.0366,0.162,0.048,0.3,3.6,10.0,80,0.14,1.0,1800,106.48,25,0.252
+Apparel_Shadecone,Leather_AlphaThrumbo,helmet,0.0366,0.424,0.08,0.3,3.6,12.0,176,0.14,1.0,1800,505,25,0.63
+Apparel_Shadecone,Leather_Mink,helmet,0.0366,0.134,0.028,0.3,3.2,6.0,80,0.14,1.0,1800,136.48,25,0.216
+Apparel_Shadecone,Leather_Hippo,helmet,0.0366,0.224,0.048,0.3,1.4,8.0,120,0.14,1.0,1800,98.98,25,0.32
+Apparel_Shadecone,Leather_Armadillo,helmet,0.0366,0.248,0.048,0.3,1.6,9.0,104,0.14,1.0,1800,86.48,25,0.346
+Apparel_Flophat,Cloth,helmet,0.0366,0.072,0,0.036,9.0,0.0,80,0.07,1.2,1200,34.32,20,0.054
+Apparel_Flophat,Synthread,helmet,0.0366,0.188,0.052,0.18,11.0,0.0,104,0.07,0.7,1200,84.32,20,0.234
+Apparel_Flophat,DevilstrandCloth,helmet,0.0366,0.28,0.072,0.6,10.0,0.0,104,0.07,0.4,1200,114.32,20,0.522
+Apparel_Flophat,Hyperweave,helmet,0.0366,0.4,0.108,0.576,13.0,0.0,192,0.07,0.4,1200,184.32,20,0.723
+Apparel_Flophat,WoolSheep,helmet,0.0366,0.072,0,0.22,13.0,0.0,80,0.07,1.7,1200,58.32,20,0.13
+Apparel_Flophat,WoolAlpaca,helmet,0.0366,0.072,0,0.22,15.0,0.0,80,0.07,1.7,1200,80.32,20,0.13
+Apparel_Flophat,WoolMegasloth,helmet,0.0366,0.16,0,0.22,17.0,0.0,80,0.07,1.7,1200,58.32,20,0.184
+Apparel_Flophat,WoolMuffalo,helmet,0.0366,0.072,0,0.22,14.0,0.0,80,0.07,1.7,1200,58.32,20,0.13
+Apparel_Flophat,WoolBison,helmet,0.0366,0.072,0,0.22,13.0,0.0,80,0.07,1.7,1200,58.32,20,0.13
+Apparel_Flophat,WoolMastodon,helmet,0.0366,0.072,0,0.22,16.0,0.0,80,0.07,1.7,1200,58.32,20,0.13
+Apparel_Flophat,WoolMuskox,helmet,0.0366,0.072,0,0.22,15.0,0.0,80,0.07,1.7,1200,58.32,20,0.13
+Apparel_BodyStrap,Cloth,torso outer,0.4266,0.036,0,0.018,1.8,1.8,160,1.5,1.2,7000,130.2,70,0.317
+Apparel_BodyStrap,Synthread,torso outer,0.4266,0.094,0.026,0.09,2.2,2.2,210,1.5,0.7,7000,305,70,1.241
+Apparel_BodyStrap,DevilstrandCloth,torso outer,0.4266,0.14,0.036,0.3,2.0,2.4,210,1.5,0.4,7000,410,70,2.624
+Apparel_BodyStrap,Hyperweave,torso outer,0.4266,0.2,0.054,0.288,2.6,2.6,385,1.5,0.4,7000,655,70,3.414
+Apparel_BodyStrap,WoolSheep,torso outer,0.4266,0.036,0,0.11,2.6,1.0,160,1.5,1.7,7000,215,70,0.758
+Apparel_BodyStrap,WoolAlpaca,torso outer,0.4266,0.036,0,0.11,3.0,1.6,160,1.5,1.7,7000,290,70,0.758
+Apparel_BodyStrap,WoolMegasloth,torso outer,0.4266,0.08,0,0.11,3.4,1.2,160,1.5,1.7,7000,215,70,1.04
+Apparel_BodyStrap,WoolMuffalo,torso outer,0.4266,0.036,0,0.11,2.8,1.2,160,1.5,1.7,7000,215,70,0.758
+Apparel_BodyStrap,WoolBison,torso outer,0.4266,0.036,0,0.11,2.6,1.2,160,1.5,1.7,7000,215,70,0.758
+Apparel_BodyStrap,Leather_Plain,torso outer,0.4266,0.081,0.024,0.15,1.6,1.6,210,1.5,1.0,7000,172.2,70,1.43
+Apparel_BodyStrap,Leather_Dog,torso outer,0.4266,0.081,0.024,0.15,1.4,1.6,210,1.5,1.0,7000,165.2,70,1.43
+Apparel_BodyStrap,Leather_Wolf,torso outer,0.4266,0.102,0.024,0.15,2.4,1.6,210,1.5,1.0,7000,235,70,1.565
+Apparel_BodyStrap,Leather_Panthera,torso outer,0.4266,0.093,0.024,0.15,1.6,2.4,210,1.5,1.0,7000,235,70,1.507
+Apparel_BodyStrap,Leather_Camel,torso outer,0.4266,0.081,0.024,0.15,1.6,2.4,210,1.5,1.0,7000,186.2,70,1.43
+Apparel_BodyStrap,Leather_Bluefur,torso outer,0.4266,0.081,0.024,0.15,2.0,1.6,210,1.5,1.0,7000,186.2,70,1.43
+Apparel_BodyStrap,Leather_Bear,torso outer,0.4266,0.112,0.024,0.15,2.0,2.0,210,1.5,1.0,7000,265,70,1.629
+Apparel_BodyStrap,Leather_GuineaPig,torso outer,0.4266,0.067,0.014,0.15,3.8,1.8,96,1.5,1.0,7000,375,70,1.261
+Apparel_BodyStrap,Leather_Human,torso outer,0.4266,0.064,0.024,0.15,1.2,1.2,210,1.5,1.0,7000,320,70,1.321
+Apparel_BodyStrap,Leather_Pig,torso outer,0.4266,0.064,0.024,0.15,1.2,1.2,210,1.5,1.0,7000,158.2,70,1.321
+Apparel_BodyStrap,Leather_Light,torso outer,0.4266,0.054,0.014,0.15,1.2,1.2,160,1.5,1.0,7000,158.2,70,1.177
+Apparel_BodyStrap,Leather_Bird,torso outer,0.4266,0.067,0.014,0.15,1.0,1.0,160,1.5,1.0,7000,151.2,70,1.261
+Apparel_BodyStrap,Leather_Chinchilla,torso outer,0.4266,0.067,0.014,0.15,3.0,1.6,160,1.5,1.0,7000,480,70,1.261
+Apparel_BodyStrap,Leather_Fox,torso outer,0.4266,0.081,0.021,0.15,2.0,1.6,160,1.5,1.0,7000,270,70,1.406
+Apparel_BodyStrap,Leather_Lizard,torso outer,0.4266,0.081,0.027,0.15,1.2,1.2,160,1.5,1.0,7000,172.2,70,1.454
+Apparel_BodyStrap,Leather_Elephant,torso outer,0.4266,0.112,0.024,0.15,1.4,1.2,240,1.5,1.0,7000,235,70,1.629
+Apparel_BodyStrap,Leather_Heavy,torso outer,0.4266,0.124,0.024,0.15,3.0,1.4,240,1.5,1.0,7000,255,70,1.705
+Apparel_BodyStrap,Leather_Rhinoceros,torso outer,0.4266,0.129,0.024,0.15,1.4,1.4,240,1.5,1.0,7000,320,70,1.737
+Apparel_BodyStrap,Leather_Thrumbo,torso outer,0.4266,0.208,0.036,0.15,3.4,2.2,320,1.5,1.0,7000,1005,70,2.71
+Apparel_BodyStrap,Leather_Patch,torso outer,0.4266,0.045,0.019,0.09,0.9,0.9,160,1.5,1.0,7000,130.2,70,0.872
+Apparel_BodyStrap,Leather_Dread,torso outer,0.4266,0.127,0.024,0.15,2.0,1.2,210,1.5,1.0,7000,270,70,1.725
+Apparel_BodyStrap,WoolMastodon,torso outer,0.4266,0.036,0,0.11,3.2,1.4,160,1.5,1.7,7000,215,70,0.758
+Apparel_BodyStrap,WoolMuskox,torso outer,0.4266,0.036,0,0.11,3.0,1.0,160,1.5,1.7,7000,215,70,0.758
+Apparel_BodyStrap,Leather_Mastodon,torso outer,0.4266,0.112,0.024,0.15,3.0,1.2,240,1.5,1.0,7000,235,70,1.629
+Apparel_BodyStrap,Leather_Sealskin,torso outer,0.4266,0.081,0.024,0.15,3.6,2.0,160,1.5,1.0,7000,305,70,1.43
+Apparel_BodyStrap,Leather_AlphaThrumbo,torso outer,0.4266,0.212,0.04,0.15,3.6,2.4,350,1.5,1.0,7000,1425,70,2.793
+Apparel_BodyStrap,Leather_Mink,torso outer,0.4266,0.067,0.014,0.15,3.2,1.2,160,1.5,1.0,7000,390,70,1.261
+Apparel_BodyStrap,Leather_Hippo,torso outer,0.4266,0.112,0.024,0.15,1.4,1.6,240,1.5,1.0,7000,285,70,1.629
+Apparel_BodyStrap,Leather_Armadillo,torso outer,0.4266,0.124,0.024,0.15,1.6,1.8,210,1.5,1.0,7000,250,70,1.705
+Apparel_Burka,Cloth,full body,0.9461,0.072,0,0.036,1.8,3.6,100,1.0,1.2,4000,104.4,60,1.405
+Apparel_Burka,Synthread,full body,0.9461,0.188,0.052,0.18,2.2,4.4,130,1.0,0.7,4000,255,60,6.046
+Apparel_Burka,DevilstrandCloth,full body,0.9461,0.28,0.072,0.6,2.0,4.8,130,1.0,0.4,4000,345,60,13.482
+Apparel_Burka,Hyperweave,full body,0.9461,0.4,0.108,0.576,2.6,5.2,240,1.0,0.4,4000,555,60,18.691
+Apparel_Burka,WoolSheep,full body,0.9461,0.072,0,0.22,2.6,2.0,100,1.0,1.7,4000,176.4,60,3.363
+Apparel_Burka,WoolAlpaca,full body,0.9461,0.072,0,0.22,3.0,3.2,100,1.0,1.7,4000,240,60,3.363
+Apparel_Burka,WoolMegasloth,full body,0.9461,0.16,0,0.22,3.4,2.4,100,1.0,1.7,4000,176.4,60,4.754
+Apparel_Burka,WoolMuffalo,full body,0.9461,0.072,0,0.22,2.8,2.4,100,1.0,1.7,4000,176.4,60,3.363
+Apparel_Burka,WoolBison,full body,0.9461,0.072,0,0.22,2.6,2.4,100,1.0,1.7,4000,176.4,60,3.363
+Apparel_Burka,WoolMastodon,full body,0.9461,0.072,0,0.22,3.2,2.8,100,1.0,1.7,4000,176.4,60,3.363
+Apparel_Burka,WoolMuskox,full body,0.9461,0.072,0,0.22,3.0,2.0,100,1.0,1.7,4000,176.4,60,3.363
+Apparel_TortureCrown,Silver,helmet,0.0366,0.108,0.054,0.054,0.0,0.0,56,0.9,0.4,1200,255,250,0.119
+Apparel_TortureCrown,Gold,helmet,0.0366,0.108,0.054,0.054,0.0,0.0,48,0.9,0.4,1080,2505,250,0.119
+Apparel_TortureCrown,Steel,helmet,0.0366,0.135,0.0675,0.09,0.0,0.0,80,0.9,0.4,1200,51.82,25,0.157
+Apparel_TortureCrown,Plasteel,helmet,0.0366,0.171,0.0825,0.0975,0.0,0.0,225,0.9,0,2640,235,25,0.202
+Apparel_TortureCrown,WoodLog,helmet,0.0366,0.081,0.081,0.06,0.0,0.0,52,0.9,1.0,840,33.02,25,0.125
+Apparel_TortureCrown,Uranium,helmet,0.0366,0.162,0.081,0.0975,0.0,0.0,200,0.9,0,2280,158.21,25,0.191
+Apparel_TortureCrown,Bioferrite,helmet,0.0366,0.165,0.075,0.075,0.0,0.0,160,0.9,0.75,3000,29.55,25,0.181
+Apparel_TortureCrown,Obsidian,helmet,0.0366,0.1275,0.06,0.105,0.0,0.0,40,0.9,0,1800,131.48,25,0.154
+Apparel_Blindfold,Cloth,helmet,0.0192,0.036,0,0.018,6.3,0.0,80,0.07,1.2,1200,34.32,20,0.014
+Apparel_Blindfold,Synthread,helmet,0.0192,0.094,0.026,0.09,7.7,0.0,104,0.07,0.7,1200,84.32,20,0.056
+Apparel_Blindfold,DevilstrandCloth,helmet,0.0192,0.14,0.036,0.3,7.0,0.0,104,0.07,0.4,1200,114.32,20,0.118
+Apparel_Blindfold,Hyperweave,helmet,0.0192,0.2,0.054,0.288,9.1,0.0,192,0.07,0.4,1200,184.32,20,0.154
+Apparel_Blindfold,WoolSheep,helmet,0.0192,0.036,0,0.11,9.1,0.0,80,0.07,1.7,1200,58.32,20,0.034
+Apparel_Blindfold,WoolAlpaca,helmet,0.0192,0.036,0,0.11,10.5,0.0,80,0.07,1.7,1200,80.32,20,0.034
+Apparel_Blindfold,WoolMegasloth,helmet,0.0192,0.08,0,0.11,11.9,0.0,80,0.07,1.7,1200,58.32,20,0.047
+Apparel_Blindfold,WoolMuffalo,helmet,0.0192,0.036,0,0.11,9.8,0.0,80,0.07,1.7,1200,58.32,20,0.034
+Apparel_Blindfold,WoolBison,helmet,0.0192,0.036,0,0.11,9.1,0.0,80,0.07,1.7,1200,58.32,20,0.034
+Apparel_Blindfold,WoolMastodon,helmet,0.0192,0.036,0,0.11,11.2,0.0,80,0.07,1.7,1200,58.32,20,0.034
+Apparel_Blindfold,WoolMuskox,helmet,0.0192,0.036,0,0.11,10.5,0.0,80,0.07,1.7,1200,58.32,20,0.034
+Apparel_KidRomper,Cloth,full body,0.8861,0.072,0,0.036,3.96,1.8,50,0.18,1.2,2000,52.2,30,1.316
+Apparel_KidRomper,Synthread,full body,0.8861,0.188,0.052,0.18,4.84,2.2,65,0.18,0.7,2000,127.2,30,5.662
+Apparel_KidRomper,DevilstrandCloth,full body,0.8861,0.28,0.072,0.6,4.4,2.4,65,0.18,0.4,2000,172.2,30,12.627
+Apparel_KidRomper,Hyperweave,full body,0.8861,0.4,0.108,0.576,5.72,2.6,120,0.18,0.4,2000,275,30,17.505
+Apparel_KidRomper,WoolSheep,full body,0.8861,0.072,0,0.22,5.72,1.0,50,0.18,1.7,2000,88.2,30,3.15
+Apparel_KidRomper,WoolAlpaca,full body,0.8861,0.072,0,0.22,6.6,1.6,50,0.18,1.7,2000,121.2,30,3.15
+Apparel_KidRomper,WoolMegasloth,full body,0.8861,0.16,0,0.22,7.48,1.2,50,0.18,1.7,2000,88.2,30,4.453
+Apparel_KidRomper,WoolMuffalo,full body,0.8861,0.072,0,0.22,6.16,1.2,50,0.18,1.7,2000,88.2,30,3.15
+Apparel_KidRomper,WoolBison,full body,0.8861,0.072,0,0.22,5.72,1.2,50,0.18,1.7,2000,88.2,30,3.15
+Apparel_KidRomper,Leather_Plain,full body,0.8861,0.162,0.048,0.3,3.52,1.6,65,0.18,1.0,2000,70.2,30,6.101
+Apparel_KidRomper,Leather_Dog,full body,0.8861,0.162,0.048,0.3,3.08,1.6,65,0.18,1.0,2000,67.2,30,6.101
+Apparel_KidRomper,Leather_Wolf,full body,0.8861,0.204,0.048,0.3,5.28,1.6,65,0.18,1.0,2000,97.2,30,7.218
+Apparel_KidRomper,Leather_Panthera,full body,0.8861,0.186,0.048,0.3,3.52,2.4,65,0.18,1.0,2000,97.2,30,6.739
+Apparel_KidRomper,Leather_Camel,full body,0.8861,0.162,0.048,0.3,3.52,2.4,65,0.18,1.0,2000,76.2,30,6.101
+Apparel_KidRomper,Leather_Bluefur,full body,0.8861,0.162,0.048,0.3,4.4,1.6,65,0.18,1.0,2000,76.2,30,6.101
+Apparel_KidRomper,Leather_Bear,full body,0.8861,0.224,0.048,0.3,4.4,2.0,65,0.18,1.0,2000,109.2,30,7.749
+Apparel_KidRomper,Leather_GuineaPig,full body,0.8861,0.134,0.028,0.3,8.36,1.8,30,0.18,1.0,2000,157.2,30,5.237
+Apparel_KidRomper,Leather_Human,full body,0.8861,0.128,0.048,0.3,2.64,1.2,65,0.18,1.0,2000,133.2,30,5.49
+Apparel_KidRomper,Leather_Pig,full body,0.8861,0.128,0.048,0.3,2.64,1.2,65,0.18,1.0,2000,64.2,30,5.49
+Apparel_KidRomper,Leather_Light,full body,0.8861,0.108,0.028,0.3,2.64,1.2,50,0.18,1.0,2000,64.2,30,4.891
+Apparel_KidRomper,Leather_Bird,full body,0.8861,0.134,0.028,0.3,2.2,1.0,50,0.18,1.0,2000,61.2,30,5.237
+Apparel_KidRomper,Leather_Chinchilla,full body,0.8861,0.134,0.028,0.3,6.6,1.6,50,0.18,1.0,2000,200,30,5.237
+Apparel_KidRomper,Leather_Fox,full body,0.8861,0.162,0.042,0.3,4.4,1.6,50,0.18,1.0,2000,112.2,30,6.001
+Apparel_KidRomper,Leather_Lizard,full body,0.8861,0.162,0.054,0.3,2.64,1.2,50,0.18,1.0,2000,70.2,30,6.201
+Apparel_KidRomper,Leather_Elephant,full body,0.8861,0.224,0.048,0.3,3.08,1.2,75,0.18,1.0,2000,97.2,30,7.749
+Apparel_KidRomper,Leather_Heavy,full body,0.8861,0.248,0.048,0.3,6.6,1.4,75,0.18,1.0,2000,106.2,30,8.387
+Apparel_KidRomper,Leather_Rhinoceros,full body,0.8861,0.258,0.048,0.3,3.08,1.4,75,0.18,1.0,2000,133.2,30,8.653
+Apparel_KidRomper,Leather_Thrumbo,full body,0.8861,0.416,0.072,0.3,7.48,2.2,100,0.18,1.0,2000,425,30,14.794
+Apparel_KidRomper,Leather_Patch,full body,0.8861,0.09,0.038,0.18,1.98,0.9,50,0.18,1.0,2000,52.2,30,3.622
+Apparel_KidRomper,Leather_Dread,full body,0.8861,0.254,0.048,0.3,4.4,1.2,65,0.18,1.0,2000,112.2,30,8.547
+Apparel_KidRomper,WoolMastodon,full body,0.8861,0.072,0,0.22,7.04,1.4,50,0.18,1.7,2000,88.2,30,3.15
+Apparel_KidRomper,WoolMuskox,full body,0.8861,0.072,0,0.22,6.6,1.0,50,0.18,1.7,2000,88.2,30,3.15
+Apparel_KidRomper,Leather_Mastodon,full body,0.8861,0.224,0.048,0.3,6.6,1.2,75,0.18,1.0,2000,97.2,30,7.749
+Apparel_KidRomper,Leather_Sealskin,full body,0.8861,0.162,0.048,0.3,7.92,2.0,50,0.18,1.0,2000,127.2,30,6.101
+Apparel_KidRomper,Leather_AlphaThrumbo,full body,0.8861,0.424,0.08,0.3,7.92,2.4,110,0.18,1.0,2000,605,30,15.246
+Apparel_KidRomper,Leather_Mink,full body,0.8861,0.134,0.028,0.3,7.04,1.2,50,0.18,1.0,2000,163.2,30,5.237
+Apparel_KidRomper,Leather_Hippo,full body,0.8861,0.224,0.048,0.3,3.08,1.6,75,0.18,1.0,2000,118.2,30,7.749
+Apparel_KidRomper,Leather_Armadillo,full body,0.8861,0.248,0.048,0.3,3.52,1.8,65,0.18,1.0,2000,103.2,30,8.387
+Apparel_KidShirt,Cloth,base clothing,0.4602,0.072,0,0.036,3.96,1.8,50,0.15,1.2,1280,34.61,20,0.683
+Apparel_KidShirt,Synthread,base clothing,0.4602,0.188,0.052,0.18,4.84,2.2,65,0.15,0.7,1280,84.61,20,2.941
+Apparel_KidShirt,DevilstrandCloth,base clothing,0.4602,0.28,0.072,0.6,4.4,2.4,65,0.15,0.4,1280,114.61,20,6.558
+Apparel_KidShirt,Hyperweave,base clothing,0.4602,0.4,0.108,0.576,5.72,2.6,120,0.15,0.4,1280,184.61,20,9.091
+Apparel_KidShirt,WoolSheep,base clothing,0.4602,0.072,0,0.22,5.72,1.0,50,0.15,1.7,1280,58.61,20,1.636
+Apparel_KidShirt,WoolAlpaca,base clothing,0.4602,0.072,0,0.22,6.6,1.6,50,0.15,1.7,1280,80.61,20,1.636
+Apparel_KidShirt,WoolMegasloth,base clothing,0.4602,0.16,0,0.22,7.48,1.2,50,0.15,1.7,1280,58.61,20,2.313
+Apparel_KidShirt,WoolMuffalo,base clothing,0.4602,0.072,0,0.22,6.16,1.2,50,0.15,1.7,1280,58.61,20,1.636
+Apparel_KidShirt,WoolBison,base clothing,0.4602,0.072,0,0.22,5.72,1.2,50,0.15,1.7,1280,58.61,20,1.636
+Apparel_KidShirt,Leather_Plain,base clothing,0.4602,0.162,0.048,0.3,3.52,1.6,65,0.15,1.0,1280,46.61,20,3.168
+Apparel_KidShirt,Leather_Dog,base clothing,0.4602,0.162,0.048,0.3,3.08,1.6,65,0.15,1.0,1280,44.61,20,3.168
+Apparel_KidShirt,Leather_Wolf,base clothing,0.4602,0.204,0.048,0.3,5.28,1.6,65,0.15,1.0,1280,64.61,20,3.748
+Apparel_KidShirt,Leather_Panthera,base clothing,0.4602,0.186,0.048,0.3,3.52,2.4,65,0.15,1.0,1280,64.61,20,3.5
+Apparel_KidShirt,Leather_Camel,base clothing,0.4602,0.162,0.048,0.3,3.52,2.4,65,0.15,1.0,1280,50.61,20,3.168
+Apparel_KidShirt,Leather_Bluefur,base clothing,0.4602,0.162,0.048,0.3,4.4,1.6,65,0.15,1.0,1280,50.61,20,3.168
+Apparel_KidShirt,Leather_Bear,base clothing,0.4602,0.224,0.048,0.3,4.4,2.0,65,0.15,1.0,1280,72.61,20,4.024
+Apparel_KidShirt,Leather_GuineaPig,base clothing,0.4602,0.134,0.028,0.3,8.36,1.8,30,0.15,1.0,1280,104.61,20,2.72
+Apparel_KidShirt,Leather_Human,base clothing,0.4602,0.128,0.048,0.3,2.64,1.2,65,0.15,1.0,1280,88.61,20,2.851
+Apparel_KidShirt,Leather_Pig,base clothing,0.4602,0.128,0.048,0.3,2.64,1.2,65,0.15,1.0,1280,42.61,20,2.851
+Apparel_KidShirt,Leather_Light,base clothing,0.4602,0.108,0.028,0.3,2.64,1.2,50,0.15,1.0,1280,42.61,20,2.54
+Apparel_KidShirt,Leather_Bird,base clothing,0.4602,0.134,0.028,0.3,2.2,1.0,50,0.15,1.0,1280,40.61,20,2.72
+Apparel_KidShirt,Leather_Chinchilla,base clothing,0.4602,0.134,0.028,0.3,6.6,1.6,50,0.15,1.0,1280,134.61,20,2.72
+Apparel_KidShirt,Leather_Fox,base clothing,0.4602,0.162,0.042,0.3,4.4,1.6,50,0.15,1.0,1280,74.61,20,3.117
+Apparel_KidShirt,Leather_Lizard,base clothing,0.4602,0.162,0.054,0.3,2.64,1.2,50,0.15,1.0,1280,46.61,20,3.22
+Apparel_KidShirt,Leather_Elephant,base clothing,0.4602,0.224,0.048,0.3,3.08,1.2,75,0.15,1.0,1280,64.61,20,4.024
+Apparel_KidShirt,Leather_Heavy,base clothing,0.4602,0.248,0.048,0.3,6.6,1.4,75,0.15,1.0,1280,70.61,20,4.356
+Apparel_KidShirt,Leather_Rhinoceros,base clothing,0.4602,0.258,0.048,0.3,3.08,1.4,75,0.15,1.0,1280,88.61,20,4.494
+Apparel_KidShirt,Leather_Thrumbo,base clothing,0.4602,0.416,0.072,0.3,7.48,2.2,100,0.15,1.0,1280,285,20,7.683
+Apparel_KidShirt,Leather_Patch,base clothing,0.4602,0.09,0.038,0.18,1.98,0.9,50,0.15,1.0,1280,34.61,20,1.881
+Apparel_KidShirt,Leather_Dread,base clothing,0.4602,0.254,0.048,0.3,4.4,1.2,65,0.15,1.0,1280,74.61,20,4.439
+Apparel_KidShirt,WoolMastodon,base clothing,0.4602,0.072,0,0.22,7.04,1.4,50,0.15,1.7,1280,58.61,20,1.636
+Apparel_KidShirt,WoolMuskox,base clothing,0.4602,0.072,0,0.22,6.6,1.0,50,0.15,1.7,1280,58.61,20,1.636
+Apparel_KidShirt,Leather_Mastodon,base clothing,0.4602,0.224,0.048,0.3,6.6,1.2,75,0.15,1.0,1280,64.61,20,4.024
+Apparel_KidShirt,Leather_Sealskin,base clothing,0.4602,0.162,0.048,0.3,7.92,2.0,50,0.15,1.0,1280,84.61,20,3.168
+Apparel_KidShirt,Leather_AlphaThrumbo,base clothing,0.4602,0.424,0.08,0.3,7.92,2.4,110,0.15,1.0,1280,405,20,7.918
+Apparel_KidShirt,Leather_Mink,base clothing,0.4602,0.134,0.028,0.3,7.04,1.2,50,0.15,1.0,1280,108.61,20,2.72
+Apparel_KidShirt,Leather_Hippo,base clothing,0.4602,0.224,0.048,0.3,3.08,1.6,75,0.15,1.0,1280,78.61,20,4.024
+Apparel_KidShirt,Leather_Armadillo,base clothing,0.4602,0.248,0.048,0.3,3.52,1.8,65,0.15,1.0,1280,68.61,20,4.356
+Apparel_KidPants,Cloth,legwear,0.252,0.072,0,0.036,3.6,1.44,50,0.25,1.2,1280,34.61,20,0.374
+Apparel_KidPants,Synthread,legwear,0.252,0.188,0.052,0.18,4.4,1.76,65,0.25,0.7,1280,84.61,20,1.61
+Apparel_KidPants,DevilstrandCloth,legwear,0.252,0.28,0.072,0.6,4.0,1.92,65,0.25,0.4,1280,114.61,20,3.591
+Apparel_KidPants,Hyperweave,legwear,0.252,0.4,0.108,0.576,5.2,2.08,120,0.25,0.4,1280,184.61,20,4.978
+Apparel_KidPants,WoolSheep,legwear,0.252,0.072,0,0.22,5.2,0.8,50,0.25,1.7,1280,58.61,20,0.896
+Apparel_KidPants,WoolAlpaca,legwear,0.252,0.072,0,0.22,6.0,1.28,50,0.25,1.7,1280,80.61,20,0.896
+Apparel_KidPants,WoolMegasloth,legwear,0.252,0.16,0,0.22,6.8,0.96,50,0.25,1.7,1280,58.61,20,1.266
+Apparel_KidPants,WoolMuffalo,legwear,0.252,0.072,0,0.22,5.6,0.96,50,0.25,1.7,1280,58.61,20,0.896
+Apparel_KidPants,WoolBison,legwear,0.252,0.072,0,0.22,5.2,0.96,50,0.25,1.7,1280,58.61,20,0.896
+Apparel_KidPants,Leather_Plain,legwear,0.252,0.162,0.048,0.3,3.2,1.28,65,0.25,1.0,1280,46.61,20,1.735
+Apparel_KidPants,Leather_Dog,legwear,0.252,0.162,0.048,0.3,2.8,1.28,65,0.25,1.0,1280,44.61,20,1.735
+Apparel_KidPants,Leather_Wolf,legwear,0.252,0.204,0.048,0.3,4.8,1.28,65,0.25,1.0,1280,64.61,20,2.053
+Apparel_KidPants,Leather_Panthera,legwear,0.252,0.186,0.048,0.3,3.2,1.92,65,0.25,1.0,1280,64.61,20,1.916
+Apparel_KidPants,Leather_Camel,legwear,0.252,0.162,0.048,0.3,3.2,1.92,65,0.25,1.0,1280,50.61,20,1.735
+Apparel_KidPants,Leather_Bluefur,legwear,0.252,0.162,0.048,0.3,4.0,1.28,65,0.25,1.0,1280,50.61,20,1.735
+Apparel_KidPants,Leather_Bear,legwear,0.252,0.224,0.048,0.3,4.0,1.6,65,0.25,1.0,1280,72.61,20,2.204
+Apparel_KidPants,Leather_GuineaPig,legwear,0.252,0.134,0.028,0.3,7.6,1.44,30,0.25,1.0,1280,104.61,20,1.489
+Apparel_KidPants,Leather_Human,legwear,0.252,0.128,0.048,0.3,2.4,0.96,65,0.25,1.0,1280,88.61,20,1.561
+Apparel_KidPants,Leather_Pig,legwear,0.252,0.128,0.048,0.3,2.4,0.96,65,0.25,1.0,1280,42.61,20,1.561
+Apparel_KidPants,Leather_Light,legwear,0.252,0.108,0.028,0.3,2.4,0.96,50,0.25,1.0,1280,42.61,20,1.391
+Apparel_KidPants,Leather_Bird,legwear,0.252,0.134,0.028,0.3,2.0,0.8,50,0.25,1.0,1280,40.61,20,1.489
+Apparel_KidPants,Leather_Chinchilla,legwear,0.252,0.134,0.028,0.3,6.0,1.28,50,0.25,1.0,1280,134.61,20,1.489
+Apparel_KidPants,Leather_Fox,legwear,0.252,0.162,0.042,0.3,4.0,1.28,50,0.25,1.0,1280,74.61,20,1.707
+Apparel_KidPants,Leather_Lizard,legwear,0.252,0.162,0.054,0.3,2.4,0.96,50,0.25,1.0,1280,46.61,20,1.763
+Apparel_KidPants,Leather_Elephant,legwear,0.252,0.224,0.048,0.3,2.8,0.96,75,0.25,1.0,1280,64.61,20,2.204
+Apparel_KidPants,Leather_Heavy,legwear,0.252,0.248,0.048,0.3,6.0,1.12,75,0.25,1.0,1280,70.61,20,2.385
+Apparel_KidPants,Leather_Rhinoceros,legwear,0.252,0.258,0.048,0.3,2.8,1.12,75,0.25,1.0,1280,88.61,20,2.461
+Apparel_KidPants,Leather_Thrumbo,legwear,0.252,0.416,0.072,0.3,6.8,1.76,100,0.25,1.0,1280,285,20,4.207
+Apparel_KidPants,Leather_Patch,legwear,0.252,0.09,0.038,0.18,1.8,0.72,50,0.25,1.0,1280,34.61,20,1.03
+Apparel_KidPants,Leather_Dread,legwear,0.252,0.254,0.048,0.3,4.0,0.96,65,0.25,1.0,1280,74.61,20,2.431
+Apparel_KidPants,WoolMastodon,legwear,0.252,0.072,0,0.22,6.4,1.12,50,0.25,1.7,1280,58.61,20,0.896
+Apparel_KidPants,WoolMuskox,legwear,0.252,0.072,0,0.22,6.0,0.8,50,0.25,1.7,1280,58.61,20,0.896
+Apparel_KidPants,Leather_Mastodon,legwear,0.252,0.224,0.048,0.3,6.0,0.96,75,0.25,1.0,1280,64.61,20,2.204
+Apparel_KidPants,Leather_Sealskin,legwear,0.252,0.162,0.048,0.3,7.2,1.6,50,0.25,1.0,1280,84.61,20,1.735
+Apparel_KidPants,Leather_AlphaThrumbo,legwear,0.252,0.424,0.08,0.3,7.2,1.92,110,0.25,1.0,1280,405,20,4.336
+Apparel_KidPants,Leather_Mink,legwear,0.252,0.134,0.028,0.3,6.4,0.96,50,0.25,1.0,1280,108.61,20,1.489
+Apparel_KidPants,Leather_Hippo,legwear,0.252,0.224,0.048,0.3,2.8,1.28,75,0.25,1.0,1280,78.61,20,2.204
+Apparel_KidPants,Leather_Armadillo,legwear,0.252,0.248,0.048,0.3,3.2,1.44,65,0.25,1.0,1280,68.61,20,2.385
+Apparel_KidParka,Cloth,torso outer,0.6341,0.072,0,0.036,27.0,0.0,100,1.0,1.2,6400,83.04,40,0.942
+Apparel_KidParka,Synthread,torso outer,0.6341,0.188,0.052,0.18,33.0,0.0,130,1.0,0.7,6400,183.04,40,4.052
+Apparel_KidParka,DevilstrandCloth,torso outer,0.6341,0.28,0.072,0.6,30.0,0.0,130,1.0,0.4,6400,245,40,9.036
+Apparel_KidParka,Hyperweave,torso outer,0.6341,0.4,0.108,0.576,39.0,0.0,240,1.0,0.4,6400,385,40,12.527
+Apparel_KidParka,WoolSheep,torso outer,0.6341,0.072,0,0.22,39.0,0.0,100,1.0,1.7,6400,131.04,40,2.254
+Apparel_KidParka,WoolAlpaca,torso outer,0.6341,0.072,0,0.22,45.0,0.0,100,1.0,1.7,6400,175.04,40,2.254
+Apparel_KidParka,WoolMegasloth,torso outer,0.6341,0.16,0,0.22,51.0,0.0,100,1.0,1.7,6400,131.04,40,3.186
+Apparel_KidParka,WoolMuffalo,torso outer,0.6341,0.072,0,0.22,42.0,0.0,100,1.0,1.7,6400,131.04,40,2.254
+Apparel_KidParka,WoolBison,torso outer,0.6341,0.072,0,0.22,39.0,0.0,100,1.0,1.7,6400,131.04,40,2.254
+Apparel_KidParka,Leather_Plain,torso outer,0.6341,0.162,0.048,0.3,24.0,0.0,130,1.0,1.0,6400,107.04,40,4.366
+Apparel_KidParka,Leather_Dog,torso outer,0.6341,0.162,0.048,0.3,21.0,0.0,130,1.0,1.0,6400,103.04,40,4.366
+Apparel_KidParka,Leather_Wolf,torso outer,0.6341,0.204,0.048,0.3,36.0,0.0,130,1.0,1.0,6400,143.04,40,5.165
+Apparel_KidParka,Leather_Panthera,torso outer,0.6341,0.186,0.048,0.3,24.0,0.0,130,1.0,1.0,6400,143.04,40,4.823
+Apparel_KidParka,Leather_Camel,torso outer,0.6341,0.162,0.048,0.3,24.0,0.0,130,1.0,1.0,6400,115.04,40,4.366
+Apparel_KidParka,Leather_Bluefur,torso outer,0.6341,0.162,0.048,0.3,30.0,0.0,130,1.0,1.0,6400,115.04,40,4.366
+Apparel_KidParka,Leather_Bear,torso outer,0.6341,0.224,0.048,0.3,30.0,0.0,130,1.0,1.0,6400,159.04,40,5.545
+Apparel_KidParka,Leather_GuineaPig,torso outer,0.6341,0.134,0.028,0.3,57.0,0.0,60,1.0,1.0,6400,225,40,3.748
+Apparel_KidParka,Leather_Human,torso outer,0.6341,0.128,0.048,0.3,18.0,0.0,130,1.0,1.0,6400,191.04,40,3.928
+Apparel_KidParka,Leather_Pig,torso outer,0.6341,0.128,0.048,0.3,18.0,0.0,130,1.0,1.0,6400,99.04,40,3.928
+Apparel_KidParka,Leather_Light,torso outer,0.6341,0.108,0.028,0.3,18.0,0.0,100,1.0,1.0,6400,99.04,40,3.5
+Apparel_KidParka,Leather_Bird,torso outer,0.6341,0.134,0.028,0.3,15.0,0.0,100,1.0,1.0,6400,95.04,40,3.748
+Apparel_KidParka,Leather_Chinchilla,torso outer,0.6341,0.134,0.028,0.3,45.0,0.0,100,1.0,1.0,6400,285,40,3.748
+Apparel_KidParka,Leather_Fox,torso outer,0.6341,0.162,0.042,0.3,30.0,0.0,100,1.0,1.0,6400,163.04,40,4.295
+Apparel_KidParka,Leather_Lizard,torso outer,0.6341,0.162,0.054,0.3,18.0,0.0,100,1.0,1.0,6400,107.04,40,4.437
+Apparel_KidParka,Leather_Elephant,torso outer,0.6341,0.224,0.048,0.3,21.0,0.0,150,1.0,1.0,6400,143.04,40,5.545
+Apparel_KidParka,Leather_Heavy,torso outer,0.6341,0.248,0.048,0.3,45.0,0.0,150,1.0,1.0,6400,155.04,40,6.002
+Apparel_KidParka,Leather_Rhinoceros,torso outer,0.6341,0.258,0.048,0.3,21.0,0.0,150,1.0,1.0,6400,191.04,40,6.192
+Apparel_KidParka,Leather_Thrumbo,torso outer,0.6341,0.416,0.072,0.3,51.0,0.0,200,1.0,1.0,6400,585,40,10.587
+Apparel_KidParka,Leather_Patch,torso outer,0.6341,0.09,0.038,0.18,13.5,0.0,100,1.0,1.0,6400,83.04,40,2.592
+Apparel_KidParka,Leather_Dread,torso outer,0.6341,0.254,0.048,0.3,30.0,0.0,130,1.0,1.0,6400,163.04,40,6.116
+Apparel_KidParka,WoolMastodon,torso outer,0.6341,0.072,0,0.22,48.0,0.0,100,1.0,1.7,6400,131.04,40,2.254
+Apparel_KidParka,WoolMuskox,torso outer,0.6341,0.072,0,0.22,45.0,0.0,100,1.0,1.7,6400,131.04,40,2.254
+Apparel_KidParka,Leather_Mastodon,torso outer,0.6341,0.224,0.048,0.3,45.0,0.0,150,1.0,1.0,6400,143.04,40,5.545
+Apparel_KidParka,Leather_Sealskin,torso outer,0.6341,0.162,0.048,0.3,54.0,0.0,100,1.0,1.0,6400,183.04,40,4.366
+Apparel_KidParka,Leather_AlphaThrumbo,torso outer,0.6341,0.424,0.08,0.3,54.0,0.0,220,1.0,1.0,6400,825,40,10.91
+Apparel_KidParka,Leather_Mink,torso outer,0.6341,0.134,0.028,0.3,48.0,0.0,100,1.0,1.0,6400,230,40,3.748
+Apparel_KidParka,Leather_Hippo,torso outer,0.6341,0.224,0.048,0.3,21.0,0.0,150,1.0,1.0,6400,171.04,40,5.545
+Apparel_KidParka,Leather_Armadillo,torso outer,0.6341,0.248,0.048,0.3,24.0,0.0,130,1.0,1.0,6400,151.04,40,6.002
+Apparel_KidTribal,Cloth,base clothing,0.6786,0.072,0,0.036,9.0,9.0,60,0.5,1.2,1400,50.04,30,1.008
+Apparel_KidTribal,Synthread,base clothing,0.6786,0.188,0.052,0.18,11.0,11.0,78,0.5,0.7,1400,125.04,30,4.336
+Apparel_KidTribal,DevilstrandCloth,base clothing,0.6786,0.28,0.072,0.6,10.0,12.0,78,0.5,0.4,1400,170.04,30,9.67
+Apparel_KidTribal,Hyperweave,base clothing,0.6786,0.4,0.108,0.576,13.0,13.0,144,0.5,0.4,1400,275,30,13.406
+Apparel_KidTribal,WoolSheep,base clothing,0.6786,0.072,0,0.22,13.0,5.0,60,0.5,1.7,1400,86.04,30,2.412
+Apparel_KidTribal,WoolAlpaca,base clothing,0.6786,0.072,0,0.22,15.0,8.0,60,0.5,1.7,1400,119.04,30,2.412
+Apparel_KidTribal,WoolMegasloth,base clothing,0.6786,0.16,0,0.22,17.0,6.0,60,0.5,1.7,1400,86.04,30,3.41
+Apparel_KidTribal,WoolMuffalo,base clothing,0.6786,0.072,0,0.22,14.0,6.0,60,0.5,1.7,1400,86.04,30,2.412
+Apparel_KidTribal,WoolBison,base clothing,0.6786,0.072,0,0.22,13.0,6.0,60,0.5,1.7,1400,86.04,30,2.412
+Apparel_KidTribal,Leather_Plain,base clothing,0.6786,0.162,0.048,0.3,8.0,8.0,78,0.5,1.0,1400,68.04,30,4.672
+Apparel_KidTribal,Leather_Dog,base clothing,0.6786,0.162,0.048,0.3,7.0,8.0,78,0.5,1.0,1400,65.04,30,4.672
+Apparel_KidTribal,Leather_Wolf,base clothing,0.6786,0.204,0.048,0.3,12.0,8.0,78,0.5,1.0,1400,95.04,30,5.527
+Apparel_KidTribal,Leather_Panthera,base clothing,0.6786,0.186,0.048,0.3,8.0,12.0,78,0.5,1.0,1400,95.04,30,5.161
+Apparel_KidTribal,Leather_Camel,base clothing,0.6786,0.162,0.048,0.3,8.0,12.0,78,0.5,1.0,1400,74.04,30,4.672
+Apparel_KidTribal,Leather_Bluefur,base clothing,0.6786,0.162,0.048,0.3,10.0,8.0,78,0.5,1.0,1400,74.04,30,4.672
+Apparel_KidTribal,Leather_Bear,base clothing,0.6786,0.224,0.048,0.3,10.0,10.0,78,0.5,1.0,1400,107.04,30,5.934
+Apparel_KidTribal,Leather_GuineaPig,base clothing,0.6786,0.134,0.028,0.3,19.0,9.0,36,0.5,1.0,1400,155.04,30,4.011
+Apparel_KidTribal,Leather_Human,base clothing,0.6786,0.128,0.048,0.3,6.0,6.0,78,0.5,1.0,1400,131.04,30,4.204
+Apparel_KidTribal,Leather_Pig,base clothing,0.6786,0.128,0.048,0.3,6.0,6.0,78,0.5,1.0,1400,62.04,30,4.204
+Apparel_KidTribal,Leather_Light,base clothing,0.6786,0.108,0.028,0.3,6.0,6.0,60,0.5,1.0,1400,62.04,30,3.746
+Apparel_KidTribal,Leather_Bird,base clothing,0.6786,0.134,0.028,0.3,5.0,5.0,60,0.5,1.0,1400,59.04,30,4.011
+Apparel_KidTribal,Leather_Chinchilla,base clothing,0.6786,0.134,0.028,0.3,15.0,8.0,60,0.5,1.0,1400,200,30,4.011
+Apparel_KidTribal,Leather_Fox,base clothing,0.6786,0.162,0.042,0.3,10.0,8.0,60,0.5,1.0,1400,110.04,30,4.596
+Apparel_KidTribal,Leather_Lizard,base clothing,0.6786,0.162,0.054,0.3,6.0,6.0,60,0.5,1.0,1400,68.04,30,4.749
+Apparel_KidTribal,Leather_Elephant,base clothing,0.6786,0.224,0.048,0.3,7.0,6.0,90,0.5,1.0,1400,95.04,30,5.934
+Apparel_KidTribal,Leather_Heavy,base clothing,0.6786,0.248,0.048,0.3,15.0,7.0,90,0.5,1.0,1400,104.04,30,6.423
+Apparel_KidTribal,Leather_Rhinoceros,base clothing,0.6786,0.258,0.048,0.3,7.0,7.0,90,0.5,1.0,1400,131.04,30,6.627
+Apparel_KidTribal,Leather_Thrumbo,base clothing,0.6786,0.416,0.072,0.3,17.0,11.0,120,0.5,1.0,1400,425,30,11.329
+Apparel_KidTribal,Leather_Patch,base clothing,0.6786,0.09,0.038,0.18,4.5,4.5,60,0.5,1.0,1400,50.04,30,2.774
+Apparel_KidTribal,Leather_Dread,base clothing,0.6786,0.254,0.048,0.3,10.0,6.0,78,0.5,1.0,1400,110.04,30,6.545
+Apparel_KidTribal,WoolMastodon,base clothing,0.6786,0.072,0,0.22,16.0,7.0,60,0.5,1.7,1400,86.04,30,2.412
+Apparel_KidTribal,WoolMuskox,base clothing,0.6786,0.072,0,0.22,15.0,5.0,60,0.5,1.7,1400,86.04,30,2.412
+Apparel_KidTribal,Leather_Mastodon,base clothing,0.6786,0.224,0.048,0.3,15.0,6.0,90,0.5,1.0,1400,95.04,30,5.934
+Apparel_KidTribal,Leather_Sealskin,base clothing,0.6786,0.162,0.048,0.3,18.0,10.0,60,0.5,1.0,1400,125.04,30,4.672
+Apparel_KidTribal,Leather_AlphaThrumbo,base clothing,0.6786,0.424,0.08,0.3,18.0,12.0,132,0.5,1.0,1400,605,30,11.675
+Apparel_KidTribal,Leather_Mink,base clothing,0.6786,0.134,0.028,0.3,16.0,6.0,60,0.5,1.0,1400,161.04,30,4.011
+Apparel_KidTribal,Leather_Hippo,base clothing,0.6786,0.224,0.048,0.3,7.0,8.0,90,0.5,1.0,1400,116.04,30,5.934
+Apparel_KidTribal,Leather_Armadillo,base clothing,0.6786,0.248,0.048,0.3,8.0,9.0,78,0.5,1.0,1400,101.04,30,6.423
+Apparel_KidHelmet,Silver,helmet,0.0366,0.36,0.18,0.18,0.45,0.0,42,1.0,0.4,2000,205,200,0.544
+Apparel_KidHelmet,Gold,helmet,0.0366,0.36,0.18,0.18,0.45,0.0,36,1.0,0.4,1800,2005,200,0.544
+Apparel_KidHelmet,Steel,helmet,0.0366,0.45,0.225,0.3,0.45,0.0,60,1.0,0.4,2000,45.2,20,0.772
+Apparel_KidHelmet,Plasteel,helmet,0.0366,0.57,0.275,0.325,0.45,0.0,168,1.0,0,4400,195.84,20,1.014
+Apparel_KidHelmet,Uranium,helmet,0.0366,0.54,0.27,0.325,0.45,0.0,150,1.0,0,3800,133.68,20,0.961
+Apparel_KidHelmet,Bioferrite,helmet,0.0366,0.55,0.25,0.25,0.38,0.0,120,1.0,0.75,5000,33.0,20,0.933
+Apparel_KidHelmet,Obsidian,helmet,0.0366,0.425,0.2,0.35,0.45,0.0,30,1.0,0,3000,110.8,20,0.734
+Apparel_Bandolier,Cloth,torso outer,0.4266,0.036,0,0.018,1.8,1.8,50,1.5,1.2,3500,125.1,75,0.317
+Apparel_Bandolier,Synthread,torso outer,0.4266,0.094,0.026,0.09,2.2,2.2,65,1.5,0.7,3500,315,75,1.241
+Apparel_Bandolier,DevilstrandCloth,torso outer,0.4266,0.14,0.036,0.3,2.0,2.4,65,1.5,0.4,3500,425,75,2.624
+Apparel_Bandolier,Hyperweave,torso outer,0.4266,0.2,0.054,0.288,2.6,2.6,120,1.5,0.4,3500,690,75,3.414
+Apparel_Bandolier,WoolSheep,torso outer,0.4266,0.036,0,0.11,2.6,1.0,50,1.5,1.7,3500,215,75,0.758
+Apparel_Bandolier,WoolAlpaca,torso outer,0.4266,0.036,0,0.11,3.0,1.6,50,1.5,1.7,3500,300,75,0.758
+Apparel_Bandolier,WoolMegasloth,torso outer,0.4266,0.08,0,0.11,3.4,1.2,50,1.5,1.7,3500,215,75,1.04
+Apparel_Bandolier,WoolMuffalo,torso outer,0.4266,0.036,0,0.11,2.8,1.2,50,1.5,1.7,3500,215,75,0.758
+Apparel_Bandolier,WoolBison,torso outer,0.4266,0.036,0,0.11,2.6,1.2,50,1.5,1.7,3500,215,75,0.758
+Apparel_Bandolier,Leather_Plain,torso outer,0.4266,0.081,0.024,0.15,1.6,1.6,65,1.5,1.0,3500,170.1,75,1.43
+Apparel_Bandolier,Leather_Dog,torso outer,0.4266,0.081,0.024,0.15,1.4,1.6,65,1.5,1.0,3500,162.6,75,1.43
+Apparel_Bandolier,Leather_Wolf,torso outer,0.4266,0.102,0.024,0.15,2.4,1.6,65,1.5,1.0,3500,240,75,1.565
+Apparel_Bandolier,Leather_Panthera,torso outer,0.4266,0.093,0.024,0.15,1.6,2.4,65,1.5,1.0,3500,240,75,1.507
+Apparel_Bandolier,Leather_Camel,torso outer,0.4266,0.081,0.024,0.15,1.6,2.4,65,1.5,1.0,3500,185.1,75,1.43
+Apparel_Bandolier,Leather_Bluefur,torso outer,0.4266,0.081,0.024,0.15,2.0,1.6,65,1.5,1.0,3500,185.1,75,1.43
+Apparel_Bandolier,Leather_Bear,torso outer,0.4266,0.112,0.024,0.15,2.0,2.0,65,1.5,1.0,3500,270,75,1.629
+Apparel_Bandolier,Leather_GuineaPig,torso outer,0.4266,0.067,0.014,0.15,3.8,1.8,30,1.5,1.0,3500,390,75,1.261
+Apparel_Bandolier,Leather_Human,torso outer,0.4266,0.064,0.024,0.15,1.2,1.2,65,1.5,1.0,3500,330,75,1.321
+Apparel_Bandolier,Leather_Pig,torso outer,0.4266,0.064,0.024,0.15,1.2,1.2,65,1.5,1.0,3500,155.1,75,1.321
+Apparel_Bandolier,Leather_Light,torso outer,0.4266,0.054,0.014,0.15,1.2,1.2,50,1.5,1.0,3500,155.1,75,1.177
+Apparel_Bandolier,Leather_Bird,torso outer,0.4266,0.067,0.014,0.15,1.0,1.0,50,1.5,1.0,3500,147.6,75,1.261
+Apparel_Bandolier,Leather_Chinchilla,torso outer,0.4266,0.067,0.014,0.15,3.0,1.6,50,1.5,1.0,3500,500,75,1.261
+Apparel_Bandolier,Leather_Fox,torso outer,0.4266,0.081,0.021,0.15,2.0,1.6,50,1.5,1.0,3500,275,75,1.406
+Apparel_Bandolier,Leather_Lizard,torso outer,0.4266,0.081,0.027,0.15,1.2,1.2,50,1.5,1.0,3500,170.1,75,1.454
+Apparel_Bandolier,Leather_Elephant,torso outer,0.4266,0.112,0.024,0.15,1.4,1.2,75,1.5,1.0,3500,240,75,1.629
+Apparel_Bandolier,Leather_Heavy,torso outer,0.4266,0.124,0.024,0.15,3.0,1.4,75,1.5,1.0,3500,260,75,1.705
+Apparel_Bandolier,Leather_Rhinoceros,torso outer,0.4266,0.129,0.024,0.15,1.4,1.4,75,1.5,1.0,3500,330,75,1.737
+Apparel_Bandolier,Leather_Thrumbo,torso outer,0.4266,0.208,0.036,0.15,3.4,2.2,100,1.5,1.0,3500,1065,75,2.71
+Apparel_Bandolier,Leather_Patch,torso outer,0.4266,0.045,0.019,0.09,0.9,0.9,50,1.5,1.0,3500,125.1,75,0.872
+Apparel_Bandolier,Leather_Dread,torso outer,0.4266,0.127,0.024,0.15,2.0,1.2,65,1.5,1.0,3500,275,75,1.725
+Apparel_Bandolier,WoolMastodon,torso outer,0.4266,0.036,0,0.11,3.2,1.4,50,1.5,1.7,3500,215,75,0.758
+Apparel_Bandolier,WoolMuskox,torso outer,0.4266,0.036,0,0.11,3.0,1.0,50,1.5,1.7,3500,215,75,0.758
+Apparel_Bandolier,Leather_Mastodon,torso outer,0.4266,0.112,0.024,0.15,3.0,1.2,75,1.5,1.0,3500,240,75,1.629
+Apparel_Bandolier,Leather_Sealskin,torso outer,0.4266,0.081,0.024,0.15,3.6,2.0,50,1.5,1.0,3500,315,75,1.43
+Apparel_Bandolier,Leather_AlphaThrumbo,torso outer,0.4266,0.212,0.04,0.15,3.6,2.4,110,1.5,1.0,3500,1515,75,2.793
+Apparel_Bandolier,Leather_Mink,torso outer,0.4266,0.067,0.014,0.15,3.2,1.2,50,1.5,1.0,3500,405,75,1.261
+Apparel_Bandolier,Leather_Hippo,torso outer,0.4266,0.112,0.024,0.15,1.4,1.6,75,1.5,1.0,3500,290,75,1.629
+Apparel_Bandolier,Leather_Armadillo,torso outer,0.4266,0.124,0.024,0.15,1.6,1.8,65,1.5,1.0,3500,255,75,1.705
+Apparel_Sash,Cloth,torso vest,0.4266,0.036,0,0.018,1.8,1.8,50,0.5,1.2,1000,41.1,25,0.317
+Apparel_Sash,Synthread,torso vest,0.4266,0.094,0.026,0.09,2.2,2.2,65,0.5,0.7,1000,103.6,25,1.241
+Apparel_Sash,DevilstrandCloth,torso vest,0.4266,0.14,0.036,0.3,2.0,2.4,65,0.5,0.4,1000,141.1,25,2.624
+Apparel_Sash,Hyperweave,torso vest,0.4266,0.2,0.054,0.288,2.6,2.6,120,0.5,0.4,1000,230,25,3.414
+Apparel_Sash,WoolSheep,torso vest,0.4266,0.036,0,0.11,2.6,1.0,50,0.5,1.7,1000,71.1,25,0.758
+Apparel_Sash,WoolAlpaca,torso vest,0.4266,0.036,0,0.11,3.0,1.6,50,0.5,1.7,1000,98.6,25,0.758
+Apparel_Sash,WoolMegasloth,torso vest,0.4266,0.08,0,0.11,3.4,1.2,50,0.5,1.7,1000,71.1,25,1.04
+Apparel_Sash,WoolMuffalo,torso vest,0.4266,0.036,0,0.11,2.8,1.2,50,0.5,1.7,1000,71.1,25,0.758
+Apparel_Sash,WoolBison,torso vest,0.4266,0.036,0,0.11,2.6,1.2,50,0.5,1.7,1000,71.1,25,0.758
+Apparel_Sash,Leather_Plain,torso vest,0.4266,0.081,0.024,0.15,1.6,1.6,65,0.5,1.0,1000,56.1,25,1.43
+Apparel_Sash,Leather_Dog,torso vest,0.4266,0.081,0.024,0.15,1.4,1.6,65,0.5,1.0,1000,53.6,25,1.43
+Apparel_Sash,Leather_Wolf,torso vest,0.4266,0.102,0.024,0.15,2.4,1.6,65,0.5,1.0,1000,78.6,25,1.565
+Apparel_Sash,Leather_Panthera,torso vest,0.4266,0.093,0.024,0.15,1.6,2.4,65,0.5,1.0,1000,78.6,25,1.507
+Apparel_Sash,Leather_Camel,torso vest,0.4266,0.081,0.024,0.15,1.6,2.4,65,0.5,1.0,1000,61.1,25,1.43
+Apparel_Sash,Leather_Bluefur,torso vest,0.4266,0.081,0.024,0.15,2.0,1.6,65,0.5,1.0,1000,61.1,25,1.43
+Apparel_Sash,Leather_Bear,torso vest,0.4266,0.112,0.024,0.15,2.0,2.0,65,0.5,1.0,1000,88.6,25,1.629
+Apparel_Sash,Leather_GuineaPig,torso vest,0.4266,0.067,0.014,0.15,3.8,1.8,30,0.5,1.0,1000,128.6,25,1.261
+Apparel_Sash,Leather_Human,torso vest,0.4266,0.064,0.024,0.15,1.2,1.2,65,0.5,1.0,1000,108.6,25,1.321
+Apparel_Sash,Leather_Pig,torso vest,0.4266,0.064,0.024,0.15,1.2,1.2,65,0.5,1.0,1000,51.1,25,1.321
+Apparel_Sash,Leather_Light,torso vest,0.4266,0.054,0.014,0.15,1.2,1.2,50,0.5,1.0,1000,51.1,25,1.177
+Apparel_Sash,Leather_Bird,torso vest,0.4266,0.067,0.014,0.15,1.0,1.0,50,0.5,1.0,1000,48.6,25,1.261
+Apparel_Sash,Leather_Chinchilla,torso vest,0.4266,0.067,0.014,0.15,3.0,1.6,50,0.5,1.0,1000,166.1,25,1.261
+Apparel_Sash,Leather_Fox,torso vest,0.4266,0.081,0.021,0.15,2.0,1.6,50,0.5,1.0,1000,91.1,25,1.406
+Apparel_Sash,Leather_Lizard,torso vest,0.4266,0.081,0.027,0.15,1.2,1.2,50,0.5,1.0,1000,56.1,25,1.454
+Apparel_Sash,Leather_Elephant,torso vest,0.4266,0.112,0.024,0.15,1.4,1.2,75,0.5,1.0,1000,78.6,25,1.629
+Apparel_Sash,Leather_Heavy,torso vest,0.4266,0.124,0.024,0.15,3.0,1.4,75,0.5,1.0,1000,86.1,25,1.705
+Apparel_Sash,Leather_Rhinoceros,torso vest,0.4266,0.129,0.024,0.15,1.4,1.4,75,0.5,1.0,1000,108.6,25,1.737
+Apparel_Sash,Leather_Thrumbo,torso vest,0.4266,0.208,0.036,0.15,3.4,2.2,100,0.5,1.0,1000,355,25,2.71
+Apparel_Sash,Leather_Patch,torso vest,0.4266,0.045,0.019,0.09,0.9,0.9,50,0.5,1.0,1000,41.1,25,0.872
+Apparel_Sash,Leather_Dread,torso vest,0.4266,0.127,0.024,0.15,2.0,1.2,65,0.5,1.0,1000,91.1,25,1.725
+Apparel_Sash,WoolMastodon,torso vest,0.4266,0.036,0,0.11,3.2,1.4,50,0.5,1.7,1000,71.1,25,0.758
+Apparel_Sash,WoolMuskox,torso vest,0.4266,0.036,0,0.11,3.0,1.0,50,0.5,1.7,1000,71.1,25,0.758
+Apparel_Sash,Leather_Mastodon,torso vest,0.4266,0.112,0.024,0.15,3.0,1.2,75,0.5,1.0,1000,78.6,25,1.629
+Apparel_Sash,Leather_Sealskin,torso vest,0.4266,0.081,0.024,0.15,3.6,2.0,50,0.5,1.0,1000,103.6,25,1.43
+Apparel_Sash,Leather_AlphaThrumbo,torso vest,0.4266,0.212,0.04,0.15,3.6,2.4,110,0.5,1.0,1000,505,25,2.793
+Apparel_Sash,Leather_Mink,torso vest,0.4266,0.067,0.014,0.15,3.2,1.2,50,0.5,1.0,1000,133.6,25,1.261
+Apparel_Sash,Leather_Hippo,torso vest,0.4266,0.112,0.024,0.15,1.4,1.6,75,0.5,1.0,1000,96.1,25,1.629
+Apparel_Sash,Leather_Armadillo,torso vest,0.4266,0.124,0.024,0.15,1.6,1.8,65,0.5,1.0,1000,83.6,25,1.705
+Apparel_CultistMask,Bioferrite,helmet,0.06,0.33,0.15,0.15,0.5,0.0,160,1.4,0.75,7500,45.75,25,0.756
+Apparel_CeremonialCultistMask,Cloth,helmet,0.06,0.144,0,0.072,9.0,1.8,90,0.1,1.2,2000,44.7,20,0.178
+Apparel_CeremonialCultistMask,Synthread,helmet,0.06,0.376,0.104,0.36,11.0,2.2,117,0.1,0.7,2000,94.7,20,0.97
+Apparel_CeremonialCultistMask,DevilstrandCloth,helmet,0.06,0.56,0.144,1.2,10.0,2.4,117,0.1,0.4,2000,124.7,20,1.989
+Apparel_CeremonialCultistMask,Hyperweave,helmet,0.06,0.8,0.216,1.152,13.0,2.6,215,0.1,0.4,2000,194.7,20,2.707
+Apparel_CeremonialCultistMask,WoolSheep,helmet,0.06,0.144,0,0.44,13.0,1.0,90,0.1,1.7,2000,68.7,20,0.427
+Apparel_CeremonialCultistMask,WoolAlpaca,helmet,0.06,0.144,0,0.44,15.0,1.6,90,0.1,1.7,2000,90.7,20,0.427
+Apparel_CeremonialCultistMask,WoolMegasloth,helmet,0.06,0.32,0,0.44,17.0,1.2,90,0.1,1.7,2000,68.7,20,0.756
+Apparel_CeremonialCultistMask,WoolMuffalo,helmet,0.06,0.144,0,0.44,14.0,1.2,90,0.1,1.7,2000,68.7,20,0.427
+Apparel_CeremonialCultistMask,WoolBison,helmet,0.06,0.144,0,0.44,13.0,1.2,90,0.1,1.7,2000,68.7,20,0.427
+Apparel_CeremonialCultistMask,WoolMastodon,helmet,0.06,0.144,0,0.44,16.0,1.4,90,0.1,1.7,2000,68.7,20,0.427
+Apparel_CeremonialCultistMask,WoolMuskox,helmet,0.06,0.144,0,0.44,15.0,1.0,90,0.1,1.7,2000,68.7,20,0.427
+Apparel_LabCoat,Cloth,torso outer,0.6341,0.072,0,0.036,9.0,10.8,140,1.5,1.2,5000,123.0,70,0.942
+Apparel_LabCoat,Synthread,torso outer,0.6341,0.188,0.052,0.18,11.0,13.2,182,1.5,0.7,5000,300,70,4.052
+Apparel_LabCoat,DevilstrandCloth,torso outer,0.6341,0.28,0.072,0.6,10.0,14.4,182,1.5,0.4,5000,405,70,9.036
+Apparel_LabCoat,Hyperweave,torso outer,0.6341,0.4,0.108,0.576,13.0,15.6,335,1.5,0.4,5000,650,70,12.527
+Apparel_LabCoat,WoolSheep,torso outer,0.6341,0.072,0,0.22,13.0,6.0,140,1.5,1.7,5000,205,70,2.254
+Apparel_LabCoat,WoolAlpaca,torso outer,0.6341,0.072,0,0.22,15.0,9.6,140,1.5,1.7,5000,285,70,2.254
+Apparel_LabCoat,WoolMegasloth,torso outer,0.6341,0.16,0,0.22,17.0,7.2,140,1.5,1.7,5000,205,70,3.186
+Apparel_LabCoat,WoolMuffalo,torso outer,0.6341,0.072,0,0.22,14.0,7.2,140,1.5,1.7,5000,205,70,2.254
+Apparel_LabCoat,WoolBison,torso outer,0.6341,0.072,0,0.22,13.0,7.2,140,1.5,1.7,5000,205,70,2.254
+Apparel_LabCoat,Leather_Plain,torso outer,0.6341,0.162,0.048,0.3,8.0,9.6,182,1.5,1.0,5000,165.0,70,4.366
+Apparel_LabCoat,Leather_Dog,torso outer,0.6341,0.162,0.048,0.3,7.0,9.6,182,1.5,1.0,5000,158.0,70,4.366
+Apparel_LabCoat,Leather_Wolf,torso outer,0.6341,0.204,0.048,0.3,12.0,9.6,182,1.5,1.0,5000,230,70,5.165
+Apparel_LabCoat,Leather_Panthera,torso outer,0.6341,0.186,0.048,0.3,8.0,14.4,182,1.5,1.0,5000,230,70,4.823
+Apparel_LabCoat,Leather_Camel,torso outer,0.6341,0.162,0.048,0.3,8.0,14.4,182,1.5,1.0,5000,179.0,70,4.366
+Apparel_LabCoat,Leather_Bluefur,torso outer,0.6341,0.162,0.048,0.3,10.0,9.6,182,1.5,1.0,5000,179.0,70,4.366
+Apparel_LabCoat,Leather_Bear,torso outer,0.6341,0.224,0.048,0.3,10.0,12.0,182,1.5,1.0,5000,255,70,5.545
+Apparel_LabCoat,Leather_GuineaPig,torso outer,0.6341,0.134,0.028,0.3,19.0,10.8,84,1.5,1.0,5000,370,70,3.748
+Apparel_LabCoat,Leather_Human,torso outer,0.6341,0.128,0.048,0.3,6.0,7.2,182,1.5,1.0,5000,310,70,3.928
+Apparel_LabCoat,Leather_Pig,torso outer,0.6341,0.128,0.048,0.3,6.0,7.2,182,1.5,1.0,5000,151.0,70,3.928
+Apparel_LabCoat,Leather_Light,torso outer,0.6341,0.108,0.028,0.3,6.0,7.2,140,1.5,1.0,5000,151.0,70,3.5
+Apparel_LabCoat,Leather_Bird,torso outer,0.6341,0.134,0.028,0.3,5.0,6.0,140,1.5,1.0,5000,144.0,70,3.748
+Apparel_LabCoat,Leather_Chinchilla,torso outer,0.6341,0.134,0.028,0.3,15.0,9.6,140,1.5,1.0,5000,475,70,3.748
+Apparel_LabCoat,Leather_Fox,torso outer,0.6341,0.162,0.042,0.3,10.0,9.6,140,1.5,1.0,5000,265,70,4.295
+Apparel_LabCoat,Leather_Lizard,torso outer,0.6341,0.162,0.054,0.3,6.0,7.2,140,1.5,1.0,5000,165.0,70,4.437
+Apparel_LabCoat,Leather_Elephant,torso outer,0.6341,0.224,0.048,0.3,7.0,7.2,210,1.5,1.0,5000,230,70,5.545
+Apparel_LabCoat,Leather_Heavy,torso outer,0.6341,0.248,0.048,0.3,15.0,8.4,210,1.5,1.0,5000,250,70,6.002
+Apparel_LabCoat,Leather_Rhinoceros,torso outer,0.6341,0.258,0.048,0.3,7.0,8.4,210,1.5,1.0,5000,310,70,6.192
+Apparel_LabCoat,Leather_Thrumbo,torso outer,0.6341,0.416,0.072,0.3,17.0,13.2,280,1.5,1.0,5000,1000,70,10.587
+Apparel_LabCoat,Leather_Patch,torso outer,0.6341,0.09,0.038,0.18,4.5,5.4,140,1.5,1.0,5000,123.0,70,2.592
+Apparel_LabCoat,Leather_Dread,torso outer,0.6341,0.254,0.048,0.3,10.0,7.2,182,1.5,1.0,5000,265,70,6.116
+Apparel_LabCoat,WoolMastodon,torso outer,0.6341,0.072,0,0.22,16.0,8.4,140,1.5,1.7,5000,205,70,2.254
+Apparel_LabCoat,WoolMuskox,torso outer,0.6341,0.072,0,0.22,15.0,6.0,140,1.5,1.7,5000,205,70,2.254
+Apparel_LabCoat,Leather_Mastodon,torso outer,0.6341,0.224,0.048,0.3,15.0,7.2,210,1.5,1.0,5000,230,70,5.545
+Apparel_LabCoat,Leather_Sealskin,torso outer,0.6341,0.162,0.048,0.3,18.0,12.0,140,1.5,1.0,5000,300,70,4.366
+Apparel_LabCoat,Leather_AlphaThrumbo,torso outer,0.6341,0.424,0.08,0.3,18.0,14.4,310,1.5,1.0,5000,1420,70,10.91
+Apparel_LabCoat,Leather_Mink,torso outer,0.6341,0.134,0.028,0.3,16.0,7.2,140,1.5,1.0,5000,380,70,3.748
+Apparel_LabCoat,Leather_Hippo,torso outer,0.6341,0.224,0.048,0.3,7.0,9.6,210,1.5,1.0,5000,275,70,5.545
+Apparel_LabCoat,Leather_Armadillo,torso outer,0.6341,0.248,0.048,0.3,8.0,10.8,182,1.5,1.0,5000,240,70,6.002

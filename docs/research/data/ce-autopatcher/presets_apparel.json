@@ -1,0 +1,490 @@
+[
+ {
+  "ArmorCurveBlunt": [
+   [
+    0.6,
+    9.0
+   ],
+   [
+    0.7,
+    10.0
+   ],
+   [
+    0.8,
+    11.0
+   ],
+   [
+    0.9,
+    12.0
+   ]
+  ],
+  "ArmorCurveSharp": [
+   [
+    0.6,
+    9.0
+   ],
+   [
+    0.7,
+    10.0
+   ],
+   [
+    0.8,
+    11.0
+   ],
+   [
+    0.9,
+    12.0
+   ]
+  ],
+  "ArmorStaticBlunt": 12.0,
+  "ArmorStaticSharp": 8.0,
+  "Bulk": 4.0,
+  "BulkWorn": 1.0,
+  "Mass": 1.0,
+  "_file": "Helmets.xml",
+  "defName": "Helmet",
+  "neededGroups": [
+   "UpperHead"
+  ],
+  "neededLayers": [
+   "Overhead"
+  ],
+  "partialStats": [
+   {
+    "ArmorRating_Sharp": 2.0,
+    "parts": [
+     "Neck",
+     "Brain"
+    ],
+    "useStatic": "true"
+   }
+  ],
+  "vanillaArmorRatingRange": [
+   0.6,
+   0.9
+  ]
+ },
+ {
+  "ArmorCurveBlunt": [
+   [
+    0.35,
+    1.1
+   ],
+   [
+    0.45,
+    3.2
+   ],
+   [
+    0.55,
+    6.4
+   ],
+   [
+    0.59,
+    8.65
+   ]
+  ],
+  "ArmorCurveSharp": [
+   [
+    0.35,
+    1.0
+   ],
+   [
+    0.45,
+    2.0
+   ],
+   [
+    0.55,
+    4.0
+   ],
+   [
+    0.59,
+    6.0
+   ]
+  ],
+  "Bulk": 4.0,
+  "BulkWorn": 1.0,
+  "Mass": 1.0,
+  "_file": "Helmets.xml",
+  "defName": "LightHelmet",
+  "neededGroups": [
+   "UpperHead"
+  ],
+  "neededLayers": [
+   "Overhead"
+  ],
+  "partialStats": [],
+  "vanillaArmorRatingRange": [
+   0.35,
+   0.59
+  ]
+ },
+ {
+  "ArmorCurveBlunt": [
+   [
+    0.0,
+    0.0
+   ],
+   [
+    0.35,
+    0.5
+   ]
+  ],
+  "ArmorCurveSharp": [
+   [
+    0.0,
+    0.0
+   ],
+   [
+    0.35,
+    0.25
+   ]
+  ],
+  "Bulk": 1.0,
+  "BulkWorn": 1.0,
+  "Mass": 1.0,
+  "_file": "Helmets.xml",
+  "defName": "Hat",
+  "neededGroups": [
+   "UpperHead"
+  ],
+  "neededLayers": [
+   "Overhead"
+  ],
+  "partialStats": [],
+  "vanillaArmorRatingRange": [
+   0.0,
+   0.35
+  ]
+ },
+ {
+  "ArmorCurveBlunt": [
+   [
+    0.08,
+    1.5
+   ],
+   [
+    0.16,
+    3.0
+   ]
+  ],
+  "ArmorCurveSharp": [
+   [
+    0.4,
+    4.0
+   ],
+   [
+    0.8,
+    8.0
+   ]
+  ],
+  "ArmorStaticBlunt": 12.0,
+  "ArmorStaticSharp": 8.0,
+  "Bulk": 5.0,
+  "BulkWorn": 5.0,
+  "Mass": 4.0,
+  "_file": "TorsoSets.xml",
+  "defName": "ArmorVestJacket",
+  "neededGroups": [
+   "Torso",
+   "Neck",
+   "Shoulders",
+   "Arms"
+  ],
+  "neededLayers": [
+   "Shell"
+  ],
+  "partialStats": [
+   {
+    "ArmorRating_Sharp": 0.75,
+    "parts": [
+     "Arm"
+    ]
+   }
+  ],
+  "vanillaArmorRatingRange": [
+   0.4,
+   1.5
+  ]
+ },
+ {
+  "ArmorCurveBlunt": [
+   [
+    0.08,
+    0.14
+   ],
+   [
+    0.16,
+    0.85
+   ]
+  ],
+  "ArmorCurveSharp": [
+   [
+    0.2,
+    0.08
+   ],
+   [
+    0.45,
+    0.6
+   ]
+  ],
+  "Bulk": 5.0,
+  "BulkWorn": 1.0,
+  "_file": "TorsoSets.xml",
+  "defName": "LeatherJacket",
+  "neededGroups": [
+   "Torso",
+   "Neck",
+   "Shoulders",
+   "Arms"
+  ],
+  "neededLayers": [
+   "Shell"
+  ],
+  "partialStats": [],
+  "vanillaArmorRatingRange": [
+   0.2,
+   0.45
+  ]
+ },
+ {
+  "ArmorCurveBlunt": [
+   [
+    0.08,
+    0.14
+   ],
+   [
+    0.16,
+    0.85
+   ]
+  ],
+  "ArmorCurveSharp": [
+   [
+    0.2,
+    0.08
+   ],
+   [
+    0.45,
+    0.6
+   ]
+  ],
+  "Bulk": 1.0,
+  "BulkWorn": 1.0,
+  "_file": "TorsoSets.xml",
+  "defName": "ShellClothing",
+  "neededGroups": [
+   "Torso",
+   "Neck",
+   "Shoulders",
+   "Arms"
+  ],
+  "neededLayers": [
+   "Shell"
+  ],
+  "partialStats": [],
+  "vanillaArmorRatingRange": [
+   0.2,
+   0.45
+  ]
+ },
+ {
+  "ArmorCurveBlunt": [
+   [
+    0.0,
+    0.0
+   ],
+   [
+    0.08,
+    0.08
+   ],
+   [
+    0.28,
+    0.25
+   ]
+  ],
+  "ArmorCurveSharp": [
+   [
+    0.08,
+    0.04
+   ],
+   [
+    0.28,
+    0.15
+   ]
+  ],
+  "Bulk": 1.0,
+  "BulkWorn": 1.0,
+  "_file": "TorsoSets.xml",
+  "defName": "MiddleClothing",
+  "neededGroups": [
+   "Torso",
+   "Shoulders",
+   "Arms"
+  ],
+  "neededLayers": [
+   "Middle"
+  ],
+  "partialStats": [],
+  "vanillaArmorRatingRange": [
+   0.08,
+   0.28
+  ]
+ },
+ {
+  "ArmorCurveBlunt": [
+   [
+    0.1,
+    0.18
+   ],
+   [
+    0.35,
+    0.45
+   ]
+  ],
+  "ArmorCurveSharp": [
+   [
+    0.1,
+    0.05
+   ],
+   [
+    0.35,
+    0.25
+   ]
+  ],
+  "Bulk": 1.0,
+  "BulkWorn": 1.0,
+  "_file": "TorsoSets.xml",
+  "defName": "SkinClothing",
+  "neededGroups": [
+   "Torso",
+   "Shoulders",
+   "Arms"
+  ],
+  "neededLayers": [
+   "OnSkin"
+  ],
+  "partialStats": [],
+  "vanillaArmorRatingRange": [
+   0.1,
+   0.35
+  ]
+ },
+ {
+  "ArmorCurveBlunt": [
+   [
+    0.1,
+    0.18
+   ],
+   [
+    0.35,
+    0.45
+   ]
+  ],
+  "ArmorCurveSharp": [
+   [
+    0.1,
+    0.05
+   ],
+   [
+    0.35,
+    0.25
+   ]
+  ],
+  "Bulk": 1.0,
+  "BulkWorn": 1.0,
+  "_file": "TorsoSets.xml",
+  "defName": "PantsClothing",
+  "neededGroups": [
+   "Legs"
+  ],
+  "neededLayers": [
+   "OnSkin"
+  ],
+  "partialStats": [],
+  "vanillaArmorRatingRange": [
+   0.1,
+   0.35
+  ]
+ },
+ {
+  "ArmorCurveBlunt": [
+   [
+    1.0,
+    12.0
+   ],
+   [
+    2.0,
+    24.0
+   ]
+  ],
+  "ArmorCurveSharp": [
+   [
+    1.0,
+    8.0
+   ],
+   [
+    2.0,
+    16.0
+   ]
+  ],
+  "ArmorStaticBlunt": 12.0,
+  "ArmorStaticSharp": 8.0,
+  "Bulk": 5.0,
+  "BulkWorn": 3.0,
+  "Mass": 13.0,
+  "_file": "Vests.xml",
+  "defName": "ArmorVest",
+  "neededGroups": [
+   "Torso",
+   "Neck",
+   "Shoulders"
+  ],
+  "neededLayers": [
+   "Middle"
+  ],
+  "partialStats": [],
+  "vanillaArmorRatingRange": [
+   1.0,
+   2.0
+  ]
+ },
+ {
+  "ArmorCurveBlunt": [
+   [
+    0.55,
+    2.65
+   ],
+   [
+    0.99,
+    14.0
+   ]
+  ],
+  "ArmorCurveSharp": [
+   [
+    0.55,
+    1.5
+   ],
+   [
+    0.99,
+    8.0
+   ]
+  ],
+  "Bulk": 5.0,
+  "BulkWorn": 1.0,
+  "Mass": 3.0,
+  "_file": "Vests.xml",
+  "defName": "LightArmorVest",
+  "neededGroups": [
+   "Torso",
+   "Neck",
+   "Shoulders"
+  ],
+  "neededLayers": [
+   "Middle"
+  ],
+  "partialStats": [],
+  "vanillaArmorRatingRange": [
+   0.55,
+   0.99
+  ]
+ }
+]

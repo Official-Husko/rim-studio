@@ -1,0 +1,820 @@
+[
+ {
+  "AmmoCapacity": 30.0,
+  "Bulk": 10.0,
+  "CaliberRanges": [
+   {
+    "AmmoSet": "AmmoSet_556x45mmNATO",
+    "DamageRange": [
+     9.0,
+     12.0
+    ],
+    "SpeedRange": [
+     64.0,
+     76.0
+    ]
+   },
+   {
+    "AmmoSet": "AmmoSet_545x39mmSoviet",
+    "DamageRange": [
+     7.0,
+     10.0
+    ],
+    "SpeedRange": [
+     61.0,
+     70.0
+    ]
+   },
+   {
+    "AmmoSet": "AmmoSet_762x39mmSoviet",
+    "DamageRange": [
+     9.0,
+     14.0
+    ],
+    "SpeedRange": [
+     58.0,
+     66.0
+    ]
+   },
+   {
+    "AmmoSet": "AmmoSet_762x51mmNATO",
+    "DamageRange": [
+     13.0,
+     18.0
+    ],
+    "SpeedRange": [
+     60.0,
+     68.0
+    ]
+   },
+   {
+    "AmmoSet": "AmmoSet_762x54mmR",
+    "DamageRange": [
+     13.0,
+     18.0
+    ],
+    "SpeedRange": [
+     58.0,
+     66.0
+    ]
+   }
+  ],
+  "DetermineCaliber": true,
+  "DiscardDesignations": false,
+  "Mass": 3.25,
+  "MassCurve": [
+   [
+    3.5,
+    3.25
+   ],
+   [
+    2.1,
+    2.7
+   ]
+  ],
+  "MiscOtherStats": {},
+  "RangeRange": [
+   22.0,
+   34.0
+  ],
+  "ReloadTime": 4.0,
+  "Spread": 0.07,
+  "Sway": 1.3,
+  "WarmupRange": [
+   0.8,
+   1.6
+  ],
+  "_file": "AssaultRifle.xml",
+  "addBipods": false,
+  "addTags": [],
+  "cooldownCurve": [
+   [
+    1.7,
+    0.36
+   ]
+  ],
+  "damageRange": [
+   8.0,
+   18.0
+  ],
+  "defName": "AssaultRifle",
+  "fireModes": {
+   "aiAimMode": "AimedShot",
+   "aiUseBurstMode": "TRUE",
+   "aimedBurstShotCount": "3"
+  },
+  "gunStats": {
+   "burstShotCount": "6",
+   "defaultProjectile": "Bullet_556x45mmNATO_FMJ",
+   "hasStandardCommand": "true",
+   "muzzleFlashScale": "9",
+   "range": "55",
+   "recoilAmount": "1.53",
+   "soundCast": "Shot_AssaultRifle",
+   "soundCastTail": "GunTail_Medium",
+   "ticksBetweenBurstShots": "5",
+   "verbClass": "CombatExtended.Verb_ShootCE",
+   "warmupTime": "1.1"
+  },
+  "names": [
+   "m16a1",
+   "m16a2",
+   "m16a3",
+   "m16a4",
+   "ak47",
+   "ak74",
+   "akm"
+  ],
+  "projSpeedRange": [
+   60.0,
+   80.0
+  ],
+  "rangeCurve": [
+   [
+    30.9,
+    55.0
+   ]
+  ],
+  "reloadOneAtATime": false,
+  "setCaliber": "AmmoSet_556x45mmNATO",
+  "specialGuns": [],
+  "tags": [
+   "AssaultRifle"
+  ],
+  "warmupCurve": [
+   [
+    1.0,
+    1.1
+   ]
+  ]
+ },
+ {
+  "AmmoCapacity": 50.0,
+  "Bulk": 14.0,
+  "CaliberRanges": [
+   {
+    "AmmoSet": "AmmoSet_556x45mmNATO",
+    "DamageRange": [
+     9.0,
+     12.0
+    ],
+    "SpeedRange": [
+     58.0,
+     72.0
+    ]
+   },
+   {
+    "AmmoSet": "AmmoSet_545x39mmSoviet",
+    "DamageRange": [
+     7.0,
+     10.0
+    ],
+    "SpeedRange": [
+     56.0,
+     70.0
+    ]
+   },
+   {
+    "AmmoSet": "AmmoSet_762x39mmSoviet",
+    "DamageRange": [
+     9.0,
+     14.0
+    ],
+    "SpeedRange": [
+     48.0,
+     62.0
+    ]
+   },
+   {
+    "AmmoSet": "AmmoSet_762x51mmNATO",
+    "DamageRange": [
+     13.0,
+     18.0
+    ],
+    "SpeedRange": [
+     52.0,
+     72.0
+    ]
+   },
+   {
+    "AmmoSet": "AmmoSet_762x54mmR",
+    "DamageRange": [
+     13.0,
+     18.0
+    ],
+    "SpeedRange": [
+     48.0,
+     68.0
+    ]
+   }
+  ],
+  "DetermineCaliber": true,
+  "DiscardDesignations": true,
+  "Mass": 9.0,
+  "MassCurve": [
+   [
+    9.12,
+    8.5
+   ]
+  ],
+  "MiscOtherStats": {},
+  "RangeRange": [
+   24.0,
+   34.0
+  ],
+  "ReloadTime": 4.9,
+  "Spread": 0.05,
+  "Sway": 1.53,
+  "WarmupRange": [
+   0.4,
+   0.81
+  ],
+  "_file": "MachineGun.xml",
+  "addBipods": true,
+  "addTags": [
+   "CE_AI_LMG"
+  ],
+  "bipodTag": "bipodLMG",
+  "cooldownCurve": [
+   [
+    1.8,
+    0.56
+   ]
+  ],
+  "damageRange": [
+   8.0,
+   17.0
+  ],
+  "defName": "MachineGun",
+  "fireModes": {
+   "aiAimMode": "SuppressFire",
+   "aiUseBurstMode": "FALSE",
+   "aimedBurstShotCount": "5"
+  },
+  "gunStats": {
+   "burstShotCount": "10",
+   "defaultProjectile": "Bullet_556x45mmNATO_FMJ",
+   "hasStandardCommand": "true",
+   "muzzleFlashScale": "10",
+   "range": "62",
+   "recoilAmount": "1.3",
+   "soundCast": "Shot_Minigun",
+   "soundCastTail": "GunTail_Medium",
+   "ticksBetweenBurstShots": "6",
+   "verbClass": "CombatExtended.Verb_ShootCE",
+   "warmupTime": "1.3"
+  },
+  "names": [
+   "lmg",
+   "machine gun"
+  ],
+  "projSpeedRange": [
+   48.0,
+   72.0
+  ],
+  "rangeCurve": [
+   [
+    25.9,
+    62.0
+   ]
+  ],
+  "reloadOneAtATime": false,
+  "setCaliber": "AmmoSet_556x45mmNATO",
+  "specialGuns": [],
+  "tags": [],
+  "warmupCurve": [
+   [
+    1.8,
+    1.3
+   ]
+  ]
+ },
+ {
+  "AmmoCapacity": 8.0,
+  "Bulk": 2.25,
+  "CaliberRanges": [
+   {
+    "AmmoSet": "AmmoSet_9x19mmPara",
+    "DamageRange": [
+     6.0,
+     8.0
+    ],
+    "SpeedRange": [
+     56.0,
+     60.0
+    ]
+   },
+   {
+    "AmmoSet": "AmmoSet_45ACP",
+    "DamageRange": [
+     8.0,
+     11.0
+    ],
+    "SpeedRange": [
+     52.0,
+     50.0
+    ]
+   },
+   {
+    "AmmoSet": "AmmoSet_FN57x28mm",
+    "DamageRange": [
+     7.0,
+     7.0
+    ],
+    "SpeedRange": [
+     61.0,
+     65.0
+    ]
+   }
+  ],
+  "DetermineCaliber": true,
+  "DiscardDesignations": true,
+  "Mass": 1.2,
+  "MassCurve": [
+   [
+    2.0,
+    1.11
+   ]
+  ],
+  "MiscOtherStats": {
+   "SightsEfficiency": 0.7
+  },
+  "RangeRange": [
+   20.0,
+   25.0
+  ],
+  "ReloadTime": 4.0,
+  "Spread": 0.17,
+  "Sway": 1.1,
+  "WarmupRange": [
+   0.4,
+   0.81
+  ],
+  "_file": "Pistol.xml",
+  "addBipods": false,
+  "addTags": [
+   "CE_OneHandedWeapon",
+   "CE_AI_BROOM"
+  ],
+  "cooldownCurve": [
+   [
+    1.0,
+    0.38
+   ]
+  ],
+  "damageRange": [
+   6.0,
+   15.0
+  ],
+  "defName": "Pistol",
+  "fireModes": {
+   "aiAimMode": "Snapshot",
+   "aiUseBurstMode": "FALSE"
+  },
+  "gunStats": {
+   "defaultProjectile": "Bullet_45ACP_FMJ",
+   "hasStandardCommand": "true",
+   "muzzleFlashScale": "9",
+   "range": "12",
+   "soundCast": "Shot_Autopistol",
+   "soundCastTail": "GunTail_Light",
+   "verbClass": "CombatExtended.Verb_ShootCE",
+   "warmupTime": "0.6"
+  },
+  "names": [
+   "pistol",
+   "glock"
+  ],
+  "projSpeedRange": [
+   54.0,
+   70.0
+  ],
+  "rangeCurve": [
+   [
+    25.9,
+    12.0
+   ],
+   [
+    22.5,
+    10.0
+   ]
+  ],
+  "reloadOneAtATime": false,
+  "setCaliber": "AmmoSet_45ACP",
+  "specialGuns": [
+   {
+    "bulk": 2.1,
+    "caliber": "AmmoSet_45ACP",
+    "magCap": 7.0,
+    "mass": 1.11,
+    "names": [
+     "m1911"
+    ],
+    "reloadTime": 4.0,
+    "stats": {}
+   }
+  ],
+  "tags": [],
+  "warmupCurve": [
+   [
+    0.3,
+    0.6
+   ]
+  ]
+ },
+ {
+  "AmmoCapacity": 6.0,
+  "Bulk": 2.5,
+  "CaliberRanges": [
+   {
+    "AmmoSet": "AmmoSet_44Magnum",
+    "DamageRange": [
+     10.0,
+     13.0
+    ],
+    "SpeedRange": [
+     52.0,
+     58.0
+    ]
+   },
+   {
+    "AmmoSet": "AmmoSet_357Magnum",
+    "DamageRange": [
+     7.0,
+     9.0
+    ],
+    "SpeedRange": [
+     54.0,
+     66.0
+    ]
+   },
+   {
+    "AmmoSet": "AmmoSet_38Special",
+    "DamageRange": [
+     5.0,
+     7.0
+    ],
+    "SpeedRange": [
+     46.0,
+     50.0
+    ]
+   }
+  ],
+  "DetermineCaliber": true,
+  "DiscardDesignations": false,
+  "Mass": 1.4,
+  "MassCurve": [
+   [
+    2.0,
+    1.96
+   ],
+   [
+    2.1,
+    2.7
+   ]
+  ],
+  "MiscOtherStats": {
+   "SightsEfficiency": 0.7
+  },
+  "RangeRange": [
+   10.0,
+   28.0
+  ],
+  "ReloadTime": 4.6,
+  "Spread": 0.2,
+  "Sway": 1.3,
+  "WarmupRange": [
+   0.2,
+   0.6
+  ],
+  "_file": "Revolver.xml",
+  "addBipods": false,
+  "addTags": [
+   "CE_OneHandedWeapon",
+   "CE_AI_BROOM"
+  ],
+  "cooldownCurve": [
+   [
+    1.6,
+    0.49
+   ]
+  ],
+  "damageRange": [
+   6.0,
+   15.0
+  ],
+  "defName": "Revolver",
+  "fireModes": {
+   "aiAimMode": "Snapshot",
+   "aiUseBurstMode": "FALSE"
+  },
+  "gunStats": {
+   "defaultProjectile": "Bullet_44Magnum_FMJ",
+   "hasStandardCommand": "true",
+   "muzzleFlashScale": "9",
+   "range": "12",
+   "soundCast": "Shot_Revolver",
+   "soundCastTail": "GunTail_Light",
+   "verbClass": "CombatExtended.Verb_ShootCE",
+   "warmupTime": "0.6"
+  },
+  "names": [
+   "revolver"
+  ],
+  "projSpeedRange": [
+   50.0,
+   68.0
+  ],
+  "rangeCurve": [
+   [
+    25.9,
+    12.0
+   ]
+  ],
+  "reloadOneAtATime": false,
+  "setCaliber": "AmmoSet_44Magnum",
+  "specialGuns": [],
+  "tags": [
+   "Revolver"
+  ],
+  "warmupCurve": [
+   [
+    0.3,
+    0.6
+   ]
+  ]
+ },
+ {
+  "AmmoCapacity": 30.0,
+  "Bulk": 4.5,
+  "CaliberRanges": [
+   {
+    "AmmoSet": "AmmoSet_9x19mmPara",
+    "DamageRange": [
+     9.0,
+     9.0
+    ],
+    "SpeedRange": [
+     56.0,
+     60.0
+    ]
+   },
+   {
+    "AmmoSet": "AmmoSet_45ACP",
+    "DamageRange": [
+     11.0,
+     14.0
+    ],
+    "SpeedRange": [
+     46.0,
+     54.0
+    ]
+   },
+   {
+    "AmmoSet": "AmmoSet_46x30mm",
+    "DamageRange": [
+     6.0,
+     6.0
+    ],
+    "SpeedRange": [
+     61.0,
+     65.0
+    ]
+   },
+   {
+    "AmmoSet": "AmmoSet_FN57x28mm",
+    "DamageRange": [
+     7.0,
+     7.0
+    ],
+    "SpeedRange": [
+     61.0,
+     65.0
+    ]
+   }
+  ],
+  "DetermineCaliber": true,
+  "DiscardDesignations": true,
+  "Mass": 2.5,
+  "MassCurve": [
+   [
+    2.0,
+    1.96
+   ],
+   [
+    2.1,
+    2.7
+   ]
+  ],
+  "MiscOtherStats": {},
+  "RangeRange": [
+   20.0,
+   25.0
+  ],
+  "ReloadTime": 4.0,
+  "Spread": 0.14,
+  "Sway": 0.93,
+  "WarmupRange": [
+   0.4,
+   0.81
+  ],
+  "_file": "SMG.xml",
+  "addBipods": false,
+  "addTags": [
+   "CE_AI_BROOM"
+  ],
+  "cooldownCurve": [
+   [
+    0.9,
+    0.36
+   ]
+  ],
+  "damageRange": [
+   6.0,
+   15.0
+  ],
+  "defName": "SMGs",
+  "fireModes": {
+   "aiAimMode": "Snapshot",
+   "aiUseBurstMode": "FALSE",
+   "aimedBurstShotCount": "3"
+  },
+  "gunStats": {
+   "burstShotCount": "6",
+   "defaultProjectile": "Bullet_9x19mmPara_FMJ",
+   "hasStandardCommand": "true",
+   "muzzleFlashScale": "9",
+   "range": "26",
+   "recoilAmount": "1.50",
+   "soundCast": "Shot_MachinePistol",
+   "soundCastTail": "GunTail_Heavy",
+   "ticksBetweenBurstShots": "5",
+   "verbClass": "CombatExtended.Verb_ShootCE",
+   "warmupTime": "0.6"
+  },
+  "names": [],
+  "projSpeedRange": [
+   54.0,
+   70.0
+  ],
+  "rangeCurve": [
+   [
+    25.0,
+    26.0
+   ],
+   [
+    22.5,
+    25.0
+   ]
+  ],
+  "reloadOneAtATime": false,
+  "setCaliber": "AmmoSet_9x19mmPara",
+  "specialGuns": [
+   {
+    "bulk": 6.5,
+    "caliber": "AmmoSet_FN57x28mm",
+    "magCap": 50.0,
+    "mass": 2.5,
+    "names": [
+     "p90"
+    ],
+    "reloadTime": 4.5,
+    "stats": {}
+   }
+  ],
+  "tags": [],
+  "warmupCurve": [
+   [
+    0.5,
+    0.6
+   ]
+  ]
+ },
+ {
+  "AmmoCapacity": 6.0,
+  "Bulk": 12.0,
+  "CaliberRanges": [
+   {
+    "AmmoSet": "AmmoSet_556x45mmNATO",
+    "DamageRange": [
+     16.0,
+     22.0
+    ],
+    "SpeedRange": [
+     88.0,
+     100.0
+    ]
+   },
+   {
+    "AmmoSet": "AmmoSet_762x39mmSoviet",
+    "DamageRange": [
+     19.0,
+     24.0
+    ],
+    "SpeedRange": [
+     84.0,
+     92.0
+    ]
+   },
+   {
+    "AmmoSet": "AmmoSet_762x51mmNATO",
+    "DamageRange": [
+     22.0,
+     30.0
+    ],
+    "SpeedRange": [
+     90.0,
+     116.0
+    ]
+   },
+   {
+    "AmmoSet": "AmmoSet_762x54mmR",
+    "DamageRange": [
+     26.0,
+     32.0
+    ],
+    "SpeedRange": [
+     100.0,
+     120.0
+    ]
+   }
+  ],
+  "DetermineCaliber": true,
+  "DiscardDesignations": true,
+  "Mass": 7.35,
+  "MassCurve": [
+   [
+    4.0,
+    7.35
+   ]
+  ],
+  "MiscOtherStats": {
+   "SightsEfficiency": 2.3
+  },
+  "RangeRange": [
+   68.0,
+   90.0
+  ],
+  "ReloadTime": 4.0,
+  "Spread": 0.05,
+  "Sway": 1.35,
+  "WarmupRange": [
+   2.0,
+   4.9
+  ],
+  "_file": "SniperRifle.xml",
+  "addBipods": true,
+  "addTags": [
+   "CE_AI_SR"
+  ],
+  "bipodTag": "bipodDMR",
+  "cooldownCurve": [
+   [
+    2.3,
+    2.3
+   ]
+  ],
+  "damageRange": [
+   18.0,
+   32.0
+  ],
+  "defName": "SniperRifle",
+  "fireModes": {
+   "aiAimMode": "AimedShot",
+   "aiUseBurstMode": "FALSE"
+  },
+  "gunStats": {
+   "defaultProjectile": "Bullet_762x51mmNATO_FMJ",
+   "hasStandardCommand": "true",
+   "muzzleFlashScale": "11",
+   "range": "75",
+   "soundCast": "Shot_SniperRifle",
+   "soundCastTail": "GunTail_Heavy",
+   "verbClass": "CombatExtended.Verb_ShootCE",
+   "warmupTime": "1.8"
+  },
+  "names": [],
+  "projSpeedRange": [
+   84.0,
+   120.0
+  ],
+  "rangeCurve": [
+   [
+    44.9,
+    75.0
+   ]
+  ],
+  "reloadOneAtATime": false,
+  "setCaliber": "AmmoSet_762x51mmNATO",
+  "specialGuns": [],
+  "tags": [
+   "SniperRifle"
+  ],
+  "warmupCurve": [
+   [
+    3.5,
+    1.8
+   ]
+  ]
+ }
+]

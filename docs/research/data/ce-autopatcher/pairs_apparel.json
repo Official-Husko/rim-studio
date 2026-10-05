@@ -1,0 +1,4446 @@
+[
+ {
+  "ce": {
+   "blunt": null,
+   "bulk": 4.0,
+   "groups": [
+    "Waist"
+   ],
+   "layers": [
+    "Belt"
+   ],
+   "mass": 3.0,
+   "partial": false,
+   "sema": null,
+   "sharp": null,
+   "stuffed": false,
+   "wornBulk": 2.0
+  },
+  "defName": "Apparel_ShieldBelt",
+  "groups": [
+   "Waist"
+  ],
+  "label": "shield belt",
+  "layers": [
+   "Belt"
+  ],
+  "mod": "Ludeon.RimWorld",
+  "stuffed": false,
+  "techLevel": "Spacer",
+  "v": {
+   "blunt": null,
+   "heat": null,
+   "marketValue": null,
+   "mass": 3.0,
+   "sema": null,
+   "sharp": null
+  }
+ },
+ {
+  "ce": {
+   "blunt": null,
+   "bulk": null,
+   "groups": [
+    "UpperHead"
+   ],
+   "layers": [
+    "Overhead"
+   ],
+   "mass": 0.14,
+   "partial": false,
+   "sema": 2.0,
+   "sharp": null,
+   "stuffed": true,
+   "wornBulk": null
+  },
+  "defName": "Apparel_CowboyHat",
+  "groups": [
+   "UpperHead"
+  ],
+  "label": "cowboy hat",
+  "layers": [
+   "Overhead"
+  ],
+  "mod": "Ludeon.RimWorld",
+  "stuffed": true,
+  "techLevel": "Medieval",
+  "v": {
+   "blunt": null,
+   "heat": null,
+   "marketValue": null,
+   "mass": 0.14,
+   "sema": 0.2,
+   "sharp": null
+  }
+ },
+ {
+  "ce": {
+   "blunt": null,
+   "bulk": null,
+   "groups": [
+    "UpperHead"
+   ],
+   "layers": [
+    "Overhead"
+   ],
+   "mass": 0.14,
+   "partial": false,
+   "sema": 2.0,
+   "sharp": null,
+   "stuffed": true,
+   "wornBulk": null
+  },
+  "defName": "Apparel_BowlerHat",
+  "groups": [
+   "UpperHead"
+  ],
+  "label": "bowler hat",
+  "layers": [
+   "Overhead"
+  ],
+  "mod": "Ludeon.RimWorld",
+  "stuffed": true,
+  "techLevel": "Medieval",
+  "v": {
+   "blunt": null,
+   "heat": null,
+   "marketValue": null,
+   "mass": 0.14,
+   "sema": 0.2,
+   "sharp": null
+  }
+ },
+ {
+  "ce": {
+   "blunt": null,
+   "bulk": null,
+   "groups": [
+    "UpperHead"
+   ],
+   "layers": [
+    "Overhead"
+   ],
+   "mass": 0.11,
+   "partial": false,
+   "sema": 5.0,
+   "sharp": null,
+   "stuffed": true,
+   "wornBulk": null
+  },
+  "defName": "Apparel_TribalHeaddress",
+  "groups": [
+   "UpperHead"
+  ],
+  "label": "tribal headdress",
+  "layers": [
+   "Overhead"
+  ],
+  "mod": "Ludeon.RimWorld",
+  "stuffed": true,
+  "techLevel": "Neolithic",
+  "v": {
+   "blunt": null,
+   "heat": null,
+   "marketValue": null,
+   "mass": 0.11,
+   "sema": 0.2,
+   "sharp": null
+  }
+ },
+ {
+  "ce": {
+   "blunt": null,
+   "bulk": null,
+   "groups": [
+    "UpperHead"
+   ],
+   "layers": [
+    "Overhead"
+   ],
+   "mass": 0.07,
+   "partial": false,
+   "sema": 2.0,
+   "sharp": null,
+   "stuffed": true,
+   "wornBulk": null
+  },
+  "defName": "Apparel_Tuque",
+  "groups": [
+   "UpperHead"
+  ],
+  "label": "tuque",
+  "layers": [
+   "Overhead"
+  ],
+  "mod": "Ludeon.RimWorld",
+  "stuffed": true,
+  "techLevel": "Medieval",
+  "v": {
+   "blunt": null,
+   "heat": null,
+   "marketValue": null,
+   "mass": 0.07,
+   "sema": 0.2,
+   "sharp": null
+  }
+ },
+ {
+  "ce": {
+   "blunt": null,
+   "bulk": null,
+   "groups": [
+    "FullHead"
+   ],
+   "layers": [
+    "Overhead"
+   ],
+   "mass": 1.4,
+   "partial": false,
+   "sema": 10.0,
+   "sharp": null,
+   "stuffed": true,
+   "wornBulk": null
+  },
+  "defName": "Apparel_WarMask",
+  "groups": [
+   "FullHead"
+  ],
+  "label": "war mask",
+  "layers": [
+   "Overhead"
+  ],
+  "mod": "Ludeon.RimWorld",
+  "stuffed": true,
+  "techLevel": "Neolithic",
+  "v": {
+   "blunt": null,
+   "heat": null,
+   "marketValue": null,
+   "mass": 1.4,
+   "sema": 0.3,
+   "sharp": null
+  }
+ },
+ {
+  "ce": {
+   "blunt": null,
+   "bulk": null,
+   "groups": [
+    "FullHead"
+   ],
+   "layers": [
+    "StrappedHead"
+   ],
+   "mass": 0.08,
+   "partial": false,
+   "sema": 1.0,
+   "sharp": null,
+   "stuffed": true,
+   "wornBulk": null
+  },
+  "defName": "Apparel_WarVeil",
+  "groups": [
+   "FullHead"
+  ],
+  "label": "veil",
+  "layers": [
+   "Overhead"
+  ],
+  "mod": "Ludeon.RimWorld",
+  "stuffed": true,
+  "techLevel": "Neolithic",
+  "v": {
+   "blunt": null,
+   "heat": null,
+   "marketValue": null,
+   "mass": 0.08,
+   "sema": 0.2,
+   "sharp": null
+  }
+ },
+ {
+  "ce": {
+   "blunt": null,
+   "bulk": 3.0,
+   "groups": [
+    "UpperHead"
+   ],
+   "layers": [
+    "Overhead"
+   ],
+   "mass": 2.0,
+   "partial": false,
+   "sema": 4.0,
+   "sharp": null,
+   "stuffed": true,
+   "wornBulk": 1.0
+  },
+  "defName": "Apparel_SimpleHelmet",
+  "groups": [
+   "UpperHead"
+  ],
+  "label": "simple helmet",
+  "layers": [
+   "Overhead"
+  ],
+  "mod": "Ludeon.RimWorld",
+  "stuffed": true,
+  "techLevel": "Industrial",
+  "v": {
+   "blunt": null,
+   "heat": null,
+   "marketValue": null,
+   "mass": 2.0,
+   "sema": 0.5,
+   "sharp": null
+  }
+ },
+ {
+  "ce": {
+   "blunt": 12.0,
+   "bulk": 4.0,
+   "groups": [
+    "UpperHead"
+   ],
+   "layers": [
+    "Overhead"
+   ],
+   "mass": 1.2,
+   "partial": false,
+   "sema": null,
+   "sharp": 8.0,
+   "stuffed": false,
+   "wornBulk": 1.0
+  },
+  "defName": "Apparel_AdvancedHelmet",
+  "groups": [
+   "UpperHead"
+  ],
+  "label": "flak helmet",
+  "layers": [
+   "Overhead"
+  ],
+  "mod": "Ludeon.RimWorld",
+  "stuffed": true,
+  "techLevel": "Industrial",
+  "v": {
+   "blunt": null,
+   "heat": null,
+   "marketValue": null,
+   "mass": 1.2,
+   "sema": 0.7,
+   "sharp": null
+  }
+ },
+ {
+  "ce": {
+   "blunt": 36.0,
+   "bulk": 5.0,
+   "groups": [
+    "FullHead"
+   ],
+   "layers": [
+    "Overhead",
+    "OnHead",
+    "StrappedHead"
+   ],
+   "mass": 4.8,
+   "partial": true,
+   "sema": null,
+   "sharp": 16.0,
+   "stuffed": false,
+   "wornBulk": 1.0
+  },
+  "defName": "Apparel_PowerArmorHelmet",
+  "groups": [
+   "FullHead"
+  ],
+  "label": "marine helmet",
+  "layers": [
+   "Overhead"
+  ],
+  "mod": "Ludeon.RimWorld",
+  "stuffed": false,
+  "techLevel": "Spacer",
+  "v": {
+   "blunt": 0.45,
+   "heat": 0.54,
+   "marketValue": null,
+   "mass": 1.5,
+   "sema": null,
+   "sharp": 1.06
+  }
+ },
+ {
+  "ce": {
+   "blunt": 26.0,
+   "bulk": 4.0,
+   "groups": [
+    "FullHead"
+   ],
+   "layers": [
+    "Overhead",
+    "OnHead",
+    "StrappedHead"
+   ],
+   "mass": 3.0,
+   "partial": true,
+   "sema": null,
+   "sharp": 12.0,
+   "stuffed": false,
+   "wornBulk": 1.0
+  },
+  "defName": "Apparel_ArmorHelmetRecon",
+  "groups": [
+   "FullHead"
+  ],
+  "label": "recon helmet",
+  "layers": [
+   "Overhead"
+  ],
+  "mod": "Ludeon.RimWorld",
+  "stuffed": false,
+  "techLevel": "Spacer",
+  "v": {
+   "blunt": 0.4,
+   "heat": 0.46,
+   "marketValue": null,
+   "mass": 1.0,
+   "sema": null,
+   "sharp": 0.92
+  }
+ },
+ {
+  "ce": {
+   "blunt": 0.09,
+   "bulk": null,
+   "groups": [
+    "UpperHead"
+   ],
+   "layers": [
+    "Overhead"
+   ],
+   "mass": 1.0,
+   "partial": false,
+   "sema": null,
+   "sharp": 0.09,
+   "stuffed": false,
+   "wornBulk": null
+  },
+  "defName": "Apparel_PsychicFoilHelmet",
+  "groups": [
+   "UpperHead"
+  ],
+  "label": "psychic foil helmet",
+  "layers": [
+   "Overhead"
+  ],
+  "mod": "Ludeon.RimWorld",
+  "stuffed": false,
+  "techLevel": "Medieval",
+  "v": {
+   "blunt": 0.09,
+   "heat": 0.27,
+   "marketValue": 250.0,
+   "mass": 1.0,
+   "sema": null,
+   "sharp": 0.09
+  }
+ },
+ {
+  "ce": {
+   "blunt": null,
+   "bulk": null,
+   "groups": [
+    "UpperHead"
+   ],
+   "layers": [
+    "Overhead"
+   ],
+   "mass": 0.1,
+   "partial": false,
+   "sema": 2.0,
+   "sharp": null,
+   "stuffed": true,
+   "wornBulk": null
+  },
+  "defName": "Apparel_HatHood",
+  "groups": [
+   "UpperHead"
+  ],
+  "label": "hood",
+  "layers": [
+   "Overhead"
+  ],
+  "mod": "Ludeon.RimWorld",
+  "stuffed": true,
+  "techLevel": "Medieval",
+  "v": {
+   "blunt": null,
+   "heat": null,
+   "marketValue": null,
+   "mass": 0.1,
+   "sema": 0.2,
+   "sharp": null
+  }
+ },
+ {
+  "ce": {
+   "blunt": null,
+   "bulk": 0.25,
+   "groups": [
+    "Mouth"
+   ],
+   "layers": [
+    "StrappedHead"
+   ],
+   "mass": 0.04,
+   "partial": false,
+   "sema": 1.5,
+   "sharp": null,
+   "stuffed": true,
+   "wornBulk": 0.0
+  },
+  "defName": "Apparel_ClothMask",
+  "groups": [
+   "Mouth"
+  ],
+  "label": "face mask",
+  "layers": [
+   "Overhead"
+  ],
+  "mod": "Ludeon.RimWorld",
+  "stuffed": true,
+  "techLevel": "Neolithic",
+  "v": {
+   "blunt": null,
+   "heat": null,
+   "marketValue": null,
+   "mass": 0.04,
+   "sema": 0.2,
+   "sharp": null
+  }
+ },
+ {
+  "ce": {
+   "blunt": null,
+   "bulk": 3.0,
+   "groups": [
+    "Waist"
+   ],
+   "layers": [
+    "Belt"
+   ],
+   "mass": 3.0,
+   "partial": false,
+   "sema": null,
+   "sharp": null,
+   "stuffed": false,
+   "wornBulk": 1.0
+  },
+  "defName": "Apparel_SmokepopBelt",
+  "groups": [
+   "Waist"
+  ],
+  "label": "smokepop pack",
+  "layers": [
+   "Belt"
+  ],
+  "mod": "Ludeon.RimWorld",
+  "stuffed": false,
+  "techLevel": "Industrial",
+  "v": {
+   "blunt": null,
+   "heat": null,
+   "marketValue": null,
+   "mass": 3.0,
+   "sema": null,
+   "sharp": null
+  }
+ },
+ {
+  "ce": {
+   "blunt": null,
+   "bulk": 3.0,
+   "groups": [
+    "Waist"
+   ],
+   "layers": [
+    "Belt"
+   ],
+   "mass": 3.0,
+   "partial": false,
+   "sema": null,
+   "sharp": null,
+   "stuffed": false,
+   "wornBulk": 1.0
+  },
+  "defName": "Apparel_FirefoampopPack",
+  "groups": [
+   "Waist"
+  ],
+  "label": "firefoam pop pack",
+  "layers": [
+   "Belt"
+  ],
+  "mod": "Ludeon.RimWorld",
+  "stuffed": false,
+  "techLevel": "Industrial",
+  "v": {
+   "blunt": null,
+   "heat": null,
+   "marketValue": null,
+   "mass": 3.0,
+   "sema": null,
+   "sharp": null
+  }
+ },
+ {
+  "ce": {
+   "blunt": null,
+   "bulk": null,
+   "groups": [
+    "Waist"
+   ],
+   "layers": [
+    "Belt"
+   ],
+   "mass": 0.5,
+   "partial": false,
+   "sema": null,
+   "sharp": null,
+   "stuffed": false,
+   "wornBulk": null
+  },
+  "defName": "Apparel_PsychicShockLance",
+  "groups": [
+   "Waist"
+  ],
+  "label": "psychic shock lance",
+  "layers": [
+   "Belt"
+  ],
+  "mod": "Ludeon.RimWorld",
+  "stuffed": false,
+  "techLevel": "Archotech",
+  "v": {
+   "blunt": null,
+   "heat": null,
+   "marketValue": 550.0,
+   "mass": 0.5,
+   "sema": null,
+   "sharp": null
+  }
+ },
+ {
+  "ce": {
+   "blunt": null,
+   "bulk": null,
+   "groups": [
+    "Waist"
+   ],
+   "layers": [
+    "Belt"
+   ],
+   "mass": 0.5,
+   "partial": false,
+   "sema": null,
+   "sharp": null,
+   "stuffed": false,
+   "wornBulk": null
+  },
+  "defName": "Apparel_PsychicInsanityLance",
+  "groups": [
+   "Waist"
+  ],
+  "label": "psychic insanity lance",
+  "layers": [
+   "Belt"
+  ],
+  "mod": "Ludeon.RimWorld",
+  "stuffed": false,
+  "techLevel": "Archotech",
+  "v": {
+   "blunt": null,
+   "heat": null,
+   "marketValue": 650.0,
+   "mass": 0.5,
+   "sema": null,
+   "sharp": null
+  }
+ },
+ {
+  "ce": {
+   "blunt": null,
+   "bulk": null,
+   "groups": [
+    "Torso",
+    "Legs"
+   ],
+   "layers": [
+    "OnSkin"
+   ],
+   "mass": 0.5,
+   "partial": false,
+   "sema": 3.0,
+   "sharp": null,
+   "stuffed": true,
+   "wornBulk": null
+  },
+  "defName": "Apparel_TribalA",
+  "groups": [
+   "Torso",
+   "Legs"
+  ],
+  "label": "tribalwear",
+  "layers": [
+   "OnSkin"
+  ],
+  "mod": "Ludeon.RimWorld",
+  "stuffed": true,
+  "techLevel": "Neolithic",
+  "v": {
+   "blunt": null,
+   "heat": null,
+   "marketValue": null,
+   "mass": 0.5,
+   "sema": 0.2,
+   "sharp": null
+  }
+ },
+ {
+  "ce": {
+   "blunt": null,
+   "bulk": 10.0,
+   "groups": [
+    "Torso",
+    "Neck",
+    "Shoulders",
+    "Arms"
+   ],
+   "layers": [
+    "Shell"
+   ],
+   "mass": 3.0,
+   "partial": false,
+   "sema": 4.0,
+   "sharp": null,
+   "stuffed": true,
+   "wornBulk": 5.0
+  },
+  "defName": "Apparel_Parka",
+  "groups": [
+   "Torso",
+   "Neck",
+   "Shoulders",
+   "Arms"
+  ],
+  "label": "parka",
+  "layers": [
+   "Shell"
+  ],
+  "mod": "Ludeon.RimWorld",
+  "stuffed": true,
+  "techLevel": "Neolithic",
+  "v": {
+   "blunt": null,
+   "heat": null,
+   "marketValue": null,
+   "mass": 2.0,
+   "sema": 0.2,
+   "sharp": null
+  }
+ },
+ {
+  "ce": {
+   "blunt": null,
+   "bulk": null,
+   "groups": [
+    "Legs"
+   ],
+   "layers": [
+    "OnSkin"
+   ],
+   "mass": 0.5,
+   "partial": false,
+   "sema": 1.0,
+   "sharp": null,
+   "stuffed": true,
+   "wornBulk": null
+  },
+  "defName": "Apparel_Pants",
+  "groups": [
+   "Legs"
+  ],
+  "label": "pants",
+  "layers": [
+   "OnSkin"
+  ],
+  "mod": "Ludeon.RimWorld",
+  "stuffed": true,
+  "techLevel": "Medieval",
+  "v": {
+   "blunt": null,
+   "heat": null,
+   "marketValue": null,
+   "mass": 0.5,
+   "sema": 0.2,
+   "sharp": null
+  }
+ },
+ {
+  "ce": {
+   "blunt": null,
+   "bulk": null,
+   "groups": [
+    "Torso",
+    "Shoulders"
+   ],
+   "layers": [
+    "OnSkin"
+   ],
+   "mass": 0.25,
+   "partial": false,
+   "sema": 1.0,
+   "sharp": null,
+   "stuffed": true,
+   "wornBulk": null
+  },
+  "defName": "Apparel_BasicShirt",
+  "groups": [
+   "Torso",
+   "Shoulders"
+  ],
+  "label": "T-shirt",
+  "layers": [
+   "OnSkin"
+  ],
+  "mod": "Ludeon.RimWorld",
+  "stuffed": true,
+  "techLevel": "Medieval",
+  "v": {
+   "blunt": null,
+   "heat": null,
+   "marketValue": null,
+   "mass": 0.25,
+   "sema": 0.2,
+   "sharp": null
+  }
+ },
+ {
+  "ce": {
+   "blunt": null,
+   "bulk": null,
+   "groups": [
+    "Torso",
+    "Neck",
+    "Shoulders",
+    "Arms"
+   ],
+   "layers": [
+    "OnSkin"
+   ],
+   "mass": 0.3,
+   "partial": false,
+   "sema": 1.0,
+   "sharp": null,
+   "stuffed": true,
+   "wornBulk": null
+  },
+  "defName": "Apparel_CollarShirt",
+  "groups": [
+   "Torso",
+   "Neck",
+   "Shoulders",
+   "Arms"
+  ],
+  "label": "button-down shirt",
+  "layers": [
+   "OnSkin"
+  ],
+  "mod": "Ludeon.RimWorld",
+  "stuffed": true,
+  "techLevel": "Medieval",
+  "v": {
+   "blunt": null,
+   "heat": null,
+   "marketValue": null,
+   "mass": 0.3,
+   "sema": 0.2,
+   "sharp": null
+  }
+ },
+ {
+  "ce": {
+   "blunt": null,
+   "bulk": 7.5,
+   "groups": [
+    "Torso",
+    "Neck",
+    "Shoulders",
+    "Arms",
+    "Legs"
+   ],
+   "layers": [
+    "Shell"
+   ],
+   "mass": 2.0,
+   "partial": false,
+   "sema": 5.0,
+   "sharp": null,
+   "stuffed": true,
+   "wornBulk": 2.0
+  },
+  "defName": "Apparel_Duster",
+  "groups": [
+   "Torso",
+   "Neck",
+   "Shoulders",
+   "Arms",
+   "Legs"
+  ],
+  "label": "duster",
+  "layers": [
+   "Shell"
+  ],
+  "mod": "Ludeon.RimWorld",
+  "stuffed": true,
+  "techLevel": "Medieval",
+  "v": {
+   "blunt": null,
+   "heat": null,
+   "marketValue": null,
+   "mass": 2.0,
+   "sema": 0.3,
+   "sharp": null
+  }
+ },
+ {
+  "ce": {
+   "blunt": null,
+   "bulk": 5.0,
+   "groups": [
+    "Torso",
+    "Neck",
+    "Shoulders",
+    "Arms"
+   ],
+   "layers": [
+    "Shell"
+   ],
+   "mass": 1.7,
+   "partial": false,
+   "sema": 5.0,
+   "sharp": null,
+   "stuffed": true,
+   "wornBulk": 1.0
+  },
+  "defName": "Apparel_Jacket",
+  "groups": [
+   "Torso",
+   "Neck",
+   "Shoulders",
+   "Arms"
+  ],
+  "label": "jacket",
+  "layers": [
+   "Shell"
+  ],
+  "mod": "Ludeon.RimWorld",
+  "stuffed": true,
+  "techLevel": "Medieval",
+  "v": {
+   "blunt": null,
+   "heat": null,
+   "marketValue": null,
+   "mass": 1.7,
+   "sema": 0.3,
+   "sharp": null
+  }
+ },
+ {
+  "ce": {
+   "blunt": null,
+   "bulk": 100.0,
+   "groups": [
+    "Torso",
+    "Neck",
+    "Shoulders",
+    "Arms",
+    "Legs",
+    "Hands",
+    "Feet"
+   ],
+   "layers": [
+    "Middle",
+    "Shell"
+   ],
+   "mass": 15.0,
+   "partial": true,
+   "sema": 3.0,
+   "sharp": null,
+   "stuffed": true,
+   "wornBulk": 10.0
+  },
+  "defName": "Apparel_PlateArmor",
+  "groups": [
+   "Torso",
+   "Neck",
+   "Shoulders",
+   "Arms",
+   "Legs"
+  ],
+  "label": "plate armor",
+  "layers": [
+   "Middle",
+   "Shell"
+  ],
+  "mod": "Ludeon.RimWorld",
+  "stuffed": true,
+  "techLevel": "Medieval",
+  "v": {
+   "blunt": null,
+   "heat": null,
+   "marketValue": null,
+   "mass": 15.0,
+   "sema": 0.9,
+   "sharp": null
+  }
+ },
+ {
+  "ce": {
+   "blunt": null,
+   "bulk": 5.0,
+   "groups": [
+    "Torso",
+    "Neck"
+   ],
+   "layers": [
+    "Middle"
+   ],
+   "mass": 11.0,
+   "partial": true,
+   "sema": 8.0,
+   "sharp": null,
+   "stuffed": true,
+   "wornBulk": 3.0
+  },
+  "defName": "Apparel_FlakVest",
+  "groups": [
+   "Torso",
+   "Neck"
+  ],
+  "label": "flak vest",
+  "layers": [
+   "Middle"
+  ],
+  "mod": "Ludeon.RimWorld",
+  "stuffed": false,
+  "techLevel": "Industrial",
+  "v": {
+   "blunt": 0.36,
+   "heat": 0.27,
+   "marketValue": null,
+   "mass": 4.0,
+   "sema": null,
+   "sharp": 1.0
+  }
+ },
+ {
+  "ce": {
+   "blunt": 1.5,
+   "bulk": 4.0,
+   "groups": [
+    "Legs"
+   ],
+   "layers": [
+    "OnSkin",
+    "Middle"
+   ],
+   "mass": 2.5,
+   "partial": false,
+   "sema": 4.0,
+   "sharp": 2.0,
+   "stuffed": true,
+   "wornBulk": 2.5
+  },
+  "defName": "Apparel_FlakPants",
+  "groups": [
+   "Legs"
+  ],
+  "label": "flak pants",
+  "layers": [
+   "OnSkin",
+   "Middle"
+  ],
+  "mod": "Ludeon.RimWorld",
+  "stuffed": false,
+  "techLevel": "Industrial",
+  "v": {
+   "blunt": 0.08,
+   "heat": 0.1,
+   "marketValue": null,
+   "mass": 4.0,
+   "sema": null,
+   "sharp": 0.55
+  }
+ },
+ {
+  "ce": {
+   "blunt": 1.5,
+   "bulk": 5.0,
+   "groups": [
+    "Torso",
+    "Neck",
+    "Shoulders",
+    "Arms"
+   ],
+   "layers": [
+    "Shell"
+   ],
+   "mass": 4.0,
+   "partial": true,
+   "sema": 4.0,
+   "sharp": 2.0,
+   "stuffed": true,
+   "wornBulk": 2.5
+  },
+  "defName": "Apparel_FlakJacket",
+  "groups": [
+   "Torso",
+   "Neck",
+   "Shoulders",
+   "Arms"
+  ],
+  "label": "flak jacket",
+  "layers": [
+   "Shell"
+  ],
+  "mod": "Ludeon.RimWorld",
+  "stuffed": false,
+  "techLevel": "Industrial",
+  "v": {
+   "blunt": 0.08,
+   "heat": 0.1,
+   "marketValue": null,
+   "mass": 7.0,
+   "sema": null,
+   "sharp": 0.55
+  }
+ },
+ {
+  "ce": {
+   "blunt": 45.0,
+   "bulk": 100.0,
+   "groups": [
+    "Torso",
+    "Neck",
+    "Shoulders",
+    "Arms",
+    "Legs",
+    "Hands",
+    "Feet"
+   ],
+   "layers": [
+    "Middle",
+    "Shell"
+   ],
+   "mass": 50.0,
+   "partial": true,
+   "sema": null,
+   "sharp": 20.0,
+   "stuffed": false,
+   "wornBulk": 15.0
+  },
+  "defName": "Apparel_PowerArmor",
+  "groups": [
+   "Torso",
+   "Neck",
+   "Shoulders",
+   "Arms",
+   "Legs"
+  ],
+  "label": "marine armor",
+  "layers": [
+   "Middle",
+   "Shell"
+  ],
+  "mod": "Ludeon.RimWorld",
+  "stuffed": false,
+  "techLevel": "Spacer",
+  "v": {
+   "blunt": 0.45,
+   "heat": 0.54,
+   "marketValue": null,
+   "mass": 12.0,
+   "sema": null,
+   "sharp": 1.06
+  }
+ },
+ {
+  "ce": {
+   "blunt": 34.0,
+   "bulk": 80.0,
+   "groups": [
+    "Torso",
+    "Neck",
+    "Shoulders",
+    "Arms",
+    "Legs",
+    "Hands",
+    "Feet"
+   ],
+   "layers": [
+    "Middle",
+    "Shell"
+   ],
+   "mass": 30.0,
+   "partial": true,
+   "sema": null,
+   "sharp": 16.0,
+   "stuffed": false,
+   "wornBulk": 12.0
+  },
+  "defName": "Apparel_ArmorRecon",
+  "groups": [
+   "Torso",
+   "Neck",
+   "Shoulders",
+   "Arms",
+   "Legs"
+  ],
+  "label": "recon armor",
+  "layers": [
+   "Middle",
+   "Shell"
+  ],
+  "mod": "Ludeon.RimWorld",
+  "stuffed": false,
+  "techLevel": "Spacer",
+  "v": {
+   "blunt": 0.4,
+   "heat": 0.46,
+   "marketValue": null,
+   "mass": 9.0,
+   "sema": null,
+   "sharp": 0.92
+  }
+ },
+ {
+  "ce": {
+   "blunt": null,
+   "bulk": 5.0,
+   "groups": [
+    "Torso",
+    "Neck",
+    "Shoulders",
+    "Arms",
+    "Legs"
+   ],
+   "layers": [
+    "Shell"
+   ],
+   "mass": 2.0,
+   "partial": false,
+   "sema": 4.0,
+   "sharp": null,
+   "stuffed": true,
+   "wornBulk": 1.5
+  },
+  "defName": "Apparel_Cape",
+  "groups": [
+   "Torso",
+   "Neck",
+   "Shoulders",
+   "Arms",
+   "Legs"
+  ],
+  "label": "cape",
+  "layers": [
+   "Shell"
+  ],
+  "mod": "Ludeon.RimWorld",
+  "stuffed": true,
+  "techLevel": "Medieval",
+  "v": {
+   "blunt": null,
+   "heat": null,
+   "marketValue": null,
+   "mass": 2.0,
+   "sema": 0.3,
+   "sharp": null
+  }
+ },
+ {
+  "ce": {
+   "blunt": null,
+   "bulk": 5.0,
+   "groups": [
+    "Torso",
+    "Shoulders",
+    "Arms",
+    "Legs"
+   ],
+   "layers": [
+    "Shell"
+   ],
+   "mass": 0.75,
+   "partial": false,
+   "sema": 4.0,
+   "sharp": null,
+   "stuffed": true,
+   "wornBulk": 2.0
+  },
+  "defName": "Apparel_Robe",
+  "groups": [
+   "Torso",
+   "Shoulders",
+   "Arms",
+   "Legs"
+  ],
+  "label": "robe",
+  "layers": [
+   "Shell"
+  ],
+  "mod": "Ludeon.RimWorld",
+  "stuffed": true,
+  "techLevel": "Medieval",
+  "v": {
+   "blunt": null,
+   "heat": null,
+   "marketValue": null,
+   "mass": 0.75,
+   "sema": 0.2,
+   "sharp": null
+  }
+ },
+ {
+  "ce": {
+   "blunt": null,
+   "bulk": null,
+   "groups": [
+    "Waist"
+   ],
+   "layers": [
+    "Belt"
+   ],
+   "mass": 0.2,
+   "partial": false,
+   "sema": null,
+   "sharp": null,
+   "stuffed": false,
+   "wornBulk": null
+  },
+  "defName": "OrbitalTargeterBombardment",
+  "groups": [
+   "Waist"
+  ],
+  "label": "orbital bombardment targeter",
+  "layers": [
+   "Belt"
+  ],
+  "mod": "Ludeon.RimWorld",
+  "stuffed": false,
+  "techLevel": "Spacer",
+  "v": {
+   "blunt": null,
+   "heat": null,
+   "marketValue": 1200.0,
+   "mass": 0.2,
+   "sema": null,
+   "sharp": null
+  }
+ },
+ {
+  "ce": {
+   "blunt": null,
+   "bulk": null,
+   "groups": [
+    "Waist"
+   ],
+   "layers": [
+    "Belt"
+   ],
+   "mass": 0.2,
+   "partial": false,
+   "sema": null,
+   "sharp": null,
+   "stuffed": false,
+   "wornBulk": null
+  },
+  "defName": "OrbitalTargeterPowerBeam",
+  "groups": [
+   "Waist"
+  ],
+  "label": "orbital power beam targeter",
+  "layers": [
+   "Belt"
+  ],
+  "mod": "Ludeon.RimWorld",
+  "stuffed": false,
+  "techLevel": "Spacer",
+  "v": {
+   "blunt": null,
+   "heat": null,
+   "marketValue": 1200.0,
+   "mass": 0.2,
+   "sema": null,
+   "sharp": null
+  }
+ },
+ {
+  "ce": {
+   "blunt": null,
+   "bulk": null,
+   "groups": [
+    "Waist"
+   ],
+   "layers": [
+    "Belt"
+   ],
+   "mass": 0.2,
+   "partial": false,
+   "sema": null,
+   "sharp": null,
+   "stuffed": false,
+   "wornBulk": null
+  },
+  "defName": "TornadoGenerator",
+  "groups": [
+   "Waist"
+  ],
+  "label": "tornado generator",
+  "layers": [
+   "Belt"
+  ],
+  "mod": "Ludeon.RimWorld",
+  "stuffed": false,
+  "techLevel": "Spacer",
+  "v": {
+   "blunt": null,
+   "heat": null,
+   "marketValue": 800.0,
+   "mass": 0.2,
+   "sema": null,
+   "sharp": null
+  }
+ },
+ {
+  "ce": {
+   "blunt": null,
+   "bulk": 8.0,
+   "groups": [
+    "Waist"
+   ],
+   "layers": [
+    "Belt"
+   ],
+   "mass": 3.0,
+   "partial": false,
+   "sema": null,
+   "sharp": null,
+   "stuffed": false,
+   "wornBulk": 3.0
+  },
+  "defName": "Apparel_PackJump",
+  "groups": [
+   "Waist"
+  ],
+  "label": "jump pack",
+  "layers": [
+   "Belt"
+  ],
+  "mod": "Ludeon.RimWorld.Royalty",
+  "stuffed": false,
+  "techLevel": "Industrial",
+  "v": {
+   "blunt": null,
+   "heat": null,
+   "marketValue": null,
+   "mass": 3.0,
+   "sema": null,
+   "sharp": null
+  }
+ },
+ {
+  "ce": {
+   "blunt": null,
+   "bulk": 8.0,
+   "groups": [
+    "Waist"
+   ],
+   "layers": [
+    "Belt"
+   ],
+   "mass": 3.0,
+   "partial": false,
+   "sema": null,
+   "sharp": null,
+   "stuffed": false,
+   "wornBulk": 3.0
+  },
+  "defName": "Apparel_PackBroadshield",
+  "groups": [
+   "Waist"
+  ],
+  "label": "low-shield pack",
+  "layers": [
+   "Belt"
+  ],
+  "mod": "Ludeon.RimWorld.Royalty",
+  "stuffed": false,
+  "techLevel": "Industrial",
+  "v": {
+   "blunt": null,
+   "heat": null,
+   "marketValue": null,
+   "mass": 3.0,
+   "sema": null,
+   "sharp": null
+  }
+ },
+ {
+  "ce": {
+   "blunt": 6.0,
+   "bulk": null,
+   "groups": [
+    "UpperHead"
+   ],
+   "layers": [
+    "Overhead"
+   ],
+   "mass": 0.8,
+   "partial": false,
+   "sema": null,
+   "sharp": 3.0,
+   "stuffed": false,
+   "wornBulk": null
+  },
+  "defName": "Apparel_PsyfocusHelmet",
+  "groups": [
+   "UpperHead"
+  ],
+  "label": "eltex helmet",
+  "layers": [
+   "Overhead"
+  ],
+  "mod": "Ludeon.RimWorld.Royalty",
+  "stuffed": false,
+  "techLevel": "Ultra",
+  "v": {
+   "blunt": 0.09,
+   "heat": 0.27,
+   "marketValue": 500.0,
+   "mass": 0.8,
+   "sema": null,
+   "sharp": 0.09
+  }
+ },
+ {
+  "ce": {
+   "blunt": 0.08,
+   "bulk": null,
+   "groups": [
+    "UpperHead"
+   ],
+   "layers": [
+    "Overhead"
+   ],
+   "mass": 0.8,
+   "partial": false,
+   "sema": null,
+   "sharp": 0.05,
+   "stuffed": false,
+   "wornBulk": null
+  },
+  "defName": "Apparel_EltexSkullcap",
+  "groups": [
+   "UpperHead"
+  ],
+  "label": "eltex skullcap",
+  "layers": [
+   "Overhead"
+  ],
+  "mod": "Ludeon.RimWorld.Royalty",
+  "stuffed": false,
+  "techLevel": "Ultra",
+  "v": {
+   "blunt": null,
+   "heat": null,
+   "marketValue": 500.0,
+   "mass": 0.8,
+   "sema": null,
+   "sharp": null
+  }
+ },
+ {
+  "ce": {
+   "blunt": 0.055,
+   "bulk": null,
+   "groups": [
+    "Torso",
+    "Shoulders"
+   ],
+   "layers": [
+    "OnSkin"
+   ],
+   "mass": 0.25,
+   "partial": false,
+   "sema": null,
+   "sharp": 0.07,
+   "stuffed": false,
+   "wornBulk": null
+  },
+  "defName": "Apparel_PsyfocusShirt",
+  "groups": [
+   "Torso",
+   "Shoulders"
+  ],
+  "label": "eltex shirt",
+  "layers": [
+   "OnSkin"
+  ],
+  "mod": "Ludeon.RimWorld.Royalty",
+  "stuffed": false,
+  "techLevel": "Ultra",
+  "v": {
+   "blunt": 0.0,
+   "heat": 0.04,
+   "marketValue": 400.0,
+   "mass": 0.25,
+   "sema": null,
+   "sharp": 0.07
+  }
+ },
+ {
+  "ce": {
+   "blunt": 0.055,
+   "bulk": null,
+   "groups": [
+    "Torso",
+    "Neck",
+    "Shoulders"
+   ],
+   "layers": [
+    "Middle"
+   ],
+   "mass": 0.5,
+   "partial": false,
+   "sema": null,
+   "sharp": 0.07,
+   "stuffed": false,
+   "wornBulk": null
+  },
+  "defName": "Apparel_PsyfocusVest",
+  "groups": [
+   "Torso",
+   "Neck",
+   "Shoulders"
+  ],
+  "label": "eltex vest",
+  "layers": [
+   "Middle"
+  ],
+  "mod": "Ludeon.RimWorld.Royalty",
+  "stuffed": false,
+  "techLevel": "Ultra",
+  "v": {
+   "blunt": 0.0,
+   "heat": 0.04,
+   "marketValue": 500.0,
+   "mass": 0.5,
+   "sema": null,
+   "sharp": 0.07
+  }
+ },
+ {
+  "ce": {
+   "blunt": 0.055,
+   "bulk": null,
+   "groups": [
+    "Torso",
+    "Neck",
+    "Shoulders",
+    "Arms",
+    "Legs"
+   ],
+   "layers": [
+    "Shell"
+   ],
+   "mass": 0.5,
+   "partial": false,
+   "sema": null,
+   "sharp": 0.07,
+   "stuffed": false,
+   "wornBulk": null
+  },
+  "defName": "Apparel_PsyfocusRobe",
+  "groups": [
+   "Torso",
+   "Neck",
+   "Shoulders",
+   "Arms",
+   "Legs"
+  ],
+  "label": "eltex robe",
+  "layers": [
+   "Shell"
+  ],
+  "mod": "Ludeon.RimWorld.Royalty",
+  "stuffed": false,
+  "techLevel": "Ultra",
+  "v": {
+   "blunt": 0.0,
+   "heat": 0.04,
+   "marketValue": 600.0,
+   "mass": 0.5,
+   "sema": null,
+   "sharp": 0.07
+  }
+ },
+ {
+  "ce": {
+   "blunt": null,
+   "bulk": null,
+   "groups": [
+    "Torso",
+    "Shoulders",
+    "Arms",
+    "Neck"
+   ],
+   "layers": [
+    "OnSkin"
+   ],
+   "mass": 0.25,
+   "partial": false,
+   "sema": 2.0,
+   "sharp": null,
+   "stuffed": true,
+   "wornBulk": null
+  },
+  "defName": "Apparel_ShirtRuffle",
+  "groups": [
+   "Torso",
+   "Shoulders",
+   "Arms",
+   "Neck"
+  ],
+  "label": "formal shirt",
+  "layers": [
+   "OnSkin"
+  ],
+  "mod": "Ludeon.RimWorld.Royalty",
+  "stuffed": true,
+  "techLevel": "Medieval",
+  "v": {
+   "blunt": null,
+   "heat": null,
+   "marketValue": null,
+   "mass": 0.25,
+   "sema": 0.2,
+   "sharp": null
+  }
+ },
+ {
+  "ce": {
+   "blunt": null,
+   "bulk": null,
+   "groups": [
+    "Torso"
+   ],
+   "layers": [
+    "Middle"
+   ],
+   "mass": 0.75,
+   "partial": false,
+   "sema": 2.0,
+   "sharp": null,
+   "stuffed": true,
+   "wornBulk": null
+  },
+  "defName": "Apparel_Corset",
+  "groups": [
+   "Torso"
+  ],
+  "label": "corset",
+  "layers": [
+   "Middle"
+  ],
+  "mod": "Ludeon.RimWorld.Royalty",
+  "stuffed": true,
+  "techLevel": "Medieval",
+  "v": {
+   "blunt": null,
+   "heat": null,
+   "marketValue": null,
+   "mass": 0.75,
+   "sema": 0.2,
+   "sharp": null
+  }
+ },
+ {
+  "ce": {
+   "blunt": null,
+   "bulk": null,
+   "groups": [
+    "Torso"
+   ],
+   "layers": [
+    "Middle"
+   ],
+   "mass": 0.75,
+   "partial": false,
+   "sema": 2.0,
+   "sharp": null,
+   "stuffed": true,
+   "wornBulk": null
+  },
+  "defName": "Apparel_VestRoyal",
+  "groups": [
+   "Torso"
+  ],
+  "label": "formal vest",
+  "layers": [
+   "Middle"
+  ],
+  "mod": "Ludeon.RimWorld.Royalty",
+  "stuffed": true,
+  "techLevel": "Medieval",
+  "v": {
+   "blunt": null,
+   "heat": null,
+   "marketValue": null,
+   "mass": 0.75,
+   "sema": 0.2,
+   "sharp": null
+  }
+ },
+ {
+  "ce": {
+   "blunt": null,
+   "bulk": null,
+   "groups": [
+    "Torso",
+    "Neck",
+    "Shoulders",
+    "Arms",
+    "Legs"
+   ],
+   "layers": [
+    "Shell"
+   ],
+   "mass": 0.75,
+   "partial": false,
+   "sema": 1.0,
+   "sharp": null,
+   "stuffed": true,
+   "wornBulk": null
+  },
+  "defName": "Apparel_RobeRoyal",
+  "groups": [
+   "Torso",
+   "Neck",
+   "Shoulders",
+   "Arms",
+   "Legs"
+  ],
+  "label": "prestige robe",
+  "layers": [
+   "Shell"
+  ],
+  "mod": "Ludeon.RimWorld.Royalty",
+  "stuffed": true,
+  "techLevel": "Medieval",
+  "v": {
+   "blunt": null,
+   "heat": null,
+   "marketValue": null,
+   "mass": 0.75,
+   "sema": 0.2,
+   "sharp": null
+  }
+ },
+ {
+  "ce": {
+   "blunt": null,
+   "bulk": null,
+   "groups": [
+    "UpperHead"
+   ],
+   "layers": [
+    "Overhead"
+   ],
+   "mass": 0.1,
+   "partial": false,
+   "sema": 3.0,
+   "sharp": null,
+   "stuffed": true,
+   "wornBulk": null
+  },
+  "defName": "Apparel_HatLadies",
+  "groups": [
+   "UpperHead"
+  ],
+  "label": "ladies hat",
+  "layers": [
+   "Overhead"
+  ],
+  "mod": "Ludeon.RimWorld.Royalty",
+  "stuffed": true,
+  "techLevel": "Medieval",
+  "v": {
+   "blunt": null,
+   "heat": null,
+   "marketValue": null,
+   "mass": 0.1,
+   "sema": null,
+   "sharp": null
+  }
+ },
+ {
+  "ce": {
+   "blunt": null,
+   "bulk": null,
+   "groups": [
+    "UpperHead"
+   ],
+   "layers": [
+    "Overhead"
+   ],
+   "mass": 0.1,
+   "partial": false,
+   "sema": 3.0,
+   "sharp": null,
+   "stuffed": true,
+   "wornBulk": null
+  },
+  "defName": "Apparel_HatTop",
+  "groups": [
+   "UpperHead"
+  ],
+  "label": "top hat",
+  "layers": [
+   "Overhead"
+  ],
+  "mod": "Ludeon.RimWorld.Royalty",
+  "stuffed": true,
+  "techLevel": "Medieval",
+  "v": {
+   "blunt": null,
+   "heat": null,
+   "marketValue": null,
+   "mass": 0.1,
+   "sema": null,
+   "sharp": null
+  }
+ },
+ {
+  "ce": {
+   "blunt": null,
+   "bulk": null,
+   "groups": [
+    "UpperHead"
+   ],
+   "layers": [
+    "Overhead"
+   ],
+   "mass": 0.7,
+   "partial": false,
+   "sema": 5.0,
+   "sharp": null,
+   "stuffed": true,
+   "wornBulk": null
+  },
+  "defName": "Apparel_Coronet",
+  "groups": [
+   "UpperHead"
+  ],
+  "label": "coronet",
+  "layers": [
+   "Overhead"
+  ],
+  "mod": "Ludeon.RimWorld.Royalty",
+  "stuffed": true,
+  "techLevel": "Medieval",
+  "v": {
+   "blunt": null,
+   "heat": null,
+   "marketValue": null,
+   "mass": 0.7,
+   "sema": null,
+   "sharp": null
+  }
+ },
+ {
+  "ce": {
+   "blunt": null,
+   "bulk": null,
+   "groups": [
+    "UpperHead"
+   ],
+   "layers": [
+    "Overhead"
+   ],
+   "mass": 0.9,
+   "partial": false,
+   "sema": 5.0,
+   "sharp": null,
+   "stuffed": true,
+   "wornBulk": null
+  },
+  "defName": "Apparel_Crown",
+  "groups": [
+   "UpperHead"
+  ],
+  "label": "crown",
+  "layers": [
+   "Overhead"
+  ],
+  "mod": "Ludeon.RimWorld.Royalty",
+  "stuffed": true,
+  "techLevel": "Medieval",
+  "v": {
+   "blunt": null,
+   "heat": null,
+   "marketValue": null,
+   "mass": 0.9,
+   "sema": null,
+   "sharp": null
+  }
+ },
+ {
+  "ce": {
+   "blunt": null,
+   "bulk": null,
+   "groups": [
+    "UpperHead"
+   ],
+   "layers": [
+    "Overhead"
+   ],
+   "mass": 0.9,
+   "partial": false,
+   "sema": 5.0,
+   "sharp": null,
+   "stuffed": true,
+   "wornBulk": null
+  },
+  "defName": "Apparel_CrownStellic",
+  "groups": [
+   "UpperHead"
+  ],
+  "label": "stellic crown",
+  "layers": [
+   "Overhead"
+  ],
+  "mod": "Ludeon.RimWorld.Royalty",
+  "stuffed": true,
+  "techLevel": "Medieval",
+  "v": {
+   "blunt": null,
+   "heat": null,
+   "marketValue": null,
+   "mass": 0.9,
+   "sema": null,
+   "sharp": null
+  }
+ },
+ {
+  "ce": {
+   "blunt": null,
+   "bulk": null,
+   "groups": [
+    "UpperHead"
+   ],
+   "layers": [
+    "Overhead"
+   ],
+   "mass": 0.1,
+   "partial": false,
+   "sema": 3.0,
+   "sharp": null,
+   "stuffed": true,
+   "wornBulk": null
+  },
+  "defName": "Apparel_Beret",
+  "groups": [
+   "UpperHead"
+  ],
+  "label": "beret",
+  "layers": [
+   "Overhead"
+  ],
+  "mod": "Ludeon.RimWorld.Royalty",
+  "stuffed": true,
+  "techLevel": "Medieval",
+  "v": {
+   "blunt": null,
+   "heat": null,
+   "marketValue": null,
+   "mass": 0.1,
+   "sema": null,
+   "sharp": null
+  }
+ },
+ {
+  "ce": {
+   "blunt": 34.0,
+   "bulk": 80.0,
+   "groups": [
+    "Torso",
+    "Neck",
+    "Shoulders",
+    "Arms",
+    "Legs",
+    "Hands",
+    "Feet"
+   ],
+   "layers": [
+    "Middle",
+    "Shell"
+   ],
+   "mass": 30.0,
+   "partial": true,
+   "sema": null,
+   "sharp": 16.0,
+   "stuffed": false,
+   "wornBulk": 12.0
+  },
+  "defName": "Apparel_ArmorReconPrestige",
+  "groups": [
+   "Torso",
+   "Neck",
+   "Shoulders",
+   "Arms",
+   "Legs"
+  ],
+  "label": "prestige recon armor",
+  "layers": [
+   "Middle",
+   "Shell"
+  ],
+  "mod": "Ludeon.RimWorld.Royalty",
+  "stuffed": false,
+  "techLevel": "Spacer",
+  "v": {
+   "blunt": 0.4,
+   "heat": 0.46,
+   "marketValue": null,
+   "mass": 9.0,
+   "sema": null,
+   "sharp": 0.92
+  }
+ },
+ {
+  "ce": {
+   "blunt": 26.0,
+   "bulk": 4.0,
+   "groups": [
+    "FullHead"
+   ],
+   "layers": [
+    "Overhead",
+    "OnHead",
+    "StrappedHead"
+   ],
+   "mass": 3.0,
+   "partial": true,
+   "sema": null,
+   "sharp": 12.0,
+   "stuffed": false,
+   "wornBulk": 1.0
+  },
+  "defName": "Apparel_ArmorHelmetReconPrestige",
+  "groups": [
+   "FullHead"
+  ],
+  "label": "prestige recon helmet",
+  "layers": [
+   "Overhead"
+  ],
+  "mod": "Ludeon.RimWorld.Royalty",
+  "stuffed": false,
+  "techLevel": "Spacer",
+  "v": {
+   "blunt": 0.4,
+   "heat": 0.46,
+   "marketValue": null,
+   "mass": 1.0,
+   "sema": null,
+   "sharp": 0.92
+  }
+ },
+ {
+  "ce": {
+   "blunt": 45.0,
+   "bulk": 100.0,
+   "groups": [
+    "Torso",
+    "Neck",
+    "Shoulders",
+    "Arms",
+    "Legs",
+    "Hands",
+    "Feet"
+   ],
+   "layers": [
+    "Middle",
+    "Shell"
+   ],
+   "mass": 50.0,
+   "partial": true,
+   "sema": null,
+   "sharp": 20.0,
+   "stuffed": false,
+   "wornBulk": 15.0
+  },
+  "defName": "Apparel_ArmorMarinePrestige",
+  "groups": [
+   "Torso",
+   "Neck",
+   "Shoulders",
+   "Arms",
+   "Legs"
+  ],
+  "label": "prestige marine armor",
+  "layers": [
+   "Middle",
+   "Shell"
+  ],
+  "mod": "Ludeon.RimWorld.Royalty",
+  "stuffed": false,
+  "techLevel": "Spacer",
+  "v": {
+   "blunt": 0.45,
+   "heat": 0.54,
+   "marketValue": null,
+   "mass": 12.0,
+   "sema": null,
+   "sharp": 1.06
+  }
+ },
+ {
+  "ce": {
+   "blunt": 36.0,
+   "bulk": 5.0,
+   "groups": [
+    "FullHead"
+   ],
+   "layers": [
+    "Overhead",
+    "OnHead",
+    "StrappedHead"
+   ],
+   "mass": 4.8,
+   "partial": true,
+   "sema": null,
+   "sharp": 16.0,
+   "stuffed": false,
+   "wornBulk": 1.0
+  },
+  "defName": "Apparel_ArmorMarineHelmetPrestige",
+  "groups": [
+   "FullHead"
+  ],
+  "label": "prestige marine helmet",
+  "layers": [
+   "Overhead"
+  ],
+  "mod": "Ludeon.RimWorld.Royalty",
+  "stuffed": false,
+  "techLevel": "Spacer",
+  "v": {
+   "blunt": 0.45,
+   "heat": 0.54,
+   "marketValue": null,
+   "mass": 1.5,
+   "sema": null,
+   "sharp": 1.06
+  }
+ },
+ {
+  "ce": {
+   "blunt": 60.0,
+   "bulk": 100.0,
+   "groups": [
+    "Torso",
+    "Neck",
+    "Shoulders",
+    "Arms",
+    "Legs",
+    "Hands",
+    "Feet"
+   ],
+   "layers": [
+    "Middle",
+    "Shell"
+   ],
+   "mass": 80.0,
+   "partial": true,
+   "sema": null,
+   "sharp": 28.0,
+   "stuffed": false,
+   "wornBulk": 15.0
+  },
+  "defName": "Apparel_ArmorCataphract",
+  "groups": [
+   "Torso",
+   "Neck",
+   "Shoulders",
+   "Arms",
+   "Legs"
+  ],
+  "label": "cataphract armor",
+  "layers": [
+   "Middle",
+   "Shell"
+  ],
+  "mod": "Ludeon.RimWorld.Royalty",
+  "stuffed": false,
+  "techLevel": "Spacer",
+  "v": {
+   "blunt": 0.5,
+   "heat": 0.6,
+   "marketValue": null,
+   "mass": 15.0,
+   "sema": null,
+   "sharp": 1.2
+  }
+ },
+ {
+  "ce": {
+   "blunt": 50.0,
+   "bulk": 6.0,
+   "groups": [
+    "FullHead"
+   ],
+   "layers": [
+    "Overhead",
+    "OnHead",
+    "StrappedHead"
+   ],
+   "mass": 6.6,
+   "partial": true,
+   "sema": null,
+   "sharp": 22.0,
+   "stuffed": false,
+   "wornBulk": 1.0
+  },
+  "defName": "Apparel_ArmorHelmetCataphract",
+  "groups": [
+   "FullHead"
+  ],
+  "label": "cataphract helmet",
+  "layers": [
+   "Overhead"
+  ],
+  "mod": "Ludeon.RimWorld.Royalty",
+  "stuffed": false,
+  "techLevel": "Spacer",
+  "v": {
+   "blunt": 0.5,
+   "heat": 0.6,
+   "marketValue": null,
+   "mass": 2.0,
+   "sema": null,
+   "sharp": 1.2
+  }
+ },
+ {
+  "ce": {
+   "blunt": 60.0,
+   "bulk": 100.0,
+   "groups": [
+    "Torso",
+    "Neck",
+    "Shoulders",
+    "Arms",
+    "Legs",
+    "Hands",
+    "Feet"
+   ],
+   "layers": [
+    "Middle",
+    "Shell"
+   ],
+   "mass": 80.0,
+   "partial": true,
+   "sema": null,
+   "sharp": 28.0,
+   "stuffed": false,
+   "wornBulk": 15.0
+  },
+  "defName": "Apparel_ArmorCataphractPrestige",
+  "groups": [
+   "Torso",
+   "Neck",
+   "Shoulders",
+   "Arms",
+   "Legs"
+  ],
+  "label": "prestige cataphract armor",
+  "layers": [
+   "Middle",
+   "Shell"
+  ],
+  "mod": "Ludeon.RimWorld.Royalty",
+  "stuffed": false,
+  "techLevel": "Spacer",
+  "v": {
+   "blunt": 0.5,
+   "heat": 0.6,
+   "marketValue": null,
+   "mass": 15.0,
+   "sema": null,
+   "sharp": 1.2
+  }
+ },
+ {
+  "ce": {
+   "blunt": 50.0,
+   "bulk": 6.0,
+   "groups": [
+    "FullHead"
+   ],
+   "layers": [
+    "Overhead",
+    "OnHead",
+    "StrappedHead"
+   ],
+   "mass": 6.6,
+   "partial": true,
+   "sema": null,
+   "sharp": 22.0,
+   "stuffed": false,
+   "wornBulk": 1.0
+  },
+  "defName": "Apparel_ArmorHelmetCataphractPrestige",
+  "groups": [
+   "FullHead"
+  ],
+  "label": "prestige cataphract helmet",
+  "layers": [
+   "Overhead"
+  ],
+  "mod": "Ludeon.RimWorld.Royalty",
+  "stuffed": false,
+  "techLevel": "Spacer",
+  "v": {
+   "blunt": 0.5,
+   "heat": 0.6,
+   "marketValue": null,
+   "mass": 2.0,
+   "sema": null,
+   "sharp": 1.2
+  }
+ },
+ {
+  "ce": {
+   "blunt": 32.0,
+   "bulk": 85.0,
+   "groups": [
+    "Torso",
+    "Neck",
+    "Shoulders",
+    "Arms",
+    "Legs",
+    "Hands",
+    "Feet"
+   ],
+   "layers": [
+    "Middle",
+    "Shell"
+   ],
+   "mass": 30.0,
+   "partial": true,
+   "sema": null,
+   "sharp": 15.0,
+   "stuffed": false,
+   "wornBulk": 15.0
+  },
+  "defName": "Apparel_ArmorLocust",
+  "groups": [
+   "Torso",
+   "Neck",
+   "Shoulders",
+   "Arms",
+   "Legs"
+  ],
+  "label": "locust armor",
+  "layers": [
+   "Middle",
+   "Shell"
+  ],
+  "mod": "Ludeon.RimWorld.Royalty",
+  "stuffed": false,
+  "techLevel": "Spacer",
+  "v": {
+   "blunt": 0.35,
+   "heat": 0.41,
+   "marketValue": null,
+   "mass": 9.0,
+   "sema": null,
+   "sharp": 0.87
+  }
+ },
+ {
+  "ce": {
+   "blunt": 41.0,
+   "bulk": 100.0,
+   "groups": [
+    "Torso",
+    "Neck",
+    "Shoulders",
+    "Arms",
+    "Legs",
+    "Hands",
+    "Feet"
+   ],
+   "layers": [
+    "Middle",
+    "Shell"
+   ],
+   "mass": 50.0,
+   "partial": true,
+   "sema": null,
+   "sharp": 18.0,
+   "stuffed": false,
+   "wornBulk": 15.0
+  },
+  "defName": "Apparel_ArmorMarineGrenadier",
+  "groups": [
+   "Torso",
+   "Neck",
+   "Shoulders",
+   "Arms",
+   "Legs"
+  ],
+  "label": "grenadier armor",
+  "layers": [
+   "Middle",
+   "Shell"
+  ],
+  "mod": "Ludeon.RimWorld.Royalty",
+  "stuffed": false,
+  "techLevel": "Spacer",
+  "v": {
+   "blunt": 0.4,
+   "heat": 0.49,
+   "marketValue": null,
+   "mass": 12.0,
+   "sema": null,
+   "sharp": 1.01
+  }
+ },
+ {
+  "ce": {
+   "blunt": 55.0,
+   "bulk": 110.0,
+   "groups": [
+    "Torso",
+    "Neck",
+    "Shoulders",
+    "Arms",
+    "Legs",
+    "Hands",
+    "Feet"
+   ],
+   "layers": [
+    "Middle",
+    "Shell"
+   ],
+   "mass": 80.0,
+   "partial": true,
+   "sema": null,
+   "sharp": 26.0,
+   "stuffed": false,
+   "wornBulk": 18.0
+  },
+  "defName": "Apparel_ArmorCataphractPhoenix",
+  "groups": [
+   "Torso",
+   "Neck",
+   "Shoulders",
+   "Arms",
+   "Legs"
+  ],
+  "label": "phoenix armor",
+  "layers": [
+   "Middle",
+   "Shell"
+  ],
+  "mod": "Ludeon.RimWorld.Royalty",
+  "stuffed": false,
+  "techLevel": "Spacer",
+  "v": {
+   "blunt": 0.45,
+   "heat": 0.75,
+   "marketValue": null,
+   "mass": 15.0,
+   "sema": null,
+   "sharp": 1.15
+  }
+ },
+ {
+  "ce": {
+   "blunt": 0.01,
+   "bulk": 4.0,
+   "groups": [
+    "UpperHead"
+   ],
+   "layers": [
+    "StrappedHead"
+   ],
+   "mass": 3.0,
+   "partial": true,
+   "sema": null,
+   "sharp": 0.01,
+   "stuffed": false,
+   "wornBulk": 1.0
+  },
+  "defName": "Apparel_Gunlink",
+  "groups": [
+   "UpperHead"
+  ],
+  "label": "gunlink",
+  "layers": [
+   "Overhead"
+  ],
+  "mod": "Ludeon.RimWorld.Royalty",
+  "stuffed": false,
+  "techLevel": "Spacer",
+  "v": {
+   "blunt": 0.0,
+   "heat": 0.0,
+   "marketValue": null,
+   "mass": 1.0,
+   "sema": null,
+   "sharp": 0.0
+  }
+ },
+ {
+  "ce": {
+   "blunt": null,
+   "bulk": null,
+   "groups": [
+    "Waist"
+   ],
+   "layers": [
+    "Belt"
+   ],
+   "mass": 0.2,
+   "partial": false,
+   "sema": null,
+   "sharp": null,
+   "stuffed": false,
+   "wornBulk": null
+  },
+  "defName": "OrbitalTargeterMechCluster",
+  "groups": [
+   "Waist"
+  ],
+  "label": "orbital mech cluster targeter",
+  "layers": [
+   "Belt"
+  ],
+  "mod": "Ludeon.RimWorld.Royalty",
+  "stuffed": false,
+  "techLevel": "Spacer",
+  "v": {
+   "blunt": null,
+   "heat": null,
+   "marketValue": 1200.0,
+   "mass": 0.2,
+   "sema": null,
+   "sharp": null
+  }
+ },
+ {
+  "ce": {
+   "blunt": null,
+   "bulk": null,
+   "groups": [
+    "UpperHead"
+   ],
+   "layers": [
+    "Overhead"
+   ],
+   "mass": 0.08,
+   "partial": false,
+   "sema": 3.0,
+   "sharp": null,
+   "stuffed": true,
+   "wornBulk": null
+  },
+  "defName": "Apparel_Headwrap",
+  "groups": [
+   "UpperHead"
+  ],
+  "label": "headwrap",
+  "layers": [
+   "Overhead"
+  ],
+  "mod": "Ludeon.RimWorld.Ideology",
+  "stuffed": true,
+  "techLevel": "Neolithic",
+  "v": {
+   "blunt": null,
+   "heat": null,
+   "marketValue": null,
+   "mass": 0.08,
+   "sema": 0.25,
+   "sharp": null
+  }
+ },
+ {
+  "ce": {
+   "blunt": null,
+   "bulk": null,
+   "groups": [
+    "FullHead",
+    "Neck",
+    "Shoulders"
+   ],
+   "layers": [
+    "OnHead"
+   ],
+   "mass": 0.1,
+   "partial": true,
+   "sema": 3.0,
+   "sharp": null,
+   "stuffed": true,
+   "wornBulk": null
+  },
+  "defName": "Apparel_Broadwrap",
+  "groups": [
+   "FullHead",
+   "Neck",
+   "Shoulders"
+  ],
+  "label": "broadwrap",
+  "layers": [
+   "Overhead"
+  ],
+  "mod": "Ludeon.RimWorld.Ideology",
+  "stuffed": true,
+  "techLevel": "Neolithic",
+  "v": {
+   "blunt": null,
+   "heat": null,
+   "marketValue": null,
+   "mass": 0.1,
+   "sema": 0.25,
+   "sharp": null
+  }
+ },
+ {
+  "ce": {
+   "blunt": null,
+   "bulk": null,
+   "groups": [
+    "FullHead"
+   ],
+   "layers": [
+    "StrappedHead"
+   ],
+   "mass": 0.1,
+   "partial": false,
+   "sema": 1.5,
+   "sharp": null,
+   "stuffed": true,
+   "wornBulk": null
+  },
+  "defName": "Apparel_VisageMask",
+  "groups": [
+   "FullHead"
+  ],
+  "label": "visage mask",
+  "layers": [
+   "Overhead"
+  ],
+  "mod": "Ludeon.RimWorld.Ideology",
+  "stuffed": true,
+  "techLevel": "Neolithic",
+  "v": {
+   "blunt": null,
+   "heat": null,
+   "marketValue": null,
+   "mass": 0.1,
+   "sema": 0.3,
+   "sharp": null
+  }
+ },
+ {
+  "ce": {
+   "blunt": null,
+   "bulk": null,
+   "groups": [
+    "UpperHead"
+   ],
+   "layers": [
+    "Overhead"
+   ],
+   "mass": 0.8,
+   "partial": false,
+   "sema": 2.0,
+   "sharp": null,
+   "stuffed": true,
+   "wornBulk": null
+  },
+  "defName": "Apparel_Slicecap",
+  "groups": [
+   "UpperHead"
+  ],
+  "label": "slicecap",
+  "layers": [
+   "Overhead"
+  ],
+  "mod": "Ludeon.RimWorld.Ideology",
+  "stuffed": true,
+  "techLevel": "Medieval",
+  "v": {
+   "blunt": null,
+   "heat": null,
+   "marketValue": null,
+   "mass": 0.8,
+   "sema": 0.1,
+   "sharp": null
+  }
+ },
+ {
+  "ce": {
+   "blunt": null,
+   "bulk": null,
+   "groups": [
+    "Neck"
+   ],
+   "layers": [
+    "StrappedHead"
+   ],
+   "mass": 0.14,
+   "partial": false,
+   "sema": 1.5,
+   "sharp": null,
+   "stuffed": true,
+   "wornBulk": null
+  },
+  "defName": "Apparel_Collar",
+  "groups": [
+   "Neck"
+  ],
+  "label": "slave collar",
+  "layers": [
+   "Overhead"
+  ],
+  "mod": "Ludeon.RimWorld.Ideology",
+  "stuffed": true,
+  "techLevel": "Medieval",
+  "v": {
+   "blunt": null,
+   "heat": null,
+   "marketValue": null,
+   "mass": 0.14,
+   "sema": 0.0,
+   "sharp": null
+  }
+ },
+ {
+  "ce": {
+   "blunt": null,
+   "bulk": null,
+   "groups": [
+    "UpperHead"
+   ],
+   "layers": [
+    "Overhead"
+   ],
+   "mass": 0.1,
+   "partial": false,
+   "sema": 2.0,
+   "sharp": null,
+   "stuffed": true,
+   "wornBulk": null
+  },
+  "defName": "Apparel_AuthorityCap",
+  "groups": [
+   "UpperHead"
+  ],
+  "label": "authority cap",
+  "layers": [
+   "Overhead"
+  ],
+  "mod": "Ludeon.RimWorld.Ideology",
+  "stuffed": true,
+  "techLevel": "Medieval",
+  "v": {
+   "blunt": null,
+   "heat": null,
+   "marketValue": null,
+   "mass": 0.1,
+   "sema": 0.2,
+   "sharp": null
+  }
+ },
+ {
+  "ce": {
+   "blunt": null,
+   "bulk": null,
+   "groups": [
+    "UpperHead"
+   ],
+   "layers": [
+    "Overhead"
+   ],
+   "mass": 0.1,
+   "partial": false,
+   "sema": 3.0,
+   "sharp": null,
+   "stuffed": true,
+   "wornBulk": null
+  },
+  "defName": "Apparel_Tailcap",
+  "groups": [
+   "UpperHead"
+  ],
+  "label": "tailcap",
+  "layers": [
+   "Overhead"
+  ],
+  "mod": "Ludeon.RimWorld.Ideology",
+  "stuffed": true,
+  "techLevel": "Medieval",
+  "v": {
+   "blunt": null,
+   "heat": null,
+   "marketValue": null,
+   "mass": 0.1,
+   "sema": 0.2,
+   "sharp": null
+  }
+ },
+ {
+  "ce": {
+   "blunt": null,
+   "bulk": null,
+   "groups": [
+    "UpperHead"
+   ],
+   "layers": [
+    "Overhead"
+   ],
+   "mass": 0.14,
+   "partial": false,
+   "sema": 2.0,
+   "sharp": null,
+   "stuffed": true,
+   "wornBulk": null
+  },
+  "defName": "Apparel_Shadecone",
+  "groups": [
+   "UpperHead"
+  ],
+  "label": "shadecone",
+  "layers": [
+   "Overhead"
+  ],
+  "mod": "Ludeon.RimWorld.Ideology",
+  "stuffed": true,
+  "techLevel": "Medieval",
+  "v": {
+   "blunt": null,
+   "heat": null,
+   "marketValue": null,
+   "mass": 0.14,
+   "sema": 0.2,
+   "sharp": null
+  }
+ },
+ {
+  "ce": {
+   "blunt": null,
+   "bulk": null,
+   "groups": [
+    "UpperHead"
+   ],
+   "layers": [
+    "Overhead"
+   ],
+   "mass": 0.07,
+   "partial": false,
+   "sema": 2.0,
+   "sharp": null,
+   "stuffed": true,
+   "wornBulk": null
+  },
+  "defName": "Apparel_Flophat",
+  "groups": [
+   "UpperHead"
+  ],
+  "label": "flophat",
+  "layers": [
+   "Overhead"
+  ],
+  "mod": "Ludeon.RimWorld.Ideology",
+  "stuffed": true,
+  "techLevel": "Medieval",
+  "v": {
+   "blunt": null,
+   "heat": null,
+   "marketValue": null,
+   "mass": 0.07,
+   "sema": 0.2,
+   "sharp": null
+  }
+ },
+ {
+  "ce": {
+   "blunt": null,
+   "bulk": null,
+   "groups": [
+    "Torso"
+   ],
+   "layers": [
+    "Shell"
+   ],
+   "mass": 1.5,
+   "partial": false,
+   "sema": 2.0,
+   "sharp": null,
+   "stuffed": true,
+   "wornBulk": null
+  },
+  "defName": "Apparel_BodyStrap",
+  "groups": [
+   "Torso"
+  ],
+  "label": "slave body strap",
+  "layers": [
+   "Shell"
+  ],
+  "mod": "Ludeon.RimWorld.Ideology",
+  "stuffed": true,
+  "techLevel": "Medieval",
+  "v": {
+   "blunt": null,
+   "heat": null,
+   "marketValue": null,
+   "mass": 1.5,
+   "sema": 0.1,
+   "sharp": null
+  }
+ },
+ {
+  "ce": {
+   "blunt": null,
+   "bulk": 6.0,
+   "groups": [
+    "FullHead",
+    "UpperHead",
+    "Neck",
+    "Shoulders",
+    "Torso",
+    "Legs",
+    "Arms"
+   ],
+   "layers": [
+    "Shell"
+   ],
+   "mass": 1.0,
+   "partial": false,
+   "sema": 4.0,
+   "sharp": null,
+   "stuffed": true,
+   "wornBulk": 2.5
+  },
+  "defName": "Apparel_Burka",
+  "groups": [
+   "FullHead",
+   "UpperHead",
+   "Neck",
+   "Shoulders",
+   "Torso",
+   "Legs",
+   "Arms"
+  ],
+  "label": "burka",
+  "layers": [
+   "Shell"
+  ],
+  "mod": "Ludeon.RimWorld.Ideology",
+  "stuffed": true,
+  "techLevel": "Neolithic",
+  "v": {
+   "blunt": null,
+   "heat": null,
+   "marketValue": null,
+   "mass": 1.0,
+   "sema": 0.2,
+   "sharp": null
+  }
+ },
+ {
+  "ce": {
+   "blunt": null,
+   "bulk": null,
+   "groups": [
+    "UpperHead"
+   ],
+   "layers": [
+    "Overhead"
+   ],
+   "mass": 0.9,
+   "partial": false,
+   "sema": 0.15,
+   "sharp": null,
+   "stuffed": true,
+   "wornBulk": null
+  },
+  "defName": "Apparel_TortureCrown",
+  "groups": [
+   "UpperHead"
+  ],
+  "label": "torture crown",
+  "layers": [
+   "Overhead"
+  ],
+  "mod": "Ludeon.RimWorld.Ideology",
+  "stuffed": true,
+  "techLevel": "Medieval",
+  "v": {
+   "blunt": null,
+   "heat": null,
+   "marketValue": null,
+   "mass": 0.9,
+   "sema": 0.15,
+   "sharp": null
+  }
+ },
+ {
+  "ce": {
+   "blunt": null,
+   "bulk": null,
+   "groups": [
+    "Eyes"
+   ],
+   "layers": [
+    "EyeCover"
+   ],
+   "mass": 0.07,
+   "partial": false,
+   "sema": 2.0,
+   "sharp": null,
+   "stuffed": true,
+   "wornBulk": null
+  },
+  "defName": "Apparel_Blindfold",
+  "groups": [
+   "Eyes"
+  ],
+  "label": "blindfold",
+  "layers": [
+   "EyeCover"
+  ],
+  "mod": "Ludeon.RimWorld.Ideology",
+  "stuffed": true,
+  "techLevel": "Medieval",
+  "v": {
+   "blunt": null,
+   "heat": null,
+   "marketValue": null,
+   "mass": 0.07,
+   "sema": 0.1,
+   "sharp": null
+  }
+ },
+ {
+  "ce": {
+   "blunt": null,
+   "bulk": 1.0,
+   "groups": [
+    "Torso",
+    "Neck",
+    "Shoulders",
+    "Arms",
+    "Legs"
+   ],
+   "layers": [
+    "OnSkin"
+   ],
+   "mass": 0.18,
+   "partial": false,
+   "sema": 1.5,
+   "sharp": null,
+   "stuffed": true,
+   "wornBulk": null
+  },
+  "defName": "Apparel_KidRomper",
+  "groups": [
+   "Torso",
+   "Neck",
+   "Shoulders",
+   "Arms",
+   "Legs"
+  ],
+  "label": "kid romper",
+  "layers": [
+   "OnSkin"
+  ],
+  "mod": "Ludeon.RimWorld.Biotech",
+  "stuffed": true,
+  "techLevel": "Medieval",
+  "v": {
+   "blunt": null,
+   "heat": null,
+   "marketValue": null,
+   "mass": 0.18,
+   "sema": 0.2,
+   "sharp": null
+  }
+ },
+ {
+  "ce": {
+   "blunt": null,
+   "bulk": 0.75,
+   "groups": [
+    "Torso",
+    "Shoulders"
+   ],
+   "layers": [
+    "OnSkin"
+   ],
+   "mass": 0.15,
+   "partial": false,
+   "sema": 0.8,
+   "sharp": null,
+   "stuffed": true,
+   "wornBulk": null
+  },
+  "defName": "Apparel_KidShirt",
+  "groups": [
+   "Torso",
+   "Shoulders"
+  ],
+  "label": "kid shirt",
+  "layers": [
+   "OnSkin"
+  ],
+  "mod": "Ludeon.RimWorld.Biotech",
+  "stuffed": true,
+  "techLevel": "Medieval",
+  "v": {
+   "blunt": null,
+   "heat": null,
+   "marketValue": null,
+   "mass": 0.15,
+   "sema": 0.2,
+   "sharp": null
+  }
+ },
+ {
+  "ce": {
+   "blunt": null,
+   "bulk": 0.75,
+   "groups": [
+    "Legs"
+   ],
+   "layers": [
+    "OnSkin"
+   ],
+   "mass": 0.25,
+   "partial": false,
+   "sema": 0.8,
+   "sharp": null,
+   "stuffed": true,
+   "wornBulk": null
+  },
+  "defName": "Apparel_KidPants",
+  "groups": [
+   "Legs"
+  ],
+  "label": "kid pants",
+  "layers": [
+   "OnSkin"
+  ],
+  "mod": "Ludeon.RimWorld.Biotech",
+  "stuffed": true,
+  "techLevel": "Medieval",
+  "v": {
+   "blunt": null,
+   "heat": null,
+   "marketValue": null,
+   "mass": 0.25,
+   "sema": 0.2,
+   "sharp": null
+  }
+ },
+ {
+  "ce": {
+   "blunt": null,
+   "bulk": 5.0,
+   "groups": [
+    "Torso",
+    "Neck",
+    "Shoulders",
+    "Arms"
+   ],
+   "layers": [
+    "Shell"
+   ],
+   "mass": 1.0,
+   "partial": false,
+   "sema": 3.0,
+   "sharp": null,
+   "stuffed": true,
+   "wornBulk": 2.5
+  },
+  "defName": "Apparel_KidParka",
+  "groups": [
+   "Torso",
+   "Neck",
+   "Shoulders",
+   "Arms"
+  ],
+  "label": "kid parka",
+  "layers": [
+   "Shell"
+  ],
+  "mod": "Ludeon.RimWorld.Biotech",
+  "stuffed": true,
+  "techLevel": "Neolithic",
+  "v": {
+   "blunt": null,
+   "heat": null,
+   "marketValue": null,
+   "mass": 1.0,
+   "sema": 0.2,
+   "sharp": null
+  }
+ },
+ {
+  "ce": {
+   "blunt": null,
+   "bulk": 0.75,
+   "groups": [
+    "Torso",
+    "Legs"
+   ],
+   "layers": [
+    "OnSkin"
+   ],
+   "mass": 0.5,
+   "partial": false,
+   "sema": 2.0,
+   "sharp": null,
+   "stuffed": true,
+   "wornBulk": null
+  },
+  "defName": "Apparel_KidTribal",
+  "groups": [
+   "Torso",
+   "Legs"
+  ],
+  "label": "kid tribalwear",
+  "layers": [
+   "OnSkin"
+  ],
+  "mod": "Ludeon.RimWorld.Biotech",
+  "stuffed": true,
+  "techLevel": "Neolithic",
+  "v": {
+   "blunt": null,
+   "heat": null,
+   "marketValue": null,
+   "mass": 0.5,
+   "sema": 0.2,
+   "sharp": null
+  }
+ },
+ {
+  "ce": {
+   "blunt": null,
+   "bulk": 3.0,
+   "groups": [
+    "UpperHead"
+   ],
+   "layers": [
+    "Overhead"
+   ],
+   "mass": 1.0,
+   "partial": false,
+   "sema": 2.5,
+   "sharp": null,
+   "stuffed": true,
+   "wornBulk": 0.75
+  },
+  "defName": "Apparel_KidHelmet",
+  "groups": [
+   "UpperHead"
+  ],
+  "label": "kid helmet",
+  "layers": [
+   "Overhead"
+  ],
+  "mod": "Ludeon.RimWorld.Biotech",
+  "stuffed": true,
+  "techLevel": "Industrial",
+  "v": {
+   "blunt": null,
+   "heat": null,
+   "marketValue": null,
+   "mass": 1.0,
+   "sema": 0.5,
+   "sharp": null
+  }
+ },
+ {
+  "ce": {
+   "blunt": null,
+   "bulk": 1.0,
+   "groups": [
+    "UpperHead"
+   ],
+   "layers": [
+    "StrappedHead"
+   ],
+   "mass": 0.08,
+   "partial": false,
+   "sema": null,
+   "sharp": null,
+   "stuffed": false,
+   "wornBulk": 1.0
+  },
+  "defName": "Apparel_AirwireHeadset",
+  "groups": [
+   "UpperHead"
+  ],
+  "label": "airwire headset",
+  "layers": [
+   "Overhead"
+  ],
+  "mod": "Ludeon.RimWorld.Biotech",
+  "stuffed": false,
+  "techLevel": "Spacer",
+  "v": {
+   "blunt": null,
+   "heat": null,
+   "marketValue": null,
+   "mass": 0.08,
+   "sema": null,
+   "sharp": null
+  }
+ },
+ {
+  "ce": {
+   "blunt": null,
+   "bulk": 1.0,
+   "groups": [
+    "UpperHead"
+   ],
+   "layers": [
+    "StrappedHead"
+   ],
+   "mass": 0.08,
+   "partial": false,
+   "sema": null,
+   "sharp": null,
+   "stuffed": false,
+   "wornBulk": 1.0
+  },
+  "defName": "Apparel_ArrayHeadset",
+  "groups": [
+   "UpperHead"
+  ],
+  "label": "array headset",
+  "layers": [
+   "Overhead"
+  ],
+  "mod": "Ludeon.RimWorld.Biotech",
+  "stuffed": false,
+  "techLevel": "Spacer",
+  "v": {
+   "blunt": null,
+   "heat": null,
+   "marketValue": null,
+   "mass": 0.08,
+   "sema": null,
+   "sharp": null
+  }
+ },
+ {
+  "ce": {
+   "blunt": 0.0,
+   "bulk": 4.0,
+   "groups": [
+    "UpperHead"
+   ],
+   "layers": [
+    "StrappedHead"
+   ],
+   "mass": 1.0,
+   "partial": true,
+   "sema": null,
+   "sharp": 0.0,
+   "stuffed": false,
+   "wornBulk": 1.0
+  },
+  "defName": "Apparel_IntegratorHeadset",
+  "groups": [
+   "UpperHead"
+  ],
+  "label": "integrator headset",
+  "layers": [
+   "Overhead"
+  ],
+  "mod": "Ludeon.RimWorld.Biotech",
+  "stuffed": false,
+  "techLevel": "Spacer",
+  "v": {
+   "blunt": 0.0,
+   "heat": 0.0,
+   "marketValue": null,
+   "mass": 1.0,
+   "sema": null,
+   "sharp": 0.0
+  }
+ },
+ {
+  "ce": {
+   "blunt": 16.0,
+   "bulk": 4.0,
+   "groups": [
+    "FullHead"
+   ],
+   "layers": [
+    "Overhead",
+    "OnHead",
+    "StrappedHead"
+   ],
+   "mass": 3.0,
+   "partial": true,
+   "sema": null,
+   "sharp": 8.0,
+   "stuffed": false,
+   "wornBulk": 1.0
+  },
+  "defName": "Apparel_ArmorHelmetMechCommander",
+  "groups": [
+   "FullHead"
+  ],
+  "label": "mechcommander helmet",
+  "layers": [
+   "Overhead"
+  ],
+  "mod": "Ludeon.RimWorld.Biotech",
+  "stuffed": false,
+  "techLevel": "Spacer",
+  "v": {
+   "blunt": 0.3,
+   "heat": 0.345,
+   "marketValue": null,
+   "mass": 1.0,
+   "sema": null,
+   "sharp": 0.69
+  }
+ },
+ {
+  "ce": {
+   "blunt": 26.0,
+   "bulk": 4.0,
+   "groups": [
+    "FullHead"
+   ],
+   "layers": [
+    "Overhead",
+    "OnHead",
+    "StrappedHead"
+   ],
+   "mass": 3.0,
+   "partial": true,
+   "sema": null,
+   "sharp": 12.0,
+   "stuffed": false,
+   "wornBulk": 1.0
+  },
+  "defName": "Apparel_ArmorHelmetMechlordHelmet",
+  "groups": [
+   "FullHead"
+  ],
+  "label": "mechlord helmet",
+  "layers": [
+   "Overhead"
+  ],
+  "mod": "Ludeon.RimWorld.Biotech",
+  "stuffed": false,
+  "techLevel": "Spacer",
+  "v": {
+   "blunt": 0.4,
+   "heat": 0.46,
+   "marketValue": null,
+   "mass": 1.0,
+   "sema": null,
+   "sharp": 0.92
+  }
+ },
+ {
+  "ce": {
+   "blunt": 0.01,
+   "bulk": 3.0,
+   "groups": [
+    "FullHead"
+   ],
+   "layers": [
+    "StrappedHead"
+   ],
+   "mass": 0.5,
+   "partial": false,
+   "sema": null,
+   "sharp": 0.01,
+   "stuffed": false,
+   "wornBulk": 1.0
+  },
+  "defName": "Apparel_GasMask",
+  "groups": [
+   "FullHead"
+  ],
+  "label": "gas mask",
+  "layers": [
+   "Overhead"
+  ],
+  "mod": "Ludeon.RimWorld.Biotech",
+  "stuffed": false,
+  "techLevel": "Industrial",
+  "v": {
+   "blunt": 0.3,
+   "heat": null,
+   "marketValue": null,
+   "mass": 0.4,
+   "sema": null,
+   "sharp": 0.18
+  }
+ },
+ {
+  "ce": {
+   "blunt": null,
+   "bulk": 5.0,
+   "groups": [
+    "Torso"
+   ],
+   "layers": [
+    "Middle"
+   ],
+   "mass": 3.0,
+   "partial": false,
+   "sema": null,
+   "sharp": null,
+   "stuffed": false,
+   "wornBulk": 2.5
+  },
+  "defName": "Apparel_HeavyShield",
+  "groups": [
+   "Torso"
+  ],
+  "label": "heavy shield unit",
+  "layers": [
+   "Middle"
+  ],
+  "mod": "Ludeon.RimWorld.Biotech",
+  "stuffed": false,
+  "techLevel": "Medieval",
+  "v": {
+   "blunt": null,
+   "heat": null,
+   "marketValue": null,
+   "mass": 3.0,
+   "sema": null,
+   "sharp": null
+  }
+ },
+ {
+  "ce": {
+   "blunt": null,
+   "bulk": 10.0,
+   "groups": [
+    "Waist",
+    "Shoulders"
+   ],
+   "layers": [
+    "Belt",
+    "Backpack"
+   ],
+   "mass": 3.0,
+   "partial": false,
+   "sema": null,
+   "sharp": null,
+   "stuffed": false,
+   "wornBulk": 2.0
+  },
+  "defName": "Apparel_PackControl",
+  "groups": [
+   "Waist"
+  ],
+  "label": "control pack",
+  "layers": [
+   "Belt"
+  ],
+  "mod": "Ludeon.RimWorld.Biotech",
+  "stuffed": false,
+  "techLevel": "Spacer",
+  "v": {
+   "blunt": null,
+   "heat": null,
+   "marketValue": null,
+   "mass": 3.0,
+   "sema": null,
+   "sharp": null
+  }
+ },
+ {
+  "ce": {
+   "blunt": null,
+   "bulk": 10.0,
+   "groups": [
+    "Waist",
+    "Shoulders"
+   ],
+   "layers": [
+    "Belt",
+    "Backpack"
+   ],
+   "mass": 3.0,
+   "partial": false,
+   "sema": null,
+   "sharp": null,
+   "stuffed": false,
+   "wornBulk": 2.0
+  },
+  "defName": "Apparel_PackBandwidth",
+  "groups": [
+   "Waist"
+  ],
+  "label": "bandwidth pack",
+  "layers": [
+   "Belt"
+  ],
+  "mod": "Ludeon.RimWorld.Biotech",
+  "stuffed": false,
+  "techLevel": "Spacer",
+  "v": {
+   "blunt": null,
+   "heat": null,
+   "marketValue": null,
+   "mass": 3.0,
+   "sema": null,
+   "sharp": null
+  }
+ },
+ {
+  "ce": {
+   "blunt": null,
+   "bulk": 10.0,
+   "groups": [
+    "Waist",
+    "Shoulders"
+   ],
+   "layers": [
+    "Belt",
+    "Backpack"
+   ],
+   "mass": 3.0,
+   "partial": false,
+   "sema": null,
+   "sharp": null,
+   "stuffed": false,
+   "wornBulk": 2.0
+  },
+  "defName": "Apparel_PackTox",
+  "groups": [
+   "Waist"
+  ],
+  "label": "tox pack",
+  "layers": [
+   "Belt"
+  ],
+  "mod": "Ludeon.RimWorld.Biotech",
+  "stuffed": false,
+  "techLevel": "Industrial",
+  "v": {
+   "blunt": null,
+   "heat": null,
+   "marketValue": null,
+   "mass": 3.0,
+   "sema": null,
+   "sharp": null
+  }
+ },
+ {
+  "ce": {
+   "blunt": 34.0,
+   "bulk": 90.0,
+   "groups": [
+    "Torso",
+    "Neck",
+    "Shoulders",
+    "Arms",
+    "Legs",
+    "Hands",
+    "Feet"
+   ],
+   "layers": [
+    "Middle",
+    "Shell"
+   ],
+   "mass": 40.0,
+   "partial": true,
+   "sema": null,
+   "sharp": 16.0,
+   "stuffed": false,
+   "wornBulk": 13.0
+  },
+  "defName": "Apparel_MechlordSuit",
+  "groups": [
+   "Torso",
+   "Neck",
+   "Shoulders",
+   "Arms",
+   "Legs"
+  ],
+  "label": "mechlord suit",
+  "layers": [
+   "Middle",
+   "Shell"
+  ],
+  "mod": "Ludeon.RimWorld.Biotech",
+  "stuffed": false,
+  "techLevel": "Spacer",
+  "v": {
+   "blunt": 0.4,
+   "heat": 0.46,
+   "marketValue": null,
+   "mass": 12.0,
+   "sema": null,
+   "sharp": 0.92
+  }
+ },
+ {
+  "ce": {
+   "blunt": null,
+   "bulk": 3.0,
+   "groups": [
+    "Torso"
+   ],
+   "layers": [
+    "Webbing"
+   ],
+   "mass": 1.5,
+   "partial": false,
+   "sema": 1.0,
+   "sharp": null,
+   "stuffed": true,
+   "wornBulk": 1.0
+  },
+  "defName": "Apparel_Bandolier",
+  "groups": [
+   "Torso"
+  ],
+  "label": "heavy bandolier",
+  "layers": [
+   "Shell"
+  ],
+  "mod": "Ludeon.RimWorld.Biotech",
+  "stuffed": true,
+  "techLevel": "Industrial",
+  "v": {
+   "blunt": null,
+   "heat": null,
+   "marketValue": null,
+   "mass": 1.5,
+   "sema": 0.1,
+   "sharp": null
+  }
+ },
+ {
+  "ce": {
+   "blunt": null,
+   "bulk": 1.0,
+   "groups": [
+    "Torso"
+   ],
+   "layers": [
+    "Middle"
+   ],
+   "mass": 0.5,
+   "partial": false,
+   "sema": 1.0,
+   "sharp": null,
+   "stuffed": true,
+   "wornBulk": 0.5
+  },
+  "defName": "Apparel_Sash",
+  "groups": [
+   "Torso"
+  ],
+  "label": "sash",
+  "layers": [
+   "Middle"
+  ],
+  "mod": "Ludeon.RimWorld.Biotech",
+  "stuffed": true,
+  "techLevel": "Industrial",
+  "v": {
+   "blunt": null,
+   "heat": null,
+   "marketValue": null,
+   "mass": 0.5,
+   "sema": 0.1,
+   "sharp": null
+  }
+ },
+ {
+  "ce": {
+   "blunt": null,
+   "bulk": 1.0,
+   "groups": [
+    "FullHead"
+   ],
+   "layers": [
+    "Overhead"
+   ],
+   "mass": 1.4,
+   "partial": false,
+   "sema": 1.0,
+   "sharp": null,
+   "stuffed": true,
+   "wornBulk": 0.0
+  },
+  "defName": "Apparel_CultistMask",
+  "groups": [
+   "FullHead"
+  ],
+  "label": "ritual mask",
+  "layers": [
+   "Overhead"
+  ],
+  "mod": "Ludeon.RimWorld.Anomaly",
+  "stuffed": true,
+  "techLevel": "Neolithic",
+  "v": {
+   "blunt": null,
+   "heat": null,
+   "marketValue": null,
+   "mass": 1.4,
+   "sema": 0.3,
+   "sharp": null
+  }
+ },
+ {
+  "ce": {
+   "blunt": null,
+   "bulk": 1.0,
+   "groups": [
+    "FullHead"
+   ],
+   "layers": [
+    "Overhead"
+   ],
+   "mass": 0.1,
+   "partial": true,
+   "sema": 2.0,
+   "sharp": null,
+   "stuffed": true,
+   "wornBulk": 0.0
+  },
+  "defName": "Apparel_CeremonialCultistMask",
+  "groups": [
+   "FullHead"
+  ],
+  "label": "ceremonial hood",
+  "layers": [
+   "Overhead"
+  ],
+  "mod": "Ludeon.RimWorld.Anomaly",
+  "stuffed": true,
+  "techLevel": "Neolithic",
+  "v": {
+   "blunt": null,
+   "heat": null,
+   "marketValue": null,
+   "mass": 0.1,
+   "sema": 0.4,
+   "sharp": null
+  }
+ },
+ {
+  "ce": {
+   "blunt": null,
+   "bulk": 10.0,
+   "groups": [
+    "Waist"
+   ],
+   "layers": [
+    "Belt"
+   ],
+   "mass": 3.0,
+   "partial": false,
+   "sema": null,
+   "sharp": null,
+   "stuffed": false,
+   "wornBulk": 2.0
+  },
+  "defName": "Apparel_DisruptorFlarePack",
+  "groups": [
+   "Waist"
+  ],
+  "label": "disruptor flare pack",
+  "layers": [
+   "Belt"
+  ],
+  "mod": "Ludeon.RimWorld.Anomaly",
+  "stuffed": false,
+  "techLevel": "Industrial",
+  "v": {
+   "blunt": null,
+   "heat": null,
+   "marketValue": null,
+   "mass": 3.0,
+   "sema": null,
+   "sharp": null
+  }
+ },
+ {
+  "ce": {
+   "blunt": null,
+   "bulk": 10.0,
+   "groups": [
+    "Waist"
+   ],
+   "layers": [
+    "Belt"
+   ],
+   "mass": 3.0,
+   "partial": false,
+   "sema": null,
+   "sharp": null,
+   "stuffed": false,
+   "wornBulk": 2.0
+  },
+  "defName": "Apparel_PackTurret",
+  "groups": [
+   "Waist"
+  ],
+  "label": "turret pack",
+  "layers": [
+   "Belt"
+  ],
+  "mod": "Ludeon.RimWorld.Anomaly",
+  "stuffed": false,
+  "techLevel": "Industrial",
+  "v": {
+   "blunt": null,
+   "heat": null,
+   "marketValue": null,
+   "mass": 3.0,
+   "sema": null,
+   "sharp": null
+  }
+ },
+ {
+  "ce": {
+   "blunt": null,
+   "bulk": 10.0,
+   "groups": [
+    "Waist"
+   ],
+   "layers": [
+    "Belt"
+   ],
+   "mass": 3.0,
+   "partial": false,
+   "sema": null,
+   "sharp": null,
+   "stuffed": false,
+   "wornBulk": 2.0
+  },
+  "defName": "Apparel_DeadlifePack",
+  "groups": [
+   "Waist"
+  ],
+  "label": "deadlife pack",
+  "layers": [
+   "Belt"
+  ],
+  "mod": "Ludeon.RimWorld.Anomaly",
+  "stuffed": false,
+  "techLevel": "Industrial",
+  "v": {
+   "blunt": null,
+   "heat": null,
+   "marketValue": null,
+   "mass": 3.0,
+   "sema": null,
+   "sharp": null
+  }
+ },
+ {
+  "ce": {
+   "blunt": null,
+   "bulk": 1.0,
+   "groups": [
+    "Waist"
+   ],
+   "layers": [
+    "Belt"
+   ],
+   "mass": 0.7,
+   "partial": false,
+   "sema": null,
+   "sharp": null,
+   "stuffed": false,
+   "wornBulk": 0.0
+  },
+  "defName": "Apparel_ShardPsychicShockLance",
+  "groups": [
+   "Waist"
+  ],
+  "label": "shard shock lance",
+  "layers": [
+   "Belt"
+  ],
+  "mod": "Ludeon.RimWorld.Anomaly",
+  "stuffed": false,
+  "techLevel": "Archotech",
+  "v": {
+   "blunt": null,
+   "heat": null,
+   "marketValue": null,
+   "mass": 0.7,
+   "sema": null,
+   "sharp": null
+  }
+ },
+ {
+  "ce": {
+   "blunt": null,
+   "bulk": 1.0,
+   "groups": [
+    "Waist"
+   ],
+   "layers": [
+    "Belt"
+   ],
+   "mass": 0.7,
+   "partial": false,
+   "sema": null,
+   "sharp": null,
+   "stuffed": false,
+   "wornBulk": 0.0
+  },
+  "defName": "Apparel_ShardPsychicInsanityLance",
+  "groups": [
+   "Waist"
+  ],
+  "label": "shard insanity lance",
+  "layers": [
+   "Belt"
+  ],
+  "mod": "Ludeon.RimWorld.Anomaly",
+  "stuffed": false,
+  "techLevel": "Archotech",
+  "v": {
+   "blunt": null,
+   "heat": null,
+   "marketValue": null,
+   "mass": 0.7,
+   "sema": null,
+   "sharp": null
+  }
+ },
+ {
+  "ce": {
+   "blunt": null,
+   "bulk": 1.0,
+   "groups": [
+    "Waist"
+   ],
+   "layers": [
+    "Belt"
+   ],
+   "mass": 0.5,
+   "partial": false,
+   "sema": null,
+   "sharp": null,
+   "stuffed": false,
+   "wornBulk": 0.0
+  },
+  "defName": "Apparel_BiomutationLance",
+  "groups": [
+   "Waist"
+  ],
+  "label": "biomutation lance",
+  "layers": [
+   "Belt"
+  ],
+  "mod": "Ludeon.RimWorld.Anomaly",
+  "stuffed": false,
+  "techLevel": "Archotech",
+  "v": {
+   "blunt": null,
+   "heat": null,
+   "marketValue": 850.0,
+   "mass": 0.5,
+   "sema": null,
+   "sharp": null
+  }
+ },
+ {
+  "ce": {
+   "blunt": null,
+   "bulk": 7.5,
+   "groups": [
+    "Torso",
+    "Neck",
+    "Shoulders",
+    "Arms"
+   ],
+   "layers": [
+    "Shell"
+   ],
+   "mass": 1.5,
+   "partial": false,
+   "sema": 2.0,
+   "sharp": null,
+   "stuffed": true,
+   "wornBulk": 1.0
+  },
+  "defName": "Apparel_LabCoat",
+  "groups": [
+   "Torso",
+   "Neck",
+   "Shoulders",
+   "Arms"
+  ],
+  "label": "lab coat",
+  "layers": [
+   "Shell"
+  ],
+  "mod": "Ludeon.RimWorld.Anomaly",
+  "stuffed": true,
+  "techLevel": "Industrial",
+  "v": {
+   "blunt": null,
+   "heat": null,
+   "marketValue": null,
+   "mass": 1.5,
+   "sema": 0.2,
+   "sharp": null
+  }
+ },
+ {
+  "ce": {
+   "blunt": 7.0,
+   "bulk": 4.0,
+   "groups": [
+    "FullHead"
+   ],
+   "layers": [
+    "Overhead"
+   ],
+   "mass": 1.5,
+   "partial": true,
+   "sema": null,
+   "sharp": 3.5,
+   "stuffed": false,
+   "wornBulk": 1.0
+  },
+  "defName": "Apparel_VacsuitHelmet",
+  "groups": [
+   "FullHead"
+  ],
+  "label": "vacsuit helmet",
+  "layers": [
+   "Overhead"
+  ],
+  "mod": "Ludeon.RimWorld.Odyssey",
+  "stuffed": false,
+  "techLevel": "Spacer",
+  "v": {
+   "blunt": 0.24,
+   "heat": 0.66,
+   "marketValue": null,
+   "mass": 1.5,
+   "sema": null,
+   "sharp": 0.52
+  }
+ },
+ {
+  "ce": {
+   "blunt": null,
+   "bulk": 8.0,
+   "groups": [
+    "Waist"
+   ],
+   "layers": [
+    "Belt"
+   ],
+   "mass": 3.0,
+   "partial": false,
+   "sema": null,
+   "sharp": null,
+   "stuffed": false,
+   "wornBulk": 3.0
+  },
+  "defName": "Apparel_PackHunter",
+  "groups": [
+   "Waist"
+  ],
+  "label": "hunter pack",
+  "layers": [
+   "Belt"
+  ],
+  "mod": "Ludeon.RimWorld.Odyssey",
+  "stuffed": false,
+  "techLevel": "Industrial",
+  "v": {
+   "blunt": null,
+   "heat": null,
+   "marketValue": null,
+   "mass": 3.0,
+   "sema": null,
+   "sharp": null
+  }
+ },
+ {
+  "ce": {
+   "blunt": null,
+   "bulk": 10.0,
+   "groups": [
+    "Waist"
+   ],
+   "layers": [
+    "Belt"
+   ],
+   "mass": 5.0,
+   "partial": false,
+   "sema": null,
+   "sharp": null,
+   "stuffed": false,
+   "wornBulk": 5.0
+  },
+  "defName": "Apparel_CerebrexNode",
+  "groups": [
+   "Waist"
+  ],
+  "label": "cerebrex node",
+  "layers": [
+   "Belt"
+  ],
+  "mod": "Ludeon.RimWorld.Odyssey",
+  "stuffed": false,
+  "techLevel": "Spacer",
+  "v": {
+   "blunt": null,
+   "heat": null,
+   "marketValue": 5000.0,
+   "mass": 5.0,
+   "sema": null,
+   "sharp": null
+  }
+ },
+ {
+  "ce": {
+   "blunt": 7.0,
+   "bulk": 80.0,
+   "groups": [
+    "Torso",
+    "Neck",
+    "Shoulders",
+    "Arms",
+    "Legs",
+    "Hands",
+    "Feet"
+   ],
+   "layers": [
+    "Middle",
+    "Shell"
+   ],
+   "mass": 12.0,
+   "partial": false,
+   "sema": null,
+   "sharp": 3.5,
+   "stuffed": false,
+   "wornBulk": 12.0
+  },
+  "defName": "Apparel_Vacsuit",
+  "groups": [
+   "Torso",
+   "Neck",
+   "Shoulders",
+   "Arms",
+   "Legs"
+  ],
+  "label": "vacsuit",
+  "layers": [
+   "Middle",
+   "Shell"
+  ],
+  "mod": "Ludeon.RimWorld.Odyssey",
+  "stuffed": false,
+  "techLevel": "Spacer",
+  "v": {
+   "blunt": 0.25,
+   "heat": 0.66,
+   "marketValue": null,
+   "mass": 12.0,
+   "sema": null,
+   "sharp": 0.52
+  }
+ },
+ {
+  "ce": {
+   "blunt": 5.25,
+   "bulk": 40.0,
+   "groups": [
+    "Torso",
+    "Neck",
+    "Shoulders",
+    "Arms",
+    "Legs",
+    "Hands",
+    "Feet"
+   ],
+   "layers": [
+    "Middle",
+    "Shell"
+   ],
+   "mass": 8.0,
+   "partial": false,
+   "sema": null,
+   "sharp": 2.65,
+   "stuffed": false,
+   "wornBulk": 6.0
+  },
+  "defName": "Apparel_VacsuitChildren",
+  "groups": [
+   "Torso",
+   "Neck",
+   "Shoulders",
+   "Arms",
+   "Legs"
+  ],
+  "label": "kid vacsuit",
+  "layers": [
+   "Middle",
+   "Shell"
+  ],
+  "mod": "Ludeon.RimWorld.Odyssey",
+  "stuffed": false,
+  "techLevel": "Spacer",
+  "v": {
+   "blunt": 0.2,
+   "heat": 0.66,
+   "marketValue": null,
+   "mass": 8.0,
+   "sema": null,
+   "sharp": 0.52
+  }
+ }
+]

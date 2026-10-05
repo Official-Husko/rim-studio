@@ -1,0 +1,75 @@
+{
+ "active_distinct": 610,
+ "active_ids_found_in_library": 610,
+ "active_ids_missing_from_library": 0,
+ "active_list_len": 610,
+ "active_mods_not_declaring_game_version": 12,
+ "active_not_declaring_and_not_in_nvw": 0,
+ "community_edges_adding_new_constraint": 56,
+ "community_edges_already_implied_by_about": 34,
+ "community_edges_contradicting_about": 0,
+ "cycles_about_only_active": [
+  2
+ ],
+ "cycles_community_only_active": [],
+ "cycles_union_active": [
+  2
+ ],
+ "incompatible_pairs_both_active": 0,
+ "library_distinct_ids": 741,
+ "library_mods": 743,
+ "no_version_warning_1_6": {
+  "active": 14,
+  "active_not_declaring_game_version": 12,
+  "entries": 318,
+  "installed": 16
+ },
+ "order_edges_from_about_active": 3199,
+ "order_edges_from_community_both_active": 90,
+ "rules_incompatibleWith": {
+  "both_active": 0,
+  "both_installed": 0,
+  "subject_active": 2,
+  "total": 5
+ },
+ "rules_loadAfter": {
+  "both_active": 59,
+  "both_installed": 63,
+  "subject_active": 176,
+  "total": 1124
+ },
+ "rules_loadBefore": {
+  "both_active": 34,
+  "both_installed": 42,
+  "subject_active": 102,
+  "total": 439
+ },
+ "rules_loadTop_loadBottom_active_subjects": {
+  "loadBottom": 5,
+  "loadTop": 1
+ },
+ "steamdb_vs_about": {
+  "about_has_dependencies": 491,
+  "about_says_current_steamdb_says_not": 2,
+  "gameversions_differ_other": 1,
+  "gameversions_equal": 451,
+  "packageid_case_only_diff": 363,
+  "packageid_differs": 1,
+  "packageid_equal_case_insens": 454,
+  "present": 682,
+  "steamdb_has_dependencies": 449,
+  "steamdb_has_gameversions": 454,
+  "steamdb_no_gameversions": 228,
+  "steamdb_no_packageid": 227,
+  "steamdb_unpublished_flag": 1,
+  "workshop_folder_absent_from_steamdb": 8
+ },
+ "use_this_instead": {
+  "by_old_packageid_hits": 53,
+  "hits_active": 0,
+  "hits_with_replacement_supporting_game": 22,
+  "installed_workshop_hits": 22,
+  "replacement_already_installed": 6,
+  "rules": 2718
+ }
+}

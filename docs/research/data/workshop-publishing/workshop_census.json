@@ -1,0 +1,100 @@
+{
+ "bytes_by_category": {
+  "archives": 3197894,
+  "backup_tmp": 2123559,
+  "build_dir": 110863622,
+  "ide_dir": 19615092,
+  "layered_art": 38940145,
+  "logs": 54344,
+  "markdown_docs": 587230,
+  "os_junk": 162864,
+  "pdb": 72401204,
+  "project_files": 942874,
+  "source_dir": 366129764,
+  "vcs_dir": 649951174,
+  "vcs_files": 246967
+ },
+ "file_count_max": 22030,
+ "files_by_category": {
+  "archives": 14,
+  "backup_tmp": 115,
+  "build_dir": 710,
+  "ide_dir": 369,
+  "layered_art": 25,
+  "logs": 3,
+  "markdown_docs": 229,
+  "os_junk": 13,
+  "pdb": 272,
+  "project_files": 293,
+  "source_dir": 3906,
+  "vcs_dir": 20960,
+  "vcs_files": 133
+ },
+ "largest": [
+  {
+   "bytes": 2946727562,
+   "files": 14537,
+   "folder": "3119816857"
+  },
+  {
+   "bytes": 2152356049,
+   "files": 22030,
+   "folder": "2323211835"
+  },
+  {
+   "bytes": 1631569057,
+   "files": 4550,
+   "folder": "2026992161"
+  },
+  {
+   "bytes": 1608928170,
+   "files": 13551,
+   "folder": "2307494117"
+  },
+  {
+   "bytes": 1439401724,
+   "files": 3817,
+   "folder": "3015391450"
+  },
+  {
+   "bytes": 858313256,
+   "files": 4210,
+   "folder": "2860715703"
+  },
+  {
+   "bytes": 836209294,
+   "files": 4025,
+   "folder": "2910172297"
+  },
+  {
+   "bytes": 654524956,
+   "files": 787,
+   "folder": "2998389369"
+  }
+ ],
+ "mods": 690,
+ "over_100MB": 62,
+ "over_10k_files": 5,
+ "over_1GiB": 5,
+ "present_in_mods": {
+  "archives": 12,
+  "backup_tmp": 15,
+  "build_dir": 39,
+  "ide_dir": 58,
+  "layered_art": 9,
+  "logs": 3,
+  "markdown_docs": 146,
+  "os_junk": 6,
+  "pdb": 82,
+  "project_files": 70,
+  "source_dir": 65,
+  "vcs_dir": 71,
+  "vcs_files": 84
+ },
+ "size_percentiles_bytes": {
+  "max": 2946727562,
+  "p50": 3624728,
+  "p90": 98278618,
+  "p99": 836209294
+ }
+}

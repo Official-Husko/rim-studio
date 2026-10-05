@@ -1,0 +1,470 @@
+{
+"role1.0_tier0.35_k1": {
+"vanilla/ranged|scratch": {
+"simple": 0.195,
+"quiz_full": 0.143
+},
+"vanilla/melee|scratch": {
+"simple": 0.382,
+"quiz_full": 0.076
+},
+"vanilla/apparel|scratch": {
+"simple": 0.344,
+"quiz_full": 0.048
+},
+"ce/ranged|scratch": {
+"simple": 0.191,
+"quiz_full": 0.146
+},
+"ce/melee|scratch": {
+"simple": 0.516,
+"quiz_full": 0.368
+},
+"ce/apparel|scratch": {
+"simple": 0.709,
+"quiz_full": 0.121
+}
+},
+"role1.0_tier0.35_k2": {
+"vanilla/ranged|scratch": {
+"simple": 0.239,
+"quiz_full": 0.143
+},
+"vanilla/melee|scratch": {
+"simple": 0.382,
+"quiz_full": 0.076
+},
+"vanilla/apparel|scratch": {
+"simple": 0.413,
+"quiz_full": 0.077
+},
+"ce/ranged|scratch": {
+"simple": 0.171,
+"quiz_full": 0.151
+},
+"ce/melee|scratch": {
+"simple": 0.492,
+"quiz_full": 0.334
+},
+"ce/apparel|scratch": {
+"simple": 0.643,
+"quiz_full": 0.167
+}
+},
+"role1.0_tier0.35_k3": {
+"vanilla/ranged|scratch": {
+"simple": 0.235,
+"quiz_full": 0.143
+},
+"vanilla/melee|scratch": {
+"simple": 0.382,
+"quiz_full": 0.076
+},
+"vanilla/apparel|scratch": {
+"simple": 0.4,
+"quiz_full": 0.092
+},
+"ce/ranged|scratch": {
+"simple": 0.201,
+"quiz_full": 0.167
+},
+"ce/melee|scratch": {
+"simple": 0.472,
+"quiz_full": 0.349
+},
+"ce/apparel|scratch": {
+"simple": 0.592,
+"quiz_full": 0.167
+}
+},
+"role1.0_tier0.7_k1": {
+"vanilla/ranged|scratch": {
+"simple": 0.195,
+"quiz_full": 0.143
+},
+"vanilla/melee|scratch": {
+"simple": 0.334,
+"quiz_full": 0.208
+},
+"vanilla/apparel|scratch": {
+"simple": 0.317,
+"quiz_full": 0.037
+},
+"ce/ranged|scratch": {
+"simple": 0.196,
+"quiz_full": 0.146
+},
+"ce/melee|scratch": {
+"simple": 0.516,
+"quiz_full": 0.354
+},
+"ce/apparel|scratch": {
+"simple": 0.709,
+"quiz_full": 0.16
+}
+},
+"role1.0_tier0.7_k2": {
+"vanilla/ranged|scratch": {
+"simple": 0.239,
+"quiz_full": 0.143
+},
+"vanilla/melee|scratch": {
+"simple": 0.425,
+"quiz_full": 0.208
+},
+"vanilla/apparel|scratch": {
+"simple": 0.38,
+"quiz_full": 0.079
+},
+"ce/ranged|scratch": {
+"simple": 0.196,
+"quiz_full": 0.145
+},
+"ce/melee|scratch": {
+"simple": 0.491,
+"quiz_full": 0.274
+},
+"ce/apparel|scratch": {
+"simple": 0.723,
+"quiz_full": 0.167
+}
+},
+"role1.0_tier0.7_k3": {
+"vanilla/ranged|scratch": {
+"simple": 0.254,
+"quiz_full": 0.143
+},
+"vanilla/melee|scratch": {
+"simple": 0.351,
+"quiz_full": 0.207
+},
+"vanilla/apparel|scratch": {
+"simple": 0.412,
+"quiz_full": 0.096
+},
+"ce/ranged|scratch": {
+"simple": 0.193,
+"quiz_full": 0.129
+},
+"ce/melee|scratch": {
+"simple": 0.424,
+"quiz_full": 0.335
+},
+"ce/apparel|scratch": {
+"simple": 0.61,
+"quiz_full": 0.184
+}
+},
+"role2.0_tier0.35_k1": {
+"vanilla/ranged|scratch": {
+"simple": 0.195,
+"quiz_full": 0.143
+},
+"vanilla/melee|scratch": {
+"simple": 0.382,
+"quiz_full": 0.168
+},
+"vanilla/apparel|scratch": {
+"simple": 0.336,
+"quiz_full": 0.03
+},
+"ce/ranged|scratch": {
+"simple": 0.191,
+"quiz_full": 0.146
+},
+"ce/melee|scratch": {
+"simple": 0.51,
+"quiz_full": 0.368
+},
+"ce/apparel|scratch": {
+"simple": 0.709,
+"quiz_full": 0.121
+}
+},
+"role2.0_tier0.35_k2": {
+"vanilla/ranged|scratch": {
+"simple": 0.239,
+"quiz_full": 0.143
+},
+"vanilla/melee|scratch": {
+"simple": 0.382,
+"quiz_full": 0.168
+},
+"vanilla/apparel|scratch": {
+"simple": 0.413,
+"quiz_full": 0.072
+},
+"ce/ranged|scratch": {
+"simple": 0.173,
+"quiz_full": 0.144
+},
+"ce/melee|scratch": {
+"simple": 0.51,
+"quiz_full": 0.344
+},
+"ce/apparel|scratch": {
+"simple": 0.74,
+"quiz_full": 0.167
+}
+},
+"role2.0_tier0.35_k3": {
+"vanilla/ranged|scratch": {
+"simple": 0.238,
+"quiz_full": 0.143
+},
+"vanilla/melee|scratch": {
+"simple": 0.382,
+"quiz_full": 0.168
+},
+"vanilla/apparel|scratch": {
+"simple": 0.4,
+"quiz_full": 0.084
+},
+"ce/ranged|scratch": {
+"simple": 0.217,
+"quiz_full": 0.169
+},
+"ce/melee|scratch": {
+"simple": 0.462,
+"quiz_full": 0.337
+},
+"ce/apparel|scratch": {
+"simple": 0.592,
+"quiz_full": 0.167
+}
+},
+"role2.0_tier0.7_k1": {
+"vanilla/ranged|scratch": {
+"simple": 0.195,
+"quiz_full": 0.143
+},
+"vanilla/melee|scratch": {
+"simple": 0.334,
+"quiz_full": 0.262
+},
+"vanilla/apparel|scratch": {
+"simple": 0.317,
+"quiz_full": 0.078
+},
+"ce/ranged|scratch": {
+"simple": 0.196,
+"quiz_full": 0.146
+},
+"ce/melee|scratch": {
+"simple": 0.516,
+"quiz_full": 0.354
+},
+"ce/apparel|scratch": {
+"simple": 0.709,
+"quiz_full": 0.16
+}
+},
+"role2.0_tier0.7_k2": {
+"vanilla/ranged|scratch": {
+"simple": 0.239,
+"quiz_full": 0.143
+},
+"vanilla/melee|scratch": {
+"simple": 0.382,
+"quiz_full": 0.213
+},
+"vanilla/apparel|scratch": {
+"simple": 0.378,
+"quiz_full": 0.102
+},
+"ce/ranged|scratch": {
+"simple": 0.162,
+"quiz_full": 0.14
+},
+"ce/melee|scratch": {
+"simple": 0.495,
+"quiz_full": 0.274
+},
+"ce/apparel|scratch": {
+"simple": 0.723,
+"quiz_full": 0.167
+}
+},
+"role2.0_tier0.7_k3": {
+"vanilla/ranged|scratch": {
+"simple": 0.238,
+"quiz_full": 0.143
+},
+"vanilla/melee|scratch": {
+"simple": 0.382,
+"quiz_full": 0.195
+},
+"vanilla/apparel|scratch": {
+"simple": 0.413,
+"quiz_full": 0.118
+},
+"ce/ranged|scratch": {
+"simple": 0.214,
+"quiz_full": 0.159
+},
+"ce/melee|scratch": {
+"simple": 0.45,
+"quiz_full": 0.335
+},
+"ce/apparel|scratch": {
+"simple": 0.622,
+"quiz_full": 0.184
+}
+},
+"role4.0_tier0.35_k1": {
+"vanilla/ranged|scratch": {
+"simple": 0.195,
+"quiz_full": 0.143
+},
+"vanilla/melee|scratch": {
+"simple": 0.382,
+"quiz_full": 0.168
+},
+"vanilla/apparel|scratch": {
+"simple": 0.336,
+"quiz_full": 0.03
+},
+"ce/ranged|scratch": {
+"simple": 0.191,
+"quiz_full": 0.146
+},
+"ce/melee|scratch": {
+"simple": 0.51,
+"quiz_full": 0.368
+},
+"ce/apparel|scratch": {
+"simple": 0.709,
+"quiz_full": 0.121
+}
+},
+"role4.0_tier0.35_k2": {
+"vanilla/ranged|scratch": {
+"simple": 0.239,
+"quiz_full": 0.143
+},
+"vanilla/melee|scratch": {
+"simple": 0.382,
+"quiz_full": 0.168
+},
+"vanilla/apparel|scratch": {
+"simple": 0.413,
+"quiz_full": 0.072
+},
+"ce/ranged|scratch": {
+"simple": 0.163,
+"quiz_full": 0.14
+},
+"ce/melee|scratch": {
+"simple": 0.51,
+"quiz_full": 0.344
+},
+"ce/apparel|scratch": {
+"simple": 0.74,
+"quiz_full": 0.167
+}
+},
+"role4.0_tier0.35_k3": {
+"vanilla/ranged|scratch": {
+"simple": 0.241,
+"quiz_full": 0.143
+},
+"vanilla/melee|scratch": {
+"simple": 0.382,
+"quiz_full": 0.168
+},
+"vanilla/apparel|scratch": {
+"simple": 0.4,
+"quiz_full": 0.084
+},
+"ce/ranged|scratch": {
+"simple": 0.202,
+"quiz_full": 0.159
+},
+"ce/melee|scratch": {
+"simple": 0.462,
+"quiz_full": 0.337
+},
+"ce/apparel|scratch": {
+"simple": 0.651,
+"quiz_full": 0.167
+}
+},
+"role4.0_tier0.7_k1": {
+"vanilla/ranged|scratch": {
+"simple": 0.195,
+"quiz_full": 0.143
+},
+"vanilla/melee|scratch": {
+"simple": 0.334,
+"quiz_full": 0.245
+},
+"vanilla/apparel|scratch": {
+"simple": 0.317,
+"quiz_full": 0.078
+},
+"ce/ranged|scratch": {
+"simple": 0.196,
+"quiz_full": 0.146
+},
+"ce/melee|scratch": {
+"simple": 0.51,
+"quiz_full": 0.366
+},
+"ce/apparel|scratch": {
+"simple": 0.709,
+"quiz_full": 0.16
+}
+},
+"role4.0_tier0.7_k2": {
+"vanilla/ranged|scratch": {
+"simple": 0.239,
+"quiz_full": 0.143
+},
+"vanilla/melee|scratch": {
+"simple": 0.382,
+"quiz_full": 0.223
+},
+"vanilla/apparel|scratch": {
+"simple": 0.378,
+"quiz_full": 0.102
+},
+"ce/ranged|scratch": {
+"simple": 0.159,
+"quiz_full": 0.14
+},
+"ce/melee|scratch": {
+"simple": 0.507,
+"quiz_full": 0.31
+},
+"ce/apparel|scratch": {
+"simple": 0.723,
+"quiz_full": 0.167
+}
+},
+"role4.0_tier0.7_k3": {
+"vanilla/ranged|scratch": {
+"simple": 0.241,
+"quiz_full": 0.143
+},
+"vanilla/melee|scratch": {
+"simple": 0.382,
+"quiz_full": 0.21
+},
+"vanilla/apparel|scratch": {
+"simple": 0.41,
+"quiz_full": 0.118
+},
+"ce/ranged|scratch": {
+"simple": 0.2,
+"quiz_full": 0.159
+},
+"ce/melee|scratch": {
+"simple": 0.442,
+"quiz_full": 0.357
+},
+"ce/apparel|scratch": {
+"simple": 0.642,
+"quiz_full": 0.184
+}
+}
+}

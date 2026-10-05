@@ -1,0 +1,162 @@
+{
+ "Arrow": {
+  "defName": "Arrow",
+  "workerClass": "DamageWorker_AddInjury",
+  "defaultDamage": -1,
+  "defaultArmorPenetration": -1,
+  "defaultStoppingPower": 0,
+  "armorCategory": "Sharp",
+  "isRanged": "true",
+  "isExplosive": null
+ },
+ "ArrowHighVelocity": {
+  "defName": "ArrowHighVelocity",
+  "workerClass": "DamageWorker_AddInjury",
+  "defaultDamage": -1,
+  "defaultArmorPenetration": -1,
+  "defaultStoppingPower": 0,
+  "armorCategory": "Sharp",
+  "isRanged": "true",
+  "isExplosive": null
+ },
+ "Beam": {
+  "defName": "Beam",
+  "workerClass": "DamageWorker_AddInjury",
+  "defaultDamage": 10.0,
+  "defaultArmorPenetration": 0.5,
+  "defaultStoppingPower": 0,
+  "armorCategory": "Heat",
+  "isRanged": "true",
+  "isExplosive": null
+ },
+ "BeamBypassShields": {
+  "defName": "BeamBypassShields",
+  "workerClass": "DamageWorker_AddInjury",
+  "defaultDamage": 10.0,
+  "defaultArmorPenetration": 0.5,
+  "defaultStoppingPower": 0,
+  "armorCategory": "Heat",
+  "isRanged": "true",
+  "isExplosive": null
+ },
+ "Bomb": {
+  "defName": "Bomb",
+  "workerClass": "DamageWorker_AddInjury",
+  "defaultDamage": 50.0,
+  "defaultArmorPenetration": 0.1,
+  "defaultStoppingPower": 0.5,
+  "armorCategory": "Sharp",
+  "isRanged": null,
+  "isExplosive": "true"
+ },
+ "Bullet": {
+  "defName": "Bullet",
+  "workerClass": "DamageWorker_AddInjury",
+  "defaultDamage": -1,
+  "defaultArmorPenetration": -1,
+  "defaultStoppingPower": 0,
+  "armorCategory": "Sharp",
+  "isRanged": "true",
+  "isExplosive": null
+ },
+ "BulletToxic": {
+  "defName": "BulletToxic",
+  "workerClass": "DamageWorker_AddInjury",
+  "defaultDamage": -1,
+  "defaultArmorPenetration": -1,
+  "defaultStoppingPower": 0,
+  "armorCategory": "Sharp",
+  "isRanged": "true",
+  "isExplosive": null
+ },
+ "EMP": {
+  "defName": "EMP",
+  "workerClass": null,
+  "defaultDamage": 50.0,
+  "defaultArmorPenetration": -1,
+  "defaultStoppingPower": 0,
+  "armorCategory": null,
+  "isRanged": null,
+  "isExplosive": null
+ },
+ "Extinguish": {
+  "defName": "Extinguish",
+  "workerClass": "DamageWorker_Extinguish",
+  "defaultDamage": 999999.0,
+  "defaultArmorPenetration": -1,
+  "defaultStoppingPower": 0,
+  "armorCategory": null,
+  "isRanged": null,
+  "isExplosive": null
+ },
+ "Flame": {
+  "defName": "Flame",
+  "workerClass": "DamageWorker_Flame",
+  "defaultDamage": 10.0,
+  "defaultArmorPenetration": 0.0,
+  "defaultStoppingPower": 0,
+  "armorCategory": "Heat",
+  "isRanged": null,
+  "isExplosive": null
+ },
+ "Nerve": {
+  "defName": "Nerve",
+  "workerClass": "DamageWorker_Nerve",
+  "defaultDamage": -1,
+  "defaultArmorPenetration": -1,
+  "defaultStoppingPower": 0,
+  "armorCategory": "Sharp",
+  "isRanged": "true",
+  "isExplosive": null
+ },
+ "RangedStab": {
+  "defName": "RangedStab",
+  "workerClass": "DamageWorker_Stab",
+  "defaultDamage": -1,
+  "defaultArmorPenetration": -1,
+  "defaultStoppingPower": 0,
+  "armorCategory": "Sharp",
+  "isRanged": "true",
+  "isExplosive": null
+ },
+ "Smoke": {
+  "defName": "Smoke",
+  "workerClass": null,
+  "defaultDamage": 0.0,
+  "defaultArmorPenetration": -1,
+  "defaultStoppingPower": 0,
+  "armorCategory": null,
+  "isRanged": null,
+  "isExplosive": null
+ },
+ "Thump": {
+  "defName": "Thump",
+  "workerClass": "DamageWorker_AddInjury",
+  "defaultDamage": 5.0,
+  "defaultArmorPenetration": 0.0,
+  "defaultStoppingPower": 0,
+  "armorCategory": "Sharp",
+  "isRanged": null,
+  "isExplosive": "true"
+ },
+ "ToxGas": {
+  "defName": "ToxGas",
+  "workerClass": null,
+  "defaultDamage": 0.0,
+  "defaultArmorPenetration": -1,
+  "defaultStoppingPower": 0,
+  "armorCategory": null,
+  "isRanged": null,
+  "isExplosive": null
+ },
+ "Vaporize": {
+  "defName": "Vaporize",
+  "workerClass": "DamageWorker_Vaporize",
+  "defaultDamage": 800.0,
+  "defaultArmorPenetration": 1.0,
+  "defaultStoppingPower": 1.5,
+  "armorCategory": "Heat",
+  "isRanged": null,
+  "isExplosive": null
+ }
+}

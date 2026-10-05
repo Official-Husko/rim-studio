@@ -1,0 +1,127 @@
+defName,label,source,tech,kind,layers,groups,stuffed,stuffCats,thickness,sharp,blunt,heat,Mass,Bulk,WornBulk,insCold,partial,van_sharp,van_thickness,van_mass
+Apparel_AdvancedHelmet,composite helmet,RimWorld,Industrial,headgear,Overhead,UpperHead,False,,,8,12,0.54,1.2,4,1,,0,,0.7,1.2
+Apparel_AirwireHeadset,airwire headset,Biotech,Spacer,headgear,StrappedHead,UpperHead,False,,,,,,0.08,1,1,,0,,,0.08
+Apparel_ArmorCataphract,cataphract armor,Royalty,Spacer,full body,Middle/Shell,Torso/Neck/Shoulders/Arms/Legs/Hands/Feet,False,,,28,60,0.6,80,100,15,70,2,1.2,,15
+Apparel_ArmorCataphractPhoenix,phoenix armor,Royalty,Spacer,full body,Middle/Shell,Torso/Neck/Shoulders/Arms/Legs/Hands/Feet,False,,,26,55,0.75,80,110,18,70,2,1.15,,15
+Apparel_ArmorCataphractPrestige,prestige cataphract armor,Royalty,Spacer,full body,Middle/Shell,Torso/Neck/Shoulders/Arms/Legs/Hands/Feet,False,,,28,60,0.6,80,100,15,70,2,1.2,,15
+Apparel_ArmorHelmetCataphract,cataphract helmet,Royalty,Spacer,headgear,Overhead/OnHead/StrappedHead,FullHead,False,,,22,50,0.6,6.6,6,1,4,2,1.2,,2
+Apparel_ArmorHelmetCataphractPrestige,prestige cataphract helmet,Royalty,Spacer,headgear,Overhead/OnHead/StrappedHead,FullHead,False,,,22,50,0.6,6.6,6,1,4,2,1.2,,2
+Apparel_ArmorHelmetMechCommander,mechcommander helmet,Biotech,Spacer,headgear,Overhead/OnHead/StrappedHead,FullHead,False,,,8,16,0.345,3.0,4,1,3,4,0.69,,1
+Apparel_ArmorHelmetMechlordHelmet,mechlord helmet,Biotech,Spacer,headgear,Overhead/OnHead/StrappedHead,FullHead,False,,,12,26,,3.0,4,1,,4,0.92,,1
+Apparel_ArmorHelmetRecon,recon helmet,RimWorld,Spacer,headgear,Overhead/OnHead/StrappedHead,FullHead,False,,,12,26,0.46,3.0,4,1,4,4,0.92,,1
+Apparel_ArmorHelmetReconPrestige,prestige recon helmet,Royalty,Spacer,headgear,Overhead/OnHead/StrappedHead,FullHead,False,,,12,26,0.46,3.0,4,1,4,4,0.92,,1
+Apparel_ArmorLocust,locust armor,Royalty,Spacer,full body,Middle/Shell,Torso/Neck/Shoulders/Arms/Legs/Hands/Feet,False,,,15,32,0.41,30,85,15,64,6,0.87,,9
+Apparel_ArmorMarineGrenadier,grenadier armor,Royalty,Spacer,full body,Middle/Shell,Torso/Neck/Shoulders/Arms/Legs/Hands/Feet,False,,,18,41,0.49,50,100,15,68,6,1.01,,12
+Apparel_ArmorMarineHelmetPrestige,prestige marine helmet,Royalty,Spacer,headgear,Overhead/OnHead/StrappedHead,FullHead,False,,,16,36,0.54,4.8,5,1,4,2,1.06,,1.5
+Apparel_ArmorMarinePrestige,prestige marine armor,Royalty,Spacer,full body,Middle/Shell,Torso/Neck/Shoulders/Arms/Legs/Hands/Feet,False,,,20,45,0.54,50,100,15,68,6,1.06,,12
+Apparel_ArmorRecon,recon armor,RimWorld,Spacer,full body,Middle/Shell,Torso/Neck/Shoulders/Arms/Legs/Hands/Feet,False,,,16,34,0.46,30,80,12,64,6,0.92,,9
+Apparel_ArmorReconPrestige,prestige recon armor,Royalty,Spacer,full body,Middle/Shell,Torso/Neck/Shoulders/Arms/Legs/Hands/Feet,False,,,16,34,0.46,30,80,12,64,6,0.92,,9
+Apparel_ArrayHeadset,array headset,Biotech,Spacer,headgear,StrappedHead,UpperHead,False,,,,,,0.08,1,1,,0,,,0.08
+Apparel_AuthorityCap,authority cap,Ideology,Medieval,headgear,Overhead,UpperHead,True,Fabric/Leathery,2,,,,0.1,,,,0,,0.2,0.1
+Apparel_Bandolier,heavy bandolier,Biotech,Industrial,torso,Webbing,Torso,True,Fabric/Leathery,1,,,,1.5,3,1,,0,,0.1,1.5
+Apparel_BasicShirt,T-shirt,RimWorld,Medieval,torso,OnSkin,Torso/Shoulders,True,Fabric/Leathery,1,,,,0.25,,,,0,,0.2,0.25
+Apparel_Beret,beret,Royalty,Medieval,headgear,Overhead,UpperHead,True,Fabric/Leathery,3,,,,0.1,,,,0,,,0.1
+Apparel_BiomutationLance,biomutation lance,Anomaly,Archotech,other,Belt,Waist,False,,,,,,0.5,1,0,,0,,,0.5
+Apparel_Blindfold,blindfold,Ideology,Medieval,other,EyeCover,Eyes,True,Fabric,2,,,,0.07,,,,0,,0.1,0.07
+Apparel_BodyStrap,slave body strap,Ideology,Medieval,torso,Shell,Torso,True,Fabric/Leathery,2,,,,1.5,,,,0,,0.1,1.5
+Apparel_BowlerHat,bowler hat,RimWorld,Medieval,headgear,Overhead,UpperHead,True,Fabric/Leathery,2,,,,0.14,,,,0,,0.2,0.14
+Apparel_Broadwrap,broadwrap,Ideology,Neolithic,headgear,OnHead,FullHead/Neck/Shoulders,True,Fabric,3,,,,0.1,,,,4,,0.25,0.1
+Apparel_Burka,burka,Ideology,Neolithic,headgear,Shell,FullHead/UpperHead/Neck/Shoulders/Torso/Legs/Arms,True,Fabric,4,,,,1,6,2.5,,0,,0.2,1
+Apparel_Cape,cape,RimWorld,Medieval,full body,Shell,Torso/Neck/Shoulders/Arms/Legs,True,Fabric/Leathery,4,,,,2,5,1.5,,0,,0.3,2
+Apparel_CerebrexNode,cerebrex node,Odyssey,Spacer,other,Belt,Waist,False,,,,,,5,10,5,,0,,,5
+Apparel_CeremonialCultistMask,ceremonial hood,Anomaly,Neolithic,headgear,Overhead,FullHead,True,Fabric,2,,,,0.1,1,0,,2,,0.4,0.1
+Apparel_ClothMask,face mask,RimWorld,Neolithic,other,StrappedHead,Mouth,True,Fabric,1.5,,,,0.04,0.25,0,,0,,0.2,0.04
+Apparel_Collar,slave collar,Ideology,Medieval,other,StrappedHead,Neck,True,Metallic/Leathery,1.5,,,,0.14,,,,0,,0.0,0.14
+Apparel_CollarShirt,button-down shirt,RimWorld,Medieval,torso,OnSkin,Torso/Neck/Shoulders/Arms,True,Fabric/Leathery,1,,,,0.3,,,,0,,0.2,0.3
+Apparel_Coronet,coronet,Royalty,Medieval,headgear,Overhead,UpperHead,True,Metallic,5,,,,0.7,,,,0,,,0.7
+Apparel_Corset,corset,Royalty,Medieval,torso,Middle,Torso,True,Fabric/Leathery,2,,,,0.75,,,,0,,0.2,0.75
+Apparel_CowboyHat,cowboy hat,RimWorld,Medieval,headgear,Overhead,UpperHead,True,Fabric/Leathery,2,,,,0.14,,,,0,,0.2,0.14
+Apparel_Crown,crown,Royalty,Medieval,headgear,Overhead,UpperHead,True,Metallic,5,,,,0.9,,,,0,,,0.9
+Apparel_CrownStellic,stellic crown,Royalty,Medieval,headgear,Overhead,UpperHead,True,Metallic,5,,,,0.9,,,,0,,,0.9
+Apparel_CultistMask,ritual mask,Anomaly,Neolithic,headgear,Overhead,FullHead,True,Bioferrite,1,,,,1.4,1,0,,0,,0.3,1.4
+Apparel_DeadlifePack,deadlife pack,Anomaly,Industrial,other,Belt,Waist,False,,,,,,3,10,2,,0,,,3
+Apparel_DisruptorFlarePack,disruptor flare pack,Anomaly,Industrial,other,Belt,Waist,False,,,,,,3,10,2,,0,,,3
+Apparel_Duster,duster,RimWorld,Medieval,full body,Shell,Torso/Neck/Shoulders/Arms/Legs,True,Fabric/Leathery,5,,,,2,7.5,2,,0,,0.3,2
+Apparel_EltexSkullcap,eltex skullcap,Royalty,Ultra,headgear,Overhead,UpperHead,False,,,0.05,0.08,,0.8,,,,0,,,0.8
+Apparel_FirefoampopPack,firefoam pop pack,RimWorld,Industrial,other,Belt,Waist,False,,,,,,3,3,1,,0,,,3
+Apparel_FlakJacket,flak jacket,RimWorld,Industrial,torso,Shell,Torso/Neck/Shoulders/Arms,True,Fabric,4,2,1.5,,4,5,2.5,,2,0.55,,7
+Apparel_FlakPants,flak pants,RimWorld,Industrial,legs,OnSkin/Middle,Legs,True,Fabric,4,2,1.5,,2.5,4,2.5,,0,0.55,,4
+Apparel_FlakVest,armor vest,RimWorld,Industrial,torso,Middle,Torso/Neck,True,Steeled,8,,,,11,5,3,1,2,1.0,,4
+Apparel_Flophat,flophat,Ideology,Medieval,headgear,Overhead,UpperHead,True,Fabric,2,,,,0.07,,,,0,,0.2,0.07
+Apparel_GasMask,gas mask,Biotech,Industrial,headgear,StrappedHead,FullHead,False,,,0.01,0.01,,0.5,3,1,,0,0.18,,0.4
+Apparel_Gunlink,gunlink,Royalty,Spacer,headgear,StrappedHead,UpperHead,False,,,0.01,0.01,0,3.0,4,1,0,4,0,,1
+Apparel_HatHood,hood,RimWorld,Medieval,headgear,Overhead,UpperHead,True,Fabric/Leathery,2,,,,0.1,,,,0,,0.2,0.1
+Apparel_HatLadies,ladies hat,Royalty,Medieval,headgear,Overhead,UpperHead,True,Fabric/Leathery,3,,,,0.1,,,,0,,,0.1
+Apparel_HatTop,top hat,Royalty,Medieval,headgear,Overhead,UpperHead,True,Fabric/Leathery,3,,,,0.1,,,,0,,,0.1
+Apparel_Headwrap,headwrap,Ideology,Neolithic,headgear,Overhead,UpperHead,True,Fabric,3,,,,0.08,,,,0,,0.25,0.08
+Apparel_HeavyShield,heavy shield unit,Biotech,Medieval,torso,Middle,Torso,False,,,,,,3,5,2.5,,0,,,3
+Apparel_IntegratorHeadset,integrator headset,Biotech,Spacer,headgear,StrappedHead,UpperHead,False,,,0,0,0,1,4,1,0,4,0,,1
+Apparel_Jacket,jacket,RimWorld,Medieval,torso,Shell,Torso/Neck/Shoulders/Arms,True,Fabric/Leathery,5,,,,1.7,5,1,,0,,0.3,1.7
+Apparel_KidHelmet,kid helmet,Biotech,Industrial,headgear,Overhead,UpperHead,True,Steeled,2.5,,,,1,3,0.75,,0,,0.5,1
+Apparel_KidPants,kid pants,Biotech,Medieval,legs,OnSkin,Legs,True,Fabric/Leathery,0.8,,,,0.25,0.75,,,0,,0.2,0.25
+Apparel_KidParka,kid parka,Biotech,Neolithic,torso,Shell,Torso/Neck/Shoulders/Arms,True,Fabric/Leathery,3,,,,1,5,2.5,,0,,0.2,1
+Apparel_KidRomper,kid romper,Biotech,Medieval,full body,OnSkin,Torso/Neck/Shoulders/Arms/Legs,True,Fabric/Leathery,1.5,,,,0.18,1,,,0,,0.2,0.18
+Apparel_KidShirt,kid shirt,Biotech,Medieval,torso,OnSkin,Torso/Shoulders,True,Fabric/Leathery,0.8,,,,0.15,0.75,,,0,,0.2,0.15
+Apparel_KidTribal,kid tribalwear,Biotech,Neolithic,full body,OnSkin,Torso/Legs,True,Fabric/Leathery,2,,,,0.5,0.75,,,0,,0.2,0.5
+Apparel_LabCoat,lab coat,Anomaly,Industrial,torso,Shell,Torso/Neck/Shoulders/Arms,True,Fabric/Leathery,2,,,,1.5,7.5,1,,0,,0.2,1.5
+Apparel_MechlordSuit,mechlord suit,Biotech,Spacer,full body,Middle/Shell,Torso/Neck/Shoulders/Arms/Legs/Hands/Feet,False,,,16,34,0.46,40,90,13,64,6,0.92,,12
+Apparel_PackBandwidth,bandwidth pack,Biotech,Spacer,other,Belt/Backpack,Waist/Shoulders,False,,,,,,3,10,2,,0,,,3
+Apparel_PackBroadshield,low-shield pack,Royalty,Industrial,other,Belt,Waist,False,,,,,,3,8,3,,0,,,3
+Apparel_PackControl,control pack,Biotech,Spacer,other,Belt/Backpack,Waist/Shoulders,False,,,,,,3,10,2,,0,,,3
+Apparel_PackHunter,hunter pack,Odyssey,Industrial,other,Belt,Waist,False,,,,,,3,8,3,,0,,,3
+Apparel_PackJump,jump pack,Royalty,Industrial,other,Belt,Waist,False,,,,,,3,8,3,,0,,,3
+Apparel_PackTox,tox pack,Biotech,Industrial,other,Belt/Backpack,Waist/Shoulders,False,,,,,,3,10,2,,0,,,3
+Apparel_PackTurret,turret pack,Anomaly,Industrial,other,Belt,Waist,False,,,,,,3,10,2,,0,,,3
+Apparel_Pants,pants,RimWorld,Medieval,legs,OnSkin,Legs,True,Fabric/Leathery,1,,,,0.5,,,,0,,0.2,0.5
+Apparel_Parka,parka,RimWorld,Neolithic,torso,Shell,Torso/Neck/Shoulders/Arms,True,Fabric/Leathery,4,,,,3,10,5,,0,,0.2,2
+Apparel_PlateArmor,plate armor,RimWorld,Medieval,full body,Middle/Shell,Torso/Neck/Shoulders/Arms/Legs/Hands/Feet,True,Metallic/Woody,3,,,,15,100,10,,8,,0.9,15
+Apparel_PowerArmor,marine armor,RimWorld,Spacer,full body,Middle/Shell,Torso/Neck/Shoulders/Arms/Legs/Hands/Feet,False,,,20,45,0.54,50,100,15,68,6,1.06,,12
+Apparel_PowerArmorHelmet,marine helmet,RimWorld,Spacer,headgear,Overhead/OnHead/StrappedHead,FullHead,False,,,16,36,0.54,4.8,5,1,4,2,1.06,,1.5
+Apparel_PsychicFoilHelmet,psychic foil helmet,RimWorld,Medieval,headgear,Overhead,UpperHead,False,,,0.09,0.09,0.27,1.0,,,2,0,0.09,,1.0
+Apparel_PsychicInsanityLance,psychic insanity lance,RimWorld,Archotech,other,Belt,Waist,False,,,,,,0.5,,,,0,,,0.5
+Apparel_PsychicShockLance,psychic shock lance,RimWorld,Archotech,other,Belt,Waist,False,,,,,,0.5,,,,0,,,0.5
+Apparel_PsyfocusHelmet,eltex helmet,Royalty,Ultra,headgear,Overhead,UpperHead,False,,,3,6,0.27,0.8,,,4,0,0.09,,0.8
+Apparel_PsyfocusRobe,eltex robe,Royalty,Ultra,full body,Shell,Torso/Neck/Shoulders/Arms/Legs,False,,,0.07,0.055,0.04,0.5,,,15,0,0.07,,0.5
+Apparel_PsyfocusShirt,eltex shirt,Royalty,Ultra,torso,OnSkin,Torso/Shoulders,False,,,0.07,0.055,0.04,0.25,,,5,0,0.07,,0.25
+Apparel_PsyfocusVest,eltex vest,Royalty,Ultra,torso,Middle,Torso/Neck/Shoulders,False,,,0.07,0.055,0.04,0.5,,,6,0,0.07,,0.5
+Apparel_Robe,robe,RimWorld,Medieval,full body,Shell,Torso/Shoulders/Arms/Legs,True,Fabric/Leathery,4,,,,0.75,5,2,,0,,0.2,0.75
+Apparel_RobeRoyal,prestige robe,Royalty,Medieval,full body,Shell,Torso/Neck/Shoulders/Arms/Legs,True,Fabric/Leathery,1,,,,0.75,,,,0,,0.2,0.75
+Apparel_Sash,sash,Biotech,Industrial,torso,Middle,Torso,True,Fabric/Leathery,1,,,,0.5,1,0.5,,0,,0.1,0.5
+Apparel_Shadecone,shadecone,Ideology,Medieval,headgear,Overhead,UpperHead,True,Fabric/Leathery,2,,,,0.14,,,,0,,0.2,0.14
+Apparel_ShardPsychicInsanityLance,shard insanity lance,Anomaly,Archotech,other,Belt,Waist,False,,,,,,0.7,1,0,,0,,,0.7
+Apparel_ShardPsychicShockLance,shard shock lance,Anomaly,Archotech,other,Belt,Waist,False,,,,,,0.7,1,0,,0,,,0.7
+Apparel_ShieldBelt,shield belt,RimWorld,Spacer,other,Belt,Waist,False,,,,,,3,4,2,,0,,,3
+Apparel_ShirtRuffle,formal shirt,Royalty,Medieval,torso,OnSkin,Torso/Shoulders/Arms/Neck,True,Fabric/Leathery,2,,,,0.25,,,,0,,0.2,0.25
+Apparel_SimpleHelmet,simple helmet,RimWorld,Industrial,headgear,Overhead,UpperHead,True,Steeled,4,,,,2,3,1,,0,,0.5,2
+Apparel_Slicecap,slicecap,Ideology,Medieval,headgear,Overhead,UpperHead,True,Woody/Metallic,2,,,,0.8,,,,0,,0.1,0.8
+Apparel_SmokepopBelt,smokepop pack,RimWorld,Industrial,other,Belt,Waist,False,,,,,,3,3,1,,0,,,3
+Apparel_Tailcap,tailcap,Ideology,Medieval,headgear,Overhead,UpperHead,True,Leathery,3,,,,0.1,,,,0,,0.2,0.1
+Apparel_TortureCrown,torture crown,Ideology,Medieval,headgear,Overhead,UpperHead,True,Metallic/Woody,0.15,,,,0.9,,,,0,,0.15,0.9
+Apparel_TribalA,tribalwear,RimWorld,Neolithic,full body,OnSkin,Torso/Legs,True,Fabric/Leathery,3,,,,0.5,,,,0,,0.2,0.5
+Apparel_TribalHeaddress,tribal headdress,RimWorld,Neolithic,headgear,Overhead,UpperHead,True,Fabric,5,,,,0.11,,,,0,,0.2,0.11
+Apparel_Tuque,tuque,RimWorld,Medieval,headgear,Overhead,UpperHead,True,Fabric,2,,,,0.07,,,,0,,0.2,0.07
+Apparel_Vacsuit,vacsuit,Odyssey,Spacer,full body,Middle/Shell,Torso/Neck/Shoulders/Arms/Legs/Hands/Feet,False,,,3.5,7,0.66,12,80,12,90,0,0.52,,12
+Apparel_VacsuitChildren,kid vacsuit,Odyssey,Spacer,full body,Middle/Shell,Torso/Neck/Shoulders/Arms/Legs/Hands/Feet,False,,,2.65,5.25,0.66,8,40,6,90,0,0.52,,8
+Apparel_VacsuitHelmet,vacsuit helmet,Odyssey,Spacer,headgear,Overhead,FullHead,False,,,3.5,7,0.66,1.5,4,1,6,4,0.52,,1.5
+Apparel_VestRoyal,formal vest,Royalty,Medieval,torso,Middle,Torso,True,Fabric/Leathery,2,,,,0.75,,,,0,,0.2,0.75
+Apparel_VisageMask,visage mask,Ideology,Neolithic,headgear,StrappedHead,FullHead,True,Woody/Metallic,1.5,,,,0.1,,,,0,,0.3,0.1
+Apparel_WarMask,war mask,RimWorld,Neolithic,headgear,Overhead,FullHead,True,Woody,10,,,,1.4,,,,0,,0.3,1.4
+Apparel_WarVeil,veil,RimWorld,Neolithic,headgear,StrappedHead,FullHead,True,Fabric,1,,,,0.08,,,,0,,0.2,0.08
+CE_Apparel_AdvancedNightVision,advanced night vision goggles,CombatExtended,Industrial,other,StrappedHead,Eyes,False,,,0.04,0.01,,0.75,5,1,,0,,,
+CE_Apparel_Backpack,backpack,CombatExtended,Industrial,other,Backpack,Shoulders,True,Fabric/Leathery,,,,,1,3,,,0,,,
+CE_Apparel_BallisticShield,ballistic shield,CombatExtended,Industrial,other,Shield,LeftShoulder,True,Steeled,8,,,,13,15,10,,0,,,
+CE_Apparel_CompositeVest,composite vest,CombatExtended,Industrial,torso,Middle,Torso/Neck,False,,,14,21,,10,5,3,,2,,,
+CE_Apparel_ExoFrame,powered exoframe,CombatExtended,Industrial,torso,Shell,Shoulders/Torso,False,,,0.4,2.0,,15,35,10,,0,,,
+CE_Apparel_GasMask,gas mask,CombatExtended,Industrial,other,StrappedHead,Eyes/Teeth,False,,,0.01,0.01,,0.5,3,1,,0,,,
+CE_Apparel_ImprovGasMask,improvised gas mask,CombatExtended,Neolithic,other,StrappedHead,Eyes/Teeth,False,,,0.01,0.01,,0.5,3,1,,0,,,
+CE_Apparel_KidBackpack,kid backpack,CombatExtended,Industrial,other,Backpack,Shoulders,True,Fabric/Leathery,,,,,0.5,1.5,,,0,,,
+CE_Apparel_MeleeShield,melee shield,CombatExtended,Medieval,other,Shield,LeftShoulder,True,Steeled/Woody,2.5,,,,7,8,5,,0,,,
+CE_Apparel_PlateHelmet,plate helmet,CombatExtended,Medieval,headgear,Overhead/OnHead/StrappedHead,FullHead,True,Metallic,3.5,,,,3.0,5,1,,2,,,
+CE_Apparel_RadioPack,radio pack,CombatExtended,Industrial,other,Backpack,Shoulders,False,,,,,,7,8,2.5,,0,,,
+CE_Apparel_SimpleNightVision,night vision monocular,CombatExtended,Industrial,other,StrappedHead,Eyes,False,,,0.03,0.01,,0.5,3,1,,0,,,
+CE_Apparel_TacVest,tactical vest,CombatExtended,Industrial,torso,Webbing,Torso,True,Fabric/Leathery,,,,,2,10,5,,0,,,
+CE_Apparel_TribalBackpack,tribal backpack,CombatExtended,Neolithic,other,Backpack,Shoulders,True,Fabric/Leathery,,,,,1,3,,,0,,,
+OrbitalTargeterBombardment,orbital bombardment targeter,RimWorld,Spacer,other,Belt,Waist,False,,,,,,0.2,,,,0,,,0.2
+OrbitalTargeterMechCluster,orbital mech cluster targeter,Royalty,Spacer,other,Belt,Waist,False,,,,,,0.2,,,,0,,,0.2
+OrbitalTargeterPowerBeam,orbital power beam targeter,RimWorld,Spacer,other,Belt,Waist,False,,,,,,0.2,,,,0,,,0.2
+TornadoGenerator,tornado generator,RimWorld,Spacer,other,Belt,Waist,False,,,,,,0.2,,,,0,,,0.2

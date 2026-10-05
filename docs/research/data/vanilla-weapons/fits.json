@@ -1,0 +1,618 @@
+{
+ "ranged_direct_n": 19,
+ "ranged_power_candidates": {
+  "P1_dps_nominal": {
+   "r2_logmv_logp": 0.664849284106888,
+   "r2_with_tier": 0.8207702694929988,
+   "adj_r2_with_tier": 0.7983665531796237,
+   "loo_rmse_log_with_tier": 0.4995935783007788,
+   "spearman_mv": 0.7836771267812361,
+   "beta_with_tier": [
+    3.370591112168518,
+    0.6051130530615129,
+    0.5614926621398638
+   ]
+  },
+  "P2_dps_mid_accuracy": {
+   "r2_logmv_logp": 0.747957091473396,
+   "r2_with_tier": 0.8222234587905095,
+   "adj_r2_with_tier": 0.8000013911393232,
+   "loo_rmse_log_with_tier": 0.5015886464134615,
+   "spearman_mv": 0.8301887591657887,
+   "beta_with_tier": [
+    3.4365709553001356,
+    0.8608656967983312,
+    0.4574910364728141
+   ]
+  },
+  "P3_dps_mid_armor": {
+   "r2_logmv_logp": 0.7945982647039341,
+   "r2_with_tier": 0.8392386212731789,
+   "adj_r2_with_tier": 0.8191434489323264,
+   "loo_rmse_log_with_tier": 0.48639907976230506,
+   "spearman_mv": 0.8652918779465831,
+   "beta_with_tier": [
+    3.7364799405753777,
+    0.9585066005983559,
+    0.3775490475885739
+   ]
+  },
+  "P4_dps_mid_armor_range": {
+   "r2_logmv_logp": 0.835730476138642,
+   "r2_with_tier": 0.8658714625977584,
+   "adj_r2_with_tier": 0.8491053954224782,
+   "loo_rmse_log_with_tier": 0.469557357168224,
+   "spearman_mv": 0.9398860053557714,
+   "beta_with_tier": [
+    3.7104081651474754,
+    1.0630098718136947,
+    0.31319390135974456
+   ]
+  },
+  "P5_dps_mid_armor_range_lin": {
+   "r2_logmv_logp": 0.7986941520167197,
+   "r2_with_tier": 0.8556547459125642,
+   "adj_r2_with_tier": 0.8376115891516347,
+   "loo_rmse_log_with_tier": 0.4648433664154468,
+   "spearman_mv": 0.9118035103311359,
+   "beta_with_tier": [
+    3.807262357285323,
+    0.8825849916883626,
+    0.39635779482940925
+   ]
+  }
+ },
+ "ranged_model_compare_logmv": {
+  "tier_only": {
+   "r2": 0.7323854784948527,
+   "adj_r2": 0.7166434478180793,
+   "loo_rmse_log": 0.5648945427836162,
+   "beta": [
+    4.174807234590266,
+    0.8604384420792653
+   ]
+  },
+  "mass_only": {
+   "r2": 0.7509380098239905,
+   "adj_r2": 0.7362873045195193,
+   "loo_rmse_log": 0.5412385242902086,
+   "beta": [
+    4.226921881033614,
+    1.174631701849383
+   ]
+  },
+  "mass_tier": {
+   "r2": 0.9342472458993165,
+   "adj_r2": 0.926028151636731,
+   "loo_rmse_log": 0.29927845549014775,
+   "beta": [
+    3.8558100434770344,
+    0.7528577278652755,
+    0.5321429582584511
+   ]
+  },
+  "P4_only": {
+   "r2": 0.835730476138642,
+   "adj_r2": 0.8260675629703269,
+   "loo_rmse_log": 0.4912419621874634,
+   "beta": [
+    3.6807918691331096,
+    1.482408719620661
+   ]
+  },
+  "P4_tier": {
+   "r2": 0.8658714625977584,
+   "adj_r2": 0.8491053954224782,
+   "loo_rmse_log": 0.469557357168224,
+   "beta": [
+    3.7104081651474754,
+    1.0630098718136947,
+    0.31319390135974456
+   ]
+  },
+  "P4_mass": {
+   "r2": 0.8921041004035679,
+   "adj_r2": 0.8786171129540139,
+   "loo_rmse_log": 0.40703146550484537,
+   "beta": [
+    3.7152243537157577,
+    0.9896080434697345,
+    0.5227581760861386
+   ]
+  },
+  "P4_mass_tier": {
+   "r2": 0.9421791609640137,
+   "adj_r2": 0.9306149931568164,
+   "loo_rmse_log": 0.30631135338186494,
+   "beta": [
+    3.760532326215799,
+    0.34703174399015935,
+    0.6199130307674627,
+    0.4114613435897777
+   ]
+  }
+ },
+ "ranged_ln_work_on_P4_tier": {
+  "beta": [
+   7.2502911854500445,
+   2.033508821087448,
+   -0.1629747682894811
+  ],
+  "r2": 0.7798175471248527,
+  "n": 18,
+  "loo_rmse_log": 0.5860249588176247
+ },
+ "ranged_ln_ingredients_on_P4_tier": {
+  "beta": [
+   3.190735509550088,
+   1.2367462237507267,
+   0.3170108187642865
+  ],
+  "r2": 0.8746628168103714,
+  "n": 18,
+  "loo_rmse_log": 0.44100020040301635
+ },
+ "ranged_chosen": {
+  "form": "ln(MarketValue) = b0 + b1*ln(P4) + b2*tier",
+  "beta": [
+   3.7104081651474754,
+   1.0630098718136947,
+   0.31319390135974456
+  ],
+  "r2": 0.8658714625977584,
+  "adj_r2": 0.8491053954224782,
+  "rmse_log": 0.3646351802982641,
+  "loo_rmse_log": 0.469557357168224,
+  "n": 19,
+  "outliers_abs_resid_gt_0p4": [
+   "Bow_Recurve",
+   "Flamebow",
+   "Gun_Autopistol",
+   "Gun_Minigun",
+   "Gun_Revolver",
+   "Gun_SniperRifle",
+   "Pila"
+  ],
+  "residuals": {
+   "Bow_Great": -0.202,
+   "Bow_Recurve": -0.433,
+   "Bow_Short": -0.224,
+   "Flamebow": 0.487,
+   "Gun_AssaultRifle": -0.004,
+   "Gun_Autopistol": -0.556,
+   "Gun_BeamRepeater": 0.397,
+   "Gun_BoltActionRifle": -0.363,
+   "Gun_ChainShotgun": -0.139,
+   "Gun_ChargeRifle": 0.203,
+   "Gun_HeavySMG": 0.028,
+   "Gun_HellcatRifle": 0.248,
+   "Gun_LMG": -0.07,
+   "Gun_MachinePistol": -0.185,
+   "Gun_Minigun": 0.514,
+   "Gun_PumpShotgun": -0.204,
+   "Gun_Revolver": -0.573,
+   "Gun_SniperRifle": 0.406,
+   "Pila": 0.671
+  }
+ },
+ "ranged_mv_identity": {
+  "n": 27,
+  "max_abs_diff_formula_vs_effective": 0.0,
+  "work_share_of_mv_median": 0.23076923076923075,
+  "work_share_min_max": [
+   0.08885232414644179,
+   0.3261608154020385
+  ]
+ },
+ "ranged_work_cost_mv": {
+  "n": 27,
+  "logmv_on_logwork": {
+   "beta": [
+    -2.2781582255203365,
+    0.8151855630654963
+   ],
+   "r2": 0.8610539487313466
+  },
+  "logmv_on_logingredients": {
+   "beta": [
+    0.2561149786953006,
+    1.0006738646756144
+   ],
+   "r2": 0.9883597488511714
+  },
+  "logingredients_on_logwork": {
+   "beta": [
+    -2.1036477948654033,
+    0.7708565354967662
+   ],
+   "r2": 0.7800718119070946
+  }
+ },
+ "ranged_mass_by_role": {
+  "bow": {
+   "n": 5,
+   "min": 0.8,
+   "q1": 0.8,
+   "median": 1.3,
+   "q3": 3.0,
+   "max": 4.0,
+   "iqr": 2.2
+  },
+  "flame": {
+   "n": 1,
+   "min": 3.4,
+   "q1": 3.4,
+   "median": 3.4,
+   "q3": 3.4,
+   "max": 3.4,
+   "iqr": 0.0
+  },
+  "grenade": {
+   "n": 4,
+   "min": 1.0,
+   "q1": 1.0,
+   "median": 1.0,
+   "q3": 1.0,
+   "max": 1.0,
+   "iqr": 0.0
+  },
+  "heavy": {
+   "n": 3,
+   "min": 8.5,
+   "q1": 9.25,
+   "median": 10.0,
+   "q3": 10.0,
+   "max": 10.0,
+   "iqr": 0.75
+  },
+  "launcher": {
+   "n": 4,
+   "min": 3.4,
+   "q1": 3.4,
+   "median": 3.4,
+   "q3": 3.4,
+   "max": 3.4,
+   "iqr": 0.0
+  },
+  "pistol": {
+   "n": 3,
+   "min": 1.2,
+   "q1": 1.2999999999999998,
+   "median": 1.4,
+   "q3": 1.95,
+   "max": 2.5,
+   "iqr": 0.6500000000000001
+  },
+  "rifle": {
+   "n": 3,
+   "min": 3.5,
+   "q1": 3.5,
+   "median": 3.5,
+   "q3": 4.05,
+   "max": 4.6,
+   "iqr": 0.5499999999999998
+  },
+  "rocket": {
+   "n": 2,
+   "min": 7.0,
+   "q1": 7.25,
+   "median": 7.5,
+   "q3": 7.75,
+   "max": 8.0,
+   "iqr": 0.5
+  },
+  "shotgun": {
+   "n": 2,
+   "min": 3.4,
+   "q1": 3.675,
+   "median": 3.95,
+   "q3": 4.225,
+   "max": 4.5,
+   "iqr": 0.5499999999999998
+  },
+  "smg": {
+   "n": 1,
+   "min": 3.5,
+   "q1": 3.5,
+   "median": 3.5,
+   "q3": 3.5,
+   "max": 3.5,
+   "iqr": 0.0
+  },
+  "sniper": {
+   "n": 2,
+   "min": 3.5,
+   "q1": 3.625,
+   "median": 3.75,
+   "q3": 3.875,
+   "max": 4.0,
+   "iqr": 0.25
+  }
+ },
+ "ranged_mass_role_eta2": 0.9353525555258226,
+ "ranged_dps_components": {
+  "damage": -0.035053334013443925,
+  "dps_nominal": 0.8153829064353065,
+  "range": 0.16907917159917935,
+  "ap": 0.5340603449543526,
+  "acc_mid": -0.22982944548774115,
+  "cooldown": 0.2137615908723872,
+  "warmup": 0.23297448131673099,
+  "burst": 0.7594987186890966,
+  "mass": 0.8665667947850244
+ },
+ "melee_power_candidates": {
+  "dps_game": {
+   "r2_craftable_steel": 0.23954136617960875,
+   "beta": [
+    1.553626452740581,
+    1.75173129438255
+   ],
+   "n": 10,
+   "spearman_all17": 0.7531223223261265
+  },
+  "dps_select": {
+   "r2_craftable_steel": 0.17218467414233418,
+   "beta": [
+    -0.36219100879464833,
+    2.708488366769958
+   ],
+   "n": 10,
+   "spearman_all17": 0.678862109771373
+  },
+  "PM_select_x_ap": {
+   "r2_craftable_steel": 0.2822870519550136,
+   "beta": [
+    0.6020548445231104,
+    2.0022894607732167
+   ],
+   "n": 10,
+   "spearman_all17": 0.7172298862579956
+  },
+  "dps_chance_only": {
+   "r2_craftable_steel": 0.1503617102732322,
+   "beta": [
+    1.4972937975419753,
+    1.8764075656282773
+   ],
+   "n": 10,
+   "spearman_all17": 0.6763867693528811
+  },
+  "best_dps": {
+   "r2_craftable_steel": 0.2273041235231683,
+   "beta": [
+    -1.891576275035873,
+    3.2996213454920786
+   ],
+   "n": 10,
+   "spearman_all17": 0.6877823033839091
+  },
+  "avg_damage": {
+   "r2_craftable_steel": 0.5437553075508734,
+   "beta": [
+    1.1539805308803712,
+    1.4104504124004587
+   ],
+   "n": 10,
+   "spearman_all17": 0.7901184775442676
+  },
+  "dps_x_ap": {
+   "r2_craftable_steel": 0.3343276850641822,
+   "beta": [
+    1.6597099551305927,
+    1.5313219162148737
+   ],
+   "n": 10,
+   "spearman_all17": 0.759310673372356
+  }
+ },
+ "melee_stuffcount_on_dps": {
+  "beta": [
+   1.4262413835270218,
+   1.3741333510433182
+  ],
+  "r2": 0.17772455251333474,
+  "n": 10
+ },
+ "melee_work_on_dps": {
+  "beta": [
+   2.0622954021528273,
+   3.4942814129091975
+  ],
+  "r2": 0.2996136277514756,
+  "n": 10
+ },
+ "melee_dps_on_cost_and_work": {
+  "beta": [
+   1.1751992516205692,
+   -0.02769894754040362,
+   0.09738816647906129
+  ],
+  "r2": 0.3022396123610225,
+  "n": 10,
+  "loo_rmse_log": 0.15641880367491484
+ },
+ "melee_mv_on_dps_steel": {
+  "beta": [
+   1.553626452740581,
+   1.75173129438255
+  ],
+  "r2": 0.23954136617960875,
+  "n": 10,
+  "loo_rmse_log": 0.5731152589863107,
+  "residuals": {
+   "MeleeWeapon_Axe": -0.098,
+   "MeleeWeapon_BreachAxe": 0.374,
+   "MeleeWeapon_Club": -0.383,
+   "MeleeWeapon_Gladius": -0.16,
+   "MeleeWeapon_Ikwa": -0.16,
+   "MeleeWeapon_Knife": -0.682,
+   "MeleeWeapon_LongSword": 0.217,
+   "MeleeWeapon_Mace": -0.209,
+   "MeleeWeapon_Spear": 0.177,
+   "MeleeWeapon_Warhammer": 0.923
+  }
+ },
+ "melee_stuff_dps_ratio_median": {
+  "Bioferrite": 1.316,
+  "BlocksGranite": 0.769,
+  "BlocksLimestone": 0.769,
+  "BlocksMarble": 0.769,
+  "BlocksSandstone": 0.769,
+  "BlocksSlate": 0.769,
+  "BlocksVacstone": 0.769,
+  "Gold": 0.78,
+  "Jade": 1.154,
+  "Obsidian": 1.415,
+  "Plasteel": 1.382,
+  "Silver": 0.861,
+  "Steel": 1.0,
+  "Uranium": 1.046,
+  "WoodLog": 0.565
+ },
+ "melee_stuff_dps_ratio_range": {
+  "Bioferrite": [
+   0.9,
+   1.342
+  ],
+  "BlocksGranite": [
+   0.769,
+   0.769
+  ],
+  "BlocksLimestone": [
+   0.769,
+   0.769
+  ],
+  "BlocksMarble": [
+   0.769,
+   0.769
+  ],
+  "BlocksSandstone": [
+   0.769,
+   0.769
+  ],
+  "BlocksSlate": [
+   0.769,
+   0.769
+  ],
+  "BlocksVacstone": [
+   0.769,
+   0.769
+  ],
+  "Gold": [
+   0.748,
+   1.0
+  ],
+  "Jade": [
+   1.154,
+   1.154
+  ],
+  "Obsidian": [
+   1.0,
+   1.439
+  ],
+  "Plasteel": [
+   1.125,
+   1.389
+  ],
+  "Silver": [
+   0.847,
+   1.0
+  ],
+  "Steel": [
+   1.0,
+   1.0
+  ],
+  "Uranium": [
+   0.997,
+   1.364
+  ],
+  "WoodLog": [
+   0.425,
+   0.9
+  ]
+ },
+ "melee_mv_on_dps_count_allstuffs": {
+  "beta": [
+   -1.169182370852372,
+   1.2205042094145264,
+   1.0244804480122012
+  ],
+  "r2": 0.4050619786657681,
+  "n": 85
+ },
+ "melee_seldamage_on_selcooldown_craftable": {
+  "beta": [
+   1.7987221804121971,
+   1.2112097240384734
+  ],
+  "r2": 0.9483082879796968,
+  "n": 10,
+  "note": "ln(damage per swing) = b0 + b1 ln(cooldown)"
+ },
+ "melee_seldamage_linear_on_selcooldown_craftable": {
+  "beta": [
+   -3.1573037662794876,
+   8.622316085885256
+  ],
+  "r2": 0.9256459831392061,
+  "n": 10
+ },
+ "melee_seldamage_on_stuffcount_craftable": {
+  "beta": [
+   1.0869597805993343,
+   0.38374433128074076
+  ],
+  "r2": 0.41903079931881226,
+  "n": 10
+ },
+ "melee_stuffcount_on_mass_craftable": {
+  "beta": [
+   3.8251205941702735,
+   0.6385534070038975
+  ],
+  "r2": 0.7192335299098633,
+  "n": 10
+ },
+ "melee_ultra_vs_craftable_dps_select": {
+  "craftable_median": 6.919711538461538,
+  "craftable_min_max": [
+   6.3,
+   7.959183673469387
+  ],
+  "ultra_median": 10.657894736842106,
+  "ultra_min_max": [
+   4.615384615384615,
+   14.53125
+  ]
+ },
+ "ranged_clusters_k4": {
+  "0": [
+   "Bow_Great",
+   "Bow_Recurve",
+   "Bow_Short",
+   "Flamebow",
+   "Gun_AssaultRifle",
+   "Gun_Autopistol",
+   "Gun_ChainShotgun",
+   "Gun_ChargeRifle",
+   "Gun_HeavySMG",
+   "Gun_HellcatRifle",
+   "Gun_MachinePistol",
+   "Gun_PumpShotgun",
+   "Gun_Revolver",
+   "Pila"
+  ],
+  "1": [
+   "Gun_BoltActionRifle",
+   "Gun_SniperRifle"
+  ],
+  "2": [
+   "Gun_LMG",
+   "Gun_Minigun"
+  ],
+  "3": [
+   "Gun_BeamRepeater"
+  ]
+ }
+}

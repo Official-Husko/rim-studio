@@ -1,0 +1,215 @@
+{
+  "bool_rule_values": {
+    "loadBottom": {
+      "True": 12
+    },
+    "loadTop": {
+      "True": 1
+    }
+  },
+  "crlf_count": 0,
+  "cyclic_components_in_dataset_alone": 2,
+  "directed_order_edges_after_normalisation": 1508,
+  "distinct_package_ids_total": 1241,
+  "distinct_rule_key_combinations": 9,
+  "distinct_subject_package_ids": 631,
+  "distinct_target_package_ids": 818,
+  "edge_counts": {
+    "incompatibleWith": 5,
+    "loadAfter": 1124,
+    "loadBefore": 439
+  },
+  "edge_total": 1568,
+  "edges_empty_name_list": 0,
+  "edges_missing_name": 0,
+  "edges_multi_name_lists": 91,
+  "edges_with_comment": 543,
+  "ends_with_newline": true,
+  "escaped_unicode_sequences": 173,
+  "file_bytes": 394716,
+  "first_indent_spaces": 4,
+  "has_bom": false,
+  "inner_keys": {
+    "incompatibleWith": {
+      "comment": 5,
+      "name": 5
+    },
+    "loadAfter": {
+      "comment": 394,
+      "name": 1124
+    },
+    "loadBefore": {
+      "comment": 145,
+      "name": 439
+    },
+    "loadBottom": {
+      "comment": 7,
+      "value": 12
+    },
+    "loadTop": {
+      "comment": 1,
+      "value": 1
+    }
+  },
+  "inner_shapes": {
+    "incompatibleWith": {
+      "comment:str": 5,
+      "name:str": 5
+    },
+    "loadAfter": {
+      "comment:list[str]": 342,
+      "comment:str": 52,
+      "name:list[str]": 1073,
+      "name:str": 51
+    },
+    "loadBefore": {
+      "comment:list[str]": 82,
+      "comment:str": 63,
+      "name:list[str]": 376,
+      "name:str": 63
+    },
+    "loadBottom": {
+      "comment:str": 7,
+      "value:bool": 12
+    },
+    "loadTop": {
+      "comment:str": 1,
+      "value:bool": 1
+    }
+  },
+  "keys_with_uppercase": 2,
+  "keys_with_uppercase_examples": [
+    "MOFSLBLECN209.rimfacehforhfacialhstuffh1v0",
+    "lazywhalehwhbenbenrabbithwhbiscuitminer192.animalcollabprojhNQNSLCRT"
+  ],
+  "keys_with_whitespace": 0,
+  "largest_cyclic_component": 8,
+  "local_library": {
+    "distinct_package_ids": 623,
+    "installed_ids_that_are_rule_subjects": 64,
+    "installed_ids_that_are_rule_targets": 82,
+    "rule_edges_with_both_ends_installed": 68,
+    "rule_edges_with_subject_installed_target_missing": 404,
+    "rule_subjects_not_installed": 567,
+    "rule_targets_not_installed": 736,
+    "workshop_folders": 690
+  },
+  "lowercase_collisions": {},
+  "max_in_degree": 47,
+  "max_out_degree": 30,
+  "raw_non_ascii_chars": 0,
+  "rule_entries": 631,
+  "rule_key_counts": {
+    "incompatibleWith": 5,
+    "loadAfter": 481,
+    "loadBefore": 220,
+    "loadBottom": 12,
+    "loadTop": 1
+  },
+  "rules_keys_sorted_case_insensitive": false,
+  "rules_keys_sorted_case_sensitive": false,
+  "same_subject_same_target_after_and_before": 2,
+  "self_edges": 0,
+  "target_keys_with_uppercase": 2,
+  "timestamp": 1789239946,
+  "timestamp_utc": "2026-09-12T19:05:46+00:00",
+  "top_in_degree": [
+    [
+      "seohyeon.optimizationmeats",
+      47
+    ],
+    [
+      "troopersmith1.agematters",
+      37
+    ],
+    [
+      "psychodoser.rimface.reuploadedby.ohgodspidersno",
+      35
+    ]
+  ],
+  "top_level_keys": [
+    "timestamp",
+    "rules"
+  ],
+  "top_out_degree": [
+    [
+      "ceteam.combatextended",
+      30
+    ],
+    [
+      "vanillaexpanded.vtexe",
+      27
+    ],
+    [
+      "erdelf.humanoidalienraces",
+      20
+    ]
+  ],
+  "top_rule_key_combinations": [
+    [
+      [
+        "loadAfter"
+      ],
+      400
+    ],
+    [
+      [
+        "loadBefore"
+      ],
+      137
+    ],
+    [
+      [
+        "loadAfter",
+        "loadBefore"
+      ],
+      76
+    ],
+    [
+      [
+        "loadBottom"
+      ],
+      5
+    ],
+    [
+      [
+        "incompatibleWith"
+      ],
+      5
+    ],
+    [
+      [
+        "loadBefore",
+        "loadBottom"
+      ],
+      3
+    ],
+    [
+      [
+        "loadAfter",
+        "loadBefore",
+        "loadBottom"
+      ],
+      3
+    ],
+    [
+      [
+        "loadAfter",
+        "loadBottom"
+      ],
+      1
+    ]
+  ],
+  "two_cycle_examples": [
+    [
+      "armorguy1.fapatches",
+      "daemon976.facialanimationplus"
+    ],
+    [
+      "armorguy1.fapatches",
+      "vanillasky.astorielfa"
+    ]
+  ],
+  "two_cycles_in_dataset_alone": 2,
+  "unknown_rule_keys": {}
+}

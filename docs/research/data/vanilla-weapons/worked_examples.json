@@ -1,0 +1,1249 @@
+{
+ "ranged": {
+  "Gun_Revolver": {
+   "damage": 12.0,
+   "ap": 0.18,
+   "burst": 1,
+   "warmup": 0.3,
+   "cooldown": 1.6,
+   "ticks_between": 0.0,
+   "cycle": 1.9000000000000001,
+   "range": 25.9,
+   "dps_nominal": 6.31578947368421,
+   "mv": 135.4,
+   "mv_formula": 135.4,
+   "radius": 0.0,
+   "hit": {
+    "3": 0.8,
+    "8": 0.7722222222222223,
+    "12": 0.75,
+    "18": 0.6576923076923077,
+    "25": 0.55,
+    "33": 0.47000000000000003,
+    "40": 0.4
+   },
+   "dps_at": {
+    "3": 5.052631578947368,
+    "12": 4.7368421052631575,
+    "25": 3.4736842105263155,
+    "40": 2.526315789473684
+   },
+   "armor_mult": {
+    "none": 1.0,
+    "flak_jacket": 0.7224999999999999,
+    "marine_armor": 0.44500000000000006,
+    "flak_vest": 0.385
+   },
+   "dps_vs_armor_at_12": {
+    "none": 4.7368421052631575,
+    "flak_jacket": 3.422368421052631,
+    "marine_armor": 2.1078947368421055,
+    "flak_vest": 1.8236842105263158
+   },
+   "legendary": {
+    "damage": 18,
+    "ap": 0.27,
+    "acc_touch_short_medium_long": [
+     1.0,
+     1.0,
+     0.8250000000000001,
+     0.6000000000000001
+    ]
+   }
+  },
+  "Gun_AssaultRifle": {
+   "damage": 11.0,
+   "ap": 0.16499999999999998,
+   "burst": 3,
+   "warmup": 1.0,
+   "cooldown": 1.7,
+   "ticks_between": 10.0,
+   "cycle": 3.0333333333333337,
+   "range": 30.9,
+   "dps_nominal": 10.879120879120878,
+   "mv": 482.0,
+   "mv_formula": 482.0,
+   "radius": 0.0,
+   "hit": {
+    "3": 0.6,
+    "8": 0.6555555555555556,
+    "12": 0.7,
+    "18": 0.676923076923077,
+    "25": 0.65,
+    "33": 0.5966666666666667,
+    "40": 0.55
+   },
+   "dps_at": {
+    "3": 6.5274725274725265,
+    "12": 7.615384615384614,
+    "25": 7.071428571428571,
+    "40": 5.983516483516484
+   },
+   "armor_mult": {
+    "none": 1.0,
+    "flak_jacket": 0.7112499999999999,
+    "marine_armor": 0.43374999999999986,
+    "flak_vest": 0.37375
+   },
+   "dps_vs_armor_at_12": {
+    "none": 7.615384615384614,
+    "flak_jacket": 5.416442307692306,
+    "marine_armor": 3.303173076923075,
+    "flak_vest": 2.8462499999999995
+   },
+   "legendary": {
+    "damage": 17,
+    "ap": 0.24749999999999997,
+    "acc_touch_short_medium_long": [
+     0.8999999999999999,
+     1.0,
+     0.9750000000000001,
+     0.8250000000000001
+    ]
+   }
+  },
+  "Gun_PumpShotgun": {
+   "damage": 18.0,
+   "ap": 0.14,
+   "burst": 1,
+   "warmup": 0.9,
+   "cooldown": 1.25,
+   "ticks_between": 0.0,
+   "cycle": 2.15,
+   "range": 15.9,
+   "dps_nominal": 8.372093023255815,
+   "mv": 253.2,
+   "mv_formula": 253.2,
+   "radius": 0.0,
+   "hit": {
+    "3": 0.8,
+    "8": 0.8388888888888889,
+    "12": 0.87,
+    "18": 0.8238461538461539,
+    "25": 0.77,
+    "33": 0.7006666666666667,
+    "40": 0.64
+   },
+   "dps_at": {
+    "3": 6.697674418604652,
+    "12": 7.283720930232558,
+    "25": 6.446511627906977,
+    "40": 5.358139534883722
+   },
+   "armor_mult": {
+    "none": 1.0,
+    "flak_jacket": 0.6925,
+    "marine_armor": 0.41500000000000004,
+    "flak_vest": 0.355
+   },
+   "dps_vs_armor_at_12": {
+    "none": 7.283720930232558,
+    "flak_jacket": 5.043976744186047,
+    "marine_armor": 3.022744186046512,
+    "flak_vest": 2.585720930232558
+   },
+   "legendary": {
+    "damage": 27,
+    "ap": 0.21000000000000002,
+    "acc_touch_short_medium_long": [
+     1.0,
+     1.0,
+     1.0,
+     0.96
+    ]
+   }
+  },
+  "Gun_SniperRifle": {
+   "damage": 25.0,
+   "ap": 0.375,
+   "burst": 1,
+   "warmup": 3.5,
+   "cooldown": 1.5,
+   "ticks_between": 0.0,
+   "cycle": 5.0,
+   "range": 44.9,
+   "dps_nominal": 5.0,
+   "mv": 532.0,
+   "mv_formula": 532.0,
+   "radius": 0.0,
+   "hit": {
+    "3": 0.5,
+    "8": 0.611111111111111,
+    "12": 0.7,
+    "18": 0.783076923076923,
+    "25": 0.88,
+    "33": 0.8906666666666667,
+    "40": 0.9
+   },
+   "dps_at": {
+    "3": 2.5,
+    "12": 3.5,
+    "25": 4.4,
+    "40": 4.5
+   },
+   "armor_mult": {
+    "none": 1.0,
+    "flak_jacket": 0.8687499999999999,
+    "marine_armor": 0.5912499999999999,
+    "flak_vest": 0.53125
+   },
+   "dps_vs_armor_at_12": {
+    "none": 3.5,
+    "flak_jacket": 3.0406249999999995,
+    "marine_armor": 2.069375,
+    "flak_vest": 1.859375
+   },
+   "legendary": {
+    "damage": 38,
+    "ap": 0.5625,
+    "acc_touch_short_medium_long": [
+     0.75,
+     1.0,
+     1.0,
+     1.0
+    ]
+   }
+  },
+  "Gun_Minigun": {
+   "damage": 10.0,
+   "ap": 0.15,
+   "burst": 25,
+   "warmup": 2.5,
+   "cooldown": 1.5,
+   "ticks_between": 5.0,
+   "cycle": 6.0,
+   "range": 30.9,
+   "dps_nominal": 41.666666666666664,
+   "mv": 1160.0,
+   "mv_formula": 1160.0,
+   "radius": 0.0,
+   "hit": {
+    "3": 0.2,
+    "8": 0.22777777777777777,
+    "12": 0.25,
+    "18": 0.25,
+    "25": 0.25,
+    "33": 0.21266666666666667,
+    "40": 0.18
+   },
+   "dps_at": {
+    "3": 8.333333333333334,
+    "12": 10.416666666666666,
+    "25": 10.416666666666666,
+    "40": 7.499999999999999
+   },
+   "armor_mult": {
+    "none": 1.0,
+    "flak_jacket": 0.7,
+    "marine_armor": 0.4225,
+    "flak_vest": 0.36250000000000004
+   },
+   "dps_vs_armor_at_12": {
+    "none": 10.416666666666666,
+    "flak_jacket": 7.291666666666666,
+    "marine_armor": 4.401041666666666,
+    "flak_vest": 3.776041666666667
+   },
+   "legendary": {
+    "damage": 15,
+    "ap": 0.22499999999999998,
+    "acc_touch_short_medium_long": [
+     0.30000000000000004,
+     0.375,
+     0.375,
+     0.27
+    ]
+   }
+  },
+  "Bow_Recurve": {
+   "damage": 14.0,
+   "ap": 0.21,
+   "burst": 1,
+   "warmup": 1.45,
+   "cooldown": 1.65,
+   "ticks_between": 0.0,
+   "cycle": 3.0999999999999996,
+   "range": 25.9,
+   "dps_nominal": 4.516129032258065,
+   "mv": 66.0,
+   "mv_formula": 66.0,
+   "radius": 0.0,
+   "hit": {
+    "3": 0.7,
+    "8": 0.7444444444444445,
+    "12": 0.78,
+    "18": 0.72,
+    "25": 0.65,
+    "33": 0.49,
+    "40": 0.35
+   },
+   "dps_at": {
+    "3": 3.1612903225806455,
+    "12": 3.5225806451612907,
+    "25": 2.9354838709677424,
+    "40": 1.5806451612903227
+   },
+   "armor_mult": {
+    "none": 1.0,
+    "flak_jacket": 0.7449999999999999,
+    "marine_armor": 0.4674999999999999,
+    "flak_vest": 0.4075
+   },
+   "dps_vs_armor_at_12": {
+    "none": 3.5225806451612907,
+    "flak_jacket": 2.624322580645161,
+    "marine_armor": 1.646806451612903,
+    "flak_vest": 1.4354516129032258
+   },
+   "legendary": {
+    "damage": 21,
+    "ap": 0.315,
+    "acc_touch_short_medium_long": [
+     1.0,
+     1.0,
+     0.9750000000000001,
+     0.5249999999999999
+    ]
+   }
+  },
+  "Gun_ChargeRifle": {
+   "damage": 16.0,
+   "ap": 0.35,
+   "burst": 3,
+   "warmup": 1.0,
+   "cooldown": 2.0,
+   "ticks_between": 12.0,
+   "cycle": 3.4,
+   "range": 27.9,
+   "dps_nominal": 14.117647058823529,
+   "mv": 1012.0,
+   "mv_formula": 1012.0,
+   "radius": 0.0,
+   "hit": {
+    "3": 0.55,
+    "8": 0.6,
+    "12": 0.64,
+    "18": 0.5984615384615385,
+    "25": 0.55,
+    "33": 0.4966666666666667,
+    "40": 0.45
+   },
+   "dps_at": {
+    "3": 7.764705882352942,
+    "12": 9.035294117647059,
+    "25": 7.764705882352942,
+    "40": 6.352941176470588
+   },
+   "armor_mult": {
+    "none": 1.0,
+    "flak_jacket": 0.85,
+    "marine_armor": 0.5725,
+    "flak_vest": 0.5125
+   },
+   "dps_vs_armor_at_12": {
+    "none": 9.035294117647059,
+    "flak_jacket": 7.68,
+    "marine_armor": 5.1727058823529415,
+    "flak_vest": 4.630588235294117
+   },
+   "legendary": {
+    "damage": 24,
+    "ap": 0.5249999999999999,
+    "acc_touch_short_medium_long": [
+     0.8250000000000001,
+     0.96,
+     0.8250000000000001,
+     0.675
+    ]
+   }
+  },
+  "Weapon_GrenadeFrag": {
+   "damage": 50.0,
+   "ap": 0.1,
+   "burst": 1,
+   "warmup": 1.5,
+   "cooldown": 2.66,
+   "ticks_between": 0.0,
+   "cycle": 4.16,
+   "range": 12.9,
+   "dps_nominal": 12.019230769230768,
+   "mv": 265.2,
+   "mv_formula": 265.2,
+   "radius": 1.9,
+   "armor_mult": {
+    "none": 1.0,
+    "flak_jacket": 0.6625,
+    "marine_armor": 0.385,
+    "flak_vest": 0.32499999999999996
+   },
+   "dps_vs_armor_at_12": {
+    "none": 12.019230769230768,
+    "flak_jacket": 7.962740384615384,
+    "marine_armor": 4.627403846153846,
+    "flak_vest": 3.906249999999999
+   },
+   "legendary": {
+    "damage": 75,
+    "ap": 0.15000000000000002,
+    "acc_touch_short_medium_long": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   }
+  }
+ },
+ "melee": {
+  "MeleeWeapon_Knife": {
+   "steel": {
+    "entries": [
+     {
+      "tool": "handle",
+      "capacity": "Blunt",
+      "kind": "Blunt",
+      "damage": 9.0,
+      "cooldown": 2.0,
+      "ap": 0.135,
+      "weight": 81.0,
+      "chanceFactor": 1.0
+     },
+     {
+      "tool": "blade",
+      "capacity": "Cut",
+      "kind": "Sharp",
+      "damage": 12.0,
+      "cooldown": 1.5,
+      "ap": 0.18,
+      "weight": 144.0,
+      "chanceFactor": 1.0
+     },
+     {
+      "tool": "point",
+      "capacity": "Stab",
+      "kind": "Sharp",
+      "damage": 13.0,
+      "cooldown": 2.0,
+      "ap": 0.195,
+      "weight": 169.0,
+      "chanceFactor": 1.0
+     }
+    ],
+    "avg_damage": 11.812182741116752,
+    "avg_cooldown": 1.8172588832487309,
+    "dps": 6.500000000000001,
+    "avg_ap": 0.17718274111675128,
+    "sel_damage": 11.75,
+    "sel_cooldown": 1.625,
+    "dps_select": 7.230769230769231,
+    "sel_ap": 0.17625000000000002
+   },
+   "plasteel": {
+    "entries": [
+     {
+      "tool": "handle",
+      "capacity": "Blunt",
+      "kind": "Blunt",
+      "damage": 8.1,
+      "cooldown": 1.6,
+      "ap": 0.1215,
+      "weight": 65.61,
+      "chanceFactor": 1.0
+     },
+     {
+      "tool": "blade",
+      "capacity": "Cut",
+      "kind": "Sharp",
+      "damage": 13.200000000000001,
+      "cooldown": 1.2000000000000002,
+      "ap": 0.198,
+      "weight": 174.24000000000004,
+      "chanceFactor": 1.0
+     },
+     {
+      "tool": "point",
+      "capacity": "Stab",
+      "kind": "Sharp",
+      "damage": 14.3,
+      "cooldown": 1.6,
+      "ap": 0.2145,
+      "weight": 204.49,
+      "chanceFactor": 1.0
+     }
+    ],
+    "avg_damage": 12.953179997299367,
+    "avg_cooldown": 1.4431471395778008,
+    "dps": 8.975647487399572,
+    "avg_ap": 0.1942976999594905,
+    "sel_damage": 12.700000000000001,
+    "sel_cooldown": 1.3000000000000003,
+    "dps_select": 9.769230769230768,
+    "sel_ap": 0.19050000000000003
+   },
+   "steel_legendary": {
+    "entries": [
+     {
+      "tool": "handle",
+      "capacity": "Blunt",
+      "kind": "Blunt",
+      "damage": 14.85,
+      "cooldown": 2.0,
+      "ap": 0.22274999999999998,
+      "weight": 220.52249999999998,
+      "chanceFactor": 1.0
+     },
+     {
+      "tool": "blade",
+      "capacity": "Cut",
+      "kind": "Sharp",
+      "damage": 19.799999999999997,
+      "cooldown": 1.5,
+      "ap": 0.29699999999999993,
+      "weight": 392.0399999999999,
+      "chanceFactor": 1.0
+     },
+     {
+      "tool": "point",
+      "capacity": "Stab",
+      "kind": "Sharp",
+      "damage": 21.45,
+      "cooldown": 2.0,
+      "ap": 0.32175,
+      "weight": 460.10249999999996,
+      "chanceFactor": 1.0
+     }
+    ],
+    "avg_damage": 19.490101522842636,
+    "avg_cooldown": 1.8172588832487309,
+    "dps": 10.724999999999998,
+    "avg_ap": 0.29235152284263954,
+    "sel_damage": 19.3875,
+    "sel_cooldown": 1.625,
+    "dps_select": 11.930769230769231,
+    "sel_ap": 0.2908124999999999
+   }
+  },
+  "MeleeWeapon_Club": {
+   "steel": {
+    "entries": [
+     {
+      "tool": "handle",
+      "capacity": "Poke",
+      "kind": "Blunt",
+      "damage": 9.0,
+      "cooldown": 2.0,
+      "ap": 0.135,
+      "weight": 81.0,
+      "chanceFactor": 1.0
+     },
+     {
+      "tool": "head",
+      "capacity": "Blunt",
+      "kind": "Blunt",
+      "damage": 14.0,
+      "cooldown": 2.0,
+      "ap": 0.21,
+      "weight": 196.0,
+      "chanceFactor": 1.0
+     }
+    ],
+    "avg_damage": 12.537906137184116,
+    "avg_cooldown": 2.0,
+    "dps": 6.268953068592058,
+    "avg_ap": 0.18806859205776172,
+    "sel_damage": 12.75,
+    "sel_cooldown": 2.0,
+    "dps_select": 6.375,
+    "sel_ap": 0.19125
+   },
+   "plasteel": {
+    "entries": [
+     {
+      "tool": "handle",
+      "capacity": "Poke",
+      "kind": "Blunt",
+      "damage": 8.1,
+      "cooldown": 1.6,
+      "ap": 0.1215,
+      "weight": 65.61,
+      "chanceFactor": 1.0
+     },
+     {
+      "tool": "head",
+      "capacity": "Blunt",
+      "kind": "Blunt",
+      "damage": 12.6,
+      "cooldown": 1.6,
+      "ap": 0.189,
+      "weight": 158.76,
+      "chanceFactor": 1.0
+     }
+    ],
+    "avg_damage": 11.284115523465701,
+    "avg_cooldown": 1.5999999999999999,
+    "dps": 7.052572202166064,
+    "avg_ap": 0.16926173285198556,
+    "sel_damage": 11.475,
+    "sel_cooldown": 1.6,
+    "dps_select": 7.171874999999999,
+    "sel_ap": 0.17212499999999997
+   },
+   "steel_legendary": {
+    "entries": [
+     {
+      "tool": "handle",
+      "capacity": "Poke",
+      "kind": "Blunt",
+      "damage": 14.85,
+      "cooldown": 2.0,
+      "ap": 0.22274999999999998,
+      "weight": 220.52249999999998,
+      "chanceFactor": 1.0
+     },
+     {
+      "tool": "head",
+      "capacity": "Blunt",
+      "kind": "Blunt",
+      "damage": 23.099999999999998,
+      "cooldown": 2.0,
+      "ap": 0.3465,
+      "weight": 533.6099999999999,
+      "chanceFactor": 1.0
+     }
+    ],
+    "avg_damage": 20.687545126353786,
+    "avg_cooldown": 2.0,
+    "dps": 10.343772563176893,
+    "avg_ap": 0.3103131768953068,
+    "sel_damage": 21.037499999999998,
+    "sel_cooldown": 2.0,
+    "dps_select": 10.518749999999999,
+    "sel_ap": 0.31556249999999997
+   }
+  },
+  "MeleeWeapon_Mace": {
+   "steel": {
+    "entries": [
+     {
+      "tool": "handle",
+      "capacity": "Poke",
+      "kind": "Blunt",
+      "damage": 9.0,
+      "cooldown": 2.0,
+      "ap": 0.135,
+      "weight": 81.0,
+      "chanceFactor": 1.0
+     },
+     {
+      "tool": "head",
+      "capacity": "Blunt",
+      "kind": "Blunt",
+      "damage": 15.7,
+      "cooldown": 2.0,
+      "ap": 0.2355,
+      "weight": 246.48999999999998,
+      "chanceFactor": 1.0
+     }
+    ],
+    "avg_damage": 14.042850163363767,
+    "avg_cooldown": 2.0,
+    "dps": 7.021425081681883,
+    "avg_ap": 0.21064275245045647,
+    "sel_damage": 14.024999999999999,
+    "sel_cooldown": 2.0,
+    "dps_select": 7.012499999999999,
+    "sel_ap": 0.21037499999999998
+   },
+   "plasteel": {
+    "entries": [
+     {
+      "tool": "handle",
+      "capacity": "Poke",
+      "kind": "Blunt",
+      "damage": 8.1,
+      "cooldown": 1.6,
+      "ap": 0.1215,
+      "weight": 65.61,
+      "chanceFactor": 1.0
+     },
+     {
+      "tool": "head",
+      "capacity": "Blunt",
+      "kind": "Blunt",
+      "damage": 14.129999999999999,
+      "cooldown": 1.6,
+      "ap": 0.21194999999999997,
+      "weight": 199.65689999999998,
+      "chanceFactor": 1.0
+     }
+    ],
+    "avg_damage": 12.63856514702739,
+    "avg_cooldown": 1.6,
+    "dps": 7.899103216892118,
+    "avg_ap": 0.18957847720541085,
+    "sel_damage": 12.6225,
+    "sel_cooldown": 1.6,
+    "dps_select": 7.8890625,
+    "sel_ap": 0.1893375
+   },
+   "steel_legendary": {
+    "entries": [
+     {
+      "tool": "handle",
+      "capacity": "Poke",
+      "kind": "Blunt",
+      "damage": 14.85,
+      "cooldown": 2.0,
+      "ap": 0.22274999999999998,
+      "weight": 220.52249999999998,
+      "chanceFactor": 1.0
+     },
+     {
+      "tool": "head",
+      "capacity": "Blunt",
+      "kind": "Blunt",
+      "damage": 25.904999999999998,
+      "cooldown": 2.0,
+      "ap": 0.38857499999999995,
+      "weight": 671.0690249999999,
+      "chanceFactor": 1.0
+     }
+    ],
+    "avg_damage": 23.170702769550218,
+    "avg_cooldown": 2.0,
+    "dps": 11.585351384775109,
+    "avg_ap": 0.3475605415432532,
+    "sel_damage": 23.141249999999996,
+    "sel_cooldown": 2.0,
+    "dps_select": 11.570624999999998,
+    "sel_ap": 0.34711875
+   }
+  },
+  "MeleeWeapon_LongSword": {
+   "steel": {
+    "entries": [
+     {
+      "tool": "handle",
+      "capacity": "Blunt",
+      "kind": "Blunt",
+      "damage": 9.0,
+      "cooldown": 2.0,
+      "ap": 0.135,
+      "weight": 81.0,
+      "chanceFactor": 1.0
+     },
+     {
+      "tool": "point",
+      "capacity": "Stab",
+      "kind": "Sharp",
+      "damage": 23.0,
+      "cooldown": 2.6,
+      "ap": 0.345,
+      "weight": 529.0,
+      "chanceFactor": 1.0
+     },
+     {
+      "tool": "edge",
+      "capacity": "Cut",
+      "kind": "Sharp",
+      "damage": 23.0,
+      "cooldown": 2.6,
+      "ap": 0.345,
+      "weight": 529.0,
+      "chanceFactor": 1.0
+     }
+    ],
+    "avg_damage": 22.004389815627743,
+    "avg_cooldown": 2.557330992098332,
+    "dps": 8.604435594616863,
+    "avg_ap": 0.3300658472344161,
+    "sel_damage": 19.5,
+    "sel_cooldown": 2.45,
+    "dps_select": 7.959183673469387,
+    "sel_ap": 0.2925
+   },
+   "plasteel": {
+    "entries": [
+     {
+      "tool": "handle",
+      "capacity": "Blunt",
+      "kind": "Blunt",
+      "damage": 8.1,
+      "cooldown": 1.6,
+      "ap": 0.1215,
+      "weight": 65.61,
+      "chanceFactor": 1.0
+     },
+     {
+      "tool": "point",
+      "capacity": "Stab",
+      "kind": "Sharp",
+      "damage": 25.3,
+      "cooldown": 2.08,
+      "ap": 0.3795,
+      "weight": 640.09,
+      "chanceFactor": 1.0
+     },
+     {
+      "tool": "edge",
+      "capacity": "Cut",
+      "kind": "Sharp",
+      "damage": 25.3,
+      "cooldown": 2.08,
+      "ap": 0.3795,
+      "weight": 640.09,
+      "chanceFactor": 1.0
+     }
+    ],
+    "avg_damage": 24.461465013114974,
+    "avg_cooldown": 2.0565990236218137,
+    "dps": 11.89413431211138,
+    "avg_ap": 0.36692197519672465,
+    "sel_damage": 21.0,
+    "sel_cooldown": 1.96,
+    "dps_select": 10.714285714285715,
+    "sel_ap": 0.315
+   },
+   "steel_legendary": {
+    "entries": [
+     {
+      "tool": "handle",
+      "capacity": "Blunt",
+      "kind": "Blunt",
+      "damage": 14.85,
+      "cooldown": 2.0,
+      "ap": 0.22274999999999998,
+      "weight": 220.52249999999998,
+      "chanceFactor": 1.0
+     },
+     {
+      "tool": "point",
+      "capacity": "Stab",
+      "kind": "Sharp",
+      "damage": 37.949999999999996,
+      "cooldown": 2.6,
+      "ap": 0.5692499999999999,
+      "weight": 1440.2024999999996,
+      "chanceFactor": 1.0
+     },
+     {
+      "tool": "edge",
+      "capacity": "Cut",
+      "kind": "Sharp",
+      "damage": 37.949999999999996,
+      "cooldown": 2.6,
+      "ap": 0.5692499999999999,
+      "weight": 1440.2024999999996,
+      "chanceFactor": 1.0
+     }
+    ],
+    "avg_damage": 36.307243195785766,
+    "avg_cooldown": 2.557330992098332,
+    "dps": 14.197318731117821,
+    "avg_ap": 0.5446086479367866,
+    "sel_damage": 32.175,
+    "sel_cooldown": 2.45,
+    "dps_select": 13.132653061224488,
+    "sel_ap": 0.48262499999999997
+   }
+  },
+  "MeleeWeapon_Spear": {
+   "steel": {
+    "entries": [
+     {
+      "tool": "shaft",
+      "capacity": "Blunt",
+      "kind": "Blunt",
+      "damage": 13.0,
+      "cooldown": 2.6,
+      "ap": 0.195,
+      "weight": 169.0,
+      "chanceFactor": 1.0
+     },
+     {
+      "tool": "shaft",
+      "capacity": "Poke",
+      "kind": "Blunt",
+      "damage": 13.0,
+      "cooldown": 2.6,
+      "ap": 0.195,
+      "weight": 169.0,
+      "chanceFactor": 1.0
+     },
+     {
+      "tool": "point",
+      "capacity": "Stab",
+      "kind": "Sharp",
+      "damage": 23.0,
+      "cooldown": 2.6,
+      "ap": 0.5,
+      "weight": 529.0,
+      "chanceFactor": 1.0
+     }
+    ],
+    "avg_damage": 19.10149942329873,
+    "avg_cooldown": 2.6000000000000005,
+    "dps": 7.346730547422587,
+    "avg_ap": 0.3810957324106113,
+    "sel_damage": 20.5,
+    "sel_cooldown": 2.6,
+    "dps_select": 7.884615384615384,
+    "sel_ap": 0.42375
+   },
+   "plasteel": {
+    "entries": [
+     {
+      "tool": "shaft",
+      "capacity": "Blunt",
+      "kind": "Blunt",
+      "damage": 11.700000000000001,
+      "cooldown": 2.08,
+      "ap": 0.17550000000000002,
+      "weight": 136.89000000000001,
+      "chanceFactor": 1.0
+     },
+     {
+      "tool": "shaft",
+      "capacity": "Poke",
+      "kind": "Blunt",
+      "damage": 11.700000000000001,
+      "cooldown": 2.08,
+      "ap": 0.17550000000000002,
+      "weight": 136.89000000000001,
+      "chanceFactor": 1.0
+     },
+     {
+      "tool": "point",
+      "capacity": "Stab",
+      "kind": "Sharp",
+      "damage": 25.3,
+      "cooldown": 2.08,
+      "ap": 0.5,
+      "weight": 640.09,
+      "chanceFactor": 1.0
+     }
+    ],
+    "avg_damage": 21.225669953056784,
+    "avg_cooldown": 2.08,
+    "dps": 10.204649015892684,
+    "avg_ap": 0.40278528674756797,
+    "sel_damage": 21.900000000000002,
+    "sel_cooldown": 2.08,
+    "dps_select": 10.528846153846155,
+    "sel_ap": 0.418875
+   },
+   "steel_legendary": {
+    "entries": [
+     {
+      "tool": "shaft",
+      "capacity": "Blunt",
+      "kind": "Blunt",
+      "damage": 21.45,
+      "cooldown": 2.6,
+      "ap": 0.32175,
+      "weight": 460.10249999999996,
+      "chanceFactor": 1.0
+     },
+     {
+      "tool": "shaft",
+      "capacity": "Poke",
+      "kind": "Blunt",
+      "damage": 21.45,
+      "cooldown": 2.6,
+      "ap": 0.32175,
+      "weight": 460.10249999999996,
+      "chanceFactor": 1.0
+     },
+     {
+      "tool": "point",
+      "capacity": "Stab",
+      "kind": "Sharp",
+      "damage": 37.949999999999996,
+      "cooldown": 2.6,
+      "ap": 0.825,
+      "weight": 1440.2024999999996,
+      "chanceFactor": 1.0
+     }
+    ],
+    "avg_damage": 31.517474048442903,
+    "avg_cooldown": 2.6000000000000005,
+    "dps": 12.122105403247268,
+    "avg_ap": 0.6288079584775087,
+    "sel_damage": 33.824999999999996,
+    "sel_cooldown": 2.6,
+    "dps_select": 13.009615384615383,
+    "sel_ap": 0.6991874999999999
+   }
+  },
+  "MeleeWeapon_Warhammer": {
+   "steel": {
+    "entries": [
+     {
+      "tool": "handle",
+      "capacity": "Poke",
+      "kind": "Blunt",
+      "damage": 11.0,
+      "cooldown": 2.6,
+      "ap": 0.16499999999999998,
+      "weight": 121.0,
+      "chanceFactor": 1.0
+     },
+     {
+      "tool": "head",
+      "capacity": "Blunt",
+      "kind": "Blunt",
+      "damage": 20.0,
+      "cooldown": 2.6,
+      "ap": 0.3,
+      "weight": 400.0,
+      "chanceFactor": 1.0
+     }
+    ],
+    "avg_damage": 17.90978886756238,
+    "avg_cooldown": 2.5999999999999996,
+    "dps": 6.88838033367784,
+    "avg_ap": 0.2686468330134357,
+    "sel_damage": 17.75,
+    "sel_cooldown": 2.6,
+    "dps_select": 6.826923076923077,
+    "sel_ap": 0.26625
+   },
+   "plasteel": {
+    "entries": [
+     {
+      "tool": "handle",
+      "capacity": "Poke",
+      "kind": "Blunt",
+      "damage": 9.9,
+      "cooldown": 2.08,
+      "ap": 0.1485,
+      "weight": 98.01,
+      "chanceFactor": 1.0
+     },
+     {
+      "tool": "head",
+      "capacity": "Blunt",
+      "kind": "Blunt",
+      "damage": 18.0,
+      "cooldown": 2.08,
+      "ap": 0.27,
+      "weight": 324.0,
+      "chanceFactor": 1.0
+     }
+    ],
+    "avg_damage": 16.11880998080614,
+    "avg_cooldown": 2.0800000000000005,
+    "dps": 7.749427875387566,
+    "avg_ap": 0.24178214971209214,
+    "sel_damage": 15.975,
+    "sel_cooldown": 2.08,
+    "dps_select": 7.680288461538461,
+    "sel_ap": 0.239625
+   },
+   "steel_legendary": {
+    "entries": [
+     {
+      "tool": "handle",
+      "capacity": "Poke",
+      "kind": "Blunt",
+      "damage": 18.15,
+      "cooldown": 2.6,
+      "ap": 0.27225,
+      "weight": 329.42249999999996,
+      "chanceFactor": 1.0
+     },
+     {
+      "tool": "head",
+      "capacity": "Blunt",
+      "kind": "Blunt",
+      "damage": 33.0,
+      "cooldown": 2.6,
+      "ap": 0.495,
+      "weight": 1089.0,
+      "chanceFactor": 1.0
+     }
+    ],
+    "avg_damage": 29.55115163147793,
+    "avg_cooldown": 2.6000000000000005,
+    "dps": 11.365827550568431,
+    "avg_ap": 0.4432672744721689,
+    "sel_damage": 29.2875,
+    "sel_cooldown": 2.6,
+    "dps_select": 11.264423076923077,
+    "sel_ap": 0.4393125
+   }
+  },
+  "MeleeWeapon_MonoSword": {
+   "steel": {
+    "entries": [
+     {
+      "tool": "handle",
+      "capacity": "Blunt",
+      "kind": "Blunt",
+      "damage": 12.0,
+      "cooldown": 1.6,
+      "ap": 0.18,
+      "weight": 144.0,
+      "chanceFactor": 1.0
+     },
+     {
+      "tool": "point",
+      "capacity": "Stab",
+      "kind": "Sharp",
+      "damage": 25.0,
+      "cooldown": 2.0,
+      "ap": 0.9,
+      "weight": 625.0,
+      "chanceFactor": 1.0
+     },
+     {
+      "tool": "edge",
+      "capacity": "Cut",
+      "kind": "Sharp",
+      "damage": 25.0,
+      "cooldown": 2.0,
+      "ap": 0.9,
+      "weight": 625.0,
+      "chanceFactor": 1.0
+     }
+    ],
+    "avg_damage": 23.657101865136298,
+    "avg_cooldown": 1.9586800573888092,
+    "dps": 12.078083797245824,
+    "avg_ap": 0.8256241032998566,
+    "sel_damage": 21.75,
+    "sel_cooldown": 1.9,
+    "dps_select": 11.447368421052632,
+    "sel_ap": 0.7200000000000001
+   },
+   "steel_legendary": {
+    "entries": [
+     {
+      "tool": "handle",
+      "capacity": "Blunt",
+      "kind": "Blunt",
+      "damage": 19.799999999999997,
+      "cooldown": 1.6,
+      "ap": 0.29699999999999993,
+      "weight": 392.0399999999999,
+      "chanceFactor": 1.0
+     },
+     {
+      "tool": "point",
+      "capacity": "Stab",
+      "kind": "Sharp",
+      "damage": 41.25,
+      "cooldown": 2.0,
+      "ap": 1.4849999999999999,
+      "weight": 1701.5625,
+      "chanceFactor": 1.0
+     },
+     {
+      "tool": "edge",
+      "capacity": "Cut",
+      "kind": "Sharp",
+      "damage": 41.25,
+      "cooldown": 2.0,
+      "ap": 1.4849999999999999,
+      "weight": 1701.5625,
+      "chanceFactor": 1.0
+     }
+    ],
+    "avg_damage": 39.03421807747489,
+    "avg_cooldown": 1.9586800573888092,
+    "dps": 19.92883826545561,
+    "avg_ap": 1.3622797704447633,
+    "sel_damage": 35.8875,
+    "sel_cooldown": 1.9,
+    "dps_select": 18.888157894736846,
+    "sel_ap": 1.188
+   }
+  },
+  "MeleeWeapon_PlasmaSword": {
+   "steel": {
+    "entries": [
+     {
+      "tool": "handle",
+      "capacity": "Blunt",
+      "kind": "Blunt",
+      "damage": 12.0,
+      "cooldown": 2.0,
+      "ap": 0.18,
+      "weight": 144.0,
+      "chanceFactor": 1.0
+     },
+     {
+      "tool": "point",
+      "capacity": "Stab",
+      "kind": "Sharp",
+      "damage": 21.0,
+      "cooldown": 2.6,
+      "ap": 0.315,
+      "weight": 441.0,
+      "chanceFactor": 1.0
+     },
+     {
+      "tool": "edge",
+      "capacity": "Cut",
+      "kind": "Sharp",
+      "damage": 21.0,
+      "cooldown": 2.6,
+      "ap": 0.315,
+      "weight": 441.0,
+      "chanceFactor": 1.0
+     }
+    ],
+    "avg_damage": 19.736842105263158,
+    "avg_cooldown": 2.515789473684211,
+    "dps": 7.845188284518827,
+    "avg_ap": 0.29605263157894735,
+    "sel_damage": 18.75,
+    "sel_cooldown": 2.45,
+    "dps_select": 7.653061224489796,
+    "sel_ap": 0.28125
+   },
+   "steel_legendary": {
+    "entries": [
+     {
+      "tool": "handle",
+      "capacity": "Blunt",
+      "kind": "Blunt",
+      "damage": 19.799999999999997,
+      "cooldown": 2.0,
+      "ap": 0.29699999999999993,
+      "weight": 392.0399999999999,
+      "chanceFactor": 1.0
+     },
+     {
+      "tool": "point",
+      "capacity": "Stab",
+      "kind": "Sharp",
+      "damage": 34.65,
+      "cooldown": 2.6,
+      "ap": 0.5197499999999999,
+      "weight": 1200.6225,
+      "chanceFactor": 1.0
+     },
+     {
+      "tool": "edge",
+      "capacity": "Cut",
+      "kind": "Sharp",
+      "damage": 34.65,
+      "cooldown": 2.6,
+      "ap": 0.5197499999999999,
+      "weight": 1200.6225,
+      "chanceFactor": 1.0
+     }
+    ],
+    "avg_damage": 32.565789473684205,
+    "avg_cooldown": 2.515789473684211,
+    "dps": 12.944560669456063,
+    "avg_ap": 0.4884868421052631,
+    "sel_damage": 30.937499999999996,
+    "sel_cooldown": 2.45,
+    "dps_select": 12.627551020408161,
+    "sel_ap": 0.46406249999999993
+   }
+  }
+ }
+}

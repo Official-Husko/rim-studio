@@ -1,0 +1,13 @@
+S6 end to end full def index build (walk + read + parse + owned records), median ms of 5
+== workshop+data: mods=697 def files=23717 bytes=221.5 MB
+  warm         1t=558 2t=333 4t=172 8t=139 16t=122
+  cold-approx  1t=2256 2t=1464 4t=624 8t=384 16t=253
+  walk-only    1t=119.1 2t=63.7 4t=36.9 8t=22.6 16t=20.8
+== owner: mods=27 def files=38 bytes=0.2 MB
+  warm         1t=1 2t=1 4t=0 8t=0 16t=1
+  cold-approx  1t=10 2t=7 4t=6 8t=6 16t=6
+  walk-only    1t=0.7 2t=0.3 4t=0.2 8t=0.2 16t=0.2
+== ce: mods=1 def files=817 bytes=5.4 MB
+  warm         1t=23 2t=22 4t=22 8t=23 16t=22
+  cold-approx  1t=1032 2t=1101 4t=1071 8t=1011 16t=1064
+  walk-only    1t=9.1 2t=9.5 4t=9.3 8t=8.7 16t=11.3

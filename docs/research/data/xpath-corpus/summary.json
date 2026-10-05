@@ -1,0 +1,1783 @@
+{
+  "meta": {
+    "generated": "2026-10-04",
+    "script": "docs/research/data/xpath-corpus/xpath_coverage.py",
+    "python": "3.14.7",
+    "lxml": "6.1.3.0",
+    "libxml2": "2.15.4",
+    "elapsed_seconds": 14.2,
+    "scan_seconds": 4.8,
+    "game_version_assumed": "1.6.4871",
+    "note": "raw expressions are not stored; examples are short excerpts"
+  },
+  "corpus": {
+    "sources": {
+      "vanilla": {
+        "units_with_patches_dir": 6,
+        "xml_files": 14,
+        "patch_files": 14,
+        "patch_files_reachable_16": 14
+      },
+      "ce_dev": {
+        "units_with_patches_dir": 1,
+        "xml_files": 3795,
+        "patch_files": 3795,
+        "patch_files_reachable_16": 3793
+      },
+      "workshop": {
+        "units_with_patches_dir": 398,
+        "xml_files": 10257,
+        "patch_files": 10251,
+        "patch_files_reachable_16": 7399,
+        "units_without_patches": 292,
+        "files_unparseable": 6
+      },
+      "owner": {
+        "units_with_patches_dir": 16,
+        "xml_files": 36,
+        "patch_files": 36,
+        "patch_files_reachable_16": 30,
+        "units_without_patches": 11
+      }
+    },
+    "patches_dirs_by_name": {
+      "ce_dev:Patches": 765,
+      "owner:Patches": 17,
+      "vanilla:Patches": 4,
+      "workshop:Patches": 3392
+    },
+    "patches_dirs_by_location": {
+      "ce_dev:other folder": 764,
+      "ce_dev:root": 1,
+      "owner:other folder": 2,
+      "owner:root": 11,
+      "owner:version folder": 4,
+      "vanilla:root": 4,
+      "workshop:Common": 16,
+      "workshop:other folder": 2583,
+      "workshop:root": 133,
+      "workshop:version folder": 660
+    },
+    "units_with_patches": {
+      "ce_dev": 1,
+      "vanilla": 6,
+      "workshop": 398,
+      "owner": 16
+    },
+    "xml_parse_status_outside_ok": {
+      "workshop:failed": 6
+    },
+    "xml_parse_problem_examples": [
+      {
+        "source": "workshop",
+        "status": "failed",
+        "file": "2244594116/ConditionalPatches/RT_Patch_RimWorld_Ideology/Patches/RT_Patch_VTC_RT_Ideology_Common.xml"
+      },
+      {
+        "source": "workshop",
+        "status": "failed",
+        "file": "2244594116/ConditionalPatches/RT_Patch_RimWorld_Ideology/Patches/RT_Patch_VTC_RT_Ideology_Rare.xml"
+      },
+      {
+        "source": "workshop",
+        "status": "failed",
+        "file": "2244594116/ConditionalPatches/RT_Patch_RimWorld_Ideology/Patches/RT_Patch_VTC_RT_Ideology_Uncommon.xml"
+      },
+      {
+        "source": "workshop",
+        "status": "failed",
+        "file": "2244594116/ConditionalPatches/RT_Patch_RimWorld_Royalty/Patches/RT_Patch_VTC_RT_Royalty_Common.xml"
+      },
+      {
+        "source": "workshop",
+        "status": "failed",
+        "file": "2244594116/ConditionalPatches/RT_Patch_RimWorld_Royalty/Patches/RT_Patch_VTC_RT_Royalty_Rare.xml"
+      },
+      {
+        "source": "workshop",
+        "status": "failed",
+        "file": "2244594116/ConditionalPatches/RT_Patch_RimWorld_Royalty/Patches/RT_Patch_VTC_RT_Royalty_Uncommon.xml"
+      }
+    ],
+    "load_folder_methods": {
+      "root-only:": 82,
+      "loadfolders:1.6": 146,
+      "folder:": 150,
+      "loadfolders:1.5": 37,
+      "loadfolders:1.4": 6
+    },
+    "operations_total": 205379,
+    "expressions_total": 183620,
+    "expressions_distinct": 85859,
+    "valid_expressions_in_folders_loaded_by_16_upper_bound": 159083
+  },
+  "operation_classes": {
+    "distinct_classes": 117,
+    "vanilla_operations": 191383,
+    "custom_operations": 13996,
+    "custom_operations_with_xpath": 1511,
+    "nesting_depth_counts": {
+      "0": 120862,
+      "1": 37573,
+      "2": 30507,
+      "3": 12044,
+      "4": 2761,
+      "5": 1632
+    },
+    "success_field_values": {
+      "Always": 8779,
+      "Invert": 132,
+      "Normal": 69
+    },
+    "operations_with_mayrequire": 673,
+    "operations_with_multiple_xpath_children": 0,
+    "other_xpath_like_child_names": {
+      "fromxpath": 42,
+      "onlyXpathExists": 6
+    },
+    "vanilla": [
+      {
+        "class": "PatchOperationReplace",
+        "operations": 68395,
+        "with_xpath": 68395
+      },
+      {
+        "class": "PatchOperationAdd",
+        "operations": 62631,
+        "with_xpath": 62629
+      },
+      {
+        "class": "PatchOperationConditional",
+        "operations": 26794,
+        "with_xpath": 26794
+      },
+      {
+        "class": "PatchOperationRemove",
+        "operations": 12855,
+        "with_xpath": 12855
+      },
+      {
+        "class": "PatchOperationAddModExtension",
+        "operations": 10267,
+        "with_xpath": 10267
+      },
+      {
+        "class": "PatchOperationSequence",
+        "operations": 5384,
+        "with_xpath": 0
+      },
+      {
+        "class": "PatchOperationFindMod",
+        "operations": 3887,
+        "with_xpath": 0
+      },
+      {
+        "class": "PatchOperationAttributeSet",
+        "operations": 636,
+        "with_xpath": 636
+      },
+      {
+        "class": "PatchOperationTest",
+        "operations": 306,
+        "with_xpath": 306
+      },
+      {
+        "class": "PatchOperationInsert",
+        "operations": 191,
+        "with_xpath": 191
+      },
+      {
+        "class": "PatchOperationAttributeAdd",
+        "operations": 24,
+        "with_xpath": 24
+      },
+      {
+        "class": "PatchOperationAttributeRemove",
+        "operations": 7,
+        "with_xpath": 7
+      },
+      {
+        "class": "PatchOperationSetName",
+        "operations": 2,
+        "with_xpath": 2
+      },
+      {
+        "class": "Verse.PatchOperationAdd",
+        "operations": 2,
+        "with_xpath": 2
+      },
+      {
+        "class": "Verse.PatchOperationSequence",
+        "operations": 1,
+        "with_xpath": 0
+      },
+      {
+        "class": "Verse.PatchOperationConditional",
+        "operations": 1,
+        "with_xpath": 1
+      }
+    ],
+    "custom_top": [
+      {
+        "class": "CombatExtended.PatchOperationMakeGunCECompatible",
+        "operations": 9727,
+        "with_xpath": 0
+      },
+      {
+        "class": "NQualityOfLife.XML.Log",
+        "operations": 611,
+        "with_xpath": 0
+      },
+      {
+        "class": "XmlExtensions.OptionalPatch",
+        "operations": 475,
+        "with_xpath": 0
+      },
+      {
+        "class": "SafePatcher.PatchOperationSetModExtension",
+        "operations": 370,
+        "with_xpath": 370
+      },
+      {
+        "class": "NQualityOfLife.XML.Add",
+        "operations": 320,
+        "with_xpath": 320
+      },
+      {
+        "class": "NQualityOfLife.XML.AddOrReplace",
+        "operations": 214,
+        "with_xpath": 214
+      },
+      {
+        "class": "NQualityOfLife.XML.Profiler",
+        "operations": 210,
+        "with_xpath": 0
+      },
+      {
+        "class": "NQualityOfLife.XML.PatchIfModsLoaded",
+        "operations": 152,
+        "with_xpath": 0
+      },
+      {
+        "class": "TweaksGalore.PatchOperation_TweakBool",
+        "operations": 151,
+        "with_xpath": 0
+      },
+      {
+        "class": "NQualityOfLife.XML.PatchIfExists",
+        "operations": 145,
+        "with_xpath": 145
+      },
+      {
+        "class": "CombatExtended.PatchOperationSettingsConditional",
+        "operations": 134,
+        "with_xpath": 0
+      },
+      {
+        "class": "NQualityOfLife.XML.PatchIfEnabled",
+        "operations": 115,
+        "with_xpath": 0
+      },
+      {
+        "class": "NQualityOfLife.XML.AddDeep",
+        "operations": 107,
+        "with_xpath": 107
+      },
+      {
+        "class": "NQualityOfLife.XML.ClearVariable",
+        "operations": 104,
+        "with_xpath": 0
+      },
+      {
+        "class": "TweaksGalore.PatchOperation_SettingActive",
+        "operations": 96,
+        "with_xpath": 0
+      },
+      {
+        "class": "XmlExtensions.OptionalPatchExternal",
+        "operations": 84,
+        "with_xpath": 0
+      },
+      {
+        "class": "ModSettingsFramework.PatchOperationModOption",
+        "operations": 70,
+        "with_xpath": 0
+      },
+      {
+        "class": "NQualityOfLife.XML.AddTextVariable",
+        "operations": 62,
+        "with_xpath": 21
+      },
+      {
+        "class": "NQualityOfLife.XML.Replace",
+        "operations": 62,
+        "with_xpath": 62
+      },
+      {
+        "class": "LWM.DeepStorage.PatchMessage",
+        "operations": 54,
+        "with_xpath": 0
+      },
+      {
+        "class": "XmlExtensions.UseSetting",
+        "operations": 52,
+        "with_xpath": 0
+      },
+      {
+        "class": "NQualityOfLife.XML.Remove",
+        "operations": 51,
+        "with_xpath": 51
+      },
+      {
+        "class": "NQualityOfLife.XML.PatchIfEnabledAndExists",
+        "operations": 46,
+        "with_xpath": 46
+      },
+      {
+        "class": "NQualityOfLife.XML.WarnIfAnyLoaded",
+        "operations": 42,
+        "with_xpath": 0
+      },
+      {
+        "class": "VEF.PatchOperationToggableSequence",
+        "operations": 41,
+        "with_xpath": 0
+      },
+      {
+        "class": "NQualityOfLife.XML.PatchIfEnabledAndModsLoaded",
+        "operations": 40,
+        "with_xpath": 0
+      },
+      {
+        "class": "VFECore.PatchOperationToggableSequence",
+        "operations": 38,
+        "with_xpath": 0
+      },
+      {
+        "class": "OutlandTerrain.PatchOperation_SettingActive",
+        "operations": 26,
+        "with_xpath": 0
+      },
+      {
+        "class": "OutlandGenes.PatchOperation_SettingActive",
+        "operations": 26,
+        "with_xpath": 0
+      },
+      {
+        "class": "PatchOperationAddOrMerge",
+        "operations": 25,
+        "with_xpath": 25
+      },
+      {
+        "class": "PatchOperationAddOrMergeCopy",
+        "operations": 25,
+        "with_xpath": 25
+      },
+      {
+        "class": "XmlExtensions.FindMod",
+        "operations": 23,
+        "with_xpath": 0
+      },
+      {
+        "class": "PatchOperationreplace",
+        "operations": 18,
+        "with_xpath": 18
+      },
+      {
+        "class": "NQualityOfLife.XML.StringConcat",
+        "operations": 18,
+        "with_xpath": 0
+      },
+      {
+        "class": "PatchOperationAddCopy",
+        "operations": 17,
+        "with_xpath": 17
+      },
+      {
+        "class": "NQualityOfLife.XML.AddIfMissing",
+        "operations": 17,
+        "with_xpath": 17
+      },
+      {
+        "class": "NQualityOfLife.XML.PatchIfSetTo",
+        "operations": 16,
+        "with_xpath": 0
+      },
+      {
+        "class": "ModSettingsFramework.PatchOperationSliderFloat",
+        "operations": 13,
+        "with_xpath": 13
+      },
+      {
+        "class": "NQualityOfLife.XML.Invoke",
+        "operations": 13,
+        "with_xpath": 0
+      },
+      {
+        "class": "NQualityOfLife.XML.PatchIf",
+        "operations": 12,
+        "with_xpath": 0
+      }
+    ],
+    "by_source_top": {
+      "vanilla": [
+        [
+          "PatchOperationReplace",
+          23
+        ],
+        [
+          "PatchOperationAttributeSet",
+          3
+        ],
+        [
+          "PatchOperationAdd",
+          3
+        ]
+      ],
+      "ce_dev": [
+        [
+          "PatchOperationReplace",
+          19135
+        ],
+        [
+          "PatchOperationAdd",
+          15792
+        ],
+        [
+          "CombatExtended.PatchOperationMakeGunCECompatible",
+          3173
+        ],
+        [
+          "PatchOperationAddModExtension",
+          3028
+        ],
+        [
+          "PatchOperationConditional",
+          2501
+        ],
+        [
+          "PatchOperationRemove",
+          1427
+        ],
+        [
+          "PatchOperationSequence",
+          391
+        ],
+        [
+          "PatchOperationFindMod",
+          307
+        ],
+        [
+          "PatchOperationAttributeSet",
+          251
+        ],
+        [
+          "CombatExtended.PatchOperationSettingsConditional",
+          67
+        ],
+        [
+          "PatchOperationInsert",
+          13
+        ],
+        [
+          "PatchOperationAttributeAdd",
+          10
+        ]
+      ],
+      "workshop": [
+        [
+          "PatchOperationReplace",
+          49159
+        ],
+        [
+          "PatchOperationAdd",
+          46777
+        ],
+        [
+          "PatchOperationConditional",
+          24287
+        ],
+        [
+          "PatchOperationRemove",
+          11418
+        ],
+        [
+          "PatchOperationAddModExtension",
+          7232
+        ],
+        [
+          "CombatExtended.PatchOperationMakeGunCECompatible",
+          6534
+        ],
+        [
+          "PatchOperationSequence",
+          4972
+        ],
+        [
+          "PatchOperationFindMod",
+          3557
+        ],
+        [
+          "NQualityOfLife.XML.Log",
+          611
+        ],
+        [
+          "XmlExtensions.OptionalPatch",
+          475
+        ],
+        [
+          "PatchOperationAttributeSet",
+          382
+        ],
+        [
+          "SafePatcher.PatchOperationSetModExtension",
+          370
+        ]
+      ],
+      "owner": [
+        [
+          "PatchOperationReplace",
+          78
+        ],
+        [
+          "PatchOperationAdd",
+          59
+        ],
+        [
+          "PatchOperationFindMod",
+          23
+        ],
+        [
+          "PatchOperationSequence",
+          21
+        ],
+        [
+          "CombatExtended.PatchOperationMakeGunCECompatible",
+          20
+        ],
+        [
+          "PatchOperationRemove",
+          10
+        ],
+        [
+          "PatchOperationAddModExtension",
+          7
+        ],
+        [
+          "PatchOperationConditional",
+          6
+        ],
+        [
+          "CombatExtended.PatchOperationFindMod",
+          2
+        ]
+      ]
+    }
+  },
+  "xpath": {
+    "valid_expressions": 183371,
+    "invalid_expressions": 249,
+    "invalid_reasons": {
+      "unexpected character '{'": 240,
+      "unterminated string literal": 4,
+      "expected ']' but found 'end of expression'": 3,
+      "expected a node test but found 'end of expression'": 2
+    },
+    "invalid_examples": {
+      "unterminated string literal": "Defs/BodyDef[defName=\"AA_EyeBody]/corePart/parts/li[def=\"AA_JellyfishTentacle\"]",
+      "expected a node test but found 'end of expression'": "Defs/ThingDef[defName=\"ROM_MiGo\"]/",
+      "expected ']' but found 'end of expression'": "Defs/ThingDef[defName=\"DC-15A_Blaster_Rifle\"",
+      "unexpected character '{'": "{EggsToPatch}"
+    },
+    "root_forms": {
+      "Defs/...": 117394,
+      "/Defs/...": 64225,
+      "*/...": 1731,
+      "/other": 10,
+      "//...": 6,
+      "(...)": 3,
+      "other relative": 2
+    },
+    "whitespace": {
+      "contains a newline": 6420,
+      "leading or trailing whitespace": 4902
+    },
+    "axes": [
+      {
+        "name": "child",
+        "occurrences": 890984,
+        "expressions": 183371,
+        "pct_of_valid_expressions": 100.0
+      },
+      {
+        "name": "attribute",
+        "occurrences": 16256,
+        "expressions": 14836,
+        "pct_of_valid_expressions": 8.09
+      },
+      {
+        "name": "descendant-or-self (//)",
+        "occurrences": 798,
+        "expressions": 798,
+        "pct_of_valid_expressions": 0.44
+      },
+      {
+        "name": "self (.)",
+        "occurrences": 461,
+        "expressions": 390,
+        "pct_of_valid_expressions": 0.21
+      },
+      {
+        "name": "parent (..)",
+        "occurrences": 48,
+        "expressions": 24,
+        "pct_of_valid_expressions": 0.01
+      },
+      {
+        "name": "self",
+        "occurrences": 13,
+        "expressions": 5,
+        "pct_of_valid_expressions": 0.0
+      },
+      {
+        "name": "parent",
+        "occurrences": 2,
+        "expressions": 2,
+        "pct_of_valid_expressions": 0.0
+      },
+      {
+        "name": "descendant",
+        "occurrences": 1,
+        "expressions": 1,
+        "pct_of_valid_expressions": 0.0
+      }
+    ],
+    "node_tests": [
+      {
+        "name": "name",
+        "occurrences": 899943,
+        "expressions": 183368,
+        "pct_of_valid_expressions": 100.0
+      },
+      {
+        "name": "text()",
+        "occurrences": 4832,
+        "expressions": 2720,
+        "pct_of_valid_expressions": 1.48
+      },
+      {
+        "name": "* (wildcard)",
+        "occurrences": 2481,
+        "expressions": 2480,
+        "pct_of_valid_expressions": 1.35
+      }
+    ],
+    "predicate_kinds": [
+      {
+        "name": "child-text equality (c = 'v')",
+        "occurrences": 232612,
+        "expressions": 174451,
+        "pct_of_valid_expressions": 95.14
+      },
+      {
+        "name": "attribute equality (@a = 'v')",
+        "occurrences": 16191,
+        "expressions": 14813,
+        "pct_of_valid_expressions": 8.08
+      },
+      {
+        "name": "text() equality (text() = 'v')",
+        "occurrences": 2949,
+        "expressions": 1154,
+        "pct_of_valid_expressions": 0.63
+      },
+      {
+        "name": "position by number [n]",
+        "occurrences": 2244,
+        "expressions": 2187,
+        "pct_of_valid_expressions": 1.19
+      },
+      {
+        "name": "child existence ([c])",
+        "occurrences": 1564,
+        "expressions": 1314,
+        "pct_of_valid_expressions": 0.72
+      },
+      {
+        "name": "nested-path existence ([a/b])",
+        "occurrences": 593,
+        "expressions": 385,
+        "pct_of_valid_expressions": 0.21
+      },
+      {
+        "name": "function: contains()",
+        "occurrences": 465,
+        "expressions": 165,
+        "pct_of_valid_expressions": 0.09
+      },
+      {
+        "name": "self equality (. = 'v')",
+        "occurrences": 424,
+        "expressions": 353,
+        "pct_of_valid_expressions": 0.19
+      },
+      {
+        "name": "nested-path equality (a/b = 'v')",
+        "occurrences": 105,
+        "expressions": 89,
+        "pct_of_valid_expressions": 0.05
+      },
+      {
+        "name": "function: starts-with()",
+        "occurrences": 70,
+        "expressions": 25,
+        "pct_of_valid_expressions": 0.01
+      },
+      {
+        "name": "function result equality (f(..) = 'v')",
+        "occurrences": 34,
+        "expressions": 12,
+        "pct_of_valid_expressions": 0.01
+      },
+      {
+        "name": "other",
+        "occurrences": 30,
+        "expressions": 28,
+        "pct_of_valid_expressions": 0.02
+      },
+      {
+        "name": "attribute existence ([@a])",
+        "occurrences": 23,
+        "expressions": 15,
+        "pct_of_valid_expressions": 0.01
+      },
+      {
+        "name": "numeric equality (x = 5)",
+        "occurrences": 22,
+        "expressions": 22,
+        "pct_of_valid_expressions": 0.01
+      },
+      {
+        "name": "comparison of two non-literals",
+        "occurrences": 22,
+        "expressions": 22,
+        "pct_of_valid_expressions": 0.01
+      },
+      {
+        "name": "function: last()",
+        "occurrences": 14,
+        "expressions": 14,
+        "pct_of_valid_expressions": 0.01
+      },
+      {
+        "name": "relational comparison",
+        "occurrences": 10,
+        "expressions": 7,
+        "pct_of_valid_expressions": 0.0
+      },
+      {
+        "name": "other equality",
+        "occurrences": 2,
+        "expressions": 2,
+        "pct_of_valid_expressions": 0.0
+      },
+      {
+        "name": "inequality (!=)",
+        "occurrences": 1,
+        "expressions": 1,
+        "pct_of_valid_expressions": 0.0
+      }
+    ],
+    "functions": [
+      {
+        "name": "not",
+        "occurrences": 1760,
+        "expressions": 1406,
+        "pct_of_valid_expressions": 0.77
+      },
+      {
+        "name": "contains",
+        "occurrences": 465,
+        "expressions": 165,
+        "pct_of_valid_expressions": 0.09
+      },
+      {
+        "name": "starts-with",
+        "occurrences": 70,
+        "expressions": 25,
+        "pct_of_valid_expressions": 0.01
+      },
+      {
+        "name": "string",
+        "occurrences": 35,
+        "expressions": 13,
+        "pct_of_valid_expressions": 0.01
+      },
+      {
+        "name": "name",
+        "occurrences": 21,
+        "expressions": 10,
+        "pct_of_valid_expressions": 0.01
+      },
+      {
+        "name": "normalize-space",
+        "occurrences": 15,
+        "expressions": 3,
+        "pct_of_valid_expressions": 0.0
+      },
+      {
+        "name": "last",
+        "occurrences": 14,
+        "expressions": 14,
+        "pct_of_valid_expressions": 0.01
+      },
+      {
+        "name": "position",
+        "occurrences": 4,
+        "expressions": 4,
+        "pct_of_valid_expressions": 0.0
+      },
+      {
+        "name": "translate",
+        "occurrences": 2,
+        "expressions": 1,
+        "pct_of_valid_expressions": 0.0
+      }
+    ],
+    "operators": [
+      {
+        "name": "=",
+        "occurrences": 252363,
+        "expressions": 182311,
+        "pct_of_valid_expressions": 99.42
+      },
+      {
+        "name": "or",
+        "occurrences": 38888,
+        "expressions": 11324,
+        "pct_of_valid_expressions": 6.18
+      },
+      {
+        "name": "and",
+        "occurrences": 521,
+        "expressions": 443,
+        "pct_of_valid_expressions": 0.24
+      },
+      {
+        "name": "union (|)",
+        "occurrences": 286,
+        "expressions": 119,
+        "pct_of_valid_expressions": 0.06
+      },
+      {
+        "name": "relational (< <= > >=)",
+        "occurrences": 10,
+        "expressions": 7,
+        "pct_of_valid_expressions": 0.0
+      },
+      {
+        "name": "!=",
+        "occurrences": 1,
+        "expressions": 1,
+        "pct_of_valid_expressions": 0.0
+      }
+    ],
+    "namespace_prefixes": {},
+    "variables": {},
+    "unknown_functions": {},
+    "length_chars": {
+      "min": 1,
+      "p50": 60,
+      "p90": 103,
+      "p99": 258,
+      "max": 13228,
+      "mean": 71.0,
+      "histogram": [
+        {
+          "range": "0-32",
+          "count": 2318,
+          "pct": 1.26
+        },
+        {
+          "range": "33-64",
+          "count": 106717,
+          "pct": 58.12
+        },
+        {
+          "range": "65-128",
+          "count": 66298,
+          "pct": 36.11
+        },
+        {
+          "range": "129-256",
+          "count": 6427,
+          "pct": 3.5
+        },
+        {
+          "range": "257-512",
+          "count": 1481,
+          "pct": 0.81
+        },
+        {
+          "range": "513-1024",
+          "count": 279,
+          "pct": 0.15
+        },
+        {
+          "range": "1025+",
+          "count": 100,
+          "pct": 0.05
+        }
+      ]
+    },
+    "steps_per_expression": {
+      "p50": 4,
+      "p90": 7,
+      "p99": 14,
+      "max": 270
+    },
+    "predicates_per_expression": {
+      "p50": 1,
+      "p90": 2,
+      "p99": 4,
+      "max": 26
+    },
+    "predicate_nesting_depth": {
+      "0": 963,
+      "1": 182088,
+      "2": 313,
+      "3": 6,
+      "4": 1
+    },
+    "tag_expression_counts": {
+      "step.child.name": {
+        "tier": "A",
+        "expressions": 183368,
+        "pct_of_valid": 100.0
+      },
+      "path.relative": {
+        "tier": "A",
+        "expressions": 182754,
+        "pct_of_valid": 99.66
+      },
+      "pred.child_eq_str": {
+        "tier": "A",
+        "expressions": 174451,
+        "pct_of_valid": 95.14
+      },
+      "path.absolute": {
+        "tier": "A",
+        "expressions": 64246,
+        "pct_of_valid": 35.04
+      },
+      "step.attribute.final": {
+        "tier": "A",
+        "expressions": 14828,
+        "pct_of_valid": 8.09
+      },
+      "pred.attr_eq_str": {
+        "tier": "A",
+        "expressions": 14813,
+        "pct_of_valid": 8.08
+      },
+      "pred.or": {
+        "tier": "B",
+        "expressions": 11324,
+        "pct_of_valid": 6.18
+      },
+      "step.text()": {
+        "tier": "C",
+        "expressions": 2720,
+        "pct_of_valid": 1.48
+      },
+      "step.wildcard": {
+        "tier": "B",
+        "expressions": 2480,
+        "pct_of_valid": 1.35
+      },
+      "pred.position_number": {
+        "tier": "C",
+        "expressions": 2187,
+        "pct_of_valid": 1.19
+      },
+      "pred.exists": {
+        "tier": "B",
+        "expressions": 1640,
+        "pct_of_valid": 0.89
+      },
+      "fn.not": {
+        "tier": "B",
+        "expressions": 1406,
+        "pct_of_valid": 0.77
+      },
+      "pred.text_eq": {
+        "tier": "C",
+        "expressions": 1154,
+        "pct_of_valid": 0.63
+      },
+      "step.//": {
+        "tier": "B",
+        "expressions": 798,
+        "pct_of_valid": 0.44
+      },
+      "pred.and": {
+        "tier": "B",
+        "expressions": 443,
+        "pct_of_valid": 0.24
+      },
+      "step.self": {
+        "tier": "B",
+        "expressions": 390,
+        "pct_of_valid": 0.21
+      },
+      "pred.self_eq": {
+        "tier": "B",
+        "expressions": 353,
+        "pct_of_valid": 0.19
+      },
+      "fn.contains": {
+        "tier": "B",
+        "expressions": 165,
+        "pct_of_valid": 0.09
+      },
+      "op.union": {
+        "tier": "C",
+        "expressions": 119,
+        "pct_of_valid": 0.06
+      },
+      "pred.nested_path_eq": {
+        "tier": "B",
+        "expressions": 89,
+        "pct_of_valid": 0.05
+      },
+      "pred.other": {
+        "tier": "D",
+        "expressions": 52,
+        "pct_of_valid": 0.03
+      },
+      "fn.other": {
+        "tier": "D",
+        "expressions": 26,
+        "pct_of_valid": 0.01
+      },
+      "fn.starts-with": {
+        "tier": "B",
+        "expressions": 25,
+        "pct_of_valid": 0.01
+      },
+      "step.parent": {
+        "tier": "B",
+        "expressions": 24,
+        "pct_of_valid": 0.01
+      },
+      "pred.num_cmp": {
+        "tier": "B",
+        "expressions": 22,
+        "pct_of_valid": 0.01
+      },
+      "fn.last": {
+        "tier": "C",
+        "expressions": 14,
+        "pct_of_valid": 0.01
+      },
+      "step.attribute.other": {
+        "tier": "B",
+        "expressions": 13,
+        "pct_of_valid": 0.01
+      },
+      "pred.func_cmp": {
+        "tier": "D",
+        "expressions": 12,
+        "pct_of_valid": 0.01
+      },
+      "step.explicit_axis": {
+        "tier": "D",
+        "expressions": 8,
+        "pct_of_valid": 0.0
+      },
+      "op.relational": {
+        "tier": "C",
+        "expressions": 7,
+        "pct_of_valid": 0.0
+      },
+      "fn.position": {
+        "tier": "C",
+        "expressions": 4,
+        "pct_of_valid": 0.0
+      },
+      "filter_expr": {
+        "tier": "D",
+        "expressions": 3,
+        "pct_of_valid": 0.0
+      },
+      "pred.neq": {
+        "tier": "B",
+        "expressions": 1,
+        "pct_of_valid": 0.0
+      }
+    }
+  },
+  "tiers": {
+    "definition": {
+      "A": "child steps (name tests) with optional final @attribute; predicates only (@attr | child) = 'literal'",
+      "B": "A + // . .. * and or not() contains() starts-with() != existence nested-path numeric-equality",
+      "C": "B + [n] last() position() count() text() relational operators and unions",
+      "D": "any other valid XPath 1.0 (explicit axes, other functions, arithmetic, filter expressions, node(), comment())",
+      "X": "invalid for XmlDocument.SelectNodes (syntax error, unknown function, variable, prefix, non-node-set result)"
+    },
+    "occurrences": {
+      "A": 164551,
+      "B": 13726,
+      "C": 5006,
+      "D": 88,
+      "X": 249
+    },
+    "cumulative_occurrences": {
+      "A": {
+        "expressions": 164551,
+        "pct_of_all": 89.61,
+        "pct_of_valid": 89.74
+      },
+      "B": {
+        "expressions": 178277,
+        "pct_of_all": 97.09,
+        "pct_of_valid": 97.22
+      },
+      "C": {
+        "expressions": 183283,
+        "pct_of_all": 99.82,
+        "pct_of_valid": 99.95
+      },
+      "D": {
+        "expressions": 183371,
+        "pct_of_all": 99.86,
+        "pct_of_valid": 100.0
+      }
+    },
+    "distinct": {
+      "A": 76426,
+      "B": 7037,
+      "C": 2145,
+      "D": 48,
+      "X": 203
+    },
+    "cumulative_distinct": {
+      "A": {
+        "expressions": 76426,
+        "pct_of_distinct_valid": 89.22
+      },
+      "B": {
+        "expressions": 83463,
+        "pct_of_distinct_valid": 97.44
+      },
+      "C": {
+        "expressions": 85608,
+        "pct_of_distinct_valid": 99.94
+      },
+      "D": {
+        "expressions": 85656,
+        "pct_of_distinct_valid": 100.0
+      }
+    },
+    "distinct_total": 85859,
+    "per_source_occurrences": {
+      "vanilla": {
+        "A": 28,
+        "C": 1
+      },
+      "ce_dev": {
+        "A": 37396,
+        "B": 4268,
+        "D": 12,
+        "C": 490,
+        "X": 4
+      },
+      "workshop": {
+        "A": 127001,
+        "D": 76,
+        "B": 9446,
+        "C": 4493,
+        "X": 245
+      },
+      "owner": {
+        "A": 126,
+        "B": 12,
+        "C": 22
+      }
+    },
+    "per_source_cumulative_pct_of_valid": {
+      "vanilla": {
+        "A": 96.55,
+        "B": 96.55,
+        "C": 100.0,
+        "D": 100.0
+      },
+      "ce_dev": {
+        "A": 88.69,
+        "B": 98.81,
+        "C": 99.97,
+        "D": 100.0
+      },
+      "workshop": {
+        "A": 90.06,
+        "B": 96.76,
+        "C": 99.95,
+        "D": 100.0
+      },
+      "owner": {
+        "A": 78.75,
+        "B": 86.25,
+        "C": 100.0,
+        "D": 100.0
+      }
+    },
+    "by_operation_kind": {
+      "vanilla": {
+        "A": 163624,
+        "C": 4896,
+        "B": 13511,
+        "D": 70
+      },
+      "custom": {
+        "A": 927,
+        "B": 215,
+        "D": 18,
+        "C": 110
+      }
+    },
+    "units_fully_covered": {
+      "vanilla": {
+        "A": {
+          "units": 3,
+          "pct": 75.0
+        },
+        "B": {
+          "units": 3,
+          "pct": 75.0
+        },
+        "C": {
+          "units": 4,
+          "pct": 100.0
+        },
+        "D": {
+          "units": 4,
+          "pct": 100.0
+        },
+        "units_total": 4,
+        "units_with_invalid_expr": 0
+      },
+      "ce_dev": {
+        "A": {
+          "units": 0,
+          "pct": 0.0
+        },
+        "B": {
+          "units": 0,
+          "pct": 0.0
+        },
+        "C": {
+          "units": 0,
+          "pct": 0.0
+        },
+        "D": {
+          "units": 0,
+          "pct": 0.0
+        },
+        "units_total": 1,
+        "units_with_invalid_expr": 1
+      },
+      "workshop": {
+        "A": {
+          "units": 163,
+          "pct": 42.01
+        },
+        "B": {
+          "units": 295,
+          "pct": 76.03
+        },
+        "C": {
+          "units": 374,
+          "pct": 96.39
+        },
+        "D": {
+          "units": 386,
+          "pct": 99.48
+        },
+        "units_total": 388,
+        "units_with_invalid_expr": 2
+      },
+      "owner": {
+        "A": {
+          "units": 9,
+          "pct": 64.29
+        },
+        "B": {
+          "units": 12,
+          "pct": 85.71
+        },
+        "C": {
+          "units": 14,
+          "pct": 100.0
+        },
+        "D": {
+          "units": 14,
+          "pct": 100.0
+        },
+        "units_total": 14,
+        "units_with_invalid_expr": 0
+      }
+    },
+    "reachable_16_upper_bound_tier_counts": {
+      "A": 143913,
+      "C": 3235,
+      "B": 11881,
+      "D": 54
+    }
+  },
+  "feature_adoption": {
+    "greedy_after_subset_A": [
+      {
+        "added": "subset A baseline",
+        "covered": 164551,
+        "pct_of_valid": 89.74
+      },
+      {
+        "added": "pred.or",
+        "tier_of_tag": "B",
+        "covered": 174372,
+        "pct_of_valid": 95.09
+      },
+      {
+        "added": "pred.position_number",
+        "tier_of_tag": "C",
+        "covered": 175864,
+        "pct_of_valid": 95.91
+      },
+      {
+        "added": "step.wildcard",
+        "tier_of_tag": "B",
+        "covered": 177575,
+        "pct_of_valid": 96.84
+      },
+      {
+        "added": "step.text()",
+        "tier_of_tag": "C",
+        "covered": 178967,
+        "pct_of_valid": 97.6
+      },
+      {
+        "added": "pred.text_eq",
+        "tier_of_tag": "C",
+        "covered": 179977,
+        "pct_of_valid": 98.15
+      },
+      {
+        "added": "step.//",
+        "tier_of_tag": "B",
+        "covered": 180731,
+        "pct_of_valid": 98.56
+      },
+      {
+        "added": "pred.and",
+        "tier_of_tag": "B",
+        "covered": 180974,
+        "pct_of_valid": 98.69
+      },
+      {
+        "added": "pred.exists",
+        "tier_of_tag": "B",
+        "covered": 181197,
+        "pct_of_valid": 98.81
+      },
+      {
+        "added": "fn.not",
+        "tier_of_tag": "B",
+        "covered": 182505,
+        "pct_of_valid": 99.53
+      },
+      {
+        "added": "fn.contains",
+        "tier_of_tag": "B",
+        "covered": 182626,
+        "pct_of_valid": 99.59
+      },
+      {
+        "added": "op.union",
+        "tier_of_tag": "C",
+        "covered": 182738,
+        "pct_of_valid": 99.65
+      },
+      {
+        "added": "pred.nested_path_eq",
+        "tier_of_tag": "B",
+        "covered": 182807,
+        "pct_of_valid": 99.69
+      },
+      {
+        "added": "pred.other",
+        "tier_of_tag": "D",
+        "covered": 182858,
+        "pct_of_valid": 99.72
+      },
+      {
+        "added": "step.self",
+        "tier_of_tag": "B",
+        "covered": 182889,
+        "pct_of_valid": 99.74
+      }
+    ],
+    "solo_unlock_over_A": {
+      "pred.or": 9821,
+      "pred.position_number": 1467,
+      "step.text()": 1392,
+      "step.wildcard": 970,
+      "pred.and": 220,
+      "op.union": 90,
+      "step.//": 30,
+      "pred.nested_path_eq": 25,
+      "pred.exists": 24,
+      "pred.num_cmp": 22,
+      "fn.not": 20,
+      "pred.other": 19,
+      "step.parent": 19,
+      "fn.last": 14,
+      "fn.contains": 9,
+      "op.relational": 2
+    },
+    "blocking_examples": {
+      "pred.or": [
+        "Defs/PawnKindDef[@Name=\"ComBase\" or @Name=\"OCBase\"]",
+        "Defs/ThingDef[defName=\"Silver\" or defName=\"Jade\"]",
+        "Defs/BodyPartDef[defName=\"Eye\" or defName=\"Jaw\"]/tags"
+      ],
+      "step.text()": [
+        "//li[text()=\"VFEFactory_MakeClusterShells\"]",
+        "Defs//*[li[text()=\"FSFNurse\"]]/li",
+        "//li[text()=\"VFEFactory_MakeShrapnelShells\"]"
+      ],
+      "step.wildcard": [
+        "*",
+        "*/TraitDef[defName = \"Gay\"]",
+        "*/JobDef[defName = \"Steal\"]"
+      ],
+      "pred.position_number": [
+        "Defs/ThingDef[defName=\"NapalmBomb\"]/comps/li[2]",
+        "Defs/ThingDef[defName=\"Human\"]/recipes/li[6]",
+        "Defs/HediffDef[defName=\"YayoHigh\"]/stages/li[1]"
+      ],
+      "pred.exists": [
+        "Defs/PreceptDef[roleDisabledWorkTags/li]",
+        "Defs//*[li[text()=\"FSFNurse\"]]/li",
+        "Defs/Vehicles.VehicleDef[defName]"
+      ],
+      "fn.not": [
+        "/Defs/ThingDef[defName=\"VBE_Bar\"][not(comps)]",
+        "Defs/ThingDef[@Name=\"DisplayBase\" and not(comps)]",
+        "/Defs/ThingDef[defName=\"Brewery\"][not(comps)]"
+      ],
+      "pred.text_eq": [
+        "//li[text()=\"VFEFactory_MakeClusterShells\"]",
+        "Defs//*[li[text()=\"FSFNurse\"]]/li",
+        "//li[text()=\"VFEFactory_MakeShrapnelShells\"]"
+      ],
+      "step.//": [
+        "Defs/BodyDef//li[.=\"FrontLeftLeg\"]",
+        "Defs//*[li[text()=\"FSFNurse\"]]/li",
+        ".//li[@Class=\"JobGiver_Orders\"]"
+      ],
+      "pred.and": [
+        "Defs/ThingDef[@Name=\"DisplayBase\" and not(comps)]",
+        "Defs/ThingDef[@Name=\"EL_ArchDCBase\" and not(comps)]",
+        "Defs/ThingDef[tradeability=\"None\" and (tools)]"
+      ],
+      "step.self": [
+        "Defs/BodyDef//li[.=\"FrontLeftLeg\"]",
+        "Defs/BodyDef//li[.=\"FrontRightLeg\"]",
+        ".//li[@Class=\"JobGiver_Orders\"]"
+      ],
+      "pred.self_eq": [
+        "Defs/BodyDef//li[.=\"FrontLeftLeg\"]",
+        "Defs/BodyDef//li[.=\"FrontRightLeg\"]",
+        "Defs/BodyDef//li[.=\"TuskAttackTool\"]"
+      ],
+      "fn.contains": [
+        "*/TerrainDef[defName[contains(text(), 'Marble')]]/color",
+        "*/TerrainDef[defName[contains(text(), 'Granite')]]/color",
+        "*/TerrainDef[defName[contains(text(), 'Slate')]]/color"
+      ],
+      "op.union": [
+        "Defs/ThingDef[defName=\"BMT_Calamites\"]/plant|\n\t\t\tDefs/ThingDef[defName=\"BMT_Horsetail\"]/plant",
+        "Defs/ThingDef[defName=\"BMT_Calamites\"]/plant|\n\t\t\t\t\tDefs/ThingDef[defName=\"BMT_Horsetail\"]/plant",
+        "Defs/ThingDef[defName=\"RangedWeapon_Kunai\"]/costStuffCount|Defs/ThingDef[defName=\"RangedWeapon_Kunai\"]/stuffCategories"
+      ],
+      "pred.nested_path_eq": [
+        "Defs[DesignationCategoryDef/defName=\"ASFstorage\"]",
+        "Defs/ThingDef[inspectorTabs/li=\"ITab_Bills\"]/comps",
+        "Defs[DesignationCategoryDef/defName=\"BA_Decoration\"]"
+      ],
+      "pred.other": [
+        "/Defs/TerrainDef[defName = defName=\"RG_DepletedSoil\"]/affordances",
+        "/Defs/CultureDef[defName = *]/styleItemTags",
+        "Defs/ThingDef[defName=\"PreciousLump\"]/genStep/li[text()=MineablePlasteel]"
+      ],
+      "fn.other": [
+        "/Defs/RecipeDef[@Name=\"VBE_MixJuiceBase\"]/*[name()=\"fixedIngredientFilter\" or name()=\"defaultIngredientFilter\"]//thingDefs",
+        "/Defs/RecipeDef[defName=\"VBE_MakeUnfermentedCider\"]/*[name()=\"ingredients\" or name()=\"fixedIngredientFilter\" or name()=\"defaultIngredientFilter\"]//thingDefs",
+        "/Defs/RecipeDef[defName=\"VCE_CanProduce\"]/*[name()=\"fixedIngredientFilter\" or name()=\"defaultIngredientFilter\"]//disallowedThingDefs"
+      ],
+      "fn.starts-with": [
+        "Defs/ThingDef[defName[starts-with(text(), \"MUS_Fishing_Decorative\")] and not(comps)]",
+        "Defs/ThingDef[defName[starts-with(text(), \"MUS_Fishing_Decorative\")]]/comps",
+        "Defs/KCSG.SettlementLayoutDef/propsOptions/scatterPropsDefs/li[starts-with(text(),'VFEPD_HayBale')]"
+      ],
+      "step.parent": [
+        "Defs/StorytellerDef/comps/li[@Class=\"StorytellerCompProperties_FactionInteraction\"]/incident[text()=\"VisitorGroup\"]/..",
+        "Defs/ThingDef/weaponTags/li[text()=\"TurretGun\"]/../.."
+      ],
+      "pred.num_cmp": [
+        "Defs/HediffDef[defName=\"ArchotechCortex\"]/stages/li[minSeverity=1]/statOffsets",
+        "Defs/HediffDef[defName=\"ArchotechCortex\"]/stages/li[minSeverity=2]/statOffsets",
+        "Defs/ThingSetMakerDef[defName=\"Reward_ItemsStandard\"]/root/options/li[maxMarketValue=5500]/thingSetMaker/options"
+      ],
+      "fn.last": [
+        "Defs/PawnTableDef[defName=\"Assign\"]/columns/li[last()]",
+        "/Defs/PawnTableDef[defName = \"Assign\"]/columns/li[last()]",
+        "/Defs/HediffDef[defName=\"HeartAttack\"]/stages/li[last()]"
+      ],
+      "step.attribute.other": [],
+      "pred.func_cmp": [
+        "/Defs/RecipeDef[@Name=\"VBE_MixJuiceBase\"]/*[name()=\"fixedIngredientFilter\" or name()=\"defaultIngredientFilter\"]//thingDefs",
+        "/Defs/RecipeDef[defName=\"VBE_MakeUnfermentedCider\"]/*[name()=\"ingredients\" or name()=\"fixedIngredientFilter\" or name()=\"defaultIngredientFilter\"]//thingDefs",
+        "/Defs/RecipeDef[defName=\"VCE_CanProduce\"]/*[name()=\"fixedIngredientFilter\" or name()=\"defaultIngredientFilter\"]//disallowedThingDefs"
+      ],
+      "step.explicit_axis": [
+        "Defs/DamageDef[@Name=\"BluntBase\"]/*[self::bluntStunDuration or self::bluntStunChancePerDamagePctOfCorePartToHeadCurve or self::bluntStunChancePerDamagePctOfCorePartToBodyCurve]",
+        "Defs/ThingDef/comps/li/doers/li/tabs/*[self::VCE_Brewing]",
+        "/Defs/ThinkTreeDef[defName='Animal']\n      //li[@Class='ThinkNode_ChancePerHour_Constant'][descendant::trainable/text()='Haul']"
+      ],
+      "op.relational": [
+        "/Defs/BodyPartDef[defName=\"Brain\"]/spawnThingOnRemoved[position()>1]",
+        "/Defs/BiomeDef/wildAnimals[Fox_Red>0]",
+        "/Defs/BiomeDef/wildAnimals[Boomalope>0]"
+      ],
+      "fn.position": [
+        "/Defs/BodyPartDef[defName=\"Brain\"]/spawnThingOnRemoved[position()>1]"
+      ],
+      "filter_expr": [
+        "(/Defs/thingDef | /Defs/ThingDef)/comps/li[@Class=\"CompProperties_AffectedByFacilities\"]/linkableFacilities[./li[text()=\"VitalsMonitor\"]]",
+        "(/Defs/thingDef | /Defs/ThingDef)/comps/li[@Class=\"CompProperties_AffectedByFacilities\"]/linkableFacilities[./li[text()=\"MultiAnalyzer\"]]",
+        "(/Defs/thingDef | /Defs/ThingDef)/comps/li[@Class=\"CompProperties_AffectedByFacilities\"]/linkableFacilities/li[text()=\"ToolCabinet\"]"
+      ],
+      "pred.neq": [
+        "Defs/Vehicles.VehicleBuildDef[@ParentName=\"VehicleBaseBuildable\"]/designationCategory[. != 'VF_Vehicles']"
+      ]
+    }
+  },
+  "top_shapes": [
+    {
+      "shape": "Defs/ThingDef[defName='S']",
+      "count": 12621,
+      "pct": 6.87
+    },
+    {
+      "shape": "Defs/ThingDef[defName='S']/statBases",
+      "count": 10273,
+      "pct": 5.59
+    },
+    {
+      "shape": "Defs/ThingDef[defName='S']/tools",
+      "count": 6370,
+      "pct": 3.47
+    },
+    {
+      "shape": "/Defs/ThingDef[defName='S']",
+      "count": 4796,
+      "pct": 2.61
+    },
+    {
+      "shape": "Defs/ThingDef[defName='S']/comps",
+      "count": 4044,
+      "pct": 2.2
+    },
+    {
+      "shape": "Defs/ThingDef[defName='S']/statBases/ArmorRating_Sharp",
+      "count": 3935,
+      "pct": 2.14
+    },
+    {
+      "shape": "Defs/ThingDef[defName='S']/statBases/ArmorRating_Blunt",
+      "count": 3860,
+      "pct": 2.1
+    },
+    {
+      "shape": "Defs/ThingDef[defName='S']/designationCategory",
+      "count": 3463,
+      "pct": 1.89
+    },
+    {
+      "shape": "/Defs/ThingDef[defName='S']/race",
+      "count": 3389,
+      "pct": 1.85
+    },
+    {
+      "shape": "Defs/BodyDef[defName='S']/corePart/parts/li[def='S']/groups",
+      "count": 2247,
+      "pct": 1.22
+    },
+    {
+      "shape": "Defs/ThingDef[defName='S']/equippedStatOffsets",
+      "count": 2080,
+      "pct": 1.13
+    },
+    {
+      "shape": "/Defs/ThingDef[defName='S']/race/wildBiomes",
+      "count": 1948,
+      "pct": 1.06
+    },
+    {
+      "shape": "/Defs/ThingDef[defName='S']/tools",
+      "count": 1871,
+      "pct": 1.02
+    },
+    {
+      "shape": "/Defs/ThingDef[defName='S']/statBases",
+      "count": 1741,
+      "pct": 0.95
+    },
+    {
+      "shape": "Defs/BodyDef[defName='S']/corePart/parts/li[def='S']/parts/li[def='S']/groups",
+      "count": 1695,
+      "pct": 0.92
+    },
+    {
+      "shape": "/Defs/ThingDef[defName='S']/comps",
+      "count": 1627,
+      "pct": 0.89
+    },
+    {
+      "shape": "Defs/BodyDef[defName='S']/corePart/parts/li[def='S']/parts/li[def='S']/parts/li[def='S']/groups",
+      "count": 1341,
+      "pct": 0.73
+    },
+    {
+      "shape": "Defs/ThingDef[defName='S']/statBases/StuffEffectMultiplierArmor",
+      "count": 1327,
+      "pct": 0.72
+    },
+    {
+      "shape": "/Defs/ThingDef[defName='S']/graphicData",
+      "count": 1288,
+      "pct": 0.7
+    },
+    {
+      "shape": "Defs/ThingDef[defName='S']/weaponTags",
+      "count": 1150,
+      "pct": 0.63
+    },
+    {
+      "shape": "Defs/PawnKindDef[defName='S']",
+      "count": 1137,
+      "pct": 0.62
+    },
+    {
+      "shape": "Defs/ThingDef[defName='S']/statBases/ArmorRating_Heat",
+      "count": 1113,
+      "pct": 0.61
+    },
+    {
+      "shape": "Defs/ThingDef[defName='S']/statBases/Mass",
+      "count": 1062,
+      "pct": 0.58
+    },
+    {
+      "shape": "/Defs/PawnKindDef[defName='S']",
+      "count": 978,
+      "pct": 0.53
+    },
+    {
+      "shape": "Defs/BodyDef[defName='S']/corePart/parts/li[def='S']",
+      "count": 938,
+      "pct": 0.51
+    },
+    {
+      "shape": "/Defs/ThingDef[defName='S']/statBases/ArmorRating_Sharp",
+      "count": 865,
+      "pct": 0.47
+    },
+    {
+      "shape": "/Defs/ThingDef[defName='S']/statBases/ArmorRating_Blunt",
+      "count": 865,
+      "pct": 0.47
+    },
+    {
+      "shape": "Defs/BodyDef[defName='S']/corePart/groups",
+      "count": 864,
+      "pct": 0.47
+    },
+    {
+      "shape": "Defs/ThingDef[defName='S']/comps/li[@Class='S']",
+      "count": 841,
+      "pct": 0.46
+    },
+    {
+      "shape": "Defs/ThingDef[defName='S']/statBases/MeleeDodgeChance",
+      "count": 828,
+      "pct": 0.45
+    },
+    {
+      "shape": "Defs/ThingDef[defName='S']/statBases/MeleeParryChance",
+      "count": 816,
+      "pct": 0.44
+    },
+    {
+      "shape": "Defs/ThingDef[defName='S']/statBases/MeleeCritChance",
+      "count": 814,
+      "pct": 0.44
+    },
+    {
+      "shape": "Defs/ThingDef[defName='S']/modExtensions/li[@Class='S']/bodyShape",
+      "count": 814,
+      "pct": 0.44
+    },
+    {
+      "shape": "Defs/ThingDef[defName='S']/modExtensions/li[@Class='S'][not(bodyShape)]",
+      "count": 814,
+      "pct": 0.44
+    },
+    {
+      "shape": "/Defs/ThingDef[defName='S']/race/useLeatherFrom",
+      "count": 810,
+      "pct": 0.44
+    },
+    {
+      "shape": "/Defs/ThingDef[defName='S']/race/canFishForFood",
+      "count": 800,
+      "pct": 0.44
+    },
+    {
+      "shape": "/Defs/ThingDef[defName='S']/race/waterCellCost",
+      "count": 791,
+      "pct": 0.43
+    },
+    {
+      "shape": "/Defs/ThingDef[defName='S']/race/waterSeeker",
+      "count": 790,
+      "pct": 0.43
+    },
+    {
+      "shape": "/Defs/ThingDef[defName='S']/race/mateMtbHours",
+      "count": 783,
+      "pct": 0.43
+    },
+    {
+      "shape": "/Defs/PawnKindDef[defName='S']/moveSpeedFactorByTerrainTag/li[key='S']",
+      "count": 781,
+      "pct": 0.43
+    }
+  ],
+  "parser_validation": {
+    "expressions_checked_against_libxml2": 85859,
+    "disagreements": {},
+    "disagreement_examples": []
+  }
+}

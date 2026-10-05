@@ -1,0 +1,3451 @@
+[
+ {
+  "databases": {
+   "Verse.ThingDef": [
+    {
+     "defName": "C",
+     "node": {
+      "attrs": [
+       [
+        "ParentName",
+        "Base"
+       ]
+      ],
+      "children": [
+       {
+        "attrs": [],
+        "children": [
+         "C"
+        ],
+        "tag": "defName"
+       },
+       {
+        "attrs": [],
+        "children": [
+         "base"
+        ],
+        "tag": "label"
+       },
+       {
+        "attrs": [],
+        "children": [
+         {
+          "attrs": [],
+          "children": [
+           "100"
+          ],
+          "tag": "MaxHitPoints"
+         },
+         {
+          "attrs": [],
+          "children": [
+           "5"
+          ],
+          "tag": "Mass"
+         }
+        ],
+        "tag": "statBases"
+       },
+       {
+        "attrs": [],
+        "children": [
+         {
+          "attrs": [],
+          "children": [
+           "a"
+          ],
+          "tag": "li"
+         },
+         {
+          "attrs": [],
+          "children": [
+           "b"
+          ],
+          "tag": "li"
+         }
+        ],
+        "tag": "comps"
+       },
+       {
+        "attrs": [],
+        "children": [
+         "1"
+        ],
+        "tag": "extra"
+       }
+      ],
+      "tag": "ThingDef"
+     },
+     "provenance": {
+      "file": "Defs/a.xml",
+      "mod": "ludeon.rimworld",
+      "parents": [
+       "ludeon.rimworld:Base"
+      ],
+      "patched_by": []
+     },
+     "type": "Verse.ThingDef"
+    }
+   ]
+  },
+  "diagnostics": {},
+  "doc": "Child over parent: scalar replaced, nested elements merged by name, li appended, new elements appended at the end; attributes of the parent (Name, Abstract, Foo) are NOT inherited.",
+  "name": "inherit-basic-merge",
+  "patch_results": [],
+  "stats": {
+   "abstract": 1,
+   "defs": 1,
+   "files": 1,
+   "may_require_skipped": 0,
+   "patch_ops": 0,
+   "top_level_nodes": 2,
+   "unknown_type": 0
+  }
+ },
+ {
+  "databases": {
+   "Verse.ThingDef": [
+    {
+     "defName": "C",
+     "node": {
+      "attrs": [
+       [
+        "ParentName",
+        "P"
+       ]
+      ],
+      "children": [
+       {
+        "attrs": [],
+        "children": [
+         {
+          "attrs": [],
+          "children": [
+           "1"
+          ],
+          "tag": "Brawler"
+         },
+         {
+          "attrs": [],
+          "children": [
+           "2"
+          ],
+          "tag": "Brawler"
+         }
+        ],
+        "tag": "forcedTraits"
+       },
+       {
+        "attrs": [],
+        "children": [
+         {
+          "attrs": [],
+          "children": [
+           "2"
+          ],
+          "tag": "Brawler"
+         }
+        ],
+        "tag": "other"
+       },
+       {
+        "attrs": [],
+        "children": [
+         "C"
+        ],
+        "tag": "defName"
+       }
+      ],
+      "tag": "ThingDef"
+     },
+     "provenance": {
+      "file": "Defs/a.xml",
+      "mod": "ludeon.rimworld",
+      "parents": [
+       "ludeon.rimworld:P"
+      ],
+      "patched_by": []
+     },
+     "type": "Verse.ThingDef"
+    }
+   ]
+  },
+  "diagnostics": {},
+  "doc": "Children of fields marked XmlInheritanceAllowDuplicateNodes (here forcedTraits) are appended like li; the same shape under another name is merged.",
+  "name": "inherit-allow-duplicate-nodes",
+  "patch_results": [],
+  "stats": {
+   "abstract": 1,
+   "defs": 1,
+   "files": 1,
+   "may_require_skipped": 0,
+   "patch_ops": 0,
+   "top_level_nodes": 2,
+   "unknown_type": 0
+  }
+ },
+ {
+  "databases": {
+   "Verse.ThingDef": [
+    {
+     "defName": "C",
+     "node": {
+      "attrs": [
+       [
+        "ParentName",
+        "P"
+       ]
+      ],
+      "children": [
+       {
+        "attrs": [],
+        "children": [
+         {
+          "attrs": [],
+          "children": [
+           "z"
+          ],
+          "tag": "li"
+         }
+        ],
+        "tag": "comps"
+       },
+       {
+        "attrs": [],
+        "children": [
+         {
+          "attrs": [],
+          "children": [
+           "2"
+          ],
+          "tag": "B"
+         }
+        ],
+        "tag": "statBases"
+       },
+       {
+        "attrs": [],
+        "children": [
+         "C"
+        ],
+        "tag": "defName"
+       }
+      ],
+      "tag": "ThingDef"
+     },
+     "provenance": {
+      "file": "Defs/a.xml",
+      "mod": "ludeon.rimworld",
+      "parents": [
+       "ludeon.rimworld:P"
+      ],
+      "patched_by": []
+     },
+     "type": "Verse.ThingDef"
+    }
+   ]
+  },
+  "diagnostics": {},
+  "doc": "Inherit=\"False\" on a nested node discards the parent's content of that node; the Inherit attribute itself is dropped.",
+  "name": "inherit-false-nested",
+  "patch_results": [],
+  "stats": {
+   "abstract": 1,
+   "defs": 1,
+   "files": 1,
+   "may_require_skipped": 0,
+   "patch_ops": 0,
+   "top_level_nodes": 2,
+   "unknown_type": 0
+  }
+ },
+ {
+  "databases": {
+   "Verse.ThingDef": [
+    {
+     "defName": "C",
+     "node": {
+      "attrs": [
+       [
+        "Name",
+        "P"
+       ],
+       [
+        "Abstract",
+        "True"
+       ],
+       [
+        "ParentName",
+        "P"
+       ]
+      ],
+      "children": [
+       {
+        "attrs": [],
+        "children": [
+         "C"
+        ],
+        "tag": "defName"
+       }
+      ],
+      "tag": "ThingDef"
+     },
+     "provenance": {
+      "file": "Defs/a.xml",
+      "mod": "ludeon.rimworld",
+      "parents": [
+       "ludeon.rimworld:P"
+      ],
+      "patched_by": []
+     },
+     "type": "Verse.ThingDef"
+    }
+   ]
+  },
+  "diagnostics": {},
+  "doc": "Quirk: with Inherit=\"false\" on the def node the cloned parent's attributes survive (Name, Abstract) and the child's are appended.",
+  "name": "inherit-false-root-keeps-parent-attrs",
+  "patch_results": [],
+  "stats": {
+   "abstract": 1,
+   "defs": 1,
+   "files": 1,
+   "may_require_skipped": 0,
+   "patch_ops": 0,
+   "top_level_nodes": 2,
+   "unknown_type": 0
+  }
+ },
+ {
+  "databases": {
+   "Verse.ThingDef": [
+    {
+     "defName": "C",
+     "node": {
+      "attrs": [
+       [
+        "ParentName",
+        "P"
+       ]
+      ],
+      "children": [
+       {
+        "attrs": [],
+        "children": [],
+        "tag": "label"
+       },
+       {
+        "attrs": [],
+        "children": [
+         {
+          "attrs": [],
+          "children": [
+           "1"
+          ],
+          "tag": "A"
+         }
+        ],
+        "tag": "statBases"
+       },
+       {
+        "attrs": [],
+        "children": [
+         {
+          "attrs": [],
+          "children": [
+           "t"
+          ],
+          "tag": "li"
+         }
+        ],
+        "tag": "tags"
+       },
+       {
+        "attrs": [],
+        "children": [
+         "C"
+        ],
+        "tag": "defName"
+       }
+      ],
+      "tag": "ThingDef"
+     },
+     "provenance": {
+      "file": "Defs/a.xml",
+      "mod": "ludeon.rimworld",
+      "parents": [
+       "ludeon.rimworld:P"
+      ],
+      "patched_by": []
+     },
+     "type": "Verse.ThingDef"
+    }
+   ]
+  },
+  "diagnostics": {},
+  "doc": "An empty child element: removes the parent's text (no element children) but keeps the parent's element children.",
+  "name": "inherit-empty-element",
+  "patch_results": [],
+  "stats": {
+   "abstract": 1,
+   "defs": 1,
+   "files": 1,
+   "may_require_skipped": 0,
+   "patch_ops": 0,
+   "top_level_nodes": 2,
+   "unknown_type": 0
+  }
+ },
+ {
+  "databases": {
+   "Verse.ThingDef": [
+    {
+     "defName": "C",
+     "node": {
+      "attrs": [
+       [
+        "ParentName",
+        "P"
+       ]
+      ],
+      "children": [
+       {
+        "attrs": [],
+        "children": [
+         {
+          "attrs": [],
+          "children": [],
+          "tag": "b"
+         },
+         {
+          "attrs": [],
+          "children": [],
+          "tag": "c"
+         },
+         "t"
+        ],
+        "tag": "x"
+       },
+       {
+        "attrs": [],
+        "children": [
+         "C"
+        ],
+        "tag": "defName"
+       }
+      ],
+      "tag": "ThingDef"
+     },
+     "provenance": {
+      "file": "Defs/a.xml",
+      "mod": "ludeon.rimworld",
+      "parents": [
+       "ludeon.rimworld:P"
+      ],
+      "patched_by": []
+     },
+     "type": "Verse.ThingDef"
+    }
+   ]
+  },
+  "diagnostics": {},
+  "doc": "Quirk (Mono probe): a child that holds text replaces the parent's content, but only the FIRST child node of the parent is removed (live list).",
+  "name": "inherit-text-over-multichild-quirk",
+  "patch_results": [],
+  "stats": {
+   "abstract": 1,
+   "defs": 1,
+   "files": 1,
+   "may_require_skipped": 0,
+   "patch_ops": 0,
+   "top_level_nodes": 2,
+   "unknown_type": 0
+  }
+ },
+ {
+  "databases": {
+   "Verse.ThingDef": [
+    {
+     "defName": "C",
+     "node": {
+      "attrs": [
+       [
+        "ParentName",
+        "P"
+       ]
+      ],
+      "children": [
+       {
+        "attrs": [],
+        "children": [
+         "g"
+        ],
+        "tag": "a"
+       },
+       {
+        "attrs": [],
+        "children": [
+         "p"
+        ],
+        "tag": "b"
+       },
+       {
+        "attrs": [],
+        "children": [
+         "c"
+        ],
+        "tag": "c"
+       },
+       {
+        "attrs": [],
+        "children": [
+         "C"
+        ],
+        "tag": "defName"
+       }
+      ],
+      "tag": "ThingDef"
+     },
+     "provenance": {
+      "file": "Defs/a.xml",
+      "mod": "ludeon.rimworld",
+      "parents": [
+       "ludeon.rimworld:P",
+       "ludeon.rimworld:G"
+      ],
+      "patched_by": []
+     },
+     "type": "Verse.ThingDef"
+    }
+   ]
+  },
+  "diagnostics": {},
+  "doc": "Grandparent, parent, child in any file order: resolved top-down; the parent chain is recorded.",
+  "name": "inherit-chain-three-levels",
+  "patch_results": [],
+  "stats": {
+   "abstract": 2,
+   "defs": 1,
+   "files": 1,
+   "may_require_skipped": 0,
+   "patch_ops": 0,
+   "top_level_nodes": 3,
+   "unknown_type": 0
+  }
+ },
+ {
+  "databases": {
+   "Verse.ThingDef": [
+    {
+     "defName": "DA",
+     "node": {
+      "attrs": [
+       [
+        "Name",
+        "A"
+       ],
+       [
+        "ParentName",
+        "B"
+       ]
+      ],
+      "children": [
+       {
+        "attrs": [],
+        "children": [
+         "DA"
+        ],
+        "tag": "defName"
+       }
+      ],
+      "tag": "ThingDef"
+     },
+     "provenance": {
+      "file": "Defs/a.xml",
+      "mod": "ludeon.rimworld",
+      "parents": [],
+      "patched_by": []
+     },
+     "type": "Verse.ThingDef"
+    },
+    {
+     "defName": "DB",
+     "node": {
+      "attrs": [
+       [
+        "Name",
+        "B"
+       ],
+       [
+        "ParentName",
+        "A"
+       ]
+      ],
+      "children": [
+       {
+        "attrs": [],
+        "children": [
+         "DB"
+        ],
+        "tag": "defName"
+       }
+      ],
+      "tag": "ThingDef"
+     },
+     "provenance": {
+      "file": "Defs/a.xml",
+      "mod": "ludeon.rimworld",
+      "parents": [],
+      "patched_by": []
+     },
+     "type": "Verse.ThingDef"
+    },
+    {
+     "defName": "N",
+     "node": {
+      "attrs": [],
+      "children": [
+       {
+        "attrs": [],
+        "children": [
+         "N"
+        ],
+        "tag": "defName"
+       }
+      ],
+      "tag": "ThingDef"
+     },
+     "provenance": {
+      "file": "Defs/a.xml",
+      "mod": "ludeon.rimworld",
+      "parents": [],
+      "patched_by": []
+     },
+     "type": "Verse.ThingDef"
+    }
+   ]
+  },
+  "diagnostics": {
+   "inherit_cycle": 2,
+   "inherit_not_resolved": 2
+  },
+  "doc": "A cycle is reported for every member; the members stay unresolved and the defs are built from the raw nodes (with a not-resolved error each).",
+  "name": "inherit-cycle",
+  "patch_results": [],
+  "stats": {
+   "abstract": 0,
+   "defs": 3,
+   "files": 1,
+   "may_require_skipped": 0,
+   "patch_ops": 0,
+   "top_level_nodes": 3,
+   "unknown_type": 0
+  }
+ },
+ {
+  "databases": {
+   "Verse.ThingDef": [
+    {
+     "defName": "M",
+     "node": {
+      "attrs": [
+       [
+        "ParentName",
+        "Nope"
+       ]
+      ],
+      "children": [
+       {
+        "attrs": [],
+        "children": [
+         "M"
+        ],
+        "tag": "defName"
+       }
+      ],
+      "tag": "ThingDef"
+     },
+     "provenance": {
+      "file": "Defs/a.xml",
+      "mod": "ludeon.rimworld",
+      "parents": [],
+      "patched_by": []
+     },
+     "type": "Verse.ThingDef"
+    }
+   ]
+  },
+  "diagnostics": {
+   "inherit_missing_parent": 1
+  },
+  "doc": "A missing parent is an error; the node still becomes a def, unmerged.",
+  "name": "inherit-missing-parent",
+  "patch_results": [],
+  "stats": {
+   "abstract": 0,
+   "defs": 1,
+   "files": 1,
+   "may_require_skipped": 0,
+   "patch_ops": 0,
+   "top_level_nodes": 1,
+   "unknown_type": 0
+  }
+ },
+ {
+  "databases": {
+   "Verse.ThingDef": [
+    {
+     "defName": "InCore",
+     "node": {
+      "attrs": [
+       [
+        "ParentName",
+        "P"
+       ]
+      ],
+      "children": [
+       {
+        "attrs": [],
+        "children": [
+         "InCore"
+        ],
+        "tag": "defName"
+       }
+      ],
+      "tag": "ThingDef"
+     },
+     "provenance": {
+      "file": "Defs/a.xml",
+      "mod": "ludeon.rimworld",
+      "parents": [],
+      "patched_by": []
+     },
+     "type": "Verse.ThingDef"
+    },
+    {
+     "defName": "InB",
+     "node": {
+      "attrs": [
+       [
+        "ParentName",
+        "P"
+       ]
+      ],
+      "children": [
+       {
+        "attrs": [],
+        "children": [
+         "A"
+        ],
+        "tag": "label"
+       },
+       {
+        "attrs": [],
+        "children": [
+         "InB"
+        ],
+        "tag": "defName"
+       }
+      ],
+      "tag": "ThingDef"
+     },
+     "provenance": {
+      "file": "Defs/a.xml",
+      "mod": "test.b",
+      "parents": [
+       "test.a:P"
+      ],
+      "patched_by": []
+     },
+     "type": "Verse.ThingDef"
+    },
+    {
+     "defName": "InC",
+     "node": {
+      "attrs": [
+       [
+        "ParentName",
+        "P"
+       ]
+      ],
+      "children": [
+       {
+        "attrs": [],
+        "children": [
+         "C"
+        ],
+        "tag": "label"
+       },
+       {
+        "attrs": [],
+        "children": [
+         "InC"
+        ],
+        "tag": "defName"
+       }
+      ],
+      "tag": "ThingDef"
+     },
+     "provenance": {
+      "file": "Defs/a.xml",
+      "mod": "test.c",
+      "parents": [
+       "test.c:P"
+      ],
+      "patched_by": []
+     },
+     "type": "Verse.ThingDef"
+    }
+   ]
+  },
+  "diagnostics": {
+   "inherit_missing_parent": 1
+  },
+  "doc": "A child sees the parent with the highest load order that is not after its own mod; a parent that only exists in a LATER mod is invisible.",
+  "name": "inherit-parent-by-load-order",
+  "patch_results": [],
+  "stats": {
+   "abstract": 2,
+   "defs": 3,
+   "files": 4,
+   "may_require_skipped": 0,
+   "patch_ops": 0,
+   "top_level_nodes": 5,
+   "unknown_type": 0
+  }
+ },
+ {
+  "databases": {
+   "Verse.ThingDef": [
+    {
+     "defName": "CA",
+     "node": {
+      "attrs": [
+       [
+        "ParentName",
+        "X"
+       ]
+      ],
+      "children": [
+       {
+        "attrs": [],
+        "children": [
+         "1"
+        ],
+        "tag": "label"
+       },
+       {
+        "attrs": [],
+        "children": [
+         "CA"
+        ],
+        "tag": "defName"
+       }
+      ],
+      "tag": "ThingDef"
+     },
+     "provenance": {
+      "file": "Defs/a.xml",
+      "mod": "test.a",
+      "parents": [
+       "test.a:X"
+      ],
+      "patched_by": []
+     },
+     "type": "Verse.ThingDef"
+    },
+    {
+     "defName": "CB",
+     "node": {
+      "attrs": [
+       [
+        "ParentName",
+        "X"
+       ]
+      ],
+      "children": [
+       {
+        "attrs": [],
+        "children": [
+         "3"
+        ],
+        "tag": "label"
+       },
+       {
+        "attrs": [],
+        "children": [
+         "CB"
+        ],
+        "tag": "defName"
+       }
+      ],
+      "tag": "ThingDef"
+     },
+     "provenance": {
+      "file": "Defs/a.xml",
+      "mod": "test.b",
+      "parents": [
+       "test.b:X"
+      ],
+      "patched_by": []
+     },
+     "type": "Verse.ThingDef"
+    }
+   ]
+  },
+  "diagnostics": {
+   "inherit_duplicate_name": 1
+  },
+  "doc": "A Name used twice inside one mod: the second is not registered (error); the same Name in another mod is fine and wins for that mod's children.",
+  "name": "inherit-duplicate-name-same-mod",
+  "patch_results": [],
+  "stats": {
+   "abstract": 3,
+   "defs": 2,
+   "files": 2,
+   "may_require_skipped": 0,
+   "patch_ops": 0,
+   "top_level_nodes": 5,
+   "unknown_type": 0
+  }
+ },
+ {
+  "databases": {
+   "Verse.ThingDef": [
+    {
+     "defName": "C",
+     "node": {
+      "attrs": [
+       [
+        "ParentName",
+        "P"
+       ]
+      ],
+      "children": [
+       {
+        "attrs": [],
+        "children": [
+         "2"
+        ],
+        "tag": "label"
+       },
+       {
+        "attrs": [],
+        "children": [
+         "C"
+        ],
+        "tag": "defName"
+       }
+      ],
+      "tag": "ThingDef"
+     },
+     "provenance": {
+      "file": "Defs/a.xml",
+      "mod": "ludeon.rimworld",
+      "parents": [
+       "ludeon.rimworld:P"
+      ],
+      "patched_by": []
+     },
+     "type": "Verse.ThingDef"
+    }
+   ]
+  },
+  "diagnostics": {
+   "inherit_duplicate_node_name": 1
+  },
+  "doc": "Two non-list nodes with one name in a child: reported; the merge applies both in order, the last text wins.",
+  "name": "inherit-duplicate-node-name-error",
+  "patch_results": [],
+  "stats": {
+   "abstract": 1,
+   "defs": 1,
+   "files": 1,
+   "may_require_skipped": 0,
+   "patch_ops": 0,
+   "top_level_nodes": 2,
+   "unknown_type": 0
+  }
+ },
+ {
+  "databases": {
+   "Verse.ThingDef": [
+    {
+     "defName": "Y1",
+     "node": {
+      "attrs": [
+       [
+        "Abstract",
+        "False"
+       ]
+      ],
+      "children": [
+       {
+        "attrs": [],
+        "children": [
+         "Y1"
+        ],
+        "tag": "defName"
+       }
+      ],
+      "tag": "ThingDef"
+     },
+     "provenance": {
+      "file": "Defs/a.xml",
+      "mod": "ludeon.rimworld",
+      "parents": [],
+      "patched_by": []
+     },
+     "type": "Verse.ThingDef"
+    },
+    {
+     "defName": "Y2",
+     "node": {
+      "attrs": [
+       [
+        "abstract",
+        "true"
+       ]
+      ],
+      "children": [
+       {
+        "attrs": [],
+        "children": [
+         "Y2"
+        ],
+        "tag": "defName"
+       }
+      ],
+      "tag": "ThingDef"
+     },
+     "provenance": {
+      "file": "Defs/a.xml",
+      "mod": "ludeon.rimworld",
+      "parents": [],
+      "patched_by": []
+     },
+     "type": "Verse.ThingDef"
+    },
+    {
+     "defName": "Y3",
+     "node": {
+      "attrs": [
+       [
+        "ParentName",
+        "P"
+       ]
+      ],
+      "children": [
+       {
+        "attrs": [],
+        "children": [
+         "p"
+        ],
+        "tag": "label"
+       },
+       {
+        "attrs": [],
+        "children": [
+         "Y3"
+        ],
+        "tag": "defName"
+       }
+      ],
+      "tag": "ThingDef"
+     },
+     "provenance": {
+      "file": "Defs/a.xml",
+      "mod": "ludeon.rimworld",
+      "parents": [
+       "ludeon.rimworld:P"
+      ],
+      "patched_by": []
+     },
+     "type": "Verse.ThingDef"
+    }
+   ]
+  },
+  "diagnostics": {},
+  "doc": "Abstract is read on the ORIGINAL node, case-insensitively as a value, case-sensitively as an attribute name; it is never inherited.",
+  "name": "abstract-not-created",
+  "patch_results": [],
+  "stats": {
+   "abstract": 4,
+   "defs": 3,
+   "files": 1,
+   "may_require_skipped": 0,
+   "patch_ops": 0,
+   "top_level_nodes": 7,
+   "unknown_type": 0
+  }
+ },
+ {
+  "databases": {
+   "CombatExtended.AmmoDef": [
+    {
+     "defName": "T1",
+     "node": {
+      "attrs": [
+       [
+        "Class",
+        "CombatExtended.AmmoDef"
+       ]
+      ],
+      "children": [
+       {
+        "attrs": [],
+        "children": [
+         "T1"
+        ],
+        "tag": "defName"
+       }
+      ],
+      "tag": "ThingDef"
+     },
+     "provenance": {
+      "file": "Defs/a.xml",
+      "mod": "ludeon.rimworld",
+      "parents": [],
+      "patched_by": []
+     },
+     "type": "CombatExtended.AmmoDef"
+    },
+    {
+     "defName": "T2",
+     "node": {
+      "attrs": [],
+      "children": [
+       {
+        "attrs": [],
+        "children": [
+         "T2"
+        ],
+        "tag": "defName"
+       }
+      ],
+      "tag": "CombatExtended.AmmoDef"
+     },
+     "provenance": {
+      "file": "Defs/a.xml",
+      "mod": "ludeon.rimworld",
+      "parents": [],
+      "patched_by": []
+     },
+     "type": "CombatExtended.AmmoDef"
+    },
+    {
+     "defName": "T3",
+     "node": {
+      "attrs": [
+       [
+        "Class",
+        "combatextended.ammodef"
+       ]
+      ],
+      "children": [
+       {
+        "attrs": [],
+        "children": [
+         "T3"
+        ],
+        "tag": "defName"
+       }
+      ],
+      "tag": "ThingDef"
+     },
+     "provenance": {
+      "file": "Defs/a.xml",
+      "mod": "ludeon.rimworld",
+      "parents": [],
+      "patched_by": []
+     },
+     "type": "CombatExtended.AmmoDef"
+    }
+   ],
+   "Verse.ThingDef": [
+    {
+     "defName": "T1",
+     "node": {
+      "attrs": [
+       [
+        "Class",
+        "CombatExtended.AmmoDef"
+       ]
+      ],
+      "children": [
+       {
+        "attrs": [],
+        "children": [
+         "T1"
+        ],
+        "tag": "defName"
+       }
+      ],
+      "tag": "ThingDef"
+     },
+     "provenance": {
+      "file": "Defs/a.xml",
+      "mod": "ludeon.rimworld",
+      "parents": [],
+      "patched_by": []
+     },
+     "type": "CombatExtended.AmmoDef"
+    },
+    {
+     "defName": "T2",
+     "node": {
+      "attrs": [],
+      "children": [
+       {
+        "attrs": [],
+        "children": [
+         "T2"
+        ],
+        "tag": "defName"
+       }
+      ],
+      "tag": "CombatExtended.AmmoDef"
+     },
+     "provenance": {
+      "file": "Defs/a.xml",
+      "mod": "ludeon.rimworld",
+      "parents": [],
+      "patched_by": []
+     },
+     "type": "CombatExtended.AmmoDef"
+    },
+    {
+     "defName": "T3",
+     "node": {
+      "attrs": [
+       [
+        "Class",
+        "combatextended.ammodef"
+       ]
+      ],
+      "children": [
+       {
+        "attrs": [],
+        "children": [
+         "T3"
+        ],
+        "tag": "defName"
+       }
+      ],
+      "tag": "ThingDef"
+     },
+     "provenance": {
+      "file": "Defs/a.xml",
+      "mod": "ludeon.rimworld",
+      "parents": [],
+      "patched_by": []
+     },
+     "type": "CombatExtended.AmmoDef"
+    },
+    {
+     "defName": "T5",
+     "node": {
+      "attrs": [],
+      "children": [
+       {
+        "attrs": [],
+        "children": [
+         "T5"
+        ],
+        "tag": "defName"
+       }
+      ],
+      "tag": "thingdef"
+     },
+     "provenance": {
+      "file": "Defs/a.xml",
+      "mod": "ludeon.rimworld",
+      "parents": [],
+      "patched_by": []
+     },
+     "type": "Verse.ThingDef"
+    },
+    {
+     "defName": "T6",
+     "node": {
+      "attrs": [
+       [
+        "ParentName",
+        "CB"
+       ]
+      ],
+      "children": [
+       {
+        "attrs": [],
+        "children": [
+         "l"
+        ],
+        "tag": "label"
+       },
+       {
+        "attrs": [],
+        "children": [
+         "T6"
+        ],
+        "tag": "defName"
+       }
+      ],
+      "tag": "ThingDef"
+     },
+     "provenance": {
+      "file": "Defs/a.xml",
+      "mod": "ludeon.rimworld",
+      "parents": [
+       "ludeon.rimworld:CB"
+      ],
+      "patched_by": []
+     },
+     "type": "Verse.ThingDef"
+    }
+   ]
+  },
+  "diagnostics": {
+   "def_unknown_type": 1
+  },
+  "doc": "Type resolution: element name or Class attribute (not inherited), case-insensitive for namespace-qualified and ignored-namespace names, short names of non-ignored namespaces fail; a subclass def lives in the databases of all its ancestors.",
+  "name": "class-attribute-and-type-names",
+  "patch_results": [],
+  "stats": {
+   "abstract": 1,
+   "defs": 5,
+   "files": 1,
+   "may_require_skipped": 0,
+   "patch_ops": 0,
+   "top_level_nodes": 7,
+   "unknown_type": 1
+  }
+ },
+ {
+  "databases": {
+   "CombatExtended.AmmoDef": [
+    {
+     "defName": "X",
+     "node": {
+      "attrs": [],
+      "children": [
+       {
+        "attrs": [],
+        "children": [
+         "X"
+        ],
+        "tag": "defName"
+       },
+       {
+        "attrs": [],
+        "children": [
+         "ammo"
+        ],
+        "tag": "label"
+       }
+      ],
+      "tag": "CombatExtended.AmmoDef"
+     },
+     "provenance": {
+      "file": "Defs/a.xml",
+      "mod": "test.a",
+      "parents": [],
+      "patched_by": []
+     },
+     "type": "CombatExtended.AmmoDef"
+    },
+    {
+     "defName": "Y",
+     "node": {
+      "attrs": [],
+      "children": [
+       {
+        "attrs": [],
+        "children": [
+         "Y"
+        ],
+        "tag": "defName"
+       }
+      ],
+      "tag": "CombatExtended.AmmoDef"
+     },
+     "provenance": {
+      "file": "Defs/a.xml",
+      "mod": "test.a",
+      "parents": [],
+      "patched_by": []
+     },
+     "type": "CombatExtended.AmmoDef"
+    }
+   ],
+   "Verse.ThingDef": [
+    {
+     "defName": "X",
+     "node": {
+      "attrs": [],
+      "children": [
+       {
+        "attrs": [],
+        "children": [
+         "X"
+        ],
+        "tag": "defName"
+       },
+       {
+        "attrs": [],
+        "children": [
+         "ammo"
+        ],
+        "tag": "label"
+       }
+      ],
+      "tag": "CombatExtended.AmmoDef"
+     },
+     "provenance": {
+      "file": "Defs/a.xml",
+      "mod": "test.a",
+      "parents": [],
+      "patched_by": []
+     },
+     "type": "CombatExtended.AmmoDef"
+    },
+    {
+     "defName": "Y",
+     "node": {
+      "attrs": [],
+      "children": [
+       {
+        "attrs": [],
+        "children": [
+         "Y"
+        ],
+        "tag": "defName"
+       }
+      ],
+      "tag": "ThingDef"
+     },
+     "provenance": {
+      "file": "Defs/a.xml",
+      "mod": "test.a",
+      "parents": [],
+      "patched_by": []
+     },
+     "type": "Verse.ThingDef"
+    }
+   ]
+  },
+  "diagnostics": {},
+  "doc": "Databases are per type and include subclasses: an AmmoDef named like a ThingDef replaces it in DefDatabase<ThingDef>; inside one mod the second def of a name is skipped in the ancestor database.",
+  "name": "duplicates-across-types",
+  "patch_results": [],
+  "stats": {
+   "abstract": 0,
+   "defs": 4,
+   "files": 2,
+   "may_require_skipped": 0,
+   "patch_ops": 0,
+   "top_level_nodes": 4,
+   "unknown_type": 0
+  }
+ },
+ {
+  "databases": {
+   "Verse.ThingDef": [
+    {
+     "defName": "A",
+     "node": {
+      "attrs": [
+       [
+        "MayRequire",
+        "x.y"
+       ]
+      ],
+      "children": [
+       {
+        "attrs": [],
+        "children": [
+         "A"
+        ],
+        "tag": "defName"
+       }
+      ],
+      "tag": "ThingDef"
+     },
+     "provenance": {
+      "file": "Defs/a.xml",
+      "mod": "ludeon.rimworld",
+      "parents": [],
+      "patched_by": []
+     },
+     "type": "Verse.ThingDef"
+    },
+    {
+     "defName": "Dd",
+     "node": {
+      "attrs": [
+       [
+        "MayRequireAnyOf",
+        "a.b, X.y"
+       ]
+      ],
+      "children": [
+       {
+        "attrs": [],
+        "children": [
+         "Dd"
+        ],
+        "tag": "defName"
+       }
+      ],
+      "tag": "ThingDef"
+     },
+     "provenance": {
+      "file": "Defs/a.xml",
+      "mod": "ludeon.rimworld",
+      "parents": [],
+      "patched_by": []
+     },
+     "type": "Verse.ThingDef"
+    },
+    {
+     "defName": "H",
+     "node": {
+      "attrs": [
+       [
+        "ParentName",
+        "PM"
+       ]
+      ],
+      "children": [
+       {
+        "attrs": [],
+        "children": [
+         "H"
+        ],
+        "tag": "defName"
+       }
+      ],
+      "tag": "ThingDef"
+     },
+     "provenance": {
+      "file": "Defs/a.xml",
+      "mod": "ludeon.rimworld",
+      "parents": [],
+      "patched_by": []
+     },
+     "type": "Verse.ThingDef"
+    }
+   ]
+  },
+  "diagnostics": {
+   "inherit_missing_parent": 1
+  },
+  "doc": "MayRequire (all of) and MayRequireAnyOf (any of) on top-level nodes: ids are trimmed and case-insensitive, an EMPTY MayRequire never matches, an unmet MayRequire on a parent keeps it from being registered.",
+  "name": "mayrequire-top-level",
+  "patch_results": [],
+  "stats": {
+   "abstract": 0,
+   "defs": 3,
+   "files": 1,
+   "may_require_skipped": 6,
+   "patch_ops": 0,
+   "top_level_nodes": 9,
+   "unknown_type": 0
+  }
+ },
+ {
+  "databases": {
+   "Verse.ThingDef": [
+    {
+     "defName": "D",
+     "node": {
+      "attrs": [],
+      "children": [
+       {
+        "attrs": [],
+        "children": [
+         "D"
+        ],
+        "tag": "defName"
+       },
+       {
+        "attrs": [],
+        "children": [
+         "1"
+        ],
+        "tag": "a"
+       },
+       {
+        "attrs": [],
+        "children": [
+         "1"
+        ],
+        "tag": "c"
+       },
+       {
+        "attrs": [],
+        "children": [
+         "1"
+        ],
+        "tag": "nm"
+       }
+      ],
+      "tag": "ThingDef"
+     },
+     "provenance": {
+      "file": "Defs/a.xml",
+      "mod": "ludeon.rimworld",
+      "parents": [],
+      "patched_by": [
+       "ludeon.rimworld:Patches/p.xml#0 PatchOperationSequence",
+       "ludeon.rimworld:Patches/p.xml#1 PatchOperationFindMod(Nope)"
+      ]
+     },
+     "type": "Verse.ThingDef"
+    }
+   ]
+  },
+  "diagnostics": {},
+  "doc": "li entries of the `operations` and `mods` lists honour MayRequire / MayRequireAnyOf (skipped when unmet).",
+  "name": "mayrequire-in-patch-lists",
+  "patch_results": [
+   true,
+   true
+  ],
+  "stats": {
+   "abstract": 0,
+   "defs": 1,
+   "files": 1,
+   "may_require_skipped": 0,
+   "patch_ops": 2,
+   "top_level_nodes": 1,
+   "unknown_type": 0
+  }
+ },
+ {
+  "databases": {
+   "Verse.ThingDef": [
+    {
+     "defName": "B",
+     "node": {
+      "attrs": [],
+      "children": [
+       {
+        "attrs": [],
+        "children": [
+         "B"
+        ],
+        "tag": "defName"
+       }
+      ],
+      "tag": "ThingDef"
+     },
+     "provenance": {
+      "file": "Defs/a.xml",
+      "mod": "ludeon.rimworld",
+      "parents": [],
+      "patched_by": []
+     },
+     "type": "Verse.ThingDef"
+    },
+    {
+     "defName": "A",
+     "node": {
+      "attrs": [],
+      "children": [
+       {
+        "attrs": [],
+        "children": [
+         "A"
+        ],
+        "tag": "defName"
+       },
+       {
+        "attrs": [],
+        "children": [
+         "moda"
+        ],
+        "tag": "label"
+       }
+      ],
+      "tag": "ThingDef"
+     },
+     "provenance": {
+      "file": "Defs/b.xml",
+      "mod": "test.a",
+      "parents": [],
+      "patched_by": []
+     },
+     "type": "Verse.ThingDef"
+    }
+   ]
+  },
+  "diagnostics": {},
+  "doc": "Later mods override earlier defs with the same defName; the winner is appended, so database order changes.",
+  "name": "merge-load-order-and-override",
+  "patch_results": [],
+  "stats": {
+   "abstract": 0,
+   "defs": 3,
+   "files": 2,
+   "may_require_skipped": 0,
+   "patch_ops": 0,
+   "top_level_nodes": 3,
+   "unknown_type": 0
+  }
+ },
+ {
+  "databases": {
+   "Verse.ThingDef": [
+    {
+     "defName": "X",
+     "node": {
+      "attrs": [],
+      "children": [
+       {
+        "attrs": [],
+        "children": [
+         "X"
+        ],
+        "tag": "defName"
+       },
+       {
+        "attrs": [],
+        "children": [
+         "first"
+        ],
+        "tag": "label"
+       }
+      ],
+      "tag": "ThingDef"
+     },
+     "provenance": {
+      "file": "Defs/a.xml",
+      "mod": "test.a",
+      "parents": [],
+      "patched_by": []
+     },
+     "type": "Verse.ThingDef"
+    }
+   ]
+  },
+  "diagnostics": {},
+  "doc": "Two defs with one defName inside ONE mod: the first stays, the second is skipped with an error. Files of a folder are visited in sorted order here (OS order in the game).",
+  "name": "duplicate-in-same-mod",
+  "patch_results": [],
+  "stats": {
+   "abstract": 0,
+   "defs": 2,
+   "files": 2,
+   "may_require_skipped": 0,
+   "patch_ops": 0,
+   "top_level_nodes": 2,
+   "unknown_type": 0
+  }
+ },
+ {
+  "databases": {
+   "Verse.ThingDef": [
+    {
+     "defName": "NoFoo",
+     "node": {
+      "attrs": [],
+      "children": [
+       {
+        "attrs": [],
+        "children": [
+         "NoFoo"
+        ],
+        "tag": "defName"
+       }
+      ],
+      "tag": "ThingDef"
+     },
+     "provenance": {
+      "file": "Defs/n.xml",
+      "mod": "test.lf",
+      "parents": [],
+      "patched_by": []
+     },
+     "type": "Verse.ThingDef"
+    },
+    {
+     "defName": "Roy",
+     "node": {
+      "attrs": [],
+      "children": [
+       {
+        "attrs": [],
+        "children": [
+         "Roy"
+        ],
+        "tag": "defName"
+       }
+      ],
+      "tag": "ThingDef"
+     },
+     "provenance": {
+      "file": "Defs/r.xml",
+      "mod": "test.lf",
+      "parents": [],
+      "patched_by": []
+     },
+     "type": "Verse.ThingDef"
+    },
+    {
+     "defName": "R",
+     "node": {
+      "attrs": [],
+      "children": [
+       {
+        "attrs": [],
+        "children": [
+         "R"
+        ],
+        "tag": "defName"
+       }
+      ],
+      "tag": "ThingDef"
+     },
+     "provenance": {
+      "file": "Defs/root.xml",
+      "mod": "test.lf",
+      "parents": [],
+      "patched_by": []
+     },
+     "type": "Verse.ThingDef"
+    },
+    {
+     "defName": "V15",
+     "node": {
+      "attrs": [],
+      "children": [
+       {
+        "attrs": [],
+        "children": [
+         "V15"
+        ],
+        "tag": "defName"
+       }
+      ],
+      "tag": "ThingDef"
+     },
+     "provenance": {
+      "file": "Defs/a.xml",
+      "mod": "test.vf",
+      "parents": [],
+      "patched_by": []
+     },
+     "type": "Verse.ThingDef"
+    },
+    {
+     "defName": "Com",
+     "node": {
+      "attrs": [],
+      "children": [
+       {
+        "attrs": [],
+        "children": [
+         "Com"
+        ],
+        "tag": "defName"
+       }
+      ],
+      "tag": "ThingDef"
+     },
+     "provenance": {
+      "file": "Defs/c.xml",
+      "mod": "test.vf",
+      "parents": [],
+      "patched_by": []
+     },
+     "type": "Verse.ThingDef"
+    },
+    {
+     "defName": "Rt",
+     "node": {
+      "attrs": [],
+      "children": [
+       {
+        "attrs": [],
+        "children": [
+         "Rt"
+        ],
+        "tag": "defName"
+       }
+      ],
+      "tag": "ThingDef"
+     },
+     "provenance": {
+      "file": "Defs/r.xml",
+      "mod": "test.vf",
+      "parents": [],
+      "patched_by": []
+     },
+     "type": "Verse.ThingDef"
+    },
+    {
+     "defName": "V16",
+     "node": {
+      "attrs": [],
+      "children": [
+       {
+        "attrs": [],
+        "children": [
+         "V16"
+        ],
+        "tag": "defName"
+       }
+      ],
+      "tag": "ThingDef"
+     },
+     "provenance": {
+      "file": "Defs/a.xml",
+      "mod": "test.vf2",
+      "parents": [],
+      "patched_by": []
+     },
+     "type": "Verse.ThingDef"
+    },
+    {
+     "defName": "R2",
+     "node": {
+      "attrs": [],
+      "children": [
+       {
+        "attrs": [],
+        "children": [
+         "R2"
+        ],
+        "tag": "defName"
+       }
+      ],
+      "tag": "ThingDef"
+     },
+     "provenance": {
+      "file": "Defs/r.xml",
+      "mod": "test.vf2",
+      "parents": [],
+      "patched_by": []
+     },
+     "type": "Verse.ThingDef"
+    }
+   ]
+  },
+  "diagnostics": {},
+  "doc": "LoadFolders.xml (v1.6 with IfModActive, IfModNotActive, IfModActiveAll; later entries have priority and load first) and the version-folder fallbacks (closest older folder, Common, root; an exact 1.6 folder wins).",
+  "name": "load-folders-and-version-folders",
+  "patch_results": [],
+  "stats": {
+   "abstract": 0,
+   "defs": 8,
+   "files": 8,
+   "may_require_skipped": 0,
+   "patch_ops": 0,
+   "top_level_nodes": 8,
+   "unknown_type": 0
+  }
+ },
+ {
+  "databases": {
+   "Verse.ThingDef": [
+    {
+     "defName": "X",
+     "node": {
+      "attrs": [],
+      "children": [
+       {
+        "attrs": [],
+        "children": [
+         "X"
+        ],
+        "tag": "defName"
+       },
+       {
+        "attrs": [],
+        "children": [
+         "over"
+        ],
+        "tag": "label"
+       }
+      ],
+      "tag": "ThingDef"
+     },
+     "provenance": {
+      "file": "Defs/x.xml",
+      "mod": "test.dd",
+      "parents": [],
+      "patched_by": []
+     },
+     "type": "Verse.ThingDef"
+    },
+    {
+     "defName": "Y",
+     "node": {
+      "attrs": [],
+      "children": [
+       {
+        "attrs": [],
+        "children": [
+         "Y"
+        ],
+        "tag": "defName"
+       }
+      ],
+      "tag": "ThingDef"
+     },
+     "provenance": {
+      "file": "Defs/sub/y.xml",
+      "mod": "test.dd",
+      "parents": [],
+      "patched_by": []
+     },
+     "type": "Verse.ThingDef"
+    }
+   ]
+  },
+  "diagnostics": {},
+  "doc": "A file in a higher-priority load folder hides the same relative path in a lower one (no duplicate error); other files of the lower folder still load.",
+  "name": "file-dedup-between-folders",
+  "patch_results": [],
+  "stats": {
+   "abstract": 0,
+   "defs": 2,
+   "files": 2,
+   "may_require_skipped": 0,
+   "patch_ops": 0,
+   "top_level_nodes": 2,
+   "unknown_type": 0
+  }
+ },
+ {
+  "databases": {
+   "Verse.ThingDef": [
+    {
+     "defName": "FooRoot",
+     "node": {
+      "attrs": [],
+      "children": [
+       {
+        "attrs": [],
+        "children": [
+         "FooRoot"
+        ],
+        "tag": "defName"
+       }
+      ],
+      "tag": "ThingDef"
+     },
+     "provenance": {
+      "file": "Defs/a.xml",
+      "mod": "test.a",
+      "parents": [],
+      "patched_by": []
+     },
+     "type": "Verse.ThingDef"
+    },
+    {
+     "defName": "Ok",
+     "node": {
+      "attrs": [],
+      "children": [
+       {
+        "attrs": [],
+        "children": [
+         "Ok"
+        ],
+        "tag": "defName"
+       }
+      ],
+      "tag": "ThingDef"
+     },
+     "provenance": {
+      "file": "Defs/c.xml",
+      "mod": "test.a",
+      "parents": [],
+      "patched_by": []
+     },
+     "type": "Verse.ThingDef"
+    }
+   ]
+  },
+  "diagnostics": {
+   "def_unknown_type": 1,
+   "defs_bad_root": 1,
+   "defs_unknown_parse_failure": 1,
+   "xml_parse_error": 1
+  },
+  "doc": "A root element other than Defs is an error but its children still load; an unparseable file is skipped; an element that is no Def type is skipped.",
+  "name": "defs-bad-root-parse-error-unknown-type",
+  "patch_results": [],
+  "stats": {
+   "abstract": 0,
+   "defs": 2,
+   "files": 3,
+   "may_require_skipped": 0,
+   "patch_ops": 0,
+   "top_level_nodes": 3,
+   "unknown_type": 1
+  }
+ },
+ {
+  "databases": {
+   "Verse.ThingDef": [
+    {
+     "defName": "D",
+     "node": {
+      "attrs": [],
+      "children": [
+       {
+        "attrs": [],
+        "children": [
+         "D"
+        ],
+        "tag": "defName"
+       },
+       {
+        "attrs": [],
+        "children": [
+         {
+          "attrs": [],
+          "children": [
+           "p1"
+          ],
+          "tag": "li"
+         },
+         {
+          "attrs": [],
+          "children": [
+           "p2"
+          ],
+          "tag": "li"
+         },
+         {
+          "attrs": [],
+          "children": [
+           "a"
+          ],
+          "tag": "li"
+         },
+         {
+          "attrs": [],
+          "children": [
+           "b"
+          ],
+          "tag": "li"
+         }
+        ],
+        "tag": "comps"
+       },
+       {
+        "attrs": [],
+        "children": [
+         {
+          "attrs": [],
+          "children": [
+           "t"
+          ],
+          "tag": "li"
+         }
+        ],
+        "tag": "tags"
+       }
+      ],
+      "tag": "ThingDef"
+     },
+     "provenance": {
+      "file": "Defs/a.xml",
+      "mod": "ludeon.rimworld",
+      "parents": [],
+      "patched_by": [
+       "ludeon.rimworld:Patches/p.xml#0 PatchOperationAdd(/Defs/ThingDef[defName=\"D\"]/comps)",
+       "ludeon.rimworld:Patches/p.xml#1 PatchOperationAdd(/Defs/ThingDef[defName=\"D\"]/comps)",
+       "ludeon.rimworld:Patches/p.xml#2 PatchOperationAdd(/Defs/ThingDef[defName=\"D\"])"
+      ]
+     },
+     "type": "Verse.ThingDef"
+    }
+   ]
+  },
+  "diagnostics": {
+   "patch_failed": 1
+  },
+  "doc": "Add appends by default; order Prepend keeps the order of the value children; a non-matching xpath fails.",
+  "name": "patch-add-order",
+  "patch_results": [
+   true,
+   true,
+   true,
+   false
+  ],
+  "stats": {
+   "abstract": 0,
+   "defs": 1,
+   "files": 1,
+   "may_require_skipped": 0,
+   "patch_ops": 4,
+   "top_level_nodes": 1,
+   "unknown_type": 0
+  }
+ },
+ {
+  "databases": {
+   "Verse.ThingDef": [
+    {
+     "defName": "D",
+     "node": {
+      "attrs": [],
+      "children": [
+       {
+        "attrs": [],
+        "children": [
+         "D"
+        ],
+        "tag": "defName"
+       },
+       {
+        "attrs": [],
+        "children": [
+         {
+          "attrs": [],
+          "children": [
+           "y"
+          ],
+          "tag": "li"
+         },
+         {
+          "attrs": [],
+          "children": [
+           "x"
+          ],
+          "tag": "li"
+         },
+         {
+          "attrs": [],
+          "children": [
+           "a"
+          ],
+          "tag": "li"
+         },
+         {
+          "attrs": [],
+          "children": [
+           "b"
+          ],
+          "tag": "li"
+         },
+         {
+          "attrs": [],
+          "children": [
+           "n"
+          ],
+          "tag": "li"
+         },
+         {
+          "attrs": [],
+          "children": [
+           "m"
+          ],
+          "tag": "li"
+         }
+        ],
+        "tag": "comps"
+       }
+      ],
+      "tag": "ThingDef"
+     },
+     "provenance": {
+      "file": "Defs/a.xml",
+      "mod": "ludeon.rimworld",
+      "parents": [],
+      "patched_by": [
+       "ludeon.rimworld:Patches/p.xml#0 PatchOperationInsert(/Defs/ThingDef[defName=\"D\"]/comps/li[1])",
+       "ludeon.rimworld:Patches/p.xml#1 PatchOperationInsert(/Defs/ThingDef[defName=\"D\"]/comps/li[last()])"
+      ]
+     },
+     "type": "Verse.ThingDef"
+    }
+   ]
+  },
+  "diagnostics": {},
+  "doc": "Insert with several value children REVERSES them in both orders: each copy is inserted directly before (Prepend, walking the value backwards) or directly after (Append, walking forwards) the target node.",
+  "name": "patch-insert-order",
+  "patch_results": [
+   true,
+   true
+  ],
+  "stats": {
+   "abstract": 0,
+   "defs": 1,
+   "files": 1,
+   "may_require_skipped": 0,
+   "patch_ops": 2,
+   "top_level_nodes": 1,
+   "unknown_type": 0
+  }
+ },
+ {
+  "databases": {
+   "Verse.ThingDef": [
+    {
+     "defName": "D",
+     "node": {
+      "attrs": [],
+      "children": [
+       {
+        "attrs": [],
+        "children": [
+         "D"
+        ],
+        "tag": "defName"
+       },
+       {
+        "attrs": [],
+        "children": [
+         "new"
+        ],
+        "tag": "label"
+       },
+       {
+        "attrs": [],
+        "children": [
+         {
+          "attrs": [],
+          "children": [
+           "a"
+          ],
+          "tag": "li"
+         },
+         {
+          "attrs": [],
+          "children": [
+           "b"
+          ],
+          "tag": "li"
+         },
+         {
+          "attrs": [],
+          "children": [
+           "2"
+          ],
+          "tag": "li"
+         }
+        ],
+        "tag": "tags"
+       }
+      ],
+      "tag": "ThingDef"
+     },
+     "provenance": {
+      "file": "Defs/a.xml",
+      "mod": "ludeon.rimworld",
+      "parents": [],
+      "patched_by": [
+       "ludeon.rimworld:Patches/p.xml#0 PatchOperationReplace(/Defs/ThingDef[defName=\"D\"]/label)",
+       "ludeon.rimworld:Patches/p.xml#1 PatchOperationReplace(/Defs/ThingDef[defName=\"D\"]/tags/li[1])",
+       "ludeon.rimworld:Patches/p.xml#2 PatchOperationRemove(/Defs/ThingDef[defName=\"D\"]/description)"
+      ]
+     },
+     "type": "Verse.ThingDef"
+    }
+   ]
+  },
+  "diagnostics": {
+   "patch_failed": 1
+  },
+  "doc": "Replace puts the value children where the node was; Remove deletes; both fail on no match.",
+  "name": "patch-replace-remove",
+  "patch_results": [
+   true,
+   true,
+   true,
+   false
+  ],
+  "stats": {
+   "abstract": 0,
+   "defs": 1,
+   "files": 1,
+   "may_require_skipped": 0,
+   "patch_ops": 4,
+   "top_level_nodes": 1,
+   "unknown_type": 0
+  }
+ },
+ {
+  "databases": {
+   "Verse.ThingDef": [
+    {
+     "defName": "Z",
+     "node": {
+      "attrs": [],
+      "children": [
+       {
+        "attrs": [],
+        "children": [
+         "Z"
+        ],
+        "tag": "defName"
+       }
+      ],
+      "tag": "ThingDef"
+     },
+     "provenance": {
+      "file": "Defs/a.xml",
+      "mod": "ludeon.rimworld",
+      "parents": [],
+      "patched_by": []
+     },
+     "type": "Verse.ThingDef"
+    },
+    {
+     "defName": "R",
+     "node": {
+      "attrs": [],
+      "children": [
+       {
+        "attrs": [],
+        "children": [
+         "R"
+        ],
+        "tag": "defName"
+       },
+       {
+        "attrs": [],
+        "children": [
+         "replaced"
+        ],
+        "tag": "label"
+       }
+      ],
+      "tag": "ThingDef"
+     },
+     "provenance": {
+      "file": null,
+      "mod": null,
+      "parents": [],
+      "patched_by": []
+     },
+     "type": "Verse.ThingDef"
+    }
+   ]
+  },
+  "diagnostics": {},
+  "doc": "A def node replaced by a patch loses its asset: provenance is empty and the def goes into the database after all mod defs ('Patches' source).",
+  "name": "patch-replace-whole-def",
+  "patch_results": [
+   true
+  ],
+  "stats": {
+   "abstract": 0,
+   "defs": 2,
+   "files": 1,
+   "may_require_skipped": 0,
+   "patch_ops": 1,
+   "top_level_nodes": 2,
+   "unknown_type": 0
+  }
+ },
+ {
+  "databases": {
+   "Verse.ThingDef": [
+    {
+     "defName": "D",
+     "node": {
+      "attrs": [
+       [
+        "Name",
+        "N2"
+       ],
+       [
+        "Tag",
+        "Foo"
+       ],
+       [
+        "Extra",
+        "e"
+       ]
+      ],
+      "children": [
+       {
+        "attrs": [],
+        "children": [
+         "D"
+        ],
+        "tag": "defName"
+       }
+      ],
+      "tag": "ThingDef"
+     },
+     "provenance": {
+      "file": "Defs/a.xml",
+      "mod": "ludeon.rimworld",
+      "parents": [],
+      "patched_by": [
+       "ludeon.rimworld:Patches/p.xml#0 PatchOperationAttributeAdd(/Defs/ThingDef[defName=\"D\"])(Tag)",
+       "ludeon.rimworld:Patches/p.xml#2 PatchOperationAttributeSet(/Defs/ThingDef[defName=\"D\"])(Name)",
+       "ludeon.rimworld:Patches/p.xml#3 PatchOperationAttributeSet(/Defs/ThingDef[defName=\"D\"])(Extra)",
+       "ludeon.rimworld:Patches/p.xml#4 PatchOperationAttributeRemove(/Defs/ThingDef[defName=\"D\"])(Abstract)"
+      ]
+     },
+     "type": "Verse.ThingDef"
+    }
+   ]
+  },
+  "diagnostics": {
+   "patch_failed": 2
+  },
+  "doc": "AttributeAdd fails when the attribute exists, AttributeSet always succeeds (creates or overwrites), AttributeRemove fails when absent.",
+  "name": "patch-attribute-ops",
+  "patch_results": [
+   true,
+   false,
+   true,
+   true,
+   true,
+   false
+  ],
+  "stats": {
+   "abstract": 0,
+   "defs": 1,
+   "files": 1,
+   "may_require_skipped": 0,
+   "patch_ops": 6,
+   "top_level_nodes": 1,
+   "unknown_type": 0
+  }
+ },
+ {
+  "databases": {
+   "Verse.ThingDef": [
+    {
+     "defName": "D",
+     "node": {
+      "attrs": [],
+      "children": [
+       {
+        "attrs": [],
+        "children": [
+         "D"
+        ],
+        "tag": "defName"
+       },
+       {
+        "attrs": [],
+        "children": [
+         {
+          "attrs": [],
+          "children": [],
+          "tag": "b"
+         },
+         "text"
+        ],
+        "tag": "bar"
+       }
+      ],
+      "tag": "ThingDef"
+     },
+     "provenance": {
+      "file": "Defs/a.xml",
+      "mod": "ludeon.rimworld",
+      "parents": [],
+      "patched_by": [
+       "ludeon.rimworld:Patches/p.xml#0 PatchOperationSetName(/Defs/ThingDef[defName=\"D\"]/foo)"
+      ]
+     },
+     "type": "Verse.ThingDef"
+    }
+   ]
+  },
+  "diagnostics": {},
+  "doc": "SetName creates a new element with the same inner XML and DROPS all attributes.",
+  "name": "patch-setname",
+  "patch_results": [
+   true
+  ],
+  "stats": {
+   "abstract": 0,
+   "defs": 1,
+   "files": 1,
+   "may_require_skipped": 0,
+   "patch_ops": 1,
+   "top_level_nodes": 1,
+   "unknown_type": 0
+  }
+ },
+ {
+  "databases": {
+   "Verse.ThingDef": [
+    {
+     "defName": "D1",
+     "node": {
+      "attrs": [],
+      "children": [
+       {
+        "attrs": [],
+        "children": [
+         "D1"
+        ],
+        "tag": "defName"
+       },
+       {
+        "attrs": [],
+        "children": [
+         {
+          "attrs": [
+           [
+            "Class",
+            "NewExt"
+           ]
+          ],
+          "children": [
+           {
+            "attrs": [],
+            "children": [
+             "1"
+            ],
+            "tag": "v"
+           }
+          ],
+          "tag": "li"
+         }
+        ],
+        "tag": "modExtensions"
+       }
+      ],
+      "tag": "ThingDef"
+     },
+     "provenance": {
+      "file": "Defs/a.xml",
+      "mod": "ludeon.rimworld",
+      "parents": [],
+      "patched_by": [
+       "ludeon.rimworld:Patches/p.xml#0 PatchOperationAddModExtension(/Defs/ThingDef[starts-with(defName,\"D\")])"
+      ]
+     },
+     "type": "Verse.ThingDef"
+    },
+    {
+     "defName": "D2",
+     "node": {
+      "attrs": [],
+      "children": [
+       {
+        "attrs": [],
+        "children": [
+         "D2"
+        ],
+        "tag": "defName"
+       },
+       {
+        "attrs": [],
+        "children": [
+         {
+          "attrs": [
+           [
+            "Class",
+            "A"
+           ]
+          ],
+          "children": [],
+          "tag": "li"
+         },
+         {
+          "attrs": [
+           [
+            "Class",
+            "NewExt"
+           ]
+          ],
+          "children": [
+           {
+            "attrs": [],
+            "children": [
+             "1"
+            ],
+            "tag": "v"
+           }
+          ],
+          "tag": "li"
+         }
+        ],
+        "tag": "modExtensions"
+       }
+      ],
+      "tag": "ThingDef"
+     },
+     "provenance": {
+      "file": "Defs/a.xml",
+      "mod": "ludeon.rimworld",
+      "parents": [],
+      "patched_by": [
+       "ludeon.rimworld:Patches/p.xml#0 PatchOperationAddModExtension(/Defs/ThingDef[starts-with(defName,\"D\")])"
+      ]
+     },
+     "type": "Verse.ThingDef"
+    }
+   ]
+  },
+  "diagnostics": {},
+  "doc": "AddModExtension creates modExtensions at the END of the def when missing, otherwise appends to it.",
+  "name": "patch-addmodextension",
+  "patch_results": [
+   true
+  ],
+  "stats": {
+   "abstract": 0,
+   "defs": 2,
+   "files": 1,
+   "may_require_skipped": 0,
+   "patch_ops": 1,
+   "top_level_nodes": 2,
+   "unknown_type": 0
+  }
+ },
+ {
+  "databases": {
+   "Verse.ThingDef": [
+    {
+     "defName": "D",
+     "node": {
+      "attrs": [],
+      "children": [
+       {
+        "attrs": [],
+        "children": [
+         "D"
+        ],
+        "tag": "defName"
+       },
+       {
+        "attrs": [],
+        "children": [
+         "x"
+        ],
+        "tag": "label"
+       },
+       {
+        "attrs": [],
+        "children": [
+         "1"
+        ],
+        "tag": "a"
+       },
+       {
+        "attrs": [],
+        "children": [
+         "1"
+        ],
+        "tag": "d"
+       },
+       {
+        "attrs": [],
+        "children": [
+         "1"
+        ],
+        "tag": "s1"
+       }
+      ],
+      "tag": "ThingDef"
+     },
+     "provenance": {
+      "file": "Defs/a.xml",
+      "mod": "ludeon.rimworld",
+      "parents": [],
+      "patched_by": [
+       "ludeon.rimworld:Patches/p.xml#2 PatchOperationConditional(/Defs/ThingDef[defName=\"D\"])",
+       "ludeon.rimworld:Patches/p.xml#3 PatchOperationConditional(/Defs/ThingDef[defName=\"Q\"])",
+       "ludeon.rimworld:Patches/p.xml#7 PatchOperationSequence"
+      ]
+     },
+     "type": "Verse.ThingDef"
+    }
+   ]
+  },
+  "diagnostics": {
+   "patch_failed": 3
+  },
+  "doc": "Test, Conditional truth table and Sequence: a failing step stops the sequence but the steps before it stay applied (no rollback).",
+  "name": "patch-conditional-test-sequence",
+  "patch_results": [
+   true,
+   false,
+   true,
+   true,
+   false,
+   true,
+   true,
+   false
+  ],
+  "stats": {
+   "abstract": 0,
+   "defs": 1,
+   "files": 1,
+   "may_require_skipped": 0,
+   "patch_ops": 8,
+   "top_level_nodes": 1,
+   "unknown_type": 0
+  }
+ },
+ {
+  "databases": {
+   "Verse.ThingDef": [
+    {
+     "defName": "D",
+     "node": {
+      "attrs": [],
+      "children": [
+       {
+        "attrs": [],
+        "children": [
+         "D"
+        ],
+        "tag": "defName"
+       },
+       {
+        "attrs": [],
+        "children": [
+         "x"
+        ],
+        "tag": "label"
+       },
+       {
+        "attrs": [],
+        "children": [
+         "1"
+        ],
+        "tag": "a"
+       },
+       {
+        "attrs": [],
+        "children": [
+         "1"
+        ],
+        "tag": "b"
+       }
+      ],
+      "tag": "ThingDef"
+     },
+     "provenance": {
+      "file": "Defs/a.xml",
+      "mod": "ludeon.rimworld",
+      "parents": [],
+      "patched_by": [
+       "ludeon.rimworld:Patches/p.xml#0 PatchOperationAdd(/Defs/ThingDef[defName=\"D\"])",
+       "ludeon.rimworld:Patches/p.xml#3 PatchOperationAdd(/Defs/ThingDef[defName=\"D\"])"
+      ]
+     },
+     "type": "Verse.ThingDef"
+    }
+   ]
+  },
+  "diagnostics": {
+   "patch_failed": 2
+  },
+  "doc": "success=Invert / Always / Never rewrite the result after the work was done (Never still applies the change).",
+  "name": "patch-success-modes",
+  "patch_results": [
+   false,
+   true,
+   true,
+   false,
+   true
+  ],
+  "stats": {
+   "abstract": 0,
+   "defs": 1,
+   "files": 1,
+   "may_require_skipped": 0,
+   "patch_ops": 5,
+   "top_level_nodes": 1,
+   "unknown_type": 0
+  }
+ },
+ {
+  "databases": {
+   "Verse.ThingDef": [
+    {
+     "defName": "D",
+     "node": {
+      "attrs": [],
+      "children": [
+       {
+        "attrs": [],
+        "children": [
+         "D"
+        ],
+        "tag": "defName"
+       },
+       {
+        "attrs": [],
+        "children": [
+         "x"
+        ],
+        "tag": "label"
+       },
+       {
+        "attrs": [],
+        "children": [
+         "1"
+        ],
+        "tag": "a"
+       },
+       {
+        "attrs": [],
+        "children": [
+         "1"
+        ],
+        "tag": "c"
+       },
+       {
+        "attrs": [],
+        "children": [
+         "1"
+        ],
+        "tag": "e"
+       }
+      ],
+      "tag": "ThingDef"
+     },
+     "provenance": {
+      "file": "Defs/a.xml",
+      "mod": "ludeon.rimworld",
+      "parents": [],
+      "patched_by": [
+       "test.a:Patches/p.xml#0 PatchOperationFindMod(Mod A)",
+       "test.a:Patches/p.xml#1 PatchOperationFindMod(mod a)",
+       "test.a:Patches/p.xml#4 PatchOperationFindMod(Nope, Mod A)"
+      ]
+     },
+     "type": "Verse.ThingDef"
+    }
+   ]
+  },
+  "diagnostics": {},
+  "doc": "FindMod matches the display NAME of an active mod (exact, case-sensitive), any entry is enough; a missing branch means success.",
+  "name": "patch-findmod",
+  "patch_results": [
+   true,
+   true,
+   true,
+   true,
+   true
+  ],
+  "stats": {
+   "abstract": 0,
+   "defs": 1,
+   "files": 1,
+   "may_require_skipped": 0,
+   "patch_ops": 5,
+   "top_level_nodes": 1,
+   "unknown_type": 0
+  }
+ },
+ {
+  "databases": {
+   "Verse.ThingDef": [
+    {
+     "defName": "D",
+     "node": {
+      "attrs": [],
+      "children": [
+       {
+        "attrs": [],
+        "children": [
+         "D"
+        ],
+        "tag": "defName"
+       },
+       {
+        "attrs": [],
+        "children": [
+         "x"
+        ],
+        "tag": "label"
+       },
+       {
+        "attrs": [],
+        "children": [
+         "1"
+        ],
+        "tag": "a"
+       },
+       {
+        "attrs": [],
+        "children": [
+         "1"
+        ],
+        "tag": "b"
+       }
+      ],
+      "tag": "ThingDef"
+     },
+     "provenance": {
+      "file": "Defs/a.xml",
+      "mod": "ludeon.rimworld",
+      "parents": [],
+      "patched_by": [
+       "ludeon.rimworld:Patches/p.xml#3 PatchOperationSequence",
+       "ludeon.rimworld:Patches/p.xml#4 PatchOperationSequence"
+      ]
+     },
+     "type": "Verse.ThingDef"
+    }
+   ]
+  },
+  "diagnostics": {
+   "patch_base_class": 5,
+   "patch_failed": 3,
+   "patch_unknown_class": 4,
+   "patch_unknown_field": 2
+  },
+  "doc": "An unknown or missing Class becomes the base PatchOperation: it fails (and logs) but success=Always/Invert still applies; inside a Sequence it stops the sequence.",
+  "name": "patch-unknown-class",
+  "patch_results": [
+   false,
+   true,
+   false,
+   false,
+   true
+  ],
+  "stats": {
+   "abstract": 0,
+   "defs": 1,
+   "files": 1,
+   "may_require_skipped": 0,
+   "patch_ops": 5,
+   "top_level_nodes": 1,
+   "unknown_type": 0
+  }
+ },
+ {
+  "databases": {
+   "Verse.ThingDef": [
+    {
+     "defName": "D",
+     "node": {
+      "attrs": [
+       [
+        "Name",
+        "N"
+       ]
+      ],
+      "children": [
+       {
+        "attrs": [],
+        "children": [
+         "D"
+        ],
+        "tag": "defName"
+       },
+       {
+        "attrs": [],
+        "children": [
+         "new"
+        ],
+        "tag": "label"
+       },
+       {
+        "attrs": [],
+        "children": [
+         {
+          "attrs": [],
+          "children": [
+           "t2"
+          ],
+          "tag": "li"
+         }
+        ],
+        "tag": "tags"
+       }
+      ],
+      "tag": "ThingDef"
+     },
+     "provenance": {
+      "file": "Defs/a.xml",
+      "mod": "ludeon.rimworld",
+      "parents": [],
+      "patched_by": [
+       "ludeon.rimworld:Patches/p.xml#0 PatchOperationReplace(Defs/ThingDef[defName=\"D\"]/label/text())",
+       "ludeon.rimworld:Patches/p.xml#1 PatchOperationAdd(//ThingDef[defName=\"D\"]/tags)",
+       "ludeon.rimworld:Patches/p.xml#3 PatchOperationRemove(/Defs/ThingDef[defName=\"D\"]/tags/li[text()=\"t1\"])"
+      ]
+     },
+     "type": "Verse.ThingDef"
+    }
+   ]
+  },
+  "diagnostics": {
+   "patch_failed": 1
+  },
+  "doc": "XPath context is the document: relative 'Defs/...' works, '//' works, attribute nodes can be tested, text() nodes can be replaced.",
+  "name": "patch-xpath-forms",
+  "patch_results": [
+   true,
+   true,
+   true,
+   true,
+   true,
+   false
+  ],
+  "stats": {
+   "abstract": 0,
+   "defs": 1,
+   "files": 1,
+   "may_require_skipped": 0,
+   "patch_ops": 6,
+   "top_level_nodes": 1,
+   "unknown_type": 0
+  }
+ },
+ {
+  "databases": {
+   "Verse.ThingDef": [
+    {
+     "defName": "D",
+     "node": {
+      "attrs": [],
+      "children": [
+       {
+        "attrs": [],
+        "children": [
+         "D"
+        ],
+        "tag": "defName"
+       }
+      ],
+      "tag": "ThingDef"
+     },
+     "provenance": {
+      "file": "Defs/a.xml",
+      "mod": "ludeon.rimworld",
+      "parents": [],
+      "patched_by": []
+     },
+     "type": "Verse.ThingDef"
+    },
+    {
+     "defName": "E",
+     "node": {
+      "attrs": [],
+      "children": [
+       {
+        "attrs": [],
+        "children": [
+         "E"
+        ],
+        "tag": "defName"
+       },
+       {
+        "attrs": [],
+        "children": [
+         "1"
+        ],
+        "tag": "fromA"
+       },
+       {
+        "attrs": [],
+        "children": [
+         "1"
+        ],
+        "tag": "fromB"
+       }
+      ],
+      "tag": "ThingDef"
+     },
+     "provenance": {
+      "file": "Defs/a.xml",
+      "mod": "test.b",
+      "parents": [],
+      "patched_by": [
+       "test.a:Patches/p.xml#0 PatchOperationAdd(/Defs/ThingDef[defName=\"E\"])",
+       "test.b:Patches/p.xml#0 PatchOperationAdd(/Defs/ThingDef[defName=\"E\"])"
+      ]
+     },
+     "type": "Verse.ThingDef"
+    }
+   ]
+  },
+  "diagnostics": {
+   "patch_failed": 1
+  },
+  "doc": "All Defs of all mods are merged BEFORE any patch runs (a patch can target a def of a later mod); patches then run mod by mod in load order, file by file.",
+  "name": "patch-order-across-mods",
+  "patch_results": [
+   true,
+   false,
+   true,
+   true
+  ],
+  "stats": {
+   "abstract": 0,
+   "defs": 2,
+   "files": 2,
+   "may_require_skipped": 0,
+   "patch_ops": 4,
+   "top_level_nodes": 2,
+   "unknown_type": 0
+  }
+ },
+ {
+  "databases": {
+   "Verse.ThingDef": [
+    {
+     "defName": "UsesPatchParent",
+     "node": {
+      "attrs": [
+       [
+        "ParentName",
+        "PP"
+       ]
+      ],
+      "children": [
+       {
+        "attrs": [],
+        "children": [
+         "1"
+        ],
+        "tag": "y"
+       },
+       {
+        "attrs": [],
+        "children": [
+         "UsesPatchParent"
+        ],
+        "tag": "defName"
+       }
+      ],
+      "tag": "ThingDef"
+     },
+     "provenance": {
+      "file": "Defs/a.xml",
+      "mod": "ludeon.rimworld",
+      "parents": [
+       "patch:PP"
+      ],
+      "patched_by": []
+     },
+     "type": "Verse.ThingDef"
+    },
+    {
+     "defName": "InB",
+     "node": {
+      "attrs": [
+       [
+        "ParentName",
+        "P"
+       ]
+      ],
+      "children": [
+       {
+        "attrs": [],
+        "children": [
+         "b"
+        ],
+        "tag": "x"
+       },
+       {
+        "attrs": [],
+        "children": [
+         "InB"
+        ],
+        "tag": "defName"
+       }
+      ],
+      "tag": "ThingDef"
+     },
+     "provenance": {
+      "file": "Defs/a.xml",
+      "mod": "test.b",
+      "parents": [
+       "test.b:P"
+      ],
+      "patched_by": []
+     },
+     "type": "Verse.ThingDef"
+    },
+    {
+     "defName": "FromPatch",
+     "node": {
+      "attrs": [
+       [
+        "ParentName",
+        "P"
+       ]
+      ],
+      "children": [
+       {
+        "attrs": [],
+        "children": [
+         "core"
+        ],
+        "tag": "label"
+       },
+       {
+        "attrs": [],
+        "children": [
+         "core"
+        ],
+        "tag": "x"
+       },
+       {
+        "attrs": [],
+        "children": [
+         "FromPatch"
+        ],
+        "tag": "defName"
+       }
+      ],
+      "tag": "ThingDef"
+     },
+     "provenance": {
+      "file": null,
+      "mod": null,
+      "parents": [
+       "ludeon.rimworld:P"
+      ],
+      "patched_by": []
+     },
+     "type": "Verse.ThingDef"
+    }
+   ]
+  },
+  "diagnostics": {},
+  "doc": "Nodes created by patches have no mod: as children they pick the null-mod parent first, else the LOWEST load order; as parents they are the fallback for mod children.",
+  "name": "patch-created-nodes-have-no-mod",
+  "patch_results": [
+   true
+  ],
+  "stats": {
+   "abstract": 4,
+   "defs": 3,
+   "files": 3,
+   "may_require_skipped": 0,
+   "patch_ops": 1,
+   "top_level_nodes": 7,
+   "unknown_type": 0
+  }
+ },
+ {
+  "databases": {
+   "Verse.ThingDef": [
+    {
+     "defName": "D",
+     "node": {
+      "attrs": [],
+      "children": [
+       {
+        "attrs": [],
+        "children": [
+         "D"
+        ],
+        "tag": "defName"
+       }
+      ],
+      "tag": "ThingDef"
+     },
+     "provenance": {
+      "file": "Defs/a.xml",
+      "mod": "ludeon.rimworld",
+      "parents": [],
+      "patched_by": []
+     },
+     "type": "Verse.ThingDef"
+    }
+   ]
+  },
+  "diagnostics": {
+   "patch_exception": 4,
+   "patch_failed": 1
+  },
+  "doc": "Exceptions inside an operation (missing value, invalid or non-node-set xpath) are logged and the operation counts as failed; nested ones abort the enclosing Sequence.",
+  "name": "patch-exceptions",
+  "patch_results": [
+   false,
+   false,
+   false,
+   false,
+   false
+  ],
+  "stats": {
+   "abstract": 0,
+   "defs": 1,
+   "files": 1,
+   "may_require_skipped": 0,
+   "patch_ops": 5,
+   "top_level_nodes": 1,
+   "unknown_type": 0
+  }
+ },
+ {
+  "databases": {
+   "Verse.ThingDef": [
+    {
+     "defName": "D",
+     "node": {
+      "attrs": [],
+      "children": [
+       {
+        "attrs": [],
+        "children": [
+         "D"
+        ],
+        "tag": "defName"
+       },
+       {
+        "attrs": [],
+        "children": [
+         "1"
+        ],
+        "tag": "a"
+       },
+       {
+        "attrs": [],
+        "children": [
+         "1"
+        ],
+        "tag": "b"
+       },
+       {
+        "attrs": [],
+        "children": [
+         "1"
+        ],
+        "tag": "c"
+       }
+      ],
+      "tag": "ThingDef"
+     },
+     "provenance": {
+      "file": "Defs/a.xml",
+      "mod": "ludeon.rimworld",
+      "parents": [],
+      "patched_by": [
+       "ludeon.rimworld:Patches/p.xml#0 PatchOperationAdd(/Defs/ThingDef[defName=\"D\"])",
+       "ludeon.rimworld:Patches/p.xml#1 PatchOperationAdd(/Defs/ThingDef[defName=\"D\"])",
+       "ludeon.rimworld:Patches/p.xml#2 PatchOperationAdd(/Defs/ThingDef[defName=\"D\"])"
+      ]
+     },
+     "type": "Verse.ThingDef"
+    }
+   ]
+  },
+  "diagnostics": {
+   "patch_field_case_mismatch": 1
+  },
+  "doc": "Class names are matched case-insensitively (also with the Verse. prefix) and field names fall back to a case-insensitive match with an error.",
+  "name": "patch-class-case-tolerance",
+  "patch_results": [
+   true,
+   true,
+   true
+  ],
+  "stats": {
+   "abstract": 0,
+   "defs": 1,
+   "files": 1,
+   "may_require_skipped": 0,
+   "patch_ops": 3,
+   "top_level_nodes": 1,
+   "unknown_type": 0
+  }
+ }
+]

@@ -1,0 +1,11231 @@
+{
+ "meta": {
+  "tool": "survey_ce_patches.py",
+  "corpora": {
+   "ce-core": "Patches/** of the CE repository checkout",
+   "ce-modpatches": "ModPatches/*/Patches/** of the CE repository checkout",
+   "owner": "the owner's own mods (patch files that mention Combat Extended)",
+   "workshop": "Steam workshop items other than Combat Extended itself, patch files that mention Combat Extended"
+  },
+  "versions": {
+   "ce_modVersion": "16.7.3.0",
+   "ce_supportedVersions": "1.6",
+   "game_version": "1.6.4871 rev598"
+  },
+  "known_ce_weapon_tags_in_core": 706,
+  "ce_schema_classes": 1555
+ },
+ "corpus_overview": {
+  "ce-core": {
+   "patch_files": 100,
+   "mods_or_folders": 1,
+   "operations_top_level": 1475,
+   "operations_nested": 254,
+   "files_with_bom": 1,
+   "files_with_parse_error": 0,
+   "files_using_ce_classes": 0,
+   "bytes": 586768
+  },
+  "ce-modpatches": {
+   "patch_files": 3574,
+   "mods_or_folders": 759,
+   "operations_top_level": 36795,
+   "operations_nested": 5993,
+   "files_with_bom": 56,
+   "files_with_parse_error": 0,
+   "files_using_ce_classes": 0,
+   "bytes": 19108856
+  },
+  "owner": {
+   "patch_files": 12,
+   "mods_or_folders": 7,
+   "operations_top_level": 12,
+   "operations_nested": 80,
+   "files_with_bom": 0,
+   "files_with_parse_error": 0,
+   "files_using_ce_classes": 0,
+   "bytes": 176080
+  },
+  "workshop": {
+   "patch_files": 355,
+   "mods_or_folders": 75,
+   "operations_top_level": 18677,
+   "operations_nested": 36393,
+   "files_with_bom": 9,
+   "files_with_parse_error": 0,
+   "files_using_ce_classes": 0,
+   "bytes": 18297910
+  }
+ },
+ "operation_classes": {
+  "ce-core": {
+   "total_operations": 1729,
+   "top_level": [
+    [
+     "PatchOperationReplace",
+     519,
+     35.19
+    ],
+    [
+     "PatchOperationAdd",
+     475,
+     32.2
+    ],
+    [
+     "PatchOperationConditional",
+     207,
+     14.03
+    ],
+    [
+     "PatchOperationAddModExtension",
+     126,
+     8.54
+    ],
+    [
+     "PatchOperationRemove",
+     66,
+     4.47
+    ],
+    [
+     "CombatExtended.PatchOperationMakeGunCECompatible",
+     30,
+     2.03
+    ],
+    [
+     "CombatExtended.PatchOperationSettingsConditional",
+     22,
+     1.49
+    ],
+    [
+     "PatchOperationAttributeSet",
+     21,
+     1.42
+    ],
+    [
+     "PatchOperationInsert",
+     6,
+     0.41
+    ],
+    [
+     "PatchOperationSequence",
+     2,
+     0.14
+    ],
+    [
+     "PatchOperationFindMod",
+     1,
+     0.07
+    ]
+   ],
+   "nested": [
+    [
+     "PatchOperationAdd",
+     217,
+     85.43
+    ],
+    [
+     "PatchOperationReplace",
+     29,
+     11.42
+    ],
+    [
+     "PatchOperationRemove",
+     5,
+     1.97
+    ],
+    [
+     "PatchOperationConditional",
+     2,
+     0.79
+    ],
+    [
+     "PatchOperationTest",
+     1,
+     0.39
+    ]
+   ],
+   "files_containing": {
+    "PatchOperationAdd": [
+     78,
+     78.0
+    ],
+    "PatchOperationReplace": [
+     65,
+     65.0
+    ],
+    "PatchOperationConditional": [
+     47,
+     47.0
+    ],
+    "PatchOperationAddModExtension": [
+     29,
+     29.0
+    ],
+    "PatchOperationRemove": [
+     19,
+     19.0
+    ],
+    "PatchOperationAttributeSet": [
+     8,
+     8.0
+    ],
+    "CombatExtended.PatchOperationMakeGunCECompatible": [
+     4,
+     4.0
+    ],
+    "CombatExtended.PatchOperationSettingsConditional": [
+     3,
+     3.0
+    ],
+    "PatchOperationInsert": [
+     3,
+     3.0
+    ],
+    "PatchOperationSequence": [
+     2,
+     2.0
+    ],
+    "PatchOperationFindMod": [
+     1,
+     1.0
+    ],
+    "PatchOperationTest": [
+     1,
+     1.0
+    ]
+   }
+  },
+  "ce-modpatches": {
+   "total_operations": 42788,
+   "top_level": [
+    [
+     "PatchOperationReplace",
+     16617,
+     45.16
+    ],
+    [
+     "PatchOperationAdd",
+     11105,
+     30.18
+    ],
+    [
+     "CombatExtended.PatchOperationMakeGunCECompatible",
+     3006,
+     8.17
+    ],
+    [
+     "PatchOperationAddModExtension",
+     2531,
+     6.88
+    ],
+    [
+     "PatchOperationConditional",
+     1789,
+     4.86
+    ],
+    [
+     "PatchOperationRemove",
+     1105,
+     3.0
+    ],
+    [
+     "PatchOperationFindMod",
+     292,
+     0.79
+    ],
+    [
+     "PatchOperationAttributeSet",
+     197,
+     0.54
+    ],
+    [
+     "PatchOperationSequence",
+     84,
+     0.23
+    ],
+    [
+     "CombatExtended.PatchOperationSettingsConditional",
+     42,
+     0.11
+    ],
+    [
+     "PatchOperationAttributeAdd",
+     9,
+     0.02
+    ],
+    [
+     "PatchOperationreplace",
+     9,
+     0.02
+    ],
+    [
+     "PatchOperationInsert",
+     7,
+     0.02
+    ],
+    [
+     "PatchOperationAttributeRemove",
+     1,
+     0.0
+    ],
+    [
+     "PatchOperationadd",
+     1,
+     0.0
+    ]
+   ],
+   "nested": [
+    [
+     "PatchOperationAdd",
+     3264,
+     54.46
+    ],
+    [
+     "PatchOperationReplace",
+     1523,
+     25.41
+    ],
+    [
+     "PatchOperationSequence",
+     304,
+     5.07
+    ],
+    [
+     "PatchOperationConditional",
+     268,
+     4.47
+    ],
+    [
+     "PatchOperationAddModExtension",
+     252,
+     4.2
+    ],
+    [
+     "PatchOperationRemove",
+     219,
+     3.65
+    ],
+    [
+     "CombatExtended.PatchOperationMakeGunCECompatible",
+     124,
+     2.07
+    ],
+    [
+     "PatchOperationAttributeSet",
+     25,
+     0.42
+    ],
+    [
+     "PatchOperationFindMod",
+     13,
+     0.22
+    ],
+    [
+     "PatchOperationTest",
+     1,
+     0.02
+    ]
+   ],
+   "files_containing": {
+    "PatchOperationReplace": [
+     2840,
+     79.46
+    ],
+    "PatchOperationAdd": [
+     2552,
+     71.4
+    ],
+    "PatchOperationAddModExtension": [
+     1283,
+     35.9
+    ],
+    "PatchOperationConditional": [
+     751,
+     21.01
+    ],
+    "CombatExtended.PatchOperationMakeGunCECompatible": [
+     574,
+     16.06
+    ],
+    "PatchOperationRemove": [
+     530,
+     14.83
+    ],
+    "PatchOperationSequence": [
+     297,
+     8.31
+    ],
+    "PatchOperationFindMod": [
+     282,
+     7.89
+    ],
+    "PatchOperationAttributeSet": [
+     114,
+     3.19
+    ],
+    "PatchOperationAttributeAdd": [
+     7,
+     0.2
+    ],
+    "CombatExtended.PatchOperationSettingsConditional": [
+     5,
+     0.14
+    ],
+    "PatchOperationInsert": [
+     4,
+     0.11
+    ],
+    "PatchOperationreplace": [
+     2,
+     0.06
+    ],
+    "PatchOperationAttributeRemove": [
+     1,
+     0.03
+    ],
+    "PatchOperationTest": [
+     1,
+     0.03
+    ],
+    "PatchOperationadd": [
+     1,
+     0.03
+    ]
+   }
+  },
+  "owner": {
+   "total_operations": 92,
+   "top_level": [
+    [
+     "PatchOperationFindMod",
+     10,
+     83.33
+    ],
+    [
+     "PatchOperationSequence",
+     2,
+     16.67
+    ]
+   ],
+   "nested": [
+    [
+     "PatchOperationReplace",
+     30,
+     37.5
+    ],
+    [
+     "CombatExtended.PatchOperationMakeGunCECompatible",
+     20,
+     25.0
+    ],
+    [
+     "PatchOperationAdd",
+     12,
+     15.0
+    ],
+    [
+     "PatchOperationSequence",
+     10,
+     12.5
+    ],
+    [
+     "PatchOperationAddModExtension",
+     6,
+     7.5
+    ],
+    [
+     "CombatExtended.PatchOperationFindMod",
+     2,
+     2.5
+    ]
+   ],
+   "files_containing": {
+    "PatchOperationSequence": [
+     10,
+     83.33
+    ],
+    "PatchOperationFindMod": [
+     9,
+     75.0
+    ],
+    "PatchOperationReplace": [
+     9,
+     75.0
+    ],
+    "PatchOperationAdd": [
+     6,
+     50.0
+    ],
+    "CombatExtended.PatchOperationMakeGunCECompatible": [
+     2,
+     16.67
+    ],
+    "PatchOperationAddModExtension": [
+     2,
+     16.67
+    ],
+    "CombatExtended.PatchOperationFindMod": [
+     1,
+     8.33
+    ]
+   }
+  },
+  "workshop": {
+   "total_operations": 55070,
+   "top_level": [
+    [
+     "PatchOperationConditional",
+     9641,
+     51.62
+    ],
+    [
+     "PatchOperationReplace",
+     5965,
+     31.94
+    ],
+    [
+     "PatchOperationRemove",
+     1020,
+     5.46
+    ],
+    [
+     "PatchOperationAdd",
+     825,
+     4.42
+    ],
+    [
+     "PatchOperationAddModExtension",
+     687,
+     3.68
+    ],
+    [
+     "PatchOperationFindMod",
+     232,
+     1.24
+    ],
+    [
+     "CombatExtended.PatchOperationMakeGunCECompatible",
+     128,
+     0.69
+    ],
+    [
+     "PatchOperationSequence",
+     126,
+     0.67
+    ],
+    [
+     "PatchOperationAttributeSet",
+     45,
+     0.24
+    ],
+    [
+     "XmlExtensions.OptionalPatch",
+     4,
+     0.02
+    ],
+    [
+     "VEF.PatchOperationToggableSequence",
+     2,
+     0.01
+    ],
+    [
+     "VFECore.PatchOperationToggableSequence",
+     2,
+     0.01
+    ]
+   ],
+   "nested": [
+    [
+     "PatchOperationAdd",
+     9665,
+     26.56
+    ],
+    [
+     "PatchOperationReplace",
+     9303,
+     25.56
+    ],
+    [
+     "PatchOperationRemove",
+     6505,
+     17.87
+    ],
+    [
+     "PatchOperationConditional",
+     5853,
+     16.08
+    ],
+    [
+     "CombatExtended.PatchOperationMakeGunCECompatible",
+     3257,
+     8.95
+    ],
+    [
+     "PatchOperationAddModExtension",
+     854,
+     2.35
+    ],
+    [
+     "PatchOperationSequence",
+     660,
+     1.81
+    ],
+    [
+     "SafePatcher.PatchOperationSetModExtension",
+     178,
+     0.49
+    ],
+    [
+     "PatchOperationFindMod",
+     47,
+     0.13
+    ],
+    [
+     "PatchOperationAttributeSet",
+     42,
+     0.12
+    ],
+    [
+     "PatchOperationTest",
+     24,
+     0.07
+    ],
+    [
+     "LWM.DeepStorage.PatchMessage",
+     2,
+     0.01
+    ],
+    [
+     "PatchOperationAddOrMerge",
+     1,
+     0.0
+    ],
+    [
+     "PatchOperationAddOrMergeCopy",
+     1,
+     0.0
+    ],
+    [
+     "XmlExtensions.OptionalPatch",
+     1,
+     0.0
+    ]
+   ],
+   "files_containing": {
+    "PatchOperationSequence": [
+     292,
+     82.25
+    ],
+    "PatchOperationReplace": [
+     277,
+     78.03
+    ],
+    "PatchOperationAdd": [
+     219,
+     61.69
+    ],
+    "PatchOperationFindMod": [
+     205,
+     57.75
+    ],
+    "PatchOperationRemove": [
+     130,
+     36.62
+    ],
+    "PatchOperationAddModExtension": [
+     129,
+     36.34
+    ],
+    "PatchOperationConditional": [
+     114,
+     32.11
+    ],
+    "CombatExtended.PatchOperationMakeGunCECompatible": [
+     106,
+     29.86
+    ],
+    "PatchOperationAttributeSet": [
+     20,
+     5.63
+    ],
+    "PatchOperationTest": [
+     9,
+     2.54
+    ],
+    "SafePatcher.PatchOperationSetModExtension": [
+     9,
+     2.54
+    ],
+    "XmlExtensions.OptionalPatch": [
+     5,
+     1.41
+    ],
+    "LWM.DeepStorage.PatchMessage": [
+     2,
+     0.56
+    ],
+    "PatchOperationAddOrMerge": [
+     1,
+     0.28
+    ],
+    "PatchOperationAddOrMergeCopy": [
+     1,
+     0.28
+    ],
+    "VEF.PatchOperationToggableSequence": [
+     1,
+     0.28
+    ],
+    "VFECore.PatchOperationToggableSequence": [
+     1,
+     0.28
+    ]
+   }
+  }
+ },
+ "xpath": {
+  "ce-core": {
+   "xpath_operations": 1674,
+   "selector_kinds": {
+    "defName": [
+     1474,
+     88.05
+    ],
+    "@Name": [
+     179,
+     10.69
+    ],
+    "type-only": [
+     10,
+     0.6
+    ],
+    "mixed-eq": [
+     8,
+     0.48
+    ],
+    "other": [
+     2,
+     0.12
+    ],
+    "@ParentName": [
+     1,
+     0.06
+    ]
+   },
+   "defName_alternatives": {
+    "1": 1391,
+    "10+": 1,
+    "4-9": 11,
+    "2-3": 71
+   },
+   "absolute_leading_slash": [
+    20,
+    1.19
+   ],
+   "descendant_axis": 5,
+   "def_node_types": [
+    [
+     "ThingDef",
+     883
+    ],
+    [
+     "BodyDef",
+     482
+    ],
+    [
+     "PawnKindDef",
+     54
+    ],
+    [
+     "StatDef",
+     45
+    ],
+    [
+     "BodyPartDef",
+     43
+    ],
+    [
+     "HediffDef",
+     42
+    ],
+    [
+     "DamageDef",
+     32
+    ],
+    [
+     "FactionDef",
+     19
+    ],
+    [
+     "TraderKindDef",
+     12
+    ],
+    [
+     "ResearchProjectDef",
+     10
+    ],
+    [
+     "TraitDef",
+     8
+    ],
+    [
+     "DutyDef",
+     7
+    ]
+   ],
+   "op_class_by_field": [
+    [
+     [
+      "Add",
+      "corePart"
+     ],
+     298
+    ],
+    [
+     [
+      "Replace",
+      "statBases"
+     ],
+     174
+    ],
+    [
+     [
+      "Conditional",
+      "corePart"
+     ],
+     150
+    ],
+    [
+     [
+      "Add",
+      "<def>"
+     ],
+     143
+    ],
+    [
+     [
+      "AddModExtension",
+      "<def>"
+     ],
+     126
+    ],
+    [
+     [
+      "Add",
+      "statBases"
+     ],
+     97
+    ],
+    [
+     [
+      "Replace",
+      "tools"
+     ],
+     82
+    ],
+    [
+     [
+      "Add",
+      "comps"
+     ],
+     40
+    ],
+    [
+     [
+      "Replace",
+      "label"
+     ],
+     32
+    ],
+    [
+     [
+      "Replace",
+      "corePart"
+     ],
+     30
+    ],
+    [
+     [
+      "Replace",
+      "comps"
+     ],
+     29
+    ],
+    [
+     [
+      "Conditional",
+      "comps"
+     ],
+     28
+    ],
+    [
+     [
+      "Remove",
+      "comps"
+     ],
+     21
+    ],
+    [
+     [
+      "Add",
+      "stuffProps"
+     ],
+     20
+    ],
+    [
+     [
+      "Replace",
+      "hitPoints"
+     ],
+     20
+    ],
+    [
+     [
+      "AttributeSet",
+      "<def>"
+     ],
+     17
+    ],
+    [
+     [
+      "Replace",
+      "description"
+     ],
+     16
+    ],
+    [
+     [
+      "Replace",
+      "costList"
+     ],
+     15
+    ],
+    [
+     [
+      "Add",
+      "graphicData"
+     ],
+     14
+    ],
+    [
+     [
+      "Replace",
+      "thingClass"
+     ],
+     14
+    ],
+    [
+     [
+      "Add",
+      "stockGenerators"
+     ],
+     11
+    ],
+    [
+     [
+      "Add",
+      "weaponTags"
+     ],
+     11
+    ],
+    [
+     [
+      "Replace",
+      "injuryProps"
+     ],
+     11
+    ],
+    [
+     [
+      "Replace",
+      "building"
+     ],
+     9
+    ],
+    [
+     [
+      "Replace",
+      "combatPower"
+     ],
+     9
+    ],
+    [
+     [
+      "Add",
+      "apparel"
+     ],
+     7
+    ],
+    [
+     [
+      "Remove",
+      "statBases"
+     ],
+     7
+    ],
+    [
+     [
+      "Replace",
+      "graphicData"
+     ],
+     7
+    ],
+    [
+     [
+      "Add",
+      "equippedStatOffsets"
+     ],
+     6
+    ],
+    [
+     [
+      "Add",
+      "pawnGroupMakers"
+     ],
+     6
+    ],
+    [
+     [
+      "Add",
+      "tags"
+     ],
+     6
+    ],
+    [
+     [
+      "Remove",
+      "equippedStatOffsets"
+     ],
+     6
+    ],
+    [
+     [
+      "Replace",
+      "fillPercent"
+     ],
+     6
+    ],
+    [
+     [
+      "Conditional",
+      "stuffProps"
+     ],
+     5
+    ],
+    [
+     [
+      "Conditional",
+      "weaponTags"
+     ],
+     5
+    ],
+    [
+     [
+      "Insert",
+      "li"
+     ],
+     5
+    ],
+    [
+     [
+      "Add",
+      "scenario"
+     ],
+     4
+    ],
+    [
+     [
+      "Add",
+      "tradeTags"
+     ],
+     4
+    ],
+    [
+     [
+      "Conditional",
+      "skills"
+     ],
+     4
+    ],
+    [
+     [
+      "Remove",
+      "costList"
+     ],
+     4
+    ]
+   ],
+   "last_step_is_list_item": 202,
+   "abstract_base_targets": [
+    [
+     "ApparelArmorPowerBase",
+     16
+    ],
+    [
+     "ApparelArmorHelmetPowerBase",
+     14
+    ],
+    [
+     "ApparelArmorReconBase",
+     12
+    ],
+    [
+     "ApparelArmorHelmetReconBase",
+     11
+    ],
+    [
+     "MechCentipede",
+     8
+    ],
+    [
+     "BaseBear",
+     7
+    ],
+    [
+     "PlayerFactionBase",
+     7
+    ],
+    [
+     "BaseArtilleryBuilding",
+     6
+    ],
+    [
+     "BaseMechanoid",
+     6
+    ],
+    [
+     "BigCatThingBase",
+     6
+    ],
+    [
+     "ThingBaseWolf",
+     6
+    ],
+    [
+     "TribeBase",
+     6
+    ],
+    [
+     "BasePawn",
+     5
+    ],
+    [
+     "WoolBase",
+     5
+    ],
+    [
+     "ArmorRatingBase",
+     4
+    ],
+    [
+     "AutocannonTurret",
+     4
+    ],
+    [
+     "TribalChiefBase",
+     4
+    ],
+    [
+     "BaseGrenadeProjectile",
+     3
+    ],
+    [
+     "BaseHare",
+     3
+    ],
+    [
+     "BaseMechanoidWalker",
+     3
+    ],
+    [
+     "MercenaryEliteTierBase",
+     3
+    ],
+    [
+     "SkyfallerBase",
+     3
+    ],
+    [
+     "StoneBlocksBase",
+     3
+    ],
+    [
+     "ThingBaseFox",
+     3
+    ],
+    [
+     "BaseInsect",
+     2
+    ]
+   ]
+  },
+  "ce-modpatches": {
+   "xpath_operations": 38923,
+   "selector_kinds": {
+    "defName": [
+     37094,
+     95.3
+    ],
+    "@Name": [
+     1684,
+     4.33
+    ],
+    "mixed-eq": [
+     108,
+     0.28
+    ],
+    "@ParentName": [
+     9,
+     0.02
+    ],
+    "not-defs": [
+     8,
+     0.02
+    ],
+    "other": [
+     6,
+     0.02
+    ],
+    "defs-only": [
+     4,
+     0.01
+    ],
+    "fuzzy": [
+     4,
+     0.01
+    ],
+    "compound": [
+     3,
+     0.01
+    ],
+    "type-only": [
+     2,
+     0.01
+    ],
+    "other-predicate": [
+     1,
+     0.0
+    ]
+   },
+   "defName_alternatives": {
+    "2-3": 2205,
+    "1": 33750,
+    "4-9": 921,
+    "10+": 218
+   },
+   "absolute_leading_slash": [
+    252,
+    0.65
+   ],
+   "descendant_axis": 337,
+   "def_node_types": [
+    [
+     "ThingDef",
+     27023
+    ],
+    [
+     "BodyDef",
+     4131
+    ],
+    [
+     "PawnKindDef",
+     1367
+    ],
+    [
+     "HediffDef",
+     1252
+    ],
+    [
+     "AlienRace.ThingDef_AlienRace",
+     1083
+    ],
+    [
+     "Vehicles.VehicleTurretDef",
+     646
+    ],
+    [
+     "Vehicles.VehicleDef",
+     643
+    ],
+    [
+     "VFEPirates.WarcasketDef",
+     610
+    ],
+    [
+     "RecipeDef",
+     565
+    ],
+    [
+     "ScenarioDef",
+     172
+    ],
+    [
+     "WeaponTraitDef",
+     148
+    ],
+    [
+     "VEF.Abilities.AbilityDef",
+     137
+    ]
+   ],
+   "op_class_by_field": [
+    [
+     [
+      "Replace",
+      "statBases"
+     ],
+     7498
+    ],
+    [
+     [
+      "Add",
+      "statBases"
+     ],
+     4608
+    ],
+    [
+     [
+      "Replace",
+      "tools"
+     ],
+     3597
+    ],
+    [
+     [
+      "AddModExtension",
+      "<def>"
+     ],
+     2783
+    ],
+    [
+     [
+      "Add",
+      "corePart"
+     ],
+     2714
+    ],
+    [
+     [
+      "Add",
+      "<def>"
+     ],
+     2695
+    ],
+    [
+     [
+      "Add",
+      "equippedStatOffsets"
+     ],
+     963
+    ],
+    [
+     [
+      "Add",
+      "comps"
+     ],
+     849
+    ],
+    [
+     [
+      "Conditional",
+      "corePart"
+     ],
+     816
+    ],
+    [
+     [
+      "Conditional",
+      "comps"
+     ],
+     622
+    ],
+    [
+     [
+      "Replace",
+      "equippedStatOffsets"
+     ],
+     609
+    ],
+    [
+     [
+      "Add",
+      "apparel"
+     ],
+     601
+    ],
+    [
+     [
+      "Replace",
+      "comps"
+     ],
+     586
+    ],
+    [
+     [
+      "Replace",
+      "stages"
+     ],
+     575
+    ],
+    [
+     [
+      "Replace",
+      "costList"
+     ],
+     477
+    ],
+    [
+     [
+      "Replace",
+      "components"
+     ],
+     421
+    ],
+    [
+     [
+      "Add",
+      "weaponTags"
+     ],
+     419
+    ],
+    [
+     [
+      "Replace",
+      "projectile"
+     ],
+     353
+    ],
+    [
+     [
+      "Add",
+      "*"
+     ],
+     328
+    ],
+    [
+     [
+      "Replace",
+      "verbs"
+     ],
+     283
+    ],
+    [
+     [
+      "Replace",
+      "ingredients"
+     ],
+     271
+    ],
+    [
+     [
+      "Replace",
+      "corePart"
+     ],
+     268
+    ],
+    [
+     [
+      "Replace",
+      "fixedIngredientFilter"
+     ],
+     257
+    ],
+    [
+     [
+      "Replace",
+      "combatPower"
+     ],
+     256
+    ],
+    [
+     [
+      "Remove",
+      "equippedStatOffsets"
+     ],
+     232
+    ],
+    [
+     [
+      "Replace",
+      "thingClass"
+     ],
+     217
+    ],
+    [
+     [
+      "AttributeSet",
+      "<def>"
+     ],
+     216
+    ],
+    [
+     [
+      "Add",
+      "stuffProps"
+     ],
+     213
+    ],
+    [
+     [
+      "Remove",
+      "comps"
+     ],
+     208
+    ],
+    [
+     [
+      "Replace",
+      "apparel"
+     ],
+     197
+    ],
+    [
+     [
+      "Remove",
+      "<def>"
+     ],
+     188
+    ],
+    [
+     [
+      "Conditional",
+      "weaponTags"
+     ],
+     186
+    ],
+    [
+     [
+      "Replace",
+      "label"
+     ],
+     178
+    ],
+    [
+     [
+      "Add",
+      "stages"
+     ],
+     175
+    ],
+    [
+     [
+      "Conditional",
+      "apparel"
+     ],
+     166
+    ],
+    [
+     [
+      "Remove",
+      "statBases"
+     ],
+     164
+    ],
+    [
+     [
+      "Replace",
+      "building"
+     ],
+     127
+    ],
+    [
+     [
+      "Add",
+      "scenario"
+     ],
+     123
+    ],
+    [
+     [
+      "Add",
+      "costList"
+     ],
+     120
+    ],
+    [
+     [
+      "Replace",
+      "description"
+     ],
+     118
+    ]
+   ],
+   "last_step_is_list_item": 1375,
+   "abstract_base_targets": [
+    [
+     "RM_VultureFalconBody",
+     27
+    ],
+    [
+     "O21_BaseMechadroid",
+     14
+    ],
+    [
+     "RHApparel_Armor_VigilanteBase",
+     14
+    ],
+    [
+     "HighMacsBase",
+     13
+    ],
+    [
+     "AURA_AuRa",
+     12
+    ],
+    [
+     "RH_ReactiveHelmet_DuskBase",
+     12
+    ],
+    [
+     "RH_ReactiveHelmet_VOIDBase",
+     12
+    ],
+    [
+     "DV_ApparelOutlawHelmetBase",
+     11
+    ],
+    [
+     "RH_VOIDReactiveBase",
+     11
+    ],
+    [
+     "RH_VengeanceGuardBase",
+     11
+    ],
+    [
+     "Tier2_Helmet",
+     11
+    ],
+    [
+     "Tier3_Helmet",
+     11
+    ],
+    [
+     "Tier4_Helmet",
+     11
+    ],
+    [
+     "VQE_BaseDrone",
+     11
+    ],
+    [
+     "AOC_SpaceApparelHelmetBase",
+     10
+    ],
+    [
+     "AOC_SpaceApparelBase",
+     9
+    ],
+    [
+     "APA_HelmetBase",
+     9
+    ],
+    [
+     "RHApparel_ArmorHelmetPower_VigilanteBase",
+     9
+    ],
+    [
+     "Tier1_Helmet",
+     9
+    ],
+    [
+     "WoodLogBase",
+     9
+    ],
+    [
+     "WoodLumberBase",
+     9
+    ],
+    [
+     "ApparelDragonArmorHelmetPowerBase",
+     8
+    ],
+    [
+     "ApparelDragonArmorPowerBase",
+     8
+    ],
+    [
+     "AutoMortarBase_GT",
+     8
+    ],
+    [
+     "DankPyon_LindwurmBase",
+     8
+    ]
+   ]
+  },
+  "owner": {
+   "xpath_operations": 48,
+   "selector_kinds": {
+    "defName": [
+     48,
+     100.0
+    ]
+   },
+   "defName_alternatives": {
+    "1": 39,
+    "4-9": 7,
+    "2-3": 2
+   },
+   "absolute_leading_slash": [
+    9,
+    18.75
+   ],
+   "descendant_axis": 0,
+   "def_node_types": [
+    [
+     "ThingDef",
+     39
+    ],
+    [
+     "PawnKindDef",
+     5
+    ],
+    [
+     "AlienRace.ThingDef_AlienRace",
+     4
+    ]
+   ],
+   "op_class_by_field": [
+    [
+     [
+      "Replace",
+      "<def>"
+     ],
+     20
+    ],
+    [
+     [
+      "Replace",
+      "tools"
+     ],
+     10
+    ],
+    [
+     [
+      "Add",
+      "statBases"
+     ],
+     6
+    ],
+    [
+     [
+      "AddModExtension",
+      "<def>"
+     ],
+     6
+    ],
+    [
+     [
+      "Add",
+      "equippedStatOffsets"
+     ],
+     5
+    ],
+    [
+     [
+      "Add",
+      "<def>"
+     ],
+     1
+    ]
+   ],
+   "last_step_is_list_item": 0,
+   "abstract_base_targets": []
+  },
+  "workshop": {
+   "xpath_operations": 50609,
+   "selector_kinds": {
+    "defName": [
+     49304,
+     97.42
+    ],
+    "@Name": [
+     1229,
+     2.43
+    ],
+    "defs-only": [
+     61,
+     0.12
+    ],
+    "mixed-eq": [
+     10,
+     0.02
+    ],
+    "@ParentName": [
+     5,
+     0.01
+    ]
+   },
+   "defName_alternatives": {
+    "1": 48739,
+    "10+": 106,
+    "2-3": 318,
+    "4-9": 141
+   },
+   "absolute_leading_slash": [
+    35100,
+    69.36
+   ],
+   "descendant_axis": 54,
+   "def_node_types": [
+    [
+     "ThingDef",
+     45928
+    ],
+    [
+     "PawnKindDef",
+     3693
+    ],
+    [
+     "BodyDef",
+     306
+    ],
+    [
+     "Vehicles.VehicleTurretDef",
+     226
+    ],
+    [
+     "Vehicles.VehicleDef",
+     169
+    ],
+    [
+     "HediffDef",
+     153
+    ],
+    [
+     "GenStepDef",
+     21
+    ],
+    [
+     "ApparelLayerDef",
+     15
+    ],
+    [
+     "DamageDef",
+     14
+    ],
+    [
+     "CombatExtended.AmmoSetDef",
+     12
+    ],
+    [
+     "StyleCategoryDef",
+     5
+    ],
+    [
+     "GameConditionDef",
+     3
+    ]
+   ],
+   "op_class_by_field": [
+    [
+     [
+      "Replace",
+      "race"
+     ],
+     6863
+    ],
+    [
+     [
+      "Conditional",
+      "race"
+     ],
+     6856
+    ],
+    [
+     [
+      "Replace",
+      "statBases"
+     ],
+     4962
+    ],
+    [
+     [
+      "Conditional",
+      "statBases"
+     ],
+     4425
+    ],
+    [
+     [
+      "Remove",
+      "race"
+     ],
+     4055
+    ],
+    [
+     [
+      "Add",
+      "race"
+     ],
+     3565
+    ],
+    [
+     [
+      "Add",
+      "statBases"
+     ],
+     3343
+    ],
+    [
+     [
+      "Add",
+      "<def>"
+     ],
+     2040
+    ],
+    [
+     [
+      "Remove",
+      "statBases"
+     ],
+     1592
+    ],
+    [
+     [
+      "AddModExtension",
+      "<def>"
+     ],
+     1541
+    ],
+    [
+     [
+      "Conditional",
+      "modExtensions"
+     ],
+     1248
+    ],
+    [
+     [
+      "Conditional",
+      "comps"
+     ],
+     839
+    ],
+    [
+     [
+      "Conditional",
+      "tools"
+     ],
+     824
+    ],
+    [
+     [
+      "Remove",
+      "tools"
+     ],
+     824
+    ],
+    [
+     [
+      "Replace",
+      "tools"
+     ],
+     554
+    ],
+    [
+     [
+      "Replace",
+      "comps"
+     ],
+     511
+    ],
+    [
+     [
+      "Add",
+      "comps"
+     ],
+     462
+    ],
+    [
+     [
+      "Replace",
+      "modExtensions"
+     ],
+     425
+    ],
+    [
+     [
+      "Conditional",
+      "moveSpeedFactorByTerrainTag"
+     ],
+     423
+    ],
+    [
+     [
+      "Add",
+      "modExtensions"
+     ],
+     415
+    ],
+    [
+     [
+      "Replace",
+      "combatPower"
+     ],
+     397
+    ],
+    [
+     [
+      "Remove",
+      "moveSpeedFactorByTerrainTag"
+     ],
+     380
+    ],
+    [
+     [
+      "Replace",
+      "ecoSystemWeight"
+     ],
+     371
+    ],
+    [
+     [
+      "Replace",
+      "canArriveManhunter"
+     ],
+     323
+    ],
+    [
+     [
+      "Conditional",
+      "canArriveManhunter"
+     ],
+     287
+    ],
+    [
+     [
+      "Remove",
+      "tradeTags"
+     ],
+     263
+    ],
+    [
+     [
+      "Remove",
+      "wildGroupSize"
+     ],
+     244
+    ],
+    [
+     [
+      "Conditional",
+      "wildGroupSize"
+     ],
+     232
+    ],
+    [
+     [
+      "Add",
+      "tradeTags"
+     ],
+     231
+    ],
+    [
+     [
+      "SafePatcher.SetModExtension",
+      "<def>"
+     ],
+     178
+    ],
+    [
+     [
+      "Replace",
+      "wildGroupSize"
+     ],
+     169
+    ],
+    [
+     [
+      "Conditional",
+      "ecoSystemWeight"
+     ],
+     144
+    ],
+    [
+     [
+      "Replace",
+      "components"
+     ],
+     135
+    ],
+    [
+     [
+      "Add",
+      "corePart"
+     ],
+     131
+    ],
+    [
+     [
+      "Add",
+      "graphicData"
+     ],
+     102
+    ],
+    [
+     [
+      "AttributeSet",
+      "<def>"
+     ],
+     85
+    ],
+    [
+     [
+      "Conditional",
+      "corePart"
+     ],
+     65
+    ],
+    [
+     [
+      "Conditional",
+      "tradeTags"
+     ],
+     65
+    ],
+    [
+     [
+      "Add",
+      "*"
+     ],
+     54
+    ],
+    [
+     [
+      "Replace",
+      "graphicData"
+     ],
+     52
+    ]
+   ],
+   "last_step_is_list_item": 3118,
+   "abstract_base_targets": [
+    [
+     "VAEWaste_BaseInsect",
+     112
+    ],
+    [
+     "BaseHare",
+     104
+    ],
+    [
+     "BigBirdThingBase",
+     104
+    ],
+    [
+     "ThingBaseFox",
+     92
+    ],
+    [
+     "BaseInsect",
+     91
+    ],
+    [
+     "SmallBirdThingBase",
+     90
+    ],
+    [
+     "BaseInsect2",
+     86
+    ],
+    [
+     "AA_AlphaBaseInsect",
+     85
+    ],
+    [
+     "BigCatThingBase",
+     81
+    ],
+    [
+     "ThingBaseWolf",
+     80
+    ],
+    [
+     "BaseBear",
+     77
+    ],
+    [
+     "GS_DragonBase",
+     54
+    ],
+    [
+     "AnimalKindBaseWolf",
+     8
+    ],
+    [
+     "AM_CataphractHelmet",
+     7
+    ],
+    [
+     "AnimalKindBaseFox",
+     7
+    ],
+    [
+     "BigCatKindBase",
+     7
+    ],
+    [
+     "InsectKindBase",
+     7
+    ],
+    [
+     "BearBase",
+     6
+    ],
+    [
+     "BigBirdKindBase",
+     6
+    ],
+    [
+     "HareBase",
+     6
+    ],
+    [
+     "StellicGuardBase",
+     6
+    ],
+    [
+     "CataphractBase",
+     3
+    ],
+    [
+     "ImperialFighterBase",
+     3
+    ],
+    [
+     "AMBossBase",
+     2
+    ],
+    [
+     "AM_MercenaryBase",
+     2
+    ]
+   ]
+  }
+ },
+ "sequences": {
+  "ce-core": {
+   "bigrams": [
+    [
+     [
+      "Add:corePart/parts",
+      "Add:corePart/parts"
+     ],
+     105
+    ],
+    [
+     [
+      "Conditional:corePart/parts",
+      "Conditional:corePart/parts"
+     ],
+     104
+    ],
+    [
+     [
+      "Replace:tools",
+      "AddModExt:RacePropertiesExtensionCE"
+     ],
+     32
+    ],
+    [
+     [
+      "Replace:statBases/MoveSpeed",
+      "Replace:tools"
+     ],
+     30
+    ],
+    [
+     [
+      "Conditional:comps",
+      "Add:comps"
+     ],
+     28
+    ],
+    [
+     [
+      "AddModExt:RacePropertiesExtensionCE",
+      "Replace:statBases/MoveSpeed"
+     ],
+     24
+    ],
+    [
+     [
+      "Replace:corePart/parts",
+      "Replace:corePart/parts"
+     ],
+     24
+    ],
+    [
+     [
+      "Add:statBases",
+      "Replace:tools"
+     ],
+     23
+    ],
+    [
+     [
+      "CE.SettingsConditional",
+      "CE.SettingsConditional"
+     ],
+     19
+    ],
+    [
+     [
+      "AddModExt:RacePropertiesExtensionCE",
+      "Add:statBases"
+     ],
+     18
+    ],
+    [
+     [
+      "Add:<def>",
+      "Add:<def>"
+     ],
+     17
+    ],
+    [
+     [
+      "Add:corePart/groups",
+      "Add:corePart/parts"
+     ],
+     17
+    ]
+   ],
+   "trigrams": [
+    [
+     [
+      "Conditional:corePart/parts",
+      "Conditional:corePart/parts",
+      "Conditional:corePart/parts"
+     ],
+     88
+    ],
+    [
+     [
+      "Add:corePart/parts",
+      "Add:corePart/parts",
+      "Add:corePart/parts"
+     ],
+     85
+    ],
+    [
+     [
+      "AddModExt:RacePropertiesExtensionCE",
+      "Replace:statBases/MoveSpeed",
+      "Replace:tools"
+     ],
+     21
+    ],
+    [
+     [
+      "Replace:statBases/MoveSpeed",
+      "Replace:tools",
+      "AddModExt:RacePropertiesExtensionCE"
+     ],
+     20
+    ],
+    [
+     [
+      "Replace:corePart/parts",
+      "Replace:corePart/parts",
+      "Replace:corePart/parts"
+     ],
+     19
+    ],
+    [
+     [
+      "Add:corePart/groups",
+      "Add:corePart/parts",
+      "Add:corePart/parts"
+     ],
+     17
+    ],
+    [
+     [
+      "CE.SettingsConditional",
+      "CE.SettingsConditional",
+      "CE.SettingsConditional"
+     ],
+     16
+    ],
+    [
+     [
+      "Conditional:corePart/groups",
+      "Conditional:corePart/parts",
+      "Conditional:corePart/parts"
+     ],
+     16
+    ],
+    [
+     [
+      "Conditional:corePart/parts",
+      "Add:corePart/groups",
+      "Add:corePart/parts"
+     ],
+     16
+    ],
+    [
+     [
+      "Conditional:corePart/parts",
+      "Conditional:corePart/parts",
+      "Add:corePart/groups"
+     ],
+     16
+    ],
+    [
+     [
+      "AddModExt:RacePropertiesExtensionCE",
+      "Add:statBases",
+      "Replace:tools"
+     ],
+     14
+    ],
+    [
+     [
+      "Replace:statBases/StuffPower_Armor_Sharp",
+      "Replace:statBases/StuffPower_Armor_Blunt",
+      "Replace:statBases/StuffPower_Armor_Heat"
+     ],
+     14
+    ]
+   ]
+  },
+  "ce-modpatches": {
+   "bigrams": [
+    [
+     [
+      "MakeGun",
+      "MakeGun"
+     ],
+     1846
+    ],
+    [
+     [
+      "Replace:statBases/ArmorRating_Sharp",
+      "Replace:statBases/ArmorRating_Blunt"
+     ],
+     1321
+    ],
+    [
+     [
+      "Add:corePart/parts",
+      "Add:corePart/parts"
+     ],
+     1084
+    ],
+    [
+     [
+      "Replace:tools",
+      "Add:statBases"
+     ],
+     916
+    ],
+    [
+     [
+      "Add:statBases",
+      "Replace:tools"
+     ],
+     880
+    ],
+    [
+     [
+      "AddModExt:RacePropertiesExtensionCE",
+      "Add:statBases"
+     ],
+     722
+    ],
+    [
+     [
+      "Add:statBases",
+      "Add:<def>"
+     ],
+     552
+    ],
+    [
+     [
+      "AddModExt:LoadoutPropertiesExtension",
+      "AddModExt:LoadoutPropertiesExtension"
+     ],
+     527
+    ],
+    [
+     [
+      "Add:statBases",
+      "Replace:statBases/ArmorRating_Sharp"
+     ],
+     526
+    ],
+    [
+     [
+      "Replace:statBases/ArmorRating_Blunt",
+      "Replace:statBases/ArmorRating_Sharp"
+     ],
+     517
+    ],
+    [
+     [
+      "Conditional:corePart/parts",
+      "Conditional:corePart/parts"
+     ],
+     467
+    ],
+    [
+     [
+      "Conditional:comps",
+      "Add:comps"
+     ],
+     416
+    ]
+   ],
+   "trigrams": [
+    [
+     [
+      "MakeGun",
+      "MakeGun",
+      "MakeGun"
+     ],
+     1512
+    ],
+    [
+     [
+      "Add:corePart/parts",
+      "Add:corePart/parts",
+      "Add:corePart/parts"
+     ],
+     928
+    ],
+    [
+     [
+      "Add:statBases",
+      "Replace:statBases/ArmorRating_Sharp",
+      "Replace:statBases/ArmorRating_Blunt"
+     ],
+     491
+    ],
+    [
+     [
+      "AddModExt:RacePropertiesExtensionCE",
+      "Add:statBases",
+      "Replace:tools"
+     ],
+     438
+    ],
+    [
+     [
+      "Replace:tools",
+      "Add:statBases",
+      "Add:<def>"
+     ],
+     437
+    ],
+    [
+     [
+      "Conditional:corePart/parts",
+      "Conditional:corePart/parts",
+      "Conditional:corePart/parts"
+     ],
+     367
+    ],
+    [
+     [
+      "AddModExt:LoadoutPropertiesExtension",
+      "AddModExt:LoadoutPropertiesExtension",
+      "AddModExt:LoadoutPropertiesExtension"
+     ],
+     366
+    ],
+    [
+     [
+      "Replace:stages/li",
+      "Replace:stages/li",
+      "Replace:stages/li"
+     ],
+     299
+    ],
+    [
+     [
+      "Replace:tools",
+      "Conditional:comps",
+      "Add:comps"
+     ],
+     284
+    ],
+    [
+     [
+      "Add:statBases",
+      "Add:<def>",
+      "Replace:tools"
+     ],
+     272
+    ],
+    [
+     [
+      "Add:<def>",
+      "Replace:tools",
+      "Add:statBases"
+     ],
+     243
+    ],
+    [
+     [
+      "Replace:corePart/parts",
+      "Replace:corePart/parts",
+      "Replace:corePart/parts"
+     ],
+     234
+    ]
+   ]
+  },
+  "owner": {
+   "bigrams": [
+    [
+     [
+      "FindMod",
+      "FindMod"
+     ],
+     1
+    ],
+    [
+     [
+      "Sequence",
+      "Sequence"
+     ],
+     1
+    ]
+   ],
+   "trigrams": []
+  },
+  "workshop": {
+   "bigrams": [
+    [
+     [
+      "Conditional:statBases/ArmorRating_Blunt",
+      "Conditional:statBases/ArmorRating_Sharp"
+     ],
+     402
+    ],
+    [
+     [
+      "Conditional:tools",
+      "Add:<def>"
+     ],
+     390
+    ],
+    [
+     [
+      "Conditional:race/waterCellCost",
+      "Conditional:race/waterSeeker"
+     ],
+     387
+    ],
+    [
+     [
+      "Conditional:race/waterSeeker",
+      "Conditional:race/canFishForFood"
+     ],
+     386
+    ],
+    [
+     [
+      "Conditional:statBases/ArmorRating_Sharp",
+      "Conditional:statBases/ToxicEnvironmentResistance"
+     ],
+     371
+    ],
+    [
+     [
+      "Conditional:statBases/ToxicEnvironmentResistance",
+      "Conditional:tools"
+     ],
+     348
+    ],
+    [
+     [
+      "Replace:race/baseHealthScale",
+      "Replace:race/baseHungerRate"
+     ],
+     343
+    ],
+    [
+     [
+      "Add:<def>",
+      "Replace:race/baseBodySize"
+     ],
+     342
+    ],
+    [
+     [
+      "Replace:race/baseBodySize",
+      "Replace:race/baseHealthScale"
+     ],
+     326
+    ],
+    [
+     [
+      "Replace:statBases/MarketValue",
+      "Replace:statBases/MoveSpeed"
+     ],
+     317
+    ],
+    [
+     [
+      "AddModExt:other",
+      "AddModExt:other"
+     ],
+     313
+    ],
+    [
+     [
+      "Replace:race/baseHungerRate",
+      "Replace:race/lifeExpectancy"
+     ],
+     305
+    ]
+   ],
+   "trigrams": [
+    [
+     [
+      "Conditional:race/waterCellCost",
+      "Conditional:race/waterSeeker",
+      "Conditional:race/canFishForFood"
+     ],
+     385
+    ],
+    [
+     [
+      "Conditional:statBases/ArmorRating_Blunt",
+      "Conditional:statBases/ArmorRating_Sharp",
+      "Conditional:statBases/ToxicEnvironmentResistance"
+     ],
+     371
+    ],
+    [
+     [
+      "Conditional:statBases/ArmorRating_Sharp",
+      "Conditional:statBases/ToxicEnvironmentResistance",
+      "Conditional:tools"
+     ],
+     348
+    ],
+    [
+     [
+      "Conditional:tools",
+      "Add:<def>",
+      "Replace:race/baseBodySize"
+     ],
+     342
+    ],
+    [
+     [
+      "Conditional:statBases/ToxicEnvironmentResistance",
+      "Conditional:tools",
+      "Add:<def>"
+     ],
+     341
+    ],
+    [
+     [
+      "Add:<def>",
+      "Replace:race/baseBodySize",
+      "Replace:race/baseHealthScale"
+     ],
+     326
+    ],
+    [
+     [
+      "Replace:race/baseBodySize",
+      "Replace:race/baseHealthScale",
+      "Replace:race/baseHungerRate"
+     ],
+     314
+    ],
+    [
+     [
+      "Replace:race/baseHealthScale",
+      "Replace:race/baseHungerRate",
+      "Replace:race/lifeExpectancy"
+     ],
+     295
+    ],
+    [
+     [
+      "Conditional:statBases/ComfyTemperatureMax",
+      "Conditional:statBases/ArmorRating_Blunt",
+      "Conditional:statBases/ArmorRating_Sharp"
+     ],
+     276
+    ],
+    [
+     [
+      "Replace:statBases/MarketValue",
+      "Replace:statBases/MoveSpeed",
+      "Replace:statBases/Wildness"
+     ],
+     263
+    ],
+    [
+     [
+      "Conditional:moveSpeedFactorByTerrainTag/li",
+      "Replace:statBases/MarketValue",
+      "Replace:statBases/MoveSpeed"
+     ],
+     240
+    ],
+    [
+     [
+      "Conditional:race/petness",
+      "Conditional:race/nuzzleMtbHours",
+      "Conditional:race/mateMtbHours"
+     ],
+     235
+    ]
+   ]
+  }
+ },
+ "idioms": {
+  "ce-core": {
+   "conditional_branch_shapes": [
+    [
+     [
+      "match=-",
+      "nomatch=Add"
+     ],
+     191
+    ],
+    [
+     [
+      "match=Add",
+      "nomatch=Add"
+     ],
+     9
+    ],
+    [
+     [
+      "match=Replace",
+      "nomatch=Add"
+     ],
+     4
+    ],
+    [
+     [
+      "match=Remove",
+      "nomatch=-"
+     ],
+     3
+    ],
+    [
+     [
+      "match=Conditional",
+      "nomatch=Add"
+     ],
+     2
+    ]
+   ],
+   "ensure_container_idiom_by_field": [
+    [
+     "comps",
+     28
+    ],
+    [
+     "weaponTags",
+     5
+    ],
+    [
+     "skills",
+     4
+    ],
+    [
+     "tags",
+     3
+    ],
+    [
+     "statBases",
+     2
+    ],
+    [
+     "tradeTags",
+     2
+    ],
+    [
+     "apparelRequired",
+     1
+    ],
+    [
+     "apparelStuffFilter",
+     1
+    ],
+    [
+     "parts",
+     1
+    ],
+    [
+     "stuffProps",
+     1
+    ]
+   ],
+   "add_into_optional_container": {
+    "total": 124,
+    "preceded_by_ensure_or_def_add": 29,
+    "not_guarded_in_file": 95,
+    "unguarded_by_field": [
+     [
+      "statBases",
+      77
+     ],
+     [
+      "comps",
+      8
+     ],
+     [
+      "weaponTags",
+      5
+     ],
+     [
+      "equippedStatOffsets",
+      2
+     ],
+     [
+      "tradeTags",
+      2
+     ],
+     [
+      "verbs",
+      1
+     ]
+    ]
+   },
+   "top_level_signatures": [
+    [
+     "Add:corePart/parts",
+     129
+    ],
+    [
+     "Conditional:corePart/parts",
+     126
+    ],
+    [
+     "Add:statBases",
+     96
+    ],
+    [
+     "Add:<def>",
+     95
+    ],
+    [
+     "Replace:tools",
+     82
+    ],
+    [
+     "AddModExt:RacePropertiesExtensionCE",
+     57
+    ],
+    [
+     "Add:comps",
+     37
+    ],
+    [
+     "Replace:statBases/MoveSpeed",
+     33
+    ],
+    [
+     "MakeGun",
+     30
+    ],
+    [
+     "Replace:corePart/parts",
+     30
+    ],
+    [
+     "Conditional:comps",
+     28
+    ],
+    [
+     "Replace:comps/li",
+     26
+    ],
+    [
+     "Conditional:corePart/groups",
+     24
+    ],
+    [
+     "CE.SettingsConditional",
+     22
+    ],
+    [
+     "AddModExt:LoadoutPropertiesExtension",
+     20
+    ],
+    [
+     "Remove:comps/li",
+     20
+    ],
+    [
+     "Replace:hitPoints",
+     20
+    ],
+    [
+     "Replace:statBases/StuffPower_Armor_Sharp",
+     20
+    ],
+    [
+     "Add:corePart/groups",
+     19
+    ],
+    [
+     "AddModExt:GunDrawExtension",
+     17
+    ],
+    [
+     "AttributeSet:<def>",
+     17
+    ],
+    [
+     "Replace:description",
+     16
+    ],
+    [
+     "Replace:statBases/StuffPower_Armor_Blunt",
+     16
+    ],
+    [
+     "Add:graphicData",
+     14
+    ],
+    [
+     "Replace:statBases/ArmorRating_Blunt",
+     14
+    ],
+    [
+     "Replace:statBases/ArmorRating_Sharp",
+     14
+    ],
+    [
+     "Replace:statBases/Mass",
+     14
+    ],
+    [
+     "Replace:statBases/StuffPower_Armor_Heat",
+     14
+    ],
+    [
+     "Replace:thingClass",
+     14
+    ],
+    [
+     "Replace:statBases/StuffEffectMultiplierArmor",
+     12
+    ]
+   ]
+  },
+  "ce-modpatches": {
+   "conditional_branch_shapes": [
+    [
+     [
+      "match=-",
+      "nomatch=Add"
+     ],
+     1461
+    ],
+    [
+     [
+      "match=Add",
+      "nomatch=Add"
+     ],
+     525
+    ],
+    [
+     [
+      "match=Remove",
+      "nomatch=-"
+     ],
+     14
+    ],
+    [
+     [
+      "match=Replace",
+      "nomatch=-"
+     ],
+     12
+    ],
+    [
+     [
+      "match=Replace",
+      "nomatch=Add"
+     ],
+     12
+    ],
+    [
+     [
+      "match=Add",
+      "nomatch=-"
+     ],
+     11
+    ],
+    [
+     [
+      "match=Sequence",
+      "nomatch=-"
+     ],
+     10
+    ],
+    [
+     [
+      "match=Conditional",
+      "nomatch=Add"
+     ],
+     6
+    ],
+    [
+     [
+      "match=-",
+      "nomatch=Sequence"
+     ],
+     2
+    ],
+    [
+     [
+      "match=Remove",
+      "nomatch=Remove"
+     ],
+     2
+    ]
+   ],
+   "ensure_container_idiom_by_field": [
+    [
+     "comps",
+     612
+    ],
+    [
+     "weaponTags",
+     184
+    ],
+    [
+     "equippedStatOffsets",
+     67
+    ],
+    [
+     "statBases",
+     55
+    ],
+    [
+     "tradeTags",
+     20
+    ],
+    [
+     "tags",
+     5
+    ],
+    [
+     "apparelRequired",
+     3
+    ],
+    [
+     "apparelStuffFilter",
+     3
+    ],
+    [
+     "apparel",
+     2
+    ],
+    [
+     "ignoresPainShock",
+     2
+    ],
+    [
+     "thingClass",
+     2
+    ],
+    [
+     "damageMultipliers",
+     1
+    ]
+   ],
+   "add_into_optional_container": {
+    "total": 6181,
+    "preceded_by_ensure_or_def_add": 676,
+    "not_guarded_in_file": 5505,
+    "unguarded_by_field": [
+     [
+      "statBases",
+      4073
+     ],
+     [
+      "equippedStatOffsets",
+      797
+     ],
+     [
+      "weaponTags",
+      289
+     ],
+     [
+      "comps",
+      167
+     ],
+     [
+      "costList",
+      100
+     ],
+     [
+      "apparel",
+      40
+     ],
+     [
+      "tools",
+      23
+     ],
+     [
+      "recipeMaker",
+      6
+     ],
+     [
+      "verbs",
+      5
+     ],
+     [
+      "stuffCategories",
+      3
+     ]
+    ]
+   },
+   "top_level_signatures": [
+    [
+     "Add:statBases",
+     4301
+    ],
+    [
+     "Replace:tools",
+     3313
+    ],
+    [
+     "MakeGun",
+     3006
+    ],
+    [
+     "Replace:statBases/ArmorRating_Sharp",
+     1891
+    ],
+    [
+     "Replace:statBases/ArmorRating_Blunt",
+     1843
+    ],
+    [
+     "Add:<def>",
+     1606
+    ],
+    [
+     "Add:corePart/parts",
+     1242
+    ],
+    [
+     "AddModExt:RacePropertiesExtensionCE",
+     1140
+    ],
+    [
+     "Replace:statBases/StuffEffectMultiplierArmor",
+     918
+    ],
+    [
+     "Add:equippedStatOffsets",
+     887
+    ],
+    [
+     "AddModExt:LoadoutPropertiesExtension",
+     839
+    ],
+    [
+     "Add:comps",
+     706
+    ],
+    [
+     "Replace:statBases/Mass",
+     596
+    ],
+    [
+     "Conditional:corePart/parts",
+     576
+    ],
+    [
+     "Conditional:comps",
+     543
+    ],
+    [
+     "Replace:stages/li",
+     505
+    ],
+    [
+     "Replace:comps/li",
+     496
+    ],
+    [
+     "Add:weaponTags",
+     397
+    ],
+    [
+     "AddModExt:PartialArmorExt",
+     340
+    ],
+    [
+     "Replace:statBases/StuffPower_Armor_Sharp",
+     328
+    ],
+    [
+     "FindMod",
+     292
+    ],
+    [
+     "Replace:statBases/StuffPower_Armor_Blunt",
+     271
+    ],
+    [
+     "Replace:corePart/parts",
+     268
+    ],
+    [
+     "Replace:components/li",
+     266
+    ],
+    [
+     "Replace:statBases/MaxHitPoints",
+     258
+    ],
+    [
+     "Replace:ingredients",
+     256
+    ],
+    [
+     "Replace:fixedIngredientFilter",
+     255
+    ],
+    [
+     "Replace:projectile",
+     251
+    ],
+    [
+     "Replace:combatPower",
+     235
+    ],
+    [
+     "Add:*/groups",
+     213
+    ]
+   ]
+  },
+  "owner": {
+   "conditional_branch_shapes": [],
+   "ensure_container_idiom_by_field": [],
+   "add_into_optional_container": {
+    "total": 0,
+    "preceded_by_ensure_or_def_add": 0,
+    "not_guarded_in_file": 0,
+    "unguarded_by_field": []
+   },
+   "top_level_signatures": [
+    [
+     "FindMod",
+     10
+    ],
+    [
+     "Sequence",
+     2
+    ]
+   ]
+  },
+  "workshop": {
+   "conditional_branch_shapes": [
+    [
+     [
+      "match=Replace",
+      "nomatch=Add"
+     ],
+     7075
+    ],
+    [
+     [
+      "match=Remove",
+      "nomatch=-"
+     ],
+     6426
+    ],
+    [
+     [
+      "match=-",
+      "nomatch=Add"
+     ],
+     538
+    ],
+    [
+     [
+      "match=Replace",
+      "nomatch=-"
+     ],
+     430
+    ],
+    [
+     [
+      "match=Add",
+      "nomatch=-"
+     ],
+     420
+    ],
+    [
+     [
+      "match=Sequence",
+      "nomatch=AddModExtension"
+     ],
+     415
+    ],
+    [
+     [
+      "match=Add",
+      "nomatch=Add"
+     ],
+     164
+    ],
+    [
+     [
+      "match=AttributeSet",
+      "nomatch=-"
+     ],
+     22
+    ],
+    [
+     [
+      "match=Sequence",
+      "nomatch=-"
+     ],
+     3
+    ],
+    [
+     [
+      "match=-",
+      "nomatch=Sequence"
+     ],
+     1
+    ]
+   ],
+   "ensure_container_idiom_by_field": [
+    [
+     "comps",
+     421
+    ],
+    [
+     "canArriveManhunter",
+     268
+    ],
+    [
+     "ecoSystemWeight",
+     141
+    ],
+    [
+     "wildGroupSize",
+     59
+    ],
+    [
+     "combatPower",
+     31
+    ],
+    [
+     "tradeTags",
+     25
+    ],
+    [
+     "moveSpeedFactorByTerrainTag",
+     22
+    ],
+    [
+     "statBases",
+     16
+    ],
+    [
+     "race",
+     9
+    ]
+   ],
+   "add_into_optional_container": {
+    "total": 288,
+    "preceded_by_ensure_or_def_add": 7,
+    "not_guarded_in_file": 281,
+    "unguarded_by_field": [
+     [
+      "tradeTags",
+      205
+     ],
+     [
+      "statBases",
+      57
+     ],
+     [
+      "costList",
+      7
+     ],
+     [
+      "comps",
+      6
+     ],
+     [
+      "equippedStatOffsets",
+      4
+     ],
+     [
+      "weaponTags",
+      2
+     ]
+    ]
+   },
+   "top_level_signatures": [
+    [
+     "AddModExt:other",
+     630
+    ],
+    [
+     "Add:<def>",
+     473
+    ],
+    [
+     "Conditional:race/specialTrainables",
+     425
+    ],
+    [
+     "Conditional:statBases/ArmorRating_Blunt",
+     402
+    ],
+    [
+     "Conditional:statBases/ArmorRating_Sharp",
+     402
+    ],
+    [
+     "Conditional:tools",
+     400
+    ],
+    [
+     "Conditional:race/useLeatherFrom",
+     395
+    ],
+    [
+     "Conditional:race/canFishForFood",
+     394
+    ],
+    [
+     "Conditional:race/waterSeeker",
+     390
+    ],
+    [
+     "Conditional:race/waterCellCost",
+     389
+    ],
+    [
+     "Replace:race/lifeStageAges",
+     388
+    ],
+    [
+     "Conditional:moveSpeedFactorByTerrainTag/li",
+     385
+    ],
+    [
+     "Conditional:race/mateMtbHours",
+     375
+    ],
+    [
+     "Conditional:statBases/ToxicEnvironmentResistance",
+     371
+    ],
+    [
+     "Replace:combatPower",
+     361
+    ],
+    [
+     "Replace:statBases/MarketValue",
+     360
+    ],
+    [
+     "Replace:race/baseHealthScale",
+     357
+    ],
+    [
+     "Replace:race/baseHungerRate",
+     355
+    ],
+    [
+     "Conditional:race/herdMigrationAllowed",
+     349
+    ],
+    [
+     "Conditional:race/nameOnTameChance",
+     346
+    ],
+    [
+     "Replace:race/baseBodySize",
+     342
+    ],
+    [
+     "Replace:statBases/ComfyTemperatureMin",
+     340
+    ],
+    [
+     "Replace:statBases/MoveSpeed",
+     332
+    ],
+    [
+     "Conditional:race/petness",
+     323
+    ],
+    [
+     "Conditional:race/roamMtbDays",
+     321
+    ],
+    [
+     "Conditional:race/maxPreyBodySize",
+     317
+    ],
+    [
+     "Replace:race/lifeExpectancy",
+     316
+    ],
+    [
+     "Replace:statBases/Wildness",
+     303
+    ],
+    [
+     "Conditional:race/packAnimal",
+     301
+    ],
+    [
+     "Conditional:statBases/ComfyTemperatureMax",
+     276
+    ]
+   ]
+  }
+ },
+ "gating": {
+  "ce-core": {
+   "top_level_operations": 1475,
+   "gate_kinds": [
+    [
+     "direct",
+     1243,
+     84.27
+    ],
+    [
+     "Conditional(xpath)",
+     207,
+     14.03
+    ],
+    [
+     "CE.SettingsConditional",
+     22,
+     1.49
+    ],
+    [
+     "FindMod(vanilla) nomatch-only",
+     1,
+     0.07
+    ],
+    [
+     "Sequence[first=Remove]",
+     1,
+     0.07
+    ],
+    [
+     "Sequence[first=Test]",
+     1,
+     0.07
+    ]
+   ],
+   "sequence_success_flags": [
+    [
+     [
+      "Sequence[first=Remove]",
+      "default"
+     ],
+     1
+    ],
+    [
+     [
+      "Sequence[first=Test]",
+      "Always"
+     ],
+     1
+    ]
+   ],
+   "file_gate_by_loadfolders": {
+    "loaded": 100
+   },
+   "conditional_gate_ids_top": []
+  },
+  "ce-modpatches": {
+   "top_level_operations": 36795,
+   "gate_kinds": [
+    [
+     "direct",
+     34581,
+     93.98
+    ],
+    [
+     "Conditional(xpath)",
+     1789,
+     4.86
+    ],
+    [
+     "FindMod(vanilla) match-only",
+     280,
+     0.76
+    ],
+    [
+     "Sequence[first=Conditional]",
+     83,
+     0.23
+    ],
+    [
+     "CE.SettingsConditional",
+     42,
+     0.11
+    ],
+    [
+     "FindMod(vanilla) nomatch-only",
+     10,
+     0.03
+    ],
+    [
+     "direct +MayRequire",
+     7,
+     0.02
+    ],
+    [
+     "FindMod(vanilla) match+nomatch",
+     2,
+     0.01
+    ],
+    [
+     "Sequence[first=Test]",
+     1,
+     0.0
+    ]
+   ],
+   "sequence_success_flags": [
+    [
+     [
+      "Sequence[first=Conditional]",
+      "default"
+     ],
+     83
+    ],
+    [
+     [
+      "Sequence[first=Test]",
+      "Always"
+     ],
+     1
+    ]
+   ],
+   "file_gate_by_loadfolders": {
+    "conditional": 3572,
+    "never-loaded": 2
+   },
+   "conditional_gate_ids_top": [
+    [
+     "sarg.alphaanimals",
+     182
+    ],
+    [
+     "BiomesTeam.BiomesCaverns",
+     77
+    ],
+    [
+     "sarg.alphamechs",
+     73
+    ],
+    [
+     "Argon.ExpandedMaterials.Metals",
+     61
+    ],
+    [
+     "DankPyon.Medieval.Overhaul",
+     57
+    ],
+    [
+     "ACPteam.ACPVanillaStyle",
+     48
+    ],
+    [
+     "VanillaExpanded.VanillaAnimalsExpanded",
+     38
+    ],
+    [
+     "BiomesTeam.BiomesPollutedLands",
+     34
+    ],
+    [
+     "VanillaExpanded.VGeneticsE",
+     34
+    ],
+    [
+     "OskarPotocki.VFE.Insectoid2",
+     32
+    ],
+    [
+     "K4G.RWW2",
+     31
+    ],
+    [
+     "HappyPurging.AgeofDarkness",
+     24
+    ]
+   ]
+  },
+  "owner": {
+   "top_level_operations": 12,
+   "gate_kinds": [
+    [
+     "FindMod(vanilla) match-only",
+     10,
+     83.33
+    ],
+    [
+     "Sequence[first=CE.FindMod]",
+     2,
+     16.67
+    ]
+   ],
+   "sequence_success_flags": [
+    [
+     [
+      "Sequence[first=CE.FindMod]",
+      "Always"
+     ],
+     2
+    ]
+   ],
+   "file_gate_by_loadfolders": {
+    "implicit-loaded": 8,
+    "never-loaded": 4
+   },
+   "conditional_gate_ids_top": []
+  },
+  "workshop": {
+   "top_level_operations": 18677,
+   "gate_kinds": [
+    [
+     "Conditional(xpath)",
+     9641,
+     51.62
+    ],
+    [
+     "direct",
+     8678,
+     46.46
+    ],
+    [
+     "FindMod(vanilla) match-only",
+     195,
+     1.04
+    ],
+    [
+     "Sequence[first=Replace]",
+     80,
+     0.43
+    ],
+    [
+     "FindMod(vanilla) nomatch-only",
+     36,
+     0.19
+    ],
+    [
+     "Sequence[first=Test]",
+     20,
+     0.11
+    ],
+    [
+     "Sequence[first=Remove]",
+     14,
+     0.07
+    ],
+    [
+     "Sequence[first=AttributeSet]",
+     7,
+     0.04
+    ],
+    [
+     "Sequence[first=FindMod]",
+     3,
+     0.02
+    ],
+    [
+     "Sequence[first=CE.MakeGunCECompatible]",
+     2,
+     0.01
+    ],
+    [
+     "FindMod(vanilla) match+nomatch",
+     1,
+     0.01
+    ]
+   ],
+   "sequence_success_flags": [
+    [
+     [
+      "Sequence[first=Replace]",
+      "default"
+     ],
+     80
+    ],
+    [
+     [
+      "Sequence[first=Test]",
+      "Always"
+     ],
+     20
+    ],
+    [
+     [
+      "Sequence[first=Remove]",
+      "default"
+     ],
+     14
+    ],
+    [
+     [
+      "Sequence[first=AttributeSet]",
+      "default"
+     ],
+     7
+    ],
+    [
+     [
+      "Sequence[first=FindMod]",
+      "Always"
+     ],
+     3
+    ],
+    [
+     [
+      "Sequence[first=CE.MakeGunCECompatible]",
+      "default"
+     ],
+     2
+    ]
+   ],
+   "file_gate_by_loadfolders": {
+    "conditional": 230,
+    "implicit-loaded": 39,
+    "loaded": 37,
+    "never-loaded": 49
+   },
+   "conditional_gate_ids_top": [
+    [
+     "CETeam.CombatExtended,CETeam.CombatExtended_copy",
+     120
+    ],
+    [
+     "sarg.alphaanimals",
+     24
+    ],
+    [
+     "VanillaExpanded.VanillaAnimalsExpanded",
+     19
+    ],
+    [
+     "Ludeon.Rimworld.Odyssey",
+     17
+    ],
+    [
+     "CETeam.CombatExtended",
+     13
+    ],
+    [
+     "CETeam.CombatExtended_steam,ceteam.combatextended",
+     4
+    ],
+    [
+     "OskarPotocki.VanillaFactionsExpanded.Core,OskarPotocki.VanillaFactionsExpanded.Core_copy",
+     4
+    ],
+    [
+     "imranfish.xmlextensions,imranfish.xmlextensions_copy",
+     4
+    ],
+    [
+     "Ludeon.Rimworld.Biotech",
+     3
+    ],
+    [
+     "VanillaExpanded.VAEEndAndExt",
+     3
+    ],
+    [
+     "ceteam.combatextended",
+     3
+    ],
+    [
+     "CETeam.CombatExtended,CETeam.CombatExtended_Development,CETeam.CombatExtended_copy",
+     2
+    ]
+   ]
+  },
+  "findmod_strings_top": {
+   "ce-core": [
+    [
+     "Biotech",
+     1
+    ]
+   ],
+   "ce-modpatches": [
+    [
+     "Biotech",
+     57
+    ],
+    [
+     "Royalty",
+     29
+    ],
+    [
+     "Vehicle Framework",
+     26
+    ],
+    [
+     "Vanilla Factions Expanded - Mechanoids",
+     24
+    ],
+    [
+     "Odyssey",
+     19
+    ],
+    [
+     "Ideology",
+     12
+    ],
+    [
+     "Anomaly",
+     10
+    ],
+    [
+     "Vanilla Factions Expanded - Insectoids 2",
+     9
+    ],
+    [
+     "Vanilla Psycasts Expanded",
+     9
+    ],
+    [
+     "Big and Small - Enable All Optional Content",
+     8
+    ],
+    [
+     "Big and Small - Slimes",
+     8
+    ],
+    [
+     "Randy Random's Rayguns - Ordinary Spacer Weapons",
+     8
+    ],
+    [
+     "Vanilla Expanded Framework",
+     7
+    ],
+    [
+     "Big and Small - Heaven and Hell",
+     5
+    ],
+    [
+     "Big and Small - Lamias and other Snake-People",
+     5
+    ]
+   ],
+   "owner": [
+    [
+     "Combat Extended",
+     8
+    ],
+    [
+     "Lombax - Desert Warriors [1.2]",
+     2
+    ],
+    [
+     "[CE.FindMod] Combat Extended",
+     2
+    ]
+   ],
+   "workshop": [
+    [
+     "Combat Extended",
+     195
+    ],
+    [
+     "Odyssey",
+     38
+    ],
+    [
+     "Royalty",
+     18
+    ],
+    [
+     "Combat Extended Armory",
+     6
+    ],
+    [
+     "Muzzle Flash",
+     6
+    ],
+    [
+     "Full Armor - Hands and Feet",
+     3
+    ],
+    [
+     "Combat Extended Attachments",
+     2
+    ],
+    [
+     "Combat Extended Guns",
+     2
+    ],
+    [
+     "Alpha Animals",
+     1
+    ],
+    [
+     "Ammo Variety - Shotguns",
+     1
+    ],
+    [
+     "RPG Style Inventory Revamped",
+     1
+    ],
+    [
+     "Rimsenal - Feral Faction Pack",
+     1
+    ],
+    [
+     "Vanilla Animals Expanded — Waste Animals",
+     1
+    ],
+    [
+     "Vanilla Chemfuel Expanded",
+     1
+    ],
+    [
+     "Vanilla Factions Expanded - Ancients",
+     1
+    ]
+   ]
+  },
+  "mayrequire_values_top": {
+   "ce-modpatches": [
+    [
+     "Ludeon.RimWorld.Royalty",
+     4
+    ],
+    [
+     "rimsenal.EVP",
+     4
+    ],
+    [
+     "Ludeon.RimWorld.Biotech",
+     3
+    ],
+    [
+     "oskarpotocki.vanillafactionsexpanded.medievalmodule",
+     2
+    ]
+   ],
+   "workshop": [
+    [
+     "VanillaExpanded.VWENL",
+     24
+    ],
+    [
+     "OskarPotocki.VanillaFactionsExpanded.Core",
+     10
+    ],
+    [
+     "VanillaExpanded.VWE",
+     1
+    ],
+    [
+     "ceteam.combatextended",
+     1
+    ]
+   ]
+  },
+  "loadfolders_ce_ids": [
+   [
+    [
+     "workshop",
+     "CETeam.CombatExtended"
+    ],
+    72
+   ],
+   [
+    [
+     "workshop",
+     "CETeam.CombatExtended_copy"
+    ],
+    50
+   ],
+   [
+    [
+     "workshop",
+     "CETeam.CombatExtended_steam"
+    ],
+    7
+   ],
+   [
+    [
+     "workshop",
+     "ceteam.combatextended"
+    ],
+    7
+   ],
+   [
+    [
+     "workshop",
+     "CETeam.CombatExtended_Development"
+    ],
+    2
+   ]
+  ]
+ },
+ "integration_styles": {
+  "owner": {
+   "mods": {
+    "The Lone Wolf Weapon Package - Copy": {
+     "name": "The Lone Wolf Weapon Package",
+     "packageId": "TLWWP.Base",
+     "styles": [
+      "findmod-name"
+     ],
+     "patch_files_mentioning_ce": 1,
+     "operations": 12,
+     "ops_using_ce_types": 10,
+     "loadAfter_ce": true,
+     "supports_1_6": false,
+     "has_loadfolders": false
+    },
+    "[OH] Croco Faction": {
+     "name": "Lombax - Desert Warriors [1.2]",
+     "packageId": "yanzihko.LDW",
+     "styles": [
+      "findmod-name"
+     ],
+     "patch_files_mentioning_ce": 2,
+     "operations": 13,
+     "ops_using_ce_types": 8,
+     "loadAfter_ce": false,
+     "supports_1_6": false,
+     "has_loadfolders": false
+    },
+    "[OH] Gewehr 41": {
+     "name": "Huskos's Gewehr 41",
+     "packageId": "oh.weapons.gewehr41",
+     "styles": [
+      "findmod-name"
+     ],
+     "patch_files_mentioning_ce": 1,
+     "operations": 8,
+     "ops_using_ce_types": 7,
+     "loadAfter_ce": true,
+     "supports_1_6": false,
+     "has_loadfolders": false
+    },
+    "[OH] Ratchet & Clank": {
+     "name": "",
+     "packageId": "",
+     "styles": [
+      "findmod-name"
+     ],
+     "patch_files_mentioning_ce": 4,
+     "operations": 29,
+     "ops_using_ce_types": 15,
+     "loadAfter_ce": false,
+     "supports_1_6": false,
+     "has_loadfolders": false
+    },
+    "[OH] Ratchet & Clank Lombax Tech": {
+     "name": "[OH] Ratchet and Clank: Lombax Tech",
+     "packageId": "Husko.RC.LombaxTech",
+     "styles": [
+      "findmod-name"
+     ],
+     "patch_files_mentioning_ce": 2,
+     "operations": 10,
+     "ops_using_ce_types": 2,
+     "loadAfter_ce": true,
+     "supports_1_6": false,
+     "has_loadfolders": false
+    },
+    "[OH] The Lone Wolf Weapon Package": {
+     "name": "The Lone Wolf Weapon Package",
+     "packageId": "TLWWP.Base",
+     "styles": [
+      "findmod-name"
+     ],
+     "patch_files_mentioning_ce": 1,
+     "operations": 12,
+     "ops_using_ce_types": 10,
+     "loadAfter_ce": true,
+     "supports_1_6": false,
+     "has_loadfolders": false
+    },
+    "[OH] Third Reich Armory": {
+     "name": "Huskos's Gewehr 41",
+     "packageId": "oh.weapons.gewehr41",
+     "styles": [
+      "findmod-name"
+     ],
+     "patch_files_mentioning_ce": 1,
+     "operations": 8,
+     "ops_using_ce_types": 7,
+     "loadAfter_ce": true,
+     "supports_1_6": false,
+     "has_loadfolders": false
+    }
+   },
+   "style_counts": {
+    "findmod-name": 7
+   },
+   "mod_count": 7,
+   "loadAfter_ce_count": 5
+  },
+  "workshop": {
+   "mods": {
+    "1775170117": {
+     "name": "RimCities",
+     "packageId": "Cabbage.RimCities",
+     "styles": [
+      "findmod-name"
+     ],
+     "patch_files_mentioning_ce": 7,
+     "operations": 35,
+     "ops_using_ce_types": 0,
+     "loadAfter_ce": false,
+     "supports_1_6": true,
+     "has_loadfolders": false
+    },
+    "1814988282": {
+     "name": "Vanilla Armour Expanded",
+     "packageId": "VanillaExpanded.VARME",
+     "styles": [
+      "findmod-name"
+     ],
+     "patch_files_mentioning_ce": 4,
+     "operations": 68,
+     "ops_using_ce_types": 0,
+     "loadAfter_ce": false,
+     "supports_1_6": true,
+     "has_loadfolders": true
+    },
+    "1914064942": {
+     "name": "Vanilla Fishing Expanded",
+     "packageId": "VanillaExpanded.VCEF",
+     "styles": [
+      "ungated-or-other"
+     ],
+     "patch_files_mentioning_ce": 3,
+     "operations": 9,
+     "ops_using_ce_types": 3,
+     "loadAfter_ce": false,
+     "supports_1_6": true,
+     "has_loadfolders": true
+    },
+    "1938420742": {
+     "name": "Vanilla Events Expanded",
+     "packageId": "VanillaExpanded.VEE",
+     "styles": [
+      "findmod-name"
+     ],
+     "patch_files_mentioning_ce": 3,
+     "operations": 15,
+     "ops_using_ce_types": 3,
+     "loadAfter_ce": false,
+     "supports_1_6": true,
+     "has_loadfolders": true
+    },
+    "1949064302": {
+     "name": "Expanded Prosthetics and Organ Engineering - Forked",
+     "packageId": "vat.epoeforked",
+     "styles": [
+      "findmod-name"
+     ],
+     "patch_files_mentioning_ce": 4,
+     "operations": 120,
+     "ops_using_ce_types": 28,
+     "loadAfter_ce": false,
+     "supports_1_6": true,
+     "has_loadfolders": true
+    },
+    "2008970276": {
+     "name": "EPOE-Forked: Royalty DLC expansion",
+     "packageId": "vat.epoeforkedroyalty",
+     "styles": [
+      "findmod-name"
+     ],
+     "patch_files_mentioning_ce": 2,
+     "operations": 20,
+     "ops_using_ce_types": 16,
+     "loadAfter_ce": false,
+     "supports_1_6": true,
+     "has_loadfolders": true
+    },
+    "2056706586": {
+     "name": "Medical System Expansion 2",
+     "packageId": "MSE2.Core",
+     "styles": [
+      "findmod-name"
+     ],
+     "patch_files_mentioning_ce": 1,
+     "operations": 5,
+     "ops_using_ce_types": 0,
+     "loadAfter_ce": true,
+     "supports_1_6": true,
+     "has_loadfolders": true
+    },
+    "2208576613": {
+     "name": "[HRK] Gun Nut - Chapter #1",
+     "packageId": "Harkon.GunNut.Chapter1",
+     "styles": [
+      "loadfolders-ce-folder"
+     ],
+     "patch_files_mentioning_ce": 1,
+     "operations": 13,
+     "ops_using_ce_types": 12,
+     "loadAfter_ce": false,
+     "supports_1_6": false,
+     "has_loadfolders": true
+    },
+    "2239800263": {
+     "name": "[HRK] Gun Nut - Chapter #2",
+     "packageId": "Harkon.GunNut.Chapter2",
+     "styles": [
+      "loadfolders-ce-folder"
+     ],
+     "patch_files_mentioning_ce": 1,
+     "operations": 11,
+     "ops_using_ce_types": 10,
+     "loadAfter_ce": false,
+     "supports_1_6": false,
+     "has_loadfolders": true
+    },
+    "2268285121": {
+     "name": "[HRK] Gun Nut - Community Pack",
+     "packageId": "Harkon.GunNut.Community",
+     "styles": [
+      "loadfolders-ce-folder"
+     ],
+     "patch_files_mentioning_ce": 1,
+     "operations": 12,
+     "ops_using_ce_types": 12,
+     "loadAfter_ce": false,
+     "supports_1_6": false,
+     "has_loadfolders": true
+    },
+    "2409637032": {
+     "name": "[HRK] Gun Nut - KRISS Vector",
+     "packageId": "Harkon.GunNut.KRISSVector",
+     "styles": [
+      "loadfolders-ce-folder"
+     ],
+     "patch_files_mentioning_ce": 1,
+     "operations": 6,
+     "ops_using_ce_types": 5,
+     "loadAfter_ce": false,
+     "supports_1_6": false,
+     "has_loadfolders": true
+    },
+    "2416660319": {
+     "name": "[HRK] Gun Nut - Kel-Tec Firearms",
+     "packageId": "Harkon.GunNut.KelTec",
+     "styles": [
+      "loadfolders-ce-folder",
+      "findmod-name"
+     ],
+     "patch_files_mentioning_ce": 2,
+     "operations": 15,
+     "ops_using_ce_types": 9,
+     "loadAfter_ce": false,
+     "supports_1_6": false,
+     "has_loadfolders": true
+    },
+    "2430129276": {
+     "name": "[HRK] RIM AT WAR - WW1 Winchester M97 \"Trench Gun\"",
+     "packageId": "Harkon.RIMATWAR.WW1M97TrenchGun",
+     "styles": [
+      "loadfolders-ce-folder"
+     ],
+     "patch_files_mentioning_ce": 1,
+     "operations": 6,
+     "ops_using_ce_types": 4,
+     "loadAfter_ce": true,
+     "supports_1_6": false,
+     "has_loadfolders": true
+    },
+    "2452304429": {
+     "name": "[HRK] RIM AT WAR - WW2 Soviet SMGs",
+     "packageId": "Harkon.RIMATWAR.WW2SovietSMGs",
+     "styles": [
+      "loadfolders-ce-folder"
+     ],
+     "patch_files_mentioning_ce": 1,
+     "operations": 6,
+     "ops_using_ce_types": 5,
+     "loadAfter_ce": true,
+     "supports_1_6": false,
+     "has_loadfolders": true
+    },
+    "2466355753": {
+     "name": "[HRK] Gun Nut - M5 SPEAR, M250 & MG 338",
+     "packageId": "Harkon.GunNut.SIGSauerNGSW",
+     "styles": [
+      "loadfolders-ce-folder",
+      "findmod-name"
+     ],
+     "patch_files_mentioning_ce": 2,
+     "operations": 11,
+     "ops_using_ce_types": 7,
+     "loadAfter_ce": false,
+     "supports_1_6": false,
+     "has_loadfolders": true
+    },
+    "2478833213": {
+     "name": "RPG Style Inventory Revamped",
+     "packageId": "Sandy.RPGStyleInventory.avilmask.Revamped",
+     "styles": [
+      "ungated-or-other"
+     ],
+     "patch_files_mentioning_ce": 5,
+     "operations": 60,
+     "ops_using_ce_types": 0,
+     "loadAfter_ce": true,
+     "supports_1_6": true,
+     "has_loadfolders": false
+    },
+    "2487791703": {
+     "name": "[HRK] Gun Nut - Desert Tech Firearms",
+     "packageId": "Harkon.GunNut.DesertTech",
+     "styles": [
+      "loadfolders-ce-folder",
+      "findmod-name"
+     ],
+     "patch_files_mentioning_ce": 2,
+     "operations": 12,
+     "ops_using_ce_types": 8,
+     "loadAfter_ce": false,
+     "supports_1_6": false,
+     "has_loadfolders": true
+    },
+    "2501069852": {
+     "name": "[HRK] Gun Nut - FN SCAR",
+     "packageId": "Harkon.GunNut.FNSCAR",
+     "styles": [
+      "loadfolders-ce-folder",
+      "findmod-name"
+     ],
+     "patch_files_mentioning_ce": 2,
+     "operations": 12,
+     "ops_using_ce_types": 8,
+     "loadAfter_ce": false,
+     "supports_1_6": false,
+     "has_loadfolders": true
+    },
+    "2558957509": {
+     "name": "Caravan Adventures",
+     "packageId": "iforgotmysocks.CaravanAdventures",
+     "styles": [
+      "loadfolders-ce-folder"
+     ],
+     "patch_files_mentioning_ce": 13,
+     "operations": 234,
+     "ops_using_ce_types": 89,
+     "loadAfter_ce": false,
+     "supports_1_6": true,
+     "has_loadfolders": true
+    },
+    "2614317714": {
+     "name": "[HRK] Gun Nut - CORE",
+     "packageId": "Harkon.GunNut.CORE",
+     "styles": [
+      "ungated-or-other"
+     ],
+     "patch_files_mentioning_ce": 4,
+     "operations": 4,
+     "ops_using_ce_types": 0,
+     "loadAfter_ce": true,
+     "supports_1_6": false,
+     "has_loadfolders": true
+    },
+    "2653963772": {
+     "name": "Treasure Hunter: The Forbidden Caravan",
+     "packageId": "TreasureHunter.velcroboy333",
+     "styles": [
+      "findmod-name"
+     ],
+     "patch_files_mentioning_ce": 1,
+     "operations": 2,
+     "ops_using_ce_types": 0,
+     "loadAfter_ce": false,
+     "supports_1_6": false,
+     "has_loadfolders": false
+    },
+    "2785558397": {
+     "name": "[HRK] Gun Nut - Ukrainian Firearms",
+     "packageId": "Harkon.GunNut.UkrainianFirearms",
+     "styles": [
+      "loadfolders-ce-folder"
+     ],
+     "patch_files_mentioning_ce": 2,
+     "operations": 19,
+     "ops_using_ce_types": 12,
+     "loadAfter_ce": true,
+     "supports_1_6": false,
+     "has_loadfolders": true
+    },
+    "2788783410": {
+     "name": "[HRK] RIM AT WAR - WW1 / WW2 French Weapons",
+     "packageId": "Harkon.RIMATWAR.WW1WW2FrenchWeapons",
+     "styles": [
+      "loadfolders-ce-folder"
+     ],
+     "patch_files_mentioning_ce": 1,
+     "operations": 10,
+     "ops_using_ce_types": 9,
+     "loadAfter_ce": true,
+     "supports_1_6": false,
+     "has_loadfolders": true
+    },
+    "2799361186": {
+     "name": "Scaled World",
+     "packageId": "Scaled.World",
+     "styles": [
+      "findmod-name"
+     ],
+     "patch_files_mentioning_ce": 12,
+     "operations": 220,
+     "ops_using_ce_types": 14,
+     "loadAfter_ce": false,
+     "supports_1_6": true,
+     "has_loadfolders": false
+    },
+    "2846348757": {
+     "name": "Dragon Genetics",
+     "packageId": "Hol.DragonGenetics",
+     "styles": [
+      "ungated-or-other"
+     ],
+     "patch_files_mentioning_ce": 1,
+     "operations": 72,
+     "ops_using_ce_types": 19,
+     "loadAfter_ce": false,
+     "supports_1_6": true,
+     "has_loadfolders": true
+    },
+    "2860715703": {
+     "name": "Biomes! Prehistoric",
+     "packageId": "BiomesTeam.BiomesPrehistoric",
+     "styles": [
+      "loadfolders-ce-folder",
+      "findmod-name"
+     ],
+     "patch_files_mentioning_ce": 21,
+     "operations": 1584,
+     "ops_using_ce_types": 642,
+     "loadAfter_ce": false,
+     "supports_1_6": true,
+     "has_loadfolders": true
+    },
+    "2917732219": {
+     "name": "Muzzle Flash",
+     "packageId": "IssacZhuang.MuzzleFlash",
+     "styles": [
+      "findmod-name"
+     ],
+     "patch_files_mentioning_ce": 9,
+     "operations": 207,
+     "ops_using_ce_types": 0,
+     "loadAfter_ce": false,
+     "supports_1_6": true,
+     "has_loadfolders": true
+    },
+    "2949320350": {
+     "name": "Guns Galore - Core",
+     "packageId": "cgf1.gunsgalorecore",
+     "styles": [
+      "loadfolders-ce-folder"
+     ],
+     "patch_files_mentioning_ce": 1,
+     "operations": 8,
+     "ops_using_ce_types": 0,
+     "loadAfter_ce": true,
+     "supports_1_6": true,
+     "has_loadfolders": true
+    },
+    "2949339248": {
+     "name": "Guns Galore - Industrial Age I",
+     "packageId": "cgf1.gunsgalore.industrialage.i",
+     "styles": [
+      "loadfolders-ce-folder"
+     ],
+     "patch_files_mentioning_ce": 5,
+     "operations": 86,
+     "ops_using_ce_types": 79,
+     "loadAfter_ce": true,
+     "supports_1_6": true,
+     "has_loadfolders": true
+    },
+    "2954194692": {
+     "name": "Guns Galore - American Civil War",
+     "packageId": "cgf1.gunsgalore.americancivilwar.i",
+     "styles": [
+      "loadfolders-ce-folder"
+     ],
+     "patch_files_mentioning_ce": 8,
+     "operations": 115,
+     "ops_using_ce_types": 94,
+     "loadAfter_ce": true,
+     "supports_1_6": true,
+     "has_loadfolders": true
+    },
+    "2962208832": {
+     "name": "Projectile Bullet Retexture",
+     "packageId": "ND.RTPJ",
+     "styles": [
+      "loadfolders-ce-folder",
+      "findmod-name"
+     ],
+     "patch_files_mentioning_ce": 2,
+     "operations": 105,
+     "ops_using_ce_types": 0,
+     "loadAfter_ce": false,
+     "supports_1_6": true,
+     "has_loadfolders": true
+    },
+    "2962779146": {
+     "name": "Guns Galore - Cold War (UK)",
+     "packageId": "cgf1.gunsgalore.coldwar.uk",
+     "styles": [
+      "loadfolders-ce-folder"
+     ],
+     "patch_files_mentioning_ce": 11,
+     "operations": 348,
+     "ops_using_ce_types": 322,
+     "loadAfter_ce": true,
+     "supports_1_6": false,
+     "has_loadfolders": true
+    },
+    "2967547965": {
+     "name": "Guns Galore - Magnum",
+     "packageId": "cgf1.gunsgalore.magnum.i",
+     "styles": [
+      "loadfolders-ce-folder"
+     ],
+     "patch_files_mentioning_ce": 2,
+     "operations": 204,
+     "ops_using_ce_types": 202,
+     "loadAfter_ce": true,
+     "supports_1_6": true,
+     "has_loadfolders": true
+    },
+    "2970766110": {
+     "name": "Guns Galore - Cold War (Germany & Austria)",
+     "packageId": "cgf1.gunsgalore.coldwar.germanyaustria",
+     "styles": [
+      "loadfolders-ce-folder"
+     ],
+     "patch_files_mentioning_ce": 10,
+     "operations": 498,
+     "ops_using_ce_types": 474,
+     "loadAfter_ce": true,
+     "supports_1_6": true,
+     "has_loadfolders": true
+    },
+    "2979817464": {
+     "name": "Guns Galore X - Hexagon Tactical",
+     "packageId": "cgf1.gunsgalore.x.hexagontactical",
+     "styles": [
+      "loadfolders-ce-folder"
+     ],
+     "patch_files_mentioning_ce": 5,
+     "operations": 131,
+     "ops_using_ce_types": 126,
+     "loadAfter_ce": true,
+     "supports_1_6": false,
+     "has_loadfolders": true
+    },
+    "2984651947": {
+     "name": "Guns Galore X - Run'N'Gunners",
+     "packageId": "cgf1.gunsgalore.x.runningunners",
+     "styles": [
+      "loadfolders-ce-folder"
+     ],
+     "patch_files_mentioning_ce": 1,
+     "operations": 28,
+     "ops_using_ce_types": 5,
+     "loadAfter_ce": true,
+     "supports_1_6": true,
+     "has_loadfolders": true
+    },
+    "2996736809": {
+     "name": "[HRK] RIM AT WAR - WW2 Japanese Weapons",
+     "packageId": "Harkon.RIMATWAR.WW2JapaneseWeapons",
+     "styles": [
+      "loadfolders-ce-folder",
+      "findmod-name"
+     ],
+     "patch_files_mentioning_ce": 6,
+     "operations": 54,
+     "ops_using_ce_types": 27,
+     "loadAfter_ce": true,
+     "supports_1_6": false,
+     "has_loadfolders": true
+    },
+    "3000451147": {
+     "name": "[HRK] Gun Nut - KS-23 Shotgun",
+     "packageId": "Harkon.GunNut.KS23Shotgun",
+     "styles": [
+      "loadfolders-ce-folder",
+      "findmod-name"
+     ],
+     "patch_files_mentioning_ce": 4,
+     "operations": 14,
+     "ops_using_ce_types": 5,
+     "loadAfter_ce": false,
+     "supports_1_6": false,
+     "has_loadfolders": true
+    },
+    "3004231100": {
+     "name": "[HRK] RIM AT WAR - WW2 German Weapons",
+     "packageId": "Harkon.RIMATWAR.WW2GermanWeapons",
+     "styles": [
+      "loadfolders-ce-folder",
+      "findmod-name"
+     ],
+     "patch_files_mentioning_ce": 6,
+     "operations": 68,
+     "ops_using_ce_types": 36,
+     "loadAfter_ce": true,
+     "supports_1_6": false,
+     "has_loadfolders": true
+    },
+    "3009527756": {
+     "name": "Engine Industries",
+     "packageId": "Aoba.Motorization.Engine",
+     "styles": [
+      "findmod-name"
+     ],
+     "patch_files_mentioning_ce": 3,
+     "operations": 30,
+     "ops_using_ce_types": 0,
+     "loadAfter_ce": false,
+     "supports_1_6": true,
+     "has_loadfolders": true
+    },
+    "3015220795": {
+     "name": "Guns Galore - Cold War (USA)",
+     "packageId": "cgf1.gunsgalore.coldwar.usa",
+     "styles": [
+      "loadfolders-ce-folder"
+     ],
+     "patch_files_mentioning_ce": 11,
+     "operations": 311,
+     "ops_using_ce_types": 263,
+     "loadAfter_ce": true,
+     "supports_1_6": true,
+     "has_loadfolders": true
+    },
+    "3024527775": {
+     "name": "Layered Wall Destruction",
+     "packageId": "Keshash.LayeredWallDestruction",
+     "styles": [
+      "findmod-name"
+     ],
+     "patch_files_mentioning_ce": 1,
+     "operations": 13,
+     "ops_using_ce_types": 0,
+     "loadAfter_ce": false,
+     "supports_1_6": true,
+     "has_loadfolders": true
+    },
+    "3046871998": {
+     "name": "Panzer",
+     "packageId": "pz4.RUS",
+     "styles": [
+      "findmod-name"
+     ],
+     "patch_files_mentioning_ce": 1,
+     "operations": 81,
+     "ops_using_ce_types": 3,
+     "loadAfter_ce": true,
+     "supports_1_6": false,
+     "has_loadfolders": false
+    },
+    "3052729087": {
+     "name": "Guns Galore - Modern (North Korea)",
+     "packageId": "cgf1.gunsgalore.modern.northkorea",
+     "styles": [
+      "loadfolders-ce-folder"
+     ],
+     "patch_files_mentioning_ce": 3,
+     "operations": 46,
+     "ops_using_ce_types": 42,
+     "loadAfter_ce": true,
+     "supports_1_6": true,
+     "has_loadfolders": true
+    },
+    "3081249079": {
+     "name": "Guns Galore - Cold War (China & Vietnam)",
+     "packageId": "cgf1.gunsgalore.coldwar.chinavietnam",
+     "styles": [
+      "loadfolders-ce-folder"
+     ],
+     "patch_files_mentioning_ce": 11,
+     "operations": 281,
+     "ops_using_ce_types": 252,
+     "loadAfter_ce": true,
+     "supports_1_6": true,
+     "has_loadfolders": true
+    },
+    "3122055268": {
+     "name": "Guns Galore - Cops & Robbers (Cold War)",
+     "packageId": "cgf1.gunsgalore.copsandrobbers.coldwar",
+     "styles": [
+      "loadfolders-ce-folder"
+     ],
+     "patch_files_mentioning_ce": 5,
+     "operations": 539,
+     "ops_using_ce_types": 534,
+     "loadAfter_ce": true,
+     "supports_1_6": true,
+     "has_loadfolders": true
+    },
+    "3139287244": {
+     "name": "Crimson - WW2 Mosin Nagant Arsenal",
+     "packageId": "CC.Mosin.Arsenal",
+     "styles": [
+      "findmod-name"
+     ],
+     "patch_files_mentioning_ce": 2,
+     "operations": 42,
+     "ops_using_ce_types": 29,
+     "loadAfter_ce": false,
+     "supports_1_6": true,
+     "has_loadfolders": false
+    },
+    "3141472661": {
+     "name": "Ancient mining industry",
+     "packageId": "XMB.AncientMiningIndustry.MO",
+     "styles": [
+      "loadfolders-ce-folder"
+     ],
+     "patch_files_mentioning_ce": 3,
+     "operations": 72,
+     "ops_using_ce_types": 9,
+     "loadAfter_ce": true,
+     "supports_1_6": true,
+     "has_loadfolders": true
+    },
+    "3166688902": {
+     "name": "Panther",
+     "packageId": "pz5.RUS",
+     "styles": [
+      "findmod-name"
+     ],
+     "patch_files_mentioning_ce": 1,
+     "operations": 46,
+     "ops_using_ce_types": 1,
+     "loadAfter_ce": true,
+     "supports_1_6": false,
+     "has_loadfolders": false
+    },
+    "3167957110": {
+     "name": "Crimson - WW2 Soviet Defense",
+     "packageId": "CC.Soviet.SupportGun",
+     "styles": [
+      "loadfolders-ce-folder"
+     ],
+     "patch_files_mentioning_ce": 1,
+     "operations": 25,
+     "ops_using_ce_types": 12,
+     "loadAfter_ce": false,
+     "supports_1_6": true,
+     "has_loadfolders": true
+    },
+    "3201536200": {
+     "name": "Phaneron's Basic Storage",
+     "packageId": "phaneron.basic.storage",
+     "styles": [
+      "findmod-name"
+     ],
+     "patch_files_mentioning_ce": 1,
+     "operations": 5,
+     "ops_using_ce_types": 0,
+     "loadAfter_ce": false,
+     "supports_1_6": true,
+     "has_loadfolders": false
+    },
+    "3285968063": {
+     "name": "GTek's Arsenal 2.0 - Ultimate Survival and Colony Defense",
+     "packageId": "killerbot.GTekV2Arsenal",
+     "styles": [
+      "loadfolders-ce-folder"
+     ],
+     "patch_files_mentioning_ce": 4,
+     "operations": 118,
+     "ops_using_ce_types": 4,
+     "loadAfter_ce": true,
+     "supports_1_6": true,
+     "has_loadfolders": true
+    },
+    "3310273630": {
+     "name": "Apocrypha2033Apparel.CEpatch",
+     "packageId": "Apocrypha2033Apparel.CEpatch",
+     "styles": [
+      "hard-dependency-on-ce"
+     ],
+     "patch_files_mentioning_ce": 1,
+     "operations": 78,
+     "ops_using_ce_types": 4,
+     "loadAfter_ce": false,
+     "supports_1_6": false,
+     "has_loadfolders": false
+    },
+    "3316062206": {
+     "name": "Ancient urban ruins",
+     "packageId": "XMB.AncientUrbanrUins.MO",
+     "styles": [
+      "loadfolders-ce-folder"
+     ],
+     "patch_files_mentioning_ce": 4,
+     "operations": 130,
+     "ops_using_ce_types": 82,
+     "loadAfter_ce": true,
+     "supports_1_6": true,
+     "has_loadfolders": true
+    },
+    "3322816166": {
+     "name": "Guns Galore - Supporter Suggestions Pack",
+     "packageId": "cgf1.gunsgalore.supportersuggestions",
+     "styles": [
+      "loadfolders-ce-folder"
+     ],
+     "patch_files_mentioning_ce": 8,
+     "operations": 294,
+     "ops_using_ce_types": 215,
+     "loadAfter_ce": true,
+     "supports_1_6": true,
+     "has_loadfolders": true
+    },
+    "3331281387": {
+     "name": "Little Critters",
+     "packageId": "tyrannidae.littlecritters",
+     "styles": [
+      "loadfolders-ce-folder"
+     ],
+     "patch_files_mentioning_ce": 1,
+     "operations": 3,
+     "ops_using_ce_types": 2,
+     "loadAfter_ce": false,
+     "supports_1_6": true,
+     "has_loadfolders": true
+    },
+    "3361945167": {
+     "name": "Rising Sun: Weapons",
+     "packageId": "LUNAR.IJA.A",
+     "styles": [
+      "loadfolders-ce-folder"
+     ],
+     "patch_files_mentioning_ce": 1,
+     "operations": 39,
+     "ops_using_ce_types": 26,
+     "loadAfter_ce": true,
+     "supports_1_6": false,
+     "has_loadfolders": true
+    },
+    "3362080094": {
+     "name": "Authentic Gun Styles",
+     "packageId": "Keshash.GunStyles",
+     "styles": [
+      "findmod-name"
+     ],
+     "patch_files_mentioning_ce": 1,
+     "operations": 7,
+     "ops_using_ce_types": 0,
+     "loadAfter_ce": true,
+     "supports_1_6": true,
+     "has_loadfolders": false
+    },
+    "3367379703": {
+     "name": "Crimson - WW2 British Defense",
+     "packageId": "CC.British.SupportGun",
+     "styles": [
+      "loadfolders-ce-folder"
+     ],
+     "patch_files_mentioning_ce": 1,
+     "operations": 17,
+     "ops_using_ce_types": 8,
+     "loadAfter_ce": true,
+     "supports_1_6": true,
+     "has_loadfolders": true
+    },
+    "3368485132": {
+     "name": "RimThunder - Talvisota",
+     "packageId": "RimThunderTeams.RimThunder.Talvisota",
+     "styles": [
+      "loadfolders-ce-folder"
+     ],
+     "patch_files_mentioning_ce": 1,
+     "operations": 1,
+     "ops_using_ce_types": 0,
+     "loadAfter_ce": true,
+     "supports_1_6": false,
+     "has_loadfolders": true
+    },
+    "3417872991": {
+     "name": "Guns Galore - Modern (USA)",
+     "packageId": "cgf1.gunsgalore.modern.usa",
+     "styles": [
+      "loadfolders-ce-folder"
+     ],
+     "patch_files_mentioning_ce": 13,
+     "operations": 853,
+     "ops_using_ce_types": 807,
+     "loadAfter_ce": true,
+     "supports_1_6": true,
+     "has_loadfolders": true
+    },
+    "3425289679": {
+     "name": "Tiger",
+     "packageId": "pz6.RUS",
+     "styles": [
+      "findmod-name"
+     ],
+     "patch_files_mentioning_ce": 1,
+     "operations": 48,
+     "ops_using_ce_types": 1,
+     "loadAfter_ce": true,
+     "supports_1_6": false,
+     "has_loadfolders": false
+    },
+    "3427719218": {
+     "name": "Sturmtiger",
+     "packageId": "pzSM.RUS",
+     "styles": [
+      "findmod-name"
+     ],
+     "patch_files_mentioning_ce": 1,
+     "operations": 38,
+     "ops_using_ce_types": 1,
+     "loadAfter_ce": true,
+     "supports_1_6": false,
+     "has_loadfolders": false
+    },
+    "3431149360": {
+     "name": "Type 3 Light Tank",
+     "packageId": "keru.RUS",
+     "styles": [
+      "findmod-name"
+     ],
+     "patch_files_mentioning_ce": 1,
+     "operations": 35,
+     "ops_using_ce_types": 1,
+     "loadAfter_ce": true,
+     "supports_1_6": false,
+     "has_loadfolders": false
+    },
+    "3433979431": {
+     "name": "RimThunder - Project KV",
+     "packageId": "RimThunderTeams.RimThunder.ProjectKV",
+     "styles": [
+      "loadfolders-ce-folder"
+     ],
+     "patch_files_mentioning_ce": 1,
+     "operations": 1,
+     "ops_using_ce_types": 0,
+     "loadAfter_ce": true,
+     "supports_1_6": false,
+     "has_loadfolders": true
+    },
+    "3532608331": {
+     "name": "LWM's Deep Storage",
+     "packageId": "LWM.DeepStorage",
+     "styles": [
+      "findmod-name"
+     ],
+     "patch_files_mentioning_ce": 2,
+     "operations": 16,
+     "ops_using_ce_types": 0,
+     "loadAfter_ce": false,
+     "supports_1_6": true,
+     "has_loadfolders": false
+    },
+    "3552214807": {
+     "name": "Awesome Inventory 1.6",
+     "packageId": "Koth.AwesomeInventory",
+     "styles": [
+      "ungated-or-other"
+     ],
+     "patch_files_mentioning_ce": 1,
+     "operations": 4,
+     "ops_using_ce_types": 0,
+     "loadAfter_ce": true,
+     "supports_1_6": true,
+     "has_loadfolders": true
+    },
+    "3559751556": {
+     "name": "Layered Wall Destruction - Additional Patches",
+     "packageId": "seromas.LayeredDestruction.Patches",
+     "styles": [
+      "loadfolders-ce-folder",
+      "findmod-name"
+     ],
+     "patch_files_mentioning_ce": 2,
+     "operations": 8,
+     "ops_using_ce_types": 0,
+     "loadAfter_ce": false,
+     "supports_1_6": true,
+     "has_loadfolders": true
+    },
+    "3563882422": {
+     "name": "Better Architect Menu",
+     "packageId": "ferny.BetterArchitect",
+     "styles": [
+      "findmod-name"
+     ],
+     "patch_files_mentioning_ce": 2,
+     "operations": 61,
+     "ops_using_ce_types": 0,
+     "loadAfter_ce": true,
+     "supports_1_6": true,
+     "has_loadfolders": true
+    },
+    "3679396881": {
+     "name": "Zoology: Realistic Animal Overhaul",
+     "packageId": "com.abobashark.zoologymod",
+     "styles": [
+      "loadfolders-ce-folder",
+      "findmod-name"
+     ],
+     "patch_files_mentioning_ce": 92,
+     "operations": 47189,
+     "ops_using_ce_types": 1257,
+     "loadAfter_ce": true,
+     "supports_1_6": true,
+     "has_loadfolders": true
+    },
+    "3680501610": {
+     "name": "World Domination 2.0",
+     "packageId": "TSA.WorldDominationExperimental",
+     "styles": [
+      "findmod-name"
+     ],
+     "patch_files_mentioning_ce": 1,
+     "operations": 3,
+     "ops_using_ce_types": 0,
+     "loadAfter_ce": true,
+     "supports_1_6": true,
+     "has_loadfolders": true
+    },
+    "3684007086": {
+     "name": "Panzer",
+     "packageId": "panzer4.boingo.box",
+     "styles": [
+      "findmod-name"
+     ],
+     "patch_files_mentioning_ce": 1,
+     "operations": 81,
+     "ops_using_ce_types": 3,
+     "loadAfter_ce": true,
+     "supports_1_6": true,
+     "has_loadfolders": false
+    },
+    "3684007227": {
+     "name": "Panther 1.6 Continued",
+     "packageId": "panther.boingo.box",
+     "styles": [
+      "findmod-name"
+     ],
+     "patch_files_mentioning_ce": 1,
+     "operations": 46,
+     "ops_using_ce_types": 1,
+     "loadAfter_ce": true,
+     "supports_1_6": true,
+     "has_loadfolders": false
+    },
+    "3684007477": {
+     "name": "Tiger 1.6 Continued",
+     "packageId": "tiger.boingo.box",
+     "styles": [
+      "findmod-name"
+     ],
+     "patch_files_mentioning_ce": 1,
+     "operations": 48,
+     "ops_using_ce_types": 1,
+     "loadAfter_ce": true,
+     "supports_1_6": true,
+     "has_loadfolders": false
+    },
+    "3730168769": {
+     "name": "Leo - Events",
+     "packageId": "Leo.EventsExpanded",
+     "styles": [
+      "loadfolders-ce-folder",
+      "findmod-name"
+     ],
+     "patch_files_mentioning_ce": 2,
+     "operations": 14,
+     "ops_using_ce_types": 4,
+     "loadAfter_ce": false,
+     "supports_1_6": true,
+     "has_loadfolders": true
+    }
+   },
+   "style_counts": {
+    "loadfolders-ce-folder": 44,
+    "findmod-name": 37,
+    "ungated-or-other": 5,
+    "hard-dependency-on-ce": 1
+   },
+   "mod_count": 75,
+   "loadAfter_ce_count": 43
+  }
+ },
+ "ce_loadfolders": {
+  "versions_defined": [
+   "1.6"
+  ],
+  "entries_in_selected_version": 769,
+  "entry_kinds": {
+   "unconditional": 1,
+   "IfModActive": 768
+  },
+  "entries_with_multiple_package_ids": 40,
+  "entries_whose_folder_exists": 769,
+  "entries_whose_folder_is_missing": 0,
+  "modpatch_folders_on_disk": 763,
+  "modpatch_folders_not_referenced": {
+   "count": 5,
+   "examples": [
+    "ModPatches/Advanced Mechanoid Warfare/Patches/Advanced Mechanoid Warfare",
+    "ModPatches/Medical System Expansion 2/Patches/Medical System Expansion 2",
+    "ModPatches/Rim-Hivers! - Biotech",
+    "ModPatches/UEM More Mechanitor Mechs/Patches/UEM More Mechanitor Mechs",
+    "ModPatches/YetAnotherProsthetics - Core/Patches/YetAnotherProsthetics - Core"
+   ]
+  },
+  "patch_files_sharing_a_relative_path_after_Patches": 0,
+  "patch_files_total": 3574
+ },
+ "weapons_make_gun": {
+  "ce-core": {
+   "make_gun_operations": 30,
+   "distinct_defNames": 30,
+   "sections_present": {
+    "Properties": [
+     30,
+     100.0
+    ],
+    "defName": [
+     30,
+     100.0
+    ],
+    "statBases": [
+     30,
+     100.0
+    ],
+    "FireModes": [
+     27,
+     90.0
+    ],
+    "weaponTags": [
+     26,
+     86.67
+    ],
+    "AmmoUser": [
+     25,
+     83.33
+    ],
+    "costList": [
+     18,
+     60.0
+    ],
+    "researchPrerequisite": [
+     16,
+     53.33
+    ],
+    "AllowWithRunAndGun": [
+     9,
+     30.0
+    ]
+   },
+   "Properties_children": [
+    [
+     "defaultProjectile",
+     30
+    ],
+    [
+     "hasStandardCommand",
+     30
+    ],
+    [
+     "range",
+     30
+    ],
+    [
+     "soundCast",
+     30
+    ],
+    [
+     "verbClass",
+     30
+    ],
+    [
+     "warmupTime",
+     30
+    ],
+    [
+     "muzzleFlashScale",
+     24
+    ],
+    [
+     "soundCastTail",
+     24
+    ],
+    [
+     "recoilAmount",
+     22
+    ],
+    [
+     "burstShotCount",
+     15
+    ],
+    [
+     "ticksBetweenBurstShots",
+     12
+    ],
+    [
+     "minRange",
+     8
+    ],
+    [
+     "targetParams",
+     7
+    ],
+    [
+     "ai_AvoidFriendlyFireRadius",
+     6
+    ],
+    [
+     "ai_IsBuildingDestroyer",
+     5
+    ],
+    [
+     "onlyManualCast",
+     5
+    ],
+    [
+     "ignorePartialLoSBlocker",
+     3
+    ],
+    [
+     "label",
+     3
+    ],
+    [
+     "noiseRadius",
+     3
+    ],
+    [
+     "recoilPattern",
+     3
+    ],
+    [
+     "interruptibleBurst",
+     1
+    ],
+    [
+     "minRangeInCover",
+     1
+    ],
+    [
+     "stopBurstWithoutLos",
+     1
+    ]
+   ],
+   "AmmoUser_children": [
+    [
+     "ammoSet",
+     25
+    ],
+    [
+     "magazineSize",
+     22
+    ],
+    [
+     "reloadTime",
+     22
+    ],
+    [
+     "AmmoGenPerMagOverride",
+     5
+    ],
+    [
+     "reloadOneAtATime",
+     2
+    ]
+   ],
+   "FireModes_children": [
+    [
+     "aiAimMode",
+     24
+    ],
+    [
+     "aiUseBurstMode",
+     8
+    ],
+    [
+     "aimedBurstShotCount",
+     7
+    ],
+    [
+     "noSingleShot",
+     2
+    ],
+    [
+     "noSnapshot",
+     1
+    ]
+   ],
+   "statBases_names": [
+    [
+     "RangedWeapon_Cooldown",
+     30
+    ],
+    [
+     "SightsEfficiency",
+     30
+    ],
+    [
+     "Bulk",
+     27
+    ],
+    [
+     "ShotSpread",
+     27
+    ],
+    [
+     "SwayFactor",
+     27
+    ],
+    [
+     "Mass",
+     25
+    ],
+    [
+     "WorkToMake",
+     15
+    ],
+    [
+     "MarketValue",
+     3
+    ]
+   ],
+   "verbClass": [
+    [
+     "CombatExtended.Verb_ShootCE",
+     25
+    ],
+    [
+     "CombatExtended.Verb_ShootCEOneUse",
+     5
+    ]
+   ],
+   "ammoSet_top": [
+    [
+     "(none)",
+     5
+    ],
+    [
+     "AmmoSet_45ACP",
+     3
+    ],
+    [
+     "AmmoSet_12Gauge",
+     2
+    ],
+    [
+     "AmmoSet_12x64mmCharged",
+     2
+    ],
+    [
+     "AmmoSet_303British",
+     2
+    ],
+    [
+     "AmmoSet_556x45mmNATO",
+     2
+    ],
+    [
+     "AmmoSet_762x51mmNATO",
+     2
+    ],
+    [
+     "AmmoSet_80x256mmFuel",
+     2
+    ],
+    [
+     "AmmoSet_164x284mmDemo",
+     1
+    ],
+    [
+     "AmmoSet_30x64mmFuel",
+     1
+    ],
+    [
+     "AmmoSet_44Magnum",
+     1
+    ],
+    [
+     "AmmoSet_5x35mmCharged",
+     1
+    ],
+    [
+     "AmmoSet_5x50mmCaseless",
+     1
+    ],
+    [
+     "AmmoSet_6x22mmCharged",
+     1
+    ],
+    [
+     "AmmoSet_6x24mmCharged",
+     1
+    ],
+    [
+     "AmmoSet_Arrow",
+     1
+    ],
+    [
+     "AmmoSet_GreatArrow",
+     1
+    ],
+    [
+     "AmmoSet_StreamlinedArrow",
+     1
+    ]
+   ],
+   "projectile_name_prefix": [
+    [
+     "Bullet_*",
+     24
+    ],
+    [
+     "Proj_*",
+     3
+    ],
+    [
+     "Projectile_*",
+     3
+    ]
+   ],
+   "weaponTag_kinds": [
+    [
+     "CE_AI_*",
+     26
+    ],
+    [
+     "CE_*",
+     15
+    ],
+    [
+     "other",
+     9
+    ],
+    [
+     "Bipod_*",
+     2
+    ]
+   ],
+   "weaponTags_top": [
+    [
+     "CE_AI_BROOM",
+     6
+    ],
+    [
+     "CE_OneHandedWeapon",
+     6
+    ],
+    [
+     "CE_AI_AOE",
+     5
+    ],
+    [
+     "NoSwitch",
+     5
+    ],
+    [
+     "CE_AI_Grenade",
+     3
+    ],
+    [
+     "CE_Bow",
+     3
+    ],
+    [
+     "CE_AI_AR",
+     2
+    ],
+    [
+     "CE_AI_Launcher",
+     2
+    ],
+    [
+     "CE_AI_Rifle",
+     2
+    ],
+    [
+     "CE_AI_SR",
+     2
+    ],
+    [
+     "CE_AI_Suppressive",
+     2
+    ],
+    [
+     "CE_SMG",
+     2
+    ],
+    [
+     "CE_Sidearm",
+     2
+    ],
+    [
+     "SimpleGun",
+     2
+    ],
+    [
+     "AdvancedGun",
+     1
+    ],
+    [
+     "Bipod_DMR",
+     1
+    ],
+    [
+     "Bipod_LMG",
+     1
+    ],
+    [
+     "CE_AI_EMP",
+     1
+    ],
+    [
+     "CE_AI_LMG",
+     1
+    ],
+    [
+     "CE_GrenadeNeolithic_Incendiary",
+     1
+    ],
+    [
+     "CE_MachineGun",
+     1
+    ],
+    [
+     "EliteGun",
+     1
+    ]
+   ],
+   "researchPrerequisite_top": [
+    [
+     "(none)",
+     14
+    ],
+    [
+     "BlowbackOperation",
+     3
+    ],
+    [
+     "CE_AdvancedLaunchers",
+     3
+    ],
+    [
+     "Gunsmithing",
+     3
+    ],
+    [
+     "GasOperation",
+     2
+    ],
+    [
+     "PrecisionRifling",
+     2
+    ],
+    [
+     "ChargedShot",
+     1
+    ],
+    [
+     "Greatbow",
+     1
+    ],
+    [
+     "RecurveBow",
+     1
+    ]
+   ],
+   "AllowWithRunAndGun": [
+    [
+     "(absent)",
+     21
+    ],
+    [
+     "false",
+     9
+    ]
+   ],
+   "reloadOneAtATime_true": 2,
+   "numeric_ranges": {
+    "AmmoUser/AmmoGenPerMagOverride": {
+     "n": 5,
+     "min": 2.0,
+     "p10": 2.4,
+     "median": 5.0,
+     "p90": 5.0,
+     "max": 5.0
+    },
+    "AmmoUser/magazineSize": {
+     "n": 22,
+     "min": 1.0,
+     "p10": 5.0,
+     "median": 10.0,
+     "p90": 100.0,
+     "max": 250.0
+    },
+    "AmmoUser/reloadTime": {
+     "n": 22,
+     "min": 0.85,
+     "p10": 1.84,
+     "median": 4.0,
+     "p90": 9.2,
+     "max": 9.8
+    },
+    "Properties/burstShotCount": {
+     "n": 15,
+     "min": 1.0,
+     "p10": 1.0,
+     "median": 6.0,
+     "p90": 10.0,
+     "max": 50.0
+    },
+    "Properties/minRange": {
+     "n": 8,
+     "min": 1.9,
+     "p10": 1.9,
+     "median": 4.0,
+     "p90": 4.93,
+     "max": 5.0
+    },
+    "Properties/muzzleFlashScale": {
+     "n": 24,
+     "min": 9.0,
+     "p10": 9.0,
+     "median": 9.0,
+     "p90": 14.0,
+     "max": 14.0
+    },
+    "Properties/range": {
+     "n": 30,
+     "min": 10.0,
+     "p10": 11.8,
+     "median": 45.0,
+     "p90": 75.0,
+     "max": 86.0
+    },
+    "Properties/recoilAmount": {
+     "n": 22,
+     "min": 0.1,
+     "p10": 0.925,
+     "median": 1.545,
+     "p90": 2.936,
+     "max": 3.87
+    },
+    "Properties/ticksBetweenBurstShots": {
+     "n": 12,
+     "min": 2.0,
+     "p10": 3.1,
+     "median": 5.5,
+     "p90": 14.2,
+     "max": 20.0
+    },
+    "Properties/warmupTime": {
+     "n": 30,
+     "min": 0.6,
+     "p10": 0.6,
+     "median": 1.25,
+     "p90": 2.22,
+     "max": 4.3
+    },
+    "statBases/Bulk": {
+     "n": 27,
+     "min": 0.87,
+     "p10": 2.044,
+     "median": 10.0,
+     "p90": 13.8,
+     "max": 20.0
+    },
+    "statBases/MarketValue": {
+     "n": 3,
+     "min": 7.05,
+     "p10": 7.884,
+     "median": 11.22,
+     "p90": 19.116,
+     "max": 21.09
+    },
+    "statBases/Mass": {
+     "n": 25,
+     "min": 0.4,
+     "p10": 0.864,
+     "median": 4.19,
+     "p90": 44.0,
+     "max": 200.0
+    },
+    "statBases/RangedWeapon_Cooldown": {
+     "n": 30,
+     "min": 0.35,
+     "p10": 0.36,
+     "median": 0.525,
+     "p90": 1.57,
+     "max": 2.59
+    },
+    "statBases/ShotSpread": {
+     "n": 27,
+     "min": 0.01,
+     "p10": 0.01,
+     "median": 0.08,
+     "p90": 0.52,
+     "max": 1.0
+    },
+    "statBases/SightsEfficiency": {
+     "n": 30,
+     "min": 0.7,
+     "p10": 0.79,
+     "median": 1.0,
+     "p90": 1.214,
+     "max": 2.6
+    },
+    "statBases/SwayFactor": {
+     "n": 27,
+     "min": 0.14,
+     "p10": 0.7,
+     "median": 1.33,
+     "p90": 2.08,
+     "max": 3.24
+    },
+    "statBases/WorkToMake": {
+     "n": 15,
+     "min": 4500.0,
+     "p10": 8200.0,
+     "median": 30000.0,
+     "p90": 49300.0,
+     "max": 52000.0
+    }
+   }
+  },
+  "ce-modpatches": {
+   "make_gun_operations": 3130,
+   "distinct_defNames": 3029,
+   "sections_present": {
+    "defName": [
+     3130,
+     100.0
+    ],
+    "Properties": [
+     3101,
+     99.07
+    ],
+    "statBases": [
+     3100,
+     99.04
+    ],
+    "FireModes": [
+     2962,
+     94.63
+    ],
+    "AmmoUser": [
+     2825,
+     90.26
+    ],
+    "weaponTags": [
+     1888,
+     60.32
+    ],
+    "costList": [
+     1360,
+     43.45
+    ],
+    "AllowWithRunAndGun": [
+     409,
+     13.07
+    ],
+    "researchPrerequisite": [
+     246,
+     7.86
+    ],
+    "weaponClasses": [
+     1,
+     0.03
+    ]
+   },
+   "Properties_children": [
+    [
+     "defaultProjectile",
+     3101
+    ],
+    [
+     "range",
+     3101
+    ],
+    [
+     "verbClass",
+     3101
+    ],
+    [
+     "hasStandardCommand",
+     3100
+    ],
+    [
+     "soundCast",
+     3095
+    ],
+    [
+     "warmupTime",
+     3094
+    ],
+    [
+     "muzzleFlashScale",
+     2851
+    ],
+    [
+     "soundCastTail",
+     2760
+    ],
+    [
+     "recoilAmount",
+     1958
+    ],
+    [
+     "burstShotCount",
+     1628
+    ],
+    [
+     "ticksBetweenBurstShots",
+     1555
+    ],
+    [
+     "targetParams",
+     676
+    ],
+    [
+     "recoilPattern",
+     490
+    ],
+    [
+     "minRange",
+     286
+    ],
+    [
+     "ai_IsBuildingDestroyer",
+     160
+    ],
+    [
+     "ammoConsumedPerShotCount",
+     145
+    ],
+    [
+     "onlyManualCast",
+     131
+    ],
+    [
+     "ignorePartialLoSBlocker",
+     104
+    ],
+    [
+     "label",
+     84
+    ],
+    [
+     "stopBurstWithoutLos",
+     80
+    ],
+    [
+     "ai_AvoidFriendlyFireRadius",
+     77
+    ],
+    [
+     "noiseRadius",
+     74
+    ],
+    [
+     "requireLineOfSight",
+     52
+    ],
+    [
+     "soundAiming",
+     47
+    ],
+    [
+     "forceNormalTimeSpeed",
+     28
+    ],
+    [
+     "indirectFirePenalty",
+     23
+    ],
+    [
+     "circularError",
+     22
+    ],
+    [
+     "consumeFuelPerShot",
+     15
+    ],
+    [
+     "rangedFireRulepack",
+     15
+    ],
+    [
+     "defaultCooldownTime",
+     6
+    ],
+    [
+     "ensureLinkedBodyPartsGroupAlwaysUsable",
+     4
+    ],
+    [
+     "linkedBodyPartsGroup",
+     4
+    ],
+    [
+     "aimingChargeMote",
+     2
+    ],
+    [
+     "minRangeInCover",
+     2
+    ],
+    [
+     "aimingChargeMoteOffset",
+     1
+    ],
+    [
+     "aimingTargetMote",
+     1
+    ],
+    [
+     "beamTargetsGround",
+     1
+    ],
+    [
+     "forcedMissRadius",
+     1
+    ]
+   ],
+   "AmmoUser_children": [
+    [
+     "ammoSet",
+     2773
+    ],
+    [
+     "reloadTime",
+     2763
+    ],
+    [
+     "magazineSize",
+     2762
+    ],
+    [
+     "AmmoGenPerMagOverride",
+     131
+    ],
+    [
+     "reloadOneAtATime",
+     126
+    ]
+   ],
+   "FireModes_children": [
+    [
+     "aiAimMode",
+     2511
+    ],
+    [
+     "aiUseBurstMode",
+     1648
+    ],
+    [
+     "aimedBurstShotCount",
+     1226
+    ],
+    [
+     "noSingleShot",
+     244
+    ],
+    [
+     "noSnapshot",
+     209
+    ],
+    [
+     "AmmoGenPerMagOverride",
+     1
+    ]
+   ],
+   "statBases_names": [
+    [
+     "SightsEfficiency",
+     3088
+    ],
+    [
+     "RangedWeapon_Cooldown",
+     3065
+    ],
+    [
+     "ShotSpread",
+     3007
+    ],
+    [
+     "SwayFactor",
+     3006
+    ],
+    [
+     "Bulk",
+     2952
+    ],
+    [
+     "Mass",
+     2576
+    ],
+    [
+     "WorkToMake",
+     1530
+    ],
+    [
+     "NightVisionEfficiency_Weapon",
+     46
+    ],
+    [
+     "MeleeCounterParryBonus",
+     18
+    ],
+    [
+     "RangedWeapon_DamageMultiplier",
+     11
+    ],
+    [
+     "MarketValue",
+     9
+    ],
+    [
+     "DeteriorationRate",
+     3
+    ],
+    [
+     "Flammability",
+     3
+    ],
+    [
+     "MaxHitPoints",
+     3
+    ],
+    [
+     "AT_Acid_damage",
+     1
+    ],
+    [
+     "AT_Acid_damage_destruction",
+     1
+    ],
+    [
+     "AT_Acid_damage_duration",
+     1
+    ]
+   ],
+   "verbClass": [
+    [
+     "CombatExtended.Verb_ShootCE",
+     2929
+    ],
+    [
+     "CombatExtended.Verb_ShootCEOneUse",
+     131
+    ],
+    [
+     "CombatExtended.Verb_ShootMortarCE",
+     40
+    ],
+    [
+     "(missing)",
+     29
+    ],
+    [
+     "Verb_Shoot",
+     1
+    ]
+   ],
+   "ammoSet_top": [
+    [
+     "(none)",
+     357
+    ],
+    [
+     "AmmoSet_556x45mmNATO",
+     189
+    ],
+    [
+     "AmmoSet_762x51mmNATO",
+     171
+    ],
+    [
+     "AmmoSet_9x19mmPara",
+     155
+    ],
+    [
+     "AmmoSet_12Gauge",
+     112
+    ],
+    [
+     "AmmoSet_45ACP",
+     71
+    ],
+    [
+     "AmmoSet_762x54mmR",
+     68
+    ],
+    [
+     "AmmoSet_762x39mmSoviet",
+     63
+    ],
+    [
+     "AmmoSet_50BMG",
+     43
+    ],
+    [
+     "AmmoSet_792x57mmMauser",
+     42
+    ],
+    [
+     "AmmoSet_545x39mmSoviet",
+     39
+    ],
+    [
+     "AmmoSet_303British",
+     33
+    ],
+    [
+     "AmmoSet_8x35mmCharged",
+     33
+    ],
+    [
+     "AmmoSet_6x24mmCharged",
+     31
+    ],
+    [
+     "AmmoSet_Flamethrower",
+     30
+    ],
+    [
+     "AmmoSet_3006Springfield",
+     26
+    ],
+    [
+     "AmmoSet_338Lapua",
+     25
+    ],
+    [
+     "AmmoSet_40x46mmGrenade",
+     25
+    ],
+    [
+     "AmmoSet_CrossbowBolt",
+     25
+    ],
+    [
+     "AmmoSet_FN57x28mm",
+     23
+    ],
+    [
+     "AmmoSet_9x18mmMakarov",
+     22
+    ],
+    [
+     "AmmoSet_6x18mmCharged",
+     21
+    ],
+    [
+     "AmmoSet_762x25mmTokarev",
+     20
+    ],
+    [
+     "AmmoSet_44Magnum",
+     18
+    ],
+    [
+     "AmmoSet_Lasgun_Rifle",
+     18
+    ]
+   ],
+   "projectile_name_prefix": [
+    [
+     "Bullet_*",
+     2755
+    ],
+    [
+     "Projectile_*",
+     124
+    ],
+    [
+     "(none)_*",
+     29
+    ],
+    [
+     "Proj_*",
+     29
+    ],
+    [
+     "RF_*",
+     27
+    ],
+    [
+     "XCOM_*",
+     18
+    ]
+   ],
+   "weaponTag_kinds": [
+    [
+     "other",
+     1136
+    ],
+    [
+     "CE_AI_*",
+     1112
+    ],
+    [
+     "CE_*",
+     1008
+    ],
+    [
+     "Bipod_*",
+     169
+    ]
+   ],
+   "weaponTags_top": [
+    [
+     "CE_OneHandedWeapon",
+     432
+    ],
+    [
+     "CE_Sidearm",
+     249
+    ],
+    [
+     "CE_AI_Rifle",
+     230
+    ],
+    [
+     "CE_AI_AssaultWeapon",
+     217
+    ],
+    [
+     "IndustrialGunAdvanced",
+     180
+    ],
+    [
+     "CE_AI_Pistol",
+     170
+    ],
+    [
+     "CE_AI_BROOM",
+     156
+    ],
+    [
+     "CE_SMG",
+     155
+    ],
+    [
+     "NoSwitch",
+     145
+    ],
+    [
+     "TurretGun",
+     129
+    ],
+    [
+     "AdvancedGun",
+     108
+    ],
+    [
+     "CE_MachineGun",
+     91
+    ],
+    [
+     "SpacerGun",
+     85
+    ],
+    [
+     "SimpleGun",
+     70
+    ],
+    [
+     "CE_AI_SR",
+     62
+    ],
+    [
+     "CE_AI_Suppressive",
+     60
+    ],
+    [
+     "Bipod_DMR",
+     59
+    ],
+    [
+     "Bipod_LMG",
+     58
+    ],
+    [
+     "CE_AI_AR",
+     58
+    ],
+    [
+     "SniperRifle",
+     54
+    ],
+    [
+     "CE_AI_AOE",
+     46
+    ],
+    [
+     "CE_AI_Grenade",
+     46
+    ],
+    [
+     "CE_Bow",
+     46
+    ],
+    [
+     "CE_AI_LMG",
+     30
+    ],
+    [
+     "CE_AI_Launcher",
+     27
+    ],
+    [
+     "Bipod_AMR",
+     26
+    ],
+    [
+     "",
+     21
+    ],
+    [
+     "GunHeavy",
+     17
+    ],
+    [
+     "NeolithicRangedHeavy",
+     16
+    ],
+    [
+     "CE_XBow",
+     13
+    ],
+    [
+     "NeolithicRangedChief",
+     13
+    ],
+    [
+     "Bipod_SAW",
+     12
+    ],
+    [
+     "CE_Rifle",
+     10
+    ],
+    [
+     "Bipod_Rifle",
+     9
+    ],
+    [
+     "MedievalRangedDecent",
+     9
+    ],
+    [
+     "GrenadeDestructive",
+     8
+    ],
+    [
+     "Gun",
+     8
+    ],
+    [
+     "Revolver",
+     8
+    ],
+    [
+     "ShortShots",
+     8
+    ],
+    [
+     "ArchotechWeapons",
+     7
+    ]
+   ],
+   "researchPrerequisite_top": [
+    [
+     "(none)",
+     2891
+    ],
+    [
+     "PrecisionRifling",
+     64
+    ],
+    [
+     "Gunsmithing",
+     21
+    ],
+    [
+     "GasOperation",
+     19
+    ],
+    [
+     "ChargedShot",
+     17
+    ],
+    [
+     "BlowbackOperation",
+     16
+    ],
+    [
+     "XCOM_BeamWeapons",
+     10
+    ],
+    [
+     "Stage0b_RA",
+     9
+    ],
+    [
+     "CE_Gunpowder",
+     8
+    ],
+    [
+     "CE_Launchers",
+     7
+    ],
+    [
+     "JDSENCRArmoryCraft",
+     7
+    ],
+    [
+     "XCOM_LaserWeapons",
+     7
+    ],
+    [
+     "Stage1b_RA",
+     6
+    ],
+    [
+     "Stage2c_RA",
+     6
+    ],
+    [
+     "Greatbow",
+     5
+    ]
+   ],
+   "AllowWithRunAndGun": [
+    [
+     "(absent)",
+     2721
+    ],
+    [
+     "false",
+     391
+    ],
+    [
+     "true",
+     13
+    ],
+    [
+     "FALSE",
+     5
+    ]
+   ],
+   "reloadOneAtATime_true": 124,
+   "numeric_ranges": {
+    "AmmoUser/AmmoGenPerMagOverride": {
+     "n": 131,
+     "min": 2.0,
+     "p10": 3.0,
+     "median": 5.0,
+     "p90": 5.0,
+     "max": 15.0
+    },
+    "AmmoUser/magazineSize": {
+     "n": 2762,
+     "min": 1.0,
+     "p10": 3.0,
+     "median": 20.0,
+     "p90": 100.0,
+     "max": 1500.0
+    },
+    "AmmoUser/reloadTime": {
+     "n": 2763,
+     "min": 0.25,
+     "p10": 2.4,
+     "median": 4.0,
+     "p90": 7.8,
+     "max": 30.0
+    },
+    "Properties/burstShotCount": {
+     "n": 1623,
+     "min": 0.0,
+     "p10": 2.0,
+     "median": 6.0,
+     "p90": 12.0,
+     "max": 300.0
+    },
+    "Properties/minRange": {
+     "n": 286,
+     "min": 0.0,
+     "p10": 1.9,
+     "median": 4.0,
+     "p90": 17.0,
+     "max": 37.0
+    },
+    "Properties/muzzleFlashScale": {
+     "n": 2851,
+     "min": 0.0,
+     "p10": 8.0,
+     "median": 9.0,
+     "p90": 14.0,
+     "max": 100.0
+    },
+    "Properties/range": {
+     "n": 3101,
+     "min": 2.5,
+     "p10": 12.0,
+     "median": 44.0,
+     "p90": 75.0,
+     "max": 2000.0
+    },
+    "Properties/recoilAmount": {
+     "n": 1958,
+     "min": 0.0,
+     "p10": 0.64,
+     "median": 1.45,
+     "p90": 2.7,
+     "max": 20.0
+    },
+    "Properties/ticksBetweenBurstShots": {
+     "n": 1555,
+     "min": 0.0,
+     "p10": 3.0,
+     "median": 5.0,
+     "p90": 12.0,
+     "max": 150.0
+    },
+    "Properties/warmupTime": {
+     "n": 3094,
+     "min": 0.0,
+     "p10": 0.6,
+     "median": 1.1,
+     "p90": 2.1,
+     "max": 20.0
+    },
+    "statBases/AT_Acid_damage": {
+     "n": 1,
+     "min": 0.3,
+     "p10": 0.3,
+     "median": 0.3,
+     "p90": 0.3,
+     "max": 0.3
+    },
+    "statBases/AT_Acid_damage_destruction": {
+     "n": 1,
+     "min": 35.0,
+     "p10": 35.0,
+     "median": 35.0,
+     "p90": 35.0,
+     "max": 35.0
+    },
+    "statBases/AT_Acid_damage_duration": {
+     "n": 1,
+     "min": 40.0,
+     "p10": 40.0,
+     "median": 40.0,
+     "p90": 40.0,
+     "max": 40.0
+    },
+    "statBases/Bulk": {
+     "n": 2952,
+     "min": 0.2,
+     "p10": 2.22,
+     "median": 8.5,
+     "p90": 14.7,
+     "max": 12150.0
+    },
+    "statBases/DeteriorationRate": {
+     "n": 3,
+     "min": 0.0,
+     "p10": 0.0,
+     "median": 0.0,
+     "p90": 0.0,
+     "max": 0.0
+    },
+    "statBases/Flammability": {
+     "n": 3,
+     "min": 0.0,
+     "p10": 0.0,
+     "median": 0.0,
+     "p90": 0.0,
+     "max": 0.0
+    },
+    "statBases/MarketValue": {
+     "n": 9,
+     "min": 7.22,
+     "p10": 10.42,
+     "median": 300.0,
+     "p90": 4399.8,
+     "max": 9999.0
+    },
+    "statBases/Mass": {
+     "n": 2576,
+     "min": 0.15,
+     "p10": 1.125,
+     "median": 3.85,
+     "p90": 12.5,
+     "max": 20700.0
+    },
+    "statBases/MaxHitPoints": {
+     "n": 3,
+     "min": 400.0,
+     "p10": 440.0,
+     "median": 600.0,
+     "p90": 760.0,
+     "max": 800.0
+    },
+    "statBases/MeleeCounterParryBonus": {
+     "n": 18,
+     "min": 0.15,
+     "p10": 0.2,
+     "median": 0.2,
+     "p90": 0.93,
+     "max": 0.93
+    },
+    "statBases/NightVisionEfficiency_Weapon": {
+     "n": 46,
+     "min": 0.3,
+     "p10": 0.4,
+     "median": 0.5,
+     "p90": 0.6,
+     "max": 0.7
+    },
+    "statBases/RangedWeapon_Cooldown": {
+     "n": 3065,
+     "min": 0.0,
+     "p10": 0.36,
+     "median": 0.4,
+     "p90": 1.5,
+     "max": 40.0
+    },
+    "statBases/RangedWeapon_DamageMultiplier": {
+     "n": 11,
+     "min": 1.1,
+     "p10": 1.1,
+     "median": 1.1,
+     "p90": 1.1,
+     "max": 1.1
+    },
+    "statBases/ShotSpread": {
+     "n": 3007,
+     "min": 0.0,
+     "p10": 0.03,
+     "median": 0.1,
+     "p90": 0.268,
+     "max": 10.0
+    },
+    "statBases/SightsEfficiency": {
+     "n": 3088,
+     "min": 0.01,
+     "p10": 0.7,
+     "median": 1.0,
+     "p90": 2.24,
+     "max": 10.0
+    },
+    "statBases/SwayFactor": {
+     "n": 3006,
+     "min": 0.0,
+     "p10": 0.85,
+     "median": 1.285,
+     "p90": 1.96,
+     "max": 14.47
+    },
+    "statBases/WorkToMake": {
+     "n": 1530,
+     "min": 50.0,
+     "p10": 8000.0,
+     "median": 30500.0,
+     "p90": 58000.0,
+     "max": 545000.0
+    }
+   }
+  },
+  "owner": {
+   "make_gun_operations": 20,
+   "distinct_defNames": 15,
+   "sections_present": {
+    "AmmoUser": [
+     20,
+     100.0
+    ],
+    "FireModes": [
+     20,
+     100.0
+    ],
+    "Properties": [
+     20,
+     100.0
+    ],
+    "defName": [
+     20,
+     100.0
+    ],
+    "statBases": [
+     20,
+     100.0
+    ],
+    "weaponTags": [
+     20,
+     100.0
+    ],
+    "costList": [
+     10,
+     50.0
+    ]
+   },
+   "Properties_children": [
+    [
+     "defaultProjectile",
+     20
+    ],
+    [
+     "hasStandardCommand",
+     20
+    ],
+    [
+     "muzzleFlashScale",
+     20
+    ],
+    [
+     "range",
+     20
+    ],
+    [
+     "soundCast",
+     20
+    ],
+    [
+     "soundCastTail",
+     20
+    ],
+    [
+     "verbClass",
+     20
+    ],
+    [
+     "warmupTime",
+     20
+    ],
+    [
+     "recoilAmount",
+     17
+    ],
+    [
+     "ticksBetweenBurstShots",
+     7
+    ],
+    [
+     "burstShotCount",
+     6
+    ],
+    [
+     "targetParams",
+     1
+    ]
+   ],
+   "AmmoUser_children": [
+    [
+     "ammoSet",
+     20
+    ],
+    [
+     "magazineSize",
+     20
+    ],
+    [
+     "reloadTime",
+     20
+    ]
+   ],
+   "FireModes_children": [
+    [
+     "aiAimMode",
+     17
+    ],
+    [
+     "aiUseBurstMode",
+     7
+    ],
+    [
+     "aimedBurstShotCount",
+     6
+    ]
+   ],
+   "statBases_names": [
+    [
+     "Bulk",
+     20
+    ],
+    [
+     "Mass",
+     20
+    ],
+    [
+     "RangedWeapon_Cooldown",
+     20
+    ],
+    [
+     "ShotSpread",
+     20
+    ],
+    [
+     "SightsEfficiency",
+     20
+    ],
+    [
+     "SwayFactor",
+     20
+    ],
+    [
+     "WorkToMake",
+     10
+    ]
+   ],
+   "verbClass": [
+    [
+     "CombatExtended.Verb_ShootCE",
+     20
+    ]
+   ],
+   "ammoSet_top": [
+    [
+     "AmmoSet_792x57mmMauser",
+     10
+    ],
+    [
+     "AmmoSet_762x51mmNATO",
+     2
+    ],
+    [
+     "AmmoSet_12Gauge",
+     1
+    ],
+    [
+     "AmmoSet_300WinchesterMagnum",
+     1
+    ],
+    [
+     "AmmoSet_46x30mm",
+     1
+    ],
+    [
+     "AmmoSet_545x39mmSoviet",
+     1
+    ],
+    [
+     "AmmoSet_556x45mmNATO",
+     1
+    ],
+    [
+     "AmmoSet_762x39mmSoviet",
+     1
+    ],
+    [
+     "AmmoSet_762x54mmR",
+     1
+    ],
+    [
+     "AmmoSet_9x19mmPara",
+     1
+    ]
+   ],
+   "projectile_name_prefix": [
+    [
+     "Bullet_*",
+     20
+    ]
+   ],
+   "weaponTag_kinds": [
+    [
+     "CE_AI_*",
+     29
+    ],
+    [
+     "CE_*",
+     6
+    ]
+   ],
+   "weaponTags_top": [
+    [
+     "CE_AI_Default",
+     10
+    ],
+    [
+     "CE_AI_SR",
+     10
+    ],
+    [
+     "CE_AI_Rifle",
+     6
+    ],
+    [
+     "CE_AI_AssaultWeapon",
+     2
+    ],
+    [
+     "CE_OneHandedWeapon",
+     2
+    ],
+    [
+     "CE_Sidearm",
+     2
+    ],
+    [
+     "CE_AI_Pistol",
+     1
+    ],
+    [
+     "CE_MachineGun",
+     1
+    ],
+    [
+     "CE_SMG",
+     1
+    ]
+   ],
+   "researchPrerequisite_top": [
+    [
+     "(none)",
+     20
+    ]
+   ],
+   "AllowWithRunAndGun": [
+    [
+     "(absent)",
+     20
+    ]
+   ],
+   "reloadOneAtATime_true": 0,
+   "numeric_ranges": {
+    "AmmoUser/magazineSize": {
+     "n": 20,
+     "min": 5.0,
+     "p10": 10.0,
+     "median": 25.0,
+     "p90": 42.0,
+     "max": 100.0
+    },
+    "AmmoUser/reloadTime": {
+     "n": 20,
+     "min": 2.0,
+     "p10": 3.2,
+     "median": 4.0,
+     "p90": 4.0,
+     "max": 7.5
+    },
+    "Properties/burstShotCount": {
+     "n": 6,
+     "min": 6.0,
+     "p10": 6.0,
+     "median": 6.0,
+     "p90": 6.0,
+     "max": 6.0
+    },
+    "Properties/muzzleFlashScale": {
+     "n": 20,
+     "min": 9.0,
+     "p10": 9.0,
+     "median": 9.0,
+     "p90": 9.0,
+     "max": 9.0
+    },
+    "Properties/range": {
+     "n": 20,
+     "min": 12.0,
+     "p10": 19.8,
+     "median": 57.0,
+     "p90": 68.0,
+     "max": 86.0
+    },
+    "Properties/recoilAmount": {
+     "n": 17,
+     "min": 1.2,
+     "p10": 1.32,
+     "median": 1.9,
+     "p90": 1.97,
+     "max": 2.0
+    },
+    "Properties/ticksBetweenBurstShots": {
+     "n": 7,
+     "min": 6.0,
+     "p10": 6.0,
+     "median": 7.0,
+     "p90": 12.0,
+     "max": 15.0
+    },
+    "Properties/warmupTime": {
+     "n": 20,
+     "min": 0.5,
+     "p10": 0.59,
+     "median": 0.9,
+     "p90": 1.11,
+     "max": 2.0
+    },
+    "statBases/Bulk": {
+     "n": 20,
+     "min": 1.5,
+     "p10": 3.86,
+     "median": 10.575,
+     "p90": 12.02,
+     "max": 14.0
+    },
+    "statBases/Mass": {
+     "n": 20,
+     "min": 1.0,
+     "p10": 2.1,
+     "median": 4.6,
+     "p90": 5.02,
+     "max": 7.3
+    },
+    "statBases/RangedWeapon_Cooldown": {
+     "n": 20,
+     "min": 0.2,
+     "p10": 0.2,
+     "median": 0.8,
+     "p90": 0.8,
+     "max": 1.36
+    },
+    "statBases/ShotSpread": {
+     "n": 20,
+     "min": 0.04,
+     "p10": 0.05,
+     "median": 0.425,
+     "p90": 0.71,
+     "max": 0.8
+    },
+    "statBases/SightsEfficiency": {
+     "n": 20,
+     "min": 1.0,
+     "p10": 1.0,
+     "median": 1.1,
+     "p90": 1.64,
+     "max": 2.8
+    },
+    "statBases/SwayFactor": {
+     "n": 20,
+     "min": 0.7,
+     "p10": 0.99,
+     "median": 1.08,
+     "p90": 1.3,
+     "max": 1.35
+    },
+    "statBases/WorkToMake": {
+     "n": 10,
+     "min": 9000.0,
+     "p10": 22950.0,
+     "median": 30500.0,
+     "p90": 32600.0,
+     "max": 38000.0
+    }
+   }
+  },
+  "workshop": {
+   "make_gun_operations": 3385,
+   "distinct_defNames": 3368,
+   "sections_present": {
+    "Properties": [
+     3385,
+     100.0
+    ],
+    "defName": [
+     3385,
+     100.0
+    ],
+    "statBases": [
+     3385,
+     100.0
+    ],
+    "FireModes": [
+     3344,
+     98.79
+    ],
+    "AmmoUser": [
+     3324,
+     98.2
+    ],
+    "weaponTags": [
+     2096,
+     61.92
+    ],
+    "AllowWithRunAndGun": [
+     216,
+     6.38
+    ],
+    "costList": [
+     122,
+     3.6
+    ],
+    "researchPrerequisite": [
+     15,
+     0.44
+    ]
+   },
+   "Properties_children": [
+    [
+     "defaultProjectile",
+     3385
+    ],
+    [
+     "hasStandardCommand",
+     3385
+    ],
+    [
+     "range",
+     3385
+    ],
+    [
+     "soundCast",
+     3385
+    ],
+    [
+     "verbClass",
+     3385
+    ],
+    [
+     "warmupTime",
+     3385
+    ],
+    [
+     "muzzleFlashScale",
+     3326
+    ],
+    [
+     "recoilAmount",
+     3279
+    ],
+    [
+     "soundCastTail",
+     2884
+    ],
+    [
+     "burstShotCount",
+     1826
+    ],
+    [
+     "ticksBetweenBurstShots",
+     1816
+    ],
+    [
+     "targetParams",
+     292
+    ],
+    [
+     "recoilPattern",
+     181
+    ],
+    [
+     "minRange",
+     88
+    ],
+    [
+     "ai_IsBuildingDestroyer",
+     80
+    ],
+    [
+     "ai_AvoidFriendlyFireRadius",
+     58
+    ],
+    [
+     "onlyManualCast",
+     50
+    ],
+    [
+     "stopBurstWithoutLos",
+     45
+    ],
+    [
+     "label",
+     43
+    ],
+    [
+     "noiseRadius",
+     43
+    ],
+    [
+     "ignorePartialLoSBlocker",
+     35
+    ],
+    [
+     "soundAiming",
+     9
+    ],
+    [
+     "indirectFirePenalty",
+     3
+    ],
+    [
+     "forceNormalTimeSpeed",
+     1
+    ]
+   ],
+   "AmmoUser_children": [
+    [
+     "ammoSet",
+     3324
+    ],
+    [
+     "magazineSize",
+     3324
+    ],
+    [
+     "reloadTime",
+     3324
+    ],
+    [
+     "reloadOneAtATime",
+     226
+    ],
+    [
+     "AmmoGenPerMagOverride",
+     110
+    ]
+   ],
+   "FireModes_children": [
+    [
+     "aiAimMode",
+     3337
+    ],
+    [
+     "aiUseBurstMode",
+     1941
+    ],
+    [
+     "aimedBurstShotCount",
+     1829
+    ],
+    [
+     "noSingleShot",
+     14
+    ],
+    [
+     "noSnapshot",
+     11
+    ]
+   ],
+   "statBases_names": [
+    [
+     "RangedWeapon_Cooldown",
+     3385
+    ],
+    [
+     "SightsEfficiency",
+     3385
+    ],
+    [
+     "ShotSpread",
+     3342
+    ],
+    [
+     "SwayFactor",
+     3342
+    ],
+    [
+     "Mass",
+     3288
+    ],
+    [
+     "Bulk",
+     3286
+    ],
+    [
+     "WorkToMake",
+     122
+    ],
+    [
+     "MarketValue",
+     44
+    ],
+    [
+     "NightVisionEfficiency_Weapon",
+     43
+    ]
+   ],
+   "verbClass": [
+    [
+     "CombatExtended.Verb_ShootCE",
+     3320
+    ],
+    [
+     "CombatExtended.Verb_ShootCEOneUse",
+     59
+    ],
+    [
+     "CombatExtended.Verb_ShootMortarCE",
+     4
+    ],
+    [
+     "CombatExtended.Verb_ShootFlareCE",
+     2
+    ]
+   ],
+   "ammoSet_top": [
+    [
+     "AmmoSet_556x45mmNATO",
+     620
+    ],
+    [
+     "AmmoSet_9x19mmPara",
+     470
+    ],
+    [
+     "AmmoSet_762x51mmNATO",
+     438
+    ],
+    [
+     "AmmoSet_762x39mmSoviet",
+     213
+    ],
+    [
+     "AmmoSet_12Gauge",
+     132
+    ],
+    [
+     "AmmoSet_45ACP",
+     99
+    ],
+    [
+     "AmmoSet_545x39mmSoviet",
+     91
+    ],
+    [
+     "AmmoSet_762x54mmR",
+     63
+    ],
+    [
+     "(none)",
+     61
+    ],
+    [
+     "AmmoSet_50BMG",
+     61
+    ],
+    [
+     "AmmoSet_357Magnum_Revolver",
+     54
+    ],
+    [
+     "AmmoSet_9x19mmParaSD",
+     53
+    ],
+    [
+     "AmmoSet_762x25mmTokarev",
+     46
+    ],
+    [
+     "AmmoSet_22LR",
+     44
+    ],
+    [
+     "AmmoSet_38Special_Revolver",
+     40
+    ],
+    [
+     "AmmoSet_277Fury",
+     39
+    ],
+    [
+     "AmmoSet_300WinchesterMagnum",
+     28
+    ],
+    [
+     "AmmoSet_280British",
+     24
+    ],
+    [
+     "AmmoSet_50AE",
+     23
+    ],
+    [
+     "AmmoSet_3006Springfield",
+     22
+    ],
+    [
+     "AmmoSet_380ACP",
+     22
+    ],
+    [
+     "AmmoSet_44Magnum_Revolver",
+     21
+    ],
+    [
+     "AmmoSet_25ACP",
+     16
+    ],
+    [
+     "AmmoSet_32ACP",
+     16
+    ],
+    [
+     "AmmoSet_40x46mmGrenade",
+     16
+    ]
+   ],
+   "projectile_name_prefix": [
+    [
+     "Bullet_*",
+     3342
+    ],
+    [
+     "CGF1_*",
+     36
+    ],
+    [
+     "HRK_*",
+     6
+    ],
+    [
+     "Proj_*",
+     1
+    ]
+   ],
+   "weaponTag_kinds": [
+    [
+     "CE_*",
+     1862
+    ],
+    [
+     "CE_AI_*",
+     1705
+    ],
+    [
+     "Bipod_*",
+     414
+    ],
+    [
+     "other",
+     129
+    ]
+   ],
+   "weaponTags_top": [
+    [
+     "CE_OneHandedWeapon",
+     854
+    ],
+    [
+     "CE_Sidearm",
+     772
+    ],
+    [
+     "CE_AI_Pistol",
+     564
+    ],
+    [
+     "CE_AI_AR",
+     366
+    ],
+    [
+     "CE_AI_SR",
+     248
+    ],
+    [
+     "CE_MachineGun",
+     221
+    ],
+    [
+     "CE_AI_LMG",
+     215
+    ],
+    [
+     "Bipod_LMG",
+     181
+    ],
+    [
+     "Bipod_DMR",
+     156
+    ],
+    [
+     "TurretGun",
+     104
+    ],
+    [
+     "CE_AI_BROOM",
+     95
+    ],
+    [
+     "CE_AI_AOE",
+     79
+    ],
+    [
+     "CE_AI_AssaultWeapon",
+     71
+    ],
+    [
+     "Bipod_AMR",
+     50
+    ],
+    [
+     "CE_AI_Rifle",
+     30
+    ],
+    [
+     "CE_AI_Grenade",
+     16
+    ],
+    [
+     "Bipod_SAW",
+     14
+    ],
+    [
+     "CE_SMG",
+     12
+    ],
+    [
+     "CE_AI_Suppressive",
+     11
+    ],
+    [
+     "CE_AI_SMOKE",
+     10
+    ],
+    [
+     "Bipod_Rifle",
+     9
+    ],
+    [
+     "AM_Sidearm",
+     7
+    ],
+    [
+     "GunHeavy",
+     7
+    ],
+    [
+     "NoSwitch",
+     5
+    ],
+    [
+     "Bipod_ATR",
+     4
+    ],
+    [
+     "SimpleGun",
+     3
+    ],
+    [
+     "CE_FlareLauncher",
+     2
+    ],
+    [
+     "SpacerGun",
+     2
+    ],
+    [
+     "CE_GrenadeFlashbang",
+     1
+    ],
+    [
+     "IndustrialGunAdvanced",
+     1
+    ]
+   ],
+   "researchPrerequisite_top": [
+    [
+     "(none)",
+     3370
+    ],
+    [
+     "Gunsmithing",
+     7
+    ],
+    [
+     "BlowbackOperation",
+     3
+    ],
+    [
+     "CE_AdvancedLaunchers",
+     2
+    ],
+    [
+     "GasOperation",
+     2
+    ],
+    [
+     "CE_Launchers",
+     1
+    ]
+   ],
+   "AllowWithRunAndGun": [
+    [
+     "(absent)",
+     3169
+    ],
+    [
+     "false",
+     216
+    ]
+   ],
+   "reloadOneAtATime_true": 226,
+   "numeric_ranges": {
+    "AmmoUser/AmmoGenPerMagOverride": {
+     "n": 110,
+     "min": 2.0,
+     "p10": 4.0,
+     "median": 7.0,
+     "p90": 7.0,
+     "max": 7.0
+    },
+    "AmmoUser/magazineSize": {
+     "n": 3324,
+     "min": 1.0,
+     "p10": 5.0,
+     "median": 20.0,
+     "p90": 71.0,
+     "max": 1200.0
+    },
+    "AmmoUser/reloadTime": {
+     "n": 3324,
+     "min": 0.6,
+     "p10": 4.0,
+     "median": 4.0,
+     "p90": 5.5,
+     "max": 20.0
+    },
+    "Properties/burstShotCount": {
+     "n": 1826,
+     "min": 1.0,
+     "p10": 6.0,
+     "median": 6.0,
+     "p90": 10.0,
+     "max": 50.0
+    },
+    "Properties/minRange": {
+     "n": 88,
+     "min": 2.0,
+     "p10": 2.97,
+     "median": 5.0,
+     "p90": 6.0,
+     "max": 29.9
+    },
+    "Properties/muzzleFlashScale": {
+     "n": 3326,
+     "min": 0.0,
+     "p10": 1.0,
+     "median": 9.0,
+     "p90": 9.0,
+     "max": 20.0
+    },
+    "Properties/range": {
+     "n": 3385,
+     "min": 5.0,
+     "p10": 12.0,
+     "median": 48.0,
+     "p90": 75.0,
+     "max": 900.0
+    },
+    "Properties/recoilAmount": {
+     "n": 3279,
+     "min": 0.0,
+     "p10": 1.3,
+     "median": 1.55,
+     "p90": 2.75,
+     "max": 4.86
+    },
+    "Properties/ticksBetweenBurstShots": {
+     "n": 1816,
+     "min": 2.0,
+     "p10": 5.0,
+     "median": 6.0,
+     "p90": 7.0,
+     "max": 45.0
+    },
+    "Properties/warmupTime": {
+     "n": 3385,
+     "min": 0.2,
+     "p10": 0.6,
+     "median": 1.1,
+     "p90": 1.38,
+     "max": 5.5
+    },
+    "statBases/Bulk": {
+     "n": 3286,
+     "min": 0.4,
+     "p10": 2.2,
+     "median": 8.05,
+     "p90": 13.2,
+     "max": 1800.0
+    },
+    "statBases/MarketValue": {
+     "n": 44,
+     "min": 2.25,
+     "p10": 2.25,
+     "median": 8.33,
+     "p90": 12.45,
+     "max": 4000.0
+    },
+    "statBases/Mass": {
+     "n": 3288,
+     "min": 0.1,
+     "p10": 1.2,
+     "median": 3.4,
+     "p90": 8.0,
+     "max": 1540.0
+    },
+    "statBases/NightVisionEfficiency_Weapon": {
+     "n": 43,
+     "min": 0.2,
+     "p10": 0.4,
+     "median": 0.6,
+     "p90": 1.0,
+     "max": 1.0
+    },
+    "statBases/RangedWeapon_Cooldown": {
+     "n": 3385,
+     "min": 0.2,
+     "p10": 0.36,
+     "median": 0.37,
+     "p90": 1.0,
+     "max": 3.95
+    },
+    "statBases/ShotSpread": {
+     "n": 3342,
+     "min": 0.01,
+     "p10": 0.05,
+     "median": 0.09,
+     "p90": 0.18,
+     "max": 2.0
+    },
+    "statBases/SightsEfficiency": {
+     "n": 3385,
+     "min": 0.35,
+     "p10": 0.7,
+     "median": 1.0,
+     "p90": 2.2,
+     "max": 4.0
+    },
+    "statBases/SwayFactor": {
+     "n": 3342,
+     "min": 0.51,
+     "p10": 1.01,
+     "median": 1.29,
+     "p90": 1.7,
+     "max": 5.1
+    },
+    "statBases/WorkToMake": {
+     "n": 122,
+     "min": 4500.0,
+     "p10": 10550.0,
+     "median": 28500.0,
+     "p90": 38500.0,
+     "max": 55000.0
+    }
+   }
+  }
+ },
+ "tools": {
+  "ce-core": {
+   "operations_with_tools": 89,
+   "tool_entries": 301,
+   "class_attribute": [
+    [
+     "CombatExtended.ToolCE",
+     301
+    ]
+   ],
+   "armor_penetration_fields": {
+    "blunt-only": [
+     182,
+     60.47
+    ],
+    "both": [
+     119,
+     39.53
+    ]
+   },
+   "capacities": [
+    [
+     "Blunt",
+     130
+    ],
+    [
+     "Bite",
+     53
+    ],
+    [
+     "Scratch",
+     47
+    ],
+    [
+     "Poke",
+     43
+    ],
+    [
+     "Stab",
+     14
+    ],
+    [
+     "Cut",
+     12
+    ],
+    [
+     "Demolish",
+     1
+    ],
+    [
+     "ToxicBite",
+     1
+    ]
+   ],
+   "child_fields": [
+    [
+     "armorPenetrationBlunt",
+     301
+    ],
+    [
+     "capacities",
+     301
+    ],
+    [
+     "cooldownTime",
+     301
+    ],
+    [
+     "power",
+     301
+    ],
+    [
+     "linkedBodyPartsGroup",
+     294
+    ],
+    [
+     "label",
+     247
+    ],
+    [
+     "armorPenetrationSharp",
+     119
+    ],
+    [
+     "chanceFactor",
+     110
+    ],
+    [
+     "surpriseAttack",
+     33
+    ],
+    [
+     "alwaysTreatAsWeapon",
+     10
+    ],
+    [
+     "restrictedGender",
+     9
+    ],
+    [
+     "soundMeleeHit",
+     4
+    ],
+    [
+     "soundMeleeMiss",
+     4
+    ]
+   ]
+  },
+  "ce-modpatches": {
+   "operations_with_tools": 4085,
+   "tool_entries": 10149,
+   "class_attribute": [
+    [
+     "CombatExtended.ToolCE",
+     10149
+    ]
+   ],
+   "armor_penetration_fields": {
+    "blunt-only": [
+     5501,
+     54.2
+    ],
+    "both": [
+     4555,
+     44.88
+    ],
+    "none": [
+     74,
+     0.73
+    ],
+    "sharp-only": [
+     19,
+     0.19
+    ]
+   },
+   "capacities": [
+    [
+     "Blunt",
+     4336
+    ],
+    [
+     "Poke",
+     1470
+    ],
+    [
+     "Scratch",
+     1179
+    ],
+    [
+     "Cut",
+     1031
+    ],
+    [
+     "Stab",
+     995
+    ],
+    [
+     "Bite",
+     900
+    ],
+    [
+     "ToxicBite",
+     66
+    ],
+    [
+     "Demolish",
+     45
+    ],
+    [
+     "Gash",
+     22
+    ],
+    [
+     "GR_VeryToxicBite",
+     21
+    ],
+    [
+     "ROM_BluntMonstrous",
+     20
+    ],
+    [
+     "ScratchToxic",
+     17
+    ],
+    [
+     "AA_ToxicSting",
+     14
+    ],
+    [
+     "VQE_CryptoaxeCut",
+     13
+    ],
+    [
+     "CAT_CryptoStab",
+     10
+    ],
+    [
+     "VFEE_CutToxblade",
+     10
+    ],
+    [
+     "BotchJob_RotCut",
+     8
+    ],
+    [
+     "ROM_ScratchMonstrous",
+     8
+    ],
+    [
+     "VFEE_StabToxblade",
+     8
+    ],
+    [
+     "AA_Electric",
+     6
+    ]
+   ],
+   "child_fields": [
+    [
+     "capacities",
+     10149
+    ],
+    [
+     "cooldownTime",
+     10149
+    ],
+    [
+     "power",
+     10149
+    ],
+    [
+     "armorPenetrationBlunt",
+     10056
+    ],
+    [
+     "label",
+     9320
+    ],
+    [
+     "linkedBodyPartsGroup",
+     9296
+    ],
+    [
+     "armorPenetrationSharp",
+     4574
+    ],
+    [
+     "chanceFactor",
+     3757
+    ],
+    [
+     "surpriseAttack",
+     1247
+    ],
+    [
+     "ensureLinkedBodyPartsGroupAlwaysUsable",
+     433
+    ],
+    [
+     "alwaysTreatAsWeapon",
+     377
+    ],
+    [
+     "extraMeleeDamages",
+     312
+    ],
+    [
+     "soundMeleeHit",
+     121
+    ],
+    [
+     "soundMeleeMiss",
+     104
+    ]
+   ]
+  },
+  "owner": {
+   "operations_with_tools": 30,
+   "tool_entries": 79,
+   "class_attribute": [
+    [
+     "CombatExtended.ToolCE",
+     79
+    ]
+   ],
+   "armor_penetration_fields": {
+    "blunt-only": [
+     71,
+     89.87
+    ],
+    "both": [
+     8,
+     10.13
+    ]
+   },
+   "capacities": [
+    [
+     "Blunt",
+     47
+    ],
+    [
+     "Poke",
+     24
+    ],
+    [
+     "Stab",
+     5
+    ],
+    [
+     "Scratch",
+     2
+    ],
+    [
+     "Bite",
+     1
+    ]
+   ],
+   "child_fields": [
+    [
+     "armorPenetrationBlunt",
+     79
+    ],
+    [
+     "capacities",
+     79
+    ],
+    [
+     "cooldownTime",
+     79
+    ],
+    [
+     "label",
+     79
+    ],
+    [
+     "linkedBodyPartsGroup",
+     79
+    ],
+    [
+     "power",
+     79
+    ],
+    [
+     "chanceFactor",
+     46
+    ],
+    [
+     "armorPenetrationSharp",
+     8
+    ]
+   ]
+  },
+  "workshop": {
+   "operations_with_tools": 1465,
+   "tool_entries": 4095,
+   "class_attribute": [
+    [
+     "CombatExtended.ToolCE",
+     2842
+    ],
+    [
+     "(no Class: vanilla Tool)",
+     1238
+    ],
+    [
+     "ZoologyMod.ToolWithGender, ZoologyMod",
+     15
+    ]
+   ],
+   "armor_penetration_fields": {
+    "both": [
+     1297,
+     31.67
+    ],
+    "blunt-only": [
+     1276,
+     31.16
+    ],
+    "none": [
+     1258,
+     30.72
+    ],
+    "sharp-only": [
+     264,
+     6.45
+    ]
+   },
+   "capacities": [
+    [
+     "Blunt",
+     1787
+    ],
+    [
+     "Scratch",
+     954
+    ],
+    [
+     "Bite",
+     793
+    ],
+    [
+     "Stab",
+     176
+    ],
+    [
+     "Poke",
+     169
+    ],
+    [
+     "Cut",
+     112
+    ],
+    [
+     "ToxicBite",
+     52
+    ],
+    [
+     "Sting",
+     20
+    ],
+    [
+     "AA_InfectedClaws",
+     8
+    ],
+    [
+     "VREA_Sear",
+     8
+    ],
+    [
+     "AA_FungalClaws",
+     4
+    ],
+    [
+     "AA_RegenerativePierce",
+     4
+    ],
+    [
+     "ScratchToxic",
+     4
+    ],
+    [
+     "VAEWaste_FluClaws",
+     4
+    ],
+    [
+     "BMT_ToxicSting",
+     3
+    ],
+    [
+     "AA_Acid",
+     2
+    ],
+    [
+     "AA_Electric",
+     2
+    ],
+    [
+     "AA_LockJawDamage",
+     2
+    ],
+    [
+     "AA_ParalysingBite",
+     2
+    ],
+    [
+     "AA_SwarmlingClaws",
+     2
+    ]
+   ],
+   "child_fields": [
+    [
+     "capacities",
+     4095
+    ],
+    [
+     "cooldownTime",
+     4095
+    ],
+    [
+     "power",
+     4095
+    ],
+    [
+     "linkedBodyPartsGroup",
+     4037
+    ],
+    [
+     "label",
+     3891
+    ],
+    [
+     "armorPenetrationBlunt",
+     2573
+    ],
+    [
+     "chanceFactor",
+     1910
+    ],
+    [
+     "armorPenetrationSharp",
+     1561
+    ],
+    [
+     "surpriseAttack",
+     959
+    ],
+    [
+     "labelNoLocation",
+     864
+    ],
+    [
+     "ensureLinkedBodyPartsGroupAlwaysUsable",
+     847
+    ],
+    [
+     "alwaysTreatAsWeapon",
+     102
+    ],
+    [
+     "restrictedGender",
+     30
+    ],
+    [
+     "soundMeleeHit",
+     30
+    ]
+   ]
+  }
+ },
+ "stats_and_extensions": {
+  "ce-core": {
+   "statBases_stats_touched": [
+    [
+     [
+      "Add",
+      "Bulk"
+     ],
+     45
+    ],
+    [
+     [
+      "Replace",
+      "MoveSpeed"
+     ],
+     33
+    ],
+    [
+     [
+      "Add",
+      "MeleeCritChance"
+     ],
+     31
+    ],
+    [
+     [
+      "Add",
+      "MeleeDodgeChance"
+     ],
+     31
+    ],
+    [
+     [
+      "Add",
+      "MeleeParryChance"
+     ],
+     31
+    ],
+    [
+     [
+      "Replace",
+      "StuffPower_Armor_Sharp"
+     ],
+     20
+    ],
+    [
+     [
+      "Replace",
+      "StuffPower_Armor_Blunt"
+     ],
+     16
+    ],
+    [
+     [
+      "Add",
+      "WornBulk"
+     ],
+     14
+    ],
+    [
+     [
+      "Replace",
+      "ArmorRating_Blunt"
+     ],
+     14
+    ],
+    [
+     [
+      "Replace",
+      "ArmorRating_Sharp"
+     ],
+     14
+    ],
+    [
+     [
+      "Replace",
+      "Mass"
+     ],
+     14
+    ],
+    [
+     [
+      "Replace",
+      "StuffPower_Armor_Heat"
+     ],
+     14
+    ],
+    [
+     [
+      "Replace",
+      "StuffEffectMultiplierArmor"
+     ],
+     12
+    ],
+    [
+     [
+      "Add",
+      "AimingAccuracy"
+     ],
+     11
+    ],
+    [
+     [
+      "Add",
+      "MeleeCounterParryBonus"
+     ],
+     10
+    ],
+    [
+     [
+      "Replace",
+      "MaxHitPoints"
+     ],
+     10
+    ],
+    [
+     [
+      "Replace",
+      "ShootingAccuracyTurret"
+     ],
+     8
+    ],
+    [
+     [
+      "Add",
+      "NightVisionEfficiency"
+     ],
+     6
+    ],
+    [
+     [
+      "Replace",
+      "Flammability"
+     ],
+     6
+    ],
+    [
+     [
+      "Add",
+      "ArmorRating_Blunt"
+     ],
+     5
+    ],
+    [
+     [
+      "Add",
+      "ArmorRating_Sharp"
+     ],
+     5
+    ],
+    [
+     [
+      "Replace",
+      "WorkToBuild"
+     ],
+     5
+    ],
+    [
+     [
+      "Add",
+      "CarryBulk"
+     ],
+     4
+    ],
+    [
+     [
+      "Add",
+      "CarryWeight"
+     ],
+     4
+    ],
+    [
+     [
+      "Add",
+      "MaxHitPoints"
+     ],
+     4
+    ],
+    [
+     [
+      "Add",
+      "StuffPower_Armor_Blunt"
+     ],
+     4
+    ],
+    [
+     [
+      "Add",
+      "ShootingAccuracyPawn"
+     ],
+     3
+    ],
+    [
+     [
+      "Remove",
+      "ArmorRating_Heat"
+     ],
+     3
+    ],
+    [
+     [
+      "Add",
+      "ArmorRating_Heat"
+     ],
+     2
+    ],
+    [
+     [
+      "Add",
+      "NightVisionEfficiency_Apparel"
+     ],
+     2
+    ]
+   ],
+   "equippedStatOffsets_stats_touched": [
+    [
+     [
+      "Remove",
+      "MoveSpeed"
+     ],
+     3
+    ],
+    [
+     [
+      "Add",
+      "ToxicEnvironmentResistance"
+     ],
+     2
+    ],
+    [
+     [
+      "Replace",
+      "ToxicEnvironmentResistance"
+     ],
+     2
+    ],
+    [
+     [
+      "Add",
+      "AimingAccuracy"
+     ],
+     1
+    ],
+    [
+     [
+      "Add",
+      "CarryBulk"
+     ],
+     1
+    ],
+    [
+     [
+      "Add",
+      "CarryWeight"
+     ],
+     1
+    ],
+    [
+     [
+      "Add",
+      "MeleeDodgeChance"
+     ],
+     1
+    ],
+    [
+     [
+      "Add",
+      "ShootingAccuracyPawn"
+     ],
+     1
+    ],
+    [
+     [
+      "Add",
+      "SmokeSensitivity"
+     ],
+     1
+    ],
+    [
+     [
+      "Add",
+      "Suppressability"
+     ],
+     1
+    ]
+   ],
+   "mod_extensions_added": [
+    [
+     "RacePropertiesExtensionCE",
+     57
+    ],
+    [
+     "LoadoutPropertiesExtension",
+     20
+    ],
+    [
+     "GunDrawExtension",
+     17
+    ],
+    [
+     "PartialArmorExt",
+     10
+    ],
+    [
+     "DamageDefExtensionCE",
+     8
+    ],
+    [
+     "ApparelLayerExtension",
+     2
+    ],
+    [
+     "MedicineFilthExtension",
+     2
+    ],
+    [
+     "WorldObjectHealthExtension",
+     2
+    ],
+    [
+     "ApparelDefExtension",
+     1
+    ],
+    [
+     "FactionDefExtensionCE",
+     1
+    ],
+    [
+     "FireSpreadExtension",
+     1
+    ],
+    [
+     "JobDefExtensionCE",
+     1
+    ],
+    [
+     "ModExtensionMeleeToolPenetration",
+     1
+    ],
+    [
+     "StuffToughnessMultiplierExtensionCE",
+     1
+    ],
+    [
+     "ThingDefExtensionCE",
+     1
+    ],
+    [
+     "WorldObjectHostilityExtension",
+     1
+    ]
+   ],
+   "ce_classes_in_values": [
+    [
+     "ToolCE",
+     301
+    ],
+    [
+     "RacePropertiesExtensionCE",
+     57
+    ],
+    [
+     "CompProperties_ArmorDurability",
+     21
+    ],
+    [
+     "LoadoutPropertiesExtension",
+     20
+    ],
+    [
+     "GunDrawExtension",
+     17
+    ],
+    [
+     "PartialArmorExt",
+     10
+    ],
+    [
+     "DamageDefExtensionCE",
+     8
+    ],
+    [
+     "HediffCompProperties_InfecterCE",
+     8
+    ],
+    [
+     "CompProperties_Fragments",
+     6
+    ],
+    [
+     "ProjectilePropertiesCE",
+     6
+    ],
+    [
+     "CompProperties_AmmoUser",
+     3
+    ],
+    [
+     "CompProperties_Charges",
+     3
+    ],
+    [
+     "CompProperties_ExplosiveCE",
+     3
+    ],
+    [
+     "VerbPropertiesCE",
+     3
+    ],
+    [
+     "ApparelLayerExtension",
+     2
+    ],
+    [
+     "CompProperties_ProjectileFleck",
+     2
+    ],
+    [
+     "CompProperties_ShearableRenameable",
+     2
+    ],
+    [
+     "HediffCompProperties_Stabilize",
+     2
+    ],
+    [
+     "JobGiver_CheckReload",
+     2
+    ],
+    [
+     "MedicineFilthExtension",
+     2
+    ],
+    [
+     "VerbProperties_CIWSSkyfaller",
+     2
+    ],
+    [
+     "WorldObjectHealthExtension",
+     2
+    ],
+    [
+     "WorldObjects.WorldObjectCompProperties_Health",
+     2
+    ],
+    [
+     "WorldObjects.WorldObjectCompProperties_Hostility",
+     2
+    ],
+    [
+     "ApparelDefExtension",
+     1
+    ]
+   ],
+   "whole_def_replace_operations": 0
+  },
+  "ce-modpatches": {
+   "statBases_stats_touched": [
+    [
+     [
+      "Add",
+      "Bulk"
+     ],
+     2705
+    ],
+    [
+     [
+      "Replace",
+      "ArmorRating_Sharp"
+     ],
+     2006
+    ],
+    [
+     [
+      "Replace",
+      "ArmorRating_Blunt"
+     ],
+     1957
+    ],
+    [
+     [
+      "Add",
+      "WornBulk"
+     ],
+     1449
+    ],
+    [
+     [
+      "Add",
+      "MeleeCritChance"
+     ],
+     1361
+    ],
+    [
+     [
+      "Add",
+      "MeleeDodgeChance"
+     ],
+     1321
+    ],
+    [
+     [
+      "Add",
+      "MeleeParryChance"
+     ],
+     1297
+    ],
+    [
+     [
+      "Add",
+      "MeleeCounterParryBonus"
+     ],
+     1007
+    ],
+    [
+     [
+      "Replace",
+      "StuffEffectMultiplierArmor"
+     ],
+     935
+    ],
+    [
+     [
+      "Replace",
+      "Mass"
+     ],
+     611
+    ],
+    [
+     [
+      "Replace",
+      "StuffPower_Armor_Sharp"
+     ],
+     332
+    ],
+    [
+     [
+      "Add",
+      "AimingAccuracy"
+     ],
+     310
+    ],
+    [
+     [
+      "Add",
+      "ArmorRating_Blunt"
+     ],
+     289
+    ],
+    [
+     [
+      "Replace",
+      "StuffPower_Armor_Blunt"
+     ],
+     276
+    ],
+    [
+     [
+      "Replace",
+      "MaxHitPoints"
+     ],
+     269
+    ],
+    [
+     [
+      "Add",
+      "ArmorRating_Sharp"
+     ],
+     265
+    ],
+    [
+     [
+      "Add",
+      "CarryBulk"
+     ],
+     199
+    ],
+    [
+     [
+      "Replace",
+      "Flammability"
+     ],
+     198
+    ],
+    [
+     [
+      "Add",
+      "CarryWeight"
+     ],
+     190
+    ],
+    [
+     [
+      "Add",
+      "ShootingAccuracyPawn"
+     ],
+     170
+    ],
+    [
+     [
+      "Replace",
+      "MoveSpeed"
+     ],
+     170
+    ],
+    [
+     [
+      "Add",
+      "NightVisionEfficiency_Apparel"
+     ],
+     162
+    ],
+    [
+     [
+      "Replace",
+      "ArmorRating_Heat"
+     ],
+     161
+    ],
+    [
+     [
+      "Add",
+      "SmokeSensitivity"
+     ],
+     157
+    ],
+    [
+     [
+      "Replace",
+      "StuffPower_Armor_Heat"
+     ],
+     148
+    ],
+    [
+     [
+      "Add",
+      "ArmorRating_Heat"
+     ],
+     118
+    ],
+    [
+     [
+      "Add",
+      "MaxHitPoints"
+     ],
+     118
+    ],
+    [
+     [
+      "Add",
+      "Suppressability"
+     ],
+     113
+    ],
+    [
+     [
+      "Replace",
+      "ShootingAccuracyTurret"
+     ],
+     81
+    ],
+    [
+     [
+      "Add",
+      "NightVisionEfficiency"
+     ],
+     75
+    ]
+   ],
+   "equippedStatOffsets_stats_touched": [
+    [
+     [
+      "Add",
+      "CarryBulk"
+     ],
+     323
+    ],
+    [
+     [
+      "Add",
+      "MeleeCritChance"
+     ],
+     310
+    ],
+    [
+     [
+      "Add",
+      "MeleeParryChance"
+     ],
+     305
+    ],
+    [
+     [
+      "Add",
+      "MeleeDodgeChance"
+     ],
+     296
+    ],
+    [
+     [
+      "Add",
+      "CarryWeight"
+     ],
+     241
+    ],
+    [
+     [
+      "Add",
+      "SmokeSensitivity"
+     ],
+     194
+    ],
+    [
+     [
+      "Add",
+      "Suppressability"
+     ],
+     188
+    ],
+    [
+     [
+      "Replace",
+      "ShootingAccuracyPawn"
+     ],
+     161
+    ],
+    [
+     [
+      "Remove",
+      "MoveSpeed"
+     ],
+     136
+    ],
+    [
+     [
+      "Add",
+      "ReloadSpeed"
+     ],
+     120
+    ],
+    [
+     [
+      "Add",
+      "ToxicEnvironmentResistance"
+     ],
+     116
+    ],
+    [
+     [
+      "Add",
+      "AimingAccuracy"
+     ],
+     95
+    ],
+    [
+     [
+      "Replace",
+      "MoveSpeed"
+     ],
+     85
+    ],
+    [
+     [
+      "Add",
+      "ShootingAccuracyPawn"
+     ],
+     59
+    ],
+    [
+     [
+      "Replace",
+      "MeleeDodgeChance"
+     ],
+     50
+    ],
+    [
+     [
+      "Replace",
+      "Flammability"
+     ],
+     40
+    ]
+   ],
+   "mod_extensions_added": [
+    [
+     "RacePropertiesExtensionCE",
+     1266
+    ],
+    [
+     "LoadoutPropertiesExtension",
+     867
+    ],
+    [
+     "PartialArmorExt",
+     350
+    ],
+    [
+     "GunDrawExtension",
+     92
+    ],
+    [
+     "DamageDefExtensionCE",
+     26
+    ],
+    [
+     "ApparelHediffExtension",
+     21
+    ],
+    [
+     "ApparelDefExtension",
+     15
+    ],
+    [
+     "ShieldDefExtension",
+     15
+    ],
+    [
+     "ApperalRenderingExtension",
+     10
+    ],
+    [
+     "MultiBarrelExtension",
+     8
+    ],
+    [
+     "StuffToughnessMultiplierExtensionCE",
+     8
+    ],
+    [
+     "FactionDefExtensionCE",
+     4
+    ],
+    [
+     "ModExtension_AutoLoaderGraphics",
+     3
+    ],
+    [
+     "ModExtensionMeleeToolPenetration",
+     1
+    ],
+    [
+     "NonSnapTurretExtension",
+     1
+    ],
+    [
+     "ThingDefExtensionCE",
+     1
+    ]
+   ],
+   "ce_classes_in_values": [
+    [
+     "ToolCE",
+     10150
+    ],
+    [
+     "RacePropertiesExtensionCE",
+     1268
+    ],
+    [
+     "LoadoutPropertiesExtension",
+     876
+    ],
+    [
+     "CompProperties_ArmorDurability",
+     449
+    ],
+    [
+     "VerbPropertiesCE",
+     449
+    ],
+    [
+     "PartialArmorExt",
+     353
+    ],
+    [
+     "ProjectilePropertiesCE",
+     262
+    ],
+    [
+     "CompProperties_AmmoUser",
+     202
+    ],
+    [
+     "CompProperties_FireModes",
+     179
+    ],
+    [
+     "CompProperties_Suppressable",
+     148
+    ],
+    [
+     "CompProperties_UnderBarrel",
+     103
+    ],
+    [
+     "GunDrawExtension",
+     95
+    ],
+    [
+     "CompProperties_ExplosiveCE",
+     71
+    ],
+    [
+     "CompProperties_Fragments",
+     66
+    ],
+    [
+     "CompProperties_Charges",
+     60
+    ],
+    [
+     "DamageDefExtensionCE",
+     26
+    ],
+    [
+     "ShieldDefExtension",
+     25
+    ],
+    [
+     "ApparelHediffExtension",
+     24
+    ],
+    [
+     "CompProperties_Inventory",
+     23
+    ],
+    [
+     "AmmoDef",
+     18
+    ],
+    [
+     "ApparelDefExtension",
+     15
+    ],
+    [
+     "ApperalRenderingExtension",
+     13
+    ],
+    [
+     "CompProperties_TacticalManager",
+     11
+    ],
+    [
+     "Compatibility.SOS2Compat.VerbPropertiesShipWeaponCE",
+     9
+    ],
+    [
+     "CompProperties_MechAmmo",
+     8
+    ]
+   ],
+   "whole_def_replace_operations": 78
+  },
+  "owner": {
+   "statBases_stats_touched": [
+    [
+     [
+      "Add",
+      "Bulk"
+     ],
+     5
+    ],
+    [
+     [
+      "Add",
+      "MeleeCounterParryBonus"
+     ],
+     5
+    ],
+    [
+     [
+      "Add",
+      "AimingAccuracy"
+     ],
+     1
+    ],
+    [
+     [
+      "Add",
+      "MeleeCritChance"
+     ],
+     1
+    ],
+    [
+     [
+      "Add",
+      "MeleeDodgeChance"
+     ],
+     1
+    ],
+    [
+     [
+      "Add",
+      "MeleeParryChance"
+     ],
+     1
+    ],
+    [
+     [
+      "Add",
+      "ReloadSpeed"
+     ],
+     1
+    ],
+    [
+     [
+      "Add",
+      "Suppressability"
+     ],
+     1
+    ]
+   ],
+   "equippedStatOffsets_stats_touched": [
+    [
+     [
+      "Add",
+      "MeleeCritChance"
+     ],
+     5
+    ],
+    [
+     [
+      "Add",
+      "MeleeDodgeChance"
+     ],
+     5
+    ],
+    [
+     [
+      "Add",
+      "MeleeParryChance"
+     ],
+     5
+    ]
+   ],
+   "mod_extensions_added": [
+    [
+     "LoadoutPropertiesExtension",
+     5
+    ],
+    [
+     "RacePropertiesExtensionCE",
+     1
+    ]
+   ],
+   "ce_classes_in_values": [
+    [
+     "ToolCE",
+     79
+    ],
+    [
+     "CompProperties_AmmoUser",
+     20
+    ],
+    [
+     "CompProperties_FireModes",
+     20
+    ],
+    [
+     "VerbPropertiesCE",
+     20
+    ],
+    [
+     "LoadoutPropertiesExtension",
+     5
+    ],
+    [
+     "CompProperties_Suppressable",
+     1
+    ],
+    [
+     "RacePropertiesExtensionCE",
+     1
+    ]
+   ],
+   "whole_def_replace_operations": 20
+  },
+  "workshop": {
+   "statBases_stats_touched": [
+    [
+     [
+      "Add",
+      "MeleeCritChance"
+     ],
+     758
+    ],
+    [
+     [
+      "Add",
+      "MeleeDodgeChance"
+     ],
+     752
+    ],
+    [
+     [
+      "Add",
+      "ArmorRating_Blunt"
+     ],
+     749
+    ],
+    [
+     [
+      "Add",
+      "ArmorRating_Sharp"
+     ],
+     748
+    ],
+    [
+     [
+      "Add",
+      "MeleeParryChance"
+     ],
+     746
+    ],
+    [
+     [
+      "Replace",
+      "ArmorRating_Blunt"
+     ],
+     636
+    ],
+    [
+     [
+      "Replace",
+      "ArmorRating_Sharp"
+     ],
+     635
+    ],
+    [
+     [
+      "Replace",
+      "MeleeDodgeChance"
+     ],
+     411
+    ],
+    [
+     [
+      "Remove",
+      "ArmorRating_Heat"
+     ],
+     408
+    ],
+    [
+     [
+      "Replace",
+      "MeleeCritChance"
+     ],
+     405
+    ],
+    [
+     [
+      "Replace",
+      "MarketValue"
+     ],
+     402
+    ],
+    [
+     [
+      "Replace",
+      "MeleeParryChance"
+     ],
+     394
+    ],
+    [
+     [
+      "Replace",
+      "ComfyTemperatureMax"
+     ],
+     388
+    ],
+    [
+     [
+      "Replace",
+      "FilthRate"
+     ],
+     381
+    ],
+    [
+     [
+      "Remove",
+      "ToxicEnvironmentResistance"
+     ],
+     372
+    ],
+    [
+     [
+      "Replace",
+      "MoveSpeed"
+     ],
+     372
+    ],
+    [
+     [
+      "Replace",
+      "ComfyTemperatureMin"
+     ],
+     371
+    ],
+    [
+     [
+      "Replace",
+      "Wildness"
+     ],
+     335
+    ],
+    [
+     [
+      "Remove",
+      "ArmorRating_Sharp"
+     ],
+     334
+    ],
+    [
+     [
+      "Remove",
+      "ArmorRating_Blunt"
+     ],
+     333
+    ],
+    [
+     [
+      "Add",
+      "ComfyTemperatureMax"
+     ],
+     276
+    ],
+    [
+     [
+      "Add",
+      "FilthRate"
+     ],
+     190
+    ],
+    [
+     [
+      "Add",
+      "Bulk"
+     ],
+     94
+    ],
+    [
+     [
+      "Add",
+      "MeleeCounterParryBonus"
+     ],
+     42
+    ],
+    [
+     [
+      "Replace",
+      "StuffPower_Armor_Sharp"
+     ],
+     42
+    ],
+    [
+     [
+      "Add",
+      "MoveSpeed"
+     ],
+     41
+    ],
+    [
+     [
+      "Add",
+      "MarketValue"
+     ],
+     39
+    ],
+    [
+     [
+      "Replace",
+      "StuffPower_Armor_Blunt"
+     ],
+     37
+    ],
+    [
+     [
+      "Add",
+      "AimingAccuracy"
+     ],
+     36
+    ],
+    [
+     [
+      "Add",
+      "ShootingAccuracyPawn"
+     ],
+     34
+    ]
+   ],
+   "equippedStatOffsets_stats_touched": [
+    [
+     [
+      "Remove",
+      "MoveSpeed"
+     ],
+     9
+    ],
+    [
+     [
+      "Add",
+      "MeleeCritChance"
+     ],
+     5
+    ],
+    [
+     [
+      "Add",
+      "MeleeDodgeChance"
+     ],
+     5
+    ],
+    [
+     [
+      "Add",
+      "MeleeParryChance"
+     ],
+     5
+    ],
+    [
+     [
+      "Replace",
+      "MoveSpeed"
+     ],
+     4
+    ],
+    [
+     [
+      "Add",
+      "SmokeSensitivity"
+     ],
+     3
+    ],
+    [
+     [
+      "Add",
+      "ToxicSensitivity"
+     ],
+     3
+    ],
+    [
+     [
+      "Add",
+      "AimingAccuracy"
+     ],
+     2
+    ],
+    [
+     [
+      "Add",
+      "CarryBulk"
+     ],
+     2
+    ],
+    [
+     [
+      "Add",
+      "CarryWeight"
+     ],
+     2
+    ],
+    [
+     [
+      "Add",
+      "AimingDelayFactor"
+     ],
+     1
+    ],
+    [
+     [
+      "Add",
+      "NightVisionEfficiency_Apparel"
+     ],
+     1
+    ],
+    [
+     [
+      "Add",
+      "PsychicSensitivity"
+     ],
+     1
+    ],
+    [
+     [
+      "Add",
+      "ShootingAccuracyPawn"
+     ],
+     1
+    ],
+    [
+     [
+      "Remove",
+      "AimingDelayFactor"
+     ],
+     1
+    ],
+    [
+     [
+      "Replace",
+      "ShootingAccuracyPawn"
+     ],
+     1
+    ]
+   ],
+   "mod_extensions_added": [
+    [
+     "RacePropertiesExtensionCE",
+     766
+    ],
+    [
+     "GunDrawExtension",
+     35
+    ],
+    [
+     "LoadoutPropertiesExtension",
+     34
+    ],
+    [
+     "PartialArmorExt",
+     15
+    ],
+    [
+     "DamageDefExtensionCE",
+     4
+    ],
+    [
+     "ApparelHediffExtension",
+     1
+    ]
+   ],
+   "ce_classes_in_values": [
+    [
+     "ToolCE",
+     2842
+    ],
+    [
+     "RacePropertiesExtensionCE",
+     766
+    ],
+    [
+     "CompProperties_ArmorDurability",
+     412
+    ],
+    [
+     "ProjectilePropertiesCE",
+     71
+    ],
+    [
+     "GunDrawExtension",
+     48
+    ],
+    [
+     "CompProperties_Fragments",
+     45
+    ],
+    [
+     "AmmoDef",
+     35
+    ],
+    [
+     "LoadoutPropertiesExtension",
+     34
+    ],
+    [
+     "CompProperties_ExplosiveCE",
+     25
+    ],
+    [
+     "CompProperties_UnderBarrel",
+     23
+    ],
+    [
+     "PartialArmorExt",
+     15
+    ],
+    [
+     "CompProperties_AmmoUser",
+     12
+    ],
+    [
+     "VerbPropertiesCE",
+     12
+    ],
+    [
+     "CompProperties_FireModes",
+     11
+    ],
+    [
+     "CompProperties_Charges",
+     6
+    ],
+    [
+     "DamageDefExtensionCE",
+     4
+    ],
+    [
+     "ApparelHediffExtension",
+     1
+    ],
+    [
+     "CompProperties_ProjectileFleck",
+     1
+    ]
+   ],
+   "whole_def_replace_operations": 1
+  }
+ },
+ "defs": {
+  "files": {
+   "ce-core-defs": 357,
+   "ce-modpatches-defs": 453
+  },
+  "def_node_kinds": {
+   "ce-core-defs": [
+    [
+     "ThingDef",
+     1283
+    ],
+    [
+     "ThingDef [Class=CombatExtended.AmmoDef]",
+     1163
+    ],
+    [
+     "RecipeDef",
+     917
+    ],
+    [
+     "CombatExtended.AmmoSetDef",
+     304
+    ],
+    [
+     "ThingCategoryDef",
+     259
+    ],
+    [
+     "CombatExtended.AmmoCategoryDef",
+     95
+    ],
+    [
+     "StatDef",
+     49
+    ],
+    [
+     "FleckDef",
+     37
+    ],
+    [
+     "ConceptDef",
+     34
+    ],
+    [
+     "BodyPartGroupDef",
+     23
+    ],
+    [
+     "SoundDef",
+     22
+    ],
+    [
+     "HediffDef",
+     20
+    ],
+    [
+     "JobDef",
+     17
+    ],
+    [
+     "DamageDef",
+     16
+    ]
+   ],
+   "ce-modpatches-defs": [
+    [
+     "ThingDef",
+     1518
+    ],
+    [
+     "ThingDef [Class=CombatExtended.AmmoDef]",
+     878
+    ],
+    [
+     "RecipeDef",
+     648
+    ],
+    [
+     "CombatExtended.AmmoSetDef",
+     628
+    ],
+    [
+     "ThingCategoryDef",
+     189
+    ],
+    [
+     "CombatExtended.AmmoCategoryDef",
+     128
+    ],
+    [
+     "ThingDef [Class=CombatExtended.Lasers.LaserBeamDefCE]",
+     101
+    ],
+    [
+     "DamageDef",
+     44
+    ],
+    [
+     "PawnKindDef",
+     36
+    ],
+    [
+     "ItemProcessor.CombinationDef",
+     24
+    ],
+    [
+     "KCSG.SymbolDef",
+     18
+    ],
+    [
+     "HediffDef",
+     13
+    ],
+    [
+     "ThingDef [Class=AbilityUser.ProjectileDef_Ability]",
+     5
+    ],
+    [
+     "CombatExtended.ShellingResponseDef",
+     4
+    ]
+   ]
+  },
+  "duplicate_defnames": {
+   "count": 338,
+   "examples": [
+    {
+     "def": "CombatExtended.AmmoCategoryDef/Inferno",
+     "files": [
+      "Defs/Ammo/AmmoCategoryDefs/AmmoCategories_Advanced.xml",
+      "ModPatches/Imperial Arsenal Royal Warcasket/Defs/Imperial Arsenal Royal Warcasket/Ammo/AmmoCategories_Bolts.xml"
+     ]
+    },
+    {
+     "def": "CombatExtended.AmmoCategoryDef/IronArrow",
+     "files": [
+      "ModPatches/Expanded Materials - Metals/Defs/Expanded Materials - Metals/Arrows_Iron.xml",
+      "ModPatches/Medieval Overhaul/Defs/Medieval Overhaul/Ammo/MO_Ammo_Arrows.xml",
+      "ModPatches/Project RimFactory - Materials/Defs/Project RimFactory - Materials/Ammo_IronArrows.xml"
+     ]
+    },
+    {
+     "def": "CombatExtended.AmmoCategoryDef/Kraken",
+     "files": [
+      "Defs/Ammo/AmmoCategoryDefs/AmmoCategories_Advanced.xml",
+      "ModPatches/Imperial Arsenal Royal Warcasket/Defs/Imperial Arsenal Royal Warcasket/Ammo/AmmoCategories_Bolts.xml"
+     ]
+    },
+    {
+     "def": "CombatExtended.AmmoCategoryDef/ME_AP",
+     "files": [
+      "ModPatches/Rim-Effect Core/Defs/Rim-Effect Core/ME_Projectile_Damage_Ammoclass.xml",
+      "ModPatches/Rim-Effect Renegade Core/Defs/Rim-Effect Renegade Core/ME_Projectile_Damage_Ammoclass.xml"
+     ]
+    },
+    {
+     "def": "CombatExtended.AmmoCategoryDef/ME_Cryo",
+     "files": [
+      "ModPatches/Rim-Effect Core/Defs/Rim-Effect Core/ME_Projectile_Damage_Ammoclass.xml",
+      "ModPatches/Rim-Effect Renegade Core/Defs/Rim-Effect Renegade Core/ME_Projectile_Damage_Ammoclass.xml"
+     ]
+    },
+    {
+     "def": "CombatExtended.AmmoCategoryDef/ME_FI",
+     "files": [
+      "ModPatches/Rim-Effect Core/Defs/Rim-Effect Core/ME_Projectile_Damage_Ammoclass.xml",
+      "ModPatches/Rim-Effect Renegade Core/Defs/Rim-Effect Renegade Core/ME_Projectile_Damage_Ammoclass.xml"
+     ]
+    },
+    {
+     "def": "CombatExtended.AmmoCategoryDef/ME_FMJ",
+     "files": [
+      "ModPatches/Rim-Effect Core/Defs/Rim-Effect Core/ME_Projectile_Damage_Ammoclass.xml",
+      "ModPatches/Rim-Effect Renegade Core/Defs/Rim-Effect Renegade Core/ME_Projectile_Damage_Ammoclass.xml"
+     ]
+    },
+    {
+     "def": "CombatExtended.AmmoCategoryDef/ME_HE",
+     "files": [
+      "ModPatches/Rim-Effect Core/Defs/Rim-Effect Core/ME_Projectile_Damage_Ammoclass.xml",
+      "ModPatches/Rim-Effect Renegade Core/Defs/Rim-Effect Renegade Core/ME_Projectile_Damage_Ammoclass.xml"
+     ]
+    },
+    {
+     "def": "CombatExtended.AmmoCategoryDef/ME_Ion",
+     "files": [
+      "ModPatches/Rim-Effect Core/Defs/Rim-Effect Core/ME_Projectile_Damage_Ammoclass.xml",
+      "ModPatches/Rim-Effect Renegade Core/Defs/Rim-Effect Renegade Core/ME_Projectile_Damage_Ammoclass.xml"
+     ]
+    },
+    {
+     "def": "CombatExtended.AmmoCategoryDef/ME_Toxic",
+     "files": [
+      "ModPatches/Rim-Effect Core/Defs/Rim-Effect Core/ME_Projectile_Damage_Ammoclass.xml",
+      "ModPatches/Rim-Effect Renegade Core/Defs/Rim-Effect Renegade Core/ME_Projectile_Damage_Ammoclass.xml"
+     ]
+    },
+    {
+     "def": "CombatExtended.AmmoCategoryDef/MetalStorm",
+     "files": [
+      "Defs/Ammo/AmmoCategoryDefs/AmmoCategories_Advanced.xml",
+      "ModPatches/Imperial Arsenal Royal Warcasket/Defs/Imperial Arsenal Royal Warcasket/Ammo/AmmoCategories_Bolts.xml"
+     ]
+    },
+    {
+     "def": "CombatExtended.AmmoCategoryDef/Standard",
+     "files": [
+      "Defs/Ammo/AmmoCategoryDefs/AmmoCategories_Advanced.xml",
+      "ModPatches/Imperial Arsenal Royal Warcasket/Defs/Imperial Arsenal Royal Warcasket/Ammo/AmmoCategories_Bolts.xml"
+     ]
+    }
+   ]
+  },
+  "ammo_sets": {
+   "count": 932,
+   "size_histogram": {
+    "1": 424,
+    "2": 46,
+    "3": 159,
+    "4": 97,
+    "5": 50,
+    "6": 87,
+    "7": 59,
+    "8": 2,
+    "9": 4,
+    "10": 2,
+    "13": 1,
+    "20": 1
+   },
+   "with_similarTo": 291,
+   "dangling_ammo_links": 8,
+   "dangling_projectile_links": 5,
+   "sets_with_duplicate_ammoClass": 17
+  },
+  "ammo_defs": {
+   "concrete_count": 1557,
+   "abstract_count": 0,
+   "trade_tags": [
+    [
+     "CE_AmmoInjector",
+     1385
+    ],
+    [
+     "CE_AutoEnableTrade",
+     1273
+    ],
+    [
+     "CE_Ammo",
+     861
+    ],
+    [
+     "CE_AutoEnableCrafting",
+     806
+    ],
+    [
+     "CE_MediumAmmo",
+     359
+    ],
+    [
+     "CE_AutoEnableCrafting_TableMachining",
+     340
+    ],
+    [
+     "CE_HeavyAmmo",
+     187
+    ],
+    [
+     "CE_AutoEnableCrafting_FabricationBench",
+     137
+    ],
+    [
+     "CE_AutoEnableCrafting_ElectricSmithy",
+     57
+    ],
+    [
+     "CE_AutoEnableCrafting_FueledSmithy",
+     57
+    ],
+    [
+     "CE_PreIndustrialAmmo",
+     47
+    ],
+    [
+     "CE_40K_HeavyAmmo",
+     38
+    ],
+    [
+     "CE_AutoEnableTrade_Sellable",
+     33
+    ],
+    [
+     "CE_40K_Ammo",
+     29
+    ]
+   ],
+   "parents": [
+    [
+     "SpacerSmallAmmoBase",
+     59
+    ],
+    [
+     "81mmMortarShellBaseCraftableBase",
+     25
+    ],
+    [
+     "AmmoGreatArrowBase",
+     19
+    ],
+    [
+     "40x46mmGrenadeBase",
+     15
+    ],
+    [
+     "Base6x24mmChargedBullet",
+     15
+    ],
+    [
+     "105mmHowitzerShellBase",
+     14
+    ],
+    [
+     "BaseGrenadeEquipment",
+     14
+    ],
+    [
+     "81mmMortarShellBase",
+     12
+    ],
+    [
+     "AmmoArrowBase",
+     12
+    ],
+    [
+     "50mmRocketBase",
+     11
+    ],
+    [
+     "60mmMortarShellBase",
+     11
+    ],
+    [
+     "90mmCannonShellBase",
+     11
+    ],
+    [
+     "84x246mmRBase",
+     10
+    ],
+    [
+     "AmmoAutocannonShellBase",
+     10
+    ]
+   ],
+   "ammo_class": [
+    [
+     "(none)",
+     172
+    ],
+    [
+     "ArmorPiercing",
+     150
+    ],
+    [
+     "FullMetalJacket",
+     146
+    ],
+    [
+     "ExplosiveAP",
+     104
+    ],
+    [
+     "HollowPoint",
+     98
+    ],
+    [
+     "Sabot",
+     92
+    ],
+    [
+     "IncendiaryAP",
+     90
+    ],
+    [
+     "GrenadeHE",
+     75
+    ],
+    [
+     "RocketHEAT",
+     40
+    ],
+    [
+     "GrenadeEMP",
+     39
+    ],
+    [
+     "BuckShot",
+     28
+    ],
+    [
+     "Smoke",
+     28
+    ],
+    [
+     "GrenadeHETF",
+     24
+    ],
+    [
+     "Charged",
+     22
+    ],
+    [
+     "Ionized",
+     22
+    ],
+    [
+     "GrenadeIncendiary",
+     19
+    ],
+    [
+     "Slug",
+     19
+    ],
+    [
+     "Plasma",
+     16
+    ],
+    [
+     "RailgunSabot",
+     14
+    ],
+    [
+     "GrenadeHEDP",
+     13
+    ]
+   ],
+   "crafting_tag_without_Make_recipe": {
+    "count": 1,
+    "examples": [
+     "Ammo_ArtilleryShell_Anti"
+    ]
+   },
+   "recipes_named_MakeAmmo": 1351
+  },
+  "projectiles": {
+   "concrete_with_projectile_node": 2594,
+   "parents": [
+    [
+     "Base6x24mmChargedBullet",
+     68
+    ],
+    [
+     "BaseGreatArrowProjectile",
+     62
+    ],
+    [
+     "BaseBulletCE",
+     51
+    ],
+    [
+     "Base12GaugeBullet",
+     47
+    ],
+    [
+     "Base556x45mmNATOBullet",
+     46
+    ],
+    [
+     "BaseKatanaBullet",
+     42
+    ],
+    [
+     "BaseExplosiveBullet",
+     41
+    ],
+    [
+     "BaseCrossbowBoltProjectile",
+     40
+    ],
+    [
+     "Base81mmMortarShell",
+     39
+    ],
+    [
+     "BaseRPG7Grenade",
+     36
+    ],
+    [
+     "Base762x51mmNATOBullet",
+     35
+    ],
+    [
+     "Base40x46mmGrenadeBullet",
+     31
+    ],
+    [
+     "BasePilumProjectile",
+     29
+    ],
+    [
+     "BaseStreamlinedArrowProjectile",
+     28
+    ]
+   ],
+   "thingClass": [
+    [
+     "CombatExtended.BulletCE",
+     2011
+    ],
+    [
+     "CombatExtended.ProjectileCE_Explosive",
+     359
+    ],
+    [
+     "CombatExtended.Lasers.LaserBeamCE",
+     107
+    ],
+    [
+     "(inherited-or-none)",
+     60
+    ],
+    [
+     "CombatExtended.ProjectileCE_Bursting",
+     17
+    ],
+    [
+     "CombatExtended.Compatibility.PsyBlastersCompat.PsychicBlasterBulletCE",
+     15
+    ],
+    [
+     "CombatExtended.ProjectileCE_HeightFuse",
+     6
+    ],
+    [
+     "CombatExtended.ProjectileCE_SpawnsThing",
+     6
+    ],
+    [
+     "CombatExtended.Compatibility.SOS2Compat.ShipProjectileCE",
+     5
+    ],
+    [
+     "CombatExtended.Compatibility.BulletCE_ThingSpawner",
+     1
+    ]
+   ],
+   "fields_in_own_projectile_node": [
+    [
+     "damageAmountBase",
+     2494
+    ],
+    [
+     "armorPenetrationBlunt",
+     2153
+    ],
+    [
+     "armorPenetrationSharp",
+     2131
+    ],
+    [
+     "damageDef",
+     1068
+    ],
+    [
+     "speed",
+     910
+    ],
+    [
+     "secondaryDamage",
+     819
+    ],
+    [
+     "explosionRadius",
+     482
+    ],
+    [
+     "preExplosionSpawnChance",
+     294
+    ],
+    [
+     "applyDamageToExplosionCellsNeighbors",
+     265
+    ],
+    [
+     "soundExplode",
+     252
+    ],
+    [
+     "preExplosionSpawnThingDef",
+     218
+    ],
+    [
+     "pelletCount",
+     194
+    ],
+    [
+     "spreadMult",
+     190
+    ],
+    [
+     "flyOverhead",
+     145
+    ],
+    [
+     "empShieldBreakChance",
+     134
+    ],
+    [
+     "dropsCasings",
+     113
+    ],
+    [
+     "suppressionFactor",
+     94
+    ],
+    [
+     "dangerFactor",
+     92
+    ],
+    [
+     "ai_IsIncendiary",
+     73
+    ],
+    [
+     "shieldDamageMultiplier",
+     68
+    ],
+    [
+     "soundAmbient",
+     67
+    ],
+    [
+     "postExplosionSpawnThingDef",
+     64
+    ],
+    [
+     "gravityFactor",
+     62
+    ],
+    [
+     "casingMoteDefname",
+     60
+    ],
+    [
+     "explosionEffect",
+     60
+    ],
+    [
+     "soundImpactAnticipate",
+     59
+    ],
+    [
+     "soundHitThickRoof",
+     58
+    ],
+    [
+     "casingFilthDefname",
+     54
+    ],
+    [
+     "preExplosionSpawnSingleThingDef",
+     48
+    ],
+    [
+     "postExplosionGasType",
+     35
+    ]
+   ]
+  }
+ },
+ "lint": {
+  "CEP001": {
+   "description": "FindMod entry looks like a packageId; FindMod compares the About.xml <name>, so it never matches",
+   "hits": {},
+   "mods_affected": {},
+   "examples": {}
+  },
+  "CEP002": {
+   "description": "FindMod entry spells Combat Extended differently from the exact name 'Combat Extended'",
+   "hits": {
+    "ce-modpatches": 1,
+    "workshop": 10
+   },
+   "mods_affected": {
+    "ce-modpatches": 1,
+    "workshop": 8
+   },
+   "examples": {
+    "ce-modpatches": [
+     {
+      "file": "ModPatches/Vanilla Factions Expanded - Deserters/Patches/Vanilla Factions Expanded - Deserters/Contraband.xml",
+      "line": 86,
+      "detail": "'Combat Extended Guns'"
+     }
+    ],
+    "workshop": [
+     {
+      "file": "Patches/CE_Attachments.xml",
+      "line": 3,
+      "detail": "'Combat Extended Attachments'"
+     },
+     {
+      "file": "CE/Patches/Armory.xml",
+      "line": 5,
+      "detail": "'Combat Extended Armory'"
+     }
+    ]
+   }
+  },
+  "CEP003": {
+   "description": "FindMod entry has leading or trailing whitespace; names are compared without trimming",
+   "hits": {},
+   "mods_affected": {},
+   "examples": {}
+  },
+  "CEP004": {
+   "description": "CE-specific operation class in a patch file that is loaded even when CE is absent (load-time errors without CE)",
+   "hits": {
+    "owner": 22,
+    "workshop": 95
+   },
+   "mods_affected": {
+    "owner": 3,
+    "workshop": 16
+   },
+   "examples": {
+    "owner": [
+     {
+      "file": "Patches/ce_patch.xml",
+      "line": 7,
+      "detail": "CombatExtended.PatchOperationFindMod"
+     },
+     {
+      "file": "Patches/ce_patch.xml",
+      "line": 59,
+      "detail": "CombatExtended.PatchOperationMakeGunCECompatible"
+     }
+    ],
+    "workshop": [
+     {
+      "file": "CE/Patches/Weapons_Ranged.xml",
+      "line": 88,
+      "detail": "CombatExtended.PatchOperationMakeGunCECompatible"
+     },
+     {
+      "file": "CE/Patches/Weapons_Ranged.xml",
+      "line": 133,
+      "detail": "CombatExtended.PatchOperationMakeGunCECompatible"
+     }
+    ]
+   }
+  },
+  "CEP005": {
+   "description": "MayRequire on a top-level <Operation>; it is only honoured on <li> list items, so it is ignored here",
+   "hits": {
+    "ce-modpatches": 7
+   },
+   "mods_affected": {
+    "ce-modpatches": 3
+   },
+   "examples": {
+    "ce-modpatches": [
+     {
+      "file": "ModPatches/Grimworld Hammer of the Imperium/Patches/Grimworld Hammer of the Imperium/CE_Patch_Launchers.xml",
+      "line": 18,
+      "detail": "PatchOperationRemove"
+     },
+     {
+      "file": "ModPatches/Rimsenal - Spacer Faction Pack/Patches/Rimsenal - Spacer Faction Pack/Apparel_Spacer_CE.xml",
+      "line": 141,
+      "detail": "PatchOperationAdd"
+     }
+    ]
+   }
+  },
+  "CEP007": {
+   "description": "same defName converted more than once with PatchOperationMakeGunCECompatible in one mod",
+   "hits": {
+    "ce-modpatches": 8,
+    "workshop": 10
+   },
+   "mods_affected": {
+    "ce-modpatches": 7,
+    "workshop": 7
+   },
+   "examples": {
+    "ce-modpatches": [
+     {
+      "file": "ModPatches/Grimworld Angels of Death/Patches/Grimworld Angels of Death/CE_Patch_Guns.xml",
+      "line": 864,
+      "detail": "GW_AOD_Gun_AstartesPlasmaCannon x2"
+     },
+     {
+      "file": "ModPatches/K4G Empires of Old - Core/Patches/K4G Empires of Old - Core/WeaponsRanged.xml",
+      "line": 558,
+      "detail": "K4G_Gun_ComradePistol x2"
+     }
+    ],
+    "workshop": [
+     {
+      "file": "1.3/CEPatches/Patches/CAMechs_CEPatch.xml",
+      "line": 23,
+      "detail": "CAFakeGun_ChargeBlasterHeavy x5"
+     },
+     {
+      "file": "CE/Patches/Industrial Age I - Rifles.xml",
+      "line": 1146,
+      "detail": "CGF1_MWP_Kammerlader_Navy_M1860_67_ x2"
+     }
+    ]
+   }
+  },
+  "CEP008": {
+   "description": "PatchOperationMakeGunCECompatible missing a section or a key field (Properties, AmmoUser, FireModes, verbClass, defaultProjectile, ammoSet, magazineSize)",
+   "hits": {
+    "ce-modpatches": 321,
+    "workshop": 2
+   },
+   "mods_affected": {
+    "ce-modpatches": 79,
+    "workshop": 1
+   },
+   "examples": {
+    "ce-modpatches": [
+     {
+      "file": "ModPatches/A Rimworld of Magic/Patches/A Rimworld of Magic/Patch_Ranged.xml",
+      "line": 61,
+      "detail": "TM_IceWand: AmmoUser"
+     },
+     {
+      "file": "ModPatches/A Rimworld of Magic/Patches/A Rimworld of Magic/Patch_Ranged.xml",
+      "line": 87,
+      "detail": "Seer_IceRing: AmmoUser"
+     }
+    ],
+    "workshop": [
+     {
+      "file": "CE/Patches/Supporter Suggestions Pack - Thrown.xml",
+      "line": 283,
+      "detail": "CGF1_MWP_Archoglaive_: AmmoUser"
+     },
+     {
+      "file": "CE/Patches/Supporter Suggestions Pack - Thrown.xml",
+      "line": 311,
+      "detail": "CGF1_MWP_Archoshuriken_: AmmoUser"
+     }
+    ]
+   }
+  },
+  "CEP009": {
+   "description": "Properties/verbClass is not a CombatExtended verb class",
+   "hits": {
+    "ce-modpatches": 1
+   },
+   "mods_affected": {
+    "ce-modpatches": 1
+   },
+   "examples": {
+    "ce-modpatches": [
+     {
+      "file": "ModPatches/Divine Order/Patches/Divine Order/ThingDef_Misc/Weapons/Divine_Order_CE_Ranged.xml",
+      "line": 164,
+      "detail": "BotchJob_DivineJudgementStaff: Verb_Shoot"
+     }
+    ]
+   }
+  },
+  "CEP010": {
+   "description": "Class attribute names a CombatExtended type that does not exist in the CE source",
+   "hits": {},
+   "mods_affected": {},
+   "examples": {}
+  },
+  "CEP011": {
+   "description": "ToolCE entry without armorPenetrationSharp and armorPenetrationBlunt",
+   "hits": {
+    "ce-modpatches": 74,
+    "workshop": 5
+   },
+   "mods_affected": {
+    "ce-modpatches": 18,
+    "workshop": 1
+   },
+   "examples": {
+    "ce-modpatches": [
+     {
+      "file": "ModPatches/Alpha Genes/Patches/Alpha Genes/HediffDefs/Hediffs_Attacks.xml",
+      "line": 155,
+      "detail": "caps=['AG_SpittingOnPawn']"
+     },
+     {
+      "file": "ModPatches/Alpha Mythology/Patches/Alpha Mythology/AM_CE_Patch_Races.xml",
+      "line": 86,
+      "detail": "caps=['MM_Grapple']"
+     }
+    ],
+    "workshop": [
+     {
+      "file": "ModPatches/Combat Extended/Patches/LE_AwakenedTree.xml",
+      "line": 50,
+      "detail": "caps=['Blunt']"
+     },
+     {
+      "file": "ModPatches/Combat Extended/Patches/LE_AwakenedTree.xml",
+      "line": 69,
+      "detail": "caps=['Scratch']"
+     }
+    ]
+   }
+  },
+  "CEP012": {
+   "description": "tools replaced with entries that carry no Class attribute (vanilla Tool, no armor penetration)",
+   "hits": {},
+   "mods_affected": {},
+   "examples": {}
+  },
+  "CEP013": {
+   "description": "ammoSet name not defined in CE, ModPatches or the patched mod (upper bound: patched mod unavailable)",
+   "hits": {
+    "ce-modpatches": 5,
+    "workshop": 309
+   },
+   "mods_affected": {
+    "ce-modpatches": 5,
+    "workshop": 10
+   },
+   "examples": {
+    "ce-modpatches": [
+     {
+      "file": "ModPatches/ADE Advanced turrets PLUS/Patches/ADE Advanced turrets PLUS/Buildings_Security.xml",
+      "line": 140,
+      "detail": "ADE_Gun_AHST: AmmoSet_57x483mmBofors"
+     },
+     {
+      "file": "ModPatches/Black Widows/Patches/Black Widows/ThingDefs_Weapons/Patch_Weapons.xml",
+      "line": 269,
+      "detail": "Bow_BWBow: AmmoSet_BlackWidowArrow"
+     }
+    ],
+    "workshop": [
+     {
+      "file": "CE/Patches/Industrial Age I - Machine Gun.xml",
+      "line": 49,
+      "detail": "CGF1_MWP_Maxim_M1889_Prussian_: AmmoSet_11x60mmRMauser"
+     },
+     {
+      "file": "CE/Patches/Industrial Age I - Manned.xml",
+      "line": 25,
+      "detail": "CGF1_MWP_TurretGun_Maxim_M1889_Prussian_: AmmoSet_11x60mmRMauser"
+     }
+    ]
+   }
+  },
+  "CEP014": {
+   "description": "defaultProjectile name not defined in CE, ModPatches, vanilla or the patched mod (upper bound)",
+   "hits": {
+    "ce-modpatches": 154,
+    "workshop": 273
+   },
+   "mods_affected": {
+    "ce-modpatches": 59,
+    "workshop": 11
+   },
+   "examples": {
+    "ce-modpatches": [
+     {
+      "file": "ModPatches/A Rimworld of Magic/Patches/A Rimworld of Magic/Patch_Turrets.xml",
+      "line": 52,
+      "detail": "Launcher_DefensePylon: Bullet_DefensePylon"
+     },
+     {
+      "file": "ModPatches/A Rimworld of Magic/Patches/A Rimworld of Magic/Patch_Turrets.xml",
+      "line": 82,
+      "detail": "Launcher_DefensePylon_I: Bullet_DefensePylon"
+     }
+    ],
+    "workshop": [
+     {
+      "file": "CE/Patches/Industrial Age I - Machine Gun.xml",
+      "line": 49,
+      "detail": "CGF1_MWP_Maxim_M1889_Prussian_: Bullet_11x60mmRMauser_FMJ"
+     },
+     {
+      "file": "CE/Patches/Industrial Age I - Manned.xml",
+      "line": 25,
+      "detail": "CGF1_MWP_TurretGun_Maxim_M1889_Prussian_: Bullet_11x60mmRMauser_FMJ"
+     }
+    ]
+   }
+  },
+  "CEP015": {
+   "description": "field name inside Properties/AmmoUser/FireModes/ToolCE is not a known field (typo, wrong case or obsolete)",
+   "hits": {
+    "ce-modpatches": 1
+   },
+   "mods_affected": {
+    "ce-modpatches": 1
+   },
+   "examples": {
+    "ce-modpatches": [
+     {
+      "file": "ModPatches/Diverse Mechanoid War Procedure/Patches/Diverse Mechanoid War Procedure/ThingDefs_Misc/RangedMechanoid.xml",
+      "line": 251,
+      "detail": "FireModes/AmmoGenPerMagOverride (Gun_MechanoidAutocannon)"
+     }
+    ]
+   }
+  },
+  "CEP016": {
+   "description": "CE_ weapon tag unknown to CE core data and source",
+   "hits": {
+    "ce-modpatches": 44,
+    "owner": 10
+   },
+   "mods_affected": {
+    "ce-modpatches": 20,
+    "owner": 2
+   },
+   "examples": {
+    "ce-modpatches": [
+     {
+      "file": "ModPatches/Apex - Rimworld Legends/Patches/Apex - Rimworld Legends/ApexRimworldLegends_Weapons_MachineGuns.xml",
+      "line": 4,
+      "detail": "ARL_HMG: CE_Machinegun"
+     },
+     {
+      "file": "ModPatches/Apex - Rimworld Legends/Patches/Apex - Rimworld Legends/ApexRimworldLegends_Weapons_MachineGuns.xml",
+      "line": 260,
+      "detail": "ARL_ChargeMinigun: CE_Machinegun"
+     }
+    ],
+    "owner": [
+     {
+      "file": "Patches/ce_patch.xml",
+      "line": 59,
+      "detail": "OH_G41m: CE_AI_Default"
+     },
+     {
+      "file": "Patches/ce_patch.xml",
+      "line": 102,
+      "detail": "OH_G41w: CE_AI_Default"
+     }
+    ]
+   }
+  },
+  "CEP017": {
+   "description": "patch file does not parse, has a root other than <Patch>, or has a child other than <Operation>",
+   "hits": {},
+   "mods_affected": {},
+   "examples": {}
+  },
+  "CEP018": {
+   "description": "patch file sits in a folder that LoadFolders.xml never loads",
+   "hits": {
+    "ce-modpatches": 2,
+    "owner": 4,
+    "workshop": 49
+   },
+   "mods_affected": {
+    "ce-modpatches": 1,
+    "owner": 1,
+    "workshop": 12
+   },
+   "examples": {
+    "ce-modpatches": [
+     {
+      "file": "ModPatches/Rim-Hivers! - Biotech/Patches/Rim-Hivers! - Biotech/GeneDefs/GeneDefs.xml",
+      "line": null,
+      "detail": "ModPatches/Rim-Hivers! - Biotech"
+     },
+     {
+      "file": "ModPatches/Rim-Hivers! - Biotech/Patches/Rim-Hivers! - Biotech/HediffDefs/Hediffs.xml",
+      "line": null,
+      "detail": "ModPatches/Rim-Hivers! - Biotech"
+     }
+    ],
+    "owner": [
+     {
+      "file": "Ratchet & Clank Lombax Tech/Patches/Factions_Lombax_Player.xml",
+      "line": null,
+      "detail": "Ratchet & Clank Lombax Tech"
+     },
+     {
+      "file": "Ratchet & Clank Lombax Tech/Patches/Weapons_Melee.xml",
+      "line": null,
+      "detail": "Ratchet & Clank Lombax Tech"
+     }
+    ],
+    "workshop": [
+     {
+      "file": "1.2/Patches/Royalty.xml",
+      "line": null,
+      "detail": "1.2"
+     },
+     {
+      "file": "1.4/Royalty/Patches/RoyaltyPatch.xml",
+      "line": null,
+      "detail": "1.4/Royalty"
+     }
+    ]
+   }
+  },
+  "CEP019": {
+   "description": "LoadFolders IfModActive uses an id variant that cannot match (for example a _copy suffix)",
+   "hits": {
+    "ce-modpatches": 5,
+    "workshop": 86
+   },
+   "mods_affected": {
+    "ce-modpatches": 1,
+    "workshop": 33
+   },
+   "examples": {
+    "ce-modpatches": [
+     {
+      "file": "LoadFolders.xml",
+      "line": null,
+      "detail": "Jewsader.Cossacks.Rimworld_copy in 1.6"
+     },
+     {
+      "file": "LoadFolders.xml",
+      "line": null,
+      "detail": "salmontoastie.lizardfolk_copy_copy in 1.6"
+     }
+    ],
+    "workshop": [
+     {
+      "file": "2208576613/LoadFolders.xml",
+      "line": null,
+      "detail": "CETeam.CombatExtended_copy in 1.4"
+     },
+     {
+      "file": "2208576613/LoadFolders.xml",
+      "line": null,
+      "detail": "CETeam.CombatExtended_copy in 1.5"
+     }
+    ]
+   }
+  },
+  "CEP020": {
+   "description": "Patches folder or .xml extension spelled with different case (breaks on case-sensitive file systems)",
+   "hits": {
+    "ce-modpatches": 1
+   },
+   "mods_affected": {
+    "ce-modpatches": 1
+   },
+   "examples": {
+    "ce-modpatches": [
+     {
+      "file": "ModPatches/Det's Energy Weapons/Patches/Det's Energy Weapons/Guns_Defs.XML",
+      "line": null,
+      "detail": "dir_case_ok=True ext_case_ok=False"
+     }
+    ]
+   }
+  },
+  "CEP021": {
+   "description": "exact duplicate operation (same class, xpath and value) inside one mod",
+   "hits": {
+    "ce-core": 14,
+    "ce-modpatches": 182,
+    "owner": 8,
+    "workshop": 1004
+   },
+   "mods_affected": {
+    "ce-core": 1,
+    "ce-modpatches": 105,
+    "owner": 4,
+    "workshop": 29
+   },
+   "examples": {
+    "ce-core": [
+     {
+      "file": "",
+      "line": null,
+      "detail": "PatchOperationAdd x2 Defs/BodyDef[defName=\"QuadrupedAnimalWithHooves\"]/corePart"
+     },
+     {
+      "file": "",
+      "line": null,
+      "detail": "PatchOperationAdd x2 Defs/BodyDef[defName=\"QuadrupedAnimalWithHoovesAndHorn\"]/corePart"
+     }
+    ],
+    "ce-modpatches": [
+     {
+      "file": "",
+      "line": null,
+      "detail": "PatchOperationReplace x2 Defs/ThingDef[ defName=\"TM_DreamcatcherBuckskin\" ]/statBases/ArmorRating_Blunt"
+     },
+     {
+      "file": "",
+      "line": null,
+      "detail": "PatchOperationAddModExtension x2 Defs/ThingDef[defName=\"AV_Mech_Fluoid\"]"
+     }
+    ],
+    "owner": [
+     {
+      "file": "",
+      "line": null,
+      "detail": "PatchOperationReplace x2 Defs/ThingDef[defName=\"TLWWP_M1A1_\"]"
+     },
+     {
+      "file": "",
+      "line": null,
+      "detail": "PatchOperationAdd x2 Defs/ThingDef[defName=\"RC_OmniWrench_8000\"]/statBases"
+     }
+    ],
+    "workshop": [
+     {
+      "file": "",
+      "line": null,
+      "detail": "PatchOperationReplace x7 /Defs/GenStepDef[defName=\"City_Emplacements\"]/genStep/options/li[weaponDef=\"Turret_MiniTurret\"]"
+     },
+     {
+      "file": "",
+      "line": null,
+      "detail": "PatchOperationReplace x7 /Defs/GenStepDef[defName=\"City_Emplacements\"]/genStep/options/li[weaponDef=\"Turret_Autocannon\"]"
+     }
+    ]
+   }
+  },
+  "CEP022": {
+   "description": "xpath is statically malformed (root not Defs, unbalanced brackets, bare literal or bare name inside a predicate)",
+   "hits": {
+    "ce-modpatches": 9
+   },
+   "mods_affected": {
+    "ce-modpatches": 4
+   },
+   "examples": {
+    "ce-modpatches": [
+     {
+      "file": "ModPatches/Alpha Animals/Patches/Alpha Animals/AA_VPE/AbilityDefs/AbilityDefs_Patch.xml",
+      "line": 44,
+      "detail": "bare-name-in-predicate: Defs/VEF.Abilities.AbilityDef[defName=\"AAVPE_SummonEyeling\" or defName=\"AAVPE_SummonOcularOriginator\" or AAVPE_SummonEye"
+     },
+     {
+      "file": "ModPatches/Grimworld Melee/Patches/Grimworld Melee/IndustrialMelee.xml",
+      "line": 5,
+      "detail": "and-between-literals: Defs/ThingDef[defName=\"MeleeWeapon_TrenchShovel\" and \"MeleeWeapon_Chainshortsword\"]/weaponTags"
+     }
+    ]
+   }
+  }
+ }
+}

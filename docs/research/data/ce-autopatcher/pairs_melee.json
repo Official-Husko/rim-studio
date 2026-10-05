@@ -1,0 +1,1538 @@
+[
+ {
+  "ce": {
+   "bulk": 0.35,
+   "mass": 0.3,
+   "stuffToughness": null,
+   "toughnessRating": null
+  },
+  "ceStuffed": false,
+  "ceTools": [
+   {
+    "apBlunt": 0.338,
+    "apSharp": null,
+    "chance": 1.33,
+    "class": "CombatExtended.ToolCE",
+    "cooldown": 2.22,
+    "label": "bottle",
+    "power": 2.0
+   },
+   {
+    "apBlunt": 0.15,
+    "apSharp": null,
+    "chance": null,
+    "class": "CombatExtended.ToolCE",
+    "cooldown": 3.33,
+    "label": "neck",
+    "power": 1.0
+   }
+  ],
+  "defName": "Beer",
+  "label": "beer",
+  "mod": "Ludeon.RimWorld",
+  "ranged": false,
+  "stuffed": false,
+  "techLevel": "Neolithic",
+  "vMass": 0.3,
+  "vTools": [
+   {
+    "ap": null,
+    "capacities": [
+     "Blunt"
+    ],
+    "chance": null,
+    "cooldown": 2.0,
+    "label": "bottle",
+    "power": 9.0
+   },
+   {
+    "ap": null,
+    "capacities": [
+     "Poke"
+    ],
+    "chance": null,
+    "cooldown": 2.0,
+    "label": "neck",
+    "power": 9.0
+   }
+  ]
+ },
+ {
+  "ce": {
+   "bulk": 25.0,
+   "mass": 50.0,
+   "stuffToughness": null,
+   "toughnessRating": null
+  },
+  "ceStuffed": false,
+  "ceTools": [],
+  "defName": "ThrumboHorn",
+  "label": "thrumbo horn",
+  "mod": "Ludeon.RimWorld",
+  "ranged": false,
+  "stuffed": false,
+  "techLevel": "Neolithic",
+  "vMass": 3.0,
+  "vTools": [
+   {
+    "ap": null,
+    "capacities": [
+     "Scratch",
+     "Stab"
+    ],
+    "chance": null,
+    "cooldown": 2.6,
+    "label": "point",
+    "power": 28.0
+   },
+   {
+    "ap": null,
+    "capacities": [
+     "Blunt"
+    ],
+    "chance": null,
+    "cooldown": 2.0,
+    "label": "base",
+    "power": 9.0
+   }
+  ]
+ },
+ {
+  "ce": {
+   "bulk": 20.0,
+   "mass": 40.0,
+   "stuffToughness": null,
+   "toughnessRating": null
+  },
+  "ceStuffed": false,
+  "ceTools": [],
+  "defName": "ElephantTusk",
+  "label": "elephant tusk",
+  "mod": "Ludeon.RimWorld",
+  "ranged": false,
+  "stuffed": false,
+  "techLevel": "Neolithic",
+  "vMass": 1.8,
+  "vTools": [
+   {
+    "ap": null,
+    "capacities": [
+     "Scratch",
+     "Stab"
+    ],
+    "chance": null,
+    "cooldown": 2.6,
+    "label": "point",
+    "power": 18.2
+   },
+   {
+    "ap": null,
+    "capacities": [
+     "Blunt"
+    ],
+    "chance": 0.5,
+    "cooldown": 2.0,
+    "label": "base",
+    "power": 9.0
+   }
+  ]
+ },
+ {
+  "ce": {
+   "bulk": 0.07,
+   "mass": 0.4,
+   "stuffToughness": null,
+   "toughnessRating": null
+  },
+  "ceStuffed": false,
+  "ceTools": [
+   {
+    "apBlunt": 0.288,
+    "apSharp": null,
+    "chance": null,
+    "class": "CombatExtended.ToolCE",
+    "cooldown": 0.99,
+    "label": null,
+    "power": 2.0
+   }
+  ],
+  "defName": "WoodLog",
+  "label": "wood",
+  "mod": "Ludeon.RimWorld",
+  "ranged": false,
+  "stuffed": false,
+  "techLevel": "Neolithic",
+  "vMass": 0.4,
+  "vTools": [
+   {
+    "ap": null,
+    "capacities": [
+     "Blunt"
+    ],
+    "chance": null,
+    "cooldown": 2.0,
+    "label": "log",
+    "power": 10.0
+   }
+  ]
+ },
+ {
+  "ce": {
+   "bulk": 9.5,
+   "mass": 1.1,
+   "stuffToughness": null,
+   "toughnessRating": null
+  },
+  "ceStuffed": true,
+  "ceTools": [
+   {
+    "apBlunt": 1.5,
+    "apSharp": null,
+    "chance": 0.1,
+    "class": "CombatExtended.ToolCE",
+    "cooldown": 1.97,
+    "label": "handle",
+    "power": 5.0
+   },
+   {
+    "apBlunt": 3.375,
+    "apSharp": null,
+    "chance": null,
+    "class": "CombatExtended.ToolCE",
+    "cooldown": 2.65,
+    "label": "head",
+    "power": 17.0
+   }
+  ],
+  "defName": "MeleeWeapon_BreachAxe",
+  "label": "breach axe",
+  "mod": "Ludeon.RimWorld",
+  "ranged": false,
+  "stuffed": true,
+  "techLevel": "Neolithic",
+  "vMass": 1.1,
+  "vTools": [
+   {
+    "ap": null,
+    "capacities": [
+     "Blunt",
+     "Poke"
+    ],
+    "chance": null,
+    "cooldown": 2.0,
+    "label": "handle",
+    "power": 9.0
+   },
+   {
+    "ap": null,
+    "capacities": [
+     "Demolish"
+    ],
+    "chance": null,
+    "cooldown": 1.0,
+    "label": "head",
+    "power": 7.5
+   }
+  ]
+ },
+ {
+  "ce": {
+   "bulk": 3.5,
+   "mass": 1.25,
+   "stuffToughness": null,
+   "toughnessRating": null
+  },
+  "ceStuffed": true,
+  "ceTools": [
+   {
+    "apBlunt": 0.625,
+    "apSharp": null,
+    "chance": 0.33,
+    "class": "CombatExtended.ToolCE",
+    "cooldown": 1.59,
+    "label": "handle",
+    "power": 2.0
+   },
+   {
+    "apBlunt": 5.625,
+    "apSharp": null,
+    "chance": null,
+    "class": "CombatExtended.ToolCE",
+    "cooldown": 1.9,
+    "label": "head",
+    "power": 15.0
+   }
+  ],
+  "defName": "MeleeWeapon_Mace",
+  "label": "mace",
+  "mod": "Ludeon.RimWorld",
+  "ranged": false,
+  "stuffed": true,
+  "techLevel": "Medieval",
+  "vMass": 1.25,
+  "vTools": [
+   {
+    "ap": null,
+    "capacities": [
+     "Poke"
+    ],
+    "chance": null,
+    "cooldown": 2.0,
+    "label": "handle",
+    "power": 9.0
+   },
+   {
+    "ap": null,
+    "capacities": [
+     "Blunt"
+    ],
+    "chance": null,
+    "cooldown": 2.0,
+    "label": "head",
+    "power": 15.7
+   }
+  ]
+ },
+ {
+  "ce": {
+   "bulk": 3.5,
+   "mass": 0.85,
+   "stuffToughness": null,
+   "toughnessRating": null
+  },
+  "ceStuffed": true,
+  "ceTools": [
+   {
+    "apBlunt": 0.425,
+    "apSharp": null,
+    "chance": 0.33,
+    "class": "CombatExtended.ToolCE",
+    "cooldown": 1.44,
+    "label": "handle",
+    "power": 2.0
+   },
+   {
+    "apBlunt": 0.425,
+    "apSharp": 0.48,
+    "chance": null,
+    "class": "CombatExtended.ToolCE",
+    "cooldown": 1.44,
+    "label": "point",
+    "power": 27.0
+   },
+   {
+    "apBlunt": 0.956,
+    "apSharp": 0.43,
+    "chance": null,
+    "class": "CombatExtended.ToolCE",
+    "cooldown": 1.34,
+    "label": "edge",
+    "power": 20.0
+   }
+  ],
+  "defName": "MeleeWeapon_Gladius",
+  "label": "gladius",
+  "mod": "Ludeon.RimWorld",
+  "ranged": false,
+  "stuffed": true,
+  "techLevel": "Medieval",
+  "vMass": 0.85,
+  "vTools": [
+   {
+    "ap": null,
+    "capacities": [
+     "Blunt"
+    ],
+    "chance": null,
+    "cooldown": 2.0,
+    "label": "handle",
+    "power": 9.0
+   },
+   {
+    "ap": null,
+    "capacities": [
+     "Stab"
+    ],
+    "chance": null,
+    "cooldown": 2.0,
+    "label": "point",
+    "power": 16.0
+   },
+   {
+    "ap": null,
+    "capacities": [
+     "Cut"
+    ],
+    "chance": null,
+    "cooldown": 2.0,
+    "label": "edge",
+    "power": 16.0
+   }
+  ]
+ },
+ {
+  "ce": {
+   "bulk": 8.0,
+   "mass": 2.0,
+   "stuffToughness": null,
+   "toughnessRating": null
+  },
+  "ceStuffed": true,
+  "ceTools": [
+   {
+    "apBlunt": 1.0,
+    "apSharp": null,
+    "chance": 0.1,
+    "class": "CombatExtended.ToolCE",
+    "cooldown": 1.78,
+    "label": "handle",
+    "power": 4.0
+   },
+   {
+    "apBlunt": 1.0,
+    "apSharp": 2.0,
+    "chance": null,
+    "class": "CombatExtended.ToolCE",
+    "cooldown": 1.78,
+    "label": "point",
+    "power": 18.0
+   },
+   {
+    "apBlunt": 3.24,
+    "apSharp": 0.72,
+    "chance": null,
+    "class": "CombatExtended.ToolCE",
+    "cooldown": 1.64,
+    "label": "edge",
+    "power": 40.0
+   }
+  ],
+  "defName": "MeleeWeapon_LongSword",
+  "label": "longsword",
+  "mod": "Ludeon.RimWorld",
+  "ranged": false,
+  "stuffed": true,
+  "techLevel": "Medieval",
+  "vMass": 2.0,
+  "vTools": [
+   {
+    "ap": null,
+    "capacities": [
+     "Blunt"
+    ],
+    "chance": null,
+    "cooldown": 2.0,
+    "label": "handle",
+    "power": 9.0
+   },
+   {
+    "ap": null,
+    "capacities": [
+     "Stab"
+    ],
+    "chance": null,
+    "cooldown": 2.6,
+    "label": "point",
+    "power": 23.0
+   },
+   {
+    "ap": null,
+    "capacities": [
+     "Cut"
+    ],
+    "chance": null,
+    "cooldown": 2.6,
+    "label": "edge",
+    "power": 23.0
+   }
+  ]
+ },
+ {
+  "ce": {
+   "bulk": 4.0,
+   "mass": 2.0,
+   "stuffToughness": null,
+   "toughnessRating": null
+  },
+  "ceStuffed": true,
+  "ceTools": [
+   {
+    "apBlunt": 1.0,
+    "apSharp": null,
+    "chance": 0.33,
+    "class": "CombatExtended.ToolCE",
+    "cooldown": 1.78,
+    "label": "handle",
+    "power": 4.0
+   },
+   {
+    "apBlunt": 4.0,
+    "apSharp": null,
+    "chance": null,
+    "class": "CombatExtended.ToolCE",
+    "cooldown": 3.48,
+    "label": "head",
+    "power": 11.0
+   }
+  ],
+  "defName": "MeleeWeapon_Club",
+  "label": "club",
+  "mod": "Ludeon.RimWorld",
+  "ranged": false,
+  "stuffed": true,
+  "techLevel": "Neolithic",
+  "vMass": 2.0,
+  "vTools": [
+   {
+    "ap": null,
+    "capacities": [
+     "Poke"
+    ],
+    "chance": null,
+    "cooldown": 2.0,
+    "label": "handle",
+    "power": 9.0
+   },
+   {
+    "ap": null,
+    "capacities": [
+     "Blunt"
+    ],
+    "chance": null,
+    "cooldown": 2.0,
+    "label": "head",
+    "power": 14.0
+   }
+  ]
+ },
+ {
+  "ce": {
+   "bulk": 1.0,
+   "mass": 0.5,
+   "stuffToughness": null,
+   "toughnessRating": null
+  },
+  "ceStuffed": true,
+  "ceTools": [
+   {
+    "apBlunt": 0.25,
+    "apSharp": null,
+    "chance": 0.33,
+    "class": "CombatExtended.ToolCE",
+    "cooldown": 1.26,
+    "label": "handle",
+    "power": 1.0
+   },
+   {
+    "apBlunt": 0.36,
+    "apSharp": 0.32,
+    "chance": null,
+    "class": "CombatExtended.ToolCE",
+    "cooldown": 1.18,
+    "label": "blade",
+    "power": 10.0
+   },
+   {
+    "apBlunt": 0.25,
+    "apSharp": 0.42,
+    "chance": null,
+    "class": "CombatExtended.ToolCE",
+    "cooldown": 1.2,
+    "label": "point",
+    "power": 11.0
+   }
+  ],
+  "defName": "MeleeWeapon_Knife",
+  "label": "knife",
+  "mod": "Ludeon.RimWorld",
+  "ranged": false,
+  "stuffed": true,
+  "techLevel": "Neolithic",
+  "vMass": 0.5,
+  "vTools": [
+   {
+    "ap": null,
+    "capacities": [
+     "Blunt"
+    ],
+    "chance": null,
+    "cooldown": 2.0,
+    "label": "handle",
+    "power": 9.0
+   },
+   {
+    "ap": null,
+    "capacities": [
+     "Cut"
+    ],
+    "chance": null,
+    "cooldown": 1.5,
+    "label": "blade",
+    "power": 12.0
+   },
+   {
+    "ap": null,
+    "capacities": [
+     "Stab"
+    ],
+    "chance": null,
+    "cooldown": 2.0,
+    "label": "point",
+    "power": 13.0
+   }
+  ]
+ },
+ {
+  "ce": {
+   "bulk": 4.0,
+   "mass": 1.1,
+   "stuffToughness": null,
+   "toughnessRating": null
+  },
+  "ceStuffed": true,
+  "ceTools": [
+   {
+    "apBlunt": 0.93,
+    "apSharp": null,
+    "chance": 0.33,
+    "class": "CombatExtended.ToolCE",
+    "cooldown": 1.36,
+    "label": "shaft",
+    "power": 3.0
+   },
+   {
+    "apBlunt": 0.55,
+    "apSharp": null,
+    "chance": 0.33,
+    "class": "CombatExtended.ToolCE",
+    "cooldown": 1.54,
+    "label": "point",
+    "power": 2.0
+   },
+   {
+    "apBlunt": 0.55,
+    "apSharp": 0.46,
+    "chance": null,
+    "class": "CombatExtended.ToolCE",
+    "cooldown": 1.54,
+    "label": "head",
+    "power": 22.0
+   }
+  ],
+  "defName": "MeleeWeapon_Ikwa",
+  "label": "ikwa",
+  "mod": "Ludeon.RimWorld",
+  "ranged": false,
+  "stuffed": true,
+  "techLevel": "Neolithic",
+  "vMass": 1.1,
+  "vTools": [
+   {
+    "ap": null,
+    "capacities": [
+     "Blunt",
+     "Poke"
+    ],
+    "chance": null,
+    "cooldown": 2.0,
+    "label": "handle",
+    "power": 9.0
+   },
+   {
+    "ap": null,
+    "capacities": [
+     "Stab"
+    ],
+    "chance": null,
+    "cooldown": 2.0,
+    "label": "head",
+    "power": 15.0
+   },
+   {
+    "ap": null,
+    "capacities": [
+     "Cut"
+    ],
+    "chance": null,
+    "cooldown": 2.0,
+    "label": "edge",
+    "power": 15.0
+   }
+  ]
+ },
+ {
+  "ce": {
+   "bulk": 10.0,
+   "mass": 2.0,
+   "stuffToughness": null,
+   "toughnessRating": null
+  },
+  "ceStuffed": true,
+  "ceTools": [
+   {
+    "apBlunt": 2.25,
+    "apSharp": null,
+    "chance": 0.15,
+    "class": "CombatExtended.ToolCE",
+    "cooldown": 1.35,
+    "label": "shaft",
+    "power": 7.0
+   },
+   {
+    "apBlunt": 1.0,
+    "apSharp": null,
+    "chance": 0.05,
+    "class": "CombatExtended.ToolCE",
+    "cooldown": 1.78,
+    "label": "shaft",
+    "power": 4.0
+   },
+   {
+    "apBlunt": 2.25,
+    "apSharp": 2.25,
+    "chance": null,
+    "class": "CombatExtended.ToolCE",
+    "cooldown": 1.19,
+    "label": "head",
+    "power": 18.0
+   }
+  ],
+  "defName": "MeleeWeapon_Spear",
+  "label": "spear",
+  "mod": "Ludeon.RimWorld",
+  "ranged": false,
+  "stuffed": true,
+  "techLevel": "Neolithic",
+  "vMass": 2.0,
+  "vTools": [
+   {
+    "ap": null,
+    "capacities": [
+     "Blunt",
+     "Poke"
+    ],
+    "chance": null,
+    "cooldown": 2.6,
+    "label": "shaft",
+    "power": 13.0
+   },
+   {
+    "ap": 0.5,
+    "capacities": [
+     "Stab"
+    ],
+    "chance": null,
+    "cooldown": 2.6,
+    "label": "point",
+    "power": 23.0
+   }
+  ]
+ },
+ {
+  "ce": {
+   "bulk": 4.0,
+   "mass": 2.0,
+   "stuffToughness": null,
+   "toughnessRating": null
+  },
+  "ceStuffed": false,
+  "ceTools": [
+   {
+    "apBlunt": 0.605,
+    "apSharp": null,
+    "chance": 0.1,
+    "class": "CombatExtended.ToolCE",
+    "cooldown": 1.36,
+    "label": "handle",
+    "power": 2.0
+   },
+   {
+    "apBlunt": 3.485,
+    "apSharp": 21.78,
+    "chance": null,
+    "class": "CombatExtended.ToolCE",
+    "cooldown": 0.74,
+    "label": "edge",
+    "power": 38.0
+   },
+   {
+    "apBlunt": 1.173,
+    "apSharp": 30.24,
+    "chance": null,
+    "class": "CombatExtended.ToolCE",
+    "cooldown": 0.85,
+    "label": "point",
+    "power": 16.0
+   }
+  ],
+  "defName": "MeleeWeapon_MonoSwordBladelink",
+  "label": "persona monosword",
+  "mod": "Ludeon.RimWorld.Royalty",
+  "ranged": false,
+  "stuffed": false,
+  "techLevel": "Ultra",
+  "vMass": 2.0,
+  "vTools": [
+   {
+    "ap": null,
+    "capacities": [
+     "Blunt"
+    ],
+    "chance": null,
+    "cooldown": 1.6,
+    "label": "handle",
+    "power": 12.0
+   },
+   {
+    "ap": 0.9,
+    "capacities": [
+     "Stab"
+    ],
+    "chance": null,
+    "cooldown": 1.6,
+    "label": "point",
+    "power": 27.0
+   },
+   {
+    "ap": 0.9,
+    "capacities": [
+     "Cut"
+    ],
+    "chance": null,
+    "cooldown": 1.6,
+    "label": "edge",
+    "power": 27.0
+   }
+  ]
+ },
+ {
+  "ce": {
+   "bulk": 8.0,
+   "mass": 2.0,
+   "stuffToughness": null,
+   "toughnessRating": null
+  },
+  "ceStuffed": false,
+  "ceTools": [
+   {
+    "apBlunt": 1.21,
+    "apSharp": null,
+    "chance": 0.1,
+    "class": "CombatExtended.ToolCE",
+    "cooldown": 1.62,
+    "label": "handle",
+    "power": 4.0
+   },
+   {
+    "apBlunt": 200.0,
+    "apSharp": null,
+    "chance": null,
+    "class": "CombatExtended.ToolCE",
+    "cooldown": 2.19,
+    "label": "head",
+    "power": 58.0
+   }
+  ],
+  "defName": "MeleeWeapon_ZeusHammerBladelink",
+  "label": "persona zeushammer",
+  "mod": "Ludeon.RimWorld.Royalty",
+  "ranged": false,
+  "stuffed": false,
+  "techLevel": "Ultra",
+  "vMass": 2.0,
+  "vTools": [
+   {
+    "ap": null,
+    "capacities": [
+     "Poke"
+    ],
+    "chance": null,
+    "cooldown": 1.6,
+    "label": "handle",
+    "power": 15.0
+   },
+   {
+    "ap": null,
+    "capacities": [
+     "Blunt"
+    ],
+    "chance": null,
+    "cooldown": 2.2,
+    "label": "head",
+    "power": 31.0
+   }
+  ]
+ },
+ {
+  "ce": {
+   "bulk": 8.5,
+   "mass": 2.0,
+   "stuffToughness": null,
+   "toughnessRating": null
+  },
+  "ceStuffed": false,
+  "ceTools": [
+   {
+    "apBlunt": 0.968,
+    "apSharp": null,
+    "chance": 0.1,
+    "class": "CombatExtended.ToolCE",
+    "cooldown": 1.53,
+    "label": "handle",
+    "power": 3.0
+   },
+   {
+    "apBlunt": 5.576,
+    "apSharp": 29.04,
+    "chance": null,
+    "class": "CombatExtended.ToolCE",
+    "cooldown": 1.03,
+    "label": "edge",
+    "power": 51.0
+   },
+   {
+    "apBlunt": 2.478,
+    "apSharp": 38.72,
+    "chance": null,
+    "class": "CombatExtended.ToolCE",
+    "cooldown": 0.96,
+    "label": "point",
+    "power": 26.0
+   }
+  ],
+  "defName": "MeleeWeapon_PlasmaSwordBladelink",
+  "label": "persona plasmasword",
+  "mod": "Ludeon.RimWorld.Royalty",
+  "ranged": false,
+  "stuffed": false,
+  "techLevel": "Ultra",
+  "vMass": 2.0,
+  "vTools": [
+   {
+    "ap": null,
+    "capacities": [
+     "Blunt"
+    ],
+    "chance": null,
+    "cooldown": 1.6,
+    "label": "handle",
+    "power": 12.0
+   },
+   {
+    "ap": null,
+    "capacities": [
+     "Stab"
+    ],
+    "chance": null,
+    "cooldown": 2.0,
+    "label": "point",
+    "power": 23.0
+   },
+   {
+    "ap": null,
+    "capacities": [
+     "Cut"
+    ],
+    "chance": null,
+    "cooldown": 2.0,
+    "label": "edge",
+    "power": 23.0
+   }
+  ]
+ },
+ {
+  "ce": {
+   "bulk": 4.0,
+   "mass": 1.5,
+   "stuffToughness": null,
+   "toughnessRating": null
+  },
+  "ceStuffed": true,
+  "ceTools": [
+   {
+    "apBlunt": 0.75,
+    "apSharp": null,
+    "chance": 0.1,
+    "class": "CombatExtended.ToolCE",
+    "cooldown": 1.66,
+    "label": "handle",
+    "power": 3.0
+   },
+   {
+    "apBlunt": 4.69,
+    "apSharp": 1.57,
+    "chance": null,
+    "class": "CombatExtended.ToolCE",
+    "cooldown": 2.47,
+    "label": "edge",
+    "power": 25.0
+   }
+  ],
+  "defName": "MeleeWeapon_Axe",
+  "label": "axe",
+  "mod": "Ludeon.RimWorld.Royalty",
+  "ranged": false,
+  "stuffed": true,
+  "techLevel": "Medieval",
+  "vMass": 1.5,
+  "vTools": [
+   {
+    "ap": null,
+    "capacities": [
+     "Poke"
+    ],
+    "chance": null,
+    "cooldown": 2.0,
+    "label": "handle",
+    "power": 9.0
+   },
+   {
+    "ap": null,
+    "capacities": [
+     "Cut"
+    ],
+    "chance": null,
+    "cooldown": 2.0,
+    "label": "edge",
+    "power": 15.0
+   }
+  ]
+ },
+ {
+  "ce": {
+   "bulk": 8.0,
+   "mass": 2.5,
+   "stuffToughness": null,
+   "toughnessRating": null
+  },
+  "ceStuffed": true,
+  "ceTools": [
+   {
+    "apBlunt": 1.25,
+    "apSharp": null,
+    "chance": 0.1,
+    "class": "CombatExtended.ToolCE",
+    "cooldown": 1.89,
+    "label": "handle",
+    "power": 4.0
+   },
+   {
+    "apBlunt": 11.25,
+    "apSharp": null,
+    "chance": null,
+    "class": "CombatExtended.ToolCE",
+    "cooldown": 2.45,
+    "label": "head",
+    "power": 27.0
+   }
+  ],
+  "defName": "MeleeWeapon_Warhammer",
+  "label": "warhammer",
+  "mod": "Ludeon.RimWorld.Royalty",
+  "ranged": false,
+  "stuffed": true,
+  "techLevel": "Medieval",
+  "vMass": 5.0,
+  "vTools": [
+   {
+    "ap": null,
+    "capacities": [
+     "Poke"
+    ],
+    "chance": null,
+    "cooldown": 2.6,
+    "label": "handle",
+    "power": 11.0
+   },
+   {
+    "ap": null,
+    "capacities": [
+     "Blunt"
+    ],
+    "chance": null,
+    "cooldown": 2.6,
+    "label": "head",
+    "power": 20.0
+   }
+  ]
+ },
+ {
+  "ce": {
+   "bulk": 4.0,
+   "mass": 2.0,
+   "stuffToughness": null,
+   "toughnessRating": null
+  },
+  "ceStuffed": false,
+  "ceTools": [
+   {
+    "apBlunt": 0.5,
+    "apSharp": null,
+    "chance": 0.1,
+    "class": "CombatExtended.ToolCE",
+    "cooldown": 1.5,
+    "label": "handle",
+    "power": 2.0
+   },
+   {
+    "apBlunt": 2.88,
+    "apSharp": 18.0,
+    "chance": null,
+    "class": "CombatExtended.ToolCE",
+    "cooldown": 0.83,
+    "label": "edge",
+    "power": 35.0
+   },
+   {
+    "apBlunt": 1.28,
+    "apSharp": 25.0,
+    "chance": null,
+    "class": "CombatExtended.ToolCE",
+    "cooldown": 0.94,
+    "label": "point",
+    "power": 16.0
+   }
+  ],
+  "defName": "MeleeWeapon_MonoSword",
+  "label": "monosword",
+  "mod": "Ludeon.RimWorld.Royalty",
+  "ranged": false,
+  "stuffed": false,
+  "techLevel": "Ultra",
+  "vMass": 2.0,
+  "vTools": [
+   {
+    "ap": null,
+    "capacities": [
+     "Blunt"
+    ],
+    "chance": null,
+    "cooldown": 1.6,
+    "label": "handle",
+    "power": 12.0
+   },
+   {
+    "ap": 0.9,
+    "capacities": [
+     "Stab"
+    ],
+    "chance": null,
+    "cooldown": 2.0,
+    "label": "point",
+    "power": 25.0
+   },
+   {
+    "ap": 0.9,
+    "capacities": [
+     "Cut"
+    ],
+    "chance": null,
+    "cooldown": 2.0,
+    "label": "edge",
+    "power": 25.0
+   }
+  ]
+ },
+ {
+  "ce": {
+   "bulk": 8.0,
+   "mass": 2.0,
+   "stuffToughness": null,
+   "toughnessRating": null
+  },
+  "ceStuffed": false,
+  "ceTools": [
+   {
+    "apBlunt": 1.0,
+    "apSharp": null,
+    "chance": 0.1,
+    "class": "CombatExtended.ToolCE",
+    "cooldown": 1.78,
+    "label": "handle",
+    "power": 4.0
+   },
+   {
+    "apBlunt": 160.0,
+    "apSharp": null,
+    "chance": null,
+    "class": "CombatExtended.ToolCE",
+    "cooldown": 2.45,
+    "label": "head",
+    "power": 49.0
+   }
+  ],
+  "defName": "MeleeWeapon_Zeushammer",
+  "label": "zeushammer",
+  "mod": "Ludeon.RimWorld.Royalty",
+  "ranged": false,
+  "stuffed": false,
+  "techLevel": "Ultra",
+  "vMass": 2.0,
+  "vTools": [
+   {
+    "ap": null,
+    "capacities": [
+     "Poke"
+    ],
+    "chance": null,
+    "cooldown": 2.0,
+    "label": "handle",
+    "power": 15.0
+   },
+   {
+    "ap": null,
+    "capacities": [
+     "Blunt"
+    ],
+    "chance": null,
+    "cooldown": 3.0,
+    "label": "head",
+    "power": 31.0
+   }
+  ]
+ },
+ {
+  "ce": {
+   "bulk": 8.5,
+   "mass": 2.0,
+   "stuffToughness": null,
+   "toughnessRating": null
+  },
+  "ceStuffed": false,
+  "ceTools": [
+   {
+    "apBlunt": 0.8,
+    "apSharp": null,
+    "chance": 0.1,
+    "class": "CombatExtended.ToolCE",
+    "cooldown": 1.69,
+    "label": "handle",
+    "power": 3.0
+   },
+   {
+    "apBlunt": 4.06,
+    "apSharp": 24.0,
+    "chance": null,
+    "class": "CombatExtended.ToolCE",
+    "cooldown": 1.17,
+    "label": "edge",
+    "power": 47.0
+   },
+   {
+    "apBlunt": 2.048,
+    "apSharp": 32.0,
+    "chance": null,
+    "class": "CombatExtended.ToolCE",
+    "cooldown": 1.05,
+    "label": "point",
+    "power": 25.0
+   }
+  ],
+  "defName": "MeleeWeapon_PlasmaSword",
+  "label": "plasmasword",
+  "mod": "Ludeon.RimWorld.Royalty",
+  "ranged": false,
+  "stuffed": false,
+  "techLevel": "Ultra",
+  "vMass": 2.0,
+  "vTools": [
+   {
+    "ap": null,
+    "capacities": [
+     "Blunt"
+    ],
+    "chance": null,
+    "cooldown": 2.0,
+    "label": "handle",
+    "power": 12.0
+   },
+   {
+    "ap": null,
+    "capacities": [
+     "Stab"
+    ],
+    "chance": null,
+    "cooldown": 2.6,
+    "label": "point",
+    "power": 21.0
+   },
+   {
+    "ap": null,
+    "capacities": [
+     "Cut"
+    ],
+    "chance": null,
+    "cooldown": 2.6,
+    "label": "edge",
+    "power": 21.0
+   }
+  ]
+ },
+ {
+  "ce": {
+   "bulk": 6.0,
+   "mass": 1.2,
+   "stuffToughness": null,
+   "toughnessRating": null
+  },
+  "ceStuffed": false,
+  "ceTools": [
+   {
+    "apBlunt": 1.54,
+    "apSharp": null,
+    "chance": null,
+    "class": "CombatExtended.ToolCE",
+    "cooldown": 1.84,
+    "label": "head",
+    "power": 5.0
+   }
+  ],
+  "defName": "MeleeWeapon_PsyfocusStaff",
+  "label": "eltex staff",
+  "mod": "Ludeon.RimWorld.Royalty",
+  "ranged": false,
+  "stuffed": false,
+  "techLevel": "Ultra",
+  "vMass": 1.2,
+  "vTools": [
+   {
+    "ap": null,
+    "capacities": [
+     "Blunt"
+    ],
+    "chance": null,
+    "cooldown": 2.6,
+    "label": "head",
+    "power": 12.0
+   }
+  ]
+ },
+ {
+  "ce": {
+   "bulk": 6.0,
+   "mass": 1.5,
+   "stuffToughness": null,
+   "toughnessRating": null
+  },
+  "ceStuffed": false,
+  "ceTools": [
+   {
+    "apBlunt": 3.0,
+    "apSharp": null,
+    "chance": null,
+    "class": "CombatExtended.ToolCE",
+    "cooldown": 2.0,
+    "label": "barrel",
+    "power": 6.0
+   }
+  ],
+  "defName": "Gun_MiniFlameblaster",
+  "label": "mini-flameblaster",
+  "mod": "Ludeon.RimWorld.Biotech",
+  "ranged": false,
+  "stuffed": false,
+  "techLevel": "Industrial",
+  "vMass": 1.5,
+  "vTools": [
+   {
+    "ap": null,
+    "capacities": [
+     "Blunt",
+     "Poke"
+    ],
+    "chance": null,
+    "cooldown": 2.6,
+    "label": "barrel",
+    "power": 9.0
+   }
+  ]
+ },
+ {
+  "ce": {
+   "bulk": null,
+   "mass": 4.0,
+   "stuffToughness": null,
+   "toughnessRating": null
+  },
+  "ceStuffed": false,
+  "ceTools": [
+   {
+    "apBlunt": 3.5,
+    "apSharp": null,
+    "chance": null,
+    "class": "CombatExtended.ToolCE",
+    "cooldown": 2.44,
+    "label": "barrel",
+    "power": 10.0
+   }
+  ],
+  "defName": "Gun_BeamGraser",
+  "label": "beam graser",
+  "mod": "Ludeon.RimWorld.Biotech",
+  "ranged": false,
+  "stuffed": false,
+  "techLevel": "Spacer",
+  "vMass": 4.0,
+  "vTools": [
+   {
+    "ap": null,
+    "capacities": [
+     "Blunt",
+     "Poke"
+    ],
+    "chance": null,
+    "cooldown": 2.0,
+    "label": "barrel",
+    "power": 9.0
+   }
+  ]
+ },
+ {
+  "ce": {
+   "bulk": 10.0,
+   "mass": 7.0,
+   "stuffToughness": null,
+   "toughnessRating": null
+  },
+  "ceStuffed": false,
+  "ceTools": [
+   {
+    "apBlunt": 2.755,
+    "apSharp": null,
+    "chance": 1.5,
+    "class": "CombatExtended.ToolCE",
+    "cooldown": 1.55,
+    "label": "stock",
+    "power": 8.0
+   },
+   {
+    "apBlunt": 1.63,
+    "apSharp": null,
+    "chance": null,
+    "class": "CombatExtended.ToolCE",
+    "cooldown": 2.02,
+    "label": "barrel",
+    "power": 5.0
+   },
+   {
+    "apBlunt": 2.755,
+    "apSharp": null,
+    "chance": null,
+    "class": "CombatExtended.ToolCE",
+    "cooldown": 1.55,
+    "label": "muzzle",
+    "power": 8.0
+   }
+  ],
+  "defName": "Gun_Incinerator",
+  "label": "incinerator",
+  "mod": "Ludeon.RimWorld.Anomaly",
+  "ranged": false,
+  "stuffed": false,
+  "techLevel": "Industrial",
+  "vMass": 3.4,
+  "vTools": [
+   {
+    "ap": null,
+    "capacities": [
+     "Blunt"
+    ],
+    "chance": null,
+    "cooldown": 2.0,
+    "label": "stock",
+    "power": 9.0
+   },
+   {
+    "ap": null,
+    "capacities": [
+     "Blunt",
+     "Poke"
+    ],
+    "chance": null,
+    "cooldown": 2.0,
+    "label": "barrel",
+    "power": 9.0
+   }
+  ]
+ },
+ {
+  "ce": {
+   "bulk": 25.0,
+   "mass": 50.0,
+   "stuffToughness": null,
+   "toughnessRating": null
+  },
+  "ceStuffed": false,
+  "ceTools": [],
+  "defName": "MastodonTusk",
+  "label": "mastodon tusk",
+  "mod": "Ludeon.RimWorld.Odyssey",
+  "ranged": false,
+  "stuffed": false,
+  "techLevel": "Neolithic",
+  "vMass": 2.2,
+  "vTools": [
+   {
+    "ap": null,
+    "capacities": [
+     "Scratch",
+     "Stab"
+    ],
+    "chance": null,
+    "cooldown": 2.8,
+    "label": "point",
+    "power": 20.0
+   },
+   {
+    "ap": null,
+    "capacities": [
+     "Blunt"
+    ],
+    "chance": 0.5,
+    "cooldown": 2.2,
+    "label": "base",
+    "power": 10.0
+   }
+  ]
+ },
+ {
+  "ce": {
+   "bulk": 25.0,
+   "mass": 50.0,
+   "stuffToughness": null,
+   "toughnessRating": null
+  },
+  "ceStuffed": false,
+  "ceTools": [],
+  "defName": "AlphaThrumboHorn",
+  "label": "alpha thrumbo horn",
+  "mod": "Ludeon.RimWorld.Odyssey",
+  "ranged": false,
+  "stuffed": false,
+  "techLevel": "Neolithic",
+  "vMass": 2.0,
+  "vTools": [
+   {
+    "ap": null,
+    "capacities": [
+     "Scratch",
+     "Stab"
+    ],
+    "chance": null,
+    "cooldown": 1.6,
+    "label": "point",
+    "power": 32.0
+   },
+   {
+    "ap": null,
+    "capacities": [
+     "Blunt"
+    ],
+    "chance": null,
+    "cooldown": 1.4,
+    "label": "base",
+    "power": 9.0
+   }
+  ]
+ }
+]

@@ -1,0 +1,17 @@
+== S2 robustness matrix on 231 sampled real About.xml files (per cell: same / changed / partial / failed)
+mutation                         events-lenient          events-strict                  serde              roxmltree
+bom-added                             231/0/0/0              231/0/0/0              231/0/0/0              231/0/0/0
+utf16le-bom                           231/0/0/0              231/0/0/0              231/0/0/0              231/0/0/0
+tags-lowercase                        228/3/0/0              228/3/0/0              228/3/0/0              228/3/0/0
+tags-uppercase                       220/11/0/0             220/11/0/0              0/231/0/0             220/11/0/0
+tags-pascalcase                      220/11/0/0             220/11/0/0             220/11/0/0             220/11/0/0
+html-in-description                   2/229/0/0              2/229/0/0              2/0/0/229              2/229/0/0
+unknown-extra-elements                231/0/0/0              231/0/0/0              231/0/0/0              231/0/0/0
+duplicate-element                     0/231/0/0              0/231/0/0              0/0/0/231              0/231/0/0
+stray-ampersand                       0/231/0/0              0/0/231/0              0/0/0/231              0/0/0/231
+undefined-entity-nbsp                 2/229/0/0              2/229/0/0              2/0/0/229              2/0/0/229
+latin1-byte                           0/231/0/0              0/231/0/0              0/231/0/0              0/231/0/0
+mismatched-end-tag                    231/0/0/0              0/0/231/0              0/0/0/231              0/0/0/231
+missing-root-close                    0/0/231/0              0/0/231/0              0/0/0/231              0/0/0/231
+truncated-60pct                       0/0/231/0              0/0/231/0              0/0/0/231              0/0/0/231
+blank-line-before-decl                231/0/0/0              231/0/0/0              231/0/0/0              9/0/0/222

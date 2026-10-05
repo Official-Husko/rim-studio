@@ -1,0 +1,155 @@
+{
+ "vanilla": {
+  "databases": {
+   "ThingDef": {
+    "defs": 1811,
+    "duplicates_skipped": 0,
+    "overridden": 0,
+    "sha256": "2202d64e99c37cd4de31194e4170da298475b11bb783a5f14abada5f8acaf17d"
+   },
+   "Verse.BuildableDef": {
+    "defs": 1924,
+    "duplicates_skipped": 0,
+    "overridden": 0,
+    "sha256": null
+   }
+  },
+  "diagnostics": {},
+  "mods": [
+   "Ludeon.RimWorld",
+   "Ludeon.RimWorld.Royalty",
+   "Ludeon.RimWorld.Ideology",
+   "Ludeon.RimWorld.Biotech",
+   "Ludeon.RimWorld.Anomaly",
+   "Ludeon.RimWorld.Odyssey"
+  ],
+  "patch_ops": {
+   "Ludeon.RimWorld.Biotech|PatchOperationReplace|applied": 10,
+   "Ludeon.RimWorld.Ideology|PatchOperationReplace|applied": 1,
+   "Ludeon.RimWorld.Odyssey|PatchOperationReplace|applied": 10,
+   "Ludeon.RimWorld.Royalty|PatchOperationAdd|applied": 3,
+   "Ludeon.RimWorld.Royalty|PatchOperationAttributeSet|applied": 3,
+   "Ludeon.RimWorld.Royalty|PatchOperationReplace|applied": 2
+  },
+  "patch_ops_applied": 29,
+  "patch_ops_total": 29,
+  "stats": {
+   "abstract": 596,
+   "defs": 13212,
+   "files": 1558,
+   "may_require_skipped": 0,
+   "patch_ops": 29,
+   "top_level_nodes": 13808,
+   "unknown_type": 0
+  },
+  "thingdefs_by_mod": {
+   "Ludeon.RimWorld": 800,
+   "Ludeon.RimWorld.Anomaly": 204,
+   "Ludeon.RimWorld.Biotech": 223,
+   "Ludeon.RimWorld.Ideology": 127,
+   "Ludeon.RimWorld.Odyssey": 336,
+   "Ludeon.RimWorld.Royalty": 121
+  }
+ },
+ "vanilla_plus_ce": {
+  "ce": {
+   "ammo_defs": 930,
+   "applied": 2777,
+   "ce_defs_by_type": {
+    "CombatExtended.AmmoCategoryDef": 95,
+    "CombatExtended.AmmoDef": 915,
+    "CombatExtended.AmmoSetDef": 307,
+    "RimWorld.StatDef": 46,
+    "Verse.FleckDef": 35,
+    "Verse.RecipeDef": 907,
+    "Verse.ThingCategoryDef": 260,
+    "Verse.ThingDef": 1063
+   },
+   "load_folders": [
+    "Odyssey",
+    "Anomaly",
+    "Biotech",
+    "Ideology",
+    "Royalty",
+    "."
+   ],
+   "make_gun_ops_distinct_defnames": 43,
+   "not_applied": 43,
+   "not_applied_classes": {
+    "CombatExtended.PatchOperationMakeGunCECompatible": 43
+   },
+   "package_id": "CETeam.CombatExtended",
+   "patch_ops": 2820
+  },
+  "databases": {
+   "ThingDef": {
+    "defs": 3781,
+    "duplicates_skipped": 0,
+    "overridden": 12,
+    "sha256": "91f02f841c185d365b4cd8724c5b654248257d22357c1163024cb1e3b8ced929"
+   },
+   "Verse.BuildableDef": {
+    "defs": 3894,
+    "duplicates_skipped": 0,
+    "overridden": 12,
+    "sha256": null
+   }
+  },
+  "diagnostics": {
+   "inherit_duplicate_node_name": 14,
+   "patch_base_class": 43,
+   "patch_failed": 43,
+   "patch_unknown_class": 43,
+   "patch_unknown_field": 280
+  },
+  "mods": [
+   "Ludeon.RimWorld",
+   "Ludeon.RimWorld.Royalty",
+   "Ludeon.RimWorld.Ideology",
+   "Ludeon.RimWorld.Biotech",
+   "Ludeon.RimWorld.Anomaly",
+   "Ludeon.RimWorld.Odyssey",
+   "CETeam.CombatExtended"
+  ],
+  "patch_ops": {
+   "CETeam.CombatExtended|CombatExtended.PatchOperationMakeGunCECompatible|failed": 43,
+   "CETeam.CombatExtended|CombatExtended.PatchOperationSettingsConditional|applied": 25,
+   "CETeam.CombatExtended|PatchOperationAddModExtension|applied": 245,
+   "CETeam.CombatExtended|PatchOperationAdd|applied": 969,
+   "CETeam.CombatExtended|PatchOperationAttributeAdd|applied": 1,
+   "CETeam.CombatExtended|PatchOperationAttributeSet|applied": 29,
+   "CETeam.CombatExtended|PatchOperationConditional|applied": 442,
+   "CETeam.CombatExtended|PatchOperationFindMod|applied": 2,
+   "CETeam.CombatExtended|PatchOperationInsert|applied": 6,
+   "CETeam.CombatExtended|PatchOperationRemove|applied": 93,
+   "CETeam.CombatExtended|PatchOperationReplace|applied": 963,
+   "CETeam.CombatExtended|PatchOperationSequence|applied": 2,
+   "Ludeon.RimWorld.Biotech|PatchOperationReplace|applied": 10,
+   "Ludeon.RimWorld.Ideology|PatchOperationReplace|applied": 1,
+   "Ludeon.RimWorld.Odyssey|PatchOperationReplace|applied": 10,
+   "Ludeon.RimWorld.Royalty|PatchOperationAdd|applied": 3,
+   "Ludeon.RimWorld.Royalty|PatchOperationAttributeSet|applied": 3,
+   "Ludeon.RimWorld.Royalty|PatchOperationReplace|applied": 2
+  },
+  "patch_ops_applied": 2806,
+  "patch_ops_total": 2849,
+  "stats": {
+   "abstract": 1097,
+   "defs": 17080,
+   "files": 1924,
+   "may_require_skipped": 0,
+   "patch_ops": 2849,
+   "top_level_nodes": 18177,
+   "unknown_type": 0
+  },
+  "thingdefs_by_mod": {
+   "CETeam.CombatExtended": 1989,
+   "Ludeon.RimWorld": 788,
+   "Ludeon.RimWorld.Anomaly": 203,
+   "Ludeon.RimWorld.Biotech": 219,
+   "Ludeon.RimWorld.Ideology": 127,
+   "Ludeon.RimWorld.Odyssey": 336,
+   "Ludeon.RimWorld.Royalty": 119
+  }
+ }
+}

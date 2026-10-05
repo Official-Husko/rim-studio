@@ -1,0 +1,183 @@
+{
+ "archetype_inference_loo_accuracy": {
+  "knn1": 0.38095238095238093,
+  "knn3": 0.38095238095238093,
+  "shipped_classifier_agreement": 0.3333333333333333
+ },
+ "class_counts": {
+  "AssaultRifle": 7,
+  "MachineGun": 3,
+  "Pistol": 3,
+  "Revolver": 5,
+  "SMGs": 1,
+  "SniperRifle": 2
+ },
+ "class_known_loo_class_median": {
+  "bulk": {
+   "median_ape": 0.2666666666666666,
+   "n_with_peers": 19,
+   "within20pct": 0.3684210526315789
+  },
+  "burst": {
+   "median_ape": 0.0,
+   "n_with_peers": 20,
+   "within20pct": 0.75
+  },
+  "cooldown": {
+   "median_ape": 0.09616873065015488,
+   "n_with_peers": 20,
+   "within20pct": 0.6
+  },
+  "magazine": {
+   "median_ape": 0.39285714285714285,
+   "n_with_peers": 20,
+   "within20pct": 0.35
+  },
+  "mass": {
+   "median_ape": 0.4634615384615383,
+   "n_with_peers": 20,
+   "within20pct": 0.1
+  },
+  "range": {
+   "median_ape": 0.22,
+   "n_with_peers": 20,
+   "within20pct": 0.4
+  },
+  "reload": {
+   "median_ape": 0.07238372093023251,
+   "n_with_peers": 20,
+   "within20pct": 0.75
+  },
+  "spread": {
+   "median_ape": 0.645,
+   "n_with_peers": 20,
+   "within20pct": 0.25
+  },
+  "sway": {
+   "median_ape": 0.21287593984962405,
+   "n_with_peers": 20,
+   "within20pct": 0.5
+  },
+  "warmup": {
+   "median_ape": 0.27272727272727254,
+   "n_with_peers": 20,
+   "within20pct": 0.3
+  }
+ },
+ "feature_ablation_3nn": {
+  "all_features_mean_median_ape": 0.39831230326074735,
+  "without": {
+   "burst": 0.4069470189266851,
+   "cooldown": 0.37191635893475994,
+   "damage": 0.3495530778066668,
+   "mass": 0.4077284450215803,
+   "range": 0.3839623786874392,
+   "speed": 0.36289492279539665,
+   "warmup": 0.38845926345827203
+  }
+ },
+ "mass_ratio_ce_over_vanilla": {
+  "median": 1.0,
+  "p10": 0.7777777777777778,
+  "p90": 1.825
+ },
+ "n": 21,
+ "single_reference_copy": {
+  "nearest": {
+   "bulk": {
+    "median_ape": 0.288135593220339,
+    "within20pct": 0.2631578947368421
+   },
+   "burst": {
+    "median_ape": 0.0,
+    "within20pct": 0.6190476190476191
+   },
+   "cooldown": {
+    "median_ape": 0.28947368421052627,
+    "within20pct": 0.42857142857142855
+   },
+   "magazine": {
+    "median_ape": 0.5,
+    "within20pct": 0.38095238095238093
+   },
+   "mass": {
+    "median_ape": 0.2857142857142857,
+    "within20pct": 0.3333333333333333
+   },
+   "mass_scaled_by_vanilla_ratio": {
+    "median_ape": 0.1646778042959429
+   },
+   "range": {
+    "median_ape": 0.0,
+    "within20pct": 0.7619047619047619
+   },
+   "reload": {
+    "median_ape": 0.0,
+    "within20pct": 0.8095238095238095
+   },
+   "spread": {
+    "median_ape": 0.07142857142857129,
+    "within20pct": 0.6190476190476191
+   },
+   "sway": {
+    "median_ape": 0.2302158273381294,
+    "within20pct": 0.42857142857142855
+   },
+   "warmup": {
+    "median_ape": 0.16666666666666669,
+    "within20pct": 0.5238095238095238
+   },
+   "warmup_scaled_by_vanilla_ratio": {
+    "median_ape": 0.14021164021164023
+   }
+  },
+  "oracle": {
+   "bulk": {
+    "median_ape": 0.234896224056014,
+    "within20pct": 0.4444444444444444
+   },
+   "burst": {
+    "median_ape": 0.0,
+    "within20pct": 0.7142857142857143
+   },
+   "cooldown": {
+    "median_ape": 0.054054054054054106,
+    "within20pct": 0.6666666666666666
+   },
+   "magazine": {
+    "median_ape": 0.4,
+    "within20pct": 0.47619047619047616
+   },
+   "mass": {
+    "median_ape": 0.2014388489208632,
+    "within20pct": 0.47619047619047616
+   },
+   "mass_scaled_by_vanilla_ratio": {
+    "median_ape": 0.08998357963875207
+   },
+   "range": {
+    "median_ape": 0.11290322580645161,
+    "within20pct": 0.6666666666666666
+   },
+   "reload": {
+    "median_ape": 0.0,
+    "within20pct": 0.8571428571428571
+   },
+   "spread": {
+    "median_ape": 0.07142857142857129,
+    "within20pct": 0.6666666666666666
+   },
+   "sway": {
+    "median_ape": 0.10833333333333343,
+    "within20pct": 0.6190476190476191
+   },
+   "warmup": {
+    "median_ape": 0.09090909090909098,
+    "within20pct": 0.7142857142857143
+   },
+   "warmup_scaled_by_vanilla_ratio": {
+    "median_ape": 0.24999999999999986
+   }
+  }
+ }
+}

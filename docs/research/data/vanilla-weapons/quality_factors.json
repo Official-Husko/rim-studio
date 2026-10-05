@@ -1,0 +1,284 @@
+{
+ "AccuracyLong": {
+  "class": "StatPart_Quality",
+  "factorAwful": 0.8,
+  "factorExcellent": 1.2,
+  "factorGood": 1.1,
+  "factorLegendary": 1.5,
+  "factorMasterwork": 1.35,
+  "factorNormal": 1.0,
+  "factorPoor": 0.9
+ },
+ "AccuracyMedium": {
+  "class": "StatPart_Quality",
+  "factorAwful": 0.8,
+  "factorExcellent": 1.2,
+  "factorGood": 1.1,
+  "factorLegendary": 1.5,
+  "factorMasterwork": 1.35,
+  "factorNormal": 1.0,
+  "factorPoor": 0.9
+ },
+ "AccuracyShort": {
+  "class": "StatPart_Quality",
+  "factorAwful": 0.8,
+  "factorExcellent": 1.2,
+  "factorGood": 1.1,
+  "factorLegendary": 1.5,
+  "factorMasterwork": 1.35,
+  "factorNormal": 1.0,
+  "factorPoor": 0.9
+ },
+ "AccuracyTouch": {
+  "class": "StatPart_Quality",
+  "factorAwful": 0.8,
+  "factorExcellent": 1.2,
+  "factorGood": 1.1,
+  "factorLegendary": 1.5,
+  "factorMasterwork": 1.35,
+  "factorNormal": 1.0,
+  "factorPoor": 0.9
+ },
+ "ArmorRating_Blunt": {
+  "class": "StatPart_Quality",
+  "factorAwful": 0.6,
+  "factorExcellent": 1.3,
+  "factorGood": 1.15,
+  "factorLegendary": 1.8,
+  "factorMasterwork": 1.45,
+  "factorNormal": 1.0,
+  "factorPoor": 0.8
+ },
+ "ArmorRating_Heat": {
+  "class": "StatPart_Quality",
+  "factorAwful": 0.6,
+  "factorExcellent": 1.3,
+  "factorGood": 1.15,
+  "factorLegendary": 1.8,
+  "factorMasterwork": 1.45,
+  "factorNormal": 1.0,
+  "factorPoor": 0.8
+ },
+ "ArmorRating_Sharp": {
+  "class": "StatPart_Quality",
+  "factorAwful": 0.6,
+  "factorExcellent": 1.3,
+  "factorGood": 1.15,
+  "factorLegendary": 1.8,
+  "factorMasterwork": 1.45,
+  "factorNormal": 1.0,
+  "factorPoor": 0.8
+ },
+ "Beauty": {
+  "class": "StatPart_Quality",
+  "factorAwful": -0.1,
+  "factorExcellent": 3.0,
+  "factorGood": 2.0,
+  "factorLegendary": 8.0,
+  "factorMasterwork": 5.0,
+  "factorNormal": 1.0,
+  "factorPoor": 0.5
+ },
+ "BeautyOutdoors": {
+  "class": "StatPart_Quality",
+  "factorAwful": -0.1,
+  "factorExcellent": 3.0,
+  "factorGood": 2.0,
+  "factorLegendary": 8.0,
+  "factorMasterwork": 5.0,
+  "factorNormal": 1.0,
+  "factorPoor": 0.5
+ },
+ "BedRestEffectiveness": {
+  "class": "StatPart_Quality",
+  "factorAwful": 0.86,
+  "factorExcellent": 1.14,
+  "factorGood": 1.08,
+  "factorLegendary": 1.6,
+  "factorMasterwork": 1.25,
+  "factorNormal": 1.0,
+  "factorPoor": 0.92
+ },
+ "Comfort": {
+  "class": "StatPart_Quality",
+  "factorAwful": 0.76,
+  "factorExcellent": 1.24,
+  "factorGood": 1.12,
+  "factorLegendary": 1.7,
+  "factorMasterwork": 1.45,
+  "factorNormal": 1.0,
+  "factorPoor": 0.88
+ },
+ "DeteriorationRate": {
+  "class": "StatPart_Quality",
+  "factorAwful": 2.0,
+  "factorExcellent": 0.6,
+  "factorGood": 0.8,
+  "factorLegendary": 0.1,
+  "factorMasterwork": 0.3,
+  "factorNormal": 1.0,
+  "factorPoor": 1.5
+ },
+ "EnergyShieldEnergyMax": {
+  "class": "StatPart_Quality",
+  "factorAwful": 0.6,
+  "factorExcellent": 1.4,
+  "factorGood": 1.2,
+  "factorLegendary": 2.1,
+  "factorMasterwork": 1.7,
+  "factorNormal": 1.0,
+  "factorPoor": 0.8
+ },
+ "EnergyShieldRechargeRate": {
+  "class": "StatPart_Quality",
+  "factorAwful": 0.9,
+  "factorExcellent": 1.1,
+  "factorGood": 1.05,
+  "factorLegendary": 1.3,
+  "factorMasterwork": 1.2,
+  "factorNormal": 1.0,
+  "factorPoor": 0.95
+ },
+ "Insulation_Cold": {
+  "applyToNegativeValues": 0.0,
+  "class": "StatPart_Quality",
+  "factorAwful": 0.8,
+  "factorExcellent": 1.2,
+  "factorGood": 1.1,
+  "factorLegendary": 1.8,
+  "factorMasterwork": 1.5,
+  "factorNormal": 1.0,
+  "factorPoor": 0.9
+ },
+ "Insulation_Heat": {
+  "applyToNegativeValues": 0.0,
+  "class": "StatPart_Quality",
+  "factorAwful": 0.8,
+  "factorExcellent": 1.2,
+  "factorGood": 1.1,
+  "factorLegendary": 1.8,
+  "factorMasterwork": 1.5,
+  "factorNormal": 1.0,
+  "factorPoor": 0.9
+ },
+ "JoyGainFactor": {
+  "class": "StatPart_Quality",
+  "factorAwful": 0.76,
+  "factorExcellent": 1.24,
+  "factorGood": 1.12,
+  "factorLegendary": 1.8,
+  "factorMasterwork": 1.4,
+  "factorNormal": 1.0,
+  "factorPoor": 0.88
+ },
+ "JumpRange": {
+  "class": "StatPart_Quality",
+  "factorAwful": 0.75,
+  "factorExcellent": 1.13,
+  "factorGood": 1.06,
+  "factorLegendary": 1.25,
+  "factorMasterwork": 1.19,
+  "factorNormal": 1.0,
+  "factorPoor": 0.9
+ },
+ "MarketValue": {
+  "class": "StatPart_Quality",
+  "factorAwful": 0.5,
+  "factorExcellent": 1.5,
+  "factorGood": 1.25,
+  "factorLegendary": 5.0,
+  "factorMasterwork": 2.5,
+  "factorNormal": 1.0,
+  "factorPoor": 0.75,
+  "maxGainExcellent": 1000.0,
+  "maxGainGood": 500.0,
+  "maxGainLegendary": 3000.0,
+  "maxGainMasterwork": 2000.0
+ },
+ "MarketValueIgnoreHp": {
+  "class": "StatPart_Quality",
+  "factorAwful": 0.5,
+  "factorExcellent": 1.5,
+  "factorGood": 1.25,
+  "factorLegendary": 5.0,
+  "factorMasterwork": 2.5,
+  "factorNormal": 1.0,
+  "factorPoor": 0.75,
+  "maxGainExcellent": 1000.0,
+  "maxGainGood": 500.0,
+  "maxGainLegendary": 3000.0,
+  "maxGainMasterwork": 2000.0
+ },
+ "MeleeWeapon_DamageMultiplier": {
+  "class": "StatPart_Quality",
+  "factorAwful": 0.8,
+  "factorExcellent": 1.2,
+  "factorGood": 1.1,
+  "factorLegendary": 1.65,
+  "factorMasterwork": 1.45,
+  "factorNormal": 1.0,
+  "factorPoor": 0.9
+ },
+ "PackRadius": {
+  "class": "StatPart_Quality",
+  "factorAwful": 0.84,
+  "factorExcellent": 1.16,
+  "factorGood": 1.08,
+  "factorLegendary": 1.5,
+  "factorMasterwork": 1.3,
+  "factorNormal": 1.0,
+  "factorPoor": 0.92
+ },
+ "PsychicSensitivityOffset": {
+  "applyToNegativeValues": 0.0,
+  "class": "StatPart_Quality",
+  "factorAwful": 0.5,
+  "factorExcellent": 1.16,
+  "factorGood": 1.0,
+  "factorLegendary": 1.5,
+  "factorMasterwork": 1.32,
+  "factorNormal": 0.83,
+  "factorPoor": 0.66
+ },
+ "RangedWeapon_ArmorPenetrationMultiplier": {
+  "class": "StatPart_Quality",
+  "factorAwful": 0.9,
+  "factorExcellent": 1.0,
+  "factorGood": 1.0,
+  "factorLegendary": 1.5,
+  "factorMasterwork": 1.25,
+  "factorNormal": 1.0,
+  "factorPoor": 1.0
+ },
+ "RangedWeapon_DamageMultiplier": {
+  "class": "StatPart_Quality",
+  "factorAwful": 0.9,
+  "factorExcellent": 1.0,
+  "factorGood": 1.0,
+  "factorLegendary": 1.5,
+  "factorMasterwork": 1.25,
+  "factorNormal": 1.0,
+  "factorPoor": 1.0
+ },
+ "SurgerySuccessChanceFactor": {
+  "class": "StatPart_Quality",
+  "factorAwful": 0.9,
+  "factorExcellent": 1.1,
+  "factorGood": 1.05,
+  "factorLegendary": 1.3,
+  "factorMasterwork": 1.15,
+  "factorNormal": 1.0,
+  "factorPoor": 0.95
+ },
+ "TerrorSource": {
+  "class": "StatPart_Quality_Offset",
+  "offsetAwful": 3.0,
+  "offsetExcellent": 20.0,
+  "offsetGood": 15.0,
+  "offsetLegendary": 40.0,
+  "offsetMasterwork": 30.0,
+  "offsetNormal": 10.0,
+  "offsetPoor": 6.0,
+  "thingDefs": 0.0
+ }
+}

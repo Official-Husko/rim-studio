@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  TEMPLATE 06: new ammunition for a mod with its own calibre. This is a DEFS file (not a Patch file): it goes in a CE-gated
+  folder (for example CE/Defs/) so it loads only when CE is active. Weapons then point at the AmmoSet (template 01).
+  Cheaper alternative: reuse an existing CE AmmoSet (the survey shows 424 of 932 CE sets hold a single ammo type and the most
+  used sets are 5.56 NATO, 9mm Para, 7.62 NATO); invent a calibre only when no CE set fits.
+-->
+<Defs>
+  <!-- 1. Category the ammo items sit in; parent is a CE ammo category (AmmoRifles, AmmoPistols, ...). [REQ] -->
+  <ThingCategoryDef>
+    <defName>Ammo{{Calibre}}</defName>
+    <label>{{calibre label}}</label>
+    <parent>{{CE_parent_category}}</parent>
+  </ThingCategoryDef>
+
+  <!-- 2. The ammo set: map each ammo item to the projectile it fires. [REQ] -->
+  <CombatExtended.AmmoSetDef>
+    <defName>AmmoSet_{{Calibre}}</defName>
+    <label>{{calibre label}}</label>
+    <ammoTypes>
+      <Ammo_{{Calibre}}_FMJ>Bullet_{{Calibre}}_FMJ</Ammo_{{Calibre}}_FMJ>   <!-- element name = ammo defName, text = projectile defName -->
+    </ammoTypes>
+    <similarTo>{{AmmoSet_of_similar_calibre}}</similarTo>                    <!-- [OPT] lets pawn loadouts treat it as a cousin -->
+  </CombatExtended.AmmoSetDef>
+
+  <!-- 3. Abstract ammo base for the calibre, parented to a CE size base (SmallAmmoBase, MediumAmmoBase, ...). -->
+  <ThingDef Class="CombatExtended.AmmoDef" Name="{{Calibre}}Base" ParentName="{{SmallAmmoBase}}" Abstract="True">
+    <statBases><Mass>{{mass}}</Mass><Bulk>{{bulk}}</Bulk></statBases>
+    <tradeTags><li>CE_AutoEnableTrade</li><li>CE_AutoEnableCrafting</li></tradeTags>
+    <thingCategories><li>Ammo{{Calibre}}</li></thingCategories>
+  </ThingDef>
+
+  <!-- 4. One concrete ammo item per ammo class. -->
+  <ThingDef Class="CombatExtended.AmmoDef" ParentName="{{Calibre}}Base">
+    <defName>Ammo_{{Calibre}}_FMJ</defName>
+    <label>{{calibre label}} (FMJ)</label>
+    <graphicData><texPath>{{tex}}</texPath><graphicClass>Graphic_StackCount</graphicClass></graphicData>
+    <ammoClass>FullMetalJacket</ammoClass>                    <!-- [REQ] an AmmoCategoryDef of CE -->
+    <cookOffProjectile>Bullet_{{Calibre}}_FMJ</cookOffProjectile> <!-- [OPT] fired when the stack burns -->
+  </ThingDef>
+
+  <!-- 5. Projectile base: BulletCE parent supplies thingClass BulletCE and ProjectilePropertiesCE. -->
+  <ThingDef Name="Base{{Calibre}}Bullet" ParentName="BaseBulletCE" Abstract="true">
+    <graphicData><texPath>{{bullet_tex}}</texPath><graphicClass>Graphic_Single</graphicClass></graphicData>
+    <projectile Class="CombatExtended.ProjectilePropertiesCE">
+      <damageDef>Bullet</damageDef>
+      <speed>{{speed}}</speed>
+      <dropsCasings>true</dropsCasings>
+    </projectile>
+  </ThingDef>
+  <!-- 6. Concrete projectile with the numbers that make the ammo type differ. -->
+  <ThingDef ParentName="Base{{Calibre}}Bullet">
+    <defName>Bullet_{{Calibre}}_FMJ</defName>
+    <label>{{calibre}} bullet (FMJ)</label>
+    <projectile Class="CombatExtended.ProjectilePropertiesCE">
+      <damageAmountBase>{{damage}}</damageAmountBase>
+      <armorPenetrationSharp>{{ap_sharp}}</armorPenetrationSharp>
+      <armorPenetrationBlunt>{{ap_blunt}}</armorPenetrationBlunt>
+    </projectile>
+  </ThingDef>
+  <!-- Crafting recipes and ammo trade injection are automatic for items tagged CE_AutoEnableCrafting / CE_AutoEnableTrade
+       (tags seen on most CE ammo; the injector behaviour itself is out of scope here and unverified). -->
+</Defs>

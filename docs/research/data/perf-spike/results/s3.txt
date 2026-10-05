@@ -1,0 +1,50 @@
+== S3 roots=workshop+data scope=superset mods=697 def_files=23717 bytes=221.5MB (scanned 26720 files)
+  parsers: defs / with defName / files with parse error / files differing from roxmltree
+    roxmltree  defs=134324 with_defName=128376 errors=0 differs=0
+    quick-xml  defs=134324 with_defName=128376 errors=0 differs=0
+    scan       defs=134324 with_defName=128376 errors=0 differs=0
+  A) parse only (text in memory), owned DefRec output
+  variant                            median ms    min ms    max ms   (n=5)
+  roxmltree@1                          1708.30   1681.39   1733.20   {}
+  roxmltree@16                          308.36    234.51    329.73   {}
+  quick-xml@1                           637.98    616.55    686.07   {}
+  quick-xml@16                           99.45     90.63    104.87   {}
+  scan@1                                188.06    182.35    203.58   {}
+  scan@16                                28.53     27.46     29.63   {}
+  A2) parse only, borrowed (no allocation of records)
+  variant                            median ms    min ms    max ms   (n=5)
+  roxmltree@1                          1649.01   1628.85   1699.96   {}
+  roxmltree@16                          297.37    265.22    308.34   {}
+  quick-xml@1                           627.16    592.38    649.89   {}
+  quick-xml@16                           92.94     84.52    109.10   {}
+  scan@1                                182.81    170.60    204.38   {}
+  scan@16                                25.98     21.69     31.27   {}
+  B) end to end: read + decode + parse + owned records (warm)
+  variant                            median ms    min ms    max ms   (n=5)
+  roxmltree@1                          1907.21   1873.18   2110.95   {}
+  roxmltree@16                          346.07    329.65    359.05   {}
+  quick-xml@1                           864.04    833.28    870.88   {}
+  quick-xml@16                          124.78    105.38    144.03   {}
+  scan@1                                395.27    371.19    418.54   {}
+  scan@16                                51.98     50.42     64.91   {}
+  C) read strategy with parser=scan (end to end, 16 threads)
+  variant                            median ms    min ms    max ms   (n=5)
+  fs::read                               57.30     53.31     65.47   {}
+  reuse-buf                              53.00     48.88     67.14   {}
+  mmap                                  148.66    144.87    152.16   {}
+  D) slowest files (single thread, best of 3, parse only)
+    roxmltree total 1534.8 ms; top 3:
+         28.60 ms   2477234 B  ~/.steam/steam/steamapps/workshop/content/294100/3316062206/1.5/Defs/AncientMarket_Libraray.CustomMapDataDef/AM_Supermarket_L.xml
+         27.50 ms   2477234 B  ~/.steam/steam/steamapps/workshop/content/294100/3316062206/1.6/Defs/AncientMarket_Libraray.CustomMapDataDef/AM_Supermarket_L.xml
+         19.11 ms   1724160 B  ~/.steam/steam/steamapps/workshop/content/294100/3316062206/1.5/Defs/AncientMarket_Libraray.CustomMapDataDef/AM_Supermarket_S.xml
+      slowest 1% of files = 41.5% of total parse time
+    quick-xml total 560.4 ms; top 3:
+          7.11 ms   2477234 B  ~/.steam/steam/steamapps/workshop/content/294100/3316062206/1.5/Defs/AncientMarket_Libraray.CustomMapDataDef/AM_Supermarket_L.xml
+          6.66 ms   2477234 B  ~/.steam/steam/steamapps/workshop/content/294100/3316062206/1.6/Defs/AncientMarket_Libraray.CustomMapDataDef/AM_Supermarket_L.xml
+          4.93 ms   1237167 B  ~/.steam/steam/steamapps/workshop/content/294100/3316062206/1.5/Defs/AncientMarket_Libraray.CustomMapDataDef/AM_Supermarket_2L_S.xml
+      slowest 1% of files = 34.1% of total parse time
+    scan total 157.4 ms; top 3:
+          2.50 ms   2477234 B  ~/.steam/steam/steamapps/workshop/content/294100/3316062206/1.5/Defs/AncientMarket_Libraray.CustomMapDataDef/AM_Supermarket_L.xml
+          1.77 ms   2477234 B  ~/.steam/steam/steamapps/workshop/content/294100/3316062206/1.6/Defs/AncientMarket_Libraray.CustomMapDataDef/AM_Supermarket_L.xml
+          1.69 ms   1724160 B  ~/.steam/steam/steamapps/workshop/content/294100/3316062206/1.5/Defs/AncientMarket_Libraray.CustomMapDataDef/AM_Supermarket_S.xml
+      slowest 1% of files = 35.2% of total parse time

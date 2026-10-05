@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  TEMPLATE 01: ranged gun (documentation of expected OUTPUT only; RimStudio holds this as a JSON node tree).
+  Legend: [REQ] required for a working CE gun, [OPT] optional, [SRC:vanilla|user|computed] where the generator gets the value.
+  Placeholders use {{name}}. Written from patterns seen in the survey, not copied from any file.
+  Preconditions: the file is loaded only when CE is active (see 09-gating-and-folders.xml), so no extra gate is inside.
+-->
+<Patch>
+  <!-- 1. The conversion operation: one per weapon def. Class lives in the CombatExtended assembly. -->
+  <Operation Class="CombatExtended.PatchOperationMakeGunCECompatible">
+    <defName>{{defName}}</defName>                       <!-- [REQ][SRC:vanilla] must exist as a ThingDef, else the op fails with a warning -->
+    <statBases>                                          <!-- [REQ] replaces same-named stats, deletes vanilla Accuracy* stats -->
+      <Mass>{{mass_kg}}</Mass>                           <!-- [OPT][SRC:vanilla or computed] keep vanilla value when unchanged -->
+      <Bulk>{{bulk}}</Bulk>                              <!-- [REQ][SRC:computed] CE inventory volume -->
+      <SwayFactor>{{sway}}</SwayFactor>                  <!-- [REQ][SRC:computed or user] -->
+      <ShotSpread>{{spread}}</ShotSpread>                <!-- [REQ][SRC:computed or user] -->
+      <SightsEfficiency>{{sights}}</SightsEfficiency>    <!-- [REQ][SRC:user or computed] 1 = iron sights -->
+      <RangedWeapon_Cooldown>{{cooldown_s}}</RangedWeapon_Cooldown> <!-- [REQ][SRC:vanilla] seconds between shots/bursts -->
+      <WorkToMake>{{work}}</WorkToMake>                  <!-- [OPT][SRC:vanilla] -->
+    </statBases>
+    <costList>                                           <!-- [OPT] fully REPLACES the cost list (cleared first) -->
+      <Steel>{{steel}}</Steel>
+    </costList>
+    <Properties>                                         <!-- [REQ] appended as a VerbPropertiesCE entry; vanilla shoot verbs are removed -->
+      <recoilAmount>{{recoil}}</recoilAmount>            <!-- [REQ][SRC:computed] -->
+      <verbClass>CombatExtended.Verb_ShootCE</verbClass> <!-- [REQ] -->
+      <hasStandardCommand>true</hasStandardCommand>      <!-- [REQ] else no draft command -->
+      <defaultProjectile>{{projectile_defName}}</defaultProjectile> <!-- [REQ][SRC:user] must be a CE projectile def -->
+      <warmupTime>{{aim_time_s}}</warmupTime>            <!-- [REQ][SRC:vanilla] -->
+      <range>{{range_cells}}</range>                     <!-- [REQ][SRC:vanilla or computed] -->
+      <burstShotCount>{{burst}}</burstShotCount>         <!-- [OPT] omit for single shot -->
+      <ticksBetweenBurstShots>{{burst_ticks}}</ticksBetweenBurstShots> <!-- [OPT] with burstShotCount -->
+      <soundCast>{{sound}}</soundCast>                   <!-- [REQ][SRC:vanilla] -->
+      <soundCastTail>{{sound_tail}}</soundCastTail>      <!-- [OPT] -->
+      <muzzleFlashScale>{{flash}}</muzzleFlashScale>     <!-- [OPT] -->
+    </Properties>
+    <AmmoUser>                                           <!-- [REQ for ammo-using guns] -->
+      <magazineSize>{{mag}}</magazineSize>               <!-- [REQ][SRC:user] -->
+      <reloadTime>{{reload_s}}</reloadTime>              <!-- [REQ][SRC:user or computed] -->
+      <ammoSet>{{ammoSet_defName}}</ammoSet>             <!-- [REQ][SRC:user] AmmoSetDef; never a single ammo item -->
+    </AmmoUser>
+    <FireModes>                                          <!-- [REQ in practice] element must exist; may be empty -->
+      <aiAimMode>AimedShot</aiAimMode>                   <!-- [OPT] AimedShot | SuppressFire | Snapshot (enum AimMode in CE source) -->
+      <aiUseBurstMode>{{true_or_false}}</aiUseBurstMode> <!-- [OPT] -->
+      <aimedBurstShotCount>{{n}}</aimedBurstShotCount>   <!-- [OPT] -->
+    </FireModes>
+    <weaponTags>                                         <!-- [REQ] appended, not replaced: never re-run this op twice -->
+      <li>{{CE_AI_tag}}</li>                             <!-- one tag that CE_AI_* maps to a loadout class; must exist in CE data -->
+    </weaponTags>
+    <researchPrerequisite>{{ResearchProjectDef}}</researchPrerequisite> <!-- [OPT] goes into recipeMaker -->
+    <AllowWithRunAndGun>true</AllowWithRunAndGun>        <!-- [OPT] false adds a RunAndGun extension only if that mod is active -->
+  </Operation>
+
+  <!-- 2. Melee tools: the gun-as-club. [REQ] because vanilla Tool has no armour penetration. -->
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="{{defName}}"]/tools</xpath>
+    <value>
+      <tools>
+        <li Class="CombatExtended.ToolCE">               <!-- Class attribute REQ -->
+          <label>{{stock_or_barrel}}</label>
+          <capacities><li>Blunt</li></capacities>
+          <power>{{power}}</power>
+          <cooldownTime>{{cooldown}}</cooldownTime>
+          <armorPenetrationBlunt>{{ap_blunt}}</armorPenetrationBlunt>
+          <linkedBodyPartsGroup>{{Stock}}</linkedBodyPartsGroup> <!-- [OPT] must be a BodyPartGroupDef -->
+        </li>
+      </tools>
+    </value>
+  </Operation>
+</Patch>

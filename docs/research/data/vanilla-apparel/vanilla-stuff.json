@@ -1,0 +1,5124 @@
+{
+ "apparelLayers": {
+  "Belt": {
+   "drawOrder": 300
+  },
+  "EyeCover": {
+   "drawOrder": 500
+  },
+  "Middle": {
+   "drawOrder": 100
+  },
+  "OnSkin": {
+   "drawOrder": 0
+  },
+  "Overhead": {
+   "drawOrder": 400
+  },
+  "Shell": {
+   "drawOrder": 200
+  }
+ },
+ "bodyPartGroups": {
+  "Arms": {
+   "label": "arms",
+   "listOrder": 90
+  },
+  "Beak": {
+   "label": "beak",
+   "listOrder": null
+  },
+  "BulbTurret": {
+   "label": "bulb turret",
+   "listOrder": null
+  },
+  "Eyes": {
+   "label": "eyes",
+   "listOrder": 198
+  },
+  "Feet": {
+   "label": "feet",
+   "listOrder": 9
+  },
+  "FifthTentacle": {
+   "label": "tentacle",
+   "listOrder": 80
+  },
+  "FirstTentacle": {
+   "label": "tentacle",
+   "listOrder": 80
+  },
+  "FourthTentacle": {
+   "label": "tentacle",
+   "listOrder": 80
+  },
+  "FrontLeftClaw": {
+   "label": "front left claw",
+   "listOrder": null
+  },
+  "FrontLeftClaws": {
+   "label": "front left claws",
+   "listOrder": null
+  },
+  "FrontLeftLeg": {
+   "label": "front left leg",
+   "listOrder": null
+  },
+  "FrontLeftPaw": {
+   "label": "front left paw",
+   "listOrder": null
+  },
+  "FrontRightClaw": {
+   "label": "front right claw",
+   "listOrder": null
+  },
+  "FrontRightClaws": {
+   "label": "front right claws",
+   "listOrder": null
+  },
+  "FrontRightLeg": {
+   "label": "front right leg",
+   "listOrder": null
+  },
+  "FrontRightPaw": {
+   "label": "front right paw",
+   "listOrder": null
+  },
+  "FullHead": {
+   "label": "full head",
+   "listOrder": 199
+  },
+  "Hands": {
+   "label": "hands",
+   "listOrder": 80
+  },
+  "HeadAttackTool": {
+   "label": "head",
+   "listOrder": null
+  },
+  "HeadClaw": {
+   "label": "claw",
+   "listOrder": null
+  },
+  "HornAttackTool": {
+   "label": "horn",
+   "listOrder": null
+  },
+  "LeftBlade": {
+   "label": "left blade",
+   "listOrder": null
+  },
+  "LeftFin": {
+   "label": "left fin",
+   "listOrder": null
+  },
+  "LeftFleshClub": {
+   "label": "left flesh club",
+   "listOrder": null
+  },
+  "LeftHand": {
+   "label": "left fist",
+   "listOrder": 79
+  },
+  "LeftPowerClaw": {
+   "label": "left power claw",
+   "listOrder": null
+  },
+  "LeftSpike": {
+   "label": "left spike",
+   "listOrder": 79
+  },
+  "Legs": {
+   "label": "legs",
+   "listOrder": 10
+  },
+  "MiddleFingers": {
+   "label": "middle finger",
+   "listOrder": 77
+  },
+  "MiddleSpike": {
+   "label": "middle spike",
+   "listOrder": 77
+  },
+  "Mouth": {
+   "label": "mouth",
+   "listOrder": 196
+  },
+  "Neck": {
+   "label": "neck",
+   "listOrder": 180
+  },
+  "RightBlade": {
+   "label": "right blade",
+   "listOrder": null
+  },
+  "RightFin": {
+   "label": "right fin",
+   "listOrder": null
+  },
+  "RightFleshClub": {
+   "label": "right flesh club",
+   "listOrder": null
+  },
+  "RightHand": {
+   "label": "right fist",
+   "listOrder": 78
+  },
+  "RightPowerClaw": {
+   "label": "right power claw",
+   "listOrder": null
+  },
+  "RightSpike": {
+   "label": "right spike",
+   "listOrder": 78
+  },
+  "SecondTentacle": {
+   "label": "tentacle",
+   "listOrder": 80
+  },
+  "Shoulders": {
+   "label": "shoulders",
+   "listOrder": 85
+  },
+  "SpikedShellAttackTool": {
+   "label": "shell spike",
+   "listOrder": 79
+  },
+  "Teeth": {
+   "label": "teeth",
+   "listOrder": 197
+  },
+  "ThirdTentacle": {
+   "label": "tentacle",
+   "listOrder": 80
+  },
+  "Torso": {
+   "label": "torso",
+   "listOrder": 100
+  },
+  "TurtleBeakAttackTool": {
+   "label": "beak",
+   "listOrder": null
+  },
+  "TuskAttackTool": {
+   "label": "tusks",
+   "listOrder": null
+  },
+  "UpperHead": {
+   "label": "upper head",
+   "listOrder": 200
+  },
+  "Waist": {
+   "label": "utility slot",
+   "listOrder": 50
+  }
+ },
+ "humanBodyParts": [
+  {
+   "coverage": 1.0,
+   "coverageAbs": 0.15,
+   "coverageAbsWithChildren": 1.0,
+   "def": "Torso",
+   "depth": "Outside",
+   "groups": [
+    "Torso"
+   ],
+   "height": "Middle",
+   "label": null,
+   "path": "Torso"
+  },
+  {
+   "coverage": 0.036,
+   "coverageAbs": 0.036,
+   "coverageAbsWithChildren": 0.036,
+   "def": "Ribcage",
+   "depth": "Inside",
+   "groups": [
+    "Torso"
+   ],
+   "height": "Undefined",
+   "label": null,
+   "path": "Torso/Ribcage"
+  },
+  {
+   "coverage": 0.015,
+   "coverageAbs": 0.015,
+   "coverageAbsWithChildren": 0.015,
+   "def": "Sternum",
+   "depth": "Inside",
+   "groups": [
+    "Torso"
+   ],
+   "height": "Undefined",
+   "label": null,
+   "path": "Torso/Sternum"
+  },
+  {
+   "coverage": 0.025,
+   "coverageAbs": 0.025,
+   "coverageAbsWithChildren": 0.025,
+   "def": "Pelvis",
+   "depth": "Inside",
+   "groups": [
+    "Torso"
+   ],
+   "height": "Bottom",
+   "label": null,
+   "path": "Torso/Pelvis"
+  },
+  {
+   "coverage": 0.025,
+   "coverageAbs": 0.025,
+   "coverageAbsWithChildren": 0.025,
+   "def": "Spine",
+   "depth": "Inside",
+   "groups": [
+    "Torso"
+   ],
+   "height": "Undefined",
+   "label": null,
+   "path": "Torso/Spine"
+  },
+  {
+   "coverage": 0.025,
+   "coverageAbs": 0.025,
+   "coverageAbsWithChildren": 0.025,
+   "def": "Stomach",
+   "depth": "Inside",
+   "groups": [
+    "Torso"
+   ],
+   "height": "Undefined",
+   "label": null,
+   "path": "Torso/Stomach"
+  },
+  {
+   "coverage": 0.02,
+   "coverageAbs": 0.02,
+   "coverageAbsWithChildren": 0.02,
+   "def": "Heart",
+   "depth": "Inside",
+   "groups": [
+    "Torso"
+   ],
+   "height": "Undefined",
+   "label": null,
+   "path": "Torso/Heart"
+  },
+  {
+   "coverage": 0.025,
+   "coverageAbs": 0.025,
+   "coverageAbsWithChildren": 0.025,
+   "def": "Lung",
+   "depth": "Inside",
+   "groups": [
+    "Torso"
+   ],
+   "height": "Undefined",
+   "label": "left lung",
+   "path": "Torso/Lung"
+  },
+  {
+   "coverage": 0.025,
+   "coverageAbs": 0.025,
+   "coverageAbsWithChildren": 0.025,
+   "def": "Lung",
+   "depth": "Inside",
+   "groups": [
+    "Torso"
+   ],
+   "height": "Undefined",
+   "label": "right lung",
+   "path": "Torso/Lung"
+  },
+  {
+   "coverage": 0.017,
+   "coverageAbs": 0.017,
+   "coverageAbsWithChildren": 0.017,
+   "def": "Kidney",
+   "depth": "Inside",
+   "groups": [
+    "Torso"
+   ],
+   "height": "Undefined",
+   "label": "left kidney",
+   "path": "Torso/Kidney"
+  },
+  {
+   "coverage": 0.017,
+   "coverageAbs": 0.017,
+   "coverageAbsWithChildren": 0.017,
+   "def": "Kidney",
+   "depth": "Inside",
+   "groups": [
+    "Torso"
+   ],
+   "height": "Undefined",
+   "label": "right kidney",
+   "path": "Torso/Kidney"
+  },
+  {
+   "coverage": 0.025,
+   "coverageAbs": 0.025,
+   "coverageAbsWithChildren": 0.025,
+   "def": "Liver",
+   "depth": "Inside",
+   "groups": [
+    "Torso"
+   ],
+   "height": "Undefined",
+   "label": null,
+   "path": "Torso/Liver"
+  },
+  {
+   "coverage": 0.075,
+   "coverageAbs": 0.015,
+   "coverageAbsWithChildren": 0.075,
+   "def": "Neck",
+   "depth": "Outside",
+   "groups": [
+    "Neck"
+   ],
+   "height": "Top",
+   "label": null,
+   "path": "Torso/Neck"
+  },
+  {
+   "coverage": 0.8,
+   "coverageAbs": 0.0174,
+   "coverageAbsWithChildren": 0.06,
+   "def": "Head",
+   "depth": "Outside",
+   "groups": [
+    "UpperHead",
+    "FullHead",
+    "HeadAttackTool"
+   ],
+   "height": "Undefined",
+   "label": null,
+   "path": "Torso/Neck/Head"
+  },
+  {
+   "coverage": 0.18,
+   "coverageAbs": 0.00216,
+   "coverageAbsWithChildren": 0.0108,
+   "def": "Skull",
+   "depth": "Inside",
+   "groups": [
+    "UpperHead",
+    "Eyes",
+    "FullHead"
+   ],
+   "height": "Undefined",
+   "label": null,
+   "path": "Torso/Neck/Head/Skull"
+  },
+  {
+   "coverage": 0.8,
+   "coverageAbs": 0.00864,
+   "coverageAbsWithChildren": 0.00864,
+   "def": "Brain",
+   "depth": "Outside",
+   "groups": [
+    "UpperHead",
+    "Eyes",
+    "FullHead"
+   ],
+   "height": "Undefined",
+   "label": null,
+   "path": "Torso/Neck/Head/Skull/Brain"
+  },
+  {
+   "coverage": 0.07,
+   "coverageAbs": 0.0042,
+   "coverageAbsWithChildren": 0.0042,
+   "def": "Eye",
+   "depth": "Outside",
+   "groups": [
+    "FullHead",
+    "Eyes"
+   ],
+   "height": "Undefined",
+   "label": "left eye",
+   "path": "Torso/Neck/Head/Eye"
+  },
+  {
+   "coverage": 0.07,
+   "coverageAbs": 0.0042,
+   "coverageAbsWithChildren": 0.0042,
+   "def": "Eye",
+   "depth": "Outside",
+   "groups": [
+    "FullHead",
+    "Eyes"
+   ],
+   "height": "Undefined",
+   "label": "right eye",
+   "path": "Torso/Neck/Head/Eye"
+  },
+  {
+   "coverage": 0.07,
+   "coverageAbs": 0.0042,
+   "coverageAbsWithChildren": 0.0042,
+   "def": "Ear",
+   "depth": "Outside",
+   "groups": [
+    "UpperHead",
+    "FullHead"
+   ],
+   "height": "Undefined",
+   "label": "left ear",
+   "path": "Torso/Neck/Head/Ear"
+  },
+  {
+   "coverage": 0.07,
+   "coverageAbs": 0.0042,
+   "coverageAbsWithChildren": 0.0042,
+   "def": "Ear",
+   "depth": "Outside",
+   "groups": [
+    "UpperHead",
+    "FullHead"
+   ],
+   "height": "Undefined",
+   "label": "right ear",
+   "path": "Torso/Neck/Head/Ear"
+  },
+  {
+   "coverage": 0.1,
+   "coverageAbs": 0.006,
+   "coverageAbsWithChildren": 0.006,
+   "def": "Nose",
+   "depth": "Outside",
+   "groups": [
+    "FullHead"
+   ],
+   "height": "Undefined",
+   "label": null,
+   "path": "Torso/Neck/Head/Nose"
+  },
+  {
+   "coverage": 0.15,
+   "coverageAbs": 0.008991,
+   "coverageAbsWithChildren": 0.009,
+   "def": "Jaw",
+   "depth": "Outside",
+   "groups": [
+    "Teeth",
+    "FullHead",
+    "Mouth"
+   ],
+   "height": "Undefined",
+   "label": null,
+   "path": "Torso/Neck/Head/Jaw"
+  },
+  {
+   "coverage": 0.001,
+   "coverageAbs": 9e-06,
+   "coverageAbsWithChildren": 9e-06,
+   "def": "Tongue",
+   "depth": "Inside",
+   "groups": [
+    "FullHead"
+   ],
+   "height": "Undefined",
+   "label": null,
+   "path": "Torso/Neck/Head/Jaw/Tongue"
+  },
+  {
+   "coverage": 0.12,
+   "coverageAbs": 0.0168,
+   "coverageAbsWithChildren": 0.12,
+   "def": "Shoulder",
+   "depth": "Outside",
+   "groups": [
+    "Shoulders"
+   ],
+   "height": "Undefined",
+   "label": "left shoulder",
+   "path": "Torso/Shoulder"
+  },
+  {
+   "coverage": 0.09,
+   "coverageAbs": 0.0108,
+   "coverageAbsWithChildren": 0.0108,
+   "def": "Clavicle",
+   "depth": "Inside",
+   "groups": [
+    "Torso"
+   ],
+   "height": "Top",
+   "label": "left clavicle",
+   "path": "Torso/Shoulder/Clavicle"
+  },
+  {
+   "coverage": 0.77,
+   "coverageAbs": 0.060984,
+   "coverageAbsWithChildren": 0.0924,
+   "def": "Arm",
+   "depth": "Outside",
+   "groups": [
+    "Arms"
+   ],
+   "height": "Undefined",
+   "label": "left arm",
+   "path": "Torso/Shoulder/Arm"
+  },
+  {
+   "coverage": 0.1,
+   "coverageAbs": 0.00924,
+   "coverageAbsWithChildren": 0.00924,
+   "def": "Humerus",
+   "depth": "Inside",
+   "groups": [
+    "Arms"
+   ],
+   "height": "Undefined",
+   "label": "left humerus",
+   "path": "Torso/Shoulder/Arm/Humerus"
+  },
+  {
+   "coverage": 0.1,
+   "coverageAbs": 0.00924,
+   "coverageAbsWithChildren": 0.00924,
+   "def": "Radius",
+   "depth": "Inside",
+   "groups": [
+    "Arms"
+   ],
+   "height": "Undefined",
+   "label": "left radius",
+   "path": "Torso/Shoulder/Arm/Radius"
+  },
+  {
+   "coverage": 0.14,
+   "coverageAbs": 0.008279,
+   "coverageAbsWithChildren": 0.012936,
+   "def": "Hand",
+   "depth": "Outside",
+   "groups": [
+    "Hands"
+   ],
+   "height": "Bottom",
+   "label": "left hand",
+   "path": "Torso/Shoulder/Arm/Hand"
+  },
+  {
+   "coverage": 0.06,
+   "coverageAbs": 0.000776,
+   "coverageAbsWithChildren": 0.000776,
+   "def": "Finger",
+   "depth": "Outside",
+   "groups": [
+    "Hands",
+    "LeftHand"
+   ],
+   "height": "Undefined",
+   "label": "left pinky",
+   "path": "Torso/Shoulder/Arm/Hand/Finger"
+  },
+  {
+   "coverage": 0.07,
+   "coverageAbs": 0.000906,
+   "coverageAbsWithChildren": 0.000906,
+   "def": "Finger",
+   "depth": "Outside",
+   "groups": [
+    "Hands",
+    "LeftHand"
+   ],
+   "height": "Undefined",
+   "label": "left ring finger",
+   "path": "Torso/Shoulder/Arm/Hand/Finger"
+  },
+  {
+   "coverage": 0.08,
+   "coverageAbs": 0.001035,
+   "coverageAbsWithChildren": 0.001035,
+   "def": "Finger",
+   "depth": "Outside",
+   "groups": [
+    "Hands",
+    "LeftHand",
+    "MiddleFingers"
+   ],
+   "height": "Undefined",
+   "label": "left middle finger",
+   "path": "Torso/Shoulder/Arm/Hand/Finger"
+  },
+  {
+   "coverage": 0.07,
+   "coverageAbs": 0.000906,
+   "coverageAbsWithChildren": 0.000906,
+   "def": "Finger",
+   "depth": "Outside",
+   "groups": [
+    "Hands",
+    "LeftHand"
+   ],
+   "height": "Undefined",
+   "label": "left index finger",
+   "path": "Torso/Shoulder/Arm/Hand/Finger"
+  },
+  {
+   "coverage": 0.08,
+   "coverageAbs": 0.001035,
+   "coverageAbsWithChildren": 0.001035,
+   "def": "Finger",
+   "depth": "Outside",
+   "groups": [
+    "Hands",
+    "LeftHand"
+   ],
+   "height": "Undefined",
+   "label": "left thumb",
+   "path": "Torso/Shoulder/Arm/Hand/Finger"
+  },
+  {
+   "coverage": 0.12,
+   "coverageAbs": 0.0168,
+   "coverageAbsWithChildren": 0.12,
+   "def": "Shoulder",
+   "depth": "Outside",
+   "groups": [
+    "Shoulders"
+   ],
+   "height": "Undefined",
+   "label": "right shoulder",
+   "path": "Torso/Shoulder"
+  },
+  {
+   "coverage": 0.09,
+   "coverageAbs": 0.0108,
+   "coverageAbsWithChildren": 0.0108,
+   "def": "Clavicle",
+   "depth": "Inside",
+   "groups": [
+    "Torso"
+   ],
+   "height": "Top",
+   "label": "right clavicle",
+   "path": "Torso/Shoulder/Clavicle"
+  },
+  {
+   "coverage": 0.77,
+   "coverageAbs": 0.060984,
+   "coverageAbsWithChildren": 0.0924,
+   "def": "Arm",
+   "depth": "Outside",
+   "groups": [
+    "Arms"
+   ],
+   "height": "Undefined",
+   "label": "right arm",
+   "path": "Torso/Shoulder/Arm"
+  },
+  {
+   "coverage": 0.1,
+   "coverageAbs": 0.00924,
+   "coverageAbsWithChildren": 0.00924,
+   "def": "Humerus",
+   "depth": "Inside",
+   "groups": [
+    "Arms"
+   ],
+   "height": "Undefined",
+   "label": "right humerus",
+   "path": "Torso/Shoulder/Arm/Humerus"
+  },
+  {
+   "coverage": 0.1,
+   "coverageAbs": 0.00924,
+   "coverageAbsWithChildren": 0.00924,
+   "def": "Radius",
+   "depth": "Inside",
+   "groups": [
+    "Arms"
+   ],
+   "height": "Undefined",
+   "label": "right radius",
+   "path": "Torso/Shoulder/Arm/Radius"
+  },
+  {
+   "coverage": 0.14,
+   "coverageAbs": 0.008279,
+   "coverageAbsWithChildren": 0.012936,
+   "def": "Hand",
+   "depth": "Outside",
+   "groups": [
+    "Hands"
+   ],
+   "height": "Bottom",
+   "label": "right hand",
+   "path": "Torso/Shoulder/Arm/Hand"
+  },
+  {
+   "coverage": 0.06,
+   "coverageAbs": 0.000776,
+   "coverageAbsWithChildren": 0.000776,
+   "def": "Finger",
+   "depth": "Outside",
+   "groups": [
+    "Hands",
+    "RightHand"
+   ],
+   "height": "Undefined",
+   "label": "right pinky",
+   "path": "Torso/Shoulder/Arm/Hand/Finger"
+  },
+  {
+   "coverage": 0.07,
+   "coverageAbs": 0.000906,
+   "coverageAbsWithChildren": 0.000906,
+   "def": "Finger",
+   "depth": "Outside",
+   "groups": [
+    "Hands",
+    "RightHand"
+   ],
+   "height": "Undefined",
+   "label": "right ring finger",
+   "path": "Torso/Shoulder/Arm/Hand/Finger"
+  },
+  {
+   "coverage": 0.08,
+   "coverageAbs": 0.001035,
+   "coverageAbsWithChildren": 0.001035,
+   "def": "Finger",
+   "depth": "Outside",
+   "groups": [
+    "Hands",
+    "RightHand",
+    "MiddleFingers"
+   ],
+   "height": "Undefined",
+   "label": "right middle finger",
+   "path": "Torso/Shoulder/Arm/Hand/Finger"
+  },
+  {
+   "coverage": 0.07,
+   "coverageAbs": 0.000906,
+   "coverageAbsWithChildren": 0.000906,
+   "def": "Finger",
+   "depth": "Outside",
+   "groups": [
+    "Hands",
+    "RightHand"
+   ],
+   "height": "Undefined",
+   "label": "right index finger",
+   "path": "Torso/Shoulder/Arm/Hand/Finger"
+  },
+  {
+   "coverage": 0.08,
+   "coverageAbs": 0.001035,
+   "coverageAbsWithChildren": 0.001035,
+   "def": "Finger",
+   "depth": "Outside",
+   "groups": [
+    "Hands",
+    "RightHand"
+   ],
+   "height": "Undefined",
+   "label": "right thumb",
+   "path": "Torso/Shoulder/Arm/Hand/Finger"
+  },
+  {
+   "coverage": 0,
+   "coverageAbs": 0.0,
+   "coverageAbsWithChildren": 0.0,
+   "def": "Waist",
+   "depth": "Outside",
+   "groups": [
+    "Waist"
+   ],
+   "height": "Bottom",
+   "label": null,
+   "path": "Torso/Waist"
+  },
+  {
+   "coverage": 0.14,
+   "coverageAbs": 0.098,
+   "coverageAbsWithChildren": 0.14,
+   "def": "Leg",
+   "depth": "Outside",
+   "groups": [
+    "Legs"
+   ],
+   "height": "Bottom",
+   "label": "left leg",
+   "path": "Torso/Leg"
+  },
+  {
+   "coverage": 0.1,
+   "coverageAbs": 0.014,
+   "coverageAbsWithChildren": 0.014,
+   "def": "Femur",
+   "depth": "Inside",
+   "groups": [
+    "Legs"
+   ],
+   "height": "Undefined",
+   "label": "left femur",
+   "path": "Torso/Leg/Femur"
+  },
+  {
+   "coverage": 0.1,
+   "coverageAbs": 0.014,
+   "coverageAbsWithChildren": 0.014,
+   "def": "Tibia",
+   "depth": "Inside",
+   "groups": [
+    "Legs"
+   ],
+   "height": "Undefined",
+   "label": "left tibia",
+   "path": "Torso/Leg/Tibia"
+  },
+  {
+   "coverage": 0.1,
+   "coverageAbs": 0.00854,
+   "coverageAbsWithChildren": 0.014,
+   "def": "Foot",
+   "depth": "Outside",
+   "groups": [
+    "Feet"
+   ],
+   "height": "Undefined",
+   "label": "left foot",
+   "path": "Torso/Leg/Foot"
+  },
+  {
+   "coverage": 0.06,
+   "coverageAbs": 0.00084,
+   "coverageAbsWithChildren": 0.00084,
+   "def": "Toe",
+   "depth": "Outside",
+   "groups": [
+    "Feet"
+   ],
+   "height": "Undefined",
+   "label": "left little toe",
+   "path": "Torso/Leg/Foot/Toe"
+  },
+  {
+   "coverage": 0.07,
+   "coverageAbs": 0.00098,
+   "coverageAbsWithChildren": 0.00098,
+   "def": "Toe",
+   "depth": "Outside",
+   "groups": [
+    "Feet"
+   ],
+   "height": "Undefined",
+   "label": "left fourth toe",
+   "path": "Torso/Leg/Foot/Toe"
+  },
+  {
+   "coverage": 0.08,
+   "coverageAbs": 0.00112,
+   "coverageAbsWithChildren": 0.00112,
+   "def": "Toe",
+   "depth": "Outside",
+   "groups": [
+    "Feet"
+   ],
+   "height": "Undefined",
+   "label": "left middle toe",
+   "path": "Torso/Leg/Foot/Toe"
+  },
+  {
+   "coverage": 0.09,
+   "coverageAbs": 0.00126,
+   "coverageAbsWithChildren": 0.00126,
+   "def": "Toe",
+   "depth": "Outside",
+   "groups": [
+    "Feet"
+   ],
+   "height": "Undefined",
+   "label": "left second toe",
+   "path": "Torso/Leg/Foot/Toe"
+  },
+  {
+   "coverage": 0.09,
+   "coverageAbs": 0.00126,
+   "coverageAbsWithChildren": 0.00126,
+   "def": "Toe",
+   "depth": "Outside",
+   "groups": [
+    "Feet"
+   ],
+   "height": "Undefined",
+   "label": "left big toe",
+   "path": "Torso/Leg/Foot/Toe"
+  },
+  {
+   "coverage": 0.14,
+   "coverageAbs": 0.098,
+   "coverageAbsWithChildren": 0.14,
+   "def": "Leg",
+   "depth": "Outside",
+   "groups": [
+    "Legs"
+   ],
+   "height": "Bottom",
+   "label": "right leg",
+   "path": "Torso/Leg"
+  },
+  {
+   "coverage": 0.1,
+   "coverageAbs": 0.014,
+   "coverageAbsWithChildren": 0.014,
+   "def": "Femur",
+   "depth": "Inside",
+   "groups": [
+    "Legs"
+   ],
+   "height": "Undefined",
+   "label": "right femur",
+   "path": "Torso/Leg/Femur"
+  },
+  {
+   "coverage": 0.1,
+   "coverageAbs": 0.014,
+   "coverageAbsWithChildren": 0.014,
+   "def": "Tibia",
+   "depth": "Inside",
+   "groups": [
+    "Legs"
+   ],
+   "height": "Undefined",
+   "label": "right tibia",
+   "path": "Torso/Leg/Tibia"
+  },
+  {
+   "coverage": 0.1,
+   "coverageAbs": 0.00854,
+   "coverageAbsWithChildren": 0.014,
+   "def": "Foot",
+   "depth": "Outside",
+   "groups": [
+    "Feet"
+   ],
+   "height": "Undefined",
+   "label": "right foot",
+   "path": "Torso/Leg/Foot"
+  },
+  {
+   "coverage": 0.06,
+   "coverageAbs": 0.00084,
+   "coverageAbsWithChildren": 0.00084,
+   "def": "Toe",
+   "depth": "Outside",
+   "groups": [
+    "Feet"
+   ],
+   "height": "Undefined",
+   "label": "right little toe",
+   "path": "Torso/Leg/Foot/Toe"
+  },
+  {
+   "coverage": 0.07,
+   "coverageAbs": 0.00098,
+   "coverageAbsWithChildren": 0.00098,
+   "def": "Toe",
+   "depth": "Outside",
+   "groups": [
+    "Feet"
+   ],
+   "height": "Undefined",
+   "label": "right fourth toe",
+   "path": "Torso/Leg/Foot/Toe"
+  },
+  {
+   "coverage": 0.08,
+   "coverageAbs": 0.00112,
+   "coverageAbsWithChildren": 0.00112,
+   "def": "Toe",
+   "depth": "Outside",
+   "groups": [
+    "Feet"
+   ],
+   "height": "Undefined",
+   "label": "right middle toe",
+   "path": "Torso/Leg/Foot/Toe"
+  },
+  {
+   "coverage": 0.09,
+   "coverageAbs": 0.00126,
+   "coverageAbsWithChildren": 0.00126,
+   "def": "Toe",
+   "depth": "Outside",
+   "groups": [
+    "Feet"
+   ],
+   "height": "Undefined",
+   "label": "right second toe",
+   "path": "Torso/Leg/Foot/Toe"
+  },
+  {
+   "coverage": 0.09,
+   "coverageAbs": 0.00126,
+   "coverageAbsWithChildren": 0.00126,
+   "def": "Toe",
+   "depth": "Outside",
+   "groups": [
+    "Feet"
+   ],
+   "height": "Undefined",
+   "label": "right big toe",
+   "path": "Torso/Leg/Foot/Toe"
+  }
+ ],
+ "meta": {
+  "apparel_count": 112,
+  "game_version": "1.6.4871 rev598",
+  "mods": [
+   "Ludeon.RimWorld",
+   "Ludeon.RimWorld.Royalty",
+   "Ludeon.RimWorld.Ideology",
+   "Ludeon.RimWorld.Biotech",
+   "Ludeon.RimWorld.Anomaly",
+   "Ludeon.RimWorld.Odyssey"
+  ],
+  "stuff_count": 55
+ },
+ "qualityLevels": [
+  "Awful",
+  "Poor",
+  "Normal",
+  "Good",
+  "Excellent",
+  "Masterwork",
+  "Legendary"
+ ],
+ "stats": {
+  "AimingDelayFactor": {
+   "applyFactorsIfNegative": "true",
+   "defaultBaseValue": 1,
+   "maxValue": 1000000000.0,
+   "minValue": 0.01,
+   "parts": [
+    {
+     "class": "StatPart_Age",
+     "priority": 0
+    }
+   ],
+   "roundToFiveOver": 1000000000.0,
+   "roundValue": "false",
+   "workerClass": null
+  },
+  "ArmorRating_Blunt": {
+   "applyFactorsIfNegative": "true",
+   "defaultBaseValue": 0,
+   "maxValue": 2,
+   "minValue": 0,
+   "parts": [
+    {
+     "class": "StatPart_Quality",
+     "factorAwful": 0.6,
+     "factorExcellent": 1.3,
+     "factorGood": 1.15,
+     "factorLegendary": 1.8,
+     "factorMasterwork": 1.45,
+     "factorNormal": 1.0,
+     "factorPoor": 0.8,
+     "priority": 0
+    },
+    {
+     "class": "StatPart_Stuff",
+     "multiplierStat": "StuffEffectMultiplierArmor",
+     "priority": 100,
+     "stuffPowerStat": "StuffPower_Armor_Blunt"
+    }
+   ],
+   "roundToFiveOver": 1000000000.0,
+   "roundValue": "false",
+   "workerClass": null
+  },
+  "ArmorRating_Heat": {
+   "applyFactorsIfNegative": "true",
+   "defaultBaseValue": 0,
+   "maxValue": 2,
+   "minValue": 0,
+   "parts": [
+    {
+     "class": "StatPart_Quality",
+     "factorAwful": 0.6,
+     "factorExcellent": 1.3,
+     "factorGood": 1.15,
+     "factorLegendary": 1.8,
+     "factorMasterwork": 1.45,
+     "factorNormal": 1.0,
+     "factorPoor": 0.8,
+     "priority": 0
+    },
+    {
+     "class": "StatPart_Stuff",
+     "multiplierStat": "StuffEffectMultiplierArmor",
+     "priority": 100,
+     "stuffPowerStat": "StuffPower_Armor_Heat"
+    }
+   ],
+   "roundToFiveOver": 1000000000.0,
+   "roundValue": "false",
+   "workerClass": null
+  },
+  "ArmorRating_Sharp": {
+   "applyFactorsIfNegative": "true",
+   "defaultBaseValue": 0,
+   "maxValue": 2,
+   "minValue": 0,
+   "parts": [
+    {
+     "class": "StatPart_Quality",
+     "factorAwful": 0.6,
+     "factorExcellent": 1.3,
+     "factorGood": 1.15,
+     "factorLegendary": 1.8,
+     "factorMasterwork": 1.45,
+     "factorNormal": 1.0,
+     "factorPoor": 0.8,
+     "priority": 0
+    },
+    {
+     "class": "StatPart_Stuff",
+     "multiplierStat": "StuffEffectMultiplierArmor",
+     "priority": 100,
+     "stuffPowerStat": "StuffPower_Armor_Sharp"
+    }
+   ],
+   "roundToFiveOver": 1000000000.0,
+   "roundValue": "false",
+   "workerClass": null
+  },
+  "Beauty": {
+   "applyFactorsIfNegative": "false",
+   "defaultBaseValue": 0,
+   "maxValue": 1000000000.0,
+   "minValue": -1000,
+   "parts": [
+    {
+     "class": "StatPart_Quality",
+     "factorAwful": -0.1,
+     "factorExcellent": 3,
+     "factorGood": 2,
+     "factorLegendary": 8,
+     "factorMasterwork": 5,
+     "factorNormal": 1,
+     "factorPoor": 0.5,
+     "priority": 0
+    },
+    {
+     "class": "StatPart_ContentsBeauty",
+     "priority": 0
+    }
+   ],
+   "roundToFiveOver": 100,
+   "roundValue": "true",
+   "workerClass": null
+  },
+  "BluntDamageMultiplier": {
+   "applyFactorsIfNegative": "true",
+   "defaultBaseValue": 1,
+   "maxValue": 1000000000.0,
+   "minValue": 0.05,
+   "parts": [],
+   "roundToFiveOver": 1000000000.0,
+   "roundValue": "false",
+   "workerClass": null
+  },
+  "CarryingCapacity": {
+   "applyFactorsIfNegative": "true",
+   "defaultBaseValue": 75,
+   "maxValue": 1000000000.0,
+   "minValue": 1,
+   "parts": [
+    {
+     "class": "StatPart_BodySize",
+     "priority": 0
+    }
+   ],
+   "roundToFiveOver": 1000000000.0,
+   "roundValue": "false",
+   "workerClass": null
+  },
+  "ComfyTemperatureMax": {
+   "applyFactorsIfNegative": "true",
+   "defaultBaseValue": 40,
+   "maxValue": 2000,
+   "minValue": -2000,
+   "parts": [
+    {
+     "class": "StatPart_GearStatOffset",
+     "priority": 0
+    }
+   ],
+   "roundToFiveOver": 1000000000.0,
+   "roundValue": "false",
+   "workerClass": null
+  },
+  "ComfyTemperatureMin": {
+   "applyFactorsIfNegative": "true",
+   "defaultBaseValue": 0,
+   "maxValue": 2000,
+   "minValue": -2000,
+   "parts": [
+    {
+     "class": "StatPart_GearStatOffset",
+     "priority": 0
+    }
+   ],
+   "roundToFiveOver": 1000000000.0,
+   "roundValue": "false",
+   "workerClass": null
+  },
+  "DeteriorationRate": {
+   "applyFactorsIfNegative": "true",
+   "defaultBaseValue": 0,
+   "maxValue": 1000000000.0,
+   "minValue": 0,
+   "parts": [
+    {
+     "class": "StatPart_Quality",
+     "factorAwful": 2,
+     "factorExcellent": 0.6,
+     "factorGood": 0.8,
+     "factorLegendary": 0.1,
+     "factorMasterwork": 0.3,
+     "factorNormal": 1,
+     "factorPoor": 1.5,
+     "priority": 0
+    },
+    {
+     "class": "StatPart_EnvironmentalEffects",
+     "factorOffsetOutdoors": 0.5,
+     "factorOffsetUnroofed": 0.5,
+     "priority": 0
+    },
+    {
+     "class": "StatPart_Pollution",
+     "priority": 0
+    },
+    {
+     "class": "StatPart_NoxiousHaze",
+     "priority": 0
+    },
+    {
+     "class": "StatPart_ToxicFallout",
+     "priority": 0
+    },
+    {
+     "class": "StatPart_NearHarbingerTree",
+     "priority": 0
+    },
+    {
+     "class": "StatPart_ShamblerCorpse",
+     "priority": 0
+    }
+   ],
+   "roundToFiveOver": 1000000000.0,
+   "roundValue": "false",
+   "workerClass": null
+  },
+  "EquipDelay": {
+   "applyFactorsIfNegative": "true",
+   "defaultBaseValue": 1,
+   "maxValue": 1000000000.0,
+   "minValue": 0,
+   "parts": [],
+   "roundToFiveOver": 1000000000.0,
+   "roundValue": "false",
+   "workerClass": null
+  },
+  "Flammability": {
+   "applyFactorsIfNegative": "true",
+   "defaultBaseValue": 0,
+   "maxValue": 2,
+   "minValue": 0,
+   "parts": [],
+   "roundToFiveOver": 1000000000.0,
+   "roundValue": "false",
+   "workerClass": null
+  },
+  "Insulation_Cold": {
+   "applyFactorsIfNegative": "true",
+   "defaultBaseValue": 0,
+   "maxValue": 9999,
+   "minValue": -9999,
+   "parts": [
+    {
+     "applyToNegativeValues": "true",
+     "class": "StatPart_Quality",
+     "factorAwful": 0.8,
+     "factorExcellent": 1.2,
+     "factorGood": 1.1,
+     "factorLegendary": 1.8,
+     "factorMasterwork": 1.5,
+     "factorNormal": 1,
+     "factorPoor": 0.9,
+     "priority": 0
+    },
+    {
+     "class": "StatPart_Stuff",
+     "multiplierStat": "StuffEffectMultiplierInsulation_Cold",
+     "priority": 100,
+     "stuffPowerStat": "StuffPower_Insulation_Cold"
+    }
+   ],
+   "roundToFiveOver": 1000000000.0,
+   "roundValue": "false",
+   "workerClass": null
+  },
+  "Insulation_Heat": {
+   "applyFactorsIfNegative": "true",
+   "defaultBaseValue": 0,
+   "maxValue": 9999,
+   "minValue": -9999,
+   "parts": [
+    {
+     "applyToNegativeValues": "true",
+     "class": "StatPart_Quality",
+     "factorAwful": 0.8,
+     "factorExcellent": 1.2,
+     "factorGood": 1.1,
+     "factorLegendary": 1.8,
+     "factorMasterwork": 1.5,
+     "factorNormal": 1,
+     "factorPoor": 0.9,
+     "priority": 0
+    },
+    {
+     "class": "StatPart_Stuff",
+     "multiplierStat": "StuffEffectMultiplierInsulation_Heat",
+     "priority": 100,
+     "stuffPowerStat": "StuffPower_Insulation_Heat"
+    }
+   ],
+   "roundToFiveOver": 1000000000.0,
+   "roundValue": "false",
+   "workerClass": null
+  },
+  "MarketValue": {
+   "applyFactorsIfNegative": "true",
+   "defaultBaseValue": 0,
+   "maxValue": 1000000000.0,
+   "minValue": 0,
+   "parts": [
+    {
+     "class": "StatPart_Quality",
+     "factorAwful": 0.5,
+     "factorExcellent": 1.5,
+     "factorGood": 1.25,
+     "factorLegendary": 5,
+     "factorMasterwork": 2.5,
+     "factorNormal": 1,
+     "factorPoor": 0.75,
+     "maxGainExcellent": 1000,
+     "maxGainGood": 500,
+     "maxGainLegendary": 3000,
+     "maxGainMasterwork": 2000,
+     "priority": 0
+    },
+    {
+     "class": "StatPart_WornByCorpse",
+     "priority": 0
+    },
+    {
+     "class": "StatPart_IsCorpseFresh",
+     "priority": 0
+    },
+    {
+     "class": "StatPart_WeaponTraitsMarketValueOffset",
+     "priority": 0
+    },
+    {
+     "class": "StatPart_Biocoded",
+     "priority": 0
+    },
+    {
+     "class": "StatPart_ReloadMarketValue",
+     "priority": 0
+    },
+    {
+     "class": "StatPart_Genes",
+     "priority": 0
+    },
+    {
+     "class": "StatPart_Health",
+     "priority": 0
+    },
+    {
+     "class": "StatPart_Age",
+     "priority": 0
+    }
+   ],
+   "roundToFiveOver": 200,
+   "roundValue": "false",
+   "workerClass": "StatWorker_MarketValue"
+  },
+  "Mass": {
+   "applyFactorsIfNegative": "true",
+   "defaultBaseValue": 1,
+   "maxValue": 1000000000.0,
+   "minValue": 0,
+   "parts": [
+    {
+     "class": "StatPart_BodySize",
+     "priority": 0
+    },
+    {
+     "class": "StatPart_NaturalNotMissingBodyPartsCoverage",
+     "priority": 0
+    },
+    {
+     "class": "StatPart_GearAndInventoryMass",
+     "priority": 0
+    },
+    {
+     "class": "StatPart_UnfinishedThingIngredientsMass",
+     "priority": 0
+    },
+    {
+     "class": "StatPart_AddedBodyPartsMass",
+     "priority": 0
+    }
+   ],
+   "roundToFiveOver": 1000000000.0,
+   "roundValue": "false",
+   "workerClass": null
+  },
+  "MaxHitPoints": {
+   "applyFactorsIfNegative": "true",
+   "defaultBaseValue": 100,
+   "maxValue": 1000000000.0,
+   "minValue": 1,
+   "parts": [],
+   "roundToFiveOver": 200,
+   "roundValue": "true",
+   "workerClass": null
+  },
+  "MeleeDodgeChance": {
+   "applyFactorsIfNegative": "true",
+   "defaultBaseValue": 0,
+   "maxValue": 1000000000.0,
+   "minValue": 0,
+   "parts": [],
+   "roundToFiveOver": 1000000000.0,
+   "roundValue": "false",
+   "workerClass": null
+  },
+  "MoveSpeed": {
+   "applyFactorsIfNegative": "true",
+   "defaultBaseValue": 3.0,
+   "maxValue": 1000000000.0,
+   "minValue": 0.15,
+   "parts": [
+    {
+     "class": "StatPart_Glow",
+     "factorFromGlowCurve": "",
+     "priority": 0
+    },
+    {
+     "class": "StatPart_RevenantSpeed",
+     "priority": 0
+    },
+    {
+     "class": "StatPart_TerrainMoveSpeed",
+     "priority": 0
+    }
+   ],
+   "roundToFiveOver": 1000000000.0,
+   "roundValue": "false",
+   "workerClass": null
+  },
+  "PsychicSensitivity": {
+   "applyFactorsIfNegative": "true",
+   "defaultBaseValue": 1,
+   "maxValue": 1000000000.0,
+   "minValue": 0,
+   "parts": [
+    {
+     "class": "StatPart_GearStatOffset",
+     "priority": 0
+    },
+    {
+     "class": "StatPart_GearStatFactor",
+     "priority": 0
+    },
+    {
+     "class": "StatPart_SightPsychicSensitivityOffset",
+     "priority": 0
+    },
+    {
+     "class": "StatPart_BlindPsychicSensitivityOffset",
+     "priority": 0
+    }
+   ],
+   "roundToFiveOver": 1000000000.0,
+   "roundValue": "false",
+   "workerClass": null
+  },
+  "SellPriceFactor": {
+   "applyFactorsIfNegative": "true",
+   "defaultBaseValue": 1,
+   "maxValue": 1000000000.0,
+   "minValue": 0,
+   "parts": [],
+   "roundToFiveOver": 1000000000.0,
+   "roundValue": "false",
+   "workerClass": null
+  },
+  "SharpDamageMultiplier": {
+   "applyFactorsIfNegative": "true",
+   "defaultBaseValue": 1,
+   "maxValue": 1000000000.0,
+   "minValue": 0.05,
+   "parts": [],
+   "roundToFiveOver": 1000000000.0,
+   "roundValue": "false",
+   "workerClass": null
+  },
+  "ShootingAccuracyPawn": {
+   "applyFactorsIfNegative": "true",
+   "defaultBaseValue": 0,
+   "maxValue": 1000000000.0,
+   "minValue": 0,
+   "parts": [],
+   "roundToFiveOver": 1000000000.0,
+   "roundValue": "false",
+   "workerClass": "StatWorker_ShootingAccuracy"
+  },
+  "StuffEffectMultiplierArmor": {
+   "applyFactorsIfNegative": "true",
+   "defaultBaseValue": 0,
+   "maxValue": 1000000000.0,
+   "minValue": 0,
+   "parts": [],
+   "roundToFiveOver": 1000000000.0,
+   "roundValue": "false",
+   "workerClass": null
+  },
+  "StuffEffectMultiplierInsulation_Cold": {
+   "applyFactorsIfNegative": "true",
+   "defaultBaseValue": 0,
+   "maxValue": 1000000000.0,
+   "minValue": 0,
+   "parts": [],
+   "roundToFiveOver": 1000000000.0,
+   "roundValue": "false",
+   "workerClass": null
+  },
+  "StuffEffectMultiplierInsulation_Heat": {
+   "applyFactorsIfNegative": "true",
+   "defaultBaseValue": 0,
+   "maxValue": 1000000000.0,
+   "minValue": 0,
+   "parts": [],
+   "roundToFiveOver": 1000000000.0,
+   "roundValue": "false",
+   "workerClass": null
+  },
+  "StuffPower_Armor_Blunt": {
+   "applyFactorsIfNegative": "true",
+   "defaultBaseValue": 0,
+   "maxValue": 1000000000.0,
+   "minValue": 0,
+   "parts": [],
+   "roundToFiveOver": 1000000000.0,
+   "roundValue": "false",
+   "workerClass": null
+  },
+  "StuffPower_Armor_Heat": {
+   "applyFactorsIfNegative": "true",
+   "defaultBaseValue": 0,
+   "maxValue": 1000000000.0,
+   "minValue": 0,
+   "parts": [],
+   "roundToFiveOver": 1000000000.0,
+   "roundValue": "false",
+   "workerClass": null
+  },
+  "StuffPower_Armor_Sharp": {
+   "applyFactorsIfNegative": "true",
+   "defaultBaseValue": 0,
+   "maxValue": 1000000000.0,
+   "minValue": 0,
+   "parts": [],
+   "roundToFiveOver": 1000000000.0,
+   "roundValue": "false",
+   "workerClass": null
+  },
+  "StuffPower_Insulation_Cold": {
+   "applyFactorsIfNegative": "true",
+   "defaultBaseValue": 0,
+   "maxValue": 1000000000.0,
+   "minValue": 0,
+   "parts": [],
+   "roundToFiveOver": 1000000000.0,
+   "roundValue": "false",
+   "workerClass": null
+  },
+  "StuffPower_Insulation_Heat": {
+   "applyFactorsIfNegative": "true",
+   "defaultBaseValue": 0,
+   "maxValue": 1000000000.0,
+   "minValue": 0,
+   "parts": [],
+   "roundToFiveOver": 1000000000.0,
+   "roundValue": "false",
+   "workerClass": null
+  },
+  "ToxicEnvironmentResistance": {
+   "applyFactorsIfNegative": "true",
+   "defaultBaseValue": 0,
+   "maxValue": 1,
+   "minValue": 0,
+   "parts": [],
+   "roundToFiveOver": 1000000000.0,
+   "roundValue": "false",
+   "workerClass": null
+  },
+  "VacuumResistance": {
+   "applyFactorsIfNegative": "true",
+   "defaultBaseValue": 0,
+   "maxValue": 1,
+   "minValue": 0,
+   "parts": [],
+   "roundToFiveOver": 1000000000.0,
+   "roundValue": "false",
+   "workerClass": "StatWorker_VacuumResistance"
+  },
+  "WorkSpeedGlobal": {
+   "applyFactorsIfNegative": "true",
+   "defaultBaseValue": 1,
+   "maxValue": 1000000000.0,
+   "minValue": 0.3,
+   "parts": [
+    {
+     "class": "StatPart_Glow",
+     "factorFromGlowCurve": "",
+     "priority": 0
+    },
+    {
+     "class": "StatPart_Slave",
+     "factor": 0.85,
+     "priority": 0
+    },
+    {
+     "class": "StatPart_OverseerStatOffset",
+     "priority": 0
+    },
+    {
+     "class": "StatPart_Age",
+     "priority": 0
+    }
+   ],
+   "roundToFiveOver": 1000000000.0,
+   "roundValue": "false",
+   "workerClass": null
+  },
+  "WorkToMake": {
+   "applyFactorsIfNegative": "true",
+   "defaultBaseValue": 1,
+   "maxValue": 1000000000.0,
+   "minValue": 0,
+   "parts": [],
+   "roundToFiveOver": 300,
+   "roundValue": "false",
+   "workerClass": null
+  }
+ },
+ "stuff": [
+  {
+   "allowedInStuffGeneration": "true",
+   "appearance": null,
+   "burnableByRecipe": null,
+   "canSuggestUseDefaultStuff": null,
+   "commonality": 1.0,
+   "comps": [
+    "CompProperties_Forbiddable"
+   ],
+   "costList": {},
+   "costStuffCount": 0,
+   "defName": "ComponentIndustrial",
+   "file": "Defs/ThingDefs_Items/Items_Resource_Manufactured.xml",
+   "generateCommonality": null,
+   "healthAffectsPrice": "false",
+   "isAirtight": null,
+   "label": "component",
+   "mod": "Ludeon.RimWorld",
+   "parents": [
+    "Ludeon.RimWorld:ResourceBase"
+   ],
+   "smallVolume": "false",
+   "smeltable": null,
+   "stackLimit": 50,
+   "statBases": {
+    "Beauty": -4,
+    "DeteriorationRate": 2.0,
+    "Flammability": 0.6,
+    "MarketValue": 32,
+    "Mass": 0.6,
+    "MaxHitPoints": 70
+   },
+   "statFactors": {},
+   "statFactorsQuality": [],
+   "statOffsets": {},
+   "statOffsetsQuality": [],
+   "stuffAdjective": null,
+   "stuffCategories": [],
+   "stuffCategories_of_stuff": [],
+   "techLevel": "Undefined",
+   "thingCategories": [
+    "Manufactured"
+   ],
+   "thingClass": "ThingWithComps",
+   "thingSetMakerTags": [],
+   "tradeTags": [],
+   "tradeability": "All",
+   "useHitPoints": "true"
+  },
+  {
+   "allowedInStuffGeneration": "true",
+   "appearance": "Metal",
+   "burnableByRecipe": "false",
+   "canSuggestUseDefaultStuff": null,
+   "commonality": 0.05,
+   "comps": [
+    "CompProperties_Forbiddable"
+   ],
+   "costList": {},
+   "costStuffCount": 0,
+   "defName": "Silver",
+   "file": "Defs/ThingDefs_Items/Items_Resource_Stuff.xml",
+   "generateCommonality": null,
+   "healthAffectsPrice": "false",
+   "isAirtight": "true",
+   "label": "silver",
+   "mod": "Ludeon.RimWorld",
+   "parents": [
+    "Ludeon.RimWorld:ResourceBase"
+   ],
+   "smallVolume": "true",
+   "smeltable": "true",
+   "stackLimit": 500,
+   "statBases": {
+    "Beauty": -4,
+    "BluntDamageMultiplier": 1.0,
+    "MarketValue": 1,
+    "Mass": 0.008,
+    "SharpDamageMultiplier": 0.85,
+    "StuffPower_Armor_Blunt": 0.36,
+    "StuffPower_Armor_Heat": 0.36,
+    "StuffPower_Armor_Sharp": 0.72,
+    "StuffPower_Insulation_Cold": 3,
+    "StuffPower_Insulation_Heat": 0
+   },
+   "statFactors": {
+    "Beauty": 2,
+    "Flammability": 0.4,
+    "MaxHitPoints": 0.7
+   },
+   "statFactorsQuality": [],
+   "statOffsets": {
+    "Beauty": 6
+   },
+   "statOffsetsQuality": [],
+   "stuffAdjective": null,
+   "stuffCategories": [],
+   "stuffCategories_of_stuff": [
+    "Metallic"
+   ],
+   "techLevel": "Undefined",
+   "thingCategories": [
+    "ResourcesRaw"
+   ],
+   "thingClass": "ThingWithComps",
+   "thingSetMakerTags": [],
+   "tradeTags": [],
+   "tradeability": "All",
+   "useHitPoints": "false"
+  },
+  {
+   "allowedInStuffGeneration": "true",
+   "appearance": "Metal",
+   "burnableByRecipe": "false",
+   "canSuggestUseDefaultStuff": null,
+   "commonality": 0.02,
+   "comps": [
+    "CompProperties_Forbiddable"
+   ],
+   "costList": {},
+   "costStuffCount": 0,
+   "defName": "Gold",
+   "file": "Defs/ThingDefs_Items/Items_Resource_Stuff.xml",
+   "generateCommonality": null,
+   "healthAffectsPrice": "false",
+   "isAirtight": "true",
+   "label": "gold",
+   "mod": "Ludeon.RimWorld",
+   "parents": [
+    "Ludeon.RimWorld:ResourceBase"
+   ],
+   "smallVolume": "true",
+   "smeltable": "true",
+   "stackLimit": 500,
+   "statBases": {
+    "Beauty": -4,
+    "BluntDamageMultiplier": 1.0,
+    "MarketValue": 10,
+    "Mass": 0.008,
+    "RoyalFavorValue": 0.015,
+    "SharpDamageMultiplier": 0.75,
+    "StuffPower_Armor_Blunt": 0.36,
+    "StuffPower_Armor_Heat": 0.36,
+    "StuffPower_Armor_Sharp": 0.72,
+    "StuffPower_Insulation_Cold": 3,
+    "StuffPower_Insulation_Heat": 0
+   },
+   "statFactors": {
+    "Beauty": 4,
+    "Flammability": 0.4,
+    "MaxHitPoints": 0.6,
+    "MeleeWeapon_CooldownMultiplier": 1.0,
+    "WorkToBuild": 0.9,
+    "WorkToMake": 0.9
+   },
+   "statFactorsQuality": [],
+   "statOffsets": {
+    "Beauty": 20
+   },
+   "statOffsetsQuality": [],
+   "stuffAdjective": "golden",
+   "stuffCategories": [],
+   "stuffCategories_of_stuff": [
+    "Metallic"
+   ],
+   "techLevel": "Undefined",
+   "thingCategories": [
+    "ResourcesRaw"
+   ],
+   "thingClass": "ThingWithComps",
+   "thingSetMakerTags": [],
+   "tradeTags": [],
+   "tradeability": "All",
+   "useHitPoints": "false"
+  },
+  {
+   "allowedInStuffGeneration": "true",
+   "appearance": "Metal",
+   "burnableByRecipe": "false",
+   "canSuggestUseDefaultStuff": "true",
+   "commonality": 1.0,
+   "comps": [
+    "CompProperties_Forbiddable"
+   ],
+   "costList": {},
+   "costStuffCount": 0,
+   "defName": "Steel",
+   "file": "Defs/ThingDefs_Items/Items_Resource_Stuff.xml",
+   "generateCommonality": null,
+   "healthAffectsPrice": "false",
+   "isAirtight": "true",
+   "label": "steel",
+   "mod": "Ludeon.RimWorld",
+   "parents": [
+    "Ludeon.RimWorld:ResourceBase"
+   ],
+   "smallVolume": "false",
+   "smeltable": "true",
+   "stackLimit": 75,
+   "statBases": {
+    "Beauty": -4,
+    "BluntDamageMultiplier": 1,
+    "MarketValue": 1.9,
+    "Mass": 0.5,
+    "SharpDamageMultiplier": 1,
+    "StuffPower_Armor_Blunt": 0.45,
+    "StuffPower_Armor_Heat": 0.6,
+    "StuffPower_Armor_Sharp": 0.9,
+    "StuffPower_Insulation_Cold": 3,
+    "StuffPower_Insulation_Heat": 0
+   },
+   "statFactors": {
+    "Beauty": 1,
+    "Flammability": 0.4,
+    "MaxHitPoints": 1
+   },
+   "statFactorsQuality": [],
+   "statOffsets": {},
+   "statOffsetsQuality": [],
+   "stuffAdjective": null,
+   "stuffCategories": [],
+   "stuffCategories_of_stuff": [
+    "Metallic"
+   ],
+   "techLevel": "Undefined",
+   "thingCategories": [
+    "ResourcesRaw"
+   ],
+   "thingClass": "ThingWithComps",
+   "thingSetMakerTags": [],
+   "tradeTags": [],
+   "tradeability": "All",
+   "useHitPoints": "false"
+  },
+  {
+   "allowedInStuffGeneration": "true",
+   "appearance": "Metal",
+   "burnableByRecipe": "false",
+   "canSuggestUseDefaultStuff": null,
+   "commonality": 0.05,
+   "comps": [
+    "CompProperties_Forbiddable"
+   ],
+   "costList": {},
+   "costStuffCount": 0,
+   "defName": "Plasteel",
+   "file": "Defs/ThingDefs_Items/Items_Resource_Stuff.xml",
+   "generateCommonality": null,
+   "healthAffectsPrice": "false",
+   "isAirtight": "true",
+   "label": "plasteel",
+   "mod": "Ludeon.RimWorld",
+   "parents": [
+    "Ludeon.RimWorld:ResourceBase"
+   ],
+   "smallVolume": "false",
+   "smeltable": "true",
+   "stackLimit": 75,
+   "statBases": {
+    "Beauty": -4,
+    "BluntDamageMultiplier": 0.9,
+    "MarketValue": 9,
+    "Mass": 0.25,
+    "SharpDamageMultiplier": 1.1,
+    "StuffPower_Armor_Blunt": 0.55,
+    "StuffPower_Armor_Heat": 0.65,
+    "StuffPower_Armor_Sharp": 1.14,
+    "StuffPower_Insulation_Cold": 3,
+    "StuffPower_Insulation_Heat": 0
+   },
+   "statFactors": {
+    "Beauty": 1,
+    "Flammability": 0,
+    "MaxHitPoints": 2.8,
+    "MeleeWeapon_CooldownMultiplier": 0.8,
+    "WorkToBuild": 2.2,
+    "WorkToMake": 2.2
+   },
+   "statFactorsQuality": [],
+   "statOffsets": {},
+   "statOffsetsQuality": [],
+   "stuffAdjective": null,
+   "stuffCategories": [],
+   "stuffCategories_of_stuff": [
+    "Metallic"
+   ],
+   "techLevel": "Undefined",
+   "thingCategories": [
+    "ResourcesRaw"
+   ],
+   "thingClass": "ThingWithComps",
+   "thingSetMakerTags": [],
+   "tradeTags": [],
+   "tradeability": "All",
+   "useHitPoints": "false"
+  },
+  {
+   "allowedInStuffGeneration": "true",
+   "appearance": "Planks",
+   "burnableByRecipe": "true",
+   "canSuggestUseDefaultStuff": "true",
+   "commonality": 1.0,
+   "comps": [
+    "CompProperties_Forbiddable",
+    "CompEquippable"
+   ],
+   "costList": {},
+   "costStuffCount": 0,
+   "defName": "WoodLog",
+   "file": "Defs/ThingDefs_Items/Items_Resource_Stuff.xml",
+   "generateCommonality": null,
+   "healthAffectsPrice": "false",
+   "isAirtight": null,
+   "label": "wood",
+   "mod": "Ludeon.RimWorld",
+   "parents": [
+    "Ludeon.RimWorld:ResourceVerbBase",
+    "Ludeon.RimWorld:ResourceBase"
+   ],
+   "smallVolume": "false",
+   "smeltable": null,
+   "stackLimit": 75,
+   "statBases": {
+    "Beauty": -4,
+    "BluntDamageMultiplier": 0.9,
+    "DeteriorationRate": 0.5,
+    "Flammability": 1.0,
+    "MarketValue": 1.2,
+    "Mass": 0.4,
+    "MaxHitPoints": 150,
+    "SharpDamageMultiplier": 0.4,
+    "StuffPower_Armor_Blunt": 0.54,
+    "StuffPower_Armor_Heat": 0.4,
+    "StuffPower_Armor_Sharp": 0.54,
+    "StuffPower_Insulation_Cold": 8,
+    "StuffPower_Insulation_Heat": 4
+   },
+   "statFactors": {
+    "Beauty": 1,
+    "DoorOpenSpeed": 1.2,
+    "Flammability": 1,
+    "MaxHitPoints": 0.65,
+    "WorkToBuild": 0.7,
+    "WorkToMake": 0.7
+   },
+   "statFactorsQuality": [],
+   "statOffsets": {},
+   "statOffsetsQuality": [],
+   "stuffAdjective": "wooden",
+   "stuffCategories": [],
+   "stuffCategories_of_stuff": [
+    "Woody"
+   ],
+   "techLevel": "Neolithic",
+   "thingCategories": [
+    "ResourcesRaw"
+   ],
+   "thingClass": "ThingWithComps",
+   "thingSetMakerTags": [],
+   "tradeTags": [],
+   "tradeability": "All",
+   "useHitPoints": "true"
+  },
+  {
+   "allowedInStuffGeneration": "true",
+   "appearance": "Metal",
+   "burnableByRecipe": "false",
+   "canSuggestUseDefaultStuff": null,
+   "commonality": 0.05,
+   "comps": [
+    "CompProperties_Forbiddable"
+   ],
+   "costList": {},
+   "costStuffCount": 0,
+   "defName": "Uranium",
+   "file": "Defs/ThingDefs_Items/Items_Resource_Stuff.xml",
+   "generateCommonality": null,
+   "healthAffectsPrice": "false",
+   "isAirtight": "true",
+   "label": "uranium",
+   "mod": "Ludeon.RimWorld",
+   "parents": [
+    "Ludeon.RimWorld:ResourceBase"
+   ],
+   "smallVolume": "false",
+   "smeltable": "true",
+   "stackLimit": 75,
+   "statBases": {
+    "Beauty": -4,
+    "BluntDamageMultiplier": 1.5,
+    "MarketValue": 6,
+    "Mass": 1,
+    "SharpDamageMultiplier": 1.1,
+    "StuffPower_Armor_Blunt": 0.54,
+    "StuffPower_Armor_Heat": 0.65,
+    "StuffPower_Armor_Sharp": 1.08,
+    "StuffPower_Insulation_Cold": 3,
+    "StuffPower_Insulation_Heat": 0
+   },
+   "statFactors": {
+    "Beauty": 0.5,
+    "DoorOpenSpeed": 0.75,
+    "Flammability": 0.0,
+    "MaxHitPoints": 2.5,
+    "MeleeWeapon_CooldownMultiplier": 1.1,
+    "WorkToBuild": 1.9,
+    "WorkToMake": 1.9
+   },
+   "statFactorsQuality": [],
+   "statOffsets": {},
+   "statOffsetsQuality": [],
+   "stuffAdjective": null,
+   "stuffCategories": [],
+   "stuffCategories_of_stuff": [
+    "Metallic"
+   ],
+   "techLevel": "Undefined",
+   "thingCategories": [
+    "ResourcesRaw"
+   ],
+   "thingClass": "ThingWithComps",
+   "thingSetMakerTags": [],
+   "tradeTags": [],
+   "tradeability": "All",
+   "useHitPoints": "false"
+  },
+  {
+   "allowedInStuffGeneration": "true",
+   "appearance": null,
+   "burnableByRecipe": "false",
+   "canSuggestUseDefaultStuff": null,
+   "commonality": 0.05,
+   "comps": [
+    "CompProperties_Forbiddable"
+   ],
+   "costList": {},
+   "costStuffCount": 0,
+   "defName": "Jade",
+   "file": "Defs/ThingDefs_Items/Items_Resource_Stuff.xml",
+   "generateCommonality": null,
+   "healthAffectsPrice": "false",
+   "isAirtight": null,
+   "label": "jade",
+   "mod": "Ludeon.RimWorld",
+   "parents": [
+    "Ludeon.RimWorld:ResourceBase"
+   ],
+   "smallVolume": "false",
+   "smeltable": "false",
+   "stackLimit": 75,
+   "statBases": {
+    "Beauty": -4,
+    "BluntDamageMultiplier": 1.5,
+    "MarketValue": 5,
+    "Mass": 0.5,
+    "StuffPower_Armor_Blunt": 0.45,
+    "StuffPower_Armor_Heat": 0.54,
+    "StuffPower_Armor_Sharp": 0.9,
+    "StuffPower_Insulation_Cold": 3,
+    "StuffPower_Insulation_Heat": 0
+   },
+   "statFactors": {
+    "Beauty": 2.5,
+    "Flammability": 0,
+    "MaxHitPoints": 0.5,
+    "MeleeWeapon_CooldownMultiplier": 1.3,
+    "WorkToBuild": 5.0,
+    "WorkToMake": 1.4
+   },
+   "statFactorsQuality": [],
+   "statOffsets": {
+    "Beauty": 10
+   },
+   "statOffsetsQuality": [],
+   "stuffAdjective": null,
+   "stuffCategories": [],
+   "stuffCategories_of_stuff": [
+    "Stony"
+   ],
+   "techLevel": "Undefined",
+   "thingCategories": [
+    "ResourcesRaw"
+   ],
+   "thingClass": "ThingWithComps",
+   "thingSetMakerTags": [],
+   "tradeTags": [],
+   "tradeability": "All",
+   "useHitPoints": "false"
+  },
+  {
+   "allowedInStuffGeneration": "true",
+   "appearance": null,
+   "burnableByRecipe": "true",
+   "canSuggestUseDefaultStuff": "true",
+   "commonality": 1.4,
+   "comps": [
+    "CompProperties_Forbiddable",
+    "CompColorable"
+   ],
+   "costList": {},
+   "costStuffCount": 0,
+   "defName": "Cloth",
+   "file": "Defs/ThingDefs_Items/Items_Resource_Stuff.xml",
+   "generateCommonality": null,
+   "healthAffectsPrice": "false",
+   "isAirtight": null,
+   "label": "cloth",
+   "mod": "Ludeon.RimWorld",
+   "parents": [
+    "Ludeon.RimWorld:ResourceBase"
+   ],
+   "smallVolume": "false",
+   "smeltable": null,
+   "stackLimit": 75,
+   "statBases": {
+    "Beauty": -4,
+    "DeteriorationRate": 4,
+    "Flammability": 1.2,
+    "MarketValue": 1.5,
+    "Mass": 0.026,
+    "MaxHitPoints": 80,
+    "StuffPower_Armor_Blunt": 0,
+    "StuffPower_Armor_Heat": 0.18,
+    "StuffPower_Armor_Sharp": 0.36,
+    "StuffPower_Insulation_Cold": 18,
+    "StuffPower_Insulation_Heat": 18
+   },
+   "statFactors": {
+    "Beauty": 1,
+    "Flammability": 1.2
+   },
+   "statFactorsQuality": [],
+   "statOffsets": {},
+   "statOffsetsQuality": [],
+   "stuffAdjective": null,
+   "stuffCategories": [],
+   "stuffCategories_of_stuff": [
+    "Fabric"
+   ],
+   "techLevel": "Undefined",
+   "thingCategories": [
+    "Textiles"
+   ],
+   "thingClass": "ThingWithComps",
+   "thingSetMakerTags": [],
+   "tradeTags": [],
+   "tradeability": "All",
+   "useHitPoints": "true"
+  },
+  {
+   "allowedInStuffGeneration": "true",
+   "appearance": null,
+   "burnableByRecipe": "true",
+   "canSuggestUseDefaultStuff": null,
+   "commonality": 0.15,
+   "comps": [
+    "CompProperties_Forbiddable"
+   ],
+   "costList": {},
+   "costStuffCount": 0,
+   "defName": "Synthread",
+   "file": "Defs/ThingDefs_Items/Items_Resource_Stuff.xml",
+   "generateCommonality": null,
+   "healthAffectsPrice": "false",
+   "isAirtight": null,
+   "label": "synthread",
+   "mod": "Ludeon.RimWorld",
+   "parents": [
+    "Ludeon.RimWorld:ResourceBase"
+   ],
+   "smallVolume": "false",
+   "smeltable": null,
+   "stackLimit": 75,
+   "statBases": {
+    "Beauty": -4,
+    "DeteriorationRate": 3,
+    "Flammability": 0.7,
+    "MarketValue": 4,
+    "Mass": 0.025,
+    "MaxHitPoints": 150,
+    "StuffPower_Armor_Blunt": 0.26,
+    "StuffPower_Armor_Heat": 0.9,
+    "StuffPower_Armor_Sharp": 0.94,
+    "StuffPower_Insulation_Cold": 22,
+    "StuffPower_Insulation_Heat": 22
+   },
+   "statFactors": {
+    "Beauty": 2.3,
+    "Flammability": 0.7,
+    "MaxHitPoints": 1.3
+   },
+   "statFactorsQuality": [],
+   "statOffsets": {},
+   "statOffsetsQuality": [],
+   "stuffAdjective": null,
+   "stuffCategories": [],
+   "stuffCategories_of_stuff": [
+    "Fabric"
+   ],
+   "techLevel": "Undefined",
+   "thingCategories": [
+    "Textiles"
+   ],
+   "thingClass": "ThingWithComps",
+   "thingSetMakerTags": [],
+   "tradeTags": [],
+   "tradeability": "All",
+   "useHitPoints": "true"
+  },
+  {
+   "allowedInStuffGeneration": "true",
+   "appearance": null,
+   "burnableByRecipe": "true",
+   "canSuggestUseDefaultStuff": null,
+   "commonality": 0.2,
+   "comps": [
+    "CompProperties_Forbiddable",
+    "CompColorable"
+   ],
+   "costList": {},
+   "costStuffCount": 0,
+   "defName": "DevilstrandCloth",
+   "file": "Defs/ThingDefs_Items/Items_Resource_Stuff.xml",
+   "generateCommonality": null,
+   "healthAffectsPrice": "false",
+   "isAirtight": null,
+   "label": "devilstrand",
+   "mod": "Ludeon.RimWorld",
+   "parents": [
+    "Ludeon.RimWorld:ResourceBase"
+   ],
+   "smallVolume": "false",
+   "smeltable": null,
+   "stackLimit": 75,
+   "statBases": {
+    "Beauty": -4,
+    "DeteriorationRate": 3,
+    "Flammability": 0.4,
+    "MarketValue": 5.5,
+    "Mass": 0.032,
+    "MaxHitPoints": 100,
+    "StuffPower_Armor_Blunt": 0.36,
+    "StuffPower_Armor_Heat": 3.0,
+    "StuffPower_Armor_Sharp": 1.4,
+    "StuffPower_Insulation_Cold": 20,
+    "StuffPower_Insulation_Heat": 24
+   },
+   "statFactors": {
+    "Beauty": 3.2,
+    "Flammability": 0.4,
+    "MaxHitPoints": 1.3
+   },
+   "statFactorsQuality": [],
+   "statOffsets": {},
+   "statOffsetsQuality": [],
+   "stuffAdjective": null,
+   "stuffCategories": [],
+   "stuffCategories_of_stuff": [
+    "Fabric"
+   ],
+   "techLevel": "Undefined",
+   "thingCategories": [
+    "Textiles"
+   ],
+   "thingClass": "ThingWithComps",
+   "thingSetMakerTags": [],
+   "tradeTags": [],
+   "tradeability": "All",
+   "useHitPoints": "true"
+  },
+  {
+   "allowedInStuffGeneration": "true",
+   "appearance": null,
+   "burnableByRecipe": "true",
+   "canSuggestUseDefaultStuff": null,
+   "commonality": 0.1,
+   "comps": [
+    "CompProperties_Forbiddable"
+   ],
+   "costList": {},
+   "costStuffCount": 0,
+   "defName": "Hyperweave",
+   "file": "Defs/ThingDefs_Items/Items_Resource_Stuff.xml",
+   "generateCommonality": null,
+   "healthAffectsPrice": "false",
+   "isAirtight": null,
+   "label": "hyperweave",
+   "mod": "Ludeon.RimWorld",
+   "parents": [
+    "Ludeon.RimWorld:ResourceBase"
+   ],
+   "smallVolume": "false",
+   "smeltable": null,
+   "stackLimit": 75,
+   "statBases": {
+    "Beauty": -4,
+    "DeteriorationRate": 1.0,
+    "Flammability": 0.4,
+    "MarketValue": 9,
+    "Mass": 0.038,
+    "MaxHitPoints": 200,
+    "StuffPower_Armor_Blunt": 0.54,
+    "StuffPower_Armor_Heat": 2.88,
+    "StuffPower_Armor_Sharp": 2.0,
+    "StuffPower_Insulation_Cold": 26,
+    "StuffPower_Insulation_Heat": 26
+   },
+   "statFactors": {
+    "Beauty": 5.5,
+    "Flammability": 0.4,
+    "MaxHitPoints": 2.4
+   },
+   "statFactorsQuality": [],
+   "statOffsets": {},
+   "statOffsetsQuality": [],
+   "stuffAdjective": null,
+   "stuffCategories": [],
+   "stuffCategories_of_stuff": [
+    "Fabric"
+   ],
+   "techLevel": "Undefined",
+   "thingCategories": [
+    "Textiles"
+   ],
+   "thingClass": "ThingWithComps",
+   "thingSetMakerTags": [
+    "RewardStandardCore"
+   ],
+   "tradeTags": [
+    "ExoticMisc"
+   ],
+   "tradeability": "All",
+   "useHitPoints": "true"
+  },
+  {
+   "allowedInStuffGeneration": "true",
+   "appearance": null,
+   "burnableByRecipe": "true",
+   "canSuggestUseDefaultStuff": "true",
+   "commonality": 0.24,
+   "comps": [
+    "CompProperties_Forbiddable"
+   ],
+   "costList": {},
+   "costStuffCount": 0,
+   "defName": "WoolSheep",
+   "file": "Defs/ThingDefs_Items/Items_Resource_Stuff.xml",
+   "generateCommonality": null,
+   "healthAffectsPrice": "false",
+   "isAirtight": null,
+   "label": "sheep wool",
+   "mod": "Ludeon.RimWorld",
+   "parents": [
+    "Ludeon.RimWorld:WoolBase",
+    "Ludeon.RimWorld:ResourceBase"
+   ],
+   "smallVolume": "false",
+   "smeltable": null,
+   "stackLimit": 100,
+   "statBases": {
+    "Beauty": -4,
+    "DeteriorationRate": 3.4,
+    "Flammability": 0.4,
+    "MarketValue": 2.7,
+    "Mass": 0.028,
+    "MaxHitPoints": 90,
+    "StuffPower_Armor_Blunt": 0.0,
+    "StuffPower_Armor_Heat": 1.1,
+    "StuffPower_Armor_Sharp": 0.36,
+    "StuffPower_Insulation_Cold": 26,
+    "StuffPower_Insulation_Heat": 10
+   },
+   "statFactors": {
+    "Beauty": 1.5,
+    "Flammability": 1.7
+   },
+   "statFactorsQuality": [],
+   "statOffsets": {},
+   "statOffsetsQuality": [],
+   "stuffAdjective": null,
+   "stuffCategories": [],
+   "stuffCategories_of_stuff": [
+    "Fabric"
+   ],
+   "techLevel": "Undefined",
+   "thingCategories": [
+    "Wools"
+   ],
+   "thingClass": "ThingWithComps",
+   "thingSetMakerTags": [],
+   "tradeTags": [],
+   "tradeability": "All",
+   "useHitPoints": "true"
+  },
+  {
+   "allowedInStuffGeneration": "true",
+   "appearance": null,
+   "burnableByRecipe": "true",
+   "canSuggestUseDefaultStuff": "true",
+   "commonality": 0.12,
+   "comps": [
+    "CompProperties_Forbiddable"
+   ],
+   "costList": {},
+   "costStuffCount": 0,
+   "defName": "WoolAlpaca",
+   "file": "Defs/ThingDefs_Items/Items_Resource_Stuff.xml",
+   "generateCommonality": null,
+   "healthAffectsPrice": "false",
+   "isAirtight": null,
+   "label": "alpaca wool",
+   "mod": "Ludeon.RimWorld",
+   "parents": [
+    "Ludeon.RimWorld:WoolBase",
+    "Ludeon.RimWorld:ResourceBase"
+   ],
+   "smallVolume": "false",
+   "smeltable": null,
+   "stackLimit": 100,
+   "statBases": {
+    "Beauty": -4,
+    "DeteriorationRate": 3.4,
+    "Flammability": 0.4,
+    "MarketValue": 3.8,
+    "Mass": 0.028,
+    "MaxHitPoints": 90,
+    "StuffPower_Armor_Blunt": 0.0,
+    "StuffPower_Armor_Heat": 1.1,
+    "StuffPower_Armor_Sharp": 0.36,
+    "StuffPower_Insulation_Cold": 30,
+    "StuffPower_Insulation_Heat": 16
+   },
+   "statFactors": {
+    "Beauty": 1.5,
+    "Flammability": 1.7
+   },
+   "statFactorsQuality": [],
+   "statOffsets": {},
+   "statOffsetsQuality": [],
+   "stuffAdjective": null,
+   "stuffCategories": [],
+   "stuffCategories_of_stuff": [
+    "Fabric"
+   ],
+   "techLevel": "Undefined",
+   "thingCategories": [
+    "Wools"
+   ],
+   "thingClass": "ThingWithComps",
+   "thingSetMakerTags": [],
+   "tradeTags": [],
+   "tradeability": "All",
+   "useHitPoints": "true"
+  },
+  {
+   "allowedInStuffGeneration": "true",
+   "appearance": null,
+   "burnableByRecipe": "true",
+   "canSuggestUseDefaultStuff": "true",
+   "commonality": 0.12,
+   "comps": [
+    "CompProperties_Forbiddable"
+   ],
+   "costList": {},
+   "costStuffCount": 0,
+   "defName": "WoolMegasloth",
+   "file": "Defs/ThingDefs_Items/Items_Resource_Stuff.xml",
+   "generateCommonality": null,
+   "healthAffectsPrice": "false",
+   "isAirtight": null,
+   "label": "megasloth wool",
+   "mod": "Ludeon.RimWorld",
+   "parents": [
+    "Ludeon.RimWorld:WoolBase",
+    "Ludeon.RimWorld:ResourceBase"
+   ],
+   "smallVolume": "false",
+   "smeltable": null,
+   "stackLimit": 100,
+   "statBases": {
+    "Beauty": -4,
+    "DeteriorationRate": 3.4,
+    "Flammability": 0.4,
+    "MarketValue": 2.7,
+    "Mass": 0.028,
+    "MaxHitPoints": 90,
+    "StuffPower_Armor_Blunt": 0.0,
+    "StuffPower_Armor_Heat": 1.1,
+    "StuffPower_Armor_Sharp": 0.8,
+    "StuffPower_Insulation_Cold": 34,
+    "StuffPower_Insulation_Heat": 12
+   },
+   "statFactors": {
+    "Beauty": 1.5,
+    "Flammability": 1.7
+   },
+   "statFactorsQuality": [],
+   "statOffsets": {},
+   "statOffsetsQuality": [],
+   "stuffAdjective": null,
+   "stuffCategories": [],
+   "stuffCategories_of_stuff": [
+    "Fabric"
+   ],
+   "techLevel": "Undefined",
+   "thingCategories": [
+    "Wools"
+   ],
+   "thingClass": "ThingWithComps",
+   "thingSetMakerTags": [],
+   "tradeTags": [],
+   "tradeability": "All",
+   "useHitPoints": "true"
+  },
+  {
+   "allowedInStuffGeneration": "true",
+   "appearance": null,
+   "burnableByRecipe": "true",
+   "canSuggestUseDefaultStuff": "true",
+   "commonality": 0.12,
+   "comps": [
+    "CompProperties_Forbiddable"
+   ],
+   "costList": {},
+   "costStuffCount": 0,
+   "defName": "WoolMuffalo",
+   "file": "Defs/ThingDefs_Items/Items_Resource_Stuff.xml",
+   "generateCommonality": null,
+   "healthAffectsPrice": "false",
+   "isAirtight": null,
+   "label": "muffalo wool",
+   "mod": "Ludeon.RimWorld",
+   "parents": [
+    "Ludeon.RimWorld:WoolBase",
+    "Ludeon.RimWorld:ResourceBase"
+   ],
+   "smallVolume": "false",
+   "smeltable": null,
+   "stackLimit": 100,
+   "statBases": {
+    "Beauty": -4,
+    "DeteriorationRate": 3.4,
+    "Flammability": 0.4,
+    "MarketValue": 2.7,
+    "Mass": 0.028,
+    "MaxHitPoints": 90,
+    "StuffPower_Armor_Blunt": 0.0,
+    "StuffPower_Armor_Heat": 1.1,
+    "StuffPower_Armor_Sharp": 0.36,
+    "StuffPower_Insulation_Cold": 28,
+    "StuffPower_Insulation_Heat": 12
+   },
+   "statFactors": {
+    "Beauty": 1.5,
+    "Flammability": 1.7
+   },
+   "statFactorsQuality": [],
+   "statOffsets": {},
+   "statOffsetsQuality": [],
+   "stuffAdjective": null,
+   "stuffCategories": [],
+   "stuffCategories_of_stuff": [
+    "Fabric"
+   ],
+   "techLevel": "Undefined",
+   "thingCategories": [
+    "Wools"
+   ],
+   "thingClass": "ThingWithComps",
+   "thingSetMakerTags": [],
+   "tradeTags": [],
+   "tradeability": "All",
+   "useHitPoints": "true"
+  },
+  {
+   "allowedInStuffGeneration": "true",
+   "appearance": null,
+   "burnableByRecipe": "true",
+   "canSuggestUseDefaultStuff": "true",
+   "commonality": 0.12,
+   "comps": [
+    "CompProperties_Forbiddable"
+   ],
+   "costList": {},
+   "costStuffCount": 0,
+   "defName": "WoolBison",
+   "file": "Defs/ThingDefs_Items/Items_Resource_Stuff.xml",
+   "generateCommonality": null,
+   "healthAffectsPrice": "false",
+   "isAirtight": null,
+   "label": "bison wool",
+   "mod": "Ludeon.RimWorld",
+   "parents": [
+    "Ludeon.RimWorld:WoolBase",
+    "Ludeon.RimWorld:ResourceBase"
+   ],
+   "smallVolume": "false",
+   "smeltable": null,
+   "stackLimit": 100,
+   "statBases": {
+    "Beauty": -4,
+    "DeteriorationRate": 3.4,
+    "Flammability": 0.4,
+    "MarketValue": 2.7,
+    "Mass": 0.028,
+    "MaxHitPoints": 90,
+    "StuffPower_Armor_Blunt": 0.0,
+    "StuffPower_Armor_Heat": 1.1,
+    "StuffPower_Armor_Sharp": 0.36,
+    "StuffPower_Insulation_Cold": 26,
+    "StuffPower_Insulation_Heat": 12
+   },
+   "statFactors": {
+    "Beauty": 1.5,
+    "Flammability": 1.7
+   },
+   "statFactorsQuality": [],
+   "statOffsets": {},
+   "statOffsetsQuality": [],
+   "stuffAdjective": null,
+   "stuffCategories": [],
+   "stuffCategories_of_stuff": [
+    "Fabric"
+   ],
+   "techLevel": "Undefined",
+   "thingCategories": [
+    "Wools"
+   ],
+   "thingClass": "ThingWithComps",
+   "thingSetMakerTags": [],
+   "tradeTags": [],
+   "tradeability": "All",
+   "useHitPoints": "true"
+  },
+  {
+   "allowedInStuffGeneration": "true",
+   "appearance": null,
+   "burnableByRecipe": "true",
+   "canSuggestUseDefaultStuff": "true",
+   "commonality": 0.2,
+   "comps": [
+    "CompProperties_Forbiddable"
+   ],
+   "costList": {},
+   "costStuffCount": 0,
+   "defName": "Leather_Plain",
+   "file": "Defs/ThingDefs_Items/Items_Resource_Stuff_Leather.xml",
+   "generateCommonality": null,
+   "healthAffectsPrice": "false",
+   "isAirtight": null,
+   "label": "plainleather",
+   "mod": "Ludeon.RimWorld",
+   "parents": [
+    "Ludeon.RimWorld:LeatherBase",
+    "Ludeon.RimWorld:ResourceBase"
+   ],
+   "smallVolume": "false",
+   "smeltable": null,
+   "stackLimit": 75,
+   "statBases": {
+    "Beauty": -4,
+    "DeteriorationRate": 2,
+    "Flammability": 1,
+    "MarketValue": 2.1,
+    "Mass": 0.03,
+    "MaxHitPoints": 60,
+    "StuffPower_Armor_Blunt": 0.24,
+    "StuffPower_Armor_Heat": 1.5,
+    "StuffPower_Armor_Sharp": 0.81,
+    "StuffPower_Insulation_Cold": 16,
+    "StuffPower_Insulation_Heat": 16
+   },
+   "statFactors": {
+    "MaxHitPoints": 1.3
+   },
+   "statFactorsQuality": [],
+   "statOffsets": {},
+   "statOffsetsQuality": [],
+   "stuffAdjective": null,
+   "stuffCategories": [],
+   "stuffCategories_of_stuff": [
+    "Leathery"
+   ],
+   "techLevel": "Undefined",
+   "thingCategories": [
+    "Leathers"
+   ],
+   "thingClass": "ThingWithComps",
+   "thingSetMakerTags": [],
+   "tradeTags": [],
+   "tradeability": "All",
+   "useHitPoints": "true"
+  },
+  {
+   "allowedInStuffGeneration": "true",
+   "appearance": null,
+   "burnableByRecipe": "true",
+   "canSuggestUseDefaultStuff": "true",
+   "commonality": 0.075,
+   "comps": [
+    "CompProperties_Forbiddable"
+   ],
+   "costList": {},
+   "costStuffCount": 0,
+   "defName": "Leather_Dog",
+   "file": "Defs/ThingDefs_Items/Items_Resource_Stuff_Leather.xml",
+   "generateCommonality": null,
+   "healthAffectsPrice": "false",
+   "isAirtight": null,
+   "label": "dog leather",
+   "mod": "Ludeon.RimWorld",
+   "parents": [
+    "Ludeon.RimWorld:LeatherBase",
+    "Ludeon.RimWorld:ResourceBase"
+   ],
+   "smallVolume": "false",
+   "smeltable": null,
+   "stackLimit": 75,
+   "statBases": {
+    "Beauty": -4,
+    "DeteriorationRate": 2,
+    "Flammability": 1,
+    "MarketValue": 2.0,
+    "Mass": 0.03,
+    "MaxHitPoints": 60,
+    "StuffPower_Armor_Blunt": 0.24,
+    "StuffPower_Armor_Heat": 1.5,
+    "StuffPower_Armor_Sharp": 0.81,
+    "StuffPower_Insulation_Cold": 14,
+    "StuffPower_Insulation_Heat": 16
+   },
+   "statFactors": {
+    "MaxHitPoints": 1.3
+   },
+   "statFactorsQuality": [],
+   "statOffsets": {},
+   "statOffsetsQuality": [],
+   "stuffAdjective": null,
+   "stuffCategories": [],
+   "stuffCategories_of_stuff": [
+    "Leathery"
+   ],
+   "techLevel": "Undefined",
+   "thingCategories": [
+    "Leathers"
+   ],
+   "thingClass": "ThingWithComps",
+   "thingSetMakerTags": [],
+   "tradeTags": [],
+   "tradeability": "All",
+   "useHitPoints": "true"
+  },
+  {
+   "allowedInStuffGeneration": "true",
+   "appearance": null,
+   "burnableByRecipe": "true",
+   "canSuggestUseDefaultStuff": "true",
+   "commonality": 0.075,
+   "comps": [
+    "CompProperties_Forbiddable"
+   ],
+   "costList": {},
+   "costStuffCount": 0,
+   "defName": "Leather_Wolf",
+   "file": "Defs/ThingDefs_Items/Items_Resource_Stuff_Leather.xml",
+   "generateCommonality": null,
+   "healthAffectsPrice": "false",
+   "isAirtight": null,
+   "label": "wolfskin",
+   "mod": "Ludeon.RimWorld",
+   "parents": [
+    "Ludeon.RimWorld:LeatherBase",
+    "Ludeon.RimWorld:ResourceBase"
+   ],
+   "smallVolume": "false",
+   "smeltable": null,
+   "stackLimit": 75,
+   "statBases": {
+    "Beauty": -4,
+    "DeteriorationRate": 2,
+    "Flammability": 1,
+    "MarketValue": 3.0,
+    "Mass": 0.03,
+    "MaxHitPoints": 60,
+    "StuffPower_Armor_Blunt": 0.24,
+    "StuffPower_Armor_Heat": 1.5,
+    "StuffPower_Armor_Sharp": 1.02,
+    "StuffPower_Insulation_Cold": 24,
+    "StuffPower_Insulation_Heat": 16
+   },
+   "statFactors": {
+    "Beauty": 1.7,
+    "MaxHitPoints": 1.3
+   },
+   "statFactorsQuality": [],
+   "statOffsets": {},
+   "statOffsetsQuality": [],
+   "stuffAdjective": null,
+   "stuffCategories": [],
+   "stuffCategories_of_stuff": [
+    "Leathery"
+   ],
+   "techLevel": "Undefined",
+   "thingCategories": [
+    "Leathers"
+   ],
+   "thingClass": "ThingWithComps",
+   "thingSetMakerTags": [],
+   "tradeTags": [],
+   "tradeability": "All",
+   "useHitPoints": "true"
+  },
+  {
+   "allowedInStuffGeneration": "true",
+   "appearance": null,
+   "burnableByRecipe": "true",
+   "canSuggestUseDefaultStuff": "true",
+   "commonality": 0.075,
+   "comps": [
+    "CompProperties_Forbiddable"
+   ],
+   "costList": {},
+   "costStuffCount": 0,
+   "defName": "Leather_Panthera",
+   "file": "Defs/ThingDefs_Items/Items_Resource_Stuff_Leather.xml",
+   "generateCommonality": null,
+   "healthAffectsPrice": "false",
+   "isAirtight": null,
+   "label": "panthera fur",
+   "mod": "Ludeon.RimWorld",
+   "parents": [
+    "Ludeon.RimWorld:LeatherBase",
+    "Ludeon.RimWorld:ResourceBase"
+   ],
+   "smallVolume": "false",
+   "smeltable": null,
+   "stackLimit": 75,
+   "statBases": {
+    "Beauty": -4,
+    "DeteriorationRate": 2,
+    "Flammability": 1,
+    "MarketValue": 3.0,
+    "Mass": 0.03,
+    "MaxHitPoints": 60,
+    "StuffPower_Armor_Blunt": 0.24,
+    "StuffPower_Armor_Heat": 1.5,
+    "StuffPower_Armor_Sharp": 0.93,
+    "StuffPower_Insulation_Cold": 16,
+    "StuffPower_Insulation_Heat": 24
+   },
+   "statFactors": {
+    "Beauty": 1.7,
+    "MaxHitPoints": 1.3
+   },
+   "statFactorsQuality": [],
+   "statOffsets": {},
+   "statOffsetsQuality": [],
+   "stuffAdjective": null,
+   "stuffCategories": [],
+   "stuffCategories_of_stuff": [
+    "Leathery"
+   ],
+   "techLevel": "Undefined",
+   "thingCategories": [
+    "Leathers"
+   ],
+   "thingClass": "ThingWithComps",
+   "thingSetMakerTags": [],
+   "tradeTags": [],
+   "tradeability": "All",
+   "useHitPoints": "true"
+  },
+  {
+   "allowedInStuffGeneration": "true",
+   "appearance": null,
+   "burnableByRecipe": "true",
+   "canSuggestUseDefaultStuff": "true",
+   "commonality": 0.05,
+   "comps": [
+    "CompProperties_Forbiddable"
+   ],
+   "costList": {},
+   "costStuffCount": 0,
+   "defName": "Leather_Camel",
+   "file": "Defs/ThingDefs_Items/Items_Resource_Stuff_Leather.xml",
+   "generateCommonality": null,
+   "healthAffectsPrice": "false",
+   "isAirtight": null,
+   "label": "camelhide",
+   "mod": "Ludeon.RimWorld",
+   "parents": [
+    "Ludeon.RimWorld:LeatherBase",
+    "Ludeon.RimWorld:ResourceBase"
+   ],
+   "smallVolume": "false",
+   "smeltable": null,
+   "stackLimit": 75,
+   "statBases": {
+    "Beauty": -4,
+    "DeteriorationRate": 2,
+    "Flammability": 1,
+    "MarketValue": 2.3,
+    "Mass": 0.03,
+    "MaxHitPoints": 60,
+    "StuffPower_Armor_Blunt": 0.24,
+    "StuffPower_Armor_Heat": 1.5,
+    "StuffPower_Armor_Sharp": 0.81,
+    "StuffPower_Insulation_Cold": 16,
+    "StuffPower_Insulation_Heat": 24
+   },
+   "statFactors": {
+    "Beauty": 1.3,
+    "MaxHitPoints": 1.3
+   },
+   "statFactorsQuality": [],
+   "statOffsets": {},
+   "statOffsetsQuality": [],
+   "stuffAdjective": null,
+   "stuffCategories": [],
+   "stuffCategories_of_stuff": [
+    "Leathery"
+   ],
+   "techLevel": "Undefined",
+   "thingCategories": [
+    "Leathers"
+   ],
+   "thingClass": "ThingWithComps",
+   "thingSetMakerTags": [],
+   "tradeTags": [],
+   "tradeability": "All",
+   "useHitPoints": "true"
+  },
+  {
+   "allowedInStuffGeneration": "true",
+   "appearance": null,
+   "burnableByRecipe": "true",
+   "canSuggestUseDefaultStuff": "true",
+   "commonality": 0.025,
+   "comps": [
+    "CompProperties_Forbiddable"
+   ],
+   "costList": {},
+   "costStuffCount": 0,
+   "defName": "Leather_Bluefur",
+   "file": "Defs/ThingDefs_Items/Items_Resource_Stuff_Leather.xml",
+   "generateCommonality": null,
+   "healthAffectsPrice": "false",
+   "isAirtight": null,
+   "label": "bluefur",
+   "mod": "Ludeon.RimWorld",
+   "parents": [
+    "Ludeon.RimWorld:LeatherBase",
+    "Ludeon.RimWorld:ResourceBase"
+   ],
+   "smallVolume": "false",
+   "smeltable": null,
+   "stackLimit": 75,
+   "statBases": {
+    "Beauty": -4,
+    "DeteriorationRate": 2,
+    "Flammability": 1,
+    "MarketValue": 2.3,
+    "Mass": 0.03,
+    "MaxHitPoints": 60,
+    "StuffPower_Armor_Blunt": 0.24,
+    "StuffPower_Armor_Heat": 1.5,
+    "StuffPower_Armor_Sharp": 0.81,
+    "StuffPower_Insulation_Cold": 20,
+    "StuffPower_Insulation_Heat": 16
+   },
+   "statFactors": {
+    "Beauty": 1.3,
+    "MaxHitPoints": 1.3
+   },
+   "statFactorsQuality": [],
+   "statOffsets": {},
+   "statOffsetsQuality": [],
+   "stuffAdjective": null,
+   "stuffCategories": [],
+   "stuffCategories_of_stuff": [
+    "Leathery"
+   ],
+   "techLevel": "Undefined",
+   "thingCategories": [
+    "Leathers"
+   ],
+   "thingClass": "ThingWithComps",
+   "thingSetMakerTags": [],
+   "tradeTags": [],
+   "tradeability": "All",
+   "useHitPoints": "true"
+  },
+  {
+   "allowedInStuffGeneration": "true",
+   "appearance": null,
+   "burnableByRecipe": "true",
+   "canSuggestUseDefaultStuff": "true",
+   "commonality": 0.05,
+   "comps": [
+    "CompProperties_Forbiddable"
+   ],
+   "costList": {},
+   "costStuffCount": 0,
+   "defName": "Leather_Bear",
+   "file": "Defs/ThingDefs_Items/Items_Resource_Stuff_Leather.xml",
+   "generateCommonality": null,
+   "healthAffectsPrice": "false",
+   "isAirtight": null,
+   "label": "bearskin",
+   "mod": "Ludeon.RimWorld",
+   "parents": [
+    "Ludeon.RimWorld:LeatherBase",
+    "Ludeon.RimWorld:ResourceBase"
+   ],
+   "smallVolume": "false",
+   "smeltable": null,
+   "stackLimit": 75,
+   "statBases": {
+    "Beauty": -4,
+    "DeteriorationRate": 2,
+    "Flammability": 1,
+    "MarketValue": 3.4,
+    "Mass": 0.03,
+    "MaxHitPoints": 60,
+    "StuffPower_Armor_Blunt": 0.24,
+    "StuffPower_Armor_Heat": 1.5,
+    "StuffPower_Armor_Sharp": 1.12,
+    "StuffPower_Insulation_Cold": 20,
+    "StuffPower_Insulation_Heat": 20
+   },
+   "statFactors": {
+    "Beauty": 1.9,
+    "MaxHitPoints": 1.3
+   },
+   "statFactorsQuality": [],
+   "statOffsets": {},
+   "statOffsetsQuality": [],
+   "stuffAdjective": null,
+   "stuffCategories": [],
+   "stuffCategories_of_stuff": [
+    "Leathery"
+   ],
+   "techLevel": "Undefined",
+   "thingCategories": [
+    "Leathers"
+   ],
+   "thingClass": "ThingWithComps",
+   "thingSetMakerTags": [],
+   "tradeTags": [],
+   "tradeability": "All",
+   "useHitPoints": "true"
+  },
+  {
+   "allowedInStuffGeneration": "true",
+   "appearance": null,
+   "burnableByRecipe": "true",
+   "canSuggestUseDefaultStuff": "true",
+   "commonality": 0.025,
+   "comps": [
+    "CompProperties_Forbiddable"
+   ],
+   "costList": {},
+   "costStuffCount": 0,
+   "defName": "Leather_GuineaPig",
+   "file": "Defs/ThingDefs_Items/Items_Resource_Stuff_Leather.xml",
+   "generateCommonality": null,
+   "healthAffectsPrice": "false",
+   "isAirtight": null,
+   "label": "guinea pig fur",
+   "mod": "Ludeon.RimWorld",
+   "parents": [
+    "Ludeon.RimWorld:LeatherBase",
+    "Ludeon.RimWorld:ResourceBase"
+   ],
+   "smallVolume": "false",
+   "smeltable": null,
+   "stackLimit": 75,
+   "statBases": {
+    "Beauty": -4,
+    "DeteriorationRate": 2,
+    "Flammability": 1,
+    "MarketValue": 5,
+    "Mass": 0.03,
+    "MaxHitPoints": 60,
+    "StuffPower_Armor_Blunt": 0.14,
+    "StuffPower_Armor_Heat": 1.5,
+    "StuffPower_Armor_Sharp": 0.67,
+    "StuffPower_Insulation_Cold": 38,
+    "StuffPower_Insulation_Heat": 18
+   },
+   "statFactors": {
+    "Beauty": 2.8,
+    "MaxHitPoints": 0.6
+   },
+   "statFactorsQuality": [],
+   "statOffsets": {},
+   "statOffsetsQuality": [],
+   "stuffAdjective": null,
+   "stuffCategories": [],
+   "stuffCategories_of_stuff": [
+    "Leathery"
+   ],
+   "techLevel": "Undefined",
+   "thingCategories": [
+    "Leathers"
+   ],
+   "thingClass": "ThingWithComps",
+   "thingSetMakerTags": [],
+   "tradeTags": [],
+   "tradeability": "All",
+   "useHitPoints": "true"
+  },
+  {
+   "allowedInStuffGeneration": "true",
+   "appearance": null,
+   "burnableByRecipe": "true",
+   "canSuggestUseDefaultStuff": "true",
+   "commonality": 0.0025,
+   "comps": [
+    "CompProperties_Forbiddable"
+   ],
+   "costList": {},
+   "costStuffCount": 0,
+   "defName": "Leather_Human",
+   "file": "Defs/ThingDefs_Items/Items_Resource_Stuff_Leather.xml",
+   "generateCommonality": null,
+   "healthAffectsPrice": "false",
+   "isAirtight": null,
+   "label": "human leather",
+   "mod": "Ludeon.RimWorld",
+   "parents": [
+    "Ludeon.RimWorld:LeatherBase",
+    "Ludeon.RimWorld:ResourceBase"
+   ],
+   "smallVolume": "false",
+   "smeltable": null,
+   "stackLimit": 75,
+   "statBases": {
+    "Beauty": -4,
+    "DeteriorationRate": 2,
+    "Flammability": 1,
+    "MarketValue": 4.2,
+    "Mass": 0.03,
+    "MaxHitPoints": 60,
+    "StuffPower_Armor_Blunt": 0.24,
+    "StuffPower_Armor_Heat": 1.5,
+    "StuffPower_Armor_Sharp": 0.64,
+    "StuffPower_Insulation_Cold": 12,
+    "StuffPower_Insulation_Heat": 12
+   },
+   "statFactors": {
+    "MaxHitPoints": 1.3
+   },
+   "statFactorsQuality": [],
+   "statOffsets": {},
+   "statOffsetsQuality": [],
+   "stuffAdjective": null,
+   "stuffCategories": [],
+   "stuffCategories_of_stuff": [
+    "Leathery"
+   ],
+   "techLevel": "Undefined",
+   "thingCategories": [
+    "Leathers"
+   ],
+   "thingClass": "ThingWithComps",
+   "thingSetMakerTags": [],
+   "tradeTags": [],
+   "tradeability": "All",
+   "useHitPoints": "true"
+  },
+  {
+   "allowedInStuffGeneration": "true",
+   "appearance": null,
+   "burnableByRecipe": "true",
+   "canSuggestUseDefaultStuff": "true",
+   "commonality": 0.05,
+   "comps": [
+    "CompProperties_Forbiddable"
+   ],
+   "costList": {},
+   "costStuffCount": 0,
+   "defName": "Leather_Pig",
+   "file": "Defs/ThingDefs_Items/Items_Resource_Stuff_Leather.xml",
+   "generateCommonality": null,
+   "healthAffectsPrice": "false",
+   "isAirtight": null,
+   "label": "pigskin",
+   "mod": "Ludeon.RimWorld",
+   "parents": [
+    "Ludeon.RimWorld:LeatherBase",
+    "Ludeon.RimWorld:ResourceBase"
+   ],
+   "smallVolume": "false",
+   "smeltable": null,
+   "stackLimit": 75,
+   "statBases": {
+    "Beauty": -4,
+    "DeteriorationRate": 2,
+    "Flammability": 1,
+    "MarketValue": 1.9,
+    "Mass": 0.03,
+    "MaxHitPoints": 60,
+    "StuffPower_Armor_Blunt": 0.24,
+    "StuffPower_Armor_Heat": 1.5,
+    "StuffPower_Armor_Sharp": 0.64,
+    "StuffPower_Insulation_Cold": 12,
+    "StuffPower_Insulation_Heat": 12
+   },
+   "statFactors": {
+    "MaxHitPoints": 1.3
+   },
+   "statFactorsQuality": [],
+   "statOffsets": {},
+   "statOffsetsQuality": [],
+   "stuffAdjective": null,
+   "stuffCategories": [],
+   "stuffCategories_of_stuff": [
+    "Leathery"
+   ],
+   "techLevel": "Undefined",
+   "thingCategories": [
+    "Leathers"
+   ],
+   "thingClass": "ThingWithComps",
+   "thingSetMakerTags": [],
+   "tradeTags": [],
+   "tradeability": "All",
+   "useHitPoints": "true"
+  },
+  {
+   "allowedInStuffGeneration": "true",
+   "appearance": null,
+   "burnableByRecipe": "true",
+   "canSuggestUseDefaultStuff": "true",
+   "commonality": 0.25,
+   "comps": [
+    "CompProperties_Forbiddable"
+   ],
+   "costList": {},
+   "costStuffCount": 0,
+   "defName": "Leather_Light",
+   "file": "Defs/ThingDefs_Items/Items_Resource_Stuff_Leather.xml",
+   "generateCommonality": null,
+   "healthAffectsPrice": "false",
+   "isAirtight": null,
+   "label": "lightleather",
+   "mod": "Ludeon.RimWorld",
+   "parents": [
+    "Ludeon.RimWorld:LeatherBase",
+    "Ludeon.RimWorld:ResourceBase"
+   ],
+   "smallVolume": "false",
+   "smeltable": null,
+   "stackLimit": 75,
+   "statBases": {
+    "Beauty": -4,
+    "DeteriorationRate": 2,
+    "Flammability": 1,
+    "MarketValue": 1.9,
+    "Mass": 0.03,
+    "MaxHitPoints": 60,
+    "StuffPower_Armor_Blunt": 0.14,
+    "StuffPower_Armor_Heat": 1.5,
+    "StuffPower_Armor_Sharp": 0.54,
+    "StuffPower_Insulation_Cold": 12,
+    "StuffPower_Insulation_Heat": 12
+   },
+   "statFactors": {
+    "MaxHitPoints": 1.0
+   },
+   "statFactorsQuality": [],
+   "statOffsets": {},
+   "statOffsetsQuality": [],
+   "stuffAdjective": null,
+   "stuffCategories": [],
+   "stuffCategories_of_stuff": [
+    "Leathery"
+   ],
+   "techLevel": "Undefined",
+   "thingCategories": [
+    "Leathers"
+   ],
+   "thingClass": "ThingWithComps",
+   "thingSetMakerTags": [],
+   "tradeTags": [],
+   "tradeability": "All",
+   "useHitPoints": "true"
+  },
+  {
+   "allowedInStuffGeneration": "true",
+   "appearance": null,
+   "burnableByRecipe": "true",
+   "canSuggestUseDefaultStuff": "true",
+   "commonality": 0.1,
+   "comps": [
+    "CompProperties_Forbiddable"
+   ],
+   "costList": {},
+   "costStuffCount": 0,
+   "defName": "Leather_Bird",
+   "file": "Defs/ThingDefs_Items/Items_Resource_Stuff_Leather.xml",
+   "generateCommonality": null,
+   "healthAffectsPrice": "false",
+   "isAirtight": null,
+   "label": "birdskin",
+   "mod": "Ludeon.RimWorld",
+   "parents": [
+    "Ludeon.RimWorld:LeatherBase",
+    "Ludeon.RimWorld:ResourceBase"
+   ],
+   "smallVolume": "false",
+   "smeltable": null,
+   "stackLimit": 75,
+   "statBases": {
+    "Beauty": -4,
+    "DeteriorationRate": 2,
+    "Flammability": 1,
+    "MarketValue": 1.8,
+    "Mass": 0.03,
+    "MaxHitPoints": 60,
+    "StuffPower_Armor_Blunt": 0.14,
+    "StuffPower_Armor_Heat": 1.5,
+    "StuffPower_Armor_Sharp": 0.67,
+    "StuffPower_Insulation_Cold": 10,
+    "StuffPower_Insulation_Heat": 10
+   },
+   "statFactors": {
+    "MaxHitPoints": 1.0
+   },
+   "statFactorsQuality": [],
+   "statOffsets": {},
+   "statOffsetsQuality": [],
+   "stuffAdjective": null,
+   "stuffCategories": [],
+   "stuffCategories_of_stuff": [
+    "Leathery"
+   ],
+   "techLevel": "Undefined",
+   "thingCategories": [
+    "Leathers"
+   ],
+   "thingClass": "ThingWithComps",
+   "thingSetMakerTags": [],
+   "tradeTags": [],
+   "tradeability": "All",
+   "useHitPoints": "true"
+  },
+  {
+   "allowedInStuffGeneration": "true",
+   "appearance": null,
+   "burnableByRecipe": "true",
+   "canSuggestUseDefaultStuff": "true",
+   "commonality": 0.025,
+   "comps": [
+    "CompProperties_Forbiddable"
+   ],
+   "costList": {},
+   "costStuffCount": 0,
+   "defName": "Leather_Chinchilla",
+   "file": "Defs/ThingDefs_Items/Items_Resource_Stuff_Leather.xml",
+   "generateCommonality": null,
+   "healthAffectsPrice": "false",
+   "isAirtight": null,
+   "label": "chinchilla fur",
+   "mod": "Ludeon.RimWorld",
+   "parents": [
+    "Ludeon.RimWorld:LeatherBase",
+    "Ludeon.RimWorld:ResourceBase"
+   ],
+   "smallVolume": "false",
+   "smeltable": null,
+   "stackLimit": 75,
+   "statBases": {
+    "Beauty": -4,
+    "DeteriorationRate": 2,
+    "Flammability": 1,
+    "MarketValue": 6.5,
+    "Mass": 0.03,
+    "MaxHitPoints": 60,
+    "StuffPower_Armor_Blunt": 0.14,
+    "StuffPower_Armor_Heat": 1.5,
+    "StuffPower_Armor_Sharp": 0.67,
+    "StuffPower_Insulation_Cold": 30,
+    "StuffPower_Insulation_Heat": 16
+   },
+   "statFactors": {
+    "Beauty": 3.6,
+    "MaxHitPoints": 1.0
+   },
+   "statFactorsQuality": [],
+   "statOffsets": {},
+   "statOffsetsQuality": [],
+   "stuffAdjective": null,
+   "stuffCategories": [],
+   "stuffCategories_of_stuff": [
+    "Leathery"
+   ],
+   "techLevel": "Undefined",
+   "thingCategories": [
+    "Leathers"
+   ],
+   "thingClass": "ThingWithComps",
+   "thingSetMakerTags": [],
+   "tradeTags": [],
+   "tradeability": "All",
+   "useHitPoints": "true"
+  },
+  {
+   "allowedInStuffGeneration": "true",
+   "appearance": null,
+   "burnableByRecipe": "true",
+   "canSuggestUseDefaultStuff": "true",
+   "commonality": 0.075,
+   "comps": [
+    "CompProperties_Forbiddable"
+   ],
+   "costList": {},
+   "costStuffCount": 0,
+   "defName": "Leather_Fox",
+   "file": "Defs/ThingDefs_Items/Items_Resource_Stuff_Leather.xml",
+   "generateCommonality": null,
+   "healthAffectsPrice": "false",
+   "isAirtight": null,
+   "label": "foxfur",
+   "mod": "Ludeon.RimWorld",
+   "parents": [
+    "Ludeon.RimWorld:LeatherBase",
+    "Ludeon.RimWorld:ResourceBase"
+   ],
+   "smallVolume": "false",
+   "smeltable": null,
+   "stackLimit": 75,
+   "statBases": {
+    "Beauty": -4,
+    "DeteriorationRate": 2,
+    "Flammability": 1,
+    "MarketValue": 3.5,
+    "Mass": 0.03,
+    "MaxHitPoints": 60,
+    "StuffPower_Armor_Blunt": 0.21,
+    "StuffPower_Armor_Heat": 1.5,
+    "StuffPower_Armor_Sharp": 0.81,
+    "StuffPower_Insulation_Cold": 20,
+    "StuffPower_Insulation_Heat": 16
+   },
+   "statFactors": {
+    "Beauty": 2.0,
+    "MaxHitPoints": 1.0
+   },
+   "statFactorsQuality": [],
+   "statOffsets": {},
+   "statOffsetsQuality": [],
+   "stuffAdjective": null,
+   "stuffCategories": [],
+   "stuffCategories_of_stuff": [
+    "Leathery"
+   ],
+   "techLevel": "Undefined",
+   "thingCategories": [
+    "Leathers"
+   ],
+   "thingClass": "ThingWithComps",
+   "thingSetMakerTags": [],
+   "tradeTags": [],
+   "tradeability": "All",
+   "useHitPoints": "true"
+  },
+  {
+   "allowedInStuffGeneration": "true",
+   "appearance": null,
+   "burnableByRecipe": "true",
+   "canSuggestUseDefaultStuff": "true",
+   "commonality": 0.075,
+   "comps": [
+    "CompProperties_Forbiddable"
+   ],
+   "costList": {},
+   "costStuffCount": 0,
+   "defName": "Leather_Lizard",
+   "file": "Defs/ThingDefs_Items/Items_Resource_Stuff_Leather.xml",
+   "generateCommonality": null,
+   "healthAffectsPrice": "false",
+   "isAirtight": null,
+   "label": "lizardskin",
+   "mod": "Ludeon.RimWorld",
+   "parents": [
+    "Ludeon.RimWorld:LeatherBase",
+    "Ludeon.RimWorld:ResourceBase"
+   ],
+   "smallVolume": "false",
+   "smeltable": null,
+   "stackLimit": 75,
+   "statBases": {
+    "Beauty": -4,
+    "DeteriorationRate": 2,
+    "Flammability": 1,
+    "MarketValue": 2.1,
+    "Mass": 0.03,
+    "MaxHitPoints": 60,
+    "StuffPower_Armor_Blunt": 0.27,
+    "StuffPower_Armor_Heat": 1.5,
+    "StuffPower_Armor_Sharp": 0.81,
+    "StuffPower_Insulation_Cold": 12,
+    "StuffPower_Insulation_Heat": 12
+   },
+   "statFactors": {
+    "Beauty": 1.2,
+    "MaxHitPoints": 1.0
+   },
+   "statFactorsQuality": [],
+   "statOffsets": {},
+   "statOffsetsQuality": [],
+   "stuffAdjective": null,
+   "stuffCategories": [],
+   "stuffCategories_of_stuff": [
+    "Leathery"
+   ],
+   "techLevel": "Undefined",
+   "thingCategories": [
+    "Leathers"
+   ],
+   "thingClass": "ThingWithComps",
+   "thingSetMakerTags": [],
+   "tradeTags": [],
+   "tradeability": "All",
+   "useHitPoints": "true"
+  },
+  {
+   "allowedInStuffGeneration": "true",
+   "appearance": null,
+   "burnableByRecipe": "true",
+   "canSuggestUseDefaultStuff": "true",
+   "commonality": 0.025,
+   "comps": [
+    "CompProperties_Forbiddable"
+   ],
+   "costList": {},
+   "costStuffCount": 0,
+   "defName": "Leather_Elephant",
+   "file": "Defs/ThingDefs_Items/Items_Resource_Stuff_Leather.xml",
+   "generateCommonality": null,
+   "healthAffectsPrice": "false",
+   "isAirtight": null,
+   "label": "elephant leather",
+   "mod": "Ludeon.RimWorld",
+   "parents": [
+    "Ludeon.RimWorld:LeatherBase",
+    "Ludeon.RimWorld:ResourceBase"
+   ],
+   "smallVolume": "false",
+   "smeltable": null,
+   "stackLimit": 75,
+   "statBases": {
+    "Beauty": -4,
+    "DeteriorationRate": 2,
+    "Flammability": 1,
+    "MarketValue": 3.0,
+    "Mass": 0.03,
+    "MaxHitPoints": 60,
+    "StuffPower_Armor_Blunt": 0.24,
+    "StuffPower_Armor_Heat": 1.5,
+    "StuffPower_Armor_Sharp": 1.12,
+    "StuffPower_Insulation_Cold": 14,
+    "StuffPower_Insulation_Heat": 12
+   },
+   "statFactors": {
+    "Beauty": 1.6,
+    "MaxHitPoints": 1.5
+   },
+   "statFactorsQuality": [],
+   "statOffsets": {},
+   "statOffsetsQuality": [],
+   "stuffAdjective": null,
+   "stuffCategories": [],
+   "stuffCategories_of_stuff": [
+    "Leathery"
+   ],
+   "techLevel": "Undefined",
+   "thingCategories": [
+    "Leathers"
+   ],
+   "thingClass": "ThingWithComps",
+   "thingSetMakerTags": [],
+   "tradeTags": [],
+   "tradeability": "All",
+   "useHitPoints": "true"
+  },
+  {
+   "allowedInStuffGeneration": "true",
+   "appearance": null,
+   "burnableByRecipe": "true",
+   "canSuggestUseDefaultStuff": "true",
+   "commonality": 0.025,
+   "comps": [
+    "CompProperties_Forbiddable"
+   ],
+   "costList": {},
+   "costStuffCount": 0,
+   "defName": "Leather_Heavy",
+   "file": "Defs/ThingDefs_Items/Items_Resource_Stuff_Leather.xml",
+   "generateCommonality": null,
+   "healthAffectsPrice": "false",
+   "isAirtight": null,
+   "label": "heavy fur",
+   "mod": "Ludeon.RimWorld",
+   "parents": [
+    "Ludeon.RimWorld:LeatherBase",
+    "Ludeon.RimWorld:ResourceBase"
+   ],
+   "smallVolume": "false",
+   "smeltable": null,
+   "stackLimit": 75,
+   "statBases": {
+    "Beauty": -4,
+    "DeteriorationRate": 2,
+    "Flammability": 1,
+    "MarketValue": 3.3,
+    "Mass": 0.03,
+    "MaxHitPoints": 60,
+    "StuffPower_Armor_Blunt": 0.24,
+    "StuffPower_Armor_Heat": 1.5,
+    "StuffPower_Armor_Sharp": 1.24,
+    "StuffPower_Insulation_Cold": 30,
+    "StuffPower_Insulation_Heat": 14
+   },
+   "statFactors": {
+    "Beauty": 1.85,
+    "MaxHitPoints": 1.5
+   },
+   "statFactorsQuality": [],
+   "statOffsets": {},
+   "statOffsetsQuality": [],
+   "stuffAdjective": null,
+   "stuffCategories": [],
+   "stuffCategories_of_stuff": [
+    "Leathery"
+   ],
+   "techLevel": "Undefined",
+   "thingCategories": [
+    "Leathers"
+   ],
+   "thingClass": "ThingWithComps",
+   "thingSetMakerTags": [],
+   "tradeTags": [],
+   "tradeability": "All",
+   "useHitPoints": "true"
+  },
+  {
+   "allowedInStuffGeneration": "true",
+   "appearance": null,
+   "burnableByRecipe": "true",
+   "canSuggestUseDefaultStuff": "true",
+   "commonality": 0.025,
+   "comps": [
+    "CompProperties_Forbiddable"
+   ],
+   "costList": {},
+   "costStuffCount": 0,
+   "defName": "Leather_Rhinoceros",
+   "file": "Defs/ThingDefs_Items/Items_Resource_Stuff_Leather.xml",
+   "generateCommonality": null,
+   "healthAffectsPrice": "false",
+   "isAirtight": null,
+   "label": "rhinoceros leather",
+   "mod": "Ludeon.RimWorld",
+   "parents": [
+    "Ludeon.RimWorld:LeatherBase",
+    "Ludeon.RimWorld:ResourceBase"
+   ],
+   "smallVolume": "false",
+   "smeltable": null,
+   "stackLimit": 75,
+   "statBases": {
+    "Beauty": -4,
+    "DeteriorationRate": 2,
+    "Flammability": 1,
+    "MarketValue": 4.2,
+    "Mass": 0.03,
+    "MaxHitPoints": 60,
+    "StuffPower_Armor_Blunt": 0.24,
+    "StuffPower_Armor_Heat": 1.5,
+    "StuffPower_Armor_Sharp": 1.29,
+    "StuffPower_Insulation_Cold": 14,
+    "StuffPower_Insulation_Heat": 14
+   },
+   "statFactors": {
+    "Beauty": 2.4,
+    "MaxHitPoints": 1.5
+   },
+   "statFactorsQuality": [],
+   "statOffsets": {},
+   "statOffsetsQuality": [],
+   "stuffAdjective": null,
+   "stuffCategories": [],
+   "stuffCategories_of_stuff": [
+    "Leathery"
+   ],
+   "techLevel": "Undefined",
+   "thingCategories": [
+    "Leathers"
+   ],
+   "thingClass": "ThingWithComps",
+   "thingSetMakerTags": [],
+   "tradeTags": [],
+   "tradeability": "All",
+   "useHitPoints": "true"
+  },
+  {
+   "allowedInStuffGeneration": "true",
+   "appearance": null,
+   "burnableByRecipe": "true",
+   "canSuggestUseDefaultStuff": "true",
+   "commonality": 0.0025,
+   "comps": [
+    "CompProperties_Forbiddable"
+   ],
+   "costList": {},
+   "costStuffCount": 0,
+   "defName": "Leather_Thrumbo",
+   "file": "Defs/ThingDefs_Items/Items_Resource_Stuff_Leather.xml",
+   "generateCommonality": null,
+   "healthAffectsPrice": "false",
+   "isAirtight": null,
+   "label": "thrumbofur",
+   "mod": "Ludeon.RimWorld",
+   "parents": [
+    "Ludeon.RimWorld:LeatherBase",
+    "Ludeon.RimWorld:ResourceBase"
+   ],
+   "smallVolume": "false",
+   "smeltable": null,
+   "stackLimit": 75,
+   "statBases": {
+    "Beauty": -4,
+    "DeteriorationRate": 2,
+    "Flammability": 1,
+    "MarketValue": 14.0,
+    "Mass": 0.03,
+    "MaxHitPoints": 60,
+    "StuffPower_Armor_Blunt": 0.36,
+    "StuffPower_Armor_Heat": 1.5,
+    "StuffPower_Armor_Sharp": 2.08,
+    "StuffPower_Insulation_Cold": 34,
+    "StuffPower_Insulation_Heat": 22
+   },
+   "statFactors": {
+    "Beauty": 8,
+    "MaxHitPoints": 2.0
+   },
+   "statFactorsQuality": [],
+   "statOffsets": {},
+   "statOffsetsQuality": [],
+   "stuffAdjective": null,
+   "stuffCategories": [],
+   "stuffCategories_of_stuff": [
+    "Leathery"
+   ],
+   "techLevel": "Undefined",
+   "thingCategories": [
+    "Leathers"
+   ],
+   "thingClass": "ThingWithComps",
+   "thingSetMakerTags": [],
+   "tradeTags": [],
+   "tradeability": "All",
+   "useHitPoints": "true"
+  },
+  {
+   "allowedInStuffGeneration": "true",
+   "appearance": null,
+   "burnableByRecipe": "true",
+   "canSuggestUseDefaultStuff": "true",
+   "commonality": 0.075,
+   "comps": [
+    "CompProperties_Forbiddable"
+   ],
+   "costList": {},
+   "costStuffCount": 0,
+   "defName": "Leather_Patch",
+   "file": "Defs/ThingDefs_Items/Items_Resource_Stuff_Leather.xml",
+   "generateCommonality": null,
+   "healthAffectsPrice": "false",
+   "isAirtight": null,
+   "label": "patchleather",
+   "mod": "Ludeon.RimWorld",
+   "parents": [
+    "Ludeon.RimWorld:LeatherBase",
+    "Ludeon.RimWorld:ResourceBase"
+   ],
+   "smallVolume": "false",
+   "smeltable": null,
+   "stackLimit": 75,
+   "statBases": {
+    "Beauty": -4,
+    "DeteriorationRate": 2,
+    "Flammability": 1,
+    "MarketValue": 1.5,
+    "Mass": 0.03,
+    "MaxHitPoints": 60,
+    "StuffPower_Armor_Blunt": 0.19,
+    "StuffPower_Armor_Heat": 0.9,
+    "StuffPower_Armor_Sharp": 0.45,
+    "StuffPower_Insulation_Cold": 9,
+    "StuffPower_Insulation_Heat": 9
+   },
+   "statFactors": {
+    "MaxHitPoints": 1.0
+   },
+   "statFactorsQuality": [],
+   "statOffsets": {},
+   "statOffsetsQuality": [],
+   "stuffAdjective": null,
+   "stuffCategories": [],
+   "stuffCategories_of_stuff": [
+    "Leathery"
+   ],
+   "techLevel": "Undefined",
+   "thingCategories": [
+    "Leathers"
+   ],
+   "thingClass": "ThingWithComps",
+   "thingSetMakerTags": [],
+   "tradeTags": [],
+   "tradeability": "All",
+   "useHitPoints": "true"
+  },
+  {
+   "allowedInStuffGeneration": "true",
+   "appearance": "Bricks",
+   "burnableByRecipe": "false",
+   "canSuggestUseDefaultStuff": "true",
+   "commonality": 0.2,
+   "comps": [
+    "CompProperties_Forbiddable"
+   ],
+   "costList": {},
+   "costStuffCount": 0,
+   "defName": "BlocksSandstone",
+   "file": "Defs/ThingDefs_Misc/Various_Stone.xml",
+   "generateCommonality": null,
+   "healthAffectsPrice": null,
+   "isAirtight": null,
+   "label": "sandstone blocks",
+   "mod": "Ludeon.RimWorld",
+   "parents": [
+    "Ludeon.RimWorld:StoneBlocksBase",
+    "Ludeon.RimWorld:ResourceBase"
+   ],
+   "smallVolume": "false",
+   "smeltable": null,
+   "stackLimit": 75,
+   "statBases": {
+    "Beauty": -12,
+    "BluntDamageMultiplier": 1.0,
+    "ConstructionSpeedFactor": 0.8,
+    "MarketValue": 0.9,
+    "Mass": 1,
+    "MaxHitPoints": 200,
+    "SharpDamageMultiplier": 0.5
+   },
+   "statFactors": {
+    "Beauty": 1.1,
+    "BedRestEffectiveness": 0.9,
+    "DoorOpenSpeed": 0.45,
+    "Flammability": 0,
+    "MarketValue": 0.4,
+    "MaxHitPoints": 1.4,
+    "MeleeWeapon_CooldownMultiplier": 1.3,
+    "WorkToBuild": 5.0,
+    "WorkToMake": 1.1
+   },
+   "statFactorsQuality": [],
+   "statOffsets": {
+    "WorkToBuild": 140
+   },
+   "statOffsetsQuality": [],
+   "stuffAdjective": "sandstone",
+   "stuffCategories": [],
+   "stuffCategories_of_stuff": [
+    "Stony"
+   ],
+   "techLevel": "Undefined",
+   "thingCategories": [
+    "StoneBlocks"
+   ],
+   "thingClass": "ThingWithComps",
+   "thingSetMakerTags": [],
+   "tradeTags": [],
+   "tradeability": "Buyable",
+   "useHitPoints": "false"
+  },
+  {
+   "allowedInStuffGeneration": "true",
+   "appearance": "Bricks",
+   "burnableByRecipe": "false",
+   "canSuggestUseDefaultStuff": "true",
+   "commonality": 0.2,
+   "comps": [
+    "CompProperties_Forbiddable"
+   ],
+   "costList": {},
+   "costStuffCount": 0,
+   "defName": "BlocksGranite",
+   "file": "Defs/ThingDefs_Misc/Various_Stone.xml",
+   "generateCommonality": null,
+   "healthAffectsPrice": null,
+   "isAirtight": null,
+   "label": "granite blocks",
+   "mod": "Ludeon.RimWorld",
+   "parents": [
+    "Ludeon.RimWorld:StoneBlocksBase",
+    "Ludeon.RimWorld:ResourceBase"
+   ],
+   "smallVolume": "false",
+   "smeltable": null,
+   "stackLimit": 75,
+   "statBases": {
+    "Beauty": -12,
+    "BluntDamageMultiplier": 1.0,
+    "ConstructionSpeedFactor": 0.8,
+    "MarketValue": 0.9,
+    "Mass": 1.25,
+    "MaxHitPoints": 200,
+    "SharpDamageMultiplier": 0.65
+   },
+   "statFactors": {
+    "BedRestEffectiveness": 0.9,
+    "DoorOpenSpeed": 0.45,
+    "Flammability": 0,
+    "MarketValue": 0.4,
+    "MaxHitPoints": 1.7,
+    "MeleeWeapon_CooldownMultiplier": 1.3,
+    "WorkToBuild": 6.0,
+    "WorkToMake": 1.3
+   },
+   "statFactorsQuality": [],
+   "statOffsets": {
+    "WorkToBuild": 140
+   },
+   "statOffsetsQuality": [],
+   "stuffAdjective": "granite",
+   "stuffCategories": [],
+   "stuffCategories_of_stuff": [
+    "Stony"
+   ],
+   "techLevel": "Undefined",
+   "thingCategories": [
+    "StoneBlocks"
+   ],
+   "thingClass": "ThingWithComps",
+   "thingSetMakerTags": [],
+   "tradeTags": [],
+   "tradeability": "Buyable",
+   "useHitPoints": "false"
+  },
+  {
+   "allowedInStuffGeneration": "true",
+   "appearance": "Bricks",
+   "burnableByRecipe": "false",
+   "canSuggestUseDefaultStuff": "true",
+   "commonality": 0.2,
+   "comps": [
+    "CompProperties_Forbiddable"
+   ],
+   "costList": {},
+   "costStuffCount": 0,
+   "defName": "BlocksLimestone",
+   "file": "Defs/ThingDefs_Misc/Various_Stone.xml",
+   "generateCommonality": null,
+   "healthAffectsPrice": null,
+   "isAirtight": null,
+   "label": "limestone blocks",
+   "mod": "Ludeon.RimWorld",
+   "parents": [
+    "Ludeon.RimWorld:StoneBlocksBase",
+    "Ludeon.RimWorld:ResourceBase"
+   ],
+   "smallVolume": "false",
+   "smeltable": null,
+   "stackLimit": 75,
+   "statBases": {
+    "Beauty": -12,
+    "BluntDamageMultiplier": 1.0,
+    "ConstructionSpeedFactor": 0.8,
+    "MarketValue": 0.9,
+    "Mass": 1.1,
+    "MaxHitPoints": 200,
+    "SharpDamageMultiplier": 0.6
+   },
+   "statFactors": {
+    "BedRestEffectiveness": 0.9,
+    "DoorOpenSpeed": 0.45,
+    "Flammability": 0,
+    "MarketValue": 0.4,
+    "MaxHitPoints": 1.55,
+    "MeleeWeapon_CooldownMultiplier": 1.3,
+    "WorkToBuild": 6.0,
+    "WorkToMake": 1.3
+   },
+   "statFactorsQuality": [],
+   "statOffsets": {
+    "WorkToBuild": 140
+   },
+   "statOffsetsQuality": [],
+   "stuffAdjective": "limestone",
+   "stuffCategories": [],
+   "stuffCategories_of_stuff": [
+    "Stony"
+   ],
+   "techLevel": "Undefined",
+   "thingCategories": [
+    "StoneBlocks"
+   ],
+   "thingClass": "ThingWithComps",
+   "thingSetMakerTags": [],
+   "tradeTags": [],
+   "tradeability": "Buyable",
+   "useHitPoints": "false"
+  },
+  {
+   "allowedInStuffGeneration": "true",
+   "appearance": "Bricks",
+   "burnableByRecipe": "false",
+   "canSuggestUseDefaultStuff": "true",
+   "commonality": 0.2,
+   "comps": [
+    "CompProperties_Forbiddable"
+   ],
+   "costList": {},
+   "costStuffCount": 0,
+   "defName": "BlocksSlate",
+   "file": "Defs/ThingDefs_Misc/Various_Stone.xml",
+   "generateCommonality": null,
+   "healthAffectsPrice": null,
+   "isAirtight": null,
+   "label": "slate blocks",
+   "mod": "Ludeon.RimWorld",
+   "parents": [
+    "Ludeon.RimWorld:StoneBlocksBase",
+    "Ludeon.RimWorld:ResourceBase"
+   ],
+   "smallVolume": "false",
+   "smeltable": null,
+   "stackLimit": 75,
+   "statBases": {
+    "Beauty": -12,
+    "BluntDamageMultiplier": 1.0,
+    "ConstructionSpeedFactor": 0.8,
+    "MarketValue": 0.9,
+    "Mass": 0.9,
+    "MaxHitPoints": 200,
+    "SharpDamageMultiplier": 0.6
+   },
+   "statFactors": {
+    "Beauty": 1.1,
+    "BedRestEffectiveness": 0.9,
+    "DoorOpenSpeed": 0.45,
+    "Flammability": 0,
+    "MarketValue": 0.4,
+    "MaxHitPoints": 1.3,
+    "MeleeWeapon_CooldownMultiplier": 1.3,
+    "WorkToBuild": 6.0,
+    "WorkToMake": 1.3
+   },
+   "statFactorsQuality": [],
+   "statOffsets": {
+    "WorkToBuild": 140
+   },
+   "statOffsetsQuality": [],
+   "stuffAdjective": "slate",
+   "stuffCategories": [],
+   "stuffCategories_of_stuff": [
+    "Stony"
+   ],
+   "techLevel": "Undefined",
+   "thingCategories": [
+    "StoneBlocks"
+   ],
+   "thingClass": "ThingWithComps",
+   "thingSetMakerTags": [],
+   "tradeTags": [],
+   "tradeability": "Buyable",
+   "useHitPoints": "false"
+  },
+  {
+   "allowedInStuffGeneration": "true",
+   "appearance": "Bricks",
+   "burnableByRecipe": "false",
+   "canSuggestUseDefaultStuff": "true",
+   "commonality": 0.2,
+   "comps": [
+    "CompProperties_Forbiddable"
+   ],
+   "costList": {},
+   "costStuffCount": 0,
+   "defName": "BlocksMarble",
+   "file": "Defs/ThingDefs_Misc/Various_Stone.xml",
+   "generateCommonality": null,
+   "healthAffectsPrice": null,
+   "isAirtight": null,
+   "label": "marble blocks",
+   "mod": "Ludeon.RimWorld",
+   "parents": [
+    "Ludeon.RimWorld:StoneBlocksBase",
+    "Ludeon.RimWorld:ResourceBase"
+   ],
+   "smallVolume": "false",
+   "smeltable": null,
+   "stackLimit": 75,
+   "statBases": {
+    "Beauty": -12,
+    "BluntDamageMultiplier": 1.0,
+    "ConstructionSpeedFactor": 0.8,
+    "MarketValue": 0.9,
+    "Mass": 1.25,
+    "MaxHitPoints": 200,
+    "SharpDamageMultiplier": 0.6
+   },
+   "statFactors": {
+    "Beauty": 1.35,
+    "BedRestEffectiveness": 0.9,
+    "DoorOpenSpeed": 0.45,
+    "Flammability": 0,
+    "MarketValue": 0.4,
+    "MaxHitPoints": 1.2,
+    "MeleeWeapon_CooldownMultiplier": 1.3,
+    "WorkToBuild": 5.5,
+    "WorkToMake": 1.15
+   },
+   "statFactorsQuality": [],
+   "statOffsets": {
+    "Beauty": 1,
+    "WorkToBuild": 140
+   },
+   "statOffsetsQuality": [],
+   "stuffAdjective": "marble",
+   "stuffCategories": [],
+   "stuffCategories_of_stuff": [
+    "Stony"
+   ],
+   "techLevel": "Undefined",
+   "thingCategories": [
+    "StoneBlocks"
+   ],
+   "thingClass": "ThingWithComps",
+   "thingSetMakerTags": [],
+   "tradeTags": [],
+   "tradeability": "Buyable",
+   "useHitPoints": "false"
+  },
+  {
+   "allowedInStuffGeneration": "false",
+   "appearance": "Metal",
+   "burnableByRecipe": "false",
+   "canSuggestUseDefaultStuff": null,
+   "commonality": 0,
+   "comps": [
+    "CompProperties_Forbiddable"
+   ],
+   "costList": {},
+   "costStuffCount": 0,
+   "defName": "Bioferrite",
+   "file": "Defs/ThingDefs_Items/Items_Resource_Stuff.xml",
+   "generateCommonality": null,
+   "healthAffectsPrice": "false",
+   "isAirtight": "true",
+   "label": "bioferrite",
+   "mod": "Ludeon.RimWorld.Anomaly",
+   "parents": [
+    "Ludeon.RimWorld:ResourceBase"
+   ],
+   "smallVolume": "false",
+   "smeltable": "true",
+   "stackLimit": 75,
+   "statBases": {
+    "Beauty": -4,
+    "BluntDamageMultiplier": 0.9,
+    "MarketValue": 0.75,
+    "Mass": 0.25,
+    "SharpDamageMultiplier": 1.3,
+    "StuffPower_Armor_Blunt": 0.5,
+    "StuffPower_Armor_Heat": 0.5,
+    "StuffPower_Armor_Sharp": 1.1,
+    "StuffPower_Insulation_Cold": 2.5,
+    "StuffPower_Insulation_Heat": 0
+   },
+   "statFactors": {
+    "Beauty": 0.25,
+    "BedRestEffectiveness": 0.85,
+    "DoorOpenSpeed": 1,
+    "Flammability": 0.75,
+    "MaxHitPoints": 2,
+    "MeleeWeapon_CooldownMultiplier": 1,
+    "WorkToBuild": 2.5,
+    "WorkToMake": 2.5
+   },
+   "statFactorsQuality": [
+    {
+     "awful": 1.06,
+     "excellent": 1.15,
+     "good": 1.13,
+     "legendary": 1.2,
+     "masterwork": 1.17,
+     "normal": 1.1,
+     "poor": 1.08,
+     "stat": "PsychicSensitivityFactor"
+    }
+   ],
+   "statOffsets": {
+    "Beauty": 0
+   },
+   "statOffsetsQuality": [
+    {
+     "awful": 4,
+     "excellent": 13,
+     "good": 11,
+     "legendary": 18,
+     "masterwork": 15,
+     "normal": 8,
+     "poor": 6,
+     "stat": "PsychicEntropyMaxOffset"
+    },
+    {
+     "awful": 0.04,
+     "excellent": 0.04,
+     "good": 0.04,
+     "legendary": 0.04,
+     "masterwork": 0.04,
+     "normal": 0.04,
+     "poor": 0.04,
+     "stat": "PsychicEntropyRecoveryRateOffset"
+    }
+   ],
+   "stuffAdjective": null,
+   "stuffCategories": [],
+   "stuffCategories_of_stuff": [
+    "Metallic",
+    "Bioferrite"
+   ],
+   "techLevel": "Undefined",
+   "thingCategories": [
+    "ResourcesRaw"
+   ],
+   "thingClass": "ThingWithComps",
+   "thingSetMakerTags": [],
+   "tradeTags": [],
+   "tradeability": "All",
+   "useHitPoints": "false"
+  },
+  {
+   "allowedInStuffGeneration": "true",
+   "appearance": "Metal",
+   "burnableByRecipe": null,
+   "canSuggestUseDefaultStuff": null,
+   "commonality": 0,
+   "comps": [
+    "CompProperties_Forbiddable"
+   ],
+   "costList": {},
+   "costStuffCount": 0,
+   "defName": "LabyrinthMatter",
+   "file": "Defs/ThingDefs_Items/Items_Resource_Stuff.xml",
+   "generateCommonality": null,
+   "healthAffectsPrice": null,
+   "isAirtight": null,
+   "label": "gray",
+   "mod": "Ludeon.RimWorld.Anomaly",
+   "parents": [
+    "Ludeon.RimWorld:ResourceBase"
+   ],
+   "smallVolume": "false",
+   "smeltable": null,
+   "stackLimit": 75,
+   "statBases": {
+    "Beauty": -4,
+    "BluntDamageMultiplier": 0,
+    "SharpDamageMultiplier": 0,
+    "StuffPower_Insulation_Cold": 3,
+    "StuffPower_Insulation_Heat": 0
+   },
+   "statFactors": {
+    "Beauty": 1,
+    "Flammability": 0,
+    "MaxHitPoints": 1
+   },
+   "statFactorsQuality": [],
+   "statOffsets": {},
+   "statOffsetsQuality": [],
+   "stuffAdjective": null,
+   "stuffCategories": [],
+   "stuffCategories_of_stuff": [],
+   "techLevel": "Undefined",
+   "thingCategories": [],
+   "thingClass": "ThingWithComps",
+   "thingSetMakerTags": [],
+   "tradeTags": [],
+   "tradeability": "All",
+   "useHitPoints": "false"
+  },
+  {
+   "allowedInStuffGeneration": "true",
+   "appearance": null,
+   "burnableByRecipe": "true",
+   "canSuggestUseDefaultStuff": "true",
+   "commonality": 0.025,
+   "comps": [
+    "CompProperties_Forbiddable"
+   ],
+   "costList": {},
+   "costStuffCount": 0,
+   "defName": "Leather_Dread",
+   "file": "Defs/ThingDefs_Items/Items_Resource_Stuff.xml",
+   "generateCommonality": null,
+   "healthAffectsPrice": "false",
+   "isAirtight": null,
+   "label": "dread leather",
+   "mod": "Ludeon.RimWorld.Anomaly",
+   "parents": [
+    "Ludeon.RimWorld:LeatherBase",
+    "Ludeon.RimWorld:ResourceBase"
+   ],
+   "smallVolume": "false",
+   "smeltable": null,
+   "stackLimit": 75,
+   "statBases": {
+    "Beauty": -4,
+    "DeteriorationRate": 2,
+    "Flammability": 1,
+    "MarketValue": 3.5,
+    "Mass": 0.03,
+    "MaxHitPoints": 60,
+    "StuffPower_Armor_Blunt": 0.24,
+    "StuffPower_Armor_Heat": 1.5,
+    "StuffPower_Armor_Sharp": 1.27,
+    "StuffPower_Insulation_Cold": 20,
+    "StuffPower_Insulation_Heat": 12
+   },
+   "statFactors": {
+    "Beauty": 1,
+    "MaxHitPoints": 1.3
+   },
+   "statFactorsQuality": [],
+   "statOffsets": {},
+   "statOffsetsQuality": [],
+   "stuffAdjective": null,
+   "stuffCategories": [],
+   "stuffCategories_of_stuff": [
+    "Leathery"
+   ],
+   "techLevel": "Undefined",
+   "thingCategories": [
+    "Leathers"
+   ],
+   "thingClass": "ThingWithComps",
+   "thingSetMakerTags": [],
+   "tradeTags": [],
+   "tradeability": "All",
+   "useHitPoints": "true"
+  },
+  {
+   "allowedInStuffGeneration": "true",
+   "appearance": null,
+   "burnableByRecipe": "true",
+   "canSuggestUseDefaultStuff": "true",
+   "commonality": 0.12,
+   "comps": [
+    "CompProperties_Forbiddable"
+   ],
+   "costList": {},
+   "costStuffCount": 0,
+   "defName": "WoolMastodon",
+   "file": "Defs/ThingDefs_Items/Items_Resource_AnimalProduct.xml",
+   "generateCommonality": null,
+   "healthAffectsPrice": "false",
+   "isAirtight": null,
+   "label": "mastodon wool",
+   "mod": "Ludeon.RimWorld.Odyssey",
+   "parents": [
+    "Ludeon.RimWorld:WoolBase",
+    "Ludeon.RimWorld:ResourceBase"
+   ],
+   "smallVolume": "false",
+   "smeltable": null,
+   "stackLimit": 100,
+   "statBases": {
+    "Beauty": -4,
+    "DeteriorationRate": 3.4,
+    "Flammability": 0.4,
+    "MarketValue": 2.7,
+    "Mass": 0.028,
+    "MaxHitPoints": 90,
+    "StuffPower_Armor_Blunt": 0.0,
+    "StuffPower_Armor_Heat": 1.1,
+    "StuffPower_Armor_Sharp": 0.36,
+    "StuffPower_Insulation_Cold": 32,
+    "StuffPower_Insulation_Heat": 14
+   },
+   "statFactors": {
+    "Beauty": 1.5,
+    "Flammability": 1.7
+   },
+   "statFactorsQuality": [],
+   "statOffsets": {},
+   "statOffsetsQuality": [],
+   "stuffAdjective": null,
+   "stuffCategories": [],
+   "stuffCategories_of_stuff": [
+    "Fabric"
+   ],
+   "techLevel": "Undefined",
+   "thingCategories": [
+    "Wools"
+   ],
+   "thingClass": "ThingWithComps",
+   "thingSetMakerTags": [],
+   "tradeTags": [],
+   "tradeability": "All",
+   "useHitPoints": "true"
+  },
+  {
+   "allowedInStuffGeneration": "true",
+   "appearance": null,
+   "burnableByRecipe": "true",
+   "canSuggestUseDefaultStuff": "true",
+   "commonality": 0.12,
+   "comps": [
+    "CompProperties_Forbiddable"
+   ],
+   "costList": {},
+   "costStuffCount": 0,
+   "defName": "WoolMuskox",
+   "file": "Defs/ThingDefs_Items/Items_Resource_AnimalProduct.xml",
+   "generateCommonality": null,
+   "healthAffectsPrice": "false",
+   "isAirtight": null,
+   "label": "muskox wool",
+   "mod": "Ludeon.RimWorld.Odyssey",
+   "parents": [
+    "Ludeon.RimWorld:WoolBase",
+    "Ludeon.RimWorld:ResourceBase"
+   ],
+   "smallVolume": "false",
+   "smeltable": null,
+   "stackLimit": 100,
+   "statBases": {
+    "Beauty": -4,
+    "DeteriorationRate": 3.4,
+    "Flammability": 0.4,
+    "MarketValue": 2.7,
+    "Mass": 0.028,
+    "MaxHitPoints": 90,
+    "StuffPower_Armor_Blunt": 0.0,
+    "StuffPower_Armor_Heat": 1.1,
+    "StuffPower_Armor_Sharp": 0.36,
+    "StuffPower_Insulation_Cold": 30,
+    "StuffPower_Insulation_Heat": 10
+   },
+   "statFactors": {
+    "Beauty": 1.5,
+    "Flammability": 1.7
+   },
+   "statFactorsQuality": [],
+   "statOffsets": {},
+   "statOffsetsQuality": [],
+   "stuffAdjective": null,
+   "stuffCategories": [],
+   "stuffCategories_of_stuff": [
+    "Fabric"
+   ],
+   "techLevel": "Undefined",
+   "thingCategories": [
+    "Wools"
+   ],
+   "thingClass": "ThingWithComps",
+   "thingSetMakerTags": [],
+   "tradeTags": [],
+   "tradeability": "All",
+   "useHitPoints": "true"
+  },
+  {
+   "allowedInStuffGeneration": "true",
+   "appearance": null,
+   "burnableByRecipe": "false",
+   "canSuggestUseDefaultStuff": null,
+   "commonality": 0.01,
+   "comps": [
+    "CompProperties_Forbiddable"
+   ],
+   "costList": {},
+   "costStuffCount": 0,
+   "defName": "Obsidian",
+   "file": "Defs/ThingDefs_Items/Items_Resource_Stuff.xml",
+   "generateCommonality": null,
+   "healthAffectsPrice": "false",
+   "isAirtight": null,
+   "label": "obsidian",
+   "mod": "Ludeon.RimWorld.Odyssey",
+   "parents": [
+    "Ludeon.RimWorld:ResourceBase"
+   ],
+   "smallVolume": "false",
+   "smeltable": "false",
+   "stackLimit": 75,
+   "statBases": {
+    "Beauty": -4,
+    "MarketValue": 5,
+    "Mass": 0.5,
+    "SharpDamageMultiplier": 1.4,
+    "StuffPower_Armor_Blunt": 0.4,
+    "StuffPower_Armor_Heat": 0.7,
+    "StuffPower_Armor_Sharp": 0.85,
+    "StuffPower_Insulation_Cold": 3,
+    "StuffPower_Insulation_Heat": 0
+   },
+   "statFactors": {
+    "Beauty": 2,
+    "BedRestEffectiveness": 0.9,
+    "Flammability": 0,
+    "MaxHitPoints": 0.5,
+    "MeleeWeapon_CooldownMultiplier": 1,
+    "WorkToBuild": 5.5,
+    "WorkToMake": 1.5
+   },
+   "statFactorsQuality": [],
+   "statOffsets": {
+    "Beauty": 8
+   },
+   "statOffsetsQuality": [],
+   "stuffAdjective": null,
+   "stuffCategories": [],
+   "stuffCategories_of_stuff": [
+    "Stony",
+    "Metallic"
+   ],
+   "techLevel": "Undefined",
+   "thingCategories": [
+    "ResourcesRaw"
+   ],
+   "thingClass": "ThingWithComps",
+   "thingSetMakerTags": [],
+   "tradeTags": [],
+   "tradeability": "All",
+   "useHitPoints": "false"
+  },
+  {
+   "allowedInStuffGeneration": "true",
+   "appearance": null,
+   "burnableByRecipe": "true",
+   "canSuggestUseDefaultStuff": "true",
+   "commonality": 0.025,
+   "comps": [
+    "CompProperties_Forbiddable"
+   ],
+   "costList": {},
+   "costStuffCount": 0,
+   "defName": "Leather_Mastodon",
+   "file": "Defs/ThingDefs_Items/Items_Resource_Stuff_Leather.xml",
+   "generateCommonality": null,
+   "healthAffectsPrice": "false",
+   "isAirtight": null,
+   "label": "mastodon leather",
+   "mod": "Ludeon.RimWorld.Odyssey",
+   "parents": [
+    "Ludeon.RimWorld:LeatherBase",
+    "Ludeon.RimWorld:ResourceBase"
+   ],
+   "smallVolume": "false",
+   "smeltable": null,
+   "stackLimit": 75,
+   "statBases": {
+    "Beauty": -4,
+    "DeteriorationRate": 2,
+    "Flammability": 1,
+    "MarketValue": 3.0,
+    "Mass": 0.03,
+    "MaxHitPoints": 60,
+    "StuffPower_Armor_Blunt": 0.24,
+    "StuffPower_Armor_Heat": 1.5,
+    "StuffPower_Armor_Sharp": 1.12,
+    "StuffPower_Insulation_Cold": 30,
+    "StuffPower_Insulation_Heat": 12
+   },
+   "statFactors": {
+    "Beauty": 1.3,
+    "MaxHitPoints": 1.5
+   },
+   "statFactorsQuality": [],
+   "statOffsets": {},
+   "statOffsetsQuality": [],
+   "stuffAdjective": null,
+   "stuffCategories": [],
+   "stuffCategories_of_stuff": [
+    "Leathery"
+   ],
+   "techLevel": "Undefined",
+   "thingCategories": [
+    "Leathers"
+   ],
+   "thingClass": "ThingWithComps",
+   "thingSetMakerTags": [],
+   "tradeTags": [],
+   "tradeability": "All",
+   "useHitPoints": "true"
+  },
+  {
+   "allowedInStuffGeneration": "true",
+   "appearance": null,
+   "burnableByRecipe": "true",
+   "canSuggestUseDefaultStuff": "true",
+   "commonality": 0.025,
+   "comps": [
+    "CompProperties_Forbiddable"
+   ],
+   "costList": {},
+   "costStuffCount": 0,
+   "defName": "Leather_Sealskin",
+   "file": "Defs/ThingDefs_Items/Items_Resource_Stuff_Leather.xml",
+   "generateCommonality": null,
+   "healthAffectsPrice": "false",
+   "isAirtight": null,
+   "label": "sealskin",
+   "mod": "Ludeon.RimWorld.Odyssey",
+   "parents": [
+    "Ludeon.RimWorld:LeatherBase",
+    "Ludeon.RimWorld:ResourceBase"
+   ],
+   "smallVolume": "false",
+   "smeltable": null,
+   "stackLimit": 75,
+   "statBases": {
+    "Beauty": -4,
+    "DeteriorationRate": 2,
+    "Flammability": 1,
+    "MarketValue": 4,
+    "Mass": 0.03,
+    "MaxHitPoints": 60,
+    "StuffPower_Armor_Blunt": 0.24,
+    "StuffPower_Armor_Heat": 1.5,
+    "StuffPower_Armor_Sharp": 0.81,
+    "StuffPower_Insulation_Cold": 36,
+    "StuffPower_Insulation_Heat": 20
+   },
+   "statFactors": {
+    "Beauty": 2,
+    "MaxHitPoints": 1
+   },
+   "statFactorsQuality": [],
+   "statOffsets": {},
+   "statOffsetsQuality": [],
+   "stuffAdjective": null,
+   "stuffCategories": [],
+   "stuffCategories_of_stuff": [
+    "Leathery"
+   ],
+   "techLevel": "Undefined",
+   "thingCategories": [
+    "Leathers"
+   ],
+   "thingClass": "ThingWithComps",
+   "thingSetMakerTags": [],
+   "tradeTags": [],
+   "tradeability": "All",
+   "useHitPoints": "true"
+  },
+  {
+   "allowedInStuffGeneration": "true",
+   "appearance": null,
+   "burnableByRecipe": "true",
+   "canSuggestUseDefaultStuff": "true",
+   "commonality": 0,
+   "comps": [
+    "CompProperties_Forbiddable"
+   ],
+   "costList": {},
+   "costStuffCount": 0,
+   "defName": "Leather_AlphaThrumbo",
+   "file": "Defs/ThingDefs_Items/Items_Resource_Stuff_Leather.xml",
+   "generateCommonality": null,
+   "healthAffectsPrice": "false",
+   "isAirtight": null,
+   "label": "thrumbomane",
+   "mod": "Ludeon.RimWorld.Odyssey",
+   "parents": [
+    "Ludeon.RimWorld:LeatherBase",
+    "Ludeon.RimWorld:ResourceBase"
+   ],
+   "smallVolume": "false",
+   "smeltable": null,
+   "stackLimit": 75,
+   "statBases": {
+    "Beauty": -4,
+    "DeteriorationRate": 2,
+    "Flammability": 1,
+    "MarketValue": 20.0,
+    "Mass": 0.03,
+    "MaxHitPoints": 60,
+    "StuffPower_Armor_Blunt": 0.4,
+    "StuffPower_Armor_Heat": 1.5,
+    "StuffPower_Armor_Sharp": 2.12,
+    "StuffPower_Insulation_Cold": 36,
+    "StuffPower_Insulation_Heat": 24
+   },
+   "statFactors": {
+    "Beauty": 8,
+    "MaxHitPoints": 2.2
+   },
+   "statFactorsQuality": [],
+   "statOffsets": {
+    "Beauty": 5
+   },
+   "statOffsetsQuality": [],
+   "stuffAdjective": null,
+   "stuffCategories": [],
+   "stuffCategories_of_stuff": [
+    "Leathery"
+   ],
+   "techLevel": "Undefined",
+   "thingCategories": [
+    "Leathers"
+   ],
+   "thingClass": "ThingWithComps",
+   "thingSetMakerTags": [],
+   "tradeTags": [],
+   "tradeability": "Sellable",
+   "useHitPoints": "true"
+  },
+  {
+   "allowedInStuffGeneration": "true",
+   "appearance": null,
+   "burnableByRecipe": "true",
+   "canSuggestUseDefaultStuff": "true",
+   "commonality": 0.01,
+   "comps": [
+    "CompProperties_Forbiddable"
+   ],
+   "costList": {},
+   "costStuffCount": 0,
+   "defName": "Leather_Mink",
+   "file": "Defs/ThingDefs_Items/Items_Resource_Stuff_Leather.xml",
+   "generateCommonality": null,
+   "healthAffectsPrice": "false",
+   "isAirtight": null,
+   "label": "mink fur",
+   "mod": "Ludeon.RimWorld.Odyssey",
+   "parents": [
+    "Ludeon.RimWorld:LeatherBase",
+    "Ludeon.RimWorld:ResourceBase"
+   ],
+   "smallVolume": "false",
+   "smeltable": null,
+   "stackLimit": 75,
+   "statBases": {
+    "Beauty": -4,
+    "DeteriorationRate": 2,
+    "Flammability": 1,
+    "MarketValue": 5.2,
+    "Mass": 0.03,
+    "MaxHitPoints": 60,
+    "StuffPower_Armor_Blunt": 0.14,
+    "StuffPower_Armor_Heat": 1.5,
+    "StuffPower_Armor_Sharp": 0.67,
+    "StuffPower_Insulation_Cold": 32,
+    "StuffPower_Insulation_Heat": 12
+   },
+   "statFactors": {
+    "Beauty": 3,
+    "MaxHitPoints": 1.0
+   },
+   "statFactorsQuality": [],
+   "statOffsets": {},
+   "statOffsetsQuality": [],
+   "stuffAdjective": null,
+   "stuffCategories": [],
+   "stuffCategories_of_stuff": [
+    "Leathery"
+   ],
+   "techLevel": "Undefined",
+   "thingCategories": [
+    "Leathers"
+   ],
+   "thingClass": "ThingWithComps",
+   "thingSetMakerTags": [],
+   "tradeTags": [],
+   "tradeability": "All",
+   "useHitPoints": "true"
+  },
+  {
+   "allowedInStuffGeneration": "true",
+   "appearance": null,
+   "burnableByRecipe": "true",
+   "canSuggestUseDefaultStuff": "true",
+   "commonality": 0.01,
+   "comps": [
+    "CompProperties_Forbiddable"
+   ],
+   "costList": {},
+   "costStuffCount": 0,
+   "defName": "Leather_Hippo",
+   "file": "Defs/ThingDefs_Items/Items_Resource_Stuff_Leather.xml",
+   "generateCommonality": null,
+   "healthAffectsPrice": "false",
+   "isAirtight": null,
+   "label": "hippo leather",
+   "mod": "Ludeon.RimWorld.Odyssey",
+   "parents": [
+    "Ludeon.RimWorld:LeatherBase",
+    "Ludeon.RimWorld:ResourceBase"
+   ],
+   "smallVolume": "false",
+   "smeltable": null,
+   "stackLimit": 75,
+   "statBases": {
+    "Beauty": -4,
+    "DeteriorationRate": 2,
+    "Flammability": 1,
+    "MarketValue": 3.7,
+    "Mass": 0.03,
+    "MaxHitPoints": 60,
+    "StuffPower_Armor_Blunt": 0.24,
+    "StuffPower_Armor_Heat": 1.5,
+    "StuffPower_Armor_Sharp": 1.12,
+    "StuffPower_Insulation_Cold": 14,
+    "StuffPower_Insulation_Heat": 16
+   },
+   "statFactors": {
+    "Beauty": 2,
+    "MaxHitPoints": 1.5
+   },
+   "statFactorsQuality": [],
+   "statOffsets": {},
+   "statOffsetsQuality": [],
+   "stuffAdjective": null,
+   "stuffCategories": [],
+   "stuffCategories_of_stuff": [
+    "Leathery"
+   ],
+   "techLevel": "Undefined",
+   "thingCategories": [
+    "Leathers"
+   ],
+   "thingClass": "ThingWithComps",
+   "thingSetMakerTags": [],
+   "tradeTags": [],
+   "tradeability": "All",
+   "useHitPoints": "true"
+  },
+  {
+   "allowedInStuffGeneration": "true",
+   "appearance": null,
+   "burnableByRecipe": "true",
+   "canSuggestUseDefaultStuff": "true",
+   "commonality": 0.01,
+   "comps": [
+    "CompProperties_Forbiddable"
+   ],
+   "costList": {},
+   "costStuffCount": 0,
+   "defName": "Leather_Armadillo",
+   "file": "Defs/ThingDefs_Items/Items_Resource_Stuff_Leather.xml",
+   "generateCommonality": null,
+   "healthAffectsPrice": "false",
+   "isAirtight": null,
+   "label": "armadillo leather",
+   "mod": "Ludeon.RimWorld.Odyssey",
+   "parents": [
+    "Ludeon.RimWorld:LeatherBase",
+    "Ludeon.RimWorld:ResourceBase"
+   ],
+   "smallVolume": "false",
+   "smeltable": null,
+   "stackLimit": 75,
+   "statBases": {
+    "Beauty": -4,
+    "DeteriorationRate": 2,
+    "Flammability": 1,
+    "MarketValue": 3.2,
+    "Mass": 0.03,
+    "MaxHitPoints": 60,
+    "StuffPower_Armor_Blunt": 0.24,
+    "StuffPower_Armor_Heat": 1.5,
+    "StuffPower_Armor_Sharp": 1.24,
+    "StuffPower_Insulation_Cold": 16,
+    "StuffPower_Insulation_Heat": 18
+   },
+   "statFactors": {
+    "Beauty": 2,
+    "MaxHitPoints": 1.3
+   },
+   "statFactorsQuality": [],
+   "statOffsets": {},
+   "statOffsetsQuality": [],
+   "stuffAdjective": null,
+   "stuffCategories": [],
+   "stuffCategories_of_stuff": [
+    "Leathery"
+   ],
+   "techLevel": "Undefined",
+   "thingCategories": [
+    "Leathers"
+   ],
+   "thingClass": "ThingWithComps",
+   "thingSetMakerTags": [],
+   "tradeTags": [],
+   "tradeability": "All",
+   "useHitPoints": "true"
+  },
+  {
+   "allowedInStuffGeneration": "false",
+   "appearance": "Bricks",
+   "burnableByRecipe": "false",
+   "canSuggestUseDefaultStuff": "true",
+   "commonality": 0.2,
+   "comps": [
+    "CompProperties_Forbiddable"
+   ],
+   "costList": {},
+   "costStuffCount": 0,
+   "defName": "BlocksVacstone",
+   "file": "Defs/ThingDefs_Misc/Stone_Various.xml",
+   "generateCommonality": null,
+   "healthAffectsPrice": null,
+   "isAirtight": null,
+   "label": "vacstone blocks",
+   "mod": "Ludeon.RimWorld.Odyssey",
+   "parents": [
+    "Ludeon.RimWorld:StoneBlocksBase",
+    "Ludeon.RimWorld:ResourceBase"
+   ],
+   "smallVolume": "false",
+   "smeltable": null,
+   "stackLimit": 75,
+   "statBases": {
+    "Beauty": -12,
+    "BluntDamageMultiplier": 1.0,
+    "ConstructionSpeedFactor": 0.8,
+    "MarketValue": 2,
+    "Mass": 0.9,
+    "MaxHitPoints": 200,
+    "SharpDamageMultiplier": 0.6
+   },
+   "statFactors": {
+    "Beauty": 1.2,
+    "BedRestEffectiveness": 0.9,
+    "DoorOpenSpeed": 0.45,
+    "Flammability": 0,
+    "MarketValue": 0.4,
+    "MaxHitPoints": 1.8,
+    "MeleeWeapon_CooldownMultiplier": 1.3,
+    "WorkToBuild": 6.0,
+    "WorkToMake": 1.3
+   },
+   "statFactorsQuality": [],
+   "statOffsets": {
+    "WorkToBuild": 140
+   },
+   "statOffsetsQuality": [],
+   "stuffAdjective": "vacstone",
+   "stuffCategories": [],
+   "stuffCategories_of_stuff": [
+    "Stony"
+   ],
+   "techLevel": "Undefined",
+   "thingCategories": [
+    "StoneBlocks"
+   ],
+   "thingClass": "ThingWithComps",
+   "thingSetMakerTags": [],
+   "tradeTags": [],
+   "tradeability": "Buyable",
+   "useHitPoints": "false"
+  }
+ ],
+ "thingValues": {
+  "Bioferrite": 0.75,
+  "BroadshieldCore": 350,
+  "Chemfuel": 2.3,
+  "Cloth": 1.5,
+  "ComponentIndustrial": 32,
+  "ComponentSpacer": 200,
+  "Gold": 10,
+  "Meat_Twisted": 0.5,
+  "NanostructuringChip": 1500,
+  "Plasteel": 9,
+  "PowerfocusChip": 1000,
+  "Shard": 400,
+  "SignalChip": 500,
+  "Steel": 1.9,
+  "Uranium": 6
+ }
+}

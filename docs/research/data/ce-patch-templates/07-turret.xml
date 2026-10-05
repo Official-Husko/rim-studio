@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  TEMPLATE 07: turret building with an attached gun. Two parts: the gun (template 01 with Mounted recoil and a large magazine)
+  and the building. Turrets are the case where a patch REMOVES vanilla comps and RAISES numbers, so most operations are Replace/Remove.
+-->
+<Patch>
+  <!-- Part A: the turret gun uses MakeGunCECompatible exactly like template 01 with these typical deltas:
+       <recoilPattern>Mounted</recoilPattern> in Properties, magazineSize 100 or more, reloadTime several seconds,
+       FireModes with aiAimMode only, and costList/researchPrerequisite normally omitted (a turret gun is not crafted). -->
+
+  <!-- Part B: the building. -->
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="{{turret_defName}}"]/thingClass</xpath>
+    <value><thingClass>CombatExtended.Building_TurretGunCE</thingClass></value>      <!-- [REQ] vanilla class would ignore CE ammo -->
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="{{turret_defName}}"]/statBases</xpath>
+    <value><AimingAccuracy>{{aim}}</AimingAccuracy></value>                          <!-- [REQ] turret aim stat -->
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="{{turret_defName}}"]/statBases/ShootingAccuracyTurret</xpath>
+    <value><ShootingAccuracyTurret>{{acc}}</ShootingAccuracyTurret></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="{{turret_defName}}"]/statBases/Mass</xpath>
+    <value><Mass>{{mass}}</Mass><Bulk>{{bulk}}</Bulk></value>                        <!-- Replace of ONE node by TWO siblings is how Bulk is added next to Mass -->
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="{{turret_defName}}"]/building/turretBurstCooldownTime</xpath>
+    <value><turretBurstCooldownTime>{{cooldown}}</turretBurstCooldownTime></value>
+  </Operation>
+  <!-- [OPT] drop vanilla comps CE replaces (explosive on death, refuelable) by class attribute selector. -->
+  <Operation Class="PatchOperationRemove">
+    <xpath>Defs/ThingDef[defName="{{turret_defName}}"]/comps/li[@Class="CompProperties_Refuelable"]</xpath>
+  </Operation>
+</Patch>

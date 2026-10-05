@@ -1,0 +1,1290 @@
+{
+ "format": 1,
+ "root": "Verse.Def",
+ "assemblies": [
+  "Assembly-CSharp"
+ ],
+ "types": {
+  "WeaponClassDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "WeaponClassPairDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "Verse.GeneCategoryDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "Verse.GeneDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "Verse.OptionCategoryDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "Verse.PawnRenderTreeDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "Verse.Def": {
+   "base": "Verse.Editable",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "Verse.AnimationDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "Verse.ApparelLayerDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "Verse.BodyDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "Verse.BodyPartDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "Verse.BodyPartGroupDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "Verse.BodyPartTagDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "Verse.BuildableDef": {
+   "base": "Verse.Def",
+   "abstract": true,
+   "assembly": "Assembly-CSharp"
+  },
+  "Verse.ClamorDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "Verse.CreepJoinerBaseDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "Verse.CreepJoinerFormKindDef": {
+   "base": "Verse.PawnKindDef",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "Verse.CreepJoinerBenefitDef": {
+   "base": "Verse.CreepJoinerBaseDef",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "Verse.CreepJoinerDownsideDef": {
+   "base": "Verse.CreepJoinerBaseDef",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "Verse.CreepJoinerAggressiveDef": {
+   "base": "Verse.CreepJoinerBaseDef",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "Verse.CreepJoinerRejectionDef": {
+   "base": "Verse.CreepJoinerBaseDef",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "Verse.DamageArmorCategoryDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "Verse.DamageDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "Verse.MechWeightClassDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "Verse.StuffAppearanceDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "Verse.DesignationCategoryDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "Verse.DesignationDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "Verse.DesignatorDropdownGroupDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "Verse.DrawStyleCategoryDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "Verse.DrawStyleDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "Verse.EffecterDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "Verse.GameConditionDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "Verse.GameSetupStepDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "Verse.GenStepDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "Verse.GraphicStateDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "Verse.HeadTypeDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "Verse.HediffDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "Verse.IdeoStoryPatternDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "Verse.ImplementOwnerTypeDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "Verse.InventoryStockGroupDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "Verse.JobDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "Verse.KeyBindingCategoryDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "Verse.KeyBindingDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "Verse.LetterDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "Verse.LogEntryDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "Verse.ManeuverDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "Verse.MapGeneratorDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "Verse.MechWorkModeDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "Verse.MentalBreakDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "Verse.MentalFitDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "Verse.MentalStateDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "Verse.MessageTypeDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "Verse.OrbitalDebrisDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "Verse.OrderedTakeGroupDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "Verse.PathGridDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "Verse.PawnCapacityDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "Verse.PawnKindDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "Verse.PlaceDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "Verse.RecipeDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "Verse.ResearchProjectDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "Verse.ResearchProjectTagDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "Verse.ReservationLayerDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "Verse.RoofDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "Verse.RoomRoleDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "Verse.RoomStatDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "Verse.RulePackDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "Verse.ScatterableDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "Verse.ShaderTypeDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "Verse.SongDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "Verse.SoundDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "Verse.StyleCategoryDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "Verse.SubcameraDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "Verse.TerrainAffordanceDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "Verse.TerrainDef": {
+   "base": "Verse.BuildableDef",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "Verse.ThingCategoryDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "Verse.ThingDef": {
+   "base": "Verse.BuildableDef",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "Verse.ThingStyleDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "Verse.ThinkTreeDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "Verse.TipSetDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "Verse.ToolCapacityDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "Verse.TrainabilityDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "Verse.WeatherDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "Verse.WorkTypeDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "Verse.WorldGenStepDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "Verse.FleckDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "Verse.PawnRenderNodeTagDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "Verse.SpecialThingFilterDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "Verse.Sound.ImpactSoundTypeDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "Verse.AI.DutyDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.PsychicRitualDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.PsychicRitualDef_BloodRain": {
+   "base": "RimWorld.PsychicRitualDef_InvocationCircle",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.PsychicRitualDef_Brainwipe": {
+   "base": "RimWorld.PsychicRitualDef_InvocationCircle",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.PsychicRitualDef_Chronophagy": {
+   "base": "RimWorld.PsychicRitualDef_InvocationCircle",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.PsychicRitualDef_ImbueDeathRefusal": {
+   "base": "RimWorld.PsychicRitualDef_InvocationCircle",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.PsychicRitualDef_InvocationCircle": {
+   "base": "RimWorld.PsychicRitualDef",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.PsychicRitualDef_NeurosisPulse": {
+   "base": "RimWorld.PsychicRitualDef_InvocationCircle",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.PsychicRitualDef_Philophagy": {
+   "base": "RimWorld.PsychicRitualDef_InvocationCircle",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.PsychicRitualDef_PleasurePulse": {
+   "base": "RimWorld.PsychicRitualDef_InvocationCircle",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.PsychicRitualDef_Psychophagy": {
+   "base": "RimWorld.PsychicRitualDef_InvocationCircle",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.PsychicRitualDef_SkipAbduction": {
+   "base": "RimWorld.PsychicRitualDef_InvocationCircle",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.PsychicRitualDef_SkipAbductionPlayer": {
+   "base": "RimWorld.PsychicRitualDef_InvocationCircle",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.PsychicRitualDef_SummonAnimals": {
+   "base": "RimWorld.PsychicRitualDef_InvocationCircle",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.PsychicRitualDef_SummonFleshbeasts": {
+   "base": "RimWorld.PsychicRitualDef_InvocationCircle",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.PsychicRitualDef_SummonFleshbeastsPlayer": {
+   "base": "RimWorld.PsychicRitualDef_InvocationCircle",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.PsychicRitualDef_SummonPitGate": {
+   "base": "RimWorld.PsychicRitualDef_InvocationCircle",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.PsychicRitualDef_SummonShamblers": {
+   "base": "RimWorld.PsychicRitualDef_InvocationCircle",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.PsychicRitualDef_VoidProvocation": {
+   "base": "RimWorld.PsychicRitualDef_InvocationCircle",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.PsychicRitualRoleDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.PsychicRitualRoleDef_DeathRefusalTarget": {
+   "base": "RimWorld.PsychicRitualRoleDef",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.GeneTemplateDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.TerrainTemplateDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.AbilityCategoryDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.AbilityGroupDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.AbilityDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.AnomalyPlaystyleDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.BabyPlayDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.BackstoryDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.BillRepeatModeDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.BillStoreModeDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.BiomeDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.BodyTypeDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.BossDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.BossgroupDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.ChemicalDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.ColorDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.CultureDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.DebugTabMenuDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.DifficultyDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.DrugPolicyDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.EntityCategoryDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.EntityCodexEntryDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.ExpansionDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.ExpectationDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.FactionDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.FeatureDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.MapMeshFlagDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.RenderSkipFlagDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.FleshTypeDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.GatheringDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.GauranlenTreeModeDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.GlobalWorldDrawLayerDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.GoodwillSituationDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.HediffGiverSetDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.HibernatableStateDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.HistoryAutoRecorderDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.HistoryAutoRecorderGroupDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.HistoryEventDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.IdeoFoundationDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.IdeoPresetCategoryDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.IdeoPresetDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.IdeoSymbolPartDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.IdeoIconDef": {
+   "base": "RimWorld.IdeoSymbolPartDef",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.IdeoColorDef": {
+   "base": "RimWorld.IdeoSymbolPartDef",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.IncidentCategoryDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.IncidentDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.IncidentTargetTagDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.InspirationDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.InteractionDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.IssueDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.JoyGiverDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.JoyKindDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.KnowledgeCategoryDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.LandingOutcomeDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.ComplexLayoutDef": {
+   "base": "RimWorld.StructureLayoutDef",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.ComplexThreatDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.LayoutDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.LayoutRoomDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.RoomPartDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.RoomPart_CrateDef": {
+   "base": "RimWorld.RoomPartDef",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.RoomPart_BarricadeDef": {
+   "base": "RimWorld.RoomPartDef",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.RoomPart_GestationTankDef": {
+   "base": "RimWorld.RoomPartDef",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.RoomPart_ThingDef": {
+   "base": "RimWorld.RoomPartDef",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.PrefabDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.StructureLayoutDef": {
+   "base": "RimWorld.LayoutDef",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.LearningDesireDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.LifeStageDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.MainButtonDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.MeditationFocusDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.MemeGroupDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.MemeDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.MonolithLevelDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.MusicSequenceDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.MusicTransitionDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.MutantDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.NeedDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.NegativeFishingOutcomeDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.PawnColumnDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.PawnGroupKindDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.PawnRelationDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.PawnsArrivalModeDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.PawnTableDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.PitGateIncidentDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.PlanetLayerDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.PlanetLayerSettingsDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.PreceptDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.PrisonerInteractionModeDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.QuestScriptDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.RaidAgeRestrictionDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.RaidStrategyDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.RecordDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.ResearchTabDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.RiverDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.RoadDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.RoadPathingDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.RoadWorldLayerDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.RuleDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.ScenarioDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.ScenPartDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.ShipJobDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.SitePartDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.SketchResolverDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.SkillDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.SlaveInteractionModeDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.StatCategoryDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.StatDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.StorytellerDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.StuffCategoryDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.StyleItemCategoryDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.StyleItemDef": {
+   "base": "Verse.Def",
+   "abstract": true,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.HairDef": {
+   "base": "RimWorld.StyleItemDef",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.BeardDef": {
+   "base": "RimWorld.StyleItemDef",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.TattooDef": {
+   "base": "RimWorld.StyleItemDef",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.FurDef": {
+   "base": "RimWorld.StyleItemDef",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.TaleDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.ThingSetMakerDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.ThoughtDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.TimeAssignmentDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.TraderKindDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.TrainableDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.TraitDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.TransferableSorterDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.TransportShipDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.ConceptDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.InstructionDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.WeaponCategoryDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.WeaponTraitDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.WorldObjectDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.XenotypeDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.XenotypeIconDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.GeneratedLocationDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.TileMutatorDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.RitualAttachableOutcomeEffectDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.RitualBehaviorDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.RitualObligationTargetFilterDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.RitualOutcomeEffectDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.RitualPatternDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.RitualTargetFilterDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.RitualVisualEffectDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.LandmarkDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.GravshipComponentTypeDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.InfectionPathwayDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.RoyalTitleDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.RoyalTitlePermitDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.SurgeryOutcomeEffectDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.WorkGiverDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  },
+  "RimWorld.WorkGiverEquivalenceGroupDef": {
+   "base": "Verse.Def",
+   "abstract": false,
+   "assembly": "Assembly-CSharp"
+  }
+ },
+ "short_name_collisions": {}
+}

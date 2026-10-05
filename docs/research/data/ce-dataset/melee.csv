@@ -1,0 +1,47 @@
+defName,label,source,tech,tool,cap,power,cooldown,apSharp,apBlunt,chance,Mass,Bulk,critC,parryC,dodgeC,toughness,counterParry,van_power,van_cooldown
+Beer,beer,RimWorld,Neolithic,bottle,Blunt,2,2.22,,0.338,1.33,0.3,0.35,0.1,0.33,0.07,,0.33,9,2
+Beer,beer,RimWorld,Neolithic,neck,Poke,1,3.33,,0.15,,0.3,0.35,0.1,0.33,0.07,,0.33,9,2
+Gun_BeamGraser,beam graser,Biotech,Spacer,barrel,Blunt,10,2.44,,3.5,,4,,,,,,,9,2
+MeleeWeapon_Axe,axe,Royalty,Medieval,handle,Poke,3,1.66,,0.75,0.1,1.5,4,0.13,0.2,0.2,,0.2,9,2
+MeleeWeapon_Axe,axe,Royalty,Medieval,edge,Cut,25,2.47,1.57,4.69,,1.5,4,0.13,0.2,0.2,,0.2,15,2
+MeleeWeapon_BreachAxe,breach axe,RimWorld,Neolithic,handle,Poke,5,1.97,,1.5,0.1,1.1,9.5,0.04,0.15,0.3,,0.2,9,2
+MeleeWeapon_BreachAxe,breach axe,RimWorld,Neolithic,head,Demolish,17,2.65,,3.375,,1.1,9.5,0.04,0.15,0.3,,0.2,7.5,1
+MeleeWeapon_Club,club,RimWorld,Neolithic,handle,Poke,4,1.78,,1,0.33,2,4,0.67,0.15,0.2,,0.15,9,2
+MeleeWeapon_Club,club,RimWorld,Neolithic,head,Blunt,11,3.48,,4,,2,4,0.67,0.15,0.2,,0.15,14,2
+MeleeWeapon_Gladius,gladius,RimWorld,Medieval,handle,Poke,2,1.44,,0.425,0.33,0.85,3.5,0.2,0.35,0.2,,0.35,9,2
+MeleeWeapon_Gladius,gladius,RimWorld,Medieval,point,Stab,27,1.44,0.48,0.425,,0.85,3.5,0.2,0.35,0.2,,0.35,16,2
+MeleeWeapon_Gladius,gladius,RimWorld,Medieval,edge,Cut,20,1.34,0.43,0.956,,0.85,3.5,0.2,0.35,0.2,,0.35,16,2
+MeleeWeapon_Ikwa,ikwa,RimWorld,Neolithic,shaft,Blunt,3,1.36,,0.93,0.33,1.1,4,0.11,0.23,0.27,,0.58,9,2
+MeleeWeapon_Ikwa,ikwa,RimWorld,Neolithic,point,Poke,2,1.54,,0.55,0.33,1.1,4,0.11,0.23,0.27,,0.58,15,2
+MeleeWeapon_Ikwa,ikwa,RimWorld,Neolithic,head,Stab,22,1.54,0.46,0.55,,1.1,4,0.11,0.23,0.27,,0.58,15,2
+MeleeWeapon_Knife,knife,RimWorld,Neolithic,handle,Poke,1,1.26,,0.25,0.33,0.5,1,0.5,0.15,0.05,,0.15,9,2
+MeleeWeapon_Knife,knife,RimWorld,Neolithic,blade,Cut,10,1.18,0.32,0.36,,0.5,1,0.5,0.15,0.05,,0.15,12,1.5
+MeleeWeapon_Knife,knife,RimWorld,Neolithic,point,Stab,11,1.2,0.42,0.25,,0.5,1,0.5,0.15,0.05,,0.15,13,2
+MeleeWeapon_LongSword,longsword,RimWorld,Medieval,handle,Poke,4,1.78,,1.0,0.1,2,8,0.5,0.6,0.4,,0.8,9,2
+MeleeWeapon_LongSword,longsword,RimWorld,Medieval,point,Stab,18,1.78,2.0,1.0,,2,8,0.5,0.6,0.4,,0.8,23,2.6
+MeleeWeapon_LongSword,longsword,RimWorld,Medieval,edge,Cut,40,1.64,0.72,3.24,,2,8,0.5,0.6,0.4,,0.8,23,2.6
+MeleeWeapon_Mace,mace,RimWorld,Medieval,handle,Poke,2,1.59,,0.625,0.33,1.25,3.5,0.42,0.24,0.2,,0.24,9,2
+MeleeWeapon_Mace,mace,RimWorld,Medieval,head,Blunt,15,1.9,,5.625,,1.25,3.5,0.42,0.24,0.2,,0.24,15.7,2
+MeleeWeapon_MonoSword,monosword,Royalty,Ultra,handle,Poke,2,1.5,,0.5,0.1,2,4,1.0,0.4,0.27,,0.4,12,1.6
+MeleeWeapon_MonoSword,monosword,Royalty,Ultra,edge,Cut,35,0.83,18,2.88,,2,4,1.0,0.4,0.27,,0.4,25,2
+MeleeWeapon_MonoSword,monosword,Royalty,Ultra,point,Stab,16,0.94,25,1.28,,2,4,1.0,0.4,0.27,,0.4,25,2
+MeleeWeapon_MonoSwordBladelink,persona monosword,Royalty,Ultra,handle,Poke,2,1.36,,0.605,0.1,2,4,1.1,0.5,0.37,,0.5,12,1.6
+MeleeWeapon_MonoSwordBladelink,persona monosword,Royalty,Ultra,edge,Cut,38,0.74,21.78,3.485,,2,4,1.1,0.5,0.37,,0.5,27,1.6
+MeleeWeapon_MonoSwordBladelink,persona monosword,Royalty,Ultra,point,Stab,16,0.85,30.24,1.173,,2,4,1.1,0.5,0.37,,0.5,27,1.6
+MeleeWeapon_PlasmaSword,plasmasword,Royalty,Ultra,handle,Poke,3,1.69,,0.8,0.1,2,8.5,1.0,0.6,0.53,,1.42,12,2
+MeleeWeapon_PlasmaSword,plasmasword,Royalty,Ultra,edge,Cut,47,1.17,24,4.06,,2,8.5,1.0,0.6,0.53,,1.42,21,2.6
+MeleeWeapon_PlasmaSword,plasmasword,Royalty,Ultra,point,Stab,25,1.05,32,2.048,,2,8.5,1.0,0.6,0.53,,1.42,21,2.6
+MeleeWeapon_PlasmaSwordBladelink,persona plasmasword,Royalty,Ultra,handle,Poke,3,1.53,,0.968,0.1,2,8.5,1.1,0.7,0.63,,1.52,12,1.6
+MeleeWeapon_PlasmaSwordBladelink,persona plasmasword,Royalty,Ultra,edge,Cut,51,1.03,29.04,5.576,,2,8.5,1.1,0.7,0.63,,1.52,23,2
+MeleeWeapon_PlasmaSwordBladelink,persona plasmasword,Royalty,Ultra,point,Stab,26,0.96,38.72,2.478,,2,8.5,1.1,0.7,0.63,,1.52,23,2
+MeleeWeapon_PsyfocusStaff,eltex staff,Royalty,Ultra,head,Blunt,5,1.84,,1.54,,1.2,6,0.6,1.17,0.47,,1.56,12,2.6
+MeleeWeapon_Spear,spear,RimWorld,Neolithic,shaft,Blunt,7,1.35,,2.25,0.15,2,10,0.17,1.45,0.9,,1.68,13,2.6
+MeleeWeapon_Spear,spear,RimWorld,Neolithic,shaft,Poke,4,1.78,,1,0.05,2,10,0.17,1.45,0.9,,1.68,23,2.6
+MeleeWeapon_Spear,spear,RimWorld,Neolithic,head,Stab,18,1.19,2.25,2.25,,2,10,0.17,1.45,0.9,,1.68,,
+MeleeWeapon_Warhammer,warhammer,Royalty,Medieval,handle,Poke,4,1.89,,1.25,0.1,2.5,8,1.25,0.36,0.3,,0.48,11,2.6
+MeleeWeapon_Warhammer,warhammer,Royalty,Medieval,head,Blunt,27,2.45,,11.25,,2.5,8,1.25,0.36,0.3,,0.48,20,2.6
+MeleeWeapon_ZeusHammerBladelink,persona zeushammer,Royalty,Ultra,handle,Poke,4,1.62,,1.21,0.1,2,8,1.1,0.55,0.4,,0.7,15,1.6
+MeleeWeapon_ZeusHammerBladelink,persona zeushammer,Royalty,Ultra,head,Blunt,58,2.19,,200,,2,8,1.1,0.55,0.4,,0.7,31,2.2
+MeleeWeapon_Zeushammer,zeushammer,Royalty,Ultra,handle,Poke,4,1.78,,1.0,0.1,2,8,1.0,0.45,0.3,,0.6,15,2
+MeleeWeapon_Zeushammer,zeushammer,Royalty,Ultra,head,Blunt,49,2.45,,160,,2,8,1.0,0.45,0.3,,0.6,31,3
+WoodLog,wood,RimWorld,Neolithic,,Blunt,2,0.99,,0.288,,0.4,0.07,0.2,1,0.13,,1.33,10,2

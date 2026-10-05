@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  TEMPLATE 08: mechanoid or robot with a ranged weapon. Three layers: the weapon def (template 01), the race def,
+  and the pawn kind. The weapon is a normal gun def that the mech spawns with; how many magazines a spawned pawn carries is set by
+  LoadoutPropertiesExtension (field primaryMagazineCount, a min/max range).
+-->
+<Patch>
+  <!-- Layer 1: weapon, MakeGunCECompatible as template 01 (Mounted recoil optional). -->
+
+  <!-- Layer 2: race. Body shape and baseline combat stats come from a base def when the mod uses one. -->
+  <Operation Class="PatchOperationAddModExtension">
+    <xpath>Defs/ThingDef[defName="{{mech_defName}}"]</xpath>
+    <value><li Class="CombatExtended.RacePropertiesExtensionCE"><bodyShape>{{Humanoid_or_Quadruped}}</bodyShape></li></value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="{{mech_defName}}"]/statBases</xpath>
+    <value>
+      <CarryWeight>{{cw}}</CarryWeight><CarryBulk>{{cb}}</CarryBulk>
+      <AimingAccuracy>{{aim}}</AimingAccuracy><ShootingAccuracyPawn>{{acc}}</ShootingAccuracyPawn>
+      <MeleeDodgeChance>{{d}}</MeleeDodgeChance><MeleeCritChance>{{c}}</MeleeCritChance><MeleeParryChance>{{p}}</MeleeParryChance>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="{{mech_defName}}"]/tools</xpath>
+    <value><tools><li Class="CombatExtended.ToolCE">...fists as in template 04, with armorPenetrationBlunt...</li></tools></value>
+  </Operation>
+  <!-- Layer 3: pawn kind (ammo and loadout). -->
+  <Operation Class="PatchOperationAddModExtension">
+    <xpath>Defs/PawnKindDef[defName="{{kind_defName}}"]</xpath>
+    <value><li Class="CombatExtended.LoadoutPropertiesExtension"><primaryMagazineCount><min>{{min}}</min><max>{{max}}</max></primaryMagazineCount></li></value>
+  </Operation>
+</Patch>

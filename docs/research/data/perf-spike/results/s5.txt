@@ -1,0 +1,6 @@
+S5 peak RSS of the full def index (separate process per run; baseline = RSS before the build)
+  mode                        defs     held MB     peak MB   build ms baseline MB
+  discard                   134324        19.3        20.6         64       14.8
+  owned-strings             134324        55.4        57.9         87       14.6
+  interned                  134324        32.0        32.0         67       14.9
+  interned-1thread          134324        14.3        17.2        439       11.1

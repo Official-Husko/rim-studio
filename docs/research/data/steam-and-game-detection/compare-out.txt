@@ -1,0 +1,89 @@
+== real files: identical tree from both parsers? ==
+same=28 diff=0 kv_only_fail=0 mini_only_fail=0
+== timing: appworkshop_294100.acf (parse only, 50 iterations, release) ==
+keyvalues-parser: 8.797292ms per parse (241302 bytes) | mini: 536.642µs per parse | ratio 16.4x
+config.vdf: keyvalues-parser 3.237971ms | mini 265.741µs | ratio 12.2x
+== edge cases: [keyvalues-parser escaped | keyvalues-parser literal | mini escaped] ==
+- windows path escaped \\ (Steam libraryfolders style)
+    kv-escaped : OK "libraryfolders":{"0":{"path":"D:\SteamLibrary
+    kv-literal : OK "libraryfolders":{"0":{"path":"D:\\SteamLibrar
+    mini       : OK "libraryfolders":{"0":{"path":"D:\SteamLibrary
+- single backslash path (registry.vdf style)
+    kv-escaped : ERR Failed parsing input Error:  -
+    kv-literal : OK "Registry":{"p":"C:\Steam\steamapps\sourcemods
+    mini       : OK "Registry":{"p":"C:\Steam\steamapps\sourcemods
+- UTF-8 BOM prefix
+    kv-escaped : ERR Failed parsing input Error:  -
+    kv-literal : ERR Failed parsing input Error:  -
+    mini       : OK "a":{"k":"v",}
+- CRLF line endings
+    kv-escaped : OK "a":{"k":"v",}
+    kv-literal : OK "a":{"k":"v",}
+    mini       : OK "a":{"k":"v",}
+- unquoted tokens
+    kv-escaped : OK "a":{"k":"v","path":"/home/x/Steam",}
+    kv-literal : OK "a":{"k":"v","path":"/home/x/Steam",}
+    mini       : OK "a":{"k":"v","path":"/home/x/Steam",}
+- duplicate keys
+    kv-escaped : OK "a":{"k":"1","k":"2","o":{"x":"1",},"o":{"x":"
+    kv-literal : OK "a":{"k":"1","k":"2","o":{"x":"1",},"o":{"x":"
+    mini       : OK "a":{"k":"1","k":"2","o":{"x":"1",},"o":{"x":"
+- line comment
+    kv-escaped : OK "a":{"k":"v",}
+    kv-literal : OK "a":{"k":"v",}
+    mini       : OK "a":{"k":"v",}
+- block comment /* */ (not in Valve parser)
+    kv-escaped : ERR Failed parsing input Error:  -
+    kv-literal : ERR Failed parsing input Error:  -
+    mini       : ERR unexpected }
+- conditional [$WIN32] after value
+    kv-escaped : OK "a":{"[$WIN32]":"k2","k":"v","v2":"[!$WIN32]",
+    kv-literal : OK "a":{"[$WIN32]":"k2","k":"v","v2":"[!$WIN32]",
+    mini       : OK "a":{"k":"v","k2":"v2",}
+- conditional before brace
+    kv-escaped : ERR Failed parsing input Error:  -
+    kv-literal : ERR Failed parsing input Error:  -
+    mini       : OK "a":{"k":"v",}
+- #base macro
+    kv-escaped : OK "a":{"k":"v",}
+    kv-literal : OK "a":{"k":"v",}
+    mini       : OK "a":{"k":"v",}
+- #include macro
+    kv-escaped : ERR Failed parsing input Error:  -
+    kv-literal : ERR Failed parsing input Error:  -
+    mini       : OK "a":{"k":"v",}
+- two top-level pairs
+    kv-escaped : ERR Failed parsing input Error:  -
+    kv-literal : ERR Failed parsing input Error:  -
+    mini       : OK "a":{"k":"v",}"b":{"k":"w",}
+- truncated (missing closing brace)
+    kv-escaped : ERR Failed parsing input Error:  -
+    kv-literal : ERR Failed parsing input Error:  -
+    mini       : ERR eof in object
+- empty file
+    kv-escaped : ERR Failed parsing input Error:  -
+    kv-literal : ERR Failed parsing input Error:  -
+    mini       : OK 
+- whitespace only
+    kv-escaped : ERR Failed parsing input Error:  -
+    kv-literal : ERR Failed parsing input Error:  -
+    mini       : OK 
+- trailing NUL byte
+    kv-escaped : OK "a":{"k":"v",}
+    kv-literal : OK "a":{"k":"v",}
+    mini       : OK "a":{"k":"v",}
+- newline inside quoted value
+    kv-escaped : OK "a":{"k":"line1
+line2",}
+    kv-literal : OK "a":{"k":"line1
+line2",}
+    mini       : OK "a":{"k":"line1
+line2",}
+- escaped quote and tab
+    kv-escaped : OK "a":{"k":"say "hi"	!",}
+    kv-literal : OK "a":{"hi\":"\t!","k":"say \",}
+    mini       : OK "a":{"k":"say "hi"	!",}
+- empty string value and empty object
+    kv-escaped : OK "a":{"k":"","o":{},}
+    kv-literal : OK "a":{"k":"","o":{},}
+    mini       : OK "a":{"k":"","o":{},}

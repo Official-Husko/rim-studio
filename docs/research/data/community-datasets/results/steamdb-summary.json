@@ -1,0 +1,155 @@
+{
+  "authors_forms": {
+    "absent": 39101,
+    "str": 18578
+  },
+  "compact_entry_size_bytes": {
+    "max": 27893,
+    "mean": 391.9,
+    "median": 363,
+    "min": 20,
+    "p99": 891
+  },
+  "dependency_edges_total": 53820,
+  "dependency_value_shapes": {
+    "list[str]": 53820
+  },
+  "distinct_package_ids": 15980,
+  "ends_with_newline": false,
+  "entries": 57679,
+  "entries_blacklist_true": 0,
+  "entries_only_unpublished_flag": 171,
+  "entries_steamName_differs_from_name": 2141,
+  "entries_unpublished_true": 256,
+  "entries_with_appid_true": 6,
+  "entries_with_dependencies_object": 32401,
+  "entries_with_tags": 56977,
+  "entries_without_any_name": 177,
+  "escaped_unicode_sequences": 102067,
+  "field_bytes_compact_json": {
+    "appid": 72,
+    "authors": 434969,
+    "dependencies": 6182634,
+    "gameVersions": 583127,
+    "name": 655853,
+    "packageId": 690751,
+    "packageid": 215,
+    "steamName": 2368752,
+    "tags": 7153087,
+    "unpublished": 4608,
+    "url": 4194007
+  },
+  "field_presence": {
+    "appid": 6,
+    "authors": 18578,
+    "dependencies": 32401,
+    "gameVersions": 18572,
+    "name": 18578,
+    "packageId": 18639,
+    "packageid": 6,
+    "steamName": 57487,
+    "tags": 56977,
+    "unpublished": 256,
+    "url": 57504
+  },
+  "field_share_percent_of_entry_payload": {
+    "appid": 0.0,
+    "authors": 2.0,
+    "dependencies": 27.8,
+    "gameVersions": 2.6,
+    "name": 2.9,
+    "packageId": 3.1,
+    "packageid": 0.0,
+    "steamName": 10.6,
+    "tags": 32.1,
+    "unpublished": 0.0,
+    "url": 18.8
+  },
+  "field_value_types": {
+    "appid": {
+      "bool": 6
+    },
+    "authors": {
+      "str": 18578
+    },
+    "dependencies": {
+      "dict": 32401
+    },
+    "gameVersions": {
+      "list[NoneType]": 6,
+      "list[str]": 18566
+    },
+    "name": {
+      "str": 18578
+    },
+    "packageId": {
+      "str": 18639
+    },
+    "packageid": {
+      "str": 6
+    },
+    "steamName": {
+      "str": 57487
+    },
+    "tags": {
+      "list[dict]": 56977
+    },
+    "unpublished": {
+      "bool": 256
+    },
+    "url": {
+      "str": 57504
+    }
+  },
+  "file_bytes": 49312694,
+  "first_indent_spaces": 4,
+  "full_file_compressed": {
+    "gzip_6_bytes": 3512663,
+    "gzip_9_bytes": 3323156,
+    "xz_6_bytes": 2042124,
+    "zstd_19_bytes": 1975479,
+    "zstd_3_bytes": 3085070
+  },
+  "game_versions_forms": {
+    "absent": 39107,
+    "list[NoneType]": 6,
+    "list[str]": 18566
+  },
+  "keys_all_digits": 57679,
+  "keys_not_digits_examples": [],
+  "local_library": {
+    "folders_flagged_unpublished_in_steamdb": 1,
+    "folders_present_in_steamdb": 682,
+    "workshop_folders": 690
+  },
+  "max_dependencies_in_one_entry": 256,
+  "max_workshop_entries_for_one_package_id": 1621,
+  "package_id_placeholders": {
+    "invalid.item": 5,
+    "missing.packageid": 878,
+    "scenario.rsc": 1621
+  },
+  "package_ids_with_multiple_workshop_entries": 155,
+  "packageid_key_variants": {
+    "none": 39040,
+    "packageId": 18633,
+    "packageid+packageId": 6
+  },
+  "python_json_parse_seconds": 0.27,
+  "raw_non_ascii_bytes": 0,
+  "slim_projection": {
+    "description": "pfid -> {p: packageId lowercase, n: steamName or name, a: authors, g: gameVersions, d: dependency workshop ids only, u: unpublished, b: blacklisted}",
+    "entries": 18848,
+    "gzip_9_bytes": 759836,
+    "minified_json_bytes": 2516068,
+    "xz_6_bytes": 540224,
+    "zstd_19_bytes": 573745,
+    "zstd_3_bytes": 729291
+  },
+  "top_level_keys": [
+    "version",
+    "database"
+  ],
+  "version": 1789309137,
+  "version_utc": "2026-09-13T14:18:57+00:00"
+}

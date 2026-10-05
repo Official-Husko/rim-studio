@@ -1,0 +1,6096 @@
+{
+ "meta": {
+  "note": "research prototype; see README.md",
+  "weights": {
+   "role": 2.0,
+   "tier": 0.35,
+   "cat": 0.8
+  },
+  "k_anchors": 2,
+  "same_band": 0.1,
+  "noise_sigma_ln": 0.2,
+  "noisy_reps": 10
+ },
+ "results": {
+  "vanilla/ranged|scratch": {
+   "n_items": 19,
+   "methods": {
+    "simple": {
+     "damage": {
+      "n": 19,
+      "median": 0.344,
+      "p80": 0.643,
+      "within20": 0.37
+     },
+     "burst": {
+      "n": 19,
+      "median": 0.0,
+      "p80": 0.704,
+      "within20": 0.63
+     },
+     "warmup": {
+      "n": 19,
+      "median": 0.333,
+      "p80": 0.571,
+      "within20": 0.21
+     },
+     "cooldown": {
+      "n": 19,
+      "median": 0.074,
+      "p80": 0.286,
+      "within20": 0.74
+     },
+     "range": {
+      "n": 19,
+      "median": 0.131,
+      "p80": 0.287,
+      "within20": 0.58
+     },
+     "mass": {
+      "n": 19,
+      "median": 0.239,
+      "p80": 0.448,
+      "within20": 0.42
+     },
+     "mv": {
+      "n": 19,
+      "median": 0.38,
+      "p80": 0.566,
+      "within20": 0.21
+     },
+     "damage_ratio": {
+      "n": 19,
+      "median": 0.311,
+      "p80": 0.629,
+      "within20": 0.37
+     }
+    },
+    "quiz_compare_only": {
+     "damage": {
+      "n": 19,
+      "median": 0.416,
+      "p80": 0.63,
+      "within20": 0.26
+     },
+     "burst": {
+      "n": 19,
+      "median": 0.0,
+      "p80": 0.667,
+      "within20": 0.68
+     },
+     "warmup": {
+      "n": 19,
+      "median": 0.333,
+      "p80": 0.575,
+      "within20": 0.21
+     },
+     "cooldown": {
+      "n": 19,
+      "median": 0.074,
+      "p80": 0.286,
+      "within20": 0.74
+     },
+     "range": {
+      "n": 19,
+      "median": 0.133,
+      "p80": 0.257,
+      "within20": 0.63
+     },
+     "mass": {
+      "n": 19,
+      "median": 0.123,
+      "p80": 0.559,
+      "within20": 0.58
+     },
+     "mv": {
+      "n": 19,
+      "median": 0.379,
+      "p80": 0.551,
+      "within20": 0.21
+     },
+     "damage_ratio": {
+      "n": 19,
+      "median": 0.312,
+      "p80": 0.646,
+      "within20": 0.32
+     }
+    },
+    "quiz_full": {
+     "damage": {
+      "n": 19,
+      "median": 0.339,
+      "p80": 0.575,
+      "within20": 0.37
+     },
+     "burst": {
+      "n": 19,
+      "median": 0.0,
+      "p80": 0.0,
+      "within20": 0.95
+     },
+     "warmup": {
+      "n": 19,
+      "median": 0.333,
+      "p80": 0.472,
+      "within20": 0.21
+     },
+     "cooldown": {
+      "n": 19,
+      "median": 0.074,
+      "p80": 0.286,
+      "within20": 0.74
+     },
+     "range": {
+      "n": 19,
+      "median": 0.097,
+      "p80": 0.137,
+      "within20": 1.0
+     },
+     "mass": {
+      "n": 19,
+      "median": 0.143,
+      "p80": 0.661,
+      "within20": 0.58
+     },
+     "mv": {
+      "n": 19,
+      "median": 0.379,
+      "p80": 0.567,
+      "within20": 0.21
+     },
+     "damage_ratio": {
+      "n": 19,
+      "median": 0.294,
+      "p80": 0.517,
+      "within20": 0.37
+     }
+    },
+    "quiz_full_noisy": {
+     "damage": {
+      "n": 190,
+      "median": 0.369,
+      "p80": 0.607,
+      "within20": 0.32
+     },
+     "burst": {
+      "n": 190,
+      "median": 0.0,
+      "p80": 0.0,
+      "within20": 0.95
+     },
+     "warmup": {
+      "n": 190,
+      "median": 0.333,
+      "p80": 0.514,
+      "within20": 0.22
+     },
+     "cooldown": {
+      "n": 190,
+      "median": 0.074,
+      "p80": 0.34,
+      "within20": 0.73
+     },
+     "range": {
+      "n": 190,
+      "median": 0.108,
+      "p80": 0.16,
+      "within20": 0.94
+     },
+     "mass": {
+      "n": 190,
+      "median": 0.248,
+      "p80": 0.668,
+      "within20": 0.48
+     },
+     "mv": {
+      "n": 190,
+      "median": 0.329,
+      "p80": 0.576,
+      "within20": 0.29
+     },
+     "damage_ratio": {
+      "n": 190,
+      "median": 0.302,
+      "p80": 0.533,
+      "within20": 0.36
+     }
+    },
+    "quiz_full_noisy_wide": {
+     "damage": {
+      "n": 190,
+      "median": 0.349,
+      "p80": 0.585,
+      "within20": 0.29
+     },
+     "burst": {
+      "n": 190,
+      "median": 0.0,
+      "p80": 0.0,
+      "within20": 0.95
+     },
+     "warmup": {
+      "n": 190,
+      "median": 0.333,
+      "p80": 0.514,
+      "within20": 0.22
+     },
+     "cooldown": {
+      "n": 190,
+      "median": 0.074,
+      "p80": 0.34,
+      "within20": 0.73
+     },
+     "range": {
+      "n": 190,
+      "median": 0.097,
+      "p80": 0.16,
+      "within20": 0.93
+     },
+     "mass": {
+      "n": 190,
+      "median": 0.296,
+      "p80": 0.668,
+      "within20": 0.46
+     },
+     "mv": {
+      "n": 190,
+      "median": 0.381,
+      "p80": 0.586,
+      "within20": 0.28
+     },
+     "damage_ratio": {
+      "n": 190,
+      "median": 0.299,
+      "p80": 0.56,
+      "within20": 0.36
+     }
+    },
+    "quiz_budget3": {
+     "damage": {
+      "n": 19,
+      "median": 0.339,
+      "p80": 0.575,
+      "within20": 0.37
+     },
+     "burst": {
+      "n": 19,
+      "median": 0.0,
+      "p80": 0.0,
+      "within20": 0.95
+     },
+     "warmup": {
+      "n": 19,
+      "median": 0.333,
+      "p80": 0.472,
+      "within20": 0.21
+     },
+     "cooldown": {
+      "n": 19,
+      "median": 0.074,
+      "p80": 0.286,
+      "within20": 0.74
+     },
+     "range": {
+      "n": 19,
+      "median": 0.097,
+      "p80": 0.137,
+      "within20": 1.0
+     },
+     "mass": {
+      "n": 19,
+      "median": 0.143,
+      "p80": 0.661,
+      "within20": 0.58
+     },
+     "mv": {
+      "n": 19,
+      "median": 0.379,
+      "p80": 0.594,
+      "within20": 0.21
+     },
+     "damage_ratio": {
+      "n": 19,
+      "median": 0.294,
+      "p80": 0.517,
+      "within20": 0.37
+     }
+    },
+    "quiz_full_k1": {
+     "damage": {
+      "n": 19,
+      "median": 0.379,
+      "p80": 0.744,
+      "within20": 0.37
+     },
+     "burst": {
+      "n": 19,
+      "median": 0.0,
+      "p80": 0.0,
+      "within20": 0.95
+     },
+     "warmup": {
+      "n": 19,
+      "median": 0.333,
+      "p80": 0.446,
+      "within20": 0.21
+     },
+     "cooldown": {
+      "n": 19,
+      "median": 0.067,
+      "p80": 0.286,
+      "within20": 0.74
+     },
+     "range": {
+      "n": 19,
+      "median": 0.097,
+      "p80": 0.137,
+      "within20": 1.0
+     },
+     "mass": {
+      "n": 19,
+      "median": 0.143,
+      "p80": 0.661,
+      "within20": 0.58
+     },
+     "mv": {
+      "n": 19,
+      "median": 0.349,
+      "p80": 0.795,
+      "within20": 0.32
+     },
+     "damage_ratio": {
+      "n": 19,
+      "median": 0.333,
+      "p80": 0.587,
+      "within20": 0.37
+     }
+    },
+    "quiz_full_k3": {
+     "damage": {
+      "n": 19,
+      "median": 0.311,
+      "p80": 0.559,
+      "within20": 0.37
+     },
+     "burst": {
+      "n": 19,
+      "median": 0.0,
+      "p80": 0.0,
+      "within20": 0.95
+     },
+     "warmup": {
+      "n": 19,
+      "median": 0.333,
+      "p80": 0.511,
+      "within20": 0.26
+     },
+     "cooldown": {
+      "n": 19,
+      "median": 0.067,
+      "p80": 0.286,
+      "within20": 0.74
+     },
+     "range": {
+      "n": 19,
+      "median": 0.097,
+      "p80": 0.137,
+      "within20": 1.0
+     },
+     "mass": {
+      "n": 19,
+      "median": 0.143,
+      "p80": 0.661,
+      "within20": 0.58
+     },
+     "mv": {
+      "n": 19,
+      "median": 0.317,
+      "p80": 0.548,
+      "within20": 0.26
+     },
+     "damage_ratio": {
+      "n": 19,
+      "median": 0.265,
+      "p80": 0.478,
+      "within20": 0.37
+     }
+    },
+    "tier_median": {
+     "damage": {
+      "n": 19,
+      "median": 0.333,
+      "p80": 0.587,
+      "within20": 0.42
+     },
+     "burst": {
+      "n": 19,
+      "median": 0.0,
+      "p80": 2.0,
+      "within20": 0.53
+     },
+     "warmup": {
+      "n": 19,
+      "median": 0.412,
+      "p80": 0.93,
+      "within20": 0.21
+     },
+     "cooldown": {
+      "n": 19,
+      "median": 0.1,
+      "p80": 0.336,
+      "within20": 0.74
+     },
+     "range": {
+      "n": 19,
+      "median": 0.162,
+      "p80": 0.299,
+      "within20": 0.53
+     },
+     "mass": {
+      "n": 19,
+      "median": 0.54,
+      "p80": 1.304,
+      "within20": 0.32
+     },
+     "mv": {
+      "n": 19,
+      "median": 0.468,
+      "p80": 0.855,
+      "within20": 0.26
+     }
+    },
+    "nn_kind_tier(oracle power)": {
+     "damage": {
+      "n": 19,
+      "median": 0.52,
+      "p80": 0.913,
+      "within20": 0.21
+     },
+     "burst": {
+      "n": 19,
+      "median": 0.5,
+      "p80": 0.94,
+      "within20": 0.47
+     },
+     "warmup": {
+      "n": 19,
+      "median": 0.545,
+      "p80": 1.42,
+      "within20": 0.21
+     },
+     "cooldown": {
+      "n": 19,
+      "median": 0.185,
+      "p80": 0.425,
+      "within20": 0.53
+     },
+     "range": {
+      "n": 19,
+      "median": 0.217,
+      "p80": 0.495,
+      "within20": 0.37
+     },
+     "mass": {
+      "n": 19,
+      "median": 0.52,
+      "p80": 1.003,
+      "within20": 0.37
+     },
+     "mv": {
+      "n": 19,
+      "median": 0.371,
+      "p80": 0.587,
+      "within20": 0.32
+     }
+    },
+    "role_tier_median": {
+     "damage": {
+      "n": 19,
+      "median": 0.265,
+      "p80": 0.445,
+      "within20": 0.47
+     },
+     "burst": {
+      "n": 19,
+      "median": 0.0,
+      "p80": 0.856,
+      "within20": 0.58
+     },
+     "warmup": {
+      "n": 19,
+      "median": 0.3,
+      "p80": 0.425,
+      "within20": 0.21
+     },
+     "cooldown": {
+      "n": 19,
+      "median": 0.074,
+      "p80": 0.286,
+      "within20": 0.74
+     },
+     "range": {
+      "n": 19,
+      "median": 0.162,
+      "p80": 0.233,
+      "within20": 0.68
+     },
+     "mass": {
+      "n": 19,
+      "median": 0.244,
+      "p80": 0.635,
+      "within20": 0.42
+     },
+     "mv": {
+      "n": 19,
+      "median": 0.468,
+      "p80": 0.738,
+      "within20": 0.21
+     }
+    }
+   },
+   "band_coverage": {
+    "damage": {
+     "cover_p50": 0.47,
+     "cover_p80": 0.79,
+     "band_p50_ratio": 1.47,
+     "band_p80_ratio": 1.72
+    },
+    "burst": {
+     "cover_p50": 0.84,
+     "cover_p80": 0.84,
+     "band_p50_ratio": 1.0,
+     "band_p80_ratio": 1.0
+    },
+    "warmup": {
+     "cover_p50": 0.53,
+     "cover_p80": 0.79,
+     "band_p50_ratio": 1.33,
+     "band_p80_ratio": 1.9
+    },
+    "cooldown": {
+     "cover_p50": 0.47,
+     "cover_p80": 0.79,
+     "band_p50_ratio": 1.08,
+     "band_p80_ratio": 1.32
+    },
+    "range": {
+     "cover_p50": 0.47,
+     "cover_p80": 0.79,
+     "band_p50_ratio": 1.1,
+     "band_p80_ratio": 1.15
+    },
+    "mass": {
+     "cover_p50": 0.47,
+     "cover_p80": 0.74,
+     "band_p50_ratio": 1.17,
+     "band_p80_ratio": 2.68
+    },
+    "mv": {
+     "cover_p50": 0.47,
+     "cover_p80": 0.79,
+     "band_p50_ratio": 1.51,
+     "band_p80_ratio": 2.0
+    },
+    "damage_ratio": {
+     "cover_p50": 0.53,
+     "cover_p80": 0.74,
+     "band_p50_ratio": 1.38,
+     "band_p80_ratio": 1.88
+    }
+   },
+   "questions": {
+    "simple": {
+     "mean": 2.0,
+     "max": 2
+    },
+    "quiz_compare_only": {
+     "mean": 4.0,
+     "max": 7
+    },
+    "quiz_full": {
+     "mean": 7.0,
+     "max": 10
+    },
+    "quiz_full_noisy": {
+     "mean": 7.94,
+     "max": 10
+    },
+    "quiz_full_noisy_wide": {
+     "mean": 6.74,
+     "max": 9
+    },
+    "quiz_budget3": {
+     "mean": 6.89,
+     "max": 8
+    },
+    "quiz_full_k1": {
+     "mean": 7.0,
+     "max": 10
+    },
+    "quiz_full_k3": {
+     "mean": 7.0,
+     "max": 10
+    }
+   },
+   "elasticity_all_items": {
+    "damage": 0.37,
+    "burst": 0.0,
+    "warmup": 0.14,
+    "cooldown": -0.04,
+    "range": 0.11,
+    "mass": 0.51,
+    "mv": 0.53
+   }
+  },
+  "vanilla/melee|scratch": {
+   "n_items": 14,
+   "methods": {
+    "simple": {
+     "damage": {
+      "n": 14,
+      "median": 0.305,
+      "p80": 0.44,
+      "within20": 0.29
+     },
+     "cooldown": {
+      "n": 14,
+      "median": 0.2,
+      "p80": 0.234,
+      "within20": 0.5
+     },
+     "ap": {
+      "n": 14,
+      "median": 0.431,
+      "p80": 0.62,
+      "within20": 0.07
+     },
+     "mass": {
+      "n": 14,
+      "median": 0.52,
+      "p80": 1.217,
+      "within20": 0.29
+     },
+     "mv": {
+      "n": 14,
+      "median": 0.382,
+      "p80": 0.648,
+      "within20": 0.36
+     },
+     "damage_ratio": {
+      "n": 14,
+      "median": 0.296,
+      "p80": 0.396,
+      "within20": 0.21
+     }
+    },
+    "quiz_compare_only": {
+     "damage": {
+      "n": 14,
+      "median": 0.185,
+      "p80": 0.232,
+      "within20": 0.57
+     },
+     "cooldown": {
+      "n": 14,
+      "median": 0.206,
+      "p80": 0.259,
+      "within20": 0.5
+     },
+     "ap": {
+      "n": 14,
+      "median": 0.236,
+      "p80": 0.397,
+      "within20": 0.36
+     },
+     "mass": {
+      "n": 14,
+      "median": 0.536,
+      "p80": 1.279,
+      "within20": 0.14
+     },
+     "mv": {
+      "n": 14,
+      "median": 0.382,
+      "p80": 0.648,
+      "within20": 0.36
+     },
+     "damage_ratio": {
+      "n": 14,
+      "median": 0.217,
+      "p80": 0.354,
+      "within20": 0.43
+     }
+    },
+    "quiz_full": {
+     "damage": {
+      "n": 14,
+      "median": 0.07,
+      "p80": 0.159,
+      "within20": 0.93
+     },
+     "cooldown": {
+      "n": 14,
+      "median": 0.025,
+      "p80": 0.137,
+      "within20": 1.0
+     },
+     "ap": {
+      "n": 14,
+      "median": 0.236,
+      "p80": 0.397,
+      "within20": 0.36
+     },
+     "mass": {
+      "n": 14,
+      "median": 0.168,
+      "p80": 0.471,
+      "within20": 0.57
+     },
+     "mv": {
+      "n": 14,
+      "median": 0.382,
+      "p80": 0.648,
+      "within20": 0.36
+     },
+     "damage_ratio": {
+      "n": 14,
+      "median": 0.217,
+      "p80": 0.354,
+      "within20": 0.43
+     }
+    },
+    "quiz_full_noisy": {
+     "damage": {
+      "n": 140,
+      "median": 0.152,
+      "p80": 0.274,
+      "within20": 0.67
+     },
+     "cooldown": {
+      "n": 140,
+      "median": 0.092,
+      "p80": 0.175,
+      "within20": 0.86
+     },
+     "ap": {
+      "n": 140,
+      "median": 0.266,
+      "p80": 0.532,
+      "within20": 0.31
+     },
+     "mass": {
+      "n": 140,
+      "median": 0.249,
+      "p80": 0.509,
+      "within20": 0.44
+     },
+     "mv": {
+      "n": 140,
+      "median": 0.382,
+      "p80": 0.667,
+      "within20": 0.36
+     },
+     "damage_ratio": {
+      "n": 140,
+      "median": 0.251,
+      "p80": 0.359,
+      "within20": 0.36
+     }
+    },
+    "quiz_full_noisy_wide": {
+     "damage": {
+      "n": 140,
+      "median": 0.16,
+      "p80": 0.284,
+      "within20": 0.74
+     },
+     "cooldown": {
+      "n": 140,
+      "median": 0.092,
+      "p80": 0.175,
+      "within20": 0.86
+     },
+     "ap": {
+      "n": 140,
+      "median": 0.298,
+      "p80": 0.564,
+      "within20": 0.2
+     },
+     "mass": {
+      "n": 140,
+      "median": 0.273,
+      "p80": 0.545,
+      "within20": 0.43
+     },
+     "mv": {
+      "n": 140,
+      "median": 0.382,
+      "p80": 0.667,
+      "within20": 0.36
+     },
+     "damage_ratio": {
+      "n": 140,
+      "median": 0.271,
+      "p80": 0.354,
+      "within20": 0.3
+     }
+    },
+    "quiz_budget3": {
+     "damage": {
+      "n": 14,
+      "median": 0.07,
+      "p80": 0.159,
+      "within20": 0.93
+     },
+     "cooldown": {
+      "n": 14,
+      "median": 0.025,
+      "p80": 0.137,
+      "within20": 1.0
+     },
+     "ap": {
+      "n": 14,
+      "median": 0.236,
+      "p80": 0.397,
+      "within20": 0.36
+     },
+     "mass": {
+      "n": 14,
+      "median": 0.15,
+      "p80": 0.382,
+      "within20": 0.64
+     },
+     "mv": {
+      "n": 14,
+      "median": 0.382,
+      "p80": 0.648,
+      "within20": 0.36
+     },
+     "damage_ratio": {
+      "n": 14,
+      "median": 0.217,
+      "p80": 0.354,
+      "within20": 0.43
+     }
+    },
+    "quiz_full_k1": {
+     "damage": {
+      "n": 14,
+      "median": 0.07,
+      "p80": 0.159,
+      "within20": 0.93
+     },
+     "cooldown": {
+      "n": 14,
+      "median": 0.025,
+      "p80": 0.137,
+      "within20": 1.0
+     },
+     "ap": {
+      "n": 14,
+      "median": 0.285,
+      "p80": 0.365,
+      "within20": 0.21
+     },
+     "mass": {
+      "n": 14,
+      "median": 0.168,
+      "p80": 0.471,
+      "within20": 0.57
+     },
+     "mv": {
+      "n": 14,
+      "median": 0.382,
+      "p80": 0.648,
+      "within20": 0.36
+     },
+     "damage_ratio": {
+      "n": 14,
+      "median": 0.279,
+      "p80": 0.406,
+      "within20": 0.29
+     }
+    },
+    "quiz_full_k3": {
+     "damage": {
+      "n": 14,
+      "median": 0.07,
+      "p80": 0.159,
+      "within20": 0.93
+     },
+     "cooldown": {
+      "n": 14,
+      "median": 0.025,
+      "p80": 0.137,
+      "within20": 1.0
+     },
+     "ap": {
+      "n": 14,
+      "median": 0.217,
+      "p80": 0.347,
+      "within20": 0.43
+     },
+     "mass": {
+      "n": 14,
+      "median": 0.168,
+      "p80": 0.471,
+      "within20": 0.57
+     },
+     "mv": {
+      "n": 14,
+      "median": 0.382,
+      "p80": 0.648,
+      "within20": 0.36
+     },
+     "damage_ratio": {
+      "n": 14,
+      "median": 0.146,
+      "p80": 0.325,
+      "within20": 0.57
+     }
+    },
+    "tier_median": {
+     "damage": {
+      "n": 14,
+      "median": 0.193,
+      "p80": 0.348,
+      "within20": 0.57
+     },
+     "cooldown": {
+      "n": 14,
+      "median": 0.139,
+      "p80": 0.223,
+      "within20": 0.71
+     },
+     "ap": {
+      "n": 14,
+      "median": 0.261,
+      "p80": 0.512,
+      "within20": 0.43
+     },
+     "mass": {
+      "n": 14,
+      "median": 0.409,
+      "p80": 0.69,
+      "within20": 0.29
+     },
+     "mv": {
+      "n": 14,
+      "median": 0.382,
+      "p80": 0.632,
+      "within20": 0.43
+     }
+    },
+    "nn_kind_tier(oracle power)": {
+     "damage": {
+      "n": 14,
+      "median": 0.246,
+      "p80": 0.368,
+      "within20": 0.43
+     },
+     "cooldown": {
+      "n": 14,
+      "median": 0.183,
+      "p80": 0.3,
+      "within20": 0.5
+     },
+     "ap": {
+      "n": 14,
+      "median": 0.326,
+      "p80": 0.48,
+      "within20": 0.29
+     },
+     "mass": {
+      "n": 14,
+      "median": 0.621,
+      "p80": 0.971,
+      "within20": 0.21
+     },
+     "mv": {
+      "n": 14,
+      "median": 0.34,
+      "p80": 0.712,
+      "within20": 0.36
+     }
+    },
+    "role_tier_median": {
+     "damage": {
+      "n": 14,
+      "median": 0.326,
+      "p80": 0.411,
+      "within20": 0.29
+     },
+     "cooldown": {
+      "n": 14,
+      "median": 0.183,
+      "p80": 0.266,
+      "within20": 0.5
+     },
+     "ap": {
+      "n": 14,
+      "median": 0.422,
+      "p80": 0.642,
+      "within20": 0.07
+     },
+     "mass": {
+      "n": 14,
+      "median": 0.525,
+      "p80": 0.914,
+      "within20": 0.29
+     },
+     "mv": {
+      "n": 14,
+      "median": 0.382,
+      "p80": 0.648,
+      "within20": 0.36
+     }
+    }
+   },
+   "band_coverage": {
+    "damage": {
+     "cover_p50": 0.5,
+     "cover_p80": 0.71,
+     "band_p50_ratio": 1.07,
+     "band_p80_ratio": 1.18
+    },
+    "cooldown": {
+     "cover_p50": 0.5,
+     "cover_p80": 0.71,
+     "band_p50_ratio": 1.03,
+     "band_p80_ratio": 1.15
+    },
+    "ap": {
+     "cover_p50": 0.5,
+     "cover_p80": 0.79,
+     "band_p50_ratio": 1.28,
+     "band_p80_ratio": 1.48
+    },
+    "mass": {
+     "cover_p50": 0.5,
+     "cover_p80": 0.79,
+     "band_p50_ratio": 1.2,
+     "band_p80_ratio": 1.53
+    },
+    "mv": {
+     "cover_p50": 0.57,
+     "cover_p80": 0.79,
+     "band_p50_ratio": 1.41,
+     "band_p80_ratio": 2.2
+    },
+    "damage_ratio": {
+     "cover_p50": 0.5,
+     "cover_p80": 0.79,
+     "band_p50_ratio": 1.25,
+     "band_p80_ratio": 1.39
+    }
+   },
+   "questions": {
+    "simple": {
+     "mean": 2.0,
+     "max": 2
+    },
+    "quiz_compare_only": {
+     "mean": 4.21,
+     "max": 7
+    },
+    "quiz_full": {
+     "mean": 6.21,
+     "max": 9
+    },
+    "quiz_full_noisy": {
+     "mean": 6.91,
+     "max": 9
+    },
+    "quiz_full_noisy_wide": {
+     "mean": 5.74,
+     "max": 9
+    },
+    "quiz_budget3": {
+     "mean": 6.07,
+     "max": 7
+    },
+    "quiz_full_k1": {
+     "mean": 6.21,
+     "max": 9
+    },
+    "quiz_full_k3": {
+     "mean": 6.21,
+     "max": 9
+    }
+   },
+   "elasticity_all_items": {
+    "damage": 0.69,
+    "cooldown": 0.12,
+    "ap": 1.0,
+    "mass": 0.64,
+    "mv": 1.5
+   }
+  },
+  "vanilla/apparel|scratch": {
+   "n_items": 112,
+   "methods": {
+    "simple": {
+     "mass": {
+      "n": 112,
+      "median": 0.331,
+      "p80": 0.874,
+      "within20": 0.34
+     },
+     "mv": {
+      "n": 111,
+      "median": 0.433,
+      "p80": 0.817,
+      "within20": 0.32
+     },
+     "sharp": {
+      "n": 77,
+      "median": 0.362,
+      "p80": 0.862,
+      "within20": 0.35
+     },
+     "heat": {
+      "n": 76,
+      "median": 0.393,
+      "p80": 0.745,
+      "within20": 0.36
+     },
+     "ins_cold": {
+      "n": 78,
+      "median": 0.474,
+      "p80": 1.167,
+      "within20": 0.4
+     },
+     "blunt": {
+      "n": 37,
+      "median": 0.474,
+      "p80": 1.0,
+      "within20": 0.27
+     }
+    },
+    "quiz_compare_only": {
+     "mass": {
+      "n": 112,
+      "median": 0.293,
+      "p80": 0.856,
+      "within20": 0.35
+     },
+     "mv": {
+      "n": 111,
+      "median": 0.433,
+      "p80": 0.817,
+      "within20": 0.32
+     },
+     "sharp": {
+      "n": 77,
+      "median": 0.06,
+      "p80": 0.27,
+      "within20": 0.71
+     },
+     "heat": {
+      "n": 76,
+      "median": 0.084,
+      "p80": 0.267,
+      "within20": 0.7
+     },
+     "ins_cold": {
+      "n": 78,
+      "median": 0.25,
+      "p80": 0.8,
+      "within20": 0.47
+     },
+     "blunt": {
+      "n": 37,
+      "median": 0.113,
+      "p80": 0.36,
+      "within20": 0.62
+     }
+    },
+    "quiz_full": {
+     "mass": {
+      "n": 112,
+      "median": 0.031,
+      "p80": 0.614,
+      "within20": 0.58
+     },
+     "mv": {
+      "n": 111,
+      "median": 0.433,
+      "p80": 0.817,
+      "within20": 0.32
+     },
+     "sharp": {
+      "n": 77,
+      "median": 0.06,
+      "p80": 0.27,
+      "within20": 0.71
+     },
+     "heat": {
+      "n": 76,
+      "median": 0.084,
+      "p80": 0.267,
+      "within20": 0.7
+     },
+     "ins_cold": {
+      "n": 78,
+      "median": 0.0,
+      "p80": 0.504,
+      "within20": 0.67
+     },
+     "blunt": {
+      "n": 37,
+      "median": 0.113,
+      "p80": 0.36,
+      "within20": 0.62
+     }
+    },
+    "quiz_full_noisy": {
+     "mass": {
+      "n": 1120,
+      "median": 0.2,
+      "p80": 0.714,
+      "within20": 0.52
+     },
+     "mv": {
+      "n": 1110,
+      "median": 0.46,
+      "p80": 0.821,
+      "within20": 0.32
+     },
+     "sharp": {
+      "n": 770,
+      "median": 0.124,
+      "p80": 0.333,
+      "within20": 0.66
+     },
+     "heat": {
+      "n": 760,
+      "median": 0.119,
+      "p80": 0.387,
+      "within20": 0.64
+     },
+     "ins_cold": {
+      "n": 780,
+      "median": 0.048,
+      "p80": 0.604,
+      "within20": 0.6
+     },
+     "blunt": {
+      "n": 370,
+      "median": 0.164,
+      "p80": 0.462,
+      "within20": 0.57
+     }
+    },
+    "quiz_full_noisy_wide": {
+     "mass": {
+      "n": 1120,
+      "median": 0.2,
+      "p80": 0.667,
+      "within20": 0.53
+     },
+     "mv": {
+      "n": 1110,
+      "median": 0.433,
+      "p80": 0.82,
+      "within20": 0.32
+     },
+     "sharp": {
+      "n": 770,
+      "median": 0.1,
+      "p80": 0.345,
+      "within20": 0.63
+     },
+     "heat": {
+      "n": 760,
+      "median": 0.122,
+      "p80": 0.395,
+      "within20": 0.61
+     },
+     "ins_cold": {
+      "n": 780,
+      "median": 0.083,
+      "p80": 0.654,
+      "within20": 0.57
+     },
+     "blunt": {
+      "n": 370,
+      "median": 0.2,
+      "p80": 0.573,
+      "within20": 0.55
+     }
+    },
+    "quiz_budget3": {
+     "mass": {
+      "n": 112,
+      "median": 0.087,
+      "p80": 0.6,
+      "within20": 0.58
+     },
+     "mv": {
+      "n": 111,
+      "median": 0.474,
+      "p80": 0.821,
+      "within20": 0.32
+     },
+     "sharp": {
+      "n": 77,
+      "median": 0.06,
+      "p80": 0.303,
+      "within20": 0.7
+     },
+     "heat": {
+      "n": 76,
+      "median": 0.121,
+      "p80": 0.382,
+      "within20": 0.62
+     },
+     "ins_cold": {
+      "n": 78,
+      "median": 0.0,
+      "p80": 0.504,
+      "within20": 0.63
+     },
+     "blunt": {
+      "n": 37,
+      "median": 0.149,
+      "p80": 0.559,
+      "within20": 0.51
+     }
+    },
+    "quiz_full_k1": {
+     "mass": {
+      "n": 112,
+      "median": 0.031,
+      "p80": 0.614,
+      "within20": 0.58
+     },
+     "mv": {
+      "n": 111,
+      "median": 0.456,
+      "p80": 0.869,
+      "within20": 0.29
+     },
+     "sharp": {
+      "n": 77,
+      "median": 0.029,
+      "p80": 0.305,
+      "within20": 0.74
+     },
+     "heat": {
+      "n": 76,
+      "median": 0.021,
+      "p80": 0.263,
+      "within20": 0.72
+     },
+     "ins_cold": {
+      "n": 78,
+      "median": 0.0,
+      "p80": 0.504,
+      "within20": 0.67
+     },
+     "blunt": {
+      "n": 37,
+      "median": 0.113,
+      "p80": 0.376,
+      "within20": 0.7
+     }
+    },
+    "quiz_full_k3": {
+     "mass": {
+      "n": 112,
+      "median": 0.031,
+      "p80": 0.614,
+      "within20": 0.58
+     },
+     "mv": {
+      "n": 111,
+      "median": 0.449,
+      "p80": 0.821,
+      "within20": 0.31
+     },
+     "sharp": {
+      "n": 77,
+      "median": 0.079,
+      "p80": 0.215,
+      "within20": 0.75
+     },
+     "heat": {
+      "n": 76,
+      "median": 0.09,
+      "p80": 0.313,
+      "within20": 0.72
+     },
+     "ins_cold": {
+      "n": 78,
+      "median": 0.0,
+      "p80": 0.504,
+      "within20": 0.67
+     },
+     "blunt": {
+      "n": 37,
+      "median": 0.1,
+      "p80": 0.378,
+      "within20": 0.7
+     }
+    },
+    "tier_median": {
+     "mass": {
+      "n": 112,
+      "median": 0.833,
+      "p80": 2.0,
+      "within20": 0.14
+     },
+     "mv": {
+      "n": 111,
+      "median": 0.49,
+      "p80": 0.89,
+      "within20": 0.21
+     },
+     "sharp": {
+      "n": 77,
+      "median": 0.2,
+      "p80": 0.688,
+      "within20": 0.47
+     },
+     "heat": {
+      "n": 76,
+      "median": 0.148,
+      "p80": 0.8,
+      "within20": 0.54
+     },
+     "ins_cold": {
+      "n": 78,
+      "median": 0.792,
+      "p80": 0.967,
+      "within20": 0.17
+     },
+     "blunt": {
+      "n": 37,
+      "median": 0.5,
+      "p80": 1.0,
+      "within20": 0.22
+     }
+    },
+    "nn_kind_tier(oracle power)": {
+     "mass": {
+      "n": 112,
+      "median": 0.286,
+      "p80": 0.929,
+      "within20": 0.46
+     },
+     "mv": {
+      "n": 111,
+      "median": 0.355,
+      "p80": 0.78,
+      "within20": 0.28
+     },
+     "sharp": {
+      "n": 77,
+      "median": 0.0,
+      "p80": 0.332,
+      "within20": 0.7
+     },
+     "heat": {
+      "n": 76,
+      "median": 0.0,
+      "p80": 0.333,
+      "within20": 0.74
+     },
+     "ins_cold": {
+      "n": 78,
+      "median": 0.0,
+      "p80": 0.8,
+      "within20": 0.62
+     },
+     "blunt": {
+      "n": 37,
+      "median": 0.111,
+      "p80": 0.44,
+      "within20": 0.68
+     }
+    },
+    "role_tier_median": {
+     "mass": {
+      "n": 112,
+      "median": 0.367,
+      "p80": 0.992,
+      "within20": 0.41
+     },
+     "mv": {
+      "n": 111,
+      "median": 0.477,
+      "p80": 0.802,
+      "within20": 0.32
+     },
+     "sharp": {
+      "n": 77,
+      "median": 0.286,
+      "p80": 0.761,
+      "within20": 0.42
+     },
+     "heat": {
+      "n": 76,
+      "median": 0.257,
+      "p80": 0.64,
+      "within20": 0.47
+     },
+     "ins_cold": {
+      "n": 78,
+      "median": 0.118,
+      "p80": 0.8,
+      "within20": 0.53
+     },
+     "blunt": {
+      "n": 37,
+      "median": 0.3,
+      "p80": 1.0,
+      "within20": 0.35
+     }
+    }
+   },
+   "band_coverage": {
+    "mass": {
+     "cover_p50": 0.5,
+     "cover_p80": 0.79,
+     "band_p50_ratio": 1.03,
+     "band_p80_ratio": 1.97
+    },
+    "mv": {
+     "cover_p50": 0.5,
+     "cover_p80": 0.8,
+     "band_p50_ratio": 1.57,
+     "band_p80_ratio": 3.04
+    },
+    "sharp": {
+     "cover_p50": 0.49,
+     "cover_p80": 0.79,
+     "band_p50_ratio": 1.06,
+     "band_p80_ratio": 1.35
+    },
+    "heat": {
+     "cover_p50": 0.5,
+     "cover_p80": 0.79,
+     "band_p50_ratio": 1.08,
+     "band_p80_ratio": 1.36
+    },
+    "ins_cold": {
+     "cover_p50": 0.56,
+     "cover_p80": 0.78,
+     "band_p50_ratio": 1.0,
+     "band_p80_ratio": 1.67
+    },
+    "blunt": {
+     "cover_p50": 0.51,
+     "cover_p80": 0.78,
+     "band_p50_ratio": 1.13,
+     "band_p80_ratio": 1.56
+    }
+   },
+   "questions": {
+    "simple": {
+     "mean": 2.0,
+     "max": 2
+    },
+    "quiz_compare_only": {
+     "mean": 4.54,
+     "max": 7
+    },
+    "quiz_full": {
+     "mean": 6.23,
+     "max": 9
+    },
+    "quiz_full_noisy": {
+     "mean": 6.77,
+     "max": 9
+    },
+    "quiz_full_noisy_wide": {
+     "mean": 6.05,
+     "max": 9
+    },
+    "quiz_budget3": {
+     "mean": 5.72,
+     "max": 7
+    },
+    "quiz_full_k1": {
+     "mean": 6.23,
+     "max": 9
+    },
+    "quiz_full_k3": {
+     "mean": 6.23,
+     "max": 9
+    }
+   },
+   "elasticity_all_items": {
+    "sharp": 0.76,
+    "blunt": 0.68,
+    "heat": 0.73,
+    "ins_cold": 0.23,
+    "mass": 0.57,
+    "mv": 0.49
+   }
+  },
+  "ce/ranged|scratch": {
+   "n_items": 26,
+   "methods": {
+    "simple": {
+     "Mass": {
+      "n": 26,
+      "median": 0.486,
+      "p80": 0.79,
+      "within20": 0.23
+     },
+     "Bulk": {
+      "n": 26,
+      "median": 0.222,
+      "p80": 0.385,
+      "within20": 0.5
+     },
+     "cooldown": {
+      "n": 26,
+      "median": 0.257,
+      "p80": 0.721,
+      "within20": 0.46
+     },
+     "range": {
+      "n": 26,
+      "median": 0.128,
+      "p80": 0.356,
+      "within20": 0.65
+     },
+     "warmup": {
+      "n": 26,
+      "median": 0.1,
+      "p80": 0.252,
+      "within20": 0.69
+     },
+     "spread": {
+      "n": 26,
+      "median": 0.098,
+      "p80": 0.8,
+      "within20": 0.69
+     },
+     "sway": {
+      "n": 26,
+      "median": 0.219,
+      "p80": 0.66,
+      "within20": 0.42
+     },
+     "burst": {
+      "n": 26,
+      "median": 0.0,
+      "p80": 0.8,
+      "within20": 0.65
+     },
+     "mag": {
+      "n": 22,
+      "median": 0.55,
+      "p80": 0.96,
+      "within20": 0.36
+     },
+     "reload": {
+      "n": 22,
+      "median": 0.075,
+      "p80": 0.723,
+      "within20": 0.64
+     }
+    },
+    "quiz_compare_only": {
+     "Mass": {
+      "n": 26,
+      "median": 0.399,
+      "p80": 0.774,
+      "within20": 0.38
+     },
+     "Bulk": {
+      "n": 26,
+      "median": 0.215,
+      "p80": 0.417,
+      "within20": 0.46
+     },
+     "cooldown": {
+      "n": 26,
+      "median": 0.187,
+      "p80": 0.606,
+      "within20": 0.5
+     },
+     "range": {
+      "n": 26,
+      "median": 0.186,
+      "p80": 0.47,
+      "within20": 0.5
+     },
+     "warmup": {
+      "n": 26,
+      "median": 0.15,
+      "p80": 0.257,
+      "within20": 0.69
+     },
+     "spread": {
+      "n": 26,
+      "median": 0.098,
+      "p80": 0.8,
+      "within20": 0.69
+     },
+     "sway": {
+      "n": 26,
+      "median": 0.279,
+      "p80": 0.616,
+      "within20": 0.38
+     },
+     "burst": {
+      "n": 26,
+      "median": 0.0,
+      "p80": 0.0,
+      "within20": 0.85
+     },
+     "mag": {
+      "n": 22,
+      "median": 0.167,
+      "p80": 0.787,
+      "within20": 0.64
+     },
+     "reload": {
+      "n": 22,
+      "median": 0.0,
+      "p80": 0.177,
+      "within20": 0.82
+     }
+    },
+    "quiz_full": {
+     "Mass": {
+      "n": 26,
+      "median": 0.243,
+      "p80": 0.463,
+      "within20": 0.38
+     },
+     "Bulk": {
+      "n": 26,
+      "median": 0.219,
+      "p80": 0.417,
+      "within20": 0.46
+     },
+     "cooldown": {
+      "n": 26,
+      "median": 0.124,
+      "p80": 0.606,
+      "within20": 0.54
+     },
+     "range": {
+      "n": 26,
+      "median": 0.135,
+      "p80": 0.299,
+      "within20": 0.65
+     },
+     "warmup": {
+      "n": 26,
+      "median": 0.152,
+      "p80": 0.257,
+      "within20": 0.69
+     },
+     "spread": {
+      "n": 26,
+      "median": 0.098,
+      "p80": 0.8,
+      "within20": 0.69
+     },
+     "sway": {
+      "n": 26,
+      "median": 0.279,
+      "p80": 0.626,
+      "within20": 0.35
+     },
+     "burst": {
+      "n": 26,
+      "median": 0.0,
+      "p80": 0.2,
+      "within20": 0.81
+     },
+     "mag": {
+      "n": 22,
+      "median": 0.167,
+      "p80": 0.787,
+      "within20": 0.64
+     },
+     "reload": {
+      "n": 22,
+      "median": 0.0,
+      "p80": 0.177,
+      "within20": 0.82
+     }
+    },
+    "quiz_full_noisy": {
+     "Mass": {
+      "n": 260,
+      "median": 0.266,
+      "p80": 0.466,
+      "within20": 0.28
+     },
+     "Bulk": {
+      "n": 260,
+      "median": 0.207,
+      "p80": 0.418,
+      "within20": 0.49
+     },
+     "cooldown": {
+      "n": 260,
+      "median": 0.15,
+      "p80": 0.606,
+      "within20": 0.54
+     },
+     "range": {
+      "n": 260,
+      "median": 0.144,
+      "p80": 0.326,
+      "within20": 0.63
+     },
+     "warmup": {
+      "n": 260,
+      "median": 0.154,
+      "p80": 0.257,
+      "within20": 0.67
+     },
+     "spread": {
+      "n": 260,
+      "median": 0.098,
+      "p80": 0.8,
+      "within20": 0.69
+     },
+     "sway": {
+      "n": 260,
+      "median": 0.299,
+      "p80": 0.61,
+      "within20": 0.33
+     },
+     "burst": {
+      "n": 260,
+      "median": 0.0,
+      "p80": 0.2,
+      "within20": 0.81
+     },
+     "mag": {
+      "n": 220,
+      "median": 0.167,
+      "p80": 0.833,
+      "within20": 0.61
+     },
+     "reload": {
+      "n": 220,
+      "median": 0.0,
+      "p80": 0.184,
+      "within20": 0.82
+     }
+    },
+    "quiz_full_noisy_wide": {
+     "Mass": {
+      "n": 260,
+      "median": 0.281,
+      "p80": 0.466,
+      "within20": 0.26
+     },
+     "Bulk": {
+      "n": 260,
+      "median": 0.227,
+      "p80": 0.417,
+      "within20": 0.46
+     },
+     "cooldown": {
+      "n": 260,
+      "median": 0.124,
+      "p80": 0.606,
+      "within20": 0.54
+     },
+     "range": {
+      "n": 260,
+      "median": 0.143,
+      "p80": 0.326,
+      "within20": 0.65
+     },
+     "warmup": {
+      "n": 260,
+      "median": 0.153,
+      "p80": 0.257,
+      "within20": 0.67
+     },
+     "spread": {
+      "n": 260,
+      "median": 0.098,
+      "p80": 0.8,
+      "within20": 0.69
+     },
+     "sway": {
+      "n": 260,
+      "median": 0.299,
+      "p80": 0.602,
+      "within20": 0.34
+     },
+     "burst": {
+      "n": 260,
+      "median": 0.0,
+      "p80": 0.2,
+      "within20": 0.81
+     },
+     "mag": {
+      "n": 220,
+      "median": 0.167,
+      "p80": 0.833,
+      "within20": 0.56
+     },
+     "reload": {
+      "n": 220,
+      "median": 0.0,
+      "p80": 0.184,
+      "within20": 0.82
+     }
+    },
+    "quiz_budget3": {
+     "Mass": {
+      "n": 26,
+      "median": 0.209,
+      "p80": 0.463,
+      "within20": 0.42
+     },
+     "Bulk": {
+      "n": 26,
+      "median": 0.204,
+      "p80": 0.417,
+      "within20": 0.5
+     },
+     "cooldown": {
+      "n": 26,
+      "median": 0.147,
+      "p80": 0.606,
+      "within20": 0.54
+     },
+     "range": {
+      "n": 26,
+      "median": 0.12,
+      "p80": 0.299,
+      "within20": 0.65
+     },
+     "warmup": {
+      "n": 26,
+      "median": 0.16,
+      "p80": 0.257,
+      "within20": 0.62
+     },
+     "spread": {
+      "n": 26,
+      "median": 0.098,
+      "p80": 0.8,
+      "within20": 0.69
+     },
+     "sway": {
+      "n": 26,
+      "median": 0.265,
+      "p80": 0.653,
+      "within20": 0.38
+     },
+     "burst": {
+      "n": 26,
+      "median": 0.0,
+      "p80": 0.2,
+      "within20": 0.81
+     },
+     "mag": {
+      "n": 22,
+      "median": 0.167,
+      "p80": 0.787,
+      "within20": 0.59
+     },
+     "reload": {
+      "n": 22,
+      "median": 0.0,
+      "p80": 0.177,
+      "within20": 0.82
+     }
+    },
+    "quiz_full_k1": {
+     "Mass": {
+      "n": 26,
+      "median": 0.243,
+      "p80": 0.463,
+      "within20": 0.38
+     },
+     "Bulk": {
+      "n": 26,
+      "median": 0.273,
+      "p80": 0.417,
+      "within20": 0.35
+     },
+     "cooldown": {
+      "n": 26,
+      "median": 0.12,
+      "p80": 0.606,
+      "within20": 0.54
+     },
+     "range": {
+      "n": 26,
+      "median": 0.135,
+      "p80": 0.299,
+      "within20": 0.65
+     },
+     "warmup": {
+      "n": 26,
+      "median": 0.157,
+      "p80": 0.25,
+      "within20": 0.65
+     },
+     "spread": {
+      "n": 26,
+      "median": 0.098,
+      "p80": 0.8,
+      "within20": 0.69
+     },
+     "sway": {
+      "n": 26,
+      "median": 0.236,
+      "p80": 0.677,
+      "within20": 0.46
+     },
+     "burst": {
+      "n": 26,
+      "median": 0.0,
+      "p80": 0.2,
+      "within20": 0.81
+     },
+     "mag": {
+      "n": 22,
+      "median": 0.167,
+      "p80": 0.787,
+      "within20": 0.64
+     },
+     "reload": {
+      "n": 22,
+      "median": 0.0,
+      "p80": 0.177,
+      "within20": 0.82
+     }
+    },
+    "quiz_full_k3": {
+     "Mass": {
+      "n": 26,
+      "median": 0.243,
+      "p80": 0.463,
+      "within20": 0.38
+     },
+     "Bulk": {
+      "n": 26,
+      "median": 0.22,
+      "p80": 0.46,
+      "within20": 0.5
+     },
+     "cooldown": {
+      "n": 26,
+      "median": 0.235,
+      "p80": 0.606,
+      "within20": 0.46
+     },
+     "range": {
+      "n": 26,
+      "median": 0.135,
+      "p80": 0.299,
+      "within20": 0.65
+     },
+     "warmup": {
+      "n": 26,
+      "median": 0.155,
+      "p80": 0.283,
+      "within20": 0.62
+     },
+     "spread": {
+      "n": 26,
+      "median": 0.098,
+      "p80": 0.8,
+      "within20": 0.69
+     },
+     "sway": {
+      "n": 26,
+      "median": 0.302,
+      "p80": 0.575,
+      "within20": 0.27
+     },
+     "burst": {
+      "n": 26,
+      "median": 0.0,
+      "p80": 0.2,
+      "within20": 0.81
+     },
+     "mag": {
+      "n": 22,
+      "median": 0.183,
+      "p80": 0.6,
+      "within20": 0.55
+     },
+     "reload": {
+      "n": 22,
+      "median": 0.0,
+      "p80": 0.177,
+      "within20": 0.82
+     }
+    },
+    "tier_median": {
+     "Mass": {
+      "n": 26,
+      "median": 0.631,
+      "p80": 1.5,
+      "within20": 0.19
+     },
+     "Bulk": {
+      "n": 26,
+      "median": 0.26,
+      "p80": 0.857,
+      "within20": 0.5
+     },
+     "cooldown": {
+      "n": 26,
+      "median": 0.053,
+      "p80": 0.4,
+      "within20": 0.69
+     },
+     "range": {
+      "n": 26,
+      "median": 0.516,
+      "p80": 1.594,
+      "within20": 0.27
+     },
+     "warmup": {
+      "n": 26,
+      "median": 0.348,
+      "p80": 0.833,
+      "within20": 0.27
+     },
+     "spread": {
+      "n": 26,
+      "median": 0.339,
+      "p80": 1.0,
+      "within20": 0.31
+     },
+     "sway": {
+      "n": 26,
+      "median": 0.233,
+      "p80": 0.412,
+      "within20": 0.46
+     },
+     "burst": {
+      "n": 26,
+      "median": 0.87,
+      "p80": 2.5,
+      "within20": 0.19
+     },
+     "mag": {
+      "n": 22,
+      "median": 0.927,
+      "p80": 2.0,
+      "within20": 0.0
+     },
+     "reload": {
+      "n": 22,
+      "median": 0.0,
+      "p80": 0.184,
+      "within20": 0.82
+     }
+    },
+    "nn_kind_tier(oracle power)": {
+     "Mass": {
+      "n": 26,
+      "median": 0.378,
+      "p80": 0.683,
+      "within20": 0.38
+     },
+     "Bulk": {
+      "n": 26,
+      "median": 0.333,
+      "p80": 0.65,
+      "within20": 0.27
+     },
+     "cooldown": {
+      "n": 26,
+      "median": 0.151,
+      "p80": 0.6,
+      "within20": 0.54
+     },
+     "range": {
+      "n": 26,
+      "median": 0.493,
+      "p80": 0.813,
+      "within20": 0.19
+     },
+     "warmup": {
+      "n": 26,
+      "median": 0.394,
+      "p80": 0.625,
+      "within20": 0.31
+     },
+     "spread": {
+      "n": 26,
+      "median": 0.367,
+      "p80": 0.933,
+      "within20": 0.46
+     },
+     "sway": {
+      "n": 26,
+      "median": 0.247,
+      "p80": 0.575,
+      "within20": 0.46
+     },
+     "burst": {
+      "n": 26,
+      "median": 0.0,
+      "p80": 0.833,
+      "within20": 0.54
+     },
+     "mag": {
+      "n": 22,
+      "median": 0.7,
+      "p80": 1.4,
+      "within20": 0.14
+     },
+     "reload": {
+      "n": 22,
+      "median": 0.035,
+      "p80": 0.184,
+      "within20": 0.82
+     }
+    },
+    "role_tier_median": {
+     "Mass": {
+      "n": 26,
+      "median": 0.479,
+      "p80": 1.038,
+      "within20": 0.15
+     },
+     "Bulk": {
+      "n": 26,
+      "median": 0.247,
+      "p80": 0.344,
+      "within20": 0.42
+     },
+     "cooldown": {
+      "n": 26,
+      "median": 0.042,
+      "p80": 0.6,
+      "within20": 0.58
+     },
+     "range": {
+      "n": 26,
+      "median": 0.144,
+      "p80": 0.533,
+      "within20": 0.58
+     },
+     "warmup": {
+      "n": 26,
+      "median": 0.1,
+      "p80": 0.25,
+      "within20": 0.73
+     },
+     "spread": {
+      "n": 26,
+      "median": 0.098,
+      "p80": 0.8,
+      "within20": 0.69
+     },
+     "sway": {
+      "n": 26,
+      "median": 0.217,
+      "p80": 0.575,
+      "within20": 0.46
+     },
+     "burst": {
+      "n": 26,
+      "median": 0.1,
+      "p80": 1.5,
+      "within20": 0.54
+     },
+     "mag": {
+      "n": 21,
+      "median": 0.5,
+      "p80": 1.0,
+      "within20": 0.29
+     },
+     "reload": {
+      "n": 21,
+      "median": 0.07,
+      "p80": 0.505,
+      "within20": 0.62
+     }
+    }
+   },
+   "band_coverage": {
+    "Mass": {
+     "cover_p50": 0.5,
+     "cover_p80": 0.77,
+     "band_p50_ratio": 1.26,
+     "band_p80_ratio": 1.72
+    },
+    "Bulk": {
+     "cover_p50": 0.5,
+     "cover_p80": 0.81,
+     "band_p50_ratio": 1.25,
+     "band_p80_ratio": 1.46
+    },
+    "cooldown": {
+     "cover_p50": 0.5,
+     "cover_p80": 0.77,
+     "band_p50_ratio": 1.13,
+     "band_p80_ratio": 2.54
+    },
+    "range": {
+     "cover_p50": 0.5,
+     "cover_p80": 0.81,
+     "band_p50_ratio": 1.14,
+     "band_p80_ratio": 1.33
+    },
+    "warmup": {
+     "cover_p50": 0.5,
+     "cover_p80": 0.77,
+     "band_p50_ratio": 1.16,
+     "band_p80_ratio": 1.33
+    },
+    "spread": {
+     "cover_p50": 0.5,
+     "cover_p80": 0.81,
+     "band_p50_ratio": 1.11,
+     "band_p80_ratio": 2.0
+    },
+    "sway": {
+     "cover_p50": 0.54,
+     "cover_p80": 0.77,
+     "band_p50_ratio": 1.3,
+     "band_p80_ratio": 2.05
+    },
+    "burst": {
+     "cover_p50": 0.77,
+     "cover_p80": 0.77,
+     "band_p50_ratio": 1.0,
+     "band_p80_ratio": 1.2
+    },
+    "mag": {
+     "cover_p50": 0.5,
+     "cover_p80": 0.82,
+     "band_p50_ratio": 1.18,
+     "band_p80_ratio": 2.0
+    },
+    "reload": {
+     "cover_p50": 0.59,
+     "cover_p80": 0.77,
+     "band_p50_ratio": 1.0,
+     "band_p80_ratio": 1.21
+    }
+   },
+   "questions": {
+    "simple": {
+     "mean": 2.0,
+     "max": 2
+    },
+    "quiz_compare_only": {
+     "mean": 5.62,
+     "max": 7
+    },
+    "quiz_full": {
+     "mean": 8.62,
+     "max": 10
+    },
+    "quiz_full_noisy": {
+     "mean": 8.53,
+     "max": 10
+    },
+    "quiz_full_noisy_wide": {
+     "mean": 7.79,
+     "max": 10
+    },
+    "quiz_budget3": {
+     "mean": 7.77,
+     "max": 8
+    },
+    "quiz_full_k1": {
+     "mean": 8.62,
+     "max": 10
+    },
+    "quiz_full_k3": {
+     "mean": 8.62,
+     "max": 10
+    }
+   },
+   "elasticity_all_items": {
+    "Mass": 0.34,
+    "Bulk": 0.08,
+    "cooldown": -0.09,
+    "range": 0.14,
+    "warmup": -0.07,
+    "spread": -0.26,
+    "sway": 0.05,
+    "mag": 0.0,
+    "reload": 0.0,
+    "burst": 0.0
+   }
+  },
+  "ce/ranged|convert": {
+   "n_items": 25,
+   "methods": {
+    "simple_convert": {
+     "Mass": {
+      "n": 25,
+      "median": 0.256,
+      "p80": 0.438,
+      "within20": 0.36
+     },
+     "Bulk": {
+      "n": 25,
+      "median": 0.258,
+      "p80": 0.374,
+      "within20": 0.36
+     },
+     "cooldown": {
+      "n": 25,
+      "median": 0.056,
+      "p80": 0.698,
+      "within20": 0.56
+     },
+     "range": {
+      "n": 25,
+      "median": 0.138,
+      "p80": 0.319,
+      "within20": 0.52
+     },
+     "warmup": {
+      "n": 25,
+      "median": 0.1,
+      "p80": 0.29,
+      "within20": 0.68
+     },
+     "spread": {
+      "n": 25,
+      "median": 0.071,
+      "p80": 0.56,
+      "within20": 0.72
+     },
+     "sway": {
+      "n": 25,
+      "median": 0.23,
+      "p80": 0.593,
+      "within20": 0.48
+     },
+     "burst": {
+      "n": 25,
+      "median": 0.0,
+      "p80": 0.1,
+      "within20": 0.8
+     },
+     "mag": {
+      "n": 21,
+      "median": 0.5,
+      "p80": 1.0,
+      "within20": 0.43
+     },
+     "reload": {
+      "n": 21,
+      "median": 0.0,
+      "p80": 0.184,
+      "within20": 0.81
+     }
+    },
+    "tier_median": {
+     "Mass": {
+      "n": 25,
+      "median": 0.637,
+      "p80": 1.143,
+      "within20": 0.2
+     },
+     "Bulk": {
+      "n": 25,
+      "median": 0.32,
+      "p80": 0.857,
+      "within20": 0.4
+     },
+     "cooldown": {
+      "n": 25,
+      "median": 0.053,
+      "p80": 0.422,
+      "within20": 0.68
+     },
+     "range": {
+      "n": 25,
+      "median": 0.516,
+      "p80": 1.594,
+      "within20": 0.12
+     },
+     "warmup": {
+      "n": 25,
+      "median": 0.346,
+      "p80": 0.833,
+      "within20": 0.28
+     },
+     "spread": {
+      "n": 25,
+      "median": 0.875,
+      "p80": 2.14,
+      "within20": 0.12
+     },
+     "sway": {
+      "n": 25,
+      "median": 0.2,
+      "p80": 0.365,
+      "within20": 0.52
+     },
+     "burst": {
+      "n": 25,
+      "median": 0.9,
+      "p80": 2.5,
+      "within20": 0.24
+     },
+     "mag": {
+      "n": 21,
+      "median": 0.95,
+      "p80": 1.917,
+      "within20": 0.05
+     },
+     "reload": {
+      "n": 21,
+      "median": 0.0,
+      "p80": 0.184,
+      "within20": 0.86
+     }
+    },
+    "nn_kind_tier(oracle power)": {
+     "Mass": {
+      "n": 25,
+      "median": 0.675,
+      "p80": 1.325,
+      "within20": 0.12
+     },
+     "Bulk": {
+      "n": 25,
+      "median": 0.357,
+      "p80": 0.78,
+      "within20": 0.28
+     },
+     "cooldown": {
+      "n": 25,
+      "median": 0.077,
+      "p80": 0.624,
+      "within20": 0.56
+     },
+     "range": {
+      "n": 25,
+      "median": 0.5,
+      "p80": 1.448,
+      "within20": 0.12
+     },
+     "warmup": {
+      "n": 25,
+      "median": 0.5,
+      "p80": 0.833,
+      "within20": 0.32
+     },
+     "spread": {
+      "n": 25,
+      "median": 0.5,
+      "p80": 1.057,
+      "within20": 0.36
+     },
+     "sway": {
+      "n": 25,
+      "median": 0.25,
+      "p80": 0.58,
+      "within20": 0.48
+     },
+     "burst": {
+      "n": 25,
+      "median": 0.0,
+      "p80": 1.02,
+      "within20": 0.64
+     },
+     "mag": {
+      "n": 20,
+      "median": 0.5,
+      "p80": 1.0,
+      "within20": 0.35
+     },
+     "reload": {
+      "n": 20,
+      "median": 0.035,
+      "p80": 0.487,
+      "within20": 0.75
+     }
+    },
+    "role_tier_median": {
+     "Mass": {
+      "n": 25,
+      "median": 0.538,
+      "p80": 1.067,
+      "within20": 0.16
+     },
+     "Bulk": {
+      "n": 25,
+      "median": 0.258,
+      "p80": 0.374,
+      "within20": 0.36
+     },
+     "cooldown": {
+      "n": 25,
+      "median": 0.028,
+      "p80": 0.623,
+      "within20": 0.6
+     },
+     "range": {
+      "n": 25,
+      "median": 0.143,
+      "p80": 0.541,
+      "within20": 0.56
+     },
+     "warmup": {
+      "n": 25,
+      "median": 0.1,
+      "p80": 0.27,
+      "within20": 0.72
+     },
+     "spread": {
+      "n": 25,
+      "median": 0.071,
+      "p80": 0.56,
+      "within20": 0.72
+     },
+     "sway": {
+      "n": 25,
+      "median": 0.23,
+      "p80": 0.593,
+      "within20": 0.48
+     },
+     "burst": {
+      "n": 25,
+      "median": 0.0,
+      "p80": 1.5,
+      "within20": 0.52
+     },
+     "mag": {
+      "n": 20,
+      "median": 0.55,
+      "p80": 1.2,
+      "within20": 0.25
+     },
+     "reload": {
+      "n": 20,
+      "median": 0.035,
+      "p80": 0.61,
+      "within20": 0.65
+     }
+    },
+    "identity(vanilla value)": {
+     "Mass": {
+      "n": 25,
+      "median": 0.081,
+      "p80": 0.41,
+      "within20": 0.68
+     },
+     "cooldown": {
+      "n": 25,
+      "median": 2.265,
+      "p80": 4.532,
+      "within20": 0.04
+     },
+     "range": {
+      "n": 25,
+      "median": 0.438,
+      "p80": 0.637,
+      "within20": 0.28
+     },
+     "warmup": {
+      "n": 25,
+      "median": 0.5,
+      "p80": 0.687,
+      "within20": 0.24
+     }
+    }
+   },
+   "band_coverage": {},
+   "questions": {
+    "simple_convert": {
+     "mean": 2.0,
+     "max": 2
+    }
+   },
+   "elasticity_all_items": null
+  },
+  "ce/melee|scratch": {
+   "n_items": 14,
+   "methods": {
+    "simple": {
+     "damage": {
+      "n": 14,
+      "median": 0.328,
+      "p80": 0.605,
+      "within20": 0.21
+     },
+     "cooldown": {
+      "n": 14,
+      "median": 0.133,
+      "p80": 0.245,
+      "within20": 0.64
+     },
+     "Mass": {
+      "n": 14,
+      "median": 0.477,
+      "p80": 0.742,
+      "within20": 0.29
+     },
+     "Bulk": {
+      "n": 14,
+      "median": 0.585,
+      "p80": 1.225,
+      "within20": 0.0
+     },
+     "apSharp": {
+      "n": 8,
+      "median": 0.685,
+      "p80": 2.097,
+      "within20": 0.0
+     },
+     "parryC": {
+      "n": 14,
+      "median": 0.543,
+      "p80": 1.415,
+      "within20": 0.21
+     },
+     "damage_ratio": {
+      "n": 14,
+      "median": 0.328,
+      "p80": 0.596,
+      "within20": 0.21
+     }
+    },
+    "quiz_compare_only": {
+     "damage": {
+      "n": 14,
+      "median": 0.216,
+      "p80": 0.269,
+      "within20": 0.43
+     },
+     "cooldown": {
+      "n": 14,
+      "median": 0.187,
+      "p80": 0.271,
+      "within20": 0.5
+     },
+     "Mass": {
+      "n": 14,
+      "median": 0.322,
+      "p80": 0.578,
+      "within20": 0.36
+     },
+     "Bulk": {
+      "n": 14,
+      "median": 0.63,
+      "p80": 1.224,
+      "within20": 0.0
+     },
+     "apSharp": {
+      "n": 8,
+      "median": 0.725,
+      "p80": 2.097,
+      "within20": 0.0
+     },
+     "parryC": {
+      "n": 14,
+      "median": 0.559,
+      "p80": 1.798,
+      "within20": 0.14
+     },
+     "damage_ratio": {
+      "n": 14,
+      "median": 0.225,
+      "p80": 0.292,
+      "within20": 0.43
+     }
+    },
+    "quiz_full": {
+     "damage": {
+      "n": 14,
+      "median": 0.041,
+      "p80": 0.096,
+      "within20": 0.93
+     },
+     "cooldown": {
+      "n": 14,
+      "median": 0.072,
+      "p80": 0.114,
+      "within20": 1.0
+     },
+     "Mass": {
+      "n": 14,
+      "median": 0.128,
+      "p80": 0.31,
+      "within20": 0.71
+     },
+     "Bulk": {
+      "n": 14,
+      "median": 0.63,
+      "p80": 1.224,
+      "within20": 0.0
+     },
+     "apSharp": {
+      "n": 8,
+      "median": 0.725,
+      "p80": 2.097,
+      "within20": 0.0
+     },
+     "parryC": {
+      "n": 14,
+      "median": 0.559,
+      "p80": 1.798,
+      "within20": 0.14
+     },
+     "damage_ratio": {
+      "n": 14,
+      "median": 0.225,
+      "p80": 0.292,
+      "within20": 0.43
+     }
+    },
+    "quiz_full_noisy": {
+     "damage": {
+      "n": 140,
+      "median": 0.099,
+      "p80": 0.217,
+      "within20": 0.76
+     },
+     "cooldown": {
+      "n": 140,
+      "median": 0.08,
+      "p80": 0.154,
+      "within20": 0.94
+     },
+     "Mass": {
+      "n": 140,
+      "median": 0.154,
+      "p80": 0.378,
+      "within20": 0.61
+     },
+     "Bulk": {
+      "n": 140,
+      "median": 0.588,
+      "p80": 1.174,
+      "within20": 0.0
+     },
+     "apSharp": {
+      "n": 80,
+      "median": 0.734,
+      "p80": 2.226,
+      "within20": 0.04
+     },
+     "parryC": {
+      "n": 140,
+      "median": 0.503,
+      "p80": 1.657,
+      "within20": 0.16
+     },
+     "damage_ratio": {
+      "n": 140,
+      "median": 0.211,
+      "p80": 0.306,
+      "within20": 0.48
+     }
+    },
+    "quiz_full_noisy_wide": {
+     "damage": {
+      "n": 140,
+      "median": 0.079,
+      "p80": 0.224,
+      "within20": 0.76
+     },
+     "cooldown": {
+      "n": 140,
+      "median": 0.08,
+      "p80": 0.144,
+      "within20": 0.93
+     },
+     "Mass": {
+      "n": 140,
+      "median": 0.136,
+      "p80": 0.323,
+      "within20": 0.66
+     },
+     "Bulk": {
+      "n": 140,
+      "median": 0.625,
+      "p80": 1.372,
+      "within20": 0.0
+     },
+     "apSharp": {
+      "n": 80,
+      "median": 0.698,
+      "p80": 2.226,
+      "within20": 0.0
+     },
+     "parryC": {
+      "n": 140,
+      "median": 0.534,
+      "p80": 2.094,
+      "within20": 0.14
+     },
+     "damage_ratio": {
+      "n": 140,
+      "median": 0.224,
+      "p80": 0.288,
+      "within20": 0.44
+     }
+    },
+    "quiz_budget3": {
+     "damage": {
+      "n": 14,
+      "median": 0.041,
+      "p80": 0.096,
+      "within20": 0.93
+     },
+     "cooldown": {
+      "n": 14,
+      "median": 0.07,
+      "p80": 0.088,
+      "within20": 1.0
+     },
+     "Mass": {
+      "n": 14,
+      "median": 0.128,
+      "p80": 0.31,
+      "within20": 0.71
+     },
+     "Bulk": {
+      "n": 14,
+      "median": 0.63,
+      "p80": 1.224,
+      "within20": 0.0
+     },
+     "apSharp": {
+      "n": 8,
+      "median": 0.725,
+      "p80": 2.097,
+      "within20": 0.0
+     },
+     "parryC": {
+      "n": 14,
+      "median": 0.559,
+      "p80": 1.798,
+      "within20": 0.14
+     },
+     "damage_ratio": {
+      "n": 14,
+      "median": 0.225,
+      "p80": 0.299,
+      "within20": 0.43
+     }
+    },
+    "quiz_full_k1": {
+     "damage": {
+      "n": 14,
+      "median": 0.041,
+      "p80": 0.096,
+      "within20": 0.93
+     },
+     "cooldown": {
+      "n": 14,
+      "median": 0.072,
+      "p80": 0.114,
+      "within20": 1.0
+     },
+     "Mass": {
+      "n": 14,
+      "median": 0.128,
+      "p80": 0.31,
+      "within20": 0.71
+     },
+     "Bulk": {
+      "n": 14,
+      "median": 0.616,
+      "p80": 1.452,
+      "within20": 0.0
+     },
+     "apSharp": {
+      "n": 8,
+      "median": 0.778,
+      "p80": 2.097,
+      "within20": 0.0
+     },
+     "parryC": {
+      "n": 14,
+      "median": 0.608,
+      "p80": 1.951,
+      "within20": 0.07
+     },
+     "damage_ratio": {
+      "n": 14,
+      "median": 0.246,
+      "p80": 0.292,
+      "within20": 0.29
+     }
+    },
+    "quiz_full_k3": {
+     "damage": {
+      "n": 14,
+      "median": 0.041,
+      "p80": 0.096,
+      "within20": 0.93
+     },
+     "cooldown": {
+      "n": 14,
+      "median": 0.072,
+      "p80": 0.114,
+      "within20": 1.0
+     },
+     "Mass": {
+      "n": 14,
+      "median": 0.128,
+      "p80": 0.31,
+      "within20": 0.71
+     },
+     "Bulk": {
+      "n": 14,
+      "median": 0.546,
+      "p80": 1.19,
+      "within20": 0.07
+     },
+     "apSharp": {
+      "n": 8,
+      "median": 0.639,
+      "p80": 2.097,
+      "within20": 0.0
+     },
+     "parryC": {
+      "n": 14,
+      "median": 0.665,
+      "p80": 1.269,
+      "within20": 0.07
+     },
+     "damage_ratio": {
+      "n": 14,
+      "median": 0.226,
+      "p80": 0.33,
+      "within20": 0.36
+     }
+    },
+    "tier_median": {
+     "damage": {
+      "n": 14,
+      "median": 0.261,
+      "p80": 0.366,
+      "within20": 0.36
+     },
+     "cooldown": {
+      "n": 14,
+      "median": 0.335,
+      "p80": 0.425,
+      "within20": 0.29
+     },
+     "Mass": {
+      "n": 14,
+      "median": 0.409,
+      "p80": 0.537,
+      "within20": 0.29
+     },
+     "Bulk": {
+      "n": 14,
+      "median": 0.589,
+      "p80": 0.714,
+      "within20": 0.0
+     },
+     "apSharp": {
+      "n": 8,
+      "median": 0.646,
+      "p80": 2.097,
+      "within20": 0.0
+     },
+     "parryC": {
+      "n": 14,
+      "median": 0.341,
+      "p80": 0.551,
+      "within20": 0.14
+     }
+    },
+    "nn_kind_tier(oracle power)": {
+     "damage": {
+      "n": 14,
+      "median": 0.279,
+      "p80": 0.436,
+      "within20": 0.29
+     },
+     "cooldown": {
+      "n": 14,
+      "median": 0.182,
+      "p80": 0.225,
+      "within20": 0.71
+     },
+     "Mass": {
+      "n": 14,
+      "median": 0.498,
+      "p80": 0.667,
+      "within20": 0.29
+     },
+     "Bulk": {
+      "n": 14,
+      "median": 0.675,
+      "p80": 1.189,
+      "within20": 0.07
+     },
+     "parryC": {
+      "n": 14,
+      "median": 0.431,
+      "p80": 0.655,
+      "within20": 0.29
+     },
+     "apSharp": {
+      "n": 7,
+      "median": 0.28,
+      "p80": 0.788,
+      "within20": 0.29
+     }
+    },
+    "role_tier_median": {
+     "damage": {
+      "n": 14,
+      "median": 0.32,
+      "p80": 0.605,
+      "within20": 0.21
+     },
+     "cooldown": {
+      "n": 14,
+      "median": 0.157,
+      "p80": 0.218,
+      "within20": 0.71
+     },
+     "Mass": {
+      "n": 14,
+      "median": 0.475,
+      "p80": 0.891,
+      "within20": 0.29
+     },
+     "Bulk": {
+      "n": 14,
+      "median": 0.571,
+      "p80": 1.189,
+      "within20": 0.0
+     },
+     "apSharp": {
+      "n": 8,
+      "median": 0.646,
+      "p80": 2.097,
+      "within20": 0.0
+     },
+     "parryC": {
+      "n": 14,
+      "median": 0.521,
+      "p80": 1.465,
+      "within20": 0.21
+     }
+    }
+   },
+   "band_coverage": {
+    "damage": {
+     "cover_p50": 0.5,
+     "cover_p80": 0.71,
+     "band_p50_ratio": 1.04,
+     "band_p80_ratio": 1.11
+    },
+    "cooldown": {
+     "cover_p50": 0.5,
+     "cover_p80": 0.79,
+     "band_p50_ratio": 1.07,
+     "band_p80_ratio": 1.13
+    },
+    "Mass": {
+     "cover_p50": 0.5,
+     "cover_p80": 0.79,
+     "band_p50_ratio": 1.14,
+     "band_p80_ratio": 1.37
+    },
+    "Bulk": {
+     "cover_p50": 0.57,
+     "cover_p80": 0.71,
+     "band_p50_ratio": 2.12,
+     "band_p80_ratio": 2.37
+    },
+    "apSharp": {
+     "cover_p50": 0.5,
+     "cover_p80": 0.75,
+     "band_p50_ratio": 2.86,
+     "band_p80_ratio": 4.03
+    },
+    "parryC": {
+     "cover_p50": 0.5,
+     "cover_p80": 0.79,
+     "band_p50_ratio": 1.84,
+     "band_p80_ratio": 3.24
+    },
+    "damage_ratio": {
+     "cover_p50": 0.5,
+     "cover_p80": 0.79,
+     "band_p50_ratio": 1.26,
+     "band_p80_ratio": 1.33
+    }
+   },
+   "questions": {
+    "simple": {
+     "mean": 2.0,
+     "max": 2
+    },
+    "quiz_compare_only": {
+     "mean": 4.21,
+     "max": 7
+    },
+    "quiz_full": {
+     "mean": 6.21,
+     "max": 9
+    },
+    "quiz_full_noisy": {
+     "mean": 7.09,
+     "max": 9
+    },
+    "quiz_full_noisy_wide": {
+     "mean": 6.26,
+     "max": 9
+    },
+    "quiz_budget3": {
+     "mean": 5.93,
+     "max": 7
+    },
+    "quiz_full_k1": {
+     "mean": 6.21,
+     "max": 9
+    },
+    "quiz_full_k3": {
+     "mean": 6.21,
+     "max": 9
+    }
+   },
+   "elasticity_all_items": {
+    "damage": 0.79,
+    "cooldown": -0.07,
+    "Mass": 0.35,
+    "Bulk": 0.42,
+    "apSharp": 1.5,
+    "parryC": 0.24
+   }
+  },
+  "ce/apparel|scratch": {
+   "n_items": 81,
+   "methods": {
+    "simple": {
+     "Mass": {
+      "n": 81,
+      "median": 0.751,
+      "p80": 0.928,
+      "within20": 0.11
+     },
+     "Bulk": {
+      "n": 81,
+      "median": 0.461,
+      "p80": 0.952,
+      "within20": 0.31
+     },
+     "WornBulk": {
+      "n": 68,
+      "median": 0.167,
+      "p80": 0.8,
+      "within20": 0.56
+     },
+     "sharp": {
+      "n": 32,
+      "median": 0.838,
+      "p80": 1.732,
+      "within20": 0.12
+     },
+     "blunt": {
+      "n": 32,
+      "median": 0.74,
+      "p80": 0.949,
+      "within20": 0.22
+     }
+    },
+    "quiz_compare_only": {
+     "Mass": {
+      "n": 81,
+      "median": 0.42,
+      "p80": 0.971,
+      "within20": 0.3
+     },
+     "Bulk": {
+      "n": 81,
+      "median": 0.253,
+      "p80": 0.856,
+      "within20": 0.42
+     },
+     "WornBulk": {
+      "n": 68,
+      "median": 0.167,
+      "p80": 0.78,
+      "within20": 0.56
+     },
+     "sharp": {
+      "n": 32,
+      "median": 0.139,
+      "p80": 0.379,
+      "within20": 0.53
+     },
+     "blunt": {
+      "n": 32,
+      "median": 0.18,
+      "p80": 0.411,
+      "within20": 0.53
+     }
+    },
+    "quiz_full": {
+     "Mass": {
+      "n": 81,
+      "median": 0.25,
+      "p80": 0.814,
+      "within20": 0.47
+     },
+     "Bulk": {
+      "n": 81,
+      "median": 0.091,
+      "p80": 0.732,
+      "within20": 0.53
+     },
+     "WornBulk": {
+      "n": 68,
+      "median": 0.167,
+      "p80": 0.78,
+      "within20": 0.56
+     },
+     "sharp": {
+      "n": 32,
+      "median": 0.139,
+      "p80": 0.379,
+      "within20": 0.53
+     },
+     "blunt": {
+      "n": 32,
+      "median": 0.18,
+      "p80": 0.411,
+      "within20": 0.53
+     }
+    },
+    "quiz_full_noisy": {
+     "Mass": {
+      "n": 810,
+      "median": 0.4,
+      "p80": 0.939,
+      "within20": 0.38
+     },
+     "Bulk": {
+      "n": 810,
+      "median": 0.25,
+      "p80": 0.9,
+      "within20": 0.46
+     },
+     "WornBulk": {
+      "n": 680,
+      "median": 0.167,
+      "p80": 0.8,
+      "within20": 0.56
+     },
+     "sharp": {
+      "n": 320,
+      "median": 0.257,
+      "p80": 0.386,
+      "within20": 0.41
+     },
+     "blunt": {
+      "n": 320,
+      "median": 0.269,
+      "p80": 0.471,
+      "within20": 0.4
+     }
+    },
+    "quiz_full_noisy_wide": {
+     "Mass": {
+      "n": 810,
+      "median": 0.4,
+      "p80": 0.939,
+      "within20": 0.38
+     },
+     "Bulk": {
+      "n": 810,
+      "median": 0.25,
+      "p80": 1.0,
+      "within20": 0.46
+     },
+     "WornBulk": {
+      "n": 680,
+      "median": 0.167,
+      "p80": 0.8,
+      "within20": 0.56
+     },
+     "sharp": {
+      "n": 320,
+      "median": 0.257,
+      "p80": 0.45,
+      "within20": 0.39
+     },
+     "blunt": {
+      "n": 320,
+      "median": 0.25,
+      "p80": 0.44,
+      "within20": 0.4
+     }
+    },
+    "quiz_budget3": {
+     "Mass": {
+      "n": 81,
+      "median": 0.212,
+      "p80": 0.864,
+      "within20": 0.48
+     },
+     "Bulk": {
+      "n": 81,
+      "median": 0.25,
+      "p80": 0.75,
+      "within20": 0.48
+     },
+     "WornBulk": {
+      "n": 68,
+      "median": 0.167,
+      "p80": 0.8,
+      "within20": 0.56
+     },
+     "sharp": {
+      "n": 32,
+      "median": 0.186,
+      "p80": 0.478,
+      "within20": 0.53
+     },
+     "blunt": {
+      "n": 32,
+      "median": 0.191,
+      "p80": 0.501,
+      "within20": 0.5
+     }
+    },
+    "quiz_full_k1": {
+     "Mass": {
+      "n": 81,
+      "median": 0.25,
+      "p80": 0.814,
+      "within20": 0.47
+     },
+     "Bulk": {
+      "n": 81,
+      "median": 0.091,
+      "p80": 0.732,
+      "within20": 0.53
+     },
+     "WornBulk": {
+      "n": 68,
+      "median": 0.16,
+      "p80": 0.78,
+      "within20": 0.57
+     },
+     "sharp": {
+      "n": 32,
+      "median": 0.096,
+      "p80": 0.353,
+      "within20": 0.62
+     },
+     "blunt": {
+      "n": 32,
+      "median": 0.121,
+      "p80": 0.414,
+      "within20": 0.56
+     }
+    },
+    "quiz_full_k3": {
+     "Mass": {
+      "n": 81,
+      "median": 0.25,
+      "p80": 0.814,
+      "within20": 0.47
+     },
+     "Bulk": {
+      "n": 81,
+      "median": 0.091,
+      "p80": 0.732,
+      "within20": 0.53
+     },
+     "WornBulk": {
+      "n": 68,
+      "median": 0.167,
+      "p80": 0.8,
+      "within20": 0.56
+     },
+     "sharp": {
+      "n": 32,
+      "median": 0.159,
+      "p80": 0.401,
+      "within20": 0.56
+     },
+     "blunt": {
+      "n": 32,
+      "median": 0.22,
+      "p80": 0.552,
+      "within20": 0.5
+     }
+    },
+    "tier_median": {
+     "Mass": {
+      "n": 81,
+      "median": 0.837,
+      "p80": 2.0,
+      "within20": 0.2
+     },
+     "Bulk": {
+      "n": 81,
+      "median": 0.667,
+      "p80": 1.5,
+      "within20": 0.19
+     },
+     "WornBulk": {
+      "n": 68,
+      "median": 0.867,
+      "p80": 1.0,
+      "within20": 0.19
+     },
+     "sharp": {
+      "n": 31,
+      "median": 0.429,
+      "p80": 3.571,
+      "within20": 0.29
+     },
+     "blunt": {
+      "n": 31,
+      "median": 0.433,
+      "p80": 3.857,
+      "within20": 0.23
+     }
+    },
+    "nn_kind_tier(oracle power)": {
+     "Mass": {
+      "n": 81,
+      "median": 0.375,
+      "p80": 0.973,
+      "within20": 0.43
+     },
+     "Bulk": {
+      "n": 81,
+      "median": 0.2,
+      "p80": 0.9,
+      "within20": 0.51
+     },
+     "WornBulk": {
+      "n": 66,
+      "median": 0.2,
+      "p80": 0.9,
+      "within20": 0.52
+     },
+     "sharp": {
+      "n": 28,
+      "median": 0.0,
+      "p80": 0.097,
+      "within20": 0.82
+     },
+     "blunt": {
+      "n": 28,
+      "median": 0.0,
+      "p80": 0.038,
+      "within20": 0.89
+     }
+    },
+    "role_tier_median": {
+     "Mass": {
+      "n": 81,
+      "median": 0.545,
+      "p80": 2.0,
+      "within20": 0.32
+     },
+     "Bulk": {
+      "n": 81,
+      "median": 0.25,
+      "p80": 1.5,
+      "within20": 0.47
+     },
+     "WornBulk": {
+      "n": 67,
+      "median": 0.167,
+      "p80": 0.8,
+      "within20": 0.57
+     },
+     "sharp": {
+      "n": 30,
+      "median": 0.429,
+      "p80": 2.52,
+      "within20": 0.37
+     },
+     "blunt": {
+      "n": 30,
+      "median": 0.332,
+      "p80": 3.096,
+      "within20": 0.23
+     }
+    }
+   },
+   "band_coverage": {
+    "Mass": {
+     "cover_p50": 0.51,
+     "cover_p80": 0.79,
+     "band_p50_ratio": 1.33,
+     "band_p80_ratio": 2.32
+    },
+    "Bulk": {
+     "cover_p50": 0.49,
+     "cover_p80": 0.79,
+     "band_p50_ratio": 1.1,
+     "band_p80_ratio": 1.85
+    },
+    "WornBulk": {
+     "cover_p50": 0.54,
+     "cover_p80": 0.82,
+     "band_p50_ratio": 1.2,
+     "band_p80_ratio": 2.0
+    },
+    "sharp": {
+     "cover_p50": 0.5,
+     "cover_p80": 0.78,
+     "band_p50_ratio": 1.16,
+     "band_p80_ratio": 1.45
+    },
+    "blunt": {
+     "cover_p50": 0.5,
+     "cover_p80": 0.78,
+     "band_p50_ratio": 1.22,
+     "band_p80_ratio": 1.52
+    }
+   },
+   "questions": {
+    "simple": {
+     "mean": 2.0,
+     "max": 2
+    },
+    "quiz_compare_only": {
+     "mean": 5.37,
+     "max": 7
+    },
+    "quiz_full": {
+     "mean": 7.37,
+     "max": 9
+    },
+    "quiz_full_noisy": {
+     "mean": 7.57,
+     "max": 9
+    },
+    "quiz_full_noisy_wide": {
+     "mean": 6.95,
+     "max": 9
+    },
+    "quiz_budget3": {
+     "mean": 6.52,
+     "max": 7
+    },
+    "quiz_full_k1": {
+     "mean": 7.37,
+     "max": 9
+    },
+    "quiz_full_k3": {
+     "mean": 7.37,
+     "max": 9
+    }
+   },
+   "elasticity_all_items": {
+    "Mass": 0.4,
+    "Bulk": 0.19,
+    "WornBulk": 0.09,
+    "sharp": 1.22,
+    "blunt": 1.3
+   }
+  }
+ },
+ "macro_median_of_stat_medians": {
+  "vanilla/ranged|scratch": {
+   "simple": 0.239,
+   "quiz_compare_only": 0.133,
+   "quiz_full": 0.143,
+   "quiz_full_noisy": 0.248,
+   "quiz_full_noisy_wide": 0.296,
+   "quiz_budget3": 0.143,
+   "quiz_full_k1": 0.143,
+   "quiz_full_k3": 0.143,
+   "tier_median": 0.333,
+   "nn_kind_tier(oracle power)": 0.5,
+   "role_tier_median": 0.244
+  },
+  "vanilla/melee|scratch": {
+   "simple": 0.382,
+   "quiz_compare_only": 0.236,
+   "quiz_full": 0.168,
+   "quiz_full_noisy": 0.249,
+   "quiz_full_noisy_wide": 0.273,
+   "quiz_budget3": 0.15,
+   "quiz_full_k1": 0.168,
+   "quiz_full_k3": 0.168,
+   "tier_median": 0.261,
+   "nn_kind_tier(oracle power)": 0.326,
+   "role_tier_median": 0.382
+  },
+  "vanilla/apparel|scratch": {
+   "simple": 0.413,
+   "quiz_compare_only": 0.181,
+   "quiz_full": 0.072,
+   "quiz_full_noisy": 0.144,
+   "quiz_full_noisy_wide": 0.161,
+   "quiz_budget3": 0.104,
+   "quiz_full_k1": 0.03,
+   "quiz_full_k3": 0.084,
+   "tier_median": 0.495,
+   "nn_kind_tier(oracle power)": 0.056,
+   "role_tier_median": 0.293
+  },
+  "ce/ranged|scratch": {
+   "simple": 0.173,
+   "quiz_compare_only": 0.176,
+   "quiz_full": 0.144,
+   "quiz_full_noisy": 0.152,
+   "quiz_full_noisy_wide": 0.148,
+   "quiz_budget3": 0.153,
+   "quiz_full_k1": 0.146,
+   "quiz_full_k3": 0.169,
+   "tier_median": 0.344,
+   "nn_kind_tier(oracle power)": 0.35,
+   "role_tier_median": 0.122
+  },
+  "ce/ranged|convert": {
+   "simple_convert": 0.119,
+   "tier_median": 0.431,
+   "nn_kind_tier(oracle power)": 0.5,
+   "role_tier_median": 0.121,
+   "identity(vanilla value)": 0.469
+  },
+  "ce/melee|scratch": {
+   "simple": 0.51,
+   "quiz_compare_only": 0.441,
+   "quiz_full": 0.344,
+   "quiz_full_noisy": 0.329,
+   "quiz_full_noisy_wide": 0.335,
+   "quiz_budget3": 0.344,
+   "quiz_full_k1": 0.368,
+   "quiz_full_k3": 0.337,
+   "tier_median": 0.375,
+   "nn_kind_tier(oracle power)": 0.356,
+   "role_tier_median": 0.498
+  },
+  "ce/apparel|scratch": {
+   "simple": 0.74,
+   "quiz_compare_only": 0.18,
+   "quiz_full": 0.167,
+   "quiz_full_noisy": 0.257,
+   "quiz_full_noisy_wide": 0.25,
+   "quiz_budget3": 0.191,
+   "quiz_full_k1": 0.121,
+   "quiz_full_k3": 0.167,
+   "tier_median": 0.667,
+   "nn_kind_tier(oracle power)": 0.2,
+   "role_tier_median": 0.332
+  }
+ },
+ "twin_free": {
+  "results": {
+   "vanilla/ranged|scratch": {
+    "n_items": 19,
+    "methods": {
+     "simple": {
+      "damage": {
+       "n": 19,
+       "median": 0.344,
+       "p80": 0.643,
+       "within20": 0.37
+      },
+      "burst": {
+       "n": 19,
+       "median": 0.0,
+       "p80": 0.704,
+       "within20": 0.63
+      },
+      "warmup": {
+       "n": 19,
+       "median": 0.333,
+       "p80": 0.571,
+       "within20": 0.21
+      },
+      "cooldown": {
+       "n": 19,
+       "median": 0.074,
+       "p80": 0.286,
+       "within20": 0.74
+      },
+      "range": {
+       "n": 19,
+       "median": 0.131,
+       "p80": 0.287,
+       "within20": 0.58
+      },
+      "mass": {
+       "n": 19,
+       "median": 0.239,
+       "p80": 0.448,
+       "within20": 0.42
+      },
+      "mv": {
+       "n": 19,
+       "median": 0.38,
+       "p80": 0.566,
+       "within20": 0.21
+      },
+      "damage_ratio": {
+       "n": 19,
+       "median": 0.311,
+       "p80": 0.629,
+       "within20": 0.37
+      }
+     },
+     "quiz_full": {
+      "damage": {
+       "n": 19,
+       "median": 0.339,
+       "p80": 0.575,
+       "within20": 0.37
+      },
+      "burst": {
+       "n": 19,
+       "median": 0.0,
+       "p80": 0.0,
+       "within20": 0.95
+      },
+      "warmup": {
+       "n": 19,
+       "median": 0.333,
+       "p80": 0.472,
+       "within20": 0.21
+      },
+      "cooldown": {
+       "n": 19,
+       "median": 0.074,
+       "p80": 0.286,
+       "within20": 0.74
+      },
+      "range": {
+       "n": 19,
+       "median": 0.097,
+       "p80": 0.137,
+       "within20": 1.0
+      },
+      "mass": {
+       "n": 19,
+       "median": 0.143,
+       "p80": 0.661,
+       "within20": 0.58
+      },
+      "mv": {
+       "n": 19,
+       "median": 0.379,
+       "p80": 0.567,
+       "within20": 0.21
+      },
+      "damage_ratio": {
+       "n": 19,
+       "median": 0.294,
+       "p80": 0.517,
+       "within20": 0.37
+      }
+     },
+     "quiz_full_k1": {
+      "damage": {
+       "n": 19,
+       "median": 0.379,
+       "p80": 0.744,
+       "within20": 0.37
+      },
+      "burst": {
+       "n": 19,
+       "median": 0.0,
+       "p80": 0.0,
+       "within20": 0.95
+      },
+      "warmup": {
+       "n": 19,
+       "median": 0.333,
+       "p80": 0.446,
+       "within20": 0.21
+      },
+      "cooldown": {
+       "n": 19,
+       "median": 0.067,
+       "p80": 0.286,
+       "within20": 0.74
+      },
+      "range": {
+       "n": 19,
+       "median": 0.097,
+       "p80": 0.137,
+       "within20": 1.0
+      },
+      "mass": {
+       "n": 19,
+       "median": 0.143,
+       "p80": 0.661,
+       "within20": 0.58
+      },
+      "mv": {
+       "n": 19,
+       "median": 0.349,
+       "p80": 0.795,
+       "within20": 0.32
+      },
+      "damage_ratio": {
+       "n": 19,
+       "median": 0.333,
+       "p80": 0.587,
+       "within20": 0.37
+      }
+     },
+     "tier_median": {
+      "damage": {
+       "n": 19,
+       "median": 0.333,
+       "p80": 0.587,
+       "within20": 0.42
+      },
+      "burst": {
+       "n": 19,
+       "median": 0.0,
+       "p80": 2.0,
+       "within20": 0.53
+      },
+      "warmup": {
+       "n": 19,
+       "median": 0.412,
+       "p80": 0.93,
+       "within20": 0.21
+      },
+      "cooldown": {
+       "n": 19,
+       "median": 0.1,
+       "p80": 0.336,
+       "within20": 0.74
+      },
+      "range": {
+       "n": 19,
+       "median": 0.162,
+       "p80": 0.299,
+       "within20": 0.53
+      },
+      "mass": {
+       "n": 19,
+       "median": 0.54,
+       "p80": 1.304,
+       "within20": 0.32
+      },
+      "mv": {
+       "n": 19,
+       "median": 0.468,
+       "p80": 0.855,
+       "within20": 0.26
+      }
+     },
+     "nn_kind_tier(oracle power)": {
+      "damage": {
+       "n": 19,
+       "median": 0.52,
+       "p80": 0.913,
+       "within20": 0.21
+      },
+      "burst": {
+       "n": 19,
+       "median": 0.5,
+       "p80": 0.94,
+       "within20": 0.47
+      },
+      "warmup": {
+       "n": 19,
+       "median": 0.545,
+       "p80": 1.42,
+       "within20": 0.21
+      },
+      "cooldown": {
+       "n": 19,
+       "median": 0.185,
+       "p80": 0.425,
+       "within20": 0.53
+      },
+      "range": {
+       "n": 19,
+       "median": 0.217,
+       "p80": 0.495,
+       "within20": 0.37
+      },
+      "mass": {
+       "n": 19,
+       "median": 0.52,
+       "p80": 1.003,
+       "within20": 0.37
+      },
+      "mv": {
+       "n": 19,
+       "median": 0.371,
+       "p80": 0.587,
+       "within20": 0.32
+      }
+     },
+     "role_tier_median": {
+      "damage": {
+       "n": 19,
+       "median": 0.265,
+       "p80": 0.445,
+       "within20": 0.47
+      },
+      "burst": {
+       "n": 19,
+       "median": 0.0,
+       "p80": 0.856,
+       "within20": 0.58
+      },
+      "warmup": {
+       "n": 19,
+       "median": 0.3,
+       "p80": 0.425,
+       "within20": 0.21
+      },
+      "cooldown": {
+       "n": 19,
+       "median": 0.074,
+       "p80": 0.286,
+       "within20": 0.74
+      },
+      "range": {
+       "n": 19,
+       "median": 0.162,
+       "p80": 0.233,
+       "within20": 0.68
+      },
+      "mass": {
+       "n": 19,
+       "median": 0.244,
+       "p80": 0.635,
+       "within20": 0.42
+      },
+      "mv": {
+       "n": 19,
+       "median": 0.468,
+       "p80": 0.738,
+       "within20": 0.21
+      }
+     }
+    },
+    "band_coverage": {
+     "damage": {
+      "cover_p50": 0.47,
+      "cover_p80": 0.79,
+      "band_p50_ratio": 1.47,
+      "band_p80_ratio": 1.72
+     },
+     "burst": {
+      "cover_p50": 0.84,
+      "cover_p80": 0.84,
+      "band_p50_ratio": 1.0,
+      "band_p80_ratio": 1.0
+     },
+     "warmup": {
+      "cover_p50": 0.53,
+      "cover_p80": 0.79,
+      "band_p50_ratio": 1.33,
+      "band_p80_ratio": 1.9
+     },
+     "cooldown": {
+      "cover_p50": 0.47,
+      "cover_p80": 0.79,
+      "band_p50_ratio": 1.08,
+      "band_p80_ratio": 1.32
+     },
+     "range": {
+      "cover_p50": 0.47,
+      "cover_p80": 0.79,
+      "band_p50_ratio": 1.1,
+      "band_p80_ratio": 1.15
+     },
+     "mass": {
+      "cover_p50": 0.47,
+      "cover_p80": 0.74,
+      "band_p50_ratio": 1.17,
+      "band_p80_ratio": 2.68
+     },
+     "mv": {
+      "cover_p50": 0.47,
+      "cover_p80": 0.79,
+      "band_p50_ratio": 1.51,
+      "band_p80_ratio": 2.0
+     },
+     "damage_ratio": {
+      "cover_p50": 0.53,
+      "cover_p80": 0.74,
+      "band_p50_ratio": 1.38,
+      "band_p80_ratio": 1.88
+     }
+    },
+    "questions": {
+     "simple": {
+      "mean": 2.0,
+      "max": 2
+     },
+     "quiz_full": {
+      "mean": 7.0,
+      "max": 10
+     },
+     "quiz_full_k1": {
+      "mean": 7.0,
+      "max": 10
+     }
+    },
+    "elasticity_all_items": {
+     "damage": 0.37,
+     "burst": 0.0,
+     "warmup": 0.14,
+     "cooldown": -0.04,
+     "range": 0.11,
+     "mass": 0.51,
+     "mv": 0.53
+    }
+   },
+   "vanilla/melee|scratch": {
+    "n_items": 14,
+    "methods": {
+     "simple": {
+      "damage": {
+       "n": 14,
+       "median": 0.305,
+       "p80": 0.44,
+       "within20": 0.29
+      },
+      "cooldown": {
+       "n": 14,
+       "median": 0.2,
+       "p80": 0.234,
+       "within20": 0.5
+      },
+      "ap": {
+       "n": 14,
+       "median": 0.431,
+       "p80": 0.62,
+       "within20": 0.07
+      },
+      "mass": {
+       "n": 14,
+       "median": 0.52,
+       "p80": 1.217,
+       "within20": 0.29
+      },
+      "mv": {
+       "n": 14,
+       "median": 0.382,
+       "p80": 0.648,
+       "within20": 0.36
+      },
+      "damage_ratio": {
+       "n": 14,
+       "median": 0.296,
+       "p80": 0.396,
+       "within20": 0.21
+      }
+     },
+     "quiz_full": {
+      "damage": {
+       "n": 14,
+       "median": 0.07,
+       "p80": 0.159,
+       "within20": 0.93
+      },
+      "cooldown": {
+       "n": 14,
+       "median": 0.025,
+       "p80": 0.137,
+       "within20": 1.0
+      },
+      "ap": {
+       "n": 14,
+       "median": 0.236,
+       "p80": 0.397,
+       "within20": 0.36
+      },
+      "mass": {
+       "n": 14,
+       "median": 0.168,
+       "p80": 0.471,
+       "within20": 0.57
+      },
+      "mv": {
+       "n": 14,
+       "median": 0.382,
+       "p80": 0.648,
+       "within20": 0.36
+      },
+      "damage_ratio": {
+       "n": 14,
+       "median": 0.217,
+       "p80": 0.354,
+       "within20": 0.43
+      }
+     },
+     "quiz_full_k1": {
+      "damage": {
+       "n": 14,
+       "median": 0.07,
+       "p80": 0.159,
+       "within20": 0.93
+      },
+      "cooldown": {
+       "n": 14,
+       "median": 0.025,
+       "p80": 0.137,
+       "within20": 1.0
+      },
+      "ap": {
+       "n": 14,
+       "median": 0.285,
+       "p80": 0.365,
+       "within20": 0.21
+      },
+      "mass": {
+       "n": 14,
+       "median": 0.168,
+       "p80": 0.471,
+       "within20": 0.57
+      },
+      "mv": {
+       "n": 14,
+       "median": 0.382,
+       "p80": 0.648,
+       "within20": 0.36
+      },
+      "damage_ratio": {
+       "n": 14,
+       "median": 0.279,
+       "p80": 0.406,
+       "within20": 0.29
+      }
+     },
+     "tier_median": {
+      "damage": {
+       "n": 14,
+       "median": 0.193,
+       "p80": 0.348,
+       "within20": 0.57
+      },
+      "cooldown": {
+       "n": 14,
+       "median": 0.139,
+       "p80": 0.223,
+       "within20": 0.71
+      },
+      "ap": {
+       "n": 14,
+       "median": 0.261,
+       "p80": 0.512,
+       "within20": 0.43
+      },
+      "mass": {
+       "n": 14,
+       "median": 0.409,
+       "p80": 0.69,
+       "within20": 0.29
+      },
+      "mv": {
+       "n": 14,
+       "median": 0.382,
+       "p80": 0.632,
+       "within20": 0.43
+      }
+     },
+     "nn_kind_tier(oracle power)": {
+      "damage": {
+       "n": 14,
+       "median": 0.246,
+       "p80": 0.368,
+       "within20": 0.43
+      },
+      "cooldown": {
+       "n": 14,
+       "median": 0.183,
+       "p80": 0.3,
+       "within20": 0.5
+      },
+      "ap": {
+       "n": 14,
+       "median": 0.326,
+       "p80": 0.48,
+       "within20": 0.29
+      },
+      "mass": {
+       "n": 14,
+       "median": 0.621,
+       "p80": 0.971,
+       "within20": 0.21
+      },
+      "mv": {
+       "n": 14,
+       "median": 0.34,
+       "p80": 0.712,
+       "within20": 0.36
+      }
+     },
+     "role_tier_median": {
+      "damage": {
+       "n": 14,
+       "median": 0.326,
+       "p80": 0.411,
+       "within20": 0.29
+      },
+      "cooldown": {
+       "n": 14,
+       "median": 0.183,
+       "p80": 0.266,
+       "within20": 0.5
+      },
+      "ap": {
+       "n": 14,
+       "median": 0.422,
+       "p80": 0.642,
+       "within20": 0.07
+      },
+      "mass": {
+       "n": 14,
+       "median": 0.525,
+       "p80": 0.914,
+       "within20": 0.29
+      },
+      "mv": {
+       "n": 14,
+       "median": 0.382,
+       "p80": 0.648,
+       "within20": 0.36
+      }
+     }
+    },
+    "band_coverage": {
+     "damage": {
+      "cover_p50": 0.5,
+      "cover_p80": 0.71,
+      "band_p50_ratio": 1.07,
+      "band_p80_ratio": 1.18
+     },
+     "cooldown": {
+      "cover_p50": 0.5,
+      "cover_p80": 0.71,
+      "band_p50_ratio": 1.03,
+      "band_p80_ratio": 1.15
+     },
+     "ap": {
+      "cover_p50": 0.5,
+      "cover_p80": 0.79,
+      "band_p50_ratio": 1.28,
+      "band_p80_ratio": 1.48
+     },
+     "mass": {
+      "cover_p50": 0.5,
+      "cover_p80": 0.79,
+      "band_p50_ratio": 1.2,
+      "band_p80_ratio": 1.53
+     },
+     "mv": {
+      "cover_p50": 0.57,
+      "cover_p80": 0.79,
+      "band_p50_ratio": 1.41,
+      "band_p80_ratio": 2.2
+     },
+     "damage_ratio": {
+      "cover_p50": 0.5,
+      "cover_p80": 0.79,
+      "band_p50_ratio": 1.25,
+      "band_p80_ratio": 1.39
+     }
+    },
+    "questions": {
+     "simple": {
+      "mean": 2.0,
+      "max": 2
+     },
+     "quiz_full": {
+      "mean": 6.21,
+      "max": 9
+     },
+     "quiz_full_k1": {
+      "mean": 6.21,
+      "max": 9
+     }
+    },
+    "elasticity_all_items": {
+     "damage": 0.69,
+     "cooldown": 0.12,
+     "ap": 1.0,
+     "mass": 0.64,
+     "mv": 1.5
+    }
+   },
+   "vanilla/apparel|scratch": {
+    "n_items": 112,
+    "methods": {
+     "simple": {
+      "mass": {
+       "n": 112,
+       "median": 0.578,
+       "p80": 0.933,
+       "within20": 0.17
+      },
+      "mv": {
+       "n": 111,
+       "median": 0.482,
+       "p80": 1.033,
+       "within20": 0.26
+      },
+      "sharp": {
+       "n": 77,
+       "median": 0.362,
+       "p80": 0.894,
+       "within20": 0.35
+      },
+      "heat": {
+       "n": 76,
+       "median": 0.397,
+       "p80": 0.884,
+       "within20": 0.36
+      },
+      "ins_cold": {
+       "n": 78,
+       "median": 0.631,
+       "p80": 1.157,
+       "within20": 0.4
+      },
+      "blunt": {
+       "n": 37,
+       "median": 0.427,
+       "p80": 1.0,
+       "within20": 0.27
+      }
+     },
+     "quiz_full": {
+      "mass": {
+       "n": 112,
+       "median": 0.3,
+       "p80": 0.832,
+       "within20": 0.38
+      },
+      "mv": {
+       "n": 111,
+       "median": 0.529,
+       "p80": 1.033,
+       "within20": 0.23
+      },
+      "sharp": {
+       "n": 77,
+       "median": 0.097,
+       "p80": 0.27,
+       "within20": 0.66
+      },
+      "heat": {
+       "n": 76,
+       "median": 0.117,
+       "p80": 0.28,
+       "within20": 0.66
+      },
+      "ins_cold": {
+       "n": 78,
+       "median": 0.071,
+       "p80": 0.6,
+       "within20": 0.55
+      },
+      "blunt": {
+       "n": 37,
+       "median": 0.159,
+       "p80": 0.36,
+       "within20": 0.62
+      }
+     },
+     "quiz_full_k1": {
+      "mass": {
+       "n": 112,
+       "median": 0.3,
+       "p80": 0.832,
+       "within20": 0.38
+      },
+      "mv": {
+       "n": 111,
+       "median": 0.572,
+       "p80": 1.042,
+       "within20": 0.2
+      },
+      "sharp": {
+       "n": 77,
+       "median": 0.078,
+       "p80": 0.305,
+       "within20": 0.69
+      },
+      "heat": {
+       "n": 76,
+       "median": 0.092,
+       "p80": 0.28,
+       "within20": 0.66
+      },
+      "ins_cold": {
+       "n": 78,
+       "median": 0.071,
+       "p80": 0.6,
+       "within20": 0.55
+      },
+      "blunt": {
+       "n": 37,
+       "median": 0.143,
+       "p80": 0.376,
+       "within20": 0.7
+      }
+     },
+     "tier_median": {
+      "mass": {
+       "n": 112,
+       "median": 0.833,
+       "p80": 2.914,
+       "within20": 0.04
+      },
+      "mv": {
+       "n": 111,
+       "median": 0.507,
+       "p80": 0.894,
+       "within20": 0.2
+      },
+      "sharp": {
+       "n": 77,
+       "median": 0.25,
+       "p80": 0.688,
+       "within20": 0.4
+      },
+      "heat": {
+       "n": 76,
+       "median": 0.148,
+       "p80": 0.8,
+       "within20": 0.54
+      },
+      "ins_cold": {
+       "n": 78,
+       "median": 0.8,
+       "p80": 0.967,
+       "within20": 0.17
+      },
+      "blunt": {
+       "n": 37,
+       "median": 0.5,
+       "p80": 1.0,
+       "within20": 0.08
+      }
+     },
+     "nn_kind_tier(oracle power)": {
+      "mass": {
+       "n": 112,
+       "median": 0.5,
+       "p80": 1.0,
+       "within20": 0.16
+      },
+      "mv": {
+       "n": 111,
+       "median": 0.444,
+       "p80": 0.806,
+       "within20": 0.25
+      },
+      "sharp": {
+       "n": 77,
+       "median": 0.0,
+       "p80": 0.332,
+       "within20": 0.7
+      },
+      "heat": {
+       "n": 76,
+       "median": 0.0,
+       "p80": 0.333,
+       "within20": 0.74
+      },
+      "ins_cold": {
+       "n": 78,
+       "median": 0.333,
+       "p80": 1.0,
+       "within20": 0.46
+      },
+      "blunt": {
+       "n": 37,
+       "median": 0.125,
+       "p80": 0.44,
+       "within20": 0.68
+      }
+     },
+     "role_tier_median": {
+      "mass": {
+       "n": 112,
+       "median": 0.5,
+       "p80": 0.992,
+       "within20": 0.23
+      },
+      "mv": {
+       "n": 111,
+       "median": 0.477,
+       "p80": 1.0,
+       "within20": 0.28
+      },
+      "sharp": {
+       "n": 77,
+       "median": 0.333,
+       "p80": 0.895,
+       "within20": 0.34
+      },
+      "heat": {
+       "n": 76,
+       "median": 0.268,
+       "p80": 0.7,
+       "within20": 0.41
+      },
+      "ins_cold": {
+       "n": 78,
+       "median": 0.199,
+       "p80": 0.803,
+       "within20": 0.5
+      },
+      "blunt": {
+       "n": 37,
+       "median": 0.333,
+       "p80": 1.0,
+       "within20": 0.27
+      }
+     }
+    },
+    "band_coverage": {
+     "mass": {
+      "cover_p50": 0.52,
+      "cover_p80": 0.79,
+      "band_p50_ratio": 1.33,
+      "band_p80_ratio": 3.39
+     },
+     "mv": {
+      "cover_p50": 0.5,
+      "cover_p80": 0.8,
+      "band_p50_ratio": 1.82,
+      "band_p80_ratio": 3.15
+     },
+     "sharp": {
+      "cover_p50": 0.51,
+      "cover_p80": 0.79,
+      "band_p50_ratio": 1.1,
+      "band_p80_ratio": 1.35
+     },
+     "heat": {
+      "cover_p50": 0.5,
+      "cover_p80": 0.8,
+      "band_p50_ratio": 1.12,
+      "band_p80_ratio": 1.36
+     },
+     "ins_cold": {
+      "cover_p50": 0.5,
+      "cover_p80": 0.78,
+      "band_p50_ratio": 1.08,
+      "band_p80_ratio": 1.92
+     },
+     "blunt": {
+      "cover_p50": 0.51,
+      "cover_p80": 0.78,
+      "band_p50_ratio": 1.17,
+      "band_p80_ratio": 1.56
+     }
+    },
+    "questions": {
+     "simple": {
+      "mean": 2.0,
+      "max": 2
+     },
+     "quiz_full": {
+      "mean": 6.31,
+      "max": 9
+     },
+     "quiz_full_k1": {
+      "mean": 6.31,
+      "max": 9
+     }
+    },
+    "elasticity_all_items": {
+     "sharp": 0.76,
+     "blunt": 0.68,
+     "heat": 0.73,
+     "ins_cold": 0.23,
+     "mass": 0.57,
+     "mv": 0.49
+    }
+   },
+   "ce/ranged|scratch": {
+    "n_items": 26,
+    "methods": {
+     "simple": {
+      "Mass": {
+       "n": 26,
+       "median": 0.486,
+       "p80": 0.79,
+       "within20": 0.23
+      },
+      "Bulk": {
+       "n": 26,
+       "median": 0.222,
+       "p80": 0.385,
+       "within20": 0.5
+      },
+      "cooldown": {
+       "n": 26,
+       "median": 0.257,
+       "p80": 0.721,
+       "within20": 0.46
+      },
+      "range": {
+       "n": 26,
+       "median": 0.128,
+       "p80": 0.356,
+       "within20": 0.65
+      },
+      "warmup": {
+       "n": 26,
+       "median": 0.1,
+       "p80": 0.252,
+       "within20": 0.69
+      },
+      "spread": {
+       "n": 26,
+       "median": 0.098,
+       "p80": 0.8,
+       "within20": 0.69
+      },
+      "sway": {
+       "n": 26,
+       "median": 0.219,
+       "p80": 0.66,
+       "within20": 0.42
+      },
+      "burst": {
+       "n": 26,
+       "median": 0.0,
+       "p80": 0.8,
+       "within20": 0.65
+      },
+      "mag": {
+       "n": 22,
+       "median": 0.55,
+       "p80": 0.96,
+       "within20": 0.36
+      },
+      "reload": {
+       "n": 22,
+       "median": 0.075,
+       "p80": 0.723,
+       "within20": 0.64
+      }
+     },
+     "quiz_full": {
+      "Mass": {
+       "n": 26,
+       "median": 0.243,
+       "p80": 0.463,
+       "within20": 0.38
+      },
+      "Bulk": {
+       "n": 26,
+       "median": 0.219,
+       "p80": 0.417,
+       "within20": 0.46
+      },
+      "cooldown": {
+       "n": 26,
+       "median": 0.124,
+       "p80": 0.606,
+       "within20": 0.54
+      },
+      "range": {
+       "n": 26,
+       "median": 0.135,
+       "p80": 0.299,
+       "within20": 0.65
+      },
+      "warmup": {
+       "n": 26,
+       "median": 0.152,
+       "p80": 0.257,
+       "within20": 0.69
+      },
+      "spread": {
+       "n": 26,
+       "median": 0.098,
+       "p80": 0.8,
+       "within20": 0.69
+      },
+      "sway": {
+       "n": 26,
+       "median": 0.279,
+       "p80": 0.626,
+       "within20": 0.35
+      },
+      "burst": {
+       "n": 26,
+       "median": 0.0,
+       "p80": 0.2,
+       "within20": 0.81
+      },
+      "mag": {
+       "n": 22,
+       "median": 0.167,
+       "p80": 0.787,
+       "within20": 0.64
+      },
+      "reload": {
+       "n": 22,
+       "median": 0.0,
+       "p80": 0.177,
+       "within20": 0.82
+      }
+     },
+     "quiz_full_k1": {
+      "Mass": {
+       "n": 26,
+       "median": 0.243,
+       "p80": 0.463,
+       "within20": 0.38
+      },
+      "Bulk": {
+       "n": 26,
+       "median": 0.273,
+       "p80": 0.417,
+       "within20": 0.35
+      },
+      "cooldown": {
+       "n": 26,
+       "median": 0.12,
+       "p80": 0.606,
+       "within20": 0.54
+      },
+      "range": {
+       "n": 26,
+       "median": 0.135,
+       "p80": 0.299,
+       "within20": 0.65
+      },
+      "warmup": {
+       "n": 26,
+       "median": 0.157,
+       "p80": 0.25,
+       "within20": 0.65
+      },
+      "spread": {
+       "n": 26,
+       "median": 0.098,
+       "p80": 0.8,
+       "within20": 0.69
+      },
+      "sway": {
+       "n": 26,
+       "median": 0.236,
+       "p80": 0.677,
+       "within20": 0.46
+      },
+      "burst": {
+       "n": 26,
+       "median": 0.0,
+       "p80": 0.2,
+       "within20": 0.81
+      },
+      "mag": {
+       "n": 22,
+       "median": 0.167,
+       "p80": 0.787,
+       "within20": 0.64
+      },
+      "reload": {
+       "n": 22,
+       "median": 0.0,
+       "p80": 0.177,
+       "within20": 0.82
+      }
+     },
+     "tier_median": {
+      "Mass": {
+       "n": 26,
+       "median": 0.631,
+       "p80": 1.5,
+       "within20": 0.19
+      },
+      "Bulk": {
+       "n": 26,
+       "median": 0.26,
+       "p80": 0.857,
+       "within20": 0.5
+      },
+      "cooldown": {
+       "n": 26,
+       "median": 0.053,
+       "p80": 0.4,
+       "within20": 0.69
+      },
+      "range": {
+       "n": 26,
+       "median": 0.516,
+       "p80": 1.594,
+       "within20": 0.27
+      },
+      "warmup": {
+       "n": 26,
+       "median": 0.348,
+       "p80": 0.833,
+       "within20": 0.27
+      },
+      "spread": {
+       "n": 26,
+       "median": 0.339,
+       "p80": 1.0,
+       "within20": 0.31
+      },
+      "sway": {
+       "n": 26,
+       "median": 0.233,
+       "p80": 0.412,
+       "within20": 0.46
+      },
+      "burst": {
+       "n": 26,
+       "median": 0.87,
+       "p80": 2.5,
+       "within20": 0.19
+      },
+      "mag": {
+       "n": 22,
+       "median": 0.927,
+       "p80": 2.0,
+       "within20": 0.0
+      },
+      "reload": {
+       "n": 22,
+       "median": 0.0,
+       "p80": 0.184,
+       "within20": 0.82
+      }
+     },
+     "nn_kind_tier(oracle power)": {
+      "Mass": {
+       "n": 26,
+       "median": 0.378,
+       "p80": 0.683,
+       "within20": 0.38
+      },
+      "Bulk": {
+       "n": 26,
+       "median": 0.333,
+       "p80": 0.65,
+       "within20": 0.27
+      },
+      "cooldown": {
+       "n": 26,
+       "median": 0.151,
+       "p80": 0.6,
+       "within20": 0.54
+      },
+      "range": {
+       "n": 26,
+       "median": 0.493,
+       "p80": 0.813,
+       "within20": 0.19
+      },
+      "warmup": {
+       "n": 26,
+       "median": 0.394,
+       "p80": 0.625,
+       "within20": 0.31
+      },
+      "spread": {
+       "n": 26,
+       "median": 0.367,
+       "p80": 0.933,
+       "within20": 0.46
+      },
+      "sway": {
+       "n": 26,
+       "median": 0.247,
+       "p80": 0.575,
+       "within20": 0.46
+      },
+      "burst": {
+       "n": 26,
+       "median": 0.0,
+       "p80": 0.833,
+       "within20": 0.54
+      },
+      "mag": {
+       "n": 22,
+       "median": 0.7,
+       "p80": 1.4,
+       "within20": 0.14
+      },
+      "reload": {
+       "n": 22,
+       "median": 0.035,
+       "p80": 0.184,
+       "within20": 0.82
+      }
+     },
+     "role_tier_median": {
+      "Mass": {
+       "n": 26,
+       "median": 0.479,
+       "p80": 1.038,
+       "within20": 0.15
+      },
+      "Bulk": {
+       "n": 26,
+       "median": 0.247,
+       "p80": 0.344,
+       "within20": 0.42
+      },
+      "cooldown": {
+       "n": 26,
+       "median": 0.042,
+       "p80": 0.6,
+       "within20": 0.58
+      },
+      "range": {
+       "n": 26,
+       "median": 0.144,
+       "p80": 0.533,
+       "within20": 0.58
+      },
+      "warmup": {
+       "n": 26,
+       "median": 0.1,
+       "p80": 0.25,
+       "within20": 0.73
+      },
+      "spread": {
+       "n": 26,
+       "median": 0.098,
+       "p80": 0.8,
+       "within20": 0.69
+      },
+      "sway": {
+       "n": 26,
+       "median": 0.217,
+       "p80": 0.575,
+       "within20": 0.46
+      },
+      "burst": {
+       "n": 26,
+       "median": 0.1,
+       "p80": 1.5,
+       "within20": 0.54
+      },
+      "mag": {
+       "n": 21,
+       "median": 0.5,
+       "p80": 1.0,
+       "within20": 0.29
+      },
+      "reload": {
+       "n": 21,
+       "median": 0.07,
+       "p80": 0.505,
+       "within20": 0.62
+      }
+     }
+    },
+    "band_coverage": {
+     "Mass": {
+      "cover_p50": 0.5,
+      "cover_p80": 0.77,
+      "band_p50_ratio": 1.26,
+      "band_p80_ratio": 1.72
+     },
+     "Bulk": {
+      "cover_p50": 0.5,
+      "cover_p80": 0.81,
+      "band_p50_ratio": 1.25,
+      "band_p80_ratio": 1.46
+     },
+     "cooldown": {
+      "cover_p50": 0.5,
+      "cover_p80": 0.77,
+      "band_p50_ratio": 1.13,
+      "band_p80_ratio": 2.54
+     },
+     "range": {
+      "cover_p50": 0.5,
+      "cover_p80": 0.81,
+      "band_p50_ratio": 1.14,
+      "band_p80_ratio": 1.33
+     },
+     "warmup": {
+      "cover_p50": 0.5,
+      "cover_p80": 0.77,
+      "band_p50_ratio": 1.16,
+      "band_p80_ratio": 1.33
+     },
+     "spread": {
+      "cover_p50": 0.5,
+      "cover_p80": 0.81,
+      "band_p50_ratio": 1.11,
+      "band_p80_ratio": 2.0
+     },
+     "sway": {
+      "cover_p50": 0.54,
+      "cover_p80": 0.77,
+      "band_p50_ratio": 1.3,
+      "band_p80_ratio": 2.05
+     },
+     "burst": {
+      "cover_p50": 0.77,
+      "cover_p80": 0.77,
+      "band_p50_ratio": 1.0,
+      "band_p80_ratio": 1.2
+     },
+     "mag": {
+      "cover_p50": 0.5,
+      "cover_p80": 0.82,
+      "band_p50_ratio": 1.18,
+      "band_p80_ratio": 2.0
+     },
+     "reload": {
+      "cover_p50": 0.59,
+      "cover_p80": 0.77,
+      "band_p50_ratio": 1.0,
+      "band_p80_ratio": 1.21
+     }
+    },
+    "questions": {
+     "simple": {
+      "mean": 2.0,
+      "max": 2
+     },
+     "quiz_full": {
+      "mean": 8.62,
+      "max": 10
+     },
+     "quiz_full_k1": {
+      "mean": 8.62,
+      "max": 10
+     }
+    },
+    "elasticity_all_items": {
+     "Mass": 0.34,
+     "Bulk": 0.08,
+     "cooldown": -0.09,
+     "range": 0.14,
+     "warmup": -0.07,
+     "spread": -0.26,
+     "sway": 0.05,
+     "mag": 0.0,
+     "reload": 0.0,
+     "burst": 0.0
+    }
+   },
+   "ce/ranged|convert": {
+    "n_items": 25,
+    "methods": {
+     "simple_convert": {
+      "Mass": {
+       "n": 25,
+       "median": 0.256,
+       "p80": 0.438,
+       "within20": 0.36
+      },
+      "Bulk": {
+       "n": 25,
+       "median": 0.258,
+       "p80": 0.374,
+       "within20": 0.36
+      },
+      "cooldown": {
+       "n": 25,
+       "median": 0.056,
+       "p80": 0.698,
+       "within20": 0.56
+      },
+      "range": {
+       "n": 25,
+       "median": 0.138,
+       "p80": 0.319,
+       "within20": 0.52
+      },
+      "warmup": {
+       "n": 25,
+       "median": 0.1,
+       "p80": 0.29,
+       "within20": 0.68
+      },
+      "spread": {
+       "n": 25,
+       "median": 0.071,
+       "p80": 0.56,
+       "within20": 0.72
+      },
+      "sway": {
+       "n": 25,
+       "median": 0.23,
+       "p80": 0.593,
+       "within20": 0.48
+      },
+      "burst": {
+       "n": 25,
+       "median": 0.0,
+       "p80": 0.1,
+       "within20": 0.8
+      },
+      "mag": {
+       "n": 21,
+       "median": 0.5,
+       "p80": 1.0,
+       "within20": 0.43
+      },
+      "reload": {
+       "n": 21,
+       "median": 0.0,
+       "p80": 0.184,
+       "within20": 0.81
+      }
+     },
+     "tier_median": {
+      "Mass": {
+       "n": 25,
+       "median": 0.637,
+       "p80": 1.143,
+       "within20": 0.2
+      },
+      "Bulk": {
+       "n": 25,
+       "median": 0.32,
+       "p80": 0.857,
+       "within20": 0.4
+      },
+      "cooldown": {
+       "n": 25,
+       "median": 0.053,
+       "p80": 0.422,
+       "within20": 0.68
+      },
+      "range": {
+       "n": 25,
+       "median": 0.516,
+       "p80": 1.594,
+       "within20": 0.12
+      },
+      "warmup": {
+       "n": 25,
+       "median": 0.346,
+       "p80": 0.833,
+       "within20": 0.28
+      },
+      "spread": {
+       "n": 25,
+       "median": 0.875,
+       "p80": 2.14,
+       "within20": 0.12
+      },
+      "sway": {
+       "n": 25,
+       "median": 0.2,
+       "p80": 0.365,
+       "within20": 0.52
+      },
+      "burst": {
+       "n": 25,
+       "median": 0.9,
+       "p80": 2.5,
+       "within20": 0.24
+      },
+      "mag": {
+       "n": 21,
+       "median": 0.95,
+       "p80": 1.917,
+       "within20": 0.05
+      },
+      "reload": {
+       "n": 21,
+       "median": 0.0,
+       "p80": 0.184,
+       "within20": 0.86
+      }
+     },
+     "nn_kind_tier(oracle power)": {
+      "Mass": {
+       "n": 25,
+       "median": 0.675,
+       "p80": 1.325,
+       "within20": 0.12
+      },
+      "Bulk": {
+       "n": 25,
+       "median": 0.357,
+       "p80": 0.78,
+       "within20": 0.28
+      },
+      "cooldown": {
+       "n": 25,
+       "median": 0.077,
+       "p80": 0.624,
+       "within20": 0.56
+      },
+      "range": {
+       "n": 25,
+       "median": 0.5,
+       "p80": 1.448,
+       "within20": 0.12
+      },
+      "warmup": {
+       "n": 25,
+       "median": 0.5,
+       "p80": 0.833,
+       "within20": 0.32
+      },
+      "spread": {
+       "n": 25,
+       "median": 0.5,
+       "p80": 1.057,
+       "within20": 0.36
+      },
+      "sway": {
+       "n": 25,
+       "median": 0.25,
+       "p80": 0.58,
+       "within20": 0.48
+      },
+      "burst": {
+       "n": 25,
+       "median": 0.0,
+       "p80": 1.02,
+       "within20": 0.64
+      },
+      "mag": {
+       "n": 20,
+       "median": 0.5,
+       "p80": 1.0,
+       "within20": 0.35
+      },
+      "reload": {
+       "n": 20,
+       "median": 0.035,
+       "p80": 0.487,
+       "within20": 0.75
+      }
+     },
+     "role_tier_median": {
+      "Mass": {
+       "n": 25,
+       "median": 0.538,
+       "p80": 1.067,
+       "within20": 0.16
+      },
+      "Bulk": {
+       "n": 25,
+       "median": 0.258,
+       "p80": 0.374,
+       "within20": 0.36
+      },
+      "cooldown": {
+       "n": 25,
+       "median": 0.028,
+       "p80": 0.623,
+       "within20": 0.6
+      },
+      "range": {
+       "n": 25,
+       "median": 0.143,
+       "p80": 0.541,
+       "within20": 0.56
+      },
+      "warmup": {
+       "n": 25,
+       "median": 0.1,
+       "p80": 0.27,
+       "within20": 0.72
+      },
+      "spread": {
+       "n": 25,
+       "median": 0.071,
+       "p80": 0.56,
+       "within20": 0.72
+      },
+      "sway": {
+       "n": 25,
+       "median": 0.23,
+       "p80": 0.593,
+       "within20": 0.48
+      },
+      "burst": {
+       "n": 25,
+       "median": 0.0,
+       "p80": 1.5,
+       "within20": 0.52
+      },
+      "mag": {
+       "n": 20,
+       "median": 0.55,
+       "p80": 1.2,
+       "within20": 0.25
+      },
+      "reload": {
+       "n": 20,
+       "median": 0.035,
+       "p80": 0.61,
+       "within20": 0.65
+      }
+     },
+     "identity(vanilla value)": {
+      "Mass": {
+       "n": 25,
+       "median": 0.081,
+       "p80": 0.41,
+       "within20": 0.68
+      },
+      "cooldown": {
+       "n": 25,
+       "median": 2.265,
+       "p80": 4.532,
+       "within20": 0.04
+      },
+      "range": {
+       "n": 25,
+       "median": 0.438,
+       "p80": 0.637,
+       "within20": 0.28
+      },
+      "warmup": {
+       "n": 25,
+       "median": 0.5,
+       "p80": 0.687,
+       "within20": 0.24
+      }
+     }
+    },
+    "band_coverage": {},
+    "questions": {
+     "simple_convert": {
+      "mean": 2.0,
+      "max": 2
+     }
+    },
+    "elasticity_all_items": null
+   },
+   "ce/melee|scratch": {
+    "n_items": 14,
+    "methods": {
+     "simple": {
+      "damage": {
+       "n": 14,
+       "median": 0.328,
+       "p80": 0.605,
+       "within20": 0.21
+      },
+      "cooldown": {
+       "n": 14,
+       "median": 0.133,
+       "p80": 0.245,
+       "within20": 0.64
+      },
+      "Mass": {
+       "n": 14,
+       "median": 0.477,
+       "p80": 0.742,
+       "within20": 0.29
+      },
+      "Bulk": {
+       "n": 14,
+       "median": 0.585,
+       "p80": 1.225,
+       "within20": 0.0
+      },
+      "apSharp": {
+       "n": 8,
+       "median": 0.685,
+       "p80": 2.097,
+       "within20": 0.0
+      },
+      "parryC": {
+       "n": 14,
+       "median": 0.543,
+       "p80": 1.415,
+       "within20": 0.21
+      },
+      "damage_ratio": {
+       "n": 14,
+       "median": 0.328,
+       "p80": 0.596,
+       "within20": 0.21
+      }
+     },
+     "quiz_full": {
+      "damage": {
+       "n": 14,
+       "median": 0.041,
+       "p80": 0.096,
+       "within20": 0.93
+      },
+      "cooldown": {
+       "n": 14,
+       "median": 0.072,
+       "p80": 0.114,
+       "within20": 1.0
+      },
+      "Mass": {
+       "n": 14,
+       "median": 0.128,
+       "p80": 0.31,
+       "within20": 0.71
+      },
+      "Bulk": {
+       "n": 14,
+       "median": 0.63,
+       "p80": 1.224,
+       "within20": 0.0
+      },
+      "apSharp": {
+       "n": 8,
+       "median": 0.725,
+       "p80": 2.097,
+       "within20": 0.0
+      },
+      "parryC": {
+       "n": 14,
+       "median": 0.559,
+       "p80": 1.798,
+       "within20": 0.14
+      },
+      "damage_ratio": {
+       "n": 14,
+       "median": 0.225,
+       "p80": 0.292,
+       "within20": 0.43
+      }
+     },
+     "quiz_full_k1": {
+      "damage": {
+       "n": 14,
+       "median": 0.041,
+       "p80": 0.096,
+       "within20": 0.93
+      },
+      "cooldown": {
+       "n": 14,
+       "median": 0.072,
+       "p80": 0.114,
+       "within20": 1.0
+      },
+      "Mass": {
+       "n": 14,
+       "median": 0.128,
+       "p80": 0.31,
+       "within20": 0.71
+      },
+      "Bulk": {
+       "n": 14,
+       "median": 0.616,
+       "p80": 1.452,
+       "within20": 0.0
+      },
+      "apSharp": {
+       "n": 8,
+       "median": 0.778,
+       "p80": 2.097,
+       "within20": 0.0
+      },
+      "parryC": {
+       "n": 14,
+       "median": 0.608,
+       "p80": 1.951,
+       "within20": 0.07
+      },
+      "damage_ratio": {
+       "n": 14,
+       "median": 0.246,
+       "p80": 0.292,
+       "within20": 0.29
+      }
+     },
+     "tier_median": {
+      "damage": {
+       "n": 14,
+       "median": 0.261,
+       "p80": 0.366,
+       "within20": 0.36
+      },
+      "cooldown": {
+       "n": 14,
+       "median": 0.335,
+       "p80": 0.425,
+       "within20": 0.29
+      },
+      "Mass": {
+       "n": 14,
+       "median": 0.409,
+       "p80": 0.537,
+       "within20": 0.29
+      },
+      "Bulk": {
+       "n": 14,
+       "median": 0.589,
+       "p80": 0.714,
+       "within20": 0.0
+      },
+      "apSharp": {
+       "n": 8,
+       "median": 0.646,
+       "p80": 2.097,
+       "within20": 0.0
+      },
+      "parryC": {
+       "n": 14,
+       "median": 0.341,
+       "p80": 0.551,
+       "within20": 0.14
+      }
+     },
+     "nn_kind_tier(oracle power)": {
+      "damage": {
+       "n": 14,
+       "median": 0.279,
+       "p80": 0.436,
+       "within20": 0.29
+      },
+      "cooldown": {
+       "n": 14,
+       "median": 0.182,
+       "p80": 0.225,
+       "within20": 0.71
+      },
+      "Mass": {
+       "n": 14,
+       "median": 0.498,
+       "p80": 0.667,
+       "within20": 0.29
+      },
+      "Bulk": {
+       "n": 14,
+       "median": 0.675,
+       "p80": 1.189,
+       "within20": 0.07
+      },
+      "parryC": {
+       "n": 14,
+       "median": 0.431,
+       "p80": 0.655,
+       "within20": 0.29
+      },
+      "apSharp": {
+       "n": 7,
+       "median": 0.28,
+       "p80": 0.788,
+       "within20": 0.29
+      }
+     },
+     "role_tier_median": {
+      "damage": {
+       "n": 14,
+       "median": 0.32,
+       "p80": 0.605,
+       "within20": 0.21
+      },
+      "cooldown": {
+       "n": 14,
+       "median": 0.157,
+       "p80": 0.218,
+       "within20": 0.71
+      },
+      "Mass": {
+       "n": 14,
+       "median": 0.475,
+       "p80": 0.891,
+       "within20": 0.29
+      },
+      "Bulk": {
+       "n": 14,
+       "median": 0.571,
+       "p80": 1.189,
+       "within20": 0.0
+      },
+      "apSharp": {
+       "n": 8,
+       "median": 0.646,
+       "p80": 2.097,
+       "within20": 0.0
+      },
+      "parryC": {
+       "n": 14,
+       "median": 0.521,
+       "p80": 1.465,
+       "within20": 0.21
+      }
+     }
+    },
+    "band_coverage": {
+     "damage": {
+      "cover_p50": 0.5,
+      "cover_p80": 0.71,
+      "band_p50_ratio": 1.04,
+      "band_p80_ratio": 1.11
+     },
+     "cooldown": {
+      "cover_p50": 0.5,
+      "cover_p80": 0.79,
+      "band_p50_ratio": 1.07,
+      "band_p80_ratio": 1.13
+     },
+     "Mass": {
+      "cover_p50": 0.5,
+      "cover_p80": 0.79,
+      "band_p50_ratio": 1.14,
+      "band_p80_ratio": 1.37
+     },
+     "Bulk": {
+      "cover_p50": 0.57,
+      "cover_p80": 0.71,
+      "band_p50_ratio": 2.12,
+      "band_p80_ratio": 2.37
+     },
+     "apSharp": {
+      "cover_p50": 0.5,
+      "cover_p80": 0.75,
+      "band_p50_ratio": 2.86,
+      "band_p80_ratio": 4.03
+     },
+     "parryC": {
+      "cover_p50": 0.5,
+      "cover_p80": 0.79,
+      "band_p50_ratio": 1.84,
+      "band_p80_ratio": 3.24
+     },
+     "damage_ratio": {
+      "cover_p50": 0.5,
+      "cover_p80": 0.79,
+      "band_p50_ratio": 1.26,
+      "band_p80_ratio": 1.33
+     }
+    },
+    "questions": {
+     "simple": {
+      "mean": 2.0,
+      "max": 2
+     },
+     "quiz_full": {
+      "mean": 6.21,
+      "max": 9
+     },
+     "quiz_full_k1": {
+      "mean": 6.21,
+      "max": 9
+     }
+    },
+    "elasticity_all_items": {
+     "damage": 0.79,
+     "cooldown": -0.07,
+     "Mass": 0.35,
+     "Bulk": 0.42,
+     "apSharp": 1.5,
+     "parryC": 0.24
+    }
+   },
+   "ce/apparel|scratch": {
+    "n_items": 81,
+    "methods": {
+     "simple": {
+      "Mass": {
+       "n": 81,
+       "median": 0.751,
+       "p80": 0.928,
+       "within20": 0.09
+      },
+      "Bulk": {
+       "n": 81,
+       "median": 0.486,
+       "p80": 0.952,
+       "within20": 0.22
+      },
+      "WornBulk": {
+       "n": 68,
+       "median": 0.25,
+       "p80": 0.843,
+       "within20": 0.49
+      },
+      "sharp": {
+       "n": 32,
+       "median": 0.861,
+       "p80": 1.732,
+       "within20": 0.12
+      },
+      "blunt": {
+       "n": 32,
+       "median": 0.74,
+       "p80": 0.961,
+       "within20": 0.22
+      }
+     },
+     "quiz_full": {
+      "Mass": {
+       "n": 81,
+       "median": 0.361,
+       "p80": 0.814,
+       "within20": 0.42
+      },
+      "Bulk": {
+       "n": 81,
+       "median": 0.2,
+       "p80": 0.848,
+       "within20": 0.49
+      },
+      "WornBulk": {
+       "n": 68,
+       "median": 0.25,
+       "p80": 0.8,
+       "within20": 0.49
+      },
+      "sharp": {
+       "n": 32,
+       "median": 0.068,
+       "p80": 0.488,
+       "within20": 0.62
+      },
+      "blunt": {
+       "n": 32,
+       "median": 0.099,
+       "p80": 0.517,
+       "within20": 0.62
+      }
+     },
+     "quiz_full_k1": {
+      "Mass": {
+       "n": 81,
+       "median": 0.361,
+       "p80": 0.814,
+       "within20": 0.42
+      },
+      "Bulk": {
+       "n": 81,
+       "median": 0.2,
+       "p80": 0.848,
+       "within20": 0.49
+      },
+      "WornBulk": {
+       "n": 68,
+       "median": 0.225,
+       "p80": 0.8,
+       "within20": 0.5
+      },
+      "sharp": {
+       "n": 32,
+       "median": 0.069,
+       "p80": 0.445,
+       "within20": 0.72
+      },
+      "blunt": {
+       "n": 32,
+       "median": 0.087,
+       "p80": 0.518,
+       "within20": 0.66
+      }
+     },
+     "tier_median": {
+      "Mass": {
+       "n": 81,
+       "median": 0.84,
+       "p80": 2.0,
+       "within20": 0.06
+      },
+      "Bulk": {
+       "n": 81,
+       "median": 0.667,
+       "p80": 1.5,
+       "within20": 0.19
+      },
+      "WornBulk": {
+       "n": 68,
+       "median": 0.84,
+       "p80": 1.0,
+       "within20": 0.12
+      },
+      "sharp": {
+       "n": 31,
+       "median": 0.429,
+       "p80": 3.571,
+       "within20": 0.29
+      },
+      "blunt": {
+       "n": 31,
+       "median": 0.433,
+       "p80": 3.857,
+       "within20": 0.23
+      }
+     },
+     "nn_kind_tier(oracle power)": {
+      "Mass": {
+       "n": 81,
+       "median": 0.667,
+       "p80": 2.0,
+       "within20": 0.16
+      },
+      "Bulk": {
+       "n": 81,
+       "median": 0.625,
+       "p80": 2.0,
+       "within20": 0.35
+      },
+      "WornBulk": {
+       "n": 57,
+       "median": 0.5,
+       "p80": 2.267,
+       "within20": 0.33
+      },
+      "sharp": {
+       "n": 28,
+       "median": 0.074,
+       "p80": 0.25,
+       "within20": 0.71
+      },
+      "blunt": {
+       "n": 28,
+       "median": 0.073,
+       "p80": 0.183,
+       "within20": 0.79
+      }
+     },
+     "role_tier_median": {
+      "Mass": {
+       "n": 81,
+       "median": 0.692,
+       "p80": 2.0,
+       "within20": 0.12
+      },
+      "Bulk": {
+       "n": 81,
+       "median": 0.333,
+       "p80": 1.0,
+       "within20": 0.41
+      },
+      "WornBulk": {
+       "n": 67,
+       "median": 0.25,
+       "p80": 0.96,
+       "within20": 0.49
+      },
+      "sharp": {
+       "n": 30,
+       "median": 0.429,
+       "p80": 2.52,
+       "within20": 0.37
+      },
+      "blunt": {
+       "n": 30,
+       "median": 0.332,
+       "p80": 3.096,
+       "within20": 0.23
+      }
+     }
+    },
+    "band_coverage": {
+     "Mass": {
+      "cover_p50": 0.51,
+      "cover_p80": 0.8,
+      "band_p50_ratio": 1.36,
+      "band_p80_ratio": 2.34
+     },
+     "Bulk": {
+      "cover_p50": 0.49,
+      "cover_p80": 0.8,
+      "band_p50_ratio": 1.25,
+      "band_p80_ratio": 2.0
+     },
+     "WornBulk": {
+      "cover_p50": 0.53,
+      "cover_p80": 0.78,
+      "band_p50_ratio": 1.25,
+      "band_p80_ratio": 2.5
+     },
+     "sharp": {
+      "cover_p50": 0.53,
+      "cover_p80": 0.78,
+      "band_p50_ratio": 1.07,
+      "band_p80_ratio": 1.9
+     },
+     "blunt": {
+      "cover_p50": 0.5,
+      "cover_p80": 0.78,
+      "band_p50_ratio": 1.1,
+      "band_p80_ratio": 2.07
+     }
+    },
+    "questions": {
+     "simple": {
+      "mean": 2.0,
+      "max": 2
+     },
+     "quiz_full": {
+      "mean": 7.53,
+      "max": 9
+     },
+     "quiz_full_k1": {
+      "mean": 7.53,
+      "max": 9
+     }
+    },
+    "elasticity_all_items": {
+     "Mass": 0.4,
+     "Bulk": 0.19,
+     "WornBulk": 0.09,
+     "sharp": 1.22,
+     "blunt": 1.3
+    }
+   }
+  },
+  "macro_median_of_stat_medians": {
+   "vanilla/ranged|scratch": {
+    "simple": 0.239,
+    "quiz_full": 0.143,
+    "quiz_full_k1": 0.143,
+    "tier_median": 0.333,
+    "nn_kind_tier(oracle power)": 0.5,
+    "role_tier_median": 0.244
+   },
+   "vanilla/melee|scratch": {
+    "simple": 0.382,
+    "quiz_full": 0.168,
+    "quiz_full_k1": 0.168,
+    "tier_median": 0.261,
+    "nn_kind_tier(oracle power)": 0.326,
+    "role_tier_median": 0.382
+   },
+   "vanilla/apparel|scratch": {
+    "simple": 0.455,
+    "quiz_full": 0.138,
+    "quiz_full_k1": 0.117,
+    "tier_median": 0.504,
+    "nn_kind_tier(oracle power)": 0.229,
+    "role_tier_median": 0.333
+   },
+   "ce/ranged|scratch": {
+    "simple": 0.173,
+    "quiz_full": 0.144,
+    "quiz_full_k1": 0.146,
+    "tier_median": 0.344,
+    "nn_kind_tier(oracle power)": 0.35,
+    "role_tier_median": 0.122
+   },
+   "ce/ranged|convert": {
+    "simple_convert": 0.119,
+    "tier_median": 0.431,
+    "nn_kind_tier(oracle power)": 0.5,
+    "role_tier_median": 0.121,
+    "identity(vanilla value)": 0.469
+   },
+   "ce/melee|scratch": {
+    "simple": 0.51,
+    "quiz_full": 0.344,
+    "quiz_full_k1": 0.368,
+    "tier_median": 0.375,
+    "nn_kind_tier(oracle power)": 0.356,
+    "role_tier_median": 0.498
+   },
+   "ce/apparel|scratch": {
+    "simple": 0.74,
+    "quiz_full": 0.2,
+    "quiz_full_k1": 0.2,
+    "tier_median": 0.667,
+    "nn_kind_tier(oracle power)": 0.5,
+    "role_tier_median": 0.333
+   }
+  }
+ }
+}

@@ -1,0 +1,25 @@
+S4 full build: 129.7 ms median (min 114.5, max 135.3); files parsed 23717, defs 134324, bytes read 221.5 MB
+S4 warm re-scan from in-memory manifest (changed mods: one=1, 1pct=4)
+  unchanged                23.2 ms median (min 21.8, max 27.1); reparsed 0 files (0.00 MB), reused 23717
+  one-mod-changed          25.8 ms median (min 22.2, max 26.8); reparsed 12 files (0.13 MB), reused 23705
+  1pct-mods-changed        26.2 ms median (min 23.4, max 28.7); reparsed 94 files (0.98 MB), reused 23623
+S4 formats (manifest: 697 mods, 134324 defs)
+  format                    bytes   encode ms   decode ms
+  json-serde_json        20837288        27.0        66.9  (min 65.8 max 69.2)
+      load incl. file read: 69.1 ms median (min 65.9 max 81.4); RSS after first load held 41.5 MB over baseline 2.9 MB; peak RSS 106.1 MB
+  json-sonic-rs          20837288        23.6        42.4  (min 40.6 max 44.0)
+      load incl. file read: 48.2 ms median (min 45.9 max 60.2); RSS after first load held 41.5 MB over baseline 2.9 MB; peak RSS 106.1 MB
+  json-simd-json         20837288        31.2        53.9  (min 53.2 max 55.1)
+      load incl. file read: 59.1 ms median (min 56.2 max 64.7); RSS after first load held 31.5 MB over baseline 3.0 MB; peak RSS 196.9 MB
+  compact-serde_json      7353596        38.4        20.8  (min 20.3 max 22.2)
+      load incl. file read: 24.0 ms median (min 21.8 max 25.0); RSS after first load held 10.9 MB over baseline 3.1 MB; peak RSS 33.6 MB
+  compact-sonic-rs        7353596        37.2        20.5  (min 19.8 max 21.6)
+      load incl. file read: 23.1 ms median (min 22.4 max 25.1); RSS after first load held 10.9 MB over baseline 3.0 MB; peak RSS 35.0 MB
+  bincode                 8473524        10.2        20.7  (min 19.4 max 21.7)
+      load incl. file read: 19.7 ms median (min 17.9 max 32.2); RSS after first load held 31.5 MB over baseline 3.0 MB; peak RSS 73.8 MB
+  rkyv-full              13732068         9.8        19.2  (min 18.7 max 22.2)
+      load incl. file read: 20.6 ms median (min 18.5 max 28.4); RSS after first load held 31.5 MB over baseline 2.9 MB; peak RSS 93.5 MB
+  rkyv-access            13732068         9.3         6.8  (min 6.5 max 7.3)
+      load incl. file read: 9.4 ms median (min 8.3 max 11.5); RSS after first load held 13.4 MB over baseline 3.0 MB; peak RSS 44.2 MB
+  compact: to_compact 26.2 ms, from_compact (expand to rows) 12.7 ms, roundtrip equal: true, strings in table: 89981
+S4 warm start end to end (read JSON manifest with serde_json + re-scan nothing changed): 100.2 ms median (min 98.8, max 116.1)

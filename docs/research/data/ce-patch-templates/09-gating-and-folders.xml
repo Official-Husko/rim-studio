@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  TEMPLATE 09 (several independent snippets, so this file is NOT one valid patch file; copy one snippet per file): gating idioms. Three correct ways to make CE content load only with CE, plus the ensure-container idiom.
+  Verified against decompiled Verse code: FindMod compares About.xml <name>; LoadFolders IfModActive and MayRequire compare packageId,
+  case-insensitively, ignoring a trailing suffix of the ACTIVE mod's id (not of the string you write).
+-->
+
+<!-- STYLE A (preferred, no XML gating needed): LoadFolders.xml at the mod root.
+     CE content (Patches and Defs that use CombatExtended classes) lives in a subfolder that is loaded only when CE is active.
+     Evidence: 44 of 75 surveyed workshop mods use this style. Folder names are case-sensitive on Linux/macOS.
+
+  <loadFolders>
+    <v1.6>
+      <li>/</li>
+      <li IfModActive="ceteam.combatextended">CE</li>      <- packageId; any case; do not add _copy or _steam
+    </v1.6>
+    <default>                                              <- used when no v<current> block exists; keep it equal to the newest block
+      <li>/</li>
+      <li IfModActive="ceteam.combatextended">CE</li>
+    </default>
+  </loadFolders>
+-->
+
+<!-- STYLE B: PatchOperationFindMod in a normal Patches/ file. CE classes inside it STILL deserialize when CE is absent,
+     because the whole operation tree is parsed at load time. With CE absent this logs "Could not find type" errors.
+     Use only for operations built from vanilla classes (Add/Replace/Remove) when the target is vanilla XML. -->
+<Patch>
+  <Operation Class="PatchOperationFindMod">
+    <mods><li>Combat Extended</li></mods>                  <!-- the exact About.xml <name>; NOT a packageId -->
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="{{defName}}"]/statBases/MarketValue</xpath>
+      <value><MarketValue>{{v}}</MarketValue></value>
+    </match>
+  </Operation>
+</Patch>
+
+<!-- STYLE C: probe the Defs for something only CE defines. Independent of mod names, so it survives renames.
+     Conditional: the xpath must select a node, else nomatch runs. -->
+<Patch>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Ammo_556x45mmNATO_FMJ"]</xpath>   <!-- exists only when CE is active -->
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="{{defName}}"]/statBases/Mass</xpath>
+      <value><Mass>{{mass}}</Mass></value>
+    </match>
+  </Operation>
+</Patch>
+
+<!-- ENSURE-CONTAINER IDIOM: Add into an optional container fails when the container is missing. Create it first. -->
+<Patch>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="{{defName}}"]/weaponTags</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="{{defName}}"]</xpath>
+      <value><weaponTags /></value>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="{{defName}}"]/weaponTags</xpath>
+    <value><li>{{tag}}</li></value>
+  </Operation>
+</Patch>
+
+<!-- SEQUENCE WITH success Always: first op is a gate, rest are the payload. A failed gate makes the sequence fail,
+     which would log a patch error, so Always turns that into success. Used by the owner's mods. -->
+<Patch>
+  <Operation Class="PatchOperationSequence">
+    <success>Always</success>
+    <operations>
+      <li Class="PatchOperationFindMod"><mods><li>Combat Extended</li></mods></li>   <!-- vanilla class: safe when CE is absent -->
+      <li Class="PatchOperationReplace">...</li>
+    </operations>
+  </Operation>
+</Patch>

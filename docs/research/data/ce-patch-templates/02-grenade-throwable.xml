@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  TEMPLATE 02: grenade or other one-use throwable. Differences from a gun: OneUse verb, no AmmoUser, no FireModes,
+  the projectile is an explosive CE projectile, and the item needs a tool and a trade tag.
+-->
+<Patch>
+  <Operation Class="CombatExtended.PatchOperationMakeGunCECompatible">
+    <defName>{{defName}}</defName>
+    <statBases>
+      <Mass>{{mass}}</Mass>
+      <Bulk>{{bulk}}</Bulk>
+      <RangedWeapon_Cooldown>1</RangedWeapon_Cooldown>
+      <SightsEfficiency>1.0</SightsEfficiency>
+    </statBases>
+    <Properties>
+      <label>{{throw_label}}</label>                         <!-- [OPT] command label -->
+      <verbClass>CombatExtended.Verb_ShootCEOneUse</verbClass> <!-- [REQ] consumes the item -->
+      <hasStandardCommand>true</hasStandardCommand>
+      <range>{{range}}</range>
+      <minRange>{{min_range}}</minRange>                     <!-- [OPT] -->
+      <warmupTime>{{warmup}}</warmupTime>
+      <noiseRadius>{{noise}}</noiseRadius>                   <!-- [OPT] -->
+      <soundCast>ThrowGrenade</soundCast>
+      <targetParams><canTargetLocations>true</canTargetLocations></targetParams>
+      <defaultProjectile>{{projectile_defName}}</defaultProjectile>
+      <onlyManualCast>true</onlyManualCast>                  <!-- [OPT] keeps AI from wasting it -->
+      <ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>  <!-- [OPT] -->
+      <ai_AvoidFriendlyFireRadius>{{radius}}</ai_AvoidFriendlyFireRadius> <!-- [OPT] -->
+    </Properties>
+    <weaponTags>
+      <li>CE_AI_Grenade</li>
+      <li>CE_AI_AOE</li>
+      <li>CE_OneHandedWeapon</li>
+    </weaponTags>
+  </Operation>
+  <!-- Vanilla grenades also lose their recipeMaker and get a body tool; third-party throwables usually only need the tool. -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="{{defName}}"]</xpath>
+    <value>
+      <tools>
+        <li Class="CombatExtended.ToolCE">
+          <label>body</label><capacities><li>Blunt</li></capacities>
+          <power>2</power><cooldownTime>1.75</cooldownTime>
+          <armorPenetrationBlunt>1.0</armorPenetrationBlunt>
+        </li>
+      </tools>
+      <tradeTags Inherit="False"><li>CE_MediumAmmo</li></tradeTags> <!-- [OPT] ADD fails if the def already has tradeTags: use the ensure idiom in 09 -->
+    </value>
+  </Operation>
+  <!-- The projectile: thingClass must become an explosive CE class, projectile node must be ProjectilePropertiesCE. -->
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="{{projectile_defName}}"]/thingClass</xpath>  <!-- [REQ] ADD instead when the node is absent -->
+    <value><thingClass>CombatExtended.ProjectileCE_Explosive</thingClass></value>
+  </Operation>
+  <Operation Class="PatchOperationAttributeSet">
+    <xpath>Defs/ThingDef[defName="{{projectile_defName}}"]/projectile</xpath>
+    <attribute>Class</attribute>
+    <value>CombatExtended.ProjectilePropertiesCE</value>     <!-- [REQ] before any CE-only field is added below -->
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="{{projectile_defName}}"]/projectile</xpath>
+    <value>
+      <explosionDamageFalloff>true</explosionDamageFalloff>
+      <armorPenetrationSharp>{{ap_sharp}}</armorPenetrationSharp>
+      <armorPenetrationBlunt>{{ap_blunt}}</armorPenetrationBlunt>
+      <suppressionFactor>{{supp}}</suppressionFactor>        <!-- [OPT] -->
+      <dangerFactor>{{danger}}</dangerFactor>                <!-- [OPT] -->
+    </value>
+  </Operation>
+</Patch>

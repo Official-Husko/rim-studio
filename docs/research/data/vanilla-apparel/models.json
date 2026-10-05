@@ -1,0 +1,3405 @@
+{
+ "archetypes": [
+  {
+   "cluster": 1,
+   "median_coverage": 0.037,
+   "median_mv": 44.0,
+   "median_sharp": 0.07,
+   "median_work": 1800.0,
+   "members": [
+    "CowboyHat",
+    "BowlerHat",
+    "TribalHeaddress",
+    "Tuque",
+    "WarMask",
+    "WarVeil",
+    "HatHood",
+    "ClothMask",
+    "Pants",
+    "HatLadies",
+    "HatTop",
+    "Coronet",
+    "Crown",
+    "Beret"
+   ],
+   "n": 31
+  },
+  {
+   "cluster": 0,
+   "median_coverage": 0.634,
+   "median_mv": 119.1,
+   "median_sharp": 0.07,
+   "median_work": 6400.0,
+   "members": [
+    "TribalA",
+    "Parka",
+    "BasicShirt",
+    "CollarShirt",
+    "Duster",
+    "Jacket",
+    "FlakJacket",
+    "Cape",
+    "Robe",
+    "ShirtRuffle",
+    "Corset",
+    "VestRoyal",
+    "RobeRoyal",
+    "BodyStrap"
+   ],
+   "n": 19
+  },
+  {
+   "cluster": 2,
+   "median_coverage": 0.037,
+   "median_mv": 245.0,
+   "median_sharp": 0.02,
+   "median_work": 4750.0,
+   "members": [
+    "SimpleHelmet",
+    "AdvancedHelmet",
+    "Gunlink",
+    "AirwireHeadset",
+    "ArrayHeadset",
+    "IntegratorHeadset",
+    "GasMask",
+    "Bandolier"
+   ],
+   "n": 8
+  },
+  {
+   "cluster": 4,
+   "median_coverage": 0.886,
+   "median_mv": 460.0,
+   "median_sharp": 0.52,
+   "median_work": 38000.0,
+   "members": [
+    "PlateArmor",
+    "Vacsuit",
+    "VacsuitChildren"
+   ],
+   "n": 3
+  },
+  {
+   "cluster": 5,
+   "median_coverage": 0.06,
+   "median_mv": 715.0,
+   "median_sharp": 0.92,
+   "median_work": 15750.0,
+   "members": [
+    "PowerArmorHelmet",
+    "ArmorHelmetRecon",
+    "FlakVest",
+    "FlakPants",
+    "ArmorHelmetReconPrestige",
+    "ArmorMarineHelmetPrestige",
+    "ArmorHelmetCataphract",
+    "ArmorHelmetCataphractPrestige",
+    "ArmorHelmetMechCommander",
+    "ArmorHelmetMechlordHelmet",
+    "VacsuitHelmet"
+   ],
+   "n": 11
+  },
+  {
+   "cluster": 3,
+   "median_coverage": 0.886,
+   "median_mv": 2417.5,
+   "median_sharp": 1.04,
+   "median_work": 67500.0,
+   "members": [
+    "PowerArmor",
+    "ArmorRecon",
+    "ArmorReconPrestige",
+    "ArmorMarinePrestige",
+    "ArmorCataphract",
+    "ArmorCataphractPrestige",
+    "ArmorLocust",
+    "ArmorMarineGrenadier",
+    "ArmorCataphractPhoenix",
+    "MechlordSuit"
+   ],
+   "n": 10
+  }
+ ],
+ "armor_mult_by_kind": {
+  "base clothing": [
+   0.2
+  ],
+  "full body": [
+   0.2,
+   0.3,
+   0.9
+  ],
+  "helmet": [
+   0.0,
+   0.1,
+   0.15,
+   0.2,
+   0.25,
+   0.3,
+   0.4,
+   0.5,
+   0.7
+  ],
+  "legwear": [
+   0.2
+  ],
+  "torso outer": [
+   0.1,
+   0.2,
+   0.3
+  ],
+  "torso vest": [
+   0.1,
+   0.2
+  ],
+  "utility": []
+ },
+ "bands": {
+  "fixed|full body": {
+   "blunt": {
+    "n": 12,
+    "p10": 0.26,
+    "p50": 0.4,
+    "p90": 0.495
+   },
+   "coverage": {
+    "n": 12,
+    "p10": 0.886,
+    "p50": 0.886,
+    "p90": 0.886
+   },
+   "heat": {
+    "n": 12,
+    "p10": 0.46,
+    "p50": 0.54,
+    "p90": 0.66
+   },
+   "hp": {
+    "n": 12,
+    "p10": 190.0,
+    "p50": 340.0,
+    "p90": 400.0
+   },
+   "market_value": {
+    "n": 12,
+    "p10": 712.0,
+    "p50": 2267.5,
+    "p90": 3885.0
+   },
+   "mass": {
+    "n": 12,
+    "p10": 9.0,
+    "p50": 12.0,
+    "p90": 15.0
+   },
+   "sharp": {
+    "n": 12,
+    "p10": 0.555,
+    "p50": 0.965,
+    "p90": 1.195
+   },
+   "work": {
+    "n": 12,
+    "p10": 45000.0,
+    "p50": 60000.0,
+    "p90": 117000.0
+   }
+  },
+  "fixed|helmet": {
+   "blunt": {
+    "n": 14,
+    "p10": 0.0,
+    "p50": 0.35,
+    "p90": 0.485
+   },
+   "coverage": {
+    "n": 14,
+    "p10": 0.037,
+    "p50": 0.06,
+    "p90": 0.06
+   },
+   "heat": {
+    "n": 14,
+    "p10": 0.0,
+    "p50": 0.46,
+    "p90": 0.6
+   },
+   "hp": {
+    "n": 14,
+    "p10": 66.0,
+    "p50": 120.0,
+    "p90": 180.0
+   },
+   "market_value": {
+    "n": 14,
+    "p10": 204.8,
+    "p50": 675.0,
+    "p90": 2091.5
+   },
+   "mass": {
+    "n": 14,
+    "p10": 0.176,
+    "p50": 1.0,
+    "p90": 1.85
+   },
+   "sharp": {
+    "n": 14,
+    "p10": 0.0,
+    "p50": 0.805,
+    "p90": 1.158
+   },
+   "work": {
+    "n": 14,
+    "p10": 3270.0,
+    "p50": 15750.0,
+    "p90": 38850.0
+   }
+  },
+  "fixed|legwear": {
+   "blunt": {
+    "n": 1,
+    "p10": 0.08,
+    "p50": 0.08,
+    "p90": 0.08
+   },
+   "coverage": {
+    "n": 1,
+    "p10": 0.252,
+    "p50": 0.252,
+    "p90": 0.252
+   },
+   "heat": {
+    "n": 1,
+    "p10": 0.1,
+    "p50": 0.1,
+    "p90": 0.1
+   },
+   "hp": {
+    "n": 1,
+    "p10": 200.0,
+    "p50": 200.0,
+    "p90": 200.0
+   },
+   "market_value": {
+    "n": 1,
+    "p10": 225.0,
+    "p50": 225.0,
+    "p90": 225.0
+   },
+   "mass": {
+    "n": 1,
+    "p10": 4.0,
+    "p50": 4.0,
+    "p90": 4.0
+   },
+   "sharp": {
+    "n": 1,
+    "p10": 0.55,
+    "p50": 0.55,
+    "p90": 0.55
+   },
+   "work": {
+    "n": 1,
+    "p10": 9000.0,
+    "p50": 9000.0,
+    "p90": 9000.0
+   }
+  },
+  "fixed|torso outer": {
+   "blunt": {
+    "n": 1,
+    "p10": 0.08,
+    "p50": 0.08,
+    "p90": 0.08
+   },
+   "coverage": {
+    "n": 1,
+    "p10": 0.634,
+    "p50": 0.634,
+    "p90": 0.634
+   },
+   "heat": {
+    "n": 1,
+    "p10": 0.1,
+    "p50": 0.1,
+    "p90": 0.1
+   },
+   "hp": {
+    "n": 1,
+    "p10": 200.0,
+    "p50": 200.0,
+    "p90": 200.0
+   },
+   "market_value": {
+    "n": 1,
+    "p10": 290.0,
+    "p50": 290.0,
+    "p90": 290.0
+   },
+   "mass": {
+    "n": 1,
+    "p10": 7.0,
+    "p50": 7.0,
+    "p90": 7.0
+   },
+   "sharp": {
+    "n": 1,
+    "p10": 0.55,
+    "p50": 0.55,
+    "p90": 0.55
+   },
+   "work": {
+    "n": 1,
+    "p10": 14000.0,
+    "p50": 14000.0,
+    "p90": 14000.0
+   }
+  },
+  "fixed|torso vest": {
+   "blunt": {
+    "n": 1,
+    "p10": 0.36,
+    "p50": 0.36,
+    "p90": 0.36
+   },
+   "coverage": {
+    "n": 1,
+    "p10": 0.442,
+    "p50": 0.442,
+    "p90": 0.442
+   },
+   "heat": {
+    "n": 1,
+    "p10": 0.27,
+    "p50": 0.27,
+    "p90": 0.27
+   },
+   "hp": {
+    "n": 1,
+    "p10": 200.0,
+    "p50": 200.0,
+    "p90": 200.0
+   },
+   "market_value": {
+    "n": 1,
+    "p10": 225.0,
+    "p50": 225.0,
+    "p90": 225.0
+   },
+   "mass": {
+    "n": 1,
+    "p10": 4.0,
+    "p50": 4.0,
+    "p90": 4.0
+   },
+   "sharp": {
+    "n": 1,
+    "p10": 1.0,
+    "p50": 1.0,
+    "p90": 1.0
+   },
+   "work": {
+    "n": 1,
+    "p10": 9000.0,
+    "p50": 9000.0,
+    "p90": 9000.0
+   }
+  },
+  "stuffed|base clothing": {
+   "blunt": {
+    "n": 6,
+    "p10": 0.0,
+    "p50": 0.0,
+    "p90": 0.0
+   },
+   "coverage": {
+    "n": 6,
+    "p10": 0.46,
+    "p50": 0.634,
+    "p90": 0.679
+   },
+   "heat": {
+    "n": 6,
+    "p10": 0.036,
+    "p50": 0.036,
+    "p90": 0.036
+   },
+   "hp": {
+    "n": 6,
+    "p10": 55.0,
+    "p50": 100.0,
+    "p90": 100.0
+   },
+   "market_value": {
+    "n": 6,
+    "p10": 42.325,
+    "p50": 71.49,
+    "p90": 107.79
+   },
+   "mass": {
+    "n": 6,
+    "p10": 0.2,
+    "p50": 0.275,
+    "p90": 0.5
+   },
+   "sharp": {
+    "n": 6,
+    "p10": 0.072,
+    "p50": 0.072,
+    "p90": 0.072
+   },
+   "work": {
+    "n": 6,
+    "p10": 1340.0,
+    "p50": 1700.0,
+    "p90": 4350.0
+   }
+  },
+  "stuffed|full body": {
+   "blunt": {
+    "n": 7,
+    "p10": 0.0,
+    "p50": 0.0,
+    "p90": 0.162
+   },
+   "coverage": {
+    "n": 7,
+    "p10": 0.88,
+    "p50": 0.886,
+    "p90": 0.91
+   },
+   "heat": {
+    "n": 7,
+    "p10": 0.036,
+    "p50": 0.036,
+    "p90": 0.248
+   },
+   "hp": {
+    "n": 7,
+    "p10": 80.0,
+    "p50": 100.0,
+    "p90": 236.0
+   },
+   "market_value": {
+    "n": 7,
+    "p10": 83.52,
+    "p50": 156.0,
+    "p90": 316.0
+   },
+   "mass": {
+    "n": 7,
+    "p10": 0.522,
+    "p50": 1.0,
+    "p90": 7.2
+   },
+   "sharp": {
+    "n": 7,
+    "p10": 0.072,
+    "p50": 0.072,
+    "p90": 0.389
+   },
+   "work": {
+    "n": 7,
+    "p10": 3200.0,
+    "p50": 10000.0,
+    "p90": 27200.0
+   }
+  },
+  "stuffed|helmet": {
+   "blunt": {
+    "n": 29,
+    "p10": 0.0,
+    "p50": 0.0,
+    "p90": 0.175
+   },
+   "coverage": {
+    "n": 29,
+    "p10": 0.033,
+    "p50": 0.037,
+    "p90": 0.06
+   },
+   "heat": {
+    "n": 29,
+    "p10": 0.0,
+    "p50": 0.036,
+    "p90": 0.3
+   },
+   "hp": {
+    "n": 29,
+    "p10": 76.0,
+    "p50": 80.0,
+    "p90": 100.8
+   },
+   "market_value": {
+    "n": 29,
+    "p10": 34.32,
+    "p50": 45.2,
+    "p90": 102.04
+   },
+   "mass": {
+    "n": 29,
+    "p10": 0.07,
+    "p50": 0.1,
+    "p90": 1.24
+   },
+   "sharp": {
+    "n": 29,
+    "p10": 0.0,
+    "p50": 0.072,
+    "p90": 0.354
+   },
+   "work": {
+    "n": 29,
+    "p10": 1200.0,
+    "p50": 2000.0,
+    "p90": 7600.0
+   }
+  },
+  "stuffed|legwear": {
+   "blunt": {
+    "n": 2,
+    "p10": 0.0,
+    "p50": 0.0,
+    "p90": 0.0
+   },
+   "coverage": {
+    "n": 2,
+    "p10": 0.252,
+    "p50": 0.252,
+    "p90": 0.252
+   },
+   "heat": {
+    "n": 2,
+    "p10": 0.036,
+    "p50": 0.036,
+    "p90": 0.036
+   },
+   "hp": {
+    "n": 2,
+    "p10": 55.0,
+    "p50": 75.0,
+    "p90": 95.0
+   },
+   "market_value": {
+    "n": 2,
+    "p10": 37.725,
+    "p50": 50.185,
+    "p90": 62.645
+   },
+   "mass": {
+    "n": 2,
+    "p10": 0.275,
+    "p50": 0.375,
+    "p90": 0.475
+   },
+   "sharp": {
+    "n": 2,
+    "p10": 0.072,
+    "p50": 0.072,
+    "p90": 0.072
+   },
+   "work": {
+    "n": 2,
+    "p10": 1312.0,
+    "p50": 1440.0,
+    "p90": 1568.0
+   }
+  },
+  "stuffed|torso outer": {
+   "blunt": {
+    "n": 6,
+    "p10": 0.0,
+    "p50": 0.0,
+    "p90": 0.0
+   },
+   "coverage": {
+    "n": 6,
+    "p10": 0.427,
+    "p50": 0.634,
+    "p90": 0.634
+   },
+   "heat": {
+    "n": 6,
+    "p10": 0.018,
+    "p50": 0.036,
+    "p90": 0.045
+   },
+   "hp": {
+    "n": 6,
+    "p10": 75.0,
+    "p50": 150.0,
+    "p90": 170.0
+   },
+   "market_value": {
+    "n": 6,
+    "p10": 103.02,
+    "p50": 127.65,
+    "p90": 139.5
+   },
+   "mass": {
+    "n": 6,
+    "p10": 1.25,
+    "p50": 1.5,
+    "p90": 1.85
+   },
+   "sharp": {
+    "n": 6,
+    "p10": 0.036,
+    "p50": 0.072,
+    "p90": 0.09
+   },
+   "work": {
+    "n": 6,
+    "p10": 4250.0,
+    "p50": 6700.0,
+    "p90": 7500.0
+   }
+  },
+  "stuffed|torso vest": {
+   "blunt": {
+    "n": 3,
+    "p10": 0.0,
+    "p50": 0.0,
+    "p90": 0.0
+   },
+   "coverage": {
+    "n": 3,
+    "p10": 0.427,
+    "p50": 0.427,
+    "p90": 0.427
+   },
+   "heat": {
+    "n": 3,
+    "p10": 0.022,
+    "p50": 0.036,
+    "p90": 0.036
+   },
+   "hp": {
+    "n": 3,
+    "p10": 60.0,
+    "p50": 100.0,
+    "p90": 100.0
+   },
+   "market_value": {
+    "n": 3,
+    "p10": 55.02,
+    "p50": 110.7,
+    "p90": 110.7
+   },
+   "mass": {
+    "n": 3,
+    "p10": 0.55,
+    "p50": 0.75,
+    "p90": 0.75
+   },
+   "sharp": {
+    "n": 3,
+    "p10": 0.043,
+    "p50": 0.072,
+    "p90": 0.072
+   },
+   "work": {
+    "n": 3,
+    "p10": 3200.0,
+    "p50": 12000.0,
+    "p90": 12000.0
+   }
+  }
+ },
+ "baseline_backtest": {
+  "best_k": 0.25,
+  "k_grid_twin_excluded": {
+   "0.0": {
+    "cost_total": 34.5,
+    "hp": 15.1,
+    "market_value": 40.0,
+    "mass": 33.3,
+    "work": 42.9
+   },
+   "0.25": {
+    "cost_total": 35.4,
+    "hp": 17.6,
+    "market_value": 41.1,
+    "mass": 30.2,
+    "work": 37.2
+   },
+   "0.5": {
+    "cost_total": 37.0,
+    "hp": 21.4,
+    "market_value": 43.1,
+    "mass": 28.6,
+    "work": 36.5
+   },
+   "0.75": {
+    "cost_total": 37.4,
+    "hp": 22.3,
+    "market_value": 42.7,
+    "mass": 33.3,
+    "work": 36.5
+   },
+   "1.0": {
+    "cost_total": 41.2,
+    "hp": 25.1,
+    "market_value": 44.2,
+    "mass": 33.5,
+    "work": 41.6
+   }
+  },
+  "n": 82,
+  "plain_loo": {
+   "cost_total": {
+    "anchor": {
+     "median_abs_pct_err": 31.1,
+     "p80_abs_pct_err": 79.6
+    },
+    "naive": {
+     "median_abs_pct_err": 33.1,
+     "p80_abs_pct_err": 87.2
+    },
+    "ols": {
+     "median_abs_pct_err": 36.6,
+     "p80_abs_pct_err": 81.7
+    }
+   },
+   "hp": {
+    "anchor": {
+     "median_abs_pct_err": 16.4,
+     "p80_abs_pct_err": 64.5
+    },
+    "naive": {
+     "median_abs_pct_err": 15.0,
+     "p80_abs_pct_err": 64.1
+    },
+    "ols": {
+     "median_abs_pct_err": 18.8,
+     "p80_abs_pct_err": 42.1
+    }
+   },
+   "market_value": {
+    "anchor": {
+     "median_abs_pct_err": 34.3,
+     "p80_abs_pct_err": 78.6
+    },
+    "naive": {
+     "median_abs_pct_err": 34.3,
+     "p80_abs_pct_err": 89.0
+    },
+    "ols": {
+     "median_abs_pct_err": 41.3,
+     "p80_abs_pct_err": 72.4
+    }
+   },
+   "mass": {
+    "anchor": {
+     "median_abs_pct_err": 26.8,
+     "p80_abs_pct_err": 69.0
+    },
+    "naive": {
+     "median_abs_pct_err": 28.6,
+     "p80_abs_pct_err": 69.0
+    },
+    "ols": {
+     "median_abs_pct_err": 45.5,
+     "p80_abs_pct_err": 91.1
+    }
+   },
+   "work": {
+    "anchor": {
+     "median_abs_pct_err": 35.7,
+     "p80_abs_pct_err": 75.8
+    },
+    "naive": {
+     "median_abs_pct_err": 40.4,
+     "p80_abs_pct_err": 74.5
+    },
+    "ols": {
+     "median_abs_pct_err": 55.9,
+     "p80_abs_pct_err": 108.2
+    }
+   }
+  },
+  "twin_excluded_loo": {
+   "cost_total": {
+    "anchor": {
+     "median_abs_pct_err": 35.4,
+     "p80_abs_pct_err": 79.6
+    },
+    "naive": {
+     "median_abs_pct_err": 34.5,
+     "p80_abs_pct_err": 87.2
+    },
+    "ols": {
+     "median_abs_pct_err": 36.7,
+     "p80_abs_pct_err": 81.7
+    }
+   },
+   "hp": {
+    "anchor": {
+     "median_abs_pct_err": 17.6,
+     "p80_abs_pct_err": 64.5
+    },
+    "naive": {
+     "median_abs_pct_err": 15.1,
+     "p80_abs_pct_err": 64.1
+    },
+    "ols": {
+     "median_abs_pct_err": 18.8,
+     "p80_abs_pct_err": 42.1
+    }
+   },
+   "market_value": {
+    "anchor": {
+     "median_abs_pct_err": 41.1,
+     "p80_abs_pct_err": 78.6
+    },
+    "naive": {
+     "median_abs_pct_err": 40.0,
+     "p80_abs_pct_err": 89.0
+    },
+    "ols": {
+     "median_abs_pct_err": 41.3,
+     "p80_abs_pct_err": 72.4
+    }
+   },
+   "mass": {
+    "anchor": {
+     "median_abs_pct_err": 30.2,
+     "p80_abs_pct_err": 84.7
+    },
+    "naive": {
+     "median_abs_pct_err": 33.3,
+     "p80_abs_pct_err": 88.6
+    },
+    "ols": {
+     "median_abs_pct_err": 45.5,
+     "p80_abs_pct_err": 91.4
+    }
+   },
+   "work": {
+    "anchor": {
+     "median_abs_pct_err": 37.2,
+     "p80_abs_pct_err": 79.9
+    },
+    "naive": {
+     "median_abs_pct_err": 42.9,
+     "p80_abs_pct_err": 83.5
+    },
+    "ols": {
+     "median_abs_pct_err": 56.5,
+     "p80_abs_pct_err": 109.7
+    }
+   }
+  },
+  "twin_groups_dropped_median": 0.0
+ },
+ "counts": {
+  "apparel": 112,
+  "item_x_material_rows": 1387,
+  "stuff_for_apparel": 47,
+  "stuff_total": 55,
+  "stuffed": 54
+ },
+ "dist_by_kind": {
+  "base clothing": {
+   "api": {
+    "max": 1.008,
+    "median": 0.942,
+    "min": 0.683,
+    "n": 7
+   },
+   "blunt": {
+    "max": 0.0,
+    "median": 0.0,
+    "min": 0.0,
+    "n": 7
+   },
+   "coverage": {
+    "max": 0.6786,
+    "median": 0.6341,
+    "min": 0.4602,
+    "n": 7
+   },
+   "heat": {
+    "max": 0.04,
+    "median": 0.036,
+    "min": 0.036,
+    "n": 7
+   },
+   "hp": {
+    "max": 100.0,
+    "median": 100.0,
+    "min": 50.0,
+    "n": 7
+   },
+   "ins_cold": {
+    "max": 9.9,
+    "median": 4.68,
+    "min": 3.96,
+    "n": 7
+   },
+   "market_value": {
+    "max": 400.0,
+    "median": 77.22,
+    "min": 34.61,
+    "n": 7
+   },
+   "mass": {
+    "max": 0.5,
+    "median": 0.25,
+    "min": 0.15,
+    "n": 7
+   },
+   "n": 7,
+   "sharp": {
+    "max": 0.072,
+    "median": 0.072,
+    "min": 0.07,
+    "n": 7
+   },
+   "work": {
+    "max": 6000.0,
+    "median": 1600.0,
+    "min": 1.0,
+    "n": 7
+   }
+  },
+  "full body": {
+   "api": {
+    "max": 53.943,
+    "median": 38.5215,
+    "min": 1.294,
+    "n": 20
+   },
+   "blunt": {
+    "max": 0.5,
+    "median": 0.375,
+    "min": 0.0,
+    "n": 20
+   },
+   "coverage": {
+    "max": 0.9461,
+    "median": 0.8861,
+    "min": 0.8711,
+    "n": 20
+   },
+   "heat": {
+    "max": 0.75,
+    "median": 0.46,
+    "min": 0.036,
+    "n": 20
+   },
+   "hp": {
+    "max": 400.0,
+    "median": 280.0,
+    "min": 50.0,
+    "n": 20
+   },
+   "ins_cold": {
+    "max": 90.0,
+    "median": 64.0,
+    "min": 1.8,
+    "n": 20
+   },
+   "market_value": {
+    "max": 7015.0,
+    "median": 1080.0,
+    "min": 52.2,
+    "n": 20
+   },
+   "mass": {
+    "max": 15.0,
+    "median": 9.0,
+    "min": 0.18,
+    "n": 20
+   },
+   "n": 20,
+   "sharp": {
+    "max": 1.2,
+    "median": 0.8400000000000001,
+    "min": 0.07,
+    "n": 20
+   },
+   "work": {
+    "max": 150000.0,
+    "median": 45000.0,
+    "min": 1.0,
+    "n": 20
+   }
+  },
+  "helmet": {
+   "api": {
+    "max": 3.652,
+    "median": 0.089,
+    "min": 0.0,
+    "n": 47
+   },
+   "blunt": {
+    "max": 0.5,
+    "median": 0.0,
+    "min": 0.0,
+    "n": 47
+   },
+   "coverage": {
+    "max": 0.1086,
+    "median": 0.0366,
+    "min": 0.009,
+    "n": 47
+   },
+   "heat": {
+    "max": 0.66,
+    "median": 0.036,
+    "min": 0.0,
+    "n": 47
+   },
+   "hp": {
+    "max": 240.0,
+    "median": 80.0,
+    "min": 40.0,
+    "n": 47
+   },
+   "ins_cold": {
+    "max": 9.0,
+    "median": 1.8,
+    "min": 0.0,
+    "n": 47
+   },
+   "market_value": {
+    "max": 5335.0,
+    "median": 96.6,
+    "min": 17.88,
+    "n": 47
+   },
+   "mass": {
+    "max": 2.0,
+    "median": 0.7,
+    "min": 0.04,
+    "n": 47
+   },
+   "n": 47,
+   "sharp": {
+    "max": 1.2,
+    "median": 0.09,
+    "min": 0.0,
+    "n": 47
+   },
+   "work": {
+    "max": 52500.0,
+    "median": 2100.0,
+    "min": 1.0,
+    "n": 47
+   }
+  },
+  "legwear": {
+   "api": {
+    "max": 5.198,
+    "median": 0.374,
+    "min": 0.374,
+    "n": 3
+   },
+   "blunt": {
+    "max": 0.08,
+    "median": 0.0,
+    "min": 0.0,
+    "n": 3
+   },
+   "coverage": {
+    "max": 0.252,
+    "median": 0.252,
+    "min": 0.252,
+    "n": 3
+   },
+   "heat": {
+    "max": 0.1,
+    "median": 0.036,
+    "min": 0.036,
+    "n": 3
+   },
+   "hp": {
+    "max": 200.0,
+    "median": 100.0,
+    "min": 50.0,
+    "n": 3
+   },
+   "ins_cold": {
+    "max": 3.6,
+    "median": 3.6,
+    "min": 3.5,
+    "n": 3
+   },
+   "market_value": {
+    "max": 225.0,
+    "median": 65.76,
+    "min": 34.61,
+    "n": 3
+   },
+   "mass": {
+    "max": 4.0,
+    "median": 0.5,
+    "min": 0.25,
+    "n": 3
+   },
+   "n": 3,
+   "sharp": {
+    "max": 0.55,
+    "median": 0.072,
+    "min": 0.072,
+    "n": 3
+   },
+   "work": {
+    "max": 9000.0,
+    "median": 1600.0,
+    "min": 1280.0,
+    "n": 3
+   }
+  },
+  "torso outer": {
+   "api": {
+    "max": 13.079,
+    "median": 0.942,
+    "min": 0.317,
+    "n": 7
+   },
+   "blunt": {
+    "max": 0.08,
+    "median": 0.0,
+    "min": 0.0,
+    "n": 7
+   },
+   "coverage": {
+    "max": 0.6341,
+    "median": 0.6341,
+    "min": 0.4266,
+    "n": 7
+   },
+   "heat": {
+    "max": 0.1,
+    "median": 0.036,
+    "min": 0.018,
+    "n": 7
+   },
+   "hp": {
+    "max": 200.0,
+    "median": 160.0,
+    "min": 50.0,
+    "n": 7
+   },
+   "ins_cold": {
+    "max": 36.0,
+    "median": 14.4,
+    "min": 1.8,
+    "n": 7
+   },
+   "market_value": {
+    "max": 290.0,
+    "median": 130.2,
+    "min": 83.04,
+    "n": 7
+   },
+   "mass": {
+    "max": 7.0,
+    "median": 1.5,
+    "min": 1.0,
+    "n": 7
+   },
+   "n": 7,
+   "sharp": {
+    "max": 0.55,
+    "median": 0.072,
+    "min": 0.036,
+    "n": 7
+   },
+   "work": {
+    "max": 14000.0,
+    "median": 7000.0,
+    "min": 3500.0,
+    "n": 7
+   }
+  },
+  "torso vest": {
+   "api": {
+    "max": 21.213,
+    "median": 0.634,
+    "min": 0.0,
+    "n": 6
+   },
+   "blunt": {
+    "max": 0.36,
+    "median": 0.0,
+    "min": 0.0,
+    "n": 6
+   },
+   "coverage": {
+    "max": 0.4752,
+    "median": 0.4266,
+    "min": 0.4266,
+    "n": 6
+   },
+   "heat": {
+    "max": 0.27,
+    "median": 0.036,
+    "min": 0.0,
+    "n": 6
+   },
+   "hp": {
+    "max": 200.0,
+    "median": 100.0,
+    "min": 50.0,
+    "n": 6
+   },
+   "ins_cold": {
+    "max": 7.2,
+    "median": 3.9,
+    "min": 0.0,
+    "n": 6
+   },
+   "market_value": {
+    "max": 500.0,
+    "median": 110.7,
+    "min": 0.0,
+    "n": 6
+   },
+   "mass": {
+    "max": 4.0,
+    "median": 0.75,
+    "min": 0.5,
+    "n": 6
+   },
+   "n": 6,
+   "sharp": {
+    "max": 1.0,
+    "median": 0.07100000000000001,
+    "min": 0.0,
+    "n": 6
+   },
+   "work": {
+    "max": 12000.0,
+    "median": 5000.0,
+    "min": 1.0,
+    "n": 6
+   }
+  },
+  "utility": {
+   "api": {
+    "max": 0.0,
+    "median": 0.0,
+    "min": 0.0,
+    "n": 15
+   },
+   "blunt": {
+    "max": 0.0,
+    "median": 0.0,
+    "min": 0.0,
+    "n": 15
+   },
+   "coverage": {
+    "max": 0.0,
+    "median": 0.0,
+    "min": 0.0,
+    "n": 15
+   },
+   "heat": {
+    "max": 0.0,
+    "median": 0.0,
+    "min": 0.0,
+    "n": 15
+   },
+   "hp": {
+    "max": 100.0,
+    "median": 100.0,
+    "min": 60.0,
+    "n": 15
+   },
+   "ins_cold": {
+    "max": 0.0,
+    "median": 0.0,
+    "min": 0.0,
+    "n": 15
+   },
+   "market_value": {
+    "max": 1365.0,
+    "median": 395.0,
+    "min": 80.42,
+    "n": 15
+   },
+   "mass": {
+    "max": 3.0,
+    "median": 3.0,
+    "min": 0.5,
+    "n": 15
+   },
+   "n": 15,
+   "sharp": {
+    "max": 0.0,
+    "median": 0.0,
+    "min": 0.0,
+    "n": 15
+   },
+   "work": {
+    "max": 21000.0,
+    "median": 10000.0,
+    "min": 3200.0,
+    "n": 15
+   }
+  }
+ },
+ "dist_by_kind_tier": {
+  "base clothing|Medieval": {
+   "mv_median": 71.49000000000001,
+   "n": 4,
+   "sharp_median": 0.072,
+   "work_median": 2150.0
+  },
+  "base clothing|Neolithic": {
+   "mv_median": 73.26,
+   "n": 2,
+   "sharp_median": 0.072,
+   "work_median": 1600.0
+  },
+  "base clothing|Ultra": {
+   "mv_median": 400.0,
+   "n": 1,
+   "sharp_median": 0.07,
+   "work_median": 1.0
+  },
+  "full body|Medieval": {
+   "mv_median": 166.8,
+   "n": 6,
+   "sharp_median": 0.09,
+   "work_median": 13000.0
+  },
+  "full body|Neolithic": {
+   "mv_median": 104.4,
+   "n": 1,
+   "sharp_median": 0.072,
+   "work_median": 4000.0
+  },
+  "full body|Spacer": {
+   "mv_median": 2267.5,
+   "n": 12,
+   "sharp_median": 0.9650000000000001,
+   "work_median": 60000.0
+  },
+  "full body|Ultra": {
+   "mv_median": 600.0,
+   "n": 1,
+   "sharp_median": 0.07,
+   "work_median": 1.0
+  },
+  "helmet|Industrial": {
+   "mv_median": 96.56,
+   "n": 4,
+   "sharp_median": 0.45,
+   "work_median": 4600.0
+  },
+  "helmet|Medieval": {
+   "mv_median": 51.82,
+   "n": 19,
+   "sharp_median": 0.072,
+   "work_median": 1800.0
+  },
+  "helmet|Neolithic": {
+   "mv_median": 37.56,
+   "n": 9,
+   "sharp_median": 0.09,
+   "work_median": 2000.0
+  },
+  "helmet|Spacer": {
+   "mv_median": 715.0,
+   "n": 13,
+   "sharp_median": 0.92,
+   "work_median": 15750.0
+  },
+  "helmet|Ultra": {
+   "mv_median": 500.0,
+   "n": 2,
+   "sharp_median": 0.045,
+   "work_median": 1.0
+  },
+  "legwear|Industrial": {
+   "mv_median": 225.0,
+   "n": 1,
+   "sharp_median": 0.55,
+   "work_median": 9000.0
+  },
+  "legwear|Medieval": {
+   "mv_median": 50.185,
+   "n": 2,
+   "sharp_median": 0.072,
+   "work_median": 1440.0
+  },
+  "torso outer|Industrial": {
+   "mv_median": 125.1,
+   "n": 3,
+   "sharp_median": 0.072,
+   "work_median": 5000.0
+  },
+  "torso outer|Medieval": {
+   "mv_median": 130.2,
+   "n": 2,
+   "sharp_median": 0.072,
+   "work_median": 7000.0
+  },
+  "torso outer|Neolithic": {
+   "mv_median": 115.92000000000002,
+   "n": 2,
+   "sharp_median": 0.072,
+   "work_median": 7200.0
+  },
+  "torso vest|Industrial": {
+   "mv_median": 133.05,
+   "n": 2,
+   "sharp_median": 0.518,
+   "work_median": 5000.0
+  },
+  "torso vest|Medieval": {
+   "mv_median": 110.7,
+   "n": 3,
+   "sharp_median": 0.072,
+   "work_median": 12000.0
+  },
+  "torso vest|Ultra": {
+   "mv_median": 500.0,
+   "n": 1,
+   "sharp_median": 0.07,
+   "work_median": 1.0
+  }
+ },
+ "explicit_market_value_items": [
+  "Apparel_PsychicFoilHelmet",
+  "Apparel_PsychicShockLance",
+  "Apparel_PsychicInsanityLance",
+  "OrbitalTargeterBombardment",
+  "OrbitalTargeterPowerBeam",
+  "TornadoGenerator",
+  "Apparel_PsyfocusHelmet",
+  "Apparel_EltexSkullcap",
+  "Apparel_PsyfocusShirt",
+  "Apparel_PsyfocusVest",
+  "Apparel_PsyfocusRobe",
+  "OrbitalTargeterMechCluster",
+  "Apparel_BiomutationLance",
+  "Apparel_CerebrexNode"
+ ],
+ "index_weight_sensitivity_r2_armored_B": {
+  "default 0.6/0.25/0.15": 0.709,
+  "equal": 0.697,
+  "sharp only": 0.718,
+  "sharp+blunt": 0.718
+ },
+ "labour_share": {
+  "max": 0.5901639344262295,
+  "median": 0.13793103448275862,
+  "min": 0.008454921762616328,
+  "n": 96
+ },
+ "layer_stacking": [
+  {
+   "ap": 0.0,
+   "mean_factor": 0.625,
+   "ratings": [
+    0.5
+   ]
+  },
+  {
+   "ap": 0.3,
+   "mean_factor": 0.85,
+   "ratings": [
+    0.5
+   ]
+  },
+  {
+   "ap": 0.0,
+   "mean_factor": 0.3906,
+   "ratings": [
+    0.5,
+    0.5
+   ]
+  },
+  {
+   "ap": 0.3,
+   "mean_factor": 0.7225,
+   "ratings": [
+    0.5,
+    0.5
+   ]
+  },
+  {
+   "ap": 0.0,
+   "mean_factor": 0.25,
+   "ratings": [
+    1.0
+   ]
+  },
+  {
+   "ap": 0.3,
+   "mean_factor": 0.475,
+   "ratings": [
+    1.0
+   ]
+  },
+  {
+   "ap": 0.0,
+   "mean_factor": 0.0625,
+   "ratings": [
+    1.0,
+    1.0
+   ]
+  },
+  {
+   "ap": 0.3,
+   "mean_factor": 0.2256,
+   "ratings": [
+    1.0,
+    1.0
+   ]
+  },
+  {
+   "ap": 0.0,
+   "mean_factor": 0.2373,
+   "ratings": [
+    0.9,
+    0.36
+   ]
+  },
+  {
+   "ap": 0.3,
+   "mean_factor": 0.5252,
+   "ratings": [
+    0.9,
+    0.36
+   ]
+  },
+  {
+   "ap": 0.0,
+   "mean_factor": 0.2,
+   "ratings": [
+    1.2
+   ]
+  },
+  {
+   "ap": 0.3,
+   "mean_factor": 0.325,
+   "ratings": [
+    1.2
+   ]
+  }
+ ],
+ "material_multipliers": {
+  "Bioferrite": {
+   "blunt_power": 0.5,
+   "f_hp": 2,
+   "f_work": 2.5,
+   "heat_power": 0.5,
+   "ins_cold_power": 2.5,
+   "market_value": 0.75,
+   "sharp_power": 1.1
+  },
+  "Cloth": {
+   "blunt_power": 0,
+   "f_hp": 1,
+   "f_work": 1,
+   "heat_power": 0.18,
+   "ins_cold_power": 18,
+   "market_value": 1.5,
+   "sharp_power": 0.36
+  },
+  "DevilstrandCloth": {
+   "blunt_power": 0.36,
+   "f_hp": 1.3,
+   "f_work": 1,
+   "heat_power": 3.0,
+   "ins_cold_power": 20,
+   "market_value": 5.5,
+   "sharp_power": 1.4
+  },
+  "Gold": {
+   "blunt_power": 0.36,
+   "f_hp": 0.6,
+   "f_work": 0.9,
+   "heat_power": 0.36,
+   "ins_cold_power": 3,
+   "market_value": 10,
+   "sharp_power": 0.72
+  },
+  "Hyperweave": {
+   "blunt_power": 0.54,
+   "f_hp": 2.4,
+   "f_work": 1,
+   "heat_power": 2.88,
+   "ins_cold_power": 26,
+   "market_value": 9,
+   "sharp_power": 2.0
+  },
+  "Jade": {
+   "blunt_power": 0.45,
+   "f_hp": 0.5,
+   "f_work": 1.4,
+   "heat_power": 0.54,
+   "ins_cold_power": 3,
+   "market_value": 5,
+   "sharp_power": 0.9
+  },
+  "Leather_AlphaThrumbo": {
+   "blunt_power": 0.4,
+   "f_hp": 2.2,
+   "f_work": 1,
+   "heat_power": 1.5,
+   "ins_cold_power": 36,
+   "market_value": 20.0,
+   "sharp_power": 2.12
+  },
+  "Leather_Armadillo": {
+   "blunt_power": 0.24,
+   "f_hp": 1.3,
+   "f_work": 1,
+   "heat_power": 1.5,
+   "ins_cold_power": 16,
+   "market_value": 3.2,
+   "sharp_power": 1.24
+  },
+  "Leather_Bear": {
+   "blunt_power": 0.24,
+   "f_hp": 1.3,
+   "f_work": 1,
+   "heat_power": 1.5,
+   "ins_cold_power": 20,
+   "market_value": 3.4,
+   "sharp_power": 1.12
+  },
+  "Leather_Bird": {
+   "blunt_power": 0.14,
+   "f_hp": 1.0,
+   "f_work": 1,
+   "heat_power": 1.5,
+   "ins_cold_power": 10,
+   "market_value": 1.8,
+   "sharp_power": 0.67
+  },
+  "Leather_Bluefur": {
+   "blunt_power": 0.24,
+   "f_hp": 1.3,
+   "f_work": 1,
+   "heat_power": 1.5,
+   "ins_cold_power": 20,
+   "market_value": 2.3,
+   "sharp_power": 0.81
+  },
+  "Leather_Camel": {
+   "blunt_power": 0.24,
+   "f_hp": 1.3,
+   "f_work": 1,
+   "heat_power": 1.5,
+   "ins_cold_power": 16,
+   "market_value": 2.3,
+   "sharp_power": 0.81
+  },
+  "Leather_Chinchilla": {
+   "blunt_power": 0.14,
+   "f_hp": 1.0,
+   "f_work": 1,
+   "heat_power": 1.5,
+   "ins_cold_power": 30,
+   "market_value": 6.5,
+   "sharp_power": 0.67
+  },
+  "Leather_Dog": {
+   "blunt_power": 0.24,
+   "f_hp": 1.3,
+   "f_work": 1,
+   "heat_power": 1.5,
+   "ins_cold_power": 14,
+   "market_value": 2.0,
+   "sharp_power": 0.81
+  },
+  "Leather_Dread": {
+   "blunt_power": 0.24,
+   "f_hp": 1.3,
+   "f_work": 1,
+   "heat_power": 1.5,
+   "ins_cold_power": 20,
+   "market_value": 3.5,
+   "sharp_power": 1.27
+  },
+  "Leather_Elephant": {
+   "blunt_power": 0.24,
+   "f_hp": 1.5,
+   "f_work": 1,
+   "heat_power": 1.5,
+   "ins_cold_power": 14,
+   "market_value": 3.0,
+   "sharp_power": 1.12
+  },
+  "Leather_Fox": {
+   "blunt_power": 0.21,
+   "f_hp": 1.0,
+   "f_work": 1,
+   "heat_power": 1.5,
+   "ins_cold_power": 20,
+   "market_value": 3.5,
+   "sharp_power": 0.81
+  },
+  "Leather_GuineaPig": {
+   "blunt_power": 0.14,
+   "f_hp": 0.6,
+   "f_work": 1,
+   "heat_power": 1.5,
+   "ins_cold_power": 38,
+   "market_value": 5,
+   "sharp_power": 0.67
+  },
+  "Leather_Heavy": {
+   "blunt_power": 0.24,
+   "f_hp": 1.5,
+   "f_work": 1,
+   "heat_power": 1.5,
+   "ins_cold_power": 30,
+   "market_value": 3.3,
+   "sharp_power": 1.24
+  },
+  "Leather_Hippo": {
+   "blunt_power": 0.24,
+   "f_hp": 1.5,
+   "f_work": 1,
+   "heat_power": 1.5,
+   "ins_cold_power": 14,
+   "market_value": 3.7,
+   "sharp_power": 1.12
+  },
+  "Leather_Human": {
+   "blunt_power": 0.24,
+   "f_hp": 1.3,
+   "f_work": 1,
+   "heat_power": 1.5,
+   "ins_cold_power": 12,
+   "market_value": 4.2,
+   "sharp_power": 0.64
+  },
+  "Leather_Light": {
+   "blunt_power": 0.14,
+   "f_hp": 1.0,
+   "f_work": 1,
+   "heat_power": 1.5,
+   "ins_cold_power": 12,
+   "market_value": 1.9,
+   "sharp_power": 0.54
+  },
+  "Leather_Lizard": {
+   "blunt_power": 0.27,
+   "f_hp": 1.0,
+   "f_work": 1,
+   "heat_power": 1.5,
+   "ins_cold_power": 12,
+   "market_value": 2.1,
+   "sharp_power": 0.81
+  },
+  "Leather_Mastodon": {
+   "blunt_power": 0.24,
+   "f_hp": 1.5,
+   "f_work": 1,
+   "heat_power": 1.5,
+   "ins_cold_power": 30,
+   "market_value": 3.0,
+   "sharp_power": 1.12
+  },
+  "Leather_Mink": {
+   "blunt_power": 0.14,
+   "f_hp": 1.0,
+   "f_work": 1,
+   "heat_power": 1.5,
+   "ins_cold_power": 32,
+   "market_value": 5.2,
+   "sharp_power": 0.67
+  },
+  "Leather_Panthera": {
+   "blunt_power": 0.24,
+   "f_hp": 1.3,
+   "f_work": 1,
+   "heat_power": 1.5,
+   "ins_cold_power": 16,
+   "market_value": 3.0,
+   "sharp_power": 0.93
+  },
+  "Leather_Patch": {
+   "blunt_power": 0.19,
+   "f_hp": 1.0,
+   "f_work": 1,
+   "heat_power": 0.9,
+   "ins_cold_power": 9,
+   "market_value": 1.5,
+   "sharp_power": 0.45
+  },
+  "Leather_Pig": {
+   "blunt_power": 0.24,
+   "f_hp": 1.3,
+   "f_work": 1,
+   "heat_power": 1.5,
+   "ins_cold_power": 12,
+   "market_value": 1.9,
+   "sharp_power": 0.64
+  },
+  "Leather_Plain": {
+   "blunt_power": 0.24,
+   "f_hp": 1.3,
+   "f_work": 1,
+   "heat_power": 1.5,
+   "ins_cold_power": 16,
+   "market_value": 2.1,
+   "sharp_power": 0.81
+  },
+  "Leather_Rhinoceros": {
+   "blunt_power": 0.24,
+   "f_hp": 1.5,
+   "f_work": 1,
+   "heat_power": 1.5,
+   "ins_cold_power": 14,
+   "market_value": 4.2,
+   "sharp_power": 1.29
+  },
+  "Leather_Sealskin": {
+   "blunt_power": 0.24,
+   "f_hp": 1,
+   "f_work": 1,
+   "heat_power": 1.5,
+   "ins_cold_power": 36,
+   "market_value": 4,
+   "sharp_power": 0.81
+  },
+  "Leather_Thrumbo": {
+   "blunt_power": 0.36,
+   "f_hp": 2.0,
+   "f_work": 1,
+   "heat_power": 1.5,
+   "ins_cold_power": 34,
+   "market_value": 14.0,
+   "sharp_power": 2.08
+  },
+  "Leather_Wolf": {
+   "blunt_power": 0.24,
+   "f_hp": 1.3,
+   "f_work": 1,
+   "heat_power": 1.5,
+   "ins_cold_power": 24,
+   "market_value": 3.0,
+   "sharp_power": 1.02
+  },
+  "Obsidian": {
+   "blunt_power": 0.4,
+   "f_hp": 0.5,
+   "f_work": 1.5,
+   "heat_power": 0.7,
+   "ins_cold_power": 3,
+   "market_value": 5,
+   "sharp_power": 0.85
+  },
+  "Plasteel": {
+   "blunt_power": 0.55,
+   "f_hp": 2.8,
+   "f_work": 2.2,
+   "heat_power": 0.65,
+   "ins_cold_power": 3,
+   "market_value": 9,
+   "sharp_power": 1.14
+  },
+  "Silver": {
+   "blunt_power": 0.36,
+   "f_hp": 0.7,
+   "f_work": 1,
+   "heat_power": 0.36,
+   "ins_cold_power": 3,
+   "market_value": 1,
+   "sharp_power": 0.72
+  },
+  "Steel": {
+   "blunt_power": 0.45,
+   "f_hp": 1,
+   "f_work": 1,
+   "heat_power": 0.6,
+   "ins_cold_power": 3,
+   "market_value": 1.9,
+   "sharp_power": 0.9
+  },
+  "Synthread": {
+   "blunt_power": 0.26,
+   "f_hp": 1.3,
+   "f_work": 1,
+   "heat_power": 0.9,
+   "ins_cold_power": 22,
+   "market_value": 4,
+   "sharp_power": 0.94
+  },
+  "Uranium": {
+   "blunt_power": 0.54,
+   "f_hp": 2.5,
+   "f_work": 1.9,
+   "heat_power": 0.65,
+   "ins_cold_power": 3,
+   "market_value": 6,
+   "sharp_power": 1.08
+  },
+  "WoodLog": {
+   "blunt_power": 0.54,
+   "f_hp": 0.65,
+   "f_work": 0.7,
+   "heat_power": 0.4,
+   "ins_cold_power": 8,
+   "market_value": 1.2,
+   "sharp_power": 0.54
+  },
+  "WoolAlpaca": {
+   "blunt_power": 0.0,
+   "f_hp": 1,
+   "f_work": 1,
+   "heat_power": 1.1,
+   "ins_cold_power": 30,
+   "market_value": 3.8,
+   "sharp_power": 0.36
+  },
+  "WoolBison": {
+   "blunt_power": 0.0,
+   "f_hp": 1,
+   "f_work": 1,
+   "heat_power": 1.1,
+   "ins_cold_power": 26,
+   "market_value": 2.7,
+   "sharp_power": 0.36
+  },
+  "WoolMastodon": {
+   "blunt_power": 0.0,
+   "f_hp": 1,
+   "f_work": 1,
+   "heat_power": 1.1,
+   "ins_cold_power": 32,
+   "market_value": 2.7,
+   "sharp_power": 0.36
+  },
+  "WoolMegasloth": {
+   "blunt_power": 0.0,
+   "f_hp": 1,
+   "f_work": 1,
+   "heat_power": 1.1,
+   "ins_cold_power": 34,
+   "market_value": 2.7,
+   "sharp_power": 0.8
+  },
+  "WoolMuffalo": {
+   "blunt_power": 0.0,
+   "f_hp": 1,
+   "f_work": 1,
+   "heat_power": 1.1,
+   "ins_cold_power": 28,
+   "market_value": 2.7,
+   "sharp_power": 0.36
+  },
+  "WoolMuskox": {
+   "blunt_power": 0.0,
+   "f_hp": 1,
+   "f_work": 1,
+   "heat_power": 1.1,
+   "ins_cold_power": 30,
+   "market_value": 2.7,
+   "sharp_power": 0.36
+  },
+  "WoolSheep": {
+   "blunt_power": 0.0,
+   "f_hp": 1,
+   "f_work": 1,
+   "heat_power": 1.1,
+   "ins_cold_power": 26,
+   "market_value": 2.7,
+   "sharp_power": 0.36
+  }
+ },
+ "model_sets": {
+  "armored": 30,
+  "clothing": 52,
+  "modelled": 82
+ },
+ "mv_models": {
+  "A: ln API | all modelled": {
+   "beta": [
+    5.208,
+    0.494
+   ],
+   "n": 82,
+   "r2": 0.516,
+   "rmse_ln": 1.036
+  },
+  "A: ln API | armored": {
+   "beta": [
+    5.276,
+    0.603
+   ],
+   "n": 30,
+   "r2": 0.489,
+   "rmse_ln": 0.966
+  },
+  "B: ln API + tier | all modelled": {
+   "beta": [
+    3.921,
+    0.271,
+    0.815
+   ],
+   "n": 82,
+   "r2": 0.77,
+   "rmse_ln": 0.713
+  },
+  "B: ln API + tier | armored": {
+   "beta": [
+    3.131,
+    0.44,
+    0.96
+   ],
+   "n": 30,
+   "r2": 0.709,
+   "rmse_ln": 0.729
+  },
+  "C: ln Q + ln coverage + tier | all modelled": {
+   "beta": [
+    4.898,
+    0.223,
+    0.27,
+    0.873
+   ],
+   "n": 82,
+   "r2": 0.762,
+   "rmse_ln": 0.726
+  },
+  "C: ln Q + ln coverage + tier | armored": {
+   "beta": [
+    6.656,
+    1.325,
+    0.335,
+    0.631
+   ],
+   "n": 30,
+   "r2": 0.763,
+   "rmse_ln": 0.658
+  },
+  "D: ln sharp rating + tier | all modelled": {
+   "beta": [
+    4.436,
+    0.41,
+    0.865
+   ],
+   "n": 82,
+   "r2": 0.714,
+   "rmse_ln": 0.796
+  },
+  "D: ln sharp rating + tier | armored": {
+   "beta": [
+    5.056,
+    1.821,
+    0.723
+   ],
+   "n": 30,
+   "r2": 0.681,
+   "rmse_ln": 0.763
+  },
+  "E: ln Q + ln coverage | all modelled": {
+   "beta": [
+    7.378,
+    0.646,
+    0.248
+   ],
+   "n": 82,
+   "r2": 0.517,
+   "rmse_ln": 1.034
+  },
+  "E: ln Q + ln coverage | armored": {
+   "beta": [
+    8.875,
+    1.942,
+    0.334
+   ],
+   "n": 30,
+   "r2": 0.698,
+   "rmse_ln": 0.742
+  },
+  "F: tier only | all modelled": {
+   "beta": [
+    3.453,
+    1.105
+   ],
+   "n": 82,
+   "r2": 0.66,
+   "rmse_ln": 0.868
+  },
+  "F: tier only | armored": {
+   "beta": [
+    3.131,
+    1.323
+   ],
+   "n": 30,
+   "r2": 0.486,
+   "rmse_ln": 0.968
+  },
+  "G: ln work (the formula's own driver) | all modelled": {
+   "beta": [
+    -3.495,
+    0.983
+   ],
+   "n": 82,
+   "r2": 0.817,
+   "rmse_ln": 0.638
+  },
+  "G: ln work (the formula's own driver) | armored": {
+   "beta": [
+    -4.506,
+    1.094
+   ],
+   "n": 30,
+   "r2": 0.721,
+   "rmse_ln": 0.713
+  }
+ },
+ "nonstuffed_work_per_material_value": {
+  "median": 40.38461538461539,
+  "p10": 8.38346608618216,
+  "p90": 71.87582215206524
+ },
+ "outliers_model_B": [
+  {
+   "defName": "Apparel_ArmorHelmetMechlordHelmet",
+   "ratio": 8.2,
+   "resid_ln": 2.104
+  },
+  {
+   "defName": "Apparel_VacsuitChildren",
+   "ratio": 0.21,
+   "resid_ln": -1.578
+  },
+  {
+   "defName": "Apparel_MechlordSuit",
+   "ratio": 3.33,
+   "resid_ln": 1.202
+  },
+  {
+   "defName": "Apparel_KidHelmet",
+   "ratio": 0.32,
+   "resid_ln": -1.154
+  },
+  {
+   "defName": "Apparel_Vacsuit",
+   "ratio": 0.37,
+   "resid_ln": -1.006
+  },
+  {
+   "defName": "Apparel_VacsuitHelmet",
+   "ratio": 0.37,
+   "resid_ln": -0.993
+  },
+  {
+   "defName": "Apparel_FlakVest",
+   "ratio": 0.38,
+   "resid_ln": -0.979
+  },
+  {
+   "defName": "Apparel_ArmorHelmetMechCommander",
+   "ratio": 2.29,
+   "resid_ln": 0.829
+  }
+ ],
+ "pawn_example": {
+  "expected_damage_fraction_random_hit": {
+   "0.0": 0.5479,
+   "0.15": 0.6466,
+   "0.3": 0.7374
+  },
+  "head": {
+   "closed_form_ap0.15": 0.64,
+   "layers": [
+    "AdvancedHelmet"
+   ],
+   "part": "Head",
+   "ratings": [
+    0.63
+   ],
+   "weight": 0.0174
+  },
+  "outfit": [
+   [
+    "Apparel_BasicShirt",
+    "Cloth"
+   ],
+   [
+    "Apparel_Pants",
+    "Cloth"
+   ],
+   [
+    "Apparel_FlakVest",
+    null
+   ],
+   [
+    "Apparel_Jacket",
+    "Leather_Heavy"
+   ],
+   [
+    "Apparel_AdvancedHelmet",
+    "Steel"
+   ]
+  ],
+  "ratings_sharp": {
+   "Apparel_AdvancedHelmet": 0.63,
+   "Apparel_BasicShirt": 0.072,
+   "Apparel_FlakVest": 1.0,
+   "Apparel_Jacket": 0.372,
+   "Apparel_Pants": 0.072
+  },
+  "torso": {
+   "closed_form_ap0.15": 0.3021,
+   "layers": [
+    "BasicShirt",
+    "FlakVest",
+    "Jacket"
+   ],
+   "monte_carlo_ap0.15": 0.3021,
+   "part": "Torso",
+   "ratings": [
+    0.072,
+    1.0,
+    0.372
+   ],
+   "weight": 0.15
+  },
+  "total_weight": 1.0
+ },
+ "quality": {
+  "ArmorRating_Sharp": {
+   "Awful": {
+    "factor": 0.6,
+    "maxGain": null
+   },
+   "Excellent": {
+    "factor": 1.3,
+    "maxGain": null
+   },
+   "Good": {
+    "factor": 1.15,
+    "maxGain": null
+   },
+   "Legendary": {
+    "factor": 1.8,
+    "maxGain": null
+   },
+   "Masterwork": {
+    "factor": 1.45,
+    "maxGain": null
+   },
+   "Normal": {
+    "factor": 1.0,
+    "maxGain": null
+   },
+   "Poor": {
+    "factor": 0.8,
+    "maxGain": null
+   }
+  },
+  "Insulation_Cold": {
+   "Awful": {
+    "factor": 0.8,
+    "maxGain": null
+   },
+   "Excellent": {
+    "factor": 1.2,
+    "maxGain": null
+   },
+   "Good": {
+    "factor": 1.1,
+    "maxGain": null
+   },
+   "Legendary": {
+    "factor": 1.8,
+    "maxGain": null
+   },
+   "Masterwork": {
+    "factor": 1.5,
+    "maxGain": null
+   },
+   "Normal": {
+    "factor": 1,
+    "maxGain": null
+   },
+   "Poor": {
+    "factor": 0.9,
+    "maxGain": null
+   }
+  },
+  "MarketValue": {
+   "Awful": {
+    "factor": 0.5,
+    "maxGain": null
+   },
+   "Excellent": {
+    "factor": 1.5,
+    "maxGain": 1000
+   },
+   "Good": {
+    "factor": 1.25,
+    "maxGain": 500
+   },
+   "Legendary": {
+    "factor": 5,
+    "maxGain": 3000
+   },
+   "Masterwork": {
+    "factor": 2.5,
+    "maxGain": 2000
+   },
+   "Normal": {
+    "factor": 1,
+    "maxGain": null
+   },
+   "Poor": {
+    "factor": 0.75,
+    "maxGain": null
+   }
+  }
+ },
+ "quality_ladder": [
+  {
+   "blunt": 0.243,
+   "heat": 0.324,
+   "hp": 290,
+   "ins_cold": 2.4,
+   "market_value": 230,
+   "quality": "Awful",
+   "sharp": 0.486
+  },
+  {
+   "blunt": 0.324,
+   "heat": 0.432,
+   "hp": 290,
+   "ins_cold": 2.7,
+   "market_value": 345,
+   "quality": "Poor",
+   "sharp": 0.648
+  },
+  {
+   "blunt": 0.405,
+   "heat": 0.54,
+   "hp": 290,
+   "ins_cold": 3.0,
+   "market_value": 460,
+   "quality": "Normal",
+   "sharp": 0.81
+  },
+  {
+   "blunt": 0.4657,
+   "heat": 0.621,
+   "hp": 290,
+   "ins_cold": 3.3,
+   "market_value": 575,
+   "quality": "Good",
+   "sharp": 0.9315
+  },
+  {
+   "blunt": 0.5265,
+   "heat": 0.702,
+   "hp": 290,
+   "ins_cold": 3.6,
+   "market_value": 690,
+   "quality": "Excellent",
+   "sharp": 1.053
+  },
+  {
+   "blunt": 0.5873,
+   "heat": 0.783,
+   "hp": 290,
+   "ins_cold": 4.5,
+   "market_value": 1150,
+   "quality": "Masterwork",
+   "sharp": 1.1745
+  },
+  {
+   "blunt": 0.729,
+   "heat": 0.972,
+   "hp": 290,
+   "ins_cold": 5.4,
+   "market_value": 2300,
+   "quality": "Legendary",
+   "sharp": 1.458
+  }
+ ],
+ "reference_items": {
+  "Apparel_AdvancedHelmet": [
+   {
+    "api": 0.86,
+    "blunt": 0.252,
+    "heat": 0.252,
+    "hp": 84,
+    "ins_cold": 0.45,
+    "market_value": 585,
+    "sharp": 0.504,
+    "stuff": "Silver",
+    "stuff_units": 400,
+    "work": 8000
+   },
+   {
+    "api": 0.86,
+    "blunt": 0.252,
+    "heat": 0.252,
+    "hp": 72,
+    "ins_cold": 0.45,
+    "market_value": 4180,
+    "sharp": 0.504,
+    "stuff": "Gold",
+    "stuff_units": 400,
+    "work": 7200
+   },
+   {
+    "api": 1.18,
+    "blunt": 0.315,
+    "heat": 0.42,
+    "hp": 120,
+    "ins_cold": 0.45,
+    "market_value": 260,
+    "sharp": 0.63,
+    "stuff": "Steel",
+    "stuff_units": 40,
+    "work": 8000
+   },
+   {
+    "api": 1.519,
+    "blunt": 0.385,
+    "heat": 0.455,
+    "hp": 335,
+    "ins_cold": 0.45,
+    "market_value": 575,
+    "sharp": 0.798,
+    "stuff": "Plasteel",
+    "stuff_units": 40,
+    "work": 17600
+   },
+   {
+    "api": 1.445,
+    "blunt": 0.378,
+    "heat": 0.455,
+    "hp": 300,
+    "ins_cold": 0.45,
+    "market_value": 450,
+    "sharp": 0.756,
+    "stuff": "Uranium",
+    "stuff_units": 40,
+    "work": 15200
+   },
+   {
+    "api": 1.405,
+    "blunt": 0.35,
+    "heat": 0.35,
+    "hp": 240,
+    "ins_cold": 0.38,
+    "market_value": 255,
+    "sharp": 0.77,
+    "stuff": "Bioferrite",
+    "stuff_units": 40,
+    "work": 20000
+   },
+   {
+    "api": 1.127,
+    "blunt": 0.28,
+    "heat": 0.49,
+    "hp": 60,
+    "ins_cold": 0.45,
+    "market_value": 395,
+    "sharp": 0.595,
+    "stuff": "Obsidian",
+    "stuff_units": 40,
+    "work": 12000
+   }
+  ],
+  "Apparel_Duster": [
+   {
+    "api": 1.974,
+    "blunt": 0,
+    "heat": 0.054,
+    "hp": 200,
+    "ins_cold": 10.8,
+    "market_value": 156.0,
+    "sharp": 0.108,
+    "stuff": "Cloth",
+    "stuff_units": 80,
+    "work": 10000
+   },
+   {
+    "api": 9.49,
+    "blunt": 0.078,
+    "heat": 0.27,
+    "hp": 260,
+    "ins_cold": 13.2,
+    "market_value": 355,
+    "sharp": 0.282,
+    "stuff": "Synthread",
+    "stuff_units": 80,
+    "work": 10000
+   },
+   {
+    "api": 21.533,
+    "blunt": 0.108,
+    "heat": 0.9,
+    "hp": 260,
+    "ins_cold": 12.0,
+    "market_value": 475,
+    "sharp": 0.42,
+    "stuff": "DevilstrandCloth",
+    "stuff_units": 80,
+    "work": 10000
+   },
+   {
+    "api": 29.249,
+    "blunt": 0.162,
+    "heat": 0.864,
+    "hp": 480,
+    "ins_cold": 15.6,
+    "market_value": 755,
+    "sharp": 0.6,
+    "stuff": "Hyperweave",
+    "stuff_units": 80,
+    "work": 10000
+   },
+   {
+    "api": 4.725,
+    "blunt": 0,
+    "heat": 0.33,
+    "hp": 200,
+    "ins_cold": 15.6,
+    "market_value": 250,
+    "sharp": 0.108,
+    "stuff": "WoolSheep",
+    "stuff_units": 80,
+    "work": 10000
+   },
+   {
+    "api": 4.725,
+    "blunt": 0,
+    "heat": 0.33,
+    "hp": 200,
+    "ins_cold": 18.0,
+    "market_value": 340,
+    "sharp": 0.108,
+    "stuff": "WoolAlpaca",
+    "stuff_units": 80,
+    "work": 10000
+   },
+   {
+    "api": 7.676,
+    "blunt": 0,
+    "heat": 0.33,
+    "hp": 200,
+    "ins_cold": 20.4,
+    "market_value": 250,
+    "sharp": 0.24,
+    "stuff": "WoolMegasloth",
+    "stuff_units": 80,
+    "work": 10000
+   },
+   {
+    "api": 4.725,
+    "blunt": 0,
+    "heat": 0.33,
+    "hp": 200,
+    "ins_cold": 16.8,
+    "market_value": 250,
+    "sharp": 0.108,
+    "stuff": "WoolMuffalo",
+    "stuff_units": 80,
+    "work": 10000
+   },
+   {
+    "api": 4.725,
+    "blunt": 0,
+    "heat": 0.33,
+    "hp": 200,
+    "ins_cold": 15.6,
+    "market_value": 250,
+    "sharp": 0.108,
+    "stuff": "WoolBison",
+    "stuff_units": 80,
+    "work": 10000
+   },
+   {
+    "api": 10.148,
+    "blunt": 0.072,
+    "heat": 0.45,
+    "hp": 260,
+    "ins_cold": 9.6,
+    "market_value": 205,
+    "sharp": 0.243,
+    "stuff": "Leather_Plain",
+    "stuff_units": 80,
+    "work": 10000
+   },
+   {
+    "api": 10.148,
+    "blunt": 0.072,
+    "heat": 0.45,
+    "hp": 260,
+    "ins_cold": 8.4,
+    "market_value": 196.0,
+    "sharp": 0.243,
+    "stuff": "Leather_Dog",
+    "stuff_units": 80,
+    "work": 10000
+   },
+   {
+    "api": 11.903,
+    "blunt": 0.072,
+    "heat": 0.45,
+    "hp": 260,
+    "ins_cold": 14.4,
+    "market_value": 275,
+    "sharp": 0.306,
+    "stuff": "Leather_Wolf",
+    "stuff_units": 80,
+    "work": 10000
+   },
+   {
+    "api": 11.105,
+    "blunt": 0.072,
+    "heat": 0.45,
+    "hp": 260,
+    "ins_cold": 9.6,
+    "market_value": 275,
+    "sharp": 0.279,
+    "stuff": "Leather_Panthera",
+    "stuff_units": 80,
+    "work": 10000
+   },
+   {
+    "api": 10.148,
+    "blunt": 0.072,
+    "heat": 0.45,
+    "hp": 260,
+    "ins_cold": 9.6,
+    "market_value": 220,
+    "sharp": 0.243,
+    "stuff": "Leather_Camel",
+    "stuff_units": 80,
+    "work": 10000
+   },
+   {
+    "api": 10.148,
+    "blunt": 0.072,
+    "heat": 0.45,
+    "hp": 260,
+    "ins_cold": 12.0,
+    "market_value": 220,
+    "sharp": 0.243,
+    "stuff": "Leather_Bluefur",
+    "stuff_units": 80,
+    "work": 10000
+   },
+   {
+    "api": 13.099,
+    "blunt": 0.072,
+    "heat": 0.45,
+    "hp": 260,
+    "ins_cold": 12.0,
+    "market_value": 310,
+    "sharp": 0.336,
+    "stuff": "Leather_Bear",
+    "stuff_units": 80,
+    "work": 10000
+   },
+   {
+    "api": 8.533,
+    "blunt": 0.042,
+    "heat": 0.45,
+    "hp": 120,
+    "ins_cold": 22.8,
+    "market_value": 435,
+    "sharp": 0.201,
+    "stuff": "Leather_GuineaPig",
+    "stuff_units": 80,
+    "work": 10000
+   },
+   {
+    "api": 8.793,
+    "blunt": 0.072,
+    "heat": 0.45,
+    "hp": 260,
+    "ins_cold": 7.2,
+    "market_value": 370,
+    "sharp": 0.192,
+    "stuff": "Leather_Human",
+    "stuff_units": 80,
+    "work": 10000
+   },
+   {
+    "api": 8.793,
+    "blunt": 0.072,
+    "heat": 0.45,
+    "hp": 260,
+    "ins_cold": 7.2,
+    "market_value": 188.0,
+    "sharp": 0.192,
+    "stuff": "Leather_Pig",
+    "stuff_units": 80,
+    "work": 10000
+   },
+   {
+    "api": 7.497,
+    "blunt": 0.042,
+    "heat": 0.45,
+    "hp": 200,
+    "ins_cold": 7.2,
+    "market_value": 188.0,
+    "sharp": 0.162,
+    "stuff": "Leather_Light",
+    "stuff_units": 80,
+    "work": 10000
+   },
+   {
+    "api": 8.533,
+    "blunt": 0.042,
+    "heat": 0.45,
+    "hp": 200,
+    "ins_cold": 6.0,
+    "market_value": 180.0,
+    "sharp": 0.201,
+    "stuff": "Leather_Bird",
+    "stuff_units": 80,
+    "work": 10000
+   },
+   {
+    "api": 8.533,
+    "blunt": 0.042,
+    "heat": 0.45,
+    "hp": 200,
+    "ins_cold": 18.0,
+    "market_value": 555,
+    "sharp": 0.201,
+    "stuff": "Leather_Chinchilla",
+    "stuff_units": 80,
+    "work": 10000
+   },
+   {
+    "api": 9.999,
+    "blunt": 0.063,
+    "heat": 0.45,
+    "hp": 200,
+    "ins_cold": 12.0,
+    "market_value": 315,
+    "sharp": 0.243,
+    "stuff": "Leather_Fox",
+    "stuff_units": 80,
+    "work": 10000
+   },
+   {
+    "api": 10.298,
+    "blunt": 0.081,
+    "heat": 0.45,
+    "hp": 200,
+    "ins_cold": 7.2,
+    "market_value": 205,
+    "sharp": 0.243,
+    "stuff": "Leather_Lizard",
+    "stuff_units": 80,
+    "work": 10000
+   },
+   {
+    "api": 13.099,
+    "blunt": 0.072,
+    "heat": 0.45,
+    "hp": 300,
+    "ins_cold": 8.4,
+    "market_value": 275,
+    "sharp": 0.336,
+    "stuff": "Leather_Elephant",
+    "stuff_units": 80,
+    "work": 10000
+   },
+   {
+    "api": 14.535,
+    "blunt": 0.072,
+    "heat": 0.45,
+    "hp": 300,
+    "ins_cold": 18.0,
+    "market_value": 300,
+    "sharp": 0.372,
+    "stuff": "Leather_Heavy",
+    "stuff_units": 80,
+    "work": 10000
+   },
+   {
+    "api": 15.133,
+    "blunt": 0.072,
+    "heat": 0.45,
+    "hp": 300,
+    "ins_cold": 8.4,
+    "market_value": 370,
+    "sharp": 0.387,
+    "stuff": "Leather_Rhinoceros",
+    "stuff_units": 80,
+    "work": 10000
+   },
+   {
+    "api": 25.182,
+    "blunt": 0.108,
+    "heat": 0.45,
+    "hp": 400,
+    "ins_cold": 20.4,
+    "market_value": 1155,
+    "sharp": 0.624,
+    "stuff": "Leather_Thrumbo",
+    "stuff_units": 80,
+    "work": 10000
+   },
+   {
+    "api": 5.433,
+    "blunt": 0.057,
+    "heat": 0.27,
+    "hp": 200,
+    "ins_cold": 5.4,
+    "market_value": 156.0,
+    "sharp": 0.135,
+    "stuff": "Leather_Patch",
+    "stuff_units": 80,
+    "work": 10000
+   },
+   {
+    "api": 14.894,
+    "blunt": 0.072,
+    "heat": 0.45,
+    "hp": 260,
+    "ins_cold": 12.0,
+    "market_value": 315,
+    "sharp": 0.381,
+    "stuff": "Leather_Dread",
+    "stuff_units": 80,
+    "work": 10000
+   },
+   {
+    "api": 4.725,
+    "blunt": 0,
+    "heat": 0.33,
+    "hp": 200,
+    "ins_cold": 19.2,
+    "market_value": 250,
+    "sharp": 0.108,
+    "stuff": "WoolMastodon",
+    "stuff_units": 80,
+    "work": 10000
+   },
+   {
+    "api": 4.725,
+    "blunt": 0,
+    "heat": 0.33,
+    "hp": 200,
+    "ins_cold": 18.0,
+    "market_value": 250,
+    "sharp": 0.108,
+    "stuff": "WoolMuskox",
+    "stuff_units": 80,
+    "work": 10000
+   },
+   {
+    "api": 13.099,
+    "blunt": 0.072,
+    "heat": 0.45,
+    "hp": 300,
+    "ins_cold": 18.0,
+    "market_value": 275,
+    "sharp": 0.336,
+    "stuff": "Leather_Mastodon",
+    "stuff_units": 80,
+    "work": 10000
+   },
+   {
+    "api": 10.148,
+    "blunt": 0.072,
+    "heat": 0.45,
+    "hp": 200,
+    "ins_cold": 21.6,
+    "market_value": 355,
+    "sharp": 0.243,
+    "stuff": "Leather_Sealskin",
+    "stuff_units": 80,
+    "work": 10000
+   },
+   {
+    "api": 25.859,
+    "blunt": 0.12,
+    "heat": 0.45,
+    "hp": 440,
+    "ins_cold": 21.6,
+    "market_value": 1635,
+    "sharp": 0.636,
+    "stuff": "Leather_AlphaThrumbo",
+    "stuff_units": 80,
+    "work": 10000
+   },
+   {
+    "api": 8.533,
+    "blunt": 0.042,
+    "heat": 0.45,
+    "hp": 200,
+    "ins_cold": 19.2,
+    "market_value": 450,
+    "sharp": 0.201,
+    "stuff": "Leather_Mink",
+    "stuff_units": 80,
+    "work": 10000
+   },
+   {
+    "api": 13.099,
+    "blunt": 0.072,
+    "heat": 0.45,
+    "hp": 300,
+    "ins_cold": 8.4,
+    "market_value": 330,
+    "sharp": 0.336,
+    "stuff": "Leather_Hippo",
+    "stuff_units": 80,
+    "work": 10000
+   },
+   {
+    "api": 14.535,
+    "blunt": 0.072,
+    "heat": 0.45,
+    "hp": 260,
+    "ins_cold": 9.6,
+    "market_value": 290,
+    "sharp": 0.372,
+    "stuff": "Leather_Armadillo",
+    "stuff_units": 80,
+    "work": 10000
+   }
+  ],
+  "Apparel_PlateArmor": [
+   {
+    "api": 28.471,
+    "blunt": 0.324,
+    "heat": 0.324,
+    "hp": 205,
+    "ins_cold": 3.0,
+    "market_value": 1835,
+    "sharp": 0.648,
+    "stuff": "Silver",
+    "stuff_units": 1700,
+    "work": 38000
+   },
+   {
+    "api": 28.471,
+    "blunt": 0.324,
+    "heat": 0.324,
+    "hp": 174,
+    "ins_cold": 3.0,
+    "market_value": 17125,
+    "sharp": 0.648,
+    "stuff": "Gold",
+    "stuff_units": 1700,
+    "work": 34200
+   },
+   {
+    "api": 38.43,
+    "blunt": 0.405,
+    "heat": 0.54,
+    "hp": 290,
+    "ins_cold": 3.0,
+    "market_value": 460,
+    "sharp": 0.81,
+    "stuff": "Steel",
+    "stuff_units": 170,
+    "work": 38000
+   },
+   {
+    "api": 48.757,
+    "blunt": 0.495,
+    "heat": 0.585,
+    "hp": 810,
+    "ins_cold": 3.0,
+    "market_value": 1830,
+    "sharp": 1.026,
+    "stuff": "Plasteel",
+    "stuff_units": 170,
+    "work": 83600
+   },
+   {
+    "api": 25.062,
+    "blunt": 0.486,
+    "heat": 0.36,
+    "hp": 189,
+    "ins_cold": 8.0,
+    "market_value": 300,
+    "sharp": 0.486,
+    "stuff": "WoodLog",
+    "stuff_units": 170,
+    "work": 26600
+   },
+   {
+    "api": 46.685,
+    "blunt": 0.486,
+    "heat": 0.585,
+    "hp": 725,
+    "ins_cold": 3.0,
+    "market_value": 1280,
+    "sharp": 0.972,
+    "stuff": "Uranium",
+    "stuff_units": 170,
+    "work": 72200
+   },
+   {
+    "api": 45.458,
+    "blunt": 0.45,
+    "heat": 0.45,
+    "hp": 580,
+    "ins_cold": 2.5,
+    "market_value": 470,
+    "sharp": 0.99,
+    "stuff": "Bioferrite",
+    "stuff_units": 170,
+    "work": 95000
+   },
+   {
+    "api": 36.785,
+    "blunt": 0.36,
+    "heat": 0.63,
+    "hp": 145,
+    "ins_cold": 3.0,
+    "market_value": 1055,
+    "sharp": 0.765,
+    "stuff": "Obsidian",
+    "stuff_units": 170,
+    "work": 57000
+   }
+  ]
+ },
+ "stuffed_work_per_unit": {
+  "median": 80.0,
+  "p10": 46.93333333333333,
+  "p90": 200.0
+ },
+ "work_models": {
+  "non-stuffed: ln work ~ ln material value": {
+   "beta": [
+    5.928,
+    0.63
+   ],
+   "n": 29,
+   "r2": 0.475
+  },
+  "stuffed: ln work ~ ln stuff_units": {
+   "beta": [
+    3.565,
+    1.26
+   ],
+   "n": 53,
+   "r2": 0.68
+  }
+ },
+ "worked": [
+  {
+   "blunt": 0.405,
+   "defName": "Apparel_PlateArmor",
+   "heat": 0.54,
+   "hp": 290,
+   "ins_cold": 3.0,
+   "market_value": 460,
+   "quality": "Normal",
+   "sharp": 0.81,
+   "stuff": "Steel",
+   "stuff_units": 170,
+   "work": 38000
+  },
+  {
+   "blunt": 0.729,
+   "defName": "Apparel_PlateArmor",
+   "heat": 0.972,
+   "hp": 290,
+   "ins_cold": 5.4,
+   "market_value": 2300,
+   "quality": "Legendary",
+   "sharp": 1.458,
+   "stuff": "Steel",
+   "stuff_units": 170,
+   "work": 38000
+  },
+  {
+   "blunt": 0.495,
+   "defName": "Apparel_PlateArmor",
+   "heat": 0.585,
+   "hp": 810,
+   "ins_cold": 3.0,
+   "market_value": 1830,
+   "quality": "Normal",
+   "sharp": 1.026,
+   "stuff": "Plasteel",
+   "stuff_units": 170,
+   "work": 83600
+  },
+  {
+   "blunt": 0.486,
+   "defName": "Apparel_PlateArmor",
+   "heat": 0.36,
+   "hp": 189,
+   "ins_cold": 8.0,
+   "market_value": 300,
+   "quality": "Normal",
+   "sharp": 0.486,
+   "stuff": "WoodLog",
+   "stuff_units": 170,
+   "work": 26600
+  },
+  {
+   "blunt": 0.315,
+   "defName": "Apparel_AdvancedHelmet",
+   "heat": 0.42,
+   "hp": 120,
+   "ins_cold": 0.45,
+   "market_value": 260,
+   "quality": "Normal",
+   "sharp": 0.63,
+   "stuff": "Steel",
+   "stuff_units": 40,
+   "work": 8000
+  },
+  {
+   "blunt": 0.567,
+   "defName": "Apparel_AdvancedHelmet",
+   "heat": 0.756,
+   "hp": 120,
+   "ins_cold": 0.81,
+   "market_value": 1295,
+   "quality": "Legendary",
+   "sharp": 1.134,
+   "stuff": "Steel",
+   "stuff_units": 40,
+   "work": 8000
+  },
+  {
+   "blunt": 0.385,
+   "defName": "Apparel_AdvancedHelmet",
+   "heat": 0.455,
+   "hp": 335,
+   "ins_cold": 0.45,
+   "market_value": 575,
+   "quality": "Normal",
+   "sharp": 0.798,
+   "stuff": "Plasteel",
+   "stuff_units": 40,
+   "work": 17600
+  },
+  {
+   "blunt": 0.378,
+   "defName": "Apparel_AdvancedHelmet",
+   "heat": 0.455,
+   "hp": 300,
+   "ins_cold": 0.45,
+   "market_value": 450,
+   "quality": "Normal",
+   "sharp": 0.756,
+   "stuff": "Uranium",
+   "stuff_units": 40,
+   "work": 15200
+  },
+  {
+   "blunt": 0.225,
+   "defName": "Apparel_SimpleHelmet",
+   "heat": 0.3,
+   "hp": 100,
+   "ins_cold": 0.45,
+   "market_value": 87.52,
+   "quality": "Normal",
+   "sharp": 0.45,
+   "stuff": "Steel",
+   "stuff_units": 40,
+   "work": 3200
+  },
+  {
+   "blunt": 0.405,
+   "defName": "Apparel_SimpleHelmet",
+   "heat": 0.54,
+   "hp": 100,
+   "ins_cold": 0.81,
+   "market_value": 440,
+   "quality": "Legendary",
+   "sharp": 0.81,
+   "stuff": "Steel",
+   "stuff_units": 40,
+   "work": 3200
+  },
+  {
+   "blunt": 0.18,
+   "defName": "Apparel_SimpleHelmet",
+   "heat": 0.18,
+   "hp": 70,
+   "ins_cold": 0.45,
+   "market_value": 410,
+   "quality": "Normal",
+   "sharp": 0.36,
+   "stuff": "Silver",
+   "stuff_units": 400,
+   "work": 3200
+  },
+  {
+   "blunt": 0.18,
+   "defName": "Apparel_SimpleHelmet",
+   "heat": 0.18,
+   "hp": 60,
+   "ins_cold": 0.45,
+   "market_value": 4010,
+   "quality": "Normal",
+   "sharp": 0.36,
+   "stuff": "Gold",
+   "stuff_units": 400,
+   "work": 2880
+  },
+  {
+   "blunt": 0,
+   "defName": "Apparel_Duster",
+   "heat": 0.054,
+   "hp": 200,
+   "ins_cold": 10.8,
+   "market_value": 156.0,
+   "quality": "Normal",
+   "sharp": 0.108,
+   "stuff": "Cloth",
+   "stuff_units": 80,
+   "work": 10000
+  },
+  {
+   "blunt": 0,
+   "defName": "Apparel_Duster",
+   "heat": 0.0972,
+   "hp": 200,
+   "ins_cold": 19.44,
+   "market_value": 780,
+   "quality": "Legendary",
+   "sharp": 0.1944,
+   "stuff": "Cloth",
+   "stuff_units": 80,
+   "work": 10000
+  },
+  {
+   "blunt": 0.078,
+   "defName": "Apparel_Duster",
+   "heat": 0.27,
+   "hp": 260,
+   "ins_cold": 13.2,
+   "market_value": 355,
+   "quality": "Normal",
+   "sharp": 0.282,
+   "stuff": "Synthread",
+   "stuff_units": 80,
+   "work": 10000
+  },
+  {
+   "blunt": 0.108,
+   "defName": "Apparel_Duster",
+   "heat": 0.45,
+   "hp": 400,
+   "ins_cold": 20.4,
+   "market_value": 1155,
+   "quality": "Normal",
+   "sharp": 0.624,
+   "stuff": "Leather_Thrumbo",
+   "stuff_units": 80,
+   "work": 10000
+  },
+  {
+   "blunt": 0,
+   "defName": "Apparel_Parka",
+   "heat": 0.036,
+   "hp": 180,
+   "ins_cold": 36.0,
+   "market_value": 148.8,
+   "quality": "Normal",
+   "sharp": 0.072,
+   "stuff": "Cloth",
+   "stuff_units": 80,
+   "work": 8000
+  },
+  {
+   "blunt": 0,
+   "defName": "Apparel_Parka",
+   "heat": 0.0648,
+   "hp": 180,
+   "ins_cold": 64.8,
+   "market_value": 745,
+   "quality": "Legendary",
+   "sharp": 0.1296,
+   "stuff": "Cloth",
+   "stuff_units": 80,
+   "work": 8000
+  },
+  {
+   "blunt": 0,
+   "defName": "Apparel_Parka",
+   "heat": 0.22,
+   "hp": 180,
+   "ins_cold": 68.0,
+   "market_value": 245,
+   "quality": "Normal",
+   "sharp": 0.16,
+   "stuff": "WoolMegasloth",
+   "stuff_units": 80,
+   "work": 8000
+  },
+  {
+   "blunt": 0.048,
+   "defName": "Apparel_Parka",
+   "heat": 0.3,
+   "hp": 270,
+   "ins_cold": 60.0,
+   "market_value": 295,
+   "quality": "Normal",
+   "sharp": 0.248,
+   "stuff": "Leather_Heavy",
+   "stuff_units": 80,
+   "work": 8000
+  },
+  {
+   "blunt": 0,
+   "defName": "Apparel_Jacket",
+   "heat": 0.054,
+   "hp": 160,
+   "ins_cold": 14.4,
+   "market_value": 130.2,
+   "quality": "Normal",
+   "sharp": 0.108,
+   "stuff": "Cloth",
+   "stuff_units": 70,
+   "work": 7000
+  },
+  {
+   "blunt": 0,
+   "defName": "Apparel_Jacket",
+   "heat": 0.0972,
+   "hp": 160,
+   "ins_cold": 25.92,
+   "market_value": 650,
+   "quality": "Legendary",
+   "sharp": 0.1944,
+   "stuff": "Cloth",
+   "stuff_units": 70,
+   "work": 7000
+  },
+  {
+   "blunt": 0.162,
+   "defName": "Apparel_Jacket",
+   "heat": 0.864,
+   "hp": 385,
+   "ins_cold": 20.8,
+   "market_value": 655,
+   "quality": "Normal",
+   "sharp": 0.6,
+   "stuff": "Hyperweave",
+   "stuff_units": 70,
+   "work": 7000
+  },
+  {
+   "blunt": 0.072,
+   "defName": "Apparel_Jacket",
+   "heat": 0.45,
+   "hp": 210,
+   "ins_cold": 12.8,
+   "market_value": 172.2,
+   "quality": "Normal",
+   "sharp": 0.243,
+   "stuff": "Leather_Plain",
+   "stuff_units": 70,
+   "work": 7000
+  }
+ ]
+}

@@ -1,0 +1,122 @@
+{
+ "Bite": [
+  {
+   "armorCategory": "Sharp",
+   "commonality": 1.0,
+   "maneuver": "Bite",
+   "meleeDamageDef": "Bite",
+   "multStat": "SharpDamageMultiplier",
+   "verbClass": "Verb_MeleeAttackDamage"
+  }
+ ],
+ "Blunt": [
+  {
+   "armorCategory": "Blunt",
+   "commonality": 1.0,
+   "maneuver": "Smash",
+   "meleeDamageDef": "Blunt",
+   "multStat": "BluntDamageMultiplier",
+   "verbClass": "Verb_MeleeAttackDamage"
+  }
+ ],
+ "Cut": [
+  {
+   "armorCategory": "Sharp",
+   "commonality": 1.0,
+   "maneuver": "Slash",
+   "meleeDamageDef": "Cut",
+   "multStat": "SharpDamageMultiplier",
+   "verbClass": "Verb_MeleeAttackDamage"
+  }
+ ],
+ "Demolish": [
+  {
+   "armorCategory": "Blunt",
+   "commonality": 1.0,
+   "maneuver": "Demolish",
+   "meleeDamageDef": "Demolish",
+   "multStat": "BluntDamageMultiplier",
+   "verbClass": "Verb_MeleeAttackDamage"
+  }
+ ],
+ "KickMaterialInEyes": [
+  {
+   "armorCategory": null,
+   "commonality": 1.0,
+   "maneuver": "KickMaterialInEyes",
+   "meleeDamageDef": null,
+   "multStat": null,
+   "verbClass": "Verb_MeleeApplyHediff"
+  }
+ ],
+ "Poke": [
+  {
+   "armorCategory": "Blunt",
+   "commonality": 1.0,
+   "maneuver": "Poke",
+   "meleeDamageDef": "Poke",
+   "multStat": "BluntDamageMultiplier",
+   "verbClass": "Verb_MeleeAttackDamage"
+  }
+ ],
+ "PorcupineBite": [
+  {
+   "armorCategory": "Sharp",
+   "commonality": 1.0,
+   "maneuver": "PorcupineBite",
+   "meleeDamageDef": "PorcupineBite",
+   "multStat": "SharpDamageMultiplier",
+   "verbClass": "Verb_MeleeAttackDamage"
+  }
+ ],
+ "PorcupineScratch": [
+  {
+   "armorCategory": "Sharp",
+   "commonality": 1.0,
+   "maneuver": "PorcupineScratch",
+   "meleeDamageDef": "PorcupineScratch",
+   "multStat": "SharpDamageMultiplier",
+   "verbClass": "Verb_MeleeAttackDamage"
+  }
+ ],
+ "Scratch": [
+  {
+   "armorCategory": "Sharp",
+   "commonality": 1.0,
+   "maneuver": "Scratch",
+   "meleeDamageDef": "Scratch",
+   "multStat": "SharpDamageMultiplier",
+   "verbClass": "Verb_MeleeAttackDamage"
+  }
+ ],
+ "ScratchToxic": [
+  {
+   "armorCategory": "Sharp",
+   "commonality": 1.0,
+   "maneuver": "ScratchToxic",
+   "meleeDamageDef": "ScratchToxic",
+   "multStat": "SharpDamageMultiplier",
+   "verbClass": "Verb_MeleeAttackDamage"
+  }
+ ],
+ "Stab": [
+  {
+   "armorCategory": "Sharp",
+   "commonality": 1.0,
+   "maneuver": "Stab",
+   "meleeDamageDef": "Stab",
+   "multStat": "SharpDamageMultiplier",
+   "verbClass": "Verb_MeleeAttackDamage"
+  }
+ ],
+ "ToxicBite": [
+  {
+   "armorCategory": "Sharp",
+   "commonality": 1.0,
+   "maneuver": "ToxicBite",
+   "meleeDamageDef": "ToxicBite",
+   "multStat": "SharpDamageMultiplier",
+   "verbClass": "Verb_MeleeAttackDamage"
+  }
+ ]
+}

@@ -1,0 +1,4 @@
+mod list (list dirs + read + parse About.xml, 1 threads) warm: 9.6 ms median (min 9.0, max 13.2)
+mod list (list dirs + read + parse About.xml, 1 threads) cold-approx: 24.5 ms median (min 22.9, max 27.7)
+mod list (list dirs + read + parse About.xml, 16 threads) warm: 2.0 ms median (min 1.8, max 3.2)
+mod list (list dirs + read + parse About.xml, 16 threads) cold-approx: 3.7 ms median (min 3.3, max 4.2)

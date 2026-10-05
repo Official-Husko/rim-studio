@@ -1,0 +1,23 @@
+== S2 roots=workshop about_files=691
+  total bytes 1114747 (median file 1136 B)
+  agreement vs events-lenient (n=691):
+    events-lenient   ok=691 recovered=0 failed=0 differs=0 files_with_unknown_entities=0
+    events-strict    ok=691 recovered=0 failed=0 differs=0 files_with_unknown_entities=0
+    roxmltree        ok=691 recovered=0 failed=0 differs=0 files_with_unknown_entities=0
+    serde            ok=690 recovered=0 failed=1 differs=0 files_with_unknown_entities=0
+  parsed: with packageId=691 with modDependencies=486
+  A) parse only, single thread, 30 iterations over 691 files
+  variant                            median ms    min ms    max ms   (n=5)
+  events-lenient                        134.27    131.68    140.79   {"parses":20730}
+  events-strict                         135.62    133.92    140.89   {"parses":20730}
+  serde                                 218.95    215.28    228.43   {"parses":20730}
+  roxmltree                             262.33    257.12    278.99   {"parses":20730}
+  B) end to end: read + decode + parse
+  variant                            median ms    min ms    max ms   (n=5)
+  events@1                                8.38      8.17      9.67   {}
+  events@2                                4.34      4.18      5.43   {}
+  events@4                                2.44      1.99      2.62   {}
+  events@8                                1.48      1.31      1.74   {}
+  events@16                               1.24      1.00      1.82   {}
+  serde@1                                12.39     11.16     12.63   {}
+  roxmltree@1                            13.62     13.19     13.91   {}

@@ -1,0 +1,2257 @@
+{
+ "meta": {
+  "game_version": "1.6.4871 rev598",
+  "date_generated_by": "extract.py (deterministic)",
+  "engine_stats": {
+   "top_level_nodes": 13808,
+   "abstract": 596,
+   "may_require_skipped": 0,
+   "unknown_type": 0,
+   "defs": 13212,
+   "files": 1558,
+   "patch_ops": 29
+  },
+  "licence_note": "Research data derived from Ludeon's proprietary game files; not for redistribution. RimStudio reads these values from the user's own install at runtime."
+ },
+ "weapons": [
+  {
+   "defName": "MeleeWeapon_Axe",
+   "label": "axe",
+   "source": "Royalty",
+   "file": "Defs/ThingDefs_Misc/Weapons/MeleeMedieval.xml",
+   "parents": [
+    "BaseMeleeWeapon_Sharp_Quality",
+    "BaseMeleeWeapon_Sharp",
+    "BaseMeleeWeapon",
+    "BaseWeapon"
+   ],
+   "techLevel": "Medieval",
+   "weaponTags": [
+    "MedievalMeleeDecent",
+    "Axe"
+   ],
+   "weaponClasses": [
+    "Melee",
+    "MeleePiercer"
+   ],
+   "thingCategories": [
+    "WeaponsMelee"
+   ],
+   "tradeTags": [
+    "WeaponMelee"
+   ],
+   "statBases": {
+    "MaxHitPoints": 100.0,
+    "Flammability": 1.0,
+    "DeteriorationRate": 2.0,
+    "Beauty": -3.0,
+    "SellPriceFactor": 0.2,
+    "WorkToMake": 7000.0,
+    "Mass": 1.5
+   },
+   "statBaseCount": 7,
+   "equippedStatOffsets": {},
+   "cost": {
+    "costList": {},
+    "costStuffCount": 50,
+    "stuffCategories": [
+     "Metallic",
+     "Woody"
+    ]
+   },
+   "recipe": {
+    "workToMake": 7000.0,
+    "workSkill": "Crafting",
+    "skillRequirements": {
+     "Crafting": 3.0
+    },
+    "recipeUsers": [
+     "ElectricSmithy",
+     "FueledSmithy"
+    ],
+    "research": [
+     {
+      "defName": "Smithing",
+      "baseCost": 700.0,
+      "techLevel": "Medieval",
+      "prerequisites": []
+     }
+    ],
+    "craftable": true
+   },
+   "trade": {
+    "tradeability": null,
+    "generateCommonality": null,
+    "generateAllowChance": null,
+    "SellPriceFactor": 0.2,
+    "destroyOnDrop": null
+   },
+   "marketValue": {
+    "explicit": null,
+    "formula_unstuffed": 125.2,
+    "formula_parts": {
+     "ingredients": 0,
+     "stuff": 100.0,
+     "work": 25.2
+    },
+    "effective": 125.2
+   },
+   "comps": [
+    "CompProperties_Forbiddable",
+    "CompEquippable",
+    "CompProperties_Styleable",
+    "CompQuality",
+    "CompProperties_Art"
+   ],
+   "graphic": {
+    "texPath": "Things/Item/Equipment/WeaponMelee/Axe",
+    "graphicClass": "Graphic_Single"
+   },
+   "stuffed": true,
+   "tools": [
+    {
+     "id": null,
+     "label": "handle",
+     "capacities": [
+      "Poke"
+     ],
+     "power": 9.0,
+     "cooldownTime": 2.0,
+     "armorPenetration": null,
+     "chanceFactor": 1.0,
+     "linkedBodyPartsGroup": null,
+     "extraMeleeDamages": [],
+     "hediff": null,
+     "surpriseAttack": null
+    },
+    {
+     "id": null,
+     "label": "edge",
+     "capacities": [
+      "Cut"
+     ],
+     "power": 15.0,
+     "cooldownTime": 2.0,
+     "armorPenetration": null,
+     "chanceFactor": 1.0,
+     "linkedBodyPartsGroup": null,
+     "extraMeleeDamages": [],
+     "hediff": null,
+     "surpriseAttack": null
+    }
+   ],
+   "group": "standard"
+  },
+  {
+   "defName": "MeleeWeapon_BreachAxe",
+   "label": "breach axe",
+   "source": "Core",
+   "file": "Defs/ThingDefs_Misc/Weapons/Breach.xml",
+   "parents": [
+    "BaseMeleeWeapon_Blunt_Quality",
+    "BaseMeleeWeapon_Sharp",
+    "BaseMeleeWeapon",
+    "BaseWeapon"
+   ],
+   "techLevel": "Neolithic",
+   "weaponTags": [
+    "NeolithicMeleeDestructive"
+   ],
+   "weaponClasses": [
+    "MeleeBlunt"
+   ],
+   "thingCategories": [
+    "WeaponsMelee"
+   ],
+   "tradeTags": [
+    "WeaponMelee"
+   ],
+   "statBases": {
+    "MaxHitPoints": 100.0,
+    "Flammability": 1.0,
+    "DeteriorationRate": 2.0,
+    "Beauty": -3.0,
+    "SellPriceFactor": 0.2,
+    "WorkToMake": 5000.0,
+    "Mass": 1.1
+   },
+   "statBaseCount": 7,
+   "equippedStatOffsets": {},
+   "cost": {
+    "costList": {},
+    "costStuffCount": 50,
+    "stuffCategories": [
+     "Metallic"
+    ]
+   },
+   "recipe": {
+    "workToMake": 5000.0,
+    "workSkill": "Crafting",
+    "skillRequirements": {
+     "Crafting": 3.0
+    },
+    "recipeUsers": [
+     "ElectricSmithy",
+     "FueledSmithy"
+    ],
+    "research": [
+     {
+      "defName": "Smithing",
+      "baseCost": 700.0,
+      "techLevel": "Medieval",
+      "prerequisites": []
+     }
+    ],
+    "craftable": true
+   },
+   "trade": {
+    "tradeability": null,
+    "generateCommonality": null,
+    "generateAllowChance": null,
+    "SellPriceFactor": 0.2,
+    "destroyOnDrop": null
+   },
+   "marketValue": {
+    "explicit": null,
+    "formula_unstuffed": 118.0,
+    "formula_parts": {
+     "ingredients": 0,
+     "stuff": 100.0,
+     "work": 18.0
+    },
+    "effective": 118.0
+   },
+   "comps": [
+    "CompProperties_Forbiddable",
+    "CompEquippable",
+    "CompProperties_Styleable",
+    "CompQuality",
+    "CompProperties_Art"
+   ],
+   "graphic": {
+    "texPath": "Things/Item/Equipment/WeaponMelee/BreachAxe",
+    "graphicClass": "Graphic_Single"
+   },
+   "stuffed": true,
+   "tools": [
+    {
+     "id": null,
+     "label": "handle",
+     "capacities": [
+      "Blunt",
+      "Poke"
+     ],
+     "power": 9.0,
+     "cooldownTime": 2.0,
+     "armorPenetration": null,
+     "chanceFactor": 1.0,
+     "linkedBodyPartsGroup": null,
+     "extraMeleeDamages": [],
+     "hediff": null,
+     "surpriseAttack": null
+    },
+    {
+     "id": null,
+     "label": "head",
+     "capacities": [
+      "Demolish"
+     ],
+     "power": 7.5,
+     "cooldownTime": 1.0,
+     "armorPenetration": null,
+     "chanceFactor": 1.0,
+     "linkedBodyPartsGroup": null,
+     "extraMeleeDamages": [],
+     "hediff": null,
+     "surpriseAttack": null
+    }
+   ],
+   "group": "standard"
+  },
+  {
+   "defName": "MeleeWeapon_Club",
+   "label": "club",
+   "source": "Core",
+   "file": "Defs/ThingDefs_Misc/Weapons/MeleeNeolithic.xml",
+   "parents": [
+    "BaseMeleeWeapon_Blunt",
+    "BaseMeleeWeapon",
+    "BaseWeapon"
+   ],
+   "techLevel": "Neolithic",
+   "weaponTags": [
+    "NeolithicMeleeBasic"
+   ],
+   "weaponClasses": [
+    "Melee",
+    "MeleeBlunt",
+    "Neolithic"
+   ],
+   "thingCategories": [
+    "WeaponsMelee"
+   ],
+   "tradeTags": [
+    "WeaponMelee"
+   ],
+   "statBases": {
+    "MaxHitPoints": 100.0,
+    "Flammability": 1.0,
+    "DeteriorationRate": 2.0,
+    "Beauty": -3.0,
+    "SellPriceFactor": 0.2,
+    "WorkToMake": 1200.0,
+    "Mass": 2.0
+   },
+   "statBaseCount": 7,
+   "equippedStatOffsets": {},
+   "cost": {
+    "costList": {},
+    "costStuffCount": 40,
+    "stuffCategories": [
+     "Metallic",
+     "Woody",
+     "Stony"
+    ]
+   },
+   "recipe": {
+    "workToMake": 1200.0,
+    "workSkill": "Crafting",
+    "skillRequirements": {},
+    "recipeUsers": [
+     "ElectricSmithy",
+     "FueledSmithy",
+     "CraftingSpot"
+    ],
+    "research": [],
+    "craftable": true
+   },
+   "trade": {
+    "tradeability": null,
+    "generateCommonality": null,
+    "generateAllowChance": null,
+    "SellPriceFactor": 0.2,
+    "destroyOnDrop": null
+   },
+   "marketValue": {
+    "explicit": null,
+    "formula_unstuffed": 84.32,
+    "formula_parts": {
+     "ingredients": 0,
+     "stuff": 80.0,
+     "work": 4.32
+    },
+    "effective": 84.32
+   },
+   "comps": [
+    "CompProperties_Forbiddable",
+    "CompEquippable",
+    "CompProperties_Styleable"
+   ],
+   "graphic": {
+    "texPath": "Things/Item/Equipment/WeaponMelee/Club",
+    "graphicClass": "Graphic_Single"
+   },
+   "stuffed": true,
+   "tools": [
+    {
+     "id": null,
+     "label": "handle",
+     "capacities": [
+      "Poke"
+     ],
+     "power": 9.0,
+     "cooldownTime": 2.0,
+     "armorPenetration": null,
+     "chanceFactor": 1.0,
+     "linkedBodyPartsGroup": null,
+     "extraMeleeDamages": [],
+     "hediff": null,
+     "surpriseAttack": null
+    },
+    {
+     "id": null,
+     "label": "head",
+     "capacities": [
+      "Blunt"
+     ],
+     "power": 14.0,
+     "cooldownTime": 2.0,
+     "armorPenetration": null,
+     "chanceFactor": 1.0,
+     "linkedBodyPartsGroup": null,
+     "extraMeleeDamages": [],
+     "hediff": null,
+     "surpriseAttack": null
+    }
+   ],
+   "group": "standard"
+  },
+  {
+   "defName": "MeleeWeapon_Gladius",
+   "label": "gladius",
+   "source": "Core",
+   "file": "Defs/ThingDefs_Misc/Weapons/MeleeMedieval.xml",
+   "parents": [
+    "BaseMeleeWeapon_Sharp_Quality",
+    "BaseMeleeWeapon_Sharp",
+    "BaseMeleeWeapon",
+    "BaseWeapon"
+   ],
+   "techLevel": "Medieval",
+   "weaponTags": [
+    "MedievalMeleeDecent"
+   ],
+   "weaponClasses": [
+    "Melee",
+    "MeleePiercer"
+   ],
+   "thingCategories": [
+    "WeaponsMelee"
+   ],
+   "tradeTags": [
+    "WeaponMelee"
+   ],
+   "statBases": {
+    "MaxHitPoints": 100.0,
+    "Flammability": 1.0,
+    "DeteriorationRate": 2.0,
+    "Beauty": -3.0,
+    "SellPriceFactor": 0.2,
+    "WorkToMake": 12000.0,
+    "Mass": 0.85
+   },
+   "statBaseCount": 7,
+   "equippedStatOffsets": {},
+   "cost": {
+    "costList": {},
+    "costStuffCount": 50,
+    "stuffCategories": [
+     "Metallic",
+     "Woody"
+    ]
+   },
+   "recipe": {
+    "workToMake": 12000.0,
+    "workSkill": "Crafting",
+    "skillRequirements": {
+     "Crafting": 3.0
+    },
+    "recipeUsers": [
+     "ElectricSmithy",
+     "FueledSmithy"
+    ],
+    "research": [
+     {
+      "defName": "Smithing",
+      "baseCost": 700.0,
+      "techLevel": "Medieval",
+      "prerequisites": []
+     }
+    ],
+    "craftable": true
+   },
+   "trade": {
+    "tradeability": null,
+    "generateCommonality": null,
+    "generateAllowChance": null,
+    "SellPriceFactor": 0.2,
+    "destroyOnDrop": null
+   },
+   "marketValue": {
+    "explicit": null,
+    "formula_unstuffed": 143.2,
+    "formula_parts": {
+     "ingredients": 0,
+     "stuff": 100.0,
+     "work": 43.2
+    },
+    "effective": 143.2
+   },
+   "comps": [
+    "CompProperties_Forbiddable",
+    "CompEquippable",
+    "CompProperties_Styleable",
+    "CompQuality",
+    "CompProperties_Art"
+   ],
+   "graphic": {
+    "texPath": "Things/Item/Equipment/WeaponMelee/Gladius",
+    "graphicClass": "Graphic_Single"
+   },
+   "stuffed": true,
+   "tools": [
+    {
+     "id": null,
+     "label": "handle",
+     "capacities": [
+      "Blunt"
+     ],
+     "power": 9.0,
+     "cooldownTime": 2.0,
+     "armorPenetration": null,
+     "chanceFactor": 1.0,
+     "linkedBodyPartsGroup": null,
+     "extraMeleeDamages": [],
+     "hediff": null,
+     "surpriseAttack": null
+    },
+    {
+     "id": null,
+     "label": "point",
+     "capacities": [
+      "Stab"
+     ],
+     "power": 16.0,
+     "cooldownTime": 2.0,
+     "armorPenetration": null,
+     "chanceFactor": 1.0,
+     "linkedBodyPartsGroup": null,
+     "extraMeleeDamages": [],
+     "hediff": null,
+     "surpriseAttack": null
+    },
+    {
+     "id": null,
+     "label": "edge",
+     "capacities": [
+      "Cut"
+     ],
+     "power": 16.0,
+     "cooldownTime": 2.0,
+     "armorPenetration": null,
+     "chanceFactor": 1.0,
+     "linkedBodyPartsGroup": null,
+     "extraMeleeDamages": [],
+     "hediff": null,
+     "surpriseAttack": null
+    }
+   ],
+   "group": "standard"
+  },
+  {
+   "defName": "MeleeWeapon_Ikwa",
+   "label": "ikwa",
+   "source": "Core",
+   "file": "Defs/ThingDefs_Misc/Weapons/MeleeNeolithic.xml",
+   "parents": [
+    "BaseMeleeWeapon_Sharp_Quality",
+    "BaseMeleeWeapon_Sharp",
+    "BaseMeleeWeapon",
+    "BaseWeapon"
+   ],
+   "techLevel": "Neolithic",
+   "weaponTags": [
+    "NeolithicMeleeDecent"
+   ],
+   "weaponClasses": [
+    "Melee",
+    "MeleePiercer",
+    "Neolithic"
+   ],
+   "thingCategories": [
+    "WeaponsMelee"
+   ],
+   "tradeTags": [
+    "WeaponMelee"
+   ],
+   "statBases": {
+    "MaxHitPoints": 100.0,
+    "Flammability": 1.0,
+    "DeteriorationRate": 2.0,
+    "Beauty": -3.0,
+    "SellPriceFactor": 0.2,
+    "WorkToMake": 5000.0,
+    "Mass": 1.1
+   },
+   "statBaseCount": 7,
+   "equippedStatOffsets": {},
+   "cost": {
+    "costList": {},
+    "costStuffCount": 50,
+    "stuffCategories": [
+     "Metallic",
+     "Woody"
+    ]
+   },
+   "recipe": {
+    "workToMake": 5000.0,
+    "workSkill": "Crafting",
+    "skillRequirements": {
+     "Crafting": 3.0
+    },
+    "recipeUsers": [
+     "ElectricSmithy",
+     "FueledSmithy"
+    ],
+    "research": [
+     {
+      "defName": "Smithing",
+      "baseCost": 700.0,
+      "techLevel": "Medieval",
+      "prerequisites": []
+     }
+    ],
+    "craftable": true
+   },
+   "trade": {
+    "tradeability": null,
+    "generateCommonality": null,
+    "generateAllowChance": null,
+    "SellPriceFactor": 0.2,
+    "destroyOnDrop": null
+   },
+   "marketValue": {
+    "explicit": null,
+    "formula_unstuffed": 118.0,
+    "formula_parts": {
+     "ingredients": 0,
+     "stuff": 100.0,
+     "work": 18.0
+    },
+    "effective": 118.0
+   },
+   "comps": [
+    "CompProperties_Forbiddable",
+    "CompEquippable",
+    "CompProperties_Styleable",
+    "CompQuality",
+    "CompProperties_Art"
+   ],
+   "graphic": {
+    "texPath": "Things/Item/Equipment/WeaponMelee/Ikwa",
+    "graphicClass": "Graphic_Single"
+   },
+   "stuffed": true,
+   "tools": [
+    {
+     "id": null,
+     "label": "handle",
+     "capacities": [
+      "Blunt",
+      "Poke"
+     ],
+     "power": 9.0,
+     "cooldownTime": 2.0,
+     "armorPenetration": null,
+     "chanceFactor": 1.0,
+     "linkedBodyPartsGroup": null,
+     "extraMeleeDamages": [],
+     "hediff": null,
+     "surpriseAttack": null
+    },
+    {
+     "id": null,
+     "label": "head",
+     "capacities": [
+      "Stab"
+     ],
+     "power": 15.0,
+     "cooldownTime": 2.0,
+     "armorPenetration": null,
+     "chanceFactor": 1.0,
+     "linkedBodyPartsGroup": null,
+     "extraMeleeDamages": [],
+     "hediff": null,
+     "surpriseAttack": null
+    },
+    {
+     "id": null,
+     "label": "edge",
+     "capacities": [
+      "Cut"
+     ],
+     "power": 15.0,
+     "cooldownTime": 2.0,
+     "armorPenetration": null,
+     "chanceFactor": 1.0,
+     "linkedBodyPartsGroup": null,
+     "extraMeleeDamages": [],
+     "hediff": null,
+     "surpriseAttack": null
+    }
+   ],
+   "group": "standard"
+  },
+  {
+   "defName": "MeleeWeapon_Knife",
+   "label": "knife",
+   "source": "Core",
+   "file": "Defs/ThingDefs_Misc/Weapons/MeleeNeolithic.xml",
+   "parents": [
+    "BaseMeleeWeapon_Sharp_Quality",
+    "BaseMeleeWeapon_Sharp",
+    "BaseMeleeWeapon",
+    "BaseWeapon"
+   ],
+   "techLevel": "Neolithic",
+   "weaponTags": [
+    "MedievalMeleeBasic",
+    "NeolithicMeleeBasic"
+   ],
+   "weaponClasses": [
+    "Melee",
+    "MeleePiercer",
+    "Neolithic"
+   ],
+   "thingCategories": [
+    "WeaponsMelee"
+   ],
+   "tradeTags": [
+    "WeaponMelee"
+   ],
+   "statBases": {
+    "MaxHitPoints": 100.0,
+    "Flammability": 1.0,
+    "DeteriorationRate": 2.0,
+    "Beauty": -3.0,
+    "SellPriceFactor": 0.2,
+    "WorkToMake": 1800.0,
+    "Mass": 0.5
+   },
+   "statBaseCount": 7,
+   "equippedStatOffsets": {},
+   "cost": {
+    "costList": {},
+    "costStuffCount": 30,
+    "stuffCategories": [
+     "Metallic"
+    ]
+   },
+   "recipe": {
+    "workToMake": 1800.0,
+    "workSkill": "Crafting",
+    "skillRequirements": {},
+    "recipeUsers": [
+     "ElectricSmithy",
+     "FueledSmithy",
+     "CraftingSpot"
+    ],
+    "research": [],
+    "craftable": true
+   },
+   "trade": {
+    "tradeability": null,
+    "generateCommonality": null,
+    "generateAllowChance": null,
+    "SellPriceFactor": 0.2,
+    "destroyOnDrop": null
+   },
+   "marketValue": {
+    "explicit": null,
+    "formula_unstuffed": 66.48,
+    "formula_parts": {
+     "ingredients": 0,
+     "stuff": 60.0,
+     "work": 6.48
+    },
+    "effective": 66.48
+   },
+   "comps": [
+    "CompProperties_Forbiddable",
+    "CompEquippable",
+    "CompProperties_Styleable",
+    "CompQuality",
+    "CompProperties_Art"
+   ],
+   "graphic": {
+    "texPath": "Things/Item/Equipment/WeaponMelee/Knife",
+    "graphicClass": "Graphic_Single"
+   },
+   "stuffed": true,
+   "tools": [
+    {
+     "id": null,
+     "label": "handle",
+     "capacities": [
+      "Blunt"
+     ],
+     "power": 9.0,
+     "cooldownTime": 2.0,
+     "armorPenetration": null,
+     "chanceFactor": 1.0,
+     "linkedBodyPartsGroup": null,
+     "extraMeleeDamages": [],
+     "hediff": null,
+     "surpriseAttack": null
+    },
+    {
+     "id": null,
+     "label": "blade",
+     "capacities": [
+      "Cut"
+     ],
+     "power": 12.0,
+     "cooldownTime": 1.5,
+     "armorPenetration": null,
+     "chanceFactor": 1.0,
+     "linkedBodyPartsGroup": null,
+     "extraMeleeDamages": [],
+     "hediff": null,
+     "surpriseAttack": null
+    },
+    {
+     "id": null,
+     "label": "point",
+     "capacities": [
+      "Stab"
+     ],
+     "power": 13.0,
+     "cooldownTime": 2.0,
+     "armorPenetration": null,
+     "chanceFactor": 1.0,
+     "linkedBodyPartsGroup": null,
+     "extraMeleeDamages": [],
+     "hediff": null,
+     "surpriseAttack": null
+    }
+   ],
+   "group": "standard"
+  },
+  {
+   "defName": "MeleeWeapon_LongSword",
+   "label": "longsword",
+   "source": "Core",
+   "file": "Defs/ThingDefs_Misc/Weapons/MeleeMedieval.xml",
+   "parents": [
+    "BaseMeleeWeapon_Sharp_Quality",
+    "BaseMeleeWeapon_Sharp",
+    "BaseMeleeWeapon",
+    "BaseWeapon"
+   ],
+   "techLevel": "Medieval",
+   "weaponTags": [
+    "MedievalMeleeAdvanced",
+    "LongSword"
+   ],
+   "weaponClasses": [
+    "Melee",
+    "MeleePiercer"
+   ],
+   "thingCategories": [
+    "WeaponsMelee"
+   ],
+   "tradeTags": [
+    "WeaponMelee"
+   ],
+   "statBases": {
+    "MaxHitPoints": 100.0,
+    "Flammability": 1.0,
+    "DeteriorationRate": 2.0,
+    "Beauty": -3.0,
+    "SellPriceFactor": 0.2,
+    "WorkToMake": 18000.0,
+    "Mass": 2.0
+   },
+   "statBaseCount": 7,
+   "equippedStatOffsets": {},
+   "cost": {
+    "costList": {},
+    "costStuffCount": 100,
+    "stuffCategories": [
+     "Metallic",
+     "Woody"
+    ]
+   },
+   "recipe": {
+    "workToMake": 18000.0,
+    "workSkill": "Crafting",
+    "skillRequirements": {
+     "Crafting": 5.0
+    },
+    "recipeUsers": [
+     "ElectricSmithy",
+     "FueledSmithy"
+    ],
+    "research": [
+     {
+      "defName": "LongBlades",
+      "baseCost": 400.0,
+      "techLevel": "Medieval",
+      "prerequisites": [
+       "Smithing"
+      ]
+     }
+    ],
+    "craftable": true
+   },
+   "trade": {
+    "tradeability": null,
+    "generateCommonality": null,
+    "generateAllowChance": null,
+    "SellPriceFactor": 0.2,
+    "destroyOnDrop": null
+   },
+   "marketValue": {
+    "explicit": null,
+    "formula_unstuffed": 264.8,
+    "formula_parts": {
+     "ingredients": 0,
+     "stuff": 200.0,
+     "work": 64.8
+    },
+    "effective": 264.8
+   },
+   "comps": [
+    "CompProperties_Forbiddable",
+    "CompEquippable",
+    "CompProperties_Styleable",
+    "CompQuality",
+    "CompProperties_Art"
+   ],
+   "graphic": {
+    "texPath": "Things/Item/Equipment/WeaponMelee/LongSword",
+    "graphicClass": "Graphic_Single"
+   },
+   "stuffed": true,
+   "tools": [
+    {
+     "id": null,
+     "label": "handle",
+     "capacities": [
+      "Blunt"
+     ],
+     "power": 9.0,
+     "cooldownTime": 2.0,
+     "armorPenetration": null,
+     "chanceFactor": 1.0,
+     "linkedBodyPartsGroup": null,
+     "extraMeleeDamages": [],
+     "hediff": null,
+     "surpriseAttack": null
+    },
+    {
+     "id": null,
+     "label": "point",
+     "capacities": [
+      "Stab"
+     ],
+     "power": 23.0,
+     "cooldownTime": 2.6,
+     "armorPenetration": null,
+     "chanceFactor": 1.0,
+     "linkedBodyPartsGroup": null,
+     "extraMeleeDamages": [],
+     "hediff": null,
+     "surpriseAttack": null
+    },
+    {
+     "id": null,
+     "label": "edge",
+     "capacities": [
+      "Cut"
+     ],
+     "power": 23.0,
+     "cooldownTime": 2.6,
+     "armorPenetration": null,
+     "chanceFactor": 1.0,
+     "linkedBodyPartsGroup": null,
+     "extraMeleeDamages": [],
+     "hediff": null,
+     "surpriseAttack": null
+    }
+   ],
+   "group": "standard"
+  },
+  {
+   "defName": "MeleeWeapon_Mace",
+   "label": "mace",
+   "source": "Core",
+   "file": "Defs/ThingDefs_Misc/Weapons/MeleeMedieval.xml",
+   "parents": [
+    "BaseMeleeWeapon_Blunt_Quality",
+    "BaseMeleeWeapon_Sharp",
+    "BaseMeleeWeapon",
+    "BaseWeapon"
+   ],
+   "techLevel": "Medieval",
+   "weaponTags": [
+    "MedievalMeleeDecent"
+   ],
+   "weaponClasses": [
+    "MeleeBlunt",
+    "Melee"
+   ],
+   "thingCategories": [
+    "WeaponsMelee"
+   ],
+   "tradeTags": [
+    "WeaponMelee"
+   ],
+   "statBases": {
+    "MaxHitPoints": 100.0,
+    "Flammability": 1.0,
+    "DeteriorationRate": 2.0,
+    "Beauty": -3.0,
+    "SellPriceFactor": 0.2,
+    "WorkToMake": 6000.0,
+    "Mass": 1.25
+   },
+   "statBaseCount": 7,
+   "equippedStatOffsets": {},
+   "cost": {
+    "costList": {},
+    "costStuffCount": 50,
+    "stuffCategories": [
+     "Metallic",
+     "Woody"
+    ]
+   },
+   "recipe": {
+    "workToMake": 6000.0,
+    "workSkill": "Crafting",
+    "skillRequirements": {
+     "Crafting": 3.0
+    },
+    "recipeUsers": [
+     "ElectricSmithy",
+     "FueledSmithy"
+    ],
+    "research": [
+     {
+      "defName": "Smithing",
+      "baseCost": 700.0,
+      "techLevel": "Medieval",
+      "prerequisites": []
+     }
+    ],
+    "craftable": true
+   },
+   "trade": {
+    "tradeability": null,
+    "generateCommonality": null,
+    "generateAllowChance": null,
+    "SellPriceFactor": 0.2,
+    "destroyOnDrop": null
+   },
+   "marketValue": {
+    "explicit": null,
+    "formula_unstuffed": 121.6,
+    "formula_parts": {
+     "ingredients": 0,
+     "stuff": 100.0,
+     "work": 21.6
+    },
+    "effective": 121.6
+   },
+   "comps": [
+    "CompProperties_Forbiddable",
+    "CompEquippable",
+    "CompProperties_Styleable",
+    "CompQuality",
+    "CompProperties_Art"
+   ],
+   "graphic": {
+    "texPath": "Things/Item/Equipment/WeaponMelee/Mace",
+    "graphicClass": "Graphic_Single"
+   },
+   "stuffed": true,
+   "tools": [
+    {
+     "id": null,
+     "label": "handle",
+     "capacities": [
+      "Poke"
+     ],
+     "power": 9.0,
+     "cooldownTime": 2.0,
+     "armorPenetration": null,
+     "chanceFactor": 1.0,
+     "linkedBodyPartsGroup": null,
+     "extraMeleeDamages": [],
+     "hediff": null,
+     "surpriseAttack": null
+    },
+    {
+     "id": null,
+     "label": "head",
+     "capacities": [
+      "Blunt"
+     ],
+     "power": 15.7,
+     "cooldownTime": 2.0,
+     "armorPenetration": null,
+     "chanceFactor": 1.0,
+     "linkedBodyPartsGroup": null,
+     "extraMeleeDamages": [],
+     "hediff": null,
+     "surpriseAttack": null
+    }
+   ],
+   "group": "standard"
+  },
+  {
+   "defName": "MeleeWeapon_MonoSword",
+   "label": "monosword",
+   "source": "Royalty",
+   "file": "Defs/ThingDefs_Misc/Weapons/MeleeUltratech.xml",
+   "parents": [
+    "MeleeWeaponUltratech",
+    "BaseWeapon"
+   ],
+   "techLevel": "Ultra",
+   "weaponTags": [
+    "UltratechMelee"
+   ],
+   "weaponClasses": [
+    "Melee",
+    "Ultratech",
+    "MeleePiercer"
+   ],
+   "thingCategories": [
+    "WeaponsMelee"
+   ],
+   "tradeTags": [
+    "WeaponMelee"
+   ],
+   "statBases": {
+    "MaxHitPoints": 100.0,
+    "Flammability": 1.0,
+    "DeteriorationRate": 2.0,
+    "Beauty": -3.0,
+    "SellPriceFactor": 0.2,
+    "MarketValue": 2000.0,
+    "Mass": 2.0
+   },
+   "statBaseCount": 7,
+   "equippedStatOffsets": {},
+   "cost": {
+    "costList": {},
+    "costStuffCount": 0,
+    "stuffCategories": []
+   },
+   "recipe": {
+    "workToMake": null,
+    "workSkill": null,
+    "skillRequirements": {},
+    "recipeUsers": [],
+    "research": [],
+    "craftable": false
+   },
+   "trade": {
+    "tradeability": null,
+    "generateCommonality": null,
+    "generateAllowChance": null,
+    "SellPriceFactor": 0.2,
+    "destroyOnDrop": null
+   },
+   "marketValue": {
+    "explicit": 2000.0,
+    "formula_unstuffed": 0.0,
+    "formula_parts": {
+     "ingredients": 0,
+     "stuff": 0.0,
+     "work": 0.0
+    },
+    "effective": 2000.0
+   },
+   "comps": [
+    "CompProperties_Forbiddable",
+    "CompEquippable",
+    "CompProperties_Styleable",
+    "CompQuality",
+    "CompProperties_Art",
+    "CompProperties_Biocodable"
+   ],
+   "graphic": {
+    "texPath": "Things/Item/Equipment/WeaponMelee/Monosword",
+    "graphicClass": "Graphic_Single"
+   },
+   "stuffed": false,
+   "tools": [
+    {
+     "id": null,
+     "label": "handle",
+     "capacities": [
+      "Blunt"
+     ],
+     "power": 12.0,
+     "cooldownTime": 1.6,
+     "armorPenetration": null,
+     "chanceFactor": 1.0,
+     "linkedBodyPartsGroup": null,
+     "extraMeleeDamages": [],
+     "hediff": null,
+     "surpriseAttack": null
+    },
+    {
+     "id": null,
+     "label": "point",
+     "capacities": [
+      "Stab"
+     ],
+     "power": 25.0,
+     "cooldownTime": 2.0,
+     "armorPenetration": 0.9,
+     "chanceFactor": 1.0,
+     "linkedBodyPartsGroup": null,
+     "extraMeleeDamages": [],
+     "hediff": null,
+     "surpriseAttack": null
+    },
+    {
+     "id": null,
+     "label": "edge",
+     "capacities": [
+      "Cut"
+     ],
+     "power": 25.0,
+     "cooldownTime": 2.0,
+     "armorPenetration": 0.9,
+     "chanceFactor": 1.0,
+     "linkedBodyPartsGroup": null,
+     "extraMeleeDamages": [],
+     "hediff": null,
+     "surpriseAttack": null
+    }
+   ],
+   "group": "standard"
+  },
+  {
+   "defName": "MeleeWeapon_MonoSwordBladelink",
+   "label": "persona monosword",
+   "source": "Royalty",
+   "file": "Defs/ThingDefs_Misc/Weapons/MeleeBladelink.xml",
+   "parents": [
+    "BaseWeapon_Bladelink",
+    "BaseWeapon"
+   ],
+   "techLevel": "Ultra",
+   "weaponTags": [
+    "Bladelink"
+   ],
+   "weaponClasses": [
+    "Ultratech",
+    "Melee",
+    "MeleePiercer"
+   ],
+   "thingCategories": [
+    "WeaponsMeleeBladelink"
+   ],
+   "tradeTags": [
+    "WeaponMelee"
+   ],
+   "statBases": {
+    "MaxHitPoints": 100.0,
+    "Flammability": 1.0,
+    "DeteriorationRate": 2.0,
+    "Beauty": -3.0,
+    "SellPriceFactor": 0.2,
+    "MarketValue": 3000.0,
+    "Mass": 2.0
+   },
+   "statBaseCount": 7,
+   "equippedStatOffsets": {},
+   "cost": {
+    "costList": {},
+    "costStuffCount": 0,
+    "stuffCategories": []
+   },
+   "recipe": {
+    "workToMake": null,
+    "workSkill": null,
+    "skillRequirements": {},
+    "recipeUsers": [],
+    "research": [],
+    "craftable": false
+   },
+   "trade": {
+    "tradeability": null,
+    "generateCommonality": null,
+    "generateAllowChance": null,
+    "SellPriceFactor": 0.2,
+    "destroyOnDrop": null
+   },
+   "marketValue": {
+    "explicit": 3000.0,
+    "formula_unstuffed": 0.0,
+    "formula_parts": {
+     "ingredients": 0,
+     "stuff": 0.0,
+     "work": 0.0
+    },
+    "effective": 3000.0
+   },
+   "comps": [
+    "CompProperties_Forbiddable",
+    "CompEquippable",
+    "CompProperties_Styleable",
+    "CompQuality",
+    "CompProperties_BladelinkWeapon",
+    "CompProperties_GeneratedName"
+   ],
+   "graphic": {
+    "texPath": "Things/Item/Equipment/WeaponMelee/Monosword",
+    "graphicClass": "Graphic_Single"
+   },
+   "stuffed": false,
+   "tools": [
+    {
+     "id": null,
+     "label": "handle",
+     "capacities": [
+      "Blunt"
+     ],
+     "power": 12.0,
+     "cooldownTime": 1.6,
+     "armorPenetration": null,
+     "chanceFactor": 1.0,
+     "linkedBodyPartsGroup": null,
+     "extraMeleeDamages": [],
+     "hediff": null,
+     "surpriseAttack": null
+    },
+    {
+     "id": null,
+     "label": "point",
+     "capacities": [
+      "Stab"
+     ],
+     "power": 27.0,
+     "cooldownTime": 1.6,
+     "armorPenetration": 0.9,
+     "chanceFactor": 1.0,
+     "linkedBodyPartsGroup": null,
+     "extraMeleeDamages": [],
+     "hediff": null,
+     "surpriseAttack": null
+    },
+    {
+     "id": null,
+     "label": "edge",
+     "capacities": [
+      "Cut"
+     ],
+     "power": 27.0,
+     "cooldownTime": 1.6,
+     "armorPenetration": 0.9,
+     "chanceFactor": 1.0,
+     "linkedBodyPartsGroup": null,
+     "extraMeleeDamages": [],
+     "hediff": null,
+     "surpriseAttack": null
+    }
+   ],
+   "group": "bladelink"
+  },
+  {
+   "defName": "MeleeWeapon_PlasmaSword",
+   "label": "plasmasword",
+   "source": "Royalty",
+   "file": "Defs/ThingDefs_Misc/Weapons/MeleeUltratech.xml",
+   "parents": [
+    "MeleeWeaponUltratech",
+    "BaseWeapon"
+   ],
+   "techLevel": "Ultra",
+   "weaponTags": [
+    "UltratechMelee"
+   ],
+   "weaponClasses": [
+    "Melee",
+    "Ultratech",
+    "MeleePiercer"
+   ],
+   "thingCategories": [
+    "WeaponsMelee"
+   ],
+   "tradeTags": [
+    "WeaponMelee"
+   ],
+   "statBases": {
+    "MaxHitPoints": 100.0,
+    "Flammability": 1.0,
+    "DeteriorationRate": 2.0,
+    "Beauty": -3.0,
+    "SellPriceFactor": 0.2,
+    "MarketValue": 2000.0,
+    "Mass": 2.0
+   },
+   "statBaseCount": 7,
+   "equippedStatOffsets": {},
+   "cost": {
+    "costList": {},
+    "costStuffCount": 0,
+    "stuffCategories": []
+   },
+   "recipe": {
+    "workToMake": null,
+    "workSkill": null,
+    "skillRequirements": {},
+    "recipeUsers": [],
+    "research": [],
+    "craftable": false
+   },
+   "trade": {
+    "tradeability": null,
+    "generateCommonality": null,
+    "generateAllowChance": null,
+    "SellPriceFactor": 0.2,
+    "destroyOnDrop": null
+   },
+   "marketValue": {
+    "explicit": 2000.0,
+    "formula_unstuffed": 0.0,
+    "formula_parts": {
+     "ingredients": 0,
+     "stuff": 0.0,
+     "work": 0.0
+    },
+    "effective": 2000.0
+   },
+   "comps": [
+    "CompProperties_Forbiddable",
+    "CompEquippable",
+    "CompProperties_Styleable",
+    "CompQuality",
+    "CompProperties_Art",
+    "CompProperties_Biocodable"
+   ],
+   "graphic": {
+    "texPath": "Things/Item/Equipment/WeaponMelee/PlasmaSword",
+    "graphicClass": "Graphic_Single"
+   },
+   "stuffed": false,
+   "tools": [
+    {
+     "id": null,
+     "label": "handle",
+     "capacities": [
+      "Blunt"
+     ],
+     "power": 12.0,
+     "cooldownTime": 2.0,
+     "armorPenetration": null,
+     "chanceFactor": 1.0,
+     "linkedBodyPartsGroup": null,
+     "extraMeleeDamages": [],
+     "hediff": null,
+     "surpriseAttack": null
+    },
+    {
+     "id": null,
+     "label": "point",
+     "capacities": [
+      "Stab"
+     ],
+     "power": 21.0,
+     "cooldownTime": 2.6,
+     "armorPenetration": null,
+     "chanceFactor": 1.0,
+     "linkedBodyPartsGroup": null,
+     "extraMeleeDamages": [
+      {
+       "def": "Flame",
+       "amount": 10.0,
+       "armorPenetration": null
+      }
+     ],
+     "hediff": null,
+     "surpriseAttack": null
+    },
+    {
+     "id": null,
+     "label": "edge",
+     "capacities": [
+      "Cut"
+     ],
+     "power": 21.0,
+     "cooldownTime": 2.6,
+     "armorPenetration": null,
+     "chanceFactor": 1.0,
+     "linkedBodyPartsGroup": null,
+     "extraMeleeDamages": [
+      {
+       "def": "Flame",
+       "amount": 10.0,
+       "armorPenetration": null
+      }
+     ],
+     "hediff": null,
+     "surpriseAttack": null
+    }
+   ],
+   "group": "standard"
+  },
+  {
+   "defName": "MeleeWeapon_PlasmaSwordBladelink",
+   "label": "persona plasmasword",
+   "source": "Royalty",
+   "file": "Defs/ThingDefs_Misc/Weapons/MeleeBladelink.xml",
+   "parents": [
+    "BaseWeapon_Bladelink",
+    "BaseWeapon"
+   ],
+   "techLevel": "Ultra",
+   "weaponTags": [
+    "Bladelink"
+   ],
+   "weaponClasses": [
+    "Ultratech",
+    "Melee",
+    "MeleePiercer"
+   ],
+   "thingCategories": [
+    "WeaponsMeleeBladelink"
+   ],
+   "tradeTags": [
+    "WeaponMelee"
+   ],
+   "statBases": {
+    "MaxHitPoints": 100.0,
+    "Flammability": 1.0,
+    "DeteriorationRate": 2.0,
+    "Beauty": -3.0,
+    "SellPriceFactor": 0.2,
+    "MarketValue": 3000.0,
+    "Mass": 2.0
+   },
+   "statBaseCount": 7,
+   "equippedStatOffsets": {},
+   "cost": {
+    "costList": {},
+    "costStuffCount": 0,
+    "stuffCategories": []
+   },
+   "recipe": {
+    "workToMake": null,
+    "workSkill": null,
+    "skillRequirements": {},
+    "recipeUsers": [],
+    "research": [],
+    "craftable": false
+   },
+   "trade": {
+    "tradeability": null,
+    "generateCommonality": null,
+    "generateAllowChance": null,
+    "SellPriceFactor": 0.2,
+    "destroyOnDrop": null
+   },
+   "marketValue": {
+    "explicit": 3000.0,
+    "formula_unstuffed": 0.0,
+    "formula_parts": {
+     "ingredients": 0,
+     "stuff": 0.0,
+     "work": 0.0
+    },
+    "effective": 3000.0
+   },
+   "comps": [
+    "CompProperties_Forbiddable",
+    "CompEquippable",
+    "CompProperties_Styleable",
+    "CompQuality",
+    "CompProperties_BladelinkWeapon",
+    "CompProperties_GeneratedName"
+   ],
+   "graphic": {
+    "texPath": "Things/Item/Equipment/WeaponMelee/PlasmaSword",
+    "graphicClass": "Graphic_Single"
+   },
+   "stuffed": false,
+   "tools": [
+    {
+     "id": null,
+     "label": "handle",
+     "capacities": [
+      "Blunt"
+     ],
+     "power": 12.0,
+     "cooldownTime": 1.6,
+     "armorPenetration": null,
+     "chanceFactor": 1.0,
+     "linkedBodyPartsGroup": null,
+     "extraMeleeDamages": [],
+     "hediff": null,
+     "surpriseAttack": null
+    },
+    {
+     "id": null,
+     "label": "point",
+     "capacities": [
+      "Stab"
+     ],
+     "power": 23.0,
+     "cooldownTime": 2.0,
+     "armorPenetration": null,
+     "chanceFactor": 1.0,
+     "linkedBodyPartsGroup": null,
+     "extraMeleeDamages": [
+      {
+       "def": "Flame",
+       "amount": 10.0,
+       "armorPenetration": null
+      }
+     ],
+     "hediff": null,
+     "surpriseAttack": null
+    },
+    {
+     "id": null,
+     "label": "edge",
+     "capacities": [
+      "Cut"
+     ],
+     "power": 23.0,
+     "cooldownTime": 2.0,
+     "armorPenetration": null,
+     "chanceFactor": 1.0,
+     "linkedBodyPartsGroup": null,
+     "extraMeleeDamages": [
+      {
+       "def": "Flame",
+       "amount": 10.0,
+       "armorPenetration": null
+      }
+     ],
+     "hediff": null,
+     "surpriseAttack": null
+    }
+   ],
+   "group": "bladelink"
+  },
+  {
+   "defName": "MeleeWeapon_PsyfocusStaff",
+   "label": "eltex staff",
+   "source": "Royalty",
+   "file": "Defs/ThingDefs_Misc/Weapons/PsychicWeapons.xml",
+   "parents": [
+    "BasePsychicWeaponMelee",
+    "BaseWeapon"
+   ],
+   "techLevel": "Ultra",
+   "weaponTags": [
+    "EltexStaff"
+   ],
+   "weaponClasses": [
+    "Melee",
+    "MeleeBlunt",
+    "Ultratech"
+   ],
+   "thingCategories": [
+    "WeaponsMelee"
+   ],
+   "tradeTags": [
+    "WeaponMelee",
+    "PsychicWeapon"
+   ],
+   "statBases": {
+    "MaxHitPoints": 100.0,
+    "Flammability": 1.0,
+    "DeteriorationRate": 2.0,
+    "Beauty": -3.0,
+    "SellPriceFactor": 0.2,
+    "MarketValue": 2000.0,
+    "Mass": 1.2
+   },
+   "statBaseCount": 7,
+   "equippedStatOffsets": {
+    "PsychicSensitivityOffset": 0.5,
+    "PsychicEntropyRecoveryRate": 0.083
+   },
+   "cost": {
+    "costList": {},
+    "costStuffCount": 0,
+    "stuffCategories": []
+   },
+   "recipe": {
+    "workToMake": null,
+    "workSkill": null,
+    "skillRequirements": {},
+    "recipeUsers": [],
+    "research": [],
+    "craftable": false
+   },
+   "trade": {
+    "tradeability": null,
+    "generateCommonality": null,
+    "generateAllowChance": null,
+    "SellPriceFactor": 0.2,
+    "destroyOnDrop": null
+   },
+   "marketValue": {
+    "explicit": 2000.0,
+    "formula_unstuffed": 0.0,
+    "formula_parts": {
+     "ingredients": 0,
+     "stuff": 0.0,
+     "work": 0.0
+    },
+    "effective": 2000.0
+   },
+   "comps": [
+    "CompProperties_Forbiddable",
+    "CompEquippable",
+    "CompProperties_Styleable",
+    "CompQuality",
+    "CompProperties_Biocodable"
+   ],
+   "graphic": {
+    "texPath": "Things/Item/Equipment/WeaponMelee/PsyfocusStaff",
+    "graphicClass": "Graphic_Single"
+   },
+   "stuffed": false,
+   "tools": [
+    {
+     "id": null,
+     "label": "head",
+     "capacities": [
+      "Blunt"
+     ],
+     "power": 12.0,
+     "cooldownTime": 2.6,
+     "armorPenetration": null,
+     "chanceFactor": 1.0,
+     "linkedBodyPartsGroup": null,
+     "extraMeleeDamages": [],
+     "hediff": null,
+     "surpriseAttack": null
+    }
+   ],
+   "group": "standard"
+  },
+  {
+   "defName": "MeleeWeapon_Spear",
+   "label": "spear",
+   "source": "Core",
+   "file": "Defs/ThingDefs_Misc/Weapons/MeleeNeolithic.xml",
+   "parents": [
+    "BaseMeleeWeapon_Sharp_Quality",
+    "BaseMeleeWeapon_Sharp",
+    "BaseMeleeWeapon",
+    "BaseWeapon"
+   ],
+   "techLevel": "Neolithic",
+   "weaponTags": [
+    "NeolithicMeleeAdvanced",
+    "MedievalMeleeAdvanced",
+    "Spear"
+   ],
+   "weaponClasses": [
+    "Melee",
+    "MeleePiercer",
+    "Neolithic"
+   ],
+   "thingCategories": [
+    "WeaponsMelee"
+   ],
+   "tradeTags": [
+    "WeaponMelee"
+   ],
+   "statBases": {
+    "MaxHitPoints": 100.0,
+    "Flammability": 1.0,
+    "DeteriorationRate": 2.0,
+    "Beauty": -3.0,
+    "SellPriceFactor": 0.2,
+    "WorkToMake": 12000.0,
+    "Mass": 2.0
+   },
+   "statBaseCount": 7,
+   "equippedStatOffsets": {},
+   "cost": {
+    "costList": {},
+    "costStuffCount": 75,
+    "stuffCategories": [
+     "Metallic",
+     "Woody"
+    ]
+   },
+   "recipe": {
+    "workToMake": 12000.0,
+    "workSkill": "Crafting",
+    "skillRequirements": {
+     "Crafting": 4.0
+    },
+    "recipeUsers": [
+     "ElectricSmithy",
+     "FueledSmithy"
+    ],
+    "research": [
+     {
+      "defName": "LongBlades",
+      "baseCost": 400.0,
+      "techLevel": "Medieval",
+      "prerequisites": [
+       "Smithing"
+      ]
+     }
+    ],
+    "craftable": true
+   },
+   "trade": {
+    "tradeability": null,
+    "generateCommonality": null,
+    "generateAllowChance": null,
+    "SellPriceFactor": 0.2,
+    "destroyOnDrop": null
+   },
+   "marketValue": {
+    "explicit": null,
+    "formula_unstuffed": 193.2,
+    "formula_parts": {
+     "ingredients": 0,
+     "stuff": 150.0,
+     "work": 43.2
+    },
+    "effective": 193.2
+   },
+   "comps": [
+    "CompProperties_Forbiddable",
+    "CompEquippable",
+    "CompProperties_Styleable",
+    "CompQuality",
+    "CompProperties_Art"
+   ],
+   "graphic": {
+    "texPath": "Things/Item/Equipment/WeaponMelee/Spear",
+    "graphicClass": "Graphic_Single"
+   },
+   "stuffed": true,
+   "tools": [
+    {
+     "id": null,
+     "label": "shaft",
+     "capacities": [
+      "Blunt",
+      "Poke"
+     ],
+     "power": 13.0,
+     "cooldownTime": 2.6,
+     "armorPenetration": null,
+     "chanceFactor": 1.0,
+     "linkedBodyPartsGroup": null,
+     "extraMeleeDamages": [],
+     "hediff": null,
+     "surpriseAttack": null
+    },
+    {
+     "id": null,
+     "label": "point",
+     "capacities": [
+      "Stab"
+     ],
+     "power": 23.0,
+     "cooldownTime": 2.6,
+     "armorPenetration": 0.5,
+     "chanceFactor": 1.0,
+     "linkedBodyPartsGroup": null,
+     "extraMeleeDamages": [],
+     "hediff": null,
+     "surpriseAttack": null
+    }
+   ],
+   "group": "standard"
+  },
+  {
+   "defName": "MeleeWeapon_Warhammer",
+   "label": "warhammer",
+   "source": "Royalty",
+   "file": "Defs/ThingDefs_Misc/Weapons/MeleeMedieval.xml",
+   "parents": [
+    "BaseMeleeWeapon_Blunt_Quality",
+    "BaseMeleeWeapon_Sharp",
+    "BaseMeleeWeapon",
+    "BaseWeapon"
+   ],
+   "techLevel": "Medieval",
+   "weaponTags": [
+    "MedievalMeleeDecent"
+   ],
+   "weaponClasses": [
+    "MeleeBlunt",
+    "Melee"
+   ],
+   "thingCategories": [
+    "WeaponsMelee"
+   ],
+   "tradeTags": [
+    "WeaponMelee"
+   ],
+   "statBases": {
+    "MaxHitPoints": 100.0,
+    "Flammability": 1.0,
+    "DeteriorationRate": 2.0,
+    "Beauty": -3.0,
+    "SellPriceFactor": 0.2,
+    "WorkToMake": 18000.0,
+    "Mass": 5.0
+   },
+   "statBaseCount": 7,
+   "equippedStatOffsets": {},
+   "cost": {
+    "costList": {},
+    "costStuffCount": 150,
+    "stuffCategories": [
+     "Metallic",
+     "Woody"
+    ]
+   },
+   "recipe": {
+    "workToMake": 18000.0,
+    "workSkill": "Crafting",
+    "skillRequirements": {
+     "Crafting": 5.0
+    },
+    "recipeUsers": [
+     "ElectricSmithy",
+     "FueledSmithy"
+    ],
+    "research": [
+     {
+      "defName": "LongBlades",
+      "baseCost": 400.0,
+      "techLevel": "Medieval",
+      "prerequisites": [
+       "Smithing"
+      ]
+     }
+    ],
+    "craftable": true
+   },
+   "trade": {
+    "tradeability": null,
+    "generateCommonality": null,
+    "generateAllowChance": null,
+    "SellPriceFactor": 0.2,
+    "destroyOnDrop": null
+   },
+   "marketValue": {
+    "explicit": null,
+    "formula_unstuffed": 364.8,
+    "formula_parts": {
+     "ingredients": 0,
+     "stuff": 300.0,
+     "work": 64.8
+    },
+    "effective": 364.8
+   },
+   "comps": [
+    "CompProperties_Forbiddable",
+    "CompEquippable",
+    "CompProperties_Styleable",
+    "CompQuality",
+    "CompProperties_Art"
+   ],
+   "graphic": {
+    "texPath": "Things/Item/Equipment/WeaponMelee/Warhammer",
+    "graphicClass": "Graphic_Single"
+   },
+   "stuffed": true,
+   "tools": [
+    {
+     "id": null,
+     "label": "handle",
+     "capacities": [
+      "Poke"
+     ],
+     "power": 11.0,
+     "cooldownTime": 2.6,
+     "armorPenetration": null,
+     "chanceFactor": 1.0,
+     "linkedBodyPartsGroup": null,
+     "extraMeleeDamages": [],
+     "hediff": null,
+     "surpriseAttack": null
+    },
+    {
+     "id": null,
+     "label": "head",
+     "capacities": [
+      "Blunt"
+     ],
+     "power": 20.0,
+     "cooldownTime": 2.6,
+     "armorPenetration": null,
+     "chanceFactor": 1.0,
+     "linkedBodyPartsGroup": null,
+     "extraMeleeDamages": [],
+     "hediff": null,
+     "surpriseAttack": null
+    }
+   ],
+   "group": "standard"
+  },
+  {
+   "defName": "MeleeWeapon_ZeusHammerBladelink",
+   "label": "persona zeushammer",
+   "source": "Royalty",
+   "file": "Defs/ThingDefs_Misc/Weapons/MeleeBladelink.xml",
+   "parents": [
+    "BaseWeapon_Bladelink",
+    "BaseWeapon"
+   ],
+   "techLevel": "Ultra",
+   "weaponTags": [
+    "Bladelink"
+   ],
+   "weaponClasses": [
+    "Ultratech",
+    "Melee",
+    "MeleeBlunt"
+   ],
+   "thingCategories": [
+    "WeaponsMeleeBladelink"
+   ],
+   "tradeTags": [
+    "WeaponMelee"
+   ],
+   "statBases": {
+    "MaxHitPoints": 100.0,
+    "Flammability": 1.0,
+    "DeteriorationRate": 2.0,
+    "Beauty": -3.0,
+    "SellPriceFactor": 0.2,
+    "MarketValue": 3000.0,
+    "Mass": 2.0
+   },
+   "statBaseCount": 7,
+   "equippedStatOffsets": {},
+   "cost": {
+    "costList": {},
+    "costStuffCount": 0,
+    "stuffCategories": []
+   },
+   "recipe": {
+    "workToMake": null,
+    "workSkill": null,
+    "skillRequirements": {},
+    "recipeUsers": [],
+    "research": [],
+    "craftable": false
+   },
+   "trade": {
+    "tradeability": null,
+    "generateCommonality": null,
+    "generateAllowChance": null,
+    "SellPriceFactor": 0.2,
+    "destroyOnDrop": null
+   },
+   "marketValue": {
+    "explicit": 3000.0,
+    "formula_unstuffed": 0.0,
+    "formula_parts": {
+     "ingredients": 0,
+     "stuff": 0.0,
+     "work": 0.0
+    },
+    "effective": 3000.0
+   },
+   "comps": [
+    "CompProperties_Forbiddable",
+    "CompEquippable",
+    "CompProperties_Styleable",
+    "CompQuality",
+    "CompProperties_BladelinkWeapon",
+    "CompProperties_GeneratedName"
+   ],
+   "graphic": {
+    "texPath": "Things/Item/Equipment/WeaponMelee/ZeusHammer",
+    "graphicClass": "Graphic_Single"
+   },
+   "stuffed": false,
+   "tools": [
+    {
+     "id": null,
+     "label": "handle",
+     "capacities": [
+      "Poke"
+     ],
+     "power": 15.0,
+     "cooldownTime": 1.6,
+     "armorPenetration": null,
+     "chanceFactor": 1.0,
+     "linkedBodyPartsGroup": null,
+     "extraMeleeDamages": [],
+     "hediff": null,
+     "surpriseAttack": null
+    },
+    {
+     "id": null,
+     "label": "head",
+     "capacities": [
+      "Blunt"
+     ],
+     "power": 31.0,
+     "cooldownTime": 2.2,
+     "armorPenetration": null,
+     "chanceFactor": 1.0,
+     "linkedBodyPartsGroup": null,
+     "extraMeleeDamages": [
+      {
+       "def": "EMP",
+       "amount": 9.0,
+       "armorPenetration": null
+      }
+     ],
+     "hediff": null,
+     "surpriseAttack": null
+    }
+   ],
+   "group": "bladelink"
+  },
+  {
+   "defName": "MeleeWeapon_Zeushammer",
+   "label": "zeushammer",
+   "source": "Royalty",
+   "file": "Defs/ThingDefs_Misc/Weapons/MeleeUltratech.xml",
+   "parents": [
+    "MeleeWeaponUltratech",
+    "BaseWeapon"
+   ],
+   "techLevel": "Ultra",
+   "weaponTags": [
+    "UltratechMelee"
+   ],
+   "weaponClasses": [
+    "Melee",
+    "Ultratech",
+    "MeleeBlunt"
+   ],
+   "thingCategories": [
+    "WeaponsMelee"
+   ],
+   "tradeTags": [
+    "WeaponMelee"
+   ],
+   "statBases": {
+    "MaxHitPoints": 100.0,
+    "Flammability": 1.0,
+    "DeteriorationRate": 2.0,
+    "Beauty": -3.0,
+    "SellPriceFactor": 0.2,
+    "MarketValue": 2000.0,
+    "Mass": 2.0
+   },
+   "statBaseCount": 7,
+   "equippedStatOffsets": {},
+   "cost": {
+    "costList": {},
+    "costStuffCount": 0,
+    "stuffCategories": []
+   },
+   "recipe": {
+    "workToMake": null,
+    "workSkill": null,
+    "skillRequirements": {},
+    "recipeUsers": [],
+    "research": [],
+    "craftable": false
+   },
+   "trade": {
+    "tradeability": null,
+    "generateCommonality": null,
+    "generateAllowChance": null,
+    "SellPriceFactor": 0.2,
+    "destroyOnDrop": null
+   },
+   "marketValue": {
+    "explicit": 2000.0,
+    "formula_unstuffed": 0.0,
+    "formula_parts": {
+     "ingredients": 0,
+     "stuff": 0.0,
+     "work": 0.0
+    },
+    "effective": 2000.0
+   },
+   "comps": [
+    "CompProperties_Forbiddable",
+    "CompEquippable",
+    "CompProperties_Styleable",
+    "CompQuality",
+    "CompProperties_Art",
+    "CompProperties_Biocodable"
+   ],
+   "graphic": {
+    "texPath": "Things/Item/Equipment/WeaponMelee/ZeusHammer",
+    "graphicClass": "Graphic_Single"
+   },
+   "stuffed": false,
+   "tools": [
+    {
+     "id": null,
+     "label": "handle",
+     "capacities": [
+      "Poke"
+     ],
+     "power": 15.0,
+     "cooldownTime": 2.0,
+     "armorPenetration": null,
+     "chanceFactor": 1.0,
+     "linkedBodyPartsGroup": null,
+     "extraMeleeDamages": [],
+     "hediff": null,
+     "surpriseAttack": null
+    },
+    {
+     "id": null,
+     "label": "head",
+     "capacities": [
+      "Blunt"
+     ],
+     "power": 31.0,
+     "cooldownTime": 3.0,
+     "armorPenetration": null,
+     "chanceFactor": 1.0,
+     "linkedBodyPartsGroup": null,
+     "extraMeleeDamages": [
+      {
+       "def": "EMP",
+       "amount": 9.0,
+       "armorPenetration": null
+      }
+     ],
+     "hediff": null,
+     "surpriseAttack": null
+    }
+   ],
+   "group": "standard"
+  }
+ ],
+ "non_weapon_tool_items": [
+  {
+   "defName": "AlphaThrumboHorn",
+   "categories": [
+    "ItemsMisc"
+   ],
+   "source": "Ludeon.RimWorld.Odyssey"
+  },
+  {
+   "defName": "Beer",
+   "categories": [
+    "Drugs"
+   ],
+   "source": "Ludeon.RimWorld"
+  },
+  {
+   "defName": "ElephantTusk",
+   "categories": [
+    "ItemsMisc"
+   ],
+   "source": "Ludeon.RimWorld"
+  },
+  {
+   "defName": "MastodonTusk",
+   "categories": [
+    "ItemsMisc"
+   ],
+   "source": "Ludeon.RimWorld.Odyssey"
+  },
+  {
+   "defName": "ThrumboHorn",
+   "categories": [
+    "ItemsMisc"
+   ],
+   "source": "Ludeon.RimWorld"
+  },
+  {
+   "defName": "WoodLog",
+   "categories": [
+    "ResourcesRaw"
+   ],
+   "source": "Ludeon.RimWorld"
+  }
+ ]
+}

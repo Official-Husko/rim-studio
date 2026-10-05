@@ -1,0 +1,58 @@
+{
+  "constants": {
+    "DB_BUILDER_PRUNE_EXCEPTIONS": [
+      "database",
+      "rules"
+    ],
+    "DB_BUILDER_RECURSE_EXCEPTIONS": [
+      "incompatibleWith",
+      "loadBefore",
+      "loadAfter",
+      "loadTop",
+      "loadBottom"
+    ]
+  },
+  "editor_adds_incompat_to_mod_that_already_has_some": {
+    "mod_had_incompat_targets": 1,
+    "mod_has_after_save": 1,
+    "pre_existing_targets_lost": [
+      "deadmano.rimanoarchitecticons"
+    ]
+  },
+  "editor_save_noop": {
+    "entries_after": 633,
+    "entries_before": 631,
+    "incompatibleWith_edges_after": 5,
+    "keys_added": [
+      "lazywhalehwhbenbenrabbithwhbiscuitminer192.animalcollabprojhnqnslcrt",
+      "mofslblecn209.rimfacehforhfacialhstuffh1v0"
+    ],
+    "keys_removed": [],
+    "timestamp_changed": true
+  },
+  "msgspec_version": "0.22.0",
+  "serialisation": {
+    "python_indent4_ascii_equals_file": false,
+    "python_indent4_ascii_plus_newline_equals_file": false,
+    "python_indent4_ensure_ascii_false_equals_file": false
+  },
+  "typed_decode": {
+    "entries_after_lowercase_normalisation": 631,
+    "entries_in_file": 631,
+    "incompatibleWith_edges_in_file": 5,
+    "incompatibleWith_edges_visible_after_typed_decode": 0,
+    "loadAfter_edges_after_typed_decode": 1124,
+    "loadAfter_edges_in_file": 1124,
+    "loadBefore_edges_after_typed_decode": 439,
+    "loadBefore_edges_in_file": 439,
+    "name_is_object": "rejected: Expected `str | array`, got `object` - at `$.rules[...].loadAfter[...].name`",
+    "rules_is_list": "rejected: Expected `object`, got `array` - at `$.rules`",
+    "timestamp_is_string": "rejected: Expected `int`, got `str` - at `$.timestamp`",
+    "unknown_field_rejected": false
+  },
+  "typed_reencode": {
+    "bytes": 217293,
+    "is_single_line": true,
+    "original_bytes": 394716
+  }
+}

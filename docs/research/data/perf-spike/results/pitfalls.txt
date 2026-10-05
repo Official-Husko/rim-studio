@@ -1,0 +1,15 @@
+ROOT /home/pawbeans/.steam/steam/steamapps/workshop/content/294100
+  {'files': 306394, 'xml': 46705} xml_utf8_bom 16577 nonutf8_names 0
+  max depth 12 longest path chars 233 xml>1MB 25 top sizes [3399005, 3399005, 3399005, 3179508, 2477237]
+    3399005 /3141472661/1.6/Ideology/Defs/Site_Base.xml
+    3399005 /3141472661/1.5/Ideology/Defs/Site_Base.xml
+    3399005 /3141472661/1.4/Ideology/Defs/Site_Base.xml
+ROOT /home/pawbeans/.steam/steam/steamapps/common/RimWorld/Data
+  {'files': 1887, 'xml': 1672} xml_utf8_bom 861 nonutf8_names 0
+  max depth 6 longest path chars 143 xml>1MB 0 top sizes []
+ROOT /run/media/pawbeans/project_drive/pawbeans/Projects/RimWorld Mods
+  {'files': 5241, 'xml': 170} xml_utf8_bom 80 nonutf8_names 0
+  max depth 9 longest path chars 203 xml>1MB 0 top sizes []
+ROOT /run/media/pawbeans/project_drive/pawbeans/Projects/Rust/rimforge-studio/CombatExtended-Development
+  {'files': 12312, 'xml': 9867} xml_utf8_bom 5443 nonutf8_names 0
+  max depth 7 longest path chars 260 xml>1MB 0 top sizes []

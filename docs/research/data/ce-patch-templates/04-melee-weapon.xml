@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  TEMPLATE 04: melee weapon. No MakeGun. Four independent operations: tools, statBases, equippedStatOffsets, stuff category.
+  A def that already has statBases/equippedStatOffsets needs ADD on the container's children via the container path, not on the def.
+-->
+<Patch>
+  <!-- 1. [REQ] tools: replace the whole list; every entry must carry the ToolCE class and an armor penetration. -->
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="{{defName}}"]/tools</xpath>
+    <value>
+      <tools>
+        <li Class="CombatExtended.ToolCE">
+          <label>{{handle}}</label>
+          <capacities><li>Poke</li></capacities>
+          <power>{{p1}}</power>
+          <chanceFactor>0.33</chanceFactor>                  <!-- [OPT] relative pick weight; low for handles -->
+          <cooldownTime>{{c1}}</cooldownTime>
+          <armorPenetrationBlunt>{{apb1}}</armorPenetrationBlunt>
+          <linkedBodyPartsGroup>Handle</linkedBodyPartsGroup>
+        </li>
+        <li Class="CombatExtended.ToolCE">
+          <label>{{blade}}</label>
+          <capacities><li>Cut</li></capacities>
+          <power>{{p2}}</power>
+          <cooldownTime>{{c2}}</cooldownTime>
+          <armorPenetrationBlunt>{{apb2}}</armorPenetrationBlunt>
+          <armorPenetrationSharp>{{aps2}}</armorPenetrationSharp> <!-- [REQ for Cut/Stab/Scratch/Bite tools] -->
+          <linkedBodyPartsGroup>Blade</linkedBodyPartsGroup>
+        </li>
+      </tools>
+    </value>
+  </Operation>
+  <!-- 2. [REQ] statBases: Bulk is the CE stat; the parry bonus is optional. -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="{{defName}}"]/statBases</xpath>
+    <value>
+      <Bulk>{{bulk}}</Bulk>
+      <MeleeCounterParryBonus>{{parry_bonus}}</MeleeCounterParryBonus>
+    </value>
+  </Operation>
+  <!-- 3. [OPT] equippedStatOffsets: ADD to the def only when the def has none; otherwise use the ensure idiom. -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="{{defName}}"]</xpath>
+    <value>
+      <equippedStatOffsets>
+        <MeleeCritChance>{{crit}}</MeleeCritChance>
+        <MeleeParryChance>{{parry}}</MeleeParryChance>
+        <MeleeDodgeChance>{{dodge}}</MeleeDodgeChance>
+      </equippedStatOffsets>
+    </value>
+  </Operation>
+  <!-- 4. [OPT] crafting stuff: CE replaces the Metallic category on vanilla melee weapons with a weapon-grade one. -->
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="{{defName}}"]/stuffCategories/li[.="Metallic"]</xpath>
+    <value><li>Metallic_Weapon</li></value>
+  </Operation>
+</Patch>

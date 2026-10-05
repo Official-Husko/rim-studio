@@ -1,0 +1,673 @@
+crate	stable	released	license	msrv	edition	recent_downloads	newest_prerelease
+ahash	0.8.12	2025-05-08	MIT OR Apache-2.0	1.60.0	2018	156237796	
+aho-corasick	1.1.5	2026-08-03	Unlicense OR MIT	1.60.0	2021	263935263	
+alphanumeric-sort	1.5.8	2026-07-01	MIT	1.56	2021	658404	
+amxml	0.5.3	2018-09-18	MIT OR Apache-2.0	None	None	373	
+anstyle	1.0.14	2026-03-13	MIT OR Apache-2.0	1.66.0	2021	208066034	
+anyhow	1.0.104	2026-07-18	MIT OR Apache-2.0	1.68	2021	230412723	
+app_dirs2	2.5.5	2023-02-15	MIT	None	2018	79413	
+arbitrary	1.4.2	2025-08-14	MIT OR Apache-2.0	1.63.0	2021	44550174	
+arboard	3.6.1	2025-08-23	MIT OR Apache-2.0	1.71.0	2021	15270051	
+arc-swap	1.9.2	2026-06-28	MIT OR Apache-2.0	None	2018	90393170	
+arcstr	1.2.0	2024-05-07	Apache-2.0 OR MIT OR Zlib	1.57.0	2021	12698035	
+arrayvec	0.7.8	2026-07-02	MIT OR Apache-2.0	1.51	2018	137855267	
+assert-json-diff	2.0.2	2022-06-29	MIT	None	2018	36994849	
+assert_cmd	2.2.2	2026-05-11	MIT OR Apache-2.0	1.85	2024	18701554	
+assert_fs	1.1.4	2026-05-26	MIT OR Apache-2.0	1.85	2024	3959089	
+async-channel	2.5.0	2025-07-06	Apache-2.0 OR MIT	1.60	2021	69343341	
+async-compression	0.4.50	2026-09-30	MIT OR Apache-2.0	1.83	2018	56261033	
+async-openai	0.42.1	2026-09-28	MIT	1.75	2021	2740677	
+async-std	1.13.2	2025-08-15	Apache-2.0 OR MIT	1.63	2018	11406854	
+async_zip	0.0.19	2026-08-22	MIT	None	2021	2307246	
+atomic-write-file	0.3.1	2026-08-11	BSD-3-Clause	1.85	2024	900501	
+atomicwrites	0.4.4	2024-09-19	MIT	None	None	3083673	
+attohttpc	0.31.0	2026-05-25	MPL-2.0	None	2021	6599059	
+aws-lc-rs	1.18.1	2026-09-01	ISC AND (Apache-2.0 OR ISC)	1.71.0	2021	92474248	
+backoff	0.4.0	2021-12-14	MIT/Apache-2.0	None	2018	15719952	
+backon	1.6.0	2025-10-18	Apache-2.0	1.85	2024	32418591	
+backtrace	0.3.76	2025-09-26	MIT OR Apache-2.0	1.82.0	2021	72343922	
+bacon	3.26.0	2026-09-26	AGPL-3.0	1.85	2024	23891	
+base58	0.2.0	2021-09-21	MIT	None	None	1686138	
+base64	0.23.1	2026-08-04	MIT OR Apache-2.0	1.71.0	2021	361623314	
+basic-toml	0.1.10	2025-03-03	MIT OR Apache-2.0	None	2021	16131285	
+basis-universal	0.3.1	2023-11-02	MIT OR Apache-2.0	None	2018	96793	
+bc7e	MISSING
+bc7enc	MISSING
+bcndecode	0.2.0	2017-08-06	MIT	None	None	871	
+better-panic	0.3.0	2022-01-15	MIT	None	2018	693036	
+bincode	3.0.0	2025-12-16	MIT	1.85.0	2021	65943232	
+bitcode	0.6.9	2025-12-18	MIT OR Apache-2.0	1.70	2021	2912306	
+bitflags	2.13.2	2026-09-10	MIT OR Apache-2.0	1.56.0	2021	462971671	
+blake3	1.8.7	2026-08-20	CC0-1.0 OR Apache-2.0 OR Apache-2.0 WITH LLVM-exception	None	2024	48354098	
+block_compression	0.10.0	2026-08-21	MIT	1.80	2021	7550	
+bolero	0.13.7	2026-10-03	MIT	1.68.0	2021	1541690	
+borsh	1.8.1	2026-08-26	MIT OR Apache-2.0	1.77.0	2018	53274249	
+bs58	0.5.1	2024-03-19	MIT/Apache-2.0	None	2021	59310748	
+bstr	1.13.1	2026-08-10	MIT OR Apache-2.0	1.65	2021	99010359	
+built	0.8.1	2026-05-21	MIT	1.87	2024	20031936	
+bumpalo	3.20.3	2026-05-22	MIT OR Apache-2.0	1.71.1	2021	158982250	
+bytes	1.12.1	2026-07-08	MIT	1.57	2021	268634994	
+bytesize	2.7.0	2026-08-02	Apache-2.0	1.85	2021	21429477	
+bzip2	0.6.1	2025-10-16	MIT OR Apache-2.0	1.82.0	2021	35935746	
+camino	1.2.6	2026-09-15	MIT OR Apache-2.0	1.61.0	2021	69637094	
+cap-std	4.0.3	2026-08-20	Apache-2.0 WITH LLVM-exception OR Apache-2.0 OR MIT	None	2021	9693938	3.4.6
+cargo-about	0.9.2	2026-08-18	MIT OR Apache-2.0	1.88.0	2024	265096	
+cargo-appimage	2.4.0	2025-11-24	GPL-3.0	None	2024	1462	
+cargo-audit	0.22.2	2026-06-05	Apache-2.0 OR MIT	1.88	2024	3666370	
+cargo-auditable	0.7.7	2026-10-02	MIT OR Apache-2.0	None	2021	337807	
+cargo-binstall	1.25.1	2026-10-03	GPL-3.0-only	1.96.1	2021	135387	
+cargo-bloat	0.12.1	2024-05-10	MIT	None	2018	47271	
+cargo-bundle	0.12.0	2026-09-20	MIT OR Apache-2.0	None	2024	19628	
+cargo-cache	0.8.3	2022-09-11	MIT/Apache-2.0	1.57	2021	61054	
+cargo-careful	0.4.10	2026-04-01	MIT OR Apache-2.0	None	2021	62260	
+cargo-chef	0.1.78	2026-08-12	Apache-2.0 OR MIT	None	2018	1076519	
+cargo-cranky	0.3.0	2022-07-08	MIT OR Apache-2.0	1.56	2021	8488	
+cargo-cyclonedx	0.5.9	2026-03-19	Apache-2.0	1.85.0	2021	801209	
+cargo-deb	3.8.0	2026-09-01	MIT	1.85	2024	235751	
+cargo-deny	0.20.2	2026-07-09	MIT OR Apache-2.0	1.88.0	2024	1795826	
+cargo-dist	0.32.0	2026-05-22	MIT OR Apache-2.0	1.74	2021	19789	
+cargo-dylint	6.1.0	2026-09-23	MIT OR Apache-2.0	None	2024	187579	
+cargo-edit	0.13.13	2026-07-15	Apache-2.0 OR MIT	1.92	2024	456210	
+cargo-expand	1.0.126	2026-08-19	MIT OR Apache-2.0	1.88	2021	567615	
+cargo-flamegraph	MISSING
+cargo-fuzz	0.13.2	2026-06-09	MIT OR Apache-2.0	None	2021	1510553	
+cargo-geiger	0.13.0	2025-08-31	Apache-2.0 OR MIT	1.85	2018	55304	
+cargo-generate-rpm	0.21.0	2026-05-04	MIT	None	2024	73108	
+cargo-hack	0.6.45	2026-05-30	Apache-2.0 OR MIT	1.85	2021	211462	
+cargo-hakari	0.9.39	2026-09-19	MIT OR Apache-2.0	1.91	2024	97889	
+cargo-license	0.7.0	2025-07-29	MIT	1.86	2021	220337	
+cargo-llvm-cov	0.9.1	2026-09-06	Apache-2.0 OR MIT	1.87	2021	1727415	
+cargo-machete	0.9.2	2026-04-15	MIT	None	2024	551121	
+cargo-minimal-versions	0.1.37	2026-03-20	Apache-2.0 OR MIT	1.82	2021	20344	
+cargo-msrv	0.19.3	2026-03-25	Apache-2.0 OR MIT	1.91.1	2024	29204	
+cargo-mutants	27.1.0	2026-06-02	MIT	1.88	2024	291138	
+cargo-nextest	0.9.146	2026-09-21	Apache-2.0 OR MIT	1.91	2024	1871205	
+cargo-outdated	0.19.0	2026-04-14	MIT	1.88.0	2024	68257	
+cargo-packager	0.11.8	2025-11-27	Apache-2.0 OR MIT	None	2021	56371	
+cargo-release	1.1.6	2026-09-16	MIT OR Apache-2.0	1.92	2024	16544	
+cargo-sbom	0.10.0	2025-06-17	MIT	None	2021	61436	
+cargo-semver-checks	0.51.0	2026-10-03	Apache-2.0 OR MIT	1.93	2024	162409	
+cargo-shear	1.14.0	2026-09-22	MIT	1.95	2024	57738	
+cargo-show-asm	0.2.63	2026-09-11	MIT OR Apache-2.0	1.88	2024	8160	
+cargo-sort	2.1.4	2026-04-25	MIT/Apache-2.0	1.82	2021	260503	
+cargo-sweep	0.8.0	2025-10-11	MIT	None	2021	106436	
+cargo-tarpaulin	0.37.5	2026-09-27	MIT OR Apache-2.0	None	2024	297025	
+cargo-udeps	0.1.61	2026-04-29	MIT OR Apache-2.0	None	2024	123124	
+cargo-vet	0.10.2	2026-01-13	Apache-2.0/MIT	1.82	2021	104889	
+cargo-watch	8.5.3	2024-10-02	CC0-1.0	1.75.0	2021	184209	
+cargo-wix	0.3.9	2025-03-13	MIT/Apache-2.0	1.70.0	2021	221356	
+cargo-xtask	MISSING
+cargo-xwin	0.23.1	2026-08-13	MIT	1.89	2024	857200	
+cargo-zigbuild	0.23.4	2026-09-02	MIT	1.88	2024	1617651	
+cargo_metadata	0.23.1	2025-11-12	MIT	1.86.0	2021	57759479	
+cargo_toml	1.0.1	2026-09-01	Apache-2.0 OR MIT	1.85	2024	18993932	
+caseless	0.2.2	2024-12-30	MIT	None	None	5595945	
+cc	1.6.0	2026-10-03	MIT OR Apache-2.0	1.65.0	2021	298494789	
+chardet	0.2.4	2017-09-15	LGPL-3.0	None	None	91278	
+chardetng	1.0.0	2026-03-30	Apache-2.0 OR MIT	1.40	2018	5361569	
+charset-normalizer-rs	1.1.0	2025-09-21	non-standard	None	2021	7509	
+chrono	0.4.45	2026-06-04	MIT OR Apache-2.0	1.62.0	2021	190019883	
+chumsky	0.13.0	2026-05-06	MIT	1.65	2021	4720061	
+ciborium	0.2.2	2024-01-24	Apache-2.0	1.58	2021	63219295	
+clap	4.6.7	2026-09-14	MIT OR Apache-2.0	1.85	2024	246595957	
+clap_complete	4.6.11	2026-09-15	MIT OR Apache-2.0	1.85	2024	30478039	
+cmake	0.1.58	2026-03-26	MIT OR Apache-2.0	1.65	2021	99560413	
+color-backtrace	0.7.4	2026-08-01	MIT OR Apache-2.0	1.81	2021	471045	
+color-eyre	0.6.5	2025-05-30	MIT OR Apache-2.0	1.65.0	2018	14073732	
+color-quant	2.0.0	2026-05-09	MIT	1.56	2021	34378740	
+colored	3.1.1	2026-01-16	MPL-2.0	1.80	2021	47328856	
+combine	4.6.8	2026-08-25	MIT	None	2018	73602688	
+comfy-table	8.0.1	2026-09-25	MIT	1.88	2024	19761605	
+compact_str	0.10.0	2026-07-13	MIT	1.71	2021	56213336	
+compress-tools	0.16.1	2026-04-23	MIT OR Apache-2.0	1.82.0	2021	27955	
+compressonator	MISSING
+config	0.15.27	2026-09-30	MIT OR Apache-2.0	1.88.0	2024	19489460	
+confy	2.0.0	2025-10-27	MIT/X11 OR Apache-2.0	None	2024	200243	
+conpty	0.7.0	2024-09-23	MIT	None	2021	291832	
+console	0.16.6	2026-09-10	MIT	1.71	2021	85728501	
+coz	0.1.3	2020-05-05	non-standard	None	2018	51278	
+crash-handler	0.8.1	2026-09-25	MIT OR Apache-2.0	None	2024	1513514	
+crc32fast	1.5.2	2026-09-12	MIT OR Apache-2.0	1.63	2021	175695919	
+criterion	0.8.2	2026-02-04	Apache-2.0 OR MIT	1.86	2021	61583083	
+cross	0.2.5	2023-02-04	MIT OR Apache-2.0	None	2021	333959	
+crossbeam	0.8.5	2026-09-05	MIT OR Apache-2.0	1.61	2021	28522096	
+crossbeam-channel	0.5.17	2026-09-05	MIT OR Apache-2.0	1.60	2021	124445475	
+crossbeam-deque	0.8.8	2026-09-05	MIT OR Apache-2.0	1.61	2021	155525911	
+crossterm	0.29.0	2025-04-05	MIT	1.63.0	2021	47584687	
+ctrlc	3.5.2	2026-02-10	MIT/Apache-2.0	1.69.0	2021	22820196	
+daggy	0.9.0	2025-04-17	MIT/Apache-2.0	None	2018	1704025	
+dashmap	6.2.1	2026-05-17	MIT	1.65	2018	88004571	
+dds-rs	0.7.0	2018-01-02	LGPL-3.0	None	None	2532	
+ddsfile	0.6.0	2026-04-04	MIT	1.73	2021	141583	
+detect-lang	0.1.5	2020-02-22	MIT	None	2018	917	
+deunicode	1.6.2	2025-04-27	BSD-3-Clause	1.66	2021	15440882	
+dhat	0.3.3	2024-02-04	MIT OR Apache-2.0	None	2021	4208371	
+dialoguer	0.12.0	2025-08-23	MIT	1.66	2021	17459167	
+diesel	2.3.13	2026-09-04	MIT OR Apache-2.0	1.86.0	2021	8352601	
+dioxus	0.7.10	2026-07-30	MIT OR Apache-2.0	1.83.0	2021	1090654	0.8.0-alpha.1
+directories	6.0.0	2025-01-12	MIT OR Apache-2.0	None	None	13098585	
+directories-next	2.0.0	2020-10-22	MIT OR Apache-2.0	None	2018	7900716	
+directxtex	1.3.0	2025-01-08	MIT	None	2021	2744	
+dirs	7.0.0	2026-09-05	MIT OR Apache-2.0	None	None	85852646	
+displaydoc	0.2.7	2026-07-28	MIT OR Apache-2.0	1.71.0	2021	201705495	
+divan	0.1.21	2025-04-10	MIT OR Apache-2.0	1.80.0	2021	3885858	
+divan-macros	0.1.21	2025-04-10	MIT OR Apache-2.0	None	2021	6396708	
+docx-rs	0.4.22	2026-07-21	MIT	None	2021	826830	
+dotenvy	0.15.7	2023-03-22	MIT	1.56.1	2018	50762841	
+dunce	1.0.5	2024-08-04	CC0-1.0 OR MIT-0 OR Apache-2.0	None	2021	105780212	
+dylint	6.1.0	2026-09-23	MIT OR Apache-2.0	1.91	2024	351079	
+ecow	0.3.1	2026-09-02	MIT OR Apache-2.0	1.73	2021	3497803	
+elementtree	1.2.3	2023-01-04	MIT	1.56.0	2018	710590	
+embed-resource	3.0.11	2026-07-02	MIT	1.76	2021	16097010	
+encoding_rs	0.8.42	2026-09-24	(Apache-2.0 OR MIT) AND BSD-3-Clause	1.88	2024	116055746	
+encoding_rs_io	0.1.8	2026-08-04	MIT OR Apache-2.0	None	None	14916535	
+env_logger	0.11.11	2026-06-25	MIT OR Apache-2.0	1.71	2021	82771801	
+error-stack	0.8.0	2026-07-03	MIT OR Apache-2.0	1.83.0	2021	980106	
+etcetera	0.11.0	2025-10-28	MIT OR Apache-2.0	1.87.0	2024	36852137	
+expect-test	1.5.1	2024-12-21	MIT OR Apache-2.0	1.60.0	2018	8528167	
+expectrl	0.9.0	2026-05-11	MIT	None	2021	342648	
+exr	1.74.2	2026-07-10	BSD-3-Clause	1.83.0	2018	19555915	
+eyre	0.6.14	2026-08-11	MIT OR Apache-2.0	1.65.0	2018	21907637	
+faccess	0.2.4	2022-03-20	MIT	None	2018	1328540	
+fake	5.1.0	2026-03-16	MIT OR Apache-2.0	1.63	2021	3786185	
+fancy-regex	0.19.2	2026-09-13	MIT	1.66	2018	71198282	
+fast-xml	0.23.1	2022-05-30	MIT	None	2018	8454	
+fast_image_resize	6.1.0	2026-07-21	MIT OR Apache-2.0	1.87.0	2021	4724840	
+fastrand	2.5.0	2026-07-19	Apache-2.0 OR MIT	1.63	2018	230220071	
+fd-lock	4.0.4	2025-03-10	MIT OR Apache-2.0	None	2021	14491699	
+fdeflate	0.3.7	2024-12-06	MIT OR Apache-2.0	1.67.0	2021	58027920	
+fern	0.7.1	2024-12-15	MIT	1.60	2018	8656116	
+figment	0.10.19	2024-05-17	MIT OR Apache-2.0	None	2018	11253412	
+file-id	0.2.3	2025-08-03	MIT OR Apache-2.0	1.77	2021	5194180	
+filetime	0.2.29	2026-05-12	MIT/Apache-2.0	1.75.0	2018	88929324	
+fjall	3.1.12	2026-10-03	MIT OR Apache-2.0	1.90.0	2021	591644	
+flate2	1.1.10	2026-08-28	MIT OR Apache-2.0	1.67.0	2018	170966398	
+flexi_logger	0.31.10	2026-08-07	MIT OR Apache-2.0	1.87.0	2021	3566099	
+fluent	0.17.0	2025-05-23	Apache-2.0 OR MIT	1.67.0	2021	5854840	
+fluent-bundle	0.16.0	2025-05-22	Apache-2.0 OR MIT	1.67.0	2021	6845084	
+fluent-templates	0.15.1	2026-08-05	MIT/Apache-2.0	1.70.0	2021	208885	
+flume	0.12.0	2025-12-08	Apache-2.0/MIT	None	2018	60338806	
+foldhash	0.2.0	2025-08-23	Zlib	1.60	2021	244346352	
+fs-err	3.3.2	2026-10-04	MIT OR Apache-2.0	None	2018	32405823	
+fs-set-times	0.20.3	2025-03-10	Apache-2.0 WITH LLVM-exception OR Apache-2.0 OR MIT	None	2021	10342532	
+fs4	1.1.0	2026-04-28	MIT OR Apache-2.0	1.75.0	2021	18790462	
+fs_extra	1.3.0	2023-02-03	MIT	None	2018	91101360	
+futures	0.3.34	2026-08-11	MIT OR Apache-2.0	1.71	2018	184037454	
+futures-lite	2.6.1	2025-08-04	Apache-2.0 OR MIT	1.60	2021	59984341	
+futures-util	0.3.34	2026-08-11	MIT OR Apache-2.0	1.71	2018	247165663	
+fuzzy-matcher	0.3.7	2020-10-04	MIT	None	2018	8921403	
+fxhash	0.2.1	2017-07-29	Apache-2.0/MIT	None	None	25665627	
+genai	0.6.5	2026-06-06	MIT OR Apache-2.0	None	2024	189119	0.7.0-rc.1
+genpdf	0.2.0	2021-06-17	Apache-2.0 OR MIT	None	2018	144498	
+getrandom	0.4.3	2026-06-17	MIT OR Apache-2.0	1.85	2024	616389103	
+gettext-rs	0.8.0	2026-08-05	MIT	None	2015	605494	
+gif	0.14.2	2026-04-09	MIT OR Apache-2.0	1.62	2021	39521485	
+git-url-parse	0.6.0	2025-09-18	MIT	1.85	2024	169136	
+git-version	0.3.9	2023-12-13	BSD-2-Clause	None	2021	6145139	
+git2	0.21.0	2026-05-18	MIT OR Apache-2.0	None	2021	16427854	
+gix	0.88.0	2026-09-25	MIT OR Apache-2.0	1.88	2024	11905658	
+gix-features	0.50.0	2026-09-25	MIT OR Apache-2.0	1.88	2024	14532855	
+gix-protocol	0.66.0	2026-09-25	MIT OR Apache-2.0	1.88	2024	11749152	
+gix-transport	0.60.0	2026-09-25	MIT OR Apache-2.0	1.88	2024	11764329	
+gix-url	0.39.0	2026-09-25	MIT OR Apache-2.0	1.88	2024	12714048	
+glob	0.3.4	2026-07-21	MIT OR Apache-2.0	1.63.0	2021	135311965	
+globset	0.4.20	2026-08-04	Unlicense OR MIT	1.88	2024	55728945	
+glommio	0.9.0	2024-03-25	Apache-2.0 OR MIT	1.65	2021	24298	
+goldenfile	1.11.0	2026-02-25	MIT	1.88	2024	954776	
+governor	0.10.4	2025-12-16	MIT	None	2018	17511264	
+grep-matcher	0.1.9	2026-07-15	Unlicense OR MIT	None	2024	6394050	
+grep-regex	0.1.14	2025-10-16	Unlicense OR MIT	None	2024	6082104	
+grep-searcher	0.1.17	2026-07-15	Unlicense OR MIT	None	2024	6338088	
+gungraun	0.20.0	2026-09-26	Apache-2.0 OR MIT	1.88.0	2024	633642	
+gxhash	3.5.0	2025-03-11	MIT	None	2021	285288	
+half	2.7.1	2025-10-14	MIT OR Apache-2.0	1.81	2021	114606106	
+hashbrown	0.17.1	2026-05-09	MIT OR Apache-2.0	1.85.0	2024	710212361	
+heed	0.22.1	2026-04-07	MIT	None	2021	2281479	
+hex	0.4.3	2021-03-03	MIT OR Apache-2.0	None	2018	157297044	
+highway	1.3.0	2025-01-11	MIT	None	2021	771022	
+home	0.5.12	2025-10-23	MIT OR Apache-2.0	1.88	2024	86412834	
+hostname	0.4.2	2025-11-28	MIT	1.74	2021	43209943	
+hotpath	0.28.4	2026-10-04	MIT	None	2021	582394	
+html5ever	0.40.1	2026-09-14	MIT OR Apache-2.0	1.85	2021	40207760	
+http	1.5.0	2026-07-29	MIT OR Apache-2.0	1.57.0	2021	257960820	
+http-cache-reqwest	0.16.0	2025-06-26	MIT OR Apache-2.0	1.82.0	2021	926366	1.0.0-alpha.9
+http-cache-semantics	3.0.0	2026-02-04	BSD-2-Clause	1.85	2024	1308557	
+httpmock	0.8.3	2026-02-04	MIT	1.88.0	2021	6247042	
+human-panic	2.0.8	2026-04-02	MIT OR Apache-2.0	1.88	2024	2770670	
+human-sort	0.2.2	2019-04-14	MIT	None	2018	76469	
+humantime	2.4.0	2026-07-02	MIT OR Apache-2.0	1.60	2021	66420195	
+hyper	1.11.1	2026-08-28	MIT	1.63	2021	221018114	
+hyper-util	0.1.21	2026-09-24	MIT	1.85	2024	157862719	
+iai-callgrind	0.16.1	2025-07-30	Apache-2.0 OR MIT	1.74.1	2021	487865	
+icu_casemap	2.3.0	2026-08-13	Unicode-3.0	1.88	2024	2911642	
+icu_normalizer	2.3.0	2026-08-13	Unicode-3.0	1.88	2024	197394291	
+ignore	0.4.33	2026-08-04	Unlicense OR MIT	1.88	2024	40856339	
+image	0.25.10	2026-03-10	MIT OR Apache-2.0	1.88.0	2021	55916329	
+image-compare	0.5.0	2025-08-18	MIT	None	2021	648101	
+image_dds	0.7.2	2025-03-13	MIT	None	2021	26651	
+imageproc	0.27.0	2026-06-02	MIT	1.87.0	2024	2828222	
+imagesize	0.15.0	2026-07-09	MIT	None	2021	13385620	
+indexmap	2.14.2	2026-09-05	Apache-2.0 OR MIT	1.85	2024	385292573	
+indicatif	0.18.6	2026-07-01	MIT	1.85	2021	50580012	
+inferno	0.12.8	2026-07-18	CDDL-1.0	1.71.0	2021	12473632	
+inotify	0.11.5	2026-08-14	ISC	1.70	2018	43129426	
+insta	1.49.0	2026-10-03	Apache-2.0	1.66.0	2021	29569208	
+insta-cmd	0.7.0	2026-06-14	Apache-2.0	1.68.0	2021	1223133	
+intel_tex_2	0.5.0	2025-07-02	MIT/Apache-2.0	None	2021	170368	
+internment	0.8.6	2024-10-12	MIT OR Apache-2.0	1.70	2018	2864542	
+io-uring	0.7.15	2026-09-07	MIT OR Apache-2.0	1.63	2021	14096254	
+is-terminal	0.4.17	2025-10-23	MIT	1.63	2018	60239036	
+isahc	2.0.1	2026-07-05	MIT	1.85	2024	1168514	
+ispc	2.0.4	2026-01-10	MIT	None	2021	423	
+ispc_rt	2.0.4	2026-01-10	MIT	None	2021	173688	
+itertools	0.15.0	2026-06-16	MIT OR Apache-2.0	1.63.0	2018	358579101	
+jiff	0.2.37	2026-09-12	Unlicense OR MIT	1.70	2021	76533990	
+jpeg-decoder	0.3.2	2025-06-21	MIT OR Apache-2.0	1.61.0	2021	11585408	
+json-patch	4.2.0	2026-04-30	MIT/Apache-2.0	None	2021	30141820	
+json5	1.3.1	2026-02-07	MIT	None	2024	15460503	
+json_comments	0.2.2	2023-11-03	Apache-2.0	None	2018	734769	
+jsonc	0.1.0	2025-10-07	MIT	None	2024	423	
+jsonc-parser	0.34.0	2026-09-27	MIT	None	2024	3313927	
+jsonschema	0.58.5	2026-10-02	MIT	1.85.0	2021	25791091	
+junction	2.1.0	2026-09-24	MIT	1.85	2024	1354329	
+just	1.58.0	2026-08-03	CC0-1.0	1.89.0	2024	547603	
+jwalk	0.9.0	2026-08-05	MIT	None	2021	2482653	
+keyring	4.2.0	2026-08-29	MIT OR Apache-2.0	1.88.0	2024	12904861	
+keyring-core	1.0.0	2026-04-21	MIT OR Apache-2.0	1.85	2024	3185774	
+keyvalues-parser	0.2.4	2026-05-17	MIT OR Apache-2.0	1.81.0	2021	90681	
+keyvalues-serde	0.2.4	2026-05-18	MIT OR Apache-2.0	1.81.0	2021	71264	
+known-folders	1.4.2	2026-03-17	Apache-2.0 OR MIT	1.60.0	2021	1013213	
+kuchiki	0.8.1	2020-08-05	MIT	None	2018	371789	
+lalrpop	0.23.1	2026-03-11	Apache-2.0 OR MIT	1.86	2024	11756809	
+lasso	0.7.3	2024-08-19	MIT OR Apache-2.0	None	2021	2806677	
+lazy_static	1.5.1	2026-10-01	MIT OR Apache-2.0	None	None	199043637	
+lenient_semver	0.4.2	2021-06-06	MIT OR Apache-2.0	None	2018	586797	
+lexical-sort	0.3.1	2020-08-29	MIT OR Apache-2.0	None	2018	829372	
+libdeflater	1.26.1	2026-09-17	Apache-2.0	None	2018	1257213	
+libfuzzer-sys	0.4.13	2026-06-04	(MIT OR Apache-2.0) AND NCSA	None	2018	16751611	
+liblzma	0.4.8	2026-08-09	MIT OR Apache-2.0	1.60	2021	6543481	
+libxml	0.3.21	2026-08-02	MIT	1.88	2024	535624	
+libz-sys	1.1.29	2026-05-31	MIT OR Apache-2.0	None	2018	35943092	
+limbo	0.0.22	2025-06-19	MIT	None	2021	1381	
+lingua	1.8.0	2026-03-09	Apache-2.0	None	2024	780715	
+linuxdeploy	MISSING
+lld	MISSING
+lodepng	3.12.2	2026-02-16	Zlib	1.72	2021	323280	
+log	0.4.34	2026-08-22	MIT OR Apache-2.0	1.71.0	2021	305777493	
+logos	0.16.1	2026-01-30	MIT OR Apache-2.0	1.80.0	2021	22701258	
+lopdf	0.45.0	2026-09-08	MIT	1.88	2024	10891160	
+lz4_flex	0.14.0	2026-07-14	MIT	1.81	2021	37791929	
+lzma-rs	0.3.0	2023-01-04	MIT	None	2018	8840038	
+lzma-sys	0.1.20	2022-10-31	MIT/Apache-2.0	None	2018	13049388	
+machine-uid	0.6.0	2026-05-07	MIT	None	2021	812919	
+md-5	0.11.0	2026-03-27	MIT OR Apache-2.0	1.85	2024	106516150	
+memchr	2.8.3	2026-07-08	Unlicense OR MIT	1.61	2021	382611726	
+memmap2	0.9.11	2026-06-22	MIT OR Apache-2.0	1.65	2021	84794469	
+miette	7.6.0	2025-04-27	Apache-2.0	1.70.0	2018	19445286	
+mimalloc	0.1.52	2026-05-22	MIT	None	2018	17336484	
+mime	0.3.17	2023-03-20	MIT OR Apache-2.0	None	None	145708305	
+minidom	0.19.0	2026-06-09	MPL-2.0	None	2021	915649	
+minidumper	0.11.0	2026-07-20	MIT OR Apache-2.0	None	2024	974635	
+miniz_oxide	0.9.1	2026-03-13	MIT OR Zlib OR Apache-2.0	None	2021	200328038	
+minreq	3.0.0	2026-06-15	ISC	1.63	2021	1415238	
+mise	2026.10.2	2026-10-04	MIT	1.95	2024	8464	
+mockall	0.15.0	2026-06-28	MIT OR Apache-2.0	1.77.0	2021	29752876	
+mold	None		None	None	None	168	0.0.0
+monoio	0.2.4	2024-08-20	MIT OR Apache-2.0	None	2021	492046	
+mozjpeg	0.10.13	2025-02-18	IJG	1.71	2021	1379696	
+nanoid	0.5.0	2026-04-13	MIT	None	2018	5773281	
+native-tls	0.2.18	2026-02-18	MIT OR Apache-2.0	1.80	2021	59658073	
+native_db	0.8.2	2025-07-08	MIT	None	2021	8776	
+natord	1.0.9	2015-08-24	MIT	None	None	2672022	
+natural-sort-rs	0.2.1	2025-01-11	MIT OR Apache-2.0	None	2021	1506	
+nextest-runner	0.124.0	2026-09-16	MIT OR Apache-2.0	1.91	2024	1728859	
+nom	8.0.0	2025-01-26	MIT	1.65.0	2021	172791180	
+normpath	1.5.2	2026-09-19	MIT OR Apache-2.0	1.81.0	2021	6420647	
+notify	8.2.0	2025-08-03	CC0-1.0	1.77	2021	41576959	9.0.0-rc.5
+notify-debouncer-full	0.7.0	2026-01-23	MIT OR Apache-2.0	1.85	2021	4992259	0.8.0-rc.2
+notify-debouncer-mini	0.7.0	2025-08-03	MIT OR Apache-2.0	1.77	2021	3759830	
+nsis	0.5.0	2026-09-27	Apache-2.0	1.88	2024	625	
+nucleo	0.5.0	2024-04-02	MPL-2.0	None	2021	674773	
+nucleo-matcher	0.3.1	2024-02-20	MPL-2.0	None	2021	1874228	
+num_cpus	1.17.0	2025-05-30	MIT OR Apache-2.0	None	None	92149809	
+octocrab	0.54.2	2026-09-14	MIT OR Apache-2.0	1.85.0	2018	2383217	
+once_cell	1.21.4	2026-03-12	MIT OR Apache-2.0	1.65	2021	300553299	
+oo7	0.6.0	2026-02-21	MIT	1.92	2024	1663873	0.7.0-beta
+open	5.4.4	2026-09-10	MIT	1.62	2018	17562376	
+opener	0.9.0	2026-09-29	MIT OR Apache-2.0	1.77	2021	5907929	
+ordered-float	5.5.0	2026-08-21	MIT	1.90	2021	104803958	
+os_info	3.15.0	2026-05-19	MIT	1.60	2018	17727743	
+owo-colors	4.4.0	2026-08-27	MIT	1.83	2021	38058507	
+oxidize	0.2.1	2015-09-24	MPL-2.0	None	None	7	
+oxipng	10.2.1	2026-09-02	MIT	1.88.0	2024	551954	
+panic-message	0.3.0	2021-08-27	MIT OR Apache-2.0	None	2018	1528974	
+parking_lot	0.12.5	2025-10-03	MIT OR Apache-2.0	1.71	2021	230347590	
+path-clean	1.0.1	2023-02-24	MIT OR Apache-2.0	None	None	8180341	
+path-slash	0.2.1	2022-08-06	MIT	1.38	2018	7304141	
+pathdiff	0.2.3	2024-11-25	MIT/Apache-2.0	None	2018	38805623	
+pathfinding	4.16.0	2026-09-07	Apache-2.0/MIT	1.88.0	2024	558784	
+percent-encoding	2.3.2	2025-08-21	MIT OR Apache-2.0	1.51	2018	212922588	
+pest	2.9.2	2026-09-21	MIT OR Apache-2.0	1.83	2021	71277591	
+petgraph	0.8.3	2025-09-30	MIT OR Apache-2.0	1.64	2021	115776206	
+platform-dirs	0.3.0	2020-09-26	MIT	None	2018	259268	
+png	0.18.1	2026-02-14	MIT OR Apache-2.0	1.73	2021	79682723	
+portable-pty	0.9.0	2025-02-11	MIT	None	2018	10154656	
+postcard	1.1.3	2025-07-24	MIT OR Apache-2.0	None	2021	27012089	
+predicates	3.1.4	2026-02-11	MIT OR Apache-2.0	1.74	2021	42694241	
+pretty_assertions	1.4.1	2024-09-15	MIT OR Apache-2.0	None	2018	40898998	
+prettytable-rs	0.10.0	2022-12-27	BSD-3-Clause	None	2018	3843163	
+printpdf	0.12.8	2026-09-05	MIT	1.88	2021	1443326	
+profiling	1.0.18	2026-05-04	MIT OR Apache-2.0	1.60	2018	24711898	
+proptest	1.11.0	2026-03-24	MIT OR Apache-2.0	1.85	2021	52630988	
+pty-process	0.5.3	2025-07-12	MIT	None	2024	1498306	
+puffin	0.20.0	2026-03-18	MIT OR Apache-2.0	1.92.0	2024	1286288	
+qoi	0.4.1	2022-10-16	MIT/Apache-2.0	1.61.0	2021	17299218	
+quick-xml	0.42.0	2026-08-22	MIT	1.86	2024	124955608	
+quick-xml-to-json	0.3.0	2026-07-05	MIT	None	2024	1062	
+quickcheck	1.1.0	2026-02-10	Unlicense OR MIT	1.85.0	2021	12300173	
+rand	0.10.3	2026-09-20	MIT OR Apache-2.0	1.85	2024	481747875	
+rapidfuzz	0.5.0	2023-12-01	MIT	None	2021	2609065	
+ratatui	0.30.2	2026-06-19	MIT	1.88.0	2024	20346100	
+ravif	0.13.0	2026-01-19	BSD-3-Clause	1.85	2024	16461164	
+raw-cpuid	11.6.0	2025-09-05	MIT	None	2018	40369318	
+rayon	1.12.0	2026-04-14	MIT OR Apache-2.0	1.80	2021	132066342	
+redb	4.3.0	2026-09-15	MIT OR Apache-2.0	1.90	2024	5564472	2.6.4
+reflink-copy	0.1.30	2026-06-18	MIT/Apache-2.0	None	2018	4583129	
+regex	1.13.1	2026-07-15	MIT OR Apache-2.0	1.65	2021	267094674	
+regex-automata	0.4.18	2026-08-04	MIT OR Apache-2.0	1.65	2021	286495520	
+relative-path	2.0.1	2025-05-10	MIT OR Apache-2.0	1.66	2021	26609045	
+remove_dir_all	1.0.0	2024-11-22	MIT OR Apache-2.0	None	2021	9729116	
+reqwest	0.13.5	2026-09-08	MIT OR Apache-2.0	1.85.0	2021	202914415	
+reqwest-middleware	0.5.2	2026-05-19	MIT OR Apache-2.0	None	2018	18969031	
+reqwest-retry	0.9.1	2026-02-05	MIT OR Apache-2.0	None	2018	9488216	
+resvg	0.48.1	2026-08-02	Apache-2.0 OR MIT	1.85.0	2024	10135198	
+retry-policies	0.5.2	2026-05-09	MIT OR Apache-2.0	None	2018	9830933	
+rfd	0.17.2	2026-01-12	MIT	None	2021	12123574	
+rgb	0.8.53	2026-02-25	MIT	1.64	2021	31676050	
+rig-core	0.43.0	2026-09-30	MIT	1.95.0	2024	1768513	
+ring	0.17.14	2025-03-11	Apache-2.0 AND ISC	1.66.0	2021	171053544	
+rkyv	0.8.18	2026-08-05	MIT	1.81	2021	39757016	
+rmp-serde	1.3.1	2025-12-23	MIT	1.85	2024	27425910	
+rmpv	1.3.1	2025-12-23	MIT	1.85	2024	8000319	
+rocksdb	0.25.0	2026-08-16	Apache-2.0	1.88.0	2021	7117406	
+roxmltree	0.21.1	2025-10-12	MIT OR Apache-2.0	1.60	2021	25183687	
+rspc	0.4.1	2025-02-07	MIT	None	2021	7587	
+rstest	0.27.0	2026-09-06	MIT OR Apache-2.0	1.85.0	2021	28972287	
+rusqlite	0.40.2	2026-08-08	MIT	None	2021	39071616	
+rust-i18n	4.2.4	2026-09-29	MIT	None	2021	1301251	
+rust-lld	MISSING
+rust-to-ts	MISSING
+rust_decimal	1.43.0	2026-09-02	MIT	1.67.1	2021	37041776	
+rustc-hash	2.1.3	2026-07-02	Apache-2.0 OR MIT	1.77	2021	234991341	
+rustc_version	0.4.1	2024-08-28	MIT OR Apache-2.0	1.32	2018	171470985	
+rustix	1.1.5	2026-09-16	Apache-2.0 WITH LLVM-exception OR Apache-2.0 OR MIT	1.65	2021	277061933	
+rustls	0.23.45	2026-09-14	Apache-2.0 OR ISC OR MIT	1.71	2021	219701428	
+rustls-native-certs	0.8.4	2026-06-01	Apache-2.0 OR ISC OR MIT	1.71	2021	140380721	
+rustls-pemfile	2.2.0	2024-09-30	Apache-2.0 OR ISC OR MIT	None	2018	72853662	
+rustls-platform-verifier	0.7.1	2026-09-24	MIT OR Apache-2.0	1.85	2021	81108292	
+ruzstd	0.9.0	2026-07-26	MIT	1.87	2018	17503684	
+rxml	0.14.0	2026-02-21	MIT	None	2021	880247	
+same-file	1.0.6	2020-01-11	Unlicense/MIT	None	2018	155248935	
+samply	0.13.1	2025-02-01	MIT OR Apache-2.0	1.77	2021	11898	
+sccache	0.18.0	2026-09-16	Apache-2.0	1.91.0	2024	134579	
+schemars	1.2.2	2026-07-27	MIT	1.74	2021	186901489	
+scopeguard	1.2.0	2023-07-17	MIT OR Apache-2.0	None	None	214768119	
+scraper	0.27.0	2026-05-11	ISC	None	2024	8973454	
+seahash	4.1.0	2021-01-16	MIT	None	None	33584032	
+secret-service	5.2.0	2026-08-29	MIT OR Apache-2.0	1.87.0	2024	7854225	
+security-framework	3.7.0	2026-02-20	MIT OR Apache-2.0	1.85	2024	91756300	
+self_update	1.3.0	2026-09-02	MIT	1.88	2024	2397679	
+semver	1.0.28	2026-04-04	MIT OR Apache-2.0	1.68	2021	222918928	
+semver-parser	0.10.3	2024-11-18	MIT/Apache-2.0	None	2018	22406614	
+sentry	0.49.3	2026-09-21	MIT	1.88	2021	13234487	
+sentry-tauri	0.3.1	2024-10-19	MIT OR Apache-2.0	None	2021	386	
+serde	1.0.229	2026-07-18	MIT OR Apache-2.0	1.56	2021	340421315	
+serde-xml-rs	0.8.2	2025-11-14	MIT	None	2021	7022068	
+serde_ignored	0.1.14	2025-09-14	MIT OR Apache-2.0	1.61	2018	13712556	
+serde_json	1.0.151	2026-07-20	MIT OR Apache-2.0	1.71	2021	341564318	
+serde_json_lenient	0.2.4	2024-12-10	MIT/Apache-2.0	1.56	2021	1448226	
+serde_jsonc	1.0.108	2023-10-30	MIT OR Apache-2.0	1.56	2021	36014	
+serde_norway	0.9.42	2024-12-21	MIT OR Apache-2.0	1.71.1	2021	5282902	
+serde_path_to_error	0.1.20	2025-09-15	MIT OR Apache-2.0	1.61	2021	90635688	
+serde_with	3.24.0	2026-09-26	MIT OR Apache-2.0	1.88	2021	88673497	
+serde_yaml	0.9.34+deprecated	2024-03-25	MIT OR Apache-2.0	1.64	2021	94925671	
+serial_test	4.0.1	2026-07-25	MIT	1.93.1	2018	32555284	
+sevenz-rust	0.6.1	2024-07-17	Apache-2.0	1.70.0	2021	437731	
+sevenz-rust2	0.23.0	2026-09-18	Apache-2.0	1.93	2024	892239	
+sha2	0.11.0	2026-03-25	MIT OR Apache-2.0	1.85	2024	282787084	
+shadow-rs	2.0.0	2026-04-23	MIT AND Apache-2.0	None	2021	2260710	
+signal-hook	0.4.4	2026-04-04	MIT OR Apache-2.0	1.66	2018	58656003	
+simd-json	0.18.1	2026-08-23	Apache-2.0 OR MIT	1.88	2024	5959755	
+similar	3.2.0	2026-08-17	Apache-2.0	1.85	2024	54741136	
+similar-asserts	2.0.0	2026-04-01	Apache-2.0	1.85.0	2024	6096339	
+simple-xml	0.1.10	2020-08-10	non-standard	None	2018	5435	
+siphasher	1.0.4	2026-09-25	MIT OR Apache-2.0	None	2018	154037701	
+sixel-image	0.2.1	2026-03-16	MIT	None	2021	35953	
+skyscraper	0.7.0	2026-05-03	MIT	None	2021	2372	
+sled	0.34.7	2021-09-12	MIT/Apache-2.0	None	2018	3581581	1.0.0-alpha.124
+slotmap	1.1.1	2025-12-06	Zlib	1.58.0	2018	28166075	
+smallvec	1.16.2	2026-09-25	MIT OR Apache-2.0	None	2018	304675791	2.0.0-beta.2
+smol	2.0.2	2024-09-07	Apache-2.0 OR MIT	1.63	2018	5988124	
+smol_str	0.3.6	2026-03-04	MIT OR Apache-2.0	1.89	2024	35181775	
+snafu	0.9.2	2026-07-21	MIT OR Apache-2.0	1.65	2018	20189431	
+snap	1.1.2	2026-07-15	BSD-3-Clause	None	2018	24485130	
+snapbox	1.2.2	2026-05-26	MIT OR Apache-2.0	1.85	2024	3783362	
+snmalloc-rs	0.7.6	2026-10-02	MIT	None	2021	500528	
+sonic-rs	0.5.10	2026-09-11	Apache-2.0	None	2021	3141828	
+specta	1.0.5	2023-07-17	MIT	None	2021	1289076	2.0.0-rc.25
+specta-macros	1.0.5	2023-07-17	MIT	None	2021	1293328	2.0.0-rc.25
+specta-serde	0.0.12	2026-05-07	MIT	None	2024	686801	
+specta-typescript	0.0.12	2026-05-07	MIT	None	2024	721910	
+specta-util	0.0.12	2026-05-07	MIT	None	2024	219787	
+speedy	0.8.7	2024-01-14	MIT/Apache-2.0	None	2018	241998	
+spng	0.1.0	2021-03-14	MIT OR Apache-2.0	None	2018	5134	0.2.0-alpha.3
+sqlx	0.9.0	2026-05-21	MIT OR Apache-2.0	1.94.0	2021	42276510	
+squish	1.0.0	2018-09-10	MIT	None	None	777	2.0.0-beta1
+std-fs-cap	MISSING
+steam-rs	0.5.1	2025-03-08	MIT	None	2021	377	
+steam-vdf	None		None	None	None	2	0.0.0
+steam-vdf-parser	0.1.2	2026-07-14	MIT OR Apache-2.0	1.88	2024	1697	
+steam-vent	0.5.0	2026-04-03	MIT	1.88.0	2024	1511	
+steam-workshop	MISSING
+steamcmd	MISSING
+steamid-ng	3.0.0	2025-10-22	MIT	None	2024	6954	
+steamlocate	2.1.1	2026-08-13	MIT	1.83.0	2021	38502	
+steamworks	0.13.1	2026-05-05	MIT / Apache-2.0	1.80.0	2021	98401	
+steamworks-sys	0.13.0	2026-04-14	MIT / Apache-2.0	1.80.0	2021	99060	
+steamy-vdf	0.2.0	2016-05-01	WTFPL	None	None	3394	
+string-interner	0.20.0	2026-04-30	MIT/Apache-2.0	1.65.0	2021	5501566	
+strong-xml	0.6.3	2021-06-03	MIT	None	2018	3873	
+strsim	0.11.1	2024-04-02	MIT	1.56	None	234758420	
+sublime_fuzzy	0.7.0	2020-12-19	non-standard	None	None	672797	
+supports-color	3.0.2	2024-11-26	Apache-2.0	1.70.0	2018	17955757	
+surf	2.3.2	2021-11-01	MIT OR Apache-2.0	None	2018	550135	
+sxd-document	0.3.2	2019-05-26	MIT	None	None	577807	
+sxd-xpath	0.4.2	2018-10-31	MIT/Apache-2.0	None	None	533365	
+sxd_xpath	0.4.2	2018-10-31	MIT/Apache-2.0	None	None	533365	
+symlink	0.1.0	2017-01-27	MIT/Apache-2.0	None	None	20242380	
+sys-info	0.9.1	2021-10-21	MIT	None	None	6370149	
+sys-locale	0.3.2	2024-11-01	MIT OR Apache-2.0	1.56	2018	11067104	
+sysinfo	0.39.6	2026-07-09	MIT	1.95	2024	50829899	
+tabled	0.22.0	2026-09-05	MIT	None	2018	9917143	
+tango-bench	0.8.0	2026-08-21	MIT	None	2021	285217	
+tantivy	0.26.2	2026-09-08	MIT	1.86	2021	4212169	
+tao	0.37.1	2026-09-26	Apache-2.0	1.85	2021	13901319	
+taplo-cli	0.10.0	2025-05-23	MIT	1.74	2021	195839	
+tar	0.4.46	2026-05-18	MIT OR Apache-2.0	1.63	2021	58677865	
+tauri	2.12.1	2026-09-30	Apache-2.0 OR MIT	1.90	2024	13190880	3.0.0-alpha.4
+tauri-bindgen	MISSING
+tauri-build	2.7.1	2026-09-30	Apache-2.0 OR MIT	1.90	2024	13153697	3.0.0-alpha.3
+tauri-cli	2.12.1	2026-09-30	Apache-2.0 OR MIT	1.90	2024	340466	3.0.0-alpha.4
+tauri-driver	2.1.0	2026-09-26	Apache-2.0 OR MIT	1.90	2024	165681	3.0.0-alpha.1
+tauri-plugin	2.7.1	2026-09-30	Apache-2.0 OR MIT	1.90	2024	11341912	3.0.0-alpha.3
+tauri-plugin-autostart	2.7.0	2026-10-01	Apache-2.0 OR MIT	1.90	2024	2039824	
+tauri-plugin-cli	2.5.0	2026-09-26	Apache-2.0 OR MIT	1.90	2024	244359	3.0.0-alpha.2
+tauri-plugin-clipboard-manager	2.4.1	2026-10-01	Apache-2.0 OR MIT	1.90	2024	2211771	
+tauri-plugin-deep-link	2.6.1	2026-10-01	Apache-2.0 OR MIT	1.90	2024	2732206	
+tauri-plugin-dialog	2.8.1	2026-10-01	Apache-2.0 OR MIT	1.90	2024	7529762	
+tauri-plugin-fs	2.6.0	2026-09-26	Apache-2.0 OR MIT	1.90	2024	7816177	3.0.0-alpha.2
+tauri-plugin-global-shortcut	2.4.0	2026-09-26	Apache-2.0 OR MIT	1.90	2024	1797260	3.0.0-alpha.2
+tauri-plugin-http	2.8.0	2026-09-26	Apache-2.0 OR MIT	1.90	2024	1314677	3.0.0-alpha.2
+tauri-plugin-localhost	2.4.0	2026-09-26	Apache-2.0 OR MIT	1.90	2024	69590	3.0.0-alpha.2
+tauri-plugin-log	2.10.0	2026-09-26	Apache-2.0 OR MIT	1.90	2024	2384699	3.0.0-alpha.2
+tauri-plugin-notification	2.5.1	2026-10-01	Apache-2.0 OR MIT	1.90	2024	3069188	
+tauri-plugin-opener	2.7.0	2026-09-29	Apache-2.0 OR MIT	1.90	2024	5472256	3.0.0-alpha.2
+tauri-plugin-os	2.4.0	2026-09-26	Apache-2.0 OR MIT	1.90	2024	1339307	3.0.0-alpha.2
+tauri-plugin-persisted-scope	2.4.0	2026-09-26	Apache-2.0 OR MIT	1.90	2024	96282	3.0.0-alpha.2
+tauri-plugin-positioner	2.4.0	2026-09-26	Apache-2.0 OR MIT	1.90	2024	171260	3.0.0-alpha.2
+tauri-plugin-prevent-default	6.0.0	2026-09-27	MIT	1.90	2024	94856	
+tauri-plugin-process	2.4.0	2026-09-26	Apache-2.0 OR MIT	1.90	2024	3548875	3.0.0-alpha.2
+tauri-plugin-shell	2.4.0	2026-09-26	Apache-2.0 OR MIT	1.90	2024	3898926	3.0.0-alpha.2
+tauri-plugin-single-instance	2.5.2	2026-10-01	Apache-2.0 OR MIT	1.90	2024	4228203	
+tauri-plugin-sql	2.5.0	2026-09-26	Apache-2.0 OR MIT	1.90	2024	374335	3.0.0-alpha.2
+tauri-plugin-store	2.5.0	2026-09-26	Apache-2.0 OR MIT	1.90	2024	1438450	3.0.0-alpha.2
+tauri-plugin-stronghold	2.4.0	2026-09-26	Apache-2.0 OR MIT	1.90	2024	91203	3.0.0-alpha.2
+tauri-plugin-updater	2.13.1	2026-09-29	Apache-2.0 OR MIT	1.90	2024	5187630	3.0.0-alpha.2
+tauri-plugin-upload	2.5.0	2026-09-26	Apache-2.0 OR MIT	1.90	2024	32252	3.0.0-alpha.2
+tauri-plugin-websocket	2.5.0	2026-09-26	Apache-2.0 OR MIT	1.90	2024	114560	3.0.0-alpha.2
+tauri-plugin-window-state	2.5.0	2026-09-26	Apache-2.0 OR MIT	1.90	2024	1883631	3.0.0-alpha.2
+tauri-runtime	2.12.1	2026-09-30	Apache-2.0 OR MIT	1.90	2024	13034803	3.0.0-alpha.3
+tauri-runtime-wry	2.12.1	2026-09-30	Apache-2.0 OR MIT	1.90	2024	12995859	3.0.0-alpha.4
+tauri-specta	1.0.2	2023-05-18	MIT	None	2021	597708	2.0.0-rc.25
+tauri-typegen	0.5.3	2026-09-17	MIT	1.77.2	2021	1785	
+tauri-utils	2.10.1	2026-09-30	Apache-2.0 OR MIT	1.90	2024	13314706	3.0.0-alpha.3
+taurpc	0.8.2	2026-07-03	MIT OR Apache-2.0	1.85	2024	2263	
+tempfile	3.27.0	2026-03-11	MIT OR Apache-2.0	1.63	2021	197443427	
+term-table	1.4.0	2024-07-14	MIT	None	2018	161676	
+termcolor	1.4.1	2024-01-10	Unlicense OR MIT	None	2018	81841560	
+test-case	3.4.0	2026-09-23	MIT	1.85	2024	12530052	
+texpresso	2.0.2	2025-05-26	MIT	None	2021	46836	
+texture-synthesis	0.8.2	2022-02-07	MIT OR Apache-2.0	None	2018	693	
+thin-vec	0.2.20	2026-09-16	MIT OR Apache-2.0	1.85	2024	15789095	
+thiserror	2.0.21	2026-09-23	MIT OR Apache-2.0	1.77	2021	399623255	
+tiff	0.11.3	2026-02-10	MIT	1.85.0	2021	35523986	
+tikv-jemallocator	0.7.0	2026-05-25	MIT/Apache-2.0	None	2018	22235071	
+time	0.3.55	2026-08-01	MIT OR Apache-2.0	1.88.0	2024	191926873	
+tiny-skia	0.12.0	2026-02-02	BSD-3-Clause	None	2021	16477132	
+tinydds	MISSING
+tl	0.7.8	2024-01-29	MIT	None	2021	621023	
+tokio	1.53.2	2026-10-03	MIT	1.71	2021	244993794	
+tokio-rustls	0.26.6	2026-09-28	MIT OR Apache-2.0	1.71	2021	183936785	
+tokio-stream	0.1.19	2026-07-22	MIT	1.71	2021	117457064	
+tokio-tungstenite	0.30.0	2026-07-11	MIT	1.85	2018	81902800	
+tokio-uring	0.5.0	2024-05-27	MIT	None	2018	1474962	
+tokio-util	0.7.19	2026-07-21	MIT	1.71	2021	181965255	
+toml	1.1.6+spec-1.1.0	2026-09-10	MIT OR Apache-2.0	1.85	2024	241441305	
+toml-rs	MISSING
+toml_edit	0.25.15+spec-1.1.0	2026-09-11	MIT OR Apache-2.0	1.85	2024	218761129	
+topological-sort	0.3.1	2026-08-07	MIT OR Apache-2.0	1.88.0	2024	7404767	
+tower	0.5.3	2026-01-12	MIT	1.64.0	2018	186820289	
+tracing	0.1.44	2025-12-18	MIT	1.65.0	2018	208396892	
+tracing-android	0.2.0	2022-01-15	MIT OR Apache-2.0	None	2018	207291	
+tracing-appender	0.2.5	2026-04-17	MIT	1.63.0	2018	34885790	
+tracing-bunyan-formatter	0.3.10	2024-11-26	MIT/Apache-2.0	None	2018	976175	
+tracing-chrome	0.7.2	2024-03-15	MIT	None	2018	4143786	
+tracing-error	0.2.1	2024-11-29	MIT	1.63.0	2018	12196358	
+tracing-flame	0.2.0	2021-12-17	MIT	1.42.0	2018	1462628	
+tracing-indicatif	0.3.14	2025-12-03	MIT	None	2024	1569707	
+tracing-journald	0.3.2	2025-11-26	MIT	1.65.0	2018	2289975	
+tracing-log	0.2.0	2023-10-25	MIT	1.56.0	2018	132230018	
+tracing-opentelemetry	0.34.0	2026-09-23	MIT	1.75.0	2021	48194102	
+tracing-oslog	0.3.0	2025-05-29	Zlib	1.77	2021	1043086	
+tracing-serde	0.2.0	2024-11-27	MIT	1.63.0	2018	70736580	
+tracing-subscriber	0.3.23	2026-03-13	MIT	1.65.0	2018	153154049	
+tracing-test	0.2.6	2026-02-07	MIT	None	2018	10430806	
+tracing-tracy	0.12.0	2026-08-25	MIT/Apache-2.0	1.70.0	2021	1551683	
+tracy-client	0.19.0	2026-08-25	MIT/Apache-2.0	1.70.0	2021	1978927	
+trash	5.2.9	2026-09-13	MIT	1.85.0	2021	1073833	
+treexml	0.7.0	2018-08-04	MIT	None	None	2496	
+trybuild	1.0.121	2026-09-08	MIT OR Apache-2.0	1.88	2024	16105672	
+trycmd	1.2.1	2026-07-21	MIT OR Apache-2.0	1.85	2024	2273950	
+ts-rs	12.0.1	2026-01-31	MIT	1.78.0	2021	6967767	
+ts-rs-macros	12.0.1	2026-01-31	MIT	None	2021	6982146	
+tsify	0.5.8	2026-08-23	MIT OR Apache-2.0	None	2021	1854519	
+tsify-next	0.5.6	2025-04-20	MIT OR Apache-2.0	None	2021	186466	
+turbojpeg	1.5.1	2026-07-25	Unlicense OR MIT	None	2021	907694	
+turso	0.8.1	2026-09-29	MIT	None	2021	580133	0.8.2-pre.2
+twox-hash	2.1.4	2026-08-27	MIT	1.81	2021	59041388	
+typed-arena	2.0.2	2023-01-09	MIT	None	None	17526418	
+typed-path	0.12.3	2026-02-11	MIT OR Apache-2.0	1.65.0	2021	25371147	
+typescript-type-def	0.5.15	2026-06-10	MIT	None	2024	473406	
+typeshare	1.0.5	2026-01-02	MIT OR Apache-2.0	None	2021	1564562	
+typeshare-cli	1.13.4	2025-12-11	MIT OR Apache-2.0	None	2021	27866	
+typify	0.8.0	2026-09-09	Apache-2.0	None	2021	5496806	0.10.0-alpha.1
+typos-cli	1.50.3	2026-09-25	MIT OR Apache-2.0	1.95	2024	120588	
+typst	0.15.1	2026-07-17	Apache-2.0	1.92	2024	1331852	
+ulid	3.0.0	2026-07-16	MIT	None	2018	15173329	
+unarc-rs	0.7.0	2026-09-30	MIT OR Apache-2.0	1.95	2021	3375	
+unic-langid	0.9.6	2025-05-09	MIT OR Apache-2.0	None	2021	8540314	
+unicase	2.9.0	2026-01-06	MIT OR Apache-2.0	None	2018	97001585	
+unicode-bidi	0.3.18	2024-12-16	MIT OR Apache-2.0	1.47.0	2018	84299545	
+unicode-normalization	0.1.25	2025-10-30	MIT OR Apache-2.0	1.36	2018	108384234	
+unicode-segmentation	1.13.3	2026-06-01	MIT OR Apache-2.0	1.85.0	2018	139688275	
+unicode-width	0.2.2	2025-10-06	MIT OR Apache-2.0	1.66	2021	177206101	
+unrar	0.5.8	2025-02-19	MIT OR Apache-2.0	None	2021	332937	
+unxml	MISSING
+ureq	3.4.2	2026-09-13	MIT OR Apache-2.0	1.85	2024	64661936	
+url	2.5.8	2026-01-05	MIT OR Apache-2.0	1.63	2018	201279021	
+ustr	1.1.0	2024-10-26	BSD-2-Clause-Patent	None	2021	1642167	
+usvg	0.48.1	2026-08-02	Apache-2.0 OR MIT	1.85.0	2024	10739211	
+utoipa	6.0.0	2026-09-22	MIT OR Apache-2.0	1.88	2021	16565219	
+uuid	1.27.0	2026-10-02	Apache-2.0 OR MIT	1.89.0	2021	200770264	
+vdf-parser	0.1.8	2023-10-22	MIT	None	2021	63	
+vdf-reader	0.3.4	2026-07-11	MIT	1.86.0	2024	3226	
+vergen	10.0.3	2026-08-24	MIT OR Apache-2.0	1.96.0	2024	9621890	
+version-compare	0.2.1	2025-10-31	MIT	1.56.0	2021	21391242	
+versions	8.0.1	2026-09-14	MIT	1.85.0	2024	2046884	
+walkdir	2.5.0	2024-03-01	Unlicense/MIT	None	2018	157681739	
+wasm-bindgen	0.2.129	2026-09-25	MIT OR Apache-2.0	1.81	2021	142133613	
+wax	0.7.0	2026-01-29	MIT	1.85.0	2024	838958	
+webp	0.3.1	2025-08-29	MIT OR Apache-2.0	None	2021	1125488	
+webpki-root-certs	1.0.9	2026-07-18	CDLA-Permissive-2.0	1.70	2021	51936286	
+webpki-roots	1.0.9	2026-07-18	CDLA-Permissive-2.0	1.70	2021	200469276	
+wgpu	30.0.1	2026-08-22	MIT OR Apache-2.0	1.87.0	2021	11653067	
+whatlang	0.18.0	2025-10-16	MIT	None	2024	1305938	
+which	8.0.6	2026-08-26	MIT	1.70	2021	66724313	
+whoami	2.1.3	2026-08-11	Apache-2.0 OR BSL-1.0 OR MIT	1.75	2021	66663622	
+wild	2.2.1	2024-01-27	Apache-2.0 OR MIT	None	2021	3763406	
+wild-linker	0.10.0	2026-08-04	MIT OR Apache-2.0	1.94	2024	30870	
+windows	0.62.2	2025-10-06	MIT OR Apache-2.0	1.82	2021	86677917	
+windows-registry	0.100.0	2026-09-03	MIT OR Apache-2.0	1.95	2024	39504944	
+windows-service	0.8.1	2026-05-08	MIT OR Apache-2.0	1.71.0	2021	2616406	
+windows-sys	0.61.2	2025-10-06	MIT OR Apache-2.0	1.71	2021	438646657	
+winnow	1.0.4	2026-07-13	MIT	1.65.0	2021	287237510	
+winreg	0.56.0	2026-03-14	MIT	1.60	2021	41918643	
+winres	0.1.12	2021-09-28	MIT	None	None	2730677	
+winresource	0.1.31	2026-03-16	MIT	None	2021	2322634	
+wiremock	0.6.5	2025-08-24	MIT/Apache-2.0	None	2024	23688791	
+wry	0.57.0	2026-09-08	Apache-2.0 OR MIT	1.85	2021	13961588	
+xdg	3.0.0	2025-05-04	Apache-2.0 OR MIT	1.60.0	2021	3992193	
+xee-interpreter	0.2.0	2025-08-21	MIT	None	2021	57581	
+xee-xpath	0.1.5	2025-08-21	MIT	None	2021	57433	
+xee-xpath-ast	0.1.4	2025-08-21	MIT	None	2021	57796	
+xee-xpath-compiler	0.1.5	2025-08-21	MIT	None	2021	57507	
+xml	1.4.0	2026-08-06	MIT	1.73	2021	4544814	
+xml-builder	0.6.0	2026-03-15	MIT	None	2024	53541	
+xml-rs	1.0.0	2025-08-25	MIT	1.85	2024	24234037	0.8.29
+xml5ever	0.40.0	2026-09-11	MIT OR Apache-2.0	1.85	2021	7563867	
+xmlem	0.5.0	2026-07-21	Apache-2.0 OR MIT	None	2021	5096	
+xmlparser	0.13.6	2023-09-30	MIT/Apache-2.0	None	2018	38319671	
+xmlsafe	None		None	None	None	16	0.0.0
+xmlserde	0.14.0	2026-08-24	MIT	None	2018	8207	
+xmltree	0.12.0	2025-11-10	MIT	None	2018	5424629	
+xmltree-rs	MISSING
+xmlwriter	0.1.0	2019-08-12	MIT	None	2018	9878082	
+xot	0.31.2	2025-04-09	MIT	None	2021	84382	
+xpath	MISSING
+xpath-reader	0.5.3	2019-05-29	Apache-2.0	None	None	3142	
+xpath-rs	MISSING
+xpath_parser	MISSING
+xpath_reader	0.5.3	2019-05-29	Apache-2.0	None	None	3142	
+xrust	2.2.0	2026-07-07	Apache-2.0	None	2024	12135	
+xtask	0.1.4	2026-06-30	MIT OR Apache-2.0	1.85	2024	974	
+xxhash-rust	0.8.19	2026-09-28	BSL-1.0	None	2018	32829532	
+xz2	0.1.7	2022-06-06	MIT/Apache-2.0	None	2018	12845621	
+yansi	1.0.1	2024-03-13	MIT OR Apache-2.0	1.63	2021	57528368	
+zip	8.6.0	2026-04-25	MIT	1.88	2024	77753500	9.0.0-pre3
+zip-extract	0.4.1	2025-07-16	MIT	None	2021	420739	
+zlib-rs	0.6.8	2026-09-15	Zlib	1.75	2021	72924928	
+zstd	0.14.0	2026-09-04	BSD-3-Clause	1.64	2018	88170735	
+zstd-safe	8.0.0	2026-09-04	BSD-3-Clause	1.64	2018	91440178	
+zstd-sys	2.1.0+zstd.1.5.7	2026-09-04	BSD-3-Clause	1.64	2018	85264900	
+zune-image	0.5.0	2026-01-24	MIT OR Apache-2.0 OR Zlib	1.87.0	2021	38078	
+zune-png	0.5.2	2026-03-11	MIT OR Apache-2.0 OR Zlib	1.87.0	2021	78656	

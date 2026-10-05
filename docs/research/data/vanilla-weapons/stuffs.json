@@ -1,0 +1,973 @@
+{
+ "Bioferrite": {
+  "blunt_damage_mult": 0.9,
+  "categories": [
+   "Metallic",
+   "Bioferrite"
+  ],
+  "market_value": 0.75,
+  "sharp_armor": 1.1,
+  "sharp_damage_mult": 1.3,
+  "stat_factors": {
+   "Beauty": 0.25,
+   "BedRestEffectiveness": 0.85,
+   "DoorOpenSpeed": 1.0,
+   "Flammability": 0.75,
+   "MaxHitPoints": 2.0,
+   "MeleeWeapon_CooldownMultiplier": 1.0,
+   "WorkToBuild": 2.5,
+   "WorkToMake": 2.5
+  },
+  "stat_offsets": {
+   "Beauty": 0.0
+  },
+  "tech_level": null,
+  "volume_per_unit": 1.0
+ },
+ "BlocksGranite": {
+  "blunt_damage_mult": 1.0,
+  "categories": [
+   "Stony"
+  ],
+  "market_value": 0.9,
+  "sharp_armor": null,
+  "sharp_damage_mult": 0.65,
+  "stat_factors": {
+   "BedRestEffectiveness": 0.9,
+   "DoorOpenSpeed": 0.45,
+   "Flammability": 0.0,
+   "MarketValue": 0.4,
+   "MaxHitPoints": 1.7,
+   "MeleeWeapon_CooldownMultiplier": 1.3,
+   "WorkToBuild": 6.0,
+   "WorkToMake": 1.3
+  },
+  "stat_offsets": {
+   "WorkToBuild": 140.0
+  },
+  "tech_level": null,
+  "volume_per_unit": 1.0
+ },
+ "BlocksLimestone": {
+  "blunt_damage_mult": 1.0,
+  "categories": [
+   "Stony"
+  ],
+  "market_value": 0.9,
+  "sharp_armor": null,
+  "sharp_damage_mult": 0.6,
+  "stat_factors": {
+   "BedRestEffectiveness": 0.9,
+   "DoorOpenSpeed": 0.45,
+   "Flammability": 0.0,
+   "MarketValue": 0.4,
+   "MaxHitPoints": 1.55,
+   "MeleeWeapon_CooldownMultiplier": 1.3,
+   "WorkToBuild": 6.0,
+   "WorkToMake": 1.3
+  },
+  "stat_offsets": {
+   "WorkToBuild": 140.0
+  },
+  "tech_level": null,
+  "volume_per_unit": 1.0
+ },
+ "BlocksMarble": {
+  "blunt_damage_mult": 1.0,
+  "categories": [
+   "Stony"
+  ],
+  "market_value": 0.9,
+  "sharp_armor": null,
+  "sharp_damage_mult": 0.6,
+  "stat_factors": {
+   "Beauty": 1.35,
+   "BedRestEffectiveness": 0.9,
+   "DoorOpenSpeed": 0.45,
+   "Flammability": 0.0,
+   "MarketValue": 0.4,
+   "MaxHitPoints": 1.2,
+   "MeleeWeapon_CooldownMultiplier": 1.3,
+   "WorkToBuild": 5.5,
+   "WorkToMake": 1.15
+  },
+  "stat_offsets": {
+   "Beauty": 1.0,
+   "WorkToBuild": 140.0
+  },
+  "tech_level": null,
+  "volume_per_unit": 1.0
+ },
+ "BlocksSandstone": {
+  "blunt_damage_mult": 1.0,
+  "categories": [
+   "Stony"
+  ],
+  "market_value": 0.9,
+  "sharp_armor": null,
+  "sharp_damage_mult": 0.5,
+  "stat_factors": {
+   "Beauty": 1.1,
+   "BedRestEffectiveness": 0.9,
+   "DoorOpenSpeed": 0.45,
+   "Flammability": 0.0,
+   "MarketValue": 0.4,
+   "MaxHitPoints": 1.4,
+   "MeleeWeapon_CooldownMultiplier": 1.3,
+   "WorkToBuild": 5.0,
+   "WorkToMake": 1.1
+  },
+  "stat_offsets": {
+   "WorkToBuild": 140.0
+  },
+  "tech_level": null,
+  "volume_per_unit": 1.0
+ },
+ "BlocksSlate": {
+  "blunt_damage_mult": 1.0,
+  "categories": [
+   "Stony"
+  ],
+  "market_value": 0.9,
+  "sharp_armor": null,
+  "sharp_damage_mult": 0.6,
+  "stat_factors": {
+   "Beauty": 1.1,
+   "BedRestEffectiveness": 0.9,
+   "DoorOpenSpeed": 0.45,
+   "Flammability": 0.0,
+   "MarketValue": 0.4,
+   "MaxHitPoints": 1.3,
+   "MeleeWeapon_CooldownMultiplier": 1.3,
+   "WorkToBuild": 6.0,
+   "WorkToMake": 1.3
+  },
+  "stat_offsets": {
+   "WorkToBuild": 140.0
+  },
+  "tech_level": null,
+  "volume_per_unit": 1.0
+ },
+ "BlocksVacstone": {
+  "blunt_damage_mult": 1.0,
+  "categories": [
+   "Stony"
+  ],
+  "market_value": 2.0,
+  "sharp_armor": null,
+  "sharp_damage_mult": 0.6,
+  "stat_factors": {
+   "Beauty": 1.2,
+   "BedRestEffectiveness": 0.9,
+   "DoorOpenSpeed": 0.45,
+   "Flammability": 0.0,
+   "MarketValue": 0.4,
+   "MaxHitPoints": 1.8,
+   "MeleeWeapon_CooldownMultiplier": 1.3,
+   "WorkToBuild": 6.0,
+   "WorkToMake": 1.3
+  },
+  "stat_offsets": {
+   "WorkToBuild": 140.0
+  },
+  "tech_level": null,
+  "volume_per_unit": 1.0
+ },
+ "Cloth": {
+  "blunt_damage_mult": 1.0,
+  "categories": [
+   "Fabric"
+  ],
+  "market_value": 1.5,
+  "sharp_armor": 0.36,
+  "sharp_damage_mult": 1.0,
+  "stat_factors": {
+   "Beauty": 1.0,
+   "Flammability": 1.2
+  },
+  "stat_offsets": {},
+  "tech_level": null,
+  "volume_per_unit": 1.0
+ },
+ "ComponentIndustrial": {
+  "blunt_damage_mult": 1.0,
+  "categories": [],
+  "market_value": 32.0,
+  "sharp_armor": null,
+  "sharp_damage_mult": 1.0,
+  "stat_factors": {},
+  "stat_offsets": {},
+  "tech_level": null,
+  "volume_per_unit": 1.0
+ },
+ "DevilstrandCloth": {
+  "blunt_damage_mult": 1.0,
+  "categories": [
+   "Fabric"
+  ],
+  "market_value": 5.5,
+  "sharp_armor": 1.4,
+  "sharp_damage_mult": 1.0,
+  "stat_factors": {
+   "Beauty": 3.2,
+   "Flammability": 0.4,
+   "MaxHitPoints": 1.3
+  },
+  "stat_offsets": {},
+  "tech_level": null,
+  "volume_per_unit": 1.0
+ },
+ "Gold": {
+  "blunt_damage_mult": 1.0,
+  "categories": [
+   "Metallic"
+  ],
+  "market_value": 10.0,
+  "sharp_armor": 0.72,
+  "sharp_damage_mult": 0.75,
+  "stat_factors": {
+   "Beauty": 4.0,
+   "Flammability": 0.4,
+   "MaxHitPoints": 0.6,
+   "MeleeWeapon_CooldownMultiplier": 1.0,
+   "WorkToBuild": 0.9,
+   "WorkToMake": 0.9
+  },
+  "stat_offsets": {
+   "Beauty": 20.0
+  },
+  "tech_level": null,
+  "volume_per_unit": 1.0
+ },
+ "Hyperweave": {
+  "blunt_damage_mult": 1.0,
+  "categories": [
+   "Fabric"
+  ],
+  "market_value": 9.0,
+  "sharp_armor": 2.0,
+  "sharp_damage_mult": 1.0,
+  "stat_factors": {
+   "Beauty": 5.5,
+   "Flammability": 0.4,
+   "MaxHitPoints": 2.4
+  },
+  "stat_offsets": {},
+  "tech_level": null,
+  "volume_per_unit": 1.0
+ },
+ "Jade": {
+  "blunt_damage_mult": 1.5,
+  "categories": [
+   "Stony"
+  ],
+  "market_value": 5.0,
+  "sharp_armor": 0.9,
+  "sharp_damage_mult": 1.0,
+  "stat_factors": {
+   "Beauty": 2.5,
+   "Flammability": 0.0,
+   "MaxHitPoints": 0.5,
+   "MeleeWeapon_CooldownMultiplier": 1.3,
+   "WorkToBuild": 5.0,
+   "WorkToMake": 1.4
+  },
+  "stat_offsets": {
+   "Beauty": 10.0
+  },
+  "tech_level": null,
+  "volume_per_unit": 1.0
+ },
+ "LabyrinthMatter": {
+  "blunt_damage_mult": 0.0,
+  "categories": [],
+  "market_value": 0.0,
+  "sharp_armor": null,
+  "sharp_damage_mult": 0.0,
+  "stat_factors": {
+   "Beauty": 1.0,
+   "Flammability": 0.0,
+   "MaxHitPoints": 1.0
+  },
+  "stat_offsets": {},
+  "tech_level": null,
+  "volume_per_unit": 1.0
+ },
+ "Leather_AlphaThrumbo": {
+  "blunt_damage_mult": 1.0,
+  "categories": [
+   "Leathery"
+  ],
+  "market_value": 20.0,
+  "sharp_armor": 2.12,
+  "sharp_damage_mult": 1.0,
+  "stat_factors": {
+   "Beauty": 8.0,
+   "MaxHitPoints": 2.2
+  },
+  "stat_offsets": {
+   "Beauty": 5.0
+  },
+  "tech_level": null,
+  "volume_per_unit": 1.0
+ },
+ "Leather_Armadillo": {
+  "blunt_damage_mult": 1.0,
+  "categories": [
+   "Leathery"
+  ],
+  "market_value": 3.2,
+  "sharp_armor": 1.24,
+  "sharp_damage_mult": 1.0,
+  "stat_factors": {
+   "Beauty": 2.0,
+   "MaxHitPoints": 1.3
+  },
+  "stat_offsets": {},
+  "tech_level": null,
+  "volume_per_unit": 1.0
+ },
+ "Leather_Bear": {
+  "blunt_damage_mult": 1.0,
+  "categories": [
+   "Leathery"
+  ],
+  "market_value": 3.4,
+  "sharp_armor": 1.12,
+  "sharp_damage_mult": 1.0,
+  "stat_factors": {
+   "Beauty": 1.9,
+   "MaxHitPoints": 1.3
+  },
+  "stat_offsets": {},
+  "tech_level": null,
+  "volume_per_unit": 1.0
+ },
+ "Leather_Bird": {
+  "blunt_damage_mult": 1.0,
+  "categories": [
+   "Leathery"
+  ],
+  "market_value": 1.8,
+  "sharp_armor": 0.67,
+  "sharp_damage_mult": 1.0,
+  "stat_factors": {
+   "MaxHitPoints": 1.0
+  },
+  "stat_offsets": {},
+  "tech_level": null,
+  "volume_per_unit": 1.0
+ },
+ "Leather_Bluefur": {
+  "blunt_damage_mult": 1.0,
+  "categories": [
+   "Leathery"
+  ],
+  "market_value": 2.3,
+  "sharp_armor": 0.81,
+  "sharp_damage_mult": 1.0,
+  "stat_factors": {
+   "Beauty": 1.3,
+   "MaxHitPoints": 1.3
+  },
+  "stat_offsets": {},
+  "tech_level": null,
+  "volume_per_unit": 1.0
+ },
+ "Leather_Camel": {
+  "blunt_damage_mult": 1.0,
+  "categories": [
+   "Leathery"
+  ],
+  "market_value": 2.3,
+  "sharp_armor": 0.81,
+  "sharp_damage_mult": 1.0,
+  "stat_factors": {
+   "Beauty": 1.3,
+   "MaxHitPoints": 1.3
+  },
+  "stat_offsets": {},
+  "tech_level": null,
+  "volume_per_unit": 1.0
+ },
+ "Leather_Chinchilla": {
+  "blunt_damage_mult": 1.0,
+  "categories": [
+   "Leathery"
+  ],
+  "market_value": 6.5,
+  "sharp_armor": 0.67,
+  "sharp_damage_mult": 1.0,
+  "stat_factors": {
+   "Beauty": 3.6,
+   "MaxHitPoints": 1.0
+  },
+  "stat_offsets": {},
+  "tech_level": null,
+  "volume_per_unit": 1.0
+ },
+ "Leather_Dog": {
+  "blunt_damage_mult": 1.0,
+  "categories": [
+   "Leathery"
+  ],
+  "market_value": 2.0,
+  "sharp_armor": 0.81,
+  "sharp_damage_mult": 1.0,
+  "stat_factors": {
+   "MaxHitPoints": 1.3
+  },
+  "stat_offsets": {},
+  "tech_level": null,
+  "volume_per_unit": 1.0
+ },
+ "Leather_Dread": {
+  "blunt_damage_mult": 1.0,
+  "categories": [
+   "Leathery"
+  ],
+  "market_value": 3.5,
+  "sharp_armor": 1.27,
+  "sharp_damage_mult": 1.0,
+  "stat_factors": {
+   "Beauty": 1.0,
+   "MaxHitPoints": 1.3
+  },
+  "stat_offsets": {},
+  "tech_level": null,
+  "volume_per_unit": 1.0
+ },
+ "Leather_Elephant": {
+  "blunt_damage_mult": 1.0,
+  "categories": [
+   "Leathery"
+  ],
+  "market_value": 3.0,
+  "sharp_armor": 1.12,
+  "sharp_damage_mult": 1.0,
+  "stat_factors": {
+   "Beauty": 1.6,
+   "MaxHitPoints": 1.5
+  },
+  "stat_offsets": {},
+  "tech_level": null,
+  "volume_per_unit": 1.0
+ },
+ "Leather_Fox": {
+  "blunt_damage_mult": 1.0,
+  "categories": [
+   "Leathery"
+  ],
+  "market_value": 3.5,
+  "sharp_armor": 0.81,
+  "sharp_damage_mult": 1.0,
+  "stat_factors": {
+   "Beauty": 2.0,
+   "MaxHitPoints": 1.0
+  },
+  "stat_offsets": {},
+  "tech_level": null,
+  "volume_per_unit": 1.0
+ },
+ "Leather_GuineaPig": {
+  "blunt_damage_mult": 1.0,
+  "categories": [
+   "Leathery"
+  ],
+  "market_value": 5.0,
+  "sharp_armor": 0.67,
+  "sharp_damage_mult": 1.0,
+  "stat_factors": {
+   "Beauty": 2.8,
+   "MaxHitPoints": 0.6
+  },
+  "stat_offsets": {},
+  "tech_level": null,
+  "volume_per_unit": 1.0
+ },
+ "Leather_Heavy": {
+  "blunt_damage_mult": 1.0,
+  "categories": [
+   "Leathery"
+  ],
+  "market_value": 3.3,
+  "sharp_armor": 1.24,
+  "sharp_damage_mult": 1.0,
+  "stat_factors": {
+   "Beauty": 1.85,
+   "MaxHitPoints": 1.5
+  },
+  "stat_offsets": {},
+  "tech_level": null,
+  "volume_per_unit": 1.0
+ },
+ "Leather_Hippo": {
+  "blunt_damage_mult": 1.0,
+  "categories": [
+   "Leathery"
+  ],
+  "market_value": 3.7,
+  "sharp_armor": 1.12,
+  "sharp_damage_mult": 1.0,
+  "stat_factors": {
+   "Beauty": 2.0,
+   "MaxHitPoints": 1.5
+  },
+  "stat_offsets": {},
+  "tech_level": null,
+  "volume_per_unit": 1.0
+ },
+ "Leather_Human": {
+  "blunt_damage_mult": 1.0,
+  "categories": [
+   "Leathery"
+  ],
+  "market_value": 4.2,
+  "sharp_armor": 0.64,
+  "sharp_damage_mult": 1.0,
+  "stat_factors": {
+   "MaxHitPoints": 1.3
+  },
+  "stat_offsets": {},
+  "tech_level": null,
+  "volume_per_unit": 1.0
+ },
+ "Leather_Light": {
+  "blunt_damage_mult": 1.0,
+  "categories": [
+   "Leathery"
+  ],
+  "market_value": 1.9,
+  "sharp_armor": 0.54,
+  "sharp_damage_mult": 1.0,
+  "stat_factors": {
+   "MaxHitPoints": 1.0
+  },
+  "stat_offsets": {},
+  "tech_level": null,
+  "volume_per_unit": 1.0
+ },
+ "Leather_Lizard": {
+  "blunt_damage_mult": 1.0,
+  "categories": [
+   "Leathery"
+  ],
+  "market_value": 2.1,
+  "sharp_armor": 0.81,
+  "sharp_damage_mult": 1.0,
+  "stat_factors": {
+   "Beauty": 1.2,
+   "MaxHitPoints": 1.0
+  },
+  "stat_offsets": {},
+  "tech_level": null,
+  "volume_per_unit": 1.0
+ },
+ "Leather_Mastodon": {
+  "blunt_damage_mult": 1.0,
+  "categories": [
+   "Leathery"
+  ],
+  "market_value": 3.0,
+  "sharp_armor": 1.12,
+  "sharp_damage_mult": 1.0,
+  "stat_factors": {
+   "Beauty": 1.3,
+   "MaxHitPoints": 1.5
+  },
+  "stat_offsets": {},
+  "tech_level": null,
+  "volume_per_unit": 1.0
+ },
+ "Leather_Mink": {
+  "blunt_damage_mult": 1.0,
+  "categories": [
+   "Leathery"
+  ],
+  "market_value": 5.2,
+  "sharp_armor": 0.67,
+  "sharp_damage_mult": 1.0,
+  "stat_factors": {
+   "Beauty": 3.0,
+   "MaxHitPoints": 1.0
+  },
+  "stat_offsets": {},
+  "tech_level": null,
+  "volume_per_unit": 1.0
+ },
+ "Leather_Panthera": {
+  "blunt_damage_mult": 1.0,
+  "categories": [
+   "Leathery"
+  ],
+  "market_value": 3.0,
+  "sharp_armor": 0.93,
+  "sharp_damage_mult": 1.0,
+  "stat_factors": {
+   "Beauty": 1.7,
+   "MaxHitPoints": 1.3
+  },
+  "stat_offsets": {},
+  "tech_level": null,
+  "volume_per_unit": 1.0
+ },
+ "Leather_Patch": {
+  "blunt_damage_mult": 1.0,
+  "categories": [
+   "Leathery"
+  ],
+  "market_value": 1.5,
+  "sharp_armor": 0.45,
+  "sharp_damage_mult": 1.0,
+  "stat_factors": {
+   "MaxHitPoints": 1.0
+  },
+  "stat_offsets": {},
+  "tech_level": null,
+  "volume_per_unit": 1.0
+ },
+ "Leather_Pig": {
+  "blunt_damage_mult": 1.0,
+  "categories": [
+   "Leathery"
+  ],
+  "market_value": 1.9,
+  "sharp_armor": 0.64,
+  "sharp_damage_mult": 1.0,
+  "stat_factors": {
+   "MaxHitPoints": 1.3
+  },
+  "stat_offsets": {},
+  "tech_level": null,
+  "volume_per_unit": 1.0
+ },
+ "Leather_Plain": {
+  "blunt_damage_mult": 1.0,
+  "categories": [
+   "Leathery"
+  ],
+  "market_value": 2.1,
+  "sharp_armor": 0.81,
+  "sharp_damage_mult": 1.0,
+  "stat_factors": {
+   "MaxHitPoints": 1.3
+  },
+  "stat_offsets": {},
+  "tech_level": null,
+  "volume_per_unit": 1.0
+ },
+ "Leather_Rhinoceros": {
+  "blunt_damage_mult": 1.0,
+  "categories": [
+   "Leathery"
+  ],
+  "market_value": 4.2,
+  "sharp_armor": 1.29,
+  "sharp_damage_mult": 1.0,
+  "stat_factors": {
+   "Beauty": 2.4,
+   "MaxHitPoints": 1.5
+  },
+  "stat_offsets": {},
+  "tech_level": null,
+  "volume_per_unit": 1.0
+ },
+ "Leather_Sealskin": {
+  "blunt_damage_mult": 1.0,
+  "categories": [
+   "Leathery"
+  ],
+  "market_value": 4.0,
+  "sharp_armor": 0.81,
+  "sharp_damage_mult": 1.0,
+  "stat_factors": {
+   "Beauty": 2.0,
+   "MaxHitPoints": 1.0
+  },
+  "stat_offsets": {},
+  "tech_level": null,
+  "volume_per_unit": 1.0
+ },
+ "Leather_Thrumbo": {
+  "blunt_damage_mult": 1.0,
+  "categories": [
+   "Leathery"
+  ],
+  "market_value": 14.0,
+  "sharp_armor": 2.08,
+  "sharp_damage_mult": 1.0,
+  "stat_factors": {
+   "Beauty": 8.0,
+   "MaxHitPoints": 2.0
+  },
+  "stat_offsets": {},
+  "tech_level": null,
+  "volume_per_unit": 1.0
+ },
+ "Leather_Wolf": {
+  "blunt_damage_mult": 1.0,
+  "categories": [
+   "Leathery"
+  ],
+  "market_value": 3.0,
+  "sharp_armor": 1.02,
+  "sharp_damage_mult": 1.0,
+  "stat_factors": {
+   "Beauty": 1.7,
+   "MaxHitPoints": 1.3
+  },
+  "stat_offsets": {},
+  "tech_level": null,
+  "volume_per_unit": 1.0
+ },
+ "Obsidian": {
+  "blunt_damage_mult": 1.0,
+  "categories": [
+   "Stony",
+   "Metallic"
+  ],
+  "market_value": 5.0,
+  "sharp_armor": 0.85,
+  "sharp_damage_mult": 1.4,
+  "stat_factors": {
+   "Beauty": 2.0,
+   "BedRestEffectiveness": 0.9,
+   "Flammability": 0.0,
+   "MaxHitPoints": 0.5,
+   "MeleeWeapon_CooldownMultiplier": 1.0,
+   "WorkToBuild": 5.5,
+   "WorkToMake": 1.5
+  },
+  "stat_offsets": {
+   "Beauty": 8.0
+  },
+  "tech_level": null,
+  "volume_per_unit": 1.0
+ },
+ "Plasteel": {
+  "blunt_damage_mult": 0.9,
+  "categories": [
+   "Metallic"
+  ],
+  "market_value": 9.0,
+  "sharp_armor": 1.14,
+  "sharp_damage_mult": 1.1,
+  "stat_factors": {
+   "Beauty": 1.0,
+   "Flammability": 0.0,
+   "MaxHitPoints": 2.8,
+   "MeleeWeapon_CooldownMultiplier": 0.8,
+   "WorkToBuild": 2.2,
+   "WorkToMake": 2.2
+  },
+  "stat_offsets": {},
+  "tech_level": null,
+  "volume_per_unit": 1.0
+ },
+ "Silver": {
+  "blunt_damage_mult": 1.0,
+  "categories": [
+   "Metallic"
+  ],
+  "market_value": 1.0,
+  "sharp_armor": 0.72,
+  "sharp_damage_mult": 0.85,
+  "stat_factors": {
+   "Beauty": 2.0,
+   "Flammability": 0.4,
+   "MaxHitPoints": 0.7
+  },
+  "stat_offsets": {
+   "Beauty": 6.0
+  },
+  "tech_level": null,
+  "volume_per_unit": 1.0
+ },
+ "Steel": {
+  "blunt_damage_mult": 1.0,
+  "categories": [
+   "Metallic"
+  ],
+  "market_value": 1.9,
+  "sharp_armor": 0.9,
+  "sharp_damage_mult": 1.0,
+  "stat_factors": {
+   "Beauty": 1.0,
+   "Flammability": 0.4,
+   "MaxHitPoints": 1.0
+  },
+  "stat_offsets": {},
+  "tech_level": null,
+  "volume_per_unit": 1.0
+ },
+ "Synthread": {
+  "blunt_damage_mult": 1.0,
+  "categories": [
+   "Fabric"
+  ],
+  "market_value": 4.0,
+  "sharp_armor": 0.94,
+  "sharp_damage_mult": 1.0,
+  "stat_factors": {
+   "Beauty": 2.3,
+   "Flammability": 0.7,
+   "MaxHitPoints": 1.3
+  },
+  "stat_offsets": {},
+  "tech_level": null,
+  "volume_per_unit": 1.0
+ },
+ "Uranium": {
+  "blunt_damage_mult": 1.5,
+  "categories": [
+   "Metallic"
+  ],
+  "market_value": 6.0,
+  "sharp_armor": 1.08,
+  "sharp_damage_mult": 1.1,
+  "stat_factors": {
+   "Beauty": 0.5,
+   "DoorOpenSpeed": 0.75,
+   "Flammability": 0.0,
+   "MaxHitPoints": 2.5,
+   "MeleeWeapon_CooldownMultiplier": 1.1,
+   "WorkToBuild": 1.9,
+   "WorkToMake": 1.9
+  },
+  "stat_offsets": {},
+  "tech_level": null,
+  "volume_per_unit": 1.0
+ },
+ "WoodLog": {
+  "blunt_damage_mult": 0.9,
+  "categories": [
+   "Woody"
+  ],
+  "market_value": 1.2,
+  "sharp_armor": 0.54,
+  "sharp_damage_mult": 0.4,
+  "stat_factors": {
+   "Beauty": 1.0,
+   "DoorOpenSpeed": 1.2,
+   "Flammability": 1.0,
+   "MaxHitPoints": 0.65,
+   "WorkToBuild": 0.7,
+   "WorkToMake": 0.7
+  },
+  "stat_offsets": {},
+  "tech_level": "Neolithic",
+  "volume_per_unit": 1.0
+ },
+ "WoolAlpaca": {
+  "blunt_damage_mult": 1.0,
+  "categories": [
+   "Fabric"
+  ],
+  "market_value": 3.8,
+  "sharp_armor": 0.36,
+  "sharp_damage_mult": 1.0,
+  "stat_factors": {
+   "Beauty": 1.5,
+   "Flammability": 1.7
+  },
+  "stat_offsets": {},
+  "tech_level": null,
+  "volume_per_unit": 1.0
+ },
+ "WoolBison": {
+  "blunt_damage_mult": 1.0,
+  "categories": [
+   "Fabric"
+  ],
+  "market_value": 2.7,
+  "sharp_armor": 0.36,
+  "sharp_damage_mult": 1.0,
+  "stat_factors": {
+   "Beauty": 1.5,
+   "Flammability": 1.7
+  },
+  "stat_offsets": {},
+  "tech_level": null,
+  "volume_per_unit": 1.0
+ },
+ "WoolMastodon": {
+  "blunt_damage_mult": 1.0,
+  "categories": [
+   "Fabric"
+  ],
+  "market_value": 2.7,
+  "sharp_armor": 0.36,
+  "sharp_damage_mult": 1.0,
+  "stat_factors": {
+   "Beauty": 1.5,
+   "Flammability": 1.7
+  },
+  "stat_offsets": {},
+  "tech_level": null,
+  "volume_per_unit": 1.0
+ },
+ "WoolMegasloth": {
+  "blunt_damage_mult": 1.0,
+  "categories": [
+   "Fabric"
+  ],
+  "market_value": 2.7,
+  "sharp_armor": 0.8,
+  "sharp_damage_mult": 1.0,
+  "stat_factors": {
+   "Beauty": 1.5,
+   "Flammability": 1.7
+  },
+  "stat_offsets": {},
+  "tech_level": null,
+  "volume_per_unit": 1.0
+ },
+ "WoolMuffalo": {
+  "blunt_damage_mult": 1.0,
+  "categories": [
+   "Fabric"
+  ],
+  "market_value": 2.7,
+  "sharp_armor": 0.36,
+  "sharp_damage_mult": 1.0,
+  "stat_factors": {
+   "Beauty": 1.5,
+   "Flammability": 1.7
+  },
+  "stat_offsets": {},
+  "tech_level": null,
+  "volume_per_unit": 1.0
+ },
+ "WoolMuskox": {
+  "blunt_damage_mult": 1.0,
+  "categories": [
+   "Fabric"
+  ],
+  "market_value": 2.7,
+  "sharp_armor": 0.36,
+  "sharp_damage_mult": 1.0,
+  "stat_factors": {
+   "Beauty": 1.5,
+   "Flammability": 1.7
+  },
+  "stat_offsets": {},
+  "tech_level": null,
+  "volume_per_unit": 1.0
+ },
+ "WoolSheep": {
+  "blunt_damage_mult": 1.0,
+  "categories": [
+   "Fabric"
+  ],
+  "market_value": 2.7,
+  "sharp_armor": 0.36,
+  "sharp_damage_mult": 1.0,
+  "stat_factors": {
+   "Beauty": 1.5,
+   "Flammability": 1.7
+  },
+  "stat_offsets": {},
+  "tech_level": null,
+  "volume_per_unit": 1.0
+ }
+}

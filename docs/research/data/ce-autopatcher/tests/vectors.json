@@ -1,0 +1,90 @@
+{
+ "note": "Expected values were derived by hand from the formula text (linear interpolation arithmetic written in 'how'), not produced by autopatch.py. Curves and presets are fictional or generic so the file needs no CE data.",
+ "curves": [
+  {"points": [[2.1, 2.7], [3.5, 3.25]], "x": 3.5, "expect": 3.25, "how": "last point"},
+  {"points": [[2.1, 2.7], [3.5, 3.25]], "x": 2.1, "expect": 2.7, "how": "first point"},
+  {"points": [[2.1, 2.7], [3.5, 3.25]], "x": 1.0, "expect": 2.7, "how": "below range clamps to first y"},
+  {"points": [[2.1, 2.7], [3.5, 3.25]], "x": 9.0, "expect": 3.25, "how": "above range clamps to last y"},
+  {"points": [[2.1, 2.7], [3.5, 3.25]], "x": 2.8, "expect": 2.975, "how": "midpoint (2.7+3.25)/2"},
+  {"points": [[30.9, 55]], "x": 10, "expect": 55, "how": "single point is a constant"},
+  {"points": [[30.9, 55]], "x": 99, "expect": 55, "how": "single point is a constant"},
+  {"points": [[25.9, 12], [22.5, 10]], "x": 24.2, "expect": 11.0, "how": "unsorted input, midpoint 10+2*(1.7/3.4)"},
+  {"points": [[2.0, 1.96], [2.1, 2.7]], "x": 2.05, "expect": 2.33, "how": "1.96+0.74*0.5"},
+  {"points": [[0.6, 9], [0.7, 10], [0.8, 11], [0.9, 12]], "x": 0.75, "expect": 10.5, "how": "between 2nd and 3rd point"},
+  {"points": [[0.55, 1.5], [0.99, 8]], "x": 0.77, "expect": 4.75, "how": "1.5+6.5*0.5"},
+  {"points": [[0.2, 1], [2.0, 20]], "x": 1.1, "expect": 10.5, "how": "race sharp curve midpoint"},
+  {"points": [[0.2, 2], [2.0, 40]], "x": 1.1, "expect": 21.0, "how": "race blunt curve midpoint"}
+ ],
+ "ranges": [
+  {"range": [8, 18], "x": 8, "expect": true, "how": "inclusive low"},
+  {"range": [8, 18], "x": 18, "expect": true, "how": "inclusive high"},
+  {"range": [8, 18], "x": 18.01, "expect": false, "how": "outside"}
+ ],
+ "tools": [
+  {"tool": {"power": 8, "cooldown": 0, "ap": 0}, "expect": {"power": 8, "cooldown": 2.0, "apSharp": 0.5, "apBlunt": 2.0}, "how": "no cooldown and no AP: both defaults"},
+  {"tool": {"power": 10, "cooldown": 1.5, "ap": 1.5}, "expect": {"power": 10, "cooldown": 1.5, "apSharp": 1.5, "apBlunt": 1.5}, "how": "AP copied to both kinds"},
+  {"tool": {"power": 10, "cooldown": 1.5, "ap": null}, "expect": {"power": 10, "cooldown": 1.5, "apSharp": 0.5, "apBlunt": 2.0}, "how": "missing AP counts as zero"}
+ ],
+ "toughness": [
+  {"bulk": 4, "tech": "Industrial", "ranged": false, "capacities": ["Cut"], "expect": 2.0, "how": "sqrt(4)"},
+  {"bulk": 4, "tech": "Spacer", "ranged": false, "capacities": ["Stab"], "expect": 4.0, "how": "sqrt(4)*2"},
+  {"bulk": 4, "tech": "Industrial", "ranged": false, "capacities": ["Blunt"], "expect": 4.0, "how": "blunt-only doubles: sqrt(4)*2"},
+  {"bulk": 9, "tech": "Ultra", "ranged": false, "capacities": ["Blunt"], "expect": 24.0, "how": "sqrt(9)*4*2"},
+  {"bulk": 9, "tech": "Archotech", "ranged": true, "capacities": [], "expect": 24.0, "how": "ranged weapons are not doubled: sqrt(9)*8"},
+  {"bulk": 0, "tech": "Industrial", "ranged": false, "capacities": ["Cut"], "expect": null, "how": "no bulk, no toughness"}
+ ],
+ "race": [
+  {"sharp": 1.1, "blunt": 1.1, "expect": [10.5, 21.0], "how": "both curves at 1.1"},
+  {"sharp": null, "blunt": null, "expect": [0.125, 1.0], "how": "defaults"},
+  {"sharp": 0.1, "blunt": 5.0, "expect": [1.0, 40.0], "how": "clamped on both ends"}
+ ],
+ "gun_presets": [
+  {"defName": "A", "names": ["foo"], "tags": ["TagA"], "DiscardDesignations": false, "specialGuns": [],
+   "RangeRange": [20, 30], "WarmupRange": [1, 2], "damageRange": [5, 10], "projSpeedRange": [50, 60], "CaliberRanges": [],
+   "DetermineCaliber": false, "setCaliber": "SetA", "Mass": 3, "Bulk": 8, "Spread": 0.1, "Sway": 1.0, "ReloadTime": 4, "AmmoCapacity": 20,
+   "MiscOtherStats": {}, "gunStats": {"recoilAmount": "1.5", "burstShotCount": "4"},
+   "rangeCurve": [[25, 40]], "warmupCurve": [[1.5, 1.0]], "cooldownCurve": [[1.0, 0.4]], "MassCurve": [[2, 2.5], [4, 3.5]]},
+  {"defName": "B", "names": ["bar"], "tags": ["TagB"], "DiscardDesignations": false, "specialGuns": [],
+   "RangeRange": [40, 60], "WarmupRange": [2, 4], "damageRange": [20, 30], "projSpeedRange": [80, 120],
+   "CaliberRanges": [{"DamageRange": [20, 25], "SpeedRange": [80, 100], "AmmoSet": "SetB1"}, {"DamageRange": [26, 35], "SpeedRange": [90, 130], "AmmoSet": "SetB2"}],
+   "DetermineCaliber": true, "setCaliber": "SetB0", "Mass": 7, "Bulk": 12, "Spread": 0.05, "Sway": 1.4, "ReloadTime": 5, "AmmoCapacity": 5,
+   "MiscOtherStats": {"SightsEfficiency": 2.0}, "gunStats": {"recoilAmount": "3"},
+   "rangeCurve": [[50, 70]], "warmupCurve": [[3, 1.8]], "cooldownCurve": [[2, 2.0]], "MassCurve": [[4, 7.0]]}
+ ],
+ "gun_classify": [
+  {"gun": {"label": "Foo Mk2", "weaponTags": [], "v": {"warmup": 9, "range": 9, "damage": 1, "speed": 1}}, "preset": "A", "reason": "name token", "how": "label token foo (case folded) is in A.names"},
+  {"gun": {"label": "x-bar", "weaponTags": [], "v": {"warmup": 9, "range": 9, "damage": 1, "speed": 1}}, "preset": "B", "reason": "fallback", "how": "hyphen removal gives xbar, which is not the token bar, so nothing claims it and the fallback preset is used"},
+  {"gun": {"label": "blaster", "weaponTags": ["TagB"], "v": {"warmup": 9, "range": 9, "damage": 1, "speed": 1}}, "preset": "B", "reason": "tag", "how": "tag intersection"},
+  {"gun": {"label": "blaster", "weaponTags": [], "v": {"warmup": 1.0, "range": 20, "damage": 5, "speed": 50}}, "preset": "A", "reason": "verb ranges", "how": "all four values on the inclusive boundary of A"},
+  {"gun": {"label": "blaster", "weaponTags": [], "v": {"warmup": 3, "range": 50, "damage": 28, "speed": 120}}, "preset": "B", "reason": "verb ranges", "how": "inside B ranges: damage 28 and speed 120 are covered because B ranges are widened by its caliber ranges to 20~35 and 80~130"},
+  {"gun": {"label": "blaster", "weaponTags": [], "v": {"warmup": 0.1, "range": 1, "damage": 1, "speed": 1}}, "preset": "B", "reason": "fallback", "how": "no claimant; B has the larger sum of range averages"}
+ ],
+ "gun_patch": [
+  {"gun": {"label": "blaster", "weaponTags": [], "v": {"mass": 3.0, "cooldown": 1.7, "warmup": 1.2, "range": 28, "damage": 8, "speed": 55}}, "preset": "A",
+   "expect": {"range": 40, "warmup": 1.0, "mass": 3.0, "cooldown": 0.4, "bulk": 8, "spread": 0.1, "sway": 1.0, "recoil": 1.5, "burst": 4, "magazine": 20, "reload": 4, "ammoSet": "SetA", "sights": null},
+   "how": "single-point curves are constants; MassCurve(3.0)=2.5+1.0*0.5=3.0"},
+  {"gun": {"label": "blaster", "weaponTags": [], "v": {"mass": 9.0, "cooldown": 3, "warmup": 1, "range": 10, "damage": 22, "speed": 85}}, "preset": "B",
+   "expect": {"range": 70, "warmup": 1.8, "mass": 7.0, "cooldown": 2.0, "bulk": 12, "ammoSet": "SetB1", "sights": 2.0, "burst": 1},
+   "how": "damage 22 and speed 85 fall in the first caliber range"},
+  {"gun": {"label": "blaster", "weaponTags": [], "v": {"mass": 9.0, "cooldown": 3, "warmup": 1, "range": 10, "damage": 30, "speed": 125}}, "preset": "B",
+   "expect": {"ammoSet": "SetB2"}, "how": "damage 30 and speed 125 match only the second caliber range"},
+  {"gun": {"label": "blaster", "weaponTags": [], "v": {"mass": 9.0, "cooldown": 3, "warmup": 1, "range": 10, "damage": 50, "speed": 10}}, "preset": "B",
+   "expect": {"ammoSet": "SetB0"}, "how": "no caliber range matches: preset default"}
+ ],
+ "apparel_presets": [
+  {"defName": "Leather", "neededLayers": ["Shell"], "neededGroups": ["Torso", "Neck", "Arms"], "vanillaArmorRatingRange": [0.2, 0.45], "Bulk": 5, "BulkWorn": 1,
+   "ArmorCurveSharp": [[0.2, 0.08], [0.45, 0.6]], "ArmorCurveBlunt": [[0.08, 0.14], [0.16, 0.85]], "partialStats": []},
+  {"defName": "Hat", "neededLayers": ["Overhead"], "neededGroups": ["UpperHead"], "vanillaArmorRatingRange": [0.0, 0.35], "Bulk": 1, "BulkWorn": 1, "Mass": 1.0,
+   "ArmorCurveSharp": [[0, 0], [0.35, 0.25]], "ArmorCurveBlunt": [[0, 0], [0.35, 0.25]], "partialStats": []}
+ ],
+ "apparel": [
+  {"a": {"layers": ["Shell"], "groups": ["Torso", "Neck"], "v": {"sharp": null, "blunt": null, "sema": 0.3}}, "preset": "Leather",
+   "expect": {"sharp": 0.288, "blunt": 0.85, "bulk": 5, "wornBulk": 1, "mass": 0.0}, "how": "no sharp stat: both curves are fed the stuff multiplier 0.3; sharp 0.08+0.52*(0.1/0.25)=0.288; blunt clamps; preset without Mass writes 0"},
+  {"a": {"layers": ["Shell", "Middle"], "groups": ["Torso"], "v": {"sharp": 0.3, "blunt": 0.1, "sema": null}}, "preset": null, "how": "layer Middle is not in neededLayers"},
+  {"a": {"layers": ["Shell"], "groups": ["Legs"], "v": {"sharp": 0.3, "blunt": 0.1, "sema": null}}, "preset": null, "how": "group Legs is not in neededGroups"},
+  {"a": {"layers": ["Overhead"], "groups": ["UpperHead"], "v": {"sharp": null, "blunt": null, "sema": null}}, "preset": "Hat",
+   "expect": {"sharp": 0.0, "blunt": 0.0, "mass": 1.0}, "how": "missing stats read as 0, which lies inside the Hat range 0~0.35"},
+  {"a": {"layers": ["Shell"], "groups": ["Torso"], "v": {"sharp": 0.3, "blunt": 0.12, "sema": null}}, "preset": "Leather",
+   "expect": {"sharp": 0.288, "blunt": 0.495}, "how": "explicit stats: blunt 0.14+0.71*(0.04/0.08)=0.495"}
+ ]
+}
