@@ -30,6 +30,7 @@
 //! same input gives the same output.
 
 pub mod container;
+pub mod conventions;
 pub mod convert;
 pub mod export;
 pub mod folders;
@@ -174,6 +175,24 @@ impl GeneratedPatch {
         self.diagnostics
             .iter()
             .any(|d| d.severity == Severity::Error)
+    }
+
+    /// The gun conversion operation of the patch, wherever it sits: the operation itself, or the branch of
+    /// the conditional that guards it. `None` for a melee patch, an update or an empty patch.
+    #[must_use]
+    pub fn gun_conversion(&self, classes: &crate::ce::reader::CeClassNames) -> Option<&Node> {
+        fn find<'a>(op: &'a Node, class: &str) -> Option<&'a Node> {
+            if op.attr("Class").is_some_and(|c| c == class) {
+                return Some(op);
+            }
+            ["match", "nomatch"]
+                .into_iter()
+                .filter_map(|t| op.child(t))
+                .find_map(|b| find(b, class))
+        }
+        self.operations
+            .iter()
+            .find_map(|op| find(op, &classes.make_gun_op))
     }
 
     /// The `Patch` root element holding the operations.

@@ -50,6 +50,15 @@ pub struct CeGun {
     pub reload_one_at_a_time: bool,
     /// The AI aim mode of the fire modes component.
     pub ai_aim_mode: Option<String>,
+    /// The `aiUseBurstMode` flag of the fire modes component, when it is written.
+    #[serde(default)]
+    pub use_burst_mode: Option<bool>,
+    /// The `aimedBurstShotCount` of the fire modes component, when it is written.
+    #[serde(default)]
+    pub aimed_burst: Option<f64>,
+    /// The converted tools of the gun (the gun bash).
+    #[serde(default)]
+    pub tools: Vec<CeToolRow>,
     /// The converted numbers by name (see [`GUN_STATS`]).
     pub stats: BTreeMap<String, f64>,
     /// The numbers of the vanilla twin with the same names, when a vanilla load was given.
@@ -80,6 +89,9 @@ pub struct CeToolRow {
     pub ap_blunt: Option<f64>,
     /// Chance factor.
     pub chance_factor: Option<f64>,
+    /// The body part group that carries the tool.
+    #[serde(default)]
+    pub linked_body_parts_group: Option<String>,
 }
 
 /// A converted melee weapon.
@@ -265,6 +277,12 @@ pub fn read_gun(
             .and_then(|a| child_bool(a, "reloadOneAtATime"))
             .unwrap_or(false),
         ai_aim_mode: modes.and_then(|m| child_text(m, "aiAimMode")),
+        use_burst_mode: modes.and_then(|m| child_bool(m, "aiUseBurstMode")),
+        aimed_burst: modes.and_then(|m| child_number(m, "aimedBurstShotCount")),
+        tools: list_items(node, "tools")
+            .into_iter()
+            .map(tool_row)
+            .collect(),
         stats,
         twin: None,
         twin_tags: Vec::new(),
@@ -327,6 +345,7 @@ fn tool_row(t: &Node) -> CeToolRow {
         ap_sharp: child_number(t, "armorPenetrationSharp"),
         ap_blunt: child_number(t, "armorPenetrationBlunt"),
         chance_factor: child_number(t, "chanceFactor"),
+        linked_body_parts_group: child_text(t, "linkedBodyPartsGroup"),
     }
 }
 
@@ -463,6 +482,16 @@ pub fn ce_block_from_def(
         weapon_tag_class: tags
             .iter()
             .find(|t| t.starts_with(&classes.ai_tag_prefix))
+            .or_else(|| {
+                // A melee conversion has no AI class; its class tag is the first Combat Extended tag that
+                // does not say one handed.
+                (!is_gun(&markers)).then(|| {
+                    tags.iter().find(|t| {
+                        t.starts_with(&classes.tag_prefix)
+                            && !t.to_lowercase().contains("onehanded")
+                    })
+                })?
+            })
             .cloned(),
         bulk: s(stat.get("Bulk").copied()),
         sway_factor: s(stat.get("SwayFactor").copied()),

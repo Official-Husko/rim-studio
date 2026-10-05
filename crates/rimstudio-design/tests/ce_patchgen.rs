@@ -71,7 +71,17 @@ fn the_ranged_golden_has_the_documented_shape() {
     let spec = ranged_with_ce();
     let model = ce_model();
     let patch = gun_patch(&spec, &model, &Container::from_spec(&spec)).unwrap();
-    let make = &patch.operations[0];
+    // The conversion is guarded: it runs only while the def has no ammo component.
+    let guard = &patch.operations[0];
+    assert_eq!(guard.attr("Class"), Some("PatchOperationConditional"));
+    assert!(
+        guard
+            .child_text("xpath")
+            .unwrap()
+            .ends_with("comps/li[@Class=\"CombatExtended.CompProperties_AmmoUser\"]")
+    );
+    assert!(guard.child("match").is_none());
+    let make = patch.gun_conversion(&model.classes).unwrap();
     assert_eq!(make.attr("Class"), Some(model.classes.make_gun_op.as_str()));
     let tags: Vec<&str> = make.elements().map(|e| e.tag.as_str()).collect();
     assert_eq!(

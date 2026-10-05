@@ -26,7 +26,7 @@ use crate::model::{CePatchSpec, CeToolPenetration, DesignSpec, ItemKind, Sourced
 use crate::plan::{PlanBuilder, ProjectLayout, WritePlan};
 use crate::reader::access::{child_number, child_text, class_attr, list_items, list_texts};
 use crate::reader::options::ReaderOptions;
-use crate::reader::{is_weapon_def, spec_from_def};
+use crate::reader::{OwnSource, is_weapon_def, spec_from_def, spec_from_def_own};
 use crate::validation::codes::VALUE_INVALID;
 
 /// The thing def database name.
@@ -979,7 +979,21 @@ pub fn convert(
             ],
         )]);
     };
-    let reading = match spec_from_def(record, env.dbs, env.reader, ValueSource::Typed) {
+    // With the def as its file writes it, the spec also carries what the conversion must not lose: the
+    // fields of the shooting verb and the extras of the tools that the designer has no field for.
+    let reading = match match raw_node(env.project, &candidate.def) {
+        Some(raw) => spec_from_def_own(
+            record,
+            env.dbs,
+            env.reader,
+            ValueSource::Typed,
+            &OwnSource {
+                def: raw,
+                projectile: None,
+            },
+        ),
+        None => spec_from_def(record, env.dbs, env.reader, ValueSource::Typed),
+    } {
         Ok(r) => r,
         Err(e) => {
             return empty(vec![VALUE_INVALID.diagnostic(

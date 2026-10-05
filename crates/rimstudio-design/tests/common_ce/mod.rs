@@ -68,6 +68,9 @@ fn gun(i: u32) -> CeGun {
         default_projectile: Some("RS_Bullet_CE".into()),
         reload_one_at_a_time: false,
         ai_aim_mode: Some("AimedShot".into()),
+        use_burst_mode: None,
+        aimed_burst: None,
+        tools: Vec::new(),
         stats,
         twin: Some(twin),
         twin_tags: vec!["RS_Gun".into()],
@@ -86,6 +89,7 @@ fn melee(i: u32) -> CeMelee {
         ap_sharp: (sharp > 0.0).then_some(sharp),
         ap_blunt: Some(blunt),
         chance_factor: None,
+        linked_body_parts_group: None,
     };
     CeMelee {
         def_name: format!("RS_CeBlade{i:02}"),

@@ -52,6 +52,7 @@ Milestone numbering follows the [roadmap, section 1.1](../roadmap.md#11-mapping-
 | [CE patch conventions](ce-patch-conventions.md) | How CE compatibility patches are written in practice: anatomy per item kind, gating and an idiom survey. |
 | [CE auto-patcher formulas](ce-autopatcher-formulas.md) | CE's programmatic conversion as explicit functions and how closely it reproduces the hand tuned values. |
 | [CE conversion quality, measured](ce-conversion-eval-0.1.0.md) | Leave one out and held out error of the automatic conversion predictors, before and after the similarity estimator with reliability ratings (aggregates only). |
+| [CE structure fidelity, measured](ce-structure-fidelity-0.1.0.md) | Round trip of the generated Combat Extended patch against the user's own conversions: missing, extra and changed elements by path, before and after (aggregates only). |
 | [Vanilla ranged weapons](vanilla-ranged-weapons-analysis.md) | Statistical structure of every vanilla ranged weapon and a computed baseline for a new one. |
 | [Vanilla melee weapons](vanilla-melee-weapons-analysis.md) | The same for melee weapons, with the verified DPS and penetration formulas and a power index. |
 | [Vanilla apparel and materials](vanilla-apparel-analysis.md) | The mathematical structure of armour and apparel balance and an automatic baseline for new apparel. |

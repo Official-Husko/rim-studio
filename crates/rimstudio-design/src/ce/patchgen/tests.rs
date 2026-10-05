@@ -123,10 +123,12 @@ fn a_gun_patch_applies_in_the_engine_and_converts_the_def() {
     let patch = gun_patch(&spec, &model, &Container::from_node(&node)).unwrap();
     assert_eq!(patch.mode, PatchMode::New);
     assert!(!patch.has_errors(), "{:?}", patch.diagnostics);
+    // The conversion sits in the branch of a guard, so that a second application does nothing.
     assert_eq!(
         patch.operations[0].attr("Class"),
-        Some(model.classes.make_gun_op.as_str())
+        Some("PatchOperationConditional")
     );
+    assert!(patch.gun_conversion(&model.classes).is_some());
     let run = dry_apply(&scratch_defs(node), &[patch.patch_root()], &model);
     assert!(run.is_clean(), "{:?}", run.diagnostics);
     let def = run.def("ThingDef", "RS_NewGun").unwrap();
@@ -713,7 +715,10 @@ fn the_simulation_reports_parameters_it_does_not_apply_and_still_converts() {
     let spec = gun_spec("RS_Platform");
     let mut patch = gun_patch(&spec, &model, &Container::from_node(&node)).unwrap();
     // A weapon platform parameter is parsed but not applied by the merge.
-    patch.operations[0].push_child(Node::with_text("isWeaponPlatform", "true"));
+    let class = model.classes.make_gun_op.clone();
+    let conversion = patch.operations[0].child_mut("nomatch").unwrap();
+    assert_eq!(conversion.attr("Class"), Some(class.as_str()));
+    conversion.push_child(Node::with_text("isWeaponPlatform", "true"));
     let run = dry_apply(&scratch_defs(node), &[patch.patch_root()], &model);
     assert!(run.is_clean(), "{:?}", run.diagnostics);
     assert!(

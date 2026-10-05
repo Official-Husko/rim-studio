@@ -1,4 +1,4 @@
-//! The lint rules CEP001 to CEP022: one positive and one negative case per rule, the "not checked" reports
+//! The lint rules CEP001 to CEP024: one positive and one negative case per rule, the "not checked" reports
 //! without Combat Extended data, the report fields and the order.
 
 #![allow(clippy::unwrap_used, clippy::expect_used)]
@@ -202,6 +202,76 @@ fn cep007_the_same_def_converted_twice() {
     assert_eq!(count(&run_one(twice, &model, &ctx), "CEP007"), 1);
     let two_defs = patch(vec![make_gun("RS_X").build(), make_gun("RS_Y").build()]);
     assert_eq!(count(&run_one(two_defs, &model, &ctx), "CEP007"), 0);
+}
+
+#[test]
+fn cep023_a_gun_conversion_that_nothing_guards() {
+    let model = ce_model();
+    let ctx = LintContext::default();
+    let bare = patch(vec![make_gun("RS_X").build()]);
+    assert_eq!(count(&run_one(bare, &model, &ctx), "CEP023"), 1);
+    // Under a conditional (in any branch) the conversion counts as guarded.
+    let classes = CeClassNames::default();
+    let mut nomatch = make_gun("RS_X").build();
+    "nomatch".clone_into(&mut nomatch.tag);
+    let guarded = patch(vec![
+        op("PatchOperationConditional")
+            .text_elem(
+                "xpath",
+                format!(
+                    "Defs/ThingDef[defName=\"RS_X\"]/comps/li[@Class=\"{}\"]",
+                    classes.ammo_user
+                ),
+            )
+            .child(nomatch)
+            .build(),
+    ]);
+    assert_eq!(count(&run_one(guarded, &model, &ctx), "CEP023"), 0);
+}
+
+#[test]
+fn cep024_a_burst_without_an_aimed_burst_size() {
+    let model = ce_model();
+    let ctx = LintContext::default();
+    let classes = CeClassNames::default();
+    let burst = |aimed: bool| {
+        op(&classes.make_gun_op)
+            .text_elem("defName", "RS_X")
+            .elem("Properties", |p| {
+                p.text_elem("verbClass", &classes.shoot_verb)
+                    .text_elem("defaultProjectile", "RS_Bullet_CE")
+                    .text_elem("burstShotCount", "4")
+            })
+            .elem("AmmoUser", |a| {
+                a.text_elem("magazineSize", "30")
+                    .text_elem("ammoSet", "RS_AmmoSet")
+            })
+            .elem("FireModes", |f| {
+                let f = f.text_elem("aiAimMode", "AimedShot");
+                if aimed {
+                    f.text_elem("aimedBurstShotCount", "2")
+                } else {
+                    f
+                }
+            })
+            .build()
+    };
+    assert_eq!(
+        count(&run_one(patch(vec![burst(false)]), &model, &ctx), "CEP024"),
+        1
+    );
+    assert_eq!(
+        count(&run_one(patch(vec![burst(true)]), &model, &ctx), "CEP024"),
+        0
+    );
+    // A single shot weapon needs none.
+    assert_eq!(
+        count(
+            &run_one(patch(vec![make_gun("RS_Y").build()]), &model, &ctx),
+            "CEP024"
+        ),
+        0
+    );
 }
 
 #[test]
@@ -685,7 +755,7 @@ fn findings_carry_the_report_fields_and_come_in_a_stable_order() {
 
 #[test]
 fn every_rule_is_registered_once_with_the_documented_severity() {
-    assert_eq!(REGISTRY.len(), 21);
+    assert_eq!(REGISTRY.len(), 23);
     let severity = |rule: &str| {
         REGISTRY
             .iter()
@@ -694,10 +764,11 @@ fn every_rule_is_registered_once_with_the_documented_severity() {
             .severity
     };
     for rule in [
-        "CEP005", "CEP009", "CEP011", "CEP012", "CEP015", "CEP016", "CEP020", "CEP021",
+        "CEP005", "CEP009", "CEP011", "CEP012", "CEP015", "CEP016", "CEP020", "CEP021", "CEP023",
     ] {
         assert_eq!(severity(rule), Severity::Warning, "{rule}");
     }
+    assert_eq!(severity("CEP024"), Severity::Hint);
     for rule in [
         "CEP001", "CEP004", "CEP007", "CEP013", "CEP017", "CEP018", "CEP022",
     ] {

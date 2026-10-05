@@ -17,7 +17,10 @@ use crate::ce::classes::{
 };
 use crate::ce::reader::CeModel;
 use crate::classes::ItemKind as PoolKind;
-use crate::model::{CePatchSpec, DesignSpec, ItemKind, ToolSpec};
+use crate::model::{
+    CePatchSpec, DesignSpec, ExtraMeleeDamage, ItemKind, SurpriseAttackSpec, ToolSpec,
+};
+use rimstudio_core::tree::Node;
 
 /// Where a derived number came from.
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
@@ -268,6 +271,8 @@ pub struct GunValues {
     pub recoil: Option<f64>,
     /// Shots per burst, written only when above one.
     pub burst: Option<u32>,
+    /// Shots of an aimed burst (the vanilla burst of a burst weapon), written only when above one.
+    pub aimed_burst: Option<u32>,
     /// Ticks between burst shots.
     pub ticks_between: Option<f64>,
     /// Magazine size.
@@ -348,14 +353,37 @@ pub fn resolve_gun(
         "recoil",
     )
     .value;
-    let burst = ranged
+    let vanilla_burst = ranged
         .and_then(|r| r.burst_count)
         .map(|b| b.value)
         .filter(|b| *b > 1);
+    let vanilla_ticks = ranged
+        .and_then(|r| r.ticks_between_burst_shots)
+        .map(|t| t.value);
+    // A burst weapon keeps its burst unless the converted weapons of its class show another one.
+    let burst = vanilla_burst.and_then(|vb| {
+        let picked = resolve(
+            &mut derived,
+            "burst",
+            None,
+            Some(f64::from(vb)),
+            prediction,
+            "burst",
+        )
+        .value?;
+        let rounded = picked.round();
+        (rounded >= 2.0 && rounded <= f64::from(u32::MAX)).then_some(rounded as u32)
+    });
     let ticks_between = if burst.is_some() {
-        ranged
-            .and_then(|r| r.ticks_between_burst_shots)
-            .map(|t| t.value)
+        resolve(
+            &mut derived,
+            "ticks between shots",
+            None,
+            vanilla_ticks,
+            prediction,
+            "ticks_between",
+        )
+        .value
     } else {
         None
     };
@@ -370,6 +398,7 @@ pub fn resolve_gun(
         range,
         recoil,
         burst,
+        aimed_burst: vanilla_burst,
         ticks_between,
         magazine: ce.magazine_size?.value,
         reload: ce.reload_time?.value,
@@ -399,6 +428,12 @@ pub struct ToolValues {
     pub chance_factor: Option<f64>,
     /// The body part group that carries the tool.
     pub linked_body_parts_group: Option<String>,
+    /// Extra damages of the attack, carried over from the vanilla tool.
+    pub extra_melee_damages: Vec<ExtraMeleeDamage>,
+    /// The extra damage of a surprise attack, carried over from the vanilla tool.
+    pub surprise_attack: Option<SurpriseAttackSpec>,
+    /// Other children of the vanilla tool, carried over as written.
+    pub extra: Vec<Node>,
 }
 
 /// True for capacities whose attacks cut or pierce, which carry a sharp penetration.
@@ -523,6 +558,9 @@ fn tool_values(
         ap_blunt,
         chance_factor: tool.chance_factor.map(|c| c.value),
         linked_body_parts_group: tool.linked_body_parts_group.clone(),
+        extra_melee_damages: tool.extra_melee_damages.clone(),
+        surprise_attack: tool.surprise_attack.clone(),
+        extra: tool.extra.clone(),
     }
 }
 

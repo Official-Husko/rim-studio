@@ -14,12 +14,13 @@ use rimstudio_core::diag::Diagnostic;
 use rimstudio_core::tree::{Node, NodeBuilder};
 
 use super::container::Container;
+use super::conventions::{FireModeHabit, apply_tool_habits, companion_tags, fire_mode_habit};
 use super::melee::tool_list;
-use super::ops::DefOps;
+use super::ops::{DefOps, INHERIT_ATTR, add, class_li_xpath, unless_present};
 use super::update::gun_update;
 use super::values::{GunValues, predict_for, predict_tool_ratios, resolve_gun, resolve_tools};
 use super::{GeneratedPatch, PatchCategory, PatchMode, PatchgenResult, guard};
-use crate::ce::lint::codes::{CEP016, TAG_NOT_FOUND};
+use crate::ce::lint::codes::{CEP016, COMPANION_TAGS, TAG_NOT_FOUND};
 use crate::ce::reader::{CeClassNames, CeModel};
 use crate::model::{CePatchSpec, DesignSpec, ItemKind, format_number};
 use crate::validation::codes::{REF_UNRESOLVED, REQUIRED_MISSING};
@@ -67,7 +68,7 @@ pub(crate) fn check_gun_refs(ce: &CePatchSpec, model: &CeModel) -> Vec<Diagnosti
 }
 
 /// The weapon tag of the installed data that marks a one handed weapon: the first known tag that names it.
-fn one_handed_tag(model: &CeModel) -> Option<String> {
+pub(super) fn one_handed_tag(model: &CeModel) -> Option<String> {
     model
         .weapon_tags
         .iter()
@@ -79,12 +80,30 @@ fn push_num(b: NodeBuilder, tag: &str, v: Option<f64>) -> NodeBuilder {
     b.text_elem_opt(tag, v.map(format_number))
 }
 
+/// The children of the verb that the properties of the conversion write themselves; a carried vanilla verb
+/// field of the same name does not repeat them.
+const WRITTEN_VERB_FIELDS: [&str; 12] = [
+    "recoilAmount",
+    "verbClass",
+    "hasStandardCommand",
+    "defaultProjectile",
+    "warmupTime",
+    "range",
+    "burstShotCount",
+    "ticksBetweenBurstShots",
+    "soundCast",
+    "soundCastTail",
+    "muzzleFlashScale",
+    "forcedMissRadius",
+];
+
 fn make_gun(
     classes: &CeClassNames,
     spec: &DesignSpec,
     ce: &CePatchSpec,
     v: &GunValues,
     tags: &[String],
+    habit: &FireModeHabit,
 ) -> Node {
     let ranged = spec.ranged.as_ref();
     let mut b = NodeBuilder::new("Operation")
@@ -113,11 +132,24 @@ fn make_gun(
             "soundCastTail",
             ranged.and_then(|r| r.sound_cast_tail.clone()),
         );
-        push_num(
+        let mut p = push_num(
             p,
             "muzzleFlashScale",
             ranged.and_then(|r| r.muzzle_flash_scale),
-        )
+        );
+        p = push_num(
+            p,
+            "forcedMissRadius",
+            ranged.and_then(|r| r.forced_miss_radius),
+        );
+        // The conversion replaces the whole shooting verb, so what the vanilla verb carries beyond the
+        // modelled fields (target rules, charge motes, minimum range) is written again.
+        for extra in ranged.map(|r| r.verb_extra.as_slice()).unwrap_or_default() {
+            if !WRITTEN_VERB_FIELDS.contains(&extra.tag.as_str()) {
+                p = p.child(extra.clone());
+            }
+        }
+        p
     });
     b = b.elem("AmmoUser", |a| {
         a.text_elem("magazineSize", v.magazine.to_string())
@@ -125,11 +157,17 @@ fn make_gun(
             .text_elem("ammoSet", &v.ammo_set)
     });
     b = b.elem("FireModes", |f| {
-        let f = f.text_elem(
-            "aiAimMode",
-            if ce.belt_fed { AIM_SUPPRESS } else { AIM_AIMED },
-        );
-        f.text_elem_opt("aiUseBurstMode", v.burst.map(|_| "true".to_owned()))
+        // The user's belt fed flag decides first, then the habit of the weapon class in the converted
+        // weapons, then the plain aimed shot.
+        let aim = if ce.belt_fed {
+            AIM_SUPPRESS
+        } else {
+            habit.aim_mode.as_deref().unwrap_or(AIM_AIMED)
+        };
+        let use_burst = habit.use_burst_mode.or(v.burst.map(|_| true));
+        f.text_elem("aiAimMode", aim)
+            .text_elem_opt("aiUseBurstMode", use_burst.map(|b| b.to_string()))
+            .text_elem_opt("aimedBurstShotCount", v.aimed_burst.map(|b| b.to_string()))
     });
     if !tags.is_empty() {
         b = b.elem("weaponTags", |t| t.li_each(tags.iter().cloned()));
@@ -191,8 +229,37 @@ pub fn gun_patch(
         }
     }
     let mut derived = values.derived.clone();
+    let habit = values
+        .tag
+        .as_deref()
+        .map(|t| fire_mode_habit(model, t))
+        .unwrap_or_default();
+    if let Some(class) = values.tag.as_deref() {
+        let companions = companion_tags(model, class);
+        if !companions.is_empty() {
+            diagnostics.push(COMPANION_TAGS.diagnostic(
+                "/ce/weaponTagClass",
+                &[("class", class), ("tags", &companions.join(", "))],
+            ));
+        }
+    }
     let mut ops = DefOps::new(&spec.identity.def_name, container);
-    ops.push(make_gun(&model.classes, spec, ce, &values, &tags));
+    // A def that takes its verbs from a parent has no list of its own to remove the shoot verb from: the
+    // list is started with `Inherit="False"`, so the converted verb replaces the inherited ones.
+    if container.has_parent && !container.has("verbs") {
+        let mut verbs = Node::new("verbs");
+        verbs.set_attr(INHERIT_ATTR, "False");
+        let own = ops.path("verbs");
+        ops.push(unless_present(&own, add(ops.def_xpath(), vec![verbs])));
+    }
+    // The conversion appends comps, a verb and tags, so it runs only while the def has no ammo component
+    // yet; applied twice (or on top of another conversion) it does nothing the second time.
+    let conversion = make_gun(&model.classes, spec, ce, &values, &tags, &habit);
+    let guard = ops.path(&format!(
+        "comps/{}",
+        class_li_xpath(&model.classes.ammo_user)
+    ));
+    ops.push(unless_present(&guard, conversion));
     if !spec.tools.is_empty() {
         let ratios = predict_tool_ratios(spec, model);
         let (tools, missing, tool_derived) = resolve_tools(spec, ce, ratios.as_ref(), false);
@@ -206,6 +273,7 @@ pub fn gun_patch(
             }
             return Ok(GeneratedPatch::off(spec, diagnostics, None));
         }
+        let tools = apply_tool_habits(model, ItemKind::Ranged, tools, &mut diagnostics);
         ops.replace_list(tool_list(&model.classes, &tools));
     }
     Ok(GeneratedPatch {

@@ -128,6 +128,16 @@ rule!(
     "the xpath {value} is malformed: {reason}", ["value", "reason"]
 );
 rule!(
+    /// CEP023: a gun conversion that nothing guards, so a second application converts again.
+    CEP023, "ce.cep023-makegun-unguarded", Warning,
+    "the gun conversion of {def} is not guarded: applied twice, or on a def another patch already converted, it appends a second verb, ammo component and set of tags", ["def"]
+);
+rule!(
+    /// CEP024: a burst weapon whose fire modes give no aimed burst size.
+    CEP024, "ce.cep024-aimed-burst-missing", Hint,
+    "the verb of {def} fires bursts of {burst} but the fire modes name no aimedBurstShotCount; the aimed mode then fires the full burst", ["def", "burst"]
+);
+rule!(
     /// A data dependent rule could not run because Combat Extended data is not available.
     NOT_CHECKED, "ce.not-checked", Info,
     "{rule} was not checked: {reason}", ["rule", "reason"]
@@ -168,10 +178,16 @@ rule!(
     "no Combat Extended tag matching {what} was found in the installed data", ["what"]
 );
 
+rule!(
+    /// Converted guns of the same class carry tags that the design does not.
+    COMPANION_TAGS, "ce.companion-tags", Hint,
+    "converted weapons of the class {class} usually also carry these tags: {tags}; add the ones that fit to the weapon", ["class", "tags"]
+);
+
 /// Every rule of this module, in id order.
 pub const REGISTRY: &[CodeInfo] = &[
     CEP001, CEP002, CEP003, CEP004, CEP005, CEP007, CEP008, CEP009, CEP010, CEP011, CEP012, CEP013,
-    CEP014, CEP015, CEP016, CEP017, CEP018, CEP019, CEP020, CEP021, CEP022,
+    CEP014, CEP015, CEP016, CEP017, CEP018, CEP019, CEP020, CEP021, CEP022, CEP023, CEP024,
 ];
 
 /// The other codes of the patch generator.
@@ -184,6 +200,7 @@ pub const OTHER: &[CodeInfo] = &[
     UPDATE_NOTHING,
     DEFERRED,
     TAG_NOT_FOUND,
+    COMPANION_TAGS,
 ];
 
 /// The rule id (`CEP013`) of a rule code (`ce.cep013-ammoset-unresolved`), when it is one.
@@ -200,7 +217,7 @@ mod tests {
 
     #[test]
     fn rule_codes_embed_their_ids_and_are_unique() {
-        assert_eq!(REGISTRY.len(), 21);
+        assert_eq!(REGISTRY.len(), 23);
         let mut seen = std::collections::BTreeSet::new();
         for (i, info) in REGISTRY.iter().enumerate() {
             let id = rule_id(info.code).unwrap_or_default();

@@ -7,7 +7,8 @@ use rimstudio_core::tree::Node;
 
 use super::codes::{
     CEP001, CEP002, CEP003, CEP004, CEP005, CEP007, CEP008, CEP009, CEP010, CEP011, CEP012, CEP013,
-    CEP014, CEP015, CEP016, CEP017, CEP018, CEP020, CEP021, CEP022, NOT_CHECKED, rule_id,
+    CEP014, CEP015, CEP016, CEP017, CEP018, CEP020, CEP021, CEP022, CEP023, CEP024, NOT_CHECKED,
+    rule_id,
 };
 use super::xpath::malformed_reason;
 use super::{LintContext, LintFile};
@@ -40,8 +41,13 @@ struct Cx<'a> {
     ce_name: String,
     out: Vec<Keyed>,
     converted: BTreeMap<String, usize>,
+    /// How many conditional operations enclose the operation being visited.
+    guard_depth: usize,
     seen_ops: BTreeSet<String>,
 }
+
+/// The vanilla conditional operation class; an operation under one is considered guarded.
+const CONDITIONAL_CLASS: &str = "PatchOperationConditional";
 
 fn same_class(a: &str, b: &str) -> bool {
     a.eq_ignore_ascii_case(b)
@@ -335,6 +341,9 @@ impl<'a> Cx<'a> {
         } else {
             spec.def_name.clone()
         };
+        if self.guard_depth == 0 {
+            self.push(key, &CEP023, path, pointer, &[("def", &def)]);
+        }
         let property = |name: &str| -> Option<String> {
             spec.properties
                 .iter()
@@ -374,6 +383,24 @@ impl<'a> Cx<'a> {
             if spec.fire_modes.is_none() {
                 missing.push(("FireModes".into(), format!("{pointer}/FireModes")));
             }
+        }
+        let burst = spec
+            .properties
+            .iter()
+            .find(|n| n.tag == "burstShotCount")
+            .and_then(text_of)
+            .and_then(|t| t.trim().parse::<f64>().ok())
+            .filter(|b| *b > 1.0);
+        if let (Some(burst), Some(modes)) = (burst, &spec.fire_modes)
+            && !modes.iter().any(|c| c.tag == "aimedBurstShotCount")
+        {
+            self.push(
+                key,
+                &CEP024,
+                path,
+                &format!("{pointer}/FireModes"),
+                &[("def", &def), ("burst", &burst.to_string())],
+            );
         }
         for (what, field) in missing {
             self.push(
@@ -515,6 +542,8 @@ impl<'a> Cx<'a> {
         if same_class(class, &self.model.classes.make_gun_op) {
             self.make_gun(key, path, op, pointer);
         }
+        let guarded = same_class(class, CONDITIONAL_CLASS);
+        self.guard_depth += usize::from(guarded);
         for branch in ["match", "nomatch"] {
             if let Some(b) = op.child(branch) {
                 let p = format!("{pointer}/{branch}");
@@ -524,6 +553,7 @@ impl<'a> Cx<'a> {
                 self.visit(key, path, b, &p);
             }
         }
+        self.guard_depth -= usize::from(guarded);
         if let Some(list) = op.child("operations") {
             for (i, li) in list.children_named("li").enumerate() {
                 self.visit(
@@ -642,6 +672,7 @@ pub(super) fn run(files: &[LintFile], model: &CeModel, ctx: &LintContext) -> Vec
         ce_name,
         out: Vec::new(),
         converted: BTreeMap::new(),
+        guard_depth: 0,
         seen_ops: BTreeSet::new(),
     };
     not_checked(&mut cx);

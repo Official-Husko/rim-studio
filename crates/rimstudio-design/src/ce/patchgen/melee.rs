@@ -8,17 +8,56 @@
 use rimstudio_core::tree::{Node, NodeBuilder};
 
 use super::container::Container;
+use super::conventions::apply_tool_habits;
+use super::gun::one_handed_tag;
 use super::ops::DefOps;
 use super::update::melee_update;
 use super::values::{ToolValues, predict_for, resolve_tools};
 use super::{GeneratedPatch, PatchCategory, PatchMode, PatchgenResult, guard};
+use crate::ce::lint::codes::{CEP016, TAG_NOT_FOUND};
 use crate::ce::reader::{CeClassNames, CeModel};
-use crate::model::{DesignSpec, ItemKind, format_number};
+use crate::model::{CePatchSpec, DesignSpec, ExtraMeleeDamage, ItemKind, format_number};
 use crate::validation::codes::REQUIRED_MISSING;
+use rimstudio_core::diag::Diagnostic;
 
 /// One converted tool entry, in the field order of the conventions.
 #[must_use]
 pub(crate) fn tool_node(classes: &CeClassNames, tool: &ToolValues) -> Node {
+    let mut node = tool_fields(classes, tool);
+    if !tool.extra_melee_damages.is_empty() {
+        node.push_child(damages_node("extraMeleeDamages", &tool.extra_melee_damages));
+    }
+    if let Some(surprise) = &tool.surprise_attack {
+        let mut s = Node::new("surpriseAttack");
+        if !surprise.extra_melee_damages.is_empty() {
+            s.push_child(damages_node(
+                "extraMeleeDamages",
+                &surprise.extra_melee_damages,
+            ));
+        }
+        node.push_child(s);
+    }
+    for extra in &tool.extra {
+        node.push_child(extra.clone());
+    }
+    node
+}
+
+/// A list of extra melee damages as the game reads it.
+fn damages_node(tag: &str, damages: &[ExtraMeleeDamage]) -> Node {
+    let mut list = Node::new(tag);
+    for d in damages {
+        let li = NodeBuilder::new("li")
+            .text_elem("def", &d.def)
+            .text_elem_opt("amount", d.amount.map(format_number))
+            .text_elem_opt("chance", d.chance.map(format_number))
+            .build();
+        list.push_child(li);
+    }
+    list
+}
+
+fn tool_fields(classes: &CeClassNames, tool: &ToolValues) -> Node {
     NodeBuilder::new("li")
         .attr("Class", &classes.tool)
         .text_elem("label", &tool.label)
@@ -40,6 +79,27 @@ pub(crate) fn tool_list(classes: &CeClassNames, tools: &[ToolValues]) -> Node {
         list.push_child(tool_node(classes, t));
     }
     list
+}
+
+/// The Combat Extended tags a melee conversion adds: the class tag the user chose and the one handed mark.
+/// A name that the installed data does not know is a warning (the class tag) or a hint (the one handed mark).
+fn melee_tags(ce: &CePatchSpec, model: &CeModel, diagnostics: &mut Vec<Diagnostic>) -> Vec<String> {
+    let mut tags: Vec<String> = Vec::new();
+    if let Some(tag) = ce.weapon_tag_class.as_deref().filter(|t| !t.is_empty()) {
+        if !model.knows_tag(tag) {
+            diagnostics.push(CEP016.diagnostic("/ce/weaponTagClass", &[("value", tag)]));
+        }
+        tags.push(tag.to_owned());
+    }
+    if ce.one_handed {
+        match one_handed_tag(model) {
+            Some(t) if !tags.contains(&t) => tags.push(t),
+            Some(_) => {}
+            None => diagnostics
+                .push(TAG_NOT_FOUND.diagnostic("/ce/oneHanded", &[("what", "one handed")])),
+        }
+    }
+    tags
 }
 
 /// Generates the patch of a melee weapon.
@@ -109,7 +169,10 @@ pub fn melee_patch(
             ("MeleeDodgeChance", format_number(dodge.value)),
         ],
     );
+    let tags = melee_tags(ce, model, &mut diagnostics);
+    ops.add_unique_li("weaponTags", &tags);
     if !tools.is_empty() {
+        let tools = apply_tool_habits(model, ItemKind::Melee, tools, &mut diagnostics);
         ops.replace_list(tool_list(&model.classes, &tools));
     }
     Ok(GeneratedPatch {

@@ -11,7 +11,8 @@ use rimstudio_core::diag::Diagnostic;
 use rimstudio_core::tree::Node;
 
 use super::container::{Container, ConversionSource, ExistingConversion};
-use super::ops::{DefOps, add, class_li_xpath, replace, xpath_literal};
+use super::gun::one_handed_tag;
+use super::ops::{DefOps, add, branch, class_li_xpath, replace, xpath_literal};
 use super::{GeneratedPatch, PatchCategory, PatchMode};
 use crate::ce::lint::codes::{UPDATE_LOAD_AFTER, UPDATE_NOTHING};
 use crate::ce::reader::CeModel;
@@ -36,14 +37,21 @@ fn diff_stat(
     }
 }
 
-/// Sets one field of a list entry that the xpath `below` selects: Replace when the field is there, Add into
-/// the entry otherwise.
+/// Sets one field of a list entry that the xpath `below` selects: Replace when the field is there, and a
+/// conditional (replace when it is there by then, add when it is not) otherwise, so that applying the update
+/// twice leaves one field.
 fn set_field(ops: &mut DefOps<'_>, below: &str, field: &str, value: String, present: bool) {
     let node = Node::with_text(field, value);
+    let field_path = ops.path(&format!("{below}/{field}"));
     if present {
-        ops.push(replace(&ops.path(&format!("{below}/{field}")), vec![node]));
+        ops.push(replace(&field_path, vec![node]));
     } else {
-        ops.push(add(&ops.path(below), vec![node]));
+        let entry = ops.path(below);
+        ops.push(branch(
+            &field_path,
+            replace(&field_path, vec![node.clone()]),
+            add(&entry, vec![node]),
+        ));
     }
 }
 
@@ -75,6 +83,28 @@ fn finish(
         diagnostics,
         derived: Vec::new(),
         source: Some(existing.source.clone()),
+    }
+}
+
+/// The weapon tags of an update: the class tag is replaced (or added), the one handed mark is added when the
+/// design says one handed and the conversion does not carry it yet.
+fn update_tags(ops: &mut DefOps<'_>, ce: &CePatchSpec, cur: &CePatchSpec, model: &CeModel) {
+    if let Some(tag) = ce.weapon_tag_class.as_deref().filter(|t| !t.is_empty())
+        && cur.weapon_tag_class.as_deref() != Some(tag)
+    {
+        match cur.weapon_tag_class.as_deref() {
+            Some(old) => ops.push(replace(
+                &ops.path(&format!("weaponTags/li[.={}]", xpath_literal(old))),
+                vec![Node::with_text("li", tag)],
+            )),
+            None => ops.add_unique_li("weaponTags", &[tag.to_owned()]),
+        }
+    }
+    if ce.one_handed
+        && !cur.one_handed
+        && let Some(tag) = one_handed_tag(model)
+    {
+        ops.add_unique_li("weaponTags", &[tag]);
     }
 }
 
@@ -164,17 +194,7 @@ pub(crate) fn gun_update(
         set_field(&mut ops, &ammo, "ammoSet", s.to_owned(), present);
     }
 
-    if let Some(tag) = ce.weapon_tag_class.as_deref().filter(|t| !t.is_empty())
-        && cur.weapon_tag_class.as_deref() != Some(tag)
-    {
-        match cur.weapon_tag_class.as_deref() {
-            Some(old) => ops.push(replace(
-                &ops.path(&format!("weaponTags/li[.={}]", xpath_literal(old))),
-                vec![Node::with_text("li", tag)],
-            )),
-            None => ops.add_into("weaponTags", vec![Node::with_text("li", tag)]),
-        }
-    }
+    update_tags(&mut ops, ce, cur, model);
     finish(
         spec,
         PatchCategory::WeaponsRanged,
@@ -188,7 +208,7 @@ pub(crate) fn gun_update(
 pub(crate) fn melee_update(
     spec: &DesignSpec,
     ce: &CePatchSpec,
-    _model: &CeModel,
+    model: &CeModel,
     container: &Container,
     existing: &ExistingConversion,
     diagnostics: Vec<Diagnostic>,
@@ -256,6 +276,7 @@ pub(crate) fn melee_update(
             }
         }
     }
+    update_tags(&mut ops, ce, cur, model);
     finish(
         spec,
         PatchCategory::WeaponsMelee,

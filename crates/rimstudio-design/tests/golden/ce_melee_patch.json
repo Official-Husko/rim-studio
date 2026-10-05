@@ -7,7 +7,7 @@
       "attrs": [
         [
           "Class",
-          "PatchOperationAdd"
+          "PatchOperationConditional"
         ]
       ],
       "children": [
@@ -15,18 +15,67 @@
           "tag": "xpath",
           "attrs": [],
           "children": [
-            "Defs/ThingDef[defName=\"RS_TestBlade\"]/statBases"
+            "Defs/ThingDef[defName=\"RS_TestBlade\"]/statBases/Bulk"
           ]
         },
         {
-          "tag": "value",
-          "attrs": [],
+          "tag": "match",
+          "attrs": [
+            [
+              "Class",
+              "PatchOperationReplace"
+            ]
+          ],
           "children": [
             {
-              "tag": "Bulk",
+              "tag": "xpath",
               "attrs": [],
               "children": [
-                "6"
+                "Defs/ThingDef[defName=\"RS_TestBlade\"]/statBases/Bulk"
+              ]
+            },
+            {
+              "tag": "value",
+              "attrs": [],
+              "children": [
+                {
+                  "tag": "Bulk",
+                  "attrs": [],
+                  "children": [
+                    "6"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "nomatch",
+          "attrs": [
+            [
+              "Class",
+              "PatchOperationAdd"
+            ]
+          ],
+          "children": [
+            {
+              "tag": "xpath",
+              "attrs": [],
+              "children": [
+                "Defs/ThingDef[defName=\"RS_TestBlade\"]/statBases"
+              ]
+            },
+            {
+              "tag": "value",
+              "attrs": [],
+              "children": [
+                {
+                  "tag": "Bulk",
+                  "attrs": [],
+                  "children": [
+                    "6"
+                  ]
+                }
               ]
             }
           ]
@@ -85,7 +134,7 @@
       "attrs": [
         [
           "Class",
-          "PatchOperationAdd"
+          "PatchOperationConditional"
         ]
       ],
       "children": [
@@ -93,32 +142,227 @@
           "tag": "xpath",
           "attrs": [],
           "children": [
-            "Defs/ThingDef[defName=\"RS_TestBlade\"]/equippedStatOffsets"
+            "Defs/ThingDef[defName=\"RS_TestBlade\"]/equippedStatOffsets/MeleeCritChance"
           ]
         },
         {
-          "tag": "value",
-          "attrs": [],
+          "tag": "match",
+          "attrs": [
+            [
+              "Class",
+              "PatchOperationReplace"
+            ]
+          ],
           "children": [
             {
-              "tag": "MeleeCritChance",
+              "tag": "xpath",
               "attrs": [],
               "children": [
-                "0.1"
+                "Defs/ThingDef[defName=\"RS_TestBlade\"]/equippedStatOffsets/MeleeCritChance"
               ]
             },
             {
-              "tag": "MeleeParryChance",
+              "tag": "value",
               "attrs": [],
               "children": [
-                "0.2"
+                {
+                  "tag": "MeleeCritChance",
+                  "attrs": [],
+                  "children": [
+                    "0.1"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "nomatch",
+          "attrs": [
+            [
+              "Class",
+              "PatchOperationAdd"
+            ]
+          ],
+          "children": [
+            {
+              "tag": "xpath",
+              "attrs": [],
+              "children": [
+                "Defs/ThingDef[defName=\"RS_TestBlade\"]/equippedStatOffsets"
               ]
             },
             {
-              "tag": "MeleeDodgeChance",
+              "tag": "value",
               "attrs": [],
               "children": [
-                "-0.05"
+                {
+                  "tag": "MeleeCritChance",
+                  "attrs": [],
+                  "children": [
+                    "0.1"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tag": "Operation",
+      "attrs": [
+        [
+          "Class",
+          "PatchOperationConditional"
+        ]
+      ],
+      "children": [
+        {
+          "tag": "xpath",
+          "attrs": [],
+          "children": [
+            "Defs/ThingDef[defName=\"RS_TestBlade\"]/equippedStatOffsets/MeleeParryChance"
+          ]
+        },
+        {
+          "tag": "match",
+          "attrs": [
+            [
+              "Class",
+              "PatchOperationReplace"
+            ]
+          ],
+          "children": [
+            {
+              "tag": "xpath",
+              "attrs": [],
+              "children": [
+                "Defs/ThingDef[defName=\"RS_TestBlade\"]/equippedStatOffsets/MeleeParryChance"
+              ]
+            },
+            {
+              "tag": "value",
+              "attrs": [],
+              "children": [
+                {
+                  "tag": "MeleeParryChance",
+                  "attrs": [],
+                  "children": [
+                    "0.2"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "nomatch",
+          "attrs": [
+            [
+              "Class",
+              "PatchOperationAdd"
+            ]
+          ],
+          "children": [
+            {
+              "tag": "xpath",
+              "attrs": [],
+              "children": [
+                "Defs/ThingDef[defName=\"RS_TestBlade\"]/equippedStatOffsets"
+              ]
+            },
+            {
+              "tag": "value",
+              "attrs": [],
+              "children": [
+                {
+                  "tag": "MeleeParryChance",
+                  "attrs": [],
+                  "children": [
+                    "0.2"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tag": "Operation",
+      "attrs": [
+        [
+          "Class",
+          "PatchOperationConditional"
+        ]
+      ],
+      "children": [
+        {
+          "tag": "xpath",
+          "attrs": [],
+          "children": [
+            "Defs/ThingDef[defName=\"RS_TestBlade\"]/equippedStatOffsets/MeleeDodgeChance"
+          ]
+        },
+        {
+          "tag": "match",
+          "attrs": [
+            [
+              "Class",
+              "PatchOperationReplace"
+            ]
+          ],
+          "children": [
+            {
+              "tag": "xpath",
+              "attrs": [],
+              "children": [
+                "Defs/ThingDef[defName=\"RS_TestBlade\"]/equippedStatOffsets/MeleeDodgeChance"
+              ]
+            },
+            {
+              "tag": "value",
+              "attrs": [],
+              "children": [
+                {
+                  "tag": "MeleeDodgeChance",
+                  "attrs": [],
+                  "children": [
+                    "-0.05"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "nomatch",
+          "attrs": [
+            [
+              "Class",
+              "PatchOperationAdd"
+            ]
+          ],
+          "children": [
+            {
+              "tag": "xpath",
+              "attrs": [],
+              "children": [
+                "Defs/ThingDef[defName=\"RS_TestBlade\"]/equippedStatOffsets"
+              ]
+            },
+            {
+              "tag": "value",
+              "attrs": [],
+              "children": [
+                {
+                  "tag": "MeleeDodgeChance",
+                  "attrs": [],
+                  "children": [
+                    "-0.05"
+                  ]
+                }
               ]
             }
           ]
