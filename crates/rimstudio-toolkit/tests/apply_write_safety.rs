@@ -102,7 +102,7 @@ fn a_stop_after_any_file_leaves_whole_files_and_the_gate_only_after_its_patch(#[
     let patch_paths: Vec<&str> = plan
         .files
         .iter()
-        .filter(|x| x.path.contains("CE/"))
+        .filter(|x| x.path.contains("Compat/CombatExtended/"))
         .map(|x| x.path.as_str())
         .collect();
     if gate {
@@ -196,9 +196,17 @@ fn a_file_that_changed_on_disk_after_planning_is_not_overwritten() {
     // the person edits the file in another program between planning and applying
     let edited = format!(
         "{}<!-- hand edit -->\n",
-        read(&p, "Defs/Weapons/RS_NewRifle.xml").unwrap()
+        read(
+            &p,
+            "Defs/ThingDefs_Misc/Weapons/RangedIndustrial/RS_NewRifle.xml"
+        )
+        .unwrap()
     );
-    common_project::put(&p.root, "Defs/Weapons/RS_NewRifle.xml", &edited);
+    common_project::put(
+        &p.root,
+        "Defs/ThingDefs_Misc/Weapons/RangedIndustrial/RS_NewRifle.xml",
+        &edited,
+    );
     let err = apply_built(
         &f.ctx,
         &prepared.writer,
@@ -211,7 +219,11 @@ fn a_file_that_changed_on_disk_after_planning_is_not_overwritten() {
     assert_eq!(err.code(), "designer.apply-failed", "{err:?}");
     assert!(err.to_string().contains("changed"), "{err}");
     assert_eq!(
-        read(&p, "Defs/Weapons/RS_NewRifle.xml").as_deref(),
+        read(
+            &p,
+            "Defs/ThingDefs_Misc/Weapons/RangedIndustrial/RS_NewRifle.xml"
+        )
+        .as_deref(),
         Some(edited.as_str())
     );
 }
@@ -221,7 +233,11 @@ fn a_file_that_appeared_after_planning_is_not_overwritten_by_a_create() {
     let f = fixture(true);
     let p = project(&f, &[]);
     let prepared = prepare(&f.ctx, &request(&p, &ranged())).unwrap();
-    common_project::put(&p.root, "Defs/Weapons/RS_NewRifle.xml", "<Defs/>\n");
+    common_project::put(
+        &p.root,
+        "Defs/ThingDefs_Misc/Weapons/RangedIndustrial/RS_NewRifle.xml",
+        "<Defs/>\n",
+    );
     let err = apply_built(
         &f.ctx,
         &prepared.writer,
@@ -233,7 +249,11 @@ fn a_file_that_appeared_after_planning_is_not_overwritten_by_a_create() {
     .unwrap_err();
     assert_eq!(err.code(), "designer.apply-failed", "{err:?}");
     assert_eq!(
-        read(&p, "Defs/Weapons/RS_NewRifle.xml").as_deref(),
+        read(
+            &p,
+            "Defs/ThingDefs_Misc/Weapons/RangedIndustrial/RS_NewRifle.xml"
+        )
+        .as_deref(),
         Some("<Defs/>\n")
     );
 }
@@ -292,7 +312,7 @@ fn a_write_error_in_the_middle_is_reported_with_the_files_already_written() {
         .plan
         .files
         .iter()
-        .find(|x| x.path.contains("CE/"))
+        .find(|x| x.path.contains("Compat/CombatExtended/"))
         .unwrap();
     let dir = p.root.join(patch.path.rsplit_once('/').unwrap().0);
     std::fs::create_dir_all(dir.as_std_path()).unwrap();
@@ -400,7 +420,11 @@ fn a_read_only_file_in_the_plan_refuses_before_the_first_write() {
     let victim = p.root.join(&changed_last);
     let victim_before = std::fs::read_to_string(victim.as_std_path()).unwrap();
     std::fs::set_permissions(victim.as_std_path(), std::fs::Permissions::from_mode(0o444)).unwrap();
-    let defs_before = read(&p, "Defs/Weapons/RS_NewRifle.xml").unwrap();
+    let defs_before = read(
+        &p,
+        "Defs/ThingDefs_Misc/Weapons/RangedIndustrial/RS_NewRifle.xml",
+    )
+    .unwrap();
     let r = apply_built(
         &f.ctx,
         &prepared.writer,
@@ -416,7 +440,11 @@ fn a_read_only_file_in_the_plan_refuses_before_the_first_write() {
         victim_before
     );
     assert_eq!(
-        read(&p, "Defs/Weapons/RS_NewRifle.xml").unwrap(),
+        read(
+            &p,
+            "Defs/ThingDefs_Misc/Weapons/RangedIndustrial/RS_NewRifle.xml"
+        )
+        .unwrap(),
         defs_before
     );
     assert_eq!(

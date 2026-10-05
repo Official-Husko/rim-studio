@@ -1,0 +1,112 @@
+{
+  "projectId": "p-1a2b3c4d",
+  "profile": "core-style",
+  "weaponsFolder": "Defs/ThingDefs_Misc/Weapons",
+  "ceFolder": "Compat/CombatExtended",
+  "ceFolderExists": false,
+  "ceFolderLegacy": false,
+  "ceGated": false,
+  "root": {
+    "name": "RS_Mod",
+    "path": "",
+    "kind": "folder",
+    "role": "content-root",
+    "bytes": 6020,
+    "files": 2,
+    "issues": 1,
+    "children": [
+      {
+        "name": "Defs",
+        "path": "Defs",
+        "kind": "folder",
+        "role": "defs",
+        "bytes": 5120,
+        "files": 1,
+        "issues": 0,
+        "children": [
+          {
+            "name": "ThingDefs_Misc",
+            "path": "Defs/ThingDefs_Misc",
+            "kind": "folder",
+            "role": "defs",
+            "bytes": 5120,
+            "files": 1,
+            "issues": 0,
+            "children": [
+              {
+                "name": "Weapons",
+                "path": "Defs/ThingDefs_Misc/Weapons",
+                "kind": "folder",
+                "role": "defs-weapons",
+                "bytes": 5120,
+                "files": 1,
+                "issues": 0,
+                "children": [
+                  {
+                    "name": "RangedIndustrial.xml",
+                    "path": "Defs/ThingDefs_Misc/Weapons/RangedIndustrial.xml",
+                    "kind": "file",
+                    "role": "defs-weapons",
+                    "bytes": 5120,
+                    "files": 1,
+                    "issues": 0,
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Patches",
+        "path": "Patches",
+        "kind": "folder",
+        "role": "patches",
+        "bytes": 900,
+        "files": 1,
+        "issues": 1,
+        "children": [
+          {
+            "name": "RS_ce_patch.xml",
+            "path": "Patches/RS_ce_patch.xml",
+            "kind": "file",
+            "role": "patches",
+            "bytes": 900,
+            "files": 1,
+            "issues": 1,
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  "counts": {
+    "folders": 4,
+    "files": 2,
+    "bytes": 6020,
+    "defFiles": 1,
+    "weaponDefs": 2,
+    "projectileDefs": 1,
+    "patchFiles": 1,
+    "textures": 0,
+    "sounds": 0
+  },
+  "issues": [
+    {
+      "code": "layout.ce-outside-gate",
+      "severity": "warning",
+      "path": "Patches/RS_ce_patch.xml",
+      "message": "The file uses Combat Extended classes outside the gated Combat Extended folder, so the game reports errors when Combat Extended is not active.",
+      "fix": {
+        "kind": "move-file",
+        "summary": "Move the file to Compat/CombatExtended/Patches/RS_ce_patch.xml and gate that folder in LoadFolders.xml.",
+        "automatic": false,
+        "targets": [
+          "Compat/CombatExtended/Patches/RS_ce_patch.xml"
+        ]
+      }
+    }
+  ],
+  "truncated": false
+}

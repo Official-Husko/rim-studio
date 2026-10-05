@@ -19,6 +19,7 @@ fn schema_version() -> u32 {
 
 /// How the numbers of a draft are calibrated.
 #[derive(Debug, Clone, Copy, Default, PartialEq, Eq, Hash, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "kebab-case")]
 pub enum CalibrationModeDto {
     /// Class medians, no questions.
@@ -32,17 +33,20 @@ pub enum CalibrationModeDto {
 
 /// An anchor weapon the user picked.
 #[derive(Debug, Clone, Default, PartialEq, Eq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase", default)]
 pub struct AnchorDto {
     /// Definition name of the anchor.
     pub def_name: String,
     /// Display label. Absent means look it up.
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub label: Option<String>,
 }
 
 /// A saved or in progress design.
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct DraftDto {
     /// Schema version of this draft.
@@ -57,12 +61,15 @@ pub struct DraftDto {
     pub spec: DesignSpecDto,
     /// Quiz answers by question id, ordered by id. Omitted when empty.
     #[serde(default, skip_serializing_if = "BTreeMap::is_empty")]
+    #[cfg_attr(feature = "ts", ts(as = "Option<BTreeMap<String, Value>>", optional))]
     pub answers: BTreeMap<String, Value>,
     /// Anchor weapons. Omitted when empty.
     #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    #[cfg_attr(feature = "ts", ts(as = "Option<Vec<AnchorDto>>", optional))]
     pub anchors: Vec<AnchorDto>,
     /// The def name of the item this draft was cloned from (flow C). Omitted for a draft that started empty.
     #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub cloned_from: Option<String>,
 }
 
@@ -84,6 +91,7 @@ impl DraftDto {
 
 /// A stored draft with its listing fields.
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct DraftEntryDto {
     /// Draft id (a document id of the store).
@@ -102,12 +110,14 @@ pub struct DraftEntryDto {
 
 /// Request of `designer_draft_save`.
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct DesignerDraftSaveRequest {
     /// Project the draft belongs to.
     pub project_id: String,
     /// Draft id to overwrite. Absent creates a new draft.
     #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub id: Option<String>,
     /// The draft to store.
     pub draft: DraftDto,
@@ -115,6 +125,7 @@ pub struct DesignerDraftSaveRequest {
 
 /// Response of `designer_draft_save`.
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct DesignerDraftSaveResponse {
     /// Draft id.
@@ -125,6 +136,7 @@ pub struct DesignerDraftSaveResponse {
 
 /// Request of `designer_draft_list`.
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct DesignerDraftListRequest {
     /// Project whose drafts to list.
@@ -133,6 +145,7 @@ pub struct DesignerDraftListRequest {
 
 /// Response of `designer_draft_list`.
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct DesignerDraftListResponse {
     /// Drafts, newest first, then by id.
@@ -141,6 +154,7 @@ pub struct DesignerDraftListResponse {
 
 /// Request of `designer_draft_delete`.
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct DesignerDraftDeleteRequest {
     /// Project the draft belongs to.
@@ -151,6 +165,7 @@ pub struct DesignerDraftDeleteRequest {
 
 /// Response of `designer_draft_delete`.
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct DesignerDraftDeleteResponse {
     /// True when a draft was removed; false when the id was unknown.

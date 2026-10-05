@@ -148,6 +148,38 @@ fn all_enum_strings_are_kebab_case() {
         SeverityDto::Info,
         SeverityDto::Hint,
     ]);
+    {
+        use rimstudio_ipc_types::project::*;
+        check_enum(&[
+            LayoutProfileDto::Rimstudio,
+            LayoutProfileDto::CoreStyle,
+            LayoutProfileDto::Flat,
+        ]);
+        check_enum(&[
+            NodeRoleDto::About,
+            NodeRoleDto::LoadFolders,
+            NodeRoleDto::ContentRoot,
+            NodeRoleDto::Defs,
+            NodeRoleDto::DefsWeapons,
+            NodeRoleDto::DefsSounds,
+            NodeRoleDto::Patches,
+            NodeRoleDto::CeCompat,
+            NodeRoleDto::Textures,
+            NodeRoleDto::Sounds,
+            NodeRoleDto::Languages,
+            NodeRoleDto::Assemblies,
+            NodeRoleDto::Source,
+            NodeRoleDto::Other,
+        ]);
+        check_enum(&[TreeNodeKindDto::Folder, TreeNodeKindDto::File]);
+        check_enum(&[
+            LayoutFixKindDto::CreateFolder,
+            LayoutFixKindDto::MoveFile,
+            LayoutFixKindDto::EditLoadFolders,
+            LayoutFixKindDto::AddFile,
+            LayoutFixKindDto::None,
+        ]);
+    }
     check_enum(&[
         ProgressUnitDto::Items,
         ProgressUnitDto::Files,

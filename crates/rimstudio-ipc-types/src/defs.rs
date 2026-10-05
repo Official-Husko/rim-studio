@@ -8,6 +8,7 @@ use serde_json::Value;
 
 /// Request of `defs_search`.
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase", default)]
 pub struct DefSearchRequest {
     /// The def session to search.
@@ -45,6 +46,7 @@ impl Default for DefSearchRequest {
 
 /// One search row.
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct DefRowDto {
     /// Def type, for example `ThingDef`.
@@ -53,6 +55,7 @@ pub struct DefRowDto {
     pub def_name: String,
     /// Display label. Absent when the definition has none.
     #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub label: Option<String>,
     /// True for an abstract definition.
     pub is_abstract: bool,
@@ -62,11 +65,13 @@ pub struct DefRowDto {
     pub file: String,
     /// Parent name. Absent when the definition has no parent.
     #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub parent: Option<String>,
 }
 
 /// Response of `defs_search`.
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct DefPage {
     /// Echo of the request query id.
@@ -81,6 +86,7 @@ pub struct DefPage {
 
 /// Request of `defs_get_resolved`.
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct DefsGetResolvedRequest {
     /// The def session.
@@ -93,6 +99,7 @@ pub struct DefsGetResolvedRequest {
 
 /// What happened when a patch operation met the definition.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "kebab-case")]
 pub enum PatchOutcomeDto {
     /// The operation changed the definition.
@@ -107,6 +114,7 @@ pub enum PatchOutcomeDto {
 
 /// One patch event that touched a definition.
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct PatchEventDto {
     /// Mod that owns the patch.
@@ -119,11 +127,13 @@ pub struct PatchEventDto {
     pub outcome: PatchOutcomeDto,
     /// English fallback text. Absent when there is nothing to add.
     #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub message: Option<String>,
 }
 
 /// One definition after inheritance and patches.
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct ResolvedDefDto {
     /// Def type.

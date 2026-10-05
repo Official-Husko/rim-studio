@@ -311,6 +311,17 @@ It also asserts that no capability grants `fs:`, `shell:` or `http:` permissions
 5. Spike S-01 (M0) decides whether the default holds: tauri-specta rc.25 must accept the macro generated wrappers, `Channel<T>` arguments and `tauri::ipc::Response` (the one open point in the research). Exit criterion: a three command slice (`app_ping`, `mods_subscribe`, `library_scan`) generates, type checks in TypeScript and round trips in a mock. If it fails, the fallback becomes the default and D-042 is updated.
 6. Runtime validation of IPC payloads is done only in development and tests (valibot or the generated types in a mock layer); release builds trust the generated types.
 
+### 9.1 Bindings as built
+
+The 0.1.0 pipeline uses the fallback path of item 4 (D-102). Nothing here needs `tauri`.
+
+- Derives. Every public serde type of `rimstudio-ipc-types` (and the app owned DTOs in `rimstudio-app::dto`) carries `#[cfg_attr(feature = "ts", derive(ts_rs::TS))]`. The feature `ts` is off by default, so shipped binaries do not depend on `ts-rs`. Fields that are absent when empty or unknown (`skip_serializing_if`) carry `ts(optional)` (with `ts(as = "Option<...>")` for empty collections), so the TypeScript type is `field?: T`. `serde_json::Value` becomes `JsonValue`. The generic envelopes `JobEvent<R>` and `JobResultEnvelope<R>` stay generic.
+- Generator. `crates/rimstudio-app/tests/bindings.rs` collects the declarations reachable from every request and response type of the registry rows (through the exported `for_each_command!` macro) plus a short list of extra roots (error envelope, job handle, job events, mods snapshot, material matrix). 64 bit integers are typed as `number`. Declarations are sorted by name, so the output is byte stable. A second test fails when a public type of the contract crate is missing from the output.
+- Files, committed under `packages/ipc-types/src`: `bindings.ts` (all DTO types) and `commands.ts` (`CommandTable` with kind, request and response of every row, the helper types `CommandName`, `CommandRequest<N>`, `CommandResponse<N>`, `CommandKindOf<N>` and `CommandsOfKind<K>`, the `commands` constant with camelCase export names, and `commandNames`). `index.ts` re-exports both. For a job row the response is the result carried by the terminal event; the command itself returns a `JobHandleDto`.
+- Refresh. After changing a DTO or a registry row run `UPDATE_BINDINGS=1 cargo test -p rimstudio-app --test bindings` and commit the changed files. Without the variable the test compares and fails with that line when the files are stale.
+- Golden check. `pnpm --filter rimstudio-ipc-types bindings:check` type checks the JSON files of `crates/rimstudio-ipc-types/tests/golden` against the generated types with the TypeScript compiler API, so a DTO and the JSON it produces cannot disagree. A new golden file needs a row in `packages/ipc-types/scripts/check-golden.mjs`.
+- Rule for authors. Never hand copy a DTO shape in the frontend: import it from `rimstudio-ipc-types`. Behaviour that serde applies and ts-rs cannot see (a new `skip_serializing_if`, a flatten, a custom serializer) needs a `ts(...)` attribute next to it.
+
 ## 10. Backend state ownership
 
 ### 10.1 The context
@@ -438,5 +449,72 @@ Notes on the table:
 3. The `rimstudio-app::images` module (id allow list, headers) and `rimstudio-library::thumbs` (decode, resize, cache) are now in the [crate catalog](crate-catalog.md); the shell keeps only `protocol_rsimg.rs`.
 4. App identifier (D-049) fixes the data directories and therefore the roots that `boot` resolves; the placeholder `app.rimstudio.desktop` is used until the owner chooses.
 5. Keychain use for secrets (D-030) affects `settings_get` only by the fact that secrets are never returned; the owner decision does not change the IPC contract.
+
+## 14. Development bridge
+
+The temporary test UI of release 0.1.0 runs in a normal browser (Vite), where Tauri's `invoke` does not exist. The crate `rimstudio-devserver` (layer `l4-shell`, binary `rimstudio-devserver`, [ADR 0040](../adr/0040-development-bridge.md), D-103) boots the same `AppContext` as the shell and the CLI and serves the registry over HTTP on the loopback address, so the browser UI works with the real backend and the real numbers of an install. It is a development tool: it is never packaged, no release artefact contains it and the shell does not depend on it. The UI reaches it only through `shared/ipc` (the frontend rule that no `fetch` or `invoke` exists elsewhere holds).
+
+Run it with `cargo run -p rimstudio-devserver -- [flags]` (set `CARGO_TARGET_DIR` as for any cargo command). It prints a banner with the address, the token and the data folder.
+
+### 14.1 Flags and defaults
+
+| Flag | Default | Meaning |
+| --- | --- | --- |
+| `--port N` | 7878, or the environment variable `RIMSTUDIO_BRIDGE_PORT`; 0 picks a free port | Loopback port |
+| `--data-dir PATH` | `$HOME/.local/share/rimstudio-dev` | Data folder with `config`, `data`, `cache` and `logs` inside, in portable style (`BootInput::with_data_base`). It never mixes with the CLI's folders or with the data of an older application |
+| `--token-file PATH` | `node_modules/.cache/rimstudio-bridge.json` in the repository root | Written at start as `{"port":N,"token":"..."}` and removed at a clean stop; the frontend dev tooling reads it |
+| `--allow-origin URL` | `http://localhost:5173` and `http://127.0.0.1:5173` | Origin a page may call from; repeatable; any use replaces the defaults |
+| `--help` | | Usage text |
+
+The token is 32 random bytes in hex, generated at each start. The server stops cleanly when `quit` is typed in its terminal. The standard library cannot catch SIGINT without unsafe code, which the workspace forbids, so Ctrl+C ends the process at once: the token file stays behind (its port is dead, so the UI reports the bridge as not running) and the crash marker of the data folder is not marked clean, which the next start reports as "previous run ended abnormally" in the development data folder only.
+
+### 14.2 Bridge API v1
+
+Base URL `http://127.0.0.1:PORT`. One request per connection (`Connection: close`).
+
+| Endpoint | Answer |
+| --- | --- |
+| `GET /dev/health` | `{"ok":true,"bridgeVersion":"0.1.0"}`. The only call without a token |
+| `GET /dev/info` | `{"bridgeVersion","platform","home","dataDir","commandCount","contractHash","roots":{"config","data","cache","logs"}}` |
+| `GET /dev/commands` | `[{"name","kind","request","response"}]`, one row per registry command |
+| `POST /rpc/COMMAND` | The body is the request JSON of the command (an empty body is an empty request). HTTP 200 with `{"ok":true,"data":RESPONSE}` or `{"ok":false,"error":ApiError}`. A job command is run through the job runner and the response arrives when the job ends. A job that reports diagnostics adds a `diagnostics` array next to `data`. A request may carry a top level `jobId` for a job so that it can match the events |
+| `GET /dev/events` | Server-Sent Events, one JSON object per `data:` line: `{"type":"job-progress","jobId","command","message","done","total"}` and `{"type":"job-finished","jobId","command","ok"}`. A comment line every 15 seconds keeps the stream alive. `EventSource` cannot send the token header, so the client reads it with `fetch` and a stream reader |
+| `GET /dev/fs/list?path=ABS[&files=1]` | `{"path","parent","entries":[{"name","kind":"dir"\|"file","isModFolder","hasAbout","symlink"}],"truncated"}`: absolute paths only (a relative path or a `..` part is a 400), directories first then by name without case, dotfiles hidden, at most 2000 entries. `isModFolder` means `About/About.xml` exists and `hasAbout` that an `About` folder exists, both without regard to case. A symbolic link is listed with the kind of its target and `symlink: true`, and is never looked into (so it reports no mod flags) |
+| `GET /dev/fs/home` | `{"home","places":[{"label","path"}]}` with the home folder, the Steam libraries of the cached detection report, the RimWorld folder, the sources (install `Data` and `Mods`, Workshop, custom mod folders) and the filesystem root or the drive letters; only folders that exist |
+
+Application errors are HTTP 200 with `ok: false` (an unknown command is `ipc.unknown-command`, a request of the wrong shape `ipc.invalid-request`). Protocol problems use a 4xx or 5xx status with the same envelope, whose `details.reason` names the cause:
+
+| Status | Code | Cause |
+| --- | --- | --- |
+| 400 | `ipc.invalid-request` | Malformed request line, header or target, body that is not JSON, bad command name, relative or `..` path, repeated security header |
+| 401 | `bridge.unauthorized` | Token missing or wrong |
+| 403 | `bridge.forbidden` | Peer not loopback, `Host` not `127.0.0.1:PORT` or `localhost:PORT`, `Origin` not allowed |
+| 404 | `bridge.not-found`, `io.not-found` | No such path, folder does not exist |
+| 405 | `ipc.invalid-request` | Method not allowed for the path (an `Allow` header names the right one) |
+| 408 | `bridge.timeout` | The request was not complete within 30 seconds |
+| 411 | `ipc.invalid-request` | A POST without `Content-Length`, or with `Transfer-Encoding` (chunked bodies are not supported) |
+| 413 | `bridge.too-large` | Body over 8 MiB, refused from the header before it is read |
+| 414, 431, 505 | `ipc.invalid-request` | Target over 2048 bytes, request line and headers over 16 KiB or over 100 fields, version other than HTTP/1.0 and 1.1 |
+| 415 | `ipc.invalid-request` | A POST whose content type is not `application/json` |
+| 503 | `bridge.too-busy` | 32 connections are already open |
+
+The `bridge.*` codes exist only here; they are not in the contract registry.
+
+### 14.3 Security
+
+The bridge reaches the real disk and the real install, and every web page in the person's browser can send requests to loopback, so the checks run in a fixed order before any body is read:
+
+1. Loopback only: the listener binds 127.0.0.1 and a peer that is not loopback is refused.
+2. `Host` must be `127.0.0.1:PORT` or `localhost:PORT` (a rebound DNS name fails).
+3. A present `Origin` must be on the allow list. An allowed origin gets `Access-Control-Allow-Origin` (also on error answers, so the page can read them) and `Vary: Origin`. A `null` origin is refused.
+4. The preflight `OPTIONS` is answered without a token, because a browser cannot attach one; it carries only the allowed methods and headers (`content-type`, `x-rimstudio-token`) and no data.
+5. Every other call except `GET /dev/health` needs the header `x-rimstudio-token`, compared in constant time. A missing token is a 401 on every path, so no route existence leaks.
+6. A POST must use `Content-Type: application/json`, which a simple cross site request cannot send without a preflight.
+
+Limits: 16 KiB for the request line and headers, 8 MiB for a body, 30 seconds in total to deliver a request (one deadline for the whole request, so a client that sends one byte at a time cannot hold a connection), 32 connections, one request per connection, no chunked uploads, no keep alive, no pipelining. A repeated `Host`, `Origin`, `Content-Length`, `Content-Type`, token or `Transfer-Encoding` header is refused, and a line feed without a carriage return is refused. The token file holds a secret that is valid for one run on loopback; it lives under `node_modules`, which is not committed.
+
+### 14.4 Verification
+
+`crates/rimstudio-devserver/tests/protocol.rs` runs over a real loopback socket against an application booted with fake ports and a temporary data folder: a query, an action and a job (final result and the `job-finished` event on the stream), the unknown command and shape errors, a bad token, `Host`, `Origin` and content type, a header and a body over the limit, a slow client, a client that trickles bytes, too many connections, malformed request lines, a relative and a traversing path in the folder listing, and a listing of a fixture tree. The parser, the token comparison and the flags have unit tests.
 
 Related documents: [command catalog](command-catalog.md), [architecture overview](overview.md), [crate catalog](crate-catalog.md), [decision register](decision-register.md), [workspace layout](workspace-layout.md), [reference architectures](../research/reference-architectures.md), [RimCrow analysis](../research/rimcrow-analysis.md).

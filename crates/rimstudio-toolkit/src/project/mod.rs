@@ -7,8 +7,19 @@
 //! stay inside the new folder and outside the game install and config folders, and a scaffold never
 //! overwrites a file that exists.
 //!
+//! The layout side of the tool (`docs/features/mod-layout.md`): [`scan`] reads a folder and gives every entry
+//! its role, [`check`] lists what differs from the layout with a suggested fix, [`tree`] builds the annotated
+//! tree, [`scaffold_missing`] creates the missing standard folders and [`read`] reads one file for the
+//! viewer. Nothing there moves, replaces or deletes a file.
+//!
 //! The tool does not use the designer module (ADR 0004). The pieces both need (the project view, the writer,
 //! the merging of `LoadFolders.xml`) live in [`crate::shared`].
+
+pub mod check;
+pub mod read;
+pub mod scaffold_missing;
+pub mod scan;
+pub mod tree;
 
 use camino::{Utf8Path, Utf8PathBuf};
 use rimstudio_core::diag::Severity;
@@ -16,7 +27,8 @@ use rimstudio_design::ce::reader::CE_PACKAGE_ID;
 use rimstudio_io::guard::sanitize_name;
 use rimstudio_ipc_types::diagnostic::diagnostics_to_dtos;
 use rimstudio_ipc_types::project::{
-    ProjectCloseRequest, ProjectCloseResponse, ProjectOpenRequest, ProjectSummaryDto,
+    ProjectCloseRequest, ProjectCloseResponse, ProjectLayoutCheckDto, ProjectLayoutCheckRequest,
+    ProjectOpenRequest, ProjectSummaryDto, ProjectTreeDto, ProjectTreeRequest,
 };
 use rimstudio_workspace::project::{ProjectRecord, project_id_for};
 use rimstudio_workspace::scaffold::{ScaffoldPlan, ScaffoldSpec, plan as scaffold_plan};
@@ -220,5 +232,47 @@ pub fn create(
         written,
         folders,
         project,
+    })
+}
+
+/// `project_tree`: the annotated tree of a registered project, with its layout issues.
+///
+/// # Errors
+///
+/// [`ToolkitError::ProjectNotOpen`] for an unknown project, [`ToolkitError::ProjectInvalid`] when the folder
+/// is no longer a mod.
+pub fn tree(env: &ProjectEnv, req: &ProjectTreeRequest) -> ToolkitResult<ProjectTreeDto> {
+    let (_, view) = env.view(&req.project_id)?;
+    let max = req.max_nodes.map_or(tree::DEFAULT_MAX_NODES, |n| {
+        usize::try_from(n).unwrap_or(usize::MAX)
+    });
+    Ok(tree::project_tree_of(&view, &req.project_id, max))
+}
+
+/// `project_layout_check`: the layout issues of a registered project, most serious first.
+///
+/// # Errors
+///
+/// See [`tree`].
+pub fn layout_check(
+    env: &ProjectEnv,
+    req: &ProjectLayoutCheckRequest,
+) -> ToolkitResult<ProjectLayoutCheckDto> {
+    use rimstudio_ipc_types::diagnostic::SeverityDto;
+    let (_, view) = env.view(&req.project_id)?;
+    let scanned = scan::scan(&view);
+    let issues = check::check(&view, &scanned);
+    let count = |sev: SeverityDto| {
+        u32::try_from(issues.iter().filter(|i| i.severity == sev).count()).unwrap_or(u32::MAX)
+    };
+    Ok(ProjectLayoutCheckDto {
+        project_id: req.project_id.clone(),
+        profile: tree::profile_dto(view.layout.profile),
+        errors: count(SeverityDto::Error),
+        warnings: count(SeverityDto::Warning),
+        infos: count(SeverityDto::Info),
+        auto_fixable: u32::try_from(issues.iter().filter(|i| i.fix.automatic).count())
+            .unwrap_or(u32::MAX),
+        issues,
     })
 }

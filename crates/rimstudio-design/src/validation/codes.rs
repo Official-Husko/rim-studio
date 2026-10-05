@@ -267,6 +267,11 @@ code!(
     PLAN_PATH_CONFLICT, "design.plan-path-conflict", Error, "IT-004",
     "two planned files use the path {path}", ["path"]
 );
+code!(
+    /// The weapon has no texture path of its own, so the plan reserves the conventional one (plan builder).
+    TEXTURE_RESERVED, "design.texture-reserved", Info, "IT-050",
+    "the art of {label} goes to {path}; the file does not exist yet", ["label", "path"]
+);
 
 /// Every registered code, in a stable order.
 pub const REGISTRY: &[CodeInfo] = &[
@@ -301,6 +306,7 @@ pub const REGISTRY: &[CodeInfo] = &[
     DUPLICATE_ENTRY,
     PLAN_PATH_INVALID,
     PLAN_PATH_CONFLICT,
+    TEXTURE_RESERVED,
 ];
 
 /// Looks a code up in the registry.

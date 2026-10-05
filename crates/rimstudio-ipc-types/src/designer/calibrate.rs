@@ -8,6 +8,7 @@ use super::spec::ItemKindDto;
 
 /// Request of the `designer_calibrate` job.
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase", default)]
 pub struct DesignerCalibrateRequest {
     /// Ranged or melee.
@@ -16,6 +17,7 @@ pub struct DesignerCalibrateRequest {
     pub force: bool,
     /// Worker threads. Absent means automatic. The result is identical for any thread count.
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub threads: Option<u8>,
 }
 
@@ -31,18 +33,22 @@ impl Default for DesignerCalibrateRequest {
 
 /// Error and coverage numbers of one stat under one variant.
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct StatMetricsDto {
     /// Weapons scored.
     pub n: u32,
     /// Median relative error. Absent when `n` is zero.
     #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub median_error: Option<f64>,
     /// 80th percentile relative error. Absent when `n` is zero.
     #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub p80_error: Option<f64>,
     /// Mean relative error. Absent when `n` is zero.
     #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub mean_error: Option<f64>,
     /// Half width factor of the 50 percent band.
     pub factor_p50: f64,
@@ -56,14 +62,17 @@ pub struct StatMetricsDto {
     pub coverage_p80: f64,
     /// Rank correlation of predicted and true values. Absent when undefined.
     #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub rank_correlation: Option<f64>,
     /// Median error of the class median baseline. Absent when `n` is zero.
     #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub baseline_median_error: Option<f64>,
 }
 
 /// Metrics of one simulated answer profile.
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct VariantMetricsDto {
     /// Profile name.
@@ -74,9 +83,11 @@ pub struct VariantMetricsDto {
     pub per_stat: BTreeMap<String, StatMetricsDto>,
     /// Macro median error. Absent when nothing was scored.
     #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub macro_median_error: Option<f64>,
     /// Macro mean error. Absent when nothing was scored.
     #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub macro_mean_error: Option<f64>,
     /// Mean questions asked.
     pub mean_questions: f64,
@@ -86,6 +97,7 @@ pub struct VariantMetricsDto {
 
 /// Result of the twin leakage check.
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct TwinCheckDto {
     /// Error with twins in the pool.
@@ -100,6 +112,7 @@ pub struct TwinCheckDto {
 
 /// Result of the `designer_calibrate` job.
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct CalibrateResultDto {
     /// Ranged or melee.
@@ -110,11 +123,13 @@ pub struct CalibrateResultDto {
     pub pool_size: u32,
     /// Unix time in milliseconds of the run. Absent when the clock was unavailable.
     #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub calibrated_at_ms: Option<u64>,
     /// Metrics by variant name, ordered by name.
     pub variants: BTreeMap<String, VariantMetricsDto>,
     /// Twin check. Absent when it did not run.
     #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub twin: Option<TwinCheckDto>,
     /// True when the result came from the cache.
     pub from_cache: bool,

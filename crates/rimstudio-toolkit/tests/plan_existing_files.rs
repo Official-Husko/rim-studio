@@ -14,14 +14,23 @@ const HAND_MADE: &str = "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<!--   wr
 #[test]
 fn only_the_section_of_the_design_changes_and_everything_else_is_identical() {
     let f = fixture(true);
-    let p = project(&f, &[("Defs/Weapons/RS_NewRifle.xml", HAND_MADE)]);
+    let p = project(
+        &f,
+        &[(
+            "Defs/ThingDefs_Misc/Weapons/RangedIndustrial/RS_NewRifle.xml",
+            HAND_MADE,
+        )],
+    );
     let prepared = prepare(&f.ctx, &request(&p, &ranged())).unwrap();
     assert!(
         !prepared.plan.has_errors(),
         "{:?}",
         prepared.plan.diagnostics
     );
-    let file = prepared.plan.file("Defs/Weapons/RS_NewRifle.xml").unwrap();
+    let file = prepared
+        .plan
+        .file("Defs/ThingDefs_Misc/Weapons/RangedIndustrial/RS_NewRifle.xml")
+        .unwrap();
     assert_eq!(file.action, FileAction::UpdateRegion);
     let old = file.previous.as_deref().unwrap();
     assert_eq!(old, HAND_MADE);
@@ -59,7 +68,10 @@ fn a_file_that_cannot_be_parsed_is_reported_and_left_out_of_the_plan() {
     let f = fixture(true);
     let p = project(
         &f,
-        &[("Defs/Weapons/RS_NewRifle.xml", "<Defs><ThingDef></Defs>")],
+        &[(
+            "Defs/ThingDefs_Misc/Weapons/RangedIndustrial/RS_NewRifle.xml",
+            "<Defs><ThingDef></Defs>",
+        )],
     );
     let prepared = prepare(&f.ctx, &request(&p, &ranged())).unwrap();
     assert!(prepared.plan.has_errors());
@@ -70,5 +82,10 @@ fn a_file_that_cannot_be_parsed_is_reported_and_left_out_of_the_plan() {
             .iter()
             .any(|d| d.code.as_str() == "designer.merge-failed")
     );
-    assert!(prepared.plan.file("Defs/Weapons/RS_NewRifle.xml").is_none());
+    assert!(
+        prepared
+            .plan
+            .file("Defs/ThingDefs_Misc/Weapons/RangedIndustrial/RS_NewRifle.xml")
+            .is_none()
+    );
 }

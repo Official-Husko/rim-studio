@@ -1,7 +1,7 @@
 {
   "files": [
     {
-      "path": "Defs/Weapons/RS_TestBlade.xml",
+      "path": "Defs/ThingDefs_Misc/Weapons/MeleeMedieval/RS_TestBlade.xml",
       "kind": "vanilla-defs",
       "action": "create",
       "tree": {
@@ -36,6 +36,26 @@
                 "attrs": [],
                 "children": [
                   "Medieval"
+                ]
+              },
+              {
+                "tag": "graphicData",
+                "attrs": [],
+                "children": [
+                  {
+                    "tag": "texPath",
+                    "attrs": [],
+                    "children": [
+                      "Things/Item/Equipment/WeaponMelee/RS_TestBlade"
+                    ]
+                  },
+                  {
+                    "tag": "graphicClass",
+                    "attrs": [],
+                    "children": [
+                      "Graphic_Single"
+                    ]
+                  }
                 ]
               },
               {
@@ -243,5 +263,16 @@
       ]
     }
   ],
-  "diagnostics": []
+  "diagnostics": [
+    {
+      "code": "design.texture-reserved",
+      "severity": "info",
+      "message": "the art of test blade goes to Textures/Things/Item/Equipment/WeaponMelee/RS_TestBlade.png; the file does not exist yet",
+      "args": {
+        "field": "/texturePath",
+        "label": "test blade",
+        "path": "Textures/Things/Item/Equipment/WeaponMelee/RS_TestBlade.png"
+      }
+    }
+  ]
 }

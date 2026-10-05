@@ -10,6 +10,7 @@ use crate::diagnostic::DiagnosticDto;
 
 /// Request of the `designer_convert_scan` job.
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase", default)]
 pub struct DesignerConvertScanRequest {
     /// The open project to scan.
@@ -29,6 +30,7 @@ impl Default for DesignerConvertScanRequest {
 
 /// The conversion status of a weapon definition.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "kebab-case")]
 pub enum ConvertStatusDto {
     /// A conversion can be generated.
@@ -43,6 +45,7 @@ pub enum ConvertStatusDto {
 
 /// The kind of an ask.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "kebab-case")]
 pub enum AskKindDto {
     /// Pick one of `options`.
@@ -55,6 +58,7 @@ pub enum AskKindDto {
 
 /// One thing the automatic mode could not derive.
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct AskItemDto {
     /// JSON pointer into the spec the answer belongs to, for example `/ce/ammoSet`.
@@ -68,14 +72,17 @@ pub struct AskItemDto {
     /// Why the number is asked although an estimate exists: the estimate was rated unreliable or could
     /// not be measured. Absent for questions with no estimate (the ammo set, for example).
     #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub reason: Option<String>,
     /// The rejected estimate, for reference only: it is never written unless the user answers with it.
     #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub suggestion: Option<f64>,
 }
 
 /// One weapon definition of the project.
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct ConvertCandidateDto {
     /// Definition name.
@@ -84,6 +91,7 @@ pub struct ConvertCandidateDto {
     pub label: String,
     /// Weapon kind. Absent when the kind could not be determined.
     #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub kind: Option<ItemKindDto>,
     /// Status.
     pub status: ConvertStatusDto,
@@ -91,17 +99,20 @@ pub struct ConvertCandidateDto {
     pub reason: String,
     /// Project file that holds the definition. Absent when it comes from another mod.
     #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub file: Option<String>,
     /// What the user must still decide. Empty means the conversion can run as is.
     pub asks: Vec<AskItemDto>,
     /// The weapon family key: weapons with the same key (kind, first weapon tag and, for guns, the default
     /// projectile) can share one answer group. Empty for a definition that is not a listed weapon.
     #[serde(default, skip_serializing_if = "String::is_empty")]
+    #[cfg_attr(feature = "ts", ts(as = "Option<String>", optional))]
     pub family: String,
 }
 
 /// Counts of a scan.
 #[derive(Debug, Clone, PartialEq, Eq, Default, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct ConvertCountsDto {
     /// Candidates that can be converted.
@@ -116,6 +127,7 @@ pub struct ConvertCountsDto {
 
 /// Result of the `designer_convert_scan` job.
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct ConvertScanDto {
     /// Candidates ordered by definition name.
@@ -128,25 +140,32 @@ pub struct ConvertScanDto {
 
 /// The user's answers to an ask list.
 #[derive(Debug, Clone, Default, PartialEq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase", default)]
 pub struct ConvertAnswersDto {
     /// Ammo set definition name. Absent means not answered.
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub ammo_set: Option<String>,
     /// Default projectile. Absent means not answered.
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub default_projectile: Option<String>,
     /// Weapon tag class. Absent means not answered.
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub weapon_tag_class: Option<String>,
     /// One handed. Absent means not answered.
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub one_handed: Option<bool>,
     /// Belt fed. Absent means not answered.
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub belt_fed: Option<bool>,
     /// Tool penetration values the user gave. Omitted when empty.
     #[serde(skip_serializing_if = "Vec::is_empty")]
+    #[cfg_attr(feature = "ts", ts(as = "Option<Vec<CeToolPenetrationDto>>", optional))]
     pub tool_penetration: Vec<CeToolPenetrationDto>,
     /// Explicit overrides of any Combat Extended field.
     pub overrides: CePatchSpecDto,
@@ -158,13 +177,16 @@ pub struct ConvertAnswersDto {
 /// that names neither applies to every weapon (the defaults of the file). The answers are kept as the raw
 /// object the user wrote, so that a member left out is not mistaken for a member set to its default.
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct ConvertAnswerGroupDto {
     /// A family key (see `ConvertCandidateDto.family`). Absent when the group names definitions.
     #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub family: Option<String>,
     /// Definition names the group applies to. Omitted when empty.
     #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    #[cfg_attr(feature = "ts", ts(as = "Option<Vec<String>>", optional))]
     pub def_names: Vec<String>,
     /// The answers, an object with the members of `ConvertAnswersDto`.
     pub answers: serde_json::Value,
@@ -172,6 +194,7 @@ pub struct ConvertAnswerGroupDto {
 
 /// A conversion of an existing definition, as part of an export request.
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct ConvertRequestDto {
     /// Definition name of the weapon to convert.
@@ -182,5 +205,9 @@ pub struct ConvertRequestDto {
     /// Answer groups, applied in order (a later group wins over an earlier one) beneath `answers`. Omitted
     /// when empty.
     #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    #[cfg_attr(
+        feature = "ts",
+        ts(as = "Option<Vec<ConvertAnswerGroupDto>>", optional)
+    )]
     pub groups: Vec<ConvertAnswerGroupDto>,
 }

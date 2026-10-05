@@ -264,7 +264,11 @@ fn only_patch_files(plan: &WritePlanDto) {
     );
     for file in &plan.files {
         if file.rendered.contains("CombatExtended.") {
-            assert!(file.path.starts_with("CE/"), "{}", file.path);
+            assert!(
+                file.path.starts_with("Compat/CombatExtended/"),
+                "{}",
+                file.path
+            );
         }
     }
 }
@@ -588,4 +592,30 @@ fn a_group_of_definition_names_answers_exactly_those_guns() {
         let plan = export_plan(&f.ctx, grouped_request(&p, def, group.clone())).unwrap();
         assert_eq!(!plan.has_errors, ok, "{def}: {:?}", plan.diagnostics);
     }
+}
+
+#[test]
+fn a_project_with_the_older_ce_folder_keeps_it_for_a_conversion() {
+    let f = fixture(true);
+    let gate = "<loadFolders>\n  <v1.6>\n    <li>/</li>\n    <li IfModActive=\"ceteam.combatextended\">CE</li>\n  </v1.6>\n</loadFolders>\n";
+    let p = project(
+        &f,
+        &[
+            ("Defs/RS_ProjWeapons.xml", DEFS),
+            ("CE/Patches/RS_Existing.xml", "<Patch/>"),
+            ("LoadFolders.xml", gate),
+        ],
+    );
+    let plan = export_plan(&f.ctx, convert_request(&p, "RS_ProjGun", gun_answers())).unwrap();
+    assert!(!plan.has_errors, "{:?}", plan.diagnostics);
+    let patch = plan
+        .files
+        .iter()
+        .find(|x| x.kind == FileKindDto::CePatch)
+        .expect("a patch file");
+    assert!(patch.path.starts_with("CE/Patches/"), "{}", patch.path);
+    assert!(plan.files.iter().all(|x| !x.path.contains("Compat")));
+    // nothing was moved or created by planning
+    assert!(p.root.join("CE/Patches/RS_Existing.xml").exists());
+    assert!(!p.root.join("Compat").exists());
 }

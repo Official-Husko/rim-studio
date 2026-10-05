@@ -68,7 +68,10 @@ fn a_replaced_file_is_backed_up_and_the_new_text_is_read_back() {
         &CancelToken::new(),
     )
     .unwrap();
-    let old = read(&p, "Defs/Weapons/RS_NewRifle.xml");
+    let old = read(
+        &p,
+        "Defs/ThingDefs_Misc/Weapons/RangedIndustrial/RS_NewRifle.xml",
+    );
     let mut changed = ranged();
     changed.identity.label = "renamed rifle".into();
     let req2 = request(&p, &changed);
@@ -76,7 +79,7 @@ fn a_replaced_file_is_backed_up_and_the_new_text_is_read_back() {
     let file = plan2
         .files
         .iter()
-        .find(|x| x.path == "Defs/Weapons/RS_NewRifle.xml")
+        .find(|x| x.path == "Defs/ThingDefs_Misc/Weapons/RangedIndustrial/RS_NewRifle.xml")
         .unwrap();
     assert_eq!(file.action, FileActionDto::UpdateRegion);
     assert!(
@@ -95,7 +98,7 @@ fn a_replaced_file_is_backed_up_and_the_new_text_is_read_back() {
     let applied = report
         .written
         .iter()
-        .find(|w| w.path == "Defs/Weapons/RS_NewRifle.xml")
+        .find(|w| w.path == "Defs/ThingDefs_Misc/Weapons/RangedIndustrial/RS_NewRifle.xml")
         .unwrap();
     let backup = applied.backup_path.as_deref().expect("a backup path");
     assert_eq!(std::fs::read_to_string(backup).unwrap(), old);
@@ -103,7 +106,13 @@ fn a_replaced_file_is_backed_up_and_the_new_text_is_read_back() {
         !backup.starts_with(p.root.as_str()),
         "backups stay out of the mod folder"
     );
-    assert!(read(&p, "Defs/Weapons/RS_NewRifle.xml").contains("renamed rifle"));
+    assert!(
+        read(
+            &p,
+            "Defs/ThingDefs_Misc/Weapons/RangedIndustrial/RS_NewRifle.xml"
+        )
+        .contains("renamed rifle")
+    );
     assert!(applied.verified);
 }
 
@@ -113,7 +122,11 @@ fn a_plan_that_changed_on_disk_since_review_is_stale_and_nothing_is_written() {
     let p = project(&f, &[]);
     let req = request(&p, &ranged());
     let plan = export_plan(&f.ctx, req.clone()).unwrap();
-    common_project::put(&p.root, "Defs/Weapons/RS_NewRifle.xml", "<Defs>\n</Defs>\n");
+    common_project::put(
+        &p.root,
+        "Defs/ThingDefs_Misc/Weapons/RangedIndustrial/RS_NewRifle.xml",
+        "<Defs>\n</Defs>\n",
+    );
     let err = apply_plan(
         &f.ctx,
         apply_request(&req, plan.plan_id),
@@ -174,7 +187,7 @@ fn a_protected_folder_inside_the_project_refuses_the_write() {
     let p = project(&f, &[]);
     let env = ProjectEnv::new(&f.roots, std::sync::Arc::new(f.clock.clone()))
         .unwrap()
-        .with_protected([p.root.join("Defs/Weapons")]);
+        .with_protected([p.root.join("Defs/ThingDefs_Misc/Weapons")]);
     let ctx = rimstudio_toolkit::designer::Ctx::new(
         f.session.clone(),
         &f.roots,
@@ -255,7 +268,7 @@ fn cancelling_between_files_rolls_forward_and_a_rerun_completes() {
     let plan = export_plan(&f.ctx, req.clone()).unwrap();
     assert_eq!(
         plan.files.len(),
-        4,
+        3,
         "{:?}",
         plan.files.iter().map(|x| &x.path).collect::<Vec<_>>()
     );
@@ -303,7 +316,7 @@ fn cancelling_between_files_rolls_forward_and_a_rerun_completes() {
         &CancelToken::new(),
     )
     .unwrap();
-    assert_eq!(report2.written.len(), 2);
+    assert_eq!(report2.written.len(), 1);
     assert_eq!(report2.unchanged.len(), 2);
     assert!(p.root.join("LoadFolders.xml").exists());
     assert_eq!(

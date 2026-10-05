@@ -76,6 +76,27 @@ fn golden_flat_with_assemblies_and_placeholders() {
     golden_json!("scaffold-flat-placeholders", &golden_of(&s));
 }
 
+#[test]
+fn golden_flat_with_every_option() {
+    let mut s = base();
+    s.languages_folder = true;
+    s.assemblies_folder = true;
+    s.source_folder = true;
+    s.ce_patch_folder = true;
+    s.gitignore = true;
+    s.ignore_source_art = true;
+    s.readme = true;
+    s.credits = true;
+    golden_json!("scaffold-flat-all-options", &golden_of(&s));
+}
+
+#[test]
+fn golden_flat_without_a_description_has_the_placeholder() {
+    let mut s = base();
+    s.description = String::new();
+    golden_json!("scaffold-flat-placeholder-description", &golden_of(&s));
+}
+
 fn arb_spec() -> impl Strategy<Value = ScaffoldSpec> {
     (
         "[A-Za-z][A-Za-z0-9 ]{0,12}",
@@ -86,21 +107,29 @@ fn arb_spec() -> impl Strategy<Value = ScaffoldSpec> {
         any::<bool>(),
         any::<bool>(),
         any::<bool>(),
+        (any::<bool>(), any::<bool>(), any::<bool>(), any::<bool>()),
     )
-        .prop_map(|(name, id, minors, versioned, ce, defs, patches, keep)| {
-            let mut s = ScaffoldSpec::new("/work/RS_Gen", name, id);
-            s.supported_versions = minors.into_iter().map(|m| format!("1.{m}")).collect();
-            s.layout = if versioned {
-                ScaffoldLayout::Versioned
-            } else {
-                ScaffoldLayout::Flat
-            };
-            s.ce_patch_folder = ce;
-            s.defs_folder = defs;
-            s.patches_folder = patches;
-            s.placeholder_files = keep;
-            s
-        })
+        .prop_map(
+            |(name, id, minors, versioned, ce, defs, patches, keep, (tex, snd, src, git))| {
+                let mut s = ScaffoldSpec::new("/work/RS_Gen", name, id);
+                s.supported_versions = minors.into_iter().map(|m| format!("1.{m}")).collect();
+                s.layout = if versioned {
+                    ScaffoldLayout::Versioned
+                } else {
+                    ScaffoldLayout::Flat
+                };
+                s.ce_patch_folder = ce;
+                s.defs_folder = defs;
+                s.patches_folder = patches;
+                s.placeholder_files = keep;
+                s.textures_folder = tex;
+                s.sounds_folder = snd;
+                s.source_folder = src;
+                s.gitignore = git;
+                s.ignore_source_art = git && src;
+                s
+            },
+        )
 }
 
 proptest! {
@@ -118,7 +147,14 @@ proptest! {
         prop_assert_eq!(&paths, &sorted);
         for p in &paths {
             prop_assert!(!p.starts_with('/') && !p.contains(".."), "{p}");
+            // the optional files and the author folder stay in the root
+            if p.starts_with("Source") || *p == ".gitignore" {
+                prop_assert!(!p.contains("1."), "{p}");
+            }
         }
+        prop_assert_eq!(paths.contains(&"Source/Art"), spec.source_folder);
+        prop_assert_eq!(paths.contains(&".gitignore"), spec.gitignore);
+        prop_assert!(!paths.contains(&"README.md") && !paths.contains(&"About/Preview.png"));
         let has_ce_dir = paths.iter().any(|p| p.contains("CombatExtended"));
         prop_assert_eq!(has_ce_dir, spec.ce_patch_folder);
         for f in a.render(&RenderOpts::default()) {

@@ -249,6 +249,35 @@ fn every_command_of_the_slice_dispatches_in_one_session() {
     let opened = run.ok("project_open", json!({"path": conv_root.as_str()}));
     let conv_id = s(&opened, "projectId").to_owned();
     assert_eq!(opened["defFiles"], json!(1));
+    // the layout commands: tree, check, scaffold missing folders (twice), read a file
+    let tree = run.ok("project_tree", json!({"projectId": pid.clone()}));
+    assert_eq!(tree["profile"], json!("rimstudio"));
+    assert_eq!(tree["root"]["kind"], json!("folder"));
+    let check = run.ok(
+        "project_layout_check",
+        json!({"projectId": conv_id.clone()}),
+    );
+    assert!(check["issues"].is_array());
+    let dry = run.ok(
+        "project_scaffold_missing",
+        json!({"projectId": conv_id.clone(), "dryRun": true}),
+    );
+    assert_eq!(dry["dryRun"], json!(true));
+    let made = run.ok(
+        "project_scaffold_missing",
+        json!({"projectId": conv_id.clone()}),
+    );
+    assert_eq!(made["folders"], dry["folders"]);
+    let again = run.ok(
+        "project_scaffold_missing",
+        json!({"projectId": conv_id.clone()}),
+    );
+    assert_eq!(again["folders"], json!([]));
+    let file = run.ok(
+        "project_read_file",
+        json!({"projectId": conv_id.clone(), "path": "Defs/Guns.xml"}),
+    );
+    assert!(s(&file, "text").contains("<Defs>"), "{file}");
     let closed = run.ok("project_close", json!({"projectId": conv_id.clone()}));
     assert_eq!(closed["closed"], json!(true));
     run.ok("project_open", json!({"path": conv_root.as_str()}));

@@ -215,6 +215,39 @@ impl GuardedWriter {
         }
     }
 
+    /// The first `max_bytes` bytes of a project file, `None` when it does not exist. The path goes through the
+    /// same checks as a write (a safe relative path, inside the root, no link out of it, outside the
+    /// protected folders), and only a regular file is read.
+    ///
+    /// # Errors
+    ///
+    /// A path refusal (also for a folder), or [`ToolkitError::Store`] when the file cannot be read.
+    pub fn read_limited(&self, rel: &str, max_bytes: usize) -> ToolkitResult<Option<LimitedRead>> {
+        use std::io::Read as _;
+        let abs = self.checked(rel)?.io;
+        let meta = match std::fs::metadata(abs.as_std_path()) {
+            Ok(m) => m,
+            Err(e) if e.kind() == std::io::ErrorKind::NotFound => return Ok(None),
+            Err(e) => return Err(StoreError::io("read", &abs, e).into()),
+        };
+        if !meta.is_file() {
+            return Err(refused(rel, "not a regular file"));
+        }
+        let file = std::fs::File::open(abs.as_std_path())
+            .map_err(|e| ToolkitError::from(StoreError::io("read", &abs, e)))?;
+        let mut bytes = Vec::new();
+        let limit = u64::try_from(max_bytes).unwrap_or(u64::MAX);
+        file.take(limit)
+            .read_to_end(&mut bytes)
+            .map_err(|e| ToolkitError::from(StoreError::io("read", &abs, e)))?;
+        let total = meta.len();
+        Ok(Some(LimitedRead {
+            truncated: total > u64::try_from(bytes.len()).unwrap_or(u64::MAX),
+            bytes,
+            total,
+        }))
+    }
+
     /// True when the project file exists.
     ///
     /// # Errors
@@ -392,6 +425,17 @@ fn check_relative(rel: &str) -> ToolkitResult<()> {
         }
     }
     Ok(())
+}
+
+/// The bytes of a project file read with a limit: see [`GuardedWriter::read_limited`].
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct LimitedRead {
+    /// At most the requested number of bytes from the start of the file.
+    pub bytes: Vec<u8>,
+    /// The size of the whole file.
+    pub total: u64,
+    /// True when the file is longer than `bytes`.
+    pub truncated: bool,
 }
 
 /// The first existing entry along `rel` (below `root`) whose name equals a segment of `rel` except for

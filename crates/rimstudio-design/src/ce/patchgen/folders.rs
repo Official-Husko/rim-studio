@@ -228,10 +228,11 @@ mod tests {
     use rimstudio_core::tree::NodeBuilder;
 
     const ID: &str = "CETeam.CombatExtended";
+    const CE_DIR: &str = "Compat/CombatExtended";
 
     fn gated(tree: &Node, block: &str) -> bool {
         tree.child(block)
-            .is_some_and(|b| has_gate(b, "CE", "ceteam.combatextended"))
+            .is_some_and(|b| has_gate(b, CE_DIR, "ceteam.combatextended"))
     }
 
     #[test]
@@ -250,7 +251,7 @@ mod tests {
             entries,
             vec![
                 ("/".to_owned(), None),
-                ("CE".to_owned(), Some("ceteam.combatextended"))
+                (CE_DIR.to_owned(), Some("ceteam.combatextended"))
             ]
         );
     }
@@ -266,7 +267,7 @@ mod tests {
             .children_named("li")
             .map(Node::text_content)
             .collect();
-        assert_eq!(texts, ["1.6", "1.6/CE"]);
+        assert_eq!(texts, ["1.6", "1.6/Compat/CombatExtended"]);
     }
 
     fn existing_without_ce() -> Node {
@@ -318,7 +319,7 @@ mod tests {
         let existing = NodeBuilder::new("loadFolders")
             .elem("v1.6", |b| {
                 b.li("/").child({
-                    let mut e = Node::with_text("li", "CE");
+                    let mut e = Node::with_text("li", CE_DIR);
                     e.set_attr("IfModActive", "CETeam.CombatExtended_copy");
                     e
                 })

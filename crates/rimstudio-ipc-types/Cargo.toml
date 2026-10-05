@@ -16,6 +16,11 @@ workspace = true
 rimstudio-core.workspace = true
 serde.workspace = true
 serde_json.workspace = true
+ts-rs = { workspace = true, optional = true }
+
+[features]
+# TypeScript bindings for the webview (never enabled in shipped binaries).
+ts = ["dep:ts-rs"]
 
 [dev-dependencies]
 proptest.workspace = true

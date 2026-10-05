@@ -3,7 +3,7 @@
 //! - [`types`]: [`WritePlan`], [`PlannedFile`], [`FileAction`], section comment headers and edits.
 //! - [`builder`]: [`PlanBuilder`], the extension point for other generators (the CE patch task adds its
 //!   files through [`PlanBuilder::add_file`]), and the path safety guard.
-//! - [`layout`]: [`ProjectLayout`], the file layout rule.
+//! - [`layout`]: [`ProjectLayout`], the file layout rule (RimStudio mod layout v1).
 //! - [`vanilla`]: the node trees of vanilla weapons and projectiles.
 //!
 //! [`export_ce_plan`] (re-exported from `ce::patchgen`) is the entry point of the optional Combat Extended
@@ -27,7 +27,7 @@ pub use crate::ce::patchgen::{
     CeProjectState, export_ce_plan, export_ce_plan_with, gate_violations,
 };
 pub use builder::{PlanBuilder, is_safe_relative_path};
-pub use layout::{ProjectLayout, file_stem};
+pub use layout::{LayoutProfile, ProjectLayout, SoundFile, WeaponCategory, file_stem};
 pub use types::{
     FileAction, FileKind, PlannedFile, SectionGroup, SectionHeader, TextEdit, WritePlan,
 };
@@ -48,10 +48,12 @@ fn defs_root(defs: Vec<Node>) -> Node {
     root
 }
 
-/// Builds the plan of the vanilla definition files of a spec: the weapon at
-/// `Defs/Weapons/<defName>.xml` (inside the version folder when the layout has one) and, when the spec
-/// creates a projectile, that projectile at `Defs/Projectiles/<defName>.xml`. Each file is a `Defs` tree
-/// with one section header `====== <defName> ======`.
+/// Builds the plan of the vanilla definition file of a spec: one file that holds the weapon and, when the
+/// spec creates a projectile, that projectile before it. The path follows the layout
+/// ([`ProjectLayout::weapon_def_path`]): by default
+/// `Defs/ThingDefs_Misc/Weapons/<Category>/<defName>.xml` (inside the version folder when the layout has
+/// one), where the category comes from the kind and the tech level ([`WeaponCategory::of`]). Each def has a
+/// section header `====== <defName> ======`.
 ///
 /// Rules:
 ///
@@ -59,7 +61,10 @@ fn defs_root(defs: Vec<Node>) -> Node {
 /// - Validation runs first ([`validate_vanilla`] plus the layout check). When any diagnostic is an error the
 ///   plan has no files and carries the diagnostics (IT-030, IT-041); warnings and info never block.
 /// - Every file has action [`FileAction::Create`]; the toolkit compares with the disk and turns a file into
-///   `Unchanged` or `UpdateRegion`.
+///   `Unchanged` or `UpdateRegion`. In a project that keeps one file per category the path is that shared
+///   file and the toolkit appends the marked sections to it.
+/// - A weapon without a texture path gets the reserved one ([`ProjectLayout::weapon_texture_path`]) and an
+///   info diagnostic names the file where the art goes; a typed texture path is kept.
 /// - Nothing about Combat Extended is written, whatever `spec.ce` holds. As a second guard, a tree that
 ///   contains `CombatExtended` anywhere turns the plan into an error plan.
 #[must_use]
@@ -73,25 +78,39 @@ pub fn export_vanilla_plan(spec: &DesignSpec, layout: &ProjectLayout) -> WritePl
     }
 
     let def_name = spec.identity.def_name.as_str();
-    let weapon = PlannedFile::new_file(
-        layout.weapon_def_path(def_name),
-        FileKind::VanillaDefs,
-        defs_root(vec![weapon_def(spec)]),
-        vec![SectionHeader::banner(0, def_name)],
-    );
-    let mut files = vec![weapon];
+    let mut spec = spec.clone();
+    if spec.texture_path.is_none() {
+        let reserved = layout.weapon_texture_path(spec.kind, def_name);
+        diagnostics.push(codes::TEXTURE_RESERVED.diagnostic(
+            "/texturePath",
+            &[
+                ("label", &spec.identity.label),
+                ("path", &layout.texture_file(&reserved)),
+            ],
+        ));
+        spec.texture_path = Some(reserved);
+    }
+    let spec = &spec;
+    let category = WeaponCategory::of(spec.kind, spec.tech_level);
+
+    let mut defs = Vec::new();
+    let mut sections = Vec::new();
     if let Some(projectile) = projectile_def(spec) {
         let name = projectile
             .child_text("defName")
             .unwrap_or_default()
             .to_owned();
-        files.push(PlannedFile::new_file(
-            layout.projectile_def_path(&name),
-            FileKind::VanillaDefs,
-            defs_root(vec![projectile]),
-            vec![SectionHeader::banner(0, &name)],
-        ));
+        sections.push(SectionHeader::banner(defs.len(), &name));
+        defs.push(projectile);
     }
+    sections.push(SectionHeader::banner(defs.len(), def_name));
+    defs.push(weapon_def(spec));
+    let files = vec![PlannedFile::new_file(
+        layout.weapon_def_path(category, def_name),
+        FileKind::VanillaDefs,
+        defs_root(defs),
+        sections,
+    )];
 
     for file in &files {
         if let Some(tree) = &file.tree

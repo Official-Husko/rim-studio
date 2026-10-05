@@ -126,10 +126,31 @@ pub fn official_data_folder_name(package_id: &str) -> Option<&'static str> {
 
 // Names used by RimStudio itself next to the game's files.
 
-/// The folder name RimStudio uses for generated Combat Extended patch content inside a mod. The
-/// folder is only made visible to the game through a `LoadFolders` entry that is conditional on the
-/// Combat Extended package being active.
-pub const CE_PATCH_FOLDER_NAME: &str = "CombatExtended";
+/// The folder, relative to a content root, that RimStudio uses for generated Combat Extended content
+/// inside a mod (layout v1). The folder is only made visible to the game through a `LoadFolders`
+/// entry that is conditional on the Combat Extended package being active.
+pub const CE_COMPAT_DIR: &str = "Compat/CombatExtended";
+/// The folder names earlier RimStudio versions and the community use for the same purpose. Such a folder
+/// is recognised and kept where it is; it is never moved.
+pub const CE_LEGACY_DIRS: [&str; 2] = ["CE", "CombatExtended"];
+/// The folder of weapon definitions, relative to the `Defs` folder, named like the game's own.
+pub const DEFS_WEAPONS_DIR: &str = "ThingDefs_Misc/Weapons";
+/// The folder of sound definitions, relative to the `Defs` folder, named like the game's own.
+pub const DEFS_SOUNDS_DIR: &str = "SoundDefs";
+/// The texture folder of ranged weapons, relative to `Textures`, named like the game's own.
+pub const TEXTURES_WEAPON_RANGED_DIR: &str = "Things/Item/Equipment/WeaponRanged";
+/// The texture folder of melee weapons, relative to `Textures`, named like the game's own.
+pub const TEXTURES_WEAPON_MELEE_DIR: &str = "Things/Item/Equipment/WeaponMelee";
+/// The texture folder of projectiles, relative to `Textures`, named like the game's own.
+pub const TEXTURES_PROJECTILE_DIR: &str = "Things/Projectile";
+/// The folder of sound clips of weapons, relative to `Sounds`.
+pub const SOUNDS_WEAPONS_DIR: &str = "Weapons";
+/// The folder for author material the game never reads (code, art sources), in the mod root.
+pub const SOURCE_DIR: &str = "Source";
+/// The folder of art sources inside [`SOURCE_DIR`].
+pub const SOURCE_ART_DIR: &str = "Source/Art";
+/// The default translation folder of a mod, relative to `Languages`.
+pub const LANGUAGES_KEYED_DIR: &str = "English/Keyed";
 /// The Combat Extended package id used in `IfModActive` conditions.
 pub const CE_PACKAGE_ID: &str = "ceteam.combatextended";
 

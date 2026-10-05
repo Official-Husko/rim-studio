@@ -12,6 +12,7 @@ use crate::settings::FolderLayoutDto;
 
 /// Operating system of the machine.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "kebab-case")]
 pub enum OsDto {
     /// Windows.
@@ -26,6 +27,7 @@ pub enum OsDto {
 
 /// How a candidate was found.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "kebab-case")]
 pub enum HowDto {
     /// The user chose it.
@@ -52,6 +54,7 @@ pub enum HowDto {
 
 /// How much to trust a candidate.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, PartialOrd, Ord, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "kebab-case")]
 pub enum ConfidenceDto {
     /// A guess.
@@ -64,6 +67,7 @@ pub enum ConfidenceDto {
 
 /// Where an install came from.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "kebab-case")]
 pub enum InstallKindDto {
     /// Steam.
@@ -78,6 +82,7 @@ pub enum InstallKindDto {
 
 /// Update state of an install.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "kebab-case")]
 pub enum HealthDto {
     /// Fully installed.
@@ -90,6 +95,7 @@ pub enum HealthDto {
 
 /// Kind of a user data folder.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "kebab-case")]
 pub enum UserDirKindDto {
     /// Native location.
@@ -110,6 +116,7 @@ pub enum UserDirKindDto {
 
 /// A Steam root candidate.
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct SteamRootDto {
     /// Path as found.
@@ -130,6 +137,7 @@ pub struct SteamRootDto {
 
 /// A Steam library folder.
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct SteamLibraryDto {
     /// Path as listed.
@@ -154,6 +162,7 @@ pub struct SteamLibraryDto {
 
 /// A parsed game version.
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct VersionDto {
     /// The raw text.
@@ -164,21 +173,26 @@ pub struct VersionDto {
     pub minor: u32,
     /// Build number. Absent when the text has none.
     #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub build: Option<u32>,
     /// Revision number. Absent when the text has none.
     #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub rev: Option<u32>,
 }
 
 /// How to start the game.
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct LaunchDto {
     /// Steam URL. Absent when the game cannot be started through Steam.
     #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub steam_url: Option<String>,
     /// Executable. Absent when unknown.
     #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub executable: Option<String>,
     /// Working directory.
     pub working_dir: String,
@@ -190,6 +204,7 @@ pub struct LaunchDto {
 
 /// A folder check.
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct DirCheckDto {
     /// The path.
@@ -202,20 +217,24 @@ pub struct DirCheckDto {
 
 /// A Workshop content folder tied to an install.
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct WorkshopDirDto {
     /// The Steam library that holds it. Absent when unknown.
     #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub library: Option<String>,
     /// The content folder.
     pub content_dir: String,
     /// The workshop manifest. Absent when none was found.
     #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub acf: Option<String>,
     /// Item folders on disk.
     pub items_on_disk: u32,
     /// Items listed in the manifest. Absent when there is no manifest.
     #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub items_in_acf: Option<u32>,
     /// How it was found.
     pub how: HowDto,
@@ -223,6 +242,7 @@ pub struct WorkshopDirDto {
 
 /// A RimWorld install candidate.
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct InstallDto {
     /// Stable id of the candidate.
@@ -239,15 +259,19 @@ pub struct InstallDto {
     pub confidence: ConfidenceDto,
     /// Game version. Absent when it could not be read.
     #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub version: Option<VersionDto>,
     /// Installed build id (a Steam build id as text). Absent when unknown.
     #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub build_id: Option<String>,
     /// Target build id. Absent when unknown.
     #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub target_build_id: Option<String>,
     /// Steam state flags. Absent when there is no manifest.
     #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub state_flags: Option<u32>,
     /// Update state.
     pub health: HealthDto,
@@ -261,6 +285,7 @@ pub struct InstallDto {
     pub proton: bool,
     /// The Steam library that holds it. Absent when unknown.
     #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub library: Option<String>,
     /// The install folder is a symbolic link.
     pub is_symlink: bool,
@@ -270,6 +295,7 @@ pub struct InstallDto {
 
 /// A user data folder candidate.
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct UserDirDto {
     /// The path.
@@ -280,15 +306,19 @@ pub struct UserDirDto {
     pub mods_config_exists: bool,
     /// Modification time of `ModsConfig.xml` in Unix milliseconds. Absent when it does not exist.
     #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub mods_config_mtime_ms: Option<i64>,
     /// The game version recorded in `ModsConfig.xml`. Absent when unknown.
     #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub game_version: Option<String>,
     /// The player log. Absent when there is none.
     #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub player_log: Option<String>,
     /// The preferences file. Absent when there is none.
     #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub prefs: Option<String>,
     /// True for the most recently used candidate.
     pub newest: bool,
@@ -296,18 +326,22 @@ pub struct UserDirDto {
 
 /// The selected candidates.
 #[derive(Debug, Clone, PartialEq, Eq, Default, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct SelectedDto {
     /// Id of the selected install. Absent when none qualifies.
     #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub install: Option<String>,
     /// Selected user data folder. Absent when none qualifies.
     #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub user_dir: Option<String>,
 }
 
 /// A detection warning.
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct DetectionWarningDto {
     /// Stable code.
@@ -320,6 +354,7 @@ pub struct DetectionWarningDto {
 
 /// Everything detection found. Result of the `detect_run` job.
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct DetectionReportDto {
     /// Schema version of the report.
@@ -344,6 +379,7 @@ pub struct DetectionReportDto {
 
 /// Request of the `detect_run` job.
 #[derive(Debug, Clone, PartialEq, Eq, Default, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase", default)]
 pub struct DetectRunRequest {
     /// True to ignore the cached report and probe again.
@@ -352,19 +388,23 @@ pub struct DetectRunRequest {
 
 /// Request of `detect_get_report`.
 #[derive(Debug, Clone, PartialEq, Eq, Default, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 pub struct DetectGetReportRequest {}
 
 /// Response of `detect_get_report`.
 #[derive(Debug, Clone, PartialEq, Eq, Default, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct DetectGetReportResponse {
     /// The last report. Absent when detection never ran in this installation.
     #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub report: Option<DetectionReportDto>,
 }
 
 /// Which path a manual override sets.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "kebab-case")]
 pub enum PathFieldDto {
     /// The game install.
@@ -377,17 +417,20 @@ pub enum PathFieldDto {
 
 /// Request of `detect_set_override`.
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct DetectSetOverrideRequest {
     /// The path field to set.
     pub field: PathFieldDto,
     /// The chosen path. Absent clears the override.
     #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub path: Option<String>,
 }
 
 /// Kind of a mod source.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, PartialOrd, Ord, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "kebab-case")]
 pub enum SourceKindDto {
     /// The install `Data` folder.
@@ -402,6 +445,7 @@ pub enum SourceKindDto {
 
 /// Status of a source.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "kebab-case")]
 pub enum SourceStatusDto {
     /// Ready to scan.
@@ -416,6 +460,7 @@ pub enum SourceStatusDto {
 
 /// One mod source.
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct SourceDto {
     /// Stable source id.
@@ -432,6 +477,7 @@ pub struct SourceDto {
     pub status: SourceStatusDto,
     /// Mods found at the last scan. Absent before the first scan.
     #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub mod_count: Option<u32>,
     /// Layout (custom folders only; others are `auto`).
     pub layout: FolderLayoutDto,
@@ -443,10 +489,12 @@ pub struct SourceDto {
 
 /// Request of `sources_list`.
 #[derive(Debug, Clone, PartialEq, Eq, Default, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 pub struct SourcesListRequest {}
 
 /// Response of `sources_list`.
 #[derive(Debug, Clone, PartialEq, Eq, Default, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct SourcesListResponse {
     /// The sources, in scan order.
@@ -455,46 +503,57 @@ pub struct SourcesListResponse {
 
 /// Request of `sources_add_folder`; the response is a [`SourceDto`].
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct SourcesAddFolderRequest {
     /// The folder the user picked.
     pub path: String,
     /// Display label. Absent means derive from the folder name.
     #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub label: Option<String>,
     /// Layout. Absent means use the probe suggestion.
     #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub layout: Option<FolderLayoutDto>,
     /// Scan depth. Absent means use the probe suggestion.
     #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub scan_depth: Option<u8>,
 }
 
 /// Request of `sources_update`; absent members stay unchanged. The response is a [`SourceDto`].
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct SourcesUpdateRequest {
     /// The source to change.
     pub id: String,
     /// New label.
     #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub label: Option<String>,
     /// New enabled flag.
     #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub enabled: Option<bool>,
     /// New position in the scan order, zero based.
     #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub order: Option<u32>,
     /// New layout.
     #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub layout: Option<FolderLayoutDto>,
     /// New scan depth.
     #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub scan_depth: Option<u8>,
 }
 
 /// Request of `sources_remove`; files are never touched.
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct SourcesRemoveRequest {
     /// The source to forget.
@@ -503,6 +562,7 @@ pub struct SourcesRemoveRequest {
 
 /// Response of `sources_remove`.
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct SourcesRemoveResponse {
     /// True when a source was removed; false when the id was unknown.
@@ -511,6 +571,7 @@ pub struct SourcesRemoveResponse {
 
 /// Request of `sources_probe_folder`.
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct SourcesProbeFolderRequest {
     /// The folder to look at.
@@ -519,6 +580,7 @@ pub struct SourcesProbeFolderRequest {
 
 /// What a probed folder looks like.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "kebab-case")]
 pub enum FolderKindDto {
     /// Does not exist.
@@ -541,6 +603,7 @@ pub enum FolderKindDto {
 
 /// A warning about a probed folder.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "kebab-case")]
 pub enum FolderWarningDto {
     /// No mods found.
@@ -557,6 +620,7 @@ pub enum FolderWarningDto {
 
 /// How a probed folder relates to a registered source.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "kebab-case")]
 pub enum OverlapRelationDto {
     /// The same folder.
@@ -569,6 +633,7 @@ pub enum OverlapRelationDto {
 
 /// An overlap with a registered source.
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct SourceOverlapDto {
     /// The registered source.
@@ -583,6 +648,7 @@ pub struct SourceOverlapDto {
 
 /// Response of `sources_probe_folder`.
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct SourcesProbeFolderResponse {
     /// What the folder looks like.
@@ -605,10 +671,12 @@ pub struct SourcesProbeFolderResponse {
 
 /// Request of the `library_scan` job.
 #[derive(Debug, Clone, PartialEq, Eq, Default, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase", default)]
 pub struct LibraryScanRequest {
     /// The library to scan. Absent means the default library.
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub library_id: Option<String>,
     /// True to ignore the cache and read every file again.
     pub full: bool,
@@ -616,6 +684,7 @@ pub struct LibraryScanRequest {
 
 /// Scan counters.
 #[derive(Debug, Clone, PartialEq, Eq, Default, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct ScanStatsDto {
     /// Folders probed.
@@ -650,6 +719,7 @@ pub struct ScanStatsDto {
 
 /// Scan phase timings in milliseconds.
 #[derive(Debug, Clone, PartialEq, Eq, Default, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct ScanTimingsDto {
     /// Discovery.
@@ -664,6 +734,7 @@ pub struct ScanTimingsDto {
 
 /// Per source scan report.
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct SourceReportDto {
     /// Source id.
@@ -680,6 +751,7 @@ pub struct SourceReportDto {
 
 /// Result of the `library_scan` job.
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct LibraryScanResult {
     /// Revision of the list after the scan.

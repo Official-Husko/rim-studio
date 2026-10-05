@@ -12,6 +12,7 @@ use crate::diagnostic::DiagnosticDto;
 
 /// Request of `designer_preview`.
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct DesignerPreviewRequest {
     /// The draft state to preview.
@@ -20,6 +21,7 @@ pub struct DesignerPreviewRequest {
 
 /// Group a readout belongs to.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "kebab-case")]
 pub enum ReadoutGroupDto {
     /// Ranged weapon numbers.
@@ -34,6 +36,7 @@ pub enum ReadoutGroupDto {
 
 /// Unit of a readout.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "kebab-case")]
 pub enum ReadoutUnitDto {
     /// A plain number.
@@ -54,6 +57,7 @@ pub enum ReadoutUnitDto {
 
 /// One step of a calculation shown on hover.
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct ReadoutStepDto {
     /// Short English label of the step.
@@ -64,6 +68,7 @@ pub struct ReadoutStepDto {
 
 /// One exact readout.
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct ReadoutDto {
     /// Stable key, for example `dps`.
@@ -74,14 +79,17 @@ pub struct ReadoutDto {
     pub unit: ReadoutUnitDto,
     /// The exact value. Absent when an input of the formula is missing.
     #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub value: Option<f64>,
     /// The calculation steps. Omitted when the readout has none.
     #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    #[cfg_attr(feature = "ts", ts(as = "Option<Vec<ReadoutStepDto>>", optional))]
     pub steps: Vec<ReadoutStepDto>,
 }
 
 /// Where a suggestion came from.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "kebab-case")]
 pub enum SuggestionSourceDto {
     /// The user typed it.
@@ -100,6 +108,7 @@ pub enum SuggestionSourceDto {
 
 /// Level of the class fallback chain.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, PartialOrd, Ord, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "kebab-case")]
 pub enum ChainLevelDto {
     /// Same role and tier.
@@ -118,6 +127,7 @@ pub enum ChainLevelDto {
 
 /// Predictor behind a suggestion.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "kebab-case")]
 pub enum PredictorDto {
     /// Class median.
@@ -130,6 +140,7 @@ pub enum PredictorDto {
 
 /// The plausible band around a suggestion.
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct SuggestionBandDto {
     /// Tenth percentile of the pool.
@@ -148,6 +159,7 @@ pub struct SuggestionBandDto {
 
 /// A suggested value for one field.
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct SuggestionDto {
     /// JSON pointer of the spec field, for example `/ranged/damage`.
@@ -156,12 +168,15 @@ pub struct SuggestionDto {
     pub stat: String,
     /// The suggested value. Absent when no estimate is possible for the field.
     #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub value: Option<f64>,
     /// Where it came from. Absent when `value` is absent.
     #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub source: Option<SuggestionSourceDto>,
     /// The band. Absent when the pool is too small for one.
     #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub band: Option<SuggestionBandDto>,
     /// Fallback level of the class used.
     pub level: ChainLevelDto,
@@ -175,6 +190,7 @@ pub struct SuggestionDto {
 
 /// An anchor weapon shown as a card.
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct AnchorCardDto {
     /// Definition name.
@@ -193,6 +209,7 @@ pub struct AnchorCardDto {
 
 /// Summary of the estimate behind the suggestions.
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct EstimateSummaryDto {
     /// Human readable name of the class used.
@@ -213,6 +230,7 @@ pub struct EstimateSummaryDto {
 
 /// Response of `designer_preview`.
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct PreviewDto {
     /// Exact readouts, in display order.
@@ -221,6 +239,7 @@ pub struct PreviewDto {
     pub suggestions: Vec<SuggestionDto>,
     /// The estimate behind the suggestions. Absent when no reference set is loaded.
     #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub estimate: Option<EstimateSummaryDto>,
     /// Static validation results with field pointers.
     pub diagnostics: Vec<DiagnosticDto>,
@@ -228,6 +247,7 @@ pub struct PreviewDto {
 
 /// Request of `designer_material_matrix`.
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct DesignerMaterialMatrixRequest {
     /// The draft state.
@@ -238,6 +258,7 @@ pub struct DesignerMaterialMatrixRequest {
 
 /// One cell of the stuff by quality grid.
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct MatrixCellDto {
     /// Index into `stuffs`.
@@ -246,11 +267,13 @@ pub struct MatrixCellDto {
     pub quality: u32,
     /// The value. Absent when not computable for the combination.
     #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub value: Option<f64>,
 }
 
 /// Response of `designer_material_matrix`.
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct MaterialMatrixDto {
     /// The tabulated readout key.

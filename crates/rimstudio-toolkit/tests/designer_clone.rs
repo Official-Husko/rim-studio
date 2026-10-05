@@ -782,7 +782,10 @@ fn a_ranged_clone_plans_one_vanilla_file_with_the_structure_of_its_source() {
     assert!(!plan.has_errors, "{:?}", plan.diagnostics);
     assert_eq!(plan.files.len(), 1);
     let file = &plan.files[0];
-    assert_eq!(file.path, "Defs/Weapons/RS_CloneGun.xml");
+    assert_eq!(
+        file.path,
+        "Defs/ThingDefs_Misc/Weapons/RangedIndustrial/RS_CloneGun.xml"
+    );
     let text = &file.rendered;
     assert!(text.contains("ParentName=\"RS_BaseGun\""), "{text}");
     assert!(

@@ -13,6 +13,7 @@ use crate::diagnostic::DiagnosticDto;
 
 /// What a plan does to a file.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "kebab-case")]
 pub enum FileActionDto {
     /// The file does not exist yet.
@@ -25,6 +26,7 @@ pub enum FileActionDto {
 
 /// What a planned file holds.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, PartialOrd, Ord, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "kebab-case")]
 pub enum FileKindDto {
     /// Vanilla definitions.
@@ -39,6 +41,7 @@ pub enum FileKindDto {
 
 /// Request of `designer_export_plan`.
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct DesignerExportPlanRequest {
     /// The open project the files go into.
@@ -47,16 +50,19 @@ pub struct DesignerExportPlanRequest {
     pub draft: DraftDto,
     /// Convert an existing definition instead of designing a new one. Absent means design.
     #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub convert: Option<ConvertRequestDto>,
     /// Fill the empty fields of the Combat Extended block from the suggestions (never typed values). Only
     /// used when `draft.spec.ce` is present; it never turns the patch on. Absent means no suggestion is
     /// written.
     #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub accept_suggestions: Option<AcceptSuggestionsDto>,
 }
 
 /// One file of a plan.
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct PlannedFileDto {
     /// Path relative to the project root, with `/` separators.
@@ -69,6 +75,7 @@ pub struct PlannedFileDto {
     pub rendered: String,
     /// Unified diff against the file on disk. Absent for `create` and `unchanged`.
     #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub diff: Option<String>,
     /// Size of `rendered` in bytes.
     pub bytes: u32,
@@ -76,6 +83,7 @@ pub struct PlannedFileDto {
 
 /// Response of `designer_export_plan`.
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct WritePlanDto {
     /// Content hash of the plan; apply refuses a plan whose rebuilt hash differs.
@@ -90,6 +98,7 @@ pub struct WritePlanDto {
 
 /// Request of the `designer_apply_plan` job.
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct DesignerApplyPlanRequest {
     /// The plan hash the user reviewed.
@@ -110,6 +119,7 @@ fn default_true() -> bool {
 
 /// A file the apply step wrote.
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct AppliedFileDto {
     /// Path relative to the project root.
@@ -120,6 +130,7 @@ pub struct AppliedFileDto {
     pub bytes: u32,
     /// Backup path relative to the project root. Absent when no backup was made.
     #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub backup_path: Option<String>,
     /// True when the file was read back and equals the rendering.
     pub verified: bool,
@@ -127,6 +138,7 @@ pub struct AppliedFileDto {
 
 /// Result of the `designer_apply_plan` job.
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct ApplyReportDto {
     /// The applied plan hash.
@@ -137,6 +149,7 @@ pub struct ApplyReportDto {
     pub unchanged: Vec<String>,
     /// Result of the dry apply. Absent when it did not run.
     #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub dry_apply_ok: Option<bool>,
     /// Problems found while applying or dry applying.
     pub diagnostics: Vec<DiagnosticDto>,

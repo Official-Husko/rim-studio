@@ -75,7 +75,10 @@ fn the_designer_does_not_use_the_project_or_defs_modules() {
 
 #[test]
 fn the_project_tool_does_not_use_the_designer_or_defs_modules() {
-    let hits = check(&[src().join("project.rs")], "project");
+    let mut files = Vec::new();
+    rust_files(&src().join("project"), &mut files);
+    assert!(files.len() >= 5, "{files:?}");
+    let hits = check(&files, "project");
     assert!(hits.is_empty(), "{hits:#?}");
 }
 

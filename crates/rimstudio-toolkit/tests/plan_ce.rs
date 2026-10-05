@@ -23,7 +23,7 @@ fn assert_gated(plan: &WritePlanDto) {
         if f.rendered.contains(CE_MARK) {
             assert_eq!(f.kind, FileKindDto::CePatch, "{} holds a CE class", f.path);
             assert!(
-                f.path.starts_with("CE/"),
+                f.path.starts_with("Compat/CombatExtended/"),
                 "{} is outside the CE folder",
                 f.path
             );
@@ -48,7 +48,7 @@ fn the_ranged_block_adds_a_gated_patch_and_load_folders_and_keeps_the_vanilla_fi
         assert_eq!(same.rendered, v.rendered, "{}", v.path);
     }
     assert!(
-        paths(&on).contains(&"CE/Patches/testmod_Weapons_Ranged.xml"),
+        paths(&on).contains(&"Compat/CombatExtended/Patches/testmod_Weapons_Ranged.xml"),
         "{:?}",
         paths(&on)
     );
@@ -166,7 +166,7 @@ fn a_second_weapon_is_added_to_the_existing_patch_file_without_touching_the_firs
         &CancelToken::new(),
     )
     .unwrap();
-    let patch_path = "CE/Patches/testmod_Weapons_Ranged.xml";
+    let patch_path = "Compat/CombatExtended/Patches/testmod_Weapons_Ranged.xml";
     let before = std::fs::read_to_string(p.root.join(patch_path).as_std_path()).unwrap();
     let mut second = ranged_ce();
     second.identity.def_name = "RS_SecondRifle".into();

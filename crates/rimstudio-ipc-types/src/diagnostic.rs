@@ -15,6 +15,7 @@ pub const FIELD_ARG: &str = "field";
 
 /// How serious a diagnostic is.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, PartialOrd, Ord, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "kebab-case")]
 pub enum SeverityDto {
     /// Blocks the operation.
@@ -40,6 +41,7 @@ impl From<Severity> for SeverityDto {
 
 /// Where inside a file a diagnostic points.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(tag = "kind", rename_all = "kebab-case")]
 pub enum SpanDto {
     /// A one based line and column.
@@ -69,6 +71,7 @@ impl From<Span> for SpanDto {
 
 /// One content problem.
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct DiagnosticDto {
     /// Stable code, `<area>.<kebab-name>`; the UI translates by code.
@@ -80,18 +83,23 @@ pub struct DiagnosticDto {
     /// JSON pointer of the input field the problem concerns, for example `/ranged/damage`. Absent when it
     /// concerns the whole input or a file.
     #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub field: Option<String>,
     /// Session handle of the mod it concerns. Absent when it concerns no mod.
     #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub mod_idx: Option<u32>,
     /// Session handle of the file it concerns. Absent when it concerns no file.
     #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub file_id: Option<u32>,
     /// Position inside the file. Absent when unknown.
     #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub span: Option<SpanDto>,
     /// Values for the translated message template, ordered by key; never contains the `field` argument.
     #[serde(default, skip_serializing_if = "BTreeMap::is_empty")]
+    #[cfg_attr(feature = "ts", ts(as = "Option<BTreeMap<String, String>>", optional))]
     pub args: BTreeMap<String, String>,
 }
 
@@ -128,6 +136,7 @@ pub fn diagnostics_to_dtos(items: &[Diagnostic]) -> Vec<DiagnosticDto> {
 
 /// Counts per code plus the first samples of each code, as a sink produced them.
 #[derive(Debug, Clone, PartialEq, Eq, Default, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct DiagnosticSummaryDto {
     /// How many diagnostics each code produced, ordered by code.

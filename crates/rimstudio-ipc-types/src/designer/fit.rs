@@ -8,6 +8,7 @@ use super::draft::DraftDto;
 
 /// Request of `designer_fit`.
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct DesignerFitRequest {
     /// The draft state to score.
@@ -16,6 +17,7 @@ pub struct DesignerFitRequest {
 
 /// How well a stat fits.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, PartialOrd, Ord, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "kebab-case")]
 pub enum FitLevelDto {
     /// Inside the 50 percent band.
@@ -28,6 +30,7 @@ pub enum FitLevelDto {
 
 /// A closed interval.
 #[derive(Debug, Clone, Copy, PartialEq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 pub struct IntervalDto {
     /// Lower bound.
     pub low: f64,
@@ -37,6 +40,7 @@ pub struct IntervalDto {
 
 /// Rank of a value among the reference values.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 pub struct RankDto {
     /// References below the value.
     pub below: u32,
@@ -48,6 +52,7 @@ pub struct RankDto {
 
 /// The fit of one stat.
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct StatFitDto {
     /// Stat name.
@@ -72,6 +77,7 @@ pub struct StatFitDto {
 
 /// Counts over all scored stats.
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct FitSummaryDto {
     /// Stats scored.
@@ -88,10 +94,12 @@ pub struct FitSummaryDto {
 
 /// Caveats the UI shows beside the meter.
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct FitNoticesDto {
     /// Unix time in milliseconds of the calibration behind the bands. Absent when never calibrated.
     #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub calibrated_at_ms: Option<u64>,
     /// Size of the reference pool.
     pub pool_size: u32,
@@ -107,12 +115,14 @@ pub struct FitNoticesDto {
 
 /// Response of `designer_fit`.
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct FitReportDto {
     /// Per stat results, ordered by stat name.
     pub per_stat: Vec<StatFitDto>,
     /// Overall typicality, zero to one. Absent when too few stats could be scored.
     #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub typicality: Option<f64>,
     /// Counts.
     pub summary: FitSummaryDto,

@@ -81,12 +81,84 @@
       },
       "kind": "file",
       "path": "Patches/.gitkeep"
+    },
+    {
+      "kind": "dir",
+      "path": "Sounds"
+    },
+    {
+      "kind": "dir",
+      "path": "Sounds/Weapons"
+    },
+    {
+      "content": {
+        "text": "",
+        "type": "text"
+      },
+      "kind": "file",
+      "path": "Sounds/Weapons/.gitkeep"
+    },
+    {
+      "kind": "dir",
+      "path": "Textures"
+    },
+    {
+      "kind": "dir",
+      "path": "Textures/Things"
+    },
+    {
+      "kind": "dir",
+      "path": "Textures/Things/Item"
+    },
+    {
+      "kind": "dir",
+      "path": "Textures/Things/Item/Equipment"
+    },
+    {
+      "kind": "dir",
+      "path": "Textures/Things/Item/Equipment/WeaponMelee"
+    },
+    {
+      "content": {
+        "text": "",
+        "type": "text"
+      },
+      "kind": "file",
+      "path": "Textures/Things/Item/Equipment/WeaponMelee/.gitkeep"
+    },
+    {
+      "kind": "dir",
+      "path": "Textures/Things/Item/Equipment/WeaponRanged"
+    },
+    {
+      "content": {
+        "text": "",
+        "type": "text"
+      },
+      "kind": "file",
+      "path": "Textures/Things/Item/Equipment/WeaponRanged/.gitkeep"
+    },
+    {
+      "kind": "dir",
+      "path": "Textures/Things/Projectile"
+    },
+    {
+      "content": {
+        "text": "",
+        "type": "text"
+      },
+      "kind": "file",
+      "path": "Textures/Things/Projectile/.gitkeep"
     }
   ],
   "rendered": {
     "About/About.xml": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<ModMetaData>\n  <name>RS Example</name>\n  <author>RS Tester</author>\n  <packageId>rs.example</packageId>\n  <supportedVersions>\n    <li>1.6</li>\n  </supportedVersions>\n  <description>A fictional example mod.</description>\n</ModMetaData>\n",
     "Assemblies/.gitkeep": "",
-    "Patches/.gitkeep": ""
+    "Patches/.gitkeep": "",
+    "Sounds/Weapons/.gitkeep": "",
+    "Textures/Things/Item/Equipment/WeaponMelee/.gitkeep": "",
+    "Textures/Things/Item/Equipment/WeaponRanged/.gitkeep": "",
+    "Textures/Things/Projectile/.gitkeep": ""
   },
   "root": "/work/RS_Example"
 }

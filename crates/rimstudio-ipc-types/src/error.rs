@@ -17,6 +17,7 @@ use serde_json::{Map, Value};
 /// `details` is a JSON object of structured parameters (never raw OS error text, never a path outside a
 /// registered root). It is absent when the code needs no parameters.
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct ApiError {
     /// Stable machine code, `<area>.<kebab-name>`; see [`codes`].
@@ -28,6 +29,7 @@ pub struct ApiError {
     /// Structured parameters for message interpolation and recovery buttons; absent when there are none.
     /// Boxed so that `Result<T, ApiError>` stays small (the JSON is the same as for a plain map).
     #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub details: Option<Box<Map<String, Value>>>,
 }
 

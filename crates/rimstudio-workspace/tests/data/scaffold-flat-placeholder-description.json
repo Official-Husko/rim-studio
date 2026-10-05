@@ -1,0 +1,122 @@
+{
+  "items": [
+    {
+      "kind": "dir",
+      "path": "About"
+    },
+    {
+      "content": {
+        "node": {
+          "attrs": [],
+          "children": [
+            {
+              "attrs": [],
+              "children": [
+                "RS Example"
+              ],
+              "tag": "name"
+            },
+            {
+              "attrs": [],
+              "children": [
+                "RS Tester"
+              ],
+              "tag": "author"
+            },
+            {
+              "attrs": [],
+              "children": [
+                "rs.example"
+              ],
+              "tag": "packageId"
+            },
+            {
+              "attrs": [],
+              "children": [
+                {
+                  "attrs": [],
+                  "children": [
+                    "1.6"
+                  ],
+                  "tag": "li"
+                }
+              ],
+              "tag": "supportedVersions"
+            },
+            {
+              "attrs": [],
+              "children": [
+                "Describe what this mod adds. This text is shown in the mod list and on the Steam Workshop page."
+              ],
+              "tag": "description"
+            }
+          ],
+          "tag": "ModMetaData"
+        },
+        "type": "xml"
+      },
+      "kind": "file",
+      "path": "About/About.xml"
+    },
+    {
+      "kind": "dir",
+      "path": "Defs"
+    },
+    {
+      "kind": "dir",
+      "path": "Defs/SoundDefs"
+    },
+    {
+      "kind": "dir",
+      "path": "Defs/ThingDefs_Misc"
+    },
+    {
+      "kind": "dir",
+      "path": "Defs/ThingDefs_Misc/Weapons"
+    },
+    {
+      "kind": "dir",
+      "path": "Patches"
+    },
+    {
+      "kind": "dir",
+      "path": "Sounds"
+    },
+    {
+      "kind": "dir",
+      "path": "Sounds/Weapons"
+    },
+    {
+      "kind": "dir",
+      "path": "Textures"
+    },
+    {
+      "kind": "dir",
+      "path": "Textures/Things"
+    },
+    {
+      "kind": "dir",
+      "path": "Textures/Things/Item"
+    },
+    {
+      "kind": "dir",
+      "path": "Textures/Things/Item/Equipment"
+    },
+    {
+      "kind": "dir",
+      "path": "Textures/Things/Item/Equipment/WeaponMelee"
+    },
+    {
+      "kind": "dir",
+      "path": "Textures/Things/Item/Equipment/WeaponRanged"
+    },
+    {
+      "kind": "dir",
+      "path": "Textures/Things/Projectile"
+    }
+  ],
+  "rendered": {
+    "About/About.xml": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<ModMetaData>\n  <name>RS Example</name>\n  <author>RS Tester</author>\n  <packageId>rs.example</packageId>\n  <supportedVersions>\n    <li>1.6</li>\n  </supportedVersions>\n  <description>Describe what this mod adds. This text is shown in the mod list and on the Steam Workshop page.</description>\n</ModMetaData>\n"
+  },
+  "root": "/work/RS_Example"
+}

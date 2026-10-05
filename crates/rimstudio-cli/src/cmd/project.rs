@@ -4,6 +4,7 @@ use std::fmt::Write as _;
 
 use serde_json::{Value, json};
 
+use super::project_layout as layout;
 use crate::cli::ProjectCmd;
 use crate::error::CliResult;
 use crate::fmt::{arr_at, bool_at, count_diagnostics, render_diagnostics, str_at, u64_at};
@@ -74,6 +75,17 @@ pub(crate) fn run(s: &Session, cmd: &ProjectCmd) -> CliResult {
             package_id,
             author,
             game_version,
+            versioned,
+            ce_folder,
+            languages,
+            assemblies,
+            source,
+            gitignore,
+            ignore_source_art,
+            readme,
+            credits,
+            no_textures,
+            no_sounds,
         } => {
             let abs = absolute(path)?;
             let mut request = json!({
@@ -81,6 +93,17 @@ pub(crate) fn run(s: &Session, cmd: &ProjectCmd) -> CliResult {
                 "name": name,
                 "packageId": package_id,
                 "author": author,
+                "versionedFolders": versioned,
+                "cePatchFolder": ce_folder,
+                "languagesFolder": languages,
+                "assembliesFolder": assemblies,
+                "sourceFolder": source,
+                "gitignore": gitignore,
+                "ignoreSourceArt": ignore_source_art,
+                "readme": readme,
+                "credits": credits,
+                "texturesFolder": !no_textures,
+                "soundsFolder": !no_sounds,
             });
             if !game_version.is_empty() {
                 request["supportedVersions"] = json!(game_version);
@@ -93,6 +116,16 @@ pub(crate) fn run(s: &Session, cmd: &ProjectCmd) -> CliResult {
                 )
             });
         }
+        ProjectCmd::Tree { path, depth, files } => layout::tree(s, path, *depth, *files)?,
+        ProjectCmd::Check { path } => layout::check(s, path)?,
+        ProjectCmd::ScaffoldMissing { path, dry_run } => {
+            layout::scaffold_missing(s, path, *dry_run)?
+        }
+        ProjectCmd::Read {
+            path,
+            file,
+            max_bytes,
+        } => layout::read(s, path, file, *max_bytes)?,
         ProjectCmd::Open { path } => {
             let summary = open(s, path)?;
             s.emit(&summary, || render_summary(&summary));

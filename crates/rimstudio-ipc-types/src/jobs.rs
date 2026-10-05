@@ -11,6 +11,7 @@ use crate::error::ApiError;
 
 /// Returned when a job is registered.
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct JobHandleDto {
     /// The caller minted job id.
@@ -21,6 +22,7 @@ pub struct JobHandleDto {
 
 /// What the numbers of a progress record count.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, Default, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "kebab-case")]
 pub enum ProgressUnitDto {
     /// Generic items.
@@ -44,6 +46,7 @@ impl From<ProgressUnit> for ProgressUnitDto {
 
 /// A progress record. The runner coalesces these to at most 20 per second per job.
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct ProgressDto {
     /// Short phase key, for example `scan-metadata`; the webview localises it.
@@ -52,11 +55,13 @@ pub struct ProgressDto {
     pub done: u64,
     /// Units in total. Absent while the total is unknown (an indeterminate bar).
     #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub total: Option<u64>,
     /// What a unit is.
     pub unit: ProgressUnitDto,
     /// Short detail string, such as the folder being scanned. Absent when there is nothing to add.
     #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub detail: Option<String>,
 }
 
@@ -80,6 +85,7 @@ impl From<Progress> for ProgressDto {
 
 /// The terminal event of a job: exactly one is sent per job.
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(
     tag = "kind",
     rename_all = "kebab-case",
@@ -96,6 +102,7 @@ pub enum JobResultEnvelope<R> {
         elapsed_ms: u64,
         /// Content problems found on the way; empty when none.
         #[serde(default, skip_serializing_if = "Vec::is_empty")]
+        #[cfg_attr(feature = "ts", ts(as = "Option<Vec<DiagnosticDto>>", optional))]
         diagnostics: Vec<DiagnosticDto>,
     },
     /// The job failed.
@@ -115,6 +122,7 @@ pub enum JobResultEnvelope<R> {
         elapsed_ms: u64,
         /// The partial result. Absent when the job keeps nothing useful from a cancelled run.
         #[serde(skip_serializing_if = "Option::is_none")]
+        #[cfg_attr(feature = "ts", ts(optional))]
         partial: Option<R>,
     },
 }
@@ -133,6 +141,7 @@ impl<R> JobResultEnvelope<R> {
 
 /// Everything a job channel carries.
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(
     tag = "kind",
     rename_all = "kebab-case",
@@ -147,6 +156,7 @@ pub enum JobEvent<R> {
         label_key: String,
         /// The phases the job goes through, in order. Empty when unknown.
         #[serde(default, skip_serializing_if = "Vec::is_empty")]
+        #[cfg_attr(feature = "ts", ts(as = "Option<Vec<String>>", optional))]
         phases: Vec<String>,
     },
     /// A progress record; the latest one wins.
@@ -166,6 +176,7 @@ pub enum JobEvent<R> {
         elapsed_ms: u64,
         /// Content problems found on the way; empty when none.
         #[serde(default, skip_serializing_if = "Vec::is_empty")]
+        #[cfg_attr(feature = "ts", ts(as = "Option<Vec<DiagnosticDto>>", optional))]
         diagnostics: Vec<DiagnosticDto>,
     },
     /// Terminal: the job failed.
@@ -185,6 +196,7 @@ pub enum JobEvent<R> {
         elapsed_ms: u64,
         /// The partial result. Absent when nothing useful is kept.
         #[serde(skip_serializing_if = "Option::is_none")]
+        #[cfg_attr(feature = "ts", ts(optional))]
         partial: Option<R>,
     },
 }
@@ -238,6 +250,7 @@ impl<R> From<JobResultEnvelope<R>> for JobEvent<R> {
 
 /// The state `cancel_job` reports.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "kebab-case")]
 pub enum CancelStateDto {
     /// The token was set; the job is winding down.
@@ -250,6 +263,7 @@ pub enum CancelStateDto {
 
 /// Request of `cancel_job`.
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct CancelJobRequest {
     /// The job to cancel.
@@ -258,6 +272,7 @@ pub struct CancelJobRequest {
 
 /// Response of `cancel_job`.
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct CancelJobResponse {
     /// The state after the call.

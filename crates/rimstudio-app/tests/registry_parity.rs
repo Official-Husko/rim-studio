@@ -27,6 +27,10 @@ fn in_slice(name: &str) -> bool {
         "project_open",
         "project_create",
         "project_close",
+        "project_tree",
+        "project_layout_check",
+        "project_scaffold_missing",
+        "project_read_file",
     ];
     EXACT.contains(&name)
         || name.starts_with("detect_")

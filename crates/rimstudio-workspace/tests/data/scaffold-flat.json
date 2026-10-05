@@ -64,7 +64,55 @@
     },
     {
       "kind": "dir",
+      "path": "Defs/SoundDefs"
+    },
+    {
+      "kind": "dir",
+      "path": "Defs/ThingDefs_Misc"
+    },
+    {
+      "kind": "dir",
+      "path": "Defs/ThingDefs_Misc/Weapons"
+    },
+    {
+      "kind": "dir",
       "path": "Patches"
+    },
+    {
+      "kind": "dir",
+      "path": "Sounds"
+    },
+    {
+      "kind": "dir",
+      "path": "Sounds/Weapons"
+    },
+    {
+      "kind": "dir",
+      "path": "Textures"
+    },
+    {
+      "kind": "dir",
+      "path": "Textures/Things"
+    },
+    {
+      "kind": "dir",
+      "path": "Textures/Things/Item"
+    },
+    {
+      "kind": "dir",
+      "path": "Textures/Things/Item/Equipment"
+    },
+    {
+      "kind": "dir",
+      "path": "Textures/Things/Item/Equipment/WeaponMelee"
+    },
+    {
+      "kind": "dir",
+      "path": "Textures/Things/Item/Equipment/WeaponRanged"
+    },
+    {
+      "kind": "dir",
+      "path": "Textures/Things/Projectile"
     }
   ],
   "rendered": {

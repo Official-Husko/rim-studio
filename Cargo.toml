@@ -25,6 +25,7 @@ rimstudio-toolkit = { path = "crates/rimstudio-toolkit" }
 rimstudio-manager = { path = "crates/rimstudio-manager" }
 rimstudio-ipc-types = { path = "crates/rimstudio-ipc-types" }
 rimstudio-app = { path = "crates/rimstudio-app" }
+rimstudio-devserver = { path = "crates/rimstudio-devserver" }
 rimstudio-testing = { path = "crates/rimstudio-testing" }
 
 # data
@@ -62,6 +63,8 @@ rstest = "0.27.0"
 goldenfile = "1.11.0"
 steamlocate = "2.1.1"
 keyvalues-parser = "0.2.4"
+# typescript bindings (optional, behind the `ts` feature of rimstudio-ipc-types)
+ts-rs = { version = "=12.0.1", default-features = false, features = ["serde-compat", "serde-json-impl"] }
 
 [workspace.lints.rust]
 unsafe_code = "forbid"

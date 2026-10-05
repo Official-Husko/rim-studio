@@ -24,7 +24,7 @@ fn a_ranged_design_plans_the_vanilla_files_only_and_matches_the_golden() {
     let weapon = plan
         .files
         .iter()
-        .find(|x| x.path == "Defs/Weapons/RS_NewRifle.xml")
+        .find(|x| x.path == "Defs/ThingDefs_Misc/Weapons/RangedIndustrial/RS_NewRifle.xml")
         .expect("weapon file");
     assert_text_golden("ranged_vanilla.xml", &weapon.rendered);
     assert!(!weapon.rendered.contains("CombatExtended"));
@@ -40,7 +40,7 @@ fn a_melee_design_matches_the_golden() {
     let weapon = plan
         .files
         .iter()
-        .find(|x| x.path == "Defs/Weapons/RS_NewBlade.xml")
+        .find(|x| x.path == "Defs/ThingDefs_Misc/Weapons/MeleeMedieval/RS_NewBlade.xml")
         .expect("weapon file");
     assert_text_golden("melee_vanilla.xml", &weapon.rendered);
 }
@@ -69,7 +69,11 @@ fn without_the_block_no_plan_holds_a_combat_extended_file_or_class() {
                 .iter()
                 .all(|x| !x.rendered.contains("CombatExtended"))
         );
-        assert!(plan.files.iter().all(|x| !x.path.starts_with("CE/")));
+        assert!(
+            plan.files
+                .iter()
+                .all(|x| !x.path.starts_with("Compat/CombatExtended/"))
+        );
     }
 }
 

@@ -64,7 +64,10 @@ pub mod wire {
         SourcesRemoveResponse, SourcesUpdateRequest,
     };
     pub use rimstudio_ipc_types::project::{
-        ProjectCloseRequest, ProjectCloseResponse, ProjectOpenRequest, ProjectSummaryDto,
+        ProjectCloseRequest, ProjectCloseResponse, ProjectFileDto, ProjectLayoutCheckDto,
+        ProjectLayoutCheckRequest, ProjectOpenRequest, ProjectReadFileRequest,
+        ProjectScaffoldMissingDto, ProjectScaffoldMissingRequest, ProjectSummaryDto,
+        ProjectTreeDto, ProjectTreeRequest,
     };
     pub use rimstudio_ipc_types::settings::{SettingsDto, SettingsGetRequest, SettingsUpdate};
     pub use rimstudio_ipc_types::tools::AppListToolsResponse;
@@ -265,6 +268,10 @@ macro_rules! for_each_command {
             action project_open (ctx, req: ProjectOpenRequest) -> ProjectSummaryDto = $crate::api::project::project_open;
             action project_create (ctx, req: ProjectCreateRequest) -> ProjectSummaryDto = $crate::api::project::project_create;
             action project_close (ctx, req: ProjectCloseRequest) -> ProjectCloseResponse = $crate::api::project::project_close;
+            query  project_tree (ctx, req: ProjectTreeRequest) -> ProjectTreeDto = $crate::api::project::project_tree;
+            query  project_layout_check (ctx, req: ProjectLayoutCheckRequest) -> ProjectLayoutCheckDto = $crate::api::project::project_layout_check;
+            action project_scaffold_missing (ctx, req: ProjectScaffoldMissingRequest) -> ProjectScaffoldMissingDto = $crate::api::project::project_scaffold_missing;
+            query  project_read_file (ctx, req: ProjectReadFileRequest) -> ProjectFileDto = $crate::api::project::project_read_file;
             query  designer_reference_list (ctx, req: DesignerReferenceListRequest) -> ReferenceListDto = $crate::api::designer::designer_reference_list;
             query  designer_preview (ctx, req: DesignerPreviewRequest) -> PreviewDto = $crate::api::designer::designer_preview;
             query  designer_fit (ctx, req: DesignerFitRequest) -> FitReportDto = $crate::api::designer::designer_fit;

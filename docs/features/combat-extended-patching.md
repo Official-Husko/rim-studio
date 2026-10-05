@@ -246,7 +246,7 @@ CE detection mechanisms and their limits ([CE patch conventions](../research/ce-
 Rules:
 
 1. CE classes (`CombatExtended.*` operations and class attributes) are written only into a folder selected by `LoadFolders.xml` with `IfModActive="ceteam.combatextended"`. A test over every generated plan asserts that no file outside that folder contains a CE class.
-2. The CE folder is named `CE` by default (the commonest choice) and is configurable; folder names are case-sensitive on Linux and macOS.
+2. The CE folder is `Compat/CombatExtended` by default (D-105, [mod layout](mod-layout.md) section 6) with the patch files in its `Patches` folder, so definitions can follow beside them later. A project that already has another Combat Extended folder keeps it: the generator uses the folder that `LoadFolders.xml` gates on `ceteam.combatextended`, else the standard folder, else `CE` or `CombatExtended` as spelled on disk, and never moves it (update mode and the convert flow work the same on such a project). Folder names are case-sensitive on Linux and macOS.
 3. `LoadFolders.xml` is created when absent (root folder plus the CE folder under the current version block) or edited by byte-span splice when present (see [items toolkit](items-toolkit.md) section 8.3). The `v1.6` block is added when the mod's supported versions lack it by copying the previous block; the game uses the exact version block, else the highest older, else `default`. The default block is kept equal to the newest block.
 4. Id suffixes (`_copy`, `_steam`) found in existing entries are flagged and offered a canonical replacement, never copied.
 5. A mod that must not use `LoadFolders.xml` gets a fallback file with only vanilla classes under a `FindMod` with `ceName`; `MakeGun` cannot be emitted there because CE classes in a file that loads without CE log errors at load time, and the generator tells the user so.
@@ -309,7 +309,7 @@ Fixtures use fictional numbers and fictional defNames. Install-backed tests (`#[
 Owner decisions:
 
 1. Whether update mode may splice into hand-written files of the open project (proposed: yes, minimal and shown as a diff) or must always write a RimStudio-owned override file.
-2. The default CE folder name (`CE` proposed) and whether to add the `v1.6` block automatically or ask.
+2. Whether to add the `v1.6` block automatically or ask (the default folder name is decided: `Compat/CombatExtended`, D-105).
 3. Whether to offer a CE auto-patcher compatible export (writing the preset-matching tags so CE's own auto-patcher handles the item at game start) as an extra option; the research recommends against shipping the preset approach and this document does not include it ([CE auto-patcher formulas](../research/ce-autopatcher-formulas.md) open question 7).
 4. Which CE versions older than 16.7 (supporting game 1.5) the generator targets; the templates were verified only against CE 16.7.3.0 and game 1.6.4871.
 

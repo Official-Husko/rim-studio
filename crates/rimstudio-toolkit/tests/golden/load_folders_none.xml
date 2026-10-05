@@ -2,6 +2,6 @@
 <loadFolders>
   <v1.6>
     <li>/</li>
-    <li IfModActive="ceteam.combatextended">CE</li>
+    <li IfModActive="ceteam.combatextended">Compat/CombatExtended</li>
   </v1.6>
 </loadFolders>

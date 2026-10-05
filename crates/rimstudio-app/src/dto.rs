@@ -13,6 +13,7 @@ use crate::jobs::JobState;
 
 /// Request of `app_ping`.
 #[derive(Debug, Clone, PartialEq, Eq, Default, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase", default)]
 pub struct AppPingRequest {
     /// Text echoed back unchanged.
@@ -21,6 +22,7 @@ pub struct AppPingRequest {
 
 /// Response of `app_ping`.
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct AppPingResponse {
     /// The echoed text.
@@ -31,10 +33,12 @@ pub struct AppPingResponse {
 
 /// Request of `app_get_info`.
 #[derive(Debug, Clone, PartialEq, Eq, Default, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 pub struct AppGetInfoRequest {}
 
 /// Response of `app_get_info`.
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct AppGetInfoResponse {
     /// The application version.
@@ -55,10 +59,12 @@ pub struct AppGetInfoResponse {
 
 /// Request of `app_list_tools`.
 #[derive(Debug, Clone, PartialEq, Eq, Default, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 pub struct AppListToolsRequest {}
 
 /// Request of `job_status`.
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct JobStatusRequest {
     /// The job to look up.
@@ -67,6 +73,7 @@ pub struct JobStatusRequest {
 
 /// Response of `job_status`. Finished jobs stay known for a minute.
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct JobStatusResponse {
     /// The job id.
@@ -75,20 +82,25 @@ pub struct JobStatusResponse {
     pub state: JobStateDto,
     /// Catalog key of the job label. Absent for an unknown id.
     #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub label_key: Option<String>,
     /// Unix time in milliseconds when the job was registered. Absent for an unknown id.
     #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub started_at_ms: Option<u64>,
     /// The latest progress record that was sent.
     #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub progress: Option<ProgressDto>,
     /// The terminal event, once the job has ended.
     #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub terminal: Option<JobEvent<Value>>,
 }
 
 /// The state `job_status` reports.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "kebab-case")]
 pub enum JobStateDto {
     /// The job is running.
@@ -122,6 +134,7 @@ impl From<JobState> for JobStateDto {
 /// Mirrors the scaffold options of the workspace crate. Nothing is written when the target exists or
 /// lies inside the game install.
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase", default)]
 pub struct ProjectCreateRequest {
     /// The folder to create; the mod root. Must be absolute.
@@ -144,10 +157,24 @@ pub struct ProjectCreateRequest {
     pub languages_folder: bool,
     /// Create the `Assemblies` folder.
     pub assemblies_folder: bool,
-    /// Create the optional Combat Extended folder gated in `LoadFolders.xml`. Off unless asked.
+    /// Create the optional `Compat/CombatExtended` folder gated in `LoadFolders.xml`. Off unless asked.
     pub ce_patch_folder: bool,
     /// Put a placeholder file in folders that would stay empty.
     pub placeholder_files: bool,
+    /// Create the texture folders of weapons and projectiles.
+    pub textures_folder: bool,
+    /// Create `Sounds/Weapons`.
+    pub sounds_folder: bool,
+    /// Create `Source/Art` (art sources and code, never shipped).
+    pub source_folder: bool,
+    /// Write a `.gitignore` for a mod repository. Off unless asked.
+    pub gitignore: bool,
+    /// With `gitignore`: keep `Source/Art` and `Raw Assets` out of the repository.
+    pub ignore_source_art: bool,
+    /// Write a `README.md`. Off unless asked.
+    pub readme: bool,
+    /// Write a `Credits.txt`. Off unless asked.
+    pub credits: bool,
 }
 
 impl Default for ProjectCreateRequest {
@@ -165,6 +192,13 @@ impl Default for ProjectCreateRequest {
             assemblies_folder: false,
             ce_patch_folder: false,
             placeholder_files: false,
+            textures_folder: true,
+            sounds_folder: true,
+            source_folder: false,
+            gitignore: false,
+            ignore_source_art: false,
+            readme: false,
+            credits: false,
         }
     }
 }

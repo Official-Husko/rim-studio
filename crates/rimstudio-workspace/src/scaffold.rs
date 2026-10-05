@@ -7,16 +7,21 @@
 //! folders and files, refusing to overwrite, going through the guard and fence) is the caller's job
 //! with `rimstudio-io`; [`ScaffoldPlan::conflicts`] tells which planned files already exist.
 //!
-//! What is generated:
+//! What is generated (RimStudio mod layout v1, `docs/features/mod-layout.md`):
 //!
-//! - `About/About.xml` through `rimstudio_xml::about::create_about`;
-//! - empty `Defs`, `Patches`, `Languages` and `Assemblies` folders as chosen (no placeholder files
-//!   unless asked);
+//! - `About/About.xml` through `rimstudio_xml::about::create_about`, with the supported versions and a
+//!   description placeholder when the user gave none;
+//! - the standard folders, named like the game's own: `Defs/ThingDefs_Misc/Weapons` and `Defs/SoundDefs`,
+//!   `Patches`, `Textures/Things/Item/Equipment/WeaponRanged`, `WeaponMelee` and `Textures/Things/Projectile`,
+//!   `Sounds/Weapons`, each on by default and each switchable; optional `Languages/English/Keyed`,
+//!   `Assemblies` and `Source/Art` (author material that is never shipped);
 //! - with the versioned layout, one folder per supported version plus `Common`;
-//! - `LoadFolders.xml` when the layout is versioned or the optional Combat Extended patch folder is
-//!   chosen. That folder is only ever listed in `LoadFolders.xml` under an `IfModActive` condition
-//!   for the Combat Extended package, so it never loads without that mod (owner rule: Combat
-//!   Extended is an opt in patch, never part of the vanilla definitions).
+//! - `LoadFolders.xml` when the layout is versioned or the optional Combat Extended folder is chosen. That
+//!   folder (`Compat/CombatExtended`, with its own `Patches`) is only ever listed in `LoadFolders.xml` under an
+//!   `IfModActive` condition for the Combat Extended package, so it never loads without that mod (owner
+//!   rule: Combat Extended is an opt in patch, never part of the vanilla definitions);
+//! - only when asked: `.gitignore` (and its Source art lines), `README.md`, `Credits.txt`, `.gitkeep` files.
+//!   `About/Preview.png` and `About/Manifest.xml` are never created here.
 //!
 //! An invalid spec (empty name, a package id the game would warn about, no valid supported
 //! version, a relative target) gives a plan with no items and [`codes::SCAFFOLD_INVALID`] problems.
@@ -69,26 +74,40 @@ pub struct ScaffoldSpec {
     pub supported_versions: Vec<String>,
     /// Flat or versioned folders.
     pub layout: ScaffoldLayout,
-    /// Create the `Defs` folder.
+    /// Create the definition folders: `Defs/ThingDefs_Misc/Weapons` and `Defs/SoundDefs`.
     pub defs_folder: bool,
     /// Create the `Patches` folder.
     pub patches_folder: bool,
-    /// Create the `Languages` folder.
+    /// Create the texture folders of weapons and projectiles, named like the game's own.
+    pub textures_folder: bool,
+    /// Create `Sounds/Weapons`.
+    pub sounds_folder: bool,
+    /// Create `Source/Art` in the mod root: art sources and code, never shipped.
+    pub source_folder: bool,
+    /// Create `Languages/English/Keyed`.
     pub languages_folder: bool,
     /// Create the `Assemblies` folder.
     pub assemblies_folder: bool,
-    /// Create the optional Combat Extended patch folder, gated in `LoadFolders.xml`. Off unless the
-    /// user asks.
+    /// Create the optional `Compat/CombatExtended/Patches` folder, gated in `LoadFolders.xml`. Off unless
+    /// the user asks.
     pub ce_patch_folder: bool,
     /// Mods this mod depends on (written to About.xml, and as `loadAfter`).
     pub dependencies: Vec<ModDependency>,
     /// Put a `.gitkeep` file in every folder that would be empty.
     pub placeholder_files: bool,
+    /// Write a `.gitignore` for a mod repository (operating system files, build output). Off unless asked.
+    pub gitignore: bool,
+    /// With `gitignore`: also keep `Source/Art` and `Raw Assets` out of the repository.
+    pub ignore_source_art: bool,
+    /// Write a `README.md` with the name and the description. Off unless asked.
+    pub readme: bool,
+    /// Write a `Credits.txt` naming the author. Off unless asked.
+    pub credits: bool,
 }
 
 impl ScaffoldSpec {
-    /// A spec with the usual defaults: version 1.6, flat layout, `Defs` and `Patches` folders, no
-    /// Combat Extended folder, no placeholders.
+    /// A spec with the usual defaults: version 1.6, flat layout, the definition, patch, texture and sound
+    /// folders, no Combat Extended folder, no optional files, no placeholders.
     #[must_use]
     pub fn new(
         target: impl Into<Utf8PathBuf>,
@@ -105,11 +124,18 @@ impl ScaffoldSpec {
             layout: ScaffoldLayout::Flat,
             defs_folder: true,
             patches_folder: true,
+            textures_folder: true,
+            sounds_folder: true,
+            source_folder: false,
             languages_folder: false,
             assemblies_folder: false,
             ce_patch_folder: false,
             dependencies: Vec::new(),
             placeholder_files: false,
+            gitignore: false,
+            ignore_source_art: false,
+            readme: false,
+            credits: false,
         }
     }
 }
@@ -296,6 +322,34 @@ fn check(spec: &ScaffoldSpec) -> (Vec<Diagnostic>, Vec<String>) {
     (problems, versions)
 }
 
+/// The text of `About.xml`'s description when the user gave none.
+pub const DESCRIPTION_PLACEHOLDER: &str = "Describe what this mod adds. This text is shown in the mod list and on the Steam Workshop page.";
+
+fn gitignore_text(ignore_source_art: bool) -> String {
+    let mut lines = vec![
+        "# Operating system and editor files",
+        ".DS_Store",
+        "Thumbs.db",
+        "*.bak",
+        "*.tmp",
+        "",
+        "# Build output of the Source folder",
+        "Source/**/bin/",
+        "Source/**/obj/",
+    ];
+    if ignore_source_art {
+        lines.extend([
+            "",
+            "# Art sources are not part of the mod",
+            "Source/Art/",
+            "Raw Assets/",
+        ]);
+    }
+    let mut text = lines.join("\n");
+    text.push('\n');
+    text
+}
+
 /// Plans a new mod folder.
 #[must_use]
 pub fn plan(spec: &ScaffoldSpec) -> ScaffoldPlan {
@@ -309,8 +363,20 @@ pub fn plan(spec: &ScaffoldSpec) -> ScaffoldPlan {
     }
 
     let mut items: BTreeMap<String, PlanItem> = BTreeMap::new();
-    let mut put_dir = |path: String| {
-        items.insert(path.clone(), PlanItem::Dir { path });
+    let mut leaf_dirs: Vec<String> = Vec::new();
+    // a folder and every folder above it
+    let mut put_path = |items: &mut BTreeMap<String, PlanItem>, path: &str, leaf: bool| {
+        let mut acc = String::new();
+        for part in path.split('/') {
+            if !acc.is_empty() {
+                acc.push('/');
+            }
+            acc.push_str(part);
+            items.insert(acc.clone(), PlanItem::Dir { path: acc.clone() });
+        }
+        if leaf {
+            leaf_dirs.push(path.to_owned());
+        }
     };
 
     // content folders
@@ -325,40 +391,63 @@ pub fn plan(spec: &ScaffoldSpec) -> ScaffoldPlan {
             format!("{base}/{name}")
         }
     };
-    let mut leaf_dirs: Vec<String> = Vec::new();
     if spec.layout == ScaffoldLayout::Versioned {
-        put_dir(paths::COMMON_DIR.to_owned());
-        leaf_dirs.push(paths::COMMON_DIR.to_owned());
+        put_path(&mut items, paths::COMMON_DIR, true);
     }
     for base in &bases {
         if spec.layout == ScaffoldLayout::Versioned {
-            put_dir(base.clone());
+            put_path(&mut items, base, false);
         }
-        let mut subs: Vec<&str> = Vec::new();
+        let mut leaves: Vec<String> = Vec::new();
         if spec.defs_folder {
-            subs.push(paths::DEFS_DIR);
+            leaves.push(join(
+                base,
+                &format!("{}/{}", paths::DEFS_DIR, paths::DEFS_WEAPONS_DIR),
+            ));
+            leaves.push(join(
+                base,
+                &format!("{}/{}", paths::DEFS_DIR, paths::DEFS_SOUNDS_DIR),
+            ));
         }
         if spec.patches_folder {
-            subs.push(paths::PATCHES_DIR);
+            leaves.push(join(base, paths::PATCHES_DIR));
+        }
+        if spec.textures_folder {
+            for dir in [
+                paths::TEXTURES_WEAPON_RANGED_DIR,
+                paths::TEXTURES_WEAPON_MELEE_DIR,
+                paths::TEXTURES_PROJECTILE_DIR,
+            ] {
+                leaves.push(join(base, &format!("{}/{dir}", paths::TEXTURES_DIR)));
+            }
+        }
+        if spec.sounds_folder {
+            leaves.push(join(
+                base,
+                &format!("{}/{}", paths::SOUNDS_DIR, paths::SOUNDS_WEAPONS_DIR),
+            ));
         }
         if spec.languages_folder {
-            subs.push(paths::LANGUAGES_DIR);
+            leaves.push(join(
+                base,
+                &format!("{}/{}", paths::LANGUAGES_DIR, paths::LANGUAGES_KEYED_DIR),
+            ));
         }
         if spec.assemblies_folder {
-            subs.push(paths::ASSEMBLIES_DIR);
-        }
-        for sub in subs {
-            let path = join(base, sub);
-            put_dir(path.clone());
-            leaf_dirs.push(path);
+            leaves.push(join(base, paths::ASSEMBLIES_DIR));
         }
         if spec.ce_patch_folder {
-            let ce = join(base, paths::CE_PATCH_FOLDER_NAME);
-            let patches = format!("{ce}/{}", paths::PATCHES_DIR);
-            put_dir(ce);
-            put_dir(patches.clone());
-            leaf_dirs.push(patches);
+            leaves.push(join(
+                base,
+                &format!("{}/{}", paths::CE_COMPAT_DIR, paths::PATCHES_DIR),
+            ));
         }
+        for leaf in leaves {
+            put_path(&mut items, &leaf, true);
+        }
+    }
+    if spec.source_folder {
+        put_path(&mut items, paths::SOURCE_ART_DIR, true);
     }
 
     // About.xml
@@ -369,11 +458,16 @@ pub fn plan(spec: &ScaffoldSpec) -> ScaffoldPlan {
             load_after.push(id.to_owned());
         }
     }
+    let description = if spec.description.trim().is_empty() {
+        DESCRIPTION_PLACEHOLDER.to_owned()
+    } else {
+        spec.description.clone()
+    };
     let about = AboutSpec {
         name: spec.name.trim().to_owned(),
         author: spec.author.trim().to_owned(),
         package_id: spec.package_id.trim().to_owned(),
-        description: spec.description.clone(),
+        description: description.clone(),
         supported_versions: versions.clone(),
         url: None,
         mod_version: None,
@@ -383,7 +477,7 @@ pub fn plan(spec: &ScaffoldSpec) -> ScaffoldPlan {
         incompatible_with: Vec::new(),
     };
     let about_path = paths::ABOUT_XML.to_owned();
-    put_dir(paths::ABOUT_DIR.to_owned());
+    put_path(&mut items, paths::ABOUT_DIR, false);
     items.insert(
         about_path.clone(),
         PlanItem::File {
@@ -410,7 +504,7 @@ pub fn plan(spec: &ScaffoldSpec) -> ScaffoldPlan {
                     ScaffoldLayout::Flat => String::new(),
                 };
                 entries.push(
-                    LoadEntry::dir(format!("{base}{}", paths::CE_PATCH_FOLDER_NAME))
+                    LoadEntry::dir(format!("{base}{}", paths::CE_COMPAT_DIR))
                         .if_active([paths::CE_PACKAGE_ID]),
                 );
             }
@@ -425,6 +519,47 @@ pub fn plan(spec: &ScaffoldSpec) -> ScaffoldPlan {
                     node: load_folders::to_node(&lf),
                 },
             },
+        );
+    }
+
+    // optional files: only when asked
+    let put_text = |items: &mut BTreeMap<String, PlanItem>, path: &str, text: String| {
+        items.insert(
+            path.to_owned(),
+            PlanItem::File {
+                path: path.to_owned(),
+                content: PlanContent::Text { text },
+            },
+        );
+    };
+    if spec.gitignore {
+        put_text(
+            &mut items,
+            ".gitignore",
+            gitignore_text(spec.ignore_source_art),
+        );
+    }
+    if spec.readme {
+        put_text(
+            &mut items,
+            "README.md",
+            format!("# {}\n\n{}\n", spec.name.trim(), description.trim()),
+        );
+    }
+    if spec.credits {
+        let author = spec.author.trim();
+        put_text(
+            &mut items,
+            "Credits.txt",
+            format!(
+                "{}\n\nAuthor: {}\n",
+                spec.name.trim(),
+                if author.is_empty() {
+                    "(your name)"
+                } else {
+                    author
+                }
+            ),
         );
     }
 
@@ -477,15 +612,93 @@ mod tests {
     }
 
     #[test]
-    fn flat_plan_has_about_and_empty_folders_only() {
+    fn flat_plan_is_the_standard_skeleton() {
         let plan = plan(&spec());
         assert!(plan.is_valid());
         assert_eq!(
             paths_of(&plan),
-            vec!["About", "About/About.xml", "Defs", "Patches"]
+            vec![
+                "About",
+                "About/About.xml",
+                "Defs",
+                "Defs/SoundDefs",
+                "Defs/ThingDefs_Misc",
+                "Defs/ThingDefs_Misc/Weapons",
+                "Patches",
+                "Sounds",
+                "Sounds/Weapons",
+                "Textures",
+                "Textures/Things",
+                "Textures/Things/Item",
+                "Textures/Things/Item/Equipment",
+                "Textures/Things/Item/Equipment/WeaponMelee",
+                "Textures/Things/Item/Equipment/WeaponRanged",
+                "Textures/Things/Projectile",
+            ]
         );
         assert!(plan.files().all(|(p, _)| p == "About/About.xml"));
         assert!(text_of(&plan, "About/About.xml").contains("<packageId>rs.newmod</packageId>"));
+    }
+
+    #[test]
+    fn every_standard_folder_can_be_switched_off() {
+        let mut s = spec();
+        s.defs_folder = false;
+        s.textures_folder = false;
+        s.sounds_folder = false;
+        s.patches_folder = false;
+        assert_eq!(paths_of(&plan(&s)), vec!["About", "About/About.xml"]);
+    }
+
+    #[test]
+    fn optional_folders_and_files_appear_only_when_asked() {
+        let mut s = spec();
+        s.languages_folder = true;
+        s.assemblies_folder = true;
+        s.source_folder = true;
+        s.gitignore = true;
+        s.ignore_source_art = true;
+        s.readme = true;
+        s.credits = true;
+        let plan = plan(&s);
+        let p = paths_of(&plan);
+        for expected in [
+            "Languages/English/Keyed",
+            "Assemblies",
+            "Source/Art",
+            ".gitignore",
+            "README.md",
+            "Credits.txt",
+        ] {
+            assert!(p.contains(&expected.to_owned()), "{expected}");
+        }
+        let ignore = text_of(&plan, ".gitignore");
+        assert!(ignore.contains("Source/Art/") && ignore.contains("Raw Assets/"));
+        assert!(text_of(&plan, "Credits.txt").contains("Author: RS Tester"));
+        assert!(text_of(&plan, "README.md").starts_with("# RS New Mod"));
+        // never created silently
+        let base = super::plan(&spec());
+        for never in [
+            "About/Preview.png",
+            "About/Manifest.xml",
+            "README.md",
+            ".gitignore",
+        ] {
+            assert!(!paths_of(&base).contains(&never.to_owned()), "{never}");
+        }
+        let plain = ScaffoldSpec {
+            gitignore: true,
+            ..spec()
+        };
+        assert!(!text_of(&super::plan(&plain), ".gitignore").contains("Source/Art/"));
+    }
+
+    #[test]
+    fn an_empty_description_gets_the_placeholder() {
+        let mut s = spec();
+        s.description = "  ".into();
+        let text = text_of(&plan(&s), "About/About.xml");
+        assert!(text.contains(DESCRIPTION_PLACEHOLDER));
     }
 
     #[test]
@@ -505,18 +718,23 @@ mod tests {
         let mut s = spec();
         s.layout = ScaffoldLayout::Versioned;
         s.supported_versions = vec!["1.5".into(), "v1.6".into(), "1.6".into()];
+        s.defs_folder = false;
+        s.textures_folder = false;
+        s.sounds_folder = false;
         s.languages_folder = true;
         let plan = plan(&s);
         assert_eq!(
             paths_of(&plan),
             vec![
                 "1.5",
-                "1.5/Defs",
                 "1.5/Languages",
+                "1.5/Languages/English",
+                "1.5/Languages/English/Keyed",
                 "1.5/Patches",
                 "1.6",
-                "1.6/Defs",
                 "1.6/Languages",
+                "1.6/Languages/English",
+                "1.6/Languages/English/Keyed",
                 "1.6/Patches",
                 "About",
                 "About/About.xml",
@@ -547,13 +765,13 @@ mod tests {
         s.ce_patch_folder = true;
         let on = plan(&s);
         let p = paths_of(&on);
-        assert!(p.contains(&"CombatExtended/Patches".to_owned()));
+        assert!(p.contains(&"Compat/CombatExtended/Patches".to_owned()));
         let lf = load_folders::read(text_of(&on, "LoadFolders.xml").as_bytes()).unwrap();
         let block = lf.spec.block("1.6").unwrap();
         let gated = block
             .entries
             .iter()
-            .find(|e| e.path == "CombatExtended")
+            .find(|e| e.path == "Compat/CombatExtended")
             .unwrap();
         assert_eq!(gated.if_active, vec!["ceteam.combatextended".to_owned()]);
         let root = block.entries.iter().find(|e| e.path.is_empty()).unwrap();
@@ -561,6 +779,7 @@ mod tests {
         // no file outside the CE folder mentions a Combat Extended class
         for f in on.render(&RenderOpts::default()) {
             assert!(!f.text.contains("CombatExtended."), "{}", f.path);
+            assert!(!f.text.contains("ceteam") || f.path == "LoadFolders.xml");
         }
     }
 
@@ -569,8 +788,9 @@ mod tests {
         let mut s = spec();
         s.placeholder_files = true;
         let plan = plan(&s);
-        assert!(paths_of(&plan).contains(&"Defs/.gitkeep".to_owned()));
+        assert!(paths_of(&plan).contains(&"Defs/ThingDefs_Misc/Weapons/.gitkeep".to_owned()));
         assert!(paths_of(&plan).contains(&"Patches/.gitkeep".to_owned()));
+        assert!(!paths_of(&plan).contains(&"Defs/.gitkeep".to_owned()));
         let none = super::plan(&spec());
         assert!(!paths_of(&none).iter().any(|p| p.ends_with(".gitkeep")));
     }

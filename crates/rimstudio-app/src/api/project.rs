@@ -1,9 +1,13 @@
-//! `project_open`, `project_create` and `project_close`.
+//! `project_open`, `project_create`, `project_close` and the layout commands `project_tree`,
+//! `project_layout_check`, `project_scaffold_missing` and `project_read_file`.
 
 use camino::Utf8PathBuf;
 use rimstudio_ipc_types::error::ApiError;
 use rimstudio_ipc_types::project::{
-    ProjectCloseRequest, ProjectCloseResponse, ProjectOpenRequest, ProjectSummaryDto,
+    ProjectCloseRequest, ProjectCloseResponse, ProjectFileDto, ProjectLayoutCheckDto,
+    ProjectLayoutCheckRequest, ProjectOpenRequest, ProjectReadFileRequest,
+    ProjectScaffoldMissingDto, ProjectScaffoldMissingRequest, ProjectSummaryDto, ProjectTreeDto,
+    ProjectTreeRequest,
 };
 use rimstudio_toolkit::project;
 use rimstudio_workspace::scaffold::{ScaffoldLayout, ScaffoldSpec};
@@ -34,6 +38,13 @@ pub fn scaffold_spec(req: &ProjectCreateRequest) -> ScaffoldSpec {
     spec.assemblies_folder = req.assemblies_folder;
     spec.ce_patch_folder = req.ce_patch_folder;
     spec.placeholder_files = req.placeholder_files;
+    spec.textures_folder = req.textures_folder;
+    spec.sounds_folder = req.sounds_folder;
+    spec.source_folder = req.source_folder;
+    spec.gitignore = req.gitignore;
+    spec.ignore_source_art = req.ignore_source_art;
+    spec.readme = req.readme;
+    spec.credits = req.credits;
     spec
 }
 
@@ -81,6 +92,51 @@ pub fn project_close(
     let response = project::close(ctx.workspace.env(), req).map_err(|e| ctx.toolkit_error(&e))?;
     ctx.workspace.note_closed(&id);
     Ok(response)
+}
+
+/// `project_tree`: the annotated folder tree of a project with its roles, sizes, counts and layout issues.
+///
+/// # Errors
+/// `project.not-open` for an unknown project id, `io.not-found` when the folder is no longer a mod.
+pub fn project_tree(ctx: &AppContext, req: ProjectTreeRequest) -> Result<ProjectTreeDto, ApiError> {
+    project::tree(ctx.workspace.env(), &req).map_err(|e| ctx.toolkit_error(&e))
+}
+
+/// `project_layout_check`: the layout issues of a project with a suggested fix each. Read only.
+///
+/// # Errors
+/// As [`project_tree`].
+pub fn project_layout_check(
+    ctx: &AppContext,
+    req: ProjectLayoutCheckRequest,
+) -> Result<ProjectLayoutCheckDto, ApiError> {
+    project::layout_check(ctx.workspace.env(), &req).map_err(|e| ctx.toolkit_error(&e))
+}
+
+/// `project_scaffold_missing`: creates the missing standard folders of a project (never a file, never
+/// anything outside the project root or inside the game install).
+///
+/// # Errors
+/// `project.not-open`, `project.path-outside-root` when the project lies in a protected folder.
+pub fn project_scaffold_missing(
+    ctx: &AppContext,
+    req: ProjectScaffoldMissingRequest,
+) -> Result<ProjectScaffoldMissingDto, ApiError> {
+    let (env, protected) = ctx.workspace.write_env(ctx)?;
+    project::scaffold_missing::scaffold_missing(&env, &req, &protected)
+        .map_err(|e| ctx.toolkit_error(&e))
+}
+
+/// `project_read_file`: the text of one file of a project, size limited, for the file viewer.
+///
+/// # Errors
+/// `project.not-open`, `project.path-outside-root` for an unsafe path, `io.not-found` for a missing file.
+pub fn project_read_file(
+    ctx: &AppContext,
+    req: ProjectReadFileRequest,
+) -> Result<ProjectFileDto, ApiError> {
+    let (env, protected) = ctx.workspace.write_env(ctx)?;
+    project::read::read_file(&env, &req, &protected).map_err(|e| ctx.toolkit_error(&e))
 }
 
 #[cfg(test)]

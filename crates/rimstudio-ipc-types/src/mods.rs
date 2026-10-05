@@ -23,6 +23,7 @@ pub mod flags {
 
 /// One row of the mod list.
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct ModRowDto {
     /// Session handle of the row.
@@ -39,6 +40,7 @@ pub struct ModRowDto {
     pub versions: u32,
     /// Position in the active list. Absent when the mod is not active.
     #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub load_index: Option<u32>,
     /// Number of error diagnostics.
     pub errors: u16,
@@ -52,12 +54,14 @@ pub struct ModRowDto {
 
 /// The whole list at one revision.
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct ModsSnapshot {
     /// Revision of the list; deltas carry the revision they apply to.
     pub rev: u64,
     /// Running game version text. Absent when no install is selected.
     #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub game_version: Option<String>,
     /// The rows, in list order.
     pub rows: Vec<ModRowDto>,

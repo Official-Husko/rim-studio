@@ -589,7 +589,13 @@ fn the_automatic_mode_asks_for_what_it_cannot_derive_and_converts_when_answered(
     assert!(!done.update);
     assert!(!done.plan.has_errors(), "{:?}", done.plan.diagnostics);
     let paths = done.plan.paths();
-    assert_eq!(paths, ["CE/Patches/Weapons_Ranged.xml", "LoadFolders.xml"]);
+    assert_eq!(
+        paths,
+        [
+            "Compat/CombatExtended/Patches/Weapons_Ranged.xml",
+            "LoadFolders.xml"
+        ]
+    );
     // The default projectile is the first of the ammo set.
     assert_eq!(
         done.spec
@@ -599,7 +605,10 @@ fn the_automatic_mode_asks_for_what_it_cannot_derive_and_converts_when_answered(
         Some("RS_CeBullet1".into())
     );
     // The plan applies to the existing definition without error, which is never edited.
-    let file = done.plan.file("CE/Patches/Weapons_Ranged.xml").unwrap();
+    let file = done
+        .plan
+        .file("Compat/CombatExtended/Patches/Weapons_Ranged.xml")
+        .unwrap();
     let run = dry_apply(
         &scratch_defs_all(&project),
         &[file.tree.clone().unwrap()],
@@ -651,7 +660,7 @@ fn an_already_converted_candidate_is_updated_and_the_def_is_not_touched() {
     assert!(!out.plan.has_errors(), "{:?}", out.plan.diagnostics);
     let file = out
         .plan
-        .file("CE/Patches/Weapons_Ranged_Update.xml")
+        .file("Compat/CombatExtended/Patches/Weapons_Ranged_Update.xml")
         .expect("update mode writes its own file");
     let ops: Vec<&Node> = file.tree.as_ref().unwrap().elements().collect();
     assert_eq!(ops.len(), 1);
@@ -750,7 +759,9 @@ fn a_rimstudio_owned_source_is_updated_without_the_load_after_hint() {
     let existing = ExistingConversion::from_def(
         &record(&converted),
         &model.classes,
-        ConversionSource::RimStudio(Some("CE/Patches/Weapons_Ranged.xml".into())),
+        ConversionSource::RimStudio(Some(
+            "Compat/CombatExtended/Patches/Weapons_Ranged.xml".into(),
+        )),
     )
     .unwrap();
     let container = Container::from_node(&converted).with_existing(existing);

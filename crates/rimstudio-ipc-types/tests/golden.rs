@@ -100,3 +100,18 @@ fn golden_job_result_envelope() {
     };
     check("job-finished-scan", &envelope);
 }
+
+#[test]
+fn golden_project_tree() {
+    check("project-tree", &common::project_tree());
+}
+
+#[test]
+fn golden_project_layout_check() {
+    check("project-layout-check", &common::layout_check());
+}
+
+#[test]
+fn golden_project_file() {
+    check("project-file", &common::project_file());
+}

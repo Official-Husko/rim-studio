@@ -5,6 +5,10 @@
     <defName>RS_NewBlade</defName>
     <label>new blade</label>
     <techLevel>Industrial</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponMelee/RS_NewBlade</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
     <statBases>
       <WorkToMake>4200</WorkToMake>
       <Mass>1.4</Mass>

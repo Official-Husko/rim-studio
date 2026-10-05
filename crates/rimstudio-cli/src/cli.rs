@@ -221,11 +221,78 @@ pub(crate) enum ProjectCmd {
         /// A supported game version (repeatable). Default 1.6.
         #[arg(long = "game-version")]
         game_version: Vec<String>,
+        /// One folder per game version plus `Common`, selected by `LoadFolders.xml`.
+        #[arg(long)]
+        versioned: bool,
+        /// Also create the gated `Compat/CombatExtended/Patches` folder (never loads without Combat Extended).
+        #[arg(long)]
+        ce_folder: bool,
+        /// Also create `Languages/English/Keyed`.
+        #[arg(long)]
+        languages: bool,
+        /// Also create `Assemblies`.
+        #[arg(long)]
+        assemblies: bool,
+        /// Also create `Source/Art` for art sources and code.
+        #[arg(long)]
+        source: bool,
+        /// Also write a `.gitignore` for a mod repository.
+        #[arg(long)]
+        gitignore: bool,
+        /// With `--gitignore`, keep `Source/Art` and `Raw Assets` out of the repository.
+        #[arg(long)]
+        ignore_source_art: bool,
+        /// Also write a `README.md`.
+        #[arg(long)]
+        readme: bool,
+        /// Also write a `Credits.txt`.
+        #[arg(long)]
+        credits: bool,
+        /// Do not create the texture folders.
+        #[arg(long)]
+        no_textures: bool,
+        /// Do not create `Sounds/Weapons`.
+        #[arg(long)]
+        no_sounds: bool,
     },
     /// Register an existing mod folder and print its summary.
     Open {
         /// The mod folder.
         path: String,
+    },
+    /// Print the annotated folder tree of a mod: roles, sizes, counts and layout issues.
+    Tree {
+        /// The mod folder.
+        path: String,
+        /// How many folder levels to print (the JSON output is always complete).
+        #[arg(long, default_value_t = 3)]
+        depth: usize,
+        /// Also list files.
+        #[arg(long)]
+        files: bool,
+    },
+    /// Check a mod against the RimStudio mod layout and list the issues with a suggested fix each.
+    Check {
+        /// The mod folder.
+        path: String,
+    },
+    /// Create the standard folders a mod lacks (folders only; never overwrites, moves or deletes).
+    ScaffoldMissing {
+        /// The mod folder.
+        path: String,
+        /// Only list what would be created.
+        #[arg(long)]
+        dry_run: bool,
+    },
+    /// Print one text file of a mod (size limited).
+    Read {
+        /// The mod folder.
+        path: String,
+        /// The file, relative to the mod folder.
+        file: String,
+        /// The most bytes to read.
+        #[arg(long)]
+        max_bytes: Option<u32>,
     },
 }
 

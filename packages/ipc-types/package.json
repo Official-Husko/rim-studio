@@ -1,0 +1,16 @@
+{
+  "name": "rimstudio-ipc-types",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json",
+    "bindings:check": "node scripts/check-golden.mjs"
+  },
+  "devDependencies": {
+    "typescript": "6.0.3"
+  }
+}

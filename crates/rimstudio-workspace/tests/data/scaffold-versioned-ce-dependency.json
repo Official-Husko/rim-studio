@@ -6,11 +6,15 @@
     },
     {
       "kind": "dir",
-      "path": "1.6/CombatExtended"
+      "path": "1.6/Compat"
     },
     {
       "kind": "dir",
-      "path": "1.6/CombatExtended/Patches"
+      "path": "1.6/Compat/CombatExtended"
+    },
+    {
+      "kind": "dir",
+      "path": "1.6/Compat/CombatExtended/Patches"
     },
     {
       "kind": "dir",
@@ -18,7 +22,55 @@
     },
     {
       "kind": "dir",
+      "path": "1.6/Defs/SoundDefs"
+    },
+    {
+      "kind": "dir",
+      "path": "1.6/Defs/ThingDefs_Misc"
+    },
+    {
+      "kind": "dir",
+      "path": "1.6/Defs/ThingDefs_Misc/Weapons"
+    },
+    {
+      "kind": "dir",
       "path": "1.6/Patches"
+    },
+    {
+      "kind": "dir",
+      "path": "1.6/Sounds"
+    },
+    {
+      "kind": "dir",
+      "path": "1.6/Sounds/Weapons"
+    },
+    {
+      "kind": "dir",
+      "path": "1.6/Textures"
+    },
+    {
+      "kind": "dir",
+      "path": "1.6/Textures/Things"
+    },
+    {
+      "kind": "dir",
+      "path": "1.6/Textures/Things/Item"
+    },
+    {
+      "kind": "dir",
+      "path": "1.6/Textures/Things/Item/Equipment"
+    },
+    {
+      "kind": "dir",
+      "path": "1.6/Textures/Things/Item/Equipment/WeaponMelee"
+    },
+    {
+      "kind": "dir",
+      "path": "1.6/Textures/Things/Item/Equipment/WeaponRanged"
+    },
+    {
+      "kind": "dir",
+      "path": "1.6/Textures/Things/Projectile"
     },
     {
       "kind": "dir",
@@ -151,7 +203,7 @@
                     ]
                   ],
                   "children": [
-                    "1.6/CombatExtended"
+                    "1.6/Compat/CombatExtended"
                   ],
                   "tag": "li"
                 }
@@ -169,7 +221,7 @@
   ],
   "rendered": {
     "About/About.xml": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<ModMetaData>\n  <name>RS Example</name>\n  <author>RS Tester</author>\n  <packageId>rs.example</packageId>\n  <supportedVersions>\n    <li>1.6</li>\n  </supportedVersions>\n  <modDependencies>\n    <li>\n      <packageId>rs.framework</packageId>\n      <displayName>RS Framework</displayName>\n    </li>\n  </modDependencies>\n  <loadAfter>\n    <li>rs.framework</li>\n  </loadAfter>\n  <description>A fictional example mod.</description>\n</ModMetaData>\n",
-    "LoadFolders.xml": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<loadFolders>\n  <v1.6>\n    <li>Common</li>\n    <li>1.6</li>\n    <li IfModActive=\"ceteam.combatextended\">1.6/CombatExtended</li>\n  </v1.6>\n</loadFolders>\n"
+    "LoadFolders.xml": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<loadFolders>\n  <v1.6>\n    <li>Common</li>\n    <li>1.6</li>\n    <li IfModActive=\"ceteam.combatextended\">1.6/Compat/CombatExtended</li>\n  </v1.6>\n</loadFolders>\n"
   },
   "root": "/work/RS_Example"
 }

@@ -33,7 +33,9 @@ fn files_that_are_not_utf8_text_are_reported_and_never_overwritten() {
         ("binary", vec![0, 159, 146, 150, 0, 1, 2]),
     ];
     for (name, bytes) in cases {
-        let path = p.root.join("Defs/Weapons/RS_NewRifle.xml");
+        let path = p
+            .root
+            .join("Defs/ThingDefs_Misc/Weapons/RangedIndustrial/RS_NewRifle.xml");
         std::fs::create_dir_all(path.parent().unwrap().as_std_path()).unwrap();
         std::fs::write(path.as_std_path(), &bytes).unwrap();
         let prepared = prepare(&f.ctx, &request(&p, &ranged())).unwrap();
@@ -49,7 +51,12 @@ fn files_that_are_not_utf8_text_are_reported_and_never_overwritten() {
             "designer.merge-failed",
             "{name}: an unreadable file is not a path problem"
         );
-        assert!(prepared.plan.file("Defs/Weapons/RS_NewRifle.xml").is_none());
+        assert!(
+            prepared
+                .plan
+                .file("Defs/ThingDefs_Misc/Weapons/RangedIndustrial/RS_NewRifle.xml")
+                .is_none()
+        );
         let plan = export_plan(&f.ctx, request(&p, &ranged())).unwrap();
         let err = apply_plan(
             &f.ctx,
@@ -79,7 +86,11 @@ fn defs_files_with_another_root_or_two_roots_or_trailing_text_are_left_alone() {
         ("truncated", "<Defs><ThingDef><defName>RS_X</defName>"),
         ("empty file", ""),
     ] {
-        common_project::put(&p.root, "Defs/Weapons/RS_NewRifle.xml", text);
+        common_project::put(
+            &p.root,
+            "Defs/ThingDefs_Misc/Weapons/RangedIndustrial/RS_NewRifle.xml",
+            text,
+        );
         let prepared = prepare(&f.ctx, &request(&p, &ranged())).unwrap();
         if name == "empty file" {
             // an empty file holds nothing to keep: the design is written fresh, which is the whole file
@@ -91,7 +102,10 @@ fn defs_files_with_another_root_or_two_roots_or_trailing_text_are_left_alone() {
             prepared.plan.diagnostics
         );
         assert!(
-            prepared.plan.file("Defs/Weapons/RS_NewRifle.xml").is_none(),
+            prepared
+                .plan
+                .file("Defs/ThingDefs_Misc/Weapons/RangedIndustrial/RS_NewRifle.xml")
+                .is_none(),
             "{name}"
         );
     }
@@ -146,7 +160,7 @@ fn hand_written_operations_next_to_a_generated_section_survive_a_second_apply() 
     let patch_path = plan
         .files
         .iter()
-        .find(|x| x.path.contains("CE/"))
+        .find(|x| x.path.contains("Compat/CombatExtended/"))
         .unwrap()
         .path
         .clone();
@@ -191,7 +205,7 @@ fn a_regenerated_section_replaces_the_old_one_without_duplicating_operations() {
     let patch_path = plan
         .files
         .iter()
-        .find(|x| x.path.contains("CE/"))
+        .find(|x| x.path.contains("Compat/CombatExtended/"))
         .unwrap()
         .path
         .clone();

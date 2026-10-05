@@ -7,6 +7,7 @@ use serde::{Deserialize, Serialize};
 
 /// Something the machine or the session must have for a tool to work.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, PartialOrd, Ord, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "kebab-case")]
 pub enum Capability {
     /// A RimWorld install was found or chosen.
@@ -25,6 +26,7 @@ pub enum Capability {
 
 /// One tool of the application.
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct ToolDescriptor {
     /// Stable id, for example `designer`.
@@ -71,6 +73,7 @@ impl ToolDescriptor {
 
 /// Response of `app_list_tools`.
 #[derive(Debug, Clone, PartialEq, Eq, Default, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct AppListToolsResponse {
     /// The tools, in display order.

@@ -9,6 +9,7 @@ use super::preview::{AnchorCardDto, EstimateSummaryDto};
 
 /// A tier choice.
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct TierOptionDto {
     /// Tier index, zero for neolithic.
@@ -21,6 +22,7 @@ pub struct TierOptionDto {
 
 /// A named choice.
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct NamedOptionDto {
     /// The name.
@@ -31,13 +33,16 @@ pub struct NamedOptionDto {
 
 /// One bin of an interval question.
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct BinDto {
     /// Lower bound. Absent for the open bottom bin.
     #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub lo: Option<f64>,
     /// Upper bound. Absent for the open top bin.
     #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub hi: Option<f64>,
     /// Display label.
     pub label: String,
@@ -45,6 +50,7 @@ pub struct BinDto {
 
 /// A question.
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(
     tag = "kind",
     rename_all = "kebab-case",
@@ -108,6 +114,7 @@ pub enum QuestionDto {
 
 /// The open prompt.
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct PromptDto {
     /// Stable question id; the answer names it.
@@ -122,6 +129,7 @@ pub struct PromptDto {
 
 /// Bucket of a compared value.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "kebab-case")]
 pub enum BucketDto {
     /// Lower than the anchor.
@@ -134,6 +142,7 @@ pub enum BucketDto {
 
 /// An answer to the open question.
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(
     tag = "kind",
     rename_all = "kebab-case",
@@ -190,10 +199,12 @@ pub enum QuizAnswerDto {
 
 /// Response of `designer_quiz_next` and part of the answer response.
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct QuizStepDto {
     /// The open prompt. Absent when the quiz is finished.
     #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub prompt: Option<PromptDto>,
     /// True when no further question will be asked.
     pub finished: bool,
@@ -201,14 +212,17 @@ pub struct QuizStepDto {
     pub answered: u32,
     /// The estimate after the answers so far. Absent when no reference set is loaded.
     #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub estimate: Option<EstimateSummaryDto>,
     /// Constraints implied by the answers, by stat name; text for display. Omitted when empty.
     #[serde(default, skip_serializing_if = "BTreeMap::is_empty")]
+    #[cfg_attr(feature = "ts", ts(as = "Option<BTreeMap<String, String>>", optional))]
     pub implied: BTreeMap<String, String>,
 }
 
 /// Request of `designer_quiz_next`.
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct DesignerQuizNextRequest {
     /// The draft with its stored answers.
@@ -217,6 +231,7 @@ pub struct DesignerQuizNextRequest {
 
 /// Request of `designer_quiz_answer`.
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct DesignerQuizAnswerRequest {
     /// The draft with its stored answers.
@@ -229,6 +244,7 @@ pub struct DesignerQuizAnswerRequest {
 
 /// Request of `designer_quiz_back`: take the last answer of the draft's quiz back.
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct DesignerQuizBackRequest {
     /// The draft with its stored answers.
@@ -237,6 +253,7 @@ pub struct DesignerQuizBackRequest {
 
 /// Response of `designer_quiz_answer` and `designer_quiz_back`.
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct DesignerQuizAnswerResponse {
     /// The draft with the answer stored and implied values applied (typed values untouched).

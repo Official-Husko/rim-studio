@@ -14,6 +14,7 @@ macro_rules! kebab_enum {
     ($(#[$meta:meta])* $name:ident <= $src:ty { $( $(#[$vmeta:meta])* $variant:ident ),+ $(,)? }) => {
         $(#[$meta])*
         #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, Default, Serialize, Deserialize)]
+        #[cfg_attr(feature = "ts", derive(ts_rs::TS))]
         #[serde(rename_all = "kebab-case")]
         pub enum $name {
             $( $(#[$vmeta])* $variant, )+
@@ -156,6 +157,7 @@ kebab_enum! {
 
 /// Appearance settings.
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct AppearanceDto {
     /// Theme id.
@@ -176,6 +178,7 @@ pub struct AppearanceDto {
 
 /// Folder watching settings.
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct WatchSettingsDto {
     /// Watch mode.
@@ -188,6 +191,7 @@ pub struct WatchSettingsDto {
 
 /// Library settings.
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct LibrarySettingsDto {
     /// Worker threads of a scan; zero means automatic.
@@ -208,6 +212,7 @@ pub struct LibrarySettingsDto {
 
 /// Sorting settings.
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct SortingSettingsDto {
     /// Treat dependencies as load after hints.
@@ -220,17 +225,20 @@ pub struct SortingSettingsDto {
 
 /// List history settings.
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct HistorySettingsDto {
     /// Whether history is kept.
     pub enabled: bool,
     /// Entries kept. Absent means unlimited.
     #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub keep: Option<u32>,
 }
 
 /// Designer settings.
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct DesignerSettingsDto {
     /// Calibration mode.
@@ -239,6 +247,7 @@ pub struct DesignerSettingsDto {
 
 /// Update settings.
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct UpdateSettingsDto {
     /// Channel.
@@ -249,6 +258,7 @@ pub struct UpdateSettingsDto {
 
 /// A path override.
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct PathOverrideDto {
     /// The path.
@@ -259,24 +269,30 @@ pub struct PathOverrideDto {
 
 /// Path overrides.
 #[derive(Debug, Clone, PartialEq, Eq, Default, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct PathsDto {
     /// Game install override. Absent means detection decides.
     #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub game_install: Option<PathOverrideDto>,
     /// User data folder override. Absent means detection decides.
     #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub user_dir: Option<PathOverrideDto>,
     /// Steam root override. Absent means detection decides.
     #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub steam_root: Option<PathOverrideDto>,
     /// Extra Workshop content folders.
     #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    #[cfg_attr(feature = "ts", ts(as = "Option<Vec<String>>", optional))]
     pub extra_workshop_dirs: Vec<String>,
 }
 
 /// Hint about the volume a folder lives on.
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct VolumeHintDto {
     /// Mount point.
@@ -285,11 +301,13 @@ pub struct VolumeHintDto {
     pub label: String,
     /// Volume uuid. Absent when unknown.
     #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub uuid: Option<String>,
 }
 
 /// A user added mod folder.
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct CustomFolderDto {
     /// Stable source id.
@@ -306,9 +324,11 @@ pub struct CustomFolderDto {
     pub scan_depth: u8,
     /// Watch override. Absent means follow the library watch setting.
     #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub watch: Option<bool>,
     /// Priority override for duplicates. Absent means the default order.
     #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub priority: Option<i32>,
     /// True when the app must never write into the folder.
     pub read_only: bool,
@@ -316,9 +336,11 @@ pub struct CustomFolderDto {
     pub link: LinkModeDto,
     /// Volume hint. Absent when unknown.
     #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub volume_hint: Option<VolumeHintDto>,
     /// Row colour. Absent means none.
     #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub colour: Option<String>,
 }
 
@@ -347,6 +369,7 @@ impl From<&core::CustomFolder> for CustomFolderDto {
 
 /// The settings the webview sees. Secrets are never part of it.
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase")]
 pub struct SettingsDto {
     /// Schema version of the settings file.
@@ -355,6 +378,7 @@ pub struct SettingsDto {
     pub rev: u64,
     /// UI language tag. Absent means the system language.
     #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub language: Option<String>,
     /// Appearance.
     pub appearance: AppearanceDto,
@@ -466,6 +490,7 @@ impl SettingsDto {
 
 /// Request of `settings_get`.
 #[derive(Debug, Clone, PartialEq, Eq, Default, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase", default)]
 pub struct SettingsGetRequest {
     /// Section names to include; empty means all sections.
@@ -474,117 +499,150 @@ pub struct SettingsGetRequest {
 
 /// Patch of the appearance section; absent members stay unchanged.
 #[derive(Debug, Clone, PartialEq, Default, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase", default)]
 pub struct AppearancePatch {
     /// New theme id.
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub theme: Option<String>,
     /// New accent.
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub accent: Option<String>,
     /// New density.
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub density: Option<DensityDto>,
     /// New font scale.
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub font_scale: Option<f64>,
     /// New reduced motion switch.
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub reduce_motion: Option<SystemToggleDto>,
     /// New colour mode.
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub colour_mode: Option<ColourModeDto>,
     /// New rich text switch.
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub rich_text: Option<bool>,
 }
 
 /// Patch of the library section; absent members stay unchanged.
 #[derive(Debug, Clone, PartialEq, Eq, Default, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase", default)]
 pub struct LibraryPatch {
     /// New thread count.
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub scan_threads: Option<u8>,
     /// New watch mode.
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub watch_mode: Option<WatchModeDto>,
     /// New polling interval.
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub poll_interval_seconds: Option<u32>,
     /// New debounce.
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub debounce_ms: Option<u32>,
     /// New update check switch.
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub check_workshop_updates: Option<bool>,
 }
 
 /// Patch of the sorting section; absent members stay unchanged.
 #[derive(Debug, Clone, PartialEq, Eq, Default, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase", default)]
 pub struct SortingPatch {
     /// New switch.
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub dependencies_as_load_after: Option<bool>,
     /// New switch.
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub alternative_ids_satisfy_dependencies: Option<bool>,
     /// New switch.
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub check_dependencies_on_sort: Option<bool>,
 }
 
 /// Patch of the path overrides; absent members stay unchanged (clear through `reset`).
 #[derive(Debug, Clone, PartialEq, Eq, Default, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase", default)]
 pub struct PathsPatch {
     /// New game install override.
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub game_install: Option<PathOverrideDto>,
     /// New user data folder override.
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub user_dir: Option<PathOverrideDto>,
     /// New Steam root override.
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub steam_root: Option<PathOverrideDto>,
     /// Replacement list of extra Workshop folders.
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub extra_workshop_dirs: Option<Vec<String>>,
 }
 
 /// Request of `settings_update`: section patches applied atomically against a revision.
 #[derive(Debug, Clone, PartialEq, Default, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "camelCase", default)]
 pub struct SettingsUpdate {
     /// The revision the caller based the patch on; a mismatch is rejected with `settings.revision-conflict`.
     pub expected_rev: u64,
     /// New language tag.
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub language: Option<String>,
     /// Appearance patch.
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub appearance: Option<AppearancePatch>,
     /// Library patch.
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub library: Option<LibraryPatch>,
     /// Sorting patch.
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub sorting: Option<SortingPatch>,
     /// New designer mode.
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub designer_mode: Option<DesignerModeDto>,
     /// New log level.
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub log_level: Option<LogLevelDto>,
     /// New onboarding flag.
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub onboarding_completed: Option<bool>,
     /// Path override patch.
     #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
     pub paths: Option<PathsPatch>,
     /// Key paths to reset to their defaults (for example `paths.gameInstall`), applied after the patches.
     #[serde(skip_serializing_if = "Vec::is_empty")]
+    #[cfg_attr(feature = "ts", ts(as = "Option<Vec<String>>", optional))]
     pub reset: Vec<String>,
 }
 

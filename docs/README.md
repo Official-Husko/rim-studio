@@ -53,7 +53,7 @@ Read in this order; each document links to the next level of detail.
 
 ### Architecture decision records ([adr/](adr/))
 
-39 short records (0001 to 0039) in the [ADR index](adr/README.md), each with context, decision, consequences, rejected alternatives and evidence.
+40 short records (0001 to 0040) in the [ADR index](adr/README.md), each with context, decision, consequences, rejected alternatives and evidence.
 
 ### Feature specifications ([features/](features/))
 
@@ -67,6 +67,7 @@ Requirement ids are stable and testable: MM (manager), GD (discovery), ST (setti
 | [load order and validation](features/load-order-and-validation.md) | Rule layers, sorting, the validation catalogue, explain |
 | [community datasets](features/community-datasets.md) | The five datasets, fetching, user rules, RimSort import and export |
 | [modding workspace](features/modding-workspace.md) | The toolkit foundation: projects, Def Explorer, patch tester, validators, log and save tools |
+| [mod layout](features/mod-layout.md) | The RimStudio mod layout v1: folder names taken from the game, the scaffold, placement of generated files, recognition of an existing mod's convention, the layout check and the project tree |
 | [items toolkit](features/items-toolkit.md), [item balance math](features/item-balance-math.md), [CE patching](features/combat-extended-patching.md) | The item designer (vanilla by default), its formulas and quiz, and the optional Combat Extended patch generation |
 | [workshop publishing](features/workshop-publishing.md) | Staging, preflight, the Steam helper protocol, history |
 

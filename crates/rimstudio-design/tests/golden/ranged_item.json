@@ -1,7 +1,7 @@
 {
   "files": [
     {
-      "path": "Defs/Projectiles/RS_Bullet_TestRifle.xml",
+      "path": "Defs/ThingDefs_Misc/Weapons/RangedIndustrial/RS_TestRifle.xml",
       "kind": "vanilla-defs",
       "action": "create",
       "tree": {
@@ -79,24 +79,7 @@
                 ]
               }
             ]
-          }
-        ]
-      },
-      "sections": [
-        {
-          "firstChild": 0,
-          "comment": "====== RS_Bullet_TestRifle ======"
-        }
-      ]
-    },
-    {
-      "path": "Defs/Weapons/RS_TestRifle.xml",
-      "kind": "vanilla-defs",
-      "action": "create",
-      "tree": {
-        "tag": "Defs",
-        "attrs": [],
-        "children": [
+          },
           {
             "tag": "ThingDef",
             "attrs": [
@@ -376,6 +359,10 @@
       "sections": [
         {
           "firstChild": 0,
+          "comment": "====== RS_Bullet_TestRifle ======"
+        },
+        {
+          "firstChild": 1,
           "comment": "====== RS_TestRifle ======"
         }
       ]

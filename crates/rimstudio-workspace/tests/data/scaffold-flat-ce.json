@@ -60,15 +60,31 @@
     },
     {
       "kind": "dir",
-      "path": "CombatExtended"
+      "path": "Compat"
     },
     {
       "kind": "dir",
-      "path": "CombatExtended/Patches"
+      "path": "Compat/CombatExtended"
+    },
+    {
+      "kind": "dir",
+      "path": "Compat/CombatExtended/Patches"
     },
     {
       "kind": "dir",
       "path": "Defs"
+    },
+    {
+      "kind": "dir",
+      "path": "Defs/SoundDefs"
+    },
+    {
+      "kind": "dir",
+      "path": "Defs/ThingDefs_Misc"
+    },
+    {
+      "kind": "dir",
+      "path": "Defs/ThingDefs_Misc/Weapons"
     },
     {
       "content": {
@@ -93,7 +109,7 @@
                     ]
                   ],
                   "children": [
-                    "CombatExtended"
+                    "Compat/CombatExtended"
                   ],
                   "tag": "li"
                 }
@@ -111,11 +127,47 @@
     {
       "kind": "dir",
       "path": "Patches"
+    },
+    {
+      "kind": "dir",
+      "path": "Sounds"
+    },
+    {
+      "kind": "dir",
+      "path": "Sounds/Weapons"
+    },
+    {
+      "kind": "dir",
+      "path": "Textures"
+    },
+    {
+      "kind": "dir",
+      "path": "Textures/Things"
+    },
+    {
+      "kind": "dir",
+      "path": "Textures/Things/Item"
+    },
+    {
+      "kind": "dir",
+      "path": "Textures/Things/Item/Equipment"
+    },
+    {
+      "kind": "dir",
+      "path": "Textures/Things/Item/Equipment/WeaponMelee"
+    },
+    {
+      "kind": "dir",
+      "path": "Textures/Things/Item/Equipment/WeaponRanged"
+    },
+    {
+      "kind": "dir",
+      "path": "Textures/Things/Projectile"
     }
   ],
   "rendered": {
     "About/About.xml": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<ModMetaData>\n  <name>RS Example</name>\n  <author>RS Tester</author>\n  <packageId>rs.example</packageId>\n  <supportedVersions>\n    <li>1.6</li>\n  </supportedVersions>\n  <description>A fictional example mod.</description>\n</ModMetaData>\n",
-    "LoadFolders.xml": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<loadFolders>\n  <v1.6>\n    <li>/</li>\n    <li IfModActive=\"ceteam.combatextended\">CombatExtended</li>\n  </v1.6>\n</loadFolders>\n"
+    "LoadFolders.xml": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<loadFolders>\n  <v1.6>\n    <li>/</li>\n    <li IfModActive=\"ceteam.combatextended\">Compat/CombatExtended</li>\n  </v1.6>\n</loadFolders>\n"
   },
   "root": "/work/RS_Example"
 }

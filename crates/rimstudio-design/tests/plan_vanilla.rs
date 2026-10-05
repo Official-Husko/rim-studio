@@ -8,7 +8,7 @@ use common::{assert_golden, melee_ce, melee_spec, ranged_ce, ranged_spec};
 use rimstudio_core::diag::Severity;
 use rimstudio_design::model::{ParentRef, ScalarField, ValueSource};
 use rimstudio_design::plan::{
-    FileAction, FileKind, ProjectLayout, WritePlan, export_vanilla_plan, vanilla,
+    FileAction, FileKind, LayoutProfile, ProjectLayout, WritePlan, export_vanilla_plan, vanilla,
 };
 use rimstudio_design::validation::codes;
 
@@ -33,22 +33,86 @@ fn golden_melee_plan() {
 }
 
 #[test]
-fn ranged_plan_has_a_weapon_file_and_a_projectile_file() {
+fn ranged_plan_has_one_file_with_the_projectile_before_the_weapon() {
     let plan = export_vanilla_plan(&ranged_spec(), &ProjectLayout::default());
     assert_eq!(
         plan.paths(),
+        ["Defs/ThingDefs_Misc/Weapons/RangedIndustrial/RS_TestRifle.xml"]
+    );
+    let f = &plan.files[0];
+    assert_eq!(f.action, FileAction::Create);
+    assert_eq!(f.kind, FileKind::VanillaDefs);
+    let tree = f.tree.as_ref().unwrap();
+    assert_eq!(tree.tag, "Defs");
+    let names: Vec<_> = tree
+        .elements()
+        .filter_map(|d| d.child_text("defName"))
+        .collect();
+    assert_eq!(names, ["RS_Bullet_TestRifle", "RS_TestRifle"]);
+    let headers: Vec<_> = f.sections.iter().map(|s| s.comment.as_str()).collect();
+    assert_eq!(
+        headers,
         [
-            "Defs/Projectiles/RS_Bullet_TestRifle.xml",
-            "Defs/Weapons/RS_TestRifle.xml"
+            "====== RS_Bullet_TestRifle ======",
+            "====== RS_TestRifle ======"
         ]
     );
-    for f in &plan.files {
-        assert_eq!(f.action, FileAction::Create);
-        assert_eq!(f.kind, FileKind::VanillaDefs);
-        assert_eq!(f.tree.as_ref().map(|t| t.tag.as_str()), Some("Defs"));
-        assert_eq!(f.sections.len(), 1);
-        assert!(f.rendered.is_none() && f.diff.is_none() && f.edits.is_empty());
-    }
+    assert!(f.rendered.is_none() && f.diff.is_none() && f.edits.is_empty());
+}
+
+#[test]
+fn the_profile_chooses_the_file_of_the_same_weapon() {
+    let spec = ranged_spec();
+    let core = export_vanilla_plan(
+        &spec,
+        &ProjectLayout::default().with_profile(LayoutProfile::CoreStyle),
+    );
+    assert_eq!(
+        core.paths(),
+        ["Defs/ThingDefs_Misc/Weapons/RangedIndustrial.xml"]
+    );
+    let flat = export_vanilla_plan(
+        &spec,
+        &ProjectLayout {
+            profile: LayoutProfile::Flat,
+            weapons_dir: "Weapons".into(),
+            ..ProjectLayout::default()
+        },
+    );
+    assert_eq!(flat.paths(), ["Defs/Weapons/RS_TestRifle.xml"]);
+}
+
+#[test]
+fn a_weapon_without_a_texture_gets_the_reserved_path_and_a_hint() {
+    let mut spec = ranged_spec();
+    spec.texture_path = None;
+    let plan = export_vanilla_plan(&spec, &ProjectLayout::with_version_folder("1.6"));
+    let weapon = plan.files[0].tree.as_ref().unwrap();
+    assert!(plan.files[0].contains_text("Things/Item/Equipment/WeaponRanged/RS_TestRifle"));
+    assert!(
+        weapon
+            .elements()
+            .any(|d| d.child_text("defName") == Some("RS_TestRifle"))
+    );
+    let hint = plan
+        .diagnostics
+        .iter()
+        .find(|d| d.code.as_str() == "design.texture-reserved")
+        .expect("a hint names the file for the art");
+    assert!(
+        hint.message
+            .contains("1.6/Textures/Things/Item/Equipment/WeaponRanged/RS_TestRifle.png")
+    );
+    // a typed texture path is kept and gives no hint
+    let mut typed = ranged_spec();
+    typed.texture_path = Some("Things/Item/Equipment/WeaponRanged/Mine".into());
+    let plan = export_vanilla_plan(&typed, &ProjectLayout::default());
+    assert!(plan.files[0].contains_text("WeaponRanged/Mine"));
+    assert!(
+        plan.diagnostics
+            .iter()
+            .all(|d| d.code.as_str() != "design.texture-reserved")
+    );
 }
 
 #[test]
@@ -60,7 +124,10 @@ fn reference_projectile_writes_no_projectile_file() {
         ));
     }
     let plan = export_vanilla_plan(&spec, &ProjectLayout::default());
-    assert_eq!(plan.paths(), ["Defs/Weapons/RS_TestRifle.xml"]);
+    assert_eq!(
+        plan.paths(),
+        ["Defs/ThingDefs_Misc/Weapons/RangedIndustrial/RS_TestRifle.xml"]
+    );
     let weapon = plan.files[0].tree.as_ref().unwrap();
     assert_eq!(
         weapon
@@ -103,7 +170,7 @@ fn no_vanilla_plan_contains_combat_extended_even_when_the_patch_is_on() {
             assert!(
                 plan.files
                     .iter()
-                    .all(|f| !f.path.contains("CE/") && f.path != "LoadFolders.xml")
+                    .all(|f| !f.path.contains("CombatExtended") && f.path != "LoadFolders.xml")
             );
         }
         assert_eq!(
@@ -141,7 +208,7 @@ fn errors_block_every_file_and_warnings_do_not() {
     odd.market_value = Some(rimstudio_design::model::Sourced::typed(300.0));
     let plan = export_vanilla_plan(&odd, &ProjectLayout::default());
     assert!(!plan.has_errors());
-    assert_eq!(plan.files.len(), 2);
+    assert_eq!(plan.files.len(), 1);
     let codes_seen: Vec<&str> = plan.diagnostics.iter().map(|d| d.code.as_str()).collect();
     assert!(codes_seen.contains(&"design.unit-mismatch"));
     assert!(codes_seen.contains(&"design.explicit-price"));
@@ -174,13 +241,13 @@ fn inherited_stats_are_not_written() {
     let plan = export_vanilla_plan(&spec, &ProjectLayout::default());
     assert!(!plan.contains_text("RS_Durability"));
     let weapon = plan
-        .file("Defs/Weapons/RS_TestRifle.xml")
+        .file("Defs/ThingDefs_Misc/Weapons/RangedIndustrial/RS_TestRifle.xml")
         .and_then(|f| f.tree.as_ref())
         .unwrap();
-    assert_eq!(
-        weapon.find("ThingDef").and_then(|n| n.attr("ParentName")),
-        Some("RS_BaseGun")
-    );
+    let def = weapon
+        .elements()
+        .find(|d| d.child_text("defName") == Some("RS_TestRifle"));
+    assert_eq!(def.and_then(|n| n.attr("ParentName")), Some("RS_BaseGun"));
 }
 
 #[test]

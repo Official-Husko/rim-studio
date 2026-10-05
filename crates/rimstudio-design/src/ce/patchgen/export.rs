@@ -25,7 +25,8 @@ use crate::validation::{codes::CE_ABSENT, has_errors};
 
 /// The text that marks a Combat Extended class: the namespace with its dot, so a package id such as
 /// `CETeam.CombatExtended` in an `IfModActive` attribute of an existing `LoadFolders.xml` does not count.
-const CE_MARK: &str = "CombatExtended.";
+/// The text that marks a Combat Extended class (a namespace prefix, so a package id does not match).
+pub const CE_MARK: &str = "CombatExtended.";
 
 /// What the planner needs to know about the project beyond the spec.
 #[derive(Debug, Clone, PartialEq)]
@@ -281,7 +282,7 @@ mod tests {
         let mut ce_tree = Node::new("Patch");
         ce_tree.set_attr("Class", "CombatExtended.X");
         let inside = PlannedFile::new_file(
-            "CE/Patches/A.xml",
+            "Compat/CombatExtended/Patches/A.xml",
             FileKind::CePatch,
             ce_tree.clone(),
             vec![],
@@ -302,8 +303,11 @@ mod tests {
 
     #[test]
     fn the_ce_dir_follows_the_version_folder() {
-        assert_eq!(ce_dir(&ProjectLayout::default()), "CE");
-        assert_eq!(ce_dir(&ProjectLayout::with_version_folder("1.6")), "1.6/CE");
+        assert_eq!(ce_dir(&ProjectLayout::default()), "Compat/CombatExtended");
+        assert_eq!(
+            ce_dir(&ProjectLayout::with_version_folder("1.6")),
+            "1.6/Compat/CombatExtended"
+        );
     }
 }
 

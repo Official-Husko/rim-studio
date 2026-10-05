@@ -192,7 +192,7 @@ fn call_runs_any_command_and_a_job() {
         .json();
     assert_eq!(pong["echo"], json!("hi"));
     let info = env.run(&["call", "app_get_info"]).expect(0).json();
-    assert_eq!(info["commandCount"], json!(38));
+    assert_eq!(info["commandCount"], json!(42));
     env.select_install();
     let scan = env
         .run(&["call", "library_scan", r#"{"full":true}"#])
@@ -624,7 +624,9 @@ fn plan_lists_the_vanilla_file_only_and_writes_nothing() {
         .expect(0)
         .stdout();
     assert!(
-        text.contains(&format!("{project}/Defs/Weapons/RS_NewRifle.xml")),
+        text.contains(&format!(
+            "{project}/Defs/ThingDefs_Misc/Weapons/RangedIndustrial/RS_NewRifle.xml"
+        )),
         "{text}"
     );
     assert!(text.contains("Nothing was written"));
@@ -684,17 +686,19 @@ fn apply_with_yes_writes_the_vanilla_definition_and_no_combat_extended_file() {
     assert!(text.contains("verified"));
     let files = files_under(Path::new(&project));
     assert!(
-        files.contains(&"Defs/Weapons/RS_NewRifle.xml".to_owned()),
+        files.contains(&"Defs/ThingDefs_Misc/Weapons/RangedIndustrial/RS_NewRifle.xml".to_owned()),
         "{files:?}"
     );
     assert!(
         files
             .iter()
-            .all(|f| !f.starts_with("CE/") && f != "LoadFolders.xml"),
+            .all(|f| !f.starts_with("Compat/CombatExtended/") && f != "LoadFolders.xml"),
         "no Combat Extended file without --ce: {files:?}"
     );
-    let def =
-        std::fs::read_to_string(Path::new(&project).join("Defs/Weapons/RS_NewRifle.xml")).unwrap();
+    let def = std::fs::read_to_string(
+        Path::new(&project).join("Defs/ThingDefs_Misc/Weapons/RangedIndustrial/RS_NewRifle.xml"),
+    )
+    .unwrap();
     assert!(def.contains("RS_NewRifle"));
     assert!(!def.contains("Combat"), "{def}");
     assert_eq!(
@@ -724,7 +728,12 @@ fn combat_extended_settings_in_a_draft_are_ignored_without_ce() {
     let out = env.run(&args).expect(0).json();
     assert_eq!(kinds(&out["plan"]), vec!["vanilla-defs"]);
     let files = files_under(Path::new(&project));
-    assert!(files.iter().all(|f| !f.starts_with("CE/")), "{files:?}");
+    assert!(
+        files
+            .iter()
+            .all(|f| !f.starts_with("Compat/CombatExtended/")),
+        "{files:?}"
+    );
 }
 
 #[test]
@@ -774,14 +783,18 @@ fn ce_adds_a_gated_patch_file_and_the_load_folders_edit() {
     let files = files_under(Path::new(&project));
     let patch = files
         .iter()
-        .find(|f| f.starts_with("CE/"))
+        .find(|f| f.starts_with("Compat/CombatExtended/"))
         .unwrap_or_else(|| panic!("{files:?}"));
     assert!(files.contains(&"LoadFolders.xml".to_owned()));
-    assert!(files.contains(&"Defs/Weapons/RS_NewRifle.xml".to_owned()));
+    assert!(
+        files.contains(&"Defs/ThingDefs_Misc/Weapons/RangedIndustrial/RS_NewRifle.xml".to_owned())
+    );
     let load = std::fs::read_to_string(Path::new(&project).join("LoadFolders.xml")).unwrap();
     assert!(load.contains("ceteam.combatextended"), "{load}");
-    let def =
-        std::fs::read_to_string(Path::new(&project).join("Defs/Weapons/RS_NewRifle.xml")).unwrap();
+    let def = std::fs::read_to_string(
+        Path::new(&project).join("Defs/ThingDefs_Misc/Weapons/RangedIndustrial/RS_NewRifle.xml"),
+    )
+    .unwrap();
     assert!(
         !def.contains("Combat"),
         "the vanilla definition is never mixed with Combat Extended: {def}"
@@ -1060,7 +1073,12 @@ fn convert_apply_writes_a_gated_patch_and_leaves_the_definitions_alone() {
     let text = env.run(&yes).expect(3).stdout();
     assert!(text.contains("wrote "), "{text}");
     let files = files_under(&proj);
-    assert!(files.iter().any(|f| f.starts_with("CE/")), "{files:?}");
+    assert!(
+        files
+            .iter()
+            .any(|f| f.starts_with("Compat/CombatExtended/")),
+        "{files:?}"
+    );
     assert!(files.contains(&"LoadFolders.xml".to_owned()));
     assert_eq!(
         std::fs::read_to_string(proj.join("Defs/Guns.xml")).unwrap(),
@@ -1683,11 +1701,16 @@ fn apply_with_accepted_suggestions_writes_the_gated_patch() {
     let run = env.run(&args);
     assert!([0, 3].contains(&run.code()), "{}", run.stdout());
     let files = files_under(Path::new(&project));
-    let patch = files.iter().find(|f| f.starts_with("CE/")).unwrap();
+    let patch = files
+        .iter()
+        .find(|f| f.starts_with("Compat/CombatExtended/"))
+        .unwrap();
     let text = std::fs::read_to_string(Path::new(&project).join(patch)).unwrap();
     assert!(text.contains("RS_CeBullet1"), "{text}");
-    let def =
-        std::fs::read_to_string(Path::new(&project).join("Defs/Weapons/RS_NewRifle.xml")).unwrap();
+    let def = std::fs::read_to_string(
+        Path::new(&project).join("Defs/ThingDefs_Misc/Weapons/RangedIndustrial/RS_NewRifle.xml"),
+    )
+    .unwrap();
     assert!(!def.contains("Combat"), "{def}");
 }
 
@@ -2034,8 +2057,10 @@ fn a_clone_can_be_planned_and_written_into_the_project_only() {
     let before_game = game_files(&env);
     env.run(&["apply", &id, "--project", &project, "--yes"])
         .expect(0);
-    let written =
-        std::fs::read_to_string(Path::new(&project).join("Defs/Weapons/RS_CopyGun.xml")).unwrap();
+    let written = std::fs::read_to_string(
+        Path::new(&project).join("Defs/ThingDefs_Misc/Weapons/RangedIndustrial/RS_CopyGun.xml"),
+    )
+    .unwrap();
     assert!(!written.contains("Combat"), "{written}");
     assert_eq!(game_files(&env), before_game);
 }

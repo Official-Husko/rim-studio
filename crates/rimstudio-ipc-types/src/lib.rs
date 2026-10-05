@@ -11,7 +11,8 @@
 //! - an `Option` member means "absent when unknown or not applicable", documented on each member, and is
 //!   omitted from the JSON when absent;
 //! - collections that come from maps are ordered by key, so equal data gives byte identical JSON;
-//! - only `serde` derives are used, so `specta` derives can be added behind a feature later.
+//! - every type derives `ts_rs::TS` behind the off by default `ts` feature; the webview types are generated from
+//!   these derives (docs/architecture/ipc-and-state.md, "Bindings as built").
 //!
 //! Conversions from core types live here only where they need nothing beyond `rimstudio-core`; the
 //! conversion of engine types lives in the feature crates.

@@ -125,6 +125,9 @@ The toolkit models the folder as the game does ([mod format note](../research/ri
 | `<version>/Defs`, `<version>/Patches`, `<version>/Textures`, `<version>/Languages`, `<version>/Assemblies`, `<version>/Sounds` | Versioned content | WS-004 to WS-006, WS-013 |
 | `Common/...` | Content shared by versions | WS-003 |
 | `Source/`, `Raw Assets/`, `.git/`, `.vscode/` | Author material never meant for players | WS-010 ignores by default |
+| `Defs/ThingDefs_Misc/Weapons`, `Defs/SoundDefs`, `Textures/Things/Item/Equipment/WeaponRanged`, `Compat/CombatExtended` | The names RimStudio uses for weapon files, sound definitions, weapon textures and the gated Combat Extended content, taken from the game's own data (mod layout v1) | [mod layout](mod-layout.md), WS-001 |
+
+The layout commands built for 0.1.0 (`project_tree`, `project_layout_check`, `project_scaffold_missing`, `project_read_file`) and the recognition of a project's convention (RimStudio layout, the game's own category files, flat) are specified in [mod layout](mod-layout.md). They never move or delete an existing file.
 
 ### 4.3 Where the project record lives
 
@@ -260,8 +263,8 @@ User story: "I start or open a mod and get a correct skeleton for 1.6 without co
 
 | Item | Specification |
 |---|---|
-| Inputs | Name, packageId (suggested from author and name, validated live), author, supported versions (default current game major.minor from `Version.txt`), options: Defs folder, Patches folder, Languages, Assemblies placeholder, optional CE patch folder gated by `IfModActive="ceteam.combatextended"` (off unless the user asks, D-085), C# starter link, target folder (any drive) |
-| Outputs | A write plan creating the folder tree, `About/About.xml`, `LoadFolders.xml` when more than one version or a gated folder is chosen, empty-folder markers where the game needs none (no placeholder files are created in empty folders unless the user opts in), a project record |
+| Inputs | Name, packageId (suggested from author and name, validated live), author, supported versions (default current game major.minor from `Version.txt`), options: Defs folder, Patches folder, Languages, Assemblies placeholder, optional CE patch folder `Compat/CombatExtended` gated by `IfModActive="ceteam.combatextended"` (off unless the user asks, D-085, D-105), C# starter link, target folder (any drive) |
+| Outputs | A write plan creating the folder tree of the RimStudio mod layout v1 ([mod layout](mod-layout.md) section 9): `About/About.xml` (with a description placeholder when none is given), `Defs/ThingDefs_Misc/Weapons`, `Defs/SoundDefs`, `Patches`, the texture folders, `Sounds/Weapons`; `LoadFolders.xml` when more than one version or a gated folder is chosen; `Languages/English/Keyed`, `Assemblies`, `Source/Art`, `.gitignore`, `README.md` and `Credits.txt` only when asked; no placeholder files in empty folders unless the user opts in; a project record. `About/Preview.png` and `About/Manifest.xml` are never created silently |
 | Templates | JSON node trees with typed parameters under the app's bundled resources (about, loadfolders, empty patch file, example def, languages stub). XML is produced only by `rimstudio-xml::render` (R10). User templates are JSONC files in the data root and shadow bundled ones by id |
 
 UI sketch: a three step dialog (what, where, options) with a live tree preview on the right and a preview of About.xml text below it; a "Create" button that opens the project immediately. A checklist at the end offers: open About editor, open in the user's editor, create first def.

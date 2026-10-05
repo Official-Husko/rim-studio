@@ -1,10 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
+  <!-- ====== RS_NewBullet ====== -->
+  <ThingDef ParentName="RS_BaseBullet">
+    <defName>RS_NewBullet</defName>
+    <label>new bullet</label>
+    <projectile>
+      <damageDef>RS_Damage</damageDef>
+      <damageAmountBase>12</damageAmountBase>
+    </projectile>
+  </ThingDef>
   <!-- ====== RS_NewRifle ====== -->
   <ThingDef ParentName="RS_BaseGun">
     <defName>RS_NewRifle</defName>
     <label>new rifle</label>
     <techLevel>Industrial</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponRanged/RS_NewRifle</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
     <statBases>
       <WorkToMake>9000</WorkToMake>
       <Mass>3.5</Mass>

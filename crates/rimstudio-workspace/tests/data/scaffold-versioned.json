@@ -10,11 +10,67 @@
     },
     {
       "kind": "dir",
+      "path": "1.5/Defs/SoundDefs"
+    },
+    {
+      "kind": "dir",
+      "path": "1.5/Defs/ThingDefs_Misc"
+    },
+    {
+      "kind": "dir",
+      "path": "1.5/Defs/ThingDefs_Misc/Weapons"
+    },
+    {
+      "kind": "dir",
       "path": "1.5/Languages"
     },
     {
       "kind": "dir",
+      "path": "1.5/Languages/English"
+    },
+    {
+      "kind": "dir",
+      "path": "1.5/Languages/English/Keyed"
+    },
+    {
+      "kind": "dir",
       "path": "1.5/Patches"
+    },
+    {
+      "kind": "dir",
+      "path": "1.5/Sounds"
+    },
+    {
+      "kind": "dir",
+      "path": "1.5/Sounds/Weapons"
+    },
+    {
+      "kind": "dir",
+      "path": "1.5/Textures"
+    },
+    {
+      "kind": "dir",
+      "path": "1.5/Textures/Things"
+    },
+    {
+      "kind": "dir",
+      "path": "1.5/Textures/Things/Item"
+    },
+    {
+      "kind": "dir",
+      "path": "1.5/Textures/Things/Item/Equipment"
+    },
+    {
+      "kind": "dir",
+      "path": "1.5/Textures/Things/Item/Equipment/WeaponMelee"
+    },
+    {
+      "kind": "dir",
+      "path": "1.5/Textures/Things/Item/Equipment/WeaponRanged"
+    },
+    {
+      "kind": "dir",
+      "path": "1.5/Textures/Things/Projectile"
     },
     {
       "kind": "dir",
@@ -26,11 +82,67 @@
     },
     {
       "kind": "dir",
+      "path": "1.6/Defs/SoundDefs"
+    },
+    {
+      "kind": "dir",
+      "path": "1.6/Defs/ThingDefs_Misc"
+    },
+    {
+      "kind": "dir",
+      "path": "1.6/Defs/ThingDefs_Misc/Weapons"
+    },
+    {
+      "kind": "dir",
       "path": "1.6/Languages"
     },
     {
       "kind": "dir",
+      "path": "1.6/Languages/English"
+    },
+    {
+      "kind": "dir",
+      "path": "1.6/Languages/English/Keyed"
+    },
+    {
+      "kind": "dir",
       "path": "1.6/Patches"
+    },
+    {
+      "kind": "dir",
+      "path": "1.6/Sounds"
+    },
+    {
+      "kind": "dir",
+      "path": "1.6/Sounds/Weapons"
+    },
+    {
+      "kind": "dir",
+      "path": "1.6/Textures"
+    },
+    {
+      "kind": "dir",
+      "path": "1.6/Textures/Things"
+    },
+    {
+      "kind": "dir",
+      "path": "1.6/Textures/Things/Item"
+    },
+    {
+      "kind": "dir",
+      "path": "1.6/Textures/Things/Item/Equipment"
+    },
+    {
+      "kind": "dir",
+      "path": "1.6/Textures/Things/Item/Equipment/WeaponMelee"
+    },
+    {
+      "kind": "dir",
+      "path": "1.6/Textures/Things/Item/Equipment/WeaponRanged"
+    },
+    {
+      "kind": "dir",
+      "path": "1.6/Textures/Things/Projectile"
     },
     {
       "kind": "dir",

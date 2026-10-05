@@ -1,0 +1,224 @@
+{
+  "items": [
+    {
+      "content": {
+        "text": "# Operating system and editor files\n.DS_Store\nThumbs.db\n*.bak\n*.tmp\n\n# Build output of the Source folder\nSource/**/bin/\nSource/**/obj/\n\n# Art sources are not part of the mod\nSource/Art/\nRaw Assets/\n",
+        "type": "text"
+      },
+      "kind": "file",
+      "path": ".gitignore"
+    },
+    {
+      "kind": "dir",
+      "path": "About"
+    },
+    {
+      "content": {
+        "node": {
+          "attrs": [],
+          "children": [
+            {
+              "attrs": [],
+              "children": [
+                "RS Example"
+              ],
+              "tag": "name"
+            },
+            {
+              "attrs": [],
+              "children": [
+                "RS Tester"
+              ],
+              "tag": "author"
+            },
+            {
+              "attrs": [],
+              "children": [
+                "rs.example"
+              ],
+              "tag": "packageId"
+            },
+            {
+              "attrs": [],
+              "children": [
+                {
+                  "attrs": [],
+                  "children": [
+                    "1.6"
+                  ],
+                  "tag": "li"
+                }
+              ],
+              "tag": "supportedVersions"
+            },
+            {
+              "attrs": [],
+              "children": [
+                "A fictional example mod."
+              ],
+              "tag": "description"
+            }
+          ],
+          "tag": "ModMetaData"
+        },
+        "type": "xml"
+      },
+      "kind": "file",
+      "path": "About/About.xml"
+    },
+    {
+      "kind": "dir",
+      "path": "Assemblies"
+    },
+    {
+      "kind": "dir",
+      "path": "Compat"
+    },
+    {
+      "kind": "dir",
+      "path": "Compat/CombatExtended"
+    },
+    {
+      "kind": "dir",
+      "path": "Compat/CombatExtended/Patches"
+    },
+    {
+      "content": {
+        "text": "RS Example\n\nAuthor: RS Tester\n",
+        "type": "text"
+      },
+      "kind": "file",
+      "path": "Credits.txt"
+    },
+    {
+      "kind": "dir",
+      "path": "Defs"
+    },
+    {
+      "kind": "dir",
+      "path": "Defs/SoundDefs"
+    },
+    {
+      "kind": "dir",
+      "path": "Defs/ThingDefs_Misc"
+    },
+    {
+      "kind": "dir",
+      "path": "Defs/ThingDefs_Misc/Weapons"
+    },
+    {
+      "kind": "dir",
+      "path": "Languages"
+    },
+    {
+      "kind": "dir",
+      "path": "Languages/English"
+    },
+    {
+      "kind": "dir",
+      "path": "Languages/English/Keyed"
+    },
+    {
+      "content": {
+        "node": {
+          "attrs": [],
+          "children": [
+            {
+              "attrs": [],
+              "children": [
+                {
+                  "attrs": [],
+                  "children": [
+                    "/"
+                  ],
+                  "tag": "li"
+                },
+                {
+                  "attrs": [
+                    [
+                      "IfModActive",
+                      "ceteam.combatextended"
+                    ]
+                  ],
+                  "children": [
+                    "Compat/CombatExtended"
+                  ],
+                  "tag": "li"
+                }
+              ],
+              "tag": "v1.6"
+            }
+          ],
+          "tag": "loadFolders"
+        },
+        "type": "xml"
+      },
+      "kind": "file",
+      "path": "LoadFolders.xml"
+    },
+    {
+      "kind": "dir",
+      "path": "Patches"
+    },
+    {
+      "content": {
+        "text": "# RS Example\n\nA fictional example mod.\n",
+        "type": "text"
+      },
+      "kind": "file",
+      "path": "README.md"
+    },
+    {
+      "kind": "dir",
+      "path": "Sounds"
+    },
+    {
+      "kind": "dir",
+      "path": "Sounds/Weapons"
+    },
+    {
+      "kind": "dir",
+      "path": "Source"
+    },
+    {
+      "kind": "dir",
+      "path": "Source/Art"
+    },
+    {
+      "kind": "dir",
+      "path": "Textures"
+    },
+    {
+      "kind": "dir",
+      "path": "Textures/Things"
+    },
+    {
+      "kind": "dir",
+      "path": "Textures/Things/Item"
+    },
+    {
+      "kind": "dir",
+      "path": "Textures/Things/Item/Equipment"
+    },
+    {
+      "kind": "dir",
+      "path": "Textures/Things/Item/Equipment/WeaponMelee"
+    },
+    {
+      "kind": "dir",
+      "path": "Textures/Things/Item/Equipment/WeaponRanged"
+    },
+    {
+      "kind": "dir",
+      "path": "Textures/Things/Projectile"
+    }
+  ],
+  "rendered": {
+    ".gitignore": "# Operating system and editor files\n.DS_Store\nThumbs.db\n*.bak\n*.tmp\n\n# Build output of the Source folder\nSource/**/bin/\nSource/**/obj/\n\n# Art sources are not part of the mod\nSource/Art/\nRaw Assets/\n",
+    "About/About.xml": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<ModMetaData>\n  <name>RS Example</name>\n  <author>RS Tester</author>\n  <packageId>rs.example</packageId>\n  <supportedVersions>\n    <li>1.6</li>\n  </supportedVersions>\n  <description>A fictional example mod.</description>\n</ModMetaData>\n",
+    "Credits.txt": "RS Example\n\nAuthor: RS Tester\n",
+    "LoadFolders.xml": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<loadFolders>\n  <v1.6>\n    <li>/</li>\n    <li IfModActive=\"ceteam.combatextended\">Compat/CombatExtended</li>\n  </v1.6>\n</loadFolders>\n",
+    "README.md": "# RS Example\n\nA fictional example mod.\n"
+  },
+  "root": "/work/RS_Example"
+}

@@ -735,6 +735,160 @@ pub fn resolved_def() -> ResolvedDefDto {
     }
 }
 
+fn tree_file(name: &str, path: &str, role: NodeRoleDto, bytes: u64, issues: u32) -> TreeNodeDto {
+    TreeNodeDto {
+        name: name.into(),
+        path: path.into(),
+        kind: TreeNodeKindDto::File,
+        role,
+        bytes,
+        files: 1,
+        issues,
+        children: Vec::new(),
+    }
+}
+
+pub fn layout_issue() -> LayoutIssueDto {
+    LayoutIssueDto {
+        code: "layout.ce-outside-gate".into(),
+        severity: SeverityDto::Warning,
+        path: "Patches/RS_ce_patch.xml".into(),
+        message: "The file uses Combat Extended classes outside the gated Combat Extended folder, so the game reports errors when Combat Extended is not active.".into(),
+        fix: LayoutFixDto {
+            kind: LayoutFixKindDto::MoveFile,
+            summary: "Move the file to Compat/CombatExtended/Patches/RS_ce_patch.xml and gate that folder in LoadFolders.xml.".into(),
+            automatic: false,
+            targets: vec!["Compat/CombatExtended/Patches/RS_ce_patch.xml".into()],
+        },
+    }
+}
+
+pub fn project_tree() -> ProjectTreeDto {
+    let weapons = TreeNodeDto {
+        name: "Weapons".into(),
+        path: "Defs/ThingDefs_Misc/Weapons".into(),
+        kind: TreeNodeKindDto::Folder,
+        role: NodeRoleDto::DefsWeapons,
+        bytes: 5120,
+        files: 1,
+        issues: 0,
+        children: vec![tree_file(
+            "RangedIndustrial.xml",
+            "Defs/ThingDefs_Misc/Weapons/RangedIndustrial.xml",
+            NodeRoleDto::DefsWeapons,
+            5120,
+            0,
+        )],
+    };
+    let patches = TreeNodeDto {
+        name: "Patches".into(),
+        path: "Patches".into(),
+        kind: TreeNodeKindDto::Folder,
+        role: NodeRoleDto::Patches,
+        bytes: 900,
+        files: 1,
+        issues: 1,
+        children: vec![tree_file(
+            "RS_ce_patch.xml",
+            "Patches/RS_ce_patch.xml",
+            NodeRoleDto::Patches,
+            900,
+            1,
+        )],
+    };
+    ProjectTreeDto {
+        project_id: "p-1a2b3c4d".into(),
+        profile: LayoutProfileDto::CoreStyle,
+        content_folder: None,
+        weapons_folder: "Defs/ThingDefs_Misc/Weapons".into(),
+        ce_folder: "Compat/CombatExtended".into(),
+        ce_folder_exists: false,
+        ce_folder_legacy: false,
+        ce_gated: false,
+        root: TreeNodeDto {
+            name: "RS_Mod".into(),
+            path: String::new(),
+            kind: TreeNodeKindDto::Folder,
+            role: NodeRoleDto::ContentRoot,
+            bytes: 6020,
+            files: 2,
+            issues: 1,
+            children: vec![
+                TreeNodeDto {
+                    name: "Defs".into(),
+                    path: "Defs".into(),
+                    kind: TreeNodeKindDto::Folder,
+                    role: NodeRoleDto::Defs,
+                    bytes: 5120,
+                    files: 1,
+                    issues: 0,
+                    children: vec![TreeNodeDto {
+                        name: "ThingDefs_Misc".into(),
+                        path: "Defs/ThingDefs_Misc".into(),
+                        kind: TreeNodeKindDto::Folder,
+                        role: NodeRoleDto::Defs,
+                        bytes: 5120,
+                        files: 1,
+                        issues: 0,
+                        children: vec![weapons],
+                    }],
+                },
+                patches,
+            ],
+        },
+        counts: ProjectCountsDto {
+            folders: 4,
+            files: 2,
+            bytes: 6020,
+            def_files: 1,
+            weapon_defs: 2,
+            projectile_defs: 1,
+            patch_files: 1,
+            textures: 0,
+            sounds: 0,
+        },
+        issues: vec![layout_issue()],
+        truncated: false,
+    }
+}
+
+pub fn layout_check() -> ProjectLayoutCheckDto {
+    ProjectLayoutCheckDto {
+        project_id: "p-1a2b3c4d".into(),
+        profile: LayoutProfileDto::CoreStyle,
+        issues: vec![
+            layout_issue(),
+            LayoutIssueDto {
+                code: "layout.missing-folder".into(),
+                severity: SeverityDto::Info,
+                path: "Sounds".into(),
+                message: "The standard folder Sounds does not exist.".into(),
+                fix: LayoutFixDto {
+                    kind: LayoutFixKindDto::CreateFolder,
+                    summary: "Create the empty folder Sounds.".into(),
+                    automatic: true,
+                    targets: vec!["Sounds".into()],
+                },
+            },
+        ],
+        errors: 0,
+        warnings: 1,
+        infos: 1,
+        auto_fixable: 1,
+    }
+}
+
+pub fn project_file() -> ProjectFileDto {
+    ProjectFileDto {
+        path: "Defs/ThingDefs_Misc/Weapons/RangedIndustrial.xml".into(),
+        role: NodeRoleDto::DefsWeapons,
+        bytes: 5120,
+        text: "<Defs>\n</Defs>\n".into(),
+        truncated: false,
+        binary: false,
+    }
+}
+
 pub fn project_summary() -> ProjectSummaryDto {
     ProjectSummaryDto {
         project_id: "p-1".into(),
@@ -1119,6 +1273,41 @@ pub fn all_samples() -> Vec<(&'static str, Value)> {
     );
     add!("ApplyReportDto", apply_report());
     add!("ProjectSummaryDto", project_summary());
+    add!("ProjectTreeDto", project_tree());
+    add!("ProjectLayoutCheckDto", layout_check());
+    add!("ProjectFileDto", project_file());
+    add!(
+        "ProjectTreeRequest",
+        ProjectTreeRequest {
+            project_id: "p-1a2b3c4d".into(),
+            max_nodes: Some(500),
+        }
+    );
+    add!(
+        "ProjectScaffoldMissingRequest",
+        ProjectScaffoldMissingRequest {
+            project_id: "p-1a2b3c4d".into(),
+            dry_run: true,
+        }
+    );
+    add!(
+        "ProjectScaffoldMissingDto",
+        ProjectScaffoldMissingDto {
+            project_id: "p-1a2b3c4d".into(),
+            dry_run: false,
+            folders: vec!["Sounds".into(), "Textures".into()],
+            files: Vec::new(),
+            skipped: Vec::new(),
+        }
+    );
+    add!(
+        "ProjectReadFileRequest",
+        ProjectReadFileRequest {
+            project_id: "p-1a2b3c4d".into(),
+            path: "About/About.xml".into(),
+            max_bytes: None,
+        }
+    );
     for (i, prompt) in quiz_prompts().into_iter().enumerate() {
         let _ = i;
         out.push(("PromptDto", round_trip(&prompt)));

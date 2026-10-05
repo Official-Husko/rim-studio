@@ -36,8 +36,15 @@ camino.workspace = true
 thiserror.workspace = true
 anyhow.workspace = true
 blake3.workspace = true
+ts-rs = { workspace = true, optional = true }
+
+[features]
+# TypeScript bindings of the app owned DTOs (used by the bindings test, never in shipped binaries).
+ts = ["dep:ts-rs", "rimstudio-ipc-types/ts"]
 
 [dev-dependencies]
 rimstudio-testing.workspace = true
 tempfile.workspace = true
 rstest.workspace = true
+# Turns on the `ts` feature for the test targets only.
+rimstudio-app = { workspace = true, features = ["ts"] }
