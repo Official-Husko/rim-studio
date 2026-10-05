@@ -1,0 +1,175 @@
+{
+  "items": [
+    {
+      "kind": "dir",
+      "path": "1.6"
+    },
+    {
+      "kind": "dir",
+      "path": "1.6/CombatExtended"
+    },
+    {
+      "kind": "dir",
+      "path": "1.6/CombatExtended/Patches"
+    },
+    {
+      "kind": "dir",
+      "path": "1.6/Defs"
+    },
+    {
+      "kind": "dir",
+      "path": "1.6/Patches"
+    },
+    {
+      "kind": "dir",
+      "path": "About"
+    },
+    {
+      "content": {
+        "node": {
+          "attrs": [],
+          "children": [
+            {
+              "attrs": [],
+              "children": [
+                "RS Example"
+              ],
+              "tag": "name"
+            },
+            {
+              "attrs": [],
+              "children": [
+                "RS Tester"
+              ],
+              "tag": "author"
+            },
+            {
+              "attrs": [],
+              "children": [
+                "rs.example"
+              ],
+              "tag": "packageId"
+            },
+            {
+              "attrs": [],
+              "children": [
+                {
+                  "attrs": [],
+                  "children": [
+                    "1.6"
+                  ],
+                  "tag": "li"
+                }
+              ],
+              "tag": "supportedVersions"
+            },
+            {
+              "attrs": [],
+              "children": [
+                {
+                  "attrs": [],
+                  "children": [
+                    {
+                      "attrs": [],
+                      "children": [
+                        "rs.framework"
+                      ],
+                      "tag": "packageId"
+                    },
+                    {
+                      "attrs": [],
+                      "children": [
+                        "RS Framework"
+                      ],
+                      "tag": "displayName"
+                    }
+                  ],
+                  "tag": "li"
+                }
+              ],
+              "tag": "modDependencies"
+            },
+            {
+              "attrs": [],
+              "children": [
+                {
+                  "attrs": [],
+                  "children": [
+                    "rs.framework"
+                  ],
+                  "tag": "li"
+                }
+              ],
+              "tag": "loadAfter"
+            },
+            {
+              "attrs": [],
+              "children": [
+                "A fictional example mod."
+              ],
+              "tag": "description"
+            }
+          ],
+          "tag": "ModMetaData"
+        },
+        "type": "xml"
+      },
+      "kind": "file",
+      "path": "About/About.xml"
+    },
+    {
+      "kind": "dir",
+      "path": "Common"
+    },
+    {
+      "content": {
+        "node": {
+          "attrs": [],
+          "children": [
+            {
+              "attrs": [],
+              "children": [
+                {
+                  "attrs": [],
+                  "children": [
+                    "Common"
+                  ],
+                  "tag": "li"
+                },
+                {
+                  "attrs": [],
+                  "children": [
+                    "1.6"
+                  ],
+                  "tag": "li"
+                },
+                {
+                  "attrs": [
+                    [
+                      "IfModActive",
+                      "ceteam.combatextended"
+                    ]
+                  ],
+                  "children": [
+                    "1.6/CombatExtended"
+                  ],
+                  "tag": "li"
+                }
+              ],
+              "tag": "v1.6"
+            }
+          ],
+          "tag": "loadFolders"
+        },
+        "type": "xml"
+      },
+      "kind": "file",
+      "path": "LoadFolders.xml"
+    }
+  ],
+  "rendered": {
+    "About/About.xml": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<ModMetaData>\n  <name>RS Example</name>\n  <author>RS Tester</author>\n  <packageId>rs.example</packageId>\n  <supportedVersions>\n    <li>1.6</li>\n  </supportedVersions>\n  <modDependencies>\n    <li>\n      <packageId>rs.framework</packageId>\n      <displayName>RS Framework</displayName>\n    </li>\n  </modDependencies>\n  <loadAfter>\n    <li>rs.framework</li>\n  </loadAfter>\n  <description>A fictional example mod.</description>\n</ModMetaData>\n",
+    "LoadFolders.xml": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<loadFolders>\n  <v1.6>\n    <li>Common</li>\n    <li>1.6</li>\n    <li IfModActive=\"ceteam.combatextended\">1.6/CombatExtended</li>\n  </v1.6>\n</loadFolders>\n"
+  },
+  "root": "/work/RS_Example"
+}

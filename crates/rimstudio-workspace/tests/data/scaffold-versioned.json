@@ -1,0 +1,163 @@
+{
+  "items": [
+    {
+      "kind": "dir",
+      "path": "1.5"
+    },
+    {
+      "kind": "dir",
+      "path": "1.5/Defs"
+    },
+    {
+      "kind": "dir",
+      "path": "1.5/Languages"
+    },
+    {
+      "kind": "dir",
+      "path": "1.5/Patches"
+    },
+    {
+      "kind": "dir",
+      "path": "1.6"
+    },
+    {
+      "kind": "dir",
+      "path": "1.6/Defs"
+    },
+    {
+      "kind": "dir",
+      "path": "1.6/Languages"
+    },
+    {
+      "kind": "dir",
+      "path": "1.6/Patches"
+    },
+    {
+      "kind": "dir",
+      "path": "About"
+    },
+    {
+      "content": {
+        "node": {
+          "attrs": [],
+          "children": [
+            {
+              "attrs": [],
+              "children": [
+                "RS Example"
+              ],
+              "tag": "name"
+            },
+            {
+              "attrs": [],
+              "children": [
+                "RS Tester"
+              ],
+              "tag": "author"
+            },
+            {
+              "attrs": [],
+              "children": [
+                "rs.example"
+              ],
+              "tag": "packageId"
+            },
+            {
+              "attrs": [],
+              "children": [
+                {
+                  "attrs": [],
+                  "children": [
+                    "1.5"
+                  ],
+                  "tag": "li"
+                },
+                {
+                  "attrs": [],
+                  "children": [
+                    "1.6"
+                  ],
+                  "tag": "li"
+                }
+              ],
+              "tag": "supportedVersions"
+            },
+            {
+              "attrs": [],
+              "children": [
+                "A fictional example mod."
+              ],
+              "tag": "description"
+            }
+          ],
+          "tag": "ModMetaData"
+        },
+        "type": "xml"
+      },
+      "kind": "file",
+      "path": "About/About.xml"
+    },
+    {
+      "kind": "dir",
+      "path": "Common"
+    },
+    {
+      "content": {
+        "node": {
+          "attrs": [],
+          "children": [
+            {
+              "attrs": [],
+              "children": [
+                {
+                  "attrs": [],
+                  "children": [
+                    "Common"
+                  ],
+                  "tag": "li"
+                },
+                {
+                  "attrs": [],
+                  "children": [
+                    "1.5"
+                  ],
+                  "tag": "li"
+                }
+              ],
+              "tag": "v1.5"
+            },
+            {
+              "attrs": [],
+              "children": [
+                {
+                  "attrs": [],
+                  "children": [
+                    "Common"
+                  ],
+                  "tag": "li"
+                },
+                {
+                  "attrs": [],
+                  "children": [
+                    "1.6"
+                  ],
+                  "tag": "li"
+                }
+              ],
+              "tag": "v1.6"
+            }
+          ],
+          "tag": "loadFolders"
+        },
+        "type": "xml"
+      },
+      "kind": "file",
+      "path": "LoadFolders.xml"
+    }
+  ],
+  "rendered": {
+    "About/About.xml": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<ModMetaData>\n  <name>RS Example</name>\n  <author>RS Tester</author>\n  <packageId>rs.example</packageId>\n  <supportedVersions>\n    <li>1.5</li>\n    <li>1.6</li>\n  </supportedVersions>\n  <description>A fictional example mod.</description>\n</ModMetaData>\n",
+    "LoadFolders.xml": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<loadFolders>\n  <v1.5>\n    <li>Common</li>\n    <li>1.5</li>\n  </v1.5>\n  <v1.6>\n    <li>Common</li>\n    <li>1.6</li>\n  </v1.6>\n</loadFolders>\n"
+  },
+  "root": "/work/RS_Example"
+}

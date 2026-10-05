@@ -1,0 +1,74 @@
+{
+  "items": [
+    {
+      "kind": "dir",
+      "path": "About"
+    },
+    {
+      "content": {
+        "node": {
+          "attrs": [],
+          "children": [
+            {
+              "attrs": [],
+              "children": [
+                "RS Example"
+              ],
+              "tag": "name"
+            },
+            {
+              "attrs": [],
+              "children": [
+                "RS Tester"
+              ],
+              "tag": "author"
+            },
+            {
+              "attrs": [],
+              "children": [
+                "rs.example"
+              ],
+              "tag": "packageId"
+            },
+            {
+              "attrs": [],
+              "children": [
+                {
+                  "attrs": [],
+                  "children": [
+                    "1.6"
+                  ],
+                  "tag": "li"
+                }
+              ],
+              "tag": "supportedVersions"
+            },
+            {
+              "attrs": [],
+              "children": [
+                "A fictional example mod."
+              ],
+              "tag": "description"
+            }
+          ],
+          "tag": "ModMetaData"
+        },
+        "type": "xml"
+      },
+      "kind": "file",
+      "path": "About/About.xml"
+    },
+    {
+      "kind": "dir",
+      "path": "Defs"
+    },
+    {
+      "kind": "dir",
+      "path": "Patches"
+    }
+  ],
+  "rendered": {
+    "About/About.xml": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<ModMetaData>\n  <name>RS Example</name>\n  <author>RS Tester</author>\n  <packageId>rs.example</packageId>\n  <supportedVersions>\n    <li>1.6</li>\n  </supportedVersions>\n  <description>A fictional example mod.</description>\n</ModMetaData>\n"
+  },
+  "root": "/work/RS_Example"
+}
