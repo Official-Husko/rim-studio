@@ -37,6 +37,11 @@ medium?: SourcedDto<number>,
 long?: SourcedDto<number>, };
 
 /**
+ * Whether a mod is in the game's active mod list (`ModsConfig.xml`, read only).
+ */
+export type ActiveInGameDto = "active" | "inactive" | "unknown";
+
+/**
  * An anchor weapon shown as a card.
  */
 export type AnchorCardDto = { 
@@ -3603,6 +3608,11 @@ export type FolderLayoutDto = "auto" | "mods-root" | "single-mod";
 export type FolderWarningDto = "no-mods-found" | "mods-found-deeper" | "ambiguous-layout" | "path-is-link" | "unreachable";
 
 /**
+ * Whether the game is running.
+ */
+export type GameRunningDto = "running" | "not-running" | "unknown";
+
+/**
  * Update state of an install.
  */
 export type HealthDto = "installed" | "update-pending" | "needs-verify";
@@ -4357,6 +4367,23 @@ autoLoadPlayerLog: boolean, };
  * How a source is deployed into the game.
  */
 export type LinkModeDto = "auto" | "links" | "copy" | "none";
+
+/**
+ * What the link backend of this system can create.
+ */
+export type LinkSupportDto = { 
+/**
+ * Symbolic links can be created.
+ */
+symlink: boolean, 
+/**
+ * Junctions can be created.
+ */
+junction: boolean, 
+/**
+ * Creating a symbolic link needs a privilege the app may lack (Windows).
+ */
+needsPrivilege: boolean, };
 
 /**
  * Totals over the findings.
@@ -5176,6 +5203,171 @@ projectId: string,
  * The apply id to reverse.
  */
 applyId: string, };
+
+/**
+ * Request of `project_link_create`.
+ */
+export type ProjectLinkCreateRequest = { 
+/**
+ * The project (from `project_open`).
+ */
+projectId: string, 
+/**
+ * How to make the entry; absent means a symbolic link.
+ */
+mode: ProjectLinkModeDto, 
+/**
+ * The person confirmed that the game is running and will be restarted. Without it a running game
+ * refuses the call.
+ */
+confirmGameRunning: boolean, };
+
+/**
+ * How the entry is (or is to be) made.
+ */
+export type ProjectLinkModeDto = "symlink" | "junction" | "copy";
+
+/**
+ * Why a create or remove did nothing.
+ */
+export type ProjectLinkRefusalDto = { 
+/**
+ * Stable code, `deploy.<kebab-name>`.
+ */
+code: string, 
+/**
+ * English fallback text.
+ */
+message: string, };
+
+/**
+ * Request of `project_link_remove`.
+ */
+export type ProjectLinkRemoveRequest = { 
+/**
+ * The project (from `project_open`).
+ */
+projectId: string, };
+
+/**
+ * The answer of `project_link_create` and `project_link_remove`.
+ */
+export type ProjectLinkResultDto = { 
+/**
+ * True when the file system changed.
+ */
+done: boolean, 
+/**
+ * Why nothing was done.
+ */
+refusal?: ProjectLinkRefusalDto, 
+/**
+ * The state after the call.
+ */
+status: ProjectLinkStatusDto, };
+
+/**
+ * What stands at `Mods/<name>`, seen from the project.
+ */
+export type ProjectLinkStateDto = "not-linked" | "linked" | "linked-by-hand" | "stale" | "foreign-link" | "foreign-folder" | "copy" | "in-mods" | "unavailable";
+
+/**
+ * The answer of `project_link_status`: whether the game can see the project.
+ */
+export type ProjectLinkStatusDto = { 
+/**
+ * The project.
+ */
+projectId: string, 
+/**
+ * The `packageId` of the project's About file, when it has one.
+ */
+packageId?: string, 
+/**
+ * A game install is known.
+ */
+gameFound: boolean, 
+/**
+ * The game folder, when known.
+ */
+gameFolder?: string, 
+/**
+ * The game's `Mods` folder, when a game is known.
+ */
+modsFolder?: string, 
+/**
+ * The `Mods` folder exists.
+ */
+modsExists: boolean, 
+/**
+ * The `Mods` folder carries a read only flag.
+ */
+modsReadOnly: boolean, 
+/**
+ * The name the project is linked under (its folder name, made safe).
+ */
+linkName?: string, 
+/**
+ * The full path of the entry in `Mods`.
+ */
+entryPath?: string, 
+/**
+ * The state of the entry.
+ */
+state: ProjectLinkStateDto, 
+/**
+ * How RimStudio made the entry, when it did.
+ */
+mode?: ProjectLinkModeDto, 
+/**
+ * Where an existing link points.
+ */
+pointsTo?: string, 
+/**
+ * Whether the game is running.
+ */
+gameRunning: GameRunningDto, 
+/**
+ * What this system can create.
+ */
+support: LinkSupportDto, 
+/**
+ * `project_link_create` may be called.
+ */
+canCreate: boolean, 
+/**
+ * `project_link_remove` may be called.
+ */
+canRemove: boolean, 
+/**
+ * The command to run by hand to create the link (`ln -s` or `mklink /J`).
+ */
+manualCommand?: string, 
+/**
+ * Whether the project's package id is in the game's active mod list.
+ */
+activeInGame: ActiveInGameDto, 
+/**
+ * The project has a Combat Extended patch (its `LoadFolders.xml` gates a folder on Combat Extended).
+ */
+hasCePatch: boolean, 
+/**
+ * Whether Combat Extended is in the game's active mod list.
+ */
+ceActiveInGame: ActiveInGameDto, 
+/**
+ * Findings, most important first.
+ */
+diagnostics: Array<DiagnosticDto>, };
+
+/**
+ * Request of `project_link_status`.
+ */
+export type ProjectLinkStatusRequest = { 
+/**
+ * The project (from `project_open`).
+ */
+projectId: string, };
 
 /**
  * Request of `project_open`.

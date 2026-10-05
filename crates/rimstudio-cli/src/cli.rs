@@ -297,6 +297,60 @@ pub(crate) enum ProjectCmd {
     /// Carry out the suggestions of the layout check (moves and `LoadFolders.xml` edits), with an undo.
     #[command(subcommand)]
     Fix(FixCmd),
+    /// Make a mod visible to the game: link it into the game's Mods folder, or take the link away.
+    #[command(subcommand)]
+    Link(LinkCmd),
+}
+
+/// How `project link create` makes the entry.
+#[derive(Debug, Clone, Copy, PartialEq, Eq, clap::ValueEnum)]
+pub(crate) enum LinkModeArg {
+    /// A symbolic link (the default).
+    Symlink,
+    /// A Windows junction.
+    Junction,
+    /// A copy of the folder with an ownership marker; it does not follow later edits.
+    Copy,
+}
+
+impl LinkModeArg {
+    /// The name on the wire.
+    pub(crate) fn as_str(self) -> &'static str {
+        match self {
+            Self::Symlink => "symlink",
+            Self::Junction => "junction",
+            Self::Copy => "copy",
+        }
+    }
+}
+
+/// The `project link` commands.
+#[derive(Debug, Subcommand)]
+pub(crate) enum LinkCmd {
+    /// Whether the game can see the mod, and what is in the way. Writes nothing.
+    Status {
+        /// The mod folder.
+        path: String,
+    },
+    /// Link the mod into the game's Mods folder under its folder name. Without `--yes` it changes nothing.
+    Create {
+        /// The mod folder.
+        path: String,
+        /// How to make the entry.
+        #[arg(long, value_enum, default_value = "symlink")]
+        mode: LinkModeArg,
+        /// The game is running and will be restarted to see the mod.
+        #[arg(long)]
+        confirm_game_running: bool,
+        /// Create the link.
+        #[arg(long)]
+        yes: bool,
+    },
+    /// Remove the link (or copy) RimStudio made for the mod. Never removes anything else.
+    Remove {
+        /// The mod folder.
+        path: String,
+    },
 }
 
 /// The `project fix` commands.

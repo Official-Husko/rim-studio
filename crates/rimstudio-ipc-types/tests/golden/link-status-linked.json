@@ -1,0 +1,27 @@
+{
+  "projectId": "p-1a2b3c4d",
+  "packageId": "rs.fiction.arms",
+  "gameFound": true,
+  "gameFolder": "/games/RimWorld",
+  "modsFolder": "/games/RimWorld/Mods",
+  "modsExists": true,
+  "modsReadOnly": false,
+  "linkName": "RS_Arms",
+  "entryPath": "/games/RimWorld/Mods/RS_Arms",
+  "state": "linked",
+  "mode": "symlink",
+  "pointsTo": "/mods/RS_Arms",
+  "gameRunning": "not-running",
+  "support": {
+    "symlink": true,
+    "junction": false,
+    "needsPrivilege": false
+  },
+  "canCreate": false,
+  "canRemove": true,
+  "manualCommand": "ln -s '/mods/RS_Arms' '/games/RimWorld/Mods/RS_Arms'",
+  "activeInGame": "inactive",
+  "hasCePatch": true,
+  "ceActiveInGame": "unknown",
+  "diagnostics": []
+}

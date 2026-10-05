@@ -27,5 +27,6 @@ pub mod library_facts;
 pub mod mods;
 pub mod project;
 pub mod project_fix;
+pub mod project_link;
 pub mod settings;
 pub mod tools;

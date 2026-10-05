@@ -20,6 +20,7 @@ pub mod fix;
 pub mod fix_apply;
 pub mod history;
 pub mod journal;
+pub mod link;
 pub mod read;
 pub mod scaffold_missing;
 pub mod scan;

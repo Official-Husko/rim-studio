@@ -12,6 +12,7 @@ pub(crate) mod lint;
 pub(crate) mod project;
 pub(crate) mod project_fix;
 pub(crate) mod project_layout;
+pub(crate) mod project_link;
 pub(crate) mod scan;
 pub(crate) mod settings;
 pub(crate) mod sources;

@@ -77,6 +77,10 @@ pub mod wire {
         ProjectLayoutFixHistoryRequest, ProjectLayoutFixPlanDto, ProjectLayoutFixPlanRequest,
         ProjectLayoutFixUndoDto, ProjectLayoutFixUndoRequest,
     };
+    pub use rimstudio_ipc_types::project_link::{
+        ProjectLinkCreateRequest, ProjectLinkRemoveRequest, ProjectLinkResultDto,
+        ProjectLinkStatusDto, ProjectLinkStatusRequest,
+    };
     pub use rimstudio_ipc_types::settings::{SettingsDto, SettingsGetRequest, SettingsUpdate};
     pub use rimstudio_ipc_types::tools::AppListToolsResponse;
 }
@@ -284,6 +288,9 @@ macro_rules! for_each_command {
             job    project_layout_fix_apply (ctx, req: ProjectLayoutFixApplyRequest) -> ProjectLayoutFixApplyDto = $crate::api::project_fix::project_layout_fix_apply;
             action project_layout_fix_undo (ctx, req: ProjectLayoutFixUndoRequest) -> ProjectLayoutFixUndoDto = $crate::api::project_fix::project_layout_fix_undo;
             query  project_layout_fix_history (ctx, req: ProjectLayoutFixHistoryRequest) -> ProjectLayoutFixHistoryDto = $crate::api::project_fix::project_layout_fix_history;
+            query  project_link_status (ctx, req: ProjectLinkStatusRequest) -> ProjectLinkStatusDto = $crate::api::project_link::project_link_status;
+            action project_link_create (ctx, req: ProjectLinkCreateRequest) -> ProjectLinkResultDto = $crate::api::project_link::project_link_create;
+            action project_link_remove (ctx, req: ProjectLinkRemoveRequest) -> ProjectLinkResultDto = $crate::api::project_link::project_link_remove;
             query  designer_reference_list (ctx, req: DesignerReferenceListRequest) -> ReferenceListDto = $crate::api::designer::designer_reference_list;
             query  designer_preview (ctx, req: DesignerPreviewRequest) -> PreviewDto = $crate::api::designer::designer_preview;
             query  designer_fit (ctx, req: DesignerFitRequest) -> FitReportDto = $crate::api::designer::designer_fit;

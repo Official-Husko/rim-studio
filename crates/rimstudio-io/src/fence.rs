@@ -292,6 +292,21 @@ impl GameWriteFence {
         self
     }
 
+    /// Replaces the ownership set with the entries of the manifest on disk. A caller that shares one
+    /// fence between calls re-reads its manifest before every operation and seeds the fence with this.
+    pub fn set_owned(&self, entries: impl IntoIterator<Item = OwnedEntry>) {
+        let mut owned = lock(&self.owned);
+        owned.clear();
+        for e in entries {
+            owned.insert(e.name.clone(), e);
+        }
+    }
+
+    /// The `Mods` folder of the install this fence protects, as configured.
+    pub fn install_mods(&self) -> &Utf8Path {
+        &self.config.install_mods
+    }
+
     /// The current ownership set (sorted by name), for persisting the manifest.
     pub fn owned(&self) -> Vec<OwnedEntry> {
         lock(&self.owned).values().cloned().collect()
@@ -356,9 +371,20 @@ impl GameWriteFence {
         })
     }
 
+    /// A link or copy source must lie outside the game folder (the folder that holds `Mods`) and must
+    /// not contain it: a target inside the install would let the game read its own files as a mod, and
+    /// a target that is an ancestor of `Mods` would make the link loop back into itself.
     fn require_outside_mods(&self, op: &'static str, p: &Utf8Path) -> Result<(), GuardError> {
         if p.starts_with(&self.mods_canonical) {
             return Err(refused(op, "the path is inside the Mods folder"));
+        }
+        if self.mods_canonical.starts_with(p) {
+            return Err(refused(op, "the path contains the Mods folder"));
+        }
+        if let Some(game_root) = self.mods_canonical.parent()
+            && p.starts_with(game_root)
+        {
+            return Err(refused(op, "the path is inside the game folder"));
         }
         Ok(())
     }

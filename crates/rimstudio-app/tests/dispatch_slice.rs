@@ -306,6 +306,14 @@ fn every_command_of_the_slice_dispatches_in_one_session() {
     assert_eq!(closed["closed"], json!(true));
     run.ok("project_open", json!({"path": conv_root.as_str()}));
 
+    // the link commands: the test platform makes no real links, so only the answers are checked
+    let link_status = run.ok("project_link_status", json!({"projectId": pid.clone()}));
+    assert_eq!(link_status["gameFound"], json!(true), "{link_status}");
+    let link_made = run.ok("project_link_create", json!({"projectId": pid.clone()}));
+    assert!(link_made["done"].is_boolean(), "{link_made}");
+    let link_gone = run.ok("project_link_remove", json!({"projectId": pid.clone()}));
+    assert!(link_gone["done"].is_boolean(), "{link_gone}");
+
     // layout fixes: plan, a stale plan, apply, history, undo, and an unknown journal
     let fix_root = project_folder(
         &f,

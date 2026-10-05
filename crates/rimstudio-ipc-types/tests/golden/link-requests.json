@@ -1,0 +1,18 @@
+{
+  "status": {
+    "projectId": "p-1a2b3c4d"
+  },
+  "create": {
+    "projectId": "p-1a2b3c4d",
+    "mode": "junction",
+    "confirmGameRunning": true
+  },
+  "createDefaults": {
+    "projectId": "",
+    "mode": "symlink",
+    "confirmGameRunning": false
+  },
+  "remove": {
+    "projectId": "p-1a2b3c4d"
+  }
+}

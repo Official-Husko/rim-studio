@@ -83,6 +83,15 @@ struct Built {
     ctx: Arc<DesignerCtx>,
 }
 
+/// The folders the link commands need from the selected install.
+#[derive(Debug, Clone)]
+pub struct LinkMachine {
+    /// The folder that holds `Mods`, when an install is selected.
+    pub game_folder: Option<Utf8PathBuf>,
+    /// The game's `ModsConfig.xml`, when the user data folder is known.
+    pub mods_config: Option<Utf8PathBuf>,
+}
+
 /// What the manager says about the machine, as far as the hub needs it.
 struct Plan {
     install: Option<Install>,
@@ -343,6 +352,21 @@ impl WorkspaceHub {
             env = env.with_fence(fence);
         }
         Ok((env, Self::protected(&plan)))
+    }
+
+    /// The game folder and the `ModsConfig.xml` path of the selected install, for the link commands.
+    ///
+    /// # Errors
+    /// The mapped manager error.
+    pub fn link_machine(app: &AppContext) -> Result<LinkMachine, ApiError> {
+        let plan = Self::plan(app)?;
+        Ok(LinkMachine {
+            game_folder: plan.install.as_ref().map(|i| i.game_root.clone()),
+            mods_config: plan
+                .user_dir
+                .as_ref()
+                .map(|u| u.join("Config/ModsConfig.xml")),
+        })
     }
 
     fn open_input(app: &AppContext, reference: ReferenceSet, game_root: &Utf8Path) -> OpenInput {

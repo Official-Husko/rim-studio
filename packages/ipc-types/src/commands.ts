@@ -76,6 +76,11 @@ import type {
   ProjectLayoutFixPlanRequest,
   ProjectLayoutFixUndoDto,
   ProjectLayoutFixUndoRequest,
+  ProjectLinkCreateRequest,
+  ProjectLinkRemoveRequest,
+  ProjectLinkResultDto,
+  ProjectLinkStatusDto,
+  ProjectLinkStatusRequest,
   ProjectOpenRequest,
   ProjectReadFileRequest,
   ProjectScaffoldMissingDto,
@@ -135,6 +140,9 @@ export interface CommandTable {
   project_layout_fix_apply: { kind: "job"; request: ProjectLayoutFixApplyRequest; response: ProjectLayoutFixApplyDto };
   project_layout_fix_undo: { kind: "action"; request: ProjectLayoutFixUndoRequest; response: ProjectLayoutFixUndoDto };
   project_layout_fix_history: { kind: "query"; request: ProjectLayoutFixHistoryRequest; response: ProjectLayoutFixHistoryDto };
+  project_link_status: { kind: "query"; request: ProjectLinkStatusRequest; response: ProjectLinkStatusDto };
+  project_link_create: { kind: "action"; request: ProjectLinkCreateRequest; response: ProjectLinkResultDto };
+  project_link_remove: { kind: "action"; request: ProjectLinkRemoveRequest; response: ProjectLinkResultDto };
   designer_reference_list: { kind: "query"; request: DesignerReferenceListRequest; response: ReferenceListDto };
   designer_preview: { kind: "query"; request: DesignerPreviewRequest; response: PreviewDto };
   designer_fit: { kind: "query"; request: DesignerFitRequest; response: FitReportDto };
@@ -204,6 +212,9 @@ export const commands = {
   projectLayoutFixApply: { name: "project_layout_fix_apply", kind: "job" },
   projectLayoutFixUndo: { name: "project_layout_fix_undo", kind: "action" },
   projectLayoutFixHistory: { name: "project_layout_fix_history", kind: "query" },
+  projectLinkStatus: { name: "project_link_status", kind: "query" },
+  projectLinkCreate: { name: "project_link_create", kind: "action" },
+  projectLinkRemove: { name: "project_link_remove", kind: "action" },
   designerReferenceList: { name: "designer_reference_list", kind: "query" },
   designerPreview: { name: "designer_preview", kind: "query" },
   designerFit: { name: "designer_fit", kind: "query" },
@@ -259,6 +270,9 @@ export const commandNames = [
   "project_layout_fix_apply",
   "project_layout_fix_undo",
   "project_layout_fix_history",
+  "project_link_status",
+  "project_link_create",
+  "project_link_remove",
   "designer_reference_list",
   "designer_preview",
   "designer_fit",

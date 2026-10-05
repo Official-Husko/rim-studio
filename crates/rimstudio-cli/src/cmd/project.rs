@@ -6,7 +6,8 @@ use serde_json::{Value, json};
 
 use super::project_fix as fix;
 use super::project_layout as layout;
-use crate::cli::{FixCmd, ProjectCmd};
+use super::project_link as link;
+use crate::cli::{FixCmd, LinkCmd, ProjectCmd};
 use crate::error::CliResult;
 use crate::fmt::{arr_at, bool_at, count_diagnostics, render_diagnostics, str_at, u64_at};
 use crate::session::{Session, absolute};
@@ -149,6 +150,16 @@ pub(crate) fn run(s: &Session, cmd: &ProjectCmd) -> CliResult {
             )?,
             FixCmd::Undo { path, apply_id } => fix::undo(s, path, apply_id)?,
             FixCmd::History { path } => fix::history(s, path)?,
+        },
+        ProjectCmd::Link(cmd) => match cmd {
+            LinkCmd::Status { path } => link::status(s, path)?,
+            LinkCmd::Create {
+                path,
+                mode,
+                confirm_game_running,
+                yes,
+            } => link::create(s, path, *mode, *confirm_game_running, *yes)?,
+            LinkCmd::Remove { path } => link::remove(s, path)?,
         },
         ProjectCmd::Open { path } => {
             let summary = open(s, path)?;

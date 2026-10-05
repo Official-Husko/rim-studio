@@ -39,6 +39,11 @@ const TYPES = {
   "ce-ammo-custom": "CustomAmmoDto",
   "ce-ammo-suggest-request": "DesignerCeAmmoSuggestRequest",
   "ce-ammo-suggestion": "CeAmmoSuggestionDto",
+  "link-requests":
+    "{ status: ProjectLinkStatusRequest; create: ProjectLinkCreateRequest; createDefaults: ProjectLinkCreateRequest; remove: ProjectLinkRemoveRequest }",
+  "link-result-done": "ProjectLinkResultDto",
+  "link-result-refused": "ProjectLinkResultDto",
+  "link-status-linked": "ProjectLinkStatusDto",
 };
 
 const files = readdirSync(goldenDir)
@@ -51,8 +56,14 @@ if (unmapped.length > 0) {
 }
 
 const virtualName = join(srcDir, "__golden_check__.ts");
-const names = [...new Set(Object.values(TYPES).map((t) => t.split("<")[0]))];
-let source = `import type { ${names.join(", ")}, LibraryScanResult } from "./bindings";\n`;
+// The type expressions may be generic or inline object types: import every identifier that bindings.ts exports.
+const exported = new Set(
+  [...readFileSync(join(srcDir, "bindings.ts"), "utf8").matchAll(/export (?:type|interface) (\w+)/g)].map((m) => m[1]),
+);
+const names = [
+  ...new Set(Object.values(TYPES).flatMap((t) => (t.match(/[A-Za-z_][A-Za-z0-9_]*/g) ?? []).filter((n) => exported.has(n)))),
+];
+let source = `import type { ${names.join(", ")} } from "./bindings";\n`;
 files.forEach((file, i) => {
   const type = TYPES[file.slice(0, -5)];
   const json = readFileSync(join(goldenDir, file), "utf8");
@@ -90,4 +101,4 @@ if (diagnostics.length > 0) {
   }
   process.exit(1);
 }
-console.log(`golden types ok: ${files.length} files`);
+process.stdout.write(`golden types ok: ${files.length} files\n`);

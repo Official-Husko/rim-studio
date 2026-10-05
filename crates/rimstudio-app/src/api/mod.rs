@@ -15,6 +15,7 @@
 //! - [`defs`]: `defs_search`, `defs_get_resolved`.
 //! - [`project`]: `project_open`, `project_create`, `project_close`.
 //! - [`project_fix`]: the `project_layout_fix_*` commands (plan, apply, undo, history).
+//! - [`project_link`]: the `project_link_*` commands (status, create, remove): make a project visible to the game.
 //! - [`designer`]: every `designer_*` command the toolkit implements, except the lint of patch files,
 //!   which is `designer_lint::designer_lint_files`.
 
@@ -27,5 +28,6 @@ pub mod jobs;
 pub mod library;
 pub mod project;
 pub mod project_fix;
+pub mod project_link;
 pub mod settings;
 pub mod sources;
