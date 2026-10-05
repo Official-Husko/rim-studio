@@ -3,9 +3,12 @@ import type { PlannedFileDto } from 'rimstudio-ipc-types';
 import { Button, CodeView, cx, DiffView, Dialog, SegmentedControl } from 'rimstudio-ui';
 import { t } from '~/shared/i18n';
 import { nameOf } from '../../output-model';
+import { CopyPreview } from './CopyPreview';
 
 export interface FilePreviewProps {
   file: PlannedFileDto;
+  /** A thumbnail of the source of a copied texture. */
+  thumbnail?: string | undefined;
 }
 
 type View = 'changes' | 'file';
@@ -45,9 +48,10 @@ function Body({
  * The text of one planned file: the XML as it will be written, or for an update the changes against
  * the file on disk. A wide dialog shows the same text with room to read it.
  */
-export function FilePreview({ file }: FilePreviewProps) {
+export function FilePreview({ file, thumbnail }: FilePreviewProps) {
   const [chosen, setChosen] = useState<View>('changes');
   const [wide, setWide] = useState(false);
+  if (file.kind === 'copy') return <CopyPreview file={file} thumbnail={thumbnail} />;
   const hasDiff = file.diff !== undefined && file.action === 'update-region';
   const view: View = hasDiff ? chosen : 'file';
   return (

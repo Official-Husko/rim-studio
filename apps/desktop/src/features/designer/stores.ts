@@ -1,4 +1,5 @@
 import type { DraftEntryDto } from 'rimstudio-ipc-types';
+import { createAssetStore } from './asset-store';
 import { createDraftsStore } from './drafts-store';
 import { createEditorStore } from './editor-store';
 import { createOutputStore } from './output-store';
@@ -20,6 +21,7 @@ export function createDesigner(
   });
   const reference = createReferenceStore();
   const quiz = createQuizStore(editor);
+  const assets = createAssetStore({ projectId });
   const output = createOutputStore({
     editor,
     projectId,
@@ -47,7 +49,7 @@ export function createDesigner(
     drafts.reset();
   }
 
-  return { drafts, editor, reference, quiz, output, select, remove, reset };
+  return { drafts, editor, reference, quiz, output, assets, select, remove, reset };
 }
 
 export type Designer = ReturnType<typeof createDesigner>;

@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'preact/hooks';
 import { Banner, EmptyState, Panel, Spinner } from 'rimstudio-ui';
 import { t, tn } from '~/shared/i18n';
 import { focusField } from '../../model/draft';
+import { copiesOf } from '../../model/assets';
 import { parseOutputLinks, runOutputLinks } from '../../output-dev-links';
 import { isDerived, isLint, problemsOf } from '../../output-model';
 import { designer, type Designer } from '../../stores';
@@ -24,6 +25,8 @@ export interface OutputPanelProps {
   store?: OutputStore;
   /** The editor of the page, for the draft the output follows. */
   editor?: Designer['editor'];
+  /** The facts of the imported files, for the thumbnails of copied textures. */
+  assets?: Designer['assets'];
 }
 
 /**
@@ -36,6 +39,7 @@ export function OutputPanel({
   projectPath,
   store = designer.output,
   editor = designer.editor,
+  assets = designer.assets,
 }: OutputPanelProps) {
   const root = useRef<HTMLDivElement>(null);
   useEffect(() => store.start(), [store]);
@@ -43,6 +47,17 @@ export function OutputPanel({
     if (!import.meta.env.DEV) return undefined;
     return runOutputLinks(store, editor, parseOutputLinks(location.hash));
   }, [store, editor]);
+
+  const plan = store.plan.value;
+  useEffect(() => {
+    for (const file of copiesOf(plan)) {
+      if (file.copy?.width !== undefined) void assets.load(file.copy.source);
+    }
+  }, [assets, plan]);
+  const thumbnailOf = (source: string): string | undefined => {
+    const state = assets.facts.value.get(source);
+    return state?.status === 'ready' ? state.info.preview : undefined;
+  };
 
   const draft = editor.draft.value;
   if (!draftId || !projectPath || !draft) {
@@ -53,7 +68,6 @@ export function OutputPanel({
     );
   }
 
-  const plan = store.plan.value;
   const selected = plan?.files.find((f) => f.path === store.selectedPath.value) ?? plan?.files[0];
   const busy = store.planning.value || store.stale.value;
   const error = store.planError.value;
@@ -100,11 +114,22 @@ export function OutputPanel({
           ) : null}
           {plan ? (
             <>
-              <FileList files={plan.files} selected={selected?.path} onSelect={store.select} />
+              <FileList
+                files={plan.files}
+                selected={selected?.path}
+                onSelect={store.select}
+                thumbnailOf={thumbnailOf}
+              />
               {on && plan.hasErrors && !plan.files.some((f) => f.kind === 'ce-patch') ? (
                 <p class="text-small text-muted">{t('designer.output.patchWaits')}</p>
               ) : null}
-              {selected ? <FilePreview key={selected.path} file={selected} /> : null}
+              {selected ? (
+                <FilePreview
+                  key={selected.path}
+                  file={selected}
+                  thumbnail={selected.copy ? thumbnailOf(selected.copy.source) : undefined}
+                />
+              ) : null}
             </>
           ) : error ? null : (
             <EmptyState compact title={t('designer.output.planning')} />

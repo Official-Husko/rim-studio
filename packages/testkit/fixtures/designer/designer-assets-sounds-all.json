@@ -1,0 +1,357 @@
+{
+  "queryId": "q2",
+  "total": 1231,
+  "offset": 0,
+  "items": [
+    {
+      "defType": "SoundDef",
+      "defName": "Interact_Drill",
+      "isAbstract": false,
+      "modId": "Ludeon.RimWorld",
+      "file": "Defs/Effects/Effecter_WorkGeneral.xml"
+    },
+    {
+      "defType": "SoundDef",
+      "defName": "Interact_Paint",
+      "isAbstract": false,
+      "modId": "Ludeon.RimWorld",
+      "file": "Defs/Effects/Effecter_WorkGeneral.xml"
+    },
+    {
+      "defType": "SoundDef",
+      "defName": "Interact_RemovePaint",
+      "isAbstract": false,
+      "modId": "Ludeon.RimWorld",
+      "file": "Defs/Effects/Effecter_WorkGeneral.xml"
+    },
+    {
+      "defType": "SoundDef",
+      "defName": "DeathAcidifier",
+      "isAbstract": false,
+      "modId": "Ludeon.RimWorld",
+      "file": "Defs/HediffDefs/BodyParts/Hediffs_BodyParts_Bionic.xml"
+    },
+    {
+      "defType": "SoundDef",
+      "defName": "PsyAmpInstalled",
+      "isAbstract": false,
+      "modId": "Ludeon.RimWorld",
+      "file": "Defs/HediffDefs/Hediffs_Psycasts.xml"
+    },
+    {
+      "defType": "SoundDef",
+      "defName": "EmpDisabled",
+      "isAbstract": false,
+      "modId": "Ludeon.RimWorld",
+      "file": "Defs/SoundDefs/Building_Exotic_Sustainers.xml"
+    },
+    {
+      "defType": "SoundDef",
+      "defName": "BulletShield_Ambience",
+      "isAbstract": false,
+      "modId": "Ludeon.RimWorld",
+      "file": "Defs/SoundDefs/Building_Exotic_Sustainers.xml"
+    },
+    {
+      "defType": "SoundDef",
+      "defName": "MortarShield_Ambience",
+      "isAbstract": false,
+      "modId": "Ludeon.RimWorld",
+      "file": "Defs/SoundDefs/Building_Exotic_Sustainers.xml"
+    },
+    {
+      "defType": "SoundDef",
+      "defName": "CryptosleepCasket_Eject",
+      "isAbstract": false,
+      "modId": "Ludeon.RimWorld",
+      "file": "Defs/SoundDefs/Building_Oneshots_Misc.xml"
+    },
+    {
+      "defType": "SoundDef",
+      "defName": "CryptosleepCasket_Accept",
+      "isAbstract": false,
+      "modId": "Ludeon.RimWorld",
+      "file": "Defs/SoundDefs/Building_Oneshots_Misc.xml"
+    },
+    {
+      "defType": "SoundDef",
+      "defName": "Hive_Spawn",
+      "isAbstract": false,
+      "modId": "Ludeon.RimWorld",
+      "file": "Defs/SoundDefs/Building_Oneshots_Misc.xml"
+    },
+    {
+      "defType": "SoundDef",
+      "defName": "MechanoidsWakeUp",
+      "isAbstract": false,
+      "modId": "Ludeon.RimWorld",
+      "file": "Defs/SoundDefs/Building_Oneshots_Misc.xml"
+    },
+    {
+      "defType": "SoundDef",
+      "defName": "ShipReactor_Startup",
+      "isAbstract": false,
+      "modId": "Ludeon.RimWorld",
+      "file": "Defs/SoundDefs/Building_Oneshots_Misc.xml"
+    },
+    {
+      "defType": "SoundDef",
+      "defName": "BuildingDestroyed_Wood_Big",
+      "isAbstract": false,
+      "modId": "Ludeon.RimWorld",
+      "file": "Defs/SoundDefs/Building_Oneshots_Misc.xml"
+    },
+    {
+      "defType": "SoundDef",
+      "defName": "BuildingDestroyed_Wood_Medium",
+      "isAbstract": false,
+      "modId": "Ludeon.RimWorld",
+      "file": "Defs/SoundDefs/Building_Oneshots_Misc.xml"
+    },
+    {
+      "defType": "SoundDef",
+      "defName": "BuildingDestroyed_Wood_Small",
+      "isAbstract": false,
+      "modId": "Ludeon.RimWorld",
+      "file": "Defs/SoundDefs/Building_Oneshots_Misc.xml"
+    },
+    {
+      "defType": "SoundDef",
+      "defName": "BuildingDestroyed_Metal_Big",
+      "isAbstract": false,
+      "modId": "Ludeon.RimWorld",
+      "file": "Defs/SoundDefs/Building_Oneshots_Misc.xml"
+    },
+    {
+      "defType": "SoundDef",
+      "defName": "BuildingDestroyed_Metal_Medium",
+      "isAbstract": false,
+      "modId": "Ludeon.RimWorld",
+      "file": "Defs/SoundDefs/Building_Oneshots_Misc.xml"
+    },
+    {
+      "defType": "SoundDef",
+      "defName": "BuildingDestroyed_Metal_Small",
+      "isAbstract": false,
+      "modId": "Ludeon.RimWorld",
+      "file": "Defs/SoundDefs/Building_Oneshots_Misc.xml"
+    },
+    {
+      "defType": "SoundDef",
+      "defName": "BuildingDestroyed_Stone_Big",
+      "isAbstract": false,
+      "modId": "Ludeon.RimWorld",
+      "file": "Defs/SoundDefs/Building_Oneshots_Misc.xml"
+    },
+    {
+      "defType": "SoundDef",
+      "defName": "BuildingDestroyed_Stone_Medium",
+      "isAbstract": false,
+      "modId": "Ludeon.RimWorld",
+      "file": "Defs/SoundDefs/Building_Oneshots_Misc.xml"
+    },
+    {
+      "defType": "SoundDef",
+      "defName": "BuildingDestroyed_Stone_Small",
+      "isAbstract": false,
+      "modId": "Ludeon.RimWorld",
+      "file": "Defs/SoundDefs/Building_Oneshots_Misc.xml"
+    },
+    {
+      "defType": "SoundDef",
+      "defName": "BuildingDestroyed_Soft_Medium",
+      "isAbstract": false,
+      "modId": "Ludeon.RimWorld",
+      "file": "Defs/SoundDefs/Building_Oneshots_Misc.xml"
+    },
+    {
+      "defType": "SoundDef",
+      "defName": "BuildingDestroyed_Soft_Small",
+      "isAbstract": false,
+      "modId": "Ludeon.RimWorld",
+      "file": "Defs/SoundDefs/Building_Oneshots_Misc.xml"
+    },
+    {
+      "defType": "SoundDef",
+      "defName": "BulletShieldGenerator_Reactivate",
+      "isAbstract": false,
+      "modId": "Ludeon.RimWorld",
+      "file": "Defs/SoundDefs/Building_Oneshots_Misc.xml"
+    },
+    {
+      "defType": "SoundDef",
+      "defName": "Shuttle_PawnLoaded",
+      "isAbstract": false,
+      "modId": "Ludeon.RimWorld",
+      "file": "Defs/SoundDefs/Building_Oneshots_Misc.xml"
+    },
+    {
+      "defType": "SoundDef",
+      "defName": "Shuttle_PawnExit",
+      "isAbstract": false,
+      "modId": "Ludeon.RimWorld",
+      "file": "Defs/SoundDefs/Building_Oneshots_Misc.xml"
+    },
+    {
+      "defType": "SoundDef",
+      "defName": "ShuttleIdle_Ambience",
+      "isAbstract": false,
+      "modId": "Ludeon.RimWorld",
+      "file": "Defs/SoundDefs/Building_Oneshots_Misc.xml"
+    },
+    {
+      "defType": "SoundDef",
+      "defName": "BurningPowerCell_Start",
+      "isAbstract": false,
+      "modId": "Ludeon.RimWorld",
+      "file": "Defs/SoundDefs/Building_Oneshots_Misc.xml"
+    },
+    {
+      "defType": "SoundDef",
+      "defName": "BurningPowerCell_End",
+      "isAbstract": false,
+      "modId": "Ludeon.RimWorld",
+      "file": "Defs/SoundDefs/Building_Oneshots_Misc.xml"
+    },
+    {
+      "defType": "SoundDef",
+      "defName": "BurningPowerCell_Loop",
+      "isAbstract": false,
+      "modId": "Ludeon.RimWorld",
+      "file": "Defs/SoundDefs/Building_Oneshots_Misc.xml"
+    },
+    {
+      "defType": "SoundDef",
+      "defName": "Designate_ExtractSkull",
+      "isAbstract": false,
+      "modId": "Ludeon.RimWorld",
+      "file": "Defs/SoundDefs/Building_Oneshots_Misc.xml"
+    },
+    {
+      "defType": "SoundDef",
+      "defName": "CrateOpeningStarted",
+      "isAbstract": false,
+      "modId": "Ludeon.RimWorld",
+      "file": "Defs/SoundDefs/Building_Oneshots_Misc.xml"
+    },
+    {
+      "defType": "SoundDef",
+      "defName": "AncientHermeticCrate_Opened",
+      "isAbstract": false,
+      "modId": "Ludeon.RimWorld",
+      "file": "Defs/SoundDefs/Building_Oneshots_Misc.xml"
+    },
+    {
+      "defType": "SoundDef",
+      "defName": "MortarShieldGenerator_Reactivate",
+      "isAbstract": false,
+      "modId": "Ludeon.RimWorld",
+      "file": "Defs/SoundDefs/Building_Oneshots_Misc.xml"
+    },
+    {
+      "defType": "SoundDef",
+      "defName": "GestatorGlassShattered",
+      "isAbstract": false,
+      "modId": "Ludeon.RimWorld",
+      "file": "Defs/SoundDefs/Building_Oneshots_Misc.xml"
+    },
+    {
+      "defType": "SoundDef",
+      "defName": "GeyserSpray",
+      "isAbstract": false,
+      "modId": "Ludeon.RimWorld",
+      "file": "Defs/SoundDefs/Building_Oneshots_Natural.xml"
+    },
+    {
+      "defType": "SoundDef",
+      "defName": "CocoonDestroyed",
+      "isAbstract": false,
+      "modId": "Ludeon.RimWorld",
+      "file": "Defs/SoundDefs/Building_Oneshots_Natural.xml"
+    },
+    {
+      "defType": "SoundDef",
+      "defName": "Crater_FilledIn",
+      "isAbstract": false,
+      "modId": "Ludeon.RimWorld",
+      "file": "Defs/SoundDefs/Building_Oneshots_Natural.xml"
+    },
+    {
+      "defType": "SoundDef",
+      "defName": "CrashedShipPart_Ambience",
+      "isAbstract": false,
+      "modId": "Ludeon.RimWorld",
+      "file": "Defs/SoundDefs/Building_Sustainers_Ambiences.xml"
+    },
+    {
+      "defType": "SoundDef",
+      "defName": "GeothermalPlant_Ambience_Start",
+      "isAbstract": false,
+      "modId": "Ludeon.RimWorld",
+      "file": "Defs/SoundDefs/Building_Sustainers_Ambiences.xml"
+    },
+    {
+      "defType": "SoundDef",
+      "defName": "GeothermalPlant_Ambience_Stop",
+      "isAbstract": false,
+      "modId": "Ludeon.RimWorld",
+      "file": "Defs/SoundDefs/Building_Sustainers_Ambiences.xml"
+    },
+    {
+      "defType": "SoundDef",
+      "defName": "GeothermalPlant_Ambience",
+      "isAbstract": false,
+      "modId": "Ludeon.RimWorld",
+      "file": "Defs/SoundDefs/Building_Sustainers_Ambiences.xml"
+    },
+    {
+      "defType": "SoundDef",
+      "defName": "WaterMill_Ambience",
+      "isAbstract": false,
+      "modId": "Ludeon.RimWorld",
+      "file": "Defs/SoundDefs/Building_Sustainers_Ambiences.xml"
+    },
+    {
+      "defType": "SoundDef",
+      "defName": "MoisturePump_Ambience",
+      "isAbstract": false,
+      "modId": "Ludeon.RimWorld",
+      "file": "Defs/SoundDefs/Building_Sustainers_Ambiences.xml"
+    },
+    {
+      "defType": "SoundDef",
+      "defName": "Television_Ambience",
+      "isAbstract": false,
+      "modId": "Ludeon.RimWorld",
+      "file": "Defs/SoundDefs/Building_Sustainers_Ambiences.xml"
+    },
+    {
+      "defType": "SoundDef",
+      "defName": "ShipReactor_Ambience",
+      "isAbstract": false,
+      "modId": "Ludeon.RimWorld",
+      "file": "Defs/SoundDefs/Building_Sustainers_Ambiences.xml"
+    },
+    {
+      "defType": "SoundDef",
+      "defName": "ScannerGroundPenetrating_Start",
+      "isAbstract": false,
+      "modId": "Ludeon.RimWorld",
+      "file": "Defs/SoundDefs/Building_Sustainers_Ambiences.xml"
+    },
+    {
+      "defType": "SoundDef",
+      "defName": "ScannerGroundPenetrating_Stop",
+      "isAbstract": false,
+      "modId": "Ludeon.RimWorld",
+      "file": "Defs/SoundDefs/Building_Sustainers_Ambiences.xml"
+    },
+    {
+      "defType": "SoundDef",
+      "defName": "ScannerGroundPenetrating_Ambience",
+      "isAbstract": false,
+      "modId": "Ludeon.RimWorld",
+      "file": "Defs/SoundDefs/Building_Sustainers_Ambiences.xml"
+    }
+  ]
+}

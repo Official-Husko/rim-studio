@@ -1,0 +1,114 @@
+{
+  "planId": "7267152eb9f5d674d192f91f94e7f018",
+  "files": [
+    {
+      "path": "Sounds/Weapons/DM_Carbine_Shot/TLWWP_AK_47_Shot.wav",
+      "kind": "copy",
+      "action": "create",
+      "rendered": "",
+      "bytes": 73904,
+      "copy": {
+        "source": "/home/user/Art/TLWWP_AK_47_Shot.wav",
+        "sha256": "0987afca497385559b9239dd7a75d5318ba749437ce4494861f7903c0a0db26b",
+        "bytes": 73904
+      }
+    },
+    {
+      "path": "Sounds/Weapons/DM_Carbine_Shot/TLWWP_Glock_17_Shot.wav",
+      "kind": "copy",
+      "action": "create",
+      "rendered": "",
+      "bytes": 224172,
+      "copy": {
+        "source": "/home/user/Art/TLWWP_Glock_17_Shot.wav",
+        "sha256": "d68ff7a003c709d35471fe0572112a02ad19c2a1762eec0a79e501935dffe3c9",
+        "bytes": 224172
+      }
+    },
+    {
+      "path": "Textures/Things/Item/Equipment/WeaponRanged/DM_Carbine.png",
+      "kind": "copy",
+      "action": "create",
+      "rendered": "",
+      "bytes": 7934,
+      "copy": {
+        "source": "/home/user/Art/TLWWP_Eagle_Carbine.png",
+        "sha256": "6865c32845858ead9af9e1a81efa12855bf6e0e7043277ec9b74b8569ef3babb",
+        "bytes": 7934,
+        "width": 512,
+        "height": 512
+      }
+    },
+    {
+      "path": "Textures/Things/Projectile/Bullet_DM_Carbine.png",
+      "kind": "copy",
+      "action": "create",
+      "rendered": "",
+      "bytes": 8353,
+      "copy": {
+        "source": "/home/user/Art/TLWWP_RGD_5_Projectile.png",
+        "sha256": "defd5eaaa0d536563ee6a99b6383637d0d9a873312ab9d879978f67040350fb8",
+        "bytes": 8353,
+        "width": 512,
+        "height": 512
+      }
+    },
+    {
+      "path": "Defs/SoundDefs/World_Oneshots_Weapons.xml",
+      "kind": "vanilla-defs",
+      "action": "create",
+      "rendered": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<Defs>\n  <!-- ====== DM_Carbine_Shot ====== -->\n  <SoundDef>\n    <defName>DM_Carbine_Shot</defName>\n    <context>MapOnly</context>\n    <maxSimultaneous>3</maxSimultaneous>\n    <subSounds>\n      <li>\n        <grains>\n          <li Class=\"AudioGrain_Clip\">\n            <clipPath>Weapons/DM_Carbine_Shot/TLWWP_Glock_17_Shot</clipPath>\n          </li>\n          <li Class=\"AudioGrain_Clip\">\n            <clipPath>Weapons/DM_Carbine_Shot/TLWWP_AK_47_Shot</clipPath>\n          </li>\n        </grains>\n        <volumeRange>45~55</volumeRange>\n        <pitchRange>0.95~1.05</pitchRange>\n        <distRange>40~60</distRange>\n      </li>\n    </subSounds>\n  </SoundDef>\n</Defs>\n",
+      "bytes": 706
+    },
+    {
+      "path": "Defs/ThingDefs_Misc/Weapons/RangedIndustrial/DM_Carbine.xml",
+      "kind": "vanilla-defs",
+      "action": "create",
+      "rendered": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<Defs>\n  <!-- ====== Bullet_DM_Carbine ====== -->\n  <ThingDef ParentName=\"BaseBullet\">\n    <defName>Bullet_DM_Carbine</defName>\n    <label>bolt-action rifle bullet</label>\n    <graphicData>\n      <texPath>Things/Projectile/Bullet_DM_Carbine</texPath>\n      <graphicClass>Graphic_Single</graphicClass>\n    </graphicData>\n    <projectile>\n      <damageDef>Bullet</damageDef>\n      <damageAmountBase>18</damageAmountBase>\n      <stoppingPower>1.5</stoppingPower>\n      <speed>70</speed>\n    </projectile>\n  </ThingDef>\n  <!-- ====== DM_Carbine ====== -->\n  <ThingDef ParentName=\"BaseHumanMakeableGun\">\n    <defName>DM_Carbine</defName>\n    <label>demo carbine</label>\n    <description>An ancient pattern bolt-action rifle. With its long range, and low fire rate, it is unlikely to drive animals to revenge, which makes it a favorite weapon for hunting.</description>\n    <graphicData>\n      <texPath>Things/Item/Equipment/WeaponRanged/DM_Carbine</texPath>\n      <graphicClass>Graphic_Single</graphicClass>\n    </graphicData>\n    <statBases>\n      <WorkToMake>12000</WorkToMake>\n      <Mass>3.5</Mass>\n      <AccuracyTouch>0.65</AccuracyTouch>\n      <AccuracyShort>0.8</AccuracyShort>\n      <AccuracyMedium>0.9</AccuracyMedium>\n      <AccuracyLong>0.8</AccuracyLong>\n      <RangedWeapon_Cooldown>1.5</RangedWeapon_Cooldown>\n    </statBases>\n    <costList>\n      <Steel>60</Steel>\n      <ComponentIndustrial>3</ComponentIndustrial>\n    </costList>\n    <recipeMaker>\n      <skillRequirements>\n        <Crafting>5</Crafting>\n      </skillRequirements>\n      <displayPriority>415</displayPriority>\n    </recipeMaker>\n    <soundInteract>Interact_Rifle</soundInteract>\n    <verbs>\n      <li>\n        <verbClass>Verb_Shoot</verbClass>\n        <hasStandardCommand>true</hasStandardCommand>\n        <defaultProjectile>Bullet_DM_Carbine</defaultProjectile>\n        <warmupTime>1.7</warmupTime>\n        <range>36.9</range>\n        <soundCast>DM_Carbine_Shot</soundCast>\n        <soundCastTail>GunTail_Heavy</soundCastTail>\n        <muzzleFlashScale>9</muzzleFlashScale>\n      </li>\n    </verbs>\n    <tools>\n      <li>\n        <label>stock</label>\n        <capacities>\n          <li>Blunt</li>\n        </capacities>\n        <power>9</power>\n        <cooldownTime>2</cooldownTime>\n      </li>\n      <li>\n        <label>barrel</label>\n        <capacities>\n          <li>Blunt</li>\n          <li>Poke</li>\n        </capacities>\n        <power>9</power>\n        <cooldownTime>2</cooldownTime>\n      </li>\n    </tools>\n    <weaponClasses>\n      <li>LongShots</li>\n    </weaponClasses>\n  </ThingDef>\n</Defs>\n",
+      "bytes": 2625
+    }
+  ],
+  "diagnostics": [
+    {
+      "code": "design.duplicate-capacity",
+      "severity": "warning",
+      "message": "tool barrel lists 2 capacities; the stat panel counts its attack once per capacity",
+      "field": "/tools/1/capacities",
+      "args": {
+        "count": "2",
+        "tool": "barrel"
+      }
+    },
+    {
+      "code": "design.sound-cast-replaced",
+      "severity": "info",
+      "message": "the shot sound Shot_BoltActionRifle is replaced by the custom sound DM_Carbine_Shot",
+      "field": "/ranged/soundCast",
+      "args": {
+        "old": "Shot_BoltActionRifle",
+        "value": "DM_Carbine_Shot"
+      }
+    },
+    {
+      "code": "design.sound-stereo",
+      "severity": "warning",
+      "message": "the clip /home/user/Art/TLWWP_Glock_17_Shot.wav has 2 channels; a sound heard on the map should be mono, or it plays without position",
+      "field": "/sounds/shot/clips/0",
+      "args": {
+        "channels": "2",
+        "path": "/home/user/Art/TLWWP_Glock_17_Shot.wav"
+      }
+    },
+    {
+      "code": "design.sound-stereo",
+      "severity": "warning",
+      "message": "the clip /home/user/Art/TLWWP_AK_47_Shot.wav has 2 channels; a sound heard on the map should be mono, or it plays without position",
+      "field": "/sounds/shot/clips/1",
+      "args": {
+        "channels": "2",
+        "path": "/home/user/Art/TLWWP_AK_47_Shot.wav"
+      }
+    }
+  ],
+  "hasErrors": false
+}

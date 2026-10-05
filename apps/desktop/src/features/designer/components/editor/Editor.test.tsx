@@ -3,7 +3,15 @@ import { renderWithProviders } from 'rimstudio-testkit';
 import { describe, expect, it } from 'vitest';
 import { createDesigner } from '../../stores';
 import type { DraftDto } from 'rimstudio-ipc-types';
-import { cloneEntry, fixture, installTransport, manualScheduler, settle } from '../../testSupport';
+import {
+  cloneEntry,
+  fixture,
+  importsDraft,
+  installAssetTransport,
+  manualScheduler,
+  settle,
+  installTransport,
+} from '../../testSupport';
 import { Editor } from './Editor';
 
 async function open() {
@@ -112,5 +120,19 @@ describe('Editor', () => {
     await waitFor(() =>
       expect(screen.getByText(/Copied from the projectile Bullet_BoltActionRifle/)).toBeTruthy(),
     );
+  });
+
+  it('shows the problems the plan found under the texture and sound imports', async () => {
+    installAssetTransport();
+    const clock = manualScheduler();
+    const stores = createDesigner(() => 'p-1', clock.scheduler);
+    const entry = cloneEntry();
+    stores.editor.open({ ...entry, draft: { ...entry.draft, spec: importsDraft().spec } });
+    stores.output.plan.value = fixture('designer-assets-plan-problems');
+    renderWithProviders(<Editor designer={stores} />);
+    expect(await screen.findByText('design.texture-missing')).toBeTruthy();
+    expect(screen.getAllByText('design.sound-clip-not-audio').length).toBeGreaterThan(0);
+    expect(screen.getByText('Texture')).toBeTruthy();
+    expect(screen.getByText('Sounds')).toBeTruthy();
   });
 });

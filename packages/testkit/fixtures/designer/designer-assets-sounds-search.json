@@ -1,0 +1,14 @@
+{
+  "queryId": "q1",
+  "total": 1,
+  "offset": 0,
+  "items": [
+    {
+      "defType": "SoundDef",
+      "defName": "Shot_BoltActionRifle",
+      "isAbstract": false,
+      "modId": "Ludeon.RimWorld",
+      "file": "Defs/SoundDefs/World_Oneshots_Weapons.xml"
+    }
+  ]
+}

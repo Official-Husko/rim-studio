@@ -3,6 +3,7 @@ import { Banner, Badge } from 'rimstudio-ui';
 import { t } from '~/shared/i18n';
 import * as api from '../../api';
 import { isCeRequiredMissing } from '../../output-model';
+import { importProblems } from '../../model/assets';
 import { focusField, groupByField, suggested, suggestionsByField } from '../../model/draft';
 import type { Designer } from '../../stores';
 import { ClonePanel } from './ClonePanel';
@@ -20,8 +21,10 @@ import { ProjectilePanel } from './ProjectilePanel';
 import { QuizStepper } from './QuizStepper';
 import { ReadoutsPanel } from './ReadoutsPanel';
 import { SaveIndicator } from './SaveIndicator';
+import { SoundsPanel } from './SoundsPanel';
 import { StructureBanner } from './StructureBanner';
 import { TagsPanel } from './TagsPanel';
+import { TexturePanel } from './TexturePanel';
 import { ToolsPanel } from './ToolsPanel';
 
 export interface EditorProps {
@@ -37,7 +40,8 @@ export function Editor({ designer }: EditorProps) {
   const [calibrating, setCalibrating] = useState(false);
   if (!draft) return null;
 
-  const grouped = groupByField(preview?.diagnostics ?? []);
+  const plan = designer.output.plan.value;
+  const grouped = groupByField([...(preview?.diagnostics ?? []), ...importProblems(plan)]);
   const env: FieldEnv = {
     spec: draft.spec,
     suggestions: suggestionsByField(preview?.suggestions),
@@ -115,7 +119,9 @@ export function Editor({ designer }: EditorProps) {
         <CostPanel kind={kind} />
         <ToolsPanel kind={kind} />
         <TagsPanel />
+        <TexturePanel assets={designer.assets} plan={plan} />
         <LookPanel />
+        <SoundsPanel assets={designer.assets} plan={plan} />
         <OtherFieldsPanel />
         <QuizStepper store={quiz} />
       </div>

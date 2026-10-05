@@ -7,15 +7,12 @@ import { makeEnv, WithEnv } from './fieldEnvTestkit';
 import { OtherFieldsPanel } from './OtherFieldsPanel';
 
 describe('OtherFieldsPanel', () => {
-  it('shows the sounds and the stats inherited from the parent', () => {
+  it('shows the stats inherited from the parent', () => {
     const spec = fixture<DraftDto>('designer-draft-clone-edited').spec;
     renderWithProviders(
       <WithEnv env={makeEnv({ spec })}>
         <OtherFieldsPanel />
       </WithEnv>,
-    );
-    expect((screen.getByLabelText('Cast sound') as HTMLInputElement).value).toBe(
-      'Shot_BoltActionRifle',
     );
     expect(screen.getByText('MaxHitPoints')).toBeTruthy();
     expect(screen.getByText('100')).toBeTruthy();

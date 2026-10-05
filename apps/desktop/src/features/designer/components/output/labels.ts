@@ -15,6 +15,8 @@ export function actionText(action: FileActionDto): string {
       return t('designer.output.action.create');
     case 'update-region':
       return t('designer.output.action.update');
+    case 'replace':
+      return t('designer.output.action.replace');
     default:
       return t('designer.output.action.unchanged');
   }
@@ -22,16 +24,38 @@ export function actionText(action: FileActionDto): string {
 
 /** The tone of an action badge: a new or changed file stands out, an unchanged one does not. */
 export function actionTone(action: FileActionDto): BadgeTone {
-  return action === 'create' ? 'success' : action === 'update-region' ? 'info' : 'neutral';
+  switch (action) {
+    case 'create':
+      return 'success';
+    case 'update-region':
+      return 'info';
+    case 'replace':
+      return 'warning';
+    default:
+      return 'neutral';
+  }
 }
 
-/** The role of a planned file in the mod layout. */
-export function kindText(kind: FileKindDto): string {
+/**
+ * The role of a planned file in the mod layout. The path tells a texture from a sound clip and the
+ * sound definitions from the weapon definitions; it is used for the wording only.
+ */
+export function kindText(kind: FileKindDto, path = ''): string {
   switch (kind) {
+    case 'copy':
+      return /\.png$/i.test(path)
+        ? t('designer.output.kind.texture')
+        : /\.(wav|ogg)$/i.test(path)
+          ? t('designer.output.kind.clip')
+          : t('designer.output.kind.copy');
     case 'vanilla-defs':
-      return t('designer.output.kind.defs');
+      return /(^|\/)SoundDefs\//.test(path)
+        ? t('designer.output.kind.soundDefs')
+        : t('designer.output.kind.defs');
     case 'ce-patch':
       return t('designer.output.kind.cePatch');
+    case 'ce-defs':
+      return t('designer.output.kind.ceDefs');
     case 'load-folders':
       return t('designer.output.kind.loadFolders');
     default:

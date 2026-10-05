@@ -1,0 +1,94 @@
+{
+  "planId": "7267152eb9f5d674d192f91f94e7f018",
+  "written": [
+    {
+      "path": "Sounds/Weapons/DM_Carbine_Shot/TLWWP_AK_47_Shot.wav",
+      "action": "create",
+      "bytes": 73904,
+      "verified": true,
+      "kind": "copy",
+      "sha256": "0987afca497385559b9239dd7a75d5318ba749437ce4494861f7903c0a0db26b"
+    },
+    {
+      "path": "Sounds/Weapons/DM_Carbine_Shot/TLWWP_Glock_17_Shot.wav",
+      "action": "create",
+      "bytes": 224172,
+      "verified": true,
+      "kind": "copy",
+      "sha256": "d68ff7a003c709d35471fe0572112a02ad19c2a1762eec0a79e501935dffe3c9"
+    },
+    {
+      "path": "Textures/Things/Item/Equipment/WeaponRanged/DM_Carbine.png",
+      "action": "create",
+      "bytes": 7934,
+      "verified": true,
+      "kind": "copy",
+      "sha256": "6865c32845858ead9af9e1a81efa12855bf6e0e7043277ec9b74b8569ef3babb"
+    },
+    {
+      "path": "Textures/Things/Projectile/Bullet_DM_Carbine.png",
+      "action": "create",
+      "bytes": 8353,
+      "verified": true,
+      "kind": "copy",
+      "sha256": "defd5eaaa0d536563ee6a99b6383637d0d9a873312ab9d879978f67040350fb8"
+    },
+    {
+      "path": "Defs/SoundDefs/World_Oneshots_Weapons.xml",
+      "action": "create",
+      "bytes": 706,
+      "verified": true,
+      "kind": "vanilla-defs"
+    },
+    {
+      "path": "Defs/ThingDefs_Misc/Weapons/RangedIndustrial/DM_Carbine.xml",
+      "action": "create",
+      "bytes": 2625,
+      "verified": true,
+      "kind": "vanilla-defs"
+    }
+  ],
+  "unchanged": [],
+  "diagnostics": [
+    {
+      "code": "design.duplicate-capacity",
+      "severity": "warning",
+      "message": "tool barrel lists 2 capacities; the stat panel counts its attack once per capacity",
+      "field": "/tools/1/capacities",
+      "args": {
+        "count": "2",
+        "tool": "barrel"
+      }
+    },
+    {
+      "code": "design.sound-cast-replaced",
+      "severity": "info",
+      "message": "the shot sound Shot_BoltActionRifle is replaced by the custom sound DM_Carbine_Shot",
+      "field": "/ranged/soundCast",
+      "args": {
+        "old": "Shot_BoltActionRifle",
+        "value": "DM_Carbine_Shot"
+      }
+    },
+    {
+      "code": "design.sound-stereo",
+      "severity": "warning",
+      "message": "the clip /home/user/Art/TLWWP_Glock_17_Shot.wav has 2 channels; a sound heard on the map should be mono, or it plays without position",
+      "field": "/sounds/shot/clips/0",
+      "args": {
+        "channels": "2",
+        "path": "/home/user/Art/TLWWP_Glock_17_Shot.wav"
+      }
+    },
+    {
+      "code": "design.sound-stereo",
+      "severity": "warning",
+      "message": "the clip /home/user/Art/TLWWP_AK_47_Shot.wav has 2 channels; a sound heard on the map should be mono, or it plays without position",
+      "field": "/sounds/shot/clips/1",
+      "args": {
+        "channels": "2",
+        "path": "/home/user/Art/TLWWP_AK_47_Shot.wav"
+      }
+    }
+  ]
+}

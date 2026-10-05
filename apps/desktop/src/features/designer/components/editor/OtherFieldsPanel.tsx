@@ -9,7 +9,7 @@ import { NumberMapField } from './NumberMapField';
 import { RawNodeList } from './RawNodeList';
 import { TextFieldRow } from './TextFieldRow';
 
-/** Fields copied from the source that have no group of their own: extra stats, sounds, inherited stats. */
+/** Fields copied from the source that have no group of their own: extra stats, inherited stats. */
 export function OtherFieldsPanel() {
   const env = useFieldEnv();
   const extra = Object.keys(env.spec.extraStats ?? {}).sort();
@@ -35,8 +35,6 @@ export function OtherFieldsPanel() {
         {ranged ? (
           <div class="grid grid-cols-1 gap-3 md:grid-cols-2">
             <TextFieldRow pointer="/ranged/verbClass" label={t('designer.field.verbClass')} />
-            <TextFieldRow pointer="/ranged/soundCast" label={t('designer.field.soundCast')} />
-            <TextFieldRow pointer="/ranged/soundCastTail" label={t('designer.field.soundTail')} />
             <NumberFieldRow
               def={{
                 pointer: '/ranged/muzzleFlashScale',

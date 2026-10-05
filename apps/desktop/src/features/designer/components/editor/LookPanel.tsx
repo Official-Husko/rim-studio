@@ -1,18 +1,24 @@
 import { Panel } from 'rimstudio-ui';
 import { t } from '~/shared/i18n';
+import { useFieldEnv } from './fieldEnv';
 import { NumberFieldRow } from './NumberFieldRow';
 import { RawNodeList } from './RawNodeList';
 import { TextFieldRow } from './TextFieldRow';
 
-/** The picture, the icon and the sound of the weapon, and the extra fields of its graphic. */
+/** The picture and the icon of the weapon, and the extra fields of its graphic. */
 export function LookPanel() {
+  const imported = useFieldEnv().spec.assets?.texture !== undefined;
   return (
     <Panel title={t('designer.panel.look')} collapsible>
       <div class="flex flex-col gap-4">
         <p class="text-small text-faint">{t('designer.look.help')}</p>
         <div class="grid grid-cols-1 gap-3 md:grid-cols-2">
           <div class="md:col-span-2">
-            <TextFieldRow pointer="/texturePath" label={t('designer.field.texture')} />
+            <TextFieldRow
+              pointer="/texturePath"
+              label={t('designer.field.texture')}
+              {...(imported ? { help: t('designer.look.textureImported') } : {})}
+            />
           </div>
           <TextFieldRow pointer="/graphicClass" label={t('designer.field.graphicClass')} />
           <TextFieldRow
@@ -21,7 +27,6 @@ export function LookPanel() {
             help={t('designer.help.drawSize')}
           />
           <TextFieldRow pointer="/graphicColor" label={t('designer.field.graphicColor')} />
-          <TextFieldRow pointer="/soundInteract" label={t('designer.field.soundInteract')} />
           <div class="md:col-span-2">
             <TextFieldRow pointer="/uiIconPath" label={t('designer.field.uiIconPath')} />
           </div>

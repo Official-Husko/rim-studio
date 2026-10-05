@@ -37,3 +37,37 @@ describe('FileList', () => {
     expect(screen.getAllByText('Unchanged')).toHaveLength(2);
   });
 });
+
+describe('FileList with copied files', () => {
+  const files = () => fixture<WritePlanDto>('designer-assets-plan-imports').files;
+
+  it('names a texture, a clip and the sound definitions, and shows the source with a hash start', () => {
+    renderWithProviders(<FileList files={files()} selected={undefined} onSelect={() => {}} />);
+    expect(screen.getAllByText('Texture')).toHaveLength(2);
+    expect(screen.getAllByText('Sound clip')).toHaveLength(2);
+    expect(screen.getByText('Sound definitions')).toBeTruthy();
+    expect(
+      screen.getByText('From /home/user/Art/TLWWP_Eagle_Carbine.png (SHA-256 6865c3284585)'),
+    ).toBeTruthy();
+  });
+
+  it('shows the thumbnail of a texture copy when it is known', () => {
+    renderWithProviders(
+      <FileList
+        files={files()}
+        selected={undefined}
+        onSelect={() => {}}
+        thumbnailOf={(source) =>
+          source.endsWith('Eagle_Carbine.png') ? 'data:image/png;base64,AAAA' : undefined
+        }
+      />,
+    );
+    expect(screen.getAllByRole('img')).toHaveLength(1);
+  });
+
+  it('words a replaced file', () => {
+    const list = files().map((f) => (f.copy ? { ...f, action: 'replace' as const } : f));
+    renderWithProviders(<FileList files={list} selected={undefined} onSelect={() => {}} />);
+    expect(screen.getAllByText('Replace')).toHaveLength(4);
+  });
+});

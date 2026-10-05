@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { actionText, kindText, ratingText, ratingTone, sourceText } from './labels';
+import { actionText, actionTone, kindText, ratingText, ratingTone, sourceText } from './labels';
 
 describe('output labels', () => {
   it('names every action and role', () => {
@@ -8,8 +8,15 @@ describe('output labels', () => {
     expect(actionText('unchanged')).toBe('Unchanged');
     expect(kindText('vanilla-defs')).toBe('Weapon definitions');
     expect(kindText('ce-patch')).toBe('Combat Extended patch');
+    expect(kindText('ce-defs')).toBe('Combat Extended definitions');
     expect(kindText('load-folders')).toBe('Load folders');
     expect(kindText('about')).toBe('About');
+    expect(actionText('replace')).toBe('Replace');
+    expect(actionTone('replace')).toBe('warning');
+    expect(kindText('copy', 'Textures/a.png')).toBe('Texture');
+    expect(kindText('copy', 'Sounds/Weapons/a/b.OGG')).toBe('Sound clip');
+    expect(kindText('copy', 'x.bin')).toBe('Copied file');
+    expect(kindText('vanilla-defs', 'Defs/SoundDefs/A.xml')).toBe('Sound definitions');
   });
 
   it('words a rating and keeps colour from being the only signal', () => {

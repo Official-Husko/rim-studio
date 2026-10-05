@@ -1,0 +1,47 @@
+{
+  "planId": "af1349b9f5f9a1a6a0404dea36dcc949",
+  "files": [],
+  "diagnostics": [
+    {
+      "code": "design.duplicate-capacity",
+      "severity": "warning",
+      "message": "tool barrel lists 2 capacities; the stat panel counts its attack once per capacity",
+      "field": "/tools/1/capacities",
+      "args": {
+        "count": "2",
+        "tool": "barrel"
+      }
+    },
+    {
+      "code": "design.texture-missing",
+      "severity": "error",
+      "message": "the weapon texture: the file /home/user/Art/Nothing.png does not exist",
+      "field": "/assets/texture",
+      "args": {
+        "label": "the weapon texture",
+        "path": "/home/user/Art/Nothing.png"
+      }
+    },
+    {
+      "code": "design.sound-cast-replaced",
+      "severity": "info",
+      "message": "the shot sound Shot_BoltActionRifle is replaced by the custom sound DM_Carbine_Shot",
+      "field": "/ranged/soundCast",
+      "args": {
+        "old": "Shot_BoltActionRifle",
+        "value": "DM_Carbine_Shot"
+      }
+    },
+    {
+      "code": "design.sound-clip-not-audio",
+      "severity": "error",
+      "message": "/home/user/Art/TLWWP_Eagle_Carbine.png is not a usable WAV or OGG file (it is not a WAV or an Ogg file by its signature)",
+      "field": "/sounds/shot/clips/0",
+      "args": {
+        "path": "/home/user/Art/TLWWP_Eagle_Carbine.png",
+        "reason": "it is not a WAV or an Ogg file by its signature"
+      }
+    }
+  ],
+  "hasErrors": true
+}

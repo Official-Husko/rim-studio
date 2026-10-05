@@ -1,0 +1,22 @@
+{
+  "path": "/home/user/Art/TLWWP_Glock_17_Shot.wav",
+  "status": "found",
+  "kind": "wav",
+  "bytes": 224172,
+  "sha256": "d68ff7a003c709d35471fe0572112a02ad19c2a1762eec0a79e501935dffe3c9",
+  "channels": 2,
+  "sampleRate": 44100,
+  "durationMs": 1270,
+  "diagnostics": [
+    {
+      "code": "design.sound-stereo",
+      "severity": "warning",
+      "message": "the clip /home/user/Art/TLWWP_Glock_17_Shot.wav has 2 channels; a sound heard on the map should be mono, or it plays without position",
+      "field": "/sounds/shot/clips/0",
+      "args": {
+        "channels": "2",
+        "path": "/home/user/Art/TLWWP_Glock_17_Shot.wav"
+      }
+    }
+  ]
+}

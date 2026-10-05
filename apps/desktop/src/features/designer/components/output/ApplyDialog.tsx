@@ -5,7 +5,8 @@ import { t, tn } from '~/shared/i18n';
 import { jobs } from '~/shared/ipc';
 import type { OutputStore } from '../../output-store';
 import { ApplyResult } from './ApplyResult';
-import { actionText, actionTone } from './labels';
+import { shortHash } from '../../model/assets';
+import { actionText, actionTone, kindText } from './labels';
 
 export interface ApplyDialogProps {
   store: OutputStore;
@@ -40,6 +41,7 @@ export function ApplyDialog({ store, projectPath }: ApplyDialogProps) {
   const plan = store.plan.value;
   const writing = plan?.files.filter((f) => f.action !== 'unchanged') ?? [];
   const same = (plan?.files.length ?? 0) - writing.length;
+  const copies = writing.filter((f) => f.kind === 'copy').length;
   const hasPatch = plan?.files.some((f) => f.kind === 'ce-patch') ?? false;
   const open = state.phase !== 'idle';
   const confirm = state.phase === 'confirm';
@@ -75,15 +77,34 @@ export function ApplyDialog({ store, projectPath }: ApplyDialogProps) {
             {writing.map((file) => (
               <li key={file.path} class="flex flex-col gap-1 border border-line p-2">
                 <span class="break-all font-mono text-mono text-fg">{file.path}</span>
-                <span class="flex items-center gap-2">
+                <span class="flex flex-wrap items-center gap-2">
                   <Badge tone={actionTone(file.action)}>{actionText(file.action)}</Badge>
+                  <Badge>{kindText(file.kind, file.path)}</Badge>
                   <span class="font-mono text-mono-small text-muted">
                     {formatBytes(file.bytes)}
                   </span>
                 </span>
+                {file.copy ? (
+                  <span class="break-all font-mono text-mono-small text-faint">
+                    {t('designer.output.copy.fromHash', {
+                      source: file.copy.source,
+                      hash: shortHash(file.copy.sha256),
+                    })}
+                  </span>
+                ) : null}
+                {file.copy?.existingSha256 ? (
+                  <span class="text-small text-warning">
+                    {t('designer.output.copy.replaces', {
+                      hash: shortHash(file.copy.existingSha256),
+                    })}
+                  </span>
+                ) : null}
               </li>
             ))}
           </ul>
+          {copies > 0 ? (
+            <p class="text-small text-muted">{tn('designer.output.apply.copies', copies)}</p>
+          ) : null}
           {same > 0 ? (
             <p class="text-small text-muted">{tn('designer.output.apply.unchanged', same)}</p>
           ) : null}

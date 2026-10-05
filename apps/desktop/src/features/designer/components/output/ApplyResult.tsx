@@ -4,7 +4,8 @@ import { formatBytes } from '~/shared/format';
 import { t, tn } from '~/shared/i18n';
 import { folderOf } from '../../output-model';
 import { severityText } from '../editor/DiagnosticNotes';
-import { actionText, actionTone, severityTone } from './labels';
+import { shortHash } from '../../model/assets';
+import { actionText, actionTone, kindText, severityTone } from './labels';
 
 export interface ApplyResultProps {
   report: ApplyReportDto;
@@ -30,7 +31,11 @@ export function ApplyResult({ report }: ApplyResultProps) {
             <span class="break-all font-mono text-mono text-fg">{file.path}</span>
             <span class="flex flex-wrap items-center gap-2">
               <Badge tone={actionTone(file.action)}>{actionText(file.action)}</Badge>
+              {file.kind ? <Badge>{kindText(file.kind, file.path)}</Badge> : null}
               <span class="font-mono text-mono-small text-muted">{formatBytes(file.bytes)}</span>
+              {file.sha256 ? (
+                <span class="font-mono text-mono-small text-faint">{shortHash(file.sha256)}</span>
+              ) : null}
               <Badge tone={file.verified ? 'success' : 'danger'}>
                 {file.verified
                   ? t('designer.output.result.verified')

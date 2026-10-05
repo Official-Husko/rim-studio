@@ -99,3 +99,30 @@ export async function settle(): Promise<void> {
   for (let i = 0; i < 6; i += 1) await Promise.resolve();
   await new Promise((resolve) => setTimeout(resolve, 0));
 }
+
+/** The draft of a clone with two textures and two shot clips imported (recorded from the real bridge). */
+export function importsDraft(): DraftDto {
+  return fixture<DraftDto>('designer-assets-draft-imports');
+}
+
+/** The facts the real bridge gave for the recorded import files, picked by the file name asked for. */
+export function recordedAssetInfo(request: unknown): unknown {
+  const path = (request as { path: string }).path;
+  if (path.endsWith('Eagle_Carbine.png')) return fixture('designer-assets-info-png');
+  if (path.endsWith('RGD_5_Projectile.png')) return fixture('designer-assets-info-projectile-png');
+  if (path.endsWith('Glock_17_Shot.wav')) return fixture('designer-assets-info-wav');
+  if (path.endsWith('AK_47_Shot.wav')) return fixture('designer-assets-info-wav2');
+  return fixture('designer-assets-info-missing');
+}
+
+/** A mock transport that answers `designer_asset_info` and `defs_search` like the recorded bridge. */
+export function installAssetTransport(handlers: Record<string, MockHandler> = {}) {
+  return installTransport({
+    designer_asset_info: recordedAssetInfo,
+    defs_search: (request) =>
+      (request as { query: string }).query === ''
+        ? fixture('designer-assets-sounds-all')
+        : fixture('designer-assets-sounds-search'),
+    ...handlers,
+  });
+}

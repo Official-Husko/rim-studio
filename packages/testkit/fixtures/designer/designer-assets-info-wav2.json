@@ -1,0 +1,22 @@
+{
+  "path": "/home/user/Art/TLWWP_AK_47_Shot.wav",
+  "status": "found",
+  "kind": "wav",
+  "bytes": 73904,
+  "sha256": "0987afca497385559b9239dd7a75d5318ba749437ce4494861f7903c0a0db26b",
+  "channels": 2,
+  "sampleRate": 44100,
+  "durationMs": 417,
+  "diagnostics": [
+    {
+      "code": "design.sound-stereo",
+      "severity": "warning",
+      "message": "the clip /home/user/Art/TLWWP_AK_47_Shot.wav has 2 channels; a sound heard on the map should be mono, or it plays without position",
+      "field": "/sounds/shot/clips/0",
+      "args": {
+        "channels": "2",
+        "path": "/home/user/Art/TLWWP_AK_47_Shot.wav"
+      }
+    }
+  ]
+}
