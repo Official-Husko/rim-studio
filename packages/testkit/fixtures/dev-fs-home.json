@@ -1,0 +1,17 @@
+{
+  "home": "/home/mock",
+  "places": [
+    {
+      "label": "Home",
+      "path": "/home/mock"
+    },
+    {
+      "label": "Steam workshop",
+      "path": "/home/mock/.steam/steam/steamapps/workshop/content/294100"
+    },
+    {
+      "label": "Custom mods",
+      "path": "/home/mock/Mods"
+    }
+  ]
+}

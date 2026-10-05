@@ -1,0 +1,7 @@
+{
+  "bridgeVersion": "0.1.0",
+  "platform": "linux",
+  "home": "/home/mock",
+  "dataDir": "/home/mock/.local/share/rimstudio-dev",
+  "commandCount": 0
+}

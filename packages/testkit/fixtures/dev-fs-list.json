@@ -1,0 +1,126 @@
+{
+  "/home/mock": {
+    "path": "/home/mock",
+    "parent": "/home",
+    "entries": [
+      {
+        "name": "Mods",
+        "kind": "dir",
+        "isModFolder": false,
+        "hasAbout": false
+      },
+      {
+        "name": "Documents",
+        "kind": "dir",
+        "isModFolder": false,
+        "hasAbout": false
+      },
+      {
+        "name": "notes.txt",
+        "kind": "file",
+        "isModFolder": false,
+        "hasAbout": false
+      }
+    ]
+  },
+  "/home/mock/Mods": {
+    "path": "/home/mock/Mods",
+    "parent": "/home/mock",
+    "entries": [
+      {
+        "name": "Plasma Carbine",
+        "kind": "dir",
+        "isModFolder": true,
+        "hasAbout": true
+      },
+      {
+        "name": "Field Rations",
+        "kind": "dir",
+        "isModFolder": true,
+        "hasAbout": true
+      },
+      {
+        "name": "Scratch",
+        "kind": "dir",
+        "isModFolder": false,
+        "hasAbout": false
+      }
+    ]
+  },
+  "/home/mock/Mods/Scratch": {
+    "path": "/home/mock/Mods/Scratch",
+    "parent": "/home/mock/Mods",
+    "entries": []
+  },
+  "/home/mock/Documents": {
+    "path": "/home/mock/Documents",
+    "parent": "/home/mock",
+    "entries": []
+  },
+  "/home/mock/Mods/Plasma Carbine": {
+    "path": "/home/mock/Mods/Plasma Carbine",
+    "parent": "/home/mock/Mods",
+    "entries": [
+      {
+        "name": "About",
+        "kind": "dir",
+        "isModFolder": false,
+        "hasAbout": false
+      },
+      {
+        "name": "Defs",
+        "kind": "dir",
+        "isModFolder": false,
+        "hasAbout": false
+      },
+      {
+        "name": "Patches",
+        "kind": "dir",
+        "isModFolder": false,
+        "hasAbout": false
+      }
+    ]
+  },
+  "/home/mock/Mods/Field Rations": {
+    "path": "/home/mock/Mods/Field Rations",
+    "parent": "/home/mock/Mods",
+    "entries": [
+      {
+        "name": "About",
+        "kind": "dir",
+        "isModFolder": false,
+        "hasAbout": false
+      },
+      {
+        "name": "Defs",
+        "kind": "dir",
+        "isModFolder": false,
+        "hasAbout": false
+      }
+    ]
+  },
+  "/home": {
+    "path": "/home",
+    "parent": "/",
+    "entries": [
+      {
+        "name": "mock",
+        "kind": "dir",
+        "isModFolder": false,
+        "hasAbout": false
+      }
+    ]
+  },
+  "/": {
+    "path": "/",
+    "parent": null,
+    "entries": [
+      {
+        "name": "home",
+        "kind": "dir",
+        "isModFolder": false,
+        "hasAbout": false
+      }
+    ]
+  }
+}
