@@ -164,3 +164,15 @@ export function splitVersions(text: string): string[] {
     .map((v) => v.trim())
     .filter((v) => v.length > 0);
 }
+
+/** Codes whose fix is offered by the fix plan although the check gives them no fix of their own. */
+const PLANNED_WITHOUT_KIND = new Set(['layout.ce-legacy-folder']);
+
+/** True when the fix plan may carry out something for this issue (moves, edits, a folder rename). */
+export function hasPlannedFix(issue: LayoutIssueDto): boolean {
+  return (
+    issue.fix.kind === 'move-file' ||
+    issue.fix.kind === 'edit-load-folders' ||
+    PLANNED_WITHOUT_KIND.has(issue.code)
+  );
+}

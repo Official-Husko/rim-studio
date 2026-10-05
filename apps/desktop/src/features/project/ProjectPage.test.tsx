@@ -7,15 +7,23 @@ import ProjectPage from './ProjectPage';
 import { installTransport, installWithProject } from './testSupport';
 
 describe('ProjectPage without a project', () => {
-  it('offers to open a mod, to create one and shows the recent list', async () => {
+  it('offers the two cards, creates or opens a mod and shows the recent list', async () => {
     installTransport();
     renderWithProviders(<ProjectPage />);
-    expect(screen.getByRole('heading', { name: 'Project' })).toBeTruthy();
+    expect(screen.getByRole('heading', { name: 'Mod' })).toBeTruthy();
+    expect(screen.getByRole('region', { name: 'Create a new mod' })).toBeTruthy();
+    expect(screen.getByRole('button', { name: 'Create a new mod' })).toBeTruthy();
     expect(screen.getByRole('button', { name: 'Choose a mod folder' })).toBeTruthy();
-    expect(screen.getByRole('button', { name: 'New mod' })).toBeTruthy();
     expect(screen.getByText('No recent projects')).toBeTruthy();
     // the sources the app knows offer a shortcut into the picker
     expect(await screen.findByRole('button', { name: 'Browse in Game mods' })).toBeTruthy();
+  });
+
+  it('opens the new mod window from the create card', async () => {
+    installTransport();
+    renderWithProviders(<ProjectPage />);
+    fireEvent.click(screen.getByRole('button', { name: 'Create a new mod' }));
+    expect(await screen.findByRole('dialog', { name: 'New mod' })).toBeTruthy();
   });
 
   it('opens the folder picker from the choose button', async () => {
@@ -42,21 +50,23 @@ describe('ProjectPage without a project', () => {
 });
 
 describe('ProjectPage with a project', () => {
-  it('shows the info card with names, versions and counts', async () => {
-    installWithProject();
+  it('shows the header and opens on the Basics tab', async () => {
+    const transport = installWithProject();
     renderWithProviders(<ProjectPage />);
-    expect(await screen.findByText("Huskos's Gewehr 41")).toBeTruthy();
+    expect(await screen.findByRole('heading', { name: "Huskos's Gewehr 41" })).toBeTruthy();
     expect(screen.getByText('oh.weapons.gewehr41')).toBeTruthy();
-    expect(screen.getByText('1.4')).toBeTruthy();
-    expect(screen.getByText('Game style')).toBeTruthy();
-    expect(screen.getByText('Not used')).toBeTruthy();
-    const counts = screen.getByRole('list', { name: 'Contents' });
-    expect(within(counts).getByText('Weapon defs').previousSibling?.textContent).toBe('5');
+    expect(screen.getByRole('tab', { name: 'Basics', selected: true })).toBeTruthy();
+    for (const name of ['Versions and folders', 'Files']) {
+      expect(screen.getByRole('tab', { name })).toBeTruthy();
+    }
+    expect(await screen.findByRole('textbox', { name: /Mod name/ })).toBeTruthy();
+    expect(transport.calls.some((c) => c.name === 'project_about_get')).toBe(true);
   });
 
-  it('shows the annotated tree with role badges and an issue marker', async () => {
+  it('shows the annotated tree with role badges and an issue marker on the Files tab', async () => {
     installWithProject();
     renderWithProviders(<ProjectPage />);
+    fireEvent.click(await screen.findByRole('tab', { name: 'Files' }));
     const tree = await screen.findByRole('tree', { name: 'Project folders' });
     expect(within(tree).getByText('Content')).toBeTruthy();
     expect(within(tree).getAllByText('1 issue').length).toBeGreaterThan(0);
@@ -66,6 +76,7 @@ describe('ProjectPage with a project', () => {
   it('shows a file with xml colouring when it is chosen in the tree', async () => {
     const transport = installWithProject();
     renderWithProviders(<ProjectPage />);
+    fireEvent.click(await screen.findByRole('tab', { name: 'Files' }));
     const tree = await screen.findByRole('tree', { name: 'Project folders' });
     fireEvent.click(within(tree).getByRole('treeitem', { name: /About\.xml/ }));
     expect(await screen.findByRole('region', { name: 'Contents of About/About.xml' })).toBeTruthy();
@@ -73,11 +84,12 @@ describe('ProjectPage with a project', () => {
     expect(read?.request).toEqual({ projectId: 'p-c36c596a', path: 'About/About.xml' });
   });
 
-  it('shows the layout issues and creates the missing folders', async () => {
+  it('shows the layout facts and issues and creates the missing folders', async () => {
     const transport = installWithProject();
     renderWithProviders(<ProjectPage />);
-    await screen.findByRole('tree', { name: 'Project folders' });
-    fireEvent.click(screen.getByRole('tab', { name: /^Layout \d/ }));
+    fireEvent.click(await screen.findByRole('tab', { name: /^Layout \d/ }));
+    const counts = await screen.findByRole('list', { name: 'Contents' });
+    expect(within(counts).getByText('Weapon defs').previousSibling?.textContent).toBe('5');
     expect(screen.getByText('Combat Extended content is not gated')).toBeTruthy();
     fireEvent.click(screen.getByRole('button', { name: 'Create 2 missing folders' }));
     await waitFor(() =>
@@ -90,10 +102,10 @@ describe('ProjectPage with a project', () => {
     expect(await screen.findByText('Created 2 folders')).toBeTruthy();
   });
 
-  it('closes the project and returns to the choice screen', async () => {
+  it('closes the project and returns to the hub', async () => {
     installWithProject();
     renderWithProviders(<ProjectPage />);
-    await screen.findByText("Huskos's Gewehr 41");
+    await screen.findByRole('heading', { name: "Huskos's Gewehr 41" });
     fireEvent.click(screen.getByRole('button', { name: 'Close' }));
     expect(await screen.findByRole('button', { name: 'Choose a mod folder' })).toBeTruthy();
     expect(currentProject.value).toBeUndefined();

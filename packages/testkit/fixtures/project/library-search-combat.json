@@ -1,0 +1,82 @@
+{
+  "scanned": true,
+  "hits": [
+    {
+      "packageId": "CETeam.CombatExtended",
+      "name": "Combat Extended",
+      "authors": [
+        "CE Team"
+      ],
+      "source": "workshop",
+      "workshopId": "2890901044",
+      "workshopUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=2890901044",
+      "path": "/home/pawbeans/.local/share/Steam/steamapps/workshop/content/294100/2890901044",
+      "loadable": true,
+      "url": "https://github.com/CombatExtended-Continued/CombatExtended"
+    },
+    {
+      "packageId": "CETeam.CombatExtendedArmors",
+      "name": "Combat Extended Armors",
+      "authors": [
+        "CE Team"
+      ],
+      "source": "workshop",
+      "workshopId": "3565026039",
+      "workshopUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3565026039",
+      "path": "/home/pawbeans/.local/share/Steam/steamapps/workshop/content/294100/3565026039",
+      "loadable": true,
+      "url": "https://github.com/CombatExtended-Continued/CombatExtendedArmors"
+    },
+    {
+      "packageId": "CETeam.CombatExtendedArmory",
+      "name": "Combat Extended Armory",
+      "authors": [
+        "CE Team"
+      ],
+      "source": "workshop",
+      "workshopId": "2911110083",
+      "workshopUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=2911110083",
+      "path": "/home/pawbeans/.local/share/Steam/steamapps/workshop/content/294100/2911110083",
+      "loadable": true,
+      "url": "https://github.com/CombatExtended-Continued/CombatExtendedArmory"
+    },
+    {
+      "packageId": "CETeam.CombatExtendedGuns",
+      "name": "Combat Extended Guns",
+      "authors": [
+        "CE Team"
+      ],
+      "source": "workshop",
+      "workshopId": "3565025938",
+      "workshopUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3565025938",
+      "path": "/home/pawbeans/.local/share/Steam/steamapps/workshop/content/294100/3565025938",
+      "loadable": true,
+      "url": "https://github.com/CombatExtended-Continued/CombatExtendedGuns"
+    },
+    {
+      "packageId": "irRegularGuy646.CombatExtendedFragBuff",
+      "name": "Combat Extended Fragmentation buff",
+      "authors": [
+        "irRegularGuy646"
+      ],
+      "source": "workshop",
+      "workshopId": "3024694998",
+      "workshopUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3024694998",
+      "path": "/home/pawbeans/.local/share/Steam/steamapps/workshop/content/294100/3024694998",
+      "loadable": true
+    },
+    {
+      "packageId": "Keshash.GrenadeVariety",
+      "name": "Grenade Variety for Combat Extended",
+      "authors": [
+        "Keshash"
+      ],
+      "source": "workshop",
+      "workshopId": "2809971989",
+      "workshopUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=2809971989",
+      "path": "/home/pawbeans/.local/share/Steam/steamapps/workshop/content/294100/2809971989",
+      "loadable": true,
+      "url": "https://github.com/Keshash/GrenadeVarietyCE"
+    }
+  ]
+}

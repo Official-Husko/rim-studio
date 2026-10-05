@@ -7,6 +7,7 @@ import {
   extensionOf,
   findNode,
   folderNameOf,
+  hasPlannedFix,
   iconOf,
   idOf,
   initiallyOpen,
@@ -105,5 +106,32 @@ describe('form helpers', () => {
     expect(splitVersions('1.5, 1.6')).toEqual(['1.5', '1.6']);
     expect(splitVersions(' 1.6 ;; ')).toEqual(['1.6']);
     expect(splitVersions('')).toEqual([]);
+  });
+});
+
+describe('hasPlannedFix', () => {
+  const base = { severity: 'warning' as const, path: 'x', message: 'm' };
+  const fix = (kind: 'move-file' | 'none' | 'create-folder' | 'edit-load-folders') => ({
+    kind,
+    summary: 's',
+    automatic: false,
+    targets: [],
+  });
+  it('is true for moves and LoadFolders edits and for the older Combat Extended folder', () => {
+    expect(hasPlannedFix({ ...base, code: 'layout.ce-outside-gate', fix: fix('move-file') })).toBe(
+      true,
+    );
+    expect(
+      hasPlannedFix({ ...base, code: 'layout.ce-folder-ungated', fix: fix('edit-load-folders') }),
+    ).toBe(true);
+    expect(hasPlannedFix({ ...base, code: 'layout.ce-legacy-folder', fix: fix('none') })).toBe(
+      true,
+    );
+  });
+  it('is false for a folder the scaffold creates and for findings without a fix', () => {
+    expect(
+      hasPlannedFix({ ...base, code: 'layout.missing-folder', fix: fix('create-folder') }),
+    ).toBe(false);
+    expect(hasPlannedFix({ ...base, code: 'layout.wrong-root', fix: fix('none') })).toBe(false);
   });
 });

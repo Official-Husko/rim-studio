@@ -1,12 +1,23 @@
-import { useEffect, useState } from 'preact/hooks';
-import { Banner, Button, Dialog, FormField, TextField } from 'rimstudio-ui';
-import { t } from '~/shared/i18n';
-import { pickFolder } from '~/shared/platform';
-import { NewModOptions } from './NewModOptions';
-import { ScaffoldPreviewList } from './ScaffoldPreviewList';
-import { folderNameOf, joinPath, suggestPackageId } from './model';
-import { emptyForm, requestOf, scaffoldPreview, type NewModForm } from './scaffold';
-import { createError, creating, createMod } from './store';
+import { useEffect } from 'preact/hooks';
+import { Banner, Button, Dialog } from 'rimstudio-ui';
+import { t, type MessageKey } from '~/shared/i18n';
+import { IdentityStep } from './create/IdentityStep';
+import { ReviewStep } from './create/ReviewStep';
+import { StructureStep } from './create/StructureStep';
+import {
+  STEPS,
+  createChecking,
+  createForm,
+  createPreview,
+  createStep,
+  createTarget,
+  goStep,
+  identityReady,
+  openCreate,
+  type CreateStep,
+} from './create/createStore';
+import { requestOf } from './scaffold';
+import { createError, createMod, creating } from './store';
 
 export interface NewModDialogProps {
   open: boolean;
@@ -15,45 +26,29 @@ export interface NewModDialogProps {
   startParent?: string;
 }
 
-/** The new mod dialog: the identity of the mod, the scaffold options and the list that will be written. */
-export function NewModDialog({ open, onClose, startParent }: NewModDialogProps) {
-  const [form, setForm] = useState<NewModForm>(emptyForm);
-  const [parent, setParent] = useState(startParent ?? '');
-  const [idTouched, setIdTouched] = useState(false);
-  const [folderTouched, setFolderTouched] = useState(false);
+const STEP_LABEL: Record<CreateStep, MessageKey> = {
+  identity: 'project.create.step.identity',
+  structure: 'project.create.step.structure',
+  review: 'project.create.step.review',
+};
 
+/** The new mod window: identity, the recommended structure with its options, then a review of what is written. */
+export function NewModDialog({ open, onClose, startParent }: NewModDialogProps) {
   useEffect(() => {
-    if (!open) return;
-    setForm(emptyForm());
-    setParent(startParent ?? '');
-    setIdTouched(false);
-    setFolderTouched(false);
-    createError.value = undefined;
+    if (open) openCreate(startParent ?? '');
   }, [open, startParent]);
 
-  const change = (patch: Partial<NewModForm>): void => {
-    setForm((current) => {
-      const next = { ...current, ...patch };
-      if (!idTouched && ('name' in patch || 'author' in patch)) {
-        next.packageId = suggestPackageId(next.author, next.name);
-      }
-      if (!folderTouched && 'name' in patch) next.folderName = folderNameOf(next.name);
-      return next;
-    });
-  };
-
-  const browse = async (): Promise<void> => {
-    const picked = await pickFolder(parent ? { start: parent } : {});
-    if (picked) setParent(picked);
-  };
-
-  const target = parent && form.folderName ? joinPath(parent, form.folderName) : '';
-  const ready = form.name.trim() !== '' && form.packageId.trim() !== '' && target !== '';
+  const step = createStep.value;
+  const index = STEPS.indexOf(step);
+  const preview = createPreview.value;
+  const canCreate = identityReady.value && (preview?.conflicts.length ?? 0) === 0;
 
   const submit = async (): Promise<void> => {
-    if (!ready) return;
-    if (await createMod(requestOf(form, target))) onClose();
+    if (!canCreate) return;
+    if (await createMod(requestOf(createForm.peek(), createTarget.peek()))) onClose();
   };
+  const next = STEPS[index + 1];
+  const back = STEPS[index - 1];
 
   return (
     <Dialog
@@ -64,87 +59,56 @@ export function NewModDialog({ open, onClose, startParent }: NewModDialogProps) 
       closeLabel={t('project.dialog.close')}
       footer={
         <>
-          <Button variant="secondary" onClick={onClose}>
+          <Button variant="ghost" onClick={onClose}>
             {t('project.dialog.cancel')}
           </Button>
-          <Button disabled={!ready} loading={creating.value} onClick={() => void submit()}>
-            {t('project.new.create')}
-          </Button>
+          {back ? (
+            <Button variant="secondary" onClick={() => goStep(back)}>
+              {t('project.create.back')}
+            </Button>
+          ) : null}
+          {next ? (
+            <Button disabled={!identityReady.value} onClick={() => goStep(next)}>
+              {t('project.create.next')}
+            </Button>
+          ) : (
+            <Button disabled={!canCreate} loading={creating.value} onClick={() => void submit()}>
+              {t('project.new.create')}
+            </Button>
+          )}
         </>
       }
     >
-      <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
-        <div class="flex min-w-0 flex-col gap-3">
-          <FormField label={t('project.new.parent')} help={t('project.new.parent.hint')} required>
-            <TextField
-              value={parent}
-              onValueChange={setParent}
-              suffix={
-                <Button size="sm" variant="ghost" icon="folder" onClick={() => void browse()}>
-                  {t('project.new.browse')}
-                </Button>
-              }
-            />
-          </FormField>
-          <div class="grid grid-cols-2 gap-3">
-            <FormField label={t('project.new.name')} required>
-              <TextField value={form.name} onValueChange={(name) => change({ name })} />
-            </FormField>
-            <FormField label={t('project.new.author')}>
-              <TextField value={form.author} onValueChange={(author) => change({ author })} />
-            </FormField>
-          </div>
-          <FormField
-            label={t('project.new.packageId')}
-            help={t('project.new.packageId.hint')}
-            required
-          >
-            <TextField
-              value={form.packageId}
-              onValueChange={(packageId) => {
-                setIdTouched(true);
-                change({ packageId });
-              }}
-            />
-          </FormField>
-          <div class="grid grid-cols-2 gap-3">
-            <FormField label={t('project.new.versions')} help={t('project.new.versions.hint')}>
-              <TextField value={form.versions} onValueChange={(versions) => change({ versions })} />
-            </FormField>
-            <FormField label={t('project.new.folder')}>
-              <TextField
-                value={form.folderName}
-                onValueChange={(folderName) => {
-                  setFolderTouched(true);
-                  change({ folderName });
-                }}
-              />
-            </FormField>
-          </div>
-          <FormField label={t('project.new.description')} help={t('project.new.description.hint')}>
-            <TextField
-              multiline
-              rows={2}
-              value={form.description}
-              onValueChange={(description) => change({ description })}
-            />
-          </FormField>
-        </div>
-        <div class="flex min-w-0 flex-col gap-4">
-          <NewModOptions form={form} onChange={change} />
-          <ScaffoldPreviewList
-            root={target || t('project.new.preview.empty')}
-            entries={scaffoldPreview(form)}
-          />
-        </div>
-      </div>
-      {createError.value ? (
-        <div class="mt-4">
+      <div class="flex flex-col gap-4">
+        <ol class="m-0 flex list-none flex-wrap gap-4 p-0" aria-label={t('project.create.steps')}>
+          {STEPS.map((id, i) => (
+            <li
+              key={id}
+              aria-current={id === step ? 'step' : undefined}
+              class={id === step ? 'font-semibold text-fg' : 'text-muted'}
+            >
+              {`${i + 1}. ${t(STEP_LABEL[id])}`}
+            </li>
+          ))}
+        </ol>
+        {step === 'identity' ? (
+          <IdentityStep />
+        ) : step === 'structure' ? (
+          <StructureStep />
+        ) : (
+          <ReviewStep />
+        )}
+        {createChecking.value ? (
+          <p class="m-0 text-small text-faint" aria-live="polite">
+            {t('project.create.checking')}
+          </p>
+        ) : null}
+        {createError.value ? (
           <Banner tone="error" title={t('project.new.error')}>
             {createError.value.message}
           </Banner>
-        </div>
-      ) : null}
+        ) : null}
+      </div>
     </Dialog>
   );
 }

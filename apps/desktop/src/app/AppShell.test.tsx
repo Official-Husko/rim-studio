@@ -22,7 +22,7 @@ describe('AppShell', () => {
     renderWithProviders(<AppShell />);
     expect(screen.getByText('RimStudio')).toBeTruthy();
     const nav = screen.getByRole('navigation', { name: 'Tools' });
-    for (const name of ['Setup', 'Project', 'Weapons', 'Patches', 'Gallery']) {
+    for (const name of ['Setup', 'Mod', 'Weapons', 'Patches', 'Gallery']) {
       expect(nav.textContent).toContain(name);
     }
     expect(screen.getByRole('link', { name: /Setup/ }).getAttribute('aria-current')).toBe('page');

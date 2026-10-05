@@ -1,0 +1,8 @@
+{
+  "ok": false,
+  "error": {
+    "code": "project.file-stale",
+    "message": "About/About.xml changed on disk since it was read; read it again",
+    "errorId": "e-131c6766"
+  }
+}

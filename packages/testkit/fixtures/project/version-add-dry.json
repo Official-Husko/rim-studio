@@ -1,0 +1,25 @@
+{
+  "version": "1.7",
+  "folder": "1.7",
+  "createdFolders": [
+    "1.7",
+    "1.7/Defs",
+    "1.7/Defs/SoundDefs",
+    "1.7/Defs/ThingDefs_Misc",
+    "1.7/Defs/ThingDefs_Misc/Weapons",
+    "1.7/Patches",
+    "1.7/Sounds",
+    "1.7/Sounds/Weapons",
+    "1.7/Textures",
+    "1.7/Textures/Things",
+    "1.7/Textures/Things/Item",
+    "1.7/Textures/Things/Item/Equipment",
+    "1.7/Textures/Things/Item/Equipment/WeaponMelee",
+    "1.7/Textures/Things/Item/Equipment/WeaponRanged",
+    "1.7/Textures/Things/Projectile"
+  ],
+  "blockAdded": true,
+  "loadFoldersCreated": false,
+  "notInSupportedVersions": true,
+  "diagnostics": []
+}

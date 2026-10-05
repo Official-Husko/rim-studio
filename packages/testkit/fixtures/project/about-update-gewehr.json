@@ -1,0 +1,118 @@
+{
+  "written": true,
+  "diff": "--- a/About/About.xml\n+++ b/About/About.xml\n@@ -1,6 +1,6 @@\n <?xml version=\"1.0\" encoding=\"utf-8\"?>\n <ModMetaData>\n-\t<name>Huskos's Gewehr 41</name>\n+\t<name>Huskos's Gewehr 41 Remastered</name>\n \t<author>Husko</author>\n \t<url>https://steamcommunity.com/sharedfiles/filedetails/?id=3019688356</url>\n \t<packageId>oh.weapons.gewehr41</packageId>\n",
+  "backup": "/tmp/claude-1000/-run-media-pawbeans-project-drive-pawbeans-Projects-Rust-rimforge-studio/f2a5dbd2-809c-4a0b-a0a7-14a50d2d15ea/scratchpad/mb-data/data/project-backups/p-c36c596a/About/About.xml/About.xml.20261005T132420183Z.bak",
+  "verified": true,
+  "about": {
+    "projectId": "p-c36c596a",
+    "path": "About/About.xml",
+    "fileHash": "43a083878a5bd14f13684cb155de3b01cfd1b8bc0b415003447d764985d0ca87",
+    "bytes": 553,
+    "parsed": true,
+    "editable": true,
+    "name": {
+      "value": "Huskos's Gewehr 41 Remastered",
+      "present": true
+    },
+    "shortName": {
+      "value": "",
+      "present": false
+    },
+    "author": {
+      "value": "Husko",
+      "present": true
+    },
+    "authors": {
+      "items": [],
+      "present": false
+    },
+    "packageId": {
+      "value": "oh.weapons.gewehr41",
+      "present": true
+    },
+    "description": {
+      "value": "Enjoy the rare and experimental Gewehr 41 in crisp 512px resolution and all known (to my knowledge) flavors!",
+      "present": true
+    },
+    "url": {
+      "value": "https://steamcommunity.com/sharedfiles/filedetails/?id=3019688356",
+      "present": true
+    },
+    "modVersion": {
+      "value": "",
+      "present": false
+    },
+    "modIconPath": {
+      "value": "",
+      "present": false
+    },
+    "supportedVersions": {
+      "items": [
+        "1.4"
+      ],
+      "present": true
+    },
+    "modDependencies": [],
+    "modDependenciesPresent": false,
+    "loadBefore": {
+      "items": [],
+      "present": false
+    },
+    "loadAfter": {
+      "items": [
+        "Ludeon.RimWorld",
+        "CETeam.CombatExtended"
+      ],
+      "present": true
+    },
+    "forceLoadBefore": {
+      "items": [],
+      "present": false
+    },
+    "forceLoadAfter": {
+      "items": [],
+      "present": false
+    },
+    "incompatibleWith": {
+      "items": [],
+      "present": false
+    },
+    "byVersion": {
+      "advanced": true,
+      "descriptions": [],
+      "relations": []
+    },
+    "unknownTags": [],
+    "preview": {
+      "exists": true,
+      "path": "About/Preview.png",
+      "bytes": 402599,
+      "width": 1920,
+      "height": 1080,
+      "sha256": "25124254a3f685afc2af678315ac76dedbde79a07387617fb90924b7eec4da0d"
+    },
+    "gameVersion": "1.6",
+    "rawText": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<ModMetaData>\r\n\t<name>Huskos's Gewehr 41 Remastered</name>\r\n\t<author>Husko</author>\r\n\t<url>https://steamcommunity.com/sharedfiles/filedetails/?id=3019688356</url>\r\n\t<packageId>oh.weapons.gewehr41</packageId>\r\n\t<supportedVersions>\r\n\t\t<li>1.4</li>\r\n\t</supportedVersions>\r\n\t<description>Enjoy the rare and experimental Gewehr 41 in crisp 512px resolution and all known (to my knowledge) flavors!</description>\r\n\t<loadAfter>\r\n\t\t<li>Ludeon.RimWorld</li>\r\n\t\t<li>CETeam.CombatExtended</li>\r\n\t</loadAfter>\r\n</ModMetaData>",
+    "rawTruncated": false,
+    "diagnostics": [
+      {
+        "code": "about.supported-versions-missing-game",
+        "severity": "warning",
+        "message": "the installed game is 1.6 and the list does not name it; the game shows the mod as made for another version",
+        "field": "/supportedVersions",
+        "args": {
+          "gameVersion": "1.6"
+        }
+      },
+      {
+        "code": "about.preview-dimensions",
+        "severity": "info",
+        "message": "the preview image is 1920 by 1080 pixels; 640 by 360 is the size the Workshop page shows without cropping",
+        "args": {
+          "height": "1080",
+          "width": "1920"
+        }
+      }
+    ]
+  }
+}

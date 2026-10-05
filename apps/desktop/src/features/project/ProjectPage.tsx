@@ -4,14 +4,12 @@ import { t } from '~/shared/i18n';
 import { pickFolder } from '~/shared/platform';
 import { currentProject, projectRevision, setCurrentProject } from '~/shared/project';
 import { devLink } from './devLinks';
+import { ModHub } from './hub/ModHub';
+import { ModView } from './ModView';
 import { NewModDialog } from './NewModDialog';
-import { OpenCard } from './OpenCard';
-import { ProjectHeader } from './ProjectHeader';
-import { RecentList } from './RecentList';
-import { Workbench } from './Workbench';
 import { loadError, loadProject, loadState, openFolder, view } from './store';
 
-/** Project: choose or create the mod, see its annotated folders, check the layout, read its files. */
+/** The Mod page: a hub to create or open a mod, and for an open mod its basics, folders, files, layout and game link. */
 export default function ProjectPage() {
   const [creatingMod, setCreatingMod] = useState(() => devLink('new') === '1');
   const current = currentProject.value;
@@ -44,22 +42,7 @@ export default function ProjectPage() {
   const shown = view.value;
   return (
     <div class="flex h-full min-h-0 max-w-7xl flex-col gap-4 p-6">
-      <div class="flex flex-wrap items-center gap-3">
-        <h1 class="m-0 flex-1 font-display text-display font-semibold tracking-display">
-          {t('project.title')}
-        </h1>
-        {current ? null : (
-          <Button icon="plus" onClick={() => setCreatingMod(true)}>
-            {t('project.new.action')}
-          </Button>
-        )}
-      </div>
-      {!current ? (
-        <div class="grid grid-cols-1 items-start gap-4 xl:grid-cols-2">
-          <OpenCard />
-          <RecentList />
-        </div>
-      ) : null}
+      {!current ? <ModHub onCreate={() => setCreatingMod(true)} /> : null}
       {current && loadState.value === 'error' ? (
         <Banner
           tone="error"
@@ -77,17 +60,15 @@ export default function ProjectPage() {
         <Spinner label={t('project.loading')} />
       ) : null}
       {current && shown ? (
-        <>
-          <ProjectHeader
-            view={shown}
-            refreshing={loadState.value === 'loading'}
-            onRefresh={() => void loadProject(current)}
-            onOpen={() => void chooseFolder()}
-            onNew={() => setCreatingMod(true)}
-            onClose={() => setCurrentProject(undefined)}
-          />
-          <Workbench key={shown.summary.projectId} view={shown} />
-        </>
+        <ModView
+          key={shown.summary.projectId}
+          view={shown}
+          refreshing={loadState.value === 'loading'}
+          onRefresh={() => void loadProject(current)}
+          onOpen={() => void chooseFolder()}
+          onNew={() => setCreatingMod(true)}
+          onClose={() => setCurrentProject(undefined)}
+        />
       ) : null}
       <NewModDialog
         open={creatingMod}

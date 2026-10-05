@@ -1,0 +1,92 @@
+{
+  "projectId": "p-c36c596a",
+  "exists": true,
+  "path": "LoadFolders.xml",
+  "fileHash": "da342dc070ab38c3761471d73a608bd9613d6d1c875fb860296d19cd855c1dcf",
+  "editable": true,
+  "blocks": [
+    {
+      "index": 0,
+      "tag": "v1.5",
+      "key": "1.5",
+      "entries": [
+        {
+          "index": 0,
+          "path": "Common",
+          "ifModActive": [],
+          "ifModActiveAll": [],
+          "ifModNotActive": [],
+          "ignoredAttributes": [],
+          "folderExists": true
+        },
+        {
+          "index": 1,
+          "path": "1.5",
+          "ifModActive": [],
+          "ifModActiveAll": [],
+          "ifModNotActive": [],
+          "ignoredAttributes": [],
+          "folderExists": true
+        },
+        {
+          "index": 2,
+          "path": "1.5/Compat/CombatExtended",
+          "ifModActive": [
+            "ceteam.combatextended"
+          ],
+          "ifModActiveAll": [],
+          "ifModNotActive": [],
+          "ignoredAttributes": [],
+          "folderExists": true
+        }
+      ]
+    },
+    {
+      "index": 1,
+      "tag": "v1.6",
+      "key": "1.6",
+      "entries": [
+        {
+          "index": 0,
+          "path": "Common",
+          "ifModActive": [],
+          "ifModActiveAll": [],
+          "ifModNotActive": [],
+          "ignoredAttributes": [],
+          "folderExists": true
+        },
+        {
+          "index": 1,
+          "path": "1.6",
+          "ifModActive": [],
+          "ifModActiveAll": [],
+          "ifModNotActive": [],
+          "ignoredAttributes": [],
+          "folderExists": true
+        },
+        {
+          "index": 2,
+          "path": "1.6/Compat/CombatExtended",
+          "ifModActive": [
+            "ceteam.combatextended"
+          ],
+          "ifModActiveAll": [],
+          "ifModNotActive": [],
+          "ignoredAttributes": [],
+          "folderExists": true
+        }
+      ]
+    }
+  ],
+  "supportedVersions": [
+    "1.5",
+    "1.6"
+  ],
+  "versionFolders": [
+    "1.5",
+    "1.6"
+  ],
+  "rawText": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<loadFolders>\n  <v1.5>\n    <li>Common</li>\n    <li>1.5</li>\n    <li IfModActive=\"ceteam.combatextended\">1.5/Compat/CombatExtended</li>\n  </v1.5>\n  <v1.6>\n    <li>Common</li>\n    <li>1.6</li>\n    <li IfModActive=\"ceteam.combatextended\">1.6/Compat/CombatExtended</li>\n  </v1.6>\n</loadFolders>\n",
+  "rawTruncated": false,
+  "diagnostics": []
+}

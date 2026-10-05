@@ -1,0 +1,119 @@
+{
+  "written": false,
+  "created": false,
+  "diff": "--- a/LoadFolders.xml\n+++ b/LoadFolders.xml\n@@ -4,6 +4,7 @@\n     <li>Common</li>\n     <li>1.5</li>\n     <li IfModActive=\"ceteam.combatextended\">1.5/Compat/CombatExtended</li>\n+    <li IfModActive=\"ludeon.rimworld.royalty\">Extra</li>\n   </v1.5>\n   <v1.6>\n     <li>Common</li>\n",
+  "verified": false,
+  "loadFolders": {
+    "projectId": "p-c36c596a",
+    "exists": true,
+    "path": "LoadFolders.xml",
+    "fileHash": "3e988d3156dfb7c95ffde9111873cbf4f2c410e3d33ab44811a6da3bff07238f",
+    "editable": true,
+    "blocks": [
+      {
+        "index": 0,
+        "tag": "v1.5",
+        "key": "1.5",
+        "entries": [
+          {
+            "index": 0,
+            "path": "Common",
+            "ifModActive": [],
+            "ifModActiveAll": [],
+            "ifModNotActive": [],
+            "ignoredAttributes": [],
+            "folderExists": true
+          },
+          {
+            "index": 1,
+            "path": "1.5",
+            "ifModActive": [],
+            "ifModActiveAll": [],
+            "ifModNotActive": [],
+            "ignoredAttributes": [],
+            "folderExists": true
+          },
+          {
+            "index": 2,
+            "path": "1.5/Compat/CombatExtended",
+            "ifModActive": [
+              "ceteam.combatextended"
+            ],
+            "ifModActiveAll": [],
+            "ifModNotActive": [],
+            "ignoredAttributes": [],
+            "folderExists": true
+          },
+          {
+            "index": 3,
+            "path": "Extra",
+            "ifModActive": [
+              "ludeon.rimworld.royalty"
+            ],
+            "ifModActiveAll": [],
+            "ifModNotActive": [],
+            "ignoredAttributes": [],
+            "folderExists": false
+          }
+        ]
+      },
+      {
+        "index": 1,
+        "tag": "v1.6",
+        "key": "1.6",
+        "entries": [
+          {
+            "index": 0,
+            "path": "Common",
+            "ifModActive": [],
+            "ifModActiveAll": [],
+            "ifModNotActive": [],
+            "ignoredAttributes": [],
+            "folderExists": true
+          },
+          {
+            "index": 1,
+            "path": "1.6",
+            "ifModActive": [],
+            "ifModActiveAll": [],
+            "ifModNotActive": [],
+            "ignoredAttributes": [],
+            "folderExists": true
+          },
+          {
+            "index": 2,
+            "path": "1.6/Compat/CombatExtended",
+            "ifModActive": [
+              "ceteam.combatextended"
+            ],
+            "ifModActiveAll": [],
+            "ifModNotActive": [],
+            "ignoredAttributes": [],
+            "folderExists": true
+          }
+        ]
+      }
+    ],
+    "supportedVersions": [
+      "1.5",
+      "1.6"
+    ],
+    "versionFolders": [
+      "1.5",
+      "1.6"
+    ],
+    "rawText": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<loadFolders>\n  <v1.5>\n    <li>Common</li>\n    <li>1.5</li>\n    <li IfModActive=\"ceteam.combatextended\">1.5/Compat/CombatExtended</li>\n    <li IfModActive=\"ludeon.rimworld.royalty\">Extra</li>\n  </v1.5>\n  <v1.6>\n    <li>Common</li>\n    <li>1.6</li>\n    <li IfModActive=\"ceteam.combatextended\">1.6/Compat/CombatExtended</li>\n  </v1.6>\n</loadFolders>\n",
+    "rawTruncated": false,
+    "diagnostics": [
+      {
+        "code": "loadfolders.folder-missing",
+        "severity": "warning",
+        "message": "the folder Extra does not exist in the mod",
+        "field": "/blocks/0/entries/3/path",
+        "args": {
+          "folder": "Extra"
+        }
+      }
+    ]
+  }
+}

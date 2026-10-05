@@ -1,4 +1,4 @@
-import { fireEvent, screen } from '@testing-library/preact';
+import { fireEvent, screen, within } from '@testing-library/preact';
 import { loadFixture, renderWithProviders } from 'rimstudio-testkit';
 import { describe, expect, it, vi } from 'vitest';
 import type { ProjectLayoutCheckDto, ProjectSummaryDto, ProjectTreeDto } from 'rimstudio-ipc-types';
@@ -16,23 +16,25 @@ function viewOf(name: 'gewehr' | 'lonewolf'): ProjectView {
 const handlers = { onRefresh: vi.fn(), onOpen: vi.fn(), onNew: vi.fn(), onClose: vi.fn() };
 
 describe('ProjectHeader', () => {
-  it('shows the identity, the convention and the folders of a game style mod', () => {
+  it('shows the name, the package id, the folder and the status of a game style mod', () => {
     renderWithProviders(<ProjectHeader view={viewOf('gewehr')} refreshing={false} {...handlers} />);
+    expect(screen.getByRole('heading', { name: "Huskos's Gewehr 41" })).toBeTruthy();
     expect(screen.getByText('oh.weapons.gewehr41')).toBeTruthy();
-    expect(screen.getByText('Game style')).toBeTruthy();
-    expect(screen.getByText('Defs/ThingDefs_Misc/Weapons')).toBeTruthy();
-    expect(screen.getByText('Compat/CombatExtended (not created yet)')).toBeTruthy();
-    expect(screen.getByText('12 folders, 27 files, 10.9 MiB')).toBeTruthy();
+    const status = screen.getByRole('list', { name: 'Status of the mod' });
+    expect(within(status).getByText('1.4')).toBeTruthy();
+    expect(within(status).getByText('Game style')).toBeTruthy();
+    expect(within(status).getByText('3 layout issues')).toBeTruthy();
+    expect(within(status).getByText('12 folders, 27 files, 10.9 MiB')).toBeTruthy();
   });
 
-  it('shows both versions and the content folder of a flat mod', () => {
+  it('shows both versions and a flat layout', () => {
     renderWithProviders(
       <ProjectHeader view={viewOf('lonewolf')} refreshing={false} {...handlers} />,
     );
-    expect(screen.getByText('1.2')).toBeTruthy();
-    expect(screen.getByText('1.3')).toBeTruthy();
-    expect(screen.getByText('Flat')).toBeTruthy();
-    expect(screen.getByText('Common')).toBeTruthy();
+    const status = screen.getByRole('list', { name: 'Status of the mod' });
+    expect(within(status).getByText('1.2')).toBeTruthy();
+    expect(within(status).getByText('1.3')).toBeTruthy();
+    expect(within(status).getByText('Flat')).toBeTruthy();
   });
 
   it('says how LoadFolders.xml is used', () => {
@@ -40,7 +42,16 @@ describe('ProjectHeader', () => {
     view.summary.hasLoadFolders = true;
     view.summary.hasCeGate = true;
     renderWithProviders(<ProjectHeader view={view} refreshing={false} {...handlers} />);
-    expect(screen.getByText('Present, gates a Combat Extended folder')).toBeTruthy();
+    expect(
+      screen.getByText('LoadFolders.xml: Present, gates a Combat Extended folder'),
+    ).toBeTruthy();
+  });
+
+  it('says the layout is fine when the check found nothing', () => {
+    const view = viewOf('gewehr');
+    view.check = { ...view.check, issues: [] };
+    renderWithProviders(<ProjectHeader view={view} refreshing={false} {...handlers} />);
+    expect(screen.getByText('Layout ok')).toBeTruthy();
   });
 
   it('calls the four actions', () => {

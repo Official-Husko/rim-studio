@@ -1,0 +1,122 @@
+{
+  "projectId": "p-5f53fa51",
+  "path": "About/About.xml",
+  "fileHash": "6f75ae100cb71e3005b79f7fa5f7a176955054b88fd8caf8e8551181945c7a36",
+  "bytes": 667,
+  "parsed": true,
+  "editable": true,
+  "name": {
+    "value": "The Lone Wolf Weapon Package",
+    "present": true
+  },
+  "shortName": {
+    "value": "",
+    "present": false
+  },
+  "author": {
+    "value": "Husko and Billy",
+    "present": true
+  },
+  "authors": {
+    "items": [],
+    "present": false
+  },
+  "packageId": {
+    "value": "TLWWP.Base",
+    "present": true
+  },
+  "description": {
+    "value": "\n\tA Mod that aims to expand the RimWorld experience with a ton of new guns ranging from the first ones made by mankind to some of the latest ones.\n\t",
+    "present": true
+  },
+  "url": {
+    "value": "",
+    "present": true
+  },
+  "modVersion": {
+    "value": "",
+    "present": false
+  },
+  "modIconPath": {
+    "value": "",
+    "present": false
+  },
+  "supportedVersions": {
+    "items": [
+      "1.2",
+      "1.3"
+    ],
+    "present": true
+  },
+  "modDependencies": [],
+  "modDependenciesPresent": false,
+  "loadBefore": {
+    "items": [],
+    "present": false
+  },
+  "loadAfter": {
+    "items": [
+      "Ludeon.RimWorld",
+      "CETeam.CombatExtended",
+      "carnysenpai.enableoversizedweapons",
+      "owlchemist.cherrypicker",
+      "imranfish.xmlextensions"
+    ],
+    "present": true
+  },
+  "forceLoadBefore": {
+    "items": [],
+    "present": false
+  },
+  "forceLoadAfter": {
+    "items": [],
+    "present": false
+  },
+  "incompatibleWith": {
+    "items": [],
+    "present": false
+  },
+  "byVersion": {
+    "advanced": true,
+    "descriptions": [],
+    "relations": []
+  },
+  "unknownTags": [],
+  "preview": {
+    "exists": true,
+    "path": "About/Preview.png",
+    "bytes": 469045,
+    "width": 1920,
+    "height": 1080,
+    "sha256": "a6765fa81f0c4ff300b8a5efe122ecc1e01a48e1ffb199e5f3304c1d6c4f68dc"
+  },
+  "gameVersion": "1.6",
+  "rawText": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<ModMetaData>\r\n\t<name>The Lone Wolf Weapon Package</name>\r\n\t<author>Husko and Billy</author>\r\n\t<url></url>\r\n\t<packageId>TLWWP.Base</packageId>\r\n\t<supportedVersions>\r\n\t\t<li>1.2</li>\r\n\t\t<li>1.3</li>\r\n\t</supportedVersions>\r\n\t<description>\r\n\tA Mod that aims to expand the RimWorld experience with a ton of new guns ranging from the first ones made by mankind to some of the latest ones.\r\n\t</description>\r\n\t<loadAfter>\r\n\t\t<li>Ludeon.RimWorld</li>\r\n\t\t<li>CETeam.CombatExtended</li>\r\n\t\t<li>carnysenpai.enableoversizedweapons</li>\r\n\t\t<li>owlchemist.cherrypicker</li>\r\n\t\t<li>imranfish.xmlextensions</li>\r\n\t</loadAfter>\r\n</ModMetaData>\r\n",
+  "rawTruncated": false,
+  "diagnostics": [
+    {
+      "code": "about.supported-versions-missing-game",
+      "severity": "warning",
+      "message": "the installed game is 1.6 and the list does not name it; the game shows the mod as made for another version",
+      "field": "/supportedVersions",
+      "args": {
+        "gameVersion": "1.6"
+      }
+    },
+    {
+      "code": "about.preview-dimensions",
+      "severity": "info",
+      "message": "the preview image is 1920 by 1080 pixels; 640 by 360 is the size the Workshop page shows without cropping",
+      "args": {
+        "height": "1080",
+        "width": "1920"
+      }
+    },
+    {
+      "code": "about.package-id-case",
+      "severity": "hint",
+      "message": "the packageId TLWWP.Base has capital letters; the game compares ids ignoring case, so the lower case form tlwwp.base is the usual way to write it",
+      "field": "/packageId"
+    }
+  ]
+}

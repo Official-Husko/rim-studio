@@ -1,0 +1,112 @@
+{
+  "projectId": "p-c36c596a",
+  "path": "About/About.xml",
+  "fileHash": "c1fde3982e993d0b6fffbd27eb05a63a2e892d3326043ac48bbe31b625602758",
+  "bytes": 542,
+  "parsed": true,
+  "editable": true,
+  "name": {
+    "value": "Huskos's Gewehr 41",
+    "present": true
+  },
+  "shortName": {
+    "value": "",
+    "present": false
+  },
+  "author": {
+    "value": "Husko",
+    "present": true
+  },
+  "authors": {
+    "items": [],
+    "present": false
+  },
+  "packageId": {
+    "value": "oh.weapons.gewehr41",
+    "present": true
+  },
+  "description": {
+    "value": "Enjoy the rare and experimental Gewehr 41 in crisp 512px resolution and all known (to my knowledge) flavors!",
+    "present": true
+  },
+  "url": {
+    "value": "https://steamcommunity.com/sharedfiles/filedetails/?id=3019688356",
+    "present": true
+  },
+  "modVersion": {
+    "value": "",
+    "present": false
+  },
+  "modIconPath": {
+    "value": "",
+    "present": false
+  },
+  "supportedVersions": {
+    "items": [
+      "1.4"
+    ],
+    "present": true
+  },
+  "modDependencies": [],
+  "modDependenciesPresent": false,
+  "loadBefore": {
+    "items": [],
+    "present": false
+  },
+  "loadAfter": {
+    "items": [
+      "Ludeon.RimWorld",
+      "CETeam.CombatExtended"
+    ],
+    "present": true
+  },
+  "forceLoadBefore": {
+    "items": [],
+    "present": false
+  },
+  "forceLoadAfter": {
+    "items": [],
+    "present": false
+  },
+  "incompatibleWith": {
+    "items": [],
+    "present": false
+  },
+  "byVersion": {
+    "advanced": true,
+    "descriptions": [],
+    "relations": []
+  },
+  "unknownTags": [],
+  "preview": {
+    "exists": true,
+    "path": "About/Preview.png",
+    "bytes": 402599,
+    "width": 1920,
+    "height": 1080,
+    "sha256": "25124254a3f685afc2af678315ac76dedbde79a07387617fb90924b7eec4da0d"
+  },
+  "gameVersion": "1.6",
+  "rawText": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<ModMetaData>\r\n\t<name>Huskos's Gewehr 41</name>\r\n\t<author>Husko</author>\r\n\t<url>https://steamcommunity.com/sharedfiles/filedetails/?id=3019688356</url>\r\n\t<packageId>oh.weapons.gewehr41</packageId>\r\n\t<supportedVersions>\r\n\t\t<li>1.4</li>\r\n\t</supportedVersions>\r\n\t<description>Enjoy the rare and experimental Gewehr 41 in crisp 512px resolution and all known (to my knowledge) flavors!</description>\r\n\t<loadAfter>\r\n\t\t<li>Ludeon.RimWorld</li>\r\n\t\t<li>CETeam.CombatExtended</li>\r\n\t</loadAfter>\r\n</ModMetaData>",
+  "rawTruncated": false,
+  "diagnostics": [
+    {
+      "code": "about.supported-versions-missing-game",
+      "severity": "warning",
+      "message": "the installed game is 1.6 and the list does not name it; the game shows the mod as made for another version",
+      "field": "/supportedVersions",
+      "args": {
+        "gameVersion": "1.6"
+      }
+    },
+    {
+      "code": "about.preview-dimensions",
+      "severity": "info",
+      "message": "the preview image is 1920 by 1080 pixels; 640 by 360 is the size the Workshop page shows without cropping",
+      "args": {
+        "height": "1080",
+        "width": "1920"
+      }
+    }
+  ]
+}

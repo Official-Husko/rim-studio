@@ -18,10 +18,10 @@ function current() {
 }
 
 describe('Workbench', () => {
-  it('starts on the file tab with nothing chosen', () => {
+  it('starts with nothing chosen', () => {
     renderWithProviders(<Workbench view={current()} />);
-    expect(screen.getByRole('tab', { name: 'File', selected: true })).toBeTruthy();
     expect(screen.getByText('No file selected')).toBeTruthy();
+    expect(screen.getByRole('tree', { name: 'Project folders' })).toBeTruthy();
   });
 
   it('shows what a folder holds when it is chosen', () => {
@@ -31,21 +31,11 @@ describe('Workbench', () => {
     expect(screen.getByText('1 layout issue on or below this folder')).toBeTruthy();
   });
 
-  it('counts the issues on the layout tab and opens the guide', () => {
+  it('opens a file in the viewer', async () => {
     renderWithProviders(<Workbench view={current()} />);
-    expect(screen.getByRole('tab', { name: /^Layout 3/ })).toBeTruthy();
-    fireEvent.click(screen.getByRole('tab', { name: 'Layout guide' }));
-    expect(screen.getByText(/The RimStudio layout keeps the names/)).toBeTruthy();
-  });
-
-  it('opens the file of an issue in the viewer', async () => {
-    renderWithProviders(<Workbench view={current()} />);
-    fireEvent.click(screen.getByRole('tab', { name: /^Layout 3/ }));
-    fireEvent.click(screen.getByRole('button', { name: 'Patches/ce_patch.xml' }));
-    expect(await screen.findByRole('tab', { name: 'File', selected: true })).toBeTruthy();
-    expect(
-      await screen.findByRole('region', { name: 'Contents of Patches/ce_patch.xml' }),
-    ).toBeTruthy();
+    const tree = screen.getByRole('tree', { name: 'Project folders' });
+    fireEvent.click(within(tree).getByRole('treeitem', { name: /About\.xml/ }));
+    expect(await screen.findByRole('region', { name: 'Contents of About/About.xml' })).toBeTruthy();
   });
 
   it('works for a project without issues', () => {
@@ -58,6 +48,6 @@ describe('Workbench', () => {
         }}
       />,
     );
-    expect(screen.getByRole('tab', { name: 'Layout' })).toBeTruthy();
+    expect(screen.getByRole('tree', { name: 'Project folders' })).toBeTruthy();
   });
 });

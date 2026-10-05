@@ -1,0 +1,18 @@
+{
+  "root": "/home/user/mods/Bad Mod",
+  "valid": false,
+  "diagnostics": [
+    {
+      "code": "about.package-id-format",
+      "severity": "error",
+      "message": "the packageId nodots breaks the game's format rule: it needs a dot, in the form author.modname",
+      "field": "/packageId",
+      "args": {
+        "reason": "it needs a dot, in the form author.modname"
+      }
+    }
+  ],
+  "entries": [],
+  "targetExists": false,
+  "conflicts": []
+}

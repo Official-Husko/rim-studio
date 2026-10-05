@@ -51,4 +51,11 @@ describe('DiffView', () => {
     render(<DiffView label="Changes" diff="" emptyText="Unchanged" />);
     expect(screen.getByText('Unchanged')).toBeTruthy();
   });
+
+  it('can be reached with the keyboard and takes extra classes', () => {
+    render(<DiffView label="Edit" diff={'@@ -1 +1 @@\n-a\n+b\n'} class="max-h-60" />);
+    const region = screen.getByRole('region', { name: 'Edit' });
+    expect(region.getAttribute('tabindex')).toBe('0');
+    expect(region.className).toContain('max-h-60');
+  });
 });

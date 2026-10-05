@@ -1,0 +1,140 @@
+{
+  "changed": true,
+  "diff": "--- a/About/About.xml\n+++ b/About/About.xml\n@@ -1,12 +1,22 @@\n <?xml version=\"1.0\" encoding=\"utf-8\"?>\n <ModMetaData>\n-\t<name>Huskos's Gewehr 41</name>\n+\t<name>Huskos's Gewehr 41 Remastered</name>\n \t<author>Husko</author>\n+\t<authors>\n+\t\t<li>Second Author</li>\n+\t</authors>\n \t<url>https://steamcommunity.com/sharedfiles/filedetails/?id=3019688356</url>\n-\t<packageId>oh.weapons.gewehr41</packageId>\n+\t<packageId>Bad Id</packageId>\n \t<supportedVersions>\n \t\t<li>1.4</li>\n \t</supportedVersions>\n+\t<modDependencies>\n+\t\t<li>\n+\t\t\t<packageId>CETeam.CombatExtended</packageId>\n+\t\t\t<displayName>Combat Extended</displayName>\n+\t\t\t<steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2890901044</steamWorkshopUrl>\n+\t\t</li>\n+\t</modDependencies>\n \t<description>Enjoy the rare and experimental Gewehr 41 in crisp 512px resolution and all known (to my knowledge) flavors!</description>\n \t<loadAfter>\n \t\t<li>Ludeon.RimWorld</li>\n",
+  "currentHash": "c1fde3982e993d0b6fffbd27eb05a63a2e892d3326043ac48bbe31b625602758",
+  "result": {
+    "projectId": "p-c36c596a",
+    "path": "About/About.xml",
+    "fileHash": "0f2bf7b59e7bcbc93f87f6780cd67a51ec952dce81268b7b3ef79b5b80aeed1f",
+    "bytes": 852,
+    "parsed": true,
+    "editable": true,
+    "name": {
+      "value": "Huskos's Gewehr 41 Remastered",
+      "present": true
+    },
+    "shortName": {
+      "value": "",
+      "present": false
+    },
+    "author": {
+      "value": "Husko",
+      "present": true
+    },
+    "authors": {
+      "items": [
+        "Second Author"
+      ],
+      "present": true
+    },
+    "packageId": {
+      "value": "Bad Id",
+      "present": true
+    },
+    "description": {
+      "value": "Enjoy the rare and experimental Gewehr 41 in crisp 512px resolution and all known (to my knowledge) flavors!",
+      "present": true
+    },
+    "url": {
+      "value": "https://steamcommunity.com/sharedfiles/filedetails/?id=3019688356",
+      "present": true
+    },
+    "modVersion": {
+      "value": "",
+      "present": false
+    },
+    "modIconPath": {
+      "value": "",
+      "present": false
+    },
+    "supportedVersions": {
+      "items": [
+        "1.4"
+      ],
+      "present": true
+    },
+    "modDependencies": [
+      {
+        "packageId": "CETeam.CombatExtended",
+        "displayName": "Combat Extended",
+        "steamWorkshopUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=2890901044"
+      }
+    ],
+    "modDependenciesPresent": true,
+    "loadBefore": {
+      "items": [],
+      "present": false
+    },
+    "loadAfter": {
+      "items": [
+        "Ludeon.RimWorld",
+        "CETeam.CombatExtended"
+      ],
+      "present": true
+    },
+    "forceLoadBefore": {
+      "items": [],
+      "present": false
+    },
+    "forceLoadAfter": {
+      "items": [],
+      "present": false
+    },
+    "incompatibleWith": {
+      "items": [],
+      "present": false
+    },
+    "byVersion": {
+      "advanced": true,
+      "descriptions": [],
+      "relations": []
+    },
+    "unknownTags": [],
+    "preview": {
+      "exists": true,
+      "path": "About/Preview.png",
+      "bytes": 402599,
+      "width": 1920,
+      "height": 1080,
+      "sha256": "25124254a3f685afc2af678315ac76dedbde79a07387617fb90924b7eec4da0d"
+    },
+    "gameVersion": "1.6",
+    "rawText": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<ModMetaData>\r\n\t<name>Huskos's Gewehr 41 Remastered</name>\r\n\t<author>Husko</author>\r\n\t<authors>\r\n\t\t<li>Second Author</li>\r\n\t</authors>\r\n\t<url>https://steamcommunity.com/sharedfiles/filedetails/?id=3019688356</url>\r\n\t<packageId>Bad Id</packageId>\r\n\t<supportedVersions>\r\n\t\t<li>1.4</li>\r\n\t</supportedVersions>\r\n\t<modDependencies>\r\n\t\t<li>\r\n\t\t\t<packageId>CETeam.CombatExtended</packageId>\r\n\t\t\t<displayName>Combat Extended</displayName>\r\n\t\t\t<steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2890901044</steamWorkshopUrl>\r\n\t\t</li>\r\n\t</modDependencies>\r\n\t<description>Enjoy the rare and experimental Gewehr 41 in crisp 512px resolution and all known (to my knowledge) flavors!</description>\r\n\t<loadAfter>\r\n\t\t<li>Ludeon.RimWorld</li>\r\n\t\t<li>CETeam.CombatExtended</li>\r\n\t</loadAfter>\r\n</ModMetaData>",
+    "rawTruncated": false,
+    "diagnostics": [
+      {
+        "code": "about.package-id-format",
+        "severity": "error",
+        "message": "the packageId Bad Id breaks the game's format rule: it may hold only the letters A to Z, digits and dots (no underscore, hyphen or space)",
+        "field": "/packageId",
+        "args": {
+          "reason": "it may hold only the letters A to Z, digits and dots (no underscore, hyphen or space)"
+        }
+      },
+      {
+        "code": "about.supported-versions-missing-game",
+        "severity": "warning",
+        "message": "the installed game is 1.6 and the list does not name it; the game shows the mod as made for another version",
+        "field": "/supportedVersions",
+        "args": {
+          "gameVersion": "1.6"
+        }
+      },
+      {
+        "code": "about.preview-dimensions",
+        "severity": "info",
+        "message": "the preview image is 1920 by 1080 pixels; 640 by 360 is the size the Workshop page shows without cropping",
+        "args": {
+          "height": "1080",
+          "width": "1920"
+        }
+      },
+      {
+        "code": "about.package-id-case",
+        "severity": "hint",
+        "message": "the packageId Bad Id has capital letters; the game compares ids ignoring case, so the lower case form bad id is the usual way to write it",
+        "field": "/packageId"
+      }
+    ]
+  }
+}

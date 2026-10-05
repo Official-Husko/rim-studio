@@ -3,6 +3,9 @@ import type { ProjectSummaryDto } from 'rimstudio-ipc-types';
 import { clearQueries, connection, setTransport } from '~/shared/ipc';
 import { resetProjectStore, setCurrentProject, type ProjectRef } from '~/shared/project';
 import { resetProjectView } from './store';
+import { resetAboutStore } from './basics/aboutStore';
+import { resetCreateStore } from './create/createStore';
+import { resetFoldersStore } from './folders/folderStore';
 
 /** The two recorded projects: the game style Gewehr 41 and the flat Lone Wolf package. */
 export const GEWEHR_ID = 'p-c36c596a';
@@ -56,7 +59,9 @@ export function projectHandlers(): Record<string, MockHandler> {
 /** Swap the mock transport without touching the stores; extra handlers win over the fixture ones. */
 export function replaceTransport(extra: Record<string, MockHandler> = {}) {
   clearQueries();
-  const transport = createMockTransport({ handlers: { ...projectHandlers(), ...extra } });
+  const transport = createMockTransport({
+    handlers: { ...projectHandlers(), ...modHandlers(), ...extra },
+  });
   setTransport(transport);
   connection.value = 'mock';
   return transport;
@@ -66,6 +71,7 @@ export function replaceTransport(extra: Record<string, MockHandler> = {}) {
 export function installTransport(extra: Record<string, MockHandler> = {}) {
   resetProjectStore();
   resetProjectView();
+  resetModStores();
   return replaceTransport(extra);
 }
 
@@ -74,4 +80,32 @@ export function installWithProject(extra: Record<string, MockHandler> = {}) {
   const transport = installTransport(extra);
   setCurrentProject(gewehrRef());
   return transport;
+}
+
+/** Handlers answering the mod basics commands from the fixtures recorded with the real backend. */
+export function modHandlers(): Record<string, MockHandler> {
+  return {
+    project_about_get: () => loadFixture('about-get-gewehr'),
+    project_about_preview: () => loadFixture('about-preview-gewehr'),
+    project_about_update: () => loadFixture('about-update-gewehr'),
+    project_about_set_preview: () => ({
+      preview: { exists: true, path: 'About/Preview.png', bytes: 1024, width: 640, height: 360 },
+      replaced: false,
+      diagnostics: [],
+    }),
+    project_about_remove_preview: () => ({ removed: true }),
+    project_load_folders_get: () => loadFixture('load-folders-get-none'),
+    project_load_folders_update: () => loadFixture('load-folders-update-dry'),
+    project_version_add: () => loadFixture('version-add-dry'),
+    library_mod_search: () => loadFixture('library-search-combat'),
+    project_scaffold_preview: () => loadFixture('scaffold-preview-versioned'),
+    detect_get_report: () => ({}),
+  };
+}
+
+/** Forget the state of the three stores of the mod basics. */
+export function resetModStores(): void {
+  resetAboutStore();
+  resetFoldersStore();
+  resetCreateStore();
 }

@@ -57,6 +57,8 @@ export interface DiffViewProps {
   /** Accessible name of the diff region. */
   label: string;
   emptyText?: string;
+  /** Extra classes of the scrolling region, for example a maximum height. */
+  class?: string;
 }
 
 const ROW: Record<DiffLineKind, string> = {
@@ -75,7 +77,7 @@ const SIGN: Record<DiffLineKind, string> = {
 };
 
 /** A unified diff: added and removed lines are told apart by the sign as well as the tint. */
-export function DiffView({ diff, label, emptyText = 'No changes' }: DiffViewProps) {
+export function DiffView({ diff, label, emptyText = 'No changes', class: className }: DiffViewProps) {
   const lines = useMemo(() => parseUnifiedDiff(diff), [diff]);
   if (lines.length === 0) {
     return (
@@ -88,7 +90,13 @@ export function DiffView({ diff, label, emptyText = 'No changes' }: DiffViewProp
     <div
       role="region"
       aria-label={label}
-      class="overflow-auto border border-line bg-surface py-1 font-mono text-mono leading-5"
+      // a scrolling region must be reachable with the keyboard
+      // oxlint-disable-next-line jsx-a11y/no-noninteractive-tabindex
+      tabIndex={0}
+      class={cx(
+        'overflow-auto border border-line bg-surface py-1 font-mono text-mono leading-5',
+        className,
+      )}
     >
       <div class="min-w-max">
         {lines.map((line, index) => (

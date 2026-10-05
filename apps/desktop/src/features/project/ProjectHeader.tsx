@@ -1,7 +1,6 @@
-import { Badge, Banner, Button, KeyValueList, Panel } from 'rimstudio-ui';
+import { Badge, Banner, Button } from 'rimstudio-ui';
 import { formatBytes, formatNumber } from '~/shared/format';
-import { t } from '~/shared/i18n';
-import { ProjectCounts } from './ProjectCounts';
+import { t, tn } from '~/shared/i18n';
 import type { ProjectView } from './store';
 
 const PROFILE_KEYS = {
@@ -19,7 +18,7 @@ export interface ProjectHeaderProps {
   onClose: () => void;
 }
 
-/** The info card of the open project: identity, how it is laid out and what it holds. */
+/** The header of the open mod: name, package id, folder, game versions and status chips, with the page actions. */
 export function ProjectHeader({
   view,
   refreshing,
@@ -28,24 +27,28 @@ export function ProjectHeader({
   onNew,
   onClose,
 }: ProjectHeaderProps) {
-  const { summary, tree } = view;
+  const { summary, tree, check } = view;
   const loadFolders = !summary.hasLoadFolders
     ? t('project.info.loadfolders.none')
     : summary.hasCeGate
       ? t('project.info.loadfolders.gated')
       : t('project.info.loadfolders.present');
-  const ce = !tree.ceFolderExists
-    ? t('project.info.ce.none', { path: tree.ceFolder })
-    : tree.ceFolderLegacy
-      ? t('project.info.ce.legacy', { path: tree.ceFolder })
-      : t('project.info.ce.standard', { path: tree.ceFolder });
+  const issues = check.issues.length;
   return (
-    <Panel
-      title={t('project.info.title')}
-      framed
-      collapsible
-      actions={
-        <div class="flex items-center gap-2">
+    <header class="bp-ticks flex flex-col gap-3 border border-line bg-surface p-4">
+      <div class="flex flex-wrap items-start gap-3">
+        <div class="min-w-0 flex-1">
+          <h1 class="m-0 truncate font-display text-display font-semibold tracking-display">
+            {summary.name}
+          </h1>
+          <p class="m-0 truncate font-mono text-mono text-muted">
+            {summary.packageId ?? t('project.info.none')}
+          </p>
+          <p class="m-0 truncate font-mono text-mono-small text-faint" title={summary.path}>
+            {summary.path}
+          </p>
+        </div>
+        <div class="flex flex-wrap items-center gap-2">
           <Button size="sm" variant="ghost" icon="refresh" loading={refreshing} onClick={onRefresh}>
             {t('project.refresh')}
           </Button>
@@ -59,70 +62,51 @@ export function ProjectHeader({
             {t('project.close')}
           </Button>
         </div>
-      }
-    >
-      <div class="grid grid-cols-1 gap-x-8 gap-y-4 p-3 md:grid-cols-2 xl:grid-cols-[1fr_1fr_minmax(0,22rem)]">
-        <KeyValueList
-          label={t('project.info.title')}
-          items={[
-            { key: t('project.info.name'), value: <strong>{summary.name}</strong> },
-            {
-              key: t('project.info.packageId'),
-              value: summary.packageId ?? t('project.info.none'),
-              mono: true,
-            },
-            {
-              key: t('project.info.versions'),
-              value: (
-                <span class="flex flex-wrap gap-1">
-                  {summary.supportedVersions.length > 0
-                    ? summary.supportedVersions.map((v) => <Badge key={v}>{v}</Badge>)
-                    : t('project.info.none')}
-                </span>
-              ),
-            },
-            {
-              key: t('project.info.path'),
-              value: (
-                <span class="block truncate" title={summary.path}>
-                  {summary.path}
-                </span>
-              ),
-              mono: true,
-            },
-          ]}
-        />
-        <KeyValueList
-          label={t('project.info.layout')}
-          items={[
-            {
-              key: t('project.info.profile'),
-              value: <Badge tone="info">{t(PROFILE_KEYS[tree.profile])}</Badge>,
-            },
-            { key: t('project.info.weapons'), value: tree.weaponsFolder, mono: true },
-            ...(tree.contentFolder
-              ? [{ key: t('project.info.content'), value: tree.contentFolder, mono: true }]
-              : []),
-            { key: t('project.info.loadfolders'), value: loadFolders },
-            { key: t('project.info.ce'), value: ce },
-          ]}
-        />
-        <div class="flex flex-col gap-2 md:col-span-2 xl:col-span-1">
-          <ProjectCounts counts={tree.counts} />
-          <p class="m-0 text-small text-muted">
-            {t('project.info.size', {
-              folders: formatNumber(tree.counts.folders, 0),
-              files: formatNumber(tree.counts.files, 0),
-              size: formatBytes(tree.counts.bytes),
-            })}
-          </p>
-        </div>
       </div>
+      <ul
+        class="m-0 flex list-none flex-wrap items-center gap-2 p-0"
+        aria-label={t('project.header.status')}
+      >
+        {summary.supportedVersions.length > 0 ? (
+          summary.supportedVersions.map((v) => (
+            <li key={v}>
+              <Badge>{v}</Badge>
+            </li>
+          ))
+        ) : (
+          <li>
+            <Badge tone="warning">{t('project.header.noVersions')}</Badge>
+          </li>
+        )}
+        <li>
+          <Badge tone="info">{t(PROFILE_KEYS[tree.profile])}</Badge>
+        </li>
+        <li>
+          <Badge>{t('project.header.loadFolders', { state: loadFolders })}</Badge>
+        </li>
+        <li>
+          {issues > 0 ? (
+            <Badge tone="warning">{tn('project.header.issues', issues)}</Badge>
+          ) : (
+            <Badge tone="success">{t('project.header.layoutOk')}</Badge>
+          )}
+        </li>
+        <li class="text-small text-muted">
+          {t('project.info.size', {
+            folders: formatNumber(tree.counts.folders, 0),
+            files: formatNumber(tree.counts.files, 0),
+            size: formatBytes(tree.counts.bytes),
+          })}
+        </li>
+      </ul>
       {summary.diagnostics.map((diag) => (
-        <div key={`${diag.code}:${diag.message}`} class="px-3 pb-3">
-          <Banner tone={diag.severity === 'error' ? 'error' : 'warning'}>{diag.message}</Banner>
-        </div>
+        <Banner
+          key={`${diag.code}:${diag.message}`}
+          tone={diag.severity === 'error' ? 'error' : 'warning'}
+        >
+          {diag.message}
+        </Banner>
       ))}
-    </Panel>
+    </header>
   );
 }

@@ -1,0 +1,85 @@
+{
+  "root": "/tmp/claude-1000/-run-media-pawbeans-project-drive-pawbeans-Projects-Rust-rimforge-studio/f2a5dbd2-809c-4a0b-a0a7-14a50d2d15ea/scratchpad/mb-work/Fresh",
+  "valid": true,
+  "diagnostics": [
+    {
+      "code": "about.package-id-case-conflict",
+      "severity": "warning",
+      "message": "the mod \"Combat Extended\" in /home/pawbeans/.local/share/Steam/steamapps/workshop/content/294100/2890901044 uses the same packageId in other letter case (CETeam.CombatExtended); the game treats the two as one mod",
+      "field": "/packageId",
+      "args": {
+        "otherName": "Combat Extended",
+        "otherPath": "/home/pawbeans/.local/share/Steam/steamapps/workshop/content/294100/2890901044",
+        "otherSource": "workshop-0"
+      }
+    }
+  ],
+  "entries": [
+    {
+      "path": "About",
+      "kind": "folder"
+    },
+    {
+      "path": "About/About.xml",
+      "kind": "file"
+    },
+    {
+      "path": "Defs",
+      "kind": "folder"
+    },
+    {
+      "path": "Defs/SoundDefs",
+      "kind": "folder"
+    },
+    {
+      "path": "Defs/ThingDefs_Misc",
+      "kind": "folder"
+    },
+    {
+      "path": "Defs/ThingDefs_Misc/Weapons",
+      "kind": "folder"
+    },
+    {
+      "path": "Patches",
+      "kind": "folder"
+    },
+    {
+      "path": "Sounds",
+      "kind": "folder"
+    },
+    {
+      "path": "Sounds/Weapons",
+      "kind": "folder"
+    },
+    {
+      "path": "Textures",
+      "kind": "folder"
+    },
+    {
+      "path": "Textures/Things",
+      "kind": "folder"
+    },
+    {
+      "path": "Textures/Things/Item",
+      "kind": "folder"
+    },
+    {
+      "path": "Textures/Things/Item/Equipment",
+      "kind": "folder"
+    },
+    {
+      "path": "Textures/Things/Item/Equipment/WeaponMelee",
+      "kind": "folder"
+    },
+    {
+      "path": "Textures/Things/Item/Equipment/WeaponRanged",
+      "kind": "folder"
+    },
+    {
+      "path": "Textures/Things/Projectile",
+      "kind": "folder"
+    }
+  ],
+  "targetExists": false,
+  "conflicts": []
+}

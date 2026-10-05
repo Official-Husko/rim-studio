@@ -1,9 +1,9 @@
-type DevLink = 'open' | 'file' | 'tab' | 'new' | 'parent';
+type DevLink = 'open' | 'file' | 'tab' | 'new' | 'parent' | 'link';
 
 /**
  * Development deep links of the project page, read from the hash query: #/project?open=PATH opens a
  * project, file=REL shows a file once it is loaded, tab=layout|guide picks a tab, new=1 opens the
- * new mod dialog and parent=PATH fills its folder. Used for screenshots; production builds ignore them.
+ * new mod dialog and parent=PATH fills its folder, link=confirm opens the link confirmation. Used for screenshots; production builds ignore them.
  */
 export function devLink(name: DevLink): string | undefined {
   if (!import.meta.env.DEV) return undefined;
