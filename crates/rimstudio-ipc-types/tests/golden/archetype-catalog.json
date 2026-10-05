@@ -1,0 +1,97 @@
+{
+  "families": [
+    {
+      "id": "rifle",
+      "label": "Rifle",
+      "kind": "ranged",
+      "archetypes": [
+        {
+          "id": "rifle/assault",
+          "label": "Assault rifle",
+          "summary": "A balanced automatic rifle.",
+          "kind": "ranged",
+          "applies": [
+            "action",
+            "rof",
+            "calibre"
+          ],
+          "actions": [
+            "burst",
+            "full-auto"
+          ],
+          "defaultAction": "burst",
+          "rofClasses": [
+            "slow",
+            "medium",
+            "fast"
+          ],
+          "defaultRof": "medium",
+          "refRpm": 650.0,
+          "calibres": [
+            "small",
+            "medium"
+          ],
+          "defaultCalibre": "medium",
+          "handlings": [
+            "standard"
+          ],
+          "defaultHandling": "standard",
+          "defaultTier": "industrial",
+          "poolRole": "rifle",
+          "ammoFamilies": [
+            "rifle"
+          ]
+        }
+      ]
+    }
+  ],
+  "rof": [
+    {
+      "id": "fast",
+      "label": "Fast",
+      "rate": 1.35
+    }
+  ],
+  "actions": [],
+  "calibres": [],
+  "handlings": [],
+  "tiers": [
+    {
+      "tier": "industrial",
+      "label": "Industrial",
+      "rangedCount": 12,
+      "meleeCount": 0
+    }
+  ],
+  "balance": [
+    {
+      "target": "typical",
+      "label": "Typical for its class",
+      "percentile": 0.5
+    }
+  ],
+  "poolSizes": [
+    20,
+    17
+  ],
+  "proposalsAvailable": true,
+  "ce": {
+    "available": true,
+    "calibres": [
+      {
+        "set": "RS_AmmoSetA",
+        "label": "RS ammo",
+        "caliber": "RS caliber",
+        "family": "rifle",
+        "projectile": "RS_CeBullet1",
+        "damage": 9.0,
+        "apSharp": 2.5,
+        "ratio": 1.0,
+        "weaponCount": 3
+      }
+    ],
+    "aiClassTags": [
+      "CE_AI_Rifle"
+    ]
+  }
+}

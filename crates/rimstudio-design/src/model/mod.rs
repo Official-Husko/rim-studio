@@ -9,6 +9,7 @@
 //!
 //! Everything here is plain data with `serde` support (camelCase fields, kebab-case enum strings) and no I/O.
 
+pub mod archetype;
 pub mod assets;
 pub mod bridge;
 pub mod carried;
@@ -20,6 +21,7 @@ pub mod platform;
 pub mod source;
 pub mod spec;
 
+pub use archetype::{ArchetypeChoice, ArchetypeMode, BalanceTarget, Descriptors, RateOfFire};
 pub use assets::{AssetImports, CustomSound, FloatRange, SoundImports, shot_sound_def_name};
 pub use bridge::{DEFAULT_BURST_COUNT, DEFAULT_TICKS_BETWEEN_SHOTS};
 pub use carried::{

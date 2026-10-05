@@ -1,0 +1,348 @@
+{
+  "version": 1,
+  "notes": "Authored by RimStudio. Every number here is a RATIO to a median that the solver reads from the user's install at run time (a shape), a unit-free count, or a tuning exponent. There are no game values in this file (R11). Names such as tool labels and capacities are def names, not values.",
+  "ladders": {
+    "rof": [
+      { "id": "slow", "label": "Slow", "rate": 0.75 },
+      { "id": "medium", "label": "Medium", "rate": 1.0 },
+      { "id": "fast", "label": "Fast", "rate": 1.35 }
+    ],
+    "actions": [
+      { "id": "bolt", "label": "Bolt action", "mode": "single", "warmup": 1.1, "cooldown": 1.1, "ticks": 1.0, "summary": "One round per cycle, worked by hand between shots." },
+      { "id": "lever", "label": "Lever action", "mode": "single", "warmup": 0.95, "cooldown": 0.95, "ticks": 1.0, "summary": "One round per cycle, a little quicker than a bolt." },
+      { "id": "pump", "label": "Pump action", "mode": "single", "warmup": 1.0, "cooldown": 1.0, "ticks": 1.0, "summary": "One round per cycle, pumped between shots." },
+      { "id": "semi", "label": "Semi automatic", "mode": "single", "warmup": 0.9, "cooldown": 0.85, "ticks": 1.0, "summary": "One round per trigger pull, no manual cycling." },
+      { "id": "burst", "label": "Burst fire", "mode": "burst", "warmup": 1.0, "cooldown": 1.0, "ticks": 1.0, "summary": "A short burst per trigger pull." },
+      { "id": "full-auto", "label": "Full automatic", "mode": "auto", "warmup": 1.1, "cooldown": 1.0, "ticks": 0.9, "summary": "A long burst while the trigger is held." },
+      { "id": "draw", "label": "Draw and loose", "mode": "single", "warmup": 1.0, "cooldown": 1.0, "ticks": 1.0, "summary": "One shot per draw, as bows and crossbows work." }
+    ],
+    "calibres": [
+      { "id": "tiny", "label": "Tiny", "examples": "rimfire, small darts", "damage": 0.7, "range": 0.92, "mass": 0.85, "ap": 0.9, "cooldown": 0.95 },
+      { "id": "small", "label": "Small", "examples": "9 mm class pistol rounds, light arrows", "damage": 0.85, "range": 0.96, "mass": 0.92, "ap": 0.95, "cooldown": 0.97 },
+      { "id": "medium", "label": "Medium", "examples": "intermediate rifle rounds, 12 gauge", "damage": 1.0, "range": 1.0, "mass": 1.0, "ap": 1.0, "cooldown": 1.0 },
+      { "id": "large", "label": "Large", "examples": "full power rifle rounds, magnum pistol rounds", "damage": 1.25, "range": 1.06, "mass": 1.1, "ap": 1.1, "cooldown": 1.05 },
+      { "id": "huge", "label": "Huge", "examples": "heavy and anti materiel rounds", "damage": 1.6, "range": 1.12, "mass": 1.3, "ap": 1.2, "cooldown": 1.15 }
+    ],
+    "handlings": [
+      { "id": "compact", "label": "Compact", "mass": 0.8, "warmup": 0.85, "range": 0.95, "touch": 1.08, "long": 0.93, "cooldown": 0.95, "power": 0.95 },
+      { "id": "standard", "label": "Standard", "mass": 1.0, "warmup": 1.0, "range": 1.0, "touch": 1.0, "long": 1.0, "cooldown": 1.0, "power": 1.0 },
+      { "id": "heavy", "label": "Heavy", "mass": 1.3, "warmup": 1.2, "range": 1.05, "touch": 0.93, "long": 1.07, "cooldown": 1.08, "power": 1.08 }
+    ],
+    "exponents": {
+      "damageScale": 0.65,
+      "cooldownScale": 0.2,
+      "warmupScale": 0.15,
+      "powerScale": 0.7,
+      "tempoScale": 0.3,
+      "rofCooldown": 0.8,
+      "rofBurst": 0.7,
+      "rofTicks": 0.5,
+      "massCoupling": 0.25,
+      "workCoupling": 0.35,
+      "costCoupling": 0.5
+    }
+  },
+  "ranged": [
+    {
+      "id": "pistol", "label": "Pistol",
+      "archetypes": [
+        { "id": "light", "label": "Light pistol", "summary": "A small self loading pistol: quick to bring up, short effective range, light damage.",
+          "roleHints": ["pistol"], "tierHint": "Industrial", "actions": ["semi", "burst"], "defaultAction": "semi", "rofClasses": ["slow", "medium", "fast"], "defaultRof": "medium", "refRpm": 400,
+          "calibres": ["tiny", "small", "medium"], "defaultCalibre": "small", "handlings": ["compact", "standard"], "defaultHandling": "standard",
+          "ammoFamilies": ["pistol"], "aiClassHints": ["BROOM", "Pistol"], "weaponClassHints": ["Ranged", "RangedLight"], "strengthShift": -0.15,
+          "burst": { "burst": 3, "auto": 3 },
+          "ranged": { "damage": 0.85, "range": 1.0, "warmup": 0.26, "cooldown": 0.63, "mass": 0.35, "work": 0.4, "ap": 1.0, "ticks": 1.0, "accuracy": [1.15, 1.0, 0.75, 0.75], "bash": [ { "label": "grip", "capacities": ["Blunt"] }, { "label": "barrel", "capacities": ["Blunt", "Poke"] } ] } },
+        { "id": "revolver", "label": "Revolver", "summary": "A double action revolver: slower cycle than an autopistol, a little more damage per shot.",
+          "roleHints": ["pistol"], "tierHint": "Industrial", "actions": ["semi"], "defaultAction": "semi", "rofClasses": ["slow", "medium", "fast"], "defaultRof": "medium", "refRpm": 150,
+          "calibres": ["small", "medium", "large"], "defaultCalibre": "medium", "handlings": ["compact", "standard"], "defaultHandling": "standard",
+          "ammoFamilies": ["pistol"], "aiClassHints": ["BROOM", "Pistol"], "weaponClassHints": ["Ranged", "RangedLight"], "strengthShift": -0.1,
+          "burst": { "burst": 1, "auto": 1 },
+          "ranged": { "damage": 1.0, "range": 1.0, "warmup": 0.26, "cooldown": 1.0, "mass": 0.41, "work": 0.33, "ap": 1.0, "ticks": 1.0, "accuracy": [1.15, 1.07, 1.0, 1.0], "bash": [ { "label": "grip", "capacities": ["Blunt"] }, { "label": "barrel", "capacities": ["Blunt", "Poke"] } ] } },
+        { "id": "heavy", "label": "Heavy or magnum pistol", "summary": "A large frame pistol with a hard hitting round: slow to settle, heavy in the hand.",
+          "roleHints": ["pistol"], "tierHint": "Industrial", "actions": ["semi"], "defaultAction": "semi", "rofClasses": ["slow", "medium"], "defaultRof": "slow", "refRpm": 100,
+          "calibres": ["medium", "large", "huge"], "defaultCalibre": "large", "handlings": ["standard", "heavy"], "defaultHandling": "standard",
+          "ammoFamilies": ["pistol"], "aiClassHints": ["BROOM", "Pistol"], "weaponClassHints": ["Ranged", "RangedLight"], "strengthShift": 0.15,
+          "burst": { "burst": 1, "auto": 1 },
+          "ranged": { "damage": 1.4, "range": 1.05, "warmup": 0.4, "cooldown": 1.3, "mass": 0.55, "work": 0.5, "ap": 1.1, "ticks": 1.0, "accuracy": [1.0, 1.0, 0.9, 0.9], "bash": [ { "label": "grip", "capacities": ["Blunt"] }, { "label": "barrel", "capacities": ["Blunt", "Poke"] } ] } },
+        { "id": "machine", "label": "Machine pistol", "summary": "A pistol that fires in bursts: very light rounds, short range, quick cycle.",
+          "roleHints": ["pistol", "smg"], "tierHint": "Industrial", "actions": ["burst", "full-auto"], "defaultAction": "burst", "rofClasses": ["slow", "medium", "fast"], "defaultRof": "medium", "refRpm": 900,
+          "calibres": ["tiny", "small", "medium"], "defaultCalibre": "small", "handlings": ["compact", "standard"], "defaultHandling": "standard",
+          "ammoFamilies": ["pistol"], "aiClassHints": ["BROOM", "SMG", "Pistol"], "weaponClassHints": ["Ranged", "RangedLight", "ShortShots"], "strengthShift": 0.0,
+          "burst": { "burst": 3, "auto": 4 },
+          "ranged": { "damage": 0.5, "range": 0.77, "warmup": 0.43, "cooldown": 0.56, "mass": 0.74, "work": 0.9, "ap": 1.0, "ticks": 0.7, "accuracy": [1.3, 0.93, 0.64, 0.38], "bash": [ { "label": "grip", "capacities": ["Blunt"] }, { "label": "barrel", "capacities": ["Blunt", "Poke"] } ] } }
+      ]
+    },
+    {
+      "id": "smg", "label": "Submachine gun",
+      "archetypes": [
+        { "id": "light", "label": "Light SMG", "summary": "A compact automatic weapon firing pistol rounds: fast cycle, short range, low damage per shot.",
+          "roleHints": ["smg"], "tierHint": "Industrial", "actions": ["burst", "full-auto", "semi"], "defaultAction": "burst", "rofClasses": ["slow", "medium", "fast"], "defaultRof": "medium", "refRpm": 800,
+          "calibres": ["tiny", "small", "medium"], "defaultCalibre": "small", "handlings": ["compact", "standard"], "defaultHandling": "standard",
+          "ammoFamilies": ["pistol"], "aiClassHints": ["BROOM", "SMG"], "weaponClassHints": ["Ranged", "ShortShots"], "strengthShift": -0.05,
+          "burst": { "burst": 3, "auto": 4 },
+          "ranged": { "damage": 0.6, "range": 0.8, "warmup": 0.5, "cooldown": 0.6, "mass": 0.6, "work": 1.2, "ap": 1.0, "ticks": 0.7, "accuracy": [1.25, 0.95, 0.65, 0.45], "bash": [ { "label": "grip", "capacities": ["Blunt"] }, { "label": "barrel", "capacities": ["Blunt", "Poke"] } ] } },
+        { "id": "heavy", "label": "Heavy SMG", "summary": "A larger submachine gun with a stronger pistol round: more damage per burst, a slower cycle.",
+          "roleHints": ["smg"], "tierHint": "Industrial", "actions": ["burst", "full-auto"], "defaultAction": "burst", "rofClasses": ["slow", "medium", "fast"], "defaultRof": "medium", "refRpm": 700,
+          "calibres": ["small", "medium", "large"], "defaultCalibre": "medium", "handlings": ["standard", "heavy"], "defaultHandling": "standard",
+          "ammoFamilies": ["pistol"], "aiClassHints": ["BROOM", "SMG"], "weaponClassHints": ["Ranged", "ShortShots", "RangedHeavy"], "strengthShift": 0.0,
+          "burst": { "burst": 3, "auto": 4 },
+          "ranged": { "damage": 1.0, "range": 0.88, "warmup": 0.78, "cooldown": 1.03, "mass": 1.0, "work": 1.9, "ap": 1.0, "ticks": 1.1, "accuracy": [1.2, 0.93, 0.64, 0.5], "bash": [ { "label": "grip", "capacities": ["Blunt"] }, { "label": "barrel", "capacities": ["Blunt", "Poke"] } ] } },
+        { "id": "pdw", "label": "Personal defence weapon", "summary": "A compact weapon with a small armor piercing round: modest damage, better penetration, steady handling.",
+          "roleHints": ["smg"], "tierHint": "Industrial", "actions": ["burst", "full-auto", "semi"], "defaultAction": "burst", "rofClasses": ["slow", "medium", "fast"], "defaultRof": "medium", "refRpm": 850,
+          "calibres": ["tiny", "small"], "defaultCalibre": "small", "handlings": ["compact", "standard"], "defaultHandling": "standard",
+          "ammoFamilies": ["pistol", "rifle"], "aiClassHints": ["BROOM", "SMG", "PDW"], "weaponClassHints": ["Ranged", "ShortShots"], "strengthShift": 0.0,
+          "burst": { "burst": 3, "auto": 4 },
+          "ranged": { "damage": 0.75, "range": 0.9, "warmup": 0.6, "cooldown": 0.8, "mass": 0.7, "work": 1.8, "ap": 1.6, "ticks": 0.8, "accuracy": [1.2, 1.0, 0.8, 0.6], "bash": [ { "label": "grip", "capacities": ["Blunt"] }, { "label": "barrel", "capacities": ["Blunt", "Poke"] } ] } }
+      ]
+    },
+    {
+      "id": "shotgun", "label": "Shotgun",
+      "archetypes": [
+        { "id": "pump", "label": "Pump shotgun", "summary": "A hard hitting short range weapon with a deliberate cycle.",
+          "roleHints": ["shotgun"], "tierHint": "Industrial", "actions": ["pump", "lever", "semi"], "defaultAction": "pump", "rofClasses": ["slow", "medium", "fast"], "defaultRof": "medium", "refRpm": 60,
+          "calibres": ["small", "medium", "large"], "defaultCalibre": "medium", "handlings": ["compact", "standard", "heavy"], "defaultHandling": "standard",
+          "ammoFamilies": ["shotgun"], "aiClassHints": ["BROOM", "Shotgun"], "weaponClassHints": ["Ranged", "ShortShots"], "strengthShift": -0.1,
+          "burst": { "burst": 1, "auto": 1 },
+          "ranged": { "damage": 1.5, "range": 0.61, "warmup": 0.78, "cooldown": 0.78, "mass": 1.0, "work": 1.0, "ap": 0.52, "ticks": 1.0, "accuracy": [1.15, 1.24, 1.4, 1.6], "bash": [ { "label": "stock", "capacities": ["Blunt"] }, { "label": "barrel", "capacities": ["Blunt", "Poke"] } ] } },
+        { "id": "semi", "label": "Semi automatic shotgun", "summary": "A shotgun that reloads itself: faster follow up shots, a little less punch.",
+          "roleHints": ["shotgun"], "tierHint": "Industrial", "actions": ["semi", "pump"], "defaultAction": "semi", "rofClasses": ["slow", "medium", "fast"], "defaultRof": "medium", "refRpm": 150,
+          "calibres": ["small", "medium", "large"], "defaultCalibre": "medium", "handlings": ["standard", "heavy"], "defaultHandling": "standard",
+          "ammoFamilies": ["shotgun"], "aiClassHints": ["BROOM", "Shotgun"], "weaponClassHints": ["Ranged", "ShortShots"], "strengthShift": 0.0,
+          "burst": { "burst": 2, "auto": 2 },
+          "ranged": { "damage": 1.5, "range": 0.65, "warmup": 0.8, "cooldown": 0.7, "mass": 1.15, "work": 1.7, "ap": 0.52, "ticks": 1.0, "accuracy": [1.1, 1.2, 1.3, 1.4], "bash": [ { "label": "stock", "capacities": ["Blunt"] }, { "label": "barrel", "capacities": ["Blunt", "Poke"] } ] } },
+        { "id": "auto", "label": "Automatic shotgun", "summary": "A heavy shotgun firing bursts: very short range, large damage per burst.",
+          "roleHints": ["shotgun"], "tierHint": "Industrial", "actions": ["burst", "full-auto"], "defaultAction": "burst", "rofClasses": ["slow", "medium", "fast"], "defaultRof": "medium", "refRpm": 300,
+          "calibres": ["medium", "large"], "defaultCalibre": "medium", "handlings": ["standard", "heavy"], "defaultHandling": "standard",
+          "ammoFamilies": ["shotgun"], "aiClassHints": ["BROOM", "Shotgun"], "weaponClassHints": ["Ranged", "ShortShots"], "strengthShift": 0.2,
+          "burst": { "burst": 3, "auto": 4 },
+          "ranged": { "damage": 1.5, "range": 0.5, "warmup": 1.04, "cooldown": 0.84, "mass": 1.3, "work": 2.6, "ap": 0.52, "ticks": 1.0, "accuracy": [0.85, 0.9, 1.0, 1.1], "bash": [ { "label": "stock", "capacities": ["Blunt"] }, { "label": "barrel", "capacities": ["Blunt", "Poke"] } ] } }
+      ]
+    },
+    {
+      "id": "rifle", "label": "Rifle",
+      "archetypes": [
+        { "id": "carbine", "label": "Carbine", "summary": "A short rifle: handy and quick to bring up, a little less damage and reach than a full rifle.",
+          "roleHints": ["rifle"], "tierHint": "Industrial", "actions": ["semi", "burst", "full-auto", "bolt", "lever"], "defaultAction": "burst", "rofClasses": ["slow", "medium", "fast"], "defaultRof": "medium", "refRpm": 600,
+          "calibres": ["small", "medium", "large"], "defaultCalibre": "medium", "handlings": ["compact", "standard"], "defaultHandling": "standard",
+          "ammoFamilies": ["rifle"], "aiClassHints": ["AR", "Carbine", "Rifle"], "weaponClassHints": ["Ranged"], "strengthShift": 0.05,
+          "burst": { "burst": 3, "auto": 4 },
+          "ranged": { "damage": 0.85, "range": 1.0, "warmup": 0.8, "cooldown": 1.0, "mass": 0.9, "work": 2.5, "ap": 1.0, "ticks": 1.0, "accuracy": [0.9, 1.0, 1.15, 1.2], "bash": [ { "label": "stock", "capacities": ["Blunt"] }, { "label": "barrel", "capacities": ["Blunt", "Poke"] } ] } },
+        { "id": "assault", "label": "Assault rifle", "summary": "A balanced automatic rifle: medium damage, good reach, bursts of three.",
+          "roleHints": ["rifle"], "tierHint": "Industrial", "actions": ["burst", "full-auto", "semi"], "defaultAction": "burst", "rofClasses": ["slow", "medium", "fast"], "defaultRof": "medium", "refRpm": 650,
+          "calibres": ["small", "medium", "large"], "defaultCalibre": "medium", "handlings": ["compact", "standard", "heavy"], "defaultHandling": "standard",
+          "ammoFamilies": ["rifle"], "aiClassHints": ["AR", "AssaultRifle", "Rifle"], "weaponClassHints": ["Ranged"], "strengthShift": 0.25,
+          "burst": { "burst": 3, "auto": 4 },
+          "ranged": { "damage": 0.92, "range": 1.19, "warmup": 0.87, "cooldown": 1.06, "mass": 1.03, "work": 3.3, "ap": 1.0, "ticks": 1.0, "accuracy": [0.86, 1.0, 1.18, 1.37], "bash": [ { "label": "stock", "capacities": ["Blunt"] }, { "label": "barrel", "capacities": ["Blunt", "Poke"] } ] } },
+        { "id": "battle", "label": "Battle rifle", "summary": "A full power self loading rifle: more damage and penetration than an assault rifle, a slower cycle.",
+          "roleHints": ["rifle"], "tierHint": "Industrial", "actions": ["semi", "burst", "full-auto"], "defaultAction": "semi", "rofClasses": ["slow", "medium", "fast"], "defaultRof": "medium", "refRpm": 500,
+          "calibres": ["medium", "large", "huge"], "defaultCalibre": "large", "handlings": ["standard", "heavy"], "defaultHandling": "standard",
+          "ammoFamilies": ["rifle"], "aiClassHints": ["AR", "BattleRifle", "Rifle"], "weaponClassHints": ["Ranged"], "strengthShift": 0.25,
+          "burst": { "burst": 3, "auto": 4 },
+          "ranged": { "damage": 1.35, "range": 1.2, "warmup": 1.0, "cooldown": 1.25, "mass": 1.35, "work": 3.7, "ap": 1.5, "ticks": 1.2, "accuracy": [0.8, 0.95, 1.05, 1.15], "bash": [ { "label": "stock", "capacities": ["Blunt"] }, { "label": "barrel", "capacities": ["Blunt", "Poke"] } ] } },
+        { "id": "bolt", "label": "Bolt action hunting rifle", "summary": "A single shot rifle with long reach and strong rounds: slow to aim, accurate far away.",
+          "roleHints": ["sniper", "rifle"], "tierHint": "Industrial", "actions": ["bolt", "lever"], "defaultAction": "bolt", "rofClasses": ["slow", "medium", "fast"], "defaultRof": "medium", "refRpm": 20,
+          "calibres": ["small", "medium", "large", "huge"], "defaultCalibre": "large", "handlings": ["compact", "standard", "heavy"], "defaultHandling": "standard",
+          "ammoFamilies": ["rifle"], "aiClassHints": ["SR", "Hunting", "Rifle"], "weaponClassHints": ["Ranged", "LongShots"], "strengthShift": 0.0,
+          "burst": { "burst": 1, "auto": 1 },
+          "ranged": { "damage": 1.5, "range": 1.42, "warmup": 1.48, "cooldown": 0.94, "mass": 1.03, "work": 1.0, "ap": 1.0, "ticks": 1.0, "accuracy": [0.93, 1.14, 1.64, 2.0], "bash": [ { "label": "stock", "capacities": ["Blunt"] }, { "label": "barrel", "capacities": ["Blunt", "Poke"] } ] } },
+        { "id": "dmr", "label": "Designated marksman rifle", "summary": "A self loading rifle tuned for single aimed shots: long reach, long aim time.",
+          "roleHints": ["sniper", "rifle"], "tierHint": "Industrial", "actions": ["semi", "bolt"], "defaultAction": "semi", "rofClasses": ["slow", "medium", "fast"], "defaultRof": "medium", "refRpm": 60,
+          "calibres": ["medium", "large", "huge"], "defaultCalibre": "large", "handlings": ["standard", "heavy"], "defaultHandling": "standard",
+          "ammoFamilies": ["rifle"], "aiClassHints": ["SR", "DMR", "Marksman"], "weaponClassHints": ["Ranged", "LongShots"], "strengthShift": 0.05,
+          "burst": { "burst": 1, "auto": 1 },
+          "ranged": { "damage": 1.7, "range": 1.55, "warmup": 1.8, "cooldown": 1.0, "mass": 1.2, "work": 3.5, "ap": 1.1, "ticks": 1.0, "accuracy": [0.75, 1.0, 1.5, 1.9], "bash": [ { "label": "stock", "capacities": ["Blunt"] }, { "label": "barrel", "capacities": ["Blunt", "Poke"] } ] } },
+        { "id": "sniper", "label": "Sniper rifle", "summary": "The longest reach and hardest hit of the single shot rifles, with a long warmup and a slow cooldown.",
+          "roleHints": ["sniper", "rifle"], "tierHint": "Industrial", "actions": ["bolt", "semi"], "defaultAction": "bolt", "rofClasses": ["slow", "medium", "fast"], "defaultRof": "medium", "refRpm": 15,
+          "calibres": ["large", "huge"], "defaultCalibre": "huge", "handlings": ["standard", "heavy"], "defaultHandling": "standard",
+          "ammoFamilies": ["rifle"], "aiClassHints": ["SR", "Sniper"], "weaponClassHints": ["Ranged", "LongShots", "RangedHeavy"], "strengthShift": 0.0,
+          "burst": { "burst": 1, "auto": 1 },
+          "ranged": { "damage": 2.08, "range": 1.73, "warmup": 3.04, "cooldown": 0.94, "mass": 1.18, "work": 3.75, "ap": 1.0, "ticks": 1.0, "accuracy": [0.7, 1.0, 1.6, 2.25], "bash": [ { "label": "stock", "capacities": ["Blunt"] }, { "label": "barrel", "capacities": ["Blunt", "Poke"] } ] } },
+        { "id": "anti-materiel", "label": "Anti materiel rifle", "summary": "A very heavy single shot rifle: huge damage and penetration, long warmup, slow cooldown, heavy to carry.",
+          "roleHints": ["sniper", "heavy", "rifle"], "tierHint": "Industrial", "actions": ["bolt", "semi"], "defaultAction": "semi", "rofClasses": ["slow", "medium", "fast"], "defaultRof": "medium", "refRpm": 10,
+          "calibres": ["huge"], "defaultCalibre": "huge", "handlings": ["standard", "heavy"], "defaultHandling": "standard",
+          "ammoFamilies": ["rifle"], "aiClassHints": ["SR", "AntiMateriel"], "weaponClassHints": ["Ranged", "LongShots", "RangedHeavy"], "strengthShift": 0.35,
+          "burst": { "burst": 1, "auto": 1 },
+          "ranged": { "damage": 3.0, "range": 2.0, "warmup": 3.5, "cooldown": 1.5, "mass": 2.5, "work": 5.0, "ap": 1.6, "ticks": 1.0, "accuracy": [0.6, 0.9, 1.5, 2.0], "bash": [ { "label": "stock", "capacities": ["Blunt"] }, { "label": "barrel", "capacities": ["Blunt", "Poke"] } ] } }
+      ]
+    },
+    {
+      "id": "machine-gun", "label": "Machine gun",
+      "archetypes": [
+        { "id": "lmg", "label": "Light machine gun", "summary": "A belt or box fed automatic weapon: long bursts, a long warmup, heavy to carry.",
+          "roleHints": ["heavy"], "tierHint": "Industrial", "actions": ["full-auto", "burst"], "defaultAction": "full-auto", "rofClasses": ["slow", "medium", "fast"], "defaultRof": "medium", "refRpm": 700,
+          "calibres": ["medium", "large"], "defaultCalibre": "medium", "handlings": ["standard", "heavy"], "defaultHandling": "standard",
+          "ammoFamilies": ["rifle", "machine"], "aiClassHints": ["LMG", "Suppressive", "MachineGun"], "weaponClassHints": ["Ranged", "RangedHeavy"], "strengthShift": 0.2,
+          "burst": { "burst": 3, "auto": 6 },
+          "ranged": { "damage": 1.0, "range": 1.0, "warmup": 1.57, "cooldown": 1.0, "mass": 2.5, "work": 2.8, "ap": 1.0, "ticks": 0.7, "accuracy": [0.57, 0.69, 0.64, 0.65], "bash": [ { "label": "stock", "capacities": ["Blunt"] }, { "label": "barrel", "capacities": ["Blunt", "Poke"] } ] } },
+        { "id": "gpmg", "label": "General purpose machine gun", "summary": "A full power machine gun: more damage per round than a light machine gun, heavier, longer reach.",
+          "roleHints": ["heavy"], "tierHint": "Industrial", "actions": ["full-auto", "burst"], "defaultAction": "full-auto", "rofClasses": ["slow", "medium", "fast"], "defaultRof": "medium", "refRpm": 650,
+          "calibres": ["large", "huge"], "defaultCalibre": "large", "handlings": ["standard", "heavy"], "defaultHandling": "standard",
+          "ammoFamilies": ["rifle", "machine"], "aiClassHints": ["LMG", "Suppressive", "GPMG"], "weaponClassHints": ["Ranged", "RangedHeavy"], "strengthShift": 0.25,
+          "burst": { "burst": 4, "auto": 8 },
+          "ranged": { "damage": 1.3, "range": 1.15, "warmup": 1.6, "cooldown": 1.0, "mass": 3.0, "work": 3.2, "ap": 1.2, "ticks": 0.7, "accuracy": [0.55, 0.68, 0.64, 0.65], "bash": [ { "label": "stock", "capacities": ["Blunt"] }, { "label": "barrel", "capacities": ["Blunt", "Poke"] } ] } },
+        { "id": "heavy", "label": "Heavy machine gun or minigun", "summary": "A rotary or heavy weapon: very long bursts of light damage, a long spin up, very heavy.",
+          "roleHints": ["heavy"], "tierHint": "Industrial", "actions": ["full-auto"], "defaultAction": "full-auto", "rofClasses": ["slow", "medium", "fast"], "defaultRof": "medium", "refRpm": 3000,
+          "calibres": ["small", "medium", "large"], "defaultCalibre": "small", "handlings": ["standard", "heavy"], "defaultHandling": "standard",
+          "ammoFamilies": ["rifle", "machine"], "aiClassHints": ["Suppressive", "LMG", "Minigun"], "weaponClassHints": ["Ranged", "RangedHeavy"], "strengthShift": 0.5,
+          "burst": { "burst": 6, "auto": 25 },
+          "ranged": { "damage": 0.83, "range": 1.19, "warmup": 2.17, "cooldown": 0.94, "mass": 2.9, "work": 5.0, "ap": 1.0, "ticks": 0.5, "accuracy": [0.3, 0.36, 0.45, 0.45], "bash": [ { "label": "barrels", "capacities": ["Blunt"] } ] } }
+      ]
+    },
+    {
+      "id": "bow", "label": "Bow and crossbow",
+      "archetypes": [
+        { "id": "short", "label": "Short bow", "summary": "A simple bow: light arrows, short reach, quick to draw.",
+          "roleHints": ["bow"], "tierHint": "Neolithic", "actions": ["draw"], "defaultAction": "draw", "rofClasses": ["slow", "medium", "fast"], "defaultRof": "medium", "refRpm": 10,
+          "calibres": ["tiny", "small", "medium"], "defaultCalibre": "small", "handlings": ["compact", "standard"], "defaultHandling": "standard",
+          "ammoFamilies": ["arrow", "bow"], "aiClassHints": ["Bow"], "weaponClassHints": ["Ranged", "RangedLight"], "strengthShift": -0.1,
+          "burst": { "burst": 1, "auto": 1 },
+          "ranged": { "damage": 0.92, "range": 0.88, "warmup": 1.17, "cooldown": 1.03, "mass": 0.24, "work": 0.2, "ap": 1.0, "ticks": 1.0, "accuracy": [1.07, 0.93, 0.82, 0.62], "bash": [ { "label": "limb", "capacities": ["Blunt", "Poke"] } ] } },
+        { "id": "recurve", "label": "Recurve bow", "summary": "A better bow: more damage and reach than a short bow, a little slower.",
+          "roleHints": ["bow"], "tierHint": "Neolithic", "actions": ["draw"], "defaultAction": "draw", "rofClasses": ["slow", "medium", "fast"], "defaultRof": "medium", "refRpm": 9,
+          "calibres": ["small", "medium", "large"], "defaultCalibre": "medium", "handlings": ["compact", "standard"], "defaultHandling": "standard",
+          "ammoFamilies": ["arrow", "bow"], "aiClassHints": ["Bow"], "weaponClassHints": ["Ranged", "RangedLight"], "strengthShift": 0.2,
+          "burst": { "burst": 1, "auto": 1 },
+          "ranged": { "damage": 1.17, "range": 1.0, "warmup": 1.26, "cooldown": 1.03, "mass": 0.38, "work": 0.42, "ap": 1.0, "ticks": 1.0, "accuracy": [1.0, 1.11, 1.18, 0.88], "bash": [ { "label": "limb", "capacities": ["Blunt", "Poke"] } ] } },
+        { "id": "great", "label": "Great bow", "summary": "A war bow: heavy arrows, the longest reach of the bows, a long draw.",
+          "roleHints": ["bow"], "tierHint": "Neolithic", "actions": ["draw"], "defaultAction": "draw", "rofClasses": ["slow", "medium", "fast"], "defaultRof": "medium", "refRpm": 7,
+          "calibres": ["medium", "large", "huge"], "defaultCalibre": "large", "handlings": ["standard", "heavy"], "defaultHandling": "standard",
+          "ammoFamilies": ["arrow", "bow"], "aiClassHints": ["Bow"], "weaponClassHints": ["Ranged", "RangedHeavy"], "strengthShift": 0.45,
+          "burst": { "burst": 1, "auto": 1 },
+          "ranged": { "damage": 1.42, "range": 1.15, "warmup": 1.74, "cooldown": 0.94, "mass": 0.88, "work": 0.75, "ap": 0.6, "ticks": 1.0, "accuracy": [0.93, 1.21, 1.36, 1.25], "bash": [ { "label": "limb", "capacities": ["Blunt", "Poke"] } ] } },
+        { "id": "crossbow", "label": "Crossbow", "summary": "A mechanical bow: strong bolts, good penetration, a long cranking cooldown.",
+          "roleHints": ["bow"], "tierHint": "Medieval", "actions": ["draw"], "defaultAction": "draw", "rofClasses": ["slow", "medium", "fast"], "defaultRof": "medium", "refRpm": 5,
+          "calibres": ["medium", "large"], "defaultCalibre": "medium", "handlings": ["standard", "heavy"], "defaultHandling": "standard",
+          "ammoFamilies": ["bolt", "arrow", "bow"], "aiClassHints": ["Crossbow", "Bow"], "weaponClassHints": ["Ranged"], "strengthShift": 0.4,
+          "burst": { "burst": 1, "auto": 1 },
+          "ranged": { "damage": 1.5, "range": 1.1, "warmup": 1.6, "cooldown": 1.8, "mass": 1.2, "work": 1.0, "ap": 1.4, "ticks": 1.0, "accuracy": [0.9, 1.0, 1.2, 1.0], "bash": [ { "label": "stock", "capacities": ["Blunt"] } ] } }
+      ]
+    }
+  ],
+  "melee": [
+    {
+      "id": "knife", "label": "Knife",
+      "archetypes": [
+        { "id": "knife", "label": "Knife", "summary": "A small blade: quick swings, modest damage, very light.",
+          "roleHints": ["blade"], "tierHint": "Neolithic", "rofClasses": ["slow", "medium", "fast"], "defaultRof": "medium",
+          "handlings": ["compact", "standard", "heavy"], "defaultHandling": "standard", "stuffCategories": ["Metallic", "Woody", "Stony"], "weaponClassHints": ["Melee", "MeleePiercer"], "strengthShift": -0.1,
+          "melee": { "mass": 0.35, "work": 0.25, "stuffCount": 0.6, "cooldown": 1.0, "tools": [
+            { "label": "handle", "capacities": ["Blunt"], "power": 0.67, "cooldown": 1.0 },
+            { "label": "blade", "capacities": ["Cut"], "power": 0.9, "cooldown": 0.75 },
+            { "label": "point", "capacities": ["Stab"], "power": 0.97, "cooldown": 1.0 } ] } }
+      ]
+    },
+    {
+      "id": "sword", "label": "Sword",
+      "archetypes": [
+        { "id": "short", "label": "Short sword", "summary": "A one handed blade: a stab and a cut of equal power, an even tempo.",
+          "roleHints": ["blade"], "tierHint": "Medieval", "rofClasses": ["slow", "medium", "fast"], "defaultRof": "medium",
+          "handlings": ["compact", "standard", "heavy"], "defaultHandling": "standard", "stuffCategories": ["Metallic"], "weaponClassHints": ["Melee", "MeleePiercer"], "strengthShift": 0.0,
+          "melee": { "mass": 0.6, "work": 1.7, "stuffCount": 1.0, "cooldown": 1.0, "tools": [
+            { "label": "handle", "capacities": ["Blunt"], "power": 0.67, "cooldown": 1.0 },
+            { "label": "point", "capacities": ["Stab"], "power": 1.2, "cooldown": 1.0 },
+            { "label": "edge", "capacities": ["Cut"], "power": 1.2, "cooldown": 1.0 } ] } },
+        { "id": "long", "label": "Long sword", "summary": "A two handed or bastard blade: much harder hitting than a short sword, with a slower swing.",
+          "roleHints": ["blade"], "tierHint": "Medieval", "rofClasses": ["slow", "medium", "fast"], "defaultRof": "medium",
+          "handlings": ["compact", "standard", "heavy"], "defaultHandling": "standard", "stuffCategories": ["Metallic"], "weaponClassHints": ["Melee", "MeleePiercer"], "strengthShift": 0.2,
+          "melee": { "mass": 1.3, "work": 2.5, "stuffCount": 1.5, "cooldown": 1.0, "tools": [
+            { "label": "handle", "capacities": ["Blunt"], "power": 0.67, "cooldown": 1.0 },
+            { "label": "point", "capacities": ["Stab"], "power": 1.7, "cooldown": 1.3 },
+            { "label": "edge", "capacities": ["Cut"], "power": 1.7, "cooldown": 1.3 } ] } }
+      ]
+    },
+    {
+      "id": "axe", "label": "Axe",
+      "archetypes": [
+        { "id": "axe", "label": "Axe", "summary": "A single edge on a haft: one strong cut, a blunt haft.",
+          "roleHints": ["blade"], "tierHint": "Medieval", "rofClasses": ["slow", "medium", "fast"], "defaultRof": "medium",
+          "handlings": ["compact", "standard", "heavy"], "defaultHandling": "standard", "stuffCategories": ["Metallic", "Woody"], "weaponClassHints": ["Melee", "MeleePiercer"], "strengthShift": 0.0,
+          "melee": { "mass": 1.0, "work": 1.0, "stuffCount": 1.0, "cooldown": 1.0, "tools": [
+            { "label": "handle", "capacities": ["Poke"], "power": 0.67, "cooldown": 1.0 },
+            { "label": "edge", "capacities": ["Cut"], "power": 1.12, "cooldown": 1.0 } ] } }
+      ]
+    },
+    {
+      "id": "mace-hammer", "label": "Mace and hammer",
+      "archetypes": [
+        { "id": "mace", "label": "Mace", "summary": "A blunt head on a haft: one heavy blunt attack, a poking haft.",
+          "roleHints": ["blunt"], "tierHint": "Medieval", "rofClasses": ["slow", "medium", "fast"], "defaultRof": "medium",
+          "handlings": ["compact", "standard", "heavy"], "defaultHandling": "standard", "stuffCategories": ["Metallic", "Woody"], "weaponClassHints": ["Melee", "MeleeBlunt"], "strengthShift": 0.0,
+          "melee": { "mass": 0.9, "work": 0.9, "stuffCount": 1.0, "cooldown": 1.0, "tools": [
+            { "label": "handle", "capacities": ["Poke"], "power": 0.67, "cooldown": 1.0 },
+            { "label": "head", "capacities": ["Blunt"], "power": 1.17, "cooldown": 1.0 } ] } },
+        { "id": "hammer", "label": "War hammer", "summary": "A heavy blunt head: the hardest blunt hit of the one handed weapons, a slow swing.",
+          "roleHints": ["blunt"], "tierHint": "Medieval", "rofClasses": ["slow", "medium", "fast"], "defaultRof": "medium",
+          "handlings": ["compact", "standard", "heavy"], "defaultHandling": "standard", "stuffCategories": ["Metallic"], "weaponClassHints": ["Melee", "MeleeBlunt"], "strengthShift": 0.1,
+          "melee": { "mass": 3.3, "work": 2.5, "stuffCount": 2.0, "cooldown": 1.0, "tools": [
+            { "label": "handle", "capacities": ["Poke"], "power": 0.82, "cooldown": 1.3 },
+            { "label": "head", "capacities": ["Blunt"], "power": 1.5, "cooldown": 1.3 } ] } }
+      ]
+    },
+    {
+      "id": "spear", "label": "Spear and polearm",
+      "archetypes": [
+        { "id": "spear", "label": "Spear", "summary": "A thrusting weapon: a strong stab with extra penetration, a slow tempo.",
+          "roleHints": ["piercing", "blade"], "tierHint": "Neolithic", "rofClasses": ["slow", "medium", "fast"], "defaultRof": "medium",
+          "handlings": ["compact", "standard", "heavy"], "defaultHandling": "standard", "stuffCategories": ["Metallic", "Woody", "Stony"], "weaponClassHints": ["Melee", "MeleePiercer"], "strengthShift": 0.3,
+          "melee": { "mass": 1.4, "work": 1.7, "stuffCount": 1.3, "cooldown": 1.0, "tools": [
+            { "label": "shaft", "capacities": ["Blunt", "Poke"], "power": 0.97, "cooldown": 1.3 },
+            { "label": "point", "capacities": ["Stab"], "power": 1.7, "cooldown": 1.3, "apFactor": 1.45 } ] } },
+        { "id": "polearm", "label": "Polearm", "summary": "A long hafted weapon with a blade or hook: heavy damage and a very slow swing.",
+          "roleHints": ["piercing", "blade"], "tierHint": "Medieval", "rofClasses": ["slow", "medium", "fast"], "defaultRof": "medium",
+          "handlings": ["compact", "standard", "heavy"], "defaultHandling": "standard", "stuffCategories": ["Metallic"], "weaponClassHints": ["Melee", "MeleePiercer"], "strengthShift": 0.4,
+          "melee": { "mass": 2.2, "work": 2.5, "stuffCount": 1.8, "cooldown": 1.0, "tools": [
+            { "label": "shaft", "capacities": ["Blunt", "Poke"], "power": 0.9, "cooldown": 1.5 },
+            { "label": "head", "capacities": ["Stab", "Cut"], "power": 1.9, "cooldown": 1.5, "apFactor": 1.2 } ] } }
+      ]
+    },
+    {
+      "id": "club-staff", "label": "Club and staff",
+      "archetypes": [
+        { "id": "club", "label": "Club", "summary": "A simple blunt weapon: easy to make, a modest blunt hit, a quick tempo.",
+          "roleHints": ["blunt"], "tierHint": "Neolithic", "rofClasses": ["slow", "medium", "fast"], "defaultRof": "medium",
+          "handlings": ["compact", "standard", "heavy"], "defaultHandling": "standard", "stuffCategories": ["Woody", "Stony"], "weaponClassHints": ["Melee", "MeleeBlunt"], "strengthShift": -0.1,
+          "melee": { "mass": 1.4, "work": 0.15, "stuffCount": 1.0, "cooldown": 1.0, "tools": [
+            { "label": "handle", "capacities": ["Poke"], "power": 0.67, "cooldown": 1.0 },
+            { "label": "head", "capacities": ["Blunt"], "power": 1.05, "cooldown": 1.0 } ] } },
+        { "id": "staff", "label": "Staff", "summary": "A single blunt attack: light and slow.",
+          "roleHints": ["blunt"], "tierHint": "Neolithic", "rofClasses": ["slow", "medium", "fast"], "defaultRof": "medium",
+          "handlings": ["compact", "standard", "heavy"], "defaultHandling": "standard", "stuffCategories": ["Woody"], "weaponClassHints": ["Melee", "MeleeBlunt"], "strengthShift": -0.2,
+          "melee": { "mass": 0.8, "work": 0.3, "stuffCount": 0.8, "cooldown": 1.0, "tools": [
+            { "label": "head", "capacities": ["Blunt"], "power": 0.9, "cooldown": 1.3 } ] } }
+      ]
+    }
+  ],
+  "deriveRules": {
+    "ranged": [
+      { "archetype": "bow/great", "when": [ { "stat": "tier", "max": 1 }, { "stat": "burst", "max": 1 }, { "stat": "damage_ratio", "min": 1.3 } ] },
+      { "archetype": "bow/recurve", "when": [ { "stat": "tier", "max": 1 }, { "stat": "burst", "max": 1 }, { "stat": "damage_ratio", "min": 1.05 } ] },
+      { "archetype": "bow/short", "when": [ { "stat": "tier", "max": 1 }, { "stat": "burst", "max": 1 } ] },
+      { "archetype": "machine-gun/heavy", "when": [ { "stat": "burst", "min": 12 } ] },
+      { "archetype": "machine-gun/lmg", "when": [ { "stat": "burst", "min": 4 } ] },
+      { "archetype": "rifle/anti-materiel", "when": [ { "stat": "burst", "max": 1 }, { "stat": "damage_ratio", "min": 2.6 } ] },
+      { "archetype": "rifle/sniper", "when": [ { "stat": "burst", "max": 1 }, { "stat": "warmup_ratio", "min": 2.2 } ] },
+      { "archetype": "rifle/bolt", "when": [ { "stat": "burst", "max": 1 }, { "stat": "range_ratio", "min": 1.3 }, { "stat": "warmup_ratio", "min": 1.2 } ] },
+      { "archetype": "shotgun/auto", "when": [ { "stat": "burst", "min": 2 }, { "stat": "range_ratio", "max": 0.6 } ] },
+      { "archetype": "shotgun/pump", "when": [ { "stat": "burst", "max": 1 }, { "stat": "range_ratio", "max": 0.7 }, { "stat": "damage_ratio", "min": 1.2 } ] },
+      { "archetype": "pistol/machine", "when": [ { "stat": "burst", "min": 2 }, { "stat": "range_ratio", "max": 0.85 }, { "stat": "damage_ratio", "max": 0.65 } ] },
+      { "archetype": "smg/heavy", "when": [ { "stat": "burst", "min": 2 }, { "stat": "range_ratio", "max": 0.95 } ] },
+      { "archetype": "rifle/battle", "when": [ { "stat": "burst", "min": 2 }, { "stat": "damage_ratio", "min": 1.25 } ] },
+      { "archetype": "rifle/assault", "when": [ { "stat": "burst", "min": 2 } ] },
+      { "archetype": "pistol/heavy", "when": [ { "stat": "burst", "max": 1 }, { "stat": "damage_ratio", "min": 1.4 } ] },
+      { "archetype": "pistol/revolver", "when": [ { "stat": "burst", "max": 1 }, { "stat": "cooldown_ratio", "min": 0.95 } ] },
+      { "archetype": "pistol/light", "when": [ { "stat": "burst", "max": 1 } ] }
+    ],
+    "melee": [
+      { "archetype": "spear/polearm", "when": [ { "stat": "has_stab", "min": 1 }, { "stat": "has_cut", "max": 0 }, { "stat": "cooldown_ratio", "min": 1.4 } ] },
+      { "archetype": "spear/spear", "when": [ { "stat": "has_stab", "min": 1 }, { "stat": "has_cut", "max": 0 } ] },
+      { "archetype": "club-staff/staff", "when": [ { "stat": "only_blunt", "min": 1 }, { "stat": "tools", "max": 1 } ] },
+      { "archetype": "mace-hammer/hammer", "when": [ { "stat": "only_blunt", "min": 1 }, { "stat": "cooldown_ratio", "min": 1.2 }, { "stat": "tier", "min": 1 } ] },
+      { "archetype": "club-staff/club", "when": [ { "stat": "only_blunt", "min": 1 }, { "stat": "tier", "max": 0 } ] },
+      { "archetype": "mace-hammer/mace", "when": [ { "stat": "only_blunt", "min": 1 } ] },
+      { "archetype": "knife/knife", "when": [ { "stat": "has_cut", "min": 1 }, { "stat": "has_stab", "min": 1 }, { "stat": "mass_ratio", "max": 0.55 } ] },
+      { "archetype": "sword/long", "when": [ { "stat": "has_cut", "min": 1 }, { "stat": "has_stab", "min": 1 }, { "stat": "cooldown_ratio", "min": 1.2 } ] },
+      { "archetype": "sword/short", "when": [ { "stat": "has_cut", "min": 1 }, { "stat": "has_stab", "min": 1 } ] },
+      { "archetype": "axe/axe", "when": [ { "stat": "has_cut", "min": 1 } ] }
+    ]
+  }
+}

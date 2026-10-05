@@ -284,6 +284,36 @@ pub(crate) fn new_draft_cmd(s: &Session, args: &NewArgs) -> CliResult {
     }
     let mut draft =
         new_draft(args.kind, &args.name, args.label.as_deref()).map_err(CliError::failed)?;
+    if let Some(archetype) = &args.archetype {
+        let (draft, proposal, filled) = super::archetype::fill_new_draft(
+            s, args.kind, archetype, &args.arch, &args.set, draft,
+        )?;
+        let id = drafts::save(s, &project_id(&summary), None, &draft)?;
+        let doc = json!({
+            "id": id, "projectId": project_id(&summary), "filled": filled,
+            "proposal": proposal, "draft": draft,
+        });
+        s.emit(&doc, || {
+            let root = str_at(&summary, "/path");
+            let mut out = format!(
+                "created draft {id} for {} in {root} from the archetype {archetype}\n  filled {filled} numbers; typed values are never overwritten\n",
+                args.name
+            );
+            out.push_str(&super::archetype::render(&proposal));
+            out.push_str(&next_steps(&id, root, false));
+            out
+        });
+        return Ok(());
+    }
+    if args.arch.ce
+        || args.arch.action.is_some()
+        || args.arch.rof.is_some()
+        || args.arch.caliber.is_some()
+    {
+        return Err(CliError::usage(
+            "the descriptors need --archetype FAMILY/TYPE (`designer archetypes` lists them)",
+        ));
+    }
     let mut filled = 0;
     apply_sets(&mut draft, &args.set).map_err(CliError::usage)?;
     let mut notes: Vec<String> = Vec::new();

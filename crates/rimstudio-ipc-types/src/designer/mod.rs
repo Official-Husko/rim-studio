@@ -17,9 +17,11 @@
 //! - [`ce_block`]: the bow, platform, under barrel, tool plan and extras members of the Combat Extended block.
 //! - [`ce_suggest`]: the suggestions for the optional Combat Extended block.
 //! - [`ce_ammo`]: the ammo catalogue, the suggestions for a new ammo type and the custom ammo spec.
+//! - [`archetype`]: weapon archetypes: the catalogue, the proposal of every number and its application.
 //! - [`assets`]: texture imports, custom sounds and `designer_asset_info`.
 //! - [`plan`]: the write plan and the apply report.
 
+pub mod archetype;
 pub mod assets;
 pub mod calibrate;
 pub mod carried;
@@ -38,6 +40,7 @@ pub mod reference;
 pub mod spec;
 
 pub use crate::diagnostic::DiagnosticDto;
+pub use archetype::*;
 pub use assets::*;
 pub use calibrate::*;
 pub use carried::*;

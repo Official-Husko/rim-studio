@@ -1,0 +1,16 @@
+{
+  "archetype": "rifle/assault",
+  "descriptors": {
+    "action": "burst",
+    "rof": {
+      "rpm": 650.0
+    },
+    "calibre": "medium",
+    "handling": "standard",
+    "tier": "industrial"
+  },
+  "balance": {
+    "percentile": 0.7
+  },
+  "mode": "vanilla"
+}

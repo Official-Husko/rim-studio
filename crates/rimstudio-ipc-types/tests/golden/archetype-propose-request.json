@@ -1,0 +1,16 @@
+{
+  "kind": "ranged",
+  "archetype": "rifle/assault",
+  "descriptors": {
+    "action": "burst",
+    "rof": {
+      "rpm": 650.0
+    },
+    "calibre": "medium",
+    "handling": "standard",
+    "tier": "industrial"
+  },
+  "balanceTarget": "stronger",
+  "mode": "combat-extended",
+  "strength": 4.5
+}

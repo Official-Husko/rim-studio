@@ -54,6 +54,8 @@ pub struct Engine {
     keys: [OnceLock<String>; 2],
     ce_snapshot: Option<Arc<Snapshot>>,
     ce: OnceLock<Arc<CeModel>>,
+    /// The cost lists and Combat Extended calibres the archetype solver reads, built on first use.
+    pub(super) archetype: OnceLock<super::archetype::ArchetypeData>,
 }
 
 impl Engine {
@@ -71,6 +73,7 @@ impl Engine {
             models: [OnceLock::new(), OnceLock::new()],
             keys: [OnceLock::new(), OnceLock::new()],
             ce: OnceLock::new(),
+            archetype: OnceLock::new(),
         }
     }
 

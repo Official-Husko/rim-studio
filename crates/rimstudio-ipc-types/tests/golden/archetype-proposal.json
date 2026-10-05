@@ -1,0 +1,159 @@
+{
+  "choice": {
+    "archetype": "rifle/assault",
+    "descriptors": {
+      "action": "burst",
+      "rof": {
+        "rpm": 650.0
+      },
+      "calibre": "medium",
+      "handling": "standard",
+      "tier": "industrial"
+    },
+    "balance": {
+      "percentile": 0.7
+    },
+    "mode": "vanilla"
+  },
+  "label": "Assault rifle",
+  "kind": "ranged",
+  "source": "archetype",
+  "resolved": {
+    "action": "burst",
+    "rof": "medium",
+    "rate": 1.0,
+    "calibre": "medium",
+    "handling": "standard",
+    "tier": "industrial"
+  },
+  "role": "rifle",
+  "values": [
+    {
+      "field": "/ranged/damage",
+      "stat": "damage",
+      "value": 12.0,
+      "write": true,
+      "source": "archetype",
+      "reason": "damage 12: the install's median is 10 (20 reference weapons). Assault rifle x1.20.",
+      "median": 10.0,
+      "medianN": 20,
+      "terms": [
+        {
+          "label": "Assault rifle",
+          "factor": 1.2
+        },
+        {
+          "label": "strength scale",
+          "factor": 1.0
+        }
+      ],
+      "locked": true
+    },
+    {
+      "field": "/ranged/range",
+      "stat": "range",
+      "value": 30.9,
+      "write": true,
+      "source": "archetype",
+      "reason": "range 30.9: the install's median is 10 (20 reference weapons). Assault rifle x1.20.",
+      "median": 10.0,
+      "medianN": 20,
+      "terms": [
+        {
+          "label": "Assault rifle",
+          "factor": 1.2
+        },
+        {
+          "label": "strength scale",
+          "factor": 1.0
+        }
+      ],
+      "locked": false
+    }
+  ],
+  "tools": [
+    {
+      "label": "stock",
+      "capacities": [
+        "Blunt"
+      ],
+      "power": {
+        "field": "/tools/0/power",
+        "stat": "bash_power",
+        "value": 9.0,
+        "write": true,
+        "source": "archetype",
+        "reason": "bash_power 9: the install's median is 10 (20 reference weapons). Assault rifle x1.20.",
+        "median": 10.0,
+        "medianN": 20,
+        "terms": [
+          {
+            "label": "Assault rifle",
+            "factor": 1.2
+          },
+          {
+            "label": "strength scale",
+            "factor": 1.0
+          }
+        ],
+        "locked": false
+      },
+      "cooldown": {
+        "field": "/tools/0/cooldownTime",
+        "stat": "bash_cooldown",
+        "value": 2.0,
+        "write": true,
+        "source": "archetype",
+        "reason": "bash_cooldown 2: the install's median is 10 (20 reference weapons). Assault rifle x1.20.",
+        "median": 10.0,
+        "medianN": 20,
+        "terms": [
+          {
+            "label": "Assault rifle",
+            "factor": 1.2
+          },
+          {
+            "label": "strength scale",
+            "factor": 1.0
+          }
+        ],
+        "locked": false
+      }
+    }
+  ],
+  "costList": [
+    {
+      "defName": "RS_Steel",
+      "count": 40.0,
+      "reason": "RS_Steel of 100% of the 12 reference weapons of the same tier need it."
+    }
+  ],
+  "weaponTags": [
+    "RsGun"
+  ],
+  "weaponClasses": [],
+  "marketValue": 420.0,
+  "strength": {
+    "percentile": 0.7,
+    "target": 4.2,
+    "achieved": 4.18,
+    "error": -0.005,
+    "scale": 0.9,
+    "clamped": false,
+    "classLabel": "based on 11 items at Industrial",
+    "classN": 11,
+    "achievedPercentile": 0.68
+  },
+  "notes": [
+    "the archetype is typically +28 percent in strength against the middle of its class"
+  ],
+  "ce": {
+    "ammoSet": "RS_AmmoSetA",
+    "caliber": "RS caliber",
+    "defaultProjectile": "RS_CeBullet1",
+    "weaponTagClass": "CE_AI_Rifle",
+    "damageRatio": 1.1,
+    "notes": []
+  },
+  "verdict": "typical"
+}

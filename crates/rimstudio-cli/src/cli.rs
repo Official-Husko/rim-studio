@@ -526,6 +526,13 @@ pub(crate) struct NewArgs {
     /// Set a value: `key=value` (repeatable), for example `ranged.damage=12`.
     #[arg(long = "set", value_name = "KEY=VALUE")]
     pub(crate) set: Vec<String>,
+    /// Start from a weapon archetype, `family/type` such as `rifle/assault` (`designer archetypes` lists
+    /// them): every number comes from your own weapons, shaped by the archetype and the descriptors below.
+    #[arg(long, value_name = "FAMILY/TYPE", conflicts_with_all = ["from", "strength"])]
+    pub(crate) archetype: Option<String>,
+    /// The descriptors of the archetype (`--rof`, `--caliber`, `--balance`, ...).
+    #[command(flatten)]
+    pub(crate) arch: crate::cmd::archetype::ArchetypeOpts,
 }
 
 /// `designer plan` arguments.
@@ -722,6 +729,10 @@ pub(crate) enum DesignerCmd {
     },
     /// Create a draft in a project's draft store.
     New(NewArgs),
+    /// List the weapon archetypes (rifle/assault, smg/light, sword/long, ...) and what each takes.
+    Archetypes(crate::cmd::archetype::ArchetypesArgs),
+    /// Show every number of a weapon an archetype describes, each with its reason; changes nothing.
+    Propose(crate::cmd::archetype::ProposeArgs),
     /// Show the exact readouts, suggestions and diagnostics of a draft.
     Preview(DraftArgs),
     /// Show what a cloned draft changes against its source weapon, and the effect on the readouts.

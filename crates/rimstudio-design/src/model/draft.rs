@@ -108,6 +108,10 @@ pub struct Draft {
     /// The def name of the item this draft was cloned from (flow C); absent for a draft that started empty.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub cloned_from: Option<String>,
+    /// What the user chose in the archetype dialog (additive: absent on older drafts and on drafts that
+    /// never used it). It is intent, not numbers: the numbers live in the spec.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub archetype: Option<super::archetype::ArchetypeChoice>,
 }
 
 impl Draft {
@@ -127,6 +131,7 @@ impl Draft {
             answers: BTreeMap::new(),
             anchors: Vec::new(),
             cloned_from: None,
+            archetype: None,
         }
     }
 

@@ -9,6 +9,8 @@ import type {
   AppPingRequest,
   AppPingResponse,
   ApplyReportDto,
+  ArchetypeCatalogDto,
+  ArchetypeProposalDto,
   CalibrateResultDto,
   CancelJobRequest,
   CancelJobResponse,
@@ -20,6 +22,10 @@ import type {
   DefSearchRequest,
   DefsGetResolvedRequest,
   DesignerApplyPlanRequest,
+  DesignerArchetypeApplyRequest,
+  DesignerArchetypeApplyResponse,
+  DesignerArchetypeCatalogRequest,
+  DesignerArchetypeProposeRequest,
   DesignerAssetInfoRequest,
   DesignerAssetInfoResponse,
   DesignerCalibrateRequest,
@@ -165,6 +171,9 @@ export interface CommandTable {
   designer_projectile_own: { kind: "query"; request: DesignerProjectileOwnRequest; response: DesignerProjectileOwnResponse };
   designer_asset_info: { kind: "query"; request: DesignerAssetInfoRequest; response: DesignerAssetInfoResponse };
   designer_lint_files: { kind: "query"; request: DesignerLintFilesRequest; response: DesignerLintFilesResult };
+  designer_archetype_catalog: { kind: "query"; request: DesignerArchetypeCatalogRequest; response: ArchetypeCatalogDto };
+  designer_archetype_propose: { kind: "query"; request: DesignerArchetypeProposeRequest; response: ArchetypeProposalDto };
+  designer_archetype_apply: { kind: "action"; request: DesignerArchetypeApplyRequest; response: DesignerArchetypeApplyResponse };
 }
 
 export type CommandName = keyof CommandTable;
@@ -237,6 +246,9 @@ export const commands = {
   designerProjectileOwn: { name: "designer_projectile_own", kind: "query" },
   designerAssetInfo: { name: "designer_asset_info", kind: "query" },
   designerLintFiles: { name: "designer_lint_files", kind: "query" },
+  designerArchetypeCatalog: { name: "designer_archetype_catalog", kind: "query" },
+  designerArchetypePropose: { name: "designer_archetype_propose", kind: "query" },
+  designerArchetypeApply: { name: "designer_archetype_apply", kind: "action" },
 } as const satisfies Record<string, CommandEntry>;
 
 /** Every wire name, in registry order. */
@@ -295,4 +307,7 @@ export const commandNames = [
   "designer_projectile_own",
   "designer_asset_info",
   "designer_lint_files",
+  "designer_archetype_catalog",
+  "designer_archetype_propose",
+  "designer_archetype_apply",
 ] as const satisfies readonly CommandName[];

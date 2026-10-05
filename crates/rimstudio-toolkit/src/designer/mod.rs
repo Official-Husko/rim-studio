@@ -13,6 +13,8 @@
 //! - `preview`: `designer_preview`, and the helpers that write suggestions into specs.
 //! - `fit`: `designer_fit`.
 //! - `ce`: `designer_ce_suggest` and the `acceptSuggestions` option of plan and apply.
+//! - `archetype`: `designer_archetype_catalog`, `designer_archetype_propose` and `designer_archetype_apply`, the
+//!   weapon archetypes with their balance math.
 //! - `ammo`: `designer_ce_ammo_catalog` and `designer_ce_ammo_suggest`, the catalogue of the ammo sets of the
 //!   install and the suggestions for a new ammo type.
 //! - `clone`: flow C: `designer_clone`, `designer_clone_diff` and `designer_structure_defaults`.
@@ -26,6 +28,7 @@
 
 pub mod ammo;
 pub mod apply;
+pub mod archetype;
 pub mod asset_info;
 pub mod calibrate;
 pub mod ce;
@@ -46,6 +49,7 @@ pub mod refs;
 
 pub use ammo::{ce_ammo_catalog, ce_ammo_suggest};
 pub use apply::{ApplyOptions, apply_built, apply_plan};
+pub use archetype::{archetype_apply, archetype_catalog, archetype_propose};
 pub use asset_info::asset_info;
 pub use calibrate::{CalibrationState, calibrate};
 pub use ce::{accept_for_plan, ce_suggest, suggestion_for};

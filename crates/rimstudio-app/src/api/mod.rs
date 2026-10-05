@@ -16,12 +16,14 @@
 //! - [`project`]: `project_open`, `project_create`, `project_close`.
 //! - [`project_fix`]: the `project_layout_fix_*` commands (plan, apply, undo, history).
 //! - [`project_link`]: the `project_link_*` commands (status, create, remove): make a project visible to the game.
+//! - [`designer_archetype`]: the `designer_archetype_*` commands (catalogue, proposal, apply).
 //! - [`designer`]: every `designer_*` command the toolkit implements, except the lint of patch files,
 //!   which is `designer_lint::designer_lint_files`.
 
 pub mod app;
 pub mod defs;
 pub mod designer;
+pub mod designer_archetype;
 pub mod designer_lint;
 pub mod detect;
 pub mod jobs;

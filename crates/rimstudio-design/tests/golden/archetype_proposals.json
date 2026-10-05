@@ -1,0 +1,2576 @@
+{
+  "rifle/assault": {
+    "archetype": "rifle/assault",
+    "label": "Assault rifle",
+    "kind": "ranged",
+    "mode": "vanilla",
+    "source": "archetype",
+    "choice": {
+      "action": "burst",
+      "rof": "medium",
+      "rate": 1.0,
+      "calibre": "medium",
+      "handling": "standard",
+      "tier": "industrial"
+    },
+    "role": "rifle",
+    "values": [
+      {
+        "field": "damage",
+        "stat": "damage",
+        "value": 12.0,
+        "write": true,
+        "reason": "damage 12: the install's median is 12 (28 reference weapons). Assault rifle x0.92, strength scale x1.13.",
+        "median": 12.0,
+        "medianN": 28,
+        "terms": [
+          {
+            "label": "Assault rifle",
+            "factor": 0.92
+          },
+          {
+            "label": "medium calibre",
+            "factor": 1.0
+          },
+          {
+            "label": "strength scale",
+            "factor": 1.1341399956257998
+          }
+        ]
+      },
+      {
+        "field": "armor-penetration",
+        "stat": "ap",
+        "value": 0.18,
+        "write": false,
+        "reason": "armor penetration 0.18: left to the game, which implies 0.015 per damage point.",
+        "terms": [
+          {
+            "label": "Assault rifle against the implied 0.015 per damage point",
+            "factor": 1.0
+          }
+        ]
+      },
+      {
+        "field": "range",
+        "stat": "range",
+        "value": 28.9,
+        "write": true,
+        "reason": "range 28.9: the install's median is 24.4 (28 reference weapons). Assault rifle x1.19.",
+        "median": 24.4,
+        "medianN": 28,
+        "terms": [
+          {
+            "label": "Assault rifle",
+            "factor": 1.19
+          },
+          {
+            "label": "medium calibre",
+            "factor": 1.0
+          },
+          {
+            "label": "standard handling",
+            "factor": 1.0
+          }
+        ]
+      },
+      {
+        "field": "burst-count",
+        "stat": "burst",
+        "value": 3.0,
+        "write": true,
+        "reason": "burst count 3: burst fire fires 3 shots per cycle, scaled by the medium rate of fire (x1.00).",
+        "terms": [
+          {
+            "label": "medium rate of fire",
+            "factor": 1.0
+          }
+        ]
+      },
+      {
+        "field": "ticks-between-burst-shots",
+        "stat": "ticks_between",
+        "value": 8.0,
+        "write": true,
+        "reason": "ticks between burst shots 8: the install's median is 8 (12 reference weapons).",
+        "median": 8.0,
+        "medianN": 12,
+        "terms": [
+          {
+            "label": "Assault rifle",
+            "factor": 1.0
+          },
+          {
+            "label": "Burst fire",
+            "factor": 1.0
+          }
+        ]
+      },
+      {
+        "field": "warmup",
+        "stat": "warmup",
+        "value": 0.8,
+        "write": true,
+        "reason": "warmup 0.8: the install's median is 0.98 (28 reference weapons). Assault rifle x0.87, strength scale x0.97.",
+        "median": 0.975,
+        "medianN": 28,
+        "terms": [
+          {
+            "label": "Assault rifle",
+            "factor": 0.87
+          },
+          {
+            "label": "Burst fire",
+            "factor": 1.0
+          },
+          {
+            "label": "standard handling",
+            "factor": 1.0
+          },
+          {
+            "label": "strength scale",
+            "factor": 0.9713698411927179
+          }
+        ]
+      },
+      {
+        "field": "cooldown",
+        "stat": "cooldown",
+        "value": 1.55,
+        "write": true,
+        "reason": "cooldown 1.55: the install's median is 1.53 (28 reference weapons). Assault rifle x1.06, strength scale x0.96.",
+        "median": 1.525,
+        "medianN": 28,
+        "terms": [
+          {
+            "label": "Assault rifle",
+            "factor": 1.06
+          },
+          {
+            "label": "Burst fire",
+            "factor": 1.0
+          },
+          {
+            "label": "medium calibre",
+            "factor": 1.0
+          },
+          {
+            "label": "medium rate of fire",
+            "factor": 1.0
+          },
+          {
+            "label": "strength scale",
+            "factor": 0.9620097803069936
+          }
+        ]
+      },
+      {
+        "field": "accuracy-touch",
+        "stat": "touch",
+        "value": 0.65,
+        "write": true,
+        "reason": "touch accuracy 0.65: the install's median is 0.75 (28 reference weapons). Assault rifle x0.86.",
+        "median": 0.75,
+        "medianN": 28,
+        "terms": [
+          {
+            "label": "Assault rifle",
+            "factor": 0.86
+          },
+          {
+            "label": "standard handling",
+            "factor": 1.0
+          }
+        ]
+      },
+      {
+        "field": "accuracy-short",
+        "stat": "short",
+        "value": 0.7,
+        "write": true,
+        "reason": "short accuracy 0.7: the install's median is 0.7 (28 reference weapons).",
+        "median": 0.7,
+        "medianN": 28,
+        "terms": [
+          {
+            "label": "Assault rifle",
+            "factor": 1.0
+          }
+        ]
+      },
+      {
+        "field": "accuracy-medium",
+        "stat": "medium",
+        "value": 0.59,
+        "write": true,
+        "reason": "medium accuracy 0.59: the install's median is 0.5 (28 reference weapons). Assault rifle x1.18.",
+        "median": 0.5,
+        "medianN": 28,
+        "terms": [
+          {
+            "label": "Assault rifle",
+            "factor": 1.18
+          }
+        ]
+      },
+      {
+        "field": "accuracy-long",
+        "stat": "long",
+        "value": 0.48,
+        "write": true,
+        "reason": "long accuracy 0.48: the install's median is 0.35 (28 reference weapons). Assault rifle x1.37.",
+        "median": 0.35,
+        "medianN": 28,
+        "terms": [
+          {
+            "label": "Assault rifle",
+            "factor": 1.37
+          },
+          {
+            "label": "standard handling",
+            "factor": 1.0
+          }
+        ]
+      },
+      {
+        "field": "mass",
+        "stat": "mass",
+        "value": 3.6,
+        "write": true,
+        "reason": "mass 3.6: the install's median is 3.3 (28 reference weapons). Assault rifle x1.03, strength scale x1.05.",
+        "median": 3.3003625976889834,
+        "medianN": 28,
+        "terms": [
+          {
+            "label": "Assault rifle",
+            "factor": 1.03
+          },
+          {
+            "label": "medium calibre",
+            "factor": 1.0
+          },
+          {
+            "label": "standard handling",
+            "factor": 1.0
+          },
+          {
+            "label": "strength scale",
+            "factor": 1.0496043956850327
+          }
+        ]
+      },
+      {
+        "field": "work-to-make",
+        "stat": "work",
+        "value": 59000.0,
+        "write": true,
+        "reason": "work to make 59000: the install's median is 14736.5 (28 reference weapons). Assault rifle x3.30.",
+        "median": 14736.5,
+        "medianN": 28,
+        "terms": [
+          {
+            "label": "Assault rifle",
+            "factor": 3.3
+          }
+        ]
+      }
+    ],
+    "stats": {
+      "ap": 0.18,
+      "burst": 3.0,
+      "cooldown": 1.55,
+      "damage": 12.0,
+      "dps": 13.757961783439491,
+      "long": 0.48,
+      "market_value": 415.0,
+      "mass": 3.6,
+      "medium": 0.59,
+      "range": 28.9,
+      "short": 0.7,
+      "ticks_between": 8.0,
+      "touch": 0.65,
+      "warmup": 0.8,
+      "work": 59000.0
+    },
+    "tools": [
+      {
+        "label": "stock",
+        "capacities": [
+          "Blunt"
+        ],
+        "power": {
+          "field": {
+            "tool-power": 0
+          },
+          "stat": "bash_power",
+          "value": 9.0,
+          "write": true,
+          "reason": "stock power 9: the median of the 28 tools of guns with the same attack in your install.",
+          "median": 9.0,
+          "medianN": 28,
+          "terms": []
+        },
+        "cooldown": {
+          "field": {
+            "tool-cooldown": 0
+          },
+          "stat": "bash_cooldown",
+          "value": 2.0,
+          "write": true,
+          "reason": "stock cooldown 2: the median of the 28 tools of guns with the same attack in your install.",
+          "median": 2.0,
+          "medianN": 28,
+          "terms": []
+        }
+      },
+      {
+        "label": "barrel",
+        "capacities": [
+          "Blunt",
+          "Poke"
+        ],
+        "power": {
+          "field": {
+            "tool-power": 1
+          },
+          "stat": "bash_power",
+          "value": 9.0,
+          "write": true,
+          "reason": "barrel power 9: the median of the 28 tools of guns with the same attack in your install.",
+          "median": 9.0,
+          "medianN": 28,
+          "terms": []
+        },
+        "cooldown": {
+          "field": {
+            "tool-cooldown": 1
+          },
+          "stat": "bash_cooldown",
+          "value": 2.0,
+          "write": true,
+          "reason": "barrel cooldown 2: the median of the 28 tools of guns with the same attack in your install.",
+          "median": 2.0,
+          "medianN": 28,
+          "terms": []
+        }
+      }
+    ],
+    "costList": [
+      {
+        "defName": "RS_Steel",
+        "count": 40.0,
+        "reason": "RS_Steel of 100% of the 24 reference weapons of the same tier need it; median 30 scaled by x1.35 for size and strength."
+      },
+      {
+        "defName": "RS_Part",
+        "count": 4.0,
+        "reason": "RS_Part of 100% of the 24 reference weapons of the same tier need it; median 3 scaled by x1.35 for size and strength."
+      }
+    ],
+    "weaponTags": [
+      "RsAdvanced",
+      "RsGun"
+    ],
+    "weaponClasses": [],
+    "marketValue": 415.0,
+    "strength": {
+      "percentile": 0.5,
+      "target": 7.094859732507198,
+      "achieved": 6.8217966936766565,
+      "error": -0.038487447127308526,
+      "scale": 1.2136754392253837,
+      "clamped": false,
+      "classLabel": "based on 4 items of role rifle at tier 2",
+      "classN": 4,
+      "achievedPercentile": 1.0
+    },
+    "notes": [
+      "the archetype is typically +28 percent in strength against the middle of its class"
+    ]
+  },
+  "rifle/sniper": {
+    "archetype": "rifle/sniper",
+    "label": "Sniper rifle",
+    "kind": "ranged",
+    "mode": "vanilla",
+    "source": "archetype",
+    "choice": {
+      "action": "bolt",
+      "rof": "medium",
+      "rate": 1.0,
+      "calibre": "huge",
+      "handling": "standard",
+      "tier": "industrial"
+    },
+    "role": "sniper",
+    "values": [
+      {
+        "field": "damage",
+        "stat": "damage",
+        "value": 26.0,
+        "write": true,
+        "reason": "damage 26: the install's median is 12 (28 reference weapons). Sniper rifle x2.08, strength scale x1.06.",
+        "median": 12.0,
+        "medianN": 28,
+        "terms": [
+          {
+            "label": "Sniper rifle",
+            "factor": 2.08
+          },
+          {
+            "label": "huge calibre",
+            "factor": 1.0
+          },
+          {
+            "label": "strength scale",
+            "factor": 1.0579730056506715
+          }
+        ]
+      },
+      {
+        "field": "armor-penetration",
+        "stat": "ap",
+        "value": 0.39,
+        "write": false,
+        "reason": "armor penetration 0.39: left to the game, which implies 0.015 per damage point.",
+        "terms": [
+          {
+            "label": "Sniper rifle against the implied 0.015 per damage point",
+            "factor": 1.0
+          }
+        ]
+      },
+      {
+        "field": "range",
+        "stat": "range",
+        "value": 41.9,
+        "write": true,
+        "reason": "range 41.9: the install's median is 24.4 (28 reference weapons). Sniper rifle x1.73.",
+        "median": 24.4,
+        "medianN": 28,
+        "terms": [
+          {
+            "label": "Sniper rifle",
+            "factor": 1.73
+          },
+          {
+            "label": "huge calibre",
+            "factor": 1.0
+          },
+          {
+            "label": "standard handling",
+            "factor": 1.0
+          }
+        ]
+      },
+      {
+        "field": "burst-count",
+        "stat": "burst",
+        "value": 1.0,
+        "write": false,
+        "reason": "burst count 1: bolt action fires one shot per cycle, so no burst is written.",
+        "terms": [
+          {
+            "label": "medium rate of fire",
+            "factor": 1.0
+          }
+        ]
+      },
+      {
+        "field": "ticks-between-burst-shots",
+        "stat": "ticks_between",
+        "value": 8.0,
+        "write": false,
+        "reason": "ticks between burst shots: a single shot weapon has no burst, so none is written.",
+        "median": 8.0,
+        "medianN": 12,
+        "terms": [
+          {
+            "label": "Sniper rifle",
+            "factor": 1.0
+          },
+          {
+            "label": "Bolt action",
+            "factor": 1.0
+          }
+        ]
+      },
+      {
+        "field": "warmup",
+        "stat": "warmup",
+        "value": 3.2,
+        "write": true,
+        "reason": "warmup 3.2: the install's median is 0.98 (28 reference weapons). Sniper rifle x3.04, Bolt action x1.10, strength scale x0.99.",
+        "median": 0.975,
+        "medianN": 28,
+        "terms": [
+          {
+            "label": "Sniper rifle",
+            "factor": 3.04
+          },
+          {
+            "label": "Bolt action",
+            "factor": 1.1
+          },
+          {
+            "label": "standard handling",
+            "factor": 1.0
+          },
+          {
+            "label": "strength scale",
+            "factor": 0.9870792409319827
+          }
+        ]
+      },
+      {
+        "field": "cooldown",
+        "stat": "cooldown",
+        "value": 1.55,
+        "write": true,
+        "reason": "cooldown 1.55: the install's median is 1.53 (28 reference weapons). Sniper rifle x0.94, Bolt action x1.10, strength scale x0.98.",
+        "median": 1.525,
+        "medianN": 28,
+        "terms": [
+          {
+            "label": "Sniper rifle",
+            "factor": 0.94
+          },
+          {
+            "label": "Bolt action",
+            "factor": 1.1
+          },
+          {
+            "label": "huge calibre",
+            "factor": 1.0
+          },
+          {
+            "label": "medium rate of fire",
+            "factor": 1.0
+          },
+          {
+            "label": "strength scale",
+            "factor": 0.9828095274564621
+          }
+        ]
+      },
+      {
+        "field": "accuracy-touch",
+        "stat": "touch",
+        "value": 0.52,
+        "write": true,
+        "reason": "touch accuracy 0.52: the install's median is 0.75 (28 reference weapons). Sniper rifle x0.70.",
+        "median": 0.75,
+        "medianN": 28,
+        "terms": [
+          {
+            "label": "Sniper rifle",
+            "factor": 0.7
+          },
+          {
+            "label": "standard handling",
+            "factor": 1.0
+          }
+        ]
+      },
+      {
+        "field": "accuracy-short",
+        "stat": "short",
+        "value": 0.7,
+        "write": true,
+        "reason": "short accuracy 0.7: the install's median is 0.7 (28 reference weapons).",
+        "median": 0.7,
+        "medianN": 28,
+        "terms": [
+          {
+            "label": "Sniper rifle",
+            "factor": 1.0
+          }
+        ]
+      },
+      {
+        "field": "accuracy-medium",
+        "stat": "medium",
+        "value": 0.8,
+        "write": true,
+        "reason": "medium accuracy 0.8: the install's median is 0.5 (28 reference weapons). Sniper rifle x1.60.",
+        "median": 0.5,
+        "medianN": 28,
+        "terms": [
+          {
+            "label": "Sniper rifle",
+            "factor": 1.6
+          }
+        ]
+      },
+      {
+        "field": "accuracy-long",
+        "stat": "long",
+        "value": 0.79,
+        "write": true,
+        "reason": "long accuracy 0.79: the install's median is 0.35 (28 reference weapons). Sniper rifle x2.25.",
+        "median": 0.35,
+        "medianN": 28,
+        "terms": [
+          {
+            "label": "Sniper rifle",
+            "factor": 2.25
+          },
+          {
+            "label": "standard handling",
+            "factor": 1.0
+          }
+        ]
+      },
+      {
+        "field": "mass",
+        "stat": "mass",
+        "value": 4.0,
+        "write": true,
+        "reason": "mass 4: the install's median is 3.3 (28 reference weapons). Sniper rifle x1.18, strength scale x1.02.",
+        "median": 3.3003625976889834,
+        "medianN": 28,
+        "terms": [
+          {
+            "label": "Sniper rifle",
+            "factor": 1.18
+          },
+          {
+            "label": "huge calibre",
+            "factor": 1.0
+          },
+          {
+            "label": "standard handling",
+            "factor": 1.0
+          },
+          {
+            "label": "strength scale",
+            "factor": 1.0219115379249777
+          }
+        ]
+      },
+      {
+        "field": "work-to-make",
+        "stat": "work",
+        "value": 57000.0,
+        "write": true,
+        "reason": "work to make 57000: the install's median is 14736.5 (28 reference weapons). Sniper rifle x3.75.",
+        "median": 14736.5,
+        "medianN": 28,
+        "terms": [
+          {
+            "label": "Sniper rifle",
+            "factor": 3.75
+          }
+        ]
+      }
+    ],
+    "stats": {
+      "ap": 0.39,
+      "burst": 1.0,
+      "cooldown": 1.55,
+      "damage": 26.0,
+      "dps": 5.473684210526316,
+      "long": 0.79,
+      "market_value": 365.0,
+      "mass": 4.0,
+      "medium": 0.8,
+      "range": 41.9,
+      "short": 0.7,
+      "ticks_between": 8.0,
+      "touch": 0.52,
+      "warmup": 3.2,
+      "work": 57000.0
+    },
+    "tools": [
+      {
+        "label": "stock",
+        "capacities": [
+          "Blunt"
+        ],
+        "power": {
+          "field": {
+            "tool-power": 0
+          },
+          "stat": "bash_power",
+          "value": 9.0,
+          "write": true,
+          "reason": "stock power 9: the median of the 28 tools of guns with the same attack in your install.",
+          "median": 9.0,
+          "medianN": 28,
+          "terms": []
+        },
+        "cooldown": {
+          "field": {
+            "tool-cooldown": 0
+          },
+          "stat": "bash_cooldown",
+          "value": 2.0,
+          "write": true,
+          "reason": "stock cooldown 2: the median of the 28 tools of guns with the same attack in your install.",
+          "median": 2.0,
+          "medianN": 28,
+          "terms": []
+        }
+      },
+      {
+        "label": "barrel",
+        "capacities": [
+          "Blunt",
+          "Poke"
+        ],
+        "power": {
+          "field": {
+            "tool-power": 1
+          },
+          "stat": "bash_power",
+          "value": 9.0,
+          "write": true,
+          "reason": "barrel power 9: the median of the 28 tools of guns with the same attack in your install.",
+          "median": 9.0,
+          "medianN": 28,
+          "terms": []
+        },
+        "cooldown": {
+          "field": {
+            "tool-cooldown": 1
+          },
+          "stat": "bash_cooldown",
+          "value": 2.0,
+          "write": true,
+          "reason": "barrel cooldown 2: the median of the 28 tools of guns with the same attack in your install.",
+          "median": 2.0,
+          "medianN": 28,
+          "terms": []
+        }
+      }
+    ],
+    "costList": [
+      {
+        "defName": "RS_Steel",
+        "count": 34.0,
+        "reason": "RS_Steel of 100% of the 24 reference weapons of the same tier need it; median 30 scaled by x1.12 for size and strength."
+      },
+      {
+        "defName": "RS_Part",
+        "count": 3.0,
+        "reason": "RS_Part of 100% of the 24 reference weapons of the same tier need it; median 3 scaled by x1.12 for size and strength."
+      }
+    ],
+    "weaponTags": [
+      "RsGun"
+    ],
+    "weaponClasses": [],
+    "marketValue": 365.0,
+    "strength": {
+      "percentile": 0.5,
+      "target": 4.442405699442307,
+      "achieved": 4.3580465145193985,
+      "error": -0.018989527438589976,
+      "scale": 1.0905691554516665,
+      "clamped": false,
+      "classLabel": "based on 4 items of role sniper at tier 2",
+      "classN": 4,
+      "achievedPercentile": 0.25
+    },
+    "notes": []
+  },
+  "smg/light": {
+    "archetype": "smg/light",
+    "label": "Light SMG",
+    "kind": "ranged",
+    "mode": "vanilla",
+    "source": "archetype",
+    "choice": {
+      "action": "burst",
+      "rof": "medium",
+      "rate": 1.0,
+      "calibre": "small",
+      "handling": "standard",
+      "tier": "industrial"
+    },
+    "role": "smg",
+    "values": [
+      {
+        "field": "damage",
+        "stat": "damage",
+        "value": 6.0,
+        "write": true,
+        "reason": "damage 6: the install's median is 12 (28 reference weapons). Light SMG x0.60, strength scale x0.88.",
+        "median": 12.0,
+        "medianN": 28,
+        "terms": [
+          {
+            "label": "Light SMG",
+            "factor": 0.6
+          },
+          {
+            "label": "small calibre",
+            "factor": 1.0
+          },
+          {
+            "label": "strength scale",
+            "factor": 0.8834319901529081
+          }
+        ]
+      },
+      {
+        "field": "armor-penetration",
+        "stat": "ap",
+        "value": 0.09,
+        "write": false,
+        "reason": "armor penetration 0.09: left to the game, which implies 0.015 per damage point.",
+        "terms": [
+          {
+            "label": "Light SMG against the implied 0.015 per damage point",
+            "factor": 1.0
+          }
+        ]
+      },
+      {
+        "field": "range",
+        "stat": "range",
+        "value": 19.9,
+        "write": true,
+        "reason": "range 19.9: the install's median is 24.4 (28 reference weapons). Light SMG x0.80.",
+        "median": 24.4,
+        "medianN": 28,
+        "terms": [
+          {
+            "label": "Light SMG",
+            "factor": 0.8
+          },
+          {
+            "label": "small calibre",
+            "factor": 1.0
+          },
+          {
+            "label": "standard handling",
+            "factor": 1.0
+          }
+        ]
+      },
+      {
+        "field": "burst-count",
+        "stat": "burst",
+        "value": 3.0,
+        "write": true,
+        "reason": "burst count 3: burst fire fires 3 shots per cycle, scaled by the medium rate of fire (x1.00).",
+        "terms": [
+          {
+            "label": "medium rate of fire",
+            "factor": 1.0
+          }
+        ]
+      },
+      {
+        "field": "ticks-between-burst-shots",
+        "stat": "ticks_between",
+        "value": 6.0,
+        "write": true,
+        "reason": "ticks between burst shots 6: the install's median is 8 (12 reference weapons). Light SMG x0.70.",
+        "median": 8.0,
+        "medianN": 12,
+        "terms": [
+          {
+            "label": "Light SMG",
+            "factor": 0.7
+          },
+          {
+            "label": "Burst fire",
+            "factor": 1.0
+          }
+        ]
+      },
+      {
+        "field": "warmup",
+        "stat": "warmup",
+        "value": 0.5,
+        "write": true,
+        "reason": "warmup 0.5: the install's median is 0.98 (28 reference weapons). Light SMG x0.50, strength scale x1.03.",
+        "median": 0.975,
+        "medianN": 28,
+        "terms": [
+          {
+            "label": "Light SMG",
+            "factor": 0.5
+          },
+          {
+            "label": "Burst fire",
+            "factor": 1.0
+          },
+          {
+            "label": "standard handling",
+            "factor": 1.0
+          },
+          {
+            "label": "strength scale",
+            "factor": 1.0290147199303354
+          }
+        ]
+      },
+      {
+        "field": "cooldown",
+        "stat": "cooldown",
+        "value": 0.95,
+        "write": true,
+        "reason": "cooldown 0.95: the install's median is 1.53 (28 reference weapons). Light SMG x0.60, strength scale x1.04.",
+        "median": 1.525,
+        "medianN": 28,
+        "terms": [
+          {
+            "label": "Light SMG",
+            "factor": 0.6
+          },
+          {
+            "label": "Burst fire",
+            "factor": 1.0
+          },
+          {
+            "label": "small calibre",
+            "factor": 1.0
+          },
+          {
+            "label": "medium rate of fire",
+            "factor": 1.0
+          },
+          {
+            "label": "strength scale",
+            "factor": 1.0388721800319887
+          }
+        ]
+      },
+      {
+        "field": "accuracy-touch",
+        "stat": "touch",
+        "value": 0.94,
+        "write": true,
+        "reason": "touch accuracy 0.94: the install's median is 0.75 (28 reference weapons). Light SMG x1.25.",
+        "median": 0.75,
+        "medianN": 28,
+        "terms": [
+          {
+            "label": "Light SMG",
+            "factor": 1.25
+          },
+          {
+            "label": "standard handling",
+            "factor": 1.0
+          }
+        ]
+      },
+      {
+        "field": "accuracy-short",
+        "stat": "short",
+        "value": 0.66,
+        "write": true,
+        "reason": "short accuracy 0.66: the install's median is 0.7 (28 reference weapons). Light SMG x0.95.",
+        "median": 0.7,
+        "medianN": 28,
+        "terms": [
+          {
+            "label": "Light SMG",
+            "factor": 0.95
+          }
+        ]
+      },
+      {
+        "field": "accuracy-medium",
+        "stat": "medium",
+        "value": 0.33,
+        "write": true,
+        "reason": "medium accuracy 0.33: the install's median is 0.5 (28 reference weapons). Light SMG x0.65.",
+        "median": 0.5,
+        "medianN": 28,
+        "terms": [
+          {
+            "label": "Light SMG",
+            "factor": 0.65
+          }
+        ]
+      },
+      {
+        "field": "accuracy-long",
+        "stat": "long",
+        "value": 0.16,
+        "write": true,
+        "reason": "long accuracy 0.16: the install's median is 0.35 (28 reference weapons). Light SMG x0.45.",
+        "median": 0.35,
+        "medianN": 28,
+        "terms": [
+          {
+            "label": "Light SMG",
+            "factor": 0.45
+          },
+          {
+            "label": "standard handling",
+            "factor": 1.0
+          }
+        ]
+      },
+      {
+        "field": "mass",
+        "stat": "mass",
+        "value": 1.9,
+        "write": true,
+        "reason": "mass 1.9: the install's median is 3.3 (28 reference weapons). Light SMG x0.60, strength scale x0.95.",
+        "median": 3.3003625976889834,
+        "medianN": 28,
+        "terms": [
+          {
+            "label": "Light SMG",
+            "factor": 0.6
+          },
+          {
+            "label": "small calibre",
+            "factor": 1.0
+          },
+          {
+            "label": "standard handling",
+            "factor": 1.0
+          },
+          {
+            "label": "strength scale",
+            "factor": 0.9534487515984766
+          }
+        ]
+      },
+      {
+        "field": "work-to-make",
+        "stat": "work",
+        "value": 17000.0,
+        "write": true,
+        "reason": "work to make 17000: the install's median is 14736.5 (28 reference weapons). Light SMG x1.20.",
+        "median": 14736.5,
+        "medianN": 28,
+        "terms": [
+          {
+            "label": "Light SMG",
+            "factor": 1.2
+          }
+        ]
+      }
+    ],
+    "stats": {
+      "ap": 0.09,
+      "burst": 3.0,
+      "cooldown": 0.95,
+      "damage": 6.0,
+      "dps": 10.90909090909091,
+      "long": 0.16,
+      "market_value": 163.0,
+      "mass": 1.9,
+      "medium": 0.33,
+      "range": 19.9,
+      "short": 0.66,
+      "ticks_between": 6.0,
+      "touch": 0.94,
+      "warmup": 0.5,
+      "work": 17000.0
+    },
+    "tools": [
+      {
+        "label": "grip",
+        "capacities": [
+          "Blunt"
+        ],
+        "power": {
+          "field": {
+            "tool-power": 0
+          },
+          "stat": "bash_power",
+          "value": 9.0,
+          "write": true,
+          "reason": "grip power 9: the median of the 28 tools of guns with the same attack in your install.",
+          "median": 9.0,
+          "medianN": 28,
+          "terms": []
+        },
+        "cooldown": {
+          "field": {
+            "tool-cooldown": 0
+          },
+          "stat": "bash_cooldown",
+          "value": 2.0,
+          "write": true,
+          "reason": "grip cooldown 2: the median of the 28 tools of guns with the same attack in your install.",
+          "median": 2.0,
+          "medianN": 28,
+          "terms": []
+        }
+      },
+      {
+        "label": "barrel",
+        "capacities": [
+          "Blunt",
+          "Poke"
+        ],
+        "power": {
+          "field": {
+            "tool-power": 1
+          },
+          "stat": "bash_power",
+          "value": 9.0,
+          "write": true,
+          "reason": "barrel power 9: the median of the 28 tools of guns with the same attack in your install.",
+          "median": 9.0,
+          "medianN": 28,
+          "terms": []
+        },
+        "cooldown": {
+          "field": {
+            "tool-cooldown": 1
+          },
+          "stat": "bash_cooldown",
+          "value": 2.0,
+          "write": true,
+          "reason": "barrel cooldown 2: the median of the 28 tools of guns with the same attack in your install.",
+          "median": 2.0,
+          "medianN": 28,
+          "terms": []
+        }
+      }
+    ],
+    "costList": [
+      {
+        "defName": "RS_Steel",
+        "count": 20.0,
+        "reason": "RS_Steel of 100% of the 24 reference weapons of the same tier need it; median 30 scaled by x0.68 for size and strength."
+      },
+      {
+        "defName": "RS_Part",
+        "count": 2.0,
+        "reason": "RS_Part of 100% of the 24 reference weapons of the same tier need it; median 3 scaled by x0.68 for size and strength."
+      }
+    ],
+    "weaponTags": [
+      "RsAdvanced",
+      "RsGun"
+    ],
+    "weaponClasses": [],
+    "marketValue": 163.0,
+    "strength": {
+      "percentile": 0.5,
+      "target": 3.398293458275694,
+      "achieved": 3.227937345116847,
+      "error": -0.05012990056641148,
+      "scale": 0.8263983050221717,
+      "clamped": false,
+      "classLabel": "based on 4 items of role smg at tier 2",
+      "classN": 4,
+      "achievedPercentile": 0.0
+    },
+    "notes": [
+      "the archetype is typically -5 percent in strength against the middle of its class"
+    ]
+  },
+  "pistol/revolver": {
+    "archetype": "pistol/revolver",
+    "label": "Revolver",
+    "kind": "ranged",
+    "mode": "vanilla",
+    "source": "archetype",
+    "choice": {
+      "action": "semi",
+      "rof": "medium",
+      "rate": 1.0,
+      "calibre": "medium",
+      "handling": "standard",
+      "tier": "industrial"
+    },
+    "role": "pistol",
+    "values": [
+      {
+        "field": "damage",
+        "stat": "damage",
+        "value": 9.0,
+        "write": true,
+        "reason": "damage 9: the install's median is 12 (28 reference weapons). strength scale x0.78.",
+        "median": 12.0,
+        "medianN": 28,
+        "terms": [
+          {
+            "label": "Revolver",
+            "factor": 1.0
+          },
+          {
+            "label": "medium calibre",
+            "factor": 1.0
+          },
+          {
+            "label": "strength scale",
+            "factor": 0.7750045424826155
+          }
+        ]
+      },
+      {
+        "field": "armor-penetration",
+        "stat": "ap",
+        "value": 0.135,
+        "write": false,
+        "reason": "armor penetration 0.135: left to the game, which implies 0.015 per damage point.",
+        "terms": [
+          {
+            "label": "Revolver against the implied 0.015 per damage point",
+            "factor": 1.0
+          }
+        ]
+      },
+      {
+        "field": "range",
+        "stat": "range",
+        "value": 24.9,
+        "write": true,
+        "reason": "range 24.9: the install's median is 24.4 (28 reference weapons).",
+        "median": 24.4,
+        "medianN": 28,
+        "terms": [
+          {
+            "label": "Revolver",
+            "factor": 1.0
+          },
+          {
+            "label": "medium calibre",
+            "factor": 1.0
+          },
+          {
+            "label": "standard handling",
+            "factor": 1.0
+          }
+        ]
+      },
+      {
+        "field": "burst-count",
+        "stat": "burst",
+        "value": 1.0,
+        "write": false,
+        "reason": "burst count 1: semi automatic fires one shot per cycle, so no burst is written.",
+        "terms": [
+          {
+            "label": "medium rate of fire",
+            "factor": 1.0
+          }
+        ]
+      },
+      {
+        "field": "ticks-between-burst-shots",
+        "stat": "ticks_between",
+        "value": 8.0,
+        "write": false,
+        "reason": "ticks between burst shots: a single shot weapon has no burst, so none is written.",
+        "median": 8.0,
+        "medianN": 12,
+        "terms": [
+          {
+            "label": "Revolver",
+            "factor": 1.0
+          },
+          {
+            "label": "Semi automatic",
+            "factor": 1.0
+          }
+        ]
+      },
+      {
+        "field": "warmup",
+        "stat": "warmup",
+        "value": 0.25,
+        "write": true,
+        "reason": "warmup 0.25: the install's median is 0.98 (28 reference weapons). Revolver x0.26, Semi automatic x0.90, strength scale x1.06.",
+        "median": 0.975,
+        "medianN": 28,
+        "terms": [
+          {
+            "label": "Revolver",
+            "factor": 0.26
+          },
+          {
+            "label": "Semi automatic",
+            "factor": 0.9
+          },
+          {
+            "label": "standard handling",
+            "factor": 1.0
+          },
+          {
+            "label": "strength scale",
+            "factor": 1.06058425026916
+          }
+        ]
+      },
+      {
+        "field": "cooldown",
+        "stat": "cooldown",
+        "value": 1.4,
+        "write": true,
+        "reason": "cooldown 1.4: the install's median is 1.53 (28 reference weapons). Semi automatic x0.85, strength scale x1.08.",
+        "median": 1.525,
+        "medianN": 28,
+        "terms": [
+          {
+            "label": "Revolver",
+            "factor": 1.0
+          },
+          {
+            "label": "Semi automatic",
+            "factor": 0.85
+          },
+          {
+            "label": "medium calibre",
+            "factor": 1.0
+          },
+          {
+            "label": "medium rate of fire",
+            "factor": 1.0
+          },
+          {
+            "label": "strength scale",
+            "factor": 1.0815839434782277
+          }
+        ]
+      },
+      {
+        "field": "accuracy-touch",
+        "stat": "touch",
+        "value": 0.86,
+        "write": true,
+        "reason": "touch accuracy 0.86: the install's median is 0.75 (28 reference weapons). Revolver x1.15.",
+        "median": 0.75,
+        "medianN": 28,
+        "terms": [
+          {
+            "label": "Revolver",
+            "factor": 1.15
+          },
+          {
+            "label": "standard handling",
+            "factor": 1.0
+          }
+        ]
+      },
+      {
+        "field": "accuracy-short",
+        "stat": "short",
+        "value": 0.75,
+        "write": true,
+        "reason": "short accuracy 0.75: the install's median is 0.7 (28 reference weapons). Revolver x1.07.",
+        "median": 0.7,
+        "medianN": 28,
+        "terms": [
+          {
+            "label": "Revolver",
+            "factor": 1.07
+          }
+        ]
+      },
+      {
+        "field": "accuracy-medium",
+        "stat": "medium",
+        "value": 0.5,
+        "write": true,
+        "reason": "medium accuracy 0.5: the install's median is 0.5 (28 reference weapons).",
+        "median": 0.5,
+        "medianN": 28,
+        "terms": [
+          {
+            "label": "Revolver",
+            "factor": 1.0
+          }
+        ]
+      },
+      {
+        "field": "accuracy-long",
+        "stat": "long",
+        "value": 0.35,
+        "write": true,
+        "reason": "long accuracy 0.35: the install's median is 0.35 (28 reference weapons).",
+        "median": 0.35,
+        "medianN": 28,
+        "terms": [
+          {
+            "label": "Revolver",
+            "factor": 1.0
+          },
+          {
+            "label": "standard handling",
+            "factor": 1.0
+          }
+        ]
+      },
+      {
+        "field": "mass",
+        "stat": "mass",
+        "value": 1.25,
+        "write": true,
+        "reason": "mass 1.25: the install's median is 3.3 (28 reference weapons). Revolver x0.41, strength scale x0.91.",
+        "median": 3.3003625976889834,
+        "medianN": 28,
+        "terms": [
+          {
+            "label": "Revolver",
+            "factor": 0.41
+          },
+          {
+            "label": "medium calibre",
+            "factor": 1.0
+          },
+          {
+            "label": "standard handling",
+            "factor": 1.0
+          },
+          {
+            "label": "strength scale",
+            "factor": 0.9066187796665797
+          }
+        ]
+      },
+      {
+        "field": "work-to-make",
+        "stat": "work",
+        "value": 4100.0,
+        "write": true,
+        "reason": "work to make 4100: the install's median is 14736.5 (28 reference weapons). Revolver x0.33.",
+        "median": 14736.5,
+        "medianN": 28,
+        "terms": [
+          {
+            "label": "Revolver",
+            "factor": 0.33
+          }
+        ]
+      }
+    ],
+    "stats": {
+      "ap": 0.135,
+      "burst": 1.0,
+      "cooldown": 1.4,
+      "damage": 9.0,
+      "dps": 5.454545454545455,
+      "long": 0.35,
+      "market_value": 73.0,
+      "mass": 1.25,
+      "medium": 0.5,
+      "range": 24.9,
+      "short": 0.75,
+      "ticks_between": 8.0,
+      "touch": 0.86,
+      "warmup": 0.25,
+      "work": 4100.0
+    },
+    "tools": [
+      {
+        "label": "grip",
+        "capacities": [
+          "Blunt"
+        ],
+        "power": {
+          "field": {
+            "tool-power": 0
+          },
+          "stat": "bash_power",
+          "value": 9.0,
+          "write": true,
+          "reason": "grip power 9: the median of the 28 tools of guns with the same attack in your install.",
+          "median": 9.0,
+          "medianN": 28,
+          "terms": []
+        },
+        "cooldown": {
+          "field": {
+            "tool-cooldown": 0
+          },
+          "stat": "bash_cooldown",
+          "value": 2.0,
+          "write": true,
+          "reason": "grip cooldown 2: the median of the 28 tools of guns with the same attack in your install.",
+          "median": 2.0,
+          "medianN": 28,
+          "terms": []
+        }
+      },
+      {
+        "label": "barrel",
+        "capacities": [
+          "Blunt",
+          "Poke"
+        ],
+        "power": {
+          "field": {
+            "tool-power": 1
+          },
+          "stat": "bash_power",
+          "value": 9.0,
+          "write": true,
+          "reason": "barrel power 9: the median of the 28 tools of guns with the same attack in your install.",
+          "median": 9.0,
+          "medianN": 28,
+          "terms": []
+        },
+        "cooldown": {
+          "field": {
+            "tool-cooldown": 1
+          },
+          "stat": "bash_cooldown",
+          "value": 2.0,
+          "write": true,
+          "reason": "barrel cooldown 2: the median of the 28 tools of guns with the same attack in your install.",
+          "median": 2.0,
+          "medianN": 28,
+          "terms": []
+        }
+      }
+    ],
+    "costList": [
+      {
+        "defName": "RS_Steel",
+        "count": 14.0,
+        "reason": "RS_Steel of 100% of the 24 reference weapons of the same tier need it; median 30 scaled by x0.46 for size and strength."
+      },
+      {
+        "defName": "RS_Part",
+        "count": 1.0,
+        "reason": "RS_Part of 100% of the 24 reference weapons of the same tier need it; median 3 scaled by x0.46 for size and strength."
+      }
+    ],
+    "weaponTags": [
+      "RsGun",
+      "RsSimple"
+    ],
+    "weaponClasses": [],
+    "marketValue": 73.0,
+    "strength": {
+      "percentile": 0.5,
+      "target": 2.424802214487677,
+      "achieved": 2.3560691325785985,
+      "error": -0.028345850848540566,
+      "scale": 0.6756143153397031,
+      "clamped": false,
+      "classLabel": "based on 4 items of role pistol at tier 2",
+      "classN": 4,
+      "achievedPercentile": 0.0
+    },
+    "notes": [
+      "the archetype is typically -10 percent in strength against the middle of its class"
+    ]
+  },
+  "bow/short": {
+    "archetype": "bow/short",
+    "label": "Short bow",
+    "kind": "ranged",
+    "mode": "vanilla",
+    "source": "archetype",
+    "choice": {
+      "action": "draw",
+      "rof": "medium",
+      "rate": 1.0,
+      "calibre": "small",
+      "handling": "standard",
+      "tier": "neolithic"
+    },
+    "role": "bow",
+    "values": [
+      {
+        "field": "damage",
+        "stat": "damage",
+        "value": 11.0,
+        "write": true,
+        "reason": "damage 11: the install's median is 12 (28 reference weapons). Short bow x0.92.",
+        "median": 12.0,
+        "medianN": 28,
+        "terms": [
+          {
+            "label": "Short bow",
+            "factor": 0.92
+          },
+          {
+            "label": "small calibre",
+            "factor": 1.0
+          },
+          {
+            "label": "strength scale",
+            "factor": 0.9993529734507551
+          }
+        ]
+      },
+      {
+        "field": "armor-penetration",
+        "stat": "ap",
+        "value": 0.16499999999999998,
+        "write": false,
+        "reason": "armor penetration 0.16499999999999998: left to the game, which implies 0.015 per damage point.",
+        "terms": [
+          {
+            "label": "Short bow against the implied 0.015 per damage point",
+            "factor": 1.0
+          }
+        ]
+      },
+      {
+        "field": "range",
+        "stat": "range",
+        "value": 21.9,
+        "write": true,
+        "reason": "range 21.9: the install's median is 24.4 (28 reference weapons). Short bow x0.88.",
+        "median": 24.4,
+        "medianN": 28,
+        "terms": [
+          {
+            "label": "Short bow",
+            "factor": 0.88
+          },
+          {
+            "label": "small calibre",
+            "factor": 1.0
+          },
+          {
+            "label": "standard handling",
+            "factor": 1.0
+          }
+        ]
+      },
+      {
+        "field": "burst-count",
+        "stat": "burst",
+        "value": 1.0,
+        "write": false,
+        "reason": "burst count 1: draw and loose fires one shot per cycle, so no burst is written.",
+        "terms": [
+          {
+            "label": "medium rate of fire",
+            "factor": 1.0
+          }
+        ]
+      },
+      {
+        "field": "ticks-between-burst-shots",
+        "stat": "ticks_between",
+        "value": 8.0,
+        "write": false,
+        "reason": "ticks between burst shots: a single shot weapon has no burst, so none is written.",
+        "median": 8.0,
+        "medianN": 12,
+        "terms": [
+          {
+            "label": "Short bow",
+            "factor": 1.0
+          },
+          {
+            "label": "Draw and loose",
+            "factor": 1.0
+          }
+        ]
+      },
+      {
+        "field": "warmup",
+        "stat": "warmup",
+        "value": 1.15,
+        "write": true,
+        "reason": "warmup 1.15: the install's median is 0.98 (28 reference weapons). Short bow x1.17.",
+        "median": 0.975,
+        "medianN": 28,
+        "terms": [
+          {
+            "label": "Short bow",
+            "factor": 1.17
+          },
+          {
+            "label": "Draw and loose",
+            "factor": 1.0
+          },
+          {
+            "label": "standard handling",
+            "factor": 1.0
+          },
+          {
+            "label": "strength scale",
+            "factor": 1.0001493732999862
+          }
+        ]
+      },
+      {
+        "field": "cooldown",
+        "stat": "cooldown",
+        "value": 1.55,
+        "write": true,
+        "reason": "cooldown 1.55: the install's median is 1.53 (28 reference weapons). Short bow x1.03.",
+        "median": 1.525,
+        "medianN": 28,
+        "terms": [
+          {
+            "label": "Short bow",
+            "factor": 1.03
+          },
+          {
+            "label": "Draw and loose",
+            "factor": 1.0
+          },
+          {
+            "label": "small calibre",
+            "factor": 1.0
+          },
+          {
+            "label": "medium rate of fire",
+            "factor": 1.0
+          },
+          {
+            "label": "strength scale",
+            "factor": 1.0001991693581243
+          }
+        ]
+      },
+      {
+        "field": "accuracy-touch",
+        "stat": "touch",
+        "value": 0.8,
+        "write": true,
+        "reason": "touch accuracy 0.8: the install's median is 0.75 (28 reference weapons). Short bow x1.07.",
+        "median": 0.75,
+        "medianN": 28,
+        "terms": [
+          {
+            "label": "Short bow",
+            "factor": 1.07
+          },
+          {
+            "label": "standard handling",
+            "factor": 1.0
+          }
+        ]
+      },
+      {
+        "field": "accuracy-short",
+        "stat": "short",
+        "value": 0.65,
+        "write": true,
+        "reason": "short accuracy 0.65: the install's median is 0.7 (28 reference weapons). Short bow x0.93.",
+        "median": 0.7,
+        "medianN": 28,
+        "terms": [
+          {
+            "label": "Short bow",
+            "factor": 0.93
+          }
+        ]
+      },
+      {
+        "field": "accuracy-medium",
+        "stat": "medium",
+        "value": 0.41,
+        "write": true,
+        "reason": "medium accuracy 0.41: the install's median is 0.5 (28 reference weapons). Short bow x0.82.",
+        "median": 0.5,
+        "medianN": 28,
+        "terms": [
+          {
+            "label": "Short bow",
+            "factor": 0.82
+          }
+        ]
+      },
+      {
+        "field": "accuracy-long",
+        "stat": "long",
+        "value": 0.22,
+        "write": true,
+        "reason": "long accuracy 0.22: the install's median is 0.35 (28 reference weapons). Short bow x0.62.",
+        "median": 0.35,
+        "medianN": 28,
+        "terms": [
+          {
+            "label": "Short bow",
+            "factor": 0.62
+          },
+          {
+            "label": "standard handling",
+            "factor": 1.0
+          }
+        ]
+      },
+      {
+        "field": "mass",
+        "stat": "mass",
+        "value": 0.8,
+        "write": true,
+        "reason": "mass 0.8: the install's median is 3.3 (28 reference weapons). Short bow x0.24.",
+        "median": 3.3003625976889834,
+        "medianN": 28,
+        "terms": [
+          {
+            "label": "Short bow",
+            "factor": 0.24
+          },
+          {
+            "label": "small calibre",
+            "factor": 1.0
+          },
+          {
+            "label": "standard handling",
+            "factor": 1.0
+          },
+          {
+            "label": "strength scale",
+            "factor": 0.9997510940740453
+          }
+        ]
+      },
+      {
+        "field": "work-to-make",
+        "stat": "work",
+        "value": 2000.0,
+        "write": true,
+        "reason": "work to make 2000: the install's median is 14736.5 (28 reference weapons). Short bow x0.20.",
+        "median": 14736.5,
+        "medianN": 28,
+        "terms": [
+          {
+            "label": "Short bow",
+            "factor": 0.2
+          }
+        ]
+      }
+    ],
+    "stats": {
+      "ap": 0.16499999999999998,
+      "burst": 1.0,
+      "cooldown": 1.55,
+      "damage": 11.0,
+      "dps": 4.0740740740740735,
+      "long": 0.22,
+      "market_value": 64.0,
+      "mass": 0.8,
+      "medium": 0.41,
+      "range": 21.9,
+      "short": 0.65,
+      "ticks_between": 8.0,
+      "touch": 0.8,
+      "warmup": 1.15,
+      "work": 2000.0
+    },
+    "tools": [
+      {
+        "label": "limb",
+        "capacities": [
+          "Blunt",
+          "Poke"
+        ],
+        "power": {
+          "field": {
+            "tool-power": 0
+          },
+          "stat": "bash_power",
+          "value": 9.0,
+          "write": true,
+          "reason": "limb power 9: the median of the 28 tools of guns with the same attack in your install.",
+          "median": 9.0,
+          "medianN": 28,
+          "terms": []
+        },
+        "cooldown": {
+          "field": {
+            "tool-cooldown": 0
+          },
+          "stat": "bash_cooldown",
+          "value": 2.0,
+          "write": true,
+          "reason": "limb cooldown 2: the median of the 28 tools of guns with the same attack in your install.",
+          "median": 2.0,
+          "medianN": 28,
+          "terms": []
+        }
+      }
+    ],
+    "costList": [
+      {
+        "defName": "RS_Steel",
+        "count": 13.0,
+        "reason": "RS_Steel of 100% of the 4 reference weapons of the same tier need it; median 27.5 scaled by x0.47 for size and strength."
+      },
+      {
+        "defName": "RS_Part",
+        "count": 1.0,
+        "reason": "RS_Part of 100% of the 4 reference weapons of the same tier need it; median 2.5 scaled by x0.47 for size and strength."
+      }
+    ],
+    "weaponTags": [
+      "RsPrimitive"
+    ],
+    "weaponClasses": [],
+    "marketValue": 64.0,
+    "strength": {
+      "percentile": 0.5,
+      "target": 1.4155665734557217,
+      "achieved": 1.4298263221652425,
+      "error": 0.010073527431994626,
+      "scale": 0.9990047479594616,
+      "clamped": false,
+      "classLabel": "based on 4 items of role bow at tier 0",
+      "classN": 4,
+      "achievedPercentile": 0.25
+    },
+    "notes": [
+      "the archetype is typically -10 percent in strength against the middle of its class"
+    ]
+  },
+  "shotgun/pump": {
+    "archetype": "shotgun/pump",
+    "label": "Pump shotgun",
+    "kind": "ranged",
+    "mode": "vanilla",
+    "source": "archetype",
+    "choice": {
+      "action": "pump",
+      "rof": "medium",
+      "rate": 1.0,
+      "calibre": "medium",
+      "handling": "standard",
+      "tier": "industrial"
+    },
+    "role": "shotgun",
+    "values": [
+      {
+        "field": "damage",
+        "stat": "damage",
+        "value": 17.0,
+        "write": true,
+        "reason": "damage 17: the install's median is 12 (28 reference weapons). Pump shotgun x1.50, strength scale x0.95.",
+        "median": 12.0,
+        "medianN": 28,
+        "terms": [
+          {
+            "label": "Pump shotgun",
+            "factor": 1.5
+          },
+          {
+            "label": "medium calibre",
+            "factor": 1.0
+          },
+          {
+            "label": "strength scale",
+            "factor": 0.9545199532231714
+          }
+        ]
+      },
+      {
+        "field": "armor-penetration",
+        "stat": "ap",
+        "value": 0.135,
+        "write": true,
+        "reason": "armor penetration 0.135: Pump shotgun against the implied 0.015 per damage point x0.53.",
+        "terms": [
+          {
+            "label": "Pump shotgun against the implied 0.015 per damage point",
+            "factor": 0.5294117647058824
+          }
+        ]
+      },
+      {
+        "field": "range",
+        "stat": "range",
+        "value": 14.9,
+        "write": true,
+        "reason": "range 14.9: the install's median is 24.4 (28 reference weapons). Pump shotgun x0.61.",
+        "median": 24.4,
+        "medianN": 28,
+        "terms": [
+          {
+            "label": "Pump shotgun",
+            "factor": 0.61
+          },
+          {
+            "label": "medium calibre",
+            "factor": 1.0
+          },
+          {
+            "label": "standard handling",
+            "factor": 1.0
+          }
+        ]
+      },
+      {
+        "field": "burst-count",
+        "stat": "burst",
+        "value": 1.0,
+        "write": false,
+        "reason": "burst count 1: pump action fires one shot per cycle, so no burst is written.",
+        "terms": [
+          {
+            "label": "medium rate of fire",
+            "factor": 1.0
+          }
+        ]
+      },
+      {
+        "field": "ticks-between-burst-shots",
+        "stat": "ticks_between",
+        "value": 8.0,
+        "write": false,
+        "reason": "ticks between burst shots: a single shot weapon has no burst, so none is written.",
+        "median": 8.0,
+        "medianN": 12,
+        "terms": [
+          {
+            "label": "Pump shotgun",
+            "factor": 1.0
+          },
+          {
+            "label": "Pump action",
+            "factor": 1.0
+          }
+        ]
+      },
+      {
+        "field": "warmup",
+        "stat": "warmup",
+        "value": 0.75,
+        "write": true,
+        "reason": "warmup 0.75: the install's median is 0.98 (28 reference weapons). Pump shotgun x0.78, strength scale x1.01.",
+        "median": 0.975,
+        "medianN": 28,
+        "terms": [
+          {
+            "label": "Pump shotgun",
+            "factor": 0.78
+          },
+          {
+            "label": "Pump action",
+            "factor": 1.0
+          },
+          {
+            "label": "standard handling",
+            "factor": 1.0
+          },
+          {
+            "label": "strength scale",
+            "factor": 1.0107994510637064
+          }
+        ]
+      },
+      {
+        "field": "cooldown",
+        "stat": "cooldown",
+        "value": 1.2,
+        "write": true,
+        "reason": "cooldown 1.2: the install's median is 1.53 (28 reference weapons). Pump shotgun x0.78, strength scale x1.01.",
+        "median": 1.525,
+        "medianN": 28,
+        "terms": [
+          {
+            "label": "Pump shotgun",
+            "factor": 0.78
+          },
+          {
+            "label": "Pump action",
+            "factor": 1.0
+          },
+          {
+            "label": "medium calibre",
+            "factor": 1.0
+          },
+          {
+            "label": "medium rate of fire",
+            "factor": 1.0
+          },
+          {
+            "label": "strength scale",
+            "factor": 1.0144251235298771
+          }
+        ]
+      },
+      {
+        "field": "accuracy-touch",
+        "stat": "touch",
+        "value": 0.86,
+        "write": true,
+        "reason": "touch accuracy 0.86: the install's median is 0.75 (28 reference weapons). Pump shotgun x1.15.",
+        "median": 0.75,
+        "medianN": 28,
+        "terms": [
+          {
+            "label": "Pump shotgun",
+            "factor": 1.15
+          },
+          {
+            "label": "standard handling",
+            "factor": 1.0
+          }
+        ]
+      },
+      {
+        "field": "accuracy-short",
+        "stat": "short",
+        "value": 0.87,
+        "write": true,
+        "reason": "short accuracy 0.87: the install's median is 0.7 (28 reference weapons). Pump shotgun x1.24.",
+        "median": 0.7,
+        "medianN": 28,
+        "terms": [
+          {
+            "label": "Pump shotgun",
+            "factor": 1.24
+          }
+        ]
+      },
+      {
+        "field": "accuracy-medium",
+        "stat": "medium",
+        "value": 0.7,
+        "write": true,
+        "reason": "medium accuracy 0.7: the install's median is 0.5 (28 reference weapons). Pump shotgun x1.40.",
+        "median": 0.5,
+        "medianN": 28,
+        "terms": [
+          {
+            "label": "Pump shotgun",
+            "factor": 1.4
+          }
+        ]
+      },
+      {
+        "field": "accuracy-long",
+        "stat": "long",
+        "value": 0.56,
+        "write": true,
+        "reason": "long accuracy 0.56: the install's median is 0.35 (28 reference weapons). Pump shotgun x1.60.",
+        "median": 0.35,
+        "medianN": 28,
+        "terms": [
+          {
+            "label": "Pump shotgun",
+            "factor": 1.6
+          },
+          {
+            "label": "standard handling",
+            "factor": 1.0
+          }
+        ]
+      },
+      {
+        "field": "mass",
+        "stat": "mass",
+        "value": 3.2,
+        "write": true,
+        "reason": "mass 3.2: the install's median is 3.3 (28 reference weapons). strength scale x0.98.",
+        "median": 3.3003625976889834,
+        "medianN": 28,
+        "terms": [
+          {
+            "label": "Pump shotgun",
+            "factor": 1.0
+          },
+          {
+            "label": "medium calibre",
+            "factor": 1.0
+          },
+          {
+            "label": "standard handling",
+            "factor": 1.0
+          },
+          {
+            "label": "strength scale",
+            "factor": 0.9822567102073348
+          }
+        ]
+      },
+      {
+        "field": "work-to-make",
+        "stat": "work",
+        "value": 14000.0,
+        "write": true,
+        "reason": "work to make 14000: the install's median is 14736.5 (28 reference weapons).",
+        "median": 14736.5,
+        "medianN": 28,
+        "terms": [
+          {
+            "label": "Pump shotgun",
+            "factor": 1.0
+          }
+        ]
+      }
+    ],
+    "stats": {
+      "ap": 0.135,
+      "burst": 1.0,
+      "cooldown": 1.2,
+      "damage": 17.0,
+      "dps": 8.717948717948719,
+      "long": 0.56,
+      "market_value": 198.0,
+      "mass": 3.2,
+      "medium": 0.7,
+      "range": 14.9,
+      "short": 0.87,
+      "ticks_between": 8.0,
+      "touch": 0.86,
+      "warmup": 0.75,
+      "work": 14000.0
+    },
+    "tools": [
+      {
+        "label": "stock",
+        "capacities": [
+          "Blunt"
+        ],
+        "power": {
+          "field": {
+            "tool-power": 0
+          },
+          "stat": "bash_power",
+          "value": 9.0,
+          "write": true,
+          "reason": "stock power 9: the median of the 28 tools of guns with the same attack in your install.",
+          "median": 9.0,
+          "medianN": 28,
+          "terms": []
+        },
+        "cooldown": {
+          "field": {
+            "tool-cooldown": 0
+          },
+          "stat": "bash_cooldown",
+          "value": 2.0,
+          "write": true,
+          "reason": "stock cooldown 2: the median of the 28 tools of guns with the same attack in your install.",
+          "median": 2.0,
+          "medianN": 28,
+          "terms": []
+        }
+      },
+      {
+        "label": "barrel",
+        "capacities": [
+          "Blunt",
+          "Poke"
+        ],
+        "power": {
+          "field": {
+            "tool-power": 1
+          },
+          "stat": "bash_power",
+          "value": 9.0,
+          "write": true,
+          "reason": "barrel power 9: the median of the 28 tools of guns with the same attack in your install.",
+          "median": 9.0,
+          "medianN": 28,
+          "terms": []
+        },
+        "cooldown": {
+          "field": {
+            "tool-cooldown": 1
+          },
+          "stat": "bash_cooldown",
+          "value": 2.0,
+          "write": true,
+          "reason": "barrel cooldown 2: the median of the 28 tools of guns with the same attack in your install.",
+          "median": 2.0,
+          "medianN": 28,
+          "terms": []
+        }
+      }
+    ],
+    "costList": [
+      {
+        "defName": "RS_Steel",
+        "count": 27.0,
+        "reason": "RS_Steel of 100% of the 24 reference weapons of the same tier need it; median 30 scaled by x0.91 for size and strength."
+      },
+      {
+        "defName": "RS_Part",
+        "count": 3.0,
+        "reason": "RS_Part of 100% of the 24 reference weapons of the same tier need it; median 3 scaled by x0.91 for size and strength."
+      }
+    ],
+    "weaponTags": [
+      "RsGun",
+      "RsShort"
+    ],
+    "weaponClasses": [],
+    "marketValue": 198.0,
+    "strength": {
+      "percentile": 0.5,
+      "target": 3.6410384182398827,
+      "achieved": 3.6587006232255943,
+      "error": 0.004850870261964905,
+      "scale": 0.9308935418622258,
+      "clamped": false,
+      "classLabel": "based on 4 items of role shotgun at tier 2",
+      "classN": 4,
+      "achievedPercentile": 0.0
+    },
+    "notes": [
+      "the archetype is typically -10 percent in strength against the middle of its class"
+    ]
+  },
+  "sword/long": {
+    "archetype": "sword/long",
+    "label": "Long sword",
+    "kind": "melee",
+    "mode": "vanilla",
+    "source": "archetype",
+    "choice": {
+      "rof": "medium",
+      "rate": 1.0,
+      "handling": "standard",
+      "tier": "medieval"
+    },
+    "role": "blade",
+    "values": [
+      {
+        "field": "mass",
+        "stat": "mass",
+        "value": 2.1,
+        "write": true,
+        "reason": "mass 2.1: the install's median mass is 1.58 (12 reference weapons). Long sword x1.30, strength scale x1.01.",
+        "median": 1.5795166418730413,
+        "medianN": 12,
+        "terms": [
+          {
+            "label": "Long sword",
+            "factor": 1.3
+          },
+          {
+            "label": "standard handling",
+            "factor": 1.0
+          },
+          {
+            "label": "strength scale",
+            "factor": 1.0058968660444823
+          }
+        ]
+      },
+      {
+        "field": "work-to-make",
+        "stat": "work",
+        "value": 25000.0,
+        "write": true,
+        "reason": "work to make 25000: the install's median work is 9000 (12 reference weapons). Long sword x2.50.",
+        "median": 9000.0,
+        "medianN": 12,
+        "terms": [
+          {
+            "label": "Long sword",
+            "factor": 2.5
+          }
+        ]
+      }
+    ],
+    "stats": {
+      "ap": 0.35833333333333334,
+      "cooldown": 2.5555555555555554,
+      "dps": 9.347826086956523,
+      "fight_dps": 8.673469387755102,
+      "market_value": 260.0,
+      "mass": 2.1,
+      "swing_damage": 23.88888888888889,
+      "tools": 3.0,
+      "work": 25000.0
+    },
+    "tools": [
+      {
+        "label": "handle",
+        "capacities": [
+          "Blunt"
+        ],
+        "power": {
+          "field": {
+            "tool-power": 0
+          },
+          "stat": "swing_damage",
+          "value": 10.0,
+          "write": true,
+          "reason": "handle power 10: the install's median swing damage is 14.68 (12 reference weapons). Long sword handle x0.67, strength scale x1.02.",
+          "median": 14.680676137529336,
+          "medianN": 12,
+          "terms": [
+            {
+              "label": "Long sword handle",
+              "factor": 0.67
+            },
+            {
+              "label": "standard handling",
+              "factor": 1.0
+            },
+            {
+              "label": "strength scale",
+              "factor": 1.0165989907123025
+            }
+          ]
+        },
+        "cooldown": {
+          "field": {
+            "tool-cooldown": 0
+          },
+          "stat": "cooldown",
+          "value": 2.0,
+          "write": true,
+          "reason": "handle cooldown 2: the install's median cooldown is 2 (12 reference weapons). strength scale x0.99.",
+          "median": 2.0,
+          "medianN": 12,
+          "terms": [
+            {
+              "label": "Long sword handle",
+              "factor": 1.0
+            },
+            {
+              "label": "standard handling",
+              "factor": 1.0
+            },
+            {
+              "label": "medium swing speed",
+              "factor": 1.0
+            },
+            {
+              "label": "strength scale",
+              "factor": 0.9929693742087575
+            }
+          ]
+        }
+      },
+      {
+        "label": "point",
+        "capacities": [
+          "Stab"
+        ],
+        "power": {
+          "field": {
+            "tool-power": 1
+          },
+          "stat": "swing_damage",
+          "value": 25.0,
+          "write": true,
+          "reason": "point power 25: the install's median swing damage is 14.68 (12 reference weapons). Long sword point x1.70, strength scale x1.02.",
+          "median": 14.680676137529336,
+          "medianN": 12,
+          "terms": [
+            {
+              "label": "Long sword point",
+              "factor": 1.7
+            },
+            {
+              "label": "standard handling",
+              "factor": 1.0
+            },
+            {
+              "label": "strength scale",
+              "factor": 1.0165989907123025
+            }
+          ]
+        },
+        "cooldown": {
+          "field": {
+            "tool-cooldown": 1
+          },
+          "stat": "cooldown",
+          "value": 2.6,
+          "write": true,
+          "reason": "point cooldown 2.6: the install's median cooldown is 2 (12 reference weapons). Long sword point x1.30, strength scale x0.99.",
+          "median": 2.0,
+          "medianN": 12,
+          "terms": [
+            {
+              "label": "Long sword point",
+              "factor": 1.3
+            },
+            {
+              "label": "standard handling",
+              "factor": 1.0
+            },
+            {
+              "label": "medium swing speed",
+              "factor": 1.0
+            },
+            {
+              "label": "strength scale",
+              "factor": 0.9929693742087575
+            }
+          ]
+        }
+      },
+      {
+        "label": "edge",
+        "capacities": [
+          "Cut"
+        ],
+        "power": {
+          "field": {
+            "tool-power": 2
+          },
+          "stat": "swing_damage",
+          "value": 25.0,
+          "write": true,
+          "reason": "edge power 25: the install's median swing damage is 14.68 (12 reference weapons). Long sword edge x1.70, strength scale x1.02.",
+          "median": 14.680676137529336,
+          "medianN": 12,
+          "terms": [
+            {
+              "label": "Long sword edge",
+              "factor": 1.7
+            },
+            {
+              "label": "standard handling",
+              "factor": 1.0
+            },
+            {
+              "label": "strength scale",
+              "factor": 1.0165989907123025
+            }
+          ]
+        },
+        "cooldown": {
+          "field": {
+            "tool-cooldown": 2
+          },
+          "stat": "cooldown",
+          "value": 2.6,
+          "write": true,
+          "reason": "edge cooldown 2.6: the install's median cooldown is 2 (12 reference weapons). Long sword edge x1.30, strength scale x0.99.",
+          "median": 2.0,
+          "medianN": 12,
+          "terms": [
+            {
+              "label": "Long sword edge",
+              "factor": 1.3
+            },
+            {
+              "label": "standard handling",
+              "factor": 1.0
+            },
+            {
+              "label": "medium swing speed",
+              "factor": 1.0
+            },
+            {
+              "label": "strength scale",
+              "factor": 0.9929693742087575
+            }
+          ]
+        }
+      }
+    ],
+    "costList": [],
+    "stuff": {
+      "categories": [
+        "Metallic"
+      ],
+      "count": 85.0,
+      "reason": "the median stuff count of the 9 reference weapons of the same tier is 50, times 1.50 for the archetype and x1.13 for strength."
+    },
+    "weaponTags": [
+      "RsMelee"
+    ],
+    "weaponClasses": [],
+    "marketValue": 260.0,
+    "strength": {
+      "percentile": 0.5,
+      "target": 11.706986535447596,
+      "achieved": 11.43813775510204,
+      "error": -0.022964815030025704,
+      "scale": 1.0237969237695514,
+      "clamped": false,
+      "classLabel": "based on 6 items of role blade at tier 1",
+      "classN": 6,
+      "achievedPercentile": 1.0
+    },
+    "notes": [
+      "the archetype is typically +22 percent in strength against the middle of its class"
+    ]
+  }
+}

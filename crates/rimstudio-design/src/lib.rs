@@ -2,6 +2,7 @@
 //!
 //! Layer `l2-engine`. See docs/architecture/crate-catalog.md for the contract of this crate.
 
+pub mod archetype;
 pub mod armor;
 pub mod assets;
 pub mod baseline;

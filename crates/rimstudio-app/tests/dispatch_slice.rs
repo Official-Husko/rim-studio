@@ -614,6 +614,32 @@ fn every_command_of_the_slice_dispatches_in_one_session() {
         "unknown"
     );
 
+
+    // weapon archetypes: the catalogue, a proposal and its application to a draft
+    let catalog = run.ok(
+        "designer_archetype_catalog",
+        json!({"includeCalibres": false}),
+    );
+    assert_eq!(catalog["proposalsAvailable"], json!(true));
+    let proposal = run.ok(
+        "designer_archetype_propose",
+        json!({"kind": "ranged", "archetype": "rifle/assault", "balanceTarget": "typical"}),
+    );
+    assert_eq!(proposal["source"], json!("archetype"));
+    let applied = run.ok(
+        "designer_archetype_apply",
+        json!({"draft": draft_json(&ranged_spec()), "proposal": proposal}),
+    );
+    assert_eq!(
+        applied["draft"]["archetype"]["archetype"],
+        json!("rifle/assault")
+    );
+    let bad = run.err(
+        "designer_archetype_propose",
+        json!({"kind": "ranged", "archetype": "rifle/nothing", "balanceTarget": "typical"}),
+    );
+    assert_eq!(bad.code, "designer.invalid-draft");
+
     let all: BTreeSet<String> = ROUTES.iter().map(|r| r.name.to_owned()).collect();
     let missing: Vec<&String> = all.difference(&run.seen).collect();
     assert!(missing.is_empty(), "commands never dispatched: {missing:?}");

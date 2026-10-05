@@ -307,6 +307,315 @@ dryApplyOk?: boolean,
 diagnostics: Array<DiagnosticDto>, };
 
 /**
+ * Response of `designer_archetype_catalog`: the taxonomy and the choices of every descriptor.
+ */
+export type ArchetypeCatalogDto = { 
+/**
+ * The families with their archetypes.
+ */
+families: Array<ArchetypeFamilyDto>, 
+/**
+ * The rate of fire classes.
+ */
+rof: Array<ArchetypeChoiceOptionDto>, 
+/**
+ * The gun actions.
+ */
+actions: Array<ArchetypeChoiceOptionDto>, 
+/**
+ * The calibre classes.
+ */
+calibres: Array<ArchetypeChoiceOptionDto>, 
+/**
+ * The handling classes.
+ */
+handlings: Array<ArchetypeChoiceOptionDto>, 
+/**
+ * The tiers: the six tech levels with the number of reference weapons the install has at each.
+ */
+tiers: Array<ArchetypeTierDto>, 
+/**
+ * The balance choices.
+ */
+balance: Array<BalanceOptionDto>, 
+/**
+ * The size of the install's reference pools: guns and bows, melee weapons.
+ */
+poolSizes: [number, number], 
+/**
+ * True when the reference pools exist (a game install is loaded). Without them nothing can be proposed.
+ */
+proposalsAvailable: boolean, 
+/**
+ * The Combat Extended part.
+ */
+ce: ArchetypeCeCatalogDto, };
+
+/**
+ * The Combat Extended part of the catalogue.
+ */
+export type ArchetypeCeCatalogDto = { 
+/**
+ * True when Combat Extended data is loaded.
+ */
+available: boolean, 
+/**
+ * Why not, when it is not available.
+ */
+reason?: string, 
+/**
+ * The calibres, by label. Empty unless the request asked for them.
+ */
+calibres: Array<CeCalibreDto>, 
+/**
+ * The AI class tags of the install.
+ */
+aiClassTags: Array<string>, };
+
+/**
+ * What the user chose in the archetype dialog. Stored in the draft so the numbers can be proposed again.
+ */
+export type ArchetypeChoiceDto = { 
+/**
+ * The archetype id, `family/archetype` (`rifle/assault`).
+ */
+archetype: string, 
+/**
+ * The descriptors.
+ */
+descriptors: DescriptorsDto, 
+/**
+ * The balance target.
+ */
+balance: BalanceTargetDto, 
+/**
+ * Vanilla or Combat Extended mode.
+ */
+mode: ArchetypeModeDto, 
+/**
+ * A strength index to aim at exactly; replaces the balance target when present.
+ */
+strength?: number, };
+
+/**
+ * A choice with a label.
+ */
+export type ArchetypeChoiceOptionDto = { 
+/**
+ * The id to send back.
+ */
+id: string, 
+/**
+ * The label to show.
+ */
+label: string, 
+/**
+ * A longer line, when there is one.
+ */
+summary?: string, 
+/**
+ * The cadence multiplier of a rate of fire class.
+ */
+rate?: number, };
+
+/**
+ * One archetype of a family and which descriptors apply to it.
+ */
+export type ArchetypeDto = { 
+/**
+ * The full id, `family/archetype`.
+ */
+id: string, 
+/**
+ * The label.
+ */
+label: string, 
+/**
+ * One line describing the weapon type.
+ */
+summary: string, 
+/**
+ * The kind of weapon.
+ */
+kind: ItemKindDto, 
+/**
+ * The descriptors that apply: any of `action`, `rof`, `calibre`, `handling`, `tier`, `balance`.
+ */
+applies: Array<string>, 
+/**
+ * The allowed actions.
+ */
+actions: Array<string>, 
+/**
+ * The default action.
+ */
+defaultAction?: string, 
+/**
+ * The allowed rate of fire classes.
+ */
+rofClasses: Array<string>, 
+/**
+ * The default rate of fire class.
+ */
+defaultRof: string, 
+/**
+ * The typical rounds per minute, the reference of a numeric rate (absent for melee).
+ */
+refRpm?: number, 
+/**
+ * The allowed calibre classes.
+ */
+calibres: Array<string>, 
+/**
+ * The default calibre class.
+ */
+defaultCalibre?: string, 
+/**
+ * The allowed handling classes.
+ */
+handlings: Array<string>, 
+/**
+ * The default handling class.
+ */
+defaultHandling: string, 
+/**
+ * The tier used when none is chosen.
+ */
+defaultTier: TechLevelDto, 
+/**
+ * The role of the install's reference pool this archetype is compared with, when the install has one.
+ */
+poolRole?: string, 
+/**
+ * The Combat Extended ammo families that fit.
+ */
+ammoFamilies: Array<string>, };
+
+/**
+ * A family of archetypes.
+ */
+export type ArchetypeFamilyDto = { 
+/**
+ * The family id.
+ */
+id: string, 
+/**
+ * The label.
+ */
+label: string, 
+/**
+ * The kind of weapon.
+ */
+kind: ItemKindDto, 
+/**
+ * The archetypes.
+ */
+archetypes: Array<ArchetypeDto>, };
+
+/**
+ * Vanilla numbers only, or also a proposal for the optional Combat Extended block.
+ */
+export type ArchetypeModeDto = "vanilla" | "combat-extended";
+
+/**
+ * The proposal for an archetype: every number of the weapon with its reason, and the fit meter's verdict.
+ */
+export type ArchetypeProposalDto = { 
+/**
+ * What produced the proposal; `designer_archetype_apply` re-derives the numbers from it.
+ */
+choice: ArchetypeChoiceDto, 
+/**
+ * The archetype label.
+ */
+label: string, 
+/**
+ * The kind of weapon.
+ */
+kind: ItemKindDto, 
+/**
+ * The source chip of every number: `archetype`.
+ */
+source: string, 
+/**
+ * The descriptors with defaults.
+ */
+resolved: ResolvedChoiceDto, 
+/**
+ * The role of the pool the proposal is compared with.
+ */
+role?: string, 
+/**
+ * The scalar fields in display order.
+ */
+values: Array<ProposedValueDto>, 
+/**
+ * The tools: the attacks of a melee weapon or the bash tools of a gun.
+ */
+tools: Array<ProposedToolDto>, 
+/**
+ * The cost list.
+ */
+costList: Array<ProposedCostDto>, 
+/**
+ * The stuff of a melee weapon.
+ */
+stuff?: ProposedStuffDto, 
+/**
+ * The weapon tags.
+ */
+weaponTags: Array<string>, 
+/**
+ * The weapon classes.
+ */
+weaponClasses: Array<string>, 
+/**
+ * The market value the price math gives (informational; it is not written).
+ */
+marketValue?: number, 
+/**
+ * The strength report.
+ */
+strength: StrengthReportDto, 
+/**
+ * Remarks: widened classes, missing data, ignored descriptors.
+ */
+notes: Array<string>, 
+/**
+ * The Combat Extended part (Combat Extended mode only).
+ */
+ce?: CeProposalDto, 
+/**
+ * The fit meter's verdict on the proposed numbers.
+ */
+fit?: FitReportDto, 
+/**
+ * The overall verdict: `typical`, `plausible` or `unusual`.
+ */
+verdict?: string, };
+
+/**
+ * A tier of the install.
+ */
+export type ArchetypeTierDto = { 
+/**
+ * The tech level.
+ */
+tier: TechLevelDto, 
+/**
+ * The label.
+ */
+label: string, 
+/**
+ * How many reference weapons of the kind the install has at the tier (0 for a tier with none).
+ */
+rangedCount: number, 
+/**
+ * How many reference melee weapons the install has at the tier.
+ */
+meleeCount: number, };
+
+/**
  * One thing the automatic mode could not derive.
  */
 export type AskItemDto = { 
@@ -363,6 +672,28 @@ export type AssetKindDto = "png" | "wav" | "ogg" | "unknown";
  * What `designer_asset_info` found at a path.
  */
 export type AssetStatusDto = "found" | "missing" | "refused" | "too-large";
+
+/**
+ * One balance choice.
+ */
+export type BalanceOptionDto = { 
+/**
+ * The value to send back.
+ */
+target: BalanceTargetDto, 
+/**
+ * The label.
+ */
+label: string, 
+/**
+ * The percentile of the class.
+ */
+percentile: number, };
+
+/**
+ * Where the strength of the weapon should land among the install's weapons of its class.
+ */
+export type BalanceTargetDto = "weaker" | "typical" | "stronger" | { "percentile": number };
 
 /**
  * One bin of an interval question.
@@ -822,6 +1153,47 @@ p50: CeIntervalDto,
 p80: CeIntervalDto, };
 
 /**
+ * A Combat Extended ammo set offered as a calibre.
+ */
+export type CeCalibreDto = { 
+/**
+ * The ammo set def name.
+ */
+set: string, 
+/**
+ * The label of the set.
+ */
+label: string, 
+/**
+ * The caliber text.
+ */
+caliber: string, 
+/**
+ * The family (pistol, rifle, shotgun, ...), when the categories say.
+ */
+family?: string, 
+/**
+ * The projectile of the first ammo type.
+ */
+projectile: string, 
+/**
+ * Damage per shot of the first ammo type.
+ */
+damage: number, 
+/**
+ * Sharp penetration of the first ammo type.
+ */
+apSharp?: number, 
+/**
+ * The damage against the median set of the family.
+ */
+ratio: number, 
+/**
+ * How many converted weapons use the set.
+ */
+weaponCount: number, };
+
+/**
  * One candidate of a choice.
  */
 export type CeCandidateDto = { 
@@ -1182,6 +1554,35 @@ customAmmo?: CustomAmmoDto, };
  * A predictor form.
  */
 export type CePredictorDto = "identity" | "median" | "ratio" | "elastic";
+
+/**
+ * The Combat Extended part of a proposal.
+ */
+export type CeProposalDto = { 
+/**
+ * The ammo set def name.
+ */
+ammoSet?: string, 
+/**
+ * The caliber text of the set.
+ */
+caliber?: string, 
+/**
+ * The projectile of the first ammo type.
+ */
+defaultProjectile?: string, 
+/**
+ * The AI class tag that fits the archetype.
+ */
+weaponTagClass?: string, 
+/**
+ * How the damage of the set compares with the median set of its family.
+ */
+damageRatio?: number, 
+/**
+ * Remarks.
+ */
+notes: Array<string>, };
 
 /**
  * How far a stat can be trusted.
@@ -2376,6 +2777,35 @@ defName: string, };
 export type DensityDto = "standard" | "compact" | "touch";
 
 /**
+ * The descriptors of a weapon beyond its archetype. Every one is optional.
+ */
+export type DescriptorsDto = { 
+/**
+ * The action (`bolt`, `lever`, `pump`, `semi`, `burst`, `full-auto`, `draw`). Guns only.
+ */
+action?: string, 
+/**
+ * The rate of fire; a melee weapon reads it as swing speed.
+ */
+rof?: RateOfFireDto, 
+/**
+ * The calibre class (`tiny`, `small`, `medium`, `large`, `huge`). Guns only.
+ */
+calibre?: string, 
+/**
+ * A Combat Extended ammo set def name: the real calibre, used in Combat Extended mode only.
+ */
+ammoSet?: string, 
+/**
+ * The handling class (`compact`, `standard`, `heavy`).
+ */
+handling?: string, 
+/**
+ * The tier. Absent means the tech level hint of the archetype.
+ */
+tier?: TechLevelDto, };
+
+/**
  * The complete design input for one weapon.
  */
 export type DesignSpecDto = { 
@@ -2555,6 +2985,106 @@ backup: boolean,
  * Run the generated patch through the def engine on a scratch copy after writing.
  */
 dryApply: boolean, };
+
+/**
+ * Request of `designer_archetype_apply`.
+ */
+export type DesignerArchetypeApplyRequest = { 
+/**
+ * The draft to fill.
+ */
+draft: DraftDto, 
+/**
+ * The proposal to apply. Its `choice` is what is applied: the numbers are derived again from it, so a
+ * stale proposal cannot write numbers the solver would not give now.
+ */
+proposal: ArchetypeProposalDto, 
+/**
+ * True also fills the optional Combat Extended block (the ammo set, the default projectile and the
+ * suggestions of the existing predictors). False leaves the Combat Extended switch alone.
+ */
+includeCe: boolean, 
+/**
+ * True replaces the cost list, stuff, tags, classes, role and tech level even when they are not empty.
+ */
+refreshStructure: boolean, 
+/**
+ * True (the default) also fills what is still empty of the structure from the nearest reference weapon
+ * of the install: the parent base and, for a gun, a projectile of its own, so the draft can be planned.
+ */
+completeStructure: boolean, };
+
+/**
+ * Response of `designer_archetype_apply`.
+ */
+export type DesignerArchetypeApplyResponse = { 
+/**
+ * The draft with the numbers filled in and the choice recorded.
+ */
+draft: DraftDto, 
+/**
+ * The pointers of the fields that now hold a proposed number.
+ */
+filled: Array<string>, 
+/**
+ * The pointers of the fields that kept the value the user decided.
+ */
+kept: Array<string>, 
+/**
+ * The proposal that was applied.
+ */
+proposal: ArchetypeProposalDto, 
+/**
+ * Plain notes about the structure that was completed, or why it could not be.
+ */
+notes?: Array<string>, };
+
+/**
+ * Request of `designer_archetype_catalog`.
+ */
+export type DesignerArchetypeCatalogRequest = { 
+/**
+ * Only the archetypes of this kind. Absent lists both.
+ */
+kind?: ItemKindDto, 
+/**
+ * True lists the Combat Extended calibres (the ammo sets of the install) as well.
+ */
+includeCalibres: boolean, };
+
+/**
+ * Request of `designer_archetype_propose`.
+ */
+export type DesignerArchetypeProposeRequest = { 
+/**
+ * The kind of weapon; must be the kind of the archetype.
+ */
+kind: ItemKindDto, 
+/**
+ * The archetype id (`rifle/assault`).
+ */
+archetype: string, 
+/**
+ * The descriptors.
+ */
+descriptors: DescriptorsDto, 
+/**
+ * The balance target.
+ */
+balanceTarget: BalanceTargetDto, 
+/**
+ * Vanilla or Combat Extended mode.
+ */
+mode: ArchetypeModeDto, 
+/**
+ * A strength index to aim at exactly; replaces the balance target when present.
+ */
+strength?: number, 
+/**
+ * The draft the proposal is for. Only used to mark the fields the user decided (`locked`); it is never
+ * changed.
+ */
+draft?: DraftDto, };
 
 /**
  * Request of `designer_asset_info`.
@@ -3323,7 +3853,11 @@ anchors?: Array<AnchorDto>,
 /**
  * The def name of the item this draft was cloned from (flow C). Omitted for a draft that started empty.
  */
-clonedFrom?: string, };
+clonedFrom?: string, 
+/**
+ * What the user chose in the archetype dialog. Omitted for a draft that never used it.
+ */
+archetype?: ArchetypeChoiceDto, };
 
 /**
  * A stored draft with its listing fields.
@@ -3484,6 +4018,19 @@ amount?: number,
  * Chance that the extra damage applies. Absent means always.
  */
 chance?: number, };
+
+/**
+ * One multiplier of a derivation.
+ */
+export type FactorTermDto = { 
+/**
+ * What the factor stands for.
+ */
+label: string, 
+/**
+ * The multiplier.
+ */
+factor: number, };
 
 /**
  * What a plan does to a file.
@@ -5629,6 +6176,110 @@ number: number,
 aboutTotal: number, };
 
 /**
+ * A line of a proposed cost list.
+ */
+export type ProposedCostDto = { 
+/**
+ * The ingredient def name.
+ */
+defName: string, 
+/**
+ * How many.
+ */
+count: number, 
+/**
+ * A short plain reason.
+ */
+reason: string, };
+
+/**
+ * The stuff of a proposed melee weapon.
+ */
+export type ProposedStuffDto = { 
+/**
+ * The stuff category def names.
+ */
+categories: Array<string>, 
+/**
+ * The stuff units per item.
+ */
+count: number, 
+/**
+ * A short plain reason.
+ */
+reason: string, };
+
+/**
+ * A proposed tool.
+ */
+export type ProposedToolDto = { 
+/**
+ * The label.
+ */
+label: string, 
+/**
+ * The capacity def names.
+ */
+capacities: Array<string>, 
+/**
+ * The power.
+ */
+power: ProposedValueDto, 
+/**
+ * The cooldown.
+ */
+cooldown: ProposedValueDto, 
+/**
+ * The explicit armor penetration, when the archetype asks for it.
+ */
+armorPenetration?: ProposedValueDto, };
+
+/**
+ * A proposed number with its reason.
+ */
+export type ProposedValueDto = { 
+/**
+ * The JSON pointer of the field in the spec, for example `/ranged/range` or `/tools/1/power`.
+ */
+field: string, 
+/**
+ * The reference stat the number is compared with.
+ */
+stat: string, 
+/**
+ * The value.
+ */
+value: number, 
+/**
+ * False when the field is better left unset because the game derives it.
+ */
+write: boolean, 
+/**
+ * The source chip: always `archetype`.
+ */
+source: string, 
+/**
+ * A short plain reason.
+ */
+reason: string, 
+/**
+ * The install median the shape started from.
+ */
+median?: number, 
+/**
+ * How many reference weapons stand behind the median.
+ */
+medianN?: number, 
+/**
+ * The multipliers applied to the median.
+ */
+terms: Array<FactorTermDto>, 
+/**
+ * True when the draft holds a value the user decided for this field: the proposal will not replace it.
+ */
+locked: boolean, };
+
+/**
  * Item quality.
  */
 export type QualityDto = "awful" | "poor" | "normal" | "good" | "excellent" | "masterwork" | "legendary";
@@ -5839,6 +6490,11 @@ equal: number,
 total: number, };
 
 /**
+ * How fast the weapon fires.
+ */
+export type RateOfFireDto = { "class": string } | { "rpm": number };
+
+/**
  * A child of an element: another element or a text run.
  */
 export type RawChildDto = RawNodeDto | string;
@@ -6035,6 +6691,39 @@ items: Array<ReferenceItemDto>,
  * Pool distributions by stat, ordered by stat name.
  */
 pools: Array<StatPoolDto>, };
+
+/**
+ * The descriptors as the solver read them, with the defaults filled in.
+ */
+export type ResolvedChoiceDto = { 
+/**
+ * The action (guns only).
+ */
+action?: string, 
+/**
+ * The rate of fire class nearest to the choice.
+ */
+rof: string, 
+/**
+ * The cadence multiplier.
+ */
+rate: number, 
+/**
+ * The calibre class (guns only).
+ */
+calibre?: string, 
+/**
+ * The Combat Extended ammo set the calibre came from.
+ */
+ammoSet?: string, 
+/**
+ * The handling class.
+ */
+handling: string, 
+/**
+ * The tier.
+ */
+tier: TechLevelDto, };
 
 /**
  * One definition after inheritance and patches.
@@ -6791,6 +7480,47 @@ hasSteamapps: boolean,
  * `libraryfolders.vdf` exists.
  */
 hasLibraryFolders: boolean, };
+
+/**
+ * How the strength was aimed and where it landed.
+ */
+export type StrengthReportDto = { 
+/**
+ * The percentile of the class the target stands for.
+ */
+percentile: number, 
+/**
+ * The strength index aimed at.
+ */
+target: number, 
+/**
+ * The strength index of the rounded proposal.
+ */
+achieved: number, 
+/**
+ * The relative difference of the two.
+ */
+error: number, 
+/**
+ * The scale the solver applied (1 means the shape already fitted).
+ */
+scale: number, 
+/**
+ * True when the target was out of reach.
+ */
+clamped: boolean, 
+/**
+ * The class the target was read from.
+ */
+classLabel: string, 
+/**
+ * How many reference weapons stand behind the class.
+ */
+classN: number, 
+/**
+ * The percentile of the achieved strength among the class.
+ */
+achievedPercentile: number, };
 
 /**
  * The reference weapon the structure was copied from.

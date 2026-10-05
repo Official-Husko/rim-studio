@@ -8,6 +8,7 @@ use std::collections::BTreeMap;
 use serde::{Deserialize, Serialize};
 use serde_json::Value;
 
+use super::archetype::ArchetypeChoiceDto;
 use super::spec::{DesignSpecDto, ItemKindDto};
 
 /// The schema version of drafts this build writes.
@@ -71,6 +72,10 @@ pub struct DraftDto {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     #[cfg_attr(feature = "ts", ts(optional))]
     pub cloned_from: Option<String>,
+    /// What the user chose in the archetype dialog. Omitted for a draft that never used it.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
+    pub archetype: Option<ArchetypeChoiceDto>,
 }
 
 impl DraftDto {
@@ -85,6 +90,7 @@ impl DraftDto {
             answers: BTreeMap::new(),
             anchors: Vec::new(),
             cloned_from: None,
+            archetype: None,
         }
     }
 }
