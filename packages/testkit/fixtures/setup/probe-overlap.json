@@ -1,0 +1,26 @@
+{
+  "kind": "workshop",
+  "modCount": 691,
+  "suggestedDepth": 1,
+  "suggestedLayout": "mods-root",
+  "warnings": [],
+  "overlaps": [
+    {
+      "with": "workshop-0",
+      "relation": "same",
+      "code": "deploy.source-overlap",
+      "hard": true
+    }
+  ],
+  "diagnostics": [
+    {
+      "code": "deploy.source-overlap",
+      "severity": "error",
+      "message": "The folder overlaps another source, so the same mods would be listed twice.",
+      "args": {
+        "source": "workshop-0"
+      }
+    }
+  ],
+  "canSave": false
+}

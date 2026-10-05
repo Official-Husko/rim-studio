@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "rev": 2879269058963529,
+  "appearance": {
+    "theme": "system",
+    "accent": "amber",
+    "density": "standard",
+    "fontScale": 1.0,
+    "reduceMotion": "system",
+    "colourMode": "background",
+    "richText": true
+  },
+  "library": {
+    "scanThreads": 0,
+    "watch": {
+      "mode": "auto",
+      "pollIntervalSeconds": 60,
+      "debounceMs": 500
+    },
+    "checkWorkshopUpdates": true,
+    "recentlyUpdatedEnabled": false,
+    "recentlyUpdatedDays": 3,
+    "showSaveComparison": true,
+    "autoLoadPlayerLog": false
+  },
+  "sorting": {
+    "dependenciesAsLoadAfter": false,
+    "alternativeIdsSatisfyDependencies": true,
+    "checkDependenciesOnSort": true
+  },
+  "history": {
+    "enabled": true,
+    "keep": 50
+  },
+  "shortcuts": {},
+  "designer": {
+    "mode": "simple"
+  },
+  "updates": {
+    "channel": "stable",
+    "checkOnStart": true
+  },
+  "logLevel": "info",
+  "onboardingCompleted": false,
+  "paths": {},
+  "customFolders": [
+    {
+      "id": "cf_a4f98cb5",
+      "path": "/run/media/pawbeans/project_drive/pawbeans/Projects/RimWorld Mods",
+      "label": "My mods",
+      "enabled": true,
+      "layout": "auto",
+      "scanDepth": 1,
+      "readOnly": false,
+      "link": "auto",
+      "volumeHint": {
+        "mount": "/run/media/pawbeans/project_drive",
+        "label": "project_drive"
+      }
+    }
+  ]
+}

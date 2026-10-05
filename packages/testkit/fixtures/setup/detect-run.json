@@ -1,0 +1,126 @@
+{
+  "schema": 1,
+  "generatedAtMs": 1791184659787,
+  "os": "linux",
+  "steamRoots": [
+    {
+      "path": "/home/pawbeans/.local/share/Steam",
+      "canonical": "/home/pawbeans/.local/share/Steam",
+      "how": "xdg-data-home",
+      "confidence": "high",
+      "exists": true,
+      "hasSteamapps": true,
+      "hasLibraryFolders": true
+    }
+  ],
+  "libraries": [
+    {
+      "path": "/home/pawbeans/.local/share/Steam",
+      "canonical": "/home/pawbeans/.local/share/Steam",
+      "how": "library-folders-vdf",
+      "root": "/home/pawbeans/.local/share/Steam",
+      "online": true,
+      "timedOut": false,
+      "label": "",
+      "hasApp": true,
+      "stale": false
+    },
+    {
+      "path": "/run/media/pawbeans/games/SteamLibrary",
+      "canonical": "/run/media/pawbeans/games/SteamLibrary",
+      "how": "library-folders-vdf",
+      "root": "/home/pawbeans/.local/share/Steam",
+      "online": true,
+      "timedOut": false,
+      "label": "",
+      "hasApp": false,
+      "stale": false
+    }
+  ],
+  "installs": [
+    {
+      "id": "steam:/home/pawbeans/.local/share/Steam",
+      "kind": "steam",
+      "path": "/home/pawbeans/.local/share/Steam/steamapps/common/RimWorld",
+      "gameRoot": "/home/pawbeans/.local/share/Steam/steamapps/common/RimWorld",
+      "how": "appmanifest",
+      "confidence": "high",
+      "version": {
+        "raw": "1.6.4871 rev598",
+        "major": 1,
+        "minor": 6,
+        "build": 4871,
+        "rev": 598
+      },
+      "buildId": "23969874",
+      "targetBuildId": "0",
+      "stateFlags": 4,
+      "health": "installed",
+      "launch": {
+        "steamUrl": "steam://rungameid/294100",
+        "executable": "/home/pawbeans/.local/share/Steam/steamapps/common/RimWorld/RimWorldLinux",
+        "workingDir": "/home/pawbeans/.local/share/Steam/steamapps/common/RimWorld",
+        "args": [],
+        "steamOnly": false
+      },
+      "modsDir": {
+        "path": "/home/pawbeans/.local/share/Steam/steamapps/common/RimWorld/Mods",
+        "exists": true,
+        "readable": true
+      },
+      "dataDirs": [
+        "Anomaly",
+        "Biotech",
+        "Core",
+        "Ideology",
+        "Odyssey",
+        "Royalty"
+      ],
+      "proton": false,
+      "library": "/home/pawbeans/.local/share/Steam",
+      "isSymlink": false,
+      "workshop": [
+        {
+          "library": "/home/pawbeans/.local/share/Steam",
+          "contentDir": "/home/pawbeans/.local/share/Steam/steamapps/workshop/content/294100",
+          "acf": "/home/pawbeans/.local/share/Steam/steamapps/workshop/appworkshop_294100.acf",
+          "itemsOnDisk": 691,
+          "itemsInAcf": 693,
+          "how": "directory-probe"
+        }
+      ]
+    }
+  ],
+  "userDirs": [
+    {
+      "path": "/home/pawbeans/.config/unity3d/Ludeon Studios/RimWorld by Ludeon Studios",
+      "kind": "native",
+      "modsConfigExists": true,
+      "modsConfigMtimeMs": 1774456977509,
+      "gameVersion": "1.6.4633 rev1270",
+      "playerLog": "/home/pawbeans/.config/unity3d/Ludeon Studios/RimWorld by Ludeon Studios/Player.log",
+      "prefs": "/home/pawbeans/.config/unity3d/Ludeon Studios/RimWorld by Ludeon Studios/Config/Prefs.xml",
+      "newest": true
+    }
+  ],
+  "selected": {
+    "install": "steam:/home/pawbeans/.local/share/Steam",
+    "userDir": "/home/pawbeans/.config/unity3d/Ludeon Studios/RimWorld by Ludeon Studios"
+  },
+  "warnings": [
+    {
+      "code": "steam.manifest-leftover",
+      "message": "temporary copies of the app manifest were ignored",
+      "paths": [
+        "/home/pawbeans/.local/share/Steam/steamapps/appmanifest_294100.acf.128309701.tmp"
+      ]
+    },
+    {
+      "code": "steam.userdir-version-mismatch",
+      "message": "ModsConfig.xml was written by 1.6.4633 rev1270, the install is 1.6.4871 rev598",
+      "paths": [
+        "/home/pawbeans/.config/unity3d/Ludeon Studios/RimWorld by Ludeon Studios"
+      ]
+    }
+  ]
+}

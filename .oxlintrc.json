@@ -243,6 +243,7 @@
         "**/*.test.ts",
         "**/*.test.tsx",
         "packages/testkit/**",
+        "apps/desktop/src/features/*/testSupport.ts",
         "apps/desktop/vite.config.ts",
         "apps/desktop/src/gallery/**"
       ],

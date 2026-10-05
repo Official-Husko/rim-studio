@@ -1,0 +1,136 @@
+{
+  "rev": 2,
+  "stats": {
+    "foldersProbed": 775,
+    "modsFound": 763,
+    "modsIndexed": 763,
+    "aboutParsed": 19,
+    "aboutReused": 744,
+    "loadFoldersParsed": 0,
+    "loadFoldersReused": 291,
+    "defFilesParsed": 32,
+    "defFilesReused": 17398,
+    "defs": 78320,
+    "filesHashed": 0,
+    "bytesRead": 226798,
+    "dirErrors": 0,
+    "nonUtf8": 0
+  },
+  "timings": {
+    "discoverMs": 5,
+    "metadataMs": 4,
+    "definitionsMs": 30,
+    "totalMs": 54
+  },
+  "sources": [
+    {
+      "id": "game-data",
+      "kind": "game-data",
+      "path": "/home/pawbeans/.local/share/Steam/steamapps/common/RimWorld/Data",
+      "status": "ready",
+      "mods": 6
+    },
+    {
+      "id": "game-mods",
+      "kind": "game-mods",
+      "path": "/home/pawbeans/.local/share/Steam/steamapps/common/RimWorld/Mods",
+      "status": "ready",
+      "mods": 47
+    },
+    {
+      "id": "workshop-0",
+      "kind": "workshop",
+      "path": "/home/pawbeans/.local/share/Steam/steamapps/workshop/content/294100",
+      "status": "ready",
+      "mods": 691
+    },
+    {
+      "id": "cf_a4f98cb5",
+      "kind": "custom",
+      "path": "/run/media/pawbeans/project_drive/pawbeans/Projects/RimWorld Mods",
+      "status": "ready",
+      "mods": 19
+    }
+  ],
+  "diagnostics": {
+    "counts": {
+      "about.field-dropped": 1,
+      "about.no-supported-versions": 1,
+      "loadfolders.ignored-attribute": 9
+    },
+    "samples": [
+      {
+        "code": "about.field-dropped",
+        "severity": "warning",
+        "message": "field <description> holds a comment or child elements, so the game ignores its value",
+        "modIdx": 470
+      },
+      {
+        "code": "about.no-supported-versions",
+        "severity": "warning",
+        "message": "the file has no supportedVersions list",
+        "modIdx": 344
+      },
+      {
+        "code": "loadfolders.ignored-attribute",
+        "severity": "warning",
+        "message": "attribute IfModActiveAny on the entry \"Mods and Shit/Cooler\" of block v1.6 is not read by the game",
+        "modIdx": 191
+      },
+      {
+        "code": "loadfolders.ignored-attribute",
+        "severity": "warning",
+        "message": "attribute IfModActiveAny on the entry \"Mods and Shit/Crypto Coffins\" of block v1.6 is not read by the game",
+        "modIdx": 191
+      },
+      {
+        "code": "loadfolders.ignored-attribute",
+        "severity": "warning",
+        "message": "attribute IfModActiveAny on the entry \"Mods and Shit/Extra Turrets Cosmic\" of block v1.6 is not read by the game",
+        "modIdx": 191
+      },
+      {
+        "code": "loadfolders.ignored-attribute",
+        "severity": "warning",
+        "message": "attribute IfModActiveAny on the entry \"Mods and Shit/HE-Vehicles/Common\" of block v1.6 is not read by the game",
+        "modIdx": 191
+      },
+      {
+        "code": "loadfolders.ignored-attribute",
+        "severity": "warning",
+        "message": "attribute IfModActiveAny on the entry \"Mods and Shit/Hunterphage/Hunterphage Equipment Only\" of block v1.6 is not read by the game",
+        "modIdx": 191
+      },
+      {
+        "code": "loadfolders.ignored-attribute",
+        "severity": "warning",
+        "message": "attribute IfModActiveAny on the entry \"Mods and Shit/MUS Common Patch\" of block v1.6 is not read by the game",
+        "modIdx": 191
+      },
+      {
+        "code": "loadfolders.ignored-attribute",
+        "severity": "warning",
+        "message": "attribute IfModActiveAny on the entry \"Mods and Shit/RR Furniture Common\" of block v1.6 is not read by the game",
+        "modIdx": 191
+      },
+      {
+        "code": "loadfolders.ignored-attribute",
+        "severity": "warning",
+        "message": "attribute IfModActiveAny on the entry \"Mods and Shit/Repair Hubs\" of block v1.6 is not read by the game",
+        "modIdx": 191
+      },
+      {
+        "code": "loadfolders.ignored-attribute",
+        "severity": "warning",
+        "message": "attribute IfModActiveAny on the entry \"Mods and Shit/Ultratech Automation\" of block v1.6 is not read by the game",
+        "modIdx": 191
+      }
+    ],
+    "truncated": false,
+    "errors": 0,
+    "warnings": 11,
+    "infos": 0,
+    "hints": 0
+  },
+  "cancelled": false
+}

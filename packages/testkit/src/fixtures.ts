@@ -1,7 +1,7 @@
 // Fixture loader: every JSON file in packages/testkit/fixtures is bundled eagerly, so the same
 // loader works in vitest and in the browser (mock mode). A feature adds fixtures by adding
 // files named after the command (designer_preview.json) or any other stable name.
-const modules = import.meta.glob<unknown>('../fixtures/*.json', { eager: true, import: 'default' });
+const modules = import.meta.glob<unknown>('../fixtures/**/*.json', { eager: true, import: 'default' });
 
 const byName = new Map<string, unknown>();
 for (const [path, value] of Object.entries(modules)) {

@@ -1,42 +1,55 @@
-import { useState } from 'preact/hooks';
-import { Banner, Button, KeyValueList, Panel } from 'rimstudio-ui';
-import { connection, devInfo, useQuery } from '~/shared/ipc';
-import { pickFolder } from '~/shared/platform';
+import { useEffect } from 'preact/hooks';
+import { Banner } from 'rimstudio-ui';
 import { t } from '~/shared/i18n';
+import { connection } from '~/shared/ipc';
+import { CeCard } from './CeCard';
+import { checkCombatExtended } from './ceStore';
+import { loadReport, report } from './detectStore';
+import { devLink } from './devLinks';
+import { GameCard } from './GameCard';
+import { ScanCard } from './ScanCard';
+import { runScan } from './scanStore';
+import { loadSettings } from './settingsStore';
+import { SettingsCard } from './SettingsCard';
+import { SourcesCard } from './SourcesCard';
+import { loadSources, startAdd } from './sourcesStore';
 
-/** Placeholder setup page: shows what the bridge reports and proves the folder picker. */
+/** The workshop folder of the selected install, if detection found one. */
+function workshopDir(): string | undefined {
+  const current = report.value;
+  const install = current?.installs.find((i) => i.id === current.selected.install);
+  return install?.workshop[0]?.contentDir;
+}
+
+/** Setup: detection, mod folders, library scan, Combat Extended and a settings summary. */
 export default function SetupPage() {
-  const info = useQuery('dev-info', devInfo);
-  const [picked, setPicked] = useState<string | null>(null);
-  const data = info.data.value;
+  useEffect(() => {
+    void (async () => {
+      await loadReport();
+      await Promise.all([loadSources(), loadSettings()]);
+      const addPath = devLink('add');
+      if (addPath) await startAdd(addPath);
+      if (devLink('scan') === 'run') await runScan(false);
+    })();
+  }, []);
+  const dir = workshopDir();
+  useEffect(() => {
+    void checkCombatExtended(dir);
+  }, [dir]);
   return (
-    <div class="flex max-w-3xl flex-col gap-4 p-6">
+    <div class="flex max-w-7xl flex-col gap-4 p-6">
       <h1 class="font-display text-display font-semibold tracking-display">{t('setup.title')}</h1>
       {connection.value === 'mock' ? <Banner tone="info">{t('setup.mock.note')}</Banner> : null}
-      <Panel title={t('setup.connection')} framed>
-        {info.error.value ? (
-          <Banner tone="error" title={t('setup.error')}>
-            {info.error.value.message}
-          </Banner>
-        ) : data ? (
-          <KeyValueList
-            items={[
-              { key: t('setup.info.version'), value: data.bridgeVersion, mono: true },
-              { key: t('setup.info.platform'), value: data.platform, mono: true },
-              { key: t('setup.info.home'), value: data.home, mono: true },
-              { key: t('setup.info.data'), value: data.dataDir, mono: true },
-              { key: t('setup.info.commands'), value: String(data.commandCount), mono: true },
-            ]}
-          />
-        ) : null}
-      </Panel>
-      <div class="flex items-center gap-3">
-        <Button icon="folder" onClick={() => void pickFolder().then(setPicked)}>
-          {t('setup.pick')}
-        </Button>
-        {picked ? (
-          <span class="font-mono text-mono text-muted">{t('setup.picked', { path: picked })}</span>
-        ) : null}
+      <div class="grid grid-cols-1 items-start gap-4 xl:grid-cols-2">
+        <div class="flex min-w-0 flex-col gap-4">
+          <GameCard />
+          <CeCard />
+          <SettingsCard />
+        </div>
+        <div class="flex min-w-0 flex-col gap-4">
+          <SourcesCard />
+          <ScanCard />
+        </div>
       </div>
     </div>
   );

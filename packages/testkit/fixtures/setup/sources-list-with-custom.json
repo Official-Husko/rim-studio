@@ -1,0 +1,51 @@
+{
+  "sources": [
+    {
+      "id": "game-data",
+      "kind": "game-data",
+      "path": "/home/pawbeans/.local/share/Steam/steamapps/common/RimWorld/Data",
+      "label": "Game data",
+      "enabled": true,
+      "status": "ready",
+      "modCount": 6,
+      "layout": "auto",
+      "scanDepth": 1,
+      "readOnly": false
+    },
+    {
+      "id": "game-mods",
+      "kind": "game-mods",
+      "path": "/home/pawbeans/.local/share/Steam/steamapps/common/RimWorld/Mods",
+      "label": "Game mods",
+      "enabled": true,
+      "status": "ready",
+      "modCount": 47,
+      "layout": "auto",
+      "scanDepth": 1,
+      "readOnly": false
+    },
+    {
+      "id": "workshop-0",
+      "kind": "workshop",
+      "path": "/home/pawbeans/.local/share/Steam/steamapps/workshop/content/294100",
+      "label": "Workshop",
+      "enabled": true,
+      "status": "ready",
+      "modCount": 691,
+      "layout": "auto",
+      "scanDepth": 1,
+      "readOnly": false
+    },
+    {
+      "id": "cf_a4f98cb5",
+      "kind": "custom",
+      "path": "/run/media/pawbeans/project_drive/pawbeans/Projects/RimWorld Mods",
+      "label": "My mods",
+      "enabled": true,
+      "status": "ready",
+      "layout": "auto",
+      "scanDepth": 1,
+      "readOnly": false
+    }
+  ]
+}

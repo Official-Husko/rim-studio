@@ -27,11 +27,11 @@ const text = sources.map((f) => readFileSync(f, 'utf8')).join('\n');
 describe('t', () => {
   it('returns the English text and fills placeholders', () => {
     expect(t('app.name')).toBe('RimStudio');
-    expect(t('setup.picked', { path: '/x' })).toBe('Chosen: /x');
+    expect(t('setup.remove.body', { name: 'X' })).toBe('X will no longer be scanned.');
   });
 
   it('keeps an unknown placeholder visible', () => {
-    expect(t('setup.picked')).toBe('Chosen: {path}');
+    expect(t('setup.remove.body')).toBe('{name} will no longer be scanned.');
   });
 
   it('falls back to the key for an unknown key', () => {
