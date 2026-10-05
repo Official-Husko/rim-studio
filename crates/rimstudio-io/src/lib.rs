@@ -18,6 +18,7 @@
 //! | [`copy`], [`sha256`] | guarded, hash verified file copies for imported assets, and the in house SHA-256 |
 //! | [`guard`], [`fence`] | path validation against roots and the game write fence (I-05) |
 //! | [`real_fs`] | [`RealFs`], the real [`rimstudio_core::ports::FsProbe`] |
+//! | [`rename`] | [`rename::move_path`]: a guarded move of a file or folder that never overwrites |
 //! | [`watch`], [`ignore_set`] | deferred, not part of 0.1.0 |
 //!
 //! Operating system conditionals do not belong here (I-11): where an identity such as an inode is
@@ -34,6 +35,7 @@ pub mod ignore_set;
 pub mod jsonc;
 pub mod migrate;
 pub mod real_fs;
+pub mod rename;
 pub mod roots;
 pub mod schema;
 pub mod sha256;

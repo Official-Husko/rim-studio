@@ -1,0 +1,48 @@
+{
+  "projectId": "p-fixture",
+  "planId": "73b81054ea556c414043cc38146b2c82",
+  "items": [
+    {
+      "id": "fix-001-d2521e",
+      "kind": "create-folder",
+      "issueCode": "layout.missing-folder",
+      "from": "",
+      "to": "Common/Defs/SoundDefs",
+      "why": "The standard folder Common/Defs/SoundDefs does not exist.",
+      "risk": "safe",
+      "applicable": true,
+      "references": [],
+      "requires": []
+    },
+    {
+      "id": "fix-002-385f9f",
+      "kind": "create-load-folders",
+      "issueCode": "layout.ce-outside-gate",
+      "from": "",
+      "to": "LoadFolders.xml",
+      "why": "A new LoadFolders.xml lists Common/Compat/CombatExtended so that it loads only when Combat Extended is active.",
+      "risk": "safe",
+      "applicable": true,
+      "diff": "--- a/LoadFolders.xml\n+++ b/LoadFolders.xml\n@@ -0,0 +1,13 @@\n+<?xml version=\"1.0\" encoding=\"utf-8\"?>\n+<loadFolders>\n+  <v1.3>\n+    <li>/</li>\n+    <li>Common</li>\n+    <li IfModActive=\"ceteam.combatextended\">Common/Compat/CombatExtended</li>\n+  </v1.3>\n+  <default>\n+    <li>/</li>\n+    <li>Common</li>\n+    <li IfModActive=\"ceteam.combatextended\">Common/Compat/CombatExtended</li>\n+  </default>\n+</loadFolders>\n",
+      "references": [],
+      "requires": []
+    },
+    {
+      "id": "fix-003-06f74a",
+      "kind": "move-file",
+      "issueCode": "layout.ce-outside-gate",
+      "from": "Patches/CE_Patch.xml",
+      "to": "Common/Compat/CombatExtended/Patches/CE_Patch.xml",
+      "why": "Patches/CE_Patch.xml uses Combat Extended classes outside the gated folder; it moves into Common/Compat/CombatExtended/Patches.",
+      "risk": "safe",
+      "applicable": true,
+      "references": [],
+      "requires": [
+        "fix-002-385f9f"
+      ]
+    }
+  ],
+  "safe": 3,
+  "needsReview": 0,
+  "conflicts": 0
+}

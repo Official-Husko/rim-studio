@@ -1,0 +1,37 @@
+{
+  "projectId": "p-1a2b3c4d",
+  "applyId": "fix-1767225600000-1a2b3c4d",
+  "planId": "ebac9a61a265145f94c35aba8f796ea9",
+  "done": [
+    {
+      "id": "fix-004-0c324d",
+      "kind": "move-file",
+      "from": "Patches/RS_ce_patch.xml",
+      "to": "Compat/CombatExtended/Patches/RS_ce_patch.xml",
+      "copied": false
+    }
+  ],
+  "edited": [
+    {
+      "path": "LoadFolders.xml",
+      "created": false,
+      "backupPath": "/data/project-backups/p-1a2b3c4d/root/LoadFolders.xml.2026-10-05"
+    }
+  ],
+  "skipped": [
+    {
+      "id": "fix-005-aa11bb",
+      "reason": "textures and sounds are referenced by path from definitions"
+    }
+  ],
+  "cancelled": false,
+  "check": {
+    "projectId": "p-1a2b3c4d",
+    "profile": "core-style",
+    "issues": [],
+    "errors": 0,
+    "warnings": 0,
+    "infos": 0,
+    "autoFixable": 0
+  }
+}

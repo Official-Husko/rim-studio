@@ -1,0 +1,59 @@
+{
+  "projectId": "p-1a2b3c4d",
+  "planId": "ebac9a61a265145f94c35aba8f796ea9",
+  "items": [
+    {
+      "id": "fix-003-385f9f",
+      "kind": "create-load-folders",
+      "issueCode": "layout.ce-outside-gate",
+      "from": "",
+      "to": "LoadFolders.xml",
+      "why": "A new LoadFolders.xml lists Compat/CombatExtended so that it loads only when Combat Extended is active.",
+      "risk": "safe",
+      "applicable": true,
+      "diff": "--- a/LoadFolders.xml\n+++ b/LoadFolders.xml\n@@ -0,0 +1,3 @@\n+<loadFolders>\n+  <v1.6>\n+  </v1.6>\n",
+      "references": [],
+      "requires": []
+    },
+    {
+      "id": "fix-004-0c324d",
+      "kind": "move-file",
+      "issueCode": "layout.ce-outside-gate",
+      "from": "Patches/RS_ce_patch.xml",
+      "to": "Compat/CombatExtended/Patches/RS_ce_patch.xml",
+      "why": "The file moves into the gated folder.",
+      "risk": "safe",
+      "applicable": true,
+      "conflict": {
+        "destinationExists": true,
+        "suggestedTo": "Compat/CombatExtended/Patches/RS_ce_patch_2.xml"
+      },
+      "references": [],
+      "requires": [
+        "fix-003-385f9f"
+      ]
+    },
+    {
+      "id": "fix-005-aa11bb",
+      "kind": "move-folder",
+      "issueCode": "layout.folder-case",
+      "from": "textures",
+      "to": "Textures",
+      "why": "The folder is named textures.",
+      "risk": "needs-review",
+      "applicable": false,
+      "reviewReason": "textures and sounds are referenced by path from definitions",
+      "references": [
+        {
+          "path": "Defs/RS_Gun.xml",
+          "line": 12,
+          "text": "<texPath>Things/RS_Gun</texPath>"
+        }
+      ],
+      "requires": []
+    }
+  ],
+  "safe": 2,
+  "needsReview": 1,
+  "conflicts": 1
+}

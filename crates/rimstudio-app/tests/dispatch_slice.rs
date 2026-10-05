@@ -54,6 +54,10 @@ fn s<'v>(v: &'v Value, key: &str) -> &'v str {
         .unwrap_or_else(|| panic!("no string {key} in {v}"))
 }
 
+fn s_of(v: &Value, key: &str) -> String {
+    s(v, key).to_owned()
+}
+
 fn ce_block() -> CePatchSpec {
     CePatchSpec {
         ammo_set: Some("RS_AmmoSetA".into()),
@@ -281,6 +285,67 @@ fn every_command_of_the_slice_dispatches_in_one_session() {
     let closed = run.ok("project_close", json!({"projectId": conv_id.clone()}));
     assert_eq!(closed["closed"], json!(true));
     run.ok("project_open", json!({"path": conv_root.as_str()}));
+
+    // layout fixes: plan, a stale plan, apply, history, undo, and an unknown journal
+    let fix_root = project_folder(
+        &f,
+        "RS_FixCe",
+        &[(
+            "Patches/ce.xml",
+            "<Patch><Operation Class=\"CombatExtended.PatchOperationFindMod\"><modName>Combat Extended</modName></Operation></Patch>",
+        )],
+    );
+    let fix_pid = s_of(
+        &run.ok("project_open", json!({"path": fix_root.as_str()})),
+        "projectId",
+    );
+    let fix_plan = run.ok(
+        "project_layout_fix_plan",
+        json!({"projectId": fix_pid.clone()}),
+    );
+    let ids: Vec<Value> = fix_plan["items"]
+        .as_array()
+        .unwrap()
+        .iter()
+        .filter(|i| i["applicable"] == json!(true))
+        .map(|i| json!({"id": i["id"].clone()}))
+        .collect();
+    assert!(ids.len() >= 3, "{fix_plan}");
+    let stale = run.err(
+        "project_layout_fix_apply",
+        json!({"projectId": fix_pid.clone(), "planId": "not-the-plan", "items": ids.clone()}),
+    );
+    assert_eq!(stale.code, "designer.plan-stale");
+    let fixed = run.ok(
+        "project_layout_fix_apply",
+        json!({"projectId": fix_pid.clone(), "planId": s(&fix_plan, "planId"), "items": ids}),
+    );
+    assert!(
+        fix_root
+            .join("Compat/CombatExtended/Patches/ce.xml")
+            .is_file(),
+        "{fixed}"
+    );
+    assert!(!fix_root.join("Patches/ce.xml").exists());
+    let history = run.ok(
+        "project_layout_fix_history",
+        json!({"projectId": fix_pid.clone()}),
+    );
+    assert_eq!(
+        history["journals"][0]["undoPossible"],
+        json!(true),
+        "{history}"
+    );
+    run.ok(
+        "project_layout_fix_undo",
+        json!({"projectId": fix_pid.clone(), "applyId": s(&fixed, "applyId")}),
+    );
+    assert!(fix_root.join("Patches/ce.xml").is_file());
+    let gone = run.err(
+        "project_layout_fix_undo",
+        json!({"projectId": fix_pid, "applyId": "fix-1-aaaaaaaa"}),
+    );
+    assert_eq!(gone.code, "project.fix-not-found");
 
     // designer: references, readouts, fit, quiz
     let refs = run.ok("designer_reference_list", json!({"kind": "ranged"}));

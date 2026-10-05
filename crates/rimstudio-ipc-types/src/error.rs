@@ -181,6 +181,9 @@ pub mod codes {
         JOB_NOT_FOUND = "job.not-found", Recovery::None, true;
         JOB_PANICKED = "job.panicked", Recovery::OpenLog, false;
         LIBRARY_SCAN_FAILED = "library.scan-failed", Recovery::Rescan, false;
+        PROJECT_FIX_JOURNAL_DAMAGED = "project.fix-journal-damaged", Recovery::None, false;
+        PROJECT_FIX_NOT_FOUND = "project.fix-not-found", Recovery::None, false;
+        PROJECT_FIX_UNDO_REFUSED = "project.fix-undo-refused", Recovery::None, false;
         PROJECT_INVALID_NAME = "project.invalid-name", Recovery::None, false;
         PROJECT_NOT_OPEN = "project.not-open", Recovery::None, false;
         PROJECT_PATH_OUTSIDE_ROOT = "project.path-outside-root", Recovery::None, false;

@@ -71,6 +71,11 @@ pub mod wire {
         ProjectScaffoldMissingDto, ProjectScaffoldMissingRequest, ProjectSummaryDto,
         ProjectTreeDto, ProjectTreeRequest,
     };
+    pub use rimstudio_ipc_types::project_fix::{
+        ProjectLayoutFixApplyDto, ProjectLayoutFixApplyRequest, ProjectLayoutFixHistoryDto,
+        ProjectLayoutFixHistoryRequest, ProjectLayoutFixPlanDto, ProjectLayoutFixPlanRequest,
+        ProjectLayoutFixUndoDto, ProjectLayoutFixUndoRequest,
+    };
     pub use rimstudio_ipc_types::settings::{SettingsDto, SettingsGetRequest, SettingsUpdate};
     pub use rimstudio_ipc_types::tools::AppListToolsResponse;
 }
@@ -274,6 +279,10 @@ macro_rules! for_each_command {
             query  project_layout_check (ctx, req: ProjectLayoutCheckRequest) -> ProjectLayoutCheckDto = $crate::api::project::project_layout_check;
             action project_scaffold_missing (ctx, req: ProjectScaffoldMissingRequest) -> ProjectScaffoldMissingDto = $crate::api::project::project_scaffold_missing;
             query  project_read_file (ctx, req: ProjectReadFileRequest) -> ProjectFileDto = $crate::api::project::project_read_file;
+            query  project_layout_fix_plan (ctx, req: ProjectLayoutFixPlanRequest) -> ProjectLayoutFixPlanDto = $crate::api::project_fix::project_layout_fix_plan;
+            job    project_layout_fix_apply (ctx, req: ProjectLayoutFixApplyRequest) -> ProjectLayoutFixApplyDto = $crate::api::project_fix::project_layout_fix_apply;
+            action project_layout_fix_undo (ctx, req: ProjectLayoutFixUndoRequest) -> ProjectLayoutFixUndoDto = $crate::api::project_fix::project_layout_fix_undo;
+            query  project_layout_fix_history (ctx, req: ProjectLayoutFixHistoryRequest) -> ProjectLayoutFixHistoryDto = $crate::api::project_fix::project_layout_fix_history;
             query  designer_reference_list (ctx, req: DesignerReferenceListRequest) -> ReferenceListDto = $crate::api::designer::designer_reference_list;
             query  designer_preview (ctx, req: DesignerPreviewRequest) -> PreviewDto = $crate::api::designer::designer_preview;
             query  designer_fit (ctx, req: DesignerFitRequest) -> FitReportDto = $crate::api::designer::designer_fit;

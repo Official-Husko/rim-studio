@@ -294,6 +294,54 @@ pub(crate) enum ProjectCmd {
         #[arg(long)]
         max_bytes: Option<u32>,
     },
+    /// Carry out the suggestions of the layout check (moves and `LoadFolders.xml` edits), with an undo.
+    #[command(subcommand)]
+    Fix(FixCmd),
+}
+
+/// The `project fix` commands.
+#[derive(Debug, Subcommand)]
+pub(crate) enum FixCmd {
+    /// List the changes the layout check suggests and the tool can carry out. Writes nothing.
+    Plan {
+        /// The mod folder.
+        path: String,
+        /// Only plan the fixes of this layout issue code (repeatable), for example `layout.ce-outside-gate`.
+        #[arg(long = "only")]
+        only: Vec<String>,
+    },
+    /// Carry out items of the plan. Without `--yes` it prints what it would do and changes nothing.
+    Apply {
+        /// The mod folder.
+        path: String,
+        /// An item id from `project fix plan` (repeatable).
+        #[arg(long = "item")]
+        items: Vec<String>,
+        /// Every item that can be applied.
+        #[arg(long)]
+        all: bool,
+        /// When a destination exists, use the numbered name the plan offers instead of skipping the item.
+        #[arg(long)]
+        rename_on_conflict: bool,
+        /// The plan id you reviewed; the apply is refused when the project changed since.
+        #[arg(long)]
+        plan_id: Option<String>,
+        /// Carry the items out.
+        #[arg(long)]
+        yes: bool,
+    },
+    /// Reverse an apply from its journal; changes nothing when a moved file was modified since.
+    Undo {
+        /// The mod folder.
+        path: String,
+        /// The apply id printed by `project fix apply`.
+        apply_id: String,
+    },
+    /// List the applies of a mod and whether each can still be undone.
+    History {
+        /// The mod folder.
+        path: String,
+    },
 }
 
 /// The `defs` commands.

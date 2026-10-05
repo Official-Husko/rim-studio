@@ -60,7 +60,7 @@ fn manual(kind: LayoutFixKindDto, summary: String, targets: Vec<String>) -> Layo
 }
 
 /// The category a tech level text belongs to for a kind, as the designer chooses it.
-fn expected_category(w: &WeaponFact) -> WeaponCategory {
+pub(crate) fn expected_category(w: &WeaponFact) -> WeaponCategory {
     use rimstudio_design::model::{ItemKind, TechLevel};
     let tier = w.tech_level.as_deref().and_then(|t| {
         TechLevel::ALL

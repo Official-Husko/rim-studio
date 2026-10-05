@@ -4,8 +4,9 @@ use std::fmt::Write as _;
 
 use serde_json::{Value, json};
 
+use super::project_fix as fix;
 use super::project_layout as layout;
-use crate::cli::ProjectCmd;
+use crate::cli::{FixCmd, ProjectCmd};
 use crate::error::CliResult;
 use crate::fmt::{arr_at, bool_at, count_diagnostics, render_diagnostics, str_at, u64_at};
 use crate::session::{Session, absolute};
@@ -126,6 +127,29 @@ pub(crate) fn run(s: &Session, cmd: &ProjectCmd) -> CliResult {
             file,
             max_bytes,
         } => layout::read(s, path, file, *max_bytes)?,
+        ProjectCmd::Fix(cmd) => match cmd {
+            FixCmd::Plan { path, only } => fix::plan(s, path, only)?,
+            FixCmd::Apply {
+                path,
+                items,
+                all,
+                rename_on_conflict,
+                plan_id,
+                yes,
+            } => fix::apply(
+                s,
+                &fix::ApplyArgs {
+                    path,
+                    items,
+                    all: *all,
+                    rename_on_conflict: *rename_on_conflict,
+                    plan_id: plan_id.as_deref(),
+                    yes: *yes,
+                },
+            )?,
+            FixCmd::Undo { path, apply_id } => fix::undo(s, path, apply_id)?,
+            FixCmd::History { path } => fix::history(s, path)?,
+        },
         ProjectCmd::Open { path } => {
             let summary = open(s, path)?;
             s.emit(&summary, || render_summary(&summary));

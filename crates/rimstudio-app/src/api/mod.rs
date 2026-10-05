@@ -15,6 +15,7 @@
 //! - [`defs`]: `defs_search`, `defs_get_resolved`.
 //! - [`project`]: `project_open`, `project_create`, `project_close`.
 //! - [`designer`]: every `designer_*` command the toolkit implements.
+//! - [`project_fix`]: the `project_layout_fix_*` commands (plan, apply, undo, history).
 
 pub mod app;
 pub mod defs;
@@ -23,5 +24,6 @@ pub mod detect;
 pub mod jobs;
 pub mod library;
 pub mod project;
+pub mod project_fix;
 pub mod settings;
 pub mod sources;

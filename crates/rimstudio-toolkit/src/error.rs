@@ -124,6 +124,26 @@ pub enum ToolkitError {
     /// A path guard refused a path.
     #[error("path guard: {0}")]
     Guard(#[from] GuardError),
+    /// No fix journal with this apply id exists for the project.
+    #[error("no layout fix {id} exists for this project")]
+    FixNotFound {
+        /// The apply id of the request.
+        id: String,
+    },
+    /// A fix journal cannot be trusted (it cannot be read, its checksum or its paths do not hold).
+    #[error("the journal of layout fix {id} is damaged: {reason}")]
+    FixJournalDamaged {
+        /// The apply id.
+        id: String,
+        /// What is wrong.
+        reason: String,
+    },
+    /// An undo was refused and nothing was changed.
+    #[error("the layout fix cannot be undone: {reason}")]
+    FixUndoRefused {
+        /// Why.
+        reason: String,
+    },
 }
 
 impl ToolkitError {
@@ -151,6 +171,9 @@ impl ToolkitError {
             Self::Workspace(e) => e.code(),
             Self::Xml(e) => e.code(),
             Self::Guard(e) => e.code(),
+            Self::FixNotFound { .. } => codes::PROJECT_FIX_NOT_FOUND,
+            Self::FixJournalDamaged { .. } => codes::PROJECT_FIX_JOURNAL_DAMAGED,
+            Self::FixUndoRefused { .. } => codes::PROJECT_FIX_UNDO_REFUSED,
         }
     }
 

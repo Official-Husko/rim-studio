@@ -3718,6 +3718,44 @@ args: Array<string>,
 steamOnly: boolean, };
 
 /**
+ * The destination of a move exists.
+ */
+export type LayoutFixConflictDto = { 
+/**
+ * The destination exists, so the move is refused unless the caller accepts the other name.
+ */
+destinationExists: boolean, 
+/**
+ * A free name next to the destination (a numbered suffix); absent when none was found.
+ */
+suggestedTo?: string, };
+
+/**
+ * A move or creation that was carried out.
+ */
+export type LayoutFixDoneDto = { 
+/**
+ * The item id.
+ */
+id: string, 
+/**
+ * What it did.
+ */
+kind: LayoutFixItemKindDto, 
+/**
+ * The old path; empty for a creation.
+ */
+from: string, 
+/**
+ * The new path.
+ */
+to: string, 
+/**
+ * True when the move crossed a volume boundary and was done as copy, verify and remove.
+ */
+copied: boolean, };
+
+/**
  * The suggested fix of a layout issue.
  */
 export type LayoutFixDto = { 
@@ -3740,9 +3778,178 @@ automatic: boolean,
 targets: Array<string>, };
 
 /**
+ * A file whose content was edited or created.
+ */
+export type LayoutFixEditedDto = { 
+/**
+ * The file, relative to the project root.
+ */
+path: string, 
+/**
+ * True when the file did not exist before.
+ */
+created: boolean, 
+/**
+ * The backup of the previous content in the app data folder; absent for a created file.
+ */
+backupPath?: string, };
+
+/**
+ * One change of a fix plan.
+ */
+export type LayoutFixItemDto = { 
+/**
+ * The item id, stable for the same project state (`fix-<number>-<short hash>`).
+ */
+id: string, 
+/**
+ * What it does.
+ */
+kind: LayoutFixItemKindDto, 
+/**
+ * The layout issue code it carries out (`layout.ce-outside-gate`).
+ */
+issueCode: string, 
+/**
+ * The source path relative to the project root; empty for a creation.
+ */
+from: string, 
+/**
+ * The destination path relative to the project root (the file or folder created or edited).
+ */
+to: string, 
+/**
+ * Why, in one plain sentence.
+ */
+why: string, 
+/**
+ * How risky it is.
+ */
+risk: LayoutFixRiskDto, 
+/**
+ * True when `project_layout_fix_apply` can carry it out (a safe item without an unresolved error).
+ */
+applicable: boolean, 
+/**
+ * Why the item is not applicable, when it is not.
+ */
+reviewReason?: string, 
+/**
+ * The exact edit as a unified diff, for an item that edits `LoadFolders.xml`.
+ */
+diff?: string, 
+/**
+ * Set when the destination exists.
+ */
+conflict?: LayoutFixConflictDto, 
+/**
+ * Places in the project's definition and patch files that mention the old path.
+ */
+references: Array<LayoutFixReferenceDto>, 
+/**
+ * Ids of items that must be applied together with this one (a Combat Extended patch needs the item
+ * that gates its folder).
+ */
+requires: Array<string>, };
+
+/**
+ * What a plan item does.
+ */
+export type LayoutFixItemKindDto = "move-file" | "move-folder" | "create-folder" | "edit-load-folders" | "create-load-folders";
+
+/**
+ * One journal of the history.
+ */
+export type LayoutFixJournalDto = { 
+/**
+ * The apply id.
+ */
+applyId: string, 
+/**
+ * The plan id that was applied.
+ */
+planId: string, 
+/**
+ * When the apply started, in Unix milliseconds.
+ */
+createdMs: number, 
+/**
+ * Items in the journal.
+ */
+itemsTotal: number, 
+/**
+ * Items that were carried out.
+ */
+itemsDone: number, 
+/**
+ * Items that were not.
+ */
+itemsSkipped: number, 
+/**
+ * True when the apply was undone.
+ */
+undone: boolean, 
+/**
+ * True when `project_layout_fix_undo` would succeed now.
+ */
+undoPossible: boolean, 
+/**
+ * Why not, when it would not.
+ */
+undoBlocker?: string, };
+
+/**
  * What a suggested fix of a layout issue does.
  */
 export type LayoutFixKindDto = "create-folder" | "move-file" | "edit-load-folders" | "add-file" | "none";
+
+/**
+ * A place in a project file that mentions the old path of a moved file.
+ */
+export type LayoutFixReferenceDto = { 
+/**
+ * The file that holds the reference, relative to the project root.
+ */
+path: string, 
+/**
+ * The one based line.
+ */
+line: number, 
+/**
+ * The line, trimmed and cut to 200 characters.
+ */
+text: string, };
+
+/**
+ * How risky an item is.
+ */
+export type LayoutFixRiskDto = "safe" | "needs-review";
+
+/**
+ * One item the caller selected.
+ */
+export type LayoutFixSelectionDto = { 
+/**
+ * The item id of the plan.
+ */
+id: string, 
+/**
+ * When the destination exists, use the suggested numbered name instead of refusing the item.
+ */
+renameOnConflict: boolean, };
+
+/**
+ * An item that was not carried out.
+ */
+export type LayoutFixSkippedDto = { 
+/**
+ * The item id as given.
+ */
+id: string, 
+/**
+ * Why, in one plain sentence.
+ */
+reason: string, };
 
 /**
  * One finding of the layout check.
@@ -4426,6 +4633,168 @@ export type ProjectLayoutCheckRequest = {
  * The project (from `project_open`).
  */
 projectId: string, };
+
+/**
+ * What `project_layout_fix_apply` did.
+ */
+export type ProjectLayoutFixApplyDto = { 
+/**
+ * The project.
+ */
+projectId: string, 
+/**
+ * The id of this apply; `project_layout_fix_undo` takes it. No journal exists, and the id is of no use,
+ * when nothing was carried out.
+ */
+applyId: string, 
+/**
+ * The plan id that was applied.
+ */
+planId: string, 
+/**
+ * The moves and creations, in the order they were done.
+ */
+done: Array<LayoutFixDoneDto>, 
+/**
+ * The files edited or created.
+ */
+edited: Array<LayoutFixEditedDto>, 
+/**
+ * The items that were not carried out.
+ */
+skipped: Array<LayoutFixSkippedDto>, 
+/**
+ * True when the job was cancelled between items; the items done stay and can be undone.
+ */
+cancelled: boolean, 
+/**
+ * The layout check run again after the apply.
+ */
+check: ProjectLayoutCheckDto, };
+
+/**
+ * Request of `project_layout_fix_apply`.
+ */
+export type ProjectLayoutFixApplyRequest = { 
+/**
+ * The project (from `project_open`).
+ */
+projectId: string, 
+/**
+ * The plan id the caller reviewed.
+ */
+planId: string, 
+/**
+ * The items to carry out; an item that is not in the plan or not applicable is skipped with a reason.
+ */
+items: Array<LayoutFixSelectionDto>, };
+
+/**
+ * The journals of a project, newest first; response of `project_layout_fix_history`.
+ */
+export type ProjectLayoutFixHistoryDto = { 
+/**
+ * The project.
+ */
+projectId: string, 
+/**
+ * The journals, newest first.
+ */
+journals: Array<LayoutFixJournalDto>, };
+
+/**
+ * Request of `project_layout_fix_history`.
+ */
+export type ProjectLayoutFixHistoryRequest = { 
+/**
+ * The project (from `project_open`).
+ */
+projectId: string, };
+
+/**
+ * The fix plan of a project; response of `project_layout_fix_plan`.
+ */
+export type ProjectLayoutFixPlanDto = { 
+/**
+ * The project.
+ */
+projectId: string, 
+/**
+ * A hash of the content of the plan: items, paths, diffs and the state of the files involved. The
+ * apply call refuses a plan id that no longer matches.
+ */
+planId: string, 
+/**
+ * The items in the order they are carried out.
+ */
+items: Array<LayoutFixItemDto>, 
+/**
+ * Items that can be applied.
+ */
+safe: number, 
+/**
+ * Items listed for review only.
+ */
+needsReview: number, 
+/**
+ * Items whose destination exists.
+ */
+conflicts: number, };
+
+/**
+ * Request of `project_layout_fix_plan`.
+ */
+export type ProjectLayoutFixPlanRequest = { 
+/**
+ * The project (from `project_open`).
+ */
+projectId: string, 
+/**
+ * Only plan the fixes of these layout issue codes; absent plans every fixable finding.
+ */
+fixes?: Array<string>, };
+
+/**
+ * What `project_layout_fix_undo` did.
+ */
+export type ProjectLayoutFixUndoDto = { 
+/**
+ * The project.
+ */
+projectId: string, 
+/**
+ * The apply id that was reversed.
+ */
+applyId: string, 
+/**
+ * The paths moved back to where they were.
+ */
+movedBack: Array<string>, 
+/**
+ * The files whose previous content was restored, or that were removed because the apply created them.
+ */
+restored: Array<string>, 
+/**
+ * The folders removed because the apply created them.
+ */
+removedFolders: Array<string>, 
+/**
+ * The layout check run again after the undo.
+ */
+check: ProjectLayoutCheckDto, };
+
+/**
+ * Request of `project_layout_fix_undo`.
+ */
+export type ProjectLayoutFixUndoRequest = { 
+/**
+ * The project (from `project_open`).
+ */
+projectId: string, 
+/**
+ * The apply id to reverse.
+ */
+applyId: string, };
 
 /**
  * Request of `project_open`.

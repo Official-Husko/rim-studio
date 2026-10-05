@@ -66,6 +66,14 @@ import type {
   ProjectFileDto,
   ProjectLayoutCheckDto,
   ProjectLayoutCheckRequest,
+  ProjectLayoutFixApplyDto,
+  ProjectLayoutFixApplyRequest,
+  ProjectLayoutFixHistoryDto,
+  ProjectLayoutFixHistoryRequest,
+  ProjectLayoutFixPlanDto,
+  ProjectLayoutFixPlanRequest,
+  ProjectLayoutFixUndoDto,
+  ProjectLayoutFixUndoRequest,
   ProjectOpenRequest,
   ProjectReadFileRequest,
   ProjectScaffoldMissingDto,
@@ -121,6 +129,10 @@ export interface CommandTable {
   project_layout_check: { kind: "query"; request: ProjectLayoutCheckRequest; response: ProjectLayoutCheckDto };
   project_scaffold_missing: { kind: "action"; request: ProjectScaffoldMissingRequest; response: ProjectScaffoldMissingDto };
   project_read_file: { kind: "query"; request: ProjectReadFileRequest; response: ProjectFileDto };
+  project_layout_fix_plan: { kind: "query"; request: ProjectLayoutFixPlanRequest; response: ProjectLayoutFixPlanDto };
+  project_layout_fix_apply: { kind: "job"; request: ProjectLayoutFixApplyRequest; response: ProjectLayoutFixApplyDto };
+  project_layout_fix_undo: { kind: "action"; request: ProjectLayoutFixUndoRequest; response: ProjectLayoutFixUndoDto };
+  project_layout_fix_history: { kind: "query"; request: ProjectLayoutFixHistoryRequest; response: ProjectLayoutFixHistoryDto };
   designer_reference_list: { kind: "query"; request: DesignerReferenceListRequest; response: ReferenceListDto };
   designer_preview: { kind: "query"; request: DesignerPreviewRequest; response: PreviewDto };
   designer_fit: { kind: "query"; request: DesignerFitRequest; response: FitReportDto };
@@ -185,6 +197,10 @@ export const commands = {
   projectLayoutCheck: { name: "project_layout_check", kind: "query" },
   projectScaffoldMissing: { name: "project_scaffold_missing", kind: "action" },
   projectReadFile: { name: "project_read_file", kind: "query" },
+  projectLayoutFixPlan: { name: "project_layout_fix_plan", kind: "query" },
+  projectLayoutFixApply: { name: "project_layout_fix_apply", kind: "job" },
+  projectLayoutFixUndo: { name: "project_layout_fix_undo", kind: "action" },
+  projectLayoutFixHistory: { name: "project_layout_fix_history", kind: "query" },
   designerReferenceList: { name: "designer_reference_list", kind: "query" },
   designerPreview: { name: "designer_preview", kind: "query" },
   designerFit: { name: "designer_fit", kind: "query" },
@@ -235,6 +251,10 @@ export const commandNames = [
   "project_layout_check",
   "project_scaffold_missing",
   "project_read_file",
+  "project_layout_fix_plan",
+  "project_layout_fix_apply",
+  "project_layout_fix_undo",
+  "project_layout_fix_history",
   "designer_reference_list",
   "designer_preview",
   "designer_fit",

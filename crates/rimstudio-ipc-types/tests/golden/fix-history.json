@@ -1,0 +1,26 @@
+{
+  "projectId": "p-1a2b3c4d",
+  "journals": [
+    {
+      "applyId": "fix-1767225600000-1a2b3c4d",
+      "planId": "ebac9a61a265145f94c35aba8f796ea9",
+      "createdMs": 1767225600000,
+      "itemsTotal": 3,
+      "itemsDone": 2,
+      "itemsSkipped": 1,
+      "undone": false,
+      "undoPossible": true
+    },
+    {
+      "applyId": "fix-1767139200000-0f0f0f0f",
+      "planId": "00000000000000000000000000000000",
+      "createdMs": 1767139200000,
+      "itemsTotal": 1,
+      "itemsDone": 1,
+      "itemsSkipped": 0,
+      "undone": false,
+      "undoPossible": false,
+      "undoBlocker": "the layout fix cannot be undone: Compat/CombatExtended/Patches/RS_ce_patch.xml was changed after the fix"
+    }
+  ]
+}

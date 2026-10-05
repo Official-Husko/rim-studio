@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationSequence">
+    <success>Always</success>
+    <operations>
+
+      <li Class="CombatExtended.PatchOperationFindMod">
+        <modName>Combat Extended</modName>
+      </li>
+
+      <li Class="PatchOperationReplace">
+        <xpath>
+          /Defs/ThingDef[
+          defName = "OH_G41m" or
+          defName = "OH_G41w" or
+          defName = "OH_G41w_25r" or
+          defName = "OH_G41w_sniper" or
+          defName = "OH_G41w_25r_sniper"
+          ]/tools
+        </xpath>
+        <value>
+          <tools>
+            <li Class="CombatExtended.ToolCE">
+              <label>stock</label>
+              <capacities>
+                <li>Blunt</li>
+              </capacities>
+              <power>8</power>
+              <cooldownTime>1.55</cooldownTime>
+              <chanceFactor>1.5</chanceFactor>
+              <armorPenetrationBlunt>2.755</armorPenetrationBlunt>
+              <linkedBodyPartsGroup>Stock</linkedBodyPartsGroup>
+            </li>
+            <li Class="CombatExtended.ToolCE">
+              <label>barrel</label>
+              <capacities>
+                <li>Blunt</li>
+              </capacities>
+              <power>5</power>
+              <cooldownTime>2.02</cooldownTime>
+              <armorPenetrationBlunt>1.630</armorPenetrationBlunt>
+              <linkedBodyPartsGroup>Barrel</linkedBodyPartsGroup>
+            </li>
+            <li Class="CombatExtended.ToolCE">
+              <label>muzzle</label>
+              <capacities>
+                <li>Poke</li>
+              </capacities>
+              <power>8</power>
+              <cooldownTime>1.55</cooldownTime>
+              <armorPenetrationBlunt>2.755</armorPenetrationBlunt>
+              <linkedBodyPartsGroup>Muzzle</linkedBodyPartsGroup>
+            </li>
+          </tools>
+        </value>
+      </li>
+
+      <!-- ================================= Gewehr 41 (m) ==================================== -->
+      <li Class="CombatExtended.PatchOperationMakeGunCECompatible">
+        <defName>OH_G41m</defName>
+
+        <statBases>
+          <Bulk>10.60</Bulk>
+          <SwayFactor>1.12</SwayFactor>
+          <ShotSpread>0.8</ShotSpread>
+          <SightsEfficiency>1.0</SightsEfficiency>
+          <RangedWeapon_Cooldown>0.8</RangedWeapon_Cooldown>
+          <Mass>4.6</Mass>
+        </statBases>
+
+        <Properties>
+          <recoilAmount>1.95</recoilAmount>
+          <warmupTime>0.9</warmupTime>
+          <range>55</range>
+          <soundCast>Shot_BoltActionRifle</soundCast>
+
+          <defaultProjectile>Bullet_792x57mmMauser_FMJ</defaultProjectile>
+
+          <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+          <hasStandardCommand>true</hasStandardCommand>
+          <soundCastTail>GunTail_Medium</soundCastTail>
+          <muzzleFlashScale>9</muzzleFlashScale>
+        </Properties>
+
+        <AmmoUser>
+          <magazineSize>10</magazineSize>
+          <reloadTime>3.2</reloadTime>
+          <ammoSet>AmmoSet_792x57mmMauser</ammoSet>
+        </AmmoUser>
+
+        <FireModes>
+          <aiAimMode>AimedShot</aiAimMode>
+        </FireModes>
+
+        <weaponTags>
+          <li>CE_AI_SR</li>
+          <li>CE_AI_Default</li>
+        </weaponTags>
+      </li>
+
+      <!-- ================================= Gewehr 41 (w) ==================================== -->
+      <li Class="CombatExtended.PatchOperationMakeGunCECompatible">
+        <defName>OH_G41w</defName>
+
+        <statBases>
+          <Bulk>10.55</Bulk>
+          <SwayFactor>1.08</SwayFactor>
+          <ShotSpread>0.7</ShotSpread>
+          <SightsEfficiency>1.0</SightsEfficiency>
+          <RangedWeapon_Cooldown>0.8</RangedWeapon_Cooldown>
+          <Mass>4.6</Mass>
+        </statBases>
+
+        <Properties>
+          <recoilAmount>1.95</recoilAmount>
+          <warmupTime>0.9</warmupTime>
+          <range>57</range>
+          <soundCast>Shot_BoltActionRifle</soundCast>
+
+          <defaultProjectile>Bullet_792x57mmMauser_FMJ</defaultProjectile>
+
+          <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+          <hasStandardCommand>true</hasStandardCommand>
+          <soundCastTail>GunTail_Medium</soundCastTail>
+          <muzzleFlashScale>9</muzzleFlashScale>
+        </Properties>
+
+        <AmmoUser>
+          <magazineSize>10</magazineSize>
+          <reloadTime>4.0</reloadTime>
+          <ammoSet>AmmoSet_792x57mmMauser</ammoSet>
+        </AmmoUser>
+
+        <FireModes>
+          <aiAimMode>AimedShot</aiAimMode>
+        </FireModes>
+
+        <weaponTags>
+          <li>CE_AI_SR</li>
+          <li>CE_AI_Default</li>
+        </weaponTags>
+      </li>
+
+      <!-- ================================= Gewehr 41 (w) 25 Round Magazine ==================================== -->
+      <li Class="CombatExtended.PatchOperationMakeGunCECompatible">
+        <defName>OH_G41w_25r</defName>
+
+        <statBases>
+          <Bulk>11.35</Bulk>
+          <SwayFactor>1.08</SwayFactor>
+          <ShotSpread>0.7</ShotSpread>
+          <SightsEfficiency>1.0</SightsEfficiency>
+          <RangedWeapon_Cooldown>0.8</RangedWeapon_Cooldown>
+          <Mass>4.7</Mass>
+        </statBases>
+
+        <Properties>
+          <recoilAmount>1.90</recoilAmount>
+          <warmupTime>0.9</warmupTime>
+          <range>57</range>
+          <soundCast>Shot_BoltActionRifle</soundCast>
+
+          <defaultProjectile>Bullet_792x57mmMauser_FMJ</defaultProjectile>
+
+          <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+          <hasStandardCommand>true</hasStandardCommand>
+          <soundCastTail>GunTail_Medium</soundCastTail>
+          <muzzleFlashScale>9</muzzleFlashScale>
+        </Properties>
+
+        <AmmoUser>
+          <magazineSize>25</magazineSize>
+          <reloadTime>3.5</reloadTime>
+          <ammoSet>AmmoSet_792x57mmMauser</ammoSet>
+        </AmmoUser>
+
+        <FireModes>
+          <aiAimMode>AimedShot</aiAimMode>
+        </FireModes>
+
+        <weaponTags>
+          <li>CE_AI_SR</li>
+          <li>CE_AI_Default</li>
+        </weaponTags>
+      </li>
+
+      <!-- ================================= Gewehr 41 (w) ZF41 ==================================== -->
+      <li Class="CombatExtended.PatchOperationMakeGunCECompatible">
+        <defName>OH_G41w_sniper</defName>
+
+        <statBases>
+          <Bulk>11.10</Bulk>
+          <SwayFactor>1.08</SwayFactor>
+          <ShotSpread>0.7</ShotSpread>
+          <SightsEfficiency>1.5</SightsEfficiency>
+          <RangedWeapon_Cooldown>0.8</RangedWeapon_Cooldown>
+          <Mass>4.7</Mass>
+        </statBases>
+
+        <Properties>
+          <recoilAmount>1.92</recoilAmount>
+          <warmupTime>0.9</warmupTime>
+          <range>68</range>
+          <soundCast>Shot_BoltActionRifle</soundCast>
+
+          <defaultProjectile>Bullet_792x57mmMauser_FMJ</defaultProjectile>
+
+          <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+          <hasStandardCommand>true</hasStandardCommand>
+          <soundCastTail>GunTail_Medium</soundCastTail>
+          <muzzleFlashScale>9</muzzleFlashScale>
+        </Properties>
+
+        <AmmoUser>
+          <magazineSize>10</magazineSize>
+          <reloadTime>4.0</reloadTime>
+          <ammoSet>AmmoSet_792x57mmMauser</ammoSet>
+        </AmmoUser>
+
+        <FireModes>
+          <aiAimMode>AimedShot</aiAimMode>
+        </FireModes>
+
+        <weaponTags>
+          <li>CE_AI_SR</li>
+          <li>CE_AI_Default</li>
+        </weaponTags>
+      </li>
+
+      <!-- ================================= Gewehr 41 (w) 25 Round Magazine ZF41 ==================================== -->
+      <li Class="CombatExtended.PatchOperationMakeGunCECompatible">
+        <defName>OH_G41w_25r_sniper</defName>
+
+        <statBases>
+          <Bulk>12.00</Bulk>
+          <SwayFactor>1.08</SwayFactor>
+          <ShotSpread>0.7</ShotSpread>
+          <SightsEfficiency>1.5</SightsEfficiency>
+          <RangedWeapon_Cooldown>0.8</RangedWeapon_Cooldown>
+          <Mass>4.8</Mass>
+        </statBases>
+
+        <Properties>
+          <recoilAmount>1.88</recoilAmount>
+          <warmupTime>0.9</warmupTime>
+          <range>68</range>
+          <soundCast>Shot_BoltActionRifle</soundCast>
+
+          <defaultProjectile>Bullet_792x57mmMauser_FMJ</defaultProjectile>
+
+          <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+          <hasStandardCommand>true</hasStandardCommand>
+          <soundCastTail>GunTail_Medium</soundCastTail>
+          <muzzleFlashScale>9</muzzleFlashScale>
+        </Properties>
+
+        <AmmoUser>
+          <magazineSize>25</magazineSize>
+          <reloadTime>3.5</reloadTime>
+          <ammoSet>AmmoSet_792x57mmMauser</ammoSet>
+        </AmmoUser>
+
+        <FireModes>
+          <aiAimMode>AimedShot</aiAimMode>
+        </FireModes>
+
+        <weaponTags>
+          <li>CE_AI_SR</li>
+          <li>CE_AI_Default</li>
+        </weaponTags>
+      </li>
+
+    </operations>
+  </Operation>
+</Patch>

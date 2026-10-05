@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+	<name>Huskos's Gewehr 41</name>
+	<author>Husko</author>
+	<url>https://steamcommunity.com/sharedfiles/filedetails/?id=3019688356</url>
+	<packageId>oh.weapons.gewehr41</packageId>
+	<supportedVersions>
+		<li>1.4</li>
+	</supportedVersions>
+	<description>Enjoy the rare and experimental Gewehr 41 in crisp 512px resolution and all known (to my knowledge) flavors!</description>
+	<loadAfter>
+		<li>Ludeon.RimWorld</li>
+		<li>CETeam.CombatExtended</li>
+	</loadAfter>
+</ModMetaData>

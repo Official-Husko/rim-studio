@@ -1,0 +1,24 @@
+{
+  "projectId": "p-1a2b3c4d",
+  "applyId": "fix-1767225600000-1a2b3c4d",
+  "movedBack": [
+    "Patches/RS_ce_patch.xml"
+  ],
+  "restored": [
+    "LoadFolders.xml"
+  ],
+  "removedFolders": [
+    "Compat/CombatExtended/Patches",
+    "Compat/CombatExtended",
+    "Compat"
+  ],
+  "check": {
+    "projectId": "p-1a2b3c4d",
+    "profile": "core-style",
+    "issues": [],
+    "errors": 0,
+    "warnings": 0,
+    "infos": 0,
+    "autoFixable": 0
+  }
+}

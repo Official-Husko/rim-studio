@@ -16,10 +16,15 @@
 //! the merging of `LoadFolders.xml`) live in [`crate::shared`].
 
 pub mod check;
+pub mod fix;
+pub mod fix_apply;
+pub mod history;
+pub mod journal;
 pub mod read;
 pub mod scaffold_missing;
 pub mod scan;
 pub mod tree;
+pub mod undo;
 
 use camino::{Utf8Path, Utf8PathBuf};
 use rimstudio_core::diag::Severity;

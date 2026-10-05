@@ -25,5 +25,6 @@ pub mod jobs;
 pub mod library;
 pub mod mods;
 pub mod project;
+pub mod project_fix;
 pub mod settings;
 pub mod tools;
