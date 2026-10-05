@@ -1,0 +1,343 @@
+{
+  "tag": "Patch",
+  "attrs": [],
+  "children": [
+    {
+      "tag": "Operation",
+      "attrs": [
+        [
+          "Class",
+          "PatchOperationAdd"
+        ]
+      ],
+      "children": [
+        {
+          "tag": "xpath",
+          "attrs": [],
+          "children": [
+            "Defs/ThingDef[defName=\"RS_TestBlade\"]/statBases"
+          ]
+        },
+        {
+          "tag": "value",
+          "attrs": [],
+          "children": [
+            {
+              "tag": "Bulk",
+              "attrs": [],
+              "children": [
+                "6"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tag": "Operation",
+      "attrs": [
+        [
+          "Class",
+          "PatchOperationConditional"
+        ]
+      ],
+      "children": [
+        {
+          "tag": "xpath",
+          "attrs": [],
+          "children": [
+            "Defs/ThingDef[defName=\"RS_TestBlade\"]/equippedStatOffsets"
+          ]
+        },
+        {
+          "tag": "nomatch",
+          "attrs": [
+            [
+              "Class",
+              "PatchOperationAdd"
+            ]
+          ],
+          "children": [
+            {
+              "tag": "xpath",
+              "attrs": [],
+              "children": [
+                "Defs/ThingDef[defName=\"RS_TestBlade\"]"
+              ]
+            },
+            {
+              "tag": "value",
+              "attrs": [],
+              "children": [
+                {
+                  "tag": "equippedStatOffsets",
+                  "attrs": [],
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tag": "Operation",
+      "attrs": [
+        [
+          "Class",
+          "PatchOperationAdd"
+        ]
+      ],
+      "children": [
+        {
+          "tag": "xpath",
+          "attrs": [],
+          "children": [
+            "Defs/ThingDef[defName=\"RS_TestBlade\"]/equippedStatOffsets"
+          ]
+        },
+        {
+          "tag": "value",
+          "attrs": [],
+          "children": [
+            {
+              "tag": "MeleeCritChance",
+              "attrs": [],
+              "children": [
+                "0.1"
+              ]
+            },
+            {
+              "tag": "MeleeParryChance",
+              "attrs": [],
+              "children": [
+                "0.2"
+              ]
+            },
+            {
+              "tag": "MeleeDodgeChance",
+              "attrs": [],
+              "children": [
+                "-0.05"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tag": "Operation",
+      "attrs": [
+        [
+          "Class",
+          "PatchOperationReplace"
+        ]
+      ],
+      "children": [
+        {
+          "tag": "xpath",
+          "attrs": [],
+          "children": [
+            "Defs/ThingDef[defName=\"RS_TestBlade\"]/tools"
+          ]
+        },
+        {
+          "tag": "value",
+          "attrs": [],
+          "children": [
+            {
+              "tag": "tools",
+              "attrs": [],
+              "children": [
+                {
+                  "tag": "li",
+                  "attrs": [
+                    [
+                      "Class",
+                      "CombatExtended.ToolCE"
+                    ]
+                  ],
+                  "children": [
+                    {
+                      "tag": "label",
+                      "attrs": [],
+                      "children": [
+                        "handle"
+                      ]
+                    },
+                    {
+                      "tag": "capacities",
+                      "attrs": [],
+                      "children": [
+                        {
+                          "tag": "li",
+                          "attrs": [],
+                          "children": [
+                            "Blunt"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "power",
+                      "attrs": [],
+                      "children": [
+                        "9"
+                      ]
+                    },
+                    {
+                      "tag": "chanceFactor",
+                      "attrs": [],
+                      "children": [
+                        "0.3"
+                      ]
+                    },
+                    {
+                      "tag": "cooldownTime",
+                      "attrs": [],
+                      "children": [
+                        "2"
+                      ]
+                    },
+                    {
+                      "tag": "armorPenetrationBlunt",
+                      "attrs": [],
+                      "children": [
+                        "0.4"
+                      ]
+                    },
+                    {
+                      "tag": "linkedBodyPartsGroup",
+                      "attrs": [],
+                      "children": [
+                        "RS_Handle"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "li",
+                  "attrs": [
+                    [
+                      "Class",
+                      "CombatExtended.ToolCE"
+                    ]
+                  ],
+                  "children": [
+                    {
+                      "tag": "label",
+                      "attrs": [],
+                      "children": [
+                        "blade"
+                      ]
+                    },
+                    {
+                      "tag": "capacities",
+                      "attrs": [],
+                      "children": [
+                        {
+                          "tag": "li",
+                          "attrs": [],
+                          "children": [
+                            "Cut"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "power",
+                      "attrs": [],
+                      "children": [
+                        "18"
+                      ]
+                    },
+                    {
+                      "tag": "cooldownTime",
+                      "attrs": [],
+                      "children": [
+                        "2.4"
+                      ]
+                    },
+                    {
+                      "tag": "armorPenetrationBlunt",
+                      "attrs": [],
+                      "children": [
+                        "0.5"
+                      ]
+                    },
+                    {
+                      "tag": "armorPenetrationSharp",
+                      "attrs": [],
+                      "children": [
+                        "0.6"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "li",
+                  "attrs": [
+                    [
+                      "Class",
+                      "CombatExtended.ToolCE"
+                    ]
+                  ],
+                  "children": [
+                    {
+                      "tag": "label",
+                      "attrs": [],
+                      "children": [
+                        "point"
+                      ]
+                    },
+                    {
+                      "tag": "capacities",
+                      "attrs": [],
+                      "children": [
+                        {
+                          "tag": "li",
+                          "attrs": [],
+                          "children": [
+                            "Stab"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "power",
+                      "attrs": [],
+                      "children": [
+                        "20"
+                      ]
+                    },
+                    {
+                      "tag": "cooldownTime",
+                      "attrs": [],
+                      "children": [
+                        "2.6"
+                      ]
+                    },
+                    {
+                      "tag": "armorPenetrationBlunt",
+                      "attrs": [],
+                      "children": [
+                        "0.5"
+                      ]
+                    },
+                    {
+                      "tag": "armorPenetrationSharp",
+                      "attrs": [],
+                      "children": [
+                        "0.9"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

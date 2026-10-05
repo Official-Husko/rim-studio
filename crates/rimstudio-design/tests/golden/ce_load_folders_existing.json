@@ -1,0 +1,83 @@
+{
+  "tag": "loadFolders",
+  "attrs": [],
+  "children": [
+    {
+      "tag": "v1.5",
+      "attrs": [],
+      "children": [
+        {
+          "tag": "li",
+          "attrs": [],
+          "children": [
+            "/"
+          ]
+        },
+        {
+          "tag": "li",
+          "attrs": [],
+          "children": [
+            "1.5"
+          ]
+        }
+      ]
+    },
+    {
+      "tag": "v1.6",
+      "attrs": [],
+      "children": [
+        {
+          "tag": "li",
+          "attrs": [],
+          "children": [
+            "/"
+          ]
+        },
+        {
+          "tag": "li",
+          "attrs": [],
+          "children": [
+            "1.5"
+          ]
+        },
+        {
+          "tag": "li",
+          "attrs": [
+            [
+              "IfModActive",
+              "rs.combatext"
+            ]
+          ],
+          "children": [
+            "CE"
+          ]
+        }
+      ]
+    },
+    {
+      "tag": "default",
+      "attrs": [],
+      "children": [
+        {
+          "tag": "li",
+          "attrs": [],
+          "children": [
+            "/"
+          ]
+        },
+        {
+          "tag": "li",
+          "attrs": [
+            [
+              "IfModActive",
+              "rs.combatext"
+            ]
+          ],
+          "children": [
+            "CE"
+          ]
+        }
+      ]
+    }
+  ]
+}

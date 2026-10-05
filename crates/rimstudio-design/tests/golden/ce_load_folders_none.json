@@ -1,0 +1,31 @@
+{
+  "tag": "loadFolders",
+  "attrs": [],
+  "children": [
+    {
+      "tag": "v1.6",
+      "attrs": [],
+      "children": [
+        {
+          "tag": "li",
+          "attrs": [],
+          "children": [
+            "/"
+          ]
+        },
+        {
+          "tag": "li",
+          "attrs": [
+            [
+              "IfModActive",
+              "rs.combatext"
+            ]
+          ],
+          "children": [
+            "CE"
+          ]
+        }
+      ]
+    }
+  ]
+}

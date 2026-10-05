@@ -23,6 +23,9 @@ use rimstudio_core::tree::Node;
 use crate::model::DesignSpec;
 use crate::validation::{codes, has_errors, validate_vanilla};
 
+pub use crate::ce::patchgen::{
+    CeProjectState, export_ce_plan, export_ce_plan_with, gate_violations,
+};
 pub use builder::{PlanBuilder, is_safe_relative_path};
 pub use layout::{ProjectLayout, file_stem};
 pub use types::{

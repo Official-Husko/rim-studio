@@ -14,6 +14,7 @@ workspace = true
 
 [dependencies]
 rimstudio-core.workspace = true
+rimstudio-defs.workspace = true
 serde.workspace = true
 serde_json.workspace = true
 thiserror.workspace = true
@@ -21,3 +22,5 @@ thiserror.workspace = true
 [dev-dependencies]
 proptest.workspace = true
 rstest.workspace = true
+rimstudio-testing.workspace = true
+camino.workspace = true

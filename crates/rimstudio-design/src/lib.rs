@@ -15,5 +15,6 @@ pub mod plan;
 pub mod price;
 pub mod quiz;
 pub mod ranged;
+pub mod reader;
 pub mod stats;
 pub mod validation;

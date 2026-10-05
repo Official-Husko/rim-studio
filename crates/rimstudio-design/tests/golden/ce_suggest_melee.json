@@ -1,0 +1,288 @@
+{
+  "kind": "melee",
+  "defName": "RS_TestBlade",
+  "available": true,
+  "toggleOn": false,
+  "classLabel": "based on the 4 nearest of 6 converted weapons",
+  "pool": 6,
+  "fields": [
+    {
+      "field": "/ce/bulk",
+      "label": "CE bulk",
+      "required": true,
+      "status": "derived",
+      "value": 5.3,
+      "source": {
+        "kind": "predicted",
+        "predictor": "median",
+        "n": 4
+      },
+      "band": {
+        "p50": {
+          "low": 5.01349,
+          "high": 5.602884
+        },
+        "p80": {
+          "low": 4.858333,
+          "high": 5.781818
+        }
+      },
+      "rating": "reliable",
+      "error": 0.055632
+    },
+    {
+      "field": "/ce/parryBonus",
+      "label": "CE counter parry bonus",
+      "required": false,
+      "status": "derived",
+      "value": 0.2,
+      "source": {
+        "kind": "predicted",
+        "predictor": "median",
+        "n": 4
+      },
+      "band": {
+        "p50": {
+          "low": 0.2,
+          "high": 0.2
+        },
+        "p80": {
+          "low": 0.2,
+          "high": 0.2
+        }
+      },
+      "rating": "reliable",
+      "error": 0.0
+    },
+    {
+      "field": "/ce/meleeCritChance",
+      "label": "CE melee crit chance",
+      "required": true,
+      "status": "derived",
+      "value": 0.1,
+      "source": {
+        "kind": "predicted",
+        "predictor": "median",
+        "n": 4
+      },
+      "band": {
+        "p50": {
+          "low": 0.1,
+          "high": 0.1
+        },
+        "p80": {
+          "low": 0.1,
+          "high": 0.1
+        }
+      },
+      "rating": "reliable",
+      "error": 0.0
+    },
+    {
+      "field": "/ce/meleeParryChance",
+      "label": "CE melee parry chance",
+      "required": true,
+      "status": "derived",
+      "value": 0.2,
+      "source": {
+        "kind": "predicted",
+        "predictor": "median",
+        "n": 4
+      },
+      "band": {
+        "p50": {
+          "low": 0.2,
+          "high": 0.2
+        },
+        "p80": {
+          "low": 0.2,
+          "high": 0.2
+        }
+      },
+      "rating": "reliable",
+      "error": 0.0
+    },
+    {
+      "field": "/ce/meleeDodgeChance",
+      "label": "CE melee dodge chance",
+      "required": true,
+      "status": "ask",
+      "rating": "unmeasured",
+      "reference": -0.05,
+      "reason": "the estimate -0.05 is not written: it is rated unmeasured: 6 converted weapons are too few to measure an error"
+    },
+    {
+      "field": "/ce/toolPenetration/handle/blunt",
+      "label": "Blunt penetration of the tool handle",
+      "required": true,
+      "status": "derived",
+      "value": 2.25,
+      "source": {
+        "kind": "predicted",
+        "predictor": "median",
+        "n": 4
+      },
+      "band": {
+        "p50": {
+          "low": 2.25,
+          "high": 2.25
+        },
+        "p80": {
+          "low": 2.25,
+          "high": 2.25
+        }
+      },
+      "rating": "reliable",
+      "error": 0.0
+    },
+    {
+      "field": "/ce/toolPenetration/blade/blunt",
+      "label": "Blunt penetration of the tool blade",
+      "required": true,
+      "status": "derived",
+      "value": 4.5,
+      "source": {
+        "kind": "predicted",
+        "predictor": "median",
+        "n": 4
+      },
+      "band": {
+        "p50": {
+          "low": 4.5,
+          "high": 4.5
+        },
+        "p80": {
+          "low": 4.5,
+          "high": 4.5
+        }
+      },
+      "rating": "reliable",
+      "error": 0.0
+    },
+    {
+      "field": "/ce/toolPenetration/blade/sharp",
+      "label": "Sharp penetration of the tool blade",
+      "required": true,
+      "status": "derived",
+      "value": 0.9,
+      "source": {
+        "kind": "predicted",
+        "predictor": "median",
+        "n": 4
+      },
+      "band": {
+        "p50": {
+          "low": 0.9,
+          "high": 0.9
+        },
+        "p80": {
+          "low": 0.9,
+          "high": 0.9
+        }
+      },
+      "rating": "reliable",
+      "error": 0.0
+    },
+    {
+      "field": "/ce/toolPenetration/point/blunt",
+      "label": "Blunt penetration of the tool point",
+      "required": true,
+      "status": "derived",
+      "value": 5.0,
+      "source": {
+        "kind": "predicted",
+        "predictor": "median",
+        "n": 4
+      },
+      "band": {
+        "p50": {
+          "low": 5.0,
+          "high": 5.0
+        },
+        "p80": {
+          "low": 5.0,
+          "high": 5.0
+        }
+      },
+      "rating": "reliable",
+      "error": 0.0
+    },
+    {
+      "field": "/ce/toolPenetration/point/sharp",
+      "label": "Sharp penetration of the tool point",
+      "required": true,
+      "status": "derived",
+      "value": 1.0,
+      "source": {
+        "kind": "predicted",
+        "predictor": "median",
+        "n": 4
+      },
+      "band": {
+        "p50": {
+          "low": 1.0,
+          "high": 1.0
+        },
+        "p80": {
+          "low": 1.0,
+          "high": 1.0
+        }
+      },
+      "rating": "reliable",
+      "error": 0.0
+    }
+  ],
+  "choices": [],
+  "patchNumbers": [
+    {
+      "field": "mass",
+      "label": "Mass in the patch",
+      "required": false,
+      "status": "derived",
+      "value": 1.4,
+      "source": {
+        "kind": "identity",
+        "n": 6
+      },
+      "band": {
+        "p50": {
+          "low": 1.4,
+          "high": 1.4
+        },
+        "p80": {
+          "low": 1.4,
+          "high": 1.4
+        }
+      },
+      "rating": "reliable",
+      "error": 0.0
+    }
+  ],
+  "asks": {
+    "items": [
+      {
+        "field": "/ce/meleeDodgeChance",
+        "label": "CE melee dodge chance",
+        "kind": "number",
+        "options": [],
+        "reason": "the estimate -0.05 is not written: it is rated unmeasured: 6 converted weapons are too few to measure an error",
+        "suggestion": -0.05
+      }
+    ]
+  },
+  "missing": [
+    "/ce/bulk",
+    "/ce/meleeCritChance",
+    "/ce/meleeParryChance",
+    "/ce/meleeDodgeChance",
+    "/ce/toolPenetration/handle/blunt",
+    "/ce/toolPenetration/blade/blunt",
+    "/ce/toolPenetration/blade/sharp",
+    "/ce/toolPenetration/point/blunt",
+    "/ce/toolPenetration/point/sharp"
+  ],
+  "stillMissingAfterAccept": [
+    "/ce/meleeDodgeChance"
+  ],
+  "notes": []
+}
