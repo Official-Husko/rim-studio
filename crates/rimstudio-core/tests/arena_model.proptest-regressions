@@ -1,0 +1,8 @@
+# Seeds for failure cases proptest has generated in the past. It is
+# automatically read and these particular cases re-run before any
+# novel cases are generated.
+#
+# It is recommended to check this file in to source control so that
+# everyone who runs the test benefits from these saved cases.
+cc 430b2f5b423527523d4df28d6cd18e0a84ebf0eb0e264729f47502718159a751 # shrinks to start = Node { tag: "a", attrs: [], children: [] }, ops = [SetAttr { target: 0, name: 0, value: "" }]
+cc 9e722e3fb2b77759206fc59622f2cf19e3615a074a967c4e73e0f834301b0e0a # shrinks to start = Node { tag: "a", attrs: [], children: [Element(Node { tag: "a", attrs: [], children: [] })] }, ops = [AppendElement { parent: 0, tag: "a" }, InsertAfter { target: 1, tag: "a" }, AppendElement { parent: 0, tag: "a" }, ReplaceWithTwo { target: 1, a: "a", b: "a" }]
