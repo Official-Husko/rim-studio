@@ -45,6 +45,9 @@ pub enum FileKind {
     VanillaDefs,
     /// A Combat Extended patch file in the gated CE folder.
     CePatch,
+    /// A Combat Extended definition file (`Defs` root) in the gated CE folder: the ammunition of a custom
+    /// caliber. Never written when the Combat Extended switch is off.
+    CeDefs,
     /// `LoadFolders.xml`.
     LoadFolders,
     /// `About/About.xml`.

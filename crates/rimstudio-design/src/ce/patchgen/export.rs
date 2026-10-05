@@ -66,7 +66,9 @@ pub fn gate_violations(plan: &WritePlan, layout: &ProjectLayout) -> Vec<String> 
     plan.files
         .iter()
         .filter(|f| f.contains_text(CE_MARK))
-        .filter(|f| !(f.kind == FileKind::CePatch && f.path.starts_with(&dir)))
+        .filter(|f| {
+            !(matches!(f.kind, FileKind::CePatch | FileKind::CeDefs) && f.path.starts_with(&dir))
+        })
         .map(|f| f.path.clone())
         .collect()
 }
@@ -146,6 +148,9 @@ pub fn export_ce_plan_with(
     }
     if !model.is_present() {
         return error_plan(vec![CE_ABSENT.diagnostic("", &[])]);
+    }
+    if let Some(prepared) = crate::ce::ammo::prepare(spec, model, layout) {
+        return crate::ce::ammo::export_with_ammo(prepared, layout, state, export_ce_plan_with);
     }
     let layout_problems = layout.validate();
     if has_errors(&layout_problems) {

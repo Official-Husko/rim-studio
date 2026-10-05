@@ -29,6 +29,11 @@ const TYPES = {
   "project-tree": "ProjectTreeDto",
   "write-plan": "WritePlanDto",
   "write-plan-assets": "WritePlanDto",
+  "ce-ammo-catalog": "CeAmmoCatalogDto",
+  "ce-ammo-catalog-request": "DesignerCeAmmoCatalogRequest",
+  "ce-ammo-custom": "CustomAmmoDto",
+  "ce-ammo-suggest-request": "DesignerCeAmmoSuggestRequest",
+  "ce-ammo-suggestion": "CeAmmoSuggestionDto",
 };
 
 const files = readdirSync(goldenDir)

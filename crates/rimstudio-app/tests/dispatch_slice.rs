@@ -294,6 +294,17 @@ fn every_command_of_the_slice_dispatches_in_one_session() {
     let suggestion = run.ok("designer_ce_suggest", json!({"draft": draft.clone()}));
     assert_eq!(suggestion["toggleOn"], json!(false), "{suggestion}");
     assert!(suggestion["available"].is_boolean());
+    // the ammunition of the installed Combat Extended: the catalogue and the suggestion for a new type
+    let catalog = run.ok(
+        "designer_ce_ammo_catalog",
+        json!({"draft": draft.clone(), "pageSize": 5}),
+    );
+    assert!(catalog["available"].is_boolean(), "{catalog}");
+    let ammo = run.ok(
+        "designer_ce_ammo_suggest",
+        json!({"class": "RS_FMJ", "hints": {"damage": 10}}),
+    );
+    assert!(ammo["available"].is_boolean(), "{ammo}");
     let mut quiz = quiz_draft();
     let step: QuizStepDto =
         serde_json::from_value(run.ok("designer_quiz_next", json!({"draft": quiz.clone()})))

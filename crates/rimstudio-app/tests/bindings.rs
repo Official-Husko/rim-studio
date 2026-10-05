@@ -20,7 +20,10 @@ use std::path::PathBuf;
 
 use rimstudio_app::for_each_command;
 use rimstudio_app::registry::wire::*;
-use rimstudio_ipc_types::designer::{DesignerMaterialMatrixRequest, MaterialMatrixDto};
+use rimstudio_ipc_types::designer::{
+    CeAmmoCatalogDto, CeAmmoSuggestionDto, CustomAmmoDto, DesignerCeAmmoCatalogRequest,
+    DesignerCeAmmoSuggestRequest, DesignerMaterialMatrixRequest, MaterialMatrixDto,
+};
 use rimstudio_ipc_types::error::ApiError;
 use rimstudio_ipc_types::jobs::{JobEvent, JobHandleDto, JobResultEnvelope, ProgressDto};
 use rimstudio_ipc_types::mods::ModsSnapshot;
@@ -91,6 +94,12 @@ fn extra_roots(c: &mut Collector) {
     c.add::<DesignerMaterialMatrixRequest>();
     c.add::<MaterialMatrixDto>();
     c.add::<ModsSnapshot>();
+    // Combat Extended ammo: the contract is declared here until the app registers its commands.
+    c.add::<DesignerCeAmmoCatalogRequest>();
+    c.add::<CeAmmoCatalogDto>();
+    c.add::<DesignerCeAmmoSuggestRequest>();
+    c.add::<CeAmmoSuggestionDto>();
+    c.add::<CustomAmmoDto>();
 }
 
 struct Row {

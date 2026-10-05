@@ -17,6 +17,7 @@ use std::collections::BTreeMap;
 use rimstudio_core::diag::{DiagCode, Diagnostic, Severity};
 use rimstudio_core::jobs::{CancelToken, Progress, ProgressSink, ProgressUnit};
 use rimstudio_core::tree::Node;
+use rimstudio_design::ce::ammo::ammo_plan;
 use rimstudio_design::ce::patchgen::{
     AskItem, AskKind, AskList, CeProjectState, ConversionSource, ConvertAnswers, ConvertCandidate,
     ConvertEnv, ConvertOutcome, ConvertStatus, ValueOrigin, convert, scan,
@@ -502,13 +503,27 @@ pub fn convert_plan(
             .with_arg("field", d.field.clone()),
         );
     }
+    // open questions end the conversion before the ammunition is looked at; its own checks still run, so
+    // the custom ammo window can show them while the other questions are being answered
+    if !outcome.asks.items.is_empty()
+        && let Some(spec) = outcome
+            .spec
+            .as_ref()
+            .filter(|s| s.ce.as_ref().is_some_and(|c| c.custom_ammo.is_some()))
+    {
+        diagnostics.extend(ammo_plan(spec, engine.ce(), &view.layout).diagnostics);
+    }
     let mut builder = PlanBuilder::new();
-    let known: std::collections::BTreeSet<String> = w
+    let mut known: std::collections::BTreeSet<String> = w
         .defs
         .nodes
         .iter()
         .filter_map(|n| n.child_text("defName").map(str::to_owned))
         .collect();
+    // the defs of a custom caliber are written by the plan, so the lint may treat them as defined
+    if let Some(spec) = &outcome.spec {
+        known.extend(super::ammo::custom_known_defs(spec));
+    }
     diagnostics.extend(finish_ce(
         &engine,
         view,

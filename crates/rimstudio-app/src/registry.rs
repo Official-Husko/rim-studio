@@ -43,9 +43,10 @@ pub mod wire {
         DefPage, DefSearchRequest, DefsGetResolvedRequest, ResolvedDefDto,
     };
     pub use rimstudio_ipc_types::designer::{
-        ApplyReportDto, CalibrateResultDto, CeSuggestionDto, ConvertScanDto,
-        DesignerApplyPlanRequest, DesignerAssetInfoRequest, DesignerAssetInfoResponse,
-        DesignerCalibrateRequest, DesignerCeSuggestRequest, DesignerCloneDiffRequest,
+        ApplyReportDto, CalibrateResultDto, CeAmmoCatalogDto, CeAmmoSuggestionDto, CeSuggestionDto,
+        ConvertScanDto, DesignerApplyPlanRequest, DesignerAssetInfoRequest,
+        DesignerAssetInfoResponse, DesignerCalibrateRequest, DesignerCeAmmoCatalogRequest,
+        DesignerCeAmmoSuggestRequest, DesignerCeSuggestRequest, DesignerCloneDiffRequest,
         DesignerCloneDiffResponse, DesignerCloneRequest, DesignerCloneResponse,
         DesignerConvertScanRequest, DesignerDraftDeleteRequest, DesignerDraftDeleteResponse,
         DesignerDraftListRequest, DesignerDraftListResponse, DesignerDraftSaveRequest,
@@ -277,6 +278,8 @@ macro_rules! for_each_command {
             query  designer_preview (ctx, req: DesignerPreviewRequest) -> PreviewDto = $crate::api::designer::designer_preview;
             query  designer_fit (ctx, req: DesignerFitRequest) -> FitReportDto = $crate::api::designer::designer_fit;
             query  designer_ce_suggest (ctx, req: DesignerCeSuggestRequest) -> CeSuggestionDto = $crate::api::designer::designer_ce_suggest;
+            query  designer_ce_ammo_catalog (ctx, req: DesignerCeAmmoCatalogRequest) -> CeAmmoCatalogDto = $crate::api::designer::designer_ce_ammo_catalog;
+            query  designer_ce_ammo_suggest (ctx, req: DesignerCeAmmoSuggestRequest) -> CeAmmoSuggestionDto = $crate::api::designer::designer_ce_ammo_suggest;
             query  designer_quiz_next (ctx, req: DesignerQuizNextRequest) -> QuizStepDto = $crate::api::designer::designer_quiz_next;
             action designer_quiz_answer (ctx, req: DesignerQuizAnswerRequest) -> DesignerQuizAnswerResponse = $crate::api::designer::designer_quiz_answer;
             action designer_quiz_back (ctx, req: DesignerQuizBackRequest) -> DesignerQuizAnswerResponse = $crate::api::designer::designer_quiz_back;

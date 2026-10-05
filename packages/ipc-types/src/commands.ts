@@ -12,6 +12,8 @@ import type {
   CalibrateResultDto,
   CancelJobRequest,
   CancelJobResponse,
+  CeAmmoCatalogDto,
+  CeAmmoSuggestionDto,
   CeSuggestionDto,
   ConvertScanDto,
   DefPage,
@@ -21,6 +23,8 @@ import type {
   DesignerAssetInfoRequest,
   DesignerAssetInfoResponse,
   DesignerCalibrateRequest,
+  DesignerCeAmmoCatalogRequest,
+  DesignerCeAmmoSuggestRequest,
   DesignerCeSuggestRequest,
   DesignerCloneDiffRequest,
   DesignerCloneDiffResponse,
@@ -121,6 +125,8 @@ export interface CommandTable {
   designer_preview: { kind: "query"; request: DesignerPreviewRequest; response: PreviewDto };
   designer_fit: { kind: "query"; request: DesignerFitRequest; response: FitReportDto };
   designer_ce_suggest: { kind: "query"; request: DesignerCeSuggestRequest; response: CeSuggestionDto };
+  designer_ce_ammo_catalog: { kind: "query"; request: DesignerCeAmmoCatalogRequest; response: CeAmmoCatalogDto };
+  designer_ce_ammo_suggest: { kind: "query"; request: DesignerCeAmmoSuggestRequest; response: CeAmmoSuggestionDto };
   designer_quiz_next: { kind: "query"; request: DesignerQuizNextRequest; response: QuizStepDto };
   designer_quiz_answer: { kind: "action"; request: DesignerQuizAnswerRequest; response: DesignerQuizAnswerResponse };
   designer_quiz_back: { kind: "action"; request: DesignerQuizBackRequest; response: DesignerQuizAnswerResponse };
@@ -183,6 +189,8 @@ export const commands = {
   designerPreview: { name: "designer_preview", kind: "query" },
   designerFit: { name: "designer_fit", kind: "query" },
   designerCeSuggest: { name: "designer_ce_suggest", kind: "query" },
+  designerCeAmmoCatalog: { name: "designer_ce_ammo_catalog", kind: "query" },
+  designerCeAmmoSuggest: { name: "designer_ce_ammo_suggest", kind: "query" },
   designerQuizNext: { name: "designer_quiz_next", kind: "query" },
   designerQuizAnswer: { name: "designer_quiz_answer", kind: "action" },
   designerQuizBack: { name: "designer_quiz_back", kind: "action" },
@@ -231,6 +239,8 @@ export const commandNames = [
   "designer_preview",
   "designer_fit",
   "designer_ce_suggest",
+  "designer_ce_ammo_catalog",
+  "designer_ce_ammo_suggest",
   "designer_quiz_next",
   "designer_quiz_answer",
   "designer_quiz_back",

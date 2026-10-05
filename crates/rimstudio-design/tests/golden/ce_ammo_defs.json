@@ -1,0 +1,873 @@
+{
+  "tag": "Defs",
+  "attrs": [],
+  "children": [
+    {
+      "tag": "ThingCategoryDef",
+      "attrs": [],
+      "children": [
+        {
+          "tag": "defName",
+          "attrs": [],
+          "children": [
+            "RS_AmmoTest68"
+          ]
+        },
+        {
+          "tag": "label",
+          "attrs": [],
+          "children": [
+            "6.8mm test"
+          ]
+        },
+        {
+          "tag": "parent",
+          "attrs": [],
+          "children": [
+            "RS_AmmoRifles"
+          ]
+        },
+        {
+          "tag": "iconPath",
+          "attrs": [],
+          "children": [
+            "RS/Icons/Category"
+          ]
+        }
+      ]
+    },
+    {
+      "tag": "CombatExtended.AmmoSetDef",
+      "attrs": [],
+      "children": [
+        {
+          "tag": "defName",
+          "attrs": [],
+          "children": [
+            "RS_AmmoSet_Test68"
+          ]
+        },
+        {
+          "tag": "label",
+          "attrs": [],
+          "children": [
+            "6.8mm test"
+          ]
+        },
+        {
+          "tag": "ammoTypes",
+          "attrs": [],
+          "children": [
+            {
+              "tag": "RS_Ammo_Test68_FMJ",
+              "attrs": [],
+              "children": [
+                "RS_Bullet_Test68_FMJ"
+              ]
+            },
+            {
+              "tag": "RS_Ammo_Test68_AP",
+              "attrs": [],
+              "children": [
+                "RS_Bullet_Test68_AP"
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "similarTo",
+          "attrs": [],
+          "children": [
+            "RS_AmmoSet_Rifle7"
+          ]
+        }
+      ]
+    },
+    {
+      "tag": "ThingDef",
+      "attrs": [
+        [
+          "Class",
+          "CombatExtended.AmmoDef"
+        ],
+        [
+          "ParentName",
+          "RS_AmmoBase"
+        ]
+      ],
+      "children": [
+        {
+          "tag": "defName",
+          "attrs": [],
+          "children": [
+            "RS_Ammo_Test68_FMJ"
+          ]
+        },
+        {
+          "tag": "label",
+          "attrs": [],
+          "children": [
+            "6.8mm test (FMJ)"
+          ]
+        },
+        {
+          "tag": "statBases",
+          "attrs": [],
+          "children": [
+            {
+              "tag": "Mass",
+              "attrs": [],
+              "children": [
+                "0.014"
+              ]
+            },
+            {
+              "tag": "Bulk",
+              "attrs": [],
+              "children": [
+                "0.028"
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "tradeTags",
+          "attrs": [
+            [
+              "Inherit",
+              "False"
+            ]
+          ],
+          "children": [
+            {
+              "tag": "li",
+              "attrs": [],
+              "children": [
+                "RS_Injector"
+              ]
+            },
+            {
+              "tag": "li",
+              "attrs": [],
+              "children": [
+                "RS_Ammo"
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "thingCategories",
+          "attrs": [
+            [
+              "Inherit",
+              "False"
+            ]
+          ],
+          "children": [
+            {
+              "tag": "li",
+              "attrs": [],
+              "children": [
+                "RS_AmmoTest68"
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "stackLimit",
+          "attrs": [],
+          "children": [
+            "5000"
+          ]
+        },
+        {
+          "tag": "graphicData",
+          "attrs": [],
+          "children": [
+            {
+              "tag": "texPath",
+              "attrs": [],
+              "children": [
+                "RS/Ammo/Rifle7/FMJ"
+              ]
+            },
+            {
+              "tag": "graphicClass",
+              "attrs": [],
+              "children": [
+                "Graphic_StackCount"
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "techLevel",
+          "attrs": [],
+          "children": [
+            "Industrial"
+          ]
+        },
+        {
+          "tag": "ammoClass",
+          "attrs": [],
+          "children": [
+            "RS_FMJ"
+          ]
+        },
+        {
+          "tag": "cookOffProjectile",
+          "attrs": [],
+          "children": [
+            "RS_Bullet_Test68_FMJ"
+          ]
+        }
+      ]
+    },
+    {
+      "tag": "ThingDef",
+      "attrs": [
+        [
+          "ParentName",
+          "RS_BulletBase"
+        ]
+      ],
+      "children": [
+        {
+          "tag": "defName",
+          "attrs": [],
+          "children": [
+            "RS_Bullet_Test68_FMJ"
+          ]
+        },
+        {
+          "tag": "label",
+          "attrs": [],
+          "children": [
+            "6.8mm test (FMJ)"
+          ]
+        },
+        {
+          "tag": "thingClass",
+          "attrs": [],
+          "children": [
+            "CombatExtended.BulletCE"
+          ]
+        },
+        {
+          "tag": "graphicData",
+          "attrs": [],
+          "children": [
+            {
+              "tag": "texPath",
+              "attrs": [],
+              "children": [
+                "RS/Projectile/Bullet"
+              ]
+            },
+            {
+              "tag": "graphicClass",
+              "attrs": [],
+              "children": [
+                "Graphic_Single"
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "projectile",
+          "attrs": [
+            [
+              "Class",
+              "CombatExtended.ProjectilePropertiesCE"
+            ]
+          ],
+          "children": [
+            {
+              "tag": "damageDef",
+              "attrs": [],
+              "children": [
+                "RS_Bullet"
+              ]
+            },
+            {
+              "tag": "damageAmountBase",
+              "attrs": [],
+              "children": [
+                "16"
+              ]
+            },
+            {
+              "tag": "armorPenetrationSharp",
+              "attrs": [],
+              "children": [
+                "7"
+              ]
+            },
+            {
+              "tag": "armorPenetrationBlunt",
+              "attrs": [],
+              "children": [
+                "21"
+              ]
+            },
+            {
+              "tag": "speed",
+              "attrs": [],
+              "children": [
+                "155"
+              ]
+            },
+            {
+              "tag": "dropsCasings",
+              "attrs": [],
+              "children": [
+                "true"
+              ]
+            },
+            {
+              "tag": "casingMoteDefname",
+              "attrs": [],
+              "children": [
+                "RS_FleckCasing"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tag": "RecipeDef",
+      "attrs": [
+        [
+          "ParentName",
+          "RS_AmmoRecipeBase"
+        ]
+      ],
+      "children": [
+        {
+          "tag": "defName",
+          "attrs": [],
+          "children": [
+            "RS_MakeAmmo_Test68_FMJ"
+          ]
+        },
+        {
+          "tag": "label",
+          "attrs": [],
+          "children": [
+            "make 6.8mm test (FMJ) x500"
+          ]
+        },
+        {
+          "tag": "description",
+          "attrs": [],
+          "children": [
+            "Craft 500 6.8mm test (FMJ)."
+          ]
+        },
+        {
+          "tag": "jobString",
+          "attrs": [],
+          "children": [
+            "Making 6.8mm test (FMJ)."
+          ]
+        },
+        {
+          "tag": "ingredients",
+          "attrs": [],
+          "children": [
+            {
+              "tag": "li",
+              "attrs": [],
+              "children": [
+                {
+                  "tag": "filter",
+                  "attrs": [],
+                  "children": [
+                    {
+                      "tag": "thingDefs",
+                      "attrs": [],
+                      "children": [
+                        {
+                          "tag": "li",
+                          "attrs": [],
+                          "children": [
+                            "RS_Steel"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "count",
+                  "attrs": [],
+                  "children": [
+                    "12"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "fixedIngredientFilter",
+          "attrs": [],
+          "children": [
+            {
+              "tag": "thingDefs",
+              "attrs": [],
+              "children": [
+                {
+                  "tag": "li",
+                  "attrs": [],
+                  "children": [
+                    "RS_Steel"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "products",
+          "attrs": [],
+          "children": [
+            {
+              "tag": "RS_Ammo_Test68_FMJ",
+              "attrs": [],
+              "children": [
+                "500"
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "workAmount",
+          "attrs": [],
+          "children": [
+            "1520"
+          ]
+        },
+        {
+          "tag": "recipeUsers",
+          "attrs": [
+            [
+              "Inherit",
+              "False"
+            ]
+          ],
+          "children": [
+            {
+              "tag": "li",
+              "attrs": [],
+              "children": [
+                "RS_Bench"
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "researchPrerequisite",
+          "attrs": [],
+          "children": [
+            "RS_Research"
+          ]
+        }
+      ]
+    },
+    {
+      "tag": "ThingDef",
+      "attrs": [
+        [
+          "Class",
+          "CombatExtended.AmmoDef"
+        ],
+        [
+          "ParentName",
+          "RS_AmmoBase"
+        ]
+      ],
+      "children": [
+        {
+          "tag": "defName",
+          "attrs": [],
+          "children": [
+            "RS_Ammo_Test68_AP"
+          ]
+        },
+        {
+          "tag": "label",
+          "attrs": [],
+          "children": [
+            "6.8mm test (AP)"
+          ]
+        },
+        {
+          "tag": "statBases",
+          "attrs": [],
+          "children": [
+            {
+              "tag": "Mass",
+              "attrs": [],
+              "children": [
+                "0.016"
+              ]
+            },
+            {
+              "tag": "Bulk",
+              "attrs": [],
+              "children": [
+                "0.032"
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "tradeTags",
+          "attrs": [
+            [
+              "Inherit",
+              "False"
+            ]
+          ],
+          "children": [
+            {
+              "tag": "li",
+              "attrs": [],
+              "children": [
+                "RS_Injector"
+              ]
+            },
+            {
+              "tag": "li",
+              "attrs": [],
+              "children": [
+                "RS_Ammo"
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "thingCategories",
+          "attrs": [
+            [
+              "Inherit",
+              "False"
+            ]
+          ],
+          "children": [
+            {
+              "tag": "li",
+              "attrs": [],
+              "children": [
+                "RS_AmmoTest68"
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "stackLimit",
+          "attrs": [],
+          "children": [
+            "5000"
+          ]
+        },
+        {
+          "tag": "graphicData",
+          "attrs": [],
+          "children": [
+            {
+              "tag": "texPath",
+              "attrs": [],
+              "children": [
+                "RS/Ammo/Rifle7/AP"
+              ]
+            },
+            {
+              "tag": "graphicClass",
+              "attrs": [],
+              "children": [
+                "Graphic_StackCount"
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "techLevel",
+          "attrs": [],
+          "children": [
+            "Industrial"
+          ]
+        },
+        {
+          "tag": "ammoClass",
+          "attrs": [],
+          "children": [
+            "RS_AP"
+          ]
+        },
+        {
+          "tag": "cookOffProjectile",
+          "attrs": [],
+          "children": [
+            "RS_Bullet_Test68_AP"
+          ]
+        }
+      ]
+    },
+    {
+      "tag": "ThingDef",
+      "attrs": [
+        [
+          "ParentName",
+          "RS_BulletBase"
+        ]
+      ],
+      "children": [
+        {
+          "tag": "defName",
+          "attrs": [],
+          "children": [
+            "RS_Bullet_Test68_AP"
+          ]
+        },
+        {
+          "tag": "label",
+          "attrs": [],
+          "children": [
+            "6.8mm test (AP)"
+          ]
+        },
+        {
+          "tag": "thingClass",
+          "attrs": [],
+          "children": [
+            "CombatExtended.BulletCE"
+          ]
+        },
+        {
+          "tag": "graphicData",
+          "attrs": [],
+          "children": [
+            {
+              "tag": "texPath",
+              "attrs": [],
+              "children": [
+                "RS/Projectile/Bullet"
+              ]
+            },
+            {
+              "tag": "graphicClass",
+              "attrs": [],
+              "children": [
+                "Graphic_Single"
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "projectile",
+          "attrs": [
+            [
+              "Class",
+              "CombatExtended.ProjectilePropertiesCE"
+            ]
+          ],
+          "children": [
+            {
+              "tag": "damageDef",
+              "attrs": [],
+              "children": [
+                "RS_Bullet"
+              ]
+            },
+            {
+              "tag": "damageAmountBase",
+              "attrs": [],
+              "children": [
+                "13"
+              ]
+            },
+            {
+              "tag": "armorPenetrationSharp",
+              "attrs": [],
+              "children": [
+                "15"
+              ]
+            },
+            {
+              "tag": "armorPenetrationBlunt",
+              "attrs": [],
+              "children": [
+                "27"
+              ]
+            },
+            {
+              "tag": "speed",
+              "attrs": [],
+              "children": [
+                "160"
+              ]
+            },
+            {
+              "tag": "dropsCasings",
+              "attrs": [],
+              "children": [
+                "true"
+              ]
+            },
+            {
+              "tag": "casingMoteDefname",
+              "attrs": [],
+              "children": [
+                "RS_FleckCasing"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tag": "RecipeDef",
+      "attrs": [
+        [
+          "ParentName",
+          "RS_AmmoRecipeBase"
+        ]
+      ],
+      "children": [
+        {
+          "tag": "defName",
+          "attrs": [],
+          "children": [
+            "RS_MakeAmmo_Test68_AP"
+          ]
+        },
+        {
+          "tag": "label",
+          "attrs": [],
+          "children": [
+            "make 6.8mm test (AP) x500"
+          ]
+        },
+        {
+          "tag": "description",
+          "attrs": [],
+          "children": [
+            "Craft 500 6.8mm test (AP)."
+          ]
+        },
+        {
+          "tag": "jobString",
+          "attrs": [],
+          "children": [
+            "Making 6.8mm test (AP)."
+          ]
+        },
+        {
+          "tag": "ingredients",
+          "attrs": [],
+          "children": [
+            {
+              "tag": "li",
+              "attrs": [],
+              "children": [
+                {
+                  "tag": "filter",
+                  "attrs": [],
+                  "children": [
+                    {
+                      "tag": "thingDefs",
+                      "attrs": [],
+                      "children": [
+                        {
+                          "tag": "li",
+                          "attrs": [],
+                          "children": [
+                            "RS_Steel"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "count",
+                  "attrs": [],
+                  "children": [
+                    "13"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "fixedIngredientFilter",
+          "attrs": [],
+          "children": [
+            {
+              "tag": "thingDefs",
+              "attrs": [],
+              "children": [
+                {
+                  "tag": "li",
+                  "attrs": [],
+                  "children": [
+                    "RS_Steel"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "products",
+          "attrs": [],
+          "children": [
+            {
+              "tag": "RS_Ammo_Test68_AP",
+              "attrs": [],
+              "children": [
+                "500"
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "workAmount",
+          "attrs": [],
+          "children": [
+            "1630"
+          ]
+        },
+        {
+          "tag": "recipeUsers",
+          "attrs": [
+            [
+              "Inherit",
+              "False"
+            ]
+          ],
+          "children": [
+            {
+              "tag": "li",
+              "attrs": [],
+              "children": [
+                "RS_Bench"
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "researchPrerequisite",
+          "attrs": [],
+          "children": [
+            "RS_Research"
+          ]
+        }
+      ]
+    }
+  ]
+}

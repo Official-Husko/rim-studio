@@ -629,6 +629,9 @@ pub(crate) enum DesignerCmd {
     Asset(crate::cmd::assets::AssetArgs),
     /// Suggest the Combat Extended numbers of a draft from your own conversions; changes nothing.
     CeSuggest(DraftArgs),
+    /// List the ammo sets of your Combat Extended, or suggest the values of a new custom ammo type;
+    /// changes nothing.
+    Ammo(crate::cmd::ammo::AmmoArgs),
     /// Show the files a draft would write, with diffs; writes nothing.
     #[command(after_long_help = DESIGNER_CE_HELP)]
     Plan(PlanArgs),

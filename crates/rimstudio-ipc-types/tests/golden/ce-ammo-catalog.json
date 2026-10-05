@@ -1,0 +1,58 @@
+{
+  "available": true,
+  "total": 307,
+  "matching": 1,
+  "page": 0,
+  "pageSize": 25,
+  "entries": [
+    {
+      "defName": "AmmoSet_Test",
+      "label": "test caliber",
+      "caliber": "test caliber",
+      "family": "rifle",
+      "similarTo": "AmmoSet_Rifle",
+      "generic": false,
+      "similarSets": 0,
+      "types": [
+        {
+          "ammoDef": "Ammo_Test_FMJ",
+          "ammoLabel": "test caliber (FMJ)",
+          "ammoClass": "FullMetalJacket",
+          "ammoClassLabel": "FMJ",
+          "projectileDef": "Bullet_Test_FMJ",
+          "damageDef": "Bullet",
+          "damage": 16.0,
+          "armorPenetrationSharp": 7.0,
+          "armorPenetrationBlunt": 21.0,
+          "speed": 155.0,
+          "secondaryDamage": [
+            {
+              "def": "Bomb_Secondary",
+              "amount": 4.0
+            }
+          ]
+        }
+      ],
+      "weaponCount": 3,
+      "exampleWeapons": [
+        "assault rifle"
+      ],
+      "suggested": true,
+      "score": 2.5
+    }
+  ],
+  "calibers": [
+    {
+      "name": "rifle",
+      "label": "rifle",
+      "count": 1
+    }
+  ],
+  "classes": [
+    {
+      "name": "FullMetalJacket",
+      "label": "FMJ",
+      "count": 1
+    }
+  ]
+}

@@ -132,9 +132,16 @@ pub fn accept_for_plan(
     }
     // What is still open after the fill: the choices the plan needs, and the rejected estimates.
     let after = suggest_block(&outcome.spec, engine.ce());
+    let has_custom_ammo = spec.ce.as_ref().is_some_and(|c| c.custom_ammo.is_some());
     for choice in &after.choices {
         let dependent = choice.field == "/ce/defaultProjectile" && choice.candidates.is_empty();
-        if choice.required && choice.status == FieldStatus::Ask && !dependent {
+        // a custom caliber brings its own ammo set and default projectile: nothing is asked for them
+        let custom = has_custom_ammo
+            && matches!(
+                choice.field.as_str(),
+                "/ce/ammoSet" | "/ce/defaultProjectile"
+            );
+        if choice.required && choice.status == FieldStatus::Ask && !dependent && !custom {
             diagnostics.push(
                 info(
                     CE_NEEDS_ANSWER,

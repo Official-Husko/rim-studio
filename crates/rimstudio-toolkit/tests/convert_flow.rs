@@ -274,6 +274,39 @@ fn only_patch_files(plan: &WritePlanDto) {
 }
 
 #[test]
+fn a_custom_caliber_in_the_answers_is_not_asked_for_a_set_and_its_checks_are_reported() {
+    let (f, p) = setup();
+    let answers = ConvertAnswersDto {
+        overrides: dto_of(&CePatchSpec {
+            custom_ammo: Some(rimstudio_design::model::CustomAmmoSpec {
+                name: "Mine".into(),
+                caliber: "my caliber".into(),
+                ..rimstudio_design::model::CustomAmmoSpec::default()
+            }),
+            ..CePatchSpec::default()
+        }),
+        ..ConvertAnswersDto::default()
+    };
+    let plan = export_plan(&f.ctx, convert_request(&p, "RS_ProjGun", answers)).unwrap();
+    let asked: Vec<&str> = plan
+        .diagnostics
+        .iter()
+        .filter(|d| d.code == "designer.convert-needs-answer")
+        .filter_map(|d| d.field.as_deref())
+        .collect();
+    assert!(!asked.contains(&"/ce/ammoSet"), "{asked:?}");
+    assert!(asked.contains(&"/ce/weaponTagClass"), "{asked:?}");
+    // the other questions are still open, yet the custom ammunition is already checked
+    assert!(
+        plan.diagnostics
+            .iter()
+            .any(|d| d.code == "ce.ammo-no-types"),
+        "{:?}",
+        plan.diagnostics
+    );
+}
+
+#[test]
 fn converting_a_gun_writes_patch_files_only_and_never_touches_the_definition() {
     let (f, p) = setup();
     let before = read(&p, "Defs/RS_ProjWeapons.xml");

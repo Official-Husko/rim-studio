@@ -120,6 +120,9 @@ pub struct CeModel {
     /// What the converted weapons say about their tool children and recoil pattern.
     #[serde(default)]
     pub extras: extras::ExtrasLibrary,
+    /// The ammunition: classes, ammo items, projectiles, recipes and thing categories.
+    #[serde(default)]
+    pub ammo: crate::ce::ammo::AmmoLibrary,
     /// Problems found while reading.
     pub diagnostics: Vec<Diagnostic>,
 }
@@ -144,6 +147,7 @@ impl CeModel {
             probe_def: None,
             platform: platform::PlatformLibrary::default(),
             extras: extras::ExtrasLibrary::default(),
+            ammo: crate::ce::ammo::AmmoLibrary::default(),
             diagnostics: vec![Diagnostic::new(
                 DiagCode::new(CE_ABSENT),
                 Severity::Info,
@@ -363,11 +367,14 @@ pub fn read_conversions_with(dbs: &DefDatabases, options: &CeReadOptions<'_>) ->
         options.vanilla,
         &options.db_type,
     );
+    let ammo =
+        crate::ce::ammo::read_library(dbs, &options.db_type, &classes.ammo_set_def, &ammo_sets);
     CeModel {
         absent: None,
         names,
         platform,
         extras,
+        ammo,
         probe_def: ammo_sets.first().map(|a| a.def_name.clone()),
         gun_presets: read_gun_presets(dbs, &classes.gun_preset_def),
         apparel_presets: read_apparel_presets(dbs, &classes.apparel_preset_def),
@@ -452,11 +459,13 @@ fn pair_twins(
 /// type table (spike S-07: the vanilla table lacks them, so these defs would count as unknown types).
 #[must_use]
 pub fn ce_type_entries(classes: &CeClassNames) -> Vec<(String, String)> {
-    vec![
+    let mut entries = vec![
         (classes.ammo_set_def.clone(), "Verse.Def".to_owned()),
         (classes.gun_preset_def.clone(), "Verse.Def".to_owned()),
         (classes.apparel_preset_def.clone(), "Verse.Def".to_owned()),
-    ]
+    ];
+    entries.extend(crate::ce::ammo::names::type_entries());
+    entries
 }
 
 /// A copy of the type table with the Combat Extended def types added (those already present are kept as

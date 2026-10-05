@@ -448,6 +448,295 @@ export type CancelStateDto = "cancelling" | "finished" | "unknown";
 export type Capability = "game-install" | "workshop-folder" | "combat-extended" | "open-project" | "steam-client" | "network";
 
 /**
+ * Response of `designer_ce_ammo_catalog`.
+ */
+export type CeAmmoCatalogDto = { 
+/**
+ * False when no Combat Extended data is loaded; `reason` says why.
+ */
+available: boolean, 
+/**
+ * The plain reason when `available` is false.
+ */
+reason?: string, 
+/**
+ * Sets in the install.
+ */
+total: number, 
+/**
+ * Sets that match the query and the filters.
+ */
+matching: number, 
+/**
+ * The page returned.
+ */
+page: number, 
+/**
+ * Entries per page.
+ */
+pageSize: number, 
+/**
+ * The entries of the page.
+ */
+entries: Array<CeAmmoEntryDto>, 
+/**
+ * Calibers and families of the sets that match the search words.
+ */
+calibers: Array<CeAmmoFacetDto>, 
+/**
+ * Ammo classes of the sets that match the search words.
+ */
+classes: Array<CeAmmoFacetDto>, };
+
+/**
+ * One ammo set of the catalogue.
+ */
+export type CeAmmoEntryDto = { 
+/**
+ * The def name of the set.
+ */
+defName: string, 
+/**
+ * The label of the set.
+ */
+label: string, 
+/**
+ * The caliber group.
+ */
+caliber: string, 
+/**
+ * The family of the caliber.
+ */
+family?: string, 
+/**
+ * The set this one is similar to.
+ */
+similarTo?: string, 
+/**
+ * True when other sets are similar to this one.
+ */
+generic: boolean, 
+/**
+ * How many sets are similar to this one.
+ */
+similarSets: number, 
+/**
+ * The ammo types.
+ */
+types: Array<CeAmmoTypeDto>, 
+/**
+ * How many converted weapons use the set.
+ */
+weaponCount: number, 
+/**
+ * A few labels of those weapons.
+ */
+exampleWeapons: Array<string>, 
+/**
+ * True when the relevance ranking of the current design suggests the set.
+ */
+suggested: boolean, 
+/**
+ * The relevance score, when suggested.
+ */
+score?: number, };
+
+/**
+ * A value of a catalogue facet.
+ */
+export type CeAmmoFacetDto = { 
+/**
+ * The value to send back as the filter.
+ */
+name: string, 
+/**
+ * What to show.
+ */
+label: string, 
+/**
+ * How many sets carry it.
+ */
+count: number, };
+
+/**
+ * What the user knows about the caliber they are making.
+ */
+export type CeAmmoHintsDto = { 
+/**
+ * A caliber name (information).
+ */
+caliber?: string, 
+/**
+ * The damage wanted.
+ */
+damage?: number, 
+/**
+ * The speed wanted.
+ */
+speed?: number, 
+/**
+ * An existing ammo set whose ammunition is the yardstick.
+ */
+similarSet?: string, };
+
+/**
+ * A secondary damage entry of a catalogue type.
+ */
+export type CeAmmoSecondaryDto = { 
+/**
+ * The damage def.
+ */
+def: string, 
+/**
+ * The amount.
+ */
+amount: number, };
+
+/**
+ * Where a suggested value comes from.
+ */
+export type CeAmmoSourceDto = "copied" | "nearest" | "hint";
+
+/**
+ * One suggested field of the new type.
+ */
+export type CeAmmoSuggestedFieldDto = { 
+/**
+ * The JSON pointer of the field inside the type.
+ */
+field: string, 
+/**
+ * What the field is called.
+ */
+label: string, 
+/**
+ * The number, for a numeric field.
+ */
+value?: number, 
+/**
+ * The text, for a text field.
+ */
+text?: string, 
+/**
+ * Where it comes from.
+ */
+source: CeAmmoSourceDto, 
+/**
+ * How far it can be trusted.
+ */
+rating: CeRatingDto, 
+/**
+ * How many ammunition types it rests on.
+ */
+n: number, 
+/**
+ * The ammo defs it rests on.
+ */
+from: Array<string>, 
+/**
+ * The smallest and the largest number among the neighbours.
+ */
+range?: [number, number], };
+
+/**
+ * Response of `designer_ce_ammo_suggest`.
+ */
+export type CeAmmoSuggestionDto = { 
+/**
+ * False when there is nothing to suggest from; `reason` says why.
+ */
+available: boolean, 
+/**
+ * The plain reason when `available` is false.
+ */
+reason?: string, 
+/**
+ * The ammo class asked for.
+ */
+class: string, 
+/**
+ * The label of the class.
+ */
+classLabel: string, 
+/**
+ * The ammo def the type was copied from.
+ */
+copiedFrom?: string, 
+/**
+ * The nearest ammunition, nearest first.
+ */
+nearest: Array<CeNearestAmmoDto>, 
+/**
+ * The suggested fields with their sources and ratings.
+ */
+fields: Array<CeAmmoSuggestedFieldDto>, 
+/**
+ * A type filled with the suggestions.
+ */
+ammoType: CustomAmmoTypeDto, 
+/**
+ * Remarks.
+ */
+notes: Array<string>, };
+
+/**
+ * One ammo type of a catalogue entry.
+ */
+export type CeAmmoTypeDto = { 
+/**
+ * The ammo item def name.
+ */
+ammoDef: string, 
+/**
+ * The label of the ammo item.
+ */
+ammoLabel: string, 
+/**
+ * The ammo class def name.
+ */
+ammoClass: string, 
+/**
+ * The label of the ammo class.
+ */
+ammoClassLabel: string, 
+/**
+ * The projectile def name.
+ */
+projectileDef: string, 
+/**
+ * The damage def of the projectile.
+ */
+damageDef?: string, 
+/**
+ * Damage per projectile.
+ */
+damage?: number, 
+/**
+ * Sharp penetration.
+ */
+armorPenetrationSharp?: number, 
+/**
+ * Blunt penetration.
+ */
+armorPenetrationBlunt?: number, 
+/**
+ * Speed in cells per second.
+ */
+speed?: number, 
+/**
+ * Pellets per shot.
+ */
+pellets?: number, 
+/**
+ * Explosion radius.
+ */
+explosionRadius?: number, 
+/**
+ * Secondary damage entries.
+ */
+secondaryDamage: Array<CeAmmoSecondaryDto>, };
+
+/**
  * One open question of a suggestion.
  */
 export type CeAskDto = { 
@@ -629,6 +918,43 @@ low: number,
 high: number, };
 
 /**
+ * An existing ammo type near the one asked for.
+ */
+export type CeNearestAmmoDto = { 
+/**
+ * The ammo item def name.
+ */
+ammoDef: string, 
+/**
+ * Its label.
+ */
+ammoLabel: string, 
+/**
+ * The ammo set it was found in.
+ */
+set?: string, 
+/**
+ * The projectile def name.
+ */
+projectileDef: string, 
+/**
+ * Damage.
+ */
+damage?: number, 
+/**
+ * Speed.
+ */
+speed?: number, 
+/**
+ * The energy index (damage times speed).
+ */
+energy?: number, 
+/**
+ * Distance from the target on the energy scale.
+ */
+distance: number, };
+
+/**
  * One optional addition that the user's conversions suggest. It is only a suggestion: the user opts in by
  * writing its value into the block.
  */
@@ -804,7 +1130,11 @@ extraTags?: Array<string>,
 /**
  * Elements written into the patch as given, each validated by the backend. Omitted when empty.
  */
-rawExtras?: Array<RawNodeDto>, };
+rawExtras?: Array<RawNodeDto>, 
+/**
+ * A custom caliber with its own projectiles, ammo items and recipes. Absent means none.
+ */
+customAmmo?: CustomAmmoDto, };
 
 /**
  * A predictor form.
@@ -1335,6 +1665,11 @@ diagnostics: Array<DiagnosticDto>, };
 export type ConvertStatusDto = "not-converted" | "already-ce" | "unsupported-kind" | "target-not-found";
 
 /**
+ * What a burning ammo item does.
+ */
+export type CookOffKindDto = "projectile" | "detonate" | "none";
+
+/**
  * The source of a copied file in a plan.
  */
 export type CopyPlanDto = { 
@@ -1376,6 +1711,202 @@ defName: string,
  * Amount.
  */
 count: number, };
+
+/**
+ * A custom caliber: the ammo set and its types. Part of the Combat Extended block (`ce.customAmmo`).
+ */
+export type CustomAmmoDto = { 
+/**
+ * The name the def names derive from.
+ */
+name: string, 
+/**
+ * The caliber label.
+ */
+caliber: string, 
+/**
+ * The label of the ammo set def.
+ */
+setLabel?: string, 
+/**
+ * The generic ammo set this one is similar to.
+ */
+similarTo?: string, 
+/**
+ * The parent thing category of the caliber's own category.
+ */
+categoryParent?: string, 
+/**
+ * The icon of the caliber's thing category.
+ */
+categoryIcon?: string, 
+/**
+ * The key of the type whose projectile is the weapon's default projectile.
+ */
+defaultType?: string, 
+/**
+ * Other children of the ammo set def, as written.
+ */
+setExtra?: Array<RawNodeDto>, 
+/**
+ * The ammo types, in set order.
+ */
+types: Array<CustomAmmoTypeDto>, };
+
+/**
+ * The ammo item that carries a projectile.
+ */
+export type CustomAmmoItemDto = { 
+/**
+ * The abstract def the item inherits from.
+ */
+parent?: string, 
+/**
+ * Mass of one item.
+ */
+mass?: SourcedDto<number>, 
+/**
+ * Bulk of one item.
+ */
+bulk?: SourcedDto<number>, 
+/**
+ * Market value. Absent: the game computes it from the recipe.
+ */
+marketValue?: SourcedDto<number>, 
+/**
+ * The stack limit.
+ */
+stackLimit?: SourcedDto<number>, 
+/**
+ * Thing categories besides the category of the set.
+ */
+thingCategories?: Array<string>, 
+/**
+ * Trade tags.
+ */
+tradeTags?: Array<string>, 
+/**
+ * The texture path.
+ */
+texPath?: string, 
+/**
+ * The graphic class.
+ */
+graphicClass?: string, 
+/**
+ * The draw size as written.
+ */
+drawSize?: string, 
+/**
+ * Other children of the graphic data, as written.
+ */
+graphicExtra?: Array<RawNodeDto>, 
+/**
+ * Stats besides mass, bulk and market value, by stat def name.
+ */
+statBases?: { [key in string]: SourcedDto<number> }, 
+/**
+ * The tech level name.
+ */
+techLevel?: string, 
+/**
+ * What the item does when it burns. Absent is derived from the projectile.
+ */
+cookOff?: CookOffKindDto, 
+/**
+ * Other children of the item def, as written.
+ */
+extra?: Array<RawNodeDto>, };
+
+/**
+ * The recipe that makes an ammo item.
+ */
+export type CustomAmmoRecipeDto = { 
+/**
+ * The abstract recipe def the recipe inherits from.
+ */
+parent?: string, 
+/**
+ * The label of the recipe.
+ */
+label?: string, 
+/**
+ * The description of the recipe.
+ */
+description?: string, 
+/**
+ * The job string of the recipe.
+ */
+jobString?: string, 
+/**
+ * The ingredients of one craft.
+ */
+ingredients?: Array<CustomIngredientDto>, 
+/**
+ * Items made per craft.
+ */
+products?: SourcedDto<number>, 
+/**
+ * The work amount of one craft.
+ */
+workAmount?: SourcedDto<number>, 
+/**
+ * The workbenches that offer the recipe.
+ */
+users?: Array<string>, 
+/**
+ * The research project that unlocks the recipe. An empty text clears the parent's.
+ */
+researchPrerequisite?: string, 
+/**
+ * Several research projects that must all be done.
+ */
+researchPrerequisites?: Array<string>, 
+/**
+ * Other children of the recipe def, as written.
+ */
+extra?: Array<RawNodeDto>, 
+/**
+ * The Crafting skill level the recipe needs.
+ */
+skillLevel?: SourcedDto<number>, };
+
+/**
+ * One ammo type: an ammo class with its projectile, its item and its recipe.
+ */
+export type CustomAmmoTypeDto = { 
+/**
+ * The short key that ends the def names of the type. Derived from the ammo class when empty.
+ */
+key: string, 
+/**
+ * The ammo class def name.
+ */
+ammoClass: string, 
+/**
+ * The label of the ammo item.
+ */
+label?: string, 
+/**
+ * The description of the ammo item.
+ */
+description?: string, 
+/**
+ * The ammo def this type was started from (information only).
+ */
+copiedFrom?: string, 
+/**
+ * The projectile.
+ */
+projectile: CustomProjectileDto, 
+/**
+ * The ammo item.
+ */
+item: CustomAmmoItemDto, 
+/**
+ * The recipe.
+ */
+recipe: CustomAmmoRecipeDto, };
 
 /**
  * A user added mod folder.
@@ -1429,6 +1960,182 @@ volumeHint?: VolumeHintDto,
  * Row colour. Absent means none.
  */
 colour?: string, };
+
+/**
+ * A fragment a projectile scatters when it bursts.
+ */
+export type CustomFragmentDto = { 
+/**
+ * The fragment projectile def name.
+ */
+def: string, 
+/**
+ * How many of them.
+ */
+count: number, };
+
+/**
+ * One ingredient of an ammo recipe.
+ */
+export type CustomIngredientDto = { 
+/**
+ * The thing def name.
+ */
+thing: string, 
+/**
+ * How many are needed for one craft.
+ */
+count?: SourcedDto<number>, 
+/**
+ * Other thing defs the ingredient accepts.
+ */
+alternatives?: Array<string>, 
+/**
+ * Categories the ingredient accepts.
+ */
+categories?: Array<string>, };
+
+/**
+ * The data of one projectile.
+ */
+export type CustomProjectileDto = { 
+/**
+ * The label of the projectile def. Derived from the ammo label when absent.
+ */
+label?: string, 
+/**
+ * The abstract def the projectile inherits from.
+ */
+parent?: string, 
+/**
+ * The `thingClass` of the projectile.
+ */
+thingClass?: string, 
+/**
+ * The damage def.
+ */
+damageDef?: string, 
+/**
+ * Damage per projectile.
+ */
+damage?: SourcedDto<number>, 
+/**
+ * Sharp armor penetration.
+ */
+armorPenetrationSharp?: SourcedDto<number>, 
+/**
+ * Blunt armor penetration.
+ */
+armorPenetrationBlunt?: SourcedDto<number>, 
+/**
+ * Muzzle speed in cells per second.
+ */
+speed?: SourcedDto<number>, 
+/**
+ * Pellets per shot.
+ */
+pelletCount?: SourcedDto<number>, 
+/**
+ * The spread multiplier of the pellets.
+ */
+spreadMult?: SourcedDto<number>, 
+/**
+ * Secondary damage entries.
+ */
+secondaryDamage?: Array<CustomSecondaryDamageDto>, 
+/**
+ * Explosion radius in cells.
+ */
+explosionRadius?: SourcedDto<number>, 
+/**
+ * Whether the explosion also damages the cells next to its radius.
+ */
+explosionNeighbors?: boolean, 
+/**
+ * Suppression factor.
+ */
+suppressionFactor?: SourcedDto<number>, 
+/**
+ * Danger factor.
+ */
+dangerFactor?: SourcedDto<number>, 
+/**
+ * Whether firing it drops a casing.
+ */
+dropsCasings?: boolean, 
+/**
+ * The casing fleck def.
+ */
+casingMote?: string, 
+/**
+ * The casing filth def.
+ */
+casingFilth?: string, 
+/**
+ * The projectile starts fires.
+ */
+incendiary?: boolean, 
+/**
+ * The projectile flies over its target before it bursts.
+ */
+flyOverhead?: boolean, 
+/**
+ * The texture path.
+ */
+texPath?: string, 
+/**
+ * The graphic class.
+ */
+graphicClass?: string, 
+/**
+ * The draw size as written.
+ */
+drawSize?: string, 
+/**
+ * Other children of the graphic data, as written.
+ */
+graphicExtra?: Array<RawNodeDto>, 
+/**
+ * The sound of the explosion.
+ */
+soundExplode?: string, 
+/**
+ * The sound in flight.
+ */
+soundAmbient?: string, 
+/**
+ * The sound of an impact on a thick roof.
+ */
+soundHitThickRoof?: string, 
+/**
+ * The sound played before the impact.
+ */
+soundImpactAnticipate?: string, 
+/**
+ * Fragments scattered on a burst.
+ */
+fragments?: Array<CustomFragmentDto>, 
+/**
+ * Other children of the projectile properties, as written.
+ */
+extra?: Array<RawNodeDto>, 
+/**
+ * Other components and children of the projectile def, as written.
+ */
+thingExtra?: Array<RawNodeDto>, };
+
+/**
+ * A secondary damage entry of a projectile.
+ */
+export type CustomSecondaryDamageDto = { 
+/**
+ * The damage def name.
+ */
+def: string, 
+/**
+ * The damage amount.
+ */
+amount?: SourcedDto<number>, };
 
 /**
  * A custom sound: clip files and the settings of the sound definition made from them.
@@ -1837,6 +2544,53 @@ force: boolean,
  * Worker threads. Absent means automatic. The result is identical for any thread count.
  */
 threads?: number, };
+
+/**
+ * Request of `designer_ce_ammo_catalog`.
+ */
+export type DesignerCeAmmoCatalogRequest = { 
+/**
+ * The current design. With it the sets the designer would suggest for it are marked; without it none
+ * is.
+ */
+draft?: DraftDto, 
+/**
+ * Words that must all appear in a set.
+ */
+query?: string, 
+/**
+ * A caliber or family, as the facets name them.
+ */
+caliber?: string, 
+/**
+ * An ammo class def name.
+ */
+class?: string, 
+/**
+ * The page, counted from zero.
+ */
+page?: number, 
+/**
+ * Entries per page; the default is 25.
+ */
+pageSize?: number, };
+
+/**
+ * Request of `designer_ce_ammo_suggest`.
+ */
+export type DesignerCeAmmoSuggestRequest = { 
+/**
+ * The ammo class def name of the new type.
+ */
+class: string, 
+/**
+ * What the user knows about the caliber.
+ */
+hints: CeAmmoHintsDto, 
+/**
+ * An ammo def to start the type from: every value is copied.
+ */
+copyFrom?: string, };
 
 /**
  * Request of `designer_ce_suggest`.
@@ -2514,7 +3268,7 @@ export type FileActionDto = "create" | "update-region" | "unchanged" | "replace"
 /**
  * What a planned file holds.
  */
-export type FileKindDto = "vanilla-defs" | "ce-patch" | "load-folders" | "about" | "copy";
+export type FileKindDto = "vanilla-defs" | "ce-patch" | "ce-defs" | "load-folders" | "about" | "copy";
 
 /**
  * How well a stat fits.

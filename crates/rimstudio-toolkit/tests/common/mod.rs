@@ -303,6 +303,18 @@ pub fn open_session_with(b: &BuiltInstall, ids: &[&str]) -> Arc<WorkspaceSession
     )
 }
 
+/// A session over the given active package ids with a type table of the caller's.
+pub fn open_session_with_types(
+    b: &BuiltInstall,
+    ids: &[&str],
+    table: Arc<TypeTable>,
+) -> Arc<WorkspaceSession> {
+    let reference = ReferenceSet::resolve(&scan(b), &active(ids), &game());
+    Arc::new(
+        WorkspaceSession::open_simple(OpenInput::new(reference).with_type_table(table)).unwrap(),
+    )
+}
+
 /// A fictional install, its session, temporary data roots and a context.
 pub struct Fixture {
     pub install: TempInstall,

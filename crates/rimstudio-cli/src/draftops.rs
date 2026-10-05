@@ -72,13 +72,23 @@ fn is_list_field(segs: &[String]) -> bool {
     let last = segs.last().map_or("", String::as_str);
     matches!(
         last,
-        "weaponTags" | "tradeTags" | "weaponClasses" | "categories" | "capacities"
+        "weaponTags"
+            | "tradeTags"
+            | "weaponClasses"
+            | "categories"
+            | "capacities"
+            | "thingCategories"
+            | "users"
+            | "alternatives"
+            | "researchPrerequisites"
     )
 }
 
 fn is_plain_number(segs: &[String]) -> bool {
     let last = segs.last().map_or("", String::as_str);
-    last == "muzzleFlashScale" || segs.first().is_some_and(|s| s == "costList")
+    last == "muzzleFlashScale"
+        || segs.first().is_some_and(|s| s == "costList")
+        || (last == "count" && segs.iter().any(|s| s == "fragments"))
 }
 
 fn is_text_field(segs: &[String]) -> bool {
@@ -103,6 +113,28 @@ fn is_text_field(segs: &[String]) -> bool {
             | "defaultProjectile"
             | "weaponTagClass"
             | "linkedBodyPartsGroup"
+            | "name"
+            | "key"
+            | "ammoClass"
+            | "setLabel"
+            | "similarTo"
+            | "categoryParent"
+            | "categoryIcon"
+            | "defaultType"
+            | "parent"
+            | "thingClass"
+            | "damageDef"
+            | "texPath"
+            | "drawSize"
+            | "casingMote"
+            | "casingFilth"
+            | "soundExplode"
+            | "soundAmbient"
+            | "soundHitThickRoof"
+            | "soundImpactAnticipate"
+            | "thing"
+            | "jobString"
+            | "copiedFrom"
     )
 }
 

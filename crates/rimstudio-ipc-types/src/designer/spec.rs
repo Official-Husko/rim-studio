@@ -504,6 +504,10 @@ pub struct CePatchSpecDto {
     #[serde(skip_serializing_if = "Vec::is_empty")]
     #[cfg_attr(feature = "ts", ts(as = "Option<Vec<RawNodeDto>>", optional))]
     pub raw_extras: Vec<RawNodeDto>,
+    /// A custom caliber with its own projectiles, ammo items and recipes. Absent means none.
+    #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
+    pub custom_ammo: Option<super::ce_ammo::CustomAmmoDto>,
 }
 
 /// The complete design input for one weapon.

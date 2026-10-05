@@ -1,0 +1,70 @@
+{
+  "name": "Mine",
+  "caliber": "my test caliber",
+  "similarTo": "RS_AmmoSet_Rifle",
+  "categoryParent": "RS_AmmoRifles",
+  "defaultType": "FMJ",
+  "types": [
+    {
+      "key": "FMJ",
+      "ammoClass": "RS_FMJ",
+      "label": "my test caliber (FMJ)",
+      "projectile": {
+        "parent": "RS_BulletBase",
+        "damageDef": "RS_Bullet",
+        "damage": {
+          "value": 16.0,
+          "source": "answered"
+        },
+        "armorPenetrationSharp": {
+          "value": 7.0,
+          "source": "suggested"
+        },
+        "armorPenetrationBlunt": {
+          "value": 21.0,
+          "source": "suggested"
+        },
+        "speed": {
+          "value": 155.0,
+          "source": "typed"
+        },
+        "secondaryDamage": [
+          {
+            "def": "RS_BombSecondary",
+            "amount": {
+              "value": 4.0,
+              "source": "typed"
+            }
+          }
+        ]
+      },
+      "item": {
+        "parent": "RS_AmmoBase",
+        "mass": {
+          "value": 0.014,
+          "source": "suggested"
+        },
+        "bulk": {
+          "value": 0.028,
+          "source": "suggested"
+        },
+        "cookOff": "projectile"
+      },
+      "recipe": {
+        "ingredients": [
+          {
+            "thing": "Steel",
+            "count": {
+              "value": 12.0,
+              "source": "typed"
+            }
+          }
+        ],
+        "workAmount": {
+          "value": 1500.0,
+          "source": "suggested"
+        }
+      }
+    }
+  ]
+}

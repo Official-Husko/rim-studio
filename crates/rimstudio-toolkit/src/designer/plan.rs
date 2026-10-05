@@ -159,6 +159,7 @@ impl BuiltPlan {
 pub fn kind_dto(kind: FileKind) -> FileKindDto {
     match kind {
         FileKind::CePatch => FileKindDto::CePatch,
+        FileKind::CeDefs => FileKindDto::CeDefs,
         FileKind::LoadFolders => FileKindDto::LoadFolders,
         FileKind::About => FileKindDto::About,
         FileKind::Copy => FileKindDto::Copy,
@@ -200,9 +201,10 @@ fn write_rank(kind: FileKind) -> u8 {
     match kind {
         FileKind::Copy => 0,
         FileKind::VanillaDefs => 1,
-        FileKind::CePatch => 2,
-        FileKind::LoadFolders => 3,
-        _ => 4,
+        FileKind::CeDefs => 2,
+        FileKind::CePatch => 3,
+        FileKind::LoadFolders => 4,
+        _ => 5,
     }
 }
 
@@ -429,6 +431,7 @@ fn spec_known_defs(spec: &DesignSpec) -> BTreeSet<String> {
     if let Some(ce) = &spec.ce {
         known.extend(ce.default_projectile.clone());
     }
+    known.extend(super::ammo::custom_known_defs(spec));
     known
 }
 
@@ -504,6 +507,12 @@ pub fn plan_design(
     let mut extra: Vec<Diagnostic> = Vec::new();
     if let Some(engine) = &engine {
         extra.extend(validate_refs(spec, &engine.lookup()));
+    }
+    if let (Some(engine), Some(custom)) = (
+        &engine,
+        spec.ce.as_ref().and_then(|c| c.custom_ammo.as_ref()),
+    ) {
+        extra.extend(super::ammo::ref_diagnostics(spec, custom, &engine.lookup()));
     }
     let facts = facts_of(spec, &view.root);
     let vanilla = export_vanilla_plan_with(spec, &view.layout, &facts);

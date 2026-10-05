@@ -36,6 +36,8 @@ pub enum FileKindDto {
     VanillaDefs,
     /// A Combat Extended patch.
     CePatch,
+    /// Combat Extended definitions (the ammunition of a custom caliber) in the gated folder.
+    CeDefs,
     /// `LoadFolders.xml`.
     LoadFolders,
     /// `About.xml`.

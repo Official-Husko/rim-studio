@@ -5,8 +5,9 @@
 //! Combat Extended patch is part of a plan only when the draft carries the opt in block.
 
 use rimstudio_ipc_types::designer::{
-    ApplyReportDto, CalibrateResultDto, CeSuggestionDto, ConvertScanDto, DesignerApplyPlanRequest,
-    DesignerAssetInfoRequest, DesignerAssetInfoResponse, DesignerCalibrateRequest,
+    ApplyReportDto, CalibrateResultDto, CeAmmoCatalogDto, CeAmmoSuggestionDto, CeSuggestionDto,
+    ConvertScanDto, DesignerApplyPlanRequest, DesignerAssetInfoRequest, DesignerAssetInfoResponse,
+    DesignerCalibrateRequest, DesignerCeAmmoCatalogRequest, DesignerCeAmmoSuggestRequest,
     DesignerCeSuggestRequest, DesignerCloneDiffRequest, DesignerCloneDiffResponse,
     DesignerCloneRequest, DesignerCloneResponse, DesignerConvertScanRequest,
     DesignerDraftDeleteRequest, DesignerDraftDeleteResponse, DesignerDraftListRequest,
@@ -69,6 +70,33 @@ pub fn designer_ce_suggest(
 ) -> Result<CeSuggestionDto, ApiError> {
     let d = ctx.workspace.designer_ctx(ctx)?;
     toolkit::ce_suggest(&d, req).map_err(|e| ctx.toolkit_error(&e))
+}
+
+/// `designer_ce_ammo_catalog`: every ammo set of the installed Combat Extended, searchable, filterable and
+/// paged. Read only; with a draft in the request the sets its relevance ranking suggests are marked.
+///
+/// # Errors
+/// Mapped toolkit errors (`designer.invalid-draft` for a draft that cannot be read). Without Combat Extended
+/// data the answer is not available and carries the plain reason.
+pub fn designer_ce_ammo_catalog(
+    ctx: &AppContext,
+    req: DesignerCeAmmoCatalogRequest,
+) -> Result<CeAmmoCatalogDto, ApiError> {
+    let d = ctx.workspace.designer_ctx(ctx)?;
+    toolkit::ce_ammo_catalog(&d, req).map_err(|e| ctx.toolkit_error(&e))
+}
+
+/// `designer_ce_ammo_suggest`: defaults for a new custom ammo type from the nearest of the user's own
+/// ammunition, or a complete copy of an existing ammo type. Read only.
+///
+/// # Errors
+/// Mapped toolkit errors. Without Combat Extended data the answer is not available and carries the reason.
+pub fn designer_ce_ammo_suggest(
+    ctx: &AppContext,
+    req: DesignerCeAmmoSuggestRequest,
+) -> Result<CeAmmoSuggestionDto, ApiError> {
+    let d = ctx.workspace.designer_ctx(ctx)?;
+    toolkit::ce_ammo_suggest(&d, req).map_err(|e| ctx.toolkit_error(&e))
 }
 
 /// `designer_quiz_next`: the next question of the estimate quiz.

@@ -15,12 +15,14 @@
 //! - [`clone`]: flow C, clone and adjust, the diff against the source and the structure defaults.
 //! - [`ce_block`]: the bow, platform, under barrel, tool plan and extras members of the Combat Extended block.
 //! - [`ce_suggest`]: the suggestions for the optional Combat Extended block.
+//! - [`ce_ammo`]: the ammo catalogue, the suggestions for a new ammo type and the custom ammo spec.
 //! - [`assets`]: texture imports, custom sounds and `designer_asset_info`.
 //! - [`plan`]: the write plan and the apply report.
 
 pub mod assets;
 pub mod calibrate;
 pub mod carried;
+pub mod ce_ammo;
 pub mod ce_block;
 pub mod ce_suggest;
 pub mod clone;
@@ -37,6 +39,7 @@ pub use crate::diagnostic::DiagnosticDto;
 pub use assets::*;
 pub use calibrate::*;
 pub use carried::*;
+pub use ce_ammo::*;
 pub use ce_block::*;
 pub use ce_suggest::*;
 pub use clone::*;

@@ -527,6 +527,11 @@ pub struct CePatchSpec {
     /// is checked for its XML shape; a node whose name the conversion owns is refused (OPT).
     #[serde(skip_serializing_if = "Vec::is_empty")]
     pub raw_extras: Vec<Node>,
+    /// A custom caliber with its own projectiles, ammo items and recipes (OPT). When present the plan adds
+    /// the ammunition definition files to the Combat Extended folder and the conversion uses the custom ammo
+    /// set and the projectile of its default type.
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub custom_ammo: Option<super::ce_ammo::CustomAmmoSpec>,
 }
 
 /// A numeric input addressed by name, used by suggestions, answers and anchors to write into a spec.

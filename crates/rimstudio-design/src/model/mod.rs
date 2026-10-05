@@ -12,6 +12,7 @@
 pub mod assets;
 pub mod bridge;
 pub mod carried;
+pub mod ce_ammo;
 pub mod ce_extras;
 pub mod draft;
 pub mod format;
@@ -24,6 +25,10 @@ pub use bridge::{DEFAULT_BURST_COUNT, DEFAULT_TICKS_BETWEEN_SHOTS};
 pub use carried::{
     ExtraMeleeDamage, INHERIT_RESETTABLE, MODELLED_THING_FIELDS, RecipeSpec, SurpriseAttackSpec,
     extra_damage_from_node,
+};
+pub use ce_ammo::{
+    CookOffKind, CustomAmmoItem, CustomAmmoRecipe, CustomAmmoSpec, CustomAmmoType, CustomFragment,
+    CustomIngredient, CustomProjectile, CustomSecondaryDamage,
 };
 pub use ce_extras::CeToolPlan;
 pub use draft::{

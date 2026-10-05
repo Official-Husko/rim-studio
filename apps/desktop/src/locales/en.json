@@ -995,6 +995,7 @@
   "patches.file.text-label": "Text of {path}",
   "patches.file-kind.vanilla-defs": "Definitions",
   "patches.file-kind.ce-patch": "Combat Extended patch",
+  "patches.file-kind.ce-defs": "Combat Extended definitions",
   "patches.file-kind.load-folders": "LoadFolders.xml",
   "patches.file-kind.about": "About.xml",
   "patches.action.create": "New file",

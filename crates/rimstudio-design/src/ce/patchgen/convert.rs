@@ -482,6 +482,8 @@ pub fn derive_ce_block(
             .clone()
             .or_else(|| over.weapon_tag_class.clone()),
         caliber: over.caliber.clone(),
+        // a custom caliber of the answers brings its own ammo set and projectile
+        custom_ammo: over.custom_ammo.clone(),
         one_handed: answers.one_handed.unwrap_or(over.one_handed),
         belt_fed: answers.belt_fed.unwrap_or(over.belt_fed),
         ..CePatchSpec::default()
@@ -532,7 +534,7 @@ fn ranged_choices(d: &mut Deriver<'_>, block: &mut CePatchSpec) {
         v.sort();
         v
     };
-    if block.ammo_set.is_none() {
+    if block.ammo_set.is_none() && block.custom_ammo.is_none() {
         d.asks.push(AskItem {
             field: "/ce/ammoSet".into(),
             label: "Which caliber (ammo set) does the weapon use?".into(),

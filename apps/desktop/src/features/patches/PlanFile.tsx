@@ -14,6 +14,7 @@ const ACTION = {
 const KIND = {
   'vanilla-defs': 'patches.file-kind.vanilla-defs',
   'ce-patch': 'patches.file-kind.ce-patch',
+  'ce-defs': 'patches.file-kind.ce-defs',
   'load-folders': 'patches.file-kind.load-folders',
   about: 'patches.file-kind.about',
   copy: 'patches.file-kind.copy',
