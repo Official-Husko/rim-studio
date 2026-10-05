@@ -1,0 +1,60 @@
+@layer base {
+  html,
+  body,
+  #app {
+    height: 100%;
+  }
+
+  body {
+    margin: 0;
+    background: var(--rs-bg);
+    color: var(--rs-text);
+    font-family: var(--rs-font-sans);
+    font-size: var(--rs-fs-body);
+    line-height: var(--rs-lh-body);
+    -webkit-font-smoothing: antialiased;
+    overflow: hidden;
+  }
+
+  /* Visible focus on every interactive element, keyboard only. */
+  :focus-visible {
+    outline: 2px solid var(--rs-focus);
+    outline-offset: 2px;
+  }
+
+  /* Inside lists, tables, trees and scroll containers the ring is drawn inset. */
+  [data-focus-inset]:focus-visible,
+  [role='option']:focus-visible,
+  [role='row']:focus-visible,
+  [role='treeitem']:focus-visible,
+  [role='tab']:focus-visible {
+    outline-offset: -2px;
+  }
+
+  ::selection {
+    background: var(--rs-accent);
+    color: var(--rs-accent-contrast);
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--rs-border-strong) transparent;
+  }
+
+  code,
+  kbd,
+  samp,
+  pre {
+    font-family: var(--rs-font-mono);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}

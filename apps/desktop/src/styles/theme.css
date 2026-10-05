@@ -1,0 +1,92 @@
+/* Maps the tokens to Tailwind v4 utilities. `inline` keeps the var() reference, so a theme
+   or density switch needs no rebuild. */
+@theme inline {
+  --color-*: initial;
+  --color-bg: var(--rs-bg);
+  --color-surface: var(--rs-surface);
+  --color-raised: var(--rs-surface-raised);
+  --color-hover: var(--rs-surface-hover);
+  --color-fg: var(--rs-text);
+  --color-muted: var(--rs-text-muted);
+  --color-faint: var(--rs-text-faint);
+  --color-accent: var(--rs-accent);
+  --color-accent-hover: var(--rs-accent-hover);
+  --color-accent-press: var(--rs-accent-press);
+  --color-on-accent: var(--rs-accent-contrast);
+  --color-accent-tint: var(--rs-accent-tint);
+  --color-warning: var(--rs-warning);
+  --color-danger: var(--rs-danger);
+  --color-success: var(--rs-success);
+  --color-info: var(--rs-info);
+  --color-rule-about: var(--rs-rule-about);
+  --color-rule-community: var(--rs-rule-community);
+  --color-rule-user: var(--rs-rule-user);
+  --color-q-awful: var(--rs-q-awful);
+  --color-q-poor: var(--rs-q-poor);
+  --color-q-normal: var(--rs-q-normal);
+  --color-q-good: var(--rs-q-good);
+  --color-q-excellent: var(--rs-q-excellent);
+  --color-q-masterwork: var(--rs-q-masterwork);
+  --color-q-legendary: var(--rs-q-legendary);
+  --color-focus: var(--rs-focus);
+  --color-line-subtle: var(--rs-border-subtle);
+  --color-line: var(--rs-border);
+  --color-line-strong: var(--rs-border-strong);
+  --color-scrim: var(--rs-scrim);
+  --color-diff-added: var(--rs-diff-added);
+  --color-diff-removed: var(--rs-diff-removed);
+  --color-band-p50: var(--rs-band-p50);
+  --color-band-p80: var(--rs-band-p80);
+  --color-source-official: var(--rs-source-official);
+  --color-source-install: var(--rs-source-install);
+  --color-source-workshop: var(--rs-source-workshop);
+  --color-source-custom: var(--rs-source-custom);
+  --color-group-1: var(--rs-group-1);
+  --color-group-2: var(--rs-group-2);
+  --color-group-3: var(--rs-group-3);
+  --color-group-4: var(--rs-group-4);
+  --color-group-5: var(--rs-group-5);
+  --color-group-6: var(--rs-group-6);
+  --color-group-7: var(--rs-group-7);
+  --color-group-8: var(--rs-group-8);
+  --color-transparent: transparent;
+  --color-current: currentColor;
+
+  --font-sans: var(--rs-font-sans);
+  --font-display: var(--rs-font-display);
+  --font-mono: var(--rs-font-mono);
+
+  --text-*: initial;
+  --text-display: var(--rs-fs-display);
+  --text-title: var(--rs-fs-title);
+  --text-body: var(--rs-fs-body);
+  --text-body--line-height: var(--rs-lh-body);
+  --text-small: var(--rs-fs-small);
+  --text-label: var(--rs-fs-label);
+  --text-mono: var(--rs-fs-mono);
+  --text-mono-small: var(--rs-fs-mono-small);
+  --text-mono-display: var(--rs-fs-mono-display);
+
+  --radius-*: initial;
+  --radius-sm: var(--rs-radius-sm);
+  --radius-md: var(--rs-radius-md);
+  --radius-lg: var(--rs-radius-lg);
+
+  --tracking-*: initial;
+  --tracking-label: 0.08em;
+  --tracking-display: 0.02em;
+  --tracking-stamp: 0.1em;
+
+  --spacing: var(--rs-space);
+  --spacing-row: var(--rs-row-h);
+  --spacing-control: var(--rs-control-h);
+  --spacing-control-sm: var(--rs-control-h-sm);
+  --spacing-rail: var(--rs-rail-w);
+  --spacing-topbar: var(--rs-topbar-h);
+  --spacing-status: var(--rs-status-h);
+  --spacing-drawer: var(--rs-drawer-w);
+  --spacing-dialog: var(--rs-dialog-w);
+
+  --shadow-*: initial;
+  --shadow-raised: 0 1px 0 var(--rs-border-subtle);
+}

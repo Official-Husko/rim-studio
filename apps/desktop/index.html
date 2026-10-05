@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en" data-theme="dark" data-density="comfortable">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <title>RimStudio</title>
+    <link rel="icon" href="data:," />
+    <script>
+      // Theme boot before first paint: dark is the only theme for now, density comes from a
+      // per viewer preference when storage is available.
+      (function () {
+        var root = document.documentElement;
+        root.setAttribute('data-theme', 'dark');
+        try {
+          var d = localStorage.getItem('rimstudio.density');
+          if (d === 'compact' || d === 'comfortable' || d === 'roomy') {
+            root.setAttribute('data-density', d);
+          }
+        } catch (e) {
+          /* storage can be blocked; the default stays */
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

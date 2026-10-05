@@ -1,0 +1,11 @@
+@import './layers.css';
+@import 'tailwindcss/preflight.css' layer(reset);
+@import 'tailwindcss/theme.css' layer(theme);
+@import './tokens.css';
+@import './theme.css';
+@import './base.css';
+@import './motifs.css';
+@import 'tailwindcss/utilities.css' layer(utilities);
+
+/* Class names used by the workspace packages are scanned too. */
+@source "../../../../packages/ui/src";

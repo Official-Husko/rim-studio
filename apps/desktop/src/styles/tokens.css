@@ -1,0 +1,147 @@
+/*
+  Design tokens: the only file (with its light sibling later) that may contain colour,
+  length and font literals. Names follow docs/design/design-prompt.md B10.
+  Dark theme "cyanotype night" is the default. A light block "vellum" goes below as
+  :root[data-theme="light"] { ... } with the same names; no component changes are needed.
+*/
+@layer tokens {
+  :root,
+  :root[data-theme='dark'] {
+    color-scheme: dark;
+
+    /* surfaces */
+    --rs-bg: #081a31;
+    --rs-surface: #0d2440;
+    --rs-surface-raised: #122e52;
+    --rs-surface-hover: #193b68;
+
+    /* text */
+    --rs-text: #e8f2ff;
+    --rs-text-muted: #a9c3e3;
+    --rs-text-faint: #7f9fc8;
+
+    /* accent and derived variants (a user accent only replaces --rs-accent) */
+    --rs-accent: #3fc8ff;
+    --rs-accent-contrast: #04223a;
+    --rs-accent-hover: color-mix(in srgb, var(--rs-accent) 82%, white);
+    --rs-accent-press: color-mix(in srgb, var(--rs-accent) 78%, black);
+    --rs-accent-tint: color-mix(in srgb, var(--rs-accent) 10%, var(--rs-surface));
+
+    /* signals */
+    --rs-warning: #ffb84d;
+    --rs-danger: #ff6b7a;
+    --rs-success: #58e0ad;
+    --rs-info: #56b4e9;
+
+    /* rule layers */
+    --rs-rule-about: #56b4e9;
+    --rs-rule-community: #d98dbd;
+    --rs-rule-user: #4fd1a5;
+
+    /* quality ladder */
+    --rs-q-awful: #8a94a6;
+    --rs-q-poor: #a8b3c4;
+    --rs-q-normal: #e8f2ff;
+    --rs-q-good: #6fe0a8;
+    --rs-q-excellent: #5bb8ff;
+    --rs-q-masterwork: #c79cff;
+    --rs-q-legendary: #ffc15c;
+
+    /* focus, borders, blueprint texture (8 digit hex carries the alpha) */
+    --rs-focus: #8be3ff;
+    --rs-border-subtle: #78beff2e;
+    --rs-border: #78beff52;
+    --rs-border-strong: #78beff8c;
+    --rs-grid-minor: #78beff0f;
+    --rs-grid-major: #78beff1c;
+    --rs-hatch: #78beff38;
+    --rs-scrim: #081a31b3;
+
+    /* diff and fit meter */
+    --rs-diff-added: color-mix(in srgb, var(--rs-success) 16%, var(--rs-surface));
+    --rs-diff-removed: color-mix(in srgb, var(--rs-danger) 16%, var(--rs-surface));
+    --rs-band-p50: color-mix(in srgb, var(--rs-success) 30%, transparent);
+    --rs-band-p80: color-mix(in srgb, var(--rs-info) 22%, transparent);
+
+    /* sources */
+    --rs-source-official: #c79cff;
+    --rs-source-install: #a9c3e3;
+    --rs-source-workshop: #5bb8ff;
+    --rs-source-custom: #ffc15c;
+
+    /* group swatches and chart series */
+    --rs-group-1: #3fc8ff;
+    --rs-group-2: #ffb84d;
+    --rs-group-3: #58e0ad;
+    --rs-group-4: #d98dbd;
+    --rs-group-5: #c79cff;
+    --rs-group-6: #ff8f6b;
+    --rs-group-7: #e6e36a;
+    --rs-group-8: #9fb4cf;
+    --rs-chart-1: #3fc8ff;
+    --rs-chart-2: #ffb84d;
+    --rs-chart-3: #58e0ad;
+    --rs-chart-4: #d98dbd;
+    --rs-chart-5: #c79cff;
+    --rs-chart-6: #a9c3e3;
+  }
+
+  /* Placeholder for the light theme (vellum): same names, other values. Not shipped yet.
+  :root[data-theme="light"] { color-scheme: light; --rs-bg: ...; }
+  */
+
+  /* Shape, type and motion are theme independent. */
+  :root {
+    --rs-font-sans:
+      'Barlow', system-ui, -apple-system, 'Segoe UI', 'Noto Sans', 'Noto Sans CJK SC', sans-serif;
+    --rs-font-display: 'Barlow Condensed', 'Barlow', system-ui, 'Segoe UI', sans-serif;
+    --rs-font-mono:
+      'Azeret Mono', ui-monospace, 'SFMono-Regular', 'Cascadia Mono', 'DejaVu Sans Mono', monospace;
+
+    --rs-fs-display: 28px;
+    --rs-fs-title: 16px;
+    --rs-fs-body: 13px;
+    --rs-fs-small: 11.5px;
+    --rs-fs-label: 12px;
+    --rs-fs-mono: 12px;
+    --rs-fs-mono-small: 11px;
+    --rs-fs-mono-display: 20px;
+    --rs-lh-body: 1.4;
+
+    --rs-space: 4px;
+    --rs-radius-sm: 2px;
+    --rs-radius-md: 4px;
+    --rs-radius-lg: 0px;
+
+    --rs-row-h: 34px;
+    --rs-control-h: 32px;
+    --rs-control-h-sm: 28px;
+    --rs-rail-w: 56px;
+    --rs-rail-w-wide: 200px;
+    --rs-topbar-h: 48px;
+    --rs-status-h: 32px;
+    --rs-drawer-w: 360px;
+    --rs-dialog-w: 480px;
+    --rs-tick: 8px;
+
+    --rs-dur-fast: 100ms;
+    --rs-dur-base: 180ms;
+    --rs-dur-slow: 200ms;
+    --rs-ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+
+    --rs-z-menu: 40;
+    --rs-z-drawer: 50;
+    --rs-z-dialog: 60;
+    --rs-z-toast: 70;
+  }
+
+  :root[data-density='compact'] {
+    --rs-row-h: 28px;
+    --rs-control-h: 28px;
+  }
+
+  :root[data-density='roomy'] {
+    --rs-row-h: 40px;
+    --rs-control-h: 40px;
+  }
+}

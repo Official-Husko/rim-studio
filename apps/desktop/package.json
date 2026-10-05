@@ -1,0 +1,33 @@
+{
+  "name": "rimstudio-desktop",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "gallery": "vite --open /#/gallery",
+    "build": "tsc -p tsconfig.json && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc -p tsconfig.json",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@preact/signals": "2.11.3",
+    "preact": "10.29.8",
+    "rimstudio-ipc-types": "workspace:*",
+    "rimstudio-ui": "workspace:*"
+  },
+  "devDependencies": {
+    "@babel/core": "7.29.7",
+    "@preact/preset-vite": "2.10.6",
+    "@tailwindcss/vite": "4.3.3",
+    "@testing-library/dom": "10.4.2",
+    "@testing-library/preact": "3.2.4",
+    "@types/node": "24.19.1",
+    "happy-dom": "20.14.5",
+    "rimstudio-testkit": "workspace:*",
+    "tailwindcss": "4.3.3",
+    "vite": "8.3.2",
+    "vitest": "5.0.3"
+  }
+}

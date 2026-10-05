@@ -1,0 +1,129 @@
+/* Blueprint motifs (design brief B5): cheap CSS only, always on top of tokens. */
+@layer components {
+  /* Canvas grid: minor 16 px, major 80 px. Never behind lists or text that is read quickly. */
+  .bp-grid {
+    background-image:
+      linear-gradient(var(--rs-grid-major) 1px, transparent 1px),
+      linear-gradient(90deg, var(--rs-grid-major) 1px, transparent 1px),
+      linear-gradient(var(--rs-grid-minor) 1px, transparent 1px),
+      linear-gradient(90deg, var(--rs-grid-minor) 1px, transparent 1px);
+    background-size:
+      80px 80px,
+      80px 80px,
+      16px 16px,
+      16px 16px;
+  }
+
+  /* Hatch: 135 degree lines every 6 px. */
+  .bp-hatch {
+    background-image: repeating-linear-gradient(135deg, var(--rs-hatch) 0 1px, transparent 1px 6px);
+  }
+
+  /* Registration marks: four L shaped ticks flush with the corners, no layout space. */
+  .bp-ticks {
+    position: relative;
+    --_t: var(--rs-tick);
+    --_c: var(--rs-border-strong);
+  }
+  .bp-ticks::before,
+  .bp-ticks::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+      linear-gradient(var(--_c), var(--_c)) top left / var(--_t) 1px no-repeat,
+      linear-gradient(var(--_c), var(--_c)) top left / 1px var(--_t) no-repeat,
+      linear-gradient(var(--_c), var(--_c)) top right / var(--_t) 1px no-repeat,
+      linear-gradient(var(--_c), var(--_c)) top right / 1px var(--_t) no-repeat;
+  }
+  .bp-ticks::after {
+    background:
+      linear-gradient(var(--_c), var(--_c)) bottom left / var(--_t) 1px no-repeat,
+      linear-gradient(var(--_c), var(--_c)) bottom left / 1px var(--_t) no-repeat,
+      linear-gradient(var(--_c), var(--_c)) bottom right / var(--_t) 1px no-repeat,
+      linear-gradient(var(--_c), var(--_c)) bottom right / 1px var(--_t) no-repeat;
+  }
+
+  /* Section cut: top right corner clipped at 45 degrees. */
+  .bp-cut {
+    clip-path: polygon(0 0, calc(100% - 6px) 0, 100% 6px, 100% 100%, 0 100%);
+  }
+
+  /* Indeterminate progress line (the one allowed loop). */
+  @keyframes rs-indeterminate {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(250%);
+    }
+  }
+  .rs-indeterminate {
+    animation: rs-indeterminate 1.4s linear infinite;
+  }
+  @keyframes rs-spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  .rs-spin {
+    animation: rs-spin 0.8s linear infinite;
+  }
+
+  /* Tooltip, CSS only: the bubble is a sibling revealed on hover or focus within. */
+  .rs-tip {
+    position: relative;
+    display: inline-flex;
+  }
+  .rs-tip > [role='tooltip'] {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity var(--rs-dur-fast) ease-out;
+  }
+  .rs-tip:hover > [role='tooltip'],
+  .rs-tip:focus-within > [role='tooltip'] {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+/* RulerSlider: a native range input whose track is drawn by the ruler around it. */
+@layer components {
+  .rs-range {
+    appearance: none;
+    background: transparent;
+    margin: 0;
+    height: 100%;
+    cursor: pointer;
+  }
+  .rs-range:disabled {
+    cursor: not-allowed;
+  }
+  .rs-range::-webkit-slider-runnable-track {
+    background: transparent;
+    height: 100%;
+  }
+  .rs-range::-moz-range-track {
+    background: transparent;
+    height: 100%;
+  }
+  .rs-range::-webkit-slider-thumb {
+    appearance: none;
+    width: 10px;
+    height: 100%;
+    border: 1px solid var(--rs-bg);
+    background: var(--rs-accent);
+    border-radius: 0;
+  }
+  .rs-range::-moz-range-thumb {
+    width: 8px;
+    height: 100%;
+    border: 1px solid var(--rs-bg);
+    background: var(--rs-accent);
+    border-radius: 0;
+  }
+  .rs-range:focus-visible {
+    outline-offset: -2px;
+  }
+}

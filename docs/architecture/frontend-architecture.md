@@ -2,7 +2,7 @@
 
 This document defines the structure of the RimStudio webview application: the folder tree and package split, the anatomy of a feature module, the import rules and how they are enforced, the single IPC module and the single platform adapter, state management, the application shell, long lists and drag and drop, theming, internationalisation, accessibility, error and offline states, the `rimstudio-ui` component library, performance rules and the test layout. It implements R1, R2, R5, R8 and R10 and decisions D-050 to D-057. The backend side of the contract is in [IPC and state architecture](ipc-and-state.md); the stack evidence is in [frontend stack research](../research/frontend-stack-research.md) and [webview and IPC performance](../research/webview-and-ipc-performance.md).
 
-Status: draft | Last updated: 2026-10-04
+Status: draft, section 18 as built | Last updated: 2026-10-05
 
 ## 1. Principles
 
@@ -507,5 +507,71 @@ Smaller checks recorded in the research as unverified, to close during M0 and M2
 2. Visual identity details (Blueprint inspired look, R8) are expressed only as tokens here; the design prompt written in a later stage fixes them.
 3. Initial density row heights (28 and 36 px) and the default shortcut set are proposals to be tuned in the gallery and the first usability pass.
 4. A user CSS layer is offered as an advanced, off by default feature; the owner may prefer to drop it.
+
+## 18. As built: the temporary UI
+
+Status: built 2026-10-05. A temporary, dark only browser UI exists so the designer can be tried end to end (adding weapons, generating files and Combat Extended patches) with real numbers from a local install, before the Tauri shell exists. It follows sections 1 to 16 where they apply; the deviations are listed at the end of this section.
+
+### 18.1 Folders
+
+```
+package.json  pnpm-workspace.yaml  .npmrc  .prettierrc.json  .editorconfig
+tsconfig.base.json  .oxlintrc.json  scripts/dev.mjs
+apps/desktop/
+  index.html                 sets data-theme and data-density before first paint
+  vite.config.ts             preact preset, tailwind plugin, aliases, /rpc and /dev proxy
+  src/main.tsx               feature probe, theme boot, mount, connect()
+  src/app/                   AppShell, TopBar, NavRail, TaskCentre, ToastHost, ErrorBoundary,
+                             ConnectionChip, route.ts (hash route), tools.ts, toasts.ts, theme.ts
+  src/features/{setup,project,weapons,patches}/   index.ts exports the lazy page; placeholders
+  src/shared/ipc/            client, transports, query, jobs, lifetime, connection, dev routes
+  src/shared/platform/       pickFolder, pickFile, openUrl, FolderPickerHost
+  src/shared/{format,i18n}/  display formatting; flat English catalog with typed keys
+  src/shared/lazy.tsx        lazyPage(): dynamic import wrapper, one chunk per page
+  src/styles/                tokens.css, theme.css, layers.css, base.css, motifs.css, index.css
+  src/gallery/               development route: every rimstudio-ui component with realistic props
+packages/ui/                 rimstudio-ui: 30 components and the icon set of 28 glyphs, each with a colocated test
+packages/testkit/            rimstudio-testkit: mock transport, fixture loader, render helpers
+```
+
+### 18.2 Styles
+
+`tokens.css` holds the Blueprint dark set with the exact values and the `--rs-` names of the design brief (B2 and B10); a light block goes below it with the same names. `theme.css` maps them to Tailwind v4 utilities through `@theme inline`: colours (`bg-surface`, `text-fg`, `text-muted`, `border-line-strong`, `bg-accent-tint`), type sizes (`text-body`, `text-small`), radii, the 4 px spacing unit and the named sizes (`h-control`, `h-row`, `w-rail`, `h-topbar`). `layers.css` declares `reset, tokens, theme, base, components, utilities, user`. `motifs.css` holds the blueprint recipes (`bp-grid`, `bp-hatch`, `bp-ticks`, `bp-cut`), the CSS only tooltip and the range input skin. Fonts name Barlow, Barlow Condensed and Azeret Mono first with system fallbacks; self hosting is a later task. A test computes the contrast of every verified pair of the brief from `tokens.css`, and two more tests fail on a colour literal or an arbitrary pixel value outside the token files.
+
+`rimstudio-ui` carries class names only; the app style entry scans `packages/ui/src` (`@source`) so its utilities are generated.
+
+### 18.3 Transports and the bridge
+
+`shared/ipc/client.ts` exposes `call(name, request)` and `callCommand(name, request)` (typed against the generated command table of `rimstudio-ipc-types`: name, request and response) over a `Transport` (`call`, `dev`, `events`). Three transports exist:
+
+| Transport | When | Notes |
+| --- | --- | --- |
+| http | the bridge answers `GET /dev/health` at boot | `POST /rpc/<command>` with the request JSON; the response is the envelope `{ok:true,data}` or `{ok:false,error}` of the bridge API; rejections are normalised to `ApiError` (`code`, `message`, `errorId`, `details`); network failures become `ipc.transport`, protocol failures `ipc.protocol` |
+| tauri | `__TAURI_INTERNALS__` exists | stub that fails with a clear message until the shell exists |
+| mock | no bridge, or `?mock` in the URL | fixtures of `packages/testkit/fixtures`, served by command name; loaded as its own chunk |
+
+`connect()` in `shared/ipc/connection.ts` picks one and drives the connection chip (Bridge ok, Mock data). `query(key, fetcher)` caches by key with stale while revalidate and `invalidate(match)`; a result that arrives after its last holder unmounted is dropped (`useQuery` ties the key to the component through `useIpcScope`). `jobs.ts` is fed by the SSE stream `GET /dev/events` and lists running and finished jobs in the task centre; a call of a job command (the kind comes from `GET /dev/commands`) also shows a local entry at once, which binds to the bridge job id on its first event.
+
+The bridge (`crates/rimstudio-devserver`) is a development tool and is never packaged: loopback peers only, header `x-rimstudio-token` on every request except `GET /dev/health`, Host and Origin checks, JSON content type on POST, size and time limits. Vite is the only client: its proxy (`apps/desktop/vite.config.ts`) reads `node_modules/.cache/rimstudio-bridge.json` on every request and adds the token, so the token never reaches the page. The development routes `/dev/info`, `/dev/commands`, `/dev/fs/home` and `/dev/fs/list` back the folder browser that `pickFolder()` opens in a plain browser.
+
+### 18.4 Scripts
+
+| Script | What it does |
+| --- | --- |
+| `pnpm dev` | `scripts/dev.mjs`: removes a stale token file, starts `cargo run -p rimstudio-devserver` (arguments after `--` go to it; `CARGO_TARGET_DIR` defaults to `$HOME/.cache/rimstudio-target`), waits for the token file and `/dev/health`, then starts Vite; stops both on exit |
+| `pnpm dev:ui`, `pnpm gallery` | Vite only (mock data); the gallery opens `/#/gallery` |
+| `pnpm typecheck`, `pnpm test`, `pnpm build` | per package `tsc`, Vitest (happy-dom), production build |
+| `pnpm lint` | oxlint with `.oxlintrc.json` |
+
+Spike S-12 result: oxlint 1.86.0 honours `overrides` with `no-restricted-imports` patterns. A group needs `**` to cross a slash (`@tauri-apps/**`, `~/**`, `**/features/**`); the pattern list of an override replaces the base list, so the XML library ban is repeated in each override. `no-restricted-globals` forbids `fetch`, `EventSource`, `XMLHttpRequest` and `WebSocket` outside `shared/ipc`. The React compiler rules of the `react` plugin (`refs`, `immutability`, `style-prop-object`) and two `jsx-a11y` rules that conflict with ARIA widget patterns are switched off for Preact code.
+
+### 18.5 Deviations from the sections above
+
+1. Section 5 says a browser mode bridge is deliberately not provided. The temporary UI uses one, with the controls of 18.3 (loopback, token, origin, never packaged); the Tauri transport replaces it when the shell exists (ADR 0040, [development bridge](../adr/0040-development-bridge.md)).
+2. The component library has 30 components and 28 icons, not the 46 of 13.2; features add the missing ones as they need them. Components are written in house (no Zag machines yet): the combobox, tabs, tree, table, split pane, dialog and tooltip use the native elements and the standard ARIA keyboard models.
+3. TypeScript is pinned at 6.0.3 as in section 2, with options that stay clean under TypeScript 7.0.2 (checked with `pnpm dlx typescript@7.0.2 -p apps/desktop/tsconfig.json`). Vitest is 5.0.3.
+4. No dependency-cruiser, knip, valibot, tinykeys or virtual list yet; oxlint carries the boundary rules.
+5. The gallery is a hash route, not a `/gallery` path, and is excluded from production builds by `import.meta.env.DEV`. Its sample text is not part of the i18n catalog.
+6. Dark theme only, with the light block left empty; `data-density` switches compact, comfortable and roomy.
 
 Related documents: [architecture overview](overview.md), [workspace layout](workspace-layout.md), [crate catalog](crate-catalog.md), [decision register](decision-register.md), [IPC and state](ipc-and-state.md), [frontend stack research](../research/frontend-stack-research.md), [RimSort feature and UX inventory](../research/rimsort-feature-and-ux-inventory.md).
