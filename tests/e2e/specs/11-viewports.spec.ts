@@ -27,6 +27,7 @@ test.describe('1024 by 700 window', () => {
     await rememberProject(page, join(env.tmp, 'work', 'QA Test Mod'));
     await page.reload();
     await gotoRoute(page, env, '/project');
+    await page.getByRole('tab', { name: 'Files' }).click();
     await expect(page.getByRole('tree')).toBeVisible();
     await noSidewaysScroll(page);
     await shot('w1024-project');

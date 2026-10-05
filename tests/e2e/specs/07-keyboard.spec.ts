@@ -55,6 +55,7 @@ test.describe('keyboard navigation of the main flows', () => {
   test('project: the tree answers arrow keys and opens a file with Enter', async ({ page, env }) => {
     await rememberProject(page, join(env.tmp, 'work', 'QA Test Mod'));
     await gotoRoute(page, env, '/project');
+    await page.getByRole('tab', { name: 'Files' }).click();
     const tree = page.getByRole('tree');
     await expect(tree).toBeVisible();
     await tree.getByRole('treeitem', { name: /^QA Test Mod/ }).focus();
@@ -64,7 +65,7 @@ test.describe('keyboard navigation of the main flows', () => {
     await page.keyboard.press('Enter');
     await expect(page.getByText('qa.qatestmod').first()).toBeVisible();
     // the tabs of the workbench move with the arrow keys
-    await page.getByRole('tab', { name: 'File' }).focus();
+    await page.getByRole('tab', { name: 'Files' }).focus();
     await page.keyboard.press('ArrowRight');
     await expect(page.getByRole('tab', { name: /^Layout( [0-9]+)?$/ })).toBeFocused();
   });

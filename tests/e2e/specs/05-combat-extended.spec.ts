@@ -1,5 +1,6 @@
 import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
+import { chooseAmmoSet } from '../support/ammo.ts';
 import { openWeaponsOn } from '../support/designer.ts';
 import { expect, gotoRoute, test } from '../support/fixtures.ts';
 
@@ -34,8 +35,7 @@ test.describe('weapons: the optional Combat Extended patch', () => {
     await shot('ce-asks');
 
     // The caliber and the class tag are never chosen for the user.
-    const ammo = ce.getByRole('combobox', { name: /Which caliber/ });
-    await ammo.selectOption({ label: (await ammo.locator('option').allTextContents()).find((t) => /AmmoSet_338Lapua/.test(t)) ?? '' });
+    await chooseAmmoSet(page, ce, 'AmmoSet_338Lapua');
     const projectile = ce.getByRole('combobox', { name: /Which projectile of the ammo set/ });
     await expect(projectile).toBeEnabled();
     const projectiles = await projectile.locator('option:not([disabled])').allTextContents();

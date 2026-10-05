@@ -51,7 +51,8 @@ test.describe('weapons: vanilla clone with its own projectile', () => {
     expect(existsSync(join(project, 'LoadFolders.xml'))).toBe(false);
 
     // the Project page shows the written file in its tree
-    await page.getByRole('link', { name: 'Project' }).click();
+    await page.getByRole('link', { name: 'Mod' }).click();
+    await page.getByRole('tab', { name: 'Files' }).click();
     const tree = page.getByRole('tree');
     await expect(tree).toBeVisible();
     for (const name of ['ThingDefs_Misc', 'Weapons', 'RangedIndustrial']) {

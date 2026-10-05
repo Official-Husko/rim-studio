@@ -27,11 +27,12 @@ test.describe('axe on pages with content', () => {
   test('project with its tree, layout tab and the new mod dialog', async ({ page, env }) => {
     await rememberProject(page, join(env.tmp, 'work', 'QA Test Mod'));
     await gotoRoute(page, env, '/project');
+    await page.getByRole('tab', { name: 'Files' }).click();
     await expect(page.getByRole('tree')).toBeVisible();
     expect(describe(await axeViolations(page)), 'axe tree').toBe('');
     await page.getByRole('tab', { name: /^Layout( [0-9]+)?$/ }).click();
     expect(describe(await axeViolations(page)), 'axe layout').toBe('');
-    await page.getByRole('tab', { name: 'Layout guide' }).click();
+    await page.getByRole('button', { name: 'Layout guide' }).click();
     expect(describe(await axeViolations(page)), 'axe guide').toBe('');
     await page.getByRole('button', { name: 'New mod' }).first().click();
     await expect(page.getByRole('dialog', { name: 'New mod' })).toBeVisible();

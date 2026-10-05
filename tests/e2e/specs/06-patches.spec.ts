@@ -1,5 +1,6 @@
 import { existsSync, mkdirSync, readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
+import { chooseAmmoSet } from '../support/ammo.ts';
 import { expect, gotoRoute, test } from '../support/fixtures.ts';
 import { copyGewehr } from '../support/mods.ts';
 import { pickFolderPath } from '../support/ui.ts';
@@ -32,10 +33,8 @@ test.describe('patches: convert a copy of a real mod', () => {
 
     // Answer the questions of the first weapon.
     const form = page.getByRole('tabpanel', { name: /^Questions/ });
-    const ammo = form.getByRole('combobox', { name: /Which caliber/ });
-    await expect(ammo).toBeVisible();
-    await ammo.click();
-    await page.getByRole('listbox').getByRole('option').first().click();
+    await expect(form.getByRole('button', { name: 'Browse all ammo' })).toBeVisible();
+    await chooseAmmoSet(page, form, 'AmmoSet_303British');
     await form.getByRole('combobox', { name: /Which weapon class tag/ }).click();
     await page.getByRole('listbox').getByRole('option').first().click();
     await form.getByRole('radiogroup', { name: /one hand/ }).getByRole('radio', { name: 'No' }).click();
@@ -80,7 +79,9 @@ test.describe('patches: convert a copy of a real mod', () => {
     await page.getByRole('button', { name: 'Scan again' }).click();
     await expect(page.getByText('1 already CE')).toBeVisible({ timeout: 60_000 });
     await page.getByRole('radio', { name: 'Lint' }).click();
-    await expect(page.getByRole('heading', { name: 'OH_G41m' })).toBeVisible({ timeout: 60_000 });
+    // the lint view reads every patch file of the mod and names each one
+    await expect(page.getByText('Files checked: 1.')).toBeVisible({ timeout: 60_000 });
+    await expect(page.getByRole('heading', { name: /gewehr41_Weapons_Ranged\.xml$/ })).toBeVisible();
     await shot('patches-lint');
   });
 });
