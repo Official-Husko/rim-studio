@@ -38,7 +38,8 @@ use rimstudio_design::ce::reader::{
     CeClassNames, CeModel, CeReadOptions, ce_block_from_def, custom_registry,
     read_conversions_with, with_ce_types,
 };
-use rimstudio_design::model::{CeToolPenetration, ItemKind, ValueSource};
+use rimstudio_design::ce::suggest::options::accept_options;
+use rimstudio_design::model::{CeToolPenetration, CeToolPlan, ItemKind, ValueSource};
 use rimstudio_design::reader::{OwnSource, ReaderOptions, spec_from_def, spec_from_def_own};
 
 const THING: &str = "ThingDef";
@@ -250,47 +251,92 @@ fn group_key(path: &str) -> String {
 }
 
 /// Why a missing or not removed path is not a defect of the generator, or `None` when it is unexplained.
-/// The reasons are the classes of the research note `ce-structure-fidelity-0.1.0`.
+/// The reason starts with its class: `policy` (a decision of the design, D-085), `optional` (written only
+/// when the user accepts a suggestion or gives the node, so the plain conversion leaves it out) or
+/// `unsupported` (not expressible). The reasons are the classes of the research notes
+/// `ce-structure-fidelity-0.1.0` and `ce-remaining-0.1.0`.
 fn explained(path: &str) -> Option<&'static str> {
-    let rules: [(&str, &str); 15] = [
-        ("/costList", "economy stays in the vanilla design (D-085)"),
+    let rules: [(&str, &str); 9] = [
+        (
+            "/costList",
+            "policy: economy stays in the vanilla design (D-085)",
+        ),
         (
             "/stuffCategories",
-            "economy stays in the vanilla design (D-085)",
+            "policy: economy stays in the vanilla design (D-085)",
         ),
-        ("/graphicData/drawSize", "art stays in the vanilla design"),
-        ("GunDrawExtension", "art of the gun draw extension"),
-        ("UnderBarrel", "weapon platform style conversion"),
         (
-            "EquippableAbilityReloadable",
-            "weapon platform style conversion",
+            "/graphicData/drawSize",
+            "policy: art stays in the vanilla design",
         ),
-        ("compClass", "weapon platform style conversion"),
         (
             "/equippedStatOffsets/MoveSpeed",
-            "economy stays in the vanilla design",
+            "policy: economy stays in the vanilla design",
         ),
         (
-            "AmmoGenPerMagOverride",
-            "ammo comp extra without a design field",
+            "GunDrawExtension",
+            "optional: art of the gun draw extension, written as a raw node when the user gives it",
         ),
-        ("reloadOneAtATime", "ammo comp extra without a design field"),
         (
             "soundCastTail",
-            "bow style conversion with its own sound set",
+            "unsupported: bow style conversion with its own sound set",
         ),
-        ("recoilPattern", "verb field without a design field"),
-        ("targetParams", "verb field that Combat Extended adds"),
+        (
+            "targetParams",
+            "unsupported: verb field that Combat Extended adds",
+        ),
         (
             "/weaponTags/li",
-            "tags beyond the class tag are suggested, not written",
+            "optional: tags beyond the class tag are written when the user accepts them",
         ),
-        ("/tools/", "tool list restructured by Combat Extended"),
+        (
+            "/tools/",
+            "optional: a restructured tool list is written when the user accepts the tool plan",
+        ),
     ];
     rules
         .iter()
         .find(|(p, _)| path.contains(p))
         .map(|(_, why)| *why)
+}
+
+/// The class of a finding that is not a missing or not removed element: extras, removed extras and value
+/// differences. A value is a derived number by nature (estimates and vanilla carry overs); an extra is a
+/// habit of the generator that the real conversion does not share; both are recorded, none is structure.
+fn classify_other(kind: Kind, path: &str) -> Option<&'static str> {
+    match kind {
+        Kind::Value => {
+            Some("derived: a number from the estimators or the vanilla design, not structure")
+        }
+        Kind::Extra | Kind::RemovedExtra if path.contains("/tools/") => {
+            Some("habit: a tool habit or a tool plan entry that the real conversion does not have")
+        }
+        Kind::Extra
+            if path.contains("CompProperties_FireModes") || path.contains("burstShotCount") =>
+        {
+            Some(
+                "habit: fire modes and burst follow the class of the converted guns or the vanilla burst",
+            )
+        }
+        Kind::Extra if path.contains("recoilAmount") => {
+            Some("habit: recoil of the class estimate where the real conversion writes none")
+        }
+        Kind::RemovedExtra if path.contains("/weaponTags/") => Some(
+            "unsupported: the real conversion removes a vanilla tag, which the block cannot say",
+        ),
+        _ => None,
+    }
+}
+
+/// [`explained`] with the kind of the finding: a vanilla tag that the real conversion removes and ours keeps
+/// is a tag removal that the block cannot say, not a tag the user could add.
+fn explained_for(kind: Kind, path: &str) -> Option<&'static str> {
+    if kind == Kind::NotRemoved && path.contains("/weaponTags/li") {
+        return Some(
+            "unsupported: the real conversion removes a vanilla tag, which the block cannot say",
+        );
+    }
+    explained(path)
 }
 
 fn patched_load(
@@ -441,6 +487,8 @@ fn raw_thing<'a>(raw: &'a [Node], name: &str) -> Option<&'a Node> {
 struct Case {
     name: String,
     kind: ItemKind,
+    /// The weapon went through the bow conversion.
+    bow: bool,
     patch_ops: Vec<Node>,
     errors: Vec<String>,
     ce_only_tools: usize,
@@ -468,6 +516,79 @@ fn map_tools(spec: &mut rimstudio_design::model::DesignSpec) -> usize {
     let extra = real.len().saturating_sub(spec.tools.len());
     ce.tool_penetration = mapped;
     extra
+}
+
+/// How the optional additions of the block are filled, from `RIMSTUDIO_FIDELITY_PLAN`:
+/// `none` writes the plain conversion only; `suggested` (the default) accepts every suggestion of the
+/// user's conversions (companion tags, tool plan, recoil pattern, reload); `explicit` writes what the real
+/// conversion did as the user would state it: a tool plan from the real tools, the tags and the extra
+/// `modExtensions` entries as raw nodes.
+#[derive(Clone, Copy, PartialEq, Eq, Debug)]
+enum PlanMode {
+    None,
+    Suggested,
+    Explicit,
+}
+
+fn plan_mode() -> PlanMode {
+    match std::env::var("RIMSTUDIO_FIDELITY_PLAN").as_deref() {
+        Ok("none") => PlanMode::None,
+        Ok("explicit") => PlanMode::Explicit,
+        _ => PlanMode::Suggested,
+    }
+}
+
+/// The tool plan that states the real tools of a conversion: every field of the real tool, starting from
+/// the vanilla tool with the same label, else the one at the same position.
+fn explicit_plan(
+    rows: &[rimstudio_design::ce::reader::CeToolRow],
+    vanilla_tools: &[rimstudio_design::model::ToolSpec],
+) -> Vec<CeToolPlan> {
+    rows.iter()
+        .enumerate()
+        .map(|(i, r)| {
+            let from = vanilla_tools
+                .iter()
+                .find(|t| t.label == r.label)
+                .or_else(|| vanilla_tools.get(i))
+                .map(|t| t.label.clone())
+                .filter(|l| *l != r.label);
+            CeToolPlan {
+                label: r.label.clone(),
+                from,
+                capacities: Some(r.capacities.clone()),
+                power: r.power,
+                cooldown: r.cooldown,
+                chance_factor: r.chance_factor,
+                armor_penetration_sharp: r.ap_sharp,
+                armor_penetration_blunt: r.ap_blunt,
+                linked_body_parts_group: r.linked_body_parts_group.clone(),
+            }
+        })
+        .collect()
+}
+
+/// The `modExtensions` entries of the real def that the vanilla def does not have, as one raw node.
+fn extra_mod_extensions(vanilla: &Node, real: &Node) -> Option<Node> {
+    let have: Vec<String> = vanilla
+        .child("modExtensions")
+        .map(|m| {
+            m.children_named("li")
+                .filter_map(|l| l.attr("Class").map(str::to_owned))
+                .collect()
+        })
+        .unwrap_or_default();
+    let mut out = Node::new("modExtensions");
+    for li in real.child("modExtensions")?.children_named("li") {
+        if li
+            .attr("Class")
+            .is_some_and(|c| !have.contains(&c.to_owned()))
+        {
+            out.push_child(li.clone());
+        }
+    }
+    let any = out.elements().next().is_some();
+    any.then_some(out)
 }
 
 fn build_cases(
@@ -524,12 +645,54 @@ fn build_cases(
         let mut spec = reading.spec;
         spec.ce = ce_block_from_def(c, &model.classes, ValueSource::Typed);
         let ce_only_tools = map_tools(&mut spec);
+        match plan_mode() {
+            PlanMode::None => {}
+            PlanMode::Suggested => {
+                spec = accept_options(&spec, model, None).spec;
+            }
+            PlanMode::Explicit => {
+                let rows = model
+                    .guns
+                    .iter()
+                    .find(|g| g.def_name == name)
+                    .map(|g| g.tools.clone())
+                    .or_else(|| {
+                        model
+                            .melee
+                            .iter()
+                            .find(|m| m.def_name == name)
+                            .map(|m| m.tools.clone())
+                    })
+                    .unwrap_or_default();
+                let tags: Vec<String> = model
+                    .guns
+                    .iter()
+                    .find(|g| g.def_name == name)
+                    .map(|g| (g.weapon_tags.clone(), g.twin_tags.clone()))
+                    .or_else(|| {
+                        model
+                            .melee
+                            .iter()
+                            .find(|m| m.def_name == name)
+                            .map(|m| (m.weapon_tags.clone(), m.twin_tags.clone()))
+                    })
+                    .map(|(all, twin)| all.into_iter().filter(|t| !twin.contains(t)).collect())
+                    .unwrap_or_default();
+                let vanilla_tools = spec.tools.clone();
+                if let Some(ce) = spec.ce.as_mut() {
+                    ce.tool_plan = explicit_plan(&rows, &vanilla_tools);
+                    ce.extra_tags = tags;
+                    ce.raw_extras = extra_mod_extensions(&v.node, &c.node).into_iter().collect();
+                }
+            }
+        }
         let container = Container::from_def(
             v,
             raw_thing(raw, &name),
             &model.classes,
             ConversionSource::Unknown,
         );
+        let bow = rimstudio_design::ce::patchgen::is_bow_spec(&spec);
         let result = match spec.kind {
             ItemKind::Ranged => gun_patch(&spec, model, &container),
             _ => melee_patch(&spec, model, &container),
@@ -547,6 +710,7 @@ fn build_cases(
         cases.push(Case {
             name,
             kind: spec.kind,
+            bow,
             patch_ops: patch.operations,
             errors,
             ce_only_tools,
@@ -733,6 +897,38 @@ fn the_generated_patch_matches_combat_extendeds_own_conversions() {
             }
         }
     }
+    if std::env::var_os("RIMSTUDIO_FIDELITY_HABITS").is_some() {
+        use rimstudio_design::ce::patchgen::conventions as conv;
+        for kind in [ItemKind::Ranged, ItemKind::Melee] {
+            println!(
+                "DROPPED {kind:?}: {:?}",
+                conv::dropped_tool_fields(&model, kind)
+            );
+        }
+        for class in &model.ai_class_tags {
+            println!(
+                "CLASS {class}: tags {:?} recoil {:?} reload {:?}",
+                conv::companion_shares(&model, class),
+                conv::recoil_pattern_habit(&model, class),
+                conv::reload_one_at_a_time_habit(&model, class)
+            );
+        }
+        println!(
+            "TWIN TOOL FIELDS {:?}",
+            model
+                .extras
+                .guns
+                .iter()
+                .chain(model.extras.melee.iter())
+                .map(|e| (
+                    e.def_name.clone(),
+                    e.twin_tool_fields.clone(),
+                    e.tool_fields.clone()
+                ))
+                .filter(|(_, t, _)| !t.is_empty())
+                .collect::<Vec<_>>()
+        );
+    }
     validity_report(&ce_dir_for_report, &usable, &model, &classes);
     let mut findings: Vec<Finding> = Vec::new();
     let mut twice_diff: Vec<String> = Vec::new();
@@ -774,6 +970,24 @@ fn the_generated_patch_matches_combat_extendeds_own_conversions() {
             weapons.len()
         );
     }
+    platform_report(&PlatformRun {
+        cases: &cases,
+        vanilla: &vanilla.databases,
+        real: &ce.databases,
+        once: &once.databases,
+        twice: &twice.databases,
+        model: &model,
+        raw: &raw,
+    });
+    bow_convert_report(&vanilla.databases, &model, &raw, &cases);
+    bow_report(&BowRun {
+        cases: &cases,
+        vanilla: &vanilla.databases,
+        real: &ce.databases,
+        once: &once.databases,
+        twice: &twice.databases,
+        model: &model,
+    });
     let count = |k: Kind| findings.iter().filter(|f| f.kind == k).count();
     println!(
         "\nTOTAL missing {} not-removed {} value {} extra {} removed-extra {}",
@@ -793,12 +1007,497 @@ fn the_generated_patch_matches_combat_extendeds_own_conversions() {
         .filter(|f| matches!(f.kind, Kind::Missing | Kind::NotRemoved))
         .filter(|f| explained(&f.path).is_none())
         .collect();
+    let mut by_class: BTreeMap<(&str, &str), usize> = BTreeMap::new();
+    for f in &findings {
+        let why = match f.kind {
+            Kind::Missing | Kind::NotRemoved => explained_for(f.kind, &f.path),
+            other => classify_other(other, &f.path),
+        };
+        let class = why
+            .and_then(|why| why.split(':').next())
+            .unwrap_or("unclassified");
+        let kind = match f.kind {
+            Kind::Missing => "missing",
+            Kind::NotRemoved => "not removed",
+            Kind::RemovedExtra => "removed extra",
+            Kind::Extra => "extra",
+            Kind::Value => "value",
+        };
+        *by_class.entry((class, kind)).or_default() += 1;
+    }
+    println!("plan mode: {:?}", plan_mode());
+    for ((class, kind), n) in &by_class {
+        println!("CLASS {class}\t{kind}\t{n}");
+    }
+    let unclassified: usize = by_class
+        .iter()
+        .filter(|((c, _), _)| *c == "unclassified")
+        .map(|(_, n)| n)
+        .sum();
+    println!("unclassified findings of any kind: {unclassified}");
     println!("unexplained missing or not removed: {}", unexplained.len());
     for f in &unexplained {
         println!("  {:?} {} {}", f.kind, f.weapon, f.path);
     }
     if std::env::var_os("RIMSTUDIO_FIDELITY_STRICT").is_some() {
         assert!(unexplained.is_empty(), "unexplained differences");
+        assert_eq!(unclassified, 0, "findings without a class");
         assert_eq!(twice_diff.len(), 0, "applying twice changes a def");
+    }
+}
+
+/// What the bow report needs from the run.
+struct BowRun<'a> {
+    cases: &'a [Case],
+    vanilla: &'a DefDatabases,
+    real: &'a DefDatabases,
+    once: &'a rimstudio_defs::DefDatabases,
+    twice: &'a rimstudio_defs::DefDatabases,
+    model: &'a CeModel,
+}
+
+/// The bow part of the run: the findings of the bow conversions alone (the weapons that went through the
+/// bow style), whether applying the patch twice changes them, and the variants that inherit a bow's
+/// conversion (compared as resolved defs, they carry no patch of their own).
+fn bow_report(run: &BowRun<'_>) {
+    let bows: Vec<&Case> = run
+        .cases
+        .iter()
+        .filter(|c| c.bow && c.errors.is_empty())
+        .collect();
+    println!("\n== bows ==");
+    println!(
+        "converted bows in the library (examples of the bow estimate): {}",
+        run.model.bows().count()
+    );
+    println!("bow conversions compared: {}", bows.len());
+    let mut findings: Vec<Finding> = Vec::new();
+    let mut twice_diff = 0usize;
+    for c in &bows {
+        let (Some(v), Some(r), Some(o)) = (
+            run.vanilla.get(THING, &c.name),
+            run.real.get(THING, &c.name),
+            run.once.get(THING, &c.name),
+        ) else {
+            continue;
+        };
+        findings.extend(compare(&c.name, &v.node, &r.node, &o.node));
+        if run
+            .twice
+            .get(THING, &c.name)
+            .is_some_and(|t| flatten(&t.node) != flatten(&o.node))
+        {
+            twice_diff += 1;
+        }
+    }
+    let inheritors: Vec<String> = run
+        .model
+        .guns
+        .iter()
+        .filter(|g| g.bow)
+        .filter(|g| bows.iter().all(|c| c.name != g.def_name))
+        .filter(|g| {
+            run.vanilla.get(THING, &g.def_name).is_some_and(|v| {
+                v.parents
+                    .iter()
+                    .any(|p| bows.iter().any(|c| c.name == p.name))
+            })
+        })
+        .map(|g| g.def_name.clone())
+        .collect();
+    let mut inherited: Vec<Finding> = Vec::new();
+    for name in &inheritors {
+        if let (Some(v), Some(r), Some(o)) = (
+            run.vanilla.get(THING, name),
+            run.real.get(THING, name),
+            run.once.get(THING, name),
+        ) {
+            inherited.extend(compare(name, &v.node, &r.node, &o.node));
+        }
+    }
+    println!(
+        "variants that inherit a bow conversion: {} ({})",
+        inheritors.len(),
+        inheritors.join(", ")
+    );
+    let count = |fs: &[Finding], k: Kind| fs.iter().filter(|f| f.kind == k).count();
+    // A variant that lists its own components (`Inherit="False"`) does not receive the components its
+    // parent's conversion adds; Combat Extended converts such variants in a separate file.
+    let explained_for = |label: &str, path: &str| {
+        explained(path).is_some()
+            || (label == "inherited" && path.starts_with("/comps/li[@Class=CombatExtended."))
+    };
+    for (label, fs) in [("own", &findings), ("inherited", &inherited)] {
+        println!(
+            "BOW {label} missing {} not-removed {} value {} extra {} removed-extra {}",
+            count(fs, Kind::Missing),
+            count(fs, Kind::NotRemoved),
+            count(fs, Kind::Value),
+            count(fs, Kind::Extra),
+            count(fs, Kind::RemovedExtra)
+        );
+        let unexplained = fs
+            .iter()
+            .filter(|f| matches!(f.kind, Kind::Missing | Kind::NotRemoved))
+            .filter(|f| !explained_for(label, &f.path))
+            .count();
+        println!("BOW {label} unexplained missing or not removed: {unexplained}");
+    }
+    println!(
+        "BOW applied twice differs from applied once: {twice_diff} of {}",
+        bows.len()
+    );
+    let mut by_group: BTreeMap<(Kind, String), usize> = BTreeMap::new();
+    for f in findings.iter().chain(inherited.iter()) {
+        *by_group.entry((f.kind, group_key(&f.path))).or_default() += 1;
+    }
+    for ((kind, path), n) in &by_group {
+        println!("BOW {kind:?}\t{path}\tx{n}");
+    }
+    if std::env::var_os("RIMSTUDIO_FIDELITY_STRICT").is_some() {
+        assert!(
+            findings
+                .iter()
+                .filter(|f| matches!(f.kind, Kind::Missing | Kind::NotRemoved))
+                .all(|f| explained_for("own", &f.path))
+                && inherited
+                    .iter()
+                    .filter(|f| matches!(f.kind, Kind::Missing | Kind::NotRemoved))
+                    .all(|f| explained_for("inherited", &f.path)),
+            "unexplained bow differences"
+        );
+        assert_eq!(twice_diff, 0, "applying a bow patch twice changes a def");
+    }
+}
+
+/// The convert flow on the real vanilla bows: what it asks with no answers, what is left to ask once the
+/// arrow set is answered, and whether the plan of a fully answered conversion lints without findings that
+/// are not about the missing Run and Gun mod. Prints; asserts the structure only.
+fn bow_convert_report(vanilla: &DefDatabases, model: &CeModel, raw: &[Node], cases: &[Case]) {
+    use rimstudio_design::ce::patchgen::{CeProjectState, ConvertAnswers, ConvertEnv, convert};
+    use rimstudio_design::plan::ProjectLayout;
+    let layout = ProjectLayout::default();
+    let reader = ReaderOptions::default();
+    let state = CeProjectState::default();
+    let source = ConversionSource::Unknown;
+    let env = ConvertEnv {
+        dbs: vanilla,
+        model,
+        layout: &layout,
+        reader: &reader,
+        project: raw,
+        state: &state,
+        source: &source,
+    };
+    let candidates = scan(raw, vanilla, model);
+    for case in cases.iter().filter(|c| c.bow) {
+        let Some(candidate) = candidates.iter().find(|c| c.def == case.name) else {
+            continue;
+        };
+        let Some(real) = model.gun(&case.name) else {
+            continue;
+        };
+        let fields = |a: &rimstudio_design::ce::patchgen::AskList| {
+            a.items.iter().map(|i| i.field.clone()).collect::<Vec<_>>()
+        };
+        let bare = convert(candidate, &ConvertAnswers::default(), &env);
+        println!(
+            "BOW CONVERT {} asks with no answers: {:?}",
+            case.name,
+            fields(&bare.asks)
+        );
+        let answers = ConvertAnswers {
+            ammo_set: real.ammo_set.clone(),
+            ..ConvertAnswers::default()
+        };
+        let set_answered = convert(candidate, &answers, &env);
+        println!(
+            "BOW CONVERT {} asks after the arrow set: {:?}; derived {:?}",
+            case.name,
+            fields(&set_answered.asks),
+            set_answered
+                .derived
+                .iter()
+                .map(|d| format!("{}={}", d.field, d.value))
+                .collect::<Vec<_>>()
+        );
+        // Answer every open number with the real conversion's own value and look at the plan.
+        let mut full = answers.clone();
+        for ask in &set_answered.asks.items {
+            let real_number = |pointer: &str| -> Option<f64> {
+                match pointer {
+                    "/ce/bulk" => real.stats.get("bulk").copied(),
+                    "/ce/swayFactor" => real.stats.get("sway").copied(),
+                    "/ce/shotSpread" => real.stats.get("spread").copied(),
+                    _ => None,
+                }
+            };
+            if let Some(v) = real_number(&ask.field) {
+                let s = Some(rimstudio_design::model::Sourced::new(v, ValueSource::Typed));
+                match ask.field.as_str() {
+                    "/ce/bulk" => full.overrides.bulk = s,
+                    "/ce/swayFactor" => full.overrides.sway_factor = s,
+                    _ => full.overrides.shot_spread = s,
+                }
+            } else if let Some(rest) = ask.field.strip_prefix("/ce/toolPenetration/")
+                && let Some((label, _)) = rest.rsplit_once('/')
+            {
+                full.tool_penetration.push(CeToolPenetration {
+                    tool: label.to_owned(),
+                    sharp: None,
+                    blunt: real
+                        .tools
+                        .first()
+                        .and_then(|t| t.ap_blunt)
+                        .map(|v| rimstudio_design::model::Sourced::new(v, ValueSource::Typed)),
+                });
+            }
+        }
+        let done = convert(candidate, &full, &env);
+        println!(
+            "BOW CONVERT {} fully answered: asks {:?}, plan files {}, errors {}",
+            case.name,
+            fields(&done.asks),
+            done.plan.files.len(),
+            done.plan
+                .diagnostics
+                .iter()
+                .filter(|d| d.severity == rimstudio_core::diag::Severity::Error)
+                .count()
+        );
+        if std::env::var_os("RIMSTUDIO_FIDELITY_STRICT").is_some() {
+            assert!(done.asks.is_empty(), "{}: asks remain", case.name);
+            assert!(!done.plan.files.is_empty(), "{}: no plan", case.name);
+        }
+    }
+}
+
+/// What the platform report needs from the run.
+struct PlatformRun<'a> {
+    cases: &'a [Case],
+    vanilla: &'a DefDatabases,
+    real: &'a DefDatabases,
+    once: &'a rimstudio_defs::DefDatabases,
+    twice: &'a rimstudio_defs::DefDatabases,
+    model: &'a CeModel,
+    raw: &'a [Node],
+}
+
+/// The platform part of the run: the weapons whose real conversion carries an under barrel unit, compared
+/// like every other weapon (their findings are counted separately, so the numbers before and after the
+/// platform work can be told apart), plus what the convert flow asks for such a weapon and what the install
+/// has of weapon platforms and attachment defs.
+fn platform_report(run: &PlatformRun<'_>) {
+    use rimstudio_design::ce::patchgen::{CeProjectState, ConvertAnswers, ConvertEnv, convert};
+    use rimstudio_design::plan::ProjectLayout;
+    let classes = &run.model.classes;
+    let family: Vec<&Case> = run
+        .cases
+        .iter()
+        .filter(|c| c.errors.is_empty())
+        .filter(|c| {
+            run.real.get(THING, &c.name).is_some_and(|r| {
+                rimstudio_design::ce::reader::platform::under_barrel_comp(&r.node, classes)
+                    .is_some()
+            })
+        })
+        .collect();
+    println!("\n== platforms and under barrel units ==");
+    println!(
+        "install: {} weapon platforms, {} attachment defs, {} under barrel units with data",
+        run.model.platform.platforms.len(),
+        run.model.platform.attachments.len(),
+        run.model.platform.under_barrels.len()
+    );
+    println!(
+        "weapons whose real conversion has an under barrel unit and a vanilla twin: {} ({})",
+        family.len(),
+        family
+            .iter()
+            .map(|c| c.name.as_str())
+            .collect::<Vec<_>>()
+            .join(", ")
+    );
+    let mut findings: Vec<Finding> = Vec::new();
+    let mut twice_diff = 0usize;
+    for c in &family {
+        let (Some(v), Some(r), Some(o)) = (
+            run.vanilla.get(THING, &c.name),
+            run.real.get(THING, &c.name),
+            run.once.get(THING, &c.name),
+        ) else {
+            continue;
+        };
+        findings.extend(compare(&c.name, &v.node, &r.node, &o.node));
+        if run
+            .twice
+            .get(THING, &c.name)
+            .is_some_and(|t| flatten(&t.node) != flatten(&o.node))
+        {
+            twice_diff += 1;
+        }
+    }
+    let count = |k: Kind| findings.iter().filter(|f| f.kind == k).count();
+    let unit_paths = |f: &Finding| {
+        f.path.contains("UnderBarrel")
+            || f.path.contains("EquippableAbility")
+            || f.path.contains("compClass")
+    };
+    println!(
+        "PLATFORM missing {} not-removed {} value {} extra {} removed-extra {}",
+        count(Kind::Missing),
+        count(Kind::NotRemoved),
+        count(Kind::Value),
+        count(Kind::Extra),
+        count(Kind::RemovedExtra)
+    );
+    let on_unit: Vec<&Finding> = findings
+        .iter()
+        .filter(|f| matches!(f.kind, Kind::Missing | Kind::NotRemoved | Kind::Value))
+        .filter(|f| unit_paths(f))
+        .collect();
+    println!(
+        "PLATFORM findings on the unit and its components (under barrel, ability component, component classes): {}",
+        on_unit.len()
+    );
+    for f in &on_unit {
+        println!(
+            "  {:?} {} {} real [{}] ours [{}]",
+            f.kind, f.weapon, f.path, f.real, f.ours
+        );
+    }
+    let unexplained = findings
+        .iter()
+        .filter(|f| matches!(f.kind, Kind::Missing | Kind::NotRemoved))
+        .filter(|f| explained(&f.path).is_none())
+        .count();
+    println!("PLATFORM unexplained missing or not removed: {unexplained}");
+    println!(
+        "PLATFORM applied twice differs from applied once: {twice_diff} of {}",
+        family.len()
+    );
+    // The convert flow on the vanilla weapons that carry a unit of their own.
+    let layout = ProjectLayout::default();
+    let reader = ReaderOptions::default();
+    let state = CeProjectState::default();
+    let source = ConversionSource::Unknown;
+    let env = ConvertEnv {
+        dbs: run.vanilla,
+        model: run.model,
+        layout: &layout,
+        reader: &reader,
+        project: run.raw,
+        state: &state,
+        source: &source,
+    };
+    let candidates = scan(run.raw, run.vanilla, run.model);
+    for c in &family {
+        let Some(candidate) = candidates.iter().find(|x| x.def == c.name) else {
+            continue;
+        };
+        println!(
+            "PLATFORM CONVERT {} status {:?}: {}",
+            c.name, candidate.status, candidate.reason
+        );
+        let out = convert(candidate, &ConvertAnswers::default(), &env);
+        println!(
+            "PLATFORM CONVERT {} asks with no answers: {:?}",
+            c.name,
+            out.asks
+                .items
+                .iter()
+                .map(|i| i.field.clone())
+                .collect::<Vec<_>>()
+        );
+    }
+    // Answered with the real numbers and the real unit, the conversion produces a plan without asks.
+    for c in &family {
+        let (Some(candidate), Some(real), Some(entry), Some(twin)) = (
+            candidates.iter().find(|x| x.def == c.name),
+            run.model.gun(&c.name),
+            run.model
+                .platform
+                .under_barrels
+                .iter()
+                .find(|e| e.def_name == c.name),
+            run.vanilla.get(THING, &c.name),
+        ) else {
+            continue;
+        };
+        let typed = |v: Option<f64>| {
+            v.map(|v| rimstudio_design::model::Sourced::new(v, ValueSource::Typed))
+        };
+        let mut answers = ConvertAnswers {
+            ammo_set: real.ammo_set.clone(),
+            weapon_tag_class: real.ai_class.clone(),
+            one_handed: Some(false),
+            belt_fed: Some(false),
+            ..ConvertAnswers::default()
+        };
+        answers.overrides.bulk = typed(real.stats.get("bulk").copied());
+        answers.overrides.sway_factor = typed(real.stats.get("sway").copied());
+        answers.overrides.shot_spread = typed(real.stats.get("spread").copied());
+        answers.overrides.magazine_size = real
+            .stats
+            .get("magazine")
+            .map(|m| rimstudio_design::model::Sourced::new(*m as u32, ValueSource::Typed));
+        answers.overrides.reload_time = typed(real.stats.get("reload").copied());
+        answers.overrides.under_barrel = Some(entry.unit.clone());
+        let labels: Vec<String> = twin
+            .node
+            .child("tools")
+            .map(|t| {
+                t.children_named("li")
+                    .filter_map(|l| l.child_text("label").map(str::to_owned))
+                    .collect()
+            })
+            .unwrap_or_default();
+        for (i, label) in labels.iter().enumerate() {
+            answers.tool_penetration.push(CeToolPenetration {
+                tool: label.clone(),
+                sharp: None,
+                blunt: typed(real.tools.get(i).and_then(|t| t.ap_blunt)),
+            });
+        }
+        let done = convert(candidate, &answers, &env);
+        let errors = done
+            .plan
+            .diagnostics
+            .iter()
+            .filter(|d| d.severity == rimstudio_core::diag::Severity::Error)
+            .count();
+        println!(
+            "PLATFORM CONVERT {} fully answered: asks {:?}, plan files {}, errors {errors}",
+            c.name,
+            done.asks
+                .items
+                .iter()
+                .map(|i| i.field.clone())
+                .collect::<Vec<_>>(),
+            done.plan.files.len()
+        );
+        if std::env::var_os("RIMSTUDIO_FIDELITY_STRICT").is_some() {
+            assert!(done.asks.is_empty(), "{}: asks remain", c.name);
+            assert!(!done.plan.files.is_empty(), "{}: no plan", c.name);
+            assert_eq!(errors, 0, "{}: plan errors", c.name);
+        }
+    }
+    for name in ["Gun_Incinerator"] {
+        if let Some(candidate) = candidates.iter().find(|x| x.def == name) {
+            println!(
+                "PLATFORM SCAN {name}: {:?} ({})",
+                candidate.status, candidate.reason
+            );
+        }
+    }
+    if std::env::var_os("RIMSTUDIO_FIDELITY_STRICT").is_some() {
+        assert!(
+            on_unit.is_empty(),
+            "the unit of a platform family weapon differs"
+        );
+        assert_eq!(
+            twice_diff, 0,
+            "applying a platform patch twice changes a def"
+        );
     }
 }

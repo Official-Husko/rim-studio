@@ -1,0 +1,265 @@
+{
+  "tag": "Patch",
+  "attrs": [],
+  "children": [
+    {
+      "tag": "Operation",
+      "attrs": [
+        [
+          "Class",
+          "PatchOperationConditional"
+        ]
+      ],
+      "children": [
+        {
+          "tag": "xpath",
+          "attrs": [],
+          "children": [
+            "Defs/ThingDef[defName=\"RS_TestBow\"]/comps/li[@Class=\"CombatExtended.CompProperties_AmmoUser\"]"
+          ]
+        },
+        {
+          "tag": "nomatch",
+          "attrs": [
+            [
+              "Class",
+              "CombatExtended.PatchOperationMakeGunCECompatible"
+            ]
+          ],
+          "children": [
+            {
+              "tag": "defName",
+              "attrs": [],
+              "children": [
+                "RS_TestBow"
+              ]
+            },
+            {
+              "tag": "statBases",
+              "attrs": [],
+              "children": [
+                {
+                  "tag": "Bulk",
+                  "attrs": [],
+                  "children": [
+                    "3"
+                  ]
+                },
+                {
+                  "tag": "SwayFactor",
+                  "attrs": [],
+                  "children": [
+                    "2"
+                  ]
+                },
+                {
+                  "tag": "ShotSpread",
+                  "attrs": [],
+                  "children": [
+                    "1"
+                  ]
+                },
+                {
+                  "tag": "SightsEfficiency",
+                  "attrs": [],
+                  "children": [
+                    "0.8"
+                  ]
+                },
+                {
+                  "tag": "RangedWeapon_Cooldown",
+                  "attrs": [],
+                  "children": [
+                    "0.8571"
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "Properties",
+              "attrs": [],
+              "children": [
+                {
+                  "tag": "verbClass",
+                  "attrs": [],
+                  "children": [
+                    "CombatExtended.Verb_ShootCE"
+                  ]
+                },
+                {
+                  "tag": "hasStandardCommand",
+                  "attrs": [],
+                  "children": [
+                    "true"
+                  ]
+                },
+                {
+                  "tag": "defaultProjectile",
+                  "attrs": [],
+                  "children": [
+                    "RS_Arrow_CE"
+                  ]
+                },
+                {
+                  "tag": "warmupTime",
+                  "attrs": [],
+                  "children": [
+                    "0.8692"
+                  ]
+                },
+                {
+                  "tag": "range",
+                  "attrs": [],
+                  "children": [
+                    "15.78"
+                  ]
+                },
+                {
+                  "tag": "soundCast",
+                  "attrs": [],
+                  "children": [
+                    "RS_BowSound"
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "AmmoUser",
+              "attrs": [],
+              "children": [
+                {
+                  "tag": "ammoSet",
+                  "attrs": [],
+                  "children": [
+                    "RS_ArrowSet"
+                  ]
+                },
+                {
+                  "tag": "AmmoGenPerMagOverride",
+                  "attrs": [],
+                  "children": [
+                    "5"
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "FireModes",
+              "attrs": [],
+              "children": []
+            },
+            {
+              "tag": "weaponTags",
+              "attrs": [],
+              "children": [
+                {
+                  "tag": "li",
+                  "attrs": [],
+                  "children": [
+                    "CE_RS_Bow"
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "AllowWithRunAndGun",
+              "attrs": [],
+              "children": [
+                "false"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tag": "Operation",
+      "attrs": [
+        [
+          "Class",
+          "PatchOperationReplace"
+        ]
+      ],
+      "children": [
+        {
+          "tag": "xpath",
+          "attrs": [],
+          "children": [
+            "Defs/ThingDef[defName=\"RS_TestBow\"]/tools"
+          ]
+        },
+        {
+          "tag": "value",
+          "attrs": [],
+          "children": [
+            {
+              "tag": "tools",
+              "attrs": [],
+              "children": [
+                {
+                  "tag": "li",
+                  "attrs": [
+                    [
+                      "Class",
+                      "CombatExtended.ToolCE"
+                    ]
+                  ],
+                  "children": [
+                    {
+                      "tag": "label",
+                      "attrs": [],
+                      "children": [
+                        "limb"
+                      ]
+                    },
+                    {
+                      "tag": "capacities",
+                      "attrs": [],
+                      "children": [
+                        {
+                          "tag": "li",
+                          "attrs": [],
+                          "children": [
+                            "Blunt"
+                          ]
+                        },
+                        {
+                          "tag": "li",
+                          "attrs": [],
+                          "children": [
+                            "Poke"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "power",
+                      "attrs": [],
+                      "children": [
+                        "9"
+                      ]
+                    },
+                    {
+                      "tag": "cooldownTime",
+                      "attrs": [],
+                      "children": [
+                        "2"
+                      ]
+                    },
+                    {
+                      "tag": "armorPenetrationBlunt",
+                      "attrs": [],
+                      "children": [
+                        "0.65"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

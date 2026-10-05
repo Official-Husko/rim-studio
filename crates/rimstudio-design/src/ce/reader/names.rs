@@ -15,7 +15,7 @@ pub const CE_PACKAGE_ID: &str = "ceteam.combatextended";
 
 /// Class and field names used to find and write Combat Extended content.
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
+#[serde(rename_all = "camelCase", default)]
 pub struct CeClassNames {
     /// Class attribute of the verb properties entry of a converted gun.
     pub verb_properties: String,
@@ -41,6 +41,14 @@ pub struct CeClassNames {
     pub tag_prefix: String,
     /// Prefix of the weapon tags that name an AI class.
     pub ai_tag_prefix: String,
+    /// Class attribute of the under barrel component.
+    pub under_barrel_comp: String,
+    /// Class attribute of a weapon platform def (the type a platform weapon takes).
+    pub weapon_platform_def: String,
+    /// The `thingClass` of a weapon platform.
+    pub weapon_platform_thing: String,
+    /// Class attribute of an attachment def.
+    pub attachment_def: String,
 }
 
 impl Default for CeClassNames {
@@ -58,6 +66,10 @@ impl Default for CeClassNames {
             apparel_preset_def: "CombatExtended.ApparelPatcherPresetDef".into(),
             tag_prefix: "CE_".into(),
             ai_tag_prefix: "CE_AI_".into(),
+            under_barrel_comp: "CombatExtended.CompProperties_UnderBarrel".into(),
+            weapon_platform_def: "CombatExtended.WeaponPlatformDef".into(),
+            weapon_platform_thing: "CombatExtended.WeaponPlatform".into(),
+            attachment_def: "CombatExtended.AttachmentDef".into(),
         }
     }
 }

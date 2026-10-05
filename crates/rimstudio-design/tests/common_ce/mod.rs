@@ -71,6 +71,8 @@ fn gun(i: u32) -> CeGun {
         use_burst_mode: None,
         aimed_burst: None,
         tools: Vec::new(),
+        bow: false,
+        ammo_gen_per_mag: None,
         stats,
         twin: Some(twin),
         twin_tags: vec!["RS_Gun".into()],

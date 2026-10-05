@@ -8,7 +8,7 @@
 use rimstudio_core::tree::{Node, NodeBuilder};
 
 use super::container::Container;
-use super::conventions::apply_tool_habits;
+use super::extras::{extras_ops, finish_tools, push_extra_tags};
 use super::gun::one_handed_tag;
 use super::ops::DefOps;
 use super::update::melee_update;
@@ -60,7 +60,7 @@ fn damages_node(tag: &str, damages: &[ExtraMeleeDamage]) -> Node {
 fn tool_fields(classes: &CeClassNames, tool: &ToolValues) -> Node {
     NodeBuilder::new("li")
         .attr("Class", &classes.tool)
-        .text_elem("label", &tool.label)
+        .text_elem_opt("label", Some(&tool.label).filter(|l| !l.is_empty()))
         .elem("capacities", |c| c.li_each(tool.capacities.iter().cloned()))
         .text_elem_opt("power", tool.power.map(format_number))
         .text_elem_opt("chanceFactor", tool.chance_factor.map(format_number))
@@ -146,15 +146,20 @@ pub fn melee_patch(
     };
     let prediction = predict_for(spec, model);
     let (tools, missing, derived) = resolve_tools(spec, ce, prediction.as_ref(), true);
-    if !missing.is_empty() {
-        for label in missing {
-            diagnostics.push(REQUIRED_MISSING.diagnostic(
-                "/ce/toolPenetration",
-                &[("label", &format!("CE blunt penetration of tool {label}"))],
-            ));
-        }
+    diagnostics.extend(super::extras::validate(ce, model));
+    if crate::validation::has_errors(&diagnostics) {
         return Ok(GeneratedPatch::off(spec, diagnostics, None));
     }
+    let Some(tools) = finish_tools(
+        model,
+        ItemKind::Melee,
+        ce,
+        tools,
+        &missing,
+        &mut diagnostics,
+    ) else {
+        return Ok(GeneratedPatch::off(spec, diagnostics, None));
+    };
     let mut ops = DefOps::new(&spec.identity.def_name, container);
     let mut stats = vec![("Bulk", format_number(bulk.value))];
     if let Some(p) = ce.parry_bonus {
@@ -169,12 +174,17 @@ pub fn melee_patch(
             ("MeleeDodgeChance", format_number(dodge.value)),
         ],
     );
-    let tags = melee_tags(ce, model, &mut diagnostics);
+    let mut tags = melee_tags(ce, model, &mut diagnostics);
+    push_extra_tags(&mut tags, ce);
     ops.add_unique_li("weaponTags", &tags);
     if !tools.is_empty() {
-        let tools = apply_tool_habits(model, ItemKind::Melee, tools, &mut diagnostics);
         ops.replace_list(tool_list(&model.classes, &tools));
     }
+    extras_ops(&mut ops, ce);
+    diagnostics.push(
+        crate::ce::lint::codes::ECONOMY_BY_DESIGN
+            .diagnostic("", &[("def", &spec.identity.def_name)]),
+    );
     Ok(GeneratedPatch {
         mode: PatchMode::New,
         category: PatchCategory::WeaponsMelee,

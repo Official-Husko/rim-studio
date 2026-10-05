@@ -20,9 +20,12 @@
 //! block).
 
 pub mod ammo;
+pub mod bows;
 pub mod conversions;
+pub mod extras;
 pub mod makegun;
 pub mod names;
+pub mod platform;
 pub mod presets;
 
 use std::collections::{BTreeMap, BTreeSet};
@@ -40,6 +43,7 @@ pub use makegun::{
     makegun_records, merge_into_def,
 };
 pub use names::{CE_PACKAGE_ID, CeClassNames, CeMarkers, detect_markers, is_conversion};
+pub use platform::{PlatformExample, PlatformLibrary, UnderBarrelExample};
 pub use presets::{read_apparel_presets, read_gun_presets};
 
 use crate::ce::formulas::{ApparelPreset, GunPreset};
@@ -110,6 +114,12 @@ pub struct CeModel {
     pub melee: Vec<CeMelee>,
     /// A def that exists only with Combat Extended, for `Conditional` probes (the first ammo set).
     pub probe_def: Option<String>,
+    /// The weapon platforms, attachment defs and under barrel units of the install.
+    #[serde(default)]
+    pub platform: platform::PlatformLibrary,
+    /// What the converted weapons say about their tool children and recoil pattern.
+    #[serde(default)]
+    pub extras: extras::ExtrasLibrary,
     /// Problems found while reading.
     pub diagnostics: Vec<Diagnostic>,
 }
@@ -132,6 +142,8 @@ impl CeModel {
             guns: Vec::new(),
             melee: Vec::new(),
             probe_def: None,
+            platform: platform::PlatformLibrary::default(),
+            extras: extras::ExtrasLibrary::default(),
             diagnostics: vec![Diagnostic::new(
                 DiagCode::new(CE_ABSENT),
                 Severity::Info,
@@ -340,9 +352,22 @@ pub fn read_conversions_with(dbs: &DefDatabases, options: &CeReadOptions<'_>) ->
             (n, rules)
         })
         .collect();
+    let platform = match dbs.database(&options.db_type) {
+        Ok(view) => platform::read_library(view.iter(), &classes),
+        Err(_) => platform::PlatformLibrary::default(),
+    };
+    let extras = extras::read_extras(
+        &converted_guns,
+        &converted_melee,
+        &classes,
+        options.vanilla,
+        &options.db_type,
+    );
     CeModel {
         absent: None,
         names,
+        platform,
+        extras,
         probe_def: ammo_sets.first().map(|a| a.def_name.clone()),
         gun_presets: read_gun_presets(dbs, &classes.gun_preset_def),
         apparel_presets: read_apparel_presets(dbs, &classes.apparel_preset_def),

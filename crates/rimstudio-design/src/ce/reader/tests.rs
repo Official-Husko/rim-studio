@@ -84,7 +84,13 @@ fn the_parsed_operation_keeps_every_parameter() {
         "an empty element is present"
     );
     assert_eq!(s.tex_path.as_deref(), Some("Things/RS/Tex"));
-    assert_eq!(s.unsupported, vec!["attachmentLinks"]);
+    assert_eq!(s.attachment_links.as_ref().map(Vec::len), Some(1));
+    assert!(s.default_graphic_parts.is_none());
+    assert!(!s.is_weapon_platform);
+    assert!(
+        s.unsupported.is_empty(),
+        "the platform parameters are supported"
+    );
     assert!(
         MakeGunSpec::parse(&Node::new("Operation"))
             .def_name

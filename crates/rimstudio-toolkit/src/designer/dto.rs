@@ -685,6 +685,61 @@ mod tests {
     }
 
     #[test]
+    fn a_full_combat_extended_block_survives_the_wire_unchanged() {
+        use rimstudio_core::tree::Node;
+        use rimstudio_design::model::{
+            CeAttachmentLink, CeGraphicPart, CeStatEntry, CeToolPlan, CeUnderBarrel, Sourced,
+        };
+        let mut spec = sample_ranged();
+        spec.ce = Some(CePatchSpec {
+            ammo_set: Some("AmmoSet_Arrow".into()),
+            bow: Some(true),
+            ammo_gen_per_mag: Some(Sourced::new(30, ValueSource::Typed)),
+            allow_with_run_and_gun: Some(false),
+            mass: Some(Sourced::new(1.2, ValueSource::Typed)),
+            is_weapon_platform: true,
+            attachment_links: vec![CeAttachmentLink {
+                attachment: "RS_Scope".into(),
+                draw_scale: Some("(0.5,0.5)".into()),
+                stat_offsets: vec![CeStatEntry {
+                    stat: "SightsEfficiency".into(),
+                    value: 0.5,
+                }],
+                ..CeAttachmentLink::default()
+            }],
+            default_graphic_parts: vec![CeGraphicPart {
+                part_graphic: Some(Node::new("partGraphic")),
+                slot_tags: vec!["Scope".into()],
+                ..CeGraphicPart::default()
+            }],
+            under_barrel: Some(CeUnderBarrel {
+                standard_label: Some("rifle".into()),
+                one_ammo_holder: true,
+                ammo_set: Some("AmmoSet_40x46mmGrenade".into()),
+                range: Some(Sourced::new(30.0, ValueSource::Typed)),
+                verb_extra: vec![Node::new("targetParams")],
+                replaces_comp: Some("CompProperties_EquippableAbilityReloadable".into()),
+                ..CeUnderBarrel::default()
+            }),
+            reload_one_at_a_time: Some(true),
+            recoil_pattern: Some("Regular".into()),
+            tool_plan: vec![CeToolPlan {
+                label: "muzzle".into(),
+                from: Some("stock".into()),
+                power: Some(8.0),
+                ..CeToolPlan::default()
+            }],
+            keep_tool_fields: vec!["power".into()],
+            extra_tags: vec!["CE_AI_AssaultWeapon".into()],
+            raw_extras: vec![Node::new("li")],
+            ..CePatchSpec::default()
+        });
+        let dto = spec_to_dto(&spec).unwrap_or_else(|e| panic!("{e}"));
+        assert_eq!(json(&dto), json(&spec));
+        assert_eq!(spec_from_dto(&dto).ok(), Some(spec));
+    }
+
+    #[test]
     fn draft_json_is_identical_on_both_sides_including_answers_and_anchors() {
         let mut draft = Draft::new(sample_ranged());
         draft.calibration = CalibrationMode::Quiz;

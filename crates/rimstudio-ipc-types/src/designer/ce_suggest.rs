@@ -10,6 +10,7 @@
 
 use serde::{Deserialize, Serialize};
 
+use super::ce_block::CeOptionDto;
 use super::convert::AskKindDto;
 use super::draft::DraftDto;
 use super::spec::ItemKindDto;
@@ -299,4 +300,9 @@ pub struct CeSuggestionDto {
     pub still_missing_after_accept: Vec<String>,
     /// Plain words about the estimates.
     pub notes: Vec<String>,
+    /// Optional additions the user's conversions suggest. Each is only offered; the user opts in by writing
+    /// its value into the block. Omitted when there are none.
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    #[cfg_attr(feature = "ts", ts(as = "Option<Vec<CeOptionDto>>", optional))]
+    pub options: Vec<CeOptionDto>,
 }

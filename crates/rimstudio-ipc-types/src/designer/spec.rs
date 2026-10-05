@@ -11,6 +11,7 @@ use serde::{Deserialize, Serialize};
 
 use super::assets::{AssetImportsDto, SoundImportsDto};
 use super::carried::{ExtraMeleeDamageDto, RawNodeDto, RecipeSpecDto, SurpriseAttackSpecDto};
+use super::ce_block::{CeAttachmentLinkDto, CeGraphicPartDto, CeToolPlanDto, CeUnderBarrelDto};
 
 /// Where a number came from. The order is the replacement rank, `typed` highest.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, PartialOrd, Ord, Serialize, Deserialize)]
@@ -447,6 +448,62 @@ pub struct CePatchSpecDto {
     pub one_handed: bool,
     /// Belt fed weapon.
     pub belt_fed: bool,
+    /// Bow conversion. Absent means decide from the weapon's shape.
+    #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
+    pub bow: Option<bool>,
+    /// Ammo generated with each magazine of a pawn's kit (`AmmoGenPerMagOverride`). Absent means derive.
+    #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
+    pub ammo_gen_per_mag: Option<SourcedDto<u32>>,
+    /// Whether a pawn may fire the weapon while running. Absent means the conversion default.
+    #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
+    pub allow_with_run_and_gun: Option<bool>,
+    /// Mass override in kilograms. Absent means the vanilla mass.
+    #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
+    pub mass: Option<SourcedDto<f64>>,
+    /// The weapon is a platform that accepts attachments. Omitted when false.
+    #[serde(skip_serializing_if = "std::ops::Not::not")]
+    #[cfg_attr(feature = "ts", ts(as = "Option<bool>", optional))]
+    pub is_weapon_platform: bool,
+    /// The attachments a platform accepts. Omitted when empty.
+    #[serde(skip_serializing_if = "Vec::is_empty")]
+    #[cfg_attr(feature = "ts", ts(as = "Option<Vec<CeAttachmentLinkDto>>", optional))]
+    pub attachment_links: Vec<CeAttachmentLinkDto>,
+    /// The default graphic parts of a platform. Omitted when empty.
+    #[serde(skip_serializing_if = "Vec::is_empty")]
+    #[cfg_attr(feature = "ts", ts(as = "Option<Vec<CeGraphicPartDto>>", optional))]
+    pub default_graphic_parts: Vec<CeGraphicPartDto>,
+    /// The under barrel unit. Absent means none.
+    #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
+    pub under_barrel: Option<CeUnderBarrelDto>,
+    /// Reload one round at a time. Absent means not set.
+    #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
+    pub reload_one_at_a_time: Option<bool>,
+    /// The recoil pattern name. Absent means none.
+    #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
+    pub recoil_pattern: Option<String>,
+    /// An explicit tool list for the converted weapon. Omitted when empty.
+    #[serde(skip_serializing_if = "Vec::is_empty")]
+    #[cfg_attr(feature = "ts", ts(as = "Option<Vec<CeToolPlanDto>>", optional))]
+    pub tool_plan: Vec<CeToolPlanDto>,
+    /// Vanilla tool fields kept as they are. Omitted when empty.
+    #[serde(skip_serializing_if = "Vec::is_empty")]
+    #[cfg_attr(feature = "ts", ts(as = "Option<Vec<String>>", optional))]
+    pub keep_tool_fields: Vec<String>,
+    /// Weapon tags added next to the weapon tag class. Omitted when empty.
+    #[serde(skip_serializing_if = "Vec::is_empty")]
+    #[cfg_attr(feature = "ts", ts(as = "Option<Vec<String>>", optional))]
+    pub extra_tags: Vec<String>,
+    /// Elements written into the patch as given, each validated by the backend. Omitted when empty.
+    #[serde(skip_serializing_if = "Vec::is_empty")]
+    #[cfg_attr(feature = "ts", ts(as = "Option<Vec<RawNodeDto>>", optional))]
+    pub raw_extras: Vec<RawNodeDto>,
 }
 
 /// The complete design input for one weapon.

@@ -23,7 +23,8 @@ pub const SIMULATION_UNSUPPORTED: &str = "ce.simulation-unsupported";
 /// The gun conversion operation as a custom patch operation of the def engine, for dry runs.
 ///
 /// It behaves like [`MakeGunOp`] (the typed merge) and in addition reports the parameters that the merge
-/// does not apply (weapon platform fields) as warnings, so a dry run never claims more than it did.
+/// parses but does not apply as warnings, so a dry run never claims more than it did. The weapon platform
+/// parameters are applied by the merge, so none is reported at present.
 #[derive(Debug, Clone)]
 pub struct MakeGunCeSimulation {
     inner: MakeGunOp,

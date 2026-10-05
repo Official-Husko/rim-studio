@@ -1,4 +1,5 @@
-//! Tests that bows and crossbows are listed as an unsupported kind by the convert scan.
+//! Tests that bows and crossbows are listed as convertible by the convert scan (they have their own
+//! conversion style, see [`crate::ce::patchgen::bow`]), and that the kinds that stay unsupported still are.
 
 #![allow(clippy::unwrap_used, clippy::expect_used)]
 
@@ -35,29 +36,41 @@ fn scan_one(node: Node) -> ConvertCandidate {
 #[case::crossbow_tag("RS_Cross", "RS_Shot1", &["RS_CrossbowHeavy"])]
 #[case::arrow_projectile("RS_Stick", "RS_Arrow_Short", &["RS_Gun"])]
 #[case::bolt_projectile("RS_Thrower", "Bolt_RS", &["RS_Gun"])]
-fn bows_and_crossbows_are_unsupported(
+fn bows_and_crossbows_are_convertible(
     #[case] name: &str,
     #[case] projectile: &str,
     #[case] tags: &[&str],
 ) {
     let c = scan_one(weapon(name, projectile, tags));
-    assert_eq!(c.status, ConvertStatus::UnsupportedKind);
-    assert_eq!(c.reason, "CE bow conversion is not available in 0.1.0");
+    assert_eq!(c.status, ConvertStatus::NotConverted);
+    assert!(!c.reason.contains("not available"), "{}", c.reason);
     assert_eq!(c.kind, Some(ItemKind::Ranged));
+    // a bow and a gun of the same projectile are told apart by the family key
+    assert!(c.family.starts_with("ranged/"));
 }
 
 #[test]
-fn a_plain_gun_with_a_bolt_action_style_name_is_still_supported() {
+fn a_turret_with_a_bow_tag_stays_unsupported() {
+    let c = scan_one(weapon(
+        "RS_BowTurret",
+        "RS_Arrow_Short",
+        &["RS_Bow", "RS_TurretGun"],
+    ));
+    assert_eq!(c.status, ConvertStatus::UnsupportedKind);
+}
+
+#[test]
+fn a_plain_gun_with_a_bolt_action_style_name_is_still_a_gun() {
     let c = scan_one(weapon("RS_Rifle", "Bullet_BoltAction", &["RS_Gun"]));
     assert_eq!(c.status, ConvertStatus::NotConverted);
 }
 
 #[test]
-fn a_weapon_class_naming_a_bow_is_unsupported() {
+fn a_weapon_class_naming_a_bow_is_convertible() {
     let mut node = weapon("RS_Classed", "RS_Shot1", &["RS_Gun"]);
     let mut classes = Node::new("weaponClasses");
     classes.push_child(Node::with_text("li", "RS_ShortBow"));
     node.push_child(classes);
     let c = scan_one(node);
-    assert_eq!(c.status, ConvertStatus::UnsupportedKind);
+    assert_eq!(c.status, ConvertStatus::NotConverted);
 }

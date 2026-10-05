@@ -486,6 +486,35 @@ export type CeAskListDto = {
 items: Array<CeAskDto>, };
 
 /**
+ * One attachment a weapon platform accepts.
+ */
+export type CeAttachmentLinkDto = { 
+/**
+ * The attachment definition name.
+ */
+attachment: string, 
+/**
+ * Draw scale as the game writes a vector. Absent means the default.
+ */
+drawScale?: string, 
+/**
+ * Draw offset as the game writes a vector. Absent means none.
+ */
+drawOffset?: string, 
+/**
+ * Stat offsets while the attachment is fitted. Omitted when empty.
+ */
+statOffsets?: Array<CeStatEntryDto>, 
+/**
+ * Stat multipliers while the attachment is fitted. Omitted when empty.
+ */
+statMultipliers?: Array<CeStatEntryDto>, 
+/**
+ * Stat replacers while the attachment is fitted. Omitted when empty.
+ */
+statReplacers?: Array<CeStatEntryDto>, };
+
+/**
  * The error band around a suggestion.
  */
 export type CeBandDto = { 
@@ -570,6 +599,23 @@ reason?: string, };
 export type CeFieldStatusDto = "held" | "derived" | "ask";
 
 /**
+ * One default graphic part of a weapon platform.
+ */
+export type CeGraphicPartDto = { 
+/**
+ * The part graphic, a raw element. Absent means none.
+ */
+partGraphic?: RawNodeDto, 
+/**
+ * The outline graphic, a raw element. Absent means none.
+ */
+outlineGraphic?: RawNodeDto, 
+/**
+ * The slot tags the part belongs to. Omitted when empty.
+ */
+slotTags?: Array<string>, };
+
+/**
  * A closed interval.
  */
 export type CeIntervalDto = { 
@@ -581,6 +627,45 @@ low: number,
  * Upper end.
  */
 high: number, };
+
+/**
+ * One optional addition that the user's conversions suggest. It is only a suggestion: the user opts in by
+ * writing its value into the block.
+ */
+export type CeOptionDto = { 
+/**
+ * The stable id.
+ */
+id: string, 
+/**
+ * The JSON pointer of the block field the option fills.
+ */
+field: string, 
+/**
+ * A short English label.
+ */
+label: string, 
+/**
+ * What accepting writes.
+ */
+value: CeOptionValueDto, 
+/**
+ * Converted weapons that show the habit.
+ */
+examples: number, 
+/**
+ * Converted weapons of the same group in all.
+ */
+of: number, 
+/**
+ * Why the option is offered, in plain words.
+ */
+why: string, };
+
+/**
+ * What accepting an optional suggestion writes.
+ */
+export type CeOptionValueDto = { "kind": "tags", "value": Array<string> } | { "kind": "flag", "value": boolean } | { "kind": "text", "value": string } | { "kind": "tool-plan", "value": Array<CeToolPlanDto> };
 
 /**
  * The optional Combat Extended patch choices. The block is absent by default; present means the user
@@ -663,7 +748,63 @@ oneHanded: boolean,
 /**
  * Belt fed weapon.
  */
-beltFed: boolean, };
+beltFed: boolean, 
+/**
+ * Bow conversion. Absent means decide from the weapon's shape.
+ */
+bow?: boolean, 
+/**
+ * Ammo generated with each magazine of a pawn's kit (`AmmoGenPerMagOverride`). Absent means derive.
+ */
+ammoGenPerMag?: SourcedDto<number>, 
+/**
+ * Whether a pawn may fire the weapon while running. Absent means the conversion default.
+ */
+allowWithRunAndGun?: boolean, 
+/**
+ * Mass override in kilograms. Absent means the vanilla mass.
+ */
+mass?: SourcedDto<number>, 
+/**
+ * The weapon is a platform that accepts attachments. Omitted when false.
+ */
+isWeaponPlatform?: boolean, 
+/**
+ * The attachments a platform accepts. Omitted when empty.
+ */
+attachmentLinks?: Array<CeAttachmentLinkDto>, 
+/**
+ * The default graphic parts of a platform. Omitted when empty.
+ */
+defaultGraphicParts?: Array<CeGraphicPartDto>, 
+/**
+ * The under barrel unit. Absent means none.
+ */
+underBarrel?: CeUnderBarrelDto, 
+/**
+ * Reload one round at a time. Absent means not set.
+ */
+reloadOneAtATime?: boolean, 
+/**
+ * The recoil pattern name. Absent means none.
+ */
+recoilPattern?: string, 
+/**
+ * An explicit tool list for the converted weapon. Omitted when empty.
+ */
+toolPlan?: Array<CeToolPlanDto>, 
+/**
+ * Vanilla tool fields kept as they are. Omitted when empty.
+ */
+keepToolFields?: Array<string>, 
+/**
+ * Weapon tags added next to the weapon tag class. Omitted when empty.
+ */
+extraTags?: Array<string>, 
+/**
+ * Elements written into the patch as given, each validated by the backend. Omitted when empty.
+ */
+rawExtras?: Array<RawNodeDto>, };
 
 /**
  * A predictor form.
@@ -691,6 +832,19 @@ predictor: CePredictorDto,
  * Converted weapons behind the estimate.
  */
 n: number, } | { "kind": "vanilla" } | { "kind": "first-of-set" };
+
+/**
+ * A stat name with a number, one entry of an attachment link's stat lists.
+ */
+export type CeStatEntryDto = { 
+/**
+ * The stat definition name.
+ */
+stat: string, 
+/**
+ * The number.
+ */
+value: number, };
 
 /**
  * One number of the block.
@@ -808,7 +962,12 @@ stillMissingAfterAccept: Array<string>,
 /**
  * Plain words about the estimates.
  */
-notes: Array<string>, };
+notes: Array<string>, 
+/**
+ * Optional additions the user's conversions suggest. Each is only offered; the user opts in by writing
+ * its value into the block. Omitted when there are none.
+ */
+options?: Array<CeOptionDto>, };
 
 /**
  * Melee tool penetration values of the Combat Extended block.
@@ -826,6 +985,165 @@ sharp?: SourcedDto<number>,
  * Blunt penetration. Absent means derive it.
  */
 blunt?: SourcedDto<number>, };
+
+/**
+ * One entry of an explicit tool list for a conversion.
+ */
+export type CeToolPlanDto = { 
+/**
+ * The label of the tool in the converted weapon. May be empty.
+ */
+label: string, 
+/**
+ * The vanilla tool it comes from. Absent means the tool of the same label.
+ */
+from?: string, 
+/**
+ * The capacities of the tool. Absent means as the vanilla tool.
+ */
+capacities?: Array<string>, 
+/**
+ * Power. Absent means as the vanilla tool.
+ */
+power?: number, 
+/**
+ * Cooldown in seconds. Absent means as the vanilla tool.
+ */
+cooldown?: number, 
+/**
+ * Chance factor. Absent means as the vanilla tool.
+ */
+chanceFactor?: number, 
+/**
+ * Sharp armor penetration.
+ */
+armorPenetrationSharp?: number, 
+/**
+ * Blunt armor penetration.
+ */
+armorPenetrationBlunt?: number, 
+/**
+ * The body part group the tool is linked to.
+ */
+linkedBodyPartsGroup?: string, };
+
+/**
+ * The under barrel unit of a weapon.
+ */
+export type CeUnderBarrelDto = { 
+/**
+ * Label of the standard mode.
+ */
+standardLabel?: string, 
+/**
+ * Label of the under barrel mode.
+ */
+underBarrelLabel?: string, 
+/**
+ * The unit shares the ammo of the main weapon.
+ */
+oneAmmoHolder: boolean, 
+/**
+ * The unit has its own reload.
+ */
+requiresReload: boolean, 
+/**
+ * Ammo set definition name.
+ */
+ammoSet?: string, 
+/**
+ * Default projectile definition name.
+ */
+defaultProjectile?: string, 
+/**
+ * Magazine size.
+ */
+magazineSize?: SourcedDto<number>, 
+/**
+ * Reload time in seconds.
+ */
+reloadTime?: SourcedDto<number>, 
+/**
+ * Recoil amount.
+ */
+recoilAmount?: SourcedDto<number>, 
+/**
+ * Warm up in seconds.
+ */
+warmupTime?: SourcedDto<number>, 
+/**
+ * Range in tiles.
+ */
+range?: SourcedDto<number>, 
+/**
+ * Minimum range in tiles.
+ */
+minRange?: number, 
+/**
+ * Shots of one burst.
+ */
+burstShotCount?: number, 
+/**
+ * Ticks between the shots of a burst.
+ */
+ticksBetweenBurstShots?: number, 
+/**
+ * Ammo used by one shot.
+ */
+ammoConsumedPerShot?: number, 
+/**
+ * Friendly fire avoidance radius.
+ */
+avoidFriendlyFireRadius?: number, 
+/**
+ * Sound of the shot (a sound definition name).
+ */
+soundCast?: string, 
+/**
+ * Muzzle flash scale.
+ */
+muzzleFlashScale?: number, 
+/**
+ * Other children of the verb, as written. Omitted when empty.
+ */
+verbExtra?: Array<RawNodeDto>, 
+/**
+ * Fire mode choices. Omitted when empty.
+ */
+fireModes?: CeUnderBarrelFireModesDto, 
+/**
+ * Other children of the verb properties, as written. Omitted when empty.
+ */
+propsExtra?: Array<RawNodeDto>, 
+/**
+ * Other children of the unit, as written. Omitted when empty.
+ */
+extra?: Array<RawNodeDto>, 
+/**
+ * The vanilla component the unit replaces.
+ */
+replacesComp?: string, };
+
+/**
+ * The fire mode choices of an under barrel unit.
+ */
+export type CeUnderBarrelFireModesDto = { 
+/**
+ * Whether the AI uses burst mode.
+ */
+aiUseBurstMode?: boolean, 
+/**
+ * The AI aim mode.
+ */
+aiAimMode?: string, 
+/**
+ * Shots of an aimed burst.
+ */
+aimedBurstShotCount?: number, 
+/**
+ * True when the unit has no single shot mode.
+ */
+noSingleShot: boolean, };
 
 /**
  * Level of the class fallback chain.

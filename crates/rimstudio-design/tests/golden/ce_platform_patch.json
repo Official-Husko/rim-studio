@@ -1,0 +1,766 @@
+{
+  "tag": "Patch",
+  "attrs": [],
+  "children": [
+    {
+      "tag": "Operation",
+      "attrs": [
+        [
+          "Class",
+          "PatchOperationConditional"
+        ]
+      ],
+      "children": [
+        {
+          "tag": "xpath",
+          "attrs": [],
+          "children": [
+            "Defs/ThingDef[defName=\"RS_TestRifle\"]/comps/li[@Class=\"CombatExtended.CompProperties_AmmoUser\"]"
+          ]
+        },
+        {
+          "tag": "nomatch",
+          "attrs": [
+            [
+              "Class",
+              "CombatExtended.PatchOperationMakeGunCECompatible"
+            ]
+          ],
+          "children": [
+            {
+              "tag": "defName",
+              "attrs": [],
+              "children": [
+                "RS_TestRifle"
+              ]
+            },
+            {
+              "tag": "statBases",
+              "attrs": [],
+              "children": [
+                {
+                  "tag": "Mass",
+                  "attrs": [],
+                  "children": [
+                    "3.3"
+                  ]
+                },
+                {
+                  "tag": "Bulk",
+                  "attrs": [],
+                  "children": [
+                    "8.5"
+                  ]
+                },
+                {
+                  "tag": "SwayFactor",
+                  "attrs": [],
+                  "children": [
+                    "1.2"
+                  ]
+                },
+                {
+                  "tag": "ShotSpread",
+                  "attrs": [],
+                  "children": [
+                    "0.1"
+                  ]
+                },
+                {
+                  "tag": "SightsEfficiency",
+                  "attrs": [],
+                  "children": [
+                    "1"
+                  ]
+                },
+                {
+                  "tag": "RangedWeapon_Cooldown",
+                  "attrs": [],
+                  "children": [
+                    "0.4"
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "Properties",
+              "attrs": [],
+              "children": [
+                {
+                  "tag": "recoilAmount",
+                  "attrs": [],
+                  "children": [
+                    "1.5"
+                  ]
+                },
+                {
+                  "tag": "verbClass",
+                  "attrs": [],
+                  "children": [
+                    "CombatExtended.Verb_ShootCE"
+                  ]
+                },
+                {
+                  "tag": "hasStandardCommand",
+                  "attrs": [],
+                  "children": [
+                    "true"
+                  ]
+                },
+                {
+                  "tag": "defaultProjectile",
+                  "attrs": [],
+                  "children": [
+                    "RS_Bullet_CE"
+                  ]
+                },
+                {
+                  "tag": "warmupTime",
+                  "attrs": [],
+                  "children": [
+                    "0.8328"
+                  ]
+                },
+                {
+                  "tag": "range",
+                  "attrs": [],
+                  "children": [
+                    "49.5"
+                  ]
+                },
+                {
+                  "tag": "burstShotCount",
+                  "attrs": [],
+                  "children": [
+                    "3"
+                  ]
+                },
+                {
+                  "tag": "ticksBetweenBurstShots",
+                  "attrs": [],
+                  "children": [
+                    "8"
+                  ]
+                },
+                {
+                  "tag": "soundCast",
+                  "attrs": [],
+                  "children": [
+                    "RS_Shot"
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "AmmoUser",
+              "attrs": [],
+              "children": [
+                {
+                  "tag": "magazineSize",
+                  "attrs": [],
+                  "children": [
+                    "30"
+                  ]
+                },
+                {
+                  "tag": "reloadTime",
+                  "attrs": [],
+                  "children": [
+                    "4"
+                  ]
+                },
+                {
+                  "tag": "ammoSet",
+                  "attrs": [],
+                  "children": [
+                    "RS_AmmoSet"
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "FireModes",
+              "attrs": [],
+              "children": [
+                {
+                  "tag": "aiAimMode",
+                  "attrs": [],
+                  "children": [
+                    "AimedShot"
+                  ]
+                },
+                {
+                  "tag": "aiUseBurstMode",
+                  "attrs": [],
+                  "children": [
+                    "true"
+                  ]
+                },
+                {
+                  "tag": "aimedBurstShotCount",
+                  "attrs": [],
+                  "children": [
+                    "3"
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "weaponTags",
+              "attrs": [],
+              "children": [
+                {
+                  "tag": "li",
+                  "attrs": [],
+                  "children": [
+                    "RS_CE_Class"
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "isWeaponPlatform",
+              "attrs": [],
+              "children": [
+                "true"
+              ]
+            },
+            {
+              "tag": "attachmentLinks",
+              "attrs": [],
+              "children": [
+                {
+                  "tag": "li",
+                  "attrs": [],
+                  "children": [
+                    {
+                      "tag": "attachment",
+                      "attrs": [],
+                      "children": [
+                        "RS_Scope"
+                      ]
+                    },
+                    {
+                      "tag": "drawScale",
+                      "attrs": [],
+                      "children": [
+                        "(1.2,1.2)"
+                      ]
+                    },
+                    {
+                      "tag": "drawOffset",
+                      "attrs": [],
+                      "children": [
+                        "(0.1,0)"
+                      ]
+                    },
+                    {
+                      "tag": "statOffsets",
+                      "attrs": [],
+                      "children": [
+                        {
+                          "tag": "RS_Spread",
+                          "attrs": [],
+                          "children": [
+                            "-0.02"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "statMultipliers",
+                      "attrs": [],
+                      "children": [
+                        {
+                          "tag": "RS_Sway",
+                          "attrs": [],
+                          "children": [
+                            "0.9"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "defaultGraphicParts",
+              "attrs": [],
+              "children": [
+                {
+                  "tag": "li",
+                  "attrs": [],
+                  "children": [
+                    {
+                      "tag": "partGraphicData",
+                      "attrs": [],
+                      "children": [
+                        {
+                          "tag": "texPath",
+                          "attrs": [],
+                          "children": [
+                            "Things/RS/Stock"
+                          ]
+                        },
+                        {
+                          "tag": "graphicClass",
+                          "attrs": [],
+                          "children": [
+                            "Graphic_Single"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "slotTags",
+                      "attrs": [],
+                      "children": [
+                        {
+                          "tag": "li",
+                          "attrs": [],
+                          "children": [
+                            "RS_Stock"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tag": "Operation",
+      "attrs": [
+        [
+          "Class",
+          "PatchOperationConditional"
+        ]
+      ],
+      "children": [
+        {
+          "tag": "xpath",
+          "attrs": [],
+          "children": [
+            "Defs/ThingDef[defName=\"RS_TestRifle\"]/comps/li[@Class=\"CombatExtended.CompProperties_UnderBarrel\"]"
+          ]
+        },
+        {
+          "tag": "nomatch",
+          "attrs": [
+            [
+              "Class",
+              "PatchOperationReplace"
+            ]
+          ],
+          "children": [
+            {
+              "tag": "xpath",
+              "attrs": [],
+              "children": [
+                "Defs/ThingDef[defName=\"RS_TestRifle\"]/comps/li[@Class=\"CompProperties_EquippableAbilityReloadable\"]"
+              ]
+            },
+            {
+              "tag": "value",
+              "attrs": [],
+              "children": [
+                {
+                  "tag": "li",
+                  "attrs": [
+                    [
+                      "Class",
+                      "CombatExtended.CompProperties_UnderBarrel"
+                    ]
+                  ],
+                  "children": [
+                    {
+                      "tag": "standardLabel",
+                      "attrs": [],
+                      "children": [
+                        "switch to rifle"
+                      ]
+                    },
+                    {
+                      "tag": "underBarrelLabel",
+                      "attrs": [],
+                      "children": [
+                        "switch to spray"
+                      ]
+                    },
+                    {
+                      "tag": "propsUnderBarrel",
+                      "attrs": [],
+                      "children": [
+                        {
+                          "tag": "magazineSize",
+                          "attrs": [],
+                          "children": [
+                            "6"
+                          ]
+                        },
+                        {
+                          "tag": "reloadTime",
+                          "attrs": [],
+                          "children": [
+                            "5"
+                          ]
+                        },
+                        {
+                          "tag": "ammoSet",
+                          "attrs": [],
+                          "children": [
+                            "RS_AmmoSetOther"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "verbPropsUnderBarrel",
+                      "attrs": [],
+                      "children": [
+                        {
+                          "tag": "recoilAmount",
+                          "attrs": [],
+                          "children": [
+                            "0.4"
+                          ]
+                        },
+                        {
+                          "tag": "verbClass",
+                          "attrs": [],
+                          "children": [
+                            "CombatExtended.Verb_ShootCE"
+                          ]
+                        },
+                        {
+                          "tag": "hasStandardCommand",
+                          "attrs": [],
+                          "children": [
+                            "true"
+                          ]
+                        },
+                        {
+                          "tag": "defaultProjectile",
+                          "attrs": [],
+                          "children": [
+                            "RS_Bullet_Other"
+                          ]
+                        },
+                        {
+                          "tag": "warmupTime",
+                          "attrs": [],
+                          "children": [
+                            "1.1"
+                          ]
+                        },
+                        {
+                          "tag": "range",
+                          "attrs": [],
+                          "children": [
+                            "12"
+                          ]
+                        },
+                        {
+                          "tag": "minRange",
+                          "attrs": [],
+                          "children": [
+                            "1"
+                          ]
+                        },
+                        {
+                          "tag": "ticksBetweenBurstShots",
+                          "attrs": [],
+                          "children": [
+                            "3"
+                          ]
+                        },
+                        {
+                          "tag": "burstShotCount",
+                          "attrs": [],
+                          "children": [
+                            "5"
+                          ]
+                        },
+                        {
+                          "tag": "soundCast",
+                          "attrs": [],
+                          "children": [
+                            "RS_Spray"
+                          ]
+                        },
+                        {
+                          "tag": "muzzleFlashScale",
+                          "attrs": [],
+                          "children": [
+                            "0"
+                          ]
+                        },
+                        {
+                          "tag": "targetParams",
+                          "attrs": [],
+                          "children": [
+                            {
+                              "tag": "canTargetLocations",
+                              "attrs": [],
+                              "children": [
+                                "true"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "propsFireModesUnderBarrel",
+                      "attrs": [],
+                      "children": [
+                        {
+                          "tag": "aiUseBurstMode",
+                          "attrs": [],
+                          "children": [
+                            "false"
+                          ]
+                        },
+                        {
+                          "tag": "aiAimMode",
+                          "attrs": [],
+                          "children": [
+                            "AimedShot"
+                          ]
+                        },
+                        {
+                          "tag": "aimedBurstShotCount",
+                          "attrs": [],
+                          "children": [
+                            "5"
+                          ]
+                        },
+                        {
+                          "tag": "noSingleShot",
+                          "attrs": [],
+                          "children": [
+                            "true"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "li",
+                  "attrs": [],
+                  "children": [
+                    {
+                      "tag": "compClass",
+                      "attrs": [],
+                      "children": [
+                        "CompEquippable"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tag": "Operation",
+      "attrs": [
+        [
+          "Class",
+          "PatchOperationConditional"
+        ]
+      ],
+      "children": [
+        {
+          "tag": "xpath",
+          "attrs": [],
+          "children": [
+            "Defs/ThingDef[defName=\"RS_TestRifle\"]/tools"
+          ]
+        },
+        {
+          "tag": "match",
+          "attrs": [
+            [
+              "Class",
+              "PatchOperationReplace"
+            ]
+          ],
+          "children": [
+            {
+              "tag": "xpath",
+              "attrs": [],
+              "children": [
+                "Defs/ThingDef[defName=\"RS_TestRifle\"]/tools"
+              ]
+            },
+            {
+              "tag": "value",
+              "attrs": [],
+              "children": [
+                {
+                  "tag": "tools",
+                  "attrs": [
+                    [
+                      "Inherit",
+                      "False"
+                    ]
+                  ],
+                  "children": [
+                    {
+                      "tag": "li",
+                      "attrs": [
+                        [
+                          "Class",
+                          "CombatExtended.ToolCE"
+                        ]
+                      ],
+                      "children": [
+                        {
+                          "tag": "label",
+                          "attrs": [],
+                          "children": [
+                            "grip"
+                          ]
+                        },
+                        {
+                          "tag": "capacities",
+                          "attrs": [],
+                          "children": [
+                            {
+                              "tag": "li",
+                              "attrs": [],
+                              "children": [
+                                "Blunt"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "power",
+                          "attrs": [],
+                          "children": [
+                            "8"
+                          ]
+                        },
+                        {
+                          "tag": "cooldownTime",
+                          "attrs": [],
+                          "children": [
+                            "2.1"
+                          ]
+                        },
+                        {
+                          "tag": "armorPenetrationBlunt",
+                          "attrs": [],
+                          "children": [
+                            "2"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "nomatch",
+          "attrs": [
+            [
+              "Class",
+              "PatchOperationAdd"
+            ]
+          ],
+          "children": [
+            {
+              "tag": "xpath",
+              "attrs": [],
+              "children": [
+                "Defs/ThingDef[defName=\"RS_TestRifle\"]"
+              ]
+            },
+            {
+              "tag": "value",
+              "attrs": [],
+              "children": [
+                {
+                  "tag": "tools",
+                  "attrs": [
+                    [
+                      "Inherit",
+                      "False"
+                    ]
+                  ],
+                  "children": [
+                    {
+                      "tag": "li",
+                      "attrs": [
+                        [
+                          "Class",
+                          "CombatExtended.ToolCE"
+                        ]
+                      ],
+                      "children": [
+                        {
+                          "tag": "label",
+                          "attrs": [],
+                          "children": [
+                            "grip"
+                          ]
+                        },
+                        {
+                          "tag": "capacities",
+                          "attrs": [],
+                          "children": [
+                            {
+                              "tag": "li",
+                              "attrs": [],
+                              "children": [
+                                "Blunt"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "tag": "power",
+                          "attrs": [],
+                          "children": [
+                            "8"
+                          ]
+                        },
+                        {
+                          "tag": "cooldownTime",
+                          "attrs": [],
+                          "children": [
+                            "2.1"
+                          ]
+                        },
+                        {
+                          "tag": "armorPenetrationBlunt",
+                          "attrs": [],
+                          "children": [
+                            "2"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

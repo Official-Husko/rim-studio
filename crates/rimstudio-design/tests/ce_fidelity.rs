@@ -9,6 +9,7 @@ mod common;
 mod common_ce;
 
 use rimstudio_core::tree::{Node, NodeBuilder};
+use rimstudio_design::ce::patchgen::extras::suggest_tool_plan;
 use rimstudio_design::ce::patchgen::{
     Container, GeneratedPatch, PatchMode, dry_apply, gun_patch, melee_patch,
 };
@@ -195,13 +196,29 @@ fn a_label_without_enough_examples_gets_no_habit() {
 }
 
 #[test]
-fn a_capacity_that_conversions_drop_moves_to_a_tool_of_its_own() {
+fn a_capacity_that_conversions_drop_is_a_suggestion_not_a_silent_split() {
     let mut spec = ranged();
     spec.tools = vec![
         ToolSpec::new("stock", &["Blunt"]).with_numbers(9.0, 2.0, ValueSource::Typed),
         ToolSpec::new("barrel", &["Blunt", "Poke"]).with_numbers(7.0, 2.5, ValueSource::Typed),
     ];
-    let patch = gun_patch(&spec, &model_with_gun_tools(), &Container::from_spec(&spec)).unwrap();
+    let model = model_with_gun_tools();
+    // without a tool plan the tools stay as designed and the patch says what converted weapons do
+    let patch = gun_patch(&spec, &model, &Container::from_spec(&spec)).unwrap();
+    let tools = gun_tools(&patch);
+    assert_eq!(tools.len(), 2);
+    assert_eq!(capacities(&tools[1]), ["Blunt", "Poke"]);
+    assert!(
+        patch
+            .diagnostics
+            .iter()
+            .any(|d| d.code.as_str() == "ce.tool-restructure-suggested")
+    );
+    // accepting the suggestion writes the split
+    let plan = suggest_tool_plan(&spec, spec.ce.as_ref().unwrap(), &model).expect("a suggestion");
+    spec.ce.as_mut().unwrap().tool_plan = plan;
+    let patch = gun_patch(&spec, &model, &Container::from_spec(&spec)).unwrap();
+    assert!(!patch.has_errors(), "{:?}", patch.diagnostics);
     let tools = gun_tools(&patch);
     assert_eq!(tools.len(), 3);
     assert_eq!(capacities(&tools[1]), ["Blunt"]);
@@ -236,6 +253,14 @@ fn a_replaced_capacity_is_not_a_split() {
         .unwrap()
         .tool_penetration
         .retain(|p| p.tool != "point");
+    // the plain conversion keeps the designed capacities
+    let patch = melee_patch(&spec, &model, &Container::from_spec(&spec)).unwrap();
+    assert!(!patch.has_errors(), "{:?}", patch.diagnostics);
+    let tools = gun_tools(&patch);
+    assert_eq!(capacities(&tools[0]), ["Blunt"]);
+    // the suggested plan carries the poke, in the same two tools
+    let plan = suggest_tool_plan(&spec, spec.ce.as_ref().unwrap(), &model).expect("a suggestion");
+    spec.ce.as_mut().unwrap().tool_plan = plan;
     let patch = melee_patch(&spec, &model, &Container::from_spec(&spec)).unwrap();
     assert!(!patch.has_errors(), "{:?}", patch.diagnostics);
     let tools = gun_tools(&patch);

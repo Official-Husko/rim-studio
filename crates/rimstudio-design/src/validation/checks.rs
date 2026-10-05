@@ -348,11 +348,14 @@ fn required_ce(ctx: &mut Ctx<'_>, ce: &CePatchSpec) {
             if !ce.default_projectile.as_deref().is_some_and(nonempty) {
                 ctx.missing("/ce/defaultProjectile", "CE default projectile");
             }
-            if ce.magazine_size.is_none() {
-                ctx.missing("/ce/magazineSize", "CE magazine size");
-            }
-            if ce.reload_time.is_none() {
-                ctx.missing("/ce/reloadTime", "CE reload time");
+            // A bow has no magazine: its spawn count and nothing else stands in for it.
+            if !crate::ce::patchgen::is_bow_spec(spec) {
+                if ce.magazine_size.is_none() {
+                    ctx.missing("/ce/magazineSize", "CE magazine size");
+                }
+                if ce.reload_time.is_none() {
+                    ctx.missing("/ce/reloadTime", "CE reload time");
+                }
             }
             if ce.sway_factor.is_none() {
                 ctx.missing("/ce/swayFactor", "CE sway factor");
@@ -371,7 +374,9 @@ fn required_ce(ctx: &mut Ctx<'_>, ce: &CePatchSpec) {
             if ce.melee_dodge_chance.is_none() {
                 ctx.missing("/ce/meleeDodgeChance", "CE melee dodge chance");
             }
-            for tool in &spec.tools {
+            // An explicit tool plan names the penetration of every converted tool itself; the generator
+            // checks the plan.
+            for tool in spec.tools.iter().filter(|_| ce.tool_plan.is_empty()) {
                 let needs_sharp = tool
                     .capacities
                     .iter()

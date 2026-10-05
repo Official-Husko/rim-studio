@@ -288,6 +288,7 @@ mod tests {
             missing: vec!["/ce/bulk".into()],
             still_missing_after_accept: Vec::new(),
             notes: vec!["n".into()],
+            options: Vec::new(),
         };
         let dto = suggestion_to_dto(&suggestion).unwrap();
         assert_eq!(

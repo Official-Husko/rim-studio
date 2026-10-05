@@ -46,9 +46,9 @@ pub const VANILLA_ACCURACY_STATS: [&str; 4] = [
 pub const VANILLA_SHOOT_VERBS: [&str; 3] =
     ["Verb_Shoot", "Verb_ShootOneUse", "Verb_LaunchProjectile"];
 
-/// Parameters the merge does not support (weapon platforms); they are listed, never applied.
-const UNSUPPORTED_FIELDS: [&str; 3] =
-    ["isWeaponPlatform", "attachmentLinks", "defaultGraphicParts"];
+/// Parameters the merge parses but does not apply. None at present: the weapon platform parameters are
+/// merged by [`super::platform::merge_platform`].
+const UNSUPPORTED_FIELDS: [&str; 0] = [];
 
 /// The parameters of one gun conversion operation.
 #[derive(Debug, Clone, Default, PartialEq)]
@@ -77,6 +77,12 @@ pub struct MakeGunSpec {
     pub allow_with_run_and_gun: Option<bool>,
     /// Names of parameters that are present but not supported by the merge.
     pub unsupported: Vec<String>,
+    /// The `isWeaponPlatform` flag.
+    pub is_weapon_platform: bool,
+    /// The `li` children of `attachmentLinks`; `None` when the element is absent.
+    pub attachment_links: Option<Vec<Node>>,
+    /// The `li` children of `defaultGraphicParts`; `None` when the element is absent.
+    pub default_graphic_parts: Option<Vec<Node>>,
 }
 
 fn element_children(node: &Node) -> Vec<Node> {
@@ -104,6 +110,12 @@ impl MakeGunSpec {
                     spec.allow_with_run_and_gun =
                         text_of(child).map(|t| t.eq_ignore_ascii_case("true"));
                 }
+                "isWeaponPlatform" => {
+                    spec.is_weapon_platform =
+                        text_of(child).is_some_and(|t| t.eq_ignore_ascii_case("true"));
+                }
+                "attachmentLinks" => spec.attachment_links = Some(element_children(child)),
+                "defaultGraphicParts" => spec.default_graphic_parts = Some(element_children(child)),
                 other if UNSUPPORTED_FIELDS.contains(&other) => {
                     spec.unsupported.push(other.to_owned());
                 }
@@ -127,6 +139,8 @@ pub struct MergeReport {
     pub verb_added: bool,
     /// Components appended (ammo user, fire modes), by class.
     pub comps_added: Vec<String>,
+    /// Whether the def was made a weapon platform.
+    pub platform: bool,
 }
 
 fn container<'a>(def: &'a mut Node, tag: &str, report: &mut MergeReport) -> Option<&'a mut Node> {
@@ -147,7 +161,16 @@ fn remove_children_named(parent: &mut Node, tag: &str) -> usize {
 
 /// Applies the conversion to a resolved `ThingDef` node in place.
 pub fn merge_into_def(def: &mut Node, spec: &MakeGunSpec, classes: &CeClassNames) -> MergeReport {
-    let mut report = MergeReport::default();
+    let mut report = MergeReport {
+        platform: super::platform::merge_platform(
+            def,
+            spec.is_weapon_platform,
+            spec.attachment_links.as_deref().unwrap_or_default(),
+            spec.default_graphic_parts.as_deref().unwrap_or_default(),
+            classes,
+        ),
+        ..MergeReport::default()
+    };
     merge_stats(def, spec, &mut report);
     if let Some(items) = spec.cost_list.as_ref().filter(|c| !c.is_empty())
         && let Some(list) = container(def, "costList", &mut report)
@@ -311,8 +334,14 @@ impl CustomPatchOp for MakeGunOp {
             let Some(mut def) = doc.arena().to_node(id) else {
                 continue;
             };
-            merge_into_def(&mut def, &spec, &self.classes);
+            let report = merge_into_def(&mut def, &spec, &self.classes);
             let arena = doc.arena_mut();
+            // The platform conversion also changes the type of the def, which is an attribute.
+            if report.platform
+                && let Some(class) = def.attr("Class")
+            {
+                arena.set_attr(id, "Class", class)?;
+            }
             arena.clear_children(id)?;
             for child in &def.children {
                 let node = arena.import_child(child, origin)?;

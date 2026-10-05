@@ -208,11 +208,11 @@ fn predicted(
 }
 
 /// One resolved number: the block's value, else the vanilla one, else the prediction.
-struct Pick {
-    value: Option<f64>,
+pub(super) struct Pick {
+    pub(super) value: Option<f64>,
 }
 
-fn resolve(
+pub(super) fn resolve(
     derived: &mut Vec<DerivedValue>,
     field: &str,
     block: Option<f64>,

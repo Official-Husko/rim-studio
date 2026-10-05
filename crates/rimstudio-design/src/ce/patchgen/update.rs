@@ -20,7 +20,7 @@ use crate::model::{CePatchSpec, DesignSpec, Sourced, format_number};
 use crate::validation::codes::CE_ALREADY_CONVERTED;
 
 /// True when a desired number differs from the current one (or there is no current one).
-fn changed(desired: f64, current: Option<f64>) -> bool {
+pub(super) fn changed(desired: f64, current: Option<f64>) -> bool {
     current.is_none_or(|c| (c - desired).abs() > 1e-6 * desired.abs().max(c.abs()).max(1e-9))
 }
 
@@ -40,7 +40,13 @@ fn diff_stat(
 /// Sets one field of a list entry that the xpath `below` selects: Replace when the field is there, and a
 /// conditional (replace when it is there by then, add when it is not) otherwise, so that applying the update
 /// twice leaves one field.
-fn set_field(ops: &mut DefOps<'_>, below: &str, field: &str, value: String, present: bool) {
+pub(super) fn set_field(
+    ops: &mut DefOps<'_>,
+    below: &str,
+    field: &str,
+    value: String,
+    present: bool,
+) {
     let node = Node::with_text(field, value);
     let field_path = ops.path(&format!("{below}/{field}"));
     if present {
@@ -106,6 +112,10 @@ fn update_tags(ops: &mut DefOps<'_>, ce: &CePatchSpec, cur: &CePatchSpec, model:
     {
         ops.add_unique_li("weaponTags", &[tag]);
     }
+    // The accepted companion tags: each is added only when the def does not carry it.
+    let mut extra: Vec<String> = Vec::new();
+    super::extras::push_extra_tags(&mut extra, ce);
+    ops.add_unique_li("weaponTags", &extra);
 }
 
 /// Update mode for a gun.
@@ -120,6 +130,7 @@ pub(crate) fn gun_update(
     let cur = &existing.block;
     let mut ops = DefOps::new(&spec.identity.def_name, container);
     let mut stats = Vec::new();
+    diff_stat(&mut stats, "Mass", ce.mass, cur.mass);
     diff_stat(&mut stats, "Bulk", ce.bulk, cur.bulk);
     diff_stat(&mut stats, "SwayFactor", ce.sway_factor, cur.sway_factor);
     diff_stat(&mut stats, "ShotSpread", ce.shot_spread, cur.shot_spread);
@@ -193,8 +204,49 @@ pub(crate) fn gun_update(
         let present = existing.ammo_fields.contains("ammoSet");
         set_field(&mut ops, &ammo, "ammoSet", s.to_owned(), present);
     }
+    if let Some(g) = ce.ammo_gen_per_mag
+        && changed(
+            f64::from(g.value),
+            cur.ammo_gen_per_mag.map(|c| f64::from(c.value)),
+        )
+    {
+        let present = existing.ammo_fields.contains("AmmoGenPerMagOverride");
+        set_field(
+            &mut ops,
+            &ammo,
+            "AmmoGenPerMagOverride",
+            g.value.to_string(),
+            present,
+        );
+    }
+
+    if ce.reload_one_at_a_time == Some(true) && cur.reload_one_at_a_time != Some(true) {
+        let present = existing.ammo_fields.contains("reloadOneAtATime");
+        set_field(
+            &mut ops,
+            &ammo,
+            "reloadOneAtATime",
+            "true".to_owned(),
+            present,
+        );
+    }
+    if let Some(p) = ce.recoil_pattern.as_deref().filter(|p| !p.is_empty())
+        && cur.recoil_pattern.as_deref() != Some(p)
+    {
+        let present = existing.verb_fields.contains("recoilPattern");
+        set_field(&mut ops, &verb, "recoilPattern", p.to_owned(), present);
+    }
 
     update_tags(&mut ops, ce, cur, model);
+    super::extras::extras_ops(&mut ops, ce);
+    super::platform::update_ops(
+        &mut ops,
+        &spec.identity.def_name,
+        ce,
+        existing,
+        &model.classes,
+        container,
+    );
     finish(
         spec,
         PatchCategory::WeaponsRanged,
@@ -277,6 +329,7 @@ pub(crate) fn melee_update(
         }
     }
     update_tags(&mut ops, ce, cur, model);
+    super::extras::extras_ops(&mut ops, ce);
     finish(
         spec,
         PatchCategory::WeaponsMelee,

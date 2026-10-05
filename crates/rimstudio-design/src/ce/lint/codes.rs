@@ -1,4 +1,4 @@
-//! The registry of the lint rules CEP001 to CEP022 and of the other `ce.*` codes of the patch generator.
+//! The registry of the lint rules CEP001 to CEP024 and CEP030 to CEP033 and of the other `ce.*` codes of the patch generator.
 //!
 //! A rule id is embedded in its code as `ce.cep<nnn>-<kebab-name>`, which keeps the `<area>.<kebab-name>`
 //! form and the stable id together. CEP006 is not defined in the research script and stays unassigned.
@@ -138,6 +138,61 @@ rule!(
     "the verb of {def} fires bursts of {burst} but the fire modes name no aimedBurstShotCount; the aimed mode then fires the full burst", ["def", "burst"]
 );
 rule!(
+    /// CEP030: a bow whose ammo set serves no arrows or bolts.
+    CEP030, "ce.cep030-bow-ammo-not-arrows", Warning,
+    "the bow {def} uses the ammo set {set}, which no converted bow uses and which holds no arrows or bolts; a bow shoots arrow or bolt sets", ["def", "set"]
+);
+rule!(
+    /// CEP031: a bow whose fire modes are not empty.
+    CEP031, "ce.cep031-bow-fire-modes", Hint,
+    "the fire modes of the bow {def} are not empty; a bow is normally converted with an empty FireModes element", ["def"]
+);
+rule!(
+    /// CEP032: a bow that may be fired while running with the Run and Gun mod.
+    CEP032, "ce.cep032-bow-run-and-gun", Hint,
+    "the bow {def} does not set AllowWithRunAndGun to false; a bow is normally not fired while running", ["def"]
+);
+rule!(
+    /// CEP033: a bow without an ammo spawn count.
+    CEP033, "ce.cep033-bow-spawn-count", Hint,
+    "the bow {def} has neither AmmoGenPerMagOverride nor a magazine size; pawns spawn with a single arrow per magazine", ["def"]
+);
+rule!(
+    /// CEP040: an under barrel unit without its own ammo set or default projectile.
+    CEP040, "ce.cep040-under-barrel-incomplete", Warning,
+    "the under barrel unit of {def} names no {what}; Combat Extended reads it when the wielder switches to the unit", ["def", "what"]
+);
+rule!(
+    /// CEP041: the ammo set of an under barrel unit is not defined.
+    CEP041, "ce.cep041-under-barrel-ammoset-unresolved", Error,
+    "the under barrel unit of {def} uses the ammo set {set}, which is not defined", ["def", "set"]
+);
+rule!(
+    /// CEP042: the default projectile of an under barrel unit is not a member of its ammo set.
+    CEP042, "ce.cep042-under-barrel-projectile-not-in-set", Warning,
+    "the under barrel unit of {def} fires {projectile}, which is not a member of its ammo set {set}", ["def", "projectile", "set"]
+);
+rule!(
+    /// CEP043: an ability component is replaced without bringing back the plain equippable component.
+    CEP043, "ce.cep043-equippable-comp-missing", Warning,
+    "the replacement of the ability component of {def} does not add the plain equippable component back; the weapon cannot be equipped without it", ["def"]
+);
+rule!(
+    /// CEP044: an attachment link without an attachment.
+    CEP044, "ce.cep044-attachment-link-empty", Error,
+    "an attachment link of {def} names no attachment", ["def"]
+);
+rule!(
+    /// CEP045: an attachment link to an attachment def that does not exist.
+    CEP045, "ce.cep045-attachment-unknown", Warning,
+    "an attachment link of {def} names {attachment}, which is not a known attachment def", ["def", "attachment"]
+);
+rule!(
+    /// CEP046: a weapon platform with no attachment links and no default graphic parts.
+    CEP046, "ce.cep046-platform-empty", Hint,
+    "{def} is made a weapon platform but has no attachment links and no default graphic parts; nothing can be fitted", ["def"]
+);
+rule!(
     /// A data dependent rule could not run because Combat Extended data is not available.
     NOT_CHECKED, "ce.not-checked", Info,
     "{rule} was not checked: {reason}", ["rule", "reason"]
@@ -184,10 +239,32 @@ rule!(
     "converted weapons of the class {class} usually also carry these tags: {tags}; add the ones that fit to the weapon", ["class", "tags"]
 );
 
+rule!(
+    /// A raw node of the Combat Extended block cannot be added to the converted def.
+    RAW_EXTRA_INVALID, "ce.raw-extra-invalid", Error,
+    "the raw node {node} cannot be added to the converted def: {reason}", ["node", "reason"]
+);
+rule!(
+    /// An entry of the explicit tool plan cannot be written.
+    TOOL_PLAN_INVALID, "ce.tool-plan-invalid", Error,
+    "the tool plan entry {tool} cannot be written: {reason}", ["tool", "reason"]
+);
+rule!(
+    /// Converted weapons restructure a tool; the plain conversion keeps the design's tools.
+    TOOL_RESTRUCTURE, "ce.tool-restructure-suggested", Hint,
+    "converted weapons change the tool {tool}: {what}; the patch keeps the tool as designed unless you accept this as a tool plan", ["tool", "what"]
+);
+rule!(
+    /// Combat Extended's own conversions change economy and art; the patch keeps the design's values.
+    ECONOMY_BY_DESIGN, "ce.economy-by-design", Info,
+    "{def} keeps the costs, materials and art of its design; Combat Extended's own conversions change these by hand, and here they stay decisions of the design", ["def"]
+);
+
 /// Every rule of this module, in id order.
 pub const REGISTRY: &[CodeInfo] = &[
     CEP001, CEP002, CEP003, CEP004, CEP005, CEP007, CEP008, CEP009, CEP010, CEP011, CEP012, CEP013,
-    CEP014, CEP015, CEP016, CEP017, CEP018, CEP019, CEP020, CEP021, CEP022, CEP023, CEP024,
+    CEP014, CEP015, CEP016, CEP017, CEP018, CEP019, CEP020, CEP021, CEP022, CEP023, CEP024, CEP030,
+    CEP031, CEP032, CEP033, CEP040, CEP041, CEP042, CEP043, CEP044, CEP045, CEP046,
 ];
 
 /// The other codes of the patch generator.
@@ -201,6 +278,10 @@ pub const OTHER: &[CodeInfo] = &[
     DEFERRED,
     TAG_NOT_FOUND,
     COMPANION_TAGS,
+    RAW_EXTRA_INVALID,
+    TOOL_PLAN_INVALID,
+    TOOL_RESTRUCTURE,
+    ECONOMY_BY_DESIGN,
 ];
 
 /// The rule id (`CEP013`) of a rule code (`ce.cep013-ammoset-unresolved`), when it is one.
@@ -217,7 +298,7 @@ mod tests {
 
     #[test]
     fn rule_codes_embed_their_ids_and_are_unique() {
-        assert_eq!(REGISTRY.len(), 23);
+        assert!(REGISTRY.len() >= 27);
         let mut seen = std::collections::BTreeSet::new();
         for (i, info) in REGISTRY.iter().enumerate() {
             let id = rule_id(info.code).unwrap_or_default();

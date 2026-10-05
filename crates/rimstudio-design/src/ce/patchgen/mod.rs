@@ -29,14 +29,17 @@
 //! The functions are total: an invalid input gives diagnostics and no operations, never a panic, and the
 //! same input gives the same output.
 
+pub mod bow;
 pub mod container;
 pub mod conventions;
 pub mod convert;
 pub mod export;
+pub mod extras;
 pub mod folders;
 pub mod gun;
 pub mod melee;
 pub mod ops;
+pub mod platform;
 pub mod simulate;
 pub mod update;
 pub mod values;
@@ -48,6 +51,7 @@ use thiserror::Error;
 use crate::error::DesignError;
 use crate::model::{DesignSpec, ItemKind};
 
+pub use bow::{bow_patch, is_bow_spec};
 pub use container::{Container, ConversionSource, ExistingConversion};
 pub use convert::{
     AskItem, AskKind, AskList, ConvertAnswers, ConvertCandidate, ConvertEnv, ConvertOutcome,

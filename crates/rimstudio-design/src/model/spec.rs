@@ -471,6 +471,62 @@ pub struct CePatchSpec {
     pub one_handed: bool,
     /// The weapon is belt fed.
     pub belt_fed: bool,
+    /// Convert the weapon in the bow style (an arrow or bolt set, empty fire modes, a spawn count instead
+    /// of a magazine). `None` lets the generator tell from the weapon's shape (role, tags, projectile);
+    /// `Some(false)` keeps a bow shaped weapon on the gun conversion.
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub bow: Option<bool>,
+    /// The `AmmoGenPerMagOverride` of the ammo component: how many rounds of ammo a pawn spawns with per
+    /// magazine, for a weapon that has no real magazine (a bow). OPT.
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub ammo_gen_per_mag: Option<Sourced<u32>>,
+    /// Whether the weapon may be fired while the Run and Gun mod lets pawns run. `None` is the default of
+    /// the style (a bow may not, a gun may); only `Some(false)` is written.
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub allow_with_run_and_gun: Option<bool>,
+    /// The `Mass` stat of the patch, written only when it differs from the vanilla mass (conversion keeps
+    /// the mass of a bow). OPT.
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub mass: Option<Sourced<f64>>,
+    /// Convert the weapon into a weapon platform that accepts attachments (OPT, off by default). Also on
+    /// when attachment links or default graphic parts are given.
+    #[serde(skip_serializing_if = "std::ops::Not::not")]
+    pub is_weapon_platform: bool,
+    /// The attachment links of the platform (OPT).
+    #[serde(skip_serializing_if = "Vec::is_empty")]
+    pub attachment_links: Vec<super::platform::CeAttachmentLink>,
+    /// The default graphic parts of the platform, drawn while their slots are empty (OPT).
+    #[serde(skip_serializing_if = "Vec::is_empty")]
+    pub default_graphic_parts: Vec<super::platform::CeGraphicPart>,
+    /// An under barrel unit with its own ammo, verb and fire modes (OPT).
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub under_barrel: Option<super::platform::CeUnderBarrel>,
+    /// The ammo component loads one round at a time (`reloadOneAtATime`), as a pump shotgun does. OPT, a
+    /// gun only; only `Some(true)` is written.
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub reload_one_at_a_time: Option<bool>,
+    /// The `recoilPattern` of the converted verb, a value of the recoil pattern enumeration (OPT, a gun
+    /// only).
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub recoil_pattern: Option<String>,
+    /// An explicit tool list: when it is not empty the converted tools are exactly these entries, in this
+    /// order, in place of the tools derived from the design (OPT; the way to write a muzzle tool or
+    /// relabelled tools on purpose).
+    #[serde(skip_serializing_if = "Vec::is_empty")]
+    pub tool_plan: Vec<super::ce_extras::CeToolPlan>,
+    /// Children of the vanilla tools that the conversion keeps although the user's own conversions drop
+    /// them (OPT; the opt out of the habit that removes `labelUsedInLogging`).
+    #[serde(skip_serializing_if = "Vec::is_empty")]
+    pub keep_tool_fields: Vec<String>,
+    /// Weapon tags written besides the class tag and the one handed mark: the companion tags of the
+    /// weapon class that the user accepted (OPT; never filled in by the generator on its own).
+    #[serde(skip_serializing_if = "Vec::is_empty")]
+    pub extra_tags: Vec<String>,
+    /// Raw nodes added to the converted def as written, for art or platform specific Combat Extended
+    /// additions that are not modelled (for example `modExtensions` with a gun draw extension). Each node
+    /// is checked for its XML shape; a node whose name the conversion owns is refused (OPT).
+    #[serde(skip_serializing_if = "Vec::is_empty")]
+    pub raw_extras: Vec<Node>,
 }
 
 /// A numeric input addressed by name, used by suggestions, answers and anchors to write into a spec.

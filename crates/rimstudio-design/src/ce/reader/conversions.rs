@@ -59,6 +59,13 @@ pub struct CeGun {
     /// The converted tools of the gun (the gun bash).
     #[serde(default)]
     pub tools: Vec<CeToolRow>,
+    /// True when the weapon has a bow shape (see [`super::bows`]): a bow or crossbow, converted in the bow
+    /// style. Bows are examples of the bow conversion and are left out of the gun class estimates.
+    #[serde(default)]
+    pub bow: bool,
+    /// The `AmmoGenPerMagOverride` of the ammo component, when it is written.
+    #[serde(default)]
+    pub ammo_gen_per_mag: Option<f64>,
     /// The converted numbers by name (see [`GUN_STATS`]).
     pub stats: BTreeMap<String, f64>,
     /// The numbers of the vanilla twin with the same names, when a vanilla load was given.
@@ -283,6 +290,8 @@ pub fn read_gun(
             .into_iter()
             .map(tool_row)
             .collect(),
+        bow: super::bows::is_bow_node(node),
+        ammo_gen_per_mag: ammo.and_then(|a| child_number(a, "AmmoGenPerMagOverride")),
         stats,
         twin: None,
         twin_tags: Vec::new(),
@@ -484,8 +493,8 @@ pub fn ce_block_from_def(
             .find(|t| t.starts_with(&classes.ai_tag_prefix))
             .or_else(|| {
                 // A melee conversion has no AI class; its class tag is the first Combat Extended tag that
-                // does not say one handed.
-                (!is_gun(&markers)).then(|| {
+                // does not say one handed. A bow has none either: its tag is the bow tag.
+                (!is_gun(&markers) || super::bows::is_bow_node(node)).then(|| {
                     tags.iter().find(|t| {
                         t.starts_with(&classes.tag_prefix)
                             && !t.to_lowercase().contains("onehanded")
@@ -493,12 +502,21 @@ pub fn ce_block_from_def(
                 })?
             })
             .cloned(),
+        mass: s(stat.get("Mass").copied()),
+        ammo_gen_per_mag: ammo
+            .and_then(|a| child_number(a, "AmmoGenPerMagOverride"))
+            .filter(|m| *m >= 0.0 && *m <= f64::from(u32::MAX))
+            .map(|m| Sourced::new(m.round() as u32, source)),
         bulk: s(stat.get("Bulk").copied()),
         sway_factor: s(stat.get("SwayFactor").copied()),
         shot_spread: s(stat.get("ShotSpread").copied()),
         sights_efficiency: s(stat.get("SightsEfficiency").copied()),
         cooldown: s(stat.get("RangedWeapon_Cooldown").copied()),
         recoil_amount: s(verb.and_then(|v| child_number(v, "recoilAmount"))),
+        recoil_pattern: verb.and_then(|v| child_text(v, "recoilPattern")),
+        reload_one_at_a_time: ammo
+            .and_then(|a| child_bool(a, "reloadOneAtATime"))
+            .filter(|b| *b),
         reload_time: s(ammo.and_then(|a| child_number(a, "reloadTime"))),
         parry_bonus: s(stat.get("MeleeCounterParryBonus").copied()),
         melee_crit_chance: s(offsets.get("MeleeCritChance").copied()),
@@ -520,5 +538,10 @@ pub fn ce_block_from_def(
             blunt: s(t.ap_blunt),
         })
         .collect();
+    let platform = super::platform::read_platform(node, classes, source);
+    block.is_weapon_platform = platform.is_platform;
+    block.attachment_links = platform.links;
+    block.default_graphic_parts = platform.parts;
+    block.under_barrel = platform.under_barrel;
     Some(block)
 }

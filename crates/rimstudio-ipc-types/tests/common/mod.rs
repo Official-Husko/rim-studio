@@ -1185,6 +1185,7 @@ pub fn ce_suggestion() -> CeSuggestionDto {
         missing: vec!["/ce/ammoSet".into()],
         still_missing_after_accept: vec!["/ce/ammoSet".into(), "/ce/shotSpread".into()],
         notes: vec!["a note".into()],
+        options: Vec::new(),
     }
 }
 

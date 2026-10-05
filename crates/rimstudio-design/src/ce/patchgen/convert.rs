@@ -15,6 +15,7 @@ use rimstudio_core::tree::Node;
 use rimstudio_defs::{DefDatabases, DefRecord};
 use serde::{Deserialize, Serialize};
 
+use super::bow::{bow_prediction, is_bow_spec};
 use super::container::{Container, ConversionSource};
 use super::export::{CeProjectState, export_ce_plan_with};
 use super::values::{
@@ -105,32 +106,6 @@ fn shooting_verb(node: &Node) -> Option<&Node> {
         .find(|v| child_text(v, "defaultProjectile").is_some())
 }
 
-/// The reason shown for a bow or crossbow, which has no Combat Extended conversion in 0.1.0.
-const BOW_REASON: &str = "CE bow conversion is not available in 0.1.0";
-
-/// True when a projectile def name reads as an arrow or a bolt of a bow or crossbow.
-fn is_bow_projectile(name: &str) -> bool {
-    let lower = name.to_lowercase();
-    lower.contains("arrow")
-        || lower.contains("quarrel")
-        || lower
-            .split(|c: char| !c.is_ascii_alphanumeric())
-            .any(|part| part == "bolt")
-}
-
-/// True when the weapon has a bow or crossbow shape: a weapon tag or weapon class that names a bow, or a
-/// shooting verb whose projectile is an arrow or a bolt.
-fn is_bow_shape(node: &Node) -> bool {
-    let tagged = list_texts(node, "weaponTags")
-        .into_iter()
-        .chain(list_texts(node, "weaponClasses"))
-        .any(|t| t.to_lowercase().contains("bow"));
-    tagged
-        || shooting_verb(node)
-            .and_then(|v| child_text(v, "defaultProjectile"))
-            .is_some_and(|p| is_bow_projectile(&p))
-}
-
 /// The reason a weapon is not converted in this release, or `None` when it is supported.
 fn unsupported_reason(node: &Node, dbs: &DefDatabases, model: &CeModel) -> Option<String> {
     if node.child("race").is_some() || node.child("building").is_some() {
@@ -146,8 +121,11 @@ fn unsupported_reason(node: &Node, dbs: &DefDatabases, model: &CeModel) -> Optio
     {
         return Some("a turret or mechanoid weapon".to_owned());
     }
-    if shooting_verb(node).is_some() && is_bow_shape(node) {
-        return Some(BOW_REASON.to_owned());
+    if shooting_verb(node).is_none() && super::platform::has_projectile_less_verb(node) {
+        return Some(
+            "a weapon whose shooting verb names no projectile (a beam or a spray): there is no ammo to convert"
+                .to_owned(),
+        );
     }
     if let Some(verb) = shooting_verb(node) {
         let class = child_text(verb, "verbClass").unwrap_or_default();
@@ -229,7 +207,10 @@ pub fn scan(project: &[Node], dbs: &DefDatabases, model: &CeModel) -> Vec<Conver
             continue;
         };
         let node = &record.node;
-        let ranged = shooting_verb(node).is_some();
+        // A weapon whose verb names no projectile (a beam, a spray) is a gun with nothing to convert, not a
+        // melee weapon: it is listed with its reason.
+        let beam = super::platform::has_projectile_less_verb(node);
+        let ranged = shooting_verb(node).is_some() || beam;
         let melee = !ranged && node.child("tools").is_some() && is_weapon_def(node);
         if !ranged && !melee {
             continue;
@@ -256,7 +237,11 @@ pub fn scan(project: &[Node], dbs: &DefDatabases, model: &CeModel) -> Vec<Conver
                 kind,
             )
         } else {
-            candidate(ConvertStatus::NotConverted, "can be converted", kind)
+            candidate(
+                ConvertStatus::NotConverted,
+                super::platform::convert_reason(node),
+                kind,
+            )
         };
         out.insert(name.clone(), ConvertCandidate { family, ..entry });
     }
@@ -334,8 +319,12 @@ pub struct ConvertAnswers {
     pub belt_fed: Option<bool>,
     /// Penetration by tool label.
     pub tool_penetration: Vec<CeToolPenetration>,
-    /// Field level overrides: every number of the block that is `Some` replaces the derived one.
+    /// Field level overrides: every number of the block that is `Some` replaces the derived one. The
+    /// platform choices and the under barrel unit are answered here too (`underBarrel`, `isWeaponPlatform`,
+    /// `attachmentLinks`, `defaultGraphicParts`).
     pub overrides: CePatchSpec,
+    /// Convert the weapon without its own under barrel unit, although its vanilla definition has one.
+    pub skip_under_barrel: bool,
 }
 
 /// Where a number of the derived block came from, collected while deriving.
@@ -497,14 +486,29 @@ pub fn derive_ce_block(
         belt_fed: answers.belt_fed.unwrap_or(over.belt_fed),
         ..CePatchSpec::default()
     };
-    if spec.kind == ItemKind::Ranged {
+    // A bow or a crossbow is converted in its own style: other choices, other numbers, other examples.
+    let bow = spec.kind == ItemKind::Ranged && over.bow.unwrap_or_else(|| is_bow_spec(spec));
+    if bow || over.bow.is_some() {
+        block.bow = Some(bow);
+    }
+    if bow {
+        bow_derive::choices(&mut d, &mut block);
+    } else if spec.kind == ItemKind::Ranged {
         ranged_choices(&mut d, &mut block);
     }
     // The prediction depends on the tag class, so it is made after the choices.
     let mut probe = spec.clone();
     probe.ce = Some(block.clone());
-    let prediction = predict_for(&probe, model);
+    let prediction = if bow {
+        bow_prediction(&probe, model)
+    } else {
+        predict_for(&probe, model)
+    };
     match spec.kind {
+        ItemKind::Ranged if bow => {
+            bow_derive::numbers(&mut d, &mut block, prediction.as_ref());
+            ranged_tools(&mut d, &mut block, spec);
+        }
         ItemKind::Ranged => {
             ranged_numbers(&mut d, &mut block, prediction.as_ref());
             ranged_tools(&mut d, &mut block, spec);
@@ -894,8 +898,30 @@ fn overlay(base: &CePatchSpec, with: &CePatchSpec) -> CePatchSpec {
         parry_bonus,
         melee_crit_chance,
         melee_parry_chance,
-        melee_dodge_chance
+        melee_dodge_chance,
+        bow,
+        ammo_gen_per_mag,
+        allow_with_run_and_gun,
+        mass,
+        reload_one_at_a_time,
+        recoil_pattern
     );
+    if !with.tool_plan.is_empty() {
+        out.tool_plan.clone_from(&with.tool_plan);
+    }
+    for f in &with.keep_tool_fields {
+        if !out.keep_tool_fields.contains(f) {
+            out.keep_tool_fields.push(f.clone());
+        }
+    }
+    for t in &with.extra_tags {
+        if !out.extra_tags.contains(t) {
+            out.extra_tags.push(t.clone());
+        }
+    }
+    if !with.raw_extras.is_empty() {
+        out.raw_extras.clone_from(&with.raw_extras);
+    }
     for p in &with.tool_penetration {
         match out.tool_penetration.iter_mut().find(|e| e.tool == p.tool) {
             Some(e) => {
@@ -911,6 +937,7 @@ fn overlay(base: &CePatchSpec, with: &CePatchSpec) -> CePatchSpec {
     }
     out.one_handed |= with.one_handed;
     out.belt_fed |= with.belt_fed;
+    super::platform::overlay(&mut out, with);
     out
 }
 
@@ -1026,7 +1053,17 @@ pub fn convert(
             update: true,
         };
     }
-    let (block, asks, derived) = derive_ce_block(&spec, env.model, answers);
+    let (mut block, mut asks, derived) = derive_ce_block(&spec, env.model, answers);
+    if spec.kind == ItemKind::Ranged && !block.bow.unwrap_or(false) {
+        super::platform::derive::apply(
+            &mut block,
+            &mut asks,
+            &record.node,
+            env.dbs,
+            env.model,
+            answers,
+        );
+    }
     spec.ce = Some(block);
     if !asks.is_empty() {
         return ConvertOutcome {
@@ -1047,5 +1084,6 @@ pub fn convert(
     }
 }
 
+mod bow_derive;
 #[cfg(test)]
 mod bow_tests;

@@ -10,6 +10,9 @@ use super::codes::{
     CEP014, CEP015, CEP016, CEP017, CEP018, CEP020, CEP021, CEP022, CEP023, CEP024, NOT_CHECKED,
     rule_id,
 };
+
+mod bows;
+mod platform;
 use super::xpath::malformed_reason;
 use super::{LintContext, LintFile};
 use crate::ce::patchgen::folders::{
@@ -323,6 +326,16 @@ impl<'a> Cx<'a> {
 
     fn make_gun(&mut self, key: (usize, usize), path: Option<&str>, op: &Node, pointer: &str) {
         let spec = MakeGunSpec::parse(op);
+        let platform_def = if spec.def_name.is_empty() {
+            "(no def)".to_owned()
+        } else {
+            spec.def_name.clone()
+        };
+        self.platform_rules(key, path, &spec, pointer, &platform_def);
+        if platform::platform_only(&spec) {
+            // The update form: it makes the def a platform and converts nothing else.
+            return;
+        }
         if !spec.def_name.is_empty() {
             let n = self.converted.entry(spec.def_name.clone()).or_insert(0);
             *n += 1;
@@ -365,11 +378,27 @@ impl<'a> Cx<'a> {
                 }
             }
         }
+        // A bow has no magazine: its tags or its projectile say so, and CEP008 does not ask for one.
+        let bow = !one_use
+            && crate::ce::reader::bows::is_bow_shape(
+                &spec
+                    .weapon_tags
+                    .iter()
+                    .filter_map(text_of)
+                    .collect::<Vec<_>>(),
+                &[],
+                property("defaultProjectile").as_deref(),
+            );
         if !one_use {
             match &spec.ammo_user {
                 None => missing.push(("AmmoUser".into(), format!("{pointer}/AmmoUser"))),
                 Some(children) => {
-                    for name in ["ammoSet", "magazineSize"] {
+                    let needed: &[&str] = if bow {
+                        &["ammoSet"]
+                    } else {
+                        &["ammoSet", "magazineSize"]
+                    };
+                    for name in needed.iter().copied() {
                         if !children
                             .iter()
                             .any(|c| c.tag == name && text_of(c).is_some())
@@ -401,6 +430,9 @@ impl<'a> Cx<'a> {
                 &format!("{pointer}/FireModes"),
                 &[("def", &def), ("burst", &burst.to_string())],
             );
+        }
+        if bow {
+            self.bow_rules(key, path, &spec, pointer, &def);
         }
         for (what, field) in missing {
             self.push(
@@ -542,6 +574,7 @@ impl<'a> Cx<'a> {
         if same_class(class, &self.model.classes.make_gun_op) {
             self.make_gun(key, path, op, pointer);
         }
+        self.under_barrel_rules(key, path, op, pointer);
         let guarded = same_class(class, CONDITIONAL_CLASS);
         self.guard_depth += usize::from(guarded);
         for branch in ["match", "nomatch"] {

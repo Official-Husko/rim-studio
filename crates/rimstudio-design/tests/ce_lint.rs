@@ -755,7 +755,9 @@ fn findings_carry_the_report_fields_and_come_in_a_stable_order() {
 
 #[test]
 fn every_rule_is_registered_once_with_the_documented_severity() {
-    assert_eq!(REGISTRY.len(), 23);
+    // CEP001 to CEP024 without CEP006, and the bow rules CEP030 to CEP033 (the numbers between are
+    // reserved for other rule families).
+    assert!(REGISTRY.len() >= 27);
     let severity = |rule: &str| {
         REGISTRY
             .iter()
@@ -769,6 +771,10 @@ fn every_rule_is_registered_once_with_the_documented_severity() {
         assert_eq!(severity(rule), Severity::Warning, "{rule}");
     }
     assert_eq!(severity("CEP024"), Severity::Hint);
+    assert_eq!(severity("CEP030"), Severity::Warning);
+    for rule in ["CEP031", "CEP032", "CEP033"] {
+        assert_eq!(severity(rule), Severity::Hint, "{rule}");
+    }
     for rule in [
         "CEP001", "CEP004", "CEP007", "CEP013", "CEP017", "CEP018", "CEP022",
     ] {

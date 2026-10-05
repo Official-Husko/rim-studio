@@ -29,6 +29,7 @@ use serde::{Deserialize, Serialize};
 
 use super::classes::{ConversionPrediction, ConversionPredictor, Reliability};
 use super::lint::codes::DERIVED_VALUE;
+use super::patchgen::bow::{bow_prediction, is_bow_spec};
 use super::patchgen::values::{predict_for, predict_tool_ratios, tidy};
 use super::patchgen::{AskItem, AskKind, AskList, ConvertAnswers, derive_ce_block};
 use super::reader::{CeGun, CeModel};
@@ -39,6 +40,9 @@ use crate::model::{
 
 /// The most candidates listed for a choice (ammo sets and tag classes of an install can be many dozens).
 pub const MAX_CANDIDATES: usize = 12;
+
+mod bow;
+pub mod options;
 
 /// Where the value shown for a field comes from.
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
@@ -257,6 +261,10 @@ pub struct CeSuggestion {
     pub still_missing_after_accept: Vec<String>,
     /// Plain words about the estimates (widened classes, missing twins).
     pub notes: Vec<String>,
+    /// The optional additions the user's conversions suggest (companion tags, a recoil pattern, a tool
+    /// plan): never written unless accepted ([`options::accept_options`]).
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub options: Vec<options::CeOption>,
 }
 
 // ---------------------------------------------------------------------------------------------------------
@@ -844,6 +852,7 @@ fn unavailable(spec: &DesignSpec, reason: String) -> CeSuggestion {
         missing: Vec::new(),
         still_missing_after_accept: Vec::new(),
         notes: Vec::new(),
+        options: Vec::new(),
     }
 }
 
@@ -879,7 +888,12 @@ pub fn suggest_block(spec: &DesignSpec, model: &CeModel) -> CeSuggestion {
         weapon_tag_class: answers.weapon_tag_class.clone(),
         ..CePatchSpec::default()
     });
-    let prediction = predict_for(&probe, model);
+    let is_bow = is_bow_spec(spec);
+    let prediction = if is_bow {
+        bow_prediction(&probe, model)
+    } else {
+        predict_for(&probe, model)
+    };
     let ratios = match spec.kind {
         ItemKind::Ranged => predict_tool_ratios(spec, model),
         ItemKind::Melee => prediction.clone(),
@@ -893,6 +907,7 @@ pub fn suggest_block(spec: &DesignSpec, model: &CeModel) -> CeSuggestion {
     let ask_of = |pointer: &str| derive_asks.items.iter().find(|a| a.field == pointer);
 
     let table: &[NumField] = match spec.kind {
+        ItemKind::Ranged if is_bow => &bow::BOW_FIELDS,
         ItemKind::Ranged => &RANGED_FIELDS,
         ItemKind::Melee => &MELEE_FIELDS,
     };
@@ -936,16 +951,18 @@ pub fn suggest_block(spec: &DesignSpec, model: &CeModel) -> CeSuggestion {
             fields.push(field);
         }
     }
-    let choices = choices_of(
-        spec,
-        model,
-        &if toggle {
-            held.clone()
-        } else {
-            CePatchSpec::default()
-        },
-    );
+    let held_block = if toggle {
+        held.clone()
+    } else {
+        CePatchSpec::default()
+    };
+    let choices = if is_bow {
+        bow::choices(spec, model, &held_block, block.weapon_tag_class.as_deref())
+    } else {
+        choices_of(spec, model, &held_block)
+    };
     let pool = match spec.kind {
+        ItemKind::Ranged if is_bow => model.bows().count(),
         ItemKind::Ranged => model.guns.iter().filter(|g| g.excluded.is_none()).count(),
         ItemKind::Melee => model.melee.iter().filter(|m| m.excluded.is_none()).count(),
     };
@@ -1022,6 +1039,7 @@ pub fn suggest_block(spec: &DesignSpec, model: &CeModel) -> CeSuggestion {
         missing,
         still_missing_after_accept: still,
         notes,
+        options: options::suggest_options(spec, model, &held_block),
     }
 }
 
@@ -1259,6 +1277,12 @@ pub fn accept_suggestions(
                     None,
                     None,
                 );
+            }
+        } else if c.field == "/ce/weaponTagClass" && c.status == FieldStatus::Derived {
+            // only a bow derives its tag, from the converted bows of the library
+            if let Some(v) = c.value.clone() {
+                ce.weapon_tag_class = Some(v.clone());
+                record(&mut out, &c.field, v, SuggestionSource::Vanilla, None, None);
             }
         } else if !named.is_empty() && c.status != FieldStatus::Held {
             out.skipped.push(SkippedField {

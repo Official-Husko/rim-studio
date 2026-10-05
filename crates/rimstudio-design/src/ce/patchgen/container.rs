@@ -109,6 +109,10 @@ pub struct Container {
     pub has_parent: bool,
     /// The conversion the target already carries, when it does.
     pub existing: Option<ExistingConversion>,
+    /// The components the def lists itself: the `Class` attribute of each entry, else its `compClass`.
+    /// The under barrel conversion looks here for the vanilla component it replaces.
+    #[serde(default)]
+    pub comp_classes: Vec<String>,
 }
 
 impl Container {
@@ -134,6 +138,7 @@ impl Container {
             containers,
             has_parent: raw.attr("ParentName").is_some(),
             existing: None,
+            comp_classes: crate::ce::reader::platform::comp_classes(raw),
         }
     }
 
@@ -179,6 +184,12 @@ impl Container {
         self.containers
             .get(container)
             .is_some_and(|c| c.iter().any(|e| e == entry))
+    }
+
+    /// True when the def lists a component with that class (or `compClass`).
+    #[must_use]
+    pub fn has_comp(&self, class: &str) -> bool {
+        self.comp_classes.iter().any(|c| c == class)
     }
 
     /// True when the target already carries a Combat Extended conversion.

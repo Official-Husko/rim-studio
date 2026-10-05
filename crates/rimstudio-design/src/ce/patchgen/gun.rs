@@ -14,7 +14,8 @@ use rimstudio_core::diag::Diagnostic;
 use rimstudio_core::tree::{Node, NodeBuilder};
 
 use super::container::Container;
-use super::conventions::{FireModeHabit, apply_tool_habits, companion_tags, fire_mode_habit};
+use super::conventions::{FireModeHabit, companion_tags, fire_mode_habit};
+use super::extras::{extras_ops, finish_tools, push_extra_tags};
 use super::melee::tool_list;
 use super::ops::{DefOps, INHERIT_ATTR, add, class_li_xpath, unless_present};
 use super::update::gun_update;
@@ -76,14 +77,15 @@ pub(super) fn one_handed_tag(model: &CeModel) -> Option<String> {
         .cloned()
 }
 
-fn push_num(b: NodeBuilder, tag: &str, v: Option<f64>) -> NodeBuilder {
+pub(super) fn push_num(b: NodeBuilder, tag: &str, v: Option<f64>) -> NodeBuilder {
     b.text_elem_opt(tag, v.map(format_number))
 }
 
 /// The children of the verb that the properties of the conversion write themselves; a carried vanilla verb
 /// field of the same name does not repeat them.
-const WRITTEN_VERB_FIELDS: [&str; 12] = [
+pub(super) const WRITTEN_VERB_FIELDS: [&str; 13] = [
     "recoilAmount",
+    "recoilPattern",
     "verbClass",
     "hasStandardCommand",
     "defaultProjectile",
@@ -119,6 +121,10 @@ fn make_gun(
     });
     b = b.elem("Properties", |p| {
         let p = push_num(p, "recoilAmount", v.recoil);
+        let p = p.text_elem_opt(
+            "recoilPattern",
+            ce.recoil_pattern.clone().filter(|r| !r.is_empty()),
+        );
         let p = p
             .text_elem("verbClass", &classes.shoot_verb)
             .text_elem("hasStandardCommand", "true")
@@ -154,7 +160,15 @@ fn make_gun(
     b = b.elem("AmmoUser", |a| {
         a.text_elem("magazineSize", v.magazine.to_string())
             .text_elem("reloadTime", format_number(v.reload))
+            .text_elem_opt(
+                "reloadOneAtATime",
+                ce.reload_one_at_a_time.filter(|r| *r).map(|_| "true"),
+            )
             .text_elem("ammoSet", &v.ammo_set)
+            .text_elem_opt(
+                "AmmoGenPerMagOverride",
+                ce.ammo_gen_per_mag.map(|g| g.value.to_string()),
+            )
     });
     b = b.elem("FireModes", |f| {
         // The user's belt fed flag decides first, then the habit of the weapon class in the converted
@@ -189,6 +203,10 @@ pub fn gun_patch(
     model: &CeModel,
     container: &Container,
 ) -> PatchgenResult<GeneratedPatch> {
+    // A bow or a crossbow has its own conversion style.
+    if super::bow::is_bow_spec(spec) {
+        return super::bow::bow_patch(spec, model, container);
+    }
     let mut diagnostics = match guard(spec, model, ItemKind::Ranged, container.is_converted()) {
         Ok(d) => d,
         Err(finished) => return Ok(*finished),
@@ -197,6 +215,8 @@ pub fn gun_patch(
         return Ok(GeneratedPatch::off(spec, diagnostics, None));
     };
     diagnostics.extend(check_gun_refs(ce, model));
+    diagnostics.extend(super::platform::validate(ce, model));
+    diagnostics.extend(super::extras::validate(ce, model));
     if crate::validation::has_errors(&diagnostics) {
         return Ok(GeneratedPatch::off(spec, diagnostics, None));
     }
@@ -228,6 +248,7 @@ pub fn gun_patch(
                 .push(TAG_NOT_FOUND.diagnostic("/ce/oneHanded", &[("what", "one handed")])),
         }
     }
+    push_extra_tags(&mut tags, ce);
     let mut derived = values.derived.clone();
     let habit = values
         .tag
@@ -254,28 +275,40 @@ pub fn gun_patch(
     }
     // The conversion appends comps, a verb and tags, so it runs only while the def has no ammo component
     // yet; applied twice (or on top of another conversion) it does nothing the second time.
-    let conversion = make_gun(&model.classes, spec, ce, &values, &tags, &habit);
+    let mut conversion = make_gun(&model.classes, spec, ce, &values, &tags, &habit);
+    for param in super::platform::make_gun_params(ce) {
+        conversion.push_child(param);
+    }
     let guard = ops.path(&format!(
         "comps/{}",
         class_li_xpath(&model.classes.ammo_user)
     ));
     ops.push(unless_present(&guard, conversion));
-    if !spec.tools.is_empty() {
+    if let Some(unit) = &ce.under_barrel {
+        let unit = super::platform::with_habit(unit, model, &mut diagnostics);
+        super::platform::under_barrel_ops(&mut ops, &model.classes, &unit, container);
+    }
+    if !spec.tools.is_empty() || !ce.tool_plan.is_empty() {
         let ratios = predict_tool_ratios(spec, model);
         let (tools, missing, tool_derived) = resolve_tools(spec, ce, ratios.as_ref(), false);
         derived.extend(tool_derived);
-        if !missing.is_empty() {
-            for label in missing {
-                diagnostics.push(REQUIRED_MISSING.diagnostic(
-                    "/ce/toolPenetration",
-                    &[("label", &format!("CE blunt penetration of tool {label}"))],
-                ));
-            }
+        let Some(tools) = finish_tools(
+            model,
+            ItemKind::Ranged,
+            ce,
+            tools,
+            &missing,
+            &mut diagnostics,
+        ) else {
             return Ok(GeneratedPatch::off(spec, diagnostics, None));
-        }
-        let tools = apply_tool_habits(model, ItemKind::Ranged, tools, &mut diagnostics);
+        };
         ops.replace_list(tool_list(&model.classes, &tools));
     }
+    extras_ops(&mut ops, ce);
+    diagnostics.push(
+        crate::ce::lint::codes::ECONOMY_BY_DESIGN
+            .diagnostic("", &[("def", &spec.identity.def_name)]),
+    );
     Ok(GeneratedPatch {
         mode: PatchMode::New,
         category: PatchCategory::WeaponsRanged,

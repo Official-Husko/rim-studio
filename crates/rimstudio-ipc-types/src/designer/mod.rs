@@ -13,6 +13,7 @@
 //! - [`calibrate`]: the calibration job.
 //! - [`convert`]: the scan and ask list of the automatic conversion.
 //! - [`clone`]: flow C, clone and adjust, the diff against the source and the structure defaults.
+//! - [`ce_block`]: the bow, platform, under barrel, tool plan and extras members of the Combat Extended block.
 //! - [`ce_suggest`]: the suggestions for the optional Combat Extended block.
 //! - [`assets`]: texture imports, custom sounds and `designer_asset_info`.
 //! - [`plan`]: the write plan and the apply report.
@@ -20,6 +21,7 @@
 pub mod assets;
 pub mod calibrate;
 pub mod carried;
+pub mod ce_block;
 pub mod ce_suggest;
 pub mod clone;
 pub mod convert;
@@ -35,6 +37,7 @@ pub use crate::diagnostic::DiagnosticDto;
 pub use assets::*;
 pub use calibrate::*;
 pub use carried::*;
+pub use ce_block::*;
 pub use ce_suggest::*;
 pub use clone::*;
 pub use convert::*;

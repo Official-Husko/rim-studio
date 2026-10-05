@@ -709,12 +709,12 @@ fn convert_refuses_unsupported_candidates() {
 // the simulation hook
 
 #[test]
-fn the_simulation_reports_parameters_it_does_not_apply_and_still_converts() {
+fn the_simulation_applies_the_platform_parameters_and_still_converts() {
     let model = model();
     let node = gun_node("RS_Platform");
     let spec = gun_spec("RS_Platform");
     let mut patch = gun_patch(&spec, &model, &Container::from_node(&node)).unwrap();
-    // A weapon platform parameter is parsed but not applied by the merge.
+    // A weapon platform parameter is applied by the merge: the def takes the platform type.
     let class = model.classes.make_gun_op.clone();
     let conversion = patch.operations[0].child_mut("nomatch").unwrap();
     assert_eq!(conversion.attr("Class"), Some(class.as_str()));
@@ -722,11 +722,15 @@ fn the_simulation_reports_parameters_it_does_not_apply_and_still_converts() {
     let run = dry_apply(&scratch_defs(node), &[patch.patch_root()], &model);
     assert!(run.is_clean(), "{:?}", run.diagnostics);
     assert!(
-        run.diagnostics
+        !run.diagnostics
             .iter()
             .any(|d| d.code.as_str() == simulate::SIMULATION_UNSUPPORTED)
     );
     let def = run.def("ThingDef", "RS_Platform").unwrap();
+    assert_eq!(
+        def.attr("Class"),
+        Some(model.classes.weapon_platform_def.as_str())
+    );
     assert_eq!(class_count(def, "verbs", &model.classes.verb_properties), 1);
 }
 
