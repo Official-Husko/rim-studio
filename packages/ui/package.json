@@ -1,0 +1,27 @@
+{
+  "name": "rimstudio-ui",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@preact/signals": "2.11.3",
+    "preact": "10.29.8"
+  },
+  "devDependencies": {
+    "@testing-library/dom": "10.4.2",
+    "@testing-library/preact": "3.2.4",
+    "happy-dom": "20.14.5",
+    "rimstudio-testkit": "workspace:*",
+    "vitest": "5.0.3",
+    "vite": "8.3.2",
+    "@preact/preset-vite": "2.10.6",
+    "@babel/core": "7.29.7"
+  }
+}
