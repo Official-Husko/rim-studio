@@ -1,0 +1,43 @@
+{
+  "perStat": [
+    {
+      "stat": "damage",
+      "value": 12.0,
+      "predicted": 11.0,
+      "p50": {
+        "low": 9.0,
+        "high": 13.0
+      },
+      "p80": {
+        "low": 7.0,
+        "high": 16.0
+      },
+      "rank": {
+        "below": 6,
+        "equal": 1,
+        "total": 14
+      },
+      "level": "typical",
+      "nearestReference": 12.0,
+      "defaultBand": false
+    }
+  ],
+  "typicality": 0.8,
+  "summary": {
+    "scored": 1,
+    "typical": 1,
+    "plausible": 0,
+    "unusual": 0,
+    "shareInP80": 1.0
+  },
+  "notices": {
+    "poolSize": 14,
+    "classLabel": "rifle",
+    "classN": 14,
+    "rough": true,
+    "optimistic": false
+  },
+  "unscored": [
+    "armorPenetration"
+  ]
+}

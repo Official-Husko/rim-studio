@@ -1,0 +1,61 @@
+{
+  "kind": "finished",
+  "jobId": "j1",
+  "result": {
+    "rev": 3,
+    "stats": {
+      "foldersProbed": 0,
+      "modsFound": 12,
+      "modsIndexed": 0,
+      "aboutParsed": 0,
+      "aboutReused": 0,
+      "loadFoldersParsed": 0,
+      "loadFoldersReused": 0,
+      "defFilesParsed": 0,
+      "defFilesReused": 0,
+      "defs": 0,
+      "filesHashed": 0,
+      "bytesRead": 0,
+      "dirErrors": 0,
+      "nonUtf8": 0
+    },
+    "timings": {
+      "discoverMs": 0,
+      "metadataMs": 0,
+      "definitionsMs": 0,
+      "totalMs": 40
+    },
+    "sources": [
+      {
+        "id": "custom-1",
+        "kind": "custom",
+        "path": "/fiction/mods",
+        "status": "ready",
+        "mods": 12
+      }
+    ],
+    "diagnostics": {
+      "counts": {
+        "scan.about-missing": 2
+      },
+      "samples": [
+        {
+          "code": "design.value-out-of-range",
+          "severity": "warning",
+          "message": "Damage is above the plausible maximum.",
+          "field": "/ranged/damage",
+          "args": {
+            "max": "500"
+          }
+        }
+      ],
+      "truncated": false,
+      "errors": 0,
+      "warnings": 2,
+      "infos": 0,
+      "hints": 0
+    },
+    "cancelled": false
+  },
+  "elapsedMs": 40
+}

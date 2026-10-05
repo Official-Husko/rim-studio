@@ -1,0 +1,83 @@
+{
+  "readouts": [
+    {
+      "key": "dps",
+      "group": "ranged",
+      "unit": "damage-per-second",
+      "value": 7.25,
+      "steps": [
+        {
+          "label": "cycle seconds",
+          "value": 4.5
+        }
+      ]
+    },
+    {
+      "key": "marketValue",
+      "group": "economy",
+      "unit": "silver"
+    }
+  ],
+  "suggestions": [
+    {
+      "field": "/ranged/range",
+      "stat": "range",
+      "value": 26.0,
+      "source": "class-median",
+      "band": {
+        "p10": 20.0,
+        "median": 26.0,
+        "p90": 32.0,
+        "p50": 1.1,
+        "p80": 1.25,
+        "shift": 0.0
+      },
+      "level": "role",
+      "predictor": "median",
+      "n": 14,
+      "locked": false
+    },
+    {
+      "field": "/ranged/damage",
+      "stat": "damage",
+      "level": "all",
+      "predictor": "quantile",
+      "n": 0,
+      "locked": true
+    }
+  ],
+  "estimate": {
+    "classLabel": "rifle, industrial",
+    "level": "role-tier",
+    "classN": 14,
+    "strength": 5.5,
+    "strengthPercentile": 0.62,
+    "anchors": [
+      {
+        "id": "RS_AnchorGun",
+        "label": "anchor gun",
+        "strength": 4.5,
+        "tier": 2,
+        "role": "rifle",
+        "stats": {
+          "damage": 10.0,
+          "range": 24.0
+        }
+      }
+    ],
+    "notes": [
+      "The pool is small."
+    ]
+  },
+  "diagnostics": [
+    {
+      "code": "design.value-out-of-range",
+      "severity": "warning",
+      "message": "Damage is above the plausible maximum.",
+      "field": "/ranged/damage",
+      "args": {
+        "max": "500"
+      }
+    }
+  ]
+}

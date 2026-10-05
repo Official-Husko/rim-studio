@@ -1,0 +1,48 @@
+{
+  "kind": "melee",
+  "identity": {
+    "defName": "RS_TestBlade",
+    "label": "",
+    "description": "",
+    "modPrefix": ""
+  },
+  "tools": [
+    {
+      "label": "edge",
+      "capacities": [
+        "Cut"
+      ],
+      "power": {
+        "value": 14.0,
+        "source": "typed"
+      },
+      "cooldownTime": {
+        "value": 1.9,
+        "source": "typed"
+      },
+      "armorPenetration": {
+        "value": 0.3,
+        "source": "suggested"
+      },
+      "linkedBodyPartsGroup": "RS_Blade"
+    }
+  ],
+  "previewQuality": "normal",
+  "ce": {
+    "parryBonus": {
+      "value": 1.1,
+      "source": "typed"
+    },
+    "toolPenetration": [
+      {
+        "tool": "edge",
+        "sharp": {
+          "value": 2.5,
+          "source": "typed"
+        }
+      }
+    ],
+    "oneHanded": true,
+    "beltFed": false
+  }
+}

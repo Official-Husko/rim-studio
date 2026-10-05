@@ -1,0 +1,9 @@
+{
+  "code": "settings.revision-conflict",
+  "message": "The settings changed since revision 41.",
+  "errorId": "e-8f3a21c9",
+  "details": {
+    "expectedRev": 41,
+    "currentRev": 44
+  }
+}

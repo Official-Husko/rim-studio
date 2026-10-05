@@ -1,0 +1,32 @@
+{
+  "planId": "b3-0123456789abcdef",
+  "files": [
+    {
+      "path": "Defs/ThingDefs_Weapons/RS_TestRifle.xml",
+      "kind": "vanilla-defs",
+      "action": "create",
+      "rendered": "<Defs>\n  <ThingDef>\n    <defName>RS_TestRifle</defName>\n  </ThingDef>\n</Defs>\n",
+      "bytes": 76
+    },
+    {
+      "path": "LoadFolders.xml",
+      "kind": "load-folders",
+      "action": "update-region",
+      "rendered": "<loadFolders/>\n",
+      "diff": "@@ -1 +1 @@\n-<loadFolders></loadFolders>\n+<loadFolders/>\n",
+      "bytes": 15
+    }
+  ],
+  "diagnostics": [
+    {
+      "code": "design.value-out-of-range",
+      "severity": "warning",
+      "message": "Damage is above the plausible maximum.",
+      "field": "/ranged/damage",
+      "args": {
+        "max": "500"
+      }
+    }
+  ],
+  "hasErrors": false
+}

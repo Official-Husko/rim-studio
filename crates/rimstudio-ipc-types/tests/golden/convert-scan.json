@@ -1,0 +1,52 @@
+{
+  "candidates": [
+    {
+      "defName": "RS_OldRifle",
+      "label": "old rifle",
+      "kind": "ranged",
+      "status": "not-converted",
+      "reason": "A conversion can be generated.",
+      "file": "Defs/Weapons.xml",
+      "asks": [
+        {
+          "field": "/ce/ammoSet",
+          "label": "Which ammo set does it use?",
+          "kind": "choice",
+          "options": [
+            "RS_AmmoSetA",
+            "RS_AmmoSetB"
+          ]
+        },
+        {
+          "field": "/ce/oneHanded",
+          "label": "Is it one handed?",
+          "kind": "flag",
+          "options": []
+        },
+        {
+          "field": "/ce/shotSpread",
+          "label": "Shot spread",
+          "kind": "number",
+          "options": [],
+          "reason": "the estimate was rated unreliable",
+          "suggestion": 1.25
+        }
+      ],
+      "family": "ranged/RS_Rifle/RS_Shot1"
+    },
+    {
+      "defName": "RS_Grenade",
+      "label": "",
+      "status": "unsupported-kind",
+      "reason": "Explosives are not supported.",
+      "asks": []
+    }
+  ],
+  "counts": {
+    "notConverted": 1,
+    "alreadyCe": 0,
+    "unsupportedKind": 1,
+    "targetNotFound": 0
+  },
+  "diagnostics": []
+}

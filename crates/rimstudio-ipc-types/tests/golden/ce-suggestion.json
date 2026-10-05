@@ -1,0 +1,114 @@
+{
+  "kind": "ranged",
+  "defName": "RS_TestRifle",
+  "available": true,
+  "toggleOn": true,
+  "classLabel": "based on the 4 nearest of 12 converted weapons",
+  "pool": 12,
+  "fields": [
+    {
+      "field": "/ce/bulk",
+      "label": "label of /ce/bulk",
+      "required": true,
+      "status": "derived",
+      "value": 7.0,
+      "source": {
+        "kind": "predicted",
+        "predictor": "ratio",
+        "n": 4
+      },
+      "band": {
+        "p50": {
+          "low": 6.5,
+          "high": 7.5
+        },
+        "p80": {
+          "low": 6.0,
+          "high": 8.0
+        }
+      },
+      "rating": "reliable",
+      "error": 0.12
+    },
+    {
+      "field": "/ce/swayFactor",
+      "label": "label of /ce/swayFactor",
+      "required": true,
+      "status": "held",
+      "held": 1.25,
+      "heldSource": {
+        "kind": "typed"
+      },
+      "value": 1.3,
+      "source": {
+        "kind": "identity",
+        "n": 12
+      },
+      "rating": "rough"
+    },
+    {
+      "field": "/ce/shotSpread",
+      "label": "label of /ce/shotSpread",
+      "required": true,
+      "status": "ask",
+      "rating": "unreliable",
+      "reference": 0.07,
+      "reason": "the estimate 0.07 is not used"
+    }
+  ],
+  "choices": [
+    {
+      "field": "/ce/ammoSet",
+      "label": "Which caliber (ammo set) does the weapon use?",
+      "kind": "choice",
+      "required": true,
+      "status": "ask",
+      "source": {
+        "kind": "first-of-set"
+      },
+      "candidates": [
+        {
+          "name": "RS_AmmoSet",
+          "usedBy": 12,
+          "score": 9.5,
+          "firstDamage": 9.0
+        }
+      ],
+      "reason": "pick one"
+    }
+  ],
+  "patchNumbers": [
+    {
+      "field": "mass",
+      "label": "label of mass",
+      "required": true,
+      "status": "derived",
+      "value": 3.3,
+      "source": {
+        "kind": "vanilla"
+      }
+    }
+  ],
+  "asks": {
+    "items": [
+      {
+        "field": "/ce/shotSpread",
+        "label": "CE shot spread",
+        "kind": "number",
+        "options": [],
+        "reason": "rated unreliable",
+        "suggestion": 0.07
+      }
+    ]
+  },
+  "missing": [
+    "/ce/ammoSet"
+  ],
+  "stillMissingAfterAccept": [
+    "/ce/ammoSet",
+    "/ce/shotSpread"
+  ],
+  "notes": [
+    "a note"
+  ]
+}
