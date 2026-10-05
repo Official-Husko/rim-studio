@@ -535,6 +535,14 @@ impl FieldReader {
     }
 }
 
+/// True when white space comes before the XML declaration (after an optional byte order mark): the game's
+/// parser rejects such a file.
+#[must_use]
+pub fn has_whitespace_before_declaration(text: &str) -> bool {
+    let body = text.trim_start_matches('\u{feff}');
+    body.starts_with(char::is_whitespace) && body.trim_start().starts_with("<?xml")
+}
+
 // ---------------------------------------------------------------------------------------- edits
 
 fn root_path(ed: &SpanEditor) -> String {

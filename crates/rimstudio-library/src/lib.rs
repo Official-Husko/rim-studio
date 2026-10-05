@@ -24,6 +24,7 @@ pub mod duplicates;
 pub mod error;
 pub mod index;
 pub mod lists;
+pub mod query;
 pub mod scan;
 pub mod sources;
 pub mod thumbs;

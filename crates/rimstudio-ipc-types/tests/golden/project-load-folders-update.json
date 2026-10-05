@@ -1,0 +1,61 @@
+{
+  "written": true,
+  "created": false,
+  "diff": "--- LoadFolders.xml\n",
+  "backup": "/data/backups/LoadFolders.xml.bak",
+  "verified": true,
+  "loadFolders": {
+    "projectId": "p-0a1b2c3d",
+    "exists": true,
+    "path": "LoadFolders.xml",
+    "fileHash": "2222222222222222222222222222222222222222222222222222222222222222",
+    "editable": true,
+    "blocks": [
+      {
+        "index": 0,
+        "tag": "v1.6",
+        "key": "1.6",
+        "entries": [
+          {
+            "index": 0,
+            "path": "",
+            "ifModActive": [],
+            "ifModActiveAll": [],
+            "ifModNotActive": [],
+            "ignoredAttributes": [],
+            "folderExists": true
+          },
+          {
+            "index": 1,
+            "path": "1.6/Compat/CE",
+            "ifModActive": [
+              "ceteam.combatextended"
+            ],
+            "ifModActiveAll": [],
+            "ifModNotActive": [],
+            "ignoredAttributes": [
+              "IfModActiveAny"
+            ],
+            "folderExists": false
+          }
+        ]
+      }
+    ],
+    "supportedVersions": [
+      "1.6"
+    ],
+    "versionFolders": [
+      "1.6"
+    ],
+    "rawText": "<loadFolders/>",
+    "rawTruncated": false,
+    "diagnostics": [
+      {
+        "code": "loadfolders.folder-missing",
+        "severity": "warning",
+        "message": "the folder 1.6/Compat/CE does not exist in the mod",
+        "field": "/blocks/0/entries/1/path"
+      }
+    ]
+  }
+}

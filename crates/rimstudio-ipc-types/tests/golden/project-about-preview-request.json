@@ -1,0 +1,15 @@
+{
+  "projectId": "p-0a1b2c3d",
+  "changes": [
+    {
+      "op": "set",
+      "field": "name",
+      "value": "RS Arms"
+    },
+    {
+      "op": "clear",
+      "field": "url"
+    }
+  ],
+  "expectedHash": "0000000000000000000000000000000000000000000000000000000000000000"
+}

@@ -4,6 +4,301 @@
 export type JsonValue = number | string | boolean | Array<JsonValue> | { [key in string]?: JsonValue } | null;
 
 /**
+ * The `ByVersion` blocks of the file. Advanced: the game replaces the base value with the block of the
+ * running version, it does not merge them.
+ */
+export type AboutByVersionDto = { 
+/**
+ * Always true: a form shows these behind an "advanced" switch.
+ */
+advanced: boolean, 
+/**
+ * `descriptionsByVersion`.
+ */
+descriptions: Array<AboutVersionTextDto>, 
+/**
+ * The relation blocks, one per version.
+ */
+relations: Array<AboutVersionRelationsDto>, };
+
+/**
+ * A relation list that has a `ByVersion` variant.
+ */
+export type AboutByVersionFieldDto = "loadBefore" | "loadAfter" | "forceLoadBefore" | "forceLoadAfter" | "incompatibleWith";
+
+/**
+ * One edit of `About.xml`. A request holds a list of them, applied in order; list positions refer to the
+ * list as it is after the earlier edits of the same request.
+ */
+export type AboutChangeDto = { "op": "set", 
+/**
+ * The field.
+ */
+field: AboutTextFieldDto, 
+/**
+ * The new text.
+ */
+value: string, } | { "op": "clear", 
+/**
+ * The field.
+ */
+field: AboutTextFieldDto, } | { "op": "list-set", 
+/**
+ * The field.
+ */
+field: AboutListFieldDto, 
+/**
+ * The new entries.
+ */
+items: Array<string>, } | { "op": "list-add", 
+/**
+ * The field.
+ */
+field: AboutListFieldDto, 
+/**
+ * The entry.
+ */
+value: string, 
+/**
+ * The position; the end when absent.
+ */
+at?: number, } | { "op": "list-remove", 
+/**
+ * The field.
+ */
+field: AboutListFieldDto, 
+/**
+ * The entry.
+ */
+value: string, } | { "op": "list-move", 
+/**
+ * The field.
+ */
+field: AboutListFieldDto, 
+/**
+ * The entry.
+ */
+value: string, 
+/**
+ * The new position (zero based).
+ */
+to: number, } | { "op": "dependency-add", 
+/**
+ * The dependency.
+ */
+dependency: AboutDependencyDto, 
+/**
+ * The position; the end when absent.
+ */
+at?: number, } | { "op": "dependency-update", 
+/**
+ * The package id the dependency has now.
+ */
+packageId: string, 
+/**
+ * What to change.
+ */
+change: AboutDependencyChangeDto, } | { "op": "dependency-remove", 
+/**
+ * The package id.
+ */
+packageId: string, } | { "op": "dependency-move", 
+/**
+ * The package id.
+ */
+packageId: string, 
+/**
+ * The new position (zero based).
+ */
+to: number, } | { "op": "by-version-list-set", 
+/**
+ * The relation.
+ */
+field: AboutByVersionFieldDto, 
+/**
+ * The version key (`1.6`).
+ */
+version: string, 
+/**
+ * The new entries.
+ */
+items: Array<string>, } | { "op": "by-version-description-set", 
+/**
+ * The version key (`1.6`).
+ */
+version: string, 
+/**
+ * The text; absent removes the block.
+ */
+value?: string, };
+
+/**
+ * What to change in one dependency; an absent member is left as it is.
+ */
+export type AboutDependencyChangeDto = { 
+/**
+ * New package id.
+ */
+packageId?: string, 
+/**
+ * New display name.
+ */
+displayName?: string, 
+/**
+ * New Workshop URL; an empty text removes it.
+ */
+steamWorkshopUrl?: string, 
+/**
+ * New download URL; an empty text removes it.
+ */
+downloadUrl?: string, 
+/**
+ * New alternatives; an empty list removes them.
+ */
+alternatives?: Array<string>, };
+
+/**
+ * One dependency of the mod.
+ */
+export type AboutDependencyDto = { 
+/**
+ * The package id of the required mod.
+ */
+packageId: string, 
+/**
+ * The name shown to people who lack it.
+ */
+displayName: string, 
+/**
+ * The Steam Workshop page.
+ */
+steamWorkshopUrl?: string, 
+/**
+ * A direct download.
+ */
+downloadUrl?: string, 
+/**
+ * Package ids that satisfy the dependency as well.
+ */
+alternatives?: Array<string>, };
+
+/**
+ * A list field with its place in the file.
+ */
+export type AboutListDto = { 
+/**
+ * The entries in file order, trimmed, empty entries left out.
+ */
+items: Array<string>, 
+/**
+ * True when the file has an element for the list.
+ */
+present: boolean, };
+
+/**
+ * A list field of `About.xml` made of `li` entries.
+ */
+export type AboutListFieldDto = "authors" | "supportedVersions" | "loadBefore" | "loadAfter" | "forceLoadBefore" | "forceLoadAfter" | "incompatibleWith";
+
+/**
+ * `About/Preview.png` as found on disk.
+ */
+export type AboutPreviewDto = { 
+/**
+ * The file exists.
+ */
+exists: boolean, 
+/**
+ * The path relative to the mod root.
+ */
+path: string, 
+/**
+ * Size in bytes; absent when the file does not exist.
+ */
+bytes?: number, 
+/**
+ * Width in pixels, when the file is a PNG with a readable header.
+ */
+width?: number, 
+/**
+ * Height in pixels.
+ */
+height?: number, 
+/**
+ * SHA-256 of the file.
+ */
+sha256?: string, 
+/**
+ * `data:image/png;base64,...` of the image, only when the request asked for it and the file is small.
+ */
+dataUrl?: string, };
+
+/**
+ * A text field with its place in the file.
+ */
+export type AboutTextDto = { 
+/**
+ * The text as the game reads it (trimmed, except the description). Empty when the field is absent or
+ * empty.
+ */
+value: string, 
+/**
+ * True when the file has an element for the field. False means the game uses its default.
+ */
+present: boolean, };
+
+/**
+ * A text field of `About.xml` that a form edits.
+ */
+export type AboutTextFieldDto = "name" | "shortName" | "author" | "packageId" | "description" | "url" | "modVersion" | "modIconPath";
+
+/**
+ * The relation lists of one game version (the `ByVersion` blocks). Advanced.
+ */
+export type AboutVersionRelationsDto = { 
+/**
+ * The version key (`1.6`).
+ */
+version: string, 
+/**
+ * `modDependenciesByVersion` entries.
+ */
+modDependencies: Array<AboutDependencyDto>, 
+/**
+ * `loadBeforeByVersion` entries.
+ */
+loadBefore: Array<string>, 
+/**
+ * `loadAfterByVersion` entries.
+ */
+loadAfter: Array<string>, 
+/**
+ * `forceLoadBeforeByVersion` entries.
+ */
+forceLoadBefore: Array<string>, 
+/**
+ * `forceLoadAfterByVersion` entries.
+ */
+forceLoadAfter: Array<string>, 
+/**
+ * `incompatibleWithByVersion` entries.
+ */
+incompatibleWith: Array<string>, };
+
+/**
+ * The description of one game version (`descriptionsByVersion`). Advanced.
+ */
+export type AboutVersionTextDto = { 
+/**
+ * The version key (`1.6`).
+ */
+version: string, 
+/**
+ * The description for that version.
+ */
+text: string, };
+
+/**
  * Which suggestions a plan accepts. Sent with the export or apply request; ignored when the draft has no
  * Combat Extended block.
  */
@@ -4797,6 +5092,77 @@ defs: number,
 duplicateGroups: number, };
 
 /**
+ * One mod of the last library scan.
+ */
+export type LibraryModHitDto = { 
+/**
+ * The package id as the mod declares it.
+ */
+packageId: string, 
+/**
+ * The display name.
+ */
+name: string, 
+/**
+ * The authors.
+ */
+authors: Array<string>, 
+/**
+ * The kind of folder the mod was found in.
+ */
+source: SourceKindDto, 
+/**
+ * The Steam Workshop item id, when the folder is a Workshop item.
+ */
+workshopId?: string, 
+/**
+ * The Workshop page of the item, built from the id.
+ */
+workshopUrl?: string, 
+/**
+ * The mod folder.
+ */
+path: string, 
+/**
+ * The game can load the folder as it is.
+ */
+loadable: boolean, 
+/**
+ * The `url` of the mod's own About file, when it has one.
+ */
+url?: string, };
+
+/**
+ * Response of `library_mod_search`.
+ */
+export type LibraryModSearchDto = { 
+/**
+ * A scan exists. False means the list is empty because nothing was scanned, not because nothing matched.
+ */
+scanned: boolean, 
+/**
+ * The matches, best first.
+ */
+hits: Array<LibraryModHitDto>, 
+/**
+ * A plain sentence for the person when there is nothing to show (no scan yet, empty query).
+ */
+hint?: string, };
+
+/**
+ * Request of `library_mod_search`.
+ */
+export type LibraryModSearchRequest = { 
+/**
+ * Words to find in the name, the package id and the authors.
+ */
+query: string, 
+/**
+ * The most rows to return (default 20, at most 100).
+ */
+limit?: number, };
+
+/**
  * Patch of the library section; absent members stay unchanged.
  */
 export type LibraryPatch = { 
@@ -5041,6 +5407,172 @@ operations: number,
  * The findings of this file, in file order.
  */
 findings: Array<LintFindingDto>, };
+
+/**
+ * One version block of `LoadFolders.xml`.
+ */
+export type LoadBlockDto = { 
+/**
+ * Position among the children of the root (zero based).
+ */
+index: number, 
+/**
+ * The element name as written (`v1.6`).
+ */
+tag: string, 
+/**
+ * The version key the game uses (`1.6`, or `default`).
+ */
+key: string, 
+/**
+ * The entries in file order.
+ */
+entries: Array<LoadEntryDto>, };
+
+/**
+ * What to change in one entry; an absent member is left as it is and an empty list removes the attribute.
+ */
+export type LoadEntryChangeDto = { 
+/**
+ * New folder.
+ */
+path?: string, 
+/**
+ * New `IfModActive` ids.
+ */
+ifModActive?: Array<string>, 
+/**
+ * New `IfModActiveAll` ids.
+ */
+ifModActiveAll?: Array<string>, 
+/**
+ * New `IfModNotActive` ids.
+ */
+ifModNotActive?: Array<string>, 
+/**
+ * Remove the attributes the game does not read.
+ */
+dropIgnoredAttributes: boolean, };
+
+/**
+ * One folder entry of `LoadFolders.xml`.
+ */
+export type LoadEntryDto = { 
+/**
+ * Position in the block (zero based, counting every child element as the game does).
+ */
+index: number, 
+/**
+ * The folder relative to the mod root; empty is the mod root itself.
+ */
+path: string, 
+/**
+ * `IfModActive`: loads when any of these is active.
+ */
+ifModActive: Array<string>, 
+/**
+ * `IfModActiveAll`: loads when all of these are active.
+ */
+ifModActiveAll: Array<string>, 
+/**
+ * `IfModNotActive`: does not load when any of these is active.
+ */
+ifModNotActive: Array<string>, 
+/**
+ * Attributes the game does not read (for example `IfModActiveAny`); such an entry loads always.
+ */
+ignoredAttributes: Array<string>, 
+/**
+ * The folder exists in the mod.
+ */
+folderExists: boolean, };
+
+/**
+ * An entry to add.
+ */
+export type LoadEntryInputDto = { 
+/**
+ * The folder relative to the mod root; empty is the root.
+ */
+path: string, 
+/**
+ * `IfModActive` ids.
+ */
+ifModActive?: Array<string>, 
+/**
+ * `IfModActiveAll` ids.
+ */
+ifModActiveAll?: Array<string>, 
+/**
+ * `IfModNotActive` ids.
+ */
+ifModNotActive?: Array<string>, };
+
+/**
+ * One edit of `LoadFolders.xml`, applied in order; positions refer to the file as the earlier edits of the
+ * same request left it.
+ */
+export type LoadFoldersChangeDto = { "op": "add-block", 
+/**
+ * The version key (`1.6` or `default`).
+ */
+version: string, 
+/**
+ * The entries of the block.
+ */
+entries: Array<LoadEntryInputDto>, 
+/**
+ * The position among the blocks; the end when absent.
+ */
+at?: number, } | { "op": "remove-block", 
+/**
+ * The block position.
+ */
+block: number, } | { "op": "add-entry", 
+/**
+ * The block position.
+ */
+block: number, 
+/**
+ * The entry.
+ */
+entry: LoadEntryInputDto, 
+/**
+ * The position in the block; the end when absent.
+ */
+at?: number, } | { "op": "remove-entry", 
+/**
+ * The block position.
+ */
+block: number, 
+/**
+ * The entry position.
+ */
+entry: number, } | { "op": "move-entry", 
+/**
+ * The block position.
+ */
+block: number, 
+/**
+ * The entry position now.
+ */
+entry: number, 
+/**
+ * The new position.
+ */
+to: number, } | { "op": "set-entry", 
+/**
+ * The block position.
+ */
+block: number, 
+/**
+ * The entry position.
+ */
+entry: number, 
+/**
+ * What to change.
+ */
+change: LoadEntryChangeDto, };
 
 /**
  * Log level.
@@ -5374,6 +5906,290 @@ detail?: string, };
  * What the numbers of a progress record count.
  */
 export type ProgressUnitDto = "items" | "files" | "bytes";
+
+/**
+ * Every basic of a mod; response of `project_about_get` and the result part of the preview and the update.
+ */
+export type ProjectAboutDto = { 
+/**
+ * The project.
+ */
+projectId: string, 
+/**
+ * The About file relative to the mod root, as it is spelled on disk (`About/About.xml`).
+ */
+path: string, 
+/**
+ * SHA-256 of the file bytes; pass it back as `expectedHash` to refuse a save over a changed file.
+ */
+fileHash: string, 
+/**
+ * Size of the file in bytes.
+ */
+bytes: number, 
+/**
+ * The file was parsed. False when it is not well formed XML: the model is then empty and nothing can be
+ * saved until the text is fixed.
+ */
+parsed: boolean, 
+/**
+ * The edits of this API can be applied: the file is well formed, UTF-8 and not too large.
+ */
+editable: boolean, 
+/**
+ * Why not, in a plain sentence, when `editable` is false.
+ */
+notEditableReason?: string, 
+/**
+ * `name`.
+ */
+name: AboutTextDto, 
+/**
+ * `shortName`.
+ */
+shortName: AboutTextDto, 
+/**
+ * `author`.
+ */
+author: AboutTextDto, 
+/**
+ * `authors`.
+ */
+authors: AboutListDto, 
+/**
+ * `packageId`.
+ */
+packageId: AboutTextDto, 
+/**
+ * `description`.
+ */
+description: AboutTextDto, 
+/**
+ * `url`.
+ */
+url: AboutTextDto, 
+/**
+ * `modVersion`.
+ */
+modVersion: AboutTextDto, 
+/**
+ * `modIconPath`.
+ */
+modIconPath: AboutTextDto, 
+/**
+ * `supportedVersions`.
+ */
+supportedVersions: AboutListDto, 
+/**
+ * `modDependencies`.
+ */
+modDependencies: Array<AboutDependencyDto>, 
+/**
+ * The file has a `modDependencies` element.
+ */
+modDependenciesPresent: boolean, 
+/**
+ * `loadBefore`.
+ */
+loadBefore: AboutListDto, 
+/**
+ * `loadAfter`.
+ */
+loadAfter: AboutListDto, 
+/**
+ * `forceLoadBefore`.
+ */
+forceLoadBefore: AboutListDto, 
+/**
+ * `forceLoadAfter`.
+ */
+forceLoadAfter: AboutListDto, 
+/**
+ * `incompatibleWith`.
+ */
+incompatibleWith: AboutListDto, 
+/**
+ * `steamAppId`, when the file has a number there.
+ */
+steamAppId?: number, 
+/**
+ * The `ByVersion` blocks (advanced).
+ */
+byVersion: AboutByVersionDto, 
+/**
+ * Elements of the root that the game does not read, in file order. They are never touched.
+ */
+unknownTags: Array<string>, 
+/**
+ * `About/Preview.png`.
+ */
+preview: AboutPreviewDto, 
+/**
+ * The installed game version the diagnostics compared against, when known (`1.6`).
+ */
+gameVersion?: string, 
+/**
+ * The text of the file (cut at `rawText` limit of 262144 bytes, read only).
+ */
+rawText: string, 
+/**
+ * The raw text was cut.
+ */
+rawTruncated: boolean, 
+/**
+ * Findings about the values, with stable codes `about.*` and `field` pointers such as `/packageId`.
+ * They never block a save.
+ */
+diagnostics: Array<DiagnosticDto>, };
+
+/**
+ * Request of `project_about_get`.
+ */
+export type ProjectAboutGetRequest = { 
+/**
+ * The project.
+ */
+projectId: string, 
+/**
+ * Also return the preview image as a data URL (up to 2 MiB).
+ */
+includePreviewImage: boolean, };
+
+/**
+ * Response of `project_about_preview`: what the edits would do, nothing written.
+ */
+export type ProjectAboutPreviewDto = { 
+/**
+ * The edits change at least one byte.
+ */
+changed: boolean, 
+/**
+ * The unified diff of the file; empty when nothing changes.
+ */
+diff: string, 
+/**
+ * Hash of the file now.
+ */
+currentHash: string, 
+/**
+ * The model of the text the edits would produce, with its diagnostics.
+ */
+result: ProjectAboutDto, };
+
+/**
+ * Request of `project_about_preview`.
+ */
+export type ProjectAboutPreviewRequest = { 
+/**
+ * The project.
+ */
+projectId: string, 
+/**
+ * The edits.
+ */
+changes: Array<AboutChangeDto>, 
+/**
+ * The `fileHash` the edits were made against; the call is refused when the file differs now.
+ */
+expectedHash?: string, };
+
+/**
+ * Response of `project_about_remove_preview`.
+ */
+export type ProjectAboutRemovePreviewDto = { 
+/**
+ * A file was removed (false when there was none).
+ */
+removed: boolean, 
+/**
+ * Where the removed file was kept, in the app data folder.
+ */
+backup?: string, };
+
+/**
+ * Request of `project_about_remove_preview`.
+ */
+export type ProjectAboutRemovePreviewRequest = { 
+/**
+ * The project.
+ */
+projectId: string, };
+
+/**
+ * Response of `project_about_set_preview`.
+ */
+export type ProjectAboutSetPreviewDto = { 
+/**
+ * The file written.
+ */
+preview: AboutPreviewDto, 
+/**
+ * A different file was replaced.
+ */
+replaced: boolean, 
+/**
+ * The backup of the replaced file, in the app data folder.
+ */
+backup?: string, 
+/**
+ * Findings about the image (size, dimensions).
+ */
+diagnostics: Array<DiagnosticDto>, };
+
+/**
+ * Request of `project_about_set_preview`.
+ */
+export type ProjectAboutSetPreviewRequest = { 
+/**
+ * The project.
+ */
+projectId: string, 
+/**
+ * The PNG to copy (an absolute path on this machine).
+ */
+sourcePath: string, };
+
+/**
+ * Response of `project_about_update`.
+ */
+export type ProjectAboutUpdateDto = { 
+/**
+ * The file was written (false when the edits changed nothing).
+ */
+written: boolean, 
+/**
+ * The unified diff that was applied; empty when nothing changed.
+ */
+diff: string, 
+/**
+ * The backup of the replaced file, in the app data folder.
+ */
+backup?: string, 
+/**
+ * The file was read back and equals what was written.
+ */
+verified: boolean, 
+/**
+ * The model after the write.
+ */
+about: ProjectAboutDto, };
+
+/**
+ * Request of `project_about_update`.
+ */
+export type ProjectAboutUpdateRequest = { 
+/**
+ * The project.
+ */
+projectId: string, 
+/**
+ * The edits.
+ */
+changes: Array<AboutChangeDto>, 
+/**
+ * The `fileHash` the edits were made against; the call is refused when the file differs now.
+ */
+expectedHash?: string, };
 
 /**
  * Request of `project_close`.
@@ -5917,6 +6733,123 @@ export type ProjectLinkStatusRequest = {
 projectId: string, };
 
 /**
+ * The `LoadFolders.xml` of a project; response of `project_load_folders_get` and part of the update.
+ */
+export type ProjectLoadFoldersDto = { 
+/**
+ * The project.
+ */
+projectId: string, 
+/**
+ * The mod has a `LoadFolders.xml`.
+ */
+exists: boolean, 
+/**
+ * The file relative to the mod root, as spelled on disk; `LoadFolders.xml` when there is none yet.
+ */
+path: string, 
+/**
+ * SHA-256 of the file; absent when there is no file.
+ */
+fileHash?: string, 
+/**
+ * The edits can be applied (the file is well formed and UTF-8, or there is none to create).
+ */
+editable: boolean, 
+/**
+ * Why not, when `editable` is false.
+ */
+notEditableReason?: string, 
+/**
+ * The blocks in file order.
+ */
+blocks: Array<LoadBlockDto>, 
+/**
+ * `supportedVersions` of the About file.
+ */
+supportedVersions: Array<string>, 
+/**
+ * The folders of the mod root that are named like a game version (`1.5`, `1.6`), sorted.
+ */
+versionFolders: Array<string>, 
+/**
+ * The text of the file (cut at 262144 bytes, read only); empty when there is none.
+ */
+rawText: string, 
+/**
+ * The raw text was cut.
+ */
+rawTruncated: boolean, 
+/**
+ * Findings: a folder that does not exist, a block for an unsupported version, a gated folder without
+ * its condition, a condition the game does not read. They never block a save.
+ */
+diagnostics: Array<DiagnosticDto>, };
+
+/**
+ * Request of `project_load_folders_get`.
+ */
+export type ProjectLoadFoldersGetRequest = { 
+/**
+ * The project.
+ */
+projectId: string, };
+
+/**
+ * Response of `project_load_folders_update`.
+ */
+export type ProjectLoadFoldersUpdateDto = { 
+/**
+ * The file was written (false for a dry run or when nothing changed).
+ */
+written: boolean, 
+/**
+ * The file did not exist and is now created.
+ */
+created: boolean, 
+/**
+ * The unified diff.
+ */
+diff: string, 
+/**
+ * The backup of the replaced file, in the app data folder.
+ */
+backup?: string, 
+/**
+ * The file was read back and equals what was written (true for a dry run).
+ */
+verified: boolean, 
+/**
+ * The state after the edits (of the text that was written, or would be written for a dry run).
+ */
+loadFolders: ProjectLoadFoldersDto, };
+
+/**
+ * Request of `project_load_folders_update`.
+ */
+export type ProjectLoadFoldersUpdateRequest = { 
+/**
+ * The project.
+ */
+projectId: string, 
+/**
+ * The edits.
+ */
+changes: Array<LoadFoldersChangeDto>, 
+/**
+ * The `fileHash` the edits were made against; the call is refused when the file differs now.
+ */
+expectedHash?: string, 
+/**
+ * Create `LoadFolders.xml` when the mod has none (an empty `loadFolders` root the edits then fill).
+ */
+create: boolean, 
+/**
+ * Compute the result and the diff and write nothing.
+ */
+dryRun: boolean, };
+
+/**
  * Request of `project_open`.
  */
 export type ProjectOpenRequest = { 
@@ -5979,6 +6912,37 @@ projectId: string,
  * Only report what would be created.
  */
 dryRun: boolean, };
+
+/**
+ * The answer of `project_scaffold_preview`.
+ */
+export type ProjectScaffoldPreviewDto = { 
+/**
+ * The folder the mod would be created in (the request path as the scaffold reads it).
+ */
+root: string, 
+/**
+ * True when no finding is an error: `project_create` would accept the request.
+ */
+valid: boolean, 
+/**
+ * Findings about the values, with a `field` pointer (`/name`, `/packageId`, `/supportedVersions`,
+ * `/target`). Empty when the request is clean.
+ */
+diagnostics: Array<DiagnosticDto>, 
+/**
+ * The entries the scaffold would write, sorted by path, a folder before its files. Empty when the
+ * request is not valid.
+ */
+entries: Array<ScaffoldEntryDto>, 
+/**
+ * True when the target folder already exists.
+ */
+targetExists: boolean, 
+/**
+ * Planned files that already exist with other content; a create would refuse them.
+ */
+conflicts: Array<string>, };
 
 /**
  * Summary of an open project; response of `project_open`.
@@ -6090,6 +7054,65 @@ projectId: string,
  * The most entries the tree holds; beyond it files are counted but not listed. Absent means 4000.
  */
 maxNodes?: number, };
+
+/**
+ * Response of `project_version_add`.
+ */
+export type ProjectVersionAddDto = { 
+/**
+ * The version key (`1.6`).
+ */
+version: string, 
+/**
+ * The folder created, relative to the mod root.
+ */
+folder: string, 
+/**
+ * Every folder created (or that a dry run would create), relative to the mod root.
+ */
+createdFolders: Array<string>, 
+/**
+ * A block was added to `LoadFolders.xml`.
+ */
+blockAdded: boolean, 
+/**
+ * `LoadFolders.xml` was created.
+ */
+loadFoldersCreated: boolean, 
+/**
+ * The version is not in `supportedVersions` of About.xml (the call does not change that file).
+ */
+notInSupportedVersions: boolean, 
+/**
+ * Findings, for example that the folder exists already.
+ */
+diagnostics: Array<DiagnosticDto>, };
+
+/**
+ * Request of `project_version_add`.
+ */
+export type ProjectVersionAddRequest = { 
+/**
+ * The project.
+ */
+projectId: string, 
+/**
+ * The game version (`1.6`).
+ */
+version: string, 
+/**
+ * Also create the standard sub folders of a version folder (folders only, no file).
+ */
+standardFolders: boolean, 
+/**
+ * Add a block for the version to `LoadFolders.xml`: it lists the mod root and the new folder.
+ * Without this the block is added only when the mod already has a `LoadFolders.xml`.
+ */
+addBlock: boolean, 
+/**
+ * Compute what would happen and write nothing.
+ */
+dryRun: boolean, };
 
 /**
  * A reference to an existing projectile or an inline definition.
@@ -6753,6 +7776,24 @@ tree: JsonValue,
  * Patch events in application order.
  */
 patchEvents: Array<PatchEventDto>, };
+
+/**
+ * One folder or file the scaffold would write.
+ */
+export type ScaffoldEntryDto = { 
+/**
+ * The path relative to the new mod folder, `/` separated.
+ */
+path: string, 
+/**
+ * Folder or file.
+ */
+kind: ScaffoldEntryKindDto, };
+
+/**
+ * Whether a planned entry is a folder or a file.
+ */
+export type ScaffoldEntryKindDto = "folder" | "file";
 
 /**
  * Scan counters.

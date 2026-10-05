@@ -11,6 +11,7 @@ pub(crate) mod drafts;
 pub(crate) mod generic;
 pub(crate) mod lint;
 pub(crate) mod project;
+pub(crate) mod project_about;
 pub(crate) mod project_fix;
 pub(crate) mod project_layout;
 pub(crate) mod project_link;
@@ -37,6 +38,11 @@ pub(crate) fn run(s: &Session, command: &Command) -> CliResult {
         Command::Scan(args) => scan::run(s, args),
         Command::Settings { cmd } => settings::run(s, cmd),
         Command::Project { cmd } => project::run(s, cmd),
+        Command::Library { cmd } => match cmd {
+            crate::cli::LibraryCmd::Search { query, limit } => {
+                project_about::library_search(s, query, *limit)
+            }
+        },
         Command::Defs { cmd } => defs::run(s, cmd),
         Command::Designer { cmd } | Command::Direct(cmd) => run_designer(s, cmd),
     }

@@ -324,6 +324,24 @@ impl SpanEditor {
             let frag = self.to_doc_eol(&render_at(node, "", "", true));
             return self.splice(at..at, &frag);
         }
+        if !e.empty {
+            let inner = &self.text[e.open_end..e.close_start];
+            if !is_ws_only(inner) {
+                // only comments or processing instructions inside: keep them and add the child after them
+                let tail = inner.len() - inner.trim_end_matches([' ', '\t', '\r', '\n']).len();
+                let at = e.close_start - tail;
+                let frag = match own_indent.as_deref() {
+                    Some(own) if tail > 0 => {
+                        let unit = self.indent_unit();
+                        let child = format!("{own}{unit}");
+                        let body = self.to_doc_eol(&render_at(node, &child, &unit, true));
+                        format!("{}{child}{body}", self.eol())
+                    }
+                    _ => self.to_doc_eol(&render_at(node, "", "", true)),
+                };
+                return self.splice(at..at, &frag);
+            }
+        }
         let content = self.children_block(std::slice::from_ref(node), own_indent.as_deref());
         if e.empty {
             let range = self.empty_tag_tail(idx);

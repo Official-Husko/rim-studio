@@ -36,8 +36,10 @@ use rimstudio_io::guard::{
 use crate::error::{ToolkitError, ToolkitResult};
 
 mod copy;
+mod remove;
 
 pub use copy::CopyReport;
+pub use remove::RemoveReport;
 
 /// The longest relative path (bytes) the writer accepts. Windows tools stop at 260 characters for the whole
 /// path, so a mod path that is much longer cannot be used by every player.

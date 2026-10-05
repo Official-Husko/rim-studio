@@ -4,10 +4,11 @@ use std::fmt::Write as _;
 
 use serde_json::{Value, json};
 
+use super::project_about as about;
 use super::project_fix as fix;
 use super::project_layout as layout;
 use super::project_link as link;
-use crate::cli::{FixCmd, LinkCmd, ProjectCmd};
+use crate::cli::{AboutCmd, FixCmd, LinkCmd, LoadFoldersCmd, ProjectCmd, VersionCmd};
 use crate::error::CliResult;
 use crate::fmt::{arr_at, bool_at, count_diagnostics, render_diagnostics, str_at, u64_at};
 use crate::session::{Session, absolute};
@@ -160,6 +161,28 @@ pub(crate) fn run(s: &Session, cmd: &ProjectCmd) -> CliResult {
                 yes,
             } => link::create(s, path, *mode, *confirm_game_running, *yes)?,
             LinkCmd::Remove { path } => link::remove(s, path)?,
+        },
+        ProjectCmd::About(cmd) => match cmd {
+            AboutCmd::Show { path, raw } => about::about_show(s, path, *raw)?,
+            AboutCmd::Set(args) => about::about_set(s, args)?,
+            AboutCmd::Preview {
+                path,
+                image,
+                remove,
+            } => about::about_preview(s, path, image.as_deref(), *remove)?,
+        },
+        ProjectCmd::LoadFolders(cmd) => match cmd {
+            LoadFoldersCmd::Show { path } => about::load_folders_show(s, path)?,
+            LoadFoldersCmd::Set(args) => about::load_folders_set(s, args)?,
+        },
+        ProjectCmd::Version(cmd) => match cmd {
+            VersionCmd::Add {
+                path,
+                game_version,
+                standard_folders,
+                add_block,
+                yes,
+            } => about::version_add(s, path, game_version, *standard_folders, *add_block, *yes)?,
         },
         ProjectCmd::Open { path } => {
             let summary = open(s, path)?;

@@ -1,0 +1,17 @@
+{
+  "scanned": true,
+  "hits": [
+    {
+      "packageId": "ceteam.combatextended",
+      "name": "Combat Extended",
+      "authors": [
+        "CE Team"
+      ],
+      "source": "workshop",
+      "workshopId": "2890901044",
+      "workshopUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=2890901044",
+      "path": "/steam/workshop/content/294100/2890901044",
+      "loadable": true
+    }
+  ]
+}

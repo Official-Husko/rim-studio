@@ -1,0 +1,19 @@
+{
+  "preview": {
+    "exists": true,
+    "path": "About/Preview.png",
+    "bytes": 48213,
+    "width": 640,
+    "height": 360,
+    "sha256": "1111111111111111111111111111111111111111111111111111111111111111"
+  },
+  "replaced": true,
+  "diagnostics": [
+    {
+      "code": "about.preview-dimensions",
+      "severity": "warning",
+      "message": "the preview image is 100 by 50 pixels",
+      "field": ""
+    }
+  ]
+}

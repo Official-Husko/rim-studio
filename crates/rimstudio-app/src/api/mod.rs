@@ -14,6 +14,9 @@
 //! - [`library`]: the `library_scan` job.
 //! - [`defs`]: `defs_search`, `defs_get_resolved`.
 //! - [`project`]: `project_open`, `project_create`, `project_close`.
+//! - [`project_about`]: the mod basics commands (`project_about_*`, `project_load_folders_*`,
+//!   `project_version_add`) and `library_mod_search`.
+//! - [`project_new`]: `project_scaffold_preview`, what a new mod would contain.
 //! - [`project_fix`]: the `project_layout_fix_*` commands (plan, apply, undo, history).
 //! - [`project_link`]: the `project_link_*` commands (status, create, remove): make a project visible to the game.
 //! - [`designer_archetype`]: the `designer_archetype_*` commands (catalogue, proposal, apply).
@@ -29,7 +32,9 @@ pub mod detect;
 pub mod jobs;
 pub mod library;
 pub mod project;
+pub mod project_about;
 pub mod project_fix;
 pub mod project_link;
+pub mod project_new;
 pub mod settings;
 pub mod sources;

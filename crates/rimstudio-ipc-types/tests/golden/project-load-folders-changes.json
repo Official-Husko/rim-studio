@@ -1,0 +1,54 @@
+{
+  "projectId": "p-0a1b2c3d",
+  "changes": [
+    {
+      "op": "add-block",
+      "version": "1.6",
+      "entries": [
+        {
+          "path": "/"
+        }
+      ],
+      "at": 0
+    },
+    {
+      "op": "remove-block",
+      "block": 1
+    },
+    {
+      "op": "add-entry",
+      "block": 0,
+      "entry": {
+        "path": "1.6/Compat/CE",
+        "ifModActive": [
+          "ceteam.combatextended"
+        ]
+      }
+    },
+    {
+      "op": "remove-entry",
+      "block": 0,
+      "entry": 2
+    },
+    {
+      "op": "move-entry",
+      "block": 0,
+      "entry": 2,
+      "to": 0
+    },
+    {
+      "op": "set-entry",
+      "block": 0,
+      "entry": 1,
+      "change": {
+        "ifModActive": [
+          "a.b"
+        ],
+        "dropIgnoredAttributes": true
+      }
+    }
+  ],
+  "expectedHash": "2222222222222222222222222222222222222222222222222222222222222222",
+  "create": false,
+  "dryRun": true
+}

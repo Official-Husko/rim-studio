@@ -1,0 +1,134 @@
+{
+  "written": true,
+  "diff": "--- About/About.xml\n",
+  "backup": "/data/project-backups/p-0a1b2c3d/About/About.xml.20261005T101010Z.bak",
+  "verified": true,
+  "about": {
+    "projectId": "p-0a1b2c3d",
+    "path": "About/About.xml",
+    "fileHash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "bytes": 612,
+    "parsed": true,
+    "editable": true,
+    "name": {
+      "value": "RS Arms",
+      "present": true
+    },
+    "shortName": {
+      "value": "",
+      "present": false
+    },
+    "author": {
+      "value": "RS Author",
+      "present": true
+    },
+    "authors": {
+      "items": [],
+      "present": false
+    },
+    "packageId": {
+      "value": "rs.arms",
+      "present": true
+    },
+    "description": {
+      "value": "Adds fictional arms.",
+      "present": true
+    },
+    "url": {
+      "value": "",
+      "present": false
+    },
+    "modVersion": {
+      "value": "0.1",
+      "present": true
+    },
+    "modIconPath": {
+      "value": "",
+      "present": false
+    },
+    "supportedVersions": {
+      "items": [
+        "1.5",
+        "1.6"
+      ],
+      "present": true
+    },
+    "modDependencies": [
+      {
+        "packageId": "rs.base",
+        "displayName": "RS Base",
+        "steamWorkshopUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=1",
+        "alternatives": [
+          "rs.base2"
+        ]
+      }
+    ],
+    "modDependenciesPresent": true,
+    "loadBefore": {
+      "items": [],
+      "present": false
+    },
+    "loadAfter": {
+      "items": [
+        "ludeon.rimworld"
+      ],
+      "present": true
+    },
+    "forceLoadBefore": {
+      "items": [],
+      "present": false
+    },
+    "forceLoadAfter": {
+      "items": [],
+      "present": false
+    },
+    "incompatibleWith": {
+      "items": [],
+      "present": false
+    },
+    "byVersion": {
+      "advanced": true,
+      "descriptions": [
+        {
+          "version": "1.6",
+          "text": "For 1.6."
+        }
+      ],
+      "relations": [
+        {
+          "version": "1.5",
+          "modDependencies": [],
+          "loadBefore": [],
+          "loadAfter": [
+            "rs.old"
+          ],
+          "forceLoadBefore": [],
+          "forceLoadAfter": [],
+          "incompatibleWith": []
+        }
+      ]
+    },
+    "unknownTags": [
+      "customThing"
+    ],
+    "preview": {
+      "exists": true,
+      "path": "About/Preview.png",
+      "bytes": 48213,
+      "width": 640,
+      "height": 360,
+      "sha256": "1111111111111111111111111111111111111111111111111111111111111111"
+    },
+    "gameVersion": "1.6",
+    "rawText": "<ModMetaData/>",
+    "rawTruncated": false,
+    "diagnostics": [
+      {
+        "code": "about.package-id-collision",
+        "severity": "warning",
+        "message": "the mod \"Other\" in /mods/Other uses the same packageId",
+        "field": "/packageId"
+      }
+    ]
+  }
+}

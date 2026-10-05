@@ -144,6 +144,26 @@ pub enum ToolkitError {
         /// Why.
         reason: String,
     },
+    /// A file changed on disk after the caller read it, so an edit made against the old text is refused.
+    #[error("{rel} changed on disk since it was read; read it again")]
+    FileStale {
+        /// The file, relative to the project root.
+        rel: String,
+    },
+    /// A file cannot be edited by the mod basics commands (not well formed, not UTF-8, too large).
+    #[error("{rel} cannot be edited: {reason}")]
+    FileNotEditable {
+        /// The file, relative to the project root.
+        rel: String,
+        /// Why, in plain words.
+        reason: String,
+    },
+    /// An edit does not apply to the file as it is (an entry that is not there, a value that cannot be written).
+    #[error("the change cannot be applied: {reason}")]
+    EditInvalid {
+        /// Why, in plain words.
+        reason: String,
+    },
 }
 
 impl ToolkitError {
@@ -174,6 +194,9 @@ impl ToolkitError {
             Self::FixNotFound { .. } => codes::PROJECT_FIX_NOT_FOUND,
             Self::FixJournalDamaged { .. } => codes::PROJECT_FIX_JOURNAL_DAMAGED,
             Self::FixUndoRefused { .. } => codes::PROJECT_FIX_UNDO_REFUSED,
+            Self::FileStale { .. } => codes::PROJECT_FILE_STALE,
+            Self::FileNotEditable { .. } => codes::PROJECT_FILE_NOT_EDITABLE,
+            Self::EditInvalid { .. } => codes::PROJECT_EDIT_INVALID,
         }
     }
 
@@ -253,6 +276,12 @@ mod tests {
                 path: "x".into(),
                 reason: "y".into(),
             },
+            ToolkitError::FileStale { rel: "x".into() },
+            ToolkitError::FileNotEditable {
+                rel: "x".into(),
+                reason: "y".into(),
+            },
+            ToolkitError::EditInvalid { reason: "x".into() },
         ];
         for e in &all {
             assert!(

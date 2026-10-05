@@ -253,6 +253,17 @@ fn every_command_of_the_slice_dispatches_in_one_session() {
     assert!(resolved["tree"].is_object());
 
     // projects
+    let preview = run.ok(
+        "project_scaffold_preview",
+        json!({
+            "path": f.base.join("projects/RS_Created").as_str(),
+            "name": "RS Created",
+            "packageId": "rs.created",
+            "author": "RS Author",
+        }),
+    );
+    assert_eq!(preview["valid"], json!(true));
+    assert!(preview["entries"].as_array().is_some_and(|e| !e.is_empty()));
     let created = run.ok(
         "project_create",
         json!({
@@ -614,6 +625,66 @@ fn every_command_of_the_slice_dispatches_in_one_session() {
         "unknown"
     );
 
+    // the mod basics: About, preview image, LoadFolders, version folders, library search
+    let basics_root = project_folder(&f, "RS_Basics", &[]);
+    let basics = run.ok("project_open", json!({"path": basics_root.as_str()}));
+    let basics_id = s_of(&basics, "projectId");
+    let about = run.ok("project_about_get", json!({"projectId": basics_id.clone()}));
+    assert_eq!(about["packageId"]["value"], json!("rs.testmod"));
+    assert_eq!(about["editable"], json!(true));
+    let about_hash = s_of(&about, "fileHash");
+    let rename = json!([{"op": "set", "field": "name", "value": "RS Renamed"}]);
+    let previewed = run.ok(
+        "project_about_preview",
+        json!({"projectId": basics_id.clone(), "changes": rename.clone(), "expectedHash": about_hash.clone()}),
+    );
+    assert_eq!(previewed["changed"], json!(true));
+    assert_eq!(previewed["result"]["name"]["value"], json!("RS Renamed"));
+    let updated = run.ok(
+        "project_about_update",
+        json!({"projectId": basics_id.clone(), "changes": rename.clone(), "expectedHash": about_hash.clone()}),
+    );
+    assert_eq!(updated["written"], json!(true));
+    assert_eq!(updated["about"]["name"]["value"], json!("RS Renamed"));
+    let stale = run.err(
+        "project_about_update",
+        json!({"projectId": basics_id.clone(), "changes": rename, "expectedHash": about_hash}),
+    );
+    assert_eq!(stale.code, "project.file-stale");
+    let art = f.base.join("basics-art.png");
+    std::fs::write(
+        art.as_std_path(),
+        rimstudio_design::assets::png::build_png(640, 360),
+    )
+    .unwrap();
+    let set = run.ok(
+        "project_about_set_preview",
+        json!({"projectId": basics_id.clone(), "sourcePath": art.as_str()}),
+    );
+    assert_eq!(set["preview"]["width"], json!(640));
+    let gone = run.ok(
+        "project_about_remove_preview",
+        json!({"projectId": basics_id.clone()}),
+    );
+    assert_eq!(gone["removed"], json!(true));
+    let lf = run.ok(
+        "project_load_folders_get",
+        json!({"projectId": basics_id.clone()}),
+    );
+    assert_eq!(lf["exists"], json!(false));
+    let lf_made = run.ok(
+        "project_load_folders_update",
+        json!({"projectId": basics_id.clone(), "create": true, "changes": [{"op": "add-block", "version": "1.6", "entries": [{"path": "/"}]}]}),
+    );
+    assert_eq!(lf_made["created"], json!(true));
+    let added = run.ok(
+        "project_version_add",
+        json!({"projectId": basics_id.clone(), "version": "1.6", "standardFolders": true}),
+    );
+    assert_eq!(added["folder"], json!("1.6"));
+    let found = run.ok("library_mod_search", json!({"query": "rs", "limit": 5}));
+    assert_eq!(found["scanned"], json!(true));
+    assert!(found["hits"].is_array());
 
     // weapon archetypes: the catalogue, a proposal and its application to a draft
     let catalog = run.ok(

@@ -15,17 +15,24 @@
 //! The tool does not use the designer module (ADR 0004). The pieces both need (the project view, the writer,
 //! the merging of `LoadFolders.xml`) live in [`crate::shared`].
 
+pub mod about;
+pub mod about_apply;
+pub mod about_lint;
+pub mod about_preview;
 pub mod check;
 pub mod fix;
 pub mod fix_apply;
 pub mod history;
 pub mod journal;
 pub mod link;
+pub mod load_folders;
 pub mod read;
 pub mod scaffold_missing;
+pub mod scaffold_preview;
 pub mod scan;
 pub mod tree;
 pub mod undo;
+pub mod versions;
 
 use camino::{Utf8Path, Utf8PathBuf};
 use rimstudio_core::diag::Severity;

@@ -35,6 +35,7 @@ pub mod ignore_set;
 pub mod jsonc;
 pub mod migrate;
 pub mod real_fs;
+pub mod remove;
 pub mod rename;
 pub mod roots;
 pub mod schema;

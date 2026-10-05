@@ -1,0 +1,75 @@
+{
+  "projectId": "p-0a1b2c3d",
+  "changes": [
+    {
+      "op": "set",
+      "field": "name",
+      "value": "RS Arms"
+    },
+    {
+      "op": "clear",
+      "field": "url"
+    },
+    {
+      "op": "list-set",
+      "field": "supportedVersions",
+      "items": [
+        "1.6"
+      ]
+    },
+    {
+      "op": "list-add",
+      "field": "loadAfter",
+      "value": "rs.base",
+      "at": 0
+    },
+    {
+      "op": "list-remove",
+      "field": "loadBefore",
+      "value": "rs.late"
+    },
+    {
+      "op": "list-move",
+      "field": "loadAfter",
+      "value": "rs.base",
+      "to": 2
+    },
+    {
+      "op": "dependency-add",
+      "dependency": {
+        "packageId": "rs.base",
+        "displayName": "RS Base"
+      }
+    },
+    {
+      "op": "dependency-update",
+      "packageId": "rs.base",
+      "change": {
+        "displayName": "RS Base Mod",
+        "downloadUrl": ""
+      }
+    },
+    {
+      "op": "dependency-remove",
+      "packageId": "rs.gone"
+    },
+    {
+      "op": "dependency-move",
+      "packageId": "rs.base",
+      "to": 0
+    },
+    {
+      "op": "by-version-list-set",
+      "field": "loadAfter",
+      "version": "1.6",
+      "items": [
+        "rs.six"
+      ]
+    },
+    {
+      "op": "by-version-description-set",
+      "version": "1.6"
+    }
+  ],
+  "expectedHash": "0000000000000000000000000000000000000000000000000000000000000000"
+}

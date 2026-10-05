@@ -6,10 +6,12 @@
 //! appears only here (invariants I-02 and I-03).
 
 pub mod about;
+pub mod about_edit;
 pub mod defs_scan;
 pub mod edit;
 pub mod error;
 pub mod load_folders;
+pub mod load_folders_edit;
 pub mod modes;
 pub mod mods_config;
 pub mod patches;

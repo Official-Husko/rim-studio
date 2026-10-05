@@ -65,9 +65,21 @@ import type {
   FitReportDto,
   JobStatusRequest,
   JobStatusResponse,
+  LibraryModSearchDto,
+  LibraryModSearchRequest,
   LibraryScanRequest,
   LibraryScanResult,
   PreviewDto,
+  ProjectAboutDto,
+  ProjectAboutGetRequest,
+  ProjectAboutPreviewDto,
+  ProjectAboutPreviewRequest,
+  ProjectAboutRemovePreviewDto,
+  ProjectAboutRemovePreviewRequest,
+  ProjectAboutSetPreviewDto,
+  ProjectAboutSetPreviewRequest,
+  ProjectAboutUpdateDto,
+  ProjectAboutUpdateRequest,
   ProjectCloseRequest,
   ProjectCloseResponse,
   ProjectCreateRequest,
@@ -87,13 +99,20 @@ import type {
   ProjectLinkResultDto,
   ProjectLinkStatusDto,
   ProjectLinkStatusRequest,
+  ProjectLoadFoldersDto,
+  ProjectLoadFoldersGetRequest,
+  ProjectLoadFoldersUpdateDto,
+  ProjectLoadFoldersUpdateRequest,
   ProjectOpenRequest,
   ProjectReadFileRequest,
   ProjectScaffoldMissingDto,
   ProjectScaffoldMissingRequest,
+  ProjectScaffoldPreviewDto,
   ProjectSummaryDto,
   ProjectTreeDto,
   ProjectTreeRequest,
+  ProjectVersionAddDto,
+  ProjectVersionAddRequest,
   QuizStepDto,
   ReferenceListDto,
   ResolvedDefDto,
@@ -140,8 +159,18 @@ export interface CommandTable {
   project_close: { kind: "action"; request: ProjectCloseRequest; response: ProjectCloseResponse };
   project_tree: { kind: "query"; request: ProjectTreeRequest; response: ProjectTreeDto };
   project_layout_check: { kind: "query"; request: ProjectLayoutCheckRequest; response: ProjectLayoutCheckDto };
+  project_scaffold_preview: { kind: "query"; request: ProjectCreateRequest; response: ProjectScaffoldPreviewDto };
   project_scaffold_missing: { kind: "action"; request: ProjectScaffoldMissingRequest; response: ProjectScaffoldMissingDto };
   project_read_file: { kind: "query"; request: ProjectReadFileRequest; response: ProjectFileDto };
+  project_about_get: { kind: "query"; request: ProjectAboutGetRequest; response: ProjectAboutDto };
+  project_about_preview: { kind: "query"; request: ProjectAboutPreviewRequest; response: ProjectAboutPreviewDto };
+  project_about_update: { kind: "action"; request: ProjectAboutUpdateRequest; response: ProjectAboutUpdateDto };
+  project_about_set_preview: { kind: "action"; request: ProjectAboutSetPreviewRequest; response: ProjectAboutSetPreviewDto };
+  project_about_remove_preview: { kind: "action"; request: ProjectAboutRemovePreviewRequest; response: ProjectAboutRemovePreviewDto };
+  project_load_folders_get: { kind: "query"; request: ProjectLoadFoldersGetRequest; response: ProjectLoadFoldersDto };
+  project_load_folders_update: { kind: "action"; request: ProjectLoadFoldersUpdateRequest; response: ProjectLoadFoldersUpdateDto };
+  project_version_add: { kind: "action"; request: ProjectVersionAddRequest; response: ProjectVersionAddDto };
+  library_mod_search: { kind: "query"; request: LibraryModSearchRequest; response: LibraryModSearchDto };
   project_layout_fix_plan: { kind: "query"; request: ProjectLayoutFixPlanRequest; response: ProjectLayoutFixPlanDto };
   project_layout_fix_apply: { kind: "job"; request: ProjectLayoutFixApplyRequest; response: ProjectLayoutFixApplyDto };
   project_layout_fix_undo: { kind: "action"; request: ProjectLayoutFixUndoRequest; response: ProjectLayoutFixUndoDto };
@@ -215,8 +244,18 @@ export const commands = {
   projectClose: { name: "project_close", kind: "action" },
   projectTree: { name: "project_tree", kind: "query" },
   projectLayoutCheck: { name: "project_layout_check", kind: "query" },
+  projectScaffoldPreview: { name: "project_scaffold_preview", kind: "query" },
   projectScaffoldMissing: { name: "project_scaffold_missing", kind: "action" },
   projectReadFile: { name: "project_read_file", kind: "query" },
+  projectAboutGet: { name: "project_about_get", kind: "query" },
+  projectAboutPreview: { name: "project_about_preview", kind: "query" },
+  projectAboutUpdate: { name: "project_about_update", kind: "action" },
+  projectAboutSetPreview: { name: "project_about_set_preview", kind: "action" },
+  projectAboutRemovePreview: { name: "project_about_remove_preview", kind: "action" },
+  projectLoadFoldersGet: { name: "project_load_folders_get", kind: "query" },
+  projectLoadFoldersUpdate: { name: "project_load_folders_update", kind: "action" },
+  projectVersionAdd: { name: "project_version_add", kind: "action" },
+  libraryModSearch: { name: "library_mod_search", kind: "query" },
   projectLayoutFixPlan: { name: "project_layout_fix_plan", kind: "query" },
   projectLayoutFixApply: { name: "project_layout_fix_apply", kind: "job" },
   projectLayoutFixUndo: { name: "project_layout_fix_undo", kind: "action" },
@@ -276,8 +315,18 @@ export const commandNames = [
   "project_close",
   "project_tree",
   "project_layout_check",
+  "project_scaffold_preview",
   "project_scaffold_missing",
   "project_read_file",
+  "project_about_get",
+  "project_about_preview",
+  "project_about_update",
+  "project_about_set_preview",
+  "project_about_remove_preview",
+  "project_load_folders_get",
+  "project_load_folders_update",
+  "project_version_add",
+  "library_mod_search",
   "project_layout_fix_plan",
   "project_layout_fix_apply",
   "project_layout_fix_undo",

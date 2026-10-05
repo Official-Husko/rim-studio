@@ -77,6 +77,14 @@ pub mod wire {
         ProjectScaffoldMissingDto, ProjectScaffoldMissingRequest, ProjectSummaryDto,
         ProjectTreeDto, ProjectTreeRequest,
     };
+    pub use rimstudio_ipc_types::project_about::{
+        LibraryModSearchDto, LibraryModSearchRequest, ProjectAboutDto, ProjectAboutGetRequest,
+        ProjectAboutPreviewDto, ProjectAboutPreviewRequest, ProjectAboutRemovePreviewDto,
+        ProjectAboutRemovePreviewRequest, ProjectAboutSetPreviewDto, ProjectAboutSetPreviewRequest,
+        ProjectAboutUpdateDto, ProjectAboutUpdateRequest, ProjectLoadFoldersDto,
+        ProjectLoadFoldersGetRequest, ProjectLoadFoldersUpdateDto, ProjectLoadFoldersUpdateRequest,
+        ProjectVersionAddDto, ProjectVersionAddRequest,
+    };
     pub use rimstudio_ipc_types::project_fix::{
         ProjectLayoutFixApplyDto, ProjectLayoutFixApplyRequest, ProjectLayoutFixHistoryDto,
         ProjectLayoutFixHistoryRequest, ProjectLayoutFixPlanDto, ProjectLayoutFixPlanRequest,
@@ -86,6 +94,7 @@ pub mod wire {
         ProjectLinkCreateRequest, ProjectLinkRemoveRequest, ProjectLinkResultDto,
         ProjectLinkStatusDto, ProjectLinkStatusRequest,
     };
+    pub use rimstudio_ipc_types::project_new::ProjectScaffoldPreviewDto;
     pub use rimstudio_ipc_types::settings::{SettingsDto, SettingsGetRequest, SettingsUpdate};
     pub use rimstudio_ipc_types::tools::AppListToolsResponse;
 }
@@ -287,8 +296,18 @@ macro_rules! for_each_command {
             action project_close (ctx, req: ProjectCloseRequest) -> ProjectCloseResponse = $crate::api::project::project_close;
             query  project_tree (ctx, req: ProjectTreeRequest) -> ProjectTreeDto = $crate::api::project::project_tree;
             query  project_layout_check (ctx, req: ProjectLayoutCheckRequest) -> ProjectLayoutCheckDto = $crate::api::project::project_layout_check;
+            query  project_scaffold_preview (ctx, req: ProjectCreateRequest) -> ProjectScaffoldPreviewDto = $crate::api::project_new::project_scaffold_preview;
             action project_scaffold_missing (ctx, req: ProjectScaffoldMissingRequest) -> ProjectScaffoldMissingDto = $crate::api::project::project_scaffold_missing;
             query  project_read_file (ctx, req: ProjectReadFileRequest) -> ProjectFileDto = $crate::api::project::project_read_file;
+            query  project_about_get (ctx, req: ProjectAboutGetRequest) -> ProjectAboutDto = $crate::api::project_about::project_about_get;
+            query  project_about_preview (ctx, req: ProjectAboutPreviewRequest) -> ProjectAboutPreviewDto = $crate::api::project_about::project_about_preview;
+            action project_about_update (ctx, req: ProjectAboutUpdateRequest) -> ProjectAboutUpdateDto = $crate::api::project_about::project_about_update;
+            action project_about_set_preview (ctx, req: ProjectAboutSetPreviewRequest) -> ProjectAboutSetPreviewDto = $crate::api::project_about::project_about_set_preview;
+            action project_about_remove_preview (ctx, req: ProjectAboutRemovePreviewRequest) -> ProjectAboutRemovePreviewDto = $crate::api::project_about::project_about_remove_preview;
+            query  project_load_folders_get (ctx, req: ProjectLoadFoldersGetRequest) -> ProjectLoadFoldersDto = $crate::api::project_about::project_load_folders_get;
+            action project_load_folders_update (ctx, req: ProjectLoadFoldersUpdateRequest) -> ProjectLoadFoldersUpdateDto = $crate::api::project_about::project_load_folders_update;
+            action project_version_add (ctx, req: ProjectVersionAddRequest) -> ProjectVersionAddDto = $crate::api::project_about::project_version_add;
+            query  library_mod_search (ctx, req: LibraryModSearchRequest) -> LibraryModSearchDto = $crate::api::project_about::library_mod_search;
             query  project_layout_fix_plan (ctx, req: ProjectLayoutFixPlanRequest) -> ProjectLayoutFixPlanDto = $crate::api::project_fix::project_layout_fix_plan;
             job    project_layout_fix_apply (ctx, req: ProjectLayoutFixApplyRequest) -> ProjectLayoutFixApplyDto = $crate::api::project_fix::project_layout_fix_apply;
             action project_layout_fix_undo (ctx, req: ProjectLayoutFixUndoRequest) -> ProjectLayoutFixUndoDto = $crate::api::project_fix::project_layout_fix_undo;

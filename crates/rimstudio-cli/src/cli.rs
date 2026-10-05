@@ -97,6 +97,12 @@ pub(crate) enum Command {
         #[command(subcommand)]
         cmd: ProjectCmd,
     },
+    /// Look things up in the scanned mod library.
+    Library {
+        /// The library command.
+        #[command(subcommand)]
+        cmd: LibraryCmd,
+    },
     /// Search and resolve definitions.
     Defs {
         /// The defs command.
@@ -300,6 +306,198 @@ pub(crate) enum ProjectCmd {
     /// Make a mod visible to the game: link it into the game's Mods folder, or take the link away.
     #[command(subcommand)]
     Link(LinkCmd),
+    /// Read and edit the basics of a mod: name, authors, package id, versions, dependencies, preview image.
+    #[command(subcommand)]
+    About(AboutCmd),
+    /// Read and edit `LoadFolders.xml`.
+    #[command(subcommand, name = "load-folders")]
+    LoadFolders(LoadFoldersCmd),
+    /// Add the folder of another game version.
+    #[command(subcommand)]
+    Version(VersionCmd),
+}
+
+/// The `project about` commands.
+#[derive(Debug, Subcommand)]
+pub(crate) enum AboutCmd {
+    /// Print every basic of the mod with the findings. Writes nothing.
+    Show {
+        /// The mod folder.
+        path: String,
+        /// Print the text of About.xml instead.
+        #[arg(long)]
+        raw: bool,
+    },
+    /// Change the basics. Without `--yes` it prints the diff and writes nothing; a backup of the old file is kept.
+    Set(Box<AboutSetArgs>),
+    /// Show, add (`--image FILE.png`) or remove (`--remove`) the preview image `About/Preview.png`.
+    Preview {
+        /// The mod folder.
+        path: String,
+        /// A PNG to copy to About/Preview.png (640 by 360 is the size the Workshop page shows).
+        #[arg(long, value_name = "FILE")]
+        image: Option<String>,
+        /// Remove the preview image (a copy is kept in the app data folder).
+        #[arg(long, conflicts_with = "image")]
+        remove: bool,
+    },
+}
+
+/// `project about set` arguments.
+#[derive(Debug, Args)]
+pub(crate) struct AboutSetArgs {
+    /// The mod folder.
+    pub(crate) path: String,
+    /// Set the name.
+    #[arg(long)]
+    pub(crate) name: Option<String>,
+    /// Set the short name.
+    #[arg(long)]
+    pub(crate) short_name: Option<String>,
+    /// Set the author.
+    #[arg(long)]
+    pub(crate) author: Option<String>,
+    /// Set the package id, for example `author.modname`.
+    #[arg(long)]
+    pub(crate) package_id: Option<String>,
+    /// Set the description.
+    #[arg(long)]
+    pub(crate) description: Option<String>,
+    /// Set the description from a text file.
+    #[arg(long, value_name = "FILE", conflicts_with = "description")]
+    pub(crate) description_file: Option<String>,
+    /// Set the url.
+    #[arg(long)]
+    pub(crate) url: Option<String>,
+    /// Set the mod version.
+    #[arg(long)]
+    pub(crate) mod_version: Option<String>,
+    /// Set the icon path (a texture below Textures, without extension).
+    #[arg(long)]
+    pub(crate) icon_path: Option<String>,
+    /// Remove a field (repeatable): name, shortName, author, packageId, description, url, modVersion, modIconPath.
+    #[arg(long, value_name = "FIELD")]
+    pub(crate) clear: Vec<String>,
+    /// Replace the supported game versions (repeatable), for example `--game-versions 1.5 --game-versions 1.6`.
+    #[arg(long = "game-versions", value_name = "VERSION")]
+    pub(crate) game_versions: Vec<String>,
+    /// Add a package id to loadAfter (repeatable).
+    #[arg(long, value_name = "ID")]
+    pub(crate) add_load_after: Vec<String>,
+    /// Remove a package id from loadAfter (repeatable).
+    #[arg(long, value_name = "ID")]
+    pub(crate) remove_load_after: Vec<String>,
+    /// Add a package id to loadBefore (repeatable).
+    #[arg(long, value_name = "ID")]
+    pub(crate) add_load_before: Vec<String>,
+    /// Remove a package id from loadBefore (repeatable).
+    #[arg(long, value_name = "ID")]
+    pub(crate) remove_load_before: Vec<String>,
+    /// Add a package id to incompatibleWith (repeatable).
+    #[arg(long, value_name = "ID")]
+    pub(crate) add_incompatible: Vec<String>,
+    /// Remove a package id from incompatibleWith (repeatable).
+    #[arg(long, value_name = "ID")]
+    pub(crate) remove_incompatible: Vec<String>,
+    /// Add a dependency by package id (give its name and a link with the options below).
+    #[arg(long, value_name = "ID")]
+    pub(crate) add_dependency: Option<String>,
+    /// The display name of the dependency being added.
+    #[arg(long, requires = "add_dependency")]
+    pub(crate) dependency_name: Option<String>,
+    /// The Steam Workshop page of the dependency being added.
+    #[arg(long, requires = "add_dependency")]
+    pub(crate) workshop_url: Option<String>,
+    /// The download page of the dependency being added.
+    #[arg(long, requires = "add_dependency")]
+    pub(crate) download_url: Option<String>,
+    /// Remove a dependency by package id (repeatable).
+    #[arg(long, value_name = "ID")]
+    pub(crate) remove_dependency: Vec<String>,
+    /// Changes as a JSON array (or `@file`), applied first; see the `project_about_update` request.
+    #[arg(long, value_name = "JSON")]
+    pub(crate) changes: Option<String>,
+    /// Write the file.
+    #[arg(long)]
+    pub(crate) yes: bool,
+}
+
+/// The `project load-folders` commands.
+#[derive(Debug, Subcommand)]
+pub(crate) enum LoadFoldersCmd {
+    /// Print the blocks and entries of LoadFolders.xml with the findings. Writes nothing.
+    Show {
+        /// The mod folder.
+        path: String,
+    },
+    /// Change LoadFolders.xml. Without `--yes` it prints the diff and writes nothing.
+    Set(Box<LoadFoldersSetArgs>),
+}
+
+/// `project load-folders set` arguments.
+#[derive(Debug, Args)]
+pub(crate) struct LoadFoldersSetArgs {
+    /// The mod folder.
+    pub(crate) path: String,
+    /// Add a block for a game version holding the mod root (repeatable).
+    #[arg(long, value_name = "VERSION")]
+    pub(crate) add_block: Vec<String>,
+    /// Add a folder to a block as `BLOCK=FOLDER` (the block is its position, see `show`; repeatable).
+    #[arg(long, value_name = "BLOCK=FOLDER")]
+    pub(crate) add_entry: Vec<String>,
+    /// Gate the entries added with `--add-entry` on these package ids (comma separated, IfModActive).
+    #[arg(long, value_name = "IDS")]
+    pub(crate) gate: Vec<String>,
+    /// Remove an entry as `BLOCK:ENTRY` (repeatable).
+    #[arg(long, value_name = "BLOCK:ENTRY")]
+    pub(crate) remove_entry: Vec<String>,
+    /// Remove a block by position (repeatable).
+    #[arg(long, value_name = "BLOCK")]
+    pub(crate) remove_block: Vec<u32>,
+    /// Changes as a JSON array (or `@file`), applied first; see the `project_load_folders_update` request.
+    #[arg(long, value_name = "JSON")]
+    pub(crate) changes: Option<String>,
+    /// Create LoadFolders.xml when the mod has none.
+    #[arg(long)]
+    pub(crate) create: bool,
+    /// Write the file.
+    #[arg(long)]
+    pub(crate) yes: bool,
+}
+
+/// The `project version` commands.
+#[derive(Debug, Subcommand)]
+pub(crate) enum VersionCmd {
+    /// Create the folder of a game version (folders only, nothing is copied). Without `--yes` it only lists.
+    Add {
+        /// The mod folder.
+        path: String,
+        /// The game version, `major.minor`, for example 1.6.
+        #[arg(value_name = "VERSION")]
+        game_version: String,
+        /// Also create the standard sub folders (Defs, Patches, Textures, Sounds).
+        #[arg(long)]
+        standard_folders: bool,
+        /// Add a block for the version to LoadFolders.xml (created when missing); an existing file always gets it.
+        #[arg(long)]
+        add_block: bool,
+        /// Do it.
+        #[arg(long)]
+        yes: bool,
+    },
+}
+
+/// The `library` commands.
+#[derive(Debug, Subcommand)]
+pub(crate) enum LibraryCmd {
+    /// Scan the library, then find mods by name, package id or author.
+    Search {
+        /// Words to find.
+        query: String,
+        /// The most rows (default 20).
+        #[arg(long)]
+        limit: Option<u32>,
+    },
 }
 
 /// How `project link create` makes the entry.
