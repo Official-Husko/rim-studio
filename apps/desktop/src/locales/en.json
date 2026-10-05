@@ -35,7 +35,6 @@
   "error.copied": "Copied",
   "error.unhandled": "Something went wrong: {message}",
   "error.id": "Error id {id}",
-  "page.placeholder.body": "This page is a placeholder. A later task builds it.",
   "setup.title": "Setup",
   "setup.mock.note": "No bridge is running, so the app shows recorded fixtures. Start it with pnpm dev.",
   "picker.title": "Choose a folder",
