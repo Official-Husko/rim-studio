@@ -1,0 +1,26 @@
+{
+  "name": "rimstudio-workspace",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@11.3.0",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "dev:ui": "pnpm --filter rimstudio-desktop dev",
+    "gallery": "pnpm --filter rimstudio-desktop gallery",
+    "typecheck": "pnpm -r --if-present typecheck",
+    "test": "pnpm -r --if-present test",
+    "build": "pnpm --filter rimstudio-desktop build",
+    "lint": "oxlint -c .oxlintrc.json apps packages",
+    "format": "prettier --write \"apps/**/*.{ts,tsx,css,json,html}\" \"packages/ui/**/*.{ts,tsx,json}\" \"packages/testkit/**/*.{ts,tsx,json}\" \"*.json\" README.md",
+    "check": "pnpm typecheck && pnpm test && pnpm lint"
+  },
+  "devDependencies": {
+    "oxlint": "1.86.0",
+    "prettier": "3.9.9",
+    "typescript": "6.0.3"
+  }
+}

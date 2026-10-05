@@ -29,3 +29,8 @@ Thumbs.db
 
 # scratch output from local lint runs
 lint_report.json
+
+# frontend build and tool caches
+.vite/
+node_modules/.cache/
+*.tsbuildinfo

@@ -1,0 +1,256 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["typescript", "react", "jsx-a11y", "import"],
+  "categories": {
+    "correctness": "error",
+    "suspicious": "warn"
+  },
+  "env": {
+    "browser": true,
+    "es2022": true
+  },
+  "ignorePatterns": ["**/dist/**", "**/node_modules/**", "**/.vite/**"],
+  "rules": {
+    "typescript/no-explicit-any": "error",
+    "typescript/no-non-null-assertion": "error",
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-no-target-blank": "error",
+    "no-console": [
+      "warn",
+      {
+        "allow": ["warn", "error"]
+      }
+    ],
+    "import/no-cycle": "error",
+    "no-restricted-imports": [
+      "error",
+      {
+        "patterns": [
+          {
+            "group": [
+              "fast-xml-parser",
+              "xml2js",
+              "xml-js",
+              "txml",
+              "sax",
+              "@xmldom/**",
+              "xmldom",
+              "htmlparser2"
+            ],
+            "message": "No XML library in the frontend: the webview receives JSON only."
+          }
+        ]
+      }
+    ],
+    "jsx-a11y/prefer-tag-over-role": "off",
+    "jsx-a11y/no-noninteractive-element-to-interactive-role": "off",
+    "react/refs": "off",
+    "react/immutability": "off",
+    "react/style-prop-object": "off",
+    "import/no-unassigned-import": "off"
+  },
+  "overrides": [
+    {
+      "files": ["apps/desktop/src/features/**"],
+      "rules": {
+        "no-restricted-imports": [
+          "error",
+          {
+            "patterns": [
+              {
+                "group": ["@tauri-apps/**"],
+                "message": "Use shared/platform."
+              },
+              {
+                "group": ["~/features/**", "**/features/**"],
+                "message": "A feature never imports another feature; move the code to shared."
+              },
+              {
+                "group": ["~/app/**", "**/app/**"],
+                "message": "A feature never imports app."
+              },
+              {
+                "group": ["~/shared/*/*", "**/shared/*/*"],
+                "message": "Use the public entry of the shared module."
+              },
+              {
+                "group": ["rimstudio-testkit", "rimstudio-testkit/**"],
+                "message": "The testkit is for tests only."
+              },
+              {
+                "group": ["@zag-js/**"],
+                "message": "Wrap third party widgets in rimstudio-ui."
+              },
+              {
+                "group": [
+                  "fast-xml-parser",
+                  "xml2js",
+                  "xml-js",
+                  "txml",
+                  "sax",
+                  "@xmldom/**",
+                  "xmldom",
+                  "htmlparser2"
+                ],
+                "message": "No XML library in the frontend: the webview receives JSON only."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "files": ["apps/desktop/src/shared/**"],
+      "rules": {
+        "no-restricted-imports": [
+          "error",
+          {
+            "patterns": [
+              {
+                "group": ["@tauri-apps/**"],
+                "message": "Only shared/platform may import Tauri."
+              },
+              {
+                "group": ["~/features/**", "**/features/**"],
+                "message": "shared never imports a feature."
+              },
+              {
+                "group": ["~/app/**", "**/app/**"],
+                "message": "shared never imports app."
+              },
+              {
+                "group": [
+                  "fast-xml-parser",
+                  "xml2js",
+                  "xml-js",
+                  "txml",
+                  "sax",
+                  "@xmldom/**",
+                  "xmldom",
+                  "htmlparser2"
+                ],
+                "message": "No XML library in the frontend: the webview receives JSON only."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "files": ["apps/desktop/src/shared/platform/**"],
+      "rules": {
+        "no-restricted-imports": "off"
+      }
+    },
+    {
+      "files": ["apps/desktop/src/app/**"],
+      "rules": {
+        "no-restricted-imports": [
+          "error",
+          {
+            "patterns": [
+              {
+                "group": ["@tauri-apps/**"],
+                "message": "Use shared/platform."
+              },
+              {
+                "group": ["~/features/*/*", "**/features/*/*"],
+                "message": "Import a feature by its index only."
+              },
+              {
+                "group": ["~/shared/*/*", "**/shared/*/*"],
+                "message": "Use the public entry of the shared module."
+              },
+              {
+                "group": [
+                  "fast-xml-parser",
+                  "xml2js",
+                  "xml-js",
+                  "txml",
+                  "sax",
+                  "@xmldom/**",
+                  "xmldom",
+                  "htmlparser2"
+                ],
+                "message": "No XML library in the frontend: the webview receives JSON only."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "files": ["packages/ui/**"],
+      "rules": {
+        "no-restricted-imports": [
+          "error",
+          {
+            "patterns": [
+              {
+                "group": ["**/apps/desktop/**", "rimstudio-ipc-types", "@tauri-apps/**", "~/**"],
+                "message": "rimstudio-ui stays pure: no app, IPC or Tauri imports."
+              },
+              {
+                "group": [
+                  "fast-xml-parser",
+                  "xml2js",
+                  "xml-js",
+                  "txml",
+                  "sax",
+                  "@xmldom/**",
+                  "xmldom",
+                  "htmlparser2"
+                ],
+                "message": "No XML library in the frontend: the webview receives JSON only."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "files": ["apps/desktop/src/**"],
+      "rules": {
+        "no-restricted-globals": [
+          "error",
+          {
+            "name": "fetch",
+            "message": "Network calls live in shared/ipc."
+          },
+          {
+            "name": "EventSource",
+            "message": "Streams live in shared/ipc."
+          },
+          {
+            "name": "XMLHttpRequest",
+            "message": "Network calls live in shared/ipc."
+          },
+          {
+            "name": "WebSocket",
+            "message": "Network calls live in shared/ipc."
+          }
+        ]
+      }
+    },
+    {
+      "files": ["apps/desktop/src/shared/ipc/**"],
+      "rules": {
+        "no-restricted-globals": "off"
+      }
+    },
+    {
+      "files": [
+        "**/*.test.ts",
+        "**/*.test.tsx",
+        "packages/testkit/**",
+        "apps/desktop/vite.config.ts",
+        "apps/desktop/src/gallery/**"
+      ],
+      "rules": {
+        "no-restricted-imports": "off",
+        "no-restricted-globals": "off",
+        "typescript/no-non-null-assertion": "off"
+      }
+    }
+  ]
+}

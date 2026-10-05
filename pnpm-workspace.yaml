@@ -1,0 +1,6 @@
+packages:
+  - "apps/*"
+  - "packages/*"
+
+# Exact pins everywhere (docs/architecture/frontend-architecture.md section 2).
+savePrefix: ""
