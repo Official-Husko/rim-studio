@@ -52,6 +52,13 @@ Status values: accepted (decided, build on it), proposed (accepted for planning,
 | 0042 | [Generation fidelity of a clone](0042-generation-fidelity-of-a-clone.md) | accepted | D-110 to D-114 |
 | 0039 | [Project records as documents, the run time type table and the DTO boundary, as built](0039-project-records-type-table-and-dto-boundary-as-built.md) | accepted | D-091, D-092, D-093 |
 | 0040 | [Development bridge for the browser test UI](0040-development-bridge.md) | accepted | D-103 |
+| 0043 | [The Tauri desktop shell with live reload](0043-tauri-desktop-shell.md) | accepted | D-115, D-116 |
+| 0046 | [Layout fixes with an undo journal](0046-layout-fixes-with-an-undo-journal.md) | accepted | D-123 to D-125 |
+| 0047 | [Asset import, copy plans and custom sound definitions](0047-asset-import-copies-and-sound-defs.md) | accepted | D-130 to D-134 |
+| 0048 | [Optional Combat Extended additions are choices of the block](0048-optional-ce-additions-are-block-choices.md) | accepted | D-146, D-085, D-095 |
+| 0049 | [Custom Combat Extended ammunition](0049-custom-ce-ammunition.md) | accepted | D-152, D-153, D-085 |
+| 0050 | [Link one project into the game for testing](0050-link-one-project-into-the-game.md) | accepted | D-170, D-171, D-039, D-040 |
+| 0052 | [Editing the basics of a mod](0052-mod-basics-editing.md) | accepted | D-180 to D-184, D-090, D-083 |
 
 ## 2. Template
 
@@ -91,3 +98,4 @@ What is decided, in the active voice, with the names of crates, files and versio
 3. Records describe RimSort, RimCrow, Combat Extended and game behaviour in the project's own words ([ADR 0034](0034-licence-hygiene.md)).
 4. Changing a decision means adding a record that supersedes the old one and updating the register and the roadmap in the same change.
 5. Documents use no em dashes, no en dashes and no emojis.
+| 0058 | [Weapon archetypes](0058-weapon-archetypes.md) | accepted | D-200 to D-204, D-085 |
