@@ -1,0 +1,21 @@
+[package]
+name = "rimstudio-xpath"
+description = "XPath 1.0 parser and evaluator over the node tree"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+publish.workspace = true
+
+[package.metadata.rimstudio]
+layer = "l2-engine"
+
+[lints]
+workspace = true
+
+[dependencies]
+rimstudio-core.workspace = true
+thiserror.workspace = true
+
+[dev-dependencies]
+proptest.workspace = true
+rstest.workspace = true
