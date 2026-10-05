@@ -1,0 +1,247 @@
+{
+  "files": [
+    {
+      "path": "Defs/Weapons/RS_TestBlade.xml",
+      "kind": "vanilla-defs",
+      "action": "create",
+      "tree": {
+        "tag": "Defs",
+        "attrs": [],
+        "children": [
+          {
+            "tag": "ThingDef",
+            "attrs": [
+              [
+                "ParentName",
+                "RS_BaseMelee"
+              ]
+            ],
+            "children": [
+              {
+                "tag": "defName",
+                "attrs": [],
+                "children": [
+                  "RS_TestBlade"
+                ]
+              },
+              {
+                "tag": "label",
+                "attrs": [],
+                "children": [
+                  "test blade"
+                ]
+              },
+              {
+                "tag": "techLevel",
+                "attrs": [],
+                "children": [
+                  "Medieval"
+                ]
+              },
+              {
+                "tag": "statBases",
+                "attrs": [],
+                "children": [
+                  {
+                    "tag": "WorkToMake",
+                    "attrs": [],
+                    "children": [
+                      "7000"
+                    ]
+                  },
+                  {
+                    "tag": "Mass",
+                    "attrs": [],
+                    "children": [
+                      "1.4"
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "costStuffCount",
+                "attrs": [],
+                "children": [
+                  "60"
+                ]
+              },
+              {
+                "tag": "stuffCategories",
+                "attrs": [],
+                "children": [
+                  {
+                    "tag": "li",
+                    "attrs": [],
+                    "children": [
+                      "RS_Metallic"
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "tools",
+                "attrs": [],
+                "children": [
+                  {
+                    "tag": "li",
+                    "attrs": [],
+                    "children": [
+                      {
+                        "tag": "label",
+                        "attrs": [],
+                        "children": [
+                          "handle"
+                        ]
+                      },
+                      {
+                        "tag": "capacities",
+                        "attrs": [],
+                        "children": [
+                          {
+                            "tag": "li",
+                            "attrs": [],
+                            "children": [
+                              "Blunt"
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "power",
+                        "attrs": [],
+                        "children": [
+                          "9"
+                        ]
+                      },
+                      {
+                        "tag": "cooldownTime",
+                        "attrs": [],
+                        "children": [
+                          "2"
+                        ]
+                      },
+                      {
+                        "tag": "linkedBodyPartsGroup",
+                        "attrs": [],
+                        "children": [
+                          "RS_Handle"
+                        ]
+                      },
+                      {
+                        "tag": "chanceFactor",
+                        "attrs": [],
+                        "children": [
+                          "0.3"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "li",
+                    "attrs": [],
+                    "children": [
+                      {
+                        "tag": "label",
+                        "attrs": [],
+                        "children": [
+                          "blade"
+                        ]
+                      },
+                      {
+                        "tag": "capacities",
+                        "attrs": [],
+                        "children": [
+                          {
+                            "tag": "li",
+                            "attrs": [],
+                            "children": [
+                              "Cut"
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "power",
+                        "attrs": [],
+                        "children": [
+                          "18"
+                        ]
+                      },
+                      {
+                        "tag": "cooldownTime",
+                        "attrs": [],
+                        "children": [
+                          "2.4"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "li",
+                    "attrs": [],
+                    "children": [
+                      {
+                        "tag": "label",
+                        "attrs": [],
+                        "children": [
+                          "point"
+                        ]
+                      },
+                      {
+                        "tag": "capacities",
+                        "attrs": [],
+                        "children": [
+                          {
+                            "tag": "li",
+                            "attrs": [],
+                            "children": [
+                              "Stab"
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "power",
+                        "attrs": [],
+                        "children": [
+                          "20"
+                        ]
+                      },
+                      {
+                        "tag": "cooldownTime",
+                        "attrs": [],
+                        "children": [
+                          "2.6"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "weaponTags",
+                "attrs": [],
+                "children": [
+                  {
+                    "tag": "li",
+                    "attrs": [],
+                    "children": [
+                      "RS_Blade"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "sections": [
+        {
+          "firstChild": 0,
+          "comment": "====== RS_TestBlade ======"
+        }
+      ]
+    }
+  ],
+  "diagnostics": []
+}

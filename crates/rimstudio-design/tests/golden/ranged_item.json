@@ -1,0 +1,385 @@
+{
+  "files": [
+    {
+      "path": "Defs/Projectiles/RS_Bullet_TestRifle.xml",
+      "kind": "vanilla-defs",
+      "action": "create",
+      "tree": {
+        "tag": "Defs",
+        "attrs": [],
+        "children": [
+          {
+            "tag": "ThingDef",
+            "attrs": [
+              [
+                "ParentName",
+                "BaseBullet"
+              ]
+            ],
+            "children": [
+              {
+                "tag": "defName",
+                "attrs": [],
+                "children": [
+                  "RS_Bullet_TestRifle"
+                ]
+              },
+              {
+                "tag": "label",
+                "attrs": [],
+                "children": [
+                  "test bullet"
+                ]
+              },
+              {
+                "tag": "graphicData",
+                "attrs": [],
+                "children": [
+                  {
+                    "tag": "texPath",
+                    "attrs": [],
+                    "children": [
+                      "Things/RS/Bullet"
+                    ]
+                  },
+                  {
+                    "tag": "graphicClass",
+                    "attrs": [],
+                    "children": [
+                      "Graphic_Single"
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "projectile",
+                "attrs": [],
+                "children": [
+                  {
+                    "tag": "damageDef",
+                    "attrs": [],
+                    "children": [
+                      "Bullet"
+                    ]
+                  },
+                  {
+                    "tag": "damageAmountBase",
+                    "attrs": [],
+                    "children": [
+                      "11"
+                    ]
+                  },
+                  {
+                    "tag": "speed",
+                    "attrs": [],
+                    "children": [
+                      "50"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "sections": [
+        {
+          "firstChild": 0,
+          "comment": "====== RS_Bullet_TestRifle ======"
+        }
+      ]
+    },
+    {
+      "path": "Defs/Weapons/RS_TestRifle.xml",
+      "kind": "vanilla-defs",
+      "action": "create",
+      "tree": {
+        "tag": "Defs",
+        "attrs": [],
+        "children": [
+          {
+            "tag": "ThingDef",
+            "attrs": [
+              [
+                "ParentName",
+                "RS_BaseGun"
+              ]
+            ],
+            "children": [
+              {
+                "tag": "defName",
+                "attrs": [],
+                "children": [
+                  "RS_TestRifle"
+                ]
+              },
+              {
+                "tag": "label",
+                "attrs": [],
+                "children": [
+                  "test rifle"
+                ]
+              },
+              {
+                "tag": "description",
+                "attrs": [],
+                "children": [
+                  "A fictional rifle used by the tests."
+                ]
+              },
+              {
+                "tag": "techLevel",
+                "attrs": [],
+                "children": [
+                  "Industrial"
+                ]
+              },
+              {
+                "tag": "graphicData",
+                "attrs": [],
+                "children": [
+                  {
+                    "tag": "texPath",
+                    "attrs": [],
+                    "children": [
+                      "Things/RS/TestRifle"
+                    ]
+                  },
+                  {
+                    "tag": "graphicClass",
+                    "attrs": [],
+                    "children": [
+                      "Graphic_Single"
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "statBases",
+                "attrs": [],
+                "children": [
+                  {
+                    "tag": "WorkToMake",
+                    "attrs": [],
+                    "children": [
+                      "9100"
+                    ]
+                  },
+                  {
+                    "tag": "Mass",
+                    "attrs": [],
+                    "children": [
+                      "3.3"
+                    ]
+                  },
+                  {
+                    "tag": "AccuracyTouch",
+                    "attrs": [],
+                    "children": [
+                      "0.6"
+                    ]
+                  },
+                  {
+                    "tag": "AccuracyShort",
+                    "attrs": [],
+                    "children": [
+                      "0.7"
+                    ]
+                  },
+                  {
+                    "tag": "AccuracyMedium",
+                    "attrs": [],
+                    "children": [
+                      "0.62"
+                    ]
+                  },
+                  {
+                    "tag": "AccuracyLong",
+                    "attrs": [],
+                    "children": [
+                      "0.5"
+                    ]
+                  },
+                  {
+                    "tag": "RangedWeapon_Cooldown",
+                    "attrs": [],
+                    "children": [
+                      "1.9"
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "costList",
+                "attrs": [],
+                "children": [
+                  {
+                    "tag": "RS_Metal",
+                    "attrs": [],
+                    "children": [
+                      "40"
+                    ]
+                  },
+                  {
+                    "tag": "RS_Part",
+                    "attrs": [],
+                    "children": [
+                      "3"
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "recipeMaker",
+                "attrs": [],
+                "children": [
+                  {
+                    "tag": "researchPrerequisite",
+                    "attrs": [],
+                    "children": [
+                      "RS_Research"
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "verbs",
+                "attrs": [],
+                "children": [
+                  {
+                    "tag": "li",
+                    "attrs": [],
+                    "children": [
+                      {
+                        "tag": "verbClass",
+                        "attrs": [],
+                        "children": [
+                          "Verb_Shoot"
+                        ]
+                      },
+                      {
+                        "tag": "hasStandardCommand",
+                        "attrs": [],
+                        "children": [
+                          "true"
+                        ]
+                      },
+                      {
+                        "tag": "defaultProjectile",
+                        "attrs": [],
+                        "children": [
+                          "RS_Bullet_TestRifle"
+                        ]
+                      },
+                      {
+                        "tag": "warmupTime",
+                        "attrs": [],
+                        "children": [
+                          "1.4"
+                        ]
+                      },
+                      {
+                        "tag": "range",
+                        "attrs": [],
+                        "children": [
+                          "27.5"
+                        ]
+                      },
+                      {
+                        "tag": "burstShotCount",
+                        "attrs": [],
+                        "children": [
+                          "3"
+                        ]
+                      },
+                      {
+                        "tag": "ticksBetweenBurstShots",
+                        "attrs": [],
+                        "children": [
+                          "8"
+                        ]
+                      },
+                      {
+                        "tag": "soundCast",
+                        "attrs": [],
+                        "children": [
+                          "RS_Shot"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "tools",
+                "attrs": [],
+                "children": [
+                  {
+                    "tag": "li",
+                    "attrs": [],
+                    "children": [
+                      {
+                        "tag": "label",
+                        "attrs": [],
+                        "children": [
+                          "grip"
+                        ]
+                      },
+                      {
+                        "tag": "capacities",
+                        "attrs": [],
+                        "children": [
+                          {
+                            "tag": "li",
+                            "attrs": [],
+                            "children": [
+                              "Blunt"
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "power",
+                        "attrs": [],
+                        "children": [
+                          "8"
+                        ]
+                      },
+                      {
+                        "tag": "cooldownTime",
+                        "attrs": [],
+                        "children": [
+                          "2.1"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "weaponTags",
+                "attrs": [],
+                "children": [
+                  {
+                    "tag": "li",
+                    "attrs": [],
+                    "children": [
+                      "RS_Gun"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "sections": [
+        {
+          "firstChild": 0,
+          "comment": "====== RS_TestRifle ======"
+        }
+      ]
+    }
+  ],
+  "diagnostics": []
+}
