@@ -49,6 +49,7 @@ Status values: accepted (decided, build on it), proposed (accepted for planning,
 | 0037 | [Vanilla by default, Combat Extended as an optional patch](0037-vanilla-default-optional-ce-patch.md) | accepted | D-085, D-064, D-065 |
 | 0038 | [Toolkit shared module, guarded writer and project backups outside the mod folder](0038-toolkit-shared-module-and-project-backups.md) | accepted | D-089, D-090 |
 | 0041 | [RimStudio mod layout v1](0041-rimstudio-mod-layout-v1.md) | accepted | D-104 to D-109 |
+| 0042 | [Generation fidelity of a clone](0042-generation-fidelity-of-a-clone.md) | accepted | D-110 to D-114 |
 | 0039 | [Project records as documents, the run time type table and the DTO boundary, as built](0039-project-records-type-table-and-dto-boundary-as-built.md) | accepted | D-091, D-092, D-093 |
 | 0040 | [Development bridge for the browser test UI](0040-development-bridge.md) | accepted | D-103 |
 

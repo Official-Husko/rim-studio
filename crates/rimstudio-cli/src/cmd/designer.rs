@@ -10,7 +10,7 @@ use std::io::{BufRead as _, IsTerminal as _, Write as _};
 
 use serde_json::{Value, json};
 
-use crate::cli::{ApplyArgs, DraftArgs, KindArg, NewArgs, PlanArgs, QuizArgs};
+use crate::cli::{ApplyArgs, DraftArgs, KindArg, NewArgs, PlanArgs, ProjectileArgs, QuizArgs};
 use crate::cmd::drafts::{self, Loaded, project_id};
 use crate::cmd::project;
 use crate::draftops::{
@@ -190,6 +190,9 @@ fn clone_cmd(s: &Session, args: &NewArgs, summary: &Value, from: &str) -> CliRes
     }
     if let Some(prefix) = &args.prefix {
         request["modPrefix"] = json!(prefix);
+    }
+    if args.shared_projectile {
+        request["ownProjectile"] = json!(false);
     }
     match s.call("designer_clone", request) {
         Ok(reply) => finish_clone(s, args, summary, from, &reply.value),
@@ -495,6 +498,38 @@ pub(crate) fn diff(s: &Session, args: &DraftArgs) -> CliResult {
     let reply = s.call("designer_clone_diff", json!({"draft": p.loaded.draft}))?;
     s.emit(&reply.value, || {
         render_diff(def_name_of(&p.loaded.draft), &reply.value)
+    });
+    Ok(())
+}
+
+/// `designer projectile DRAFT --project DIR [--shared]`: gives a gun draft a projectile of its own, or
+/// points it back at the shared one, and saves the draft.
+///
+/// # Errors
+/// The envelope of `designer_projectile_own` (`designer.invalid-draft` with the reason when the switch
+/// cannot be made), or of the save.
+pub(crate) fn projectile(s: &Session, args: &ProjectileArgs) -> CliResult {
+    let p = prepare(s, &args.draft, true)?;
+    let Some(summary) = p.summary.as_ref() else {
+        return Err(CliError::usage("this command needs --project DIR"));
+    };
+    let reply = s.call(
+        "designer_projectile_own",
+        json!({"draft": p.loaded.draft, "own": !args.shared}),
+    )?;
+    let draft = reply.value.get("draft").cloned().unwrap_or(Value::Null);
+    let id = drafts::save(s, &project_id(summary), p.loaded.id.as_deref(), &draft)?;
+    let notes: Vec<String> = arr_at(&reply.value, "/notes")
+        .iter()
+        .filter_map(|n| n.as_str().map(str::to_owned))
+        .collect();
+    let doc = json!({"id": id, "notes": notes, "draft": draft});
+    s.emit(&doc, || {
+        let mut out = format!("saved draft {id}\n");
+        for n in &notes {
+            let _ = writeln!(out, "  note: {n}");
+        }
+        out
     });
     Ok(())
 }

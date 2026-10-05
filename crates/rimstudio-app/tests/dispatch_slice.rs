@@ -372,6 +372,17 @@ fn every_command_of_the_slice_dispatches_in_one_session() {
         json!({"draft": draft.clone()}),
     );
     assert!(structured["draft"].is_object(), "{structured}");
+    // the draft of this test has a projectile of its own that was not copied from another one
+    let own = run.ok(
+        "designer_projectile_own",
+        json!({"draft": draft.clone(), "own": true}),
+    );
+    assert!(own["draft"].is_object(), "{own}");
+    let nothing_to_point_back_at = run.err(
+        "designer_projectile_own",
+        json!({"draft": draft.clone(), "own": false}),
+    );
+    assert_eq!(nothing_to_point_back_at.code, "designer.invalid-draft");
 
     // designer: vanilla plan and apply
     let request = json!({"projectId": pid.clone(), "draft": draft.clone()});

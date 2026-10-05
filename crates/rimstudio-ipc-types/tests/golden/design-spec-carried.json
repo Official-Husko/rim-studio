@@ -1,0 +1,215 @@
+{
+  "kind": "ranged",
+  "identity": {
+    "defName": "RS_TestRifle",
+    "label": "test rifle",
+    "description": "A fictional rifle.",
+    "modPrefix": "RS_"
+  },
+  "parent": {
+    "defName": "BaseHumanMakeableGun",
+    "inheritedTechLevel": "industrial"
+  },
+  "techLevel": "industrial",
+  "role": "rifle",
+  "mass": {
+    "value": 3.5,
+    "source": "typed"
+  },
+  "workToMake": {
+    "value": 11000.0,
+    "source": "suggested"
+  },
+  "costList": [
+    {
+      "defName": "RS_Steel",
+      "count": 40.0
+    }
+  ],
+  "stuff": {
+    "categories": [
+      "RS_Metallic"
+    ],
+    "count": {
+      "value": 20.0,
+      "source": "suggested"
+    }
+  },
+  "weaponTags": [
+    "RS_Gun"
+  ],
+  "extraStats": {
+    "RS_Stat": {
+      "value": 1.25,
+      "source": "typed"
+    }
+  },
+  "ranged": {
+    "damage": {
+      "value": 12.0,
+      "source": "typed"
+    },
+    "range": {
+      "value": 25.9,
+      "source": "anchor"
+    },
+    "burstCount": {
+      "value": 3,
+      "source": "answered"
+    },
+    "ticksBetweenBurstShots": {
+      "value": 9.0,
+      "source": "typed"
+    },
+    "warmup": {
+      "value": 1.5,
+      "source": "typed"
+    },
+    "cooldown": {
+      "value": 2.0,
+      "source": "typed"
+    },
+    "accuracy": {
+      "touch": {
+        "value": 0.9,
+        "source": "typed"
+      },
+      "short": {
+        "value": 0.8,
+        "source": "typed"
+      },
+      "medium": {
+        "value": 0.6,
+        "source": "typed"
+      }
+    },
+    "projectile": {
+      "mode": "inline",
+      "def": {
+        "defName": "RS_Bullet_TestRifle",
+        "label": "rifle bullet",
+        "parent": "BaseBullet",
+        "damageDef": "Bullet",
+        "texturePath": "Things/Projectile/Bullet_Big",
+        "speed": {
+          "value": 70.0,
+          "source": "typed"
+        },
+        "extra": [
+          {
+            "tag": "explosionRadius",
+            "attrs": [],
+            "children": [
+              "1.5"
+            ]
+          }
+        ],
+        "graphicExtra": [
+          {
+            "tag": "drawSize",
+            "attrs": [],
+            "children": [
+              "(0.7,0.7)"
+            ]
+          }
+        ],
+        "thingExtra": [
+          {
+            "tag": "thingClass",
+            "attrs": [],
+            "children": [
+              "Bullet"
+            ]
+          }
+        ],
+        "omitDefaults": [
+          "armorPenetrationBase"
+        ],
+        "copiedFrom": "Bullet_BoltActionRifle"
+      }
+    },
+    "soundCast": "RS_Shot",
+    "muzzleFlashScale": 9.0,
+    "forcedMissRadius": 0.5,
+    "verbExtra": [
+      {
+        "tag": "aimingChargeMote",
+        "attrs": [],
+        "children": [
+          "Mote_Charge"
+        ]
+      }
+    ]
+  },
+  "previewQuality": "normal",
+  "soundInteract": "Interact_Rifle",
+  "recipe": {
+    "skillRequirements": {
+      "Crafting": 5
+    },
+    "displayPriority": 450.0,
+    "recipeUsers": [
+      "TableMachining"
+    ],
+    "extra": [
+      {
+        "tag": "soundWorking",
+        "attrs": [],
+        "children": [
+          "Recipe_Machining"
+        ]
+      }
+    ],
+    "attrs": {
+      "Inherit": "False"
+    }
+  },
+  "equippedStatOffsets": {
+    "MoveSpeed": -0.25
+  },
+  "comps": [
+    {
+      "tag": "li",
+      "attrs": [
+        [
+          "Class",
+          "CompProperties_Art"
+        ]
+      ],
+      "children": [
+        {
+          "tag": "nameMaker",
+          "attrs": [],
+          "children": [
+            "NamerArtWeaponGun"
+          ]
+        }
+      ]
+    }
+  ],
+  "uiIconPath": "Things/Item/Equipment/WeaponRanged/RS_Icon",
+  "uiIconScale": 1.2,
+  "drawSize": "(1.5,1.5)",
+  "graphicColor": "(0.8,0.8,0.8)",
+  "extraFields": [
+    {
+      "tag": "relicChance",
+      "attrs": [],
+      "children": [
+        "2"
+      ]
+    }
+  ],
+  "extraAttrs": {
+    "MayRequire": "ludeon.rimworld.royalty"
+  },
+  "omitDefaults": [
+    "graphicClass"
+  ],
+  "inheritReset": [
+    "comps"
+  ],
+  "acceptedMissing": [
+    "/workToMake"
+  ]
+}

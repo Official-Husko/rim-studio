@@ -87,7 +87,9 @@ pub fn draft_to_dto(draft: &Draft) -> ToolkitResult<DraftDto> {
 /// [`ToolkitError::InvalidDraft`] for a shape problem or an envelope kind that differs from the spec's,
 /// [`ToolkitError::DraftNewerSchema`] for a draft written by a newer build.
 pub fn draft_from_dto(draft: &DraftDto) -> ToolkitResult<Draft> {
-    let parsed: Draft = through_json(draft, "the draft")?;
+    let mut parsed: Draft = through_json(draft, "the draft")?;
+    // A draft of an older schema reads as it is; only its version changes.
+    parsed.migrate();
     if parsed.is_newer_than_supported() {
         return Err(ToolkitError::DraftNewerSchema {
             found: parsed.schema_version,

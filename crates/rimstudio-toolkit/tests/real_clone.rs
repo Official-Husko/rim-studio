@@ -129,6 +129,7 @@ fn clone_plan_apply(w: &World, source: &str, name: &str) -> Node {
             def_name: name.to_owned(),
             label: None,
             mod_prefix: None,
+            own_projectile: Some(false),
         },
     )
     .unwrap();
@@ -180,7 +181,12 @@ fn clone_plan_apply(w: &World, source: &str, name: &str) -> Node {
     )
     .unwrap();
     assert!(!report.written.is_empty());
-    let path = w.root.join(format!("Defs/Weapons/{name}.xml"));
+    let planned = plan
+        .files
+        .iter()
+        .find(|f| f.kind == rimstudio_ipc_types::designer::FileKindDto::VanillaDefs)
+        .expect("the plan holds the definition file");
+    let path = w.root.join(&planned.path);
     let bytes = std::fs::read(path.as_std_path()).unwrap();
     println!("{}", String::from_utf8_lossy(&bytes));
     let parsed = parse_top_level(&bytes, ParseMode::Tolerant, "Defs").unwrap();
@@ -259,6 +265,7 @@ fn a_vanilla_rifle_clones_plans_and_writes_with_the_numbers_of_its_source() {
             def_name: "RS_ClonedRifleAgain".to_owned(),
             label: None,
             mod_prefix: None,
+            own_projectile: Some(false),
         },
     )
     .unwrap();

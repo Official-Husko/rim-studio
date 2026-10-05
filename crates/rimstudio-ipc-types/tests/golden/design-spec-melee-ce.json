@@ -24,7 +24,30 @@
         "value": 0.3,
         "source": "suggested"
       },
-      "linkedBodyPartsGroup": "RS_Blade"
+      "linkedBodyPartsGroup": "RS_Blade",
+      "extraMeleeDamages": [
+        {
+          "def": "Stun",
+          "amount": 14.0
+        }
+      ],
+      "surpriseAttack": {
+        "extraMeleeDamages": [
+          {
+            "def": "Stun",
+            "amount": 14.0
+          }
+        ]
+      },
+      "extra": [
+        {
+          "tag": "labelUsedInLogging",
+          "attrs": [],
+          "children": [
+            "false"
+          ]
+        }
+      ]
     }
   ],
   "previewQuality": "normal",

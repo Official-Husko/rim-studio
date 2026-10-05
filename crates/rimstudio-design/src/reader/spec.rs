@@ -16,6 +16,7 @@ use rimstudio_defs::{DefDatabases, DefRecord};
 
 use super::access::{child_number, child_text, list_items, list_texts, named_numbers, number_map};
 use super::options::ReaderOptions;
+use super::own::{OwnSource, apply_own};
 use super::weapons::{ReadContext, description_of, tech_level_named};
 use crate::error::{DesignError, DesignResult};
 use crate::model::{
@@ -99,7 +100,111 @@ pub fn spec_from_def_inheriting(
             .inherited_stats
             .insert("MarketValue".to_owned(), price.value);
     }
+    // The mapped stats the def does not set itself keep their value in the spec (the readouts need it) and
+    // are recorded as the parent's, so the written definition does not restate them until they change.
+    let mut mapped: Vec<(&str, Option<f64>)> = vec![
+        ("Mass", spec.mass.map(|s| s.value)),
+        ("WorkToMake", spec.work_to_make.map(|s| s.value)),
+    ];
+    if let Some(r) = &spec.ranged {
+        mapped.extend([
+            ("AccuracyTouch", r.accuracy.touch.map(|s| s.value)),
+            ("AccuracyShort", r.accuracy.short.map(|s| s.value)),
+            ("AccuracyMedium", r.accuracy.medium.map(|s| s.value)),
+            ("AccuracyLong", r.accuracy.long.map(|s| s.value)),
+            ("RangedWeapon_Cooldown", r.cooldown.map(|s| s.value)),
+        ]);
+    }
+    for (name, value) in mapped {
+        if let Some(v) = value
+            && !own_stats.contains(name)
+        {
+            parent.inherited_stats.insert(name.to_owned(), v);
+        }
+    }
     Ok(reading)
+}
+
+/// Reads a weapon def for the clone flow, with the def as its file writes it.
+///
+/// Like [`spec_from_def_inheriting`], and in addition the spec carries what the source defines itself and
+/// nothing the parent supplies: its own tags, cost list, recipe (skill requirements, display priority,
+/// workbenches), comps, interaction sound, icon, equipped stat offsets, verb and tool extras, the verbs
+/// other than the shooting verb, and every field the designer does not model as a raw node. The tech level
+/// the parent supplies is recorded in [`ParentRef::inherited_tech_level`] and not written. A clone built
+/// from this reading reproduces its source.
+///
+/// # Errors
+///
+/// As [`spec_from_def`].
+pub fn spec_from_def_own(
+    def: &DefRecord,
+    dbs: &DefDatabases,
+    opts: &ReaderOptions,
+    source: ValueSource,
+    own: &OwnSource<'_>,
+) -> DesignResult<SpecReading> {
+    let reset = own.def.child("statBases").is_some_and(|s| {
+        s.attr("Inherit")
+            .is_some_and(|v| v.eq_ignore_ascii_case("false"))
+    });
+    let stats_node = if reset {
+        def.node.child("statBases")
+    } else {
+        own.def.child("statBases")
+    };
+    let own_stats: BTreeSet<String> = stats_node
+        .map(|s| s.elements().map(|e| e.tag.clone()).collect())
+        .unwrap_or_default();
+    let mut reading = spec_from_def_inheriting(def, dbs, opts, source, &own_stats)?;
+    apply_own(&mut reading.spec, &def.node, own.def, source);
+    reading.notes.retain(|n| {
+        !n.starts_with("fields the designer does not model") && !n.contains("other verb(s)")
+    });
+    if let Some(note) = carried_note(&reading.spec) {
+        reading.notes.push(note);
+    }
+    Ok(reading)
+}
+
+/// The raw fields a spec carries, named in plain words (`None` when it carries none).
+#[must_use]
+pub fn carried_note(spec: &DesignSpec) -> Option<String> {
+    let mut names: Vec<String> = spec.extra_fields.iter().map(|n| n.tag.clone()).collect();
+    if !spec.comps.is_empty() {
+        names.push(format!("comps ({})", spec.comps.len()));
+    }
+    if !spec.other_verbs.is_empty() {
+        names.push(format!("{} more verb(s)", spec.other_verbs.len()));
+    }
+    if let Some(r) = &spec.ranged {
+        names.extend(r.verb_extra.iter().map(|n| format!("verbs.{}", n.tag)));
+    }
+    names.extend(
+        spec.tools
+            .iter()
+            .flat_map(|t| t.extra.iter().map(|n| format!("tools.{}", n.tag))),
+    );
+    names.extend(
+        spec.graphic_extra
+            .iter()
+            .map(|n| format!("graphicData.{}", n.tag)),
+    );
+    if let Some(recipe) = &spec.recipe {
+        names.extend(
+            recipe
+                .extra
+                .iter()
+                .map(|n| format!("recipeMaker.{}", n.tag)),
+        );
+    }
+    names.dedup();
+    (!names.is_empty()).then(|| {
+        format!(
+            "fields the designer does not model are carried as written: {}",
+            names.join(", ")
+        )
+    })
 }
 
 fn sourced(v: Option<f64>, source: ValueSource) -> Option<Sourced<f64>> {
@@ -168,7 +273,10 @@ pub fn spec_from_def(
         spec.texture_path = child_text(graphic, "texPath");
         spec.graphic_class = child_text(graphic, "graphicClass");
     }
-    spec.extra_stats = extra_stats(&stats, source);
+    spec.sound_interact = child_text(node, "soundInteract");
+    spec.ui_icon_path = child_text(node, "uiIconPath");
+    spec.ui_icon_scale = child_number(node, "uiIconScale");
+    spec.extra_stats = extra_stats(&stats, source, kind);
     spec.tools = tool_nodes.iter().map(|t| tool_spec(t, source)).collect();
     if let Some(verb) = shooting {
         spec.ranged = Some(ranged_inputs(verb, &stats, dbs, opts, source, &mut notes));
@@ -200,7 +308,10 @@ pub fn spec_from_def(
 }
 
 /// Children of the def node the spec has a field for (or that the written definition always inherits).
-const MODELLED_TOP: [&str; 15] = [
+const MODELLED_TOP: [&str; 18] = [
+    "soundInteract",
+    "uiIconPath",
+    "uiIconScale",
     "defName",
     "label",
     "description",
@@ -218,7 +329,8 @@ const MODELLED_TOP: [&str; 15] = [
     "tools",
 ];
 /// Children of the shooting verb the spec has a field for.
-const MODELLED_VERB: [&str; 10] = [
+const MODELLED_VERB: [&str; 11] = [
+    "forcedMissRadius",
     "verbClass",
     "defaultProjectile",
     "range",
@@ -313,13 +425,26 @@ fn unmodelled_notes(node: &Node, verbs: &[&Node]) -> Vec<String> {
     notes
 }
 
+/// The stats without a field of their own. The ranged stats (accuracy, cooldown) have fields only on a
+/// shooting weapon; on any other weapon (a flamethrower verb, a thrown item) they are plain extra stats.
 fn extra_stats(
     stats: &BTreeMap<String, f64>,
     source: ValueSource,
+    kind: ItemKind,
 ) -> BTreeMap<String, Sourced<f64>> {
+    const RANGED_ONLY: [&str; 5] = [
+        "AccuracyTouch",
+        "AccuracyShort",
+        "AccuracyMedium",
+        "AccuracyLong",
+        "RangedWeapon_Cooldown",
+    ];
     stats
         .iter()
-        .filter(|(name, _)| !MAPPED_STATS.contains(&name.as_str()))
+        .filter(|(name, _)| {
+            let ranged_only = RANGED_ONLY.contains(&name.as_str());
+            !MAPPED_STATS.contains(&name.as_str()) || (ranged_only && kind != ItemKind::Ranged)
+        })
         .map(|(name, v)| (name.clone(), Sourced::new(*v, source)))
         .collect()
 }
@@ -333,6 +458,7 @@ fn tool_spec(node: &Node, source: ValueSource) -> ToolSpec {
         armor_penetration: sourced(child_number(node, "armorPenetration"), source),
         chance_factor: sourced(child_number(node, "chanceFactor"), source),
         linked_body_parts_group: child_text(node, "linkedBodyPartsGroup"),
+        ..ToolSpec::default()
     }
 }
 
@@ -378,5 +504,7 @@ fn ranged_inputs(
         sound_cast: child_text(verb, "soundCast"),
         sound_cast_tail: child_text(verb, "soundCastTail"),
         muzzle_flash_scale: child_number(verb, "muzzleFlashScale"),
+        forced_miss_radius: child_number(verb, "forcedMissRadius"),
+        verb_extra: Vec::new(),
     }
 }

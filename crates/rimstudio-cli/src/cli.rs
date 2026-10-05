@@ -381,6 +381,17 @@ pub(crate) struct DraftArgs {
     pub(crate) set: Vec<String>,
 }
 
+/// `designer projectile` arguments.
+#[derive(Debug, Args)]
+pub(crate) struct ProjectileArgs {
+    /// The draft and project.
+    #[command(flatten)]
+    pub(crate) draft: DraftArgs,
+    /// Point the weapon back at the shared projectile it was copied from instead of giving it its own.
+    #[arg(long)]
+    pub(crate) shared: bool,
+}
+
 /// `designer new` arguments.
 #[derive(Debug, Args)]
 pub(crate) struct NewArgs {
@@ -406,6 +417,10 @@ pub(crate) struct NewArgs {
     /// The prefix the mod uses for definition names (added to `--name` when it lacks it).
     #[arg(long, value_name = "PREFIX", requires = "from")]
     pub(crate) prefix: Option<String>,
+    /// Keep pointing at the projectile of the source instead of giving the clone a projectile of its own.
+    /// With the shared projectile, a damage change is shown in the readouts but not written to the files.
+    #[arg(long, requires = "from")]
+    pub(crate) shared_projectile: bool,
     /// Set a value: `key=value` (repeatable), for example `ranged.damage=12`.
     #[arg(long = "set", value_name = "KEY=VALUE")]
     pub(crate) set: Vec<String>,
@@ -606,6 +621,9 @@ pub(crate) enum DesignerCmd {
     Preview(DraftArgs),
     /// Show what a cloned draft changes against its source weapon, and the effect on the readouts.
     Diff(DraftArgs),
+    /// Give a gun draft a projectile of its own (copied from the one it fires), or point it back at the
+    /// shared one with `--shared`; the draft is saved.
+    Projectile(ProjectileArgs),
     /// Suggest the Combat Extended numbers of a draft from your own conversions; changes nothing.
     CeSuggest(DraftArgs),
     /// Show the files a draft would write, with diffs; writes nothing.

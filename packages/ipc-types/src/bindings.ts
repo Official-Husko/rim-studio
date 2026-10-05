@@ -1251,7 +1251,70 @@ previewQuality: QualityDto,
 /**
  * Optional Combat Extended patch choices. Absent by default: the designer writes vanilla only.
  */
-ce?: CePatchSpecDto, };
+ce?: CePatchSpecDto, 
+/**
+ * Sound played when a pawn interacts with the weapon (a sound definition name). Absent means inherited.
+ */
+soundInteract?: string, 
+/**
+ * The crafting recipe. Absent means inherited.
+ */
+recipe?: RecipeSpecDto, 
+/**
+ * Stat offsets while the weapon is equipped, by stat name. Omitted when empty.
+ */
+equippedStatOffsets?: { [key in string]: number }, 
+/**
+ * The `comps` entries, each a raw list entry. Omitted when empty.
+ */
+comps?: Array<RawNodeDto>, 
+/**
+ * Menu icon texture path. Absent means inherited.
+ */
+uiIconPath?: string, 
+/**
+ * Menu icon scale. Absent means the game default.
+ */
+uiIconScale?: number, 
+/**
+ * Draw size of the graphic as the game writes a vector, `(1.5,1.5)`. Absent means inherited.
+ */
+drawSize?: string, 
+/**
+ * Graphic color as the game writes it, `(0.8,0.8,0.8)`. Absent means inherited.
+ */
+graphicColor?: string, 
+/**
+ * Other children of the graphic data, as written. Omitted when empty.
+ */
+graphicExtra?: Array<RawNodeDto>, 
+/**
+ * Verbs other than the shooting verb, each a raw list entry. Omitted when empty.
+ */
+otherVerbs?: Array<RawNodeDto>, 
+/**
+ * Fields of the definition the designer does not model, as written; the user can remove them.
+ * Omitted when empty.
+ */
+extraFields?: Array<RawNodeDto>, 
+/**
+ * Attributes of the root element other than `ParentName`, `Name` and `Abstract`. Omitted when empty.
+ */
+extraAttrs?: { [key in string]: string }, 
+/**
+ * Fields the writer leaves out because the parent supplies them (`graphicClass`, `verbClass`,
+ * `hasStandardCommand`). Omitted when empty.
+ */
+omitDefaults?: Array<string>, 
+/**
+ * List containers written with `Inherit="False"`, by element name. Omitted when empty.
+ */
+inheritReset?: Array<string>, 
+/**
+ * JSON pointers of required fields the source of a clone does not set either; they are not errors.
+ * Omitted when empty.
+ */
+acceptedMissing?: Array<string>, };
 
 /**
  * Request of the `designer_apply_plan` job.
@@ -1360,7 +1423,12 @@ label?: string,
  * Prefix the mod uses for its definition names. When set, a definition name that does not start with
  * `<prefix>_` gets it.
  */
-modPrefix?: string, };
+modPrefix?: string, 
+/**
+ * Give a gun a projectile of its own, copied from the one it fires, so that damage edits change the
+ * written file. Absent means yes; false keeps pointing at the shared projectile of the source.
+ */
+ownProjectile?: boolean, };
 
 /**
  * Response of `designer_clone`: the stored draft and what the copy could not carry.
@@ -1518,6 +1586,33 @@ export type DesignerPreviewRequest = {
  * The draft state to preview.
  */
 draft: DraftDto, };
+
+/**
+ * Request of `designer_projectile_own`: switch the own projectile of a draft on or off.
+ */
+export type DesignerProjectileOwnRequest = { 
+/**
+ * The draft state to change. It need not be saved; the answer is not stored either.
+ */
+draft: DraftDto, 
+/**
+ * True gives the weapon a projectile of its own copied from the one it points at; false points it
+ * back at the projectile it was copied from.
+ */
+own: boolean, };
+
+/**
+ * Response of `designer_projectile_own`.
+ */
+export type DesignerProjectileOwnResponse = { 
+/**
+ * The draft with the projectile switched. Not stored.
+ */
+draft: DraftDto, 
+/**
+ * Plain notes about what changed.
+ */
+notes?: Array<string>, };
 
 /**
  * Request of `designer_quiz_answer`.
@@ -1909,6 +2004,23 @@ anchors: Array<AnchorCardDto>,
  * English notes, for example that the pool is small.
  */
 notes: Array<string>, };
+
+/**
+ * One extra damage of a melee attack.
+ */
+export type ExtraMeleeDamageDto = { 
+/**
+ * Damage definition name.
+ */
+def: string, 
+/**
+ * Damage amount. Absent means the game default.
+ */
+amount?: number, 
+/**
+ * Chance that the extra damage applies. Absent means always.
+ */
+chance?: number, };
 
 /**
  * What a plan does to a file.
@@ -2665,7 +2777,11 @@ defName: string,
 /**
  * Stats the parent provides, by stat name, ordered by name. Omitted when empty.
  */
-inheritedStats?: { [key in string]: number }, };
+inheritedStats?: { [key in string]: number }, 
+/**
+ * The tech level the parent supplies. When it equals the spec's tech level no `techLevel` is written.
+ */
+inheritedTechLevel?: TechLevelDto, };
 
 /**
  * One patch event that touched a definition.
@@ -3271,7 +3387,28 @@ speed?: SourcedDto<number>,
 /**
  * Stopping power. Absent means inherit.
  */
-stoppingPower?: SourcedDto<number>, };
+stoppingPower?: SourcedDto<number>, 
+/**
+ * Other children of the `projectile` element, as written (explosion fields). Omitted when empty.
+ */
+extra?: Array<RawNodeDto>, 
+/**
+ * Other children of the graphic data, as written. Omitted when empty.
+ */
+graphicExtra?: Array<RawNodeDto>, 
+/**
+ * Other children of the projectile definition, as written. Omitted when empty.
+ */
+thingExtra?: Array<RawNodeDto>, 
+/**
+ * Fields the writer leaves out because the parent supplies them: `damageDef`, `damageAmountBase`,
+ * `armorPenetrationBase`, `graphicClass`. Omitted when empty.
+ */
+omitDefaults?: Array<string>, 
+/**
+ * The projectile this one was copied from. Absent when it was written from scratch.
+ */
+copiedFrom?: string, };
 
 /**
  * The open prompt.
@@ -3477,7 +3614,15 @@ soundCastTail?: string,
 /**
  * Muzzle flash scale. Absent means the game default.
  */
-muzzleFlashScale?: number, };
+muzzleFlashScale?: number, 
+/**
+ * Radius around the target where a missed shot lands. Absent means the game default.
+ */
+forcedMissRadius?: number, 
+/**
+ * Other children of the shooting verb, as written. Omitted when empty.
+ */
+verbExtra?: Array<RawNodeDto>, };
 
 /**
  * Rank of a value among the reference values.
@@ -3495,6 +3640,28 @@ equal: number,
  * References in total.
  */
 total: number, };
+
+/**
+ * A child of an element: another element or a text run.
+ */
+export type RawChildDto = RawNodeDto | string;
+
+/**
+ * An XML element as JSON: a tag, ordered attributes and ordered children.
+ */
+export type RawNodeDto = { 
+/**
+ * Element name.
+ */
+tag: string, 
+/**
+ * Attributes in source order as `[name, value]` pairs. Absent in input means none.
+ */
+attrs: Array<[string, string]>, 
+/**
+ * Child elements and text in document order. Absent in input means none.
+ */
+children: Array<RawChildDto>, };
 
 /**
  * An exact readout of the source next to the clone's.
@@ -3572,6 +3739,39 @@ value: number, };
  * Unit of a readout.
  */
 export type ReadoutUnitDto = "number" | "damage-per-second" | "seconds" | "tiles" | "silver" | "kilograms" | "fraction";
+
+/**
+ * The crafting recipe of a weapon (`recipeMaker` without the research prerequisite).
+ */
+export type RecipeSpecDto = { 
+/**
+ * Skill levels needed to craft the weapon, by skill name. Omitted when empty.
+ */
+skillRequirements?: { [key in string]: number }, 
+/**
+ * Position of the recipe in the bill menu. Absent means the game default.
+ */
+displayPriority?: number, 
+/**
+ * Workbenches that offer the recipe. Omitted when empty.
+ */
+recipeUsers?: Array<string>, 
+/**
+ * The unfinished thing that stands in for the weapon while it is made. Absent means inherited.
+ */
+unfinishedThingDef?: string, 
+/**
+ * The skill that works the recipe. Absent means inherited.
+ */
+workSkill?: string, 
+/**
+ * Other children of the recipe, as written. Omitted when empty.
+ */
+extra?: Array<RawNodeDto>, 
+/**
+ * Attributes of the recipe element (`IsNull`, `Inherit`), by name. Omitted when empty.
+ */
+attrs?: { [key in string]: string }, };
 
 /**
  * One reference weapon.
@@ -4479,6 +4679,15 @@ locked: boolean, };
 export type SuggestionSourceDto = "typed" | "answer" | "anchor" | "class-median" | "quantile" | "derived";
 
 /**
+ * The extra damage of a surprise attack.
+ */
+export type SurpriseAttackSpecDto = { 
+/**
+ * The extra damages. Omitted when empty.
+ */
+extraMeleeDamages?: Array<ExtraMeleeDamageDto>, };
+
+/**
  * A three way switch that can follow the system.
  */
 export type SystemToggleDto = "system" | "on" | "off";
@@ -4569,7 +4778,19 @@ chanceFactor?: SourcedDto<number>,
 /**
  * Body part group the tool is linked to. Absent means none.
  */
-linkedBodyPartsGroup?: string, };
+linkedBodyPartsGroup?: string, 
+/**
+ * Extra damages the attack deals besides its own. Omitted when empty.
+ */
+extraMeleeDamages?: Array<ExtraMeleeDamageDto>, 
+/**
+ * The extra damage of a surprise attack. Absent means none.
+ */
+surpriseAttack?: SurpriseAttackSpecDto, 
+/**
+ * Other children of the tool, as written. Omitted when empty.
+ */
+extra?: Array<RawNodeDto>, };
 
 /**
  * One folder or file of the annotated project tree.

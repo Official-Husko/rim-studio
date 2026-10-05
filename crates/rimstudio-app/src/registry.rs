@@ -49,11 +49,11 @@ pub mod wire {
         DesignerCloneResponse, DesignerConvertScanRequest, DesignerDraftDeleteRequest,
         DesignerDraftDeleteResponse, DesignerDraftListRequest, DesignerDraftListResponse,
         DesignerDraftSaveRequest, DesignerDraftSaveResponse, DesignerExportPlanRequest,
-        DesignerFitRequest, DesignerPreviewRequest, DesignerQuizAnswerRequest,
-        DesignerQuizAnswerResponse, DesignerQuizBackRequest, DesignerQuizNextRequest,
-        DesignerReferenceListRequest, DesignerStructureDefaultsRequest,
-        DesignerStructureDefaultsResponse, FitReportDto, PreviewDto, QuizStepDto, ReferenceListDto,
-        WritePlanDto,
+        DesignerFitRequest, DesignerPreviewRequest, DesignerProjectileOwnRequest,
+        DesignerProjectileOwnResponse, DesignerQuizAnswerRequest, DesignerQuizAnswerResponse,
+        DesignerQuizBackRequest, DesignerQuizNextRequest, DesignerReferenceListRequest,
+        DesignerStructureDefaultsRequest, DesignerStructureDefaultsResponse, FitReportDto,
+        PreviewDto, QuizStepDto, ReferenceListDto, WritePlanDto,
     };
     pub use rimstudio_ipc_types::jobs::{CancelJobRequest, CancelJobResponse};
     pub use rimstudio_ipc_types::library::{
@@ -289,6 +289,7 @@ macro_rules! for_each_command {
             action designer_clone (ctx, req: DesignerCloneRequest) -> DesignerCloneResponse = $crate::api::designer::designer_clone;
             query  designer_clone_diff (ctx, req: DesignerCloneDiffRequest) -> DesignerCloneDiffResponse = $crate::api::designer::designer_clone_diff;
             query  designer_structure_defaults (ctx, req: DesignerStructureDefaultsRequest) -> DesignerStructureDefaultsResponse = $crate::api::designer::designer_structure_defaults;
+            query  designer_projectile_own (ctx, req: DesignerProjectileOwnRequest) -> DesignerProjectileOwnResponse = $crate::api::designer::designer_projectile_own;
         }
     };
 }

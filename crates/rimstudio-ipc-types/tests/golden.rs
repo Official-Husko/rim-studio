@@ -55,6 +55,11 @@ fn golden_design_spec_ranged_without_ce() {
 }
 
 #[test]
+fn golden_design_spec_with_carried_fields() {
+    check("design-spec-carried", &common::carried_spec());
+}
+
+#[test]
 fn golden_design_spec_melee_with_ce() {
     check("design-spec-melee-ce", &common::melee_spec_with_ce());
 }

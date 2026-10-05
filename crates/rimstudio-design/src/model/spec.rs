@@ -12,6 +12,9 @@ use std::collections::BTreeMap;
 
 use serde::{Deserialize, Serialize};
 
+use rimstudio_core::tree::Node;
+
+use super::carried::{ExtraMeleeDamage, RecipeSpec, SurpriseAttackSpec};
 use super::source::{OfferOutcome, Sourced, ValueSource, offer};
 
 /// The kind of item a spec describes. Apparel is deferred, hence the non exhaustive marker.
@@ -139,6 +142,10 @@ pub struct ParentRef {
     /// Stat values the parent provides, by stat def name.
     #[serde(skip_serializing_if = "BTreeMap::is_empty")]
     pub inherited_stats: BTreeMap<String, f64>,
+    /// The tech level the parent supplies. When it equals the spec's tech level the definition does not
+    /// write a `techLevel` of its own: the parent already provides it.
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub inherited_tech_level: Option<TechLevel>,
 }
 
 impl ParentRef {
@@ -148,6 +155,7 @@ impl ParentRef {
         Self {
             def_name: def_name.into(),
             inherited_stats: BTreeMap::new(),
+            inherited_tech_level: None,
         }
     }
 }
@@ -207,6 +215,15 @@ pub struct ToolSpec {
     /// The body part group that carries the tool (OPT).
     #[serde(skip_serializing_if = "Option::is_none")]
     pub linked_body_parts_group: Option<String>,
+    /// Extra damages the attack deals besides its own (OPT).
+    #[serde(skip_serializing_if = "Vec::is_empty")]
+    pub extra_melee_damages: Vec<ExtraMeleeDamage>,
+    /// The extra damage of a surprise attack (OPT).
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub surprise_attack: Option<SurpriseAttackSpec>,
+    /// Other children of the tool, as written (for example `labelUsedInLogging`).
+    #[serde(skip_serializing_if = "Vec::is_empty")]
+    pub extra: Vec<Node>,
 }
 
 impl ToolSpec {
@@ -273,6 +290,24 @@ pub struct ProjectileSpec {
     /// Stopping power (OPT).
     #[serde(skip_serializing_if = "Option::is_none")]
     pub stopping_power: Option<Sourced<f64>>,
+    /// Other children of the `projectile` element, as written (explosion fields, flight behaviour).
+    #[serde(skip_serializing_if = "Vec::is_empty")]
+    pub extra: Vec<Node>,
+    /// Other children of the `graphicData` element, as written (draw size, shader).
+    #[serde(skip_serializing_if = "Vec::is_empty")]
+    pub graphic_extra: Vec<Node>,
+    /// Other children of the projectile's thing def, as written (thing class, label hints).
+    #[serde(skip_serializing_if = "Vec::is_empty")]
+    pub thing_extra: Vec<Node>,
+    /// Fields the writer would add (its defaults and the values of the inputs) that the projectile this one
+    /// was copied from gets from its parent instead: `damageDef`, `damageAmountBase`,
+    /// `armorPenetrationBase`, `graphicClass`. They are not written.
+    #[serde(skip_serializing_if = "Vec::is_empty")]
+    pub omit_defaults: Vec<String>,
+    /// The def name of the projectile this one was copied from (OPT). Giving the weapon back the shared
+    /// projectile uses it.
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub copied_from: Option<String>,
 }
 
 /// Parent base written when a new projectile names none. A def name, not a value.
@@ -287,6 +322,7 @@ pub const DEFAULT_VERB_CLASS: &str = "Verb_Shoot";
 /// Which projectile a ranged weapon fires.
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 #[serde(rename_all = "kebab-case", tag = "mode", content = "def")]
+#[allow(clippy::large_enum_variant)] // boxing would change the public shape every consumer matches on
 pub enum ProjectileChoice {
     /// An existing projectile def, referenced by name. The damage input is informational (it feeds the
     /// readouts); nothing about the projectile is written.
@@ -349,6 +385,12 @@ pub struct RangedInputs {
     /// Muzzle flash scale (OPT).
     #[serde(skip_serializing_if = "Option::is_none")]
     pub muzzle_flash_scale: Option<f64>,
+    /// Radius in cells around the target where a missed shot lands (OPT).
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub forced_miss_radius: Option<f64>,
+    /// Other children of the shooting verb, as written (aiming effects, log rules).
+    #[serde(skip_serializing_if = "Vec::is_empty")]
+    pub verb_extra: Vec<Node>,
 }
 
 /// Penetration of one tool in a Combat Extended patch.
@@ -687,6 +729,55 @@ pub struct DesignSpec {
     /// The optional Combat Extended patch. `None` means the toggle is off, which is the default.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub ce: Option<CePatchSpec>,
+    /// The sound played when a pawn picks up or interacts with the weapon (OPT, a `SoundDef` name).
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub sound_interact: Option<String>,
+    /// The crafting recipe: skill requirements, display priority, workbenches (OPT).
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub recipe: Option<RecipeSpec>,
+    /// Stat offsets while the weapon is equipped, by stat def name (OPT).
+    #[serde(default, skip_serializing_if = "BTreeMap::is_empty")]
+    pub equipped_stat_offsets: BTreeMap<String, f64>,
+    /// The `comps` entries (quality, art, charges), each a raw `li` node.
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub comps: Vec<Node>,
+    /// The icon texture path of the item in menus (OPT).
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub ui_icon_path: Option<String>,
+    /// The scale of the menu icon (OPT).
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub ui_icon_scale: Option<f64>,
+    /// The draw size of the item graphic as the game writes a vector, `(1.5,1.5)` (OPT).
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub draw_size: Option<String>,
+    /// The graphic color as the game writes it, `(0.8,0.8,0.8)` (OPT).
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub graphic_color: Option<String>,
+    /// Other children of `graphicData`, as written (shader, second color, offsets).
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub graphic_extra: Vec<Node>,
+    /// Verbs of the definition other than the shooting verb, each a raw `li` node.
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub other_verbs: Vec<Node>,
+    /// Fields of the definition the designer does not model, as written. They are emitted verbatim after
+    /// the modelled fields and the user can remove them.
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub extra_fields: Vec<Node>,
+    /// Attributes of the root element other than `ParentName`, `Name` and `Abstract` (for example
+    /// `MayRequire`), by name.
+    #[serde(default, skip_serializing_if = "BTreeMap::is_empty")]
+    pub extra_attrs: BTreeMap<String, String>,
+    /// Fields the writer would add by default (`graphicClass`, `verbClass`, `hasStandardCommand`) that the
+    /// source of a clone does not define, because its parent supplies them. They are not written.
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub omit_defaults: Vec<String>,
+    /// The list containers written with `Inherit="False"` (they replace the parent's list), by element name.
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub inherit_reset: Vec<String>,
+    /// JSON pointers of required fields the source of a clone does not define either. Such a field is not
+    /// an error: the written definition lacks it as the source does.
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub accepted_missing: Vec<String>,
 }
 
 impl DesignSpec {
@@ -719,6 +810,21 @@ impl DesignSpec {
             ranged: (kind == ItemKind::Ranged).then(RangedInputs::default),
             preview_quality: Quality::Normal,
             ce: None,
+            sound_interact: None,
+            recipe: None,
+            equipped_stat_offsets: BTreeMap::new(),
+            comps: Vec::new(),
+            ui_icon_path: None,
+            ui_icon_scale: None,
+            draw_size: None,
+            graphic_color: None,
+            graphic_extra: Vec::new(),
+            other_verbs: Vec::new(),
+            extra_fields: Vec::new(),
+            extra_attrs: BTreeMap::new(),
+            omit_defaults: Vec::new(),
+            inherit_reset: Vec::new(),
+            accepted_missing: Vec::new(),
         }
     }
 

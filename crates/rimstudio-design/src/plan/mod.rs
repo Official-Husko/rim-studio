@@ -20,7 +20,7 @@ pub mod vanilla;
 
 use rimstudio_core::tree::Node;
 
-use crate::model::DesignSpec;
+use crate::model::{DesignSpec, ProjectileChoice};
 use crate::validation::{codes, has_errors, validate_vanilla};
 
 pub use crate::ce::patchgen::{
@@ -79,7 +79,7 @@ pub fn export_vanilla_plan(spec: &DesignSpec, layout: &ProjectLayout) -> WritePl
 
     let def_name = spec.identity.def_name.as_str();
     let mut spec = spec.clone();
-    if spec.texture_path.is_none() {
+    if spec.texture_path.is_none() && !spec.omit_defaults.iter().any(|o| o == "texPath") {
         let reserved = layout.weapon_texture_path(spec.kind, def_name);
         diagnostics.push(codes::TEXTURE_RESERVED.diagnostic(
             "/texturePath",
@@ -89,6 +89,42 @@ pub fn export_vanilla_plan(spec: &DesignSpec, layout: &ProjectLayout) -> WritePl
             ],
         ));
         spec.texture_path = Some(reserved);
+    } else if let Some(path) = &spec.texture_path
+        && *path != layout.weapon_texture_path(spec.kind, def_name)
+    {
+        diagnostics.push(codes::TEXTURE_SHARED.diagnostic(
+            "/texturePath",
+            &[
+                ("label", &spec.identity.label),
+                ("path", path),
+                (
+                    "file",
+                    &layout.texture_file(&layout.weapon_texture_path(spec.kind, def_name)),
+                ),
+            ],
+        ));
+    }
+    if let Some(ProjectileChoice::Inline(p)) =
+        spec.ranged.as_ref().and_then(|r| r.projectile.as_ref())
+        && let Some(path) = &p.texture_path
+        && *path != layout.projectile_texture_path(&p.def_name)
+    {
+        let label = if p.label.is_empty() {
+            &p.def_name
+        } else {
+            &p.label
+        };
+        diagnostics.push(codes::TEXTURE_SHARED.diagnostic(
+            "/ranged/projectile/def/texturePath",
+            &[
+                ("label", label),
+                ("path", path),
+                (
+                    "file",
+                    &layout.texture_file(&layout.projectile_texture_path(&p.def_name)),
+                ),
+            ],
+        ));
     }
     let spec = &spec;
     let category = WeaponCategory::of(spec.kind, spec.tech_level);

@@ -21,6 +21,7 @@
 
 pub mod access;
 pub mod options;
+pub mod own;
 pub mod pricing;
 pub mod spec;
 pub mod statdefs;
@@ -31,8 +32,11 @@ pub use options::{
     ArmorSource, Exclusions, FALLBACK_ARMOR_RATINGS, ReaderOptions, RoleCondition, RoleFacts,
     RoleRule, RoleRules,
 };
+pub use own::{OwnSource, projectile_spec_from_def, shooting_verb};
 pub use pricing::market_value_of;
-pub use spec::{SpecReading, spec_from_def, spec_from_def_inheriting};
+pub use spec::{
+    SpecReading, carried_note, spec_from_def, spec_from_def_inheriting, spec_from_def_own,
+};
 pub use statdefs::StatTable;
 pub use stuff::{StuffProfile, evaluate_stat};
 pub use weapons::{
@@ -43,5 +47,7 @@ pub use weapons::{
 
 #[cfg(test)]
 pub(crate) mod fixtures_tests;
+#[cfg(test)]
+mod own_tests;
 #[cfg(test)]
 mod tests;

@@ -13,30 +13,28 @@
 //! The diff re-reads the source from the same snapshot, so it is a pure function of the draft and the loaded
 //! defs.
 
-use std::collections::{BTreeMap, BTreeSet};
+use std::collections::BTreeMap;
 
-use rimstudio_defs::DefRecord;
 use rimstudio_design::ce::reader::is_conversion;
 use rimstudio_design::classes::{ItemKind as PoolKind, Pool};
 use rimstudio_design::model::{
     Anchor, CalibrationMode, CostEntry, DesignSpec, Draft, ItemKind, ProjectileChoice, Sourced,
     StuffSpec, ValueSource,
 };
-use rimstudio_design::reader::{SpecReading, spec_from_def, spec_from_def_inheriting};
+use rimstudio_design::reader::SpecReading;
 use rimstudio_design::validation::{diagnostic_field, validate_refs, validate_vanilla};
 use rimstudio_ipc_types::designer::{
     CloneChangeDto, DesignerCloneDiffRequest, DesignerCloneDiffResponse, DesignerCloneRequest,
     DesignerCloneResponse, DesignerDraftSaveRequest, DesignerStructureDefaultsRequest,
     DesignerStructureDefaultsResponse, ReadoutDeltaDto, StructureReferenceDto,
 };
-use rimstudio_workspace::snapshot::{DefRef, Snapshot};
-use rimstudio_xml::modes::ParseMode;
-use rimstudio_xml::reader::parse_top_level;
+use rimstudio_workspace::snapshot::DefRef;
 use serde_json::Value;
 
 use super::ctx::{Ctx, Engine};
 use super::drafts::{check_part, draft_load, draft_save};
 use super::dto::{draft_from_dto, draft_to_dto, pool_kind};
+use super::own::{free_name, give_own_projectile, read_with_own};
 use super::preview::{ReadoutEnv, readouts, spec_stats};
 use crate::error::{ToolkitError, ToolkitResult};
 
@@ -54,33 +52,6 @@ const NAME_POINTERS: [&str; 3] = [
 // ---------------------------------------------------------------------------------------------------
 // Reading the source
 // ---------------------------------------------------------------------------------------------------
-
-/// The names of the stats the def declares itself, read from the raw `statBases` of its file.
-///
-/// `None` means every stat has to be treated as the def's own: the def was changed by a patch (the file
-/// does not show the final state), its file cannot be read or found, or its `statBases` resets inheritance.
-fn own_stats(snapshot: &Snapshot, record: &DefRecord) -> Option<BTreeSet<String>> {
-    if !record.patched_by.is_empty() {
-        return None;
-    }
-    let file = snapshot.file(record.origin?.file)?;
-    let bytes = std::fs::read(file.path.as_std_path()).ok()?;
-    let parsed = parse_top_level(&bytes, ParseMode::Tolerant, "Defs").ok()?;
-    let raw = parsed
-        .nodes
-        .iter()
-        .find(|n| n.child_text("defName") == Some(record.def_name.as_str()))?;
-    let Some(stats) = raw.child("statBases") else {
-        return Some(BTreeSet::new());
-    };
-    if stats
-        .attr("Inherit")
-        .is_some_and(|v| v.eq_ignore_ascii_case("false"))
-    {
-        return None;
-    }
-    Some(stats.elements().map(|e| e.tag.clone()).collect())
-}
 
 /// Reads a weapon of the loaded defs into a spec marked `anchor`, the way a clone copies it.
 ///
@@ -102,12 +73,7 @@ fn read_source(engine: &Engine, name: &str) -> ToolkitResult<SpecReading> {
              definitions, so clone it from a game setup without Combat Extended loaded"
         )));
     }
-    let dbs = engine.databases();
-    let opts = engine.reader_options();
-    let reading = match own_stats(snapshot, record) {
-        Some(own) => spec_from_def_inheriting(record, dbs, opts, ValueSource::Anchor, &own),
-        None => spec_from_def(record, dbs, opts, ValueSource::Anchor),
-    }?;
+    let reading = read_with_own(engine, record, ValueSource::Anchor)?;
     Ok(with_pool_role(engine, name, reading))
 }
 
@@ -158,6 +124,20 @@ fn applied_name(def_name: &str, prefix: &str) -> String {
     }
 }
 
+/// The pointers of the required fields a clone lacks because its source lacks them. They are accepted: the
+/// clone is written without them, as the source is.
+fn missing_in_source(spec: &DesignSpec) -> Vec<String> {
+    let mut out: Vec<String> = validate_vanilla(spec)
+        .iter()
+        .filter(|d| d.code.as_str() == "design.required-missing")
+        .filter_map(|d| diagnostic_field(d).map(str::to_owned))
+        .filter(|f| !f.starts_with("/identity/"))
+        .collect();
+    out.sort();
+    out.dedup();
+    out
+}
+
 /// The error diagnostics about the names of the new item, as one plain reason.
 fn name_problems(engine: &Engine, spec: &DesignSpec) -> Option<String> {
     let mut all = validate_vanilla(spec);
@@ -172,9 +152,8 @@ fn name_problems(engine: &Engine, spec: &DesignSpec) -> Option<String> {
 }
 
 /// The notes of a clone: what the reader could not carry and what the copy shares with its source.
-fn clone_notes(source: &str, reading: &SpecReading) -> Vec<String> {
+fn clone_notes(source: &str, reading: &SpecReading, spec: &DesignSpec) -> Vec<String> {
     let mut notes = reading.notes.clone();
-    let spec = &reading.spec;
     if spec.work_to_make.is_none() {
         notes.push(format!(
             "{source} has no work to make; the designer needs one before the clone can be written"
@@ -186,11 +165,8 @@ fn clone_notes(source: &str, reading: &SpecReading) -> Vec<String> {
              them before the clone can be written"
         ));
     }
-    if let Some(ProjectileChoice::Reference(projectile)) = reading
-        .spec
-        .ranged
-        .as_ref()
-        .and_then(|r| r.projectile.as_ref())
+    if let Some(ProjectileChoice::Reference(projectile)) =
+        spec.ranged.as_ref().and_then(|r| r.projectile.as_ref())
     {
         notes.push(format!(
             "the clone points at the projectile {projectile} of {source}; the damage and armor \
@@ -218,7 +194,6 @@ pub fn clone_draft(ctx: &Ctx, req: DesignerCloneRequest) -> ToolkitResult<Design
     let engine = ctx.require_engine()?;
     let source = req.source.trim();
     let reading = read_source(&engine, source)?;
-    let notes = clone_notes(source, &reading);
     let source_label = reading.spec.identity.label.clone();
 
     let prefix = req.mod_prefix.as_deref().map(str::trim).unwrap_or_default();
@@ -231,7 +206,7 @@ pub fn clone_draft(ctx: &Ctx, req: DesignerCloneRequest) -> ToolkitResult<Design
                 .unwrap_or(&def_name),
         ),
     };
-    let mut spec = reading.clone_as(&def_name, &label);
+    let mut spec = reading.clone().clone_as(&def_name, &label);
     spec.identity.mod_prefix = prefix.to_owned();
     spec.ce = None;
     if let Some(reason) = name_problems(&engine, &spec) {
@@ -239,6 +214,19 @@ pub fn clone_draft(ctx: &Ctx, req: DesignerCloneRequest) -> ToolkitResult<Design
             "the new name cannot be used: {reason}"
         )));
     }
+    let mut extra_notes = Vec::new();
+    if req.own_projectile.unwrap_or(true) && spec.kind == ItemKind::Ranged {
+        let name = free_name(&engine, &def_name, prefix);
+        match give_own_projectile(&engine, &mut spec, &name) {
+            Ok(note) => extra_notes.push(note),
+            Err(reason) => extra_notes.push(format!(
+                "the weapon keeps pointing at the projectile of {source}: {reason}"
+            )),
+        }
+    }
+    spec.accepted_missing = missing_in_source(&spec);
+    let mut notes = clone_notes(source, &reading, &spec);
+    notes.extend(extra_notes);
 
     let mut draft = Draft::new(spec);
     draft.calibration = CalibrationMode::Anchored;
@@ -339,7 +327,10 @@ fn label_of_pointer(pointer: &str) -> String {
 }
 
 fn is_ignored(pointer: &str) -> bool {
-    NAME_POINTERS.contains(&pointer) || pointer == "/ce" || pointer.starts_with("/ce/")
+    NAME_POINTERS.contains(&pointer)
+        || pointer == "/ce"
+        || pointer.starts_with("/ce/")
+        || pointer.starts_with("/acceptedMissing")
 }
 
 /// The changed fields between two specs, as old and new leaf values.
@@ -435,7 +426,19 @@ pub fn clone_diff(
         ));
     };
     let engine = ctx.require_engine()?;
-    let reading = read_source(&engine, &source_name)?;
+    let mut reading = read_source(&engine, &source_name)?;
+    // A clone with a projectile of its own is compared with the source read the same way, so that only
+    // real edits show up.
+    if let Some(ProjectileChoice::Inline(p)) = draft
+        .spec
+        .ranged
+        .as_ref()
+        .and_then(|r| r.projectile.as_ref())
+        && p.copied_from.is_some()
+    {
+        // A source whose projectile cannot be copied stays as read; the difference then shows.
+        let _ = give_own_projectile(&engine, &mut reading.spec, &p.def_name);
+    }
     let source = &reading.spec;
     let clone = &draft.spec;
     let changes = changes_between(source, clone)?;

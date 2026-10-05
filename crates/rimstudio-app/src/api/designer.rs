@@ -11,10 +11,11 @@ use rimstudio_ipc_types::designer::{
     DesignerConvertScanRequest, DesignerDraftDeleteRequest, DesignerDraftDeleteResponse,
     DesignerDraftListRequest, DesignerDraftListResponse, DesignerDraftSaveRequest,
     DesignerDraftSaveResponse, DesignerExportPlanRequest, DesignerFitRequest,
-    DesignerPreviewRequest, DesignerQuizAnswerRequest, DesignerQuizAnswerResponse,
-    DesignerQuizBackRequest, DesignerQuizNextRequest, DesignerReferenceListRequest,
-    DesignerStructureDefaultsRequest, DesignerStructureDefaultsResponse, FitReportDto, PreviewDto,
-    QuizStepDto, ReferenceListDto, WritePlanDto,
+    DesignerPreviewRequest, DesignerProjectileOwnRequest, DesignerProjectileOwnResponse,
+    DesignerQuizAnswerRequest, DesignerQuizAnswerResponse, DesignerQuizBackRequest,
+    DesignerQuizNextRequest, DesignerReferenceListRequest, DesignerStructureDefaultsRequest,
+    DesignerStructureDefaultsResponse, FitReportDto, PreviewDto, QuizStepDto, ReferenceListDto,
+    WritePlanDto,
 };
 use rimstudio_ipc_types::error::ApiError;
 use rimstudio_toolkit::designer as toolkit;
@@ -240,4 +241,19 @@ pub fn designer_structure_defaults(
 ) -> Result<DesignerStructureDefaultsResponse, ApiError> {
     let d = ctx.workspace.designer_ctx(ctx)?;
     toolkit::structure_defaults(&d, req).map_err(|e| ctx.toolkit_error(&e))
+}
+
+/// `designer_projectile_own`: switches the own projectile of a draft on or off. On copies the projectile
+/// the weapon points at into a projectile of its own (new name derived from the weapon); off points the
+/// weapon back at the projectile it was copied from. Read only: the answer is not stored.
+///
+/// # Errors
+/// `designer.invalid-draft` for a draft that cannot be read or a switch that cannot be made (the message
+/// says why), `designer.reference-unavailable` without an install.
+pub fn designer_projectile_own(
+    ctx: &AppContext,
+    req: DesignerProjectileOwnRequest,
+) -> Result<DesignerProjectileOwnResponse, ApiError> {
+    let d = ctx.workspace.designer_ctx(ctx)?;
+    toolkit::projectile_own(&d, req).map_err(|e| ctx.toolkit_error(&e))
 }

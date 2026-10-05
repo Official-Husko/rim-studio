@@ -9,6 +9,8 @@ use std::collections::BTreeMap;
 
 use serde::{Deserialize, Serialize};
 
+use super::carried::{ExtraMeleeDamageDto, RawNodeDto, RecipeSpecDto, SurpriseAttackSpecDto};
+
 /// Where a number came from. The order is the replacement rank, `typed` highest.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, PartialOrd, Ord, Serialize, Deserialize)]
 #[cfg_attr(feature = "ts", derive(ts_rs::TS))]
@@ -119,6 +121,10 @@ pub struct ParentRefDto {
     #[serde(skip_serializing_if = "BTreeMap::is_empty")]
     #[cfg_attr(feature = "ts", ts(as = "Option<BTreeMap<String, f64>>", optional))]
     pub inherited_stats: BTreeMap<String, f64>,
+    /// The tech level the parent supplies. When it equals the spec's tech level no `techLevel` is written.
+    #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
+    pub inherited_tech_level: Option<TechLevelDto>,
 }
 
 /// One ingredient of the recipe.
@@ -174,6 +180,18 @@ pub struct ToolSpecDto {
     #[serde(skip_serializing_if = "Option::is_none")]
     #[cfg_attr(feature = "ts", ts(optional))]
     pub linked_body_parts_group: Option<String>,
+    /// Extra damages the attack deals besides its own. Omitted when empty.
+    #[serde(skip_serializing_if = "Vec::is_empty")]
+    #[cfg_attr(feature = "ts", ts(as = "Option<Vec<ExtraMeleeDamageDto>>", optional))]
+    pub extra_melee_damages: Vec<ExtraMeleeDamageDto>,
+    /// The extra damage of a surprise attack. Absent means none.
+    #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
+    pub surprise_attack: Option<SurpriseAttackSpecDto>,
+    /// Other children of the tool, as written. Omitted when empty.
+    #[serde(skip_serializing_if = "Vec::is_empty")]
+    #[cfg_attr(feature = "ts", ts(as = "Option<Vec<RawNodeDto>>", optional))]
+    pub extra: Vec<RawNodeDto>,
 }
 
 /// Accuracy at the four range bands.
@@ -232,12 +250,34 @@ pub struct ProjectileSpecDto {
     #[serde(skip_serializing_if = "Option::is_none")]
     #[cfg_attr(feature = "ts", ts(optional))]
     pub stopping_power: Option<SourcedDto<f64>>,
+    /// Other children of the `projectile` element, as written (explosion fields). Omitted when empty.
+    #[serde(skip_serializing_if = "Vec::is_empty")]
+    #[cfg_attr(feature = "ts", ts(as = "Option<Vec<RawNodeDto>>", optional))]
+    pub extra: Vec<RawNodeDto>,
+    /// Other children of the graphic data, as written. Omitted when empty.
+    #[serde(skip_serializing_if = "Vec::is_empty")]
+    #[cfg_attr(feature = "ts", ts(as = "Option<Vec<RawNodeDto>>", optional))]
+    pub graphic_extra: Vec<RawNodeDto>,
+    /// Other children of the projectile definition, as written. Omitted when empty.
+    #[serde(skip_serializing_if = "Vec::is_empty")]
+    #[cfg_attr(feature = "ts", ts(as = "Option<Vec<RawNodeDto>>", optional))]
+    pub thing_extra: Vec<RawNodeDto>,
+    /// Fields the writer leaves out because the parent supplies them: `damageDef`, `damageAmountBase`,
+    /// `armorPenetrationBase`, `graphicClass`. Omitted when empty.
+    #[serde(skip_serializing_if = "Vec::is_empty")]
+    #[cfg_attr(feature = "ts", ts(as = "Option<Vec<String>>", optional))]
+    pub omit_defaults: Vec<String>,
+    /// The projectile this one was copied from. Absent when it was written from scratch.
+    #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
+    pub copied_from: Option<String>,
 }
 
 /// A reference to an existing projectile or an inline definition.
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 #[cfg_attr(feature = "ts", derive(ts_rs::TS))]
 #[serde(rename_all = "kebab-case", tag = "mode", content = "def")]
+#[allow(clippy::large_enum_variant)] // the DTO mirrors the engine enum, which consumers match on
 pub enum ProjectileChoiceDto {
     /// Use an existing projectile by definition name.
     Reference(String),
@@ -300,6 +340,14 @@ pub struct RangedInputsDto {
     #[serde(skip_serializing_if = "Option::is_none")]
     #[cfg_attr(feature = "ts", ts(optional))]
     pub muzzle_flash_scale: Option<f64>,
+    /// Radius around the target where a missed shot lands. Absent means the game default.
+    #[serde(skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
+    pub forced_miss_radius: Option<f64>,
+    /// Other children of the shooting verb, as written. Omitted when empty.
+    #[serde(skip_serializing_if = "Vec::is_empty")]
+    #[cfg_attr(feature = "ts", ts(as = "Option<Vec<RawNodeDto>>", optional))]
+    pub verb_extra: Vec<RawNodeDto>,
 }
 
 /// Melee tool penetration values of the Combat Extended block.
@@ -488,6 +536,69 @@ pub struct DesignSpecDto {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     #[cfg_attr(feature = "ts", ts(optional))]
     pub ce: Option<CePatchSpecDto>,
+    /// Sound played when a pawn interacts with the weapon (a sound definition name). Absent means inherited.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
+    pub sound_interact: Option<String>,
+    /// The crafting recipe. Absent means inherited.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
+    pub recipe: Option<RecipeSpecDto>,
+    /// Stat offsets while the weapon is equipped, by stat name. Omitted when empty.
+    #[serde(default, skip_serializing_if = "BTreeMap::is_empty")]
+    #[cfg_attr(feature = "ts", ts(as = "Option<BTreeMap<String, f64>>", optional))]
+    pub equipped_stat_offsets: BTreeMap<String, f64>,
+    /// The `comps` entries, each a raw list entry. Omitted when empty.
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    #[cfg_attr(feature = "ts", ts(as = "Option<Vec<RawNodeDto>>", optional))]
+    pub comps: Vec<RawNodeDto>,
+    /// Menu icon texture path. Absent means inherited.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
+    pub ui_icon_path: Option<String>,
+    /// Menu icon scale. Absent means the game default.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
+    pub ui_icon_scale: Option<f64>,
+    /// Draw size of the graphic as the game writes a vector, `(1.5,1.5)`. Absent means inherited.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
+    pub draw_size: Option<String>,
+    /// Graphic color as the game writes it, `(0.8,0.8,0.8)`. Absent means inherited.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
+    pub graphic_color: Option<String>,
+    /// Other children of the graphic data, as written. Omitted when empty.
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    #[cfg_attr(feature = "ts", ts(as = "Option<Vec<RawNodeDto>>", optional))]
+    pub graphic_extra: Vec<RawNodeDto>,
+    /// Verbs other than the shooting verb, each a raw list entry. Omitted when empty.
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    #[cfg_attr(feature = "ts", ts(as = "Option<Vec<RawNodeDto>>", optional))]
+    pub other_verbs: Vec<RawNodeDto>,
+    /// Fields of the definition the designer does not model, as written; the user can remove them.
+    /// Omitted when empty.
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    #[cfg_attr(feature = "ts", ts(as = "Option<Vec<RawNodeDto>>", optional))]
+    pub extra_fields: Vec<RawNodeDto>,
+    /// Attributes of the root element other than `ParentName`, `Name` and `Abstract`. Omitted when empty.
+    #[serde(default, skip_serializing_if = "BTreeMap::is_empty")]
+    #[cfg_attr(feature = "ts", ts(as = "Option<BTreeMap<String, String>>", optional))]
+    pub extra_attrs: BTreeMap<String, String>,
+    /// Fields the writer leaves out because the parent supplies them (`graphicClass`, `verbClass`,
+    /// `hasStandardCommand`). Omitted when empty.
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    #[cfg_attr(feature = "ts", ts(as = "Option<Vec<String>>", optional))]
+    pub omit_defaults: Vec<String>,
+    /// List containers written with `Inherit="False"`, by element name. Omitted when empty.
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    #[cfg_attr(feature = "ts", ts(as = "Option<Vec<String>>", optional))]
+    pub inherit_reset: Vec<String>,
+    /// JSON pointers of required fields the source of a clone does not set either; they are not errors.
+    /// Omitted when empty.
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    #[cfg_attr(feature = "ts", ts(as = "Option<Vec<String>>", optional))]
+    pub accepted_missing: Vec<String>,
 }
 
 impl DesignSpecDto {
@@ -516,6 +627,21 @@ impl DesignSpecDto {
             ranged: None,
             preview_quality: QualityDto::Normal,
             ce: None,
+            sound_interact: None,
+            recipe: None,
+            equipped_stat_offsets: BTreeMap::new(),
+            comps: Vec::new(),
+            ui_icon_path: None,
+            ui_icon_scale: None,
+            draw_size: None,
+            graphic_color: None,
+            graphic_extra: Vec::new(),
+            other_verbs: Vec::new(),
+            extra_fields: Vec::new(),
+            extra_attrs: BTreeMap::new(),
+            omit_defaults: Vec::new(),
+            inherit_reset: Vec::new(),
+            accepted_missing: Vec::new(),
         }
     }
 

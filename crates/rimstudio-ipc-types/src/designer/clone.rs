@@ -30,6 +30,36 @@ pub struct DesignerCloneRequest {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     #[cfg_attr(feature = "ts", ts(optional))]
     pub mod_prefix: Option<String>,
+    /// Give a gun a projectile of its own, copied from the one it fires, so that damage edits change the
+    /// written file. Absent means yes; false keeps pointing at the shared projectile of the source.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
+    pub own_projectile: Option<bool>,
+}
+
+/// Request of `designer_projectile_own`: switch the own projectile of a draft on or off.
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
+#[serde(rename_all = "camelCase")]
+pub struct DesignerProjectileOwnRequest {
+    /// The draft state to change. It need not be saved; the answer is not stored either.
+    pub draft: DraftDto,
+    /// True gives the weapon a projectile of its own copied from the one it points at; false points it
+    /// back at the projectile it was copied from.
+    pub own: bool,
+}
+
+/// Response of `designer_projectile_own`.
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
+#[serde(rename_all = "camelCase")]
+pub struct DesignerProjectileOwnResponse {
+    /// The draft with the projectile switched. Not stored.
+    pub draft: DraftDto,
+    /// Plain notes about what changed.
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    #[cfg_attr(feature = "ts", ts(as = "Option<Vec<String>>", optional))]
+    pub notes: Vec<String>,
 }
 
 /// Response of `designer_clone`: the stored draft and what the copy could not carry.

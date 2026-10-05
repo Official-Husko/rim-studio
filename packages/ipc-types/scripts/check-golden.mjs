@@ -16,6 +16,7 @@ const TYPES = {
   "ce-suggestion": "CeSuggestionDto",
   "clone-diff": "DesignerCloneDiffResponse",
   "convert-scan": "ConvertScanDto",
+  "design-spec-carried": "DesignSpecDto",
   "design-spec-melee-ce": "DesignSpecDto",
   "design-spec-ranged": "DesignSpecDto",
   "fit-report": "FitReportDto",

@@ -13,7 +13,7 @@
             "attrs": [
               [
                 "ParentName",
-                "BaseBullet"
+                "RS_BaseBullet"
               ]
             ],
             "children": [
@@ -43,10 +43,10 @@
                     ]
                   },
                   {
-                    "tag": "graphicClass",
+                    "tag": "drawSize",
                     "attrs": [],
                     "children": [
-                      "Graphic_Single"
+                      "(0.5,0.5)"
                     ]
                   }
                 ]
@@ -55,13 +55,6 @@
                 "tag": "projectile",
                 "attrs": [],
                 "children": [
-                  {
-                    "tag": "damageDef",
-                    "attrs": [],
-                    "children": [
-                      "Bullet"
-                    ]
-                  },
                   {
                     "tag": "damageAmountBase",
                     "attrs": [],
@@ -75,7 +68,21 @@
                     "children": [
                       "50"
                     ]
+                  },
+                  {
+                    "tag": "explosionRadius",
+                    "attrs": [],
+                    "children": [
+                      "1.9"
+                    ]
                   }
+                ]
+              },
+              {
+                "tag": "thingClass",
+                "attrs": [],
+                "children": [
+                  "RS_Bullet"
                 ]
               }
             ]
@@ -86,6 +93,10 @@
               [
                 "ParentName",
                 "RS_BaseGun"
+              ],
+              [
+                "MayRequire",
+                "rs.dlc"
               ]
             ],
             "children": [
@@ -111,13 +122,6 @@
                 ]
               },
               {
-                "tag": "techLevel",
-                "attrs": [],
-                "children": [
-                  "Industrial"
-                ]
-              },
-              {
                 "tag": "graphicData",
                 "attrs": [],
                 "children": [
@@ -134,7 +138,42 @@
                     "children": [
                       "Graphic_Single"
                     ]
+                  },
+                  {
+                    "tag": "drawSize",
+                    "attrs": [],
+                    "children": [
+                      "(1.5,1.5)"
+                    ]
+                  },
+                  {
+                    "tag": "color",
+                    "attrs": [],
+                    "children": [
+                      "(0.8,0.8,0.8)"
+                    ]
+                  },
+                  {
+                    "tag": "shaderType",
+                    "attrs": [],
+                    "children": [
+                      "CutoutComplex"
+                    ]
                   }
+                ]
+              },
+              {
+                "tag": "uiIconPath",
+                "attrs": [],
+                "children": [
+                  "RS/Icon"
+                ]
+              },
+              {
+                "tag": "uiIconScale",
+                "attrs": [],
+                "children": [
+                  "1.2"
                 ]
               },
               {
@@ -193,6 +232,19 @@
                 ]
               },
               {
+                "tag": "equippedStatOffsets",
+                "attrs": [],
+                "children": [
+                  {
+                    "tag": "MoveSpeed",
+                    "attrs": [],
+                    "children": [
+                      "-0.25"
+                    ]
+                  }
+                ]
+              },
+              {
                 "tag": "costList",
                 "attrs": [],
                 "children": [
@@ -222,7 +274,68 @@
                     "children": [
                       "RS_Research"
                     ]
+                  },
+                  {
+                    "tag": "skillRequirements",
+                    "attrs": [],
+                    "children": [
+                      {
+                        "tag": "RS_Crafting",
+                        "attrs": [],
+                        "children": [
+                          "5"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "displayPriority",
+                    "attrs": [],
+                    "children": [
+                      "415"
+                    ]
+                  },
+                  {
+                    "tag": "recipeUsers",
+                    "attrs": [],
+                    "children": [
+                      {
+                        "tag": "li",
+                        "attrs": [],
+                        "children": [
+                          "RS_Bench"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "unfinishedThingDef",
+                    "attrs": [],
+                    "children": [
+                      "RS_Unfinished"
+                    ]
+                  },
+                  {
+                    "tag": "workSkill",
+                    "attrs": [],
+                    "children": [
+                      "RS_Crafting"
+                    ]
+                  },
+                  {
+                    "tag": "soundWorking",
+                    "attrs": [],
+                    "children": [
+                      "RS_Working"
+                    ]
                   }
+                ]
+              },
+              {
+                "tag": "soundInteract",
+                "attrs": [],
+                "children": [
+                  "RS_Click"
                 ]
               },
               {
@@ -283,10 +396,24 @@
                         ]
                       },
                       {
+                        "tag": "forcedMissRadius",
+                        "attrs": [],
+                        "children": [
+                          "0.5"
+                        ]
+                      },
+                      {
                         "tag": "soundCast",
                         "attrs": [],
                         "children": [
                           "RS_Shot"
+                        ]
+                      },
+                      {
+                        "tag": "aimingChargeMote",
+                        "attrs": [],
+                        "children": [
+                          "RS_Mote"
                         ]
                       }
                     ]
@@ -334,6 +461,78 @@
                         "children": [
                           "2.1"
                         ]
+                      },
+                      {
+                        "tag": "extraMeleeDamages",
+                        "attrs": [],
+                        "children": [
+                          {
+                            "tag": "li",
+                            "attrs": [],
+                            "children": [
+                              {
+                                "tag": "def",
+                                "attrs": [],
+                                "children": [
+                                  "Stun"
+                                ]
+                              },
+                              {
+                                "tag": "amount",
+                                "attrs": [],
+                                "children": [
+                                  "14"
+                                ]
+                              },
+                              {
+                                "tag": "chance",
+                                "attrs": [],
+                                "children": [
+                                  "0.5"
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "surpriseAttack",
+                        "attrs": [],
+                        "children": [
+                          {
+                            "tag": "extraMeleeDamages",
+                            "attrs": [],
+                            "children": [
+                              {
+                                "tag": "li",
+                                "attrs": [],
+                                "children": [
+                                  {
+                                    "tag": "def",
+                                    "attrs": [],
+                                    "children": [
+                                      "Stun"
+                                    ]
+                                  },
+                                  {
+                                    "tag": "amount",
+                                    "attrs": [],
+                                    "children": [
+                                      "14"
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "labelUsedInLogging",
+                        "attrs": [],
+                        "children": [
+                          "false"
+                        ]
                       }
                     ]
                   }
@@ -350,6 +549,44 @@
                       "RS_Gun"
                     ]
                   }
+                ]
+              },
+              {
+                "tag": "comps",
+                "attrs": [],
+                "children": [
+                  {
+                    "tag": "li",
+                    "attrs": [
+                      [
+                        "Class",
+                        "RS_CompArt"
+                      ]
+                    ],
+                    "children": [
+                      {
+                        "tag": "nameMaker",
+                        "attrs": [],
+                        "children": [
+                          "RS_Namer"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "relicChance",
+                "attrs": [],
+                "children": [
+                  "2"
+                ]
+              },
+              {
+                "tag": "smeltable",
+                "attrs": [],
+                "children": [
+                  "true"
                 ]
               }
             ]

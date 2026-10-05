@@ -266,6 +266,8 @@ fn type_of(kind: RefKind) -> &'static str {
         RefKind::DamageDef => "DamageDef",
         RefKind::StuffCategory => "StuffCategoryDef",
         RefKind::WeaponClass => "WeaponClassDef",
+        RefKind::SoundDef => "SoundDef",
+        RefKind::SkillDef => "SkillDef",
     }
 }
 
@@ -693,6 +695,8 @@ mod tests {
             RefKind::DamageDef,
             RefKind::StuffCategory,
             RefKind::WeaponClass,
+            RefKind::SoundDef,
+            RefKind::SkillDef,
         ] {
             assert!(type_of(kind).ends_with("Def"));
         }

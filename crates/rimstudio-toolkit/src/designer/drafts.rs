@@ -11,7 +11,9 @@
 
 use std::sync::atomic::{AtomicU64, Ordering};
 
-use rimstudio_design::model::Draft;
+use rimstudio_design::model::{Draft, migrate_value};
+use rimstudio_io::error::MigrateError;
+use rimstudio_io::migrate::MigrationFn;
 use rimstudio_io::schema::Versioned;
 use rimstudio_ipc_types::designer::{
     DesignerDraftDeleteRequest, DesignerDraftDeleteResponse, DesignerDraftListRequest,
@@ -44,6 +46,21 @@ pub struct DraftRecord {
 impl Versioned for DraftRecord {
     const KIND: &'static str = Draft::KIND;
     const VERSION: u32 = Draft::VERSION;
+
+    fn migrations() -> Vec<(u32, MigrationFn)> {
+        vec![(1, migrate_record_v1)]
+    }
+}
+
+/// The step from version 1 to version 2 of a stored draft record: the draft inside it gets the new schema
+/// version (the shape only gained optional fields).
+fn migrate_record_v1(mut value: Value) -> Result<Value, MigrateError> {
+    if let Some(map) = value.as_object_mut()
+        && let Some(draft) = map.remove("draft")
+    {
+        map.insert("draft".to_owned(), migrate_value(draft));
+    }
+    Ok(value)
 }
 
 impl DraftRecord {

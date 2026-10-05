@@ -14,6 +14,7 @@
 //! - `fit`: `designer_fit`.
 //! - `ce`: `designer_ce_suggest` and the `acceptSuggestions` option of plan and apply.
 //! - `clone`: flow C: `designer_clone`, `designer_clone_diff` and `designer_structure_defaults`.
+//! - `own`: the source of a clone as its file writes it, and `designer_projectile_own`.
 //! - `quiz`: `designer_quiz_next`, `designer_quiz_answer` and Back.
 //! - `calibrate`: `designer_calibrate`, the calibration cache.
 //! - `drafts`: `designer_draft_save`, `_list` and `_delete`.
@@ -29,6 +30,7 @@ pub mod ctx;
 pub mod drafts;
 pub mod dto;
 pub mod fit;
+pub mod own;
 pub mod plan;
 pub mod preview;
 pub mod quiz;
@@ -42,6 +44,7 @@ pub use convert::{answers_for_def, convert_plan, convert_scan, group_applies};
 pub use ctx::{Ctx, Engine, SessionLookup};
 pub use drafts::{draft_delete, draft_list, draft_load, draft_save};
 pub use fit::fit;
+pub use own::{derived_projectile_name, projectile_own};
 pub use plan::{BuiltPlan, export_plan};
 pub use preview::{preview, suggest_fill};
 pub use quiz::{quiz_answer, quiz_back, quiz_next};

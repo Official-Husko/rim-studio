@@ -192,7 +192,7 @@ fn call_runs_any_command_and_a_job() {
         .json();
     assert_eq!(pong["echo"], json!("hi"));
     let info = env.run(&["call", "app_get_info"]).expect(0).json();
-    assert_eq!(info["commandCount"], json!(42));
+    assert_eq!(info["commandCount"], json!(43));
     env.select_install();
     let scan = env
         .run(&["call", "library_scan", r#"{"full":true}"#])
@@ -1888,6 +1888,93 @@ fn diff_of_a_draft_that_is_not_a_clone_fails_plainly() {
         .run(&["--json", "diff", &id, "--project", &project])
         .expect(1);
     assert_eq!(error_code(&run), "designer.invalid-draft");
+}
+
+#[test]
+fn a_clone_can_keep_pointing_at_the_shared_projectile() {
+    let env = Env::new(false);
+    env.select_install();
+    let project = create_project(&env, "RS_Mine");
+    let out = env
+        .run(&[
+            "--json",
+            "new",
+            "ranged",
+            "--name",
+            "RS_SharedGun",
+            "--project",
+            &project,
+            "--from",
+            "RS_Gun03",
+            "--shared-projectile",
+        ])
+        .expect(0)
+        .json();
+    assert_eq!(
+        out["draft"]["spec"]["ranged"]["projectile"],
+        json!({"mode": "reference", "def": "RS_Shot03"})
+    );
+}
+
+#[test]
+fn the_shared_projectile_flag_belongs_to_a_clone() {
+    let env = Env::new(false);
+    env.select_install();
+    let project = create_project(&env, "RS_Mine");
+    let run = env
+        .run(&[
+            "new",
+            "ranged",
+            "--name",
+            "RS_NoClone",
+            "--project",
+            &project,
+            "--shared-projectile",
+        ])
+        .expect(2);
+    assert!(run.stderr().contains("--from"), "{}", run.stderr());
+}
+
+#[test]
+fn the_projectile_command_says_in_plain_words_why_it_cannot_switch() {
+    let env = Env::new(false);
+    env.select_install();
+    let project = create_project(&env, "RS_Mine");
+    let out = env
+        .run(&[
+            "--json",
+            "new",
+            "ranged",
+            "--name",
+            "RS_SwitchGun",
+            "--project",
+            &project,
+            "--from",
+            "RS_Gun03",
+            "--shared-projectile",
+        ])
+        .expect(0)
+        .json();
+    let id = out["id"].as_str().unwrap().to_owned();
+    // the fictional projectile has no parent base to copy
+    let run = env
+        .run(&["--json", "projectile", &id, "--project", &project])
+        .expect(1);
+    assert_eq!(error_code(&run), "designer.invalid-draft");
+    assert!(run.stderr().contains("no parent base"), "{}", run.stderr());
+    // pointing back needs a copy that was made
+    let run = env
+        .run(&[
+            "--json",
+            "projectile",
+            &id,
+            "--project",
+            &project,
+            "--shared",
+        ])
+        .expect(0)
+        .json();
+    assert_eq!(run["id"], json!(id));
 }
 
 #[test]

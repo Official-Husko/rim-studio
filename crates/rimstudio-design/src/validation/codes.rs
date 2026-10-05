@@ -273,6 +273,30 @@ code!(
     "the art of {label} goes to {path}; the file does not exist yet", ["label", "path"]
 );
 
+code!(
+    /// A required field is empty, and the source definition of a clone does not set it either, so the clone
+    /// is written without it (pure).
+    ACCEPTED_MISSING, "design.accepted-missing", Info, "IT-030",
+    "{label} is not set; the definition this one was cloned from does not set it either", ["label"]
+);
+code!(
+    /// A carried raw field has the name of a field the designer writes from its own input, so it would be
+    /// written twice (pure).
+    EXTRA_FIELD_CONFLICT, "design.extra-field-conflict", Error, "IT-041",
+    "the carried field {name} in {place} is also written from an input of the designer; remove one of them", ["name", "place"]
+);
+code!(
+    /// A carried raw field is not a valid XML element tree (pure).
+    EXTRA_FIELD_INVALID, "design.extra-field-invalid", Error, "IT-041",
+    "the carried field {name} in {place} cannot be written: {reason}", ["name", "place", "reason"]
+);
+code!(
+    /// A weapon or projectile uses a texture path other than the reserved one; RimStudio never copies art
+    /// (plan builder).
+    TEXTURE_SHARED, "design.texture-shared", Info, "IT-050",
+    "{label} uses the texture {path}; the art is not copied, so it must exist in the game or in your mod (your own art goes to {file})", ["label", "path", "file"]
+);
+
 /// Every registered code, in a stable order.
 pub const REGISTRY: &[CodeInfo] = &[
     REQUIRED_MISSING,
@@ -307,6 +331,10 @@ pub const REGISTRY: &[CodeInfo] = &[
     PLAN_PATH_INVALID,
     PLAN_PATH_CONFLICT,
     TEXTURE_RESERVED,
+    ACCEPTED_MISSING,
+    EXTRA_FIELD_CONFLICT,
+    EXTRA_FIELD_INVALID,
+    TEXTURE_SHARED,
 ];
 
 /// Looks a code up in the registry.

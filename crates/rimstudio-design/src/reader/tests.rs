@@ -801,12 +801,12 @@ fn a_def_without_a_parent_reads_the_same_with_or_without_the_inheriting_reader()
 #[test]
 fn fields_the_spec_cannot_hold_are_named_in_the_notes_in_document_order() {
     let mut weapon = gun("RS_Odd", "RS_Shot1", GunNumbers::default(), &[]);
-    weapon.push_child(Node::with_text("soundInteract", "RS_Click"));
-    weapon.push_child(Node::with_text("uiIconPath", "RS/Icon"));
+    weapon.push_child(Node::with_text("relicChance", "2"));
+    weapon.push_child(Node::with_text("smeltable", "true"));
     if let Some(verbs) = weapon.child_mut("verbs")
         && let Some(li) = verbs.elements_mut().next()
     {
-        li.push_child(Node::with_text("forcedMissRadius", "1.5"));
+        li.push_child(Node::with_text("aimingChargeMote", "RS_Mote"));
     }
     let mut defs = base_defs();
     defs.push(weapon);
@@ -824,10 +824,11 @@ fn fields_the_spec_cannot_hold_are_named_in_the_notes_in_document_order() {
         .iter()
         .find(|n| n.contains("does not carry"))
         .expect("a note names the left behind fields");
-    let soundi = note.find("soundInteract").unwrap();
-    let icon = note.find("uiIconPath").unwrap();
-    let verb = note.find("verbs.forcedMissRadius").unwrap();
-    assert!(soundi < icon && icon < verb, "{note}");
+    let relic = note.find("relicChance").unwrap();
+    let smelt = note.find("smeltable").unwrap();
+    let verb = note.find("verbs.aimingChargeMote").unwrap();
+    assert!(relic < smelt && smelt < verb, "{note}");
+    assert!(!note.contains("soundInteract") && !note.contains("forcedMissRadius"));
     assert!(!note.contains("statBases") && !note.contains("verbs,"));
 }
 

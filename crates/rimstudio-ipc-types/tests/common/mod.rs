@@ -109,7 +109,73 @@ pub fn ranged_spec() -> DesignSpecDto {
         sound_cast: Some("RS_Shot".into()),
         sound_cast_tail: None,
         muzzle_flash_scale: Some(9.0),
+        forced_miss_radius: None,
+        verb_extra: Vec::new(),
     });
+    spec
+}
+
+fn raw(tag: &str, text: &str) -> RawNodeDto {
+    RawNodeDto {
+        tag: tag.into(),
+        attrs: Vec::new(),
+        children: vec![RawChildDto::Text(text.into())],
+    }
+}
+
+/// A ranged spec that carries the fields of a clone: recipe, comps, raw fields, an own projectile.
+pub fn carried_spec() -> DesignSpecDto {
+    let mut spec = ranged_spec();
+    spec.parent = Some(ParentRefDto {
+        def_name: "BaseHumanMakeableGun".into(),
+        inherited_stats: BTreeMap::new(),
+        inherited_tech_level: Some(TechLevelDto::Industrial),
+    });
+    spec.sound_interact = Some("Interact_Rifle".into());
+    spec.recipe = Some(RecipeSpecDto {
+        skill_requirements: BTreeMap::from([("Crafting".to_owned(), 5)]),
+        display_priority: Some(450.0),
+        recipe_users: vec!["TableMachining".into()],
+        unfinished_thing_def: None,
+        work_skill: None,
+        extra: vec![raw("soundWorking", "Recipe_Machining")],
+        attrs: BTreeMap::from([("Inherit".to_owned(), "False".to_owned())]),
+    });
+    spec.equipped_stat_offsets = BTreeMap::from([("MoveSpeed".to_owned(), -0.25)]);
+    spec.comps = vec![RawNodeDto {
+        tag: "li".into(),
+        attrs: vec![("Class".into(), "CompProperties_Art".into())],
+        children: vec![RawChildDto::Element(raw("nameMaker", "NamerArtWeaponGun"))],
+    }];
+    spec.ui_icon_path = Some("Things/Item/Equipment/WeaponRanged/RS_Icon".into());
+    spec.ui_icon_scale = Some(1.2);
+    spec.draw_size = Some("(1.5,1.5)".into());
+    spec.graphic_color = Some("(0.8,0.8,0.8)".into());
+    spec.extra_fields = vec![raw("relicChance", "2")];
+    spec.extra_attrs =
+        BTreeMap::from([("MayRequire".to_owned(), "ludeon.rimworld.royalty".into())]);
+    spec.omit_defaults = vec!["graphicClass".into()];
+    spec.inherit_reset = vec!["comps".into()];
+    spec.accepted_missing = vec!["/workToMake".into()];
+    if let Some(r) = spec.ranged.as_mut() {
+        r.forced_miss_radius = Some(0.5);
+        r.verb_extra = vec![raw("aimingChargeMote", "Mote_Charge")];
+        r.projectile = Some(ProjectileChoiceDto::Inline(ProjectileSpecDto {
+            def_name: "RS_Bullet_TestRifle".into(),
+            label: "rifle bullet".into(),
+            parent: Some("BaseBullet".into()),
+            damage_def: Some("Bullet".into()),
+            texture_path: Some("Things/Projectile/Bullet_Big".into()),
+            graphic_class: None,
+            speed: Some(typed(70.0)),
+            stopping_power: None,
+            extra: vec![raw("explosionRadius", "1.5")],
+            graphic_extra: vec![raw("drawSize", "(0.7,0.7)")],
+            thing_extra: vec![raw("thingClass", "Bullet")],
+            omit_defaults: vec!["armorPenetrationBase".into()],
+            copied_from: Some("Bullet_BoltActionRifle".into()),
+        }));
+    }
     spec
 }
 
@@ -124,6 +190,19 @@ pub fn melee_spec_with_ce() -> DesignSpecDto {
         armor_penetration: Some(suggested(0.3)),
         chance_factor: None,
         linked_body_parts_group: Some("RS_Blade".into()),
+        extra_melee_damages: vec![ExtraMeleeDamageDto {
+            def: "Stun".into(),
+            amount: Some(14.0),
+            chance: None,
+        }],
+        surprise_attack: Some(SurpriseAttackSpecDto {
+            extra_melee_damages: vec![ExtraMeleeDamageDto {
+                def: "Stun".into(),
+                amount: Some(14.0),
+                chance: None,
+            }],
+        }),
+        extra: vec![raw("labelUsedInLogging", "false")],
     }];
     spec.ce = Some(CePatchSpecDto {
         parry_bonus: Some(typed(1.1)),
@@ -1152,8 +1231,24 @@ pub fn all_samples() -> Vec<(&'static str, Value)> {
             def_name: "RS_CloneGun".into(),
             label: Some("clone gun".into()),
             mod_prefix: Some("RS".into()),
+            own_projectile: Some(true),
         }
     );
+    add!(
+        "DesignerProjectileOwnRequest",
+        DesignerProjectileOwnRequest {
+            draft: draft(),
+            own: true,
+        }
+    );
+    add!(
+        "DesignerProjectileOwnResponse",
+        DesignerProjectileOwnResponse {
+            draft: draft(),
+            notes: vec!["the weapon has its own projectile".into()],
+        }
+    );
+    add!("DesignSpecDtoCarried", carried_spec());
     add!(
         "DesignerCloneResponse",
         DesignerCloneResponse {

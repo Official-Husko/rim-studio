@@ -16,8 +16,11 @@ use std::collections::BTreeSet;
 use rimstudio_core::diag::Diagnostic;
 
 use crate::armor::MAX_RATING;
+use rimstudio_core::tree::Node;
+
 use crate::model::{
-    CePatchSpec, DesignSpec, Draft, ItemKind, ProjectileChoice, ScalarField, Sourced,
+    CePatchSpec, DesignSpec, Draft, INHERIT_RESETTABLE, ItemKind, MODELLED_THING_FIELDS,
+    ProjectileChoice, ScalarField, Sourced,
 };
 
 use super::codes::{self, CodeInfo};
@@ -54,7 +57,11 @@ impl Ctx<'_> {
     }
 
     fn missing(&mut self, field: &str, label: &str) {
-        self.emit(codes::REQUIRED_MISSING, field, &[("label", label)]);
+        if self.spec.accepted_missing.iter().any(|f| f == field) {
+            self.emit(codes::ACCEPTED_MISSING, field, &[("label", label)]);
+        } else {
+            self.emit(codes::REQUIRED_MISSING, field, &[("label", label)]);
+        }
     }
 
     fn invalid_value(&mut self, field: &str, label: &str, value: f64, reason: &str) {
@@ -158,6 +165,7 @@ pub fn validate_vanilla(spec: &DesignSpec) -> Vec<Diagnostic> {
     tools(&mut ctx);
     lists(&mut ctx);
     vanilla_rules(&mut ctx);
+    carried(&mut ctx);
     ctx.out
 }
 
@@ -967,6 +975,218 @@ fn vanilla_rules(ctx: &mut Ctx<'_>) {
 }
 
 // ---------------------------------------------------------------------------------------------------------
+// carried fields
+
+/// Checks one list of carried raw nodes: each must be a valid element tree and must not repeat a field the
+/// designer writes itself (`known`).
+fn check_extras(ctx: &mut Ctx<'_>, pointer: &str, place: &str, nodes: &[Node], known: &[&str]) {
+    for (i, node) in nodes.iter().enumerate() {
+        let field = format!("{pointer}/{i}");
+        if known.contains(&node.tag.as_str()) {
+            ctx.emit(
+                codes::EXTRA_FIELD_CONFLICT,
+                &field,
+                &[("name", &node.tag), ("place", place)],
+            );
+        }
+        if let Err(e) = node.validate() {
+            ctx.emit(
+                codes::EXTRA_FIELD_INVALID,
+                &field,
+                &[
+                    ("name", &node.tag),
+                    ("place", place),
+                    ("reason", &e.to_string()),
+                ],
+            );
+        }
+    }
+}
+
+/// Checks nodes that are written as list entries: they must be `li` elements.
+fn check_list_entries(ctx: &mut Ctx<'_>, pointer: &str, place: &str, nodes: &[Node]) {
+    check_extras(ctx, pointer, place, nodes, &[]);
+    for (i, node) in nodes.iter().enumerate() {
+        if node.tag != "li" {
+            ctx.emit(
+                codes::EXTRA_FIELD_INVALID,
+                &format!("{pointer}/{i}"),
+                &[
+                    ("name", &node.tag),
+                    ("place", place),
+                    ("reason", "a list entry must be an li element"),
+                ],
+            );
+        }
+    }
+}
+
+fn carried(ctx: &mut Ctx<'_>) {
+    let spec = ctx.spec;
+    check_extras(
+        ctx,
+        "/extraFields",
+        "the definition",
+        &spec.extra_fields,
+        &MODELLED_THING_FIELDS,
+    );
+    check_list_entries(ctx, "/comps", "comps", &spec.comps);
+    check_list_entries(ctx, "/otherVerbs", "verbs", &spec.other_verbs);
+    check_extras(
+        ctx,
+        "/graphicExtra",
+        "graphicData",
+        &spec.graphic_extra,
+        &["texPath", "graphicClass", "drawSize", "color"],
+    );
+    if let Some(recipe) = &spec.recipe {
+        check_extras(
+            ctx,
+            "/recipe/extra",
+            "recipeMaker",
+            &recipe.extra,
+            &[
+                "researchPrerequisite",
+                "skillRequirements",
+                "displayPriority",
+                "recipeUsers",
+                "unfinishedThingDef",
+                "workSkill",
+            ],
+        );
+        for skill in recipe.skill_requirements.keys() {
+            ctx.check_element_token(
+                &format!("/recipe/skillRequirements/{}", escape_pointer(skill)),
+                "skill",
+                skill,
+            );
+        }
+        if let Some(p) = recipe.display_priority
+            && !p.is_finite()
+        {
+            ctx.invalid_value(
+                "/recipe/displayPriority",
+                "display priority",
+                p,
+                "must be a finite number",
+            );
+        }
+    }
+    for (name, value) in &spec.equipped_stat_offsets {
+        let pointer = format!("/equippedStatOffsets/{}", escape_pointer(name));
+        ctx.check_element_token(&pointer, "stat name", name);
+        if !value.is_finite() {
+            ctx.invalid_value(&pointer, name, *value, "must be a finite number");
+        }
+    }
+    if let Some(scale) = spec.ui_icon_scale
+        && (!scale.is_finite() || scale <= 0.0)
+    {
+        ctx.invalid_value(
+            "/uiIconScale",
+            "icon scale",
+            scale,
+            "must be a finite number above zero",
+        );
+    }
+    for (i, tool) in spec.tools.iter().enumerate() {
+        check_extras(
+            ctx,
+            &format!("/tools/{i}/extra"),
+            "a tool",
+            &tool.extra,
+            &[
+                "label",
+                "capacities",
+                "power",
+                "cooldownTime",
+                "armorPenetration",
+                "chanceFactor",
+                "linkedBodyPartsGroup",
+                "extraMeleeDamages",
+                "surpriseAttack",
+            ],
+        );
+    }
+    if let Some(r) = &spec.ranged {
+        check_extras(
+            ctx,
+            "/ranged/verbExtra",
+            "the shooting verb",
+            &r.verb_extra,
+            &[
+                "verbClass",
+                "defaultProjectile",
+                "range",
+                "burstShotCount",
+                "ticksBetweenBurstShots",
+                "warmupTime",
+                "soundCast",
+                "soundCastTail",
+                "muzzleFlashScale",
+                "hasStandardCommand",
+                "forcedMissRadius",
+            ],
+        );
+        if let Some(radius) = r.forced_miss_radius
+            && (!radius.is_finite() || radius < 0.0)
+        {
+            ctx.invalid_value(
+                "/ranged/forcedMissRadius",
+                "forced miss radius",
+                radius,
+                "must be a finite number that is not negative",
+            );
+        }
+        if let Some(ProjectileChoice::Inline(p)) = &r.projectile {
+            check_extras(
+                ctx,
+                "/ranged/projectile/def/extra",
+                "the projectile element",
+                &p.extra,
+                &[
+                    "damageDef",
+                    "damageAmountBase",
+                    "stoppingPower",
+                    "armorPenetrationBase",
+                    "speed",
+                ],
+            );
+            check_extras(
+                ctx,
+                "/ranged/projectile/def/graphicExtra",
+                "the projectile graphicData",
+                &p.graphic_extra,
+                &["texPath", "graphicClass"],
+            );
+            check_extras(
+                ctx,
+                "/ranged/projectile/def/thingExtra",
+                "the projectile definition",
+                &p.thing_extra,
+                &["defName", "label", "graphicData", "projectile"],
+            );
+        }
+    }
+    for (i, name) in spec.inherit_reset.iter().enumerate() {
+        if !INHERIT_RESETTABLE.contains(&name.as_str()) {
+            ctx.emit(
+                codes::VALUE_INVALID,
+                &format!("/inheritReset/{i}"),
+                &[
+                    ("label", "inherit reset"),
+                    ("value", name),
+                    (
+                        "reason",
+                        "this list cannot be written with Inherit=\"False\"",
+                    ),
+                ],
+            );
+        }
+    }
+}
+
+// ---------------------------------------------------------------------------------------------------------
 // references against loaded defs
 
 /// The kinds of def a reference can point at.
@@ -986,6 +1206,10 @@ pub enum RefKind {
     StuffCategory,
     /// A weapon class def.
     WeaponClass,
+    /// A sound def.
+    SoundDef,
+    /// A skill def.
+    SkillDef,
 }
 
 /// Answers whether a def exists among the loaded defs and the project. The toolkit implements it over the
@@ -1069,7 +1293,61 @@ pub fn validate_refs(spec: &DesignSpec, lookup: &dyn DefLookup) -> Vec<Diagnosti
             );
         }
     }
+    if let Some(sound) = &spec.sound_interact {
+        unresolved(
+            RefKind::SoundDef,
+            "/soundInteract".into(),
+            "interaction sound",
+            sound,
+        );
+    }
+    if let Some(recipe) = &spec.recipe {
+        for skill in recipe.skill_requirements.keys() {
+            unresolved(
+                RefKind::SkillDef,
+                format!("/recipe/skillRequirements/{}", escape_pointer(skill)),
+                "skill",
+                skill,
+            );
+        }
+        for (i, user) in recipe.recipe_users.iter().enumerate() {
+            unresolved(
+                RefKind::Thing,
+                format!("/recipe/recipeUsers/{i}"),
+                "workbench",
+                user,
+            );
+        }
+        if let Some(t) = &recipe.unfinished_thing_def {
+            unresolved(
+                RefKind::Thing,
+                "/recipe/unfinishedThingDef".into(),
+                "unfinished thing",
+                t,
+            );
+        }
+        if let Some(w) = &recipe.work_skill {
+            unresolved(
+                RefKind::SkillDef,
+                "/recipe/workSkill".into(),
+                "work skill",
+                w,
+            );
+        }
+    }
     if let Some(r) = &spec.ranged {
+        for (pointer, label, slot) in [
+            ("/ranged/soundCast", "shot sound", &r.sound_cast),
+            (
+                "/ranged/soundCastTail",
+                "shot tail sound",
+                &r.sound_cast_tail,
+            ),
+        ] {
+            if let Some(sound) = slot {
+                unresolved(RefKind::SoundDef, pointer.into(), label, sound);
+            }
+        }
         match &r.projectile {
             Some(ProjectileChoice::Reference(name)) => {
                 unresolved(

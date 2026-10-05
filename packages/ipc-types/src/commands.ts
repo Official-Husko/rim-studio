@@ -34,6 +34,8 @@ import type {
   DesignerExportPlanRequest,
   DesignerFitRequest,
   DesignerPreviewRequest,
+  DesignerProjectileOwnRequest,
+  DesignerProjectileOwnResponse,
   DesignerQuizAnswerRequest,
   DesignerQuizAnswerResponse,
   DesignerQuizBackRequest,
@@ -130,6 +132,7 @@ export interface CommandTable {
   designer_clone: { kind: "action"; request: DesignerCloneRequest; response: DesignerCloneResponse };
   designer_clone_diff: { kind: "query"; request: DesignerCloneDiffRequest; response: DesignerCloneDiffResponse };
   designer_structure_defaults: { kind: "query"; request: DesignerStructureDefaultsRequest; response: DesignerStructureDefaultsResponse };
+  designer_projectile_own: { kind: "query"; request: DesignerProjectileOwnRequest; response: DesignerProjectileOwnResponse };
 }
 
 export type CommandName = keyof CommandTable;
@@ -190,6 +193,7 @@ export const commands = {
   designerClone: { name: "designer_clone", kind: "action" },
   designerCloneDiff: { name: "designer_clone_diff", kind: "query" },
   designerStructureDefaults: { name: "designer_structure_defaults", kind: "query" },
+  designerProjectileOwn: { name: "designer_projectile_own", kind: "query" },
 } as const satisfies Record<string, CommandEntry>;
 
 /** Every wire name, in registry order. */
@@ -236,4 +240,5 @@ export const commandNames = [
   "designer_clone",
   "designer_clone_diff",
   "designer_structure_defaults",
+  "designer_projectile_own",
 ] as const satisfies readonly CommandName[];

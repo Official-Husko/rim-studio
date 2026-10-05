@@ -126,6 +126,7 @@ fn request(source: &str, name: &str) -> DesignerCloneRequest {
         def_name: name.into(),
         label: None,
         mod_prefix: None,
+        own_projectile: None,
     }
 }
 
@@ -405,11 +406,14 @@ fn clones_of_the_same_source_are_byte_identical_apart_from_the_draft_id() {
 }
 
 #[test]
-fn the_notes_name_left_behind_fields_and_the_shared_projectile() {
+fn the_notes_name_the_shared_projectile_and_no_longer_a_lost_sound() {
     let f = fixture();
     let response = clone_draft(&f.ctx, request("RS_ParentGun", "RS_CloneGun")).unwrap();
     let all = response.notes.join("\n");
-    assert!(all.contains("soundInteract"), "{all}");
+    // the interaction sound is a modelled field now: it is carried, not left behind
+    assert!(!all.contains("soundInteract"), "{all}");
+    let draft = draft_from_dto(&response.entry.draft).unwrap();
+    assert_eq!(draft.spec.sound_interact.as_deref(), Some("RS_Click"));
     assert!(
         all.contains("RS_Shot05") && all.contains("RS_ParentGun"),
         "{all}"

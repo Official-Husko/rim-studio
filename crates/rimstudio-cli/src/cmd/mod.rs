@@ -58,6 +58,7 @@ pub(crate) fn run_designer(s: &Session, command: &DesignerCmd) -> CliResult {
         DesignerCmd::New(args) => designer::new_draft_cmd(s, args),
         DesignerCmd::Preview(args) => designer::preview(s, args),
         DesignerCmd::Diff(args) => designer::diff(s, args),
+        DesignerCmd::Projectile(args) => designer::projectile(s, args),
         DesignerCmd::CeSuggest(args) => designer::ce_suggest(s, args),
         DesignerCmd::Plan(args) => designer::plan(s, args),
         DesignerCmd::Apply(args) => designer::apply(s, args),

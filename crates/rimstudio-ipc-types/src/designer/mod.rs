@@ -4,6 +4,7 @@
 //! spec (`ce`, absent by default) and is never enabled automatically.
 //!
 //! - [`spec`]: the design spec and its building blocks.
+//! - [`carried`]: the recipe, tool extras and the raw fields a clone carries.
 //! - [`draft`]: drafts and the draft store requests.
 //! - [`reference`]: the reference weapon list.
 //! - [`preview`]: readouts, suggestions and the material matrix.
@@ -16,6 +17,7 @@
 //! - [`plan`]: the write plan and the apply report.
 
 pub mod calibrate;
+pub mod carried;
 pub mod ce_suggest;
 pub mod clone;
 pub mod convert;
@@ -29,6 +31,7 @@ pub mod spec;
 
 pub use crate::diagnostic::DiagnosticDto;
 pub use calibrate::*;
+pub use carried::*;
 pub use ce_suggest::*;
 pub use clone::*;
 pub use convert::*;

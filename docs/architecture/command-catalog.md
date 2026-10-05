@@ -21,7 +21,7 @@ Milestone numbering follows the [roadmap, section 1.1](../roadmap.md#11-mapping-
 
 ## 1. How to read the catalog
 
-The catalog has 157 rows: the 152 rows of the tables of section 4 plus the five extra rows of section 4.12. 40 of them are registered in [IPC and state](ipc-and-state.md) (the first 40 commands, milestone M0 to M4 entries of section 11 there); the others are proposed by a feature spec or by a note of the architecture documents and must become registry rows in `crates/rimstudio-app/src/registry.rs` when their milestone starts. A row marked "family" stands for a group of commands that a spec names only by a wildcard (for example `history_*`); the concrete names are fixed when the milestone starts and each then gets its own row.
+The catalog has 158 rows: the 153 rows of the tables of section 4 plus the five extra rows of section 4.12. 40 of them are registered in [IPC and state](ipc-and-state.md) (the first 40 commands, milestone M0 to M4 entries of section 11 there); the others are proposed by a feature spec or by a note of the architecture documents and must become registry rows in `crates/rimstudio-app/src/registry.rs` when their milestone starts. A row marked "family" stands for a group of commands that a spec names only by a wildcard (for example `history_*`); the concrete names are fixed when the milestone starts and each then gets its own row.
 
 | Column | Meaning |
 |---|---|
@@ -280,6 +280,7 @@ The designer always writes vanilla definitions; a Combat Extended patch is an op
 | `designer_clone` | action | flow C: `DesignerCloneRequest { projectId, source, defName, label?, modPrefix? }` returns `DesignerCloneResponse { entry, notes }`; copies every modelled field of a loaded weapon into a new stored draft, source as first anchor and `clonedFrom`, Combat Extended toggle off | `rimstudio-toolkit` | M5 | R7, IT | ProjectRoot | none | proposed by items toolkit |
 | `designer_clone_diff` | query | `DesignerCloneDiffRequest { draft }` returns `DesignerCloneDiffResponse { source, sourceLabel, changes, readouts, notes }`: the changed fields of a clone against its source with the effect on the exact readouts | `rimstudio-toolkit` | M5 | R7, IT | none | none | proposed by items toolkit |
 | `designer_structure_defaults` | query | `DesignerStructureDefaultsRequest { draft }` returns `DesignerStructureDefaultsResponse { draft, reference?, filled, notes }`: parent, projectile, cost list and stuff of a new weapon from the nearest reference weapon, as suggestions | `rimstudio-toolkit` | M5 | R7, IT | none | none | proposed by items toolkit |
+| `designer_projectile_own` | query | `DesignerProjectileOwnRequest { draft, own }` returns `DesignerProjectileOwnResponse { draft, notes }`: gives a gun a projectile of its own copied from the one it fires (new name derived from the weapon), or points it back at the shared one; the answer is not stored | `rimstudio-toolkit` | M5 | R7, IT | none | none | proposed by items toolkit |
 
 ### 4.11 Workshop publishing
 
@@ -328,6 +329,7 @@ The backend of release 0.1.0 implements the handlers below as plain functions; `
 | `designer_clone` | `designer::clone_draft` | `DesignerCloneRequest` returns `DesignerCloneResponse { entry: DraftEntryDto, notes }` | the draft is stored by the call; `clonedFrom` and the first anchor name the source; inherited values stay inherited (`parent.inheritedStats`); a source with a Combat Extended conversion is refused; the source def is never edited |
 | `designer_clone_diff` | `designer::clone_diff` | `DesignerCloneDiffRequest` returns `DesignerCloneDiffResponse` | read only; the changed fields as old and new JSON values and the readouts of both (cycle time, DPS, strength, price for ranged; panel and in fight DPS for melee) with their delta |
 | `designer_structure_defaults` | `designer::structure_defaults` | `DesignerStructureDefaultsRequest` returns `DesignerStructureDefaultsResponse` | read only; an extra row beyond the two clone rows, used by `designer new --strength` of the CLI |
+| `designer_projectile_own` | `designer::projectile_own` | `DesignerProjectileOwnRequest` returns `DesignerProjectileOwnResponse` | read only; the draft in the answer is not stored, the caller saves it; an own projectile is named `<prefix>_Bullet_<rest>` after the weapon; the shared projectile it was copied from is kept in `copiedFrom` |
 | `designer_quiz_next`, `designer_quiz_answer`, `designer_quiz_back` | `designer::{quiz_next, quiz_answer, quiz_back}` | `DesignerQuizNextRequest` returns `QuizStepDto`; `DesignerQuizAnswerRequest` and `DesignerQuizBackRequest` return `DesignerQuizAnswerResponse` | back removes the last answer the user gave (the setup answers taken from the spec stay); the values earlier answers wrote into the spec stay, so the returned step and estimate are the truth; the terminal quiz uses it for `b` instead of keeping earlier drafts |
 | `designer_calibrate` | `designer::calibrate(ctx, req, &dyn ProgressSink, &CancelToken)` | `DesignerCalibrateRequest` returns `CalibrateResultDto` | job body; results cached in the cache root collection `designer-calibration` |
 | `designer_draft_save`, `designer_draft_list`, `designer_draft_delete` | `designer::{draft_save, draft_list, draft_delete}` | `DesignerDraftSaveRequest`, `DesignerDraftListRequest`, `DesignerDraftDeleteRequest` and their responses | extra row `designer_draft_load` (`draft_load` returns a `DraftEntryDto`) |
@@ -397,7 +399,7 @@ By kind (the first word of the kind column, so families and promotable queries c
 | action | 52 |
 | family | 4 |
 | job | 22 |
-| query | 74 |
+| query | 75 |
 | stream | 5 |
 
 By milestone:
@@ -409,7 +411,7 @@ By milestone:
 | M2 | 54 |
 | M3 | 23 |
 | M4 | 27 |
-| M5 | 22 |
+| M5 | 23 |
 | M6 | 12 |
 | M7 | 1 |
 
@@ -420,7 +422,7 @@ By owning crate (the crate whose `api` module holds the handler):
 | rimstudio-app | 10 |
 | rimstudio-manager | 83 |
 | rimstudio-publish | 12 |
-| rimstudio-toolkit | 52 |
+| rimstudio-toolkit | 53 |
 
 By root class:
 
@@ -431,7 +433,7 @@ By root class:
 | DataRoot | 16 |
 | GameRoot | 12 |
 | UserPick | 14 |
-| none | 84 |
+| none | 85 |
 
 The milestone M2 core subset, rows 1 to 40 of [IPC and state section 11](ipc-and-state.md#11-the-first-40-commands), keeps its own table there because it is the list that the milestone M2 exit criteria and the CLI parity test refer to; the milestone entries of those rows include the M0, M1 and M4 rows that the table lists for context.
 
