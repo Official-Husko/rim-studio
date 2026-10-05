@@ -1,0 +1,42 @@
+[package]
+name = "rimstudio-toolkit"
+description = "Toolkit tool modules (designer first)"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+publish.workspace = true
+
+[package.metadata.rimstudio]
+layer = "l3-feature"
+
+[lints]
+workspace = true
+
+[features]
+default = ["tool-designer", "tool-project", "tool-defs"]
+# One module per tool (ADR 0004). A module never uses another tool's module.
+tool-designer = []
+tool-project = []
+tool-defs = []
+
+[dependencies]
+rimstudio-core.workspace = true
+rimstudio-io.workspace = true
+rimstudio-xml.workspace = true
+rimstudio-defs.workspace = true
+rimstudio-design.workspace = true
+rimstudio-workspace.workspace = true
+rimstudio-library.workspace = true
+rimstudio-ipc-types.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+camino.workspace = true
+blake3.workspace = true
+thiserror.workspace = true
+tracing.workspace = true
+
+[dev-dependencies]
+rimstudio-testing.workspace = true
+tempfile.workspace = true
+rstest.workspace = true
+proptest.workspace = true
