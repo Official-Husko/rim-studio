@@ -56,7 +56,7 @@ describe('ProjectPage with a project', () => {
     expect(await screen.findByRole('heading', { name: "Huskos's Gewehr 41" })).toBeTruthy();
     expect(screen.getByText('oh.weapons.gewehr41')).toBeTruthy();
     expect(screen.getByRole('tab', { name: 'Basics', selected: true })).toBeTruthy();
-    for (const name of ['Versions and folders', 'Files']) {
+    for (const name of ['Versions and folders', 'Files', 'Test in game']) {
       expect(screen.getByRole('tab', { name })).toBeTruthy();
     }
     expect(await screen.findByRole('textbox', { name: /Mod name/ })).toBeTruthy();

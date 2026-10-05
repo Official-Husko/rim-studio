@@ -1,0 +1,31 @@
+{
+  "projectId": "p-f7cbde43",
+  "packageId": "rs.fiction.arms",
+  "gameFound": true,
+  "gameFolder": "/home/pawbeans/.steam/steam/steamapps/common/RimWorld",
+  "modsFolder": "/home/pawbeans/.steam/steam/steamapps/common/RimWorld/Mods",
+  "modsExists": false,
+  "modsReadOnly": false,
+  "linkName": "RS_Arms",
+  "entryPath": "/home/pawbeans/.steam/steam/steamapps/common/RimWorld/Mods/RS_Arms",
+  "state": "unavailable",
+  "gameRunning": "not-running",
+  "support": {
+    "symlink": true,
+    "junction": false,
+    "needsPrivilege": false
+  },
+  "canCreate": false,
+  "canRemove": false,
+  "manualCommand": "ln -s '/home/pawbeans/Projects/RimWorld Mods/RS_Arms' '/home/pawbeans/.steam/steam/steamapps/common/RimWorld/Mods/RS_Arms'",
+  "activeInGame": "inactive",
+  "hasCePatch": true,
+  "ceActiveInGame": "active",
+  "diagnostics": [
+    {
+      "code": "deploy.mods-missing",
+      "severity": "warning",
+      "message": "the game's Mods folder does not exist"
+    }
+  ]
+}

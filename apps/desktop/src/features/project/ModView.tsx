@@ -4,6 +4,7 @@ import type { TreeNodeDto } from 'rimstudio-ipc-types';
 import { t } from '~/shared/i18n';
 import { BasicsTab } from './basics/BasicsTab';
 import { pendingChanges } from './basics/aboutStore';
+import { LinkCard } from './components/LinkCard';
 import { devLink } from './devLinks';
 import { FoldersTab } from './folders/FoldersTab';
 import { foldersPending } from './folders/folderStore';
@@ -12,8 +13,8 @@ import { ProjectHeader } from './ProjectHeader';
 import { Workbench, selectNode } from './Workbench';
 import type { ProjectView } from './store';
 
-type TabId = 'basics' | 'folders' | 'files' | 'layout';
-const TAB_IDS: readonly TabId[] = ['basics', 'folders', 'files', 'layout'];
+type TabId = 'basics' | 'folders' | 'files' | 'layout' | 'game';
+const TAB_IDS: readonly TabId[] = ['basics', 'folders', 'files', 'layout', 'game'];
 
 function startTab(): TabId {
   const wanted = devLink('tab');
@@ -30,7 +31,7 @@ export interface ModViewProps {
   onClose: () => void;
 }
 
-/** An open mod: its header and the tabs Basics, Versions and folders, Files and Layout. */
+/** An open mod: its header and the tabs Basics, Versions and folders, Files, Layout and Test in game. */
 export function ModView({ view, refreshing, onRefresh, onOpen, onNew, onClose }: ModViewProps) {
   const [tab, setTab] = useState<TabId>(startTab);
   const projectId = view.summary.projectId;
@@ -54,6 +55,7 @@ export function ModView({ view, refreshing, onRefresh, onOpen, onNew, onClose }:
       label: t('project.tab.layout'),
       ...(view.check.issues.length > 0 ? { badge: String(view.check.issues.length) } : {}),
     },
+    { id: 'game', label: t('project.tab.game') },
   ];
 
   const show = (node: TreeNodeDto): void => {
@@ -85,6 +87,15 @@ export function ModView({ view, refreshing, onRefresh, onOpen, onNew, onClose }:
               <FoldersTab projectId={projectId} />
             ) : id === 'layout' ? (
               <LayoutTab view={view} onShowNode={show} />
+            ) : id === 'game' ? (
+              <div class="p-4">
+                <LinkCard
+                  key={`link-${projectId}`}
+                  projectId={projectId}
+                  projectPath={view.summary.path}
+                  projectName={view.summary.name}
+                />
+              </div>
             ) : (
               <Workbench key={`workbench-${projectId}`} view={view} />
             )
