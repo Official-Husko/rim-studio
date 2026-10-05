@@ -141,6 +141,11 @@ fn check_edges(m: &Member, ws: &Workspace, cfg: &Config, out: &mut Vec<Finding>)
             continue;
         };
         if dep.kind == DepKind::Dev {
+            // A crate that lists itself as a dev-dependency only switches features on for its own
+            // tests (for example the generated TypeScript bindings); it adds no edge to the graph.
+            if target.name == m.name {
+                continue;
+            }
             if !cfg.dev_allowed.contains(&target.name) {
                 out.push(Finding::new(
                     "layers.dev-edge",
@@ -380,6 +385,16 @@ mod tests {
             ),
         ]);
         assert_eq!(rules(&f), ["layers.dev-edge"]);
+    }
+
+    #[test]
+    fn a_self_dev_dependency_that_only_enables_features_is_allowed() {
+        let f = run(vec![member(
+            "e1",
+            Some("l2-engine"),
+            &[("e1", DepKind::Dev)],
+        )]);
+        assert!(f.is_empty(), "{f:?}");
     }
 
     #[test]
