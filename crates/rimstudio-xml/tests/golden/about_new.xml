@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <name>RS Golden Mod</name>
+  <author>Ann</author>
+  <packageId>rs.golden</packageId>
+  <url>https://example.invalid/golden</url>
+  <modVersion>0.1.0</modVersion>
+  <supportedVersions>
+    <li>1.5</li>
+    <li>1.6</li>
+  </supportedVersions>
+  <modDependencies>
+    <li>
+      <packageId>rs.base</packageId>
+      <displayName>RS Base</displayName>
+      <steamWorkshopUrl>steam://url/CommunityFilePage/1</steamWorkshopUrl>
+      <alternativePackageIds>
+        <li>rs.base.alt</li>
+      </alternativePackageIds>
+    </li>
+  </modDependencies>
+  <loadAfter>
+    <li>ludeon.rimworld</li>
+    <li>rs.base</li>
+  </loadAfter>
+  <incompatibleWith>
+    <li>rs.clash</li>
+  </incompatibleWith>
+  <description>First line
+Second line with &lt;markup&gt; &amp; ampersand</description>
+</ModMetaData>

@@ -1,0 +1,26 @@
+[package]
+name = "rimstudio-xml"
+description = "The only XML boundary: parse, render, byte-span edit and RimWorld file codecs"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+publish.workspace = true
+
+[package.metadata.rimstudio]
+layer = "l1-infra"
+
+[lints]
+workspace = true
+
+[dependencies]
+rimstudio-core.workspace = true
+quick-xml.workspace = true
+serde.workspace = true
+thiserror.workspace = true
+camino.workspace = true
+
+[dev-dependencies]
+proptest.workspace = true
+rstest.workspace = true
+goldenfile.workspace = true
+tempfile.workspace = true

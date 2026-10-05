@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModsConfigData>
+  <version>1.6.1111 rev1</version>
+  <activeMods>
+    <li>ludeon.rimworld</li>
+    <li>rs.alpha</li>
+    <li>rs.beta_steam</li>
+  </activeMods>
+  <!-- tool added -->
+  <knownExpansions>
+    <li>ludeon.rimworld.royalty</li>
+  </knownExpansions>
+</ModsConfigData>
