@@ -1,0 +1,67 @@
+{
+  "generatedAtMs": 1700000000000,
+  "installs": [
+    {
+      "buildId": null,
+      "confidence": "medium",
+      "dataDirs": [
+        "Core"
+      ],
+      "executable": "/home/rs_user/GOG Games/RimWorld/game/RimWorldLinux",
+      "gameRoot": "/home/rs_user/GOG Games/RimWorld/game",
+      "health": "installed",
+      "how": "directory-probe",
+      "id": "gog:/home/rs_user/GOG Games/RimWorld/game",
+      "isSymlink": false,
+      "kind": "gog",
+      "launch": {
+        "args": [],
+        "executable": "/home/rs_user/GOG Games/RimWorld/game/RimWorldLinux",
+        "steamOnly": false,
+        "steamUrl": null,
+        "workingDir": "/home/rs_user/GOG Games/RimWorld/game"
+      },
+      "library": null,
+      "modsDir": {
+        "exists": true,
+        "path": "/home/rs_user/GOG Games/RimWorld/game/Mods",
+        "readable": true
+      },
+      "path": "/home/rs_user/GOG Games/RimWorld/game",
+      "proton": false,
+      "stateFlags": null,
+      "targetBuildId": null,
+      "version": {
+        "build": 9999,
+        "major": 1,
+        "minor": 9,
+        "raw": "1.9.9999 rev1",
+        "rev": 1
+      },
+      "workshop": []
+    }
+  ],
+  "libraries": [],
+  "os": "linux",
+  "schema": 1,
+  "selected": {
+    "install": "gog:/home/rs_user/GOG Games/RimWorld/game",
+    "userDir": "/home/rs_user/.config/unity3d/Ludeon Studios/RimWorld by Ludeon Studios"
+  },
+  "steamRoots": [],
+  "userDirs": [
+    {
+      "kind": "native",
+      "modsConfig": {
+        "exists": true,
+        "gameVersion": null,
+        "mtimeMs": 1700000020000
+      },
+      "newest": true,
+      "path": "/home/rs_user/.config/unity3d/Ludeon Studios/RimWorld by Ludeon Studios",
+      "playerLog": null,
+      "prefs": null
+    }
+  ],
+  "warnings": []
+}

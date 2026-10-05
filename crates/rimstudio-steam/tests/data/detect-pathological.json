@@ -1,0 +1,118 @@
+{
+  "generatedAtMs": 1700000000000,
+  "installs": [
+    {
+      "buildId": null,
+      "confidence": "medium",
+      "dataDirs": [
+        "Core"
+      ],
+      "executable": "/home/rs_user/GOG Games/RimWorld/game/RimWorldLinux",
+      "gameRoot": "/home/rs_user/GOG Games/RimWorld/game",
+      "health": "installed",
+      "how": "directory-probe",
+      "id": "gog:/home/rs_user/GOG Games/RimWorld/game",
+      "isSymlink": false,
+      "kind": "gog",
+      "launch": {
+        "args": [],
+        "executable": "/home/rs_user/GOG Games/RimWorld/game/RimWorldLinux",
+        "steamOnly": false,
+        "steamUrl": null,
+        "workingDir": "/home/rs_user/GOG Games/RimWorld/game"
+      },
+      "library": null,
+      "modsDir": {
+        "exists": true,
+        "path": "/home/rs_user/GOG Games/RimWorld/game/Mods",
+        "readable": true
+      },
+      "path": "/home/rs_user/GOG Games/RimWorld/game",
+      "proton": false,
+      "stateFlags": null,
+      "targetBuildId": null,
+      "version": {
+        "build": 9999,
+        "major": 1,
+        "minor": 9,
+        "raw": "1.9.9999 rev1",
+        "rev": 1
+      },
+      "workshop": []
+    }
+  ],
+  "libraries": [
+    {
+      "canonical": "/home/rs_user/.local/share/Steam",
+      "hasApp": true,
+      "how": "libraryfolders.vdf",
+      "label": "",
+      "online": true,
+      "path": "/home/rs_user/.local/share/Steam",
+      "root": "/home/rs_user/.local/share/Steam",
+      "stale": false,
+      "timedOut": false
+    },
+    {
+      "canonical": "/mnt/OfflineLibrary",
+      "hasApp": false,
+      "how": "libraryfolders.vdf",
+      "label": "",
+      "online": false,
+      "path": "/mnt/OfflineLibrary",
+      "root": "/home/rs_user/.local/share/Steam",
+      "stale": false,
+      "timedOut": false
+    }
+  ],
+  "os": "linux",
+  "schema": 1,
+  "selected": {
+    "install": "gog:/home/rs_user/GOG Games/RimWorld/game",
+    "userDir": null
+  },
+  "steamRoots": [
+    {
+      "canonical": "/home/rs_user/.local/share/Steam",
+      "checks": {
+        "exists": true,
+        "hasLibraryFolders": true,
+        "hasSteamapps": true
+      },
+      "confidence": "high",
+      "how": "xdg-data-home",
+      "path": "/home/rs_user/.local/share/Steam"
+    }
+  ],
+  "userDirs": [],
+  "warnings": [
+    {
+      "code": "steam.install-dir-missing",
+      "message": "the manifest names an install folder that does not exist",
+      "paths": [
+        "/home/rs_user/.local/share/Steam/steamapps/common/MissingFolder"
+      ]
+    },
+    {
+      "code": "steam.library-offline",
+      "message": "a Steam library folder does not exist (drive not connected?)",
+      "paths": [
+        "/mnt/OfflineLibrary"
+      ]
+    },
+    {
+      "code": "steam.manifest-leftover",
+      "message": "temporary copies of the app manifest were ignored",
+      "paths": [
+        "/home/rs_user/.local/share/Steam/steamapps/appmanifest_294100.acf.123.tmp"
+      ]
+    },
+    {
+      "code": "steam.root-dangling-link",
+      "message": "a Steam folder link points at a missing target",
+      "paths": [
+        "/home/rs_user/.steam/steam"
+      ]
+    }
+  ]
+}

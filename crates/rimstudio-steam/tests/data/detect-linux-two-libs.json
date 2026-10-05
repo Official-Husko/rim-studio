@@ -1,0 +1,111 @@
+{
+  "generatedAtMs": 1700000000000,
+  "installs": [
+    {
+      "buildId": "1000",
+      "confidence": "high",
+      "dataDirs": [
+        "Core"
+      ],
+      "executable": "/mnt/SteamLibrary/steamapps/common/RimWorld/RimWorldLinux",
+      "gameRoot": "/mnt/SteamLibrary/steamapps/common/RimWorld",
+      "health": "installed",
+      "how": "appmanifest",
+      "id": "steam:/mnt/SteamLibrary",
+      "isSymlink": false,
+      "kind": "steam",
+      "launch": {
+        "args": [],
+        "executable": "/mnt/SteamLibrary/steamapps/common/RimWorld/RimWorldLinux",
+        "steamOnly": false,
+        "steamUrl": "steam://rungameid/294100",
+        "workingDir": "/mnt/SteamLibrary/steamapps/common/RimWorld"
+      },
+      "library": "/mnt/SteamLibrary",
+      "modsDir": {
+        "exists": true,
+        "path": "/mnt/SteamLibrary/steamapps/common/RimWorld/Mods",
+        "readable": true
+      },
+      "path": "/mnt/SteamLibrary/steamapps/common/RimWorld",
+      "proton": false,
+      "stateFlags": 4,
+      "targetBuildId": "1000",
+      "version": {
+        "build": 9999,
+        "major": 1,
+        "minor": 9,
+        "raw": "1.9.9999 rev1",
+        "rev": 1
+      },
+      "workshop": [
+        {
+          "acf": "/mnt/SteamLibrary/steamapps/workshop/appworkshop_294100.acf",
+          "contentDir": "/mnt/SteamLibrary/steamapps/workshop/content/294100",
+          "how": "directory-probe",
+          "itemsInAcf": 1,
+          "itemsOnDisk": 1,
+          "library": "/mnt/SteamLibrary"
+        }
+      ]
+    }
+  ],
+  "libraries": [
+    {
+      "canonical": "/home/rs_user/.local/share/Steam",
+      "hasApp": false,
+      "how": "libraryfolders.vdf",
+      "label": "",
+      "online": true,
+      "path": "/home/rs_user/.local/share/Steam",
+      "root": "/home/rs_user/.local/share/Steam",
+      "stale": false,
+      "timedOut": false
+    },
+    {
+      "canonical": "/mnt/SteamLibrary",
+      "hasApp": true,
+      "how": "libraryfolders.vdf",
+      "label": "",
+      "online": true,
+      "path": "/mnt/SteamLibrary",
+      "root": "/home/rs_user/.local/share/Steam",
+      "stale": false,
+      "timedOut": false
+    }
+  ],
+  "os": "linux",
+  "schema": 1,
+  "selected": {
+    "install": "steam:/mnt/SteamLibrary",
+    "userDir": "/home/rs_user/.config/unity3d/Ludeon Studios/RimWorld by Ludeon Studios"
+  },
+  "steamRoots": [
+    {
+      "canonical": "/home/rs_user/.local/share/Steam",
+      "checks": {
+        "exists": true,
+        "hasLibraryFolders": true,
+        "hasSteamapps": true
+      },
+      "confidence": "high",
+      "how": "xdg-data-home",
+      "path": "/home/rs_user/.local/share/Steam"
+    }
+  ],
+  "userDirs": [
+    {
+      "kind": "native",
+      "modsConfig": {
+        "exists": true,
+        "gameVersion": null,
+        "mtimeMs": 1700000041000
+      },
+      "newest": true,
+      "path": "/home/rs_user/.config/unity3d/Ludeon Studios/RimWorld by Ludeon Studios",
+      "playerLog": null,
+      "prefs": null
+    }
+  ],
+  "warnings": []
+}

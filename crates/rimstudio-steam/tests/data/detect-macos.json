@@ -1,0 +1,100 @@
+{
+  "generatedAtMs": 1700000000000,
+  "installs": [
+    {
+      "buildId": "1000",
+      "confidence": "high",
+      "dataDirs": [
+        "Core"
+      ],
+      "executable": "/Users/rs_user/Library/Application Support/Steam/steamapps/common/RimWorld/RimWorldMac.app",
+      "gameRoot": "/Users/rs_user/Library/Application Support/Steam/steamapps/common/RimWorld/RimWorldMac.app",
+      "health": "installed",
+      "how": "appmanifest",
+      "id": "steam:/Users/rs_user/Library/Application Support/Steam",
+      "isSymlink": false,
+      "kind": "steam",
+      "launch": {
+        "args": [],
+        "executable": "/Users/rs_user/Library/Application Support/Steam/steamapps/common/RimWorld/RimWorldMac.app",
+        "steamOnly": false,
+        "steamUrl": "steam://rungameid/294100",
+        "workingDir": "/Users/rs_user/Library/Application Support/Steam/steamapps/common/RimWorld"
+      },
+      "library": "/Users/rs_user/Library/Application Support/Steam",
+      "modsDir": {
+        "exists": true,
+        "path": "/Users/rs_user/Library/Application Support/Steam/steamapps/common/RimWorld/RimWorldMac.app/Mods",
+        "readable": true
+      },
+      "path": "/Users/rs_user/Library/Application Support/Steam/steamapps/common/RimWorld",
+      "proton": false,
+      "stateFlags": 4,
+      "targetBuildId": "1000",
+      "version": {
+        "build": 9999,
+        "major": 1,
+        "minor": 9,
+        "raw": "1.9.9999 rev1",
+        "rev": 1
+      },
+      "workshop": [
+        {
+          "acf": "/Users/rs_user/Library/Application Support/Steam/steamapps/workshop/appworkshop_294100.acf",
+          "contentDir": "/Users/rs_user/Library/Application Support/Steam/steamapps/workshop/content/294100",
+          "how": "directory-probe",
+          "itemsInAcf": 1,
+          "itemsOnDisk": 1,
+          "library": "/Users/rs_user/Library/Application Support/Steam"
+        }
+      ]
+    }
+  ],
+  "libraries": [
+    {
+      "canonical": "/Users/rs_user/Library/Application Support/Steam",
+      "hasApp": true,
+      "how": "libraryfolders.vdf",
+      "label": "",
+      "online": true,
+      "path": "/Users/rs_user/Library/Application Support/Steam",
+      "root": "/Users/rs_user/Library/Application Support/Steam",
+      "stale": false,
+      "timedOut": false
+    }
+  ],
+  "os": "macos",
+  "schema": 1,
+  "selected": {
+    "install": "steam:/Users/rs_user/Library/Application Support/Steam",
+    "userDir": "/Users/rs_user/Library/Application Support/RimWorld"
+  },
+  "steamRoots": [
+    {
+      "canonical": "/Users/rs_user/Library/Application Support/Steam",
+      "checks": {
+        "exists": true,
+        "hasLibraryFolders": true,
+        "hasSteamapps": true
+      },
+      "confidence": "medium",
+      "how": "directory-probe",
+      "path": "/Users/rs_user/Library/Application Support/Steam"
+    }
+  ],
+  "userDirs": [
+    {
+      "kind": "macos",
+      "modsConfig": {
+        "exists": true,
+        "gameVersion": null,
+        "mtimeMs": 1700000030000
+      },
+      "newest": true,
+      "path": "/Users/rs_user/Library/Application Support/RimWorld",
+      "playerLog": null,
+      "prefs": null
+    }
+  ],
+  "warnings": []
+}

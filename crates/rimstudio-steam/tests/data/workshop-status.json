@@ -1,0 +1,34 @@
+[
+  {
+    "id": 111,
+    "installedTimeUpdated": 100,
+    "latestTimeUpdated": 100,
+    "onDisk": true,
+    "sizeHint": 10,
+    "state": "current"
+  },
+  {
+    "id": 222,
+    "installedTimeUpdated": 100,
+    "latestTimeUpdated": 250,
+    "onDisk": true,
+    "sizeHint": 10,
+    "state": "update-available"
+  },
+  {
+    "id": 333,
+    "installedTimeUpdated": null,
+    "latestTimeUpdated": null,
+    "onDisk": true,
+    "sizeHint": null,
+    "state": "orphan"
+  },
+  {
+    "id": 444,
+    "installedTimeUpdated": 100,
+    "latestTimeUpdated": null,
+    "onDisk": false,
+    "sizeHint": 10,
+    "state": "not-downloaded"
+  }
+]
