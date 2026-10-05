@@ -1,0 +1,219 @@
+{
+  "readouts": [
+    {
+      "key": "melee-swing-damage",
+      "group": "melee",
+      "unit": "number",
+      "value": 18
+    },
+    {
+      "key": "melee-swing-cooldown",
+      "group": "melee",
+      "unit": "seconds",
+      "value": 2
+    },
+    {
+      "key": "melee-dps",
+      "group": "melee",
+      "unit": "damage-per-second",
+      "value": 9
+    },
+    {
+      "key": "melee-ap",
+      "group": "melee",
+      "unit": "fraction",
+      "value": 0.27
+    },
+    {
+      "key": "melee-fight-dps",
+      "group": "melee",
+      "unit": "damage-per-second",
+      "value": 9,
+      "steps": [
+        {
+          "label": "blade Cut share",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "key": "strength-index",
+      "group": "melee",
+      "unit": "number",
+      "value": 11.43
+    },
+    {
+      "key": "market-value",
+      "group": "economy",
+      "unit": "silver"
+    }
+  ],
+  "suggestions": [
+    {
+      "field": "/tools/0/power",
+      "stat": "swing_damage",
+      "value": 18,
+      "source": "typed",
+      "level": "all",
+      "predictor": "anchor",
+      "n": 17,
+      "locked": true
+    },
+    {
+      "field": "/tools/0/cooldownTime",
+      "stat": "cooldown",
+      "value": 2,
+      "source": "typed",
+      "level": "all",
+      "predictor": "anchor",
+      "n": 17,
+      "locked": true
+    },
+    {
+      "field": "/mass",
+      "stat": "mass",
+      "value": 2,
+      "source": "quantile",
+      "band": {
+        "p10": 1,
+        "median": 2,
+        "p90": 2,
+        "p50": 1.2726869667184948,
+        "p80": 1.8578340908059403,
+        "shift": 0
+      },
+      "level": "all",
+      "predictor": "quantile",
+      "n": 17,
+      "locked": false
+    },
+    {
+      "field": "/workToMake",
+      "stat": "work",
+      "level": "all",
+      "predictor": "anchor",
+      "n": 17,
+      "locked": false
+    }
+  ],
+  "estimate": {
+    "classLabel": "based on 17 items of this kind",
+    "level": "all",
+    "classN": 17,
+    "strength": 10.43055268967519,
+    "strengthPercentile": 0.5,
+    "anchors": [
+      {
+        "id": "MeleeWeapon_LongSword",
+        "label": "longsword",
+        "strength": 10.287244897959184,
+        "tier": 1,
+        "role": "blade",
+        "stats": {
+          "ap": 0.3300658472344161,
+          "cooldown": 2.557330992098332,
+          "dps": 8.604435594616863,
+          "fight_dps": 7.959183673469387,
+          "market_value": 264.8,
+          "mass": 2,
+          "swing_damage": 22.004389815627743,
+          "tools": 3,
+          "work": 18000
+        }
+      },
+      {
+        "id": "MeleeWeapon_PlasmaSword",
+        "label": "plasmasword",
+        "strength": 9.80548469387755,
+        "tier": 4,
+        "role": "blade",
+        "stats": {
+          "ap": 0.29605263157894735,
+          "cooldown": 2.515789473684211,
+          "dps": 7.845188284518827,
+          "fight_dps": 7.653061224489796,
+          "market_value": 2000,
+          "mass": 2,
+          "swing_damage": 19.736842105263158,
+          "tools": 3,
+          "work": 1
+        }
+      },
+      {
+        "id": "MeleeWeapon_Spear",
+        "label": "spear",
+        "strength": 11.225721153846154,
+        "tier": 0,
+        "role": "piercing",
+        "stats": {
+          "ap": 0.3810957324106113,
+          "cooldown": 2.6000000000000005,
+          "dps": 7.346730547422587,
+          "fight_dps": 7.884615384615384,
+          "market_value": 193.2,
+          "mass": 2,
+          "swing_damage": 19.10149942329873,
+          "tools": 3,
+          "work": 12000
+        }
+      }
+    ],
+    "notes": []
+  },
+  "diagnostics": [
+    {
+      "code": "design.required-missing",
+      "severity": "error",
+      "message": "parent base is required",
+      "field": "/parent",
+      "args": {
+        "label": "parent base"
+      }
+    },
+    {
+      "code": "design.required-missing",
+      "severity": "error",
+      "message": "tier is required",
+      "field": "/techLevel",
+      "args": {
+        "label": "tier"
+      }
+    },
+    {
+      "code": "design.required-missing",
+      "severity": "error",
+      "message": "role is required",
+      "field": "/role",
+      "args": {
+        "label": "role"
+      }
+    },
+    {
+      "code": "design.required-missing",
+      "severity": "error",
+      "message": "mass is required",
+      "field": "/mass",
+      "args": {
+        "label": "mass"
+      }
+    },
+    {
+      "code": "design.required-missing",
+      "severity": "error",
+      "message": "work to make is required",
+      "field": "/workToMake",
+      "args": {
+        "label": "work to make"
+      }
+    },
+    {
+      "code": "design.required-missing",
+      "severity": "error",
+      "message": "stuff categories and count, or a cost list is required",
+      "field": "/stuff",
+      "args": {
+        "label": "stuff categories and count, or a cost list"
+      }
+    }
+  ]
+}

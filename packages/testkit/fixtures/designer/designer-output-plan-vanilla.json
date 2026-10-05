@@ -1,0 +1,47 @@
+{
+  "planId": "e5149246cda573dbbe69ac3a10fc3843",
+  "files": [
+    {
+      "path": "Defs/ThingDefs_Misc/Weapons/RangedIndustrial/Gun_OutRifle.xml",
+      "kind": "vanilla-defs",
+      "action": "create",
+      "rendered": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<Defs>\n  <!-- ====== Bullet_Gun_OutRifle ====== -->\n  <ThingDef ParentName=\"BaseBullet\">\n    <defName>Bullet_Gun_OutRifle</defName>\n    <label>bolt-action rifle bullet</label>\n    <graphicData>\n      <texPath>Things/Projectile/Bullet_big</texPath>\n      <graphicClass>Graphic_Single</graphicClass>\n    </graphicData>\n    <projectile>\n      <damageDef>Bullet</damageDef>\n      <damageAmountBase>18</damageAmountBase>\n      <stoppingPower>1.5</stoppingPower>\n      <speed>70</speed>\n    </projectile>\n  </ThingDef>\n  <!-- ====== Gun_OutRifle ====== -->\n  <ThingDef ParentName=\"BaseHumanMakeableGun\">\n    <defName>Gun_OutRifle</defName>\n    <label>Out rifle</label>\n    <description>An ancient pattern bolt-action rifle. With its long range, and low fire rate, it is unlikely to drive animals to revenge, which makes it a favorite weapon for hunting.</description>\n    <graphicData>\n      <texPath>Things/Item/Equipment/WeaponRanged/BoltActionRifle</texPath>\n      <graphicClass>Graphic_Single</graphicClass>\n    </graphicData>\n    <statBases>\n      <WorkToMake>12000</WorkToMake>\n      <Mass>3.5</Mass>\n      <AccuracyTouch>0.65</AccuracyTouch>\n      <AccuracyShort>0.8</AccuracyShort>\n      <AccuracyMedium>0.9</AccuracyMedium>\n      <AccuracyLong>0.8</AccuracyLong>\n      <RangedWeapon_Cooldown>1.5</RangedWeapon_Cooldown>\n    </statBases>\n    <costList>\n      <Steel>60</Steel>\n      <ComponentIndustrial>3</ComponentIndustrial>\n    </costList>\n    <recipeMaker>\n      <skillRequirements>\n        <Crafting>5</Crafting>\n      </skillRequirements>\n      <displayPriority>415</displayPriority>\n    </recipeMaker>\n    <soundInteract>Interact_Rifle</soundInteract>\n    <verbs>\n      <li>\n        <verbClass>Verb_Shoot</verbClass>\n        <hasStandardCommand>true</hasStandardCommand>\n        <defaultProjectile>Bullet_Gun_OutRifle</defaultProjectile>\n        <warmupTime>1.7</warmupTime>\n        <range>36.9</range>\n        <soundCast>Shot_BoltActionRifle</soundCast>\n        <soundCastTail>GunTail_Heavy</soundCastTail>\n        <muzzleFlashScale>9</muzzleFlashScale>\n      </li>\n    </verbs>\n    <tools>\n      <li>\n        <label>stock</label>\n        <capacities>\n          <li>Blunt</li>\n        </capacities>\n        <power>9</power>\n        <cooldownTime>2</cooldownTime>\n      </li>\n      <li>\n        <label>barrel</label>\n        <capacities>\n          <li>Blunt</li>\n          <li>Poke</li>\n        </capacities>\n        <power>9</power>\n        <cooldownTime>2</cooldownTime>\n      </li>\n    </tools>\n    <weaponClasses>\n      <li>LongShots</li>\n    </weaponClasses>\n  </ThingDef>\n</Defs>\n",
+      "bytes": 2635
+    }
+  ],
+  "diagnostics": [
+    {
+      "code": "design.duplicate-capacity",
+      "severity": "warning",
+      "message": "tool barrel lists 2 capacities; the stat panel counts its attack once per capacity",
+      "field": "/tools/1/capacities",
+      "args": {
+        "count": "2",
+        "tool": "barrel"
+      }
+    },
+    {
+      "code": "design.texture-shared",
+      "severity": "info",
+      "message": "Out rifle uses the texture Things/Item/Equipment/WeaponRanged/BoltActionRifle; the art is not copied, so it must exist in the game or in your mod (your own art goes to Textures/Things/Item/Equipment/WeaponRanged/Gun_OutRifle.png)",
+      "field": "/texturePath",
+      "args": {
+        "file": "Textures/Things/Item/Equipment/WeaponRanged/Gun_OutRifle.png",
+        "label": "Out rifle",
+        "path": "Things/Item/Equipment/WeaponRanged/BoltActionRifle"
+      }
+    },
+    {
+      "code": "design.texture-shared",
+      "severity": "info",
+      "message": "bolt-action rifle bullet uses the texture Things/Projectile/Bullet_big; the art is not copied, so it must exist in the game or in your mod (your own art goes to Textures/Things/Projectile/Bullet_Gun_OutRifle.png)",
+      "field": "/ranged/projectile/def/texturePath",
+      "args": {
+        "file": "Textures/Things/Projectile/Bullet_Gun_OutRifle.png",
+        "label": "bolt-action rifle bullet",
+        "path": "Things/Projectile/Bullet_big"
+      }
+    }
+  ],
+  "hasErrors": false
+}

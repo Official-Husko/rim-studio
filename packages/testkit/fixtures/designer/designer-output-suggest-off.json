@@ -1,0 +1,554 @@
+{
+  "kind": "ranged",
+  "defName": "Gun_OutRifle",
+  "available": true,
+  "toggleOn": false,
+  "classLabel": "based on the 4 nearest of 20 converted weapons",
+  "pool": 20,
+  "fields": [
+    {
+      "field": "/ce/bulk",
+      "label": "CE bulk",
+      "required": true,
+      "status": "derived",
+      "value": 7.771,
+      "source": {
+        "kind": "predicted",
+        "predictor": "ratio",
+        "n": 4
+      },
+      "band": {
+        "p50": {
+          "low": 5.616456037817962,
+          "high": 10.752054426025808
+        },
+        "p80": {
+          "low": 4.538239589800451,
+          "high": 13.306578422109112
+        }
+      },
+      "rating": "rough",
+      "error": 0.3272530266282473
+    },
+    {
+      "field": "/ce/swayFactor",
+      "label": "CE sway factor",
+      "required": true,
+      "status": "derived",
+      "value": 1.23,
+      "source": {
+        "kind": "predicted",
+        "predictor": "median",
+        "n": 4
+      },
+      "band": {
+        "p50": {
+          "low": 0.9875912408759124,
+          "high": 1.5319090909090909
+        },
+        "p80": {
+          "low": 0.7897966769365325,
+          "high": 1.9155562997153197
+        }
+      },
+      "rating": "rough",
+      "error": 0.19708029197080293
+    },
+    {
+      "field": "/ce/shotSpread",
+      "label": "CE shot spread",
+      "required": true,
+      "status": "ask",
+      "rating": "unreliable",
+      "error": 0.3,
+      "reference": 0.165,
+      "reason": "the estimate 0.165 is not written: it is rated unreliable: the typical error was about 30 percent when each of 19 converted weapons was predicted from the others"
+    },
+    {
+      "field": "/ce/sightsEfficiency",
+      "label": "CE sights efficiency",
+      "required": false,
+      "status": "derived",
+      "value": 0.85,
+      "source": {
+        "kind": "predicted",
+        "predictor": "median",
+        "n": 4
+      },
+      "band": {
+        "p50": {
+          "low": 0.7224999999999999,
+          "high": 1
+        },
+        "p80": {
+          "low": 0.595,
+          "high": 1.2142857142857142
+        }
+      },
+      "rating": "rough",
+      "error": 0.15000000000000002
+    },
+    {
+      "field": "/ce/recoilAmount",
+      "label": "CE recoil",
+      "required": false,
+      "status": "derived",
+      "value": 2.72,
+      "source": {
+        "kind": "predicted",
+        "predictor": "median",
+        "n": 4
+      },
+      "band": {
+        "p50": {
+          "low": 2.286507047932099,
+          "high": 3.2356777586542154
+        },
+        "p80": {
+          "low": 1.808411349884035,
+          "high": 4.091104604311639
+        }
+      },
+      "rating": "rough",
+      "error": 0.18958991174803663
+    },
+    {
+      "field": "/ce/magazineSize",
+      "label": "CE magazine size",
+      "required": true,
+      "status": "ask",
+      "rating": "unreliable",
+      "error": 0.6207142857142858,
+      "reference": 7,
+      "reason": "the estimate 7 is not written: it is rated unreliable: the typical error was about 62 percent when each of 16 converted weapons was predicted from the others"
+    },
+    {
+      "field": "/ce/reloadTime",
+      "label": "CE reload time",
+      "required": true,
+      "status": "derived",
+      "value": 4.15,
+      "source": {
+        "kind": "predicted",
+        "predictor": "median",
+        "n": 4
+      },
+      "band": {
+        "p50": {
+          "low": 3.3008888722492276,
+          "high": 5.217534023877811
+        },
+        "p80": {
+          "low": 2.796739130434783,
+          "high": 6.1580645161290315
+        }
+      },
+      "rating": "rough",
+      "error": 0.2043367346938776
+    },
+    {
+      "field": "/ce/toolPenetration/stock/blunt",
+      "label": "Blunt penetration of the tool stock",
+      "required": true,
+      "status": "ask",
+      "rating": "unreliable",
+      "error": 0.6434630278443666,
+      "reference": 2.56,
+      "reason": "the estimate 2.56 is not written: the ratio of penetration to power is rated unreliable: the typical error was about 64 percent when each of 19 converted weapons was predicted from the others"
+    },
+    {
+      "field": "/ce/toolPenetration/barrel/blunt",
+      "label": "Blunt penetration of the tool barrel",
+      "required": true,
+      "status": "ask",
+      "rating": "unreliable",
+      "error": 0.6434630278443666,
+      "reference": 2.56,
+      "reason": "the estimate 2.56 is not written: the ratio of penetration to power is rated unreliable: the typical error was about 64 percent when each of 19 converted weapons was predicted from the others"
+    }
+  ],
+  "choices": [
+    {
+      "field": "/ce/ammoSet",
+      "label": "Which caliber (ammo set) does the weapon use?",
+      "kind": "choice",
+      "required": true,
+      "status": "ask",
+      "candidates": [
+        {
+          "name": "AmmoSet_25x40mmGrenade",
+          "usedBy": 0,
+          "score": 0,
+          "firstDamage": 18
+        },
+        {
+          "name": "AmmoSet_280British",
+          "usedBy": 0,
+          "score": 0,
+          "firstDamage": 18
+        },
+        {
+          "name": "AmmoSet_3030Winchester",
+          "usedBy": 0,
+          "score": 0,
+          "firstDamage": 18
+        },
+        {
+          "name": "AmmoSet_303British_SB",
+          "usedBy": 0,
+          "score": 0,
+          "firstDamage": 18
+        },
+        {
+          "name": "AmmoSet_5656Spencer",
+          "usedBy": 0,
+          "score": 0,
+          "firstDamage": 18
+        },
+        {
+          "name": "AmmoSet_762x54mmR_SB",
+          "usedBy": 0,
+          "score": 0,
+          "firstDamage": 18
+        },
+        {
+          "name": "AmmoSet_8x50mmRLebel_SB",
+          "usedBy": 0,
+          "score": 0,
+          "firstDamage": 18
+        },
+        {
+          "name": "AmmoSet_PlasmaCellHeavy",
+          "usedBy": 0,
+          "score": 0,
+          "firstDamage": 18
+        },
+        {
+          "name": "AmmoSet_127x40mmUNSC",
+          "usedBy": 0,
+          "score": 0,
+          "firstDamage": 19
+        },
+        {
+          "name": "AmmoSet_25x59mmGrenade",
+          "usedBy": 0,
+          "score": 0,
+          "firstDamage": 19
+        },
+        {
+          "name": "AmmoSet_277Fury",
+          "usedBy": 0,
+          "score": 0,
+          "firstDamage": 19
+        },
+        {
+          "name": "AmmoSet_44Magnum_HV",
+          "usedBy": 0,
+          "score": 0,
+          "firstDamage": 19
+        }
+      ],
+      "reason": "the caliber is never chosen for you: pick one of the candidates, best fit first"
+    },
+    {
+      "field": "/ce/defaultProjectile",
+      "label": "Which projectile of the ammo set is the default?",
+      "kind": "choice",
+      "required": true,
+      "status": "ask",
+      "candidates": [],
+      "reason": "it follows the ammo set: choose the caliber first"
+    },
+    {
+      "field": "/ce/weaponTagClass",
+      "label": "Which weapon class tag does the weapon get?",
+      "kind": "choice",
+      "required": true,
+      "status": "ask",
+      "candidates": [
+        {
+          "name": "CE_AI_BROOM",
+          "usedBy": 6,
+          "score": 0
+        },
+        {
+          "name": "CE_AI_AR",
+          "usedBy": 2,
+          "score": 0
+        },
+        {
+          "name": "CE_AI_SR",
+          "usedBy": 2,
+          "score": 0
+        },
+        {
+          "name": "CE_AI_LMG",
+          "usedBy": 1,
+          "score": 0
+        },
+        {
+          "name": "CE_AI_Rifle",
+          "usedBy": 1,
+          "score": 0
+        },
+        {
+          "name": "CE_AI_Suppressive",
+          "usedBy": 1,
+          "score": 0
+        },
+        {
+          "name": "CE_AI_AOE",
+          "usedBy": 0,
+          "score": 0
+        },
+        {
+          "name": "CE_AI_EMP",
+          "usedBy": 0,
+          "score": 0
+        },
+        {
+          "name": "CE_AI_Grenade",
+          "usedBy": 0,
+          "score": 0
+        },
+        {
+          "name": "CE_AI_Launcher",
+          "usedBy": 0,
+          "score": 0
+        },
+        {
+          "name": "CE_AI_SMOKE",
+          "usedBy": 0,
+          "score": 0
+        }
+      ],
+      "reason": "the class tag is never chosen for you; answering it also sharpens the estimates of the numbers below"
+    },
+    {
+      "field": "/ce/oneHanded",
+      "label": "Is the weapon held in one hand?",
+      "kind": "flag",
+      "required": false,
+      "status": "ask",
+      "candidates": [],
+      "reason": "a flag of the block; it is false until you set it"
+    },
+    {
+      "field": "/ce/beltFed",
+      "label": "Is the weapon belt fed?",
+      "kind": "flag",
+      "required": false,
+      "status": "ask",
+      "candidates": [],
+      "reason": "a flag of the block; it is false until you set it"
+    }
+  ],
+  "patchNumbers": [
+    {
+      "field": "mass",
+      "label": "Mass in the patch",
+      "required": false,
+      "status": "derived",
+      "value": 3.5,
+      "source": {
+        "kind": "identity",
+        "n": 18
+      },
+      "band": {
+        "p50": {
+          "low": 3.1102073246521367,
+          "high": 3.938644187126693
+        },
+        "p80": {
+          "low": 2.367199627987107,
+          "high": 5.174890978846808
+        }
+      },
+      "rating": "reliable",
+      "error": 0.11723620410990532
+    },
+    {
+      "field": "range",
+      "label": "Range in the patch",
+      "required": false,
+      "status": "derived",
+      "value": 30.1,
+      "source": {
+        "kind": "predicted",
+        "predictor": "ratio",
+        "n": 4
+      },
+      "band": {
+        "p50": {
+          "low": 20.739055736159745,
+          "high": 43.68617412124117
+        },
+        "p80": {
+          "low": 17.107000675428228,
+          "high": 52.96135875538688
+        }
+      },
+      "rating": "rough",
+      "error": 0.31093683495439584
+    },
+    {
+      "field": "warmup",
+      "label": "Warmup in the patch",
+      "required": false,
+      "status": "derived",
+      "value": 1.686,
+      "source": {
+        "kind": "predicted",
+        "predictor": "ratio",
+        "n": 4
+      },
+      "band": {
+        "p50": {
+          "low": 1.2429447076633628,
+          "high": 2.2869850786394625
+        },
+        "p80": {
+          "low": 0.9512381353822849,
+          "high": 2.988311648016102
+        }
+      },
+      "rating": "rough",
+      "error": 0.30734302875817154
+    },
+    {
+      "field": "cooldown",
+      "label": "Cooldown in the patch",
+      "required": false,
+      "status": "derived",
+      "value": 0.44,
+      "source": {
+        "kind": "predicted",
+        "predictor": "median",
+        "n": 4
+      },
+      "band": {
+        "p50": {
+          "low": 0.4031826735136002,
+          "high": 0.48017936463598915
+        },
+        "p80": {
+          "low": 0.2920803560765833,
+          "high": 0.6628312927324637
+        }
+      },
+      "rating": "reliable",
+      "error": 0.08574263038548754
+    }
+  ],
+  "asks": {
+    "items": [
+      {
+        "field": "/ce/ammoSet",
+        "label": "Which caliber (ammo set) does the weapon use?",
+        "kind": "choice",
+        "options": [
+          "AmmoSet_25x40mmGrenade",
+          "AmmoSet_280British",
+          "AmmoSet_3030Winchester",
+          "AmmoSet_303British_SB",
+          "AmmoSet_5656Spencer",
+          "AmmoSet_762x54mmR_SB",
+          "AmmoSet_8x50mmRLebel_SB",
+          "AmmoSet_PlasmaCellHeavy",
+          "AmmoSet_127x40mmUNSC",
+          "AmmoSet_25x59mmGrenade",
+          "AmmoSet_277Fury",
+          "AmmoSet_44Magnum_HV"
+        ],
+        "reason": "the caliber is never chosen for you: pick one of the candidates, best fit first"
+      },
+      {
+        "field": "/ce/weaponTagClass",
+        "label": "Which weapon class tag does the weapon get?",
+        "kind": "choice",
+        "options": [
+          "CE_AI_BROOM",
+          "CE_AI_AR",
+          "CE_AI_SR",
+          "CE_AI_LMG",
+          "CE_AI_Rifle",
+          "CE_AI_Suppressive",
+          "CE_AI_AOE",
+          "CE_AI_EMP",
+          "CE_AI_Grenade",
+          "CE_AI_Launcher",
+          "CE_AI_SMOKE"
+        ],
+        "reason": "the class tag is never chosen for you; answering it also sharpens the estimates of the numbers below"
+      },
+      {
+        "field": "/ce/oneHanded",
+        "label": "Is the weapon held in one hand?",
+        "kind": "flag",
+        "options": [],
+        "reason": "a flag of the block; it is false until you set it"
+      },
+      {
+        "field": "/ce/beltFed",
+        "label": "Is the weapon belt fed?",
+        "kind": "flag",
+        "options": [],
+        "reason": "a flag of the block; it is false until you set it"
+      },
+      {
+        "field": "/ce/shotSpread",
+        "label": "CE shot spread",
+        "kind": "number",
+        "options": [],
+        "reason": "the estimate 0.165 is not written: it is rated unreliable: the typical error was about 30 percent when each of 19 converted weapons was predicted from the others",
+        "suggestion": 0.165
+      },
+      {
+        "field": "/ce/magazineSize",
+        "label": "CE magazine size",
+        "kind": "number",
+        "options": [],
+        "reason": "the estimate 7 is not written: it is rated unreliable: the typical error was about 62 percent when each of 16 converted weapons was predicted from the others",
+        "suggestion": 7
+      },
+      {
+        "field": "/ce/toolPenetration/stock/blunt",
+        "label": "Blunt penetration of the tool stock",
+        "kind": "number",
+        "options": [],
+        "reason": "the estimate 2.56 is not written: the ratio of penetration to power is rated unreliable: the typical error was about 64 percent when each of 19 converted weapons was predicted from the others",
+        "suggestion": 2.56
+      },
+      {
+        "field": "/ce/toolPenetration/barrel/blunt",
+        "label": "Blunt penetration of the tool barrel",
+        "kind": "number",
+        "options": [],
+        "reason": "the estimate 2.56 is not written: the ratio of penetration to power is rated unreliable: the typical error was about 64 percent when each of 19 converted weapons was predicted from the others",
+        "suggestion": 2.56
+      }
+    ]
+  },
+  "missing": [
+    "/ce/bulk",
+    "/ce/swayFactor",
+    "/ce/shotSpread",
+    "/ce/magazineSize",
+    "/ce/reloadTime",
+    "/ce/toolPenetration/stock/blunt",
+    "/ce/toolPenetration/barrel/blunt",
+    "/ce/ammoSet",
+    "/ce/defaultProjectile",
+    "/ce/weaponTagClass"
+  ],
+  "stillMissingAfterAccept": [
+    "/ce/shotSpread",
+    "/ce/magazineSize",
+    "/ce/toolPenetration/stock/blunt",
+    "/ce/toolPenetration/barrel/blunt",
+    "/ce/ammoSet",
+    "/ce/defaultProjectile",
+    "/ce/weaponTagClass"
+  ],
+  "notes": []
+}

@@ -131,7 +131,13 @@ export function NumberField(props: NumberFieldProps) {
             onValueChange(n);
         }}
         onBlur={() => {
-          if (draft !== null) commit(parse(draft));
+          if (draft === null) return;
+          // The typed number was already sent while typing; send again only when leaving changes it
+          // (cleared, clamped), so a click on a button elsewhere does not invalidate the page twice.
+          const parsed = parse(draft);
+          const next = parsed === undefined ? undefined : clamp(parsed, min, max);
+          setDraft(null);
+          if (next !== value) onValueChange(next);
         }}
         onKeyDown={onKeyDown}
         class="min-w-0 flex-1 bg-transparent px-2 text-right font-mono text-mono text-fg tabular-nums outline-none placeholder:text-faint"

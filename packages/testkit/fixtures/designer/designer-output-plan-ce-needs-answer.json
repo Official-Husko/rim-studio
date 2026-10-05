@@ -1,0 +1,187 @@
+{
+  "planId": "e5149246cda573dbbe69ac3a10fc3843",
+  "files": [
+    {
+      "path": "Defs/ThingDefs_Misc/Weapons/RangedIndustrial/Gun_OutRifle.xml",
+      "kind": "vanilla-defs",
+      "action": "create",
+      "rendered": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<Defs>\n  <!-- ====== Bullet_Gun_OutRifle ====== -->\n  <ThingDef ParentName=\"BaseBullet\">\n    <defName>Bullet_Gun_OutRifle</defName>\n    <label>bolt-action rifle bullet</label>\n    <graphicData>\n      <texPath>Things/Projectile/Bullet_big</texPath>\n      <graphicClass>Graphic_Single</graphicClass>\n    </graphicData>\n    <projectile>\n      <damageDef>Bullet</damageDef>\n      <damageAmountBase>18</damageAmountBase>\n      <stoppingPower>1.5</stoppingPower>\n      <speed>70</speed>\n    </projectile>\n  </ThingDef>\n  <!-- ====== Gun_OutRifle ====== -->\n  <ThingDef ParentName=\"BaseHumanMakeableGun\">\n    <defName>Gun_OutRifle</defName>\n    <label>Out rifle</label>\n    <description>An ancient pattern bolt-action rifle. With its long range, and low fire rate, it is unlikely to drive animals to revenge, which makes it a favorite weapon for hunting.</description>\n    <graphicData>\n      <texPath>Things/Item/Equipment/WeaponRanged/BoltActionRifle</texPath>\n      <graphicClass>Graphic_Single</graphicClass>\n    </graphicData>\n    <statBases>\n      <WorkToMake>12000</WorkToMake>\n      <Mass>3.5</Mass>\n      <AccuracyTouch>0.65</AccuracyTouch>\n      <AccuracyShort>0.8</AccuracyShort>\n      <AccuracyMedium>0.9</AccuracyMedium>\n      <AccuracyLong>0.8</AccuracyLong>\n      <RangedWeapon_Cooldown>1.5</RangedWeapon_Cooldown>\n    </statBases>\n    <costList>\n      <Steel>60</Steel>\n      <ComponentIndustrial>3</ComponentIndustrial>\n    </costList>\n    <recipeMaker>\n      <skillRequirements>\n        <Crafting>5</Crafting>\n      </skillRequirements>\n      <displayPriority>415</displayPriority>\n    </recipeMaker>\n    <soundInteract>Interact_Rifle</soundInteract>\n    <verbs>\n      <li>\n        <verbClass>Verb_Shoot</verbClass>\n        <hasStandardCommand>true</hasStandardCommand>\n        <defaultProjectile>Bullet_Gun_OutRifle</defaultProjectile>\n        <warmupTime>1.7</warmupTime>\n        <range>36.9</range>\n        <soundCast>Shot_BoltActionRifle</soundCast>\n        <soundCastTail>GunTail_Heavy</soundCastTail>\n        <muzzleFlashScale>9</muzzleFlashScale>\n      </li>\n    </verbs>\n    <tools>\n      <li>\n        <label>stock</label>\n        <capacities>\n          <li>Blunt</li>\n        </capacities>\n        <power>9</power>\n        <cooldownTime>2</cooldownTime>\n      </li>\n      <li>\n        <label>barrel</label>\n        <capacities>\n          <li>Blunt</li>\n          <li>Poke</li>\n        </capacities>\n        <power>9</power>\n        <cooldownTime>2</cooldownTime>\n      </li>\n    </tools>\n    <weaponClasses>\n      <li>LongShots</li>\n    </weaponClasses>\n  </ThingDef>\n</Defs>\n",
+      "bytes": 2635
+    }
+  ],
+  "diagnostics": [
+    {
+      "code": "ce.derived-value",
+      "severity": "info",
+      "message": "/ce/bulk = 7.771 was taken from the Combat Extended suggestion: predicted (Ratio) from 4 of the converted weapons in the library, rated rough, typical error about 33 percent; check it",
+      "field": "/ce/bulk",
+      "args": {
+        "how": "taken from the Combat Extended suggestion: predicted (Ratio) from 4 of the converted weapons in the library, rated rough, typical error about 33 percent; check it",
+        "value": "7.771"
+      }
+    },
+    {
+      "code": "ce.derived-value",
+      "severity": "info",
+      "message": "/ce/swayFactor = 1.23 was taken from the Combat Extended suggestion: predicted (Median) from 4 of the converted weapons in the library, rated rough, typical error about 20 percent; check it",
+      "field": "/ce/swayFactor",
+      "args": {
+        "how": "taken from the Combat Extended suggestion: predicted (Median) from 4 of the converted weapons in the library, rated rough, typical error about 20 percent; check it",
+        "value": "1.23"
+      }
+    },
+    {
+      "code": "ce.derived-value",
+      "severity": "info",
+      "message": "/ce/sightsEfficiency = 0.85 was taken from the Combat Extended suggestion: predicted (Median) from 4 of the converted weapons in the library, rated rough, typical error about 15 percent; check it",
+      "field": "/ce/sightsEfficiency",
+      "args": {
+        "how": "taken from the Combat Extended suggestion: predicted (Median) from 4 of the converted weapons in the library, rated rough, typical error about 15 percent; check it",
+        "value": "0.85"
+      }
+    },
+    {
+      "code": "ce.derived-value",
+      "severity": "info",
+      "message": "/ce/recoilAmount = 2.72 was taken from the Combat Extended suggestion: predicted (Median) from 4 of the converted weapons in the library, rated rough, typical error about 19 percent; check it",
+      "field": "/ce/recoilAmount",
+      "args": {
+        "how": "taken from the Combat Extended suggestion: predicted (Median) from 4 of the converted weapons in the library, rated rough, typical error about 19 percent; check it",
+        "value": "2.72"
+      }
+    },
+    {
+      "code": "ce.derived-value",
+      "severity": "info",
+      "message": "/ce/reloadTime = 4.15 was taken from the Combat Extended suggestion: predicted (Median) from 4 of the converted weapons in the library, rated rough, typical error about 20 percent; check it",
+      "field": "/ce/reloadTime",
+      "args": {
+        "how": "taken from the Combat Extended suggestion: predicted (Median) from 4 of the converted weapons in the library, rated rough, typical error about 20 percent; check it",
+        "value": "4.15"
+      }
+    },
+    {
+      "code": "designer.ce-needs-answer",
+      "severity": "error",
+      "message": "Which caliber (ammo set) does the weapon use? needs your answer before this plan can be written: the caliber is never chosen for you: pick one of the candidates, best fit first",
+      "field": "/ce/ammoSet",
+      "args": {
+        "candidates": "AmmoSet_25x40mmGrenade, AmmoSet_280British, AmmoSet_3030Winchester, AmmoSet_303British_SB, AmmoSet_5656Spencer, AmmoSet_762x54mmR_SB, AmmoSet_8x50mmRLebel_SB, AmmoSet_PlasmaCellHeavy, AmmoSet_127x40mmUNSC, AmmoSet_25x59mmGrenade, AmmoSet_277Fury, AmmoSet_44Magnum_HV"
+      }
+    },
+    {
+      "code": "designer.ce-needs-answer",
+      "severity": "error",
+      "message": "Which weapon class tag does the weapon get? needs your answer before this plan can be written: the class tag is never chosen for you; answering it also sharpens the estimates of the numbers below",
+      "field": "/ce/weaponTagClass",
+      "args": {
+        "candidates": "CE_AI_BROOM, CE_AI_AR, CE_AI_SR, CE_AI_LMG, CE_AI_Rifle, CE_AI_Suppressive, CE_AI_AOE, CE_AI_EMP, CE_AI_Grenade, CE_AI_Launcher, CE_AI_SMOKE"
+      }
+    },
+    {
+      "code": "designer.ce-suggestion-rejected",
+      "severity": "info",
+      "message": "CE shot spread: the estimate 0.165 is not written: it is rated unreliable: the typical error was about 30 percent when each of 19 converted weapons was predicted from the others",
+      "field": "/ce/shotSpread",
+      "args": {
+        "reference": "0.165"
+      }
+    },
+    {
+      "code": "designer.ce-suggestion-rejected",
+      "severity": "info",
+      "message": "CE magazine size: the estimate 7 is not written: it is rated unreliable: the typical error was about 62 percent when each of 16 converted weapons was predicted from the others",
+      "field": "/ce/magazineSize",
+      "args": {
+        "reference": "7"
+      }
+    },
+    {
+      "code": "designer.ce-suggestion-rejected",
+      "severity": "info",
+      "message": "Blunt penetration of the tool stock: the estimate 2.56 is not written: the ratio of penetration to power is rated unreliable: the typical error was about 64 percent when each of 19 converted weapons was predicted from the others",
+      "field": "/ce/toolPenetration/stock/blunt",
+      "args": {
+        "reference": "2.56"
+      }
+    },
+    {
+      "code": "designer.ce-suggestion-rejected",
+      "severity": "info",
+      "message": "Blunt penetration of the tool barrel: the estimate 2.56 is not written: the ratio of penetration to power is rated unreliable: the typical error was about 64 percent when each of 19 converted weapons was predicted from the others",
+      "field": "/ce/toolPenetration/barrel/blunt",
+      "args": {
+        "reference": "2.56"
+      }
+    },
+    {
+      "code": "design.duplicate-capacity",
+      "severity": "warning",
+      "message": "tool barrel lists 2 capacities; the stat panel counts its attack once per capacity",
+      "field": "/tools/1/capacities",
+      "args": {
+        "count": "2",
+        "tool": "barrel"
+      }
+    },
+    {
+      "code": "design.texture-shared",
+      "severity": "info",
+      "message": "Out rifle uses the texture Things/Item/Equipment/WeaponRanged/BoltActionRifle; the art is not copied, so it must exist in the game or in your mod (your own art goes to Textures/Things/Item/Equipment/WeaponRanged/Gun_OutRifle.png)",
+      "field": "/texturePath",
+      "args": {
+        "file": "Textures/Things/Item/Equipment/WeaponRanged/Gun_OutRifle.png",
+        "label": "Out rifle",
+        "path": "Things/Item/Equipment/WeaponRanged/BoltActionRifle"
+      }
+    },
+    {
+      "code": "design.texture-shared",
+      "severity": "info",
+      "message": "bolt-action rifle bullet uses the texture Things/Projectile/Bullet_big; the art is not copied, so it must exist in the game or in your mod (your own art goes to Textures/Things/Projectile/Bullet_Gun_OutRifle.png)",
+      "field": "/ranged/projectile/def/texturePath",
+      "args": {
+        "file": "Textures/Things/Projectile/Bullet_Gun_OutRifle.png",
+        "label": "bolt-action rifle bullet",
+        "path": "Things/Projectile/Bullet_big"
+      }
+    },
+    {
+      "code": "design.required-missing",
+      "severity": "error",
+      "message": "CE ammo set is required",
+      "field": "/ce/ammoSet",
+      "args": {
+        "label": "CE ammo set"
+      }
+    },
+    {
+      "code": "design.required-missing",
+      "severity": "error",
+      "message": "CE default projectile is required",
+      "field": "/ce/defaultProjectile",
+      "args": {
+        "label": "CE default projectile"
+      }
+    },
+    {
+      "code": "design.required-missing",
+      "severity": "error",
+      "message": "CE magazine size is required",
+      "field": "/ce/magazineSize",
+      "args": {
+        "label": "CE magazine size"
+      }
+    },
+    {
+      "code": "design.required-missing",
+      "severity": "error",
+      "message": "CE shot spread is required",
+      "field": "/ce/shotSpread",
+      "args": {
+        "label": "CE shot spread"
+      }
+    }
+  ],
+  "hasErrors": true
+}

@@ -1,0 +1,125 @@
+{
+  "perStat": [
+    {
+      "stat": "ap",
+      "value": 0.27,
+      "predicted": 0.3258817979525717,
+      "p50": {
+        "low": 0.21725453196838115,
+        "high": 0.4888226969288576
+      },
+      "p80": {
+        "low": 0.1303527191810287,
+        "high": 0.8147044948814293
+      },
+      "rank": {
+        "below": 9,
+        "equal": 0,
+        "total": 17
+      },
+      "level": "typical",
+      "nearestReference": 0.2686468330134357,
+      "defaultBand": true
+    },
+    {
+      "stat": "cooldown",
+      "value": 2,
+      "predicted": 2.534622184799319,
+      "p50": {
+        "low": 1.6897481231995461,
+        "high": 3.8019332771989784
+      },
+      "p80": {
+        "low": 1.0138488739197276,
+        "high": 6.336555461998298
+      },
+      "rank": {
+        "below": 5,
+        "equal": 5,
+        "total": 17
+      },
+      "level": "typical",
+      "nearestReference": 2,
+      "defaultBand": true
+    },
+    {
+      "stat": "dps",
+      "value": 9,
+      "predicted": 8.465677444043706,
+      "p50": {
+        "low": 5.643784962695804,
+        "high": 12.69851616606556
+      },
+      "p80": {
+        "low": 3.3862709776174826,
+        "high": 21.164193610109265
+      },
+      "rank": {
+        "below": 12,
+        "equal": 0,
+        "total": 17
+      },
+      "level": "typical",
+      "nearestReference": 8.604435594616863,
+      "defaultBand": true
+    },
+    {
+      "stat": "fight_dps",
+      "value": 9,
+      "predicted": 7.989558940158345,
+      "p50": {
+        "low": 5.32637262677223,
+        "high": 11.984338410237516
+      },
+      "p80": {
+        "low": 3.195823576063338,
+        "high": 19.973897350395863
+      },
+      "rank": {
+        "below": 12,
+        "equal": 0,
+        "total": 17
+      },
+      "level": "typical",
+      "nearestReference": 9.818181818181818,
+      "defaultBand": true
+    },
+    {
+      "stat": "swing_damage",
+      "value": 18,
+      "predicted": 26.437510246968944,
+      "p50": {
+        "low": 17.62500683131263,
+        "high": 39.65626537045342
+      },
+      "p80": {
+        "low": 10.575004098787577,
+        "high": 66.09377561742237
+      },
+      "rank": {
+        "below": 9,
+        "equal": 0,
+        "total": 17
+      },
+      "level": "typical",
+      "nearestReference": 17.90978886756238,
+      "defaultBand": true
+    }
+  ],
+  "typicality": 99.98546087224557,
+  "summary": {
+    "scored": 5,
+    "typical": 5,
+    "plausible": 0,
+    "unusual": 0,
+    "shareInP80": 1
+  },
+  "notices": {
+    "poolSize": 17,
+    "classLabel": "based on 17 items of this kind",
+    "classN": 17,
+    "rough": false,
+    "optimistic": false
+  },
+  "unscored": []
+}

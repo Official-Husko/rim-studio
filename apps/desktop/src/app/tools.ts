@@ -2,7 +2,7 @@ import type { ComponentType } from 'preact';
 import type { IconName } from 'rimstudio-ui';
 import { SetupPage } from '~/features/setup';
 import { ProjectPage } from '~/features/project';
-import { WeaponsPage } from '~/features/weapons';
+import { DesignerPage } from '~/features/designer';
 import { PatchesPage } from '~/features/patches';
 import { lazyPage } from '~/shared/lazy';
 import type { MessageKey } from '~/shared/i18n';
@@ -23,7 +23,7 @@ const GalleryPage = lazyPage(() => import('~/gallery'));
 export const TOOLS: readonly ToolDescriptor[] = [
   { id: 'setup', titleKey: 'nav.setup', icon: 'settings', Page: SetupPage },
   { id: 'project', titleKey: 'nav.project', icon: 'folder', Page: ProjectPage },
-  { id: 'weapons', titleKey: 'nav.weapons', icon: 'crosshair', Page: WeaponsPage },
+  { id: 'weapons', titleKey: 'nav.weapons', icon: 'crosshair', Page: DesignerPage },
   { id: 'patches', titleKey: 'nav.patches', icon: 'patch', Page: PatchesPage },
   { id: 'gallery', titleKey: 'nav.gallery', icon: 'grid', Page: GalleryPage, dev: true },
 ];

@@ -1,0 +1,248 @@
+{
+  "readouts": [
+    {
+      "key": "melee-swing-damage",
+      "group": "melee",
+      "unit": "number",
+      "value": 27.964586846543003
+    },
+    {
+      "key": "melee-swing-cooldown",
+      "group": "melee",
+      "unit": "seconds",
+      "value": 2.8102866779089375
+    },
+    {
+      "key": "melee-dps",
+      "group": "melee",
+      "unit": "damage-per-second",
+      "value": 9.950795079507952
+    },
+    {
+      "key": "melee-ap",
+      "group": "melee",
+      "unit": "fraction",
+      "value": 0.41946880269814496
+    },
+    {
+      "key": "melee-fight-dps",
+      "group": "melee",
+      "unit": "damage-per-second",
+      "value": 9.818181818181818,
+      "steps": [
+        {
+          "label": "handle Poke share",
+          "value": 0.25
+        },
+        {
+          "label": "head Blunt share",
+          "value": 0.75
+        }
+      ]
+    },
+    {
+      "key": "strength-index",
+      "group": "melee",
+      "unit": "number",
+      "value": 13.794545454545455
+    },
+    {
+      "key": "market-value",
+      "group": "economy",
+      "unit": "silver"
+    }
+  ],
+  "suggestions": [
+    {
+      "field": "/tools/0/power",
+      "stat": "swing_damage",
+      "value": 36.41783722816022,
+      "source": "derived",
+      "band": {
+        "p10": 15.192917369308601,
+        "median": 27.964586846543003,
+        "p90": 27.964586846543003,
+        "p50": 1.1509303357904133,
+        "p80": 1.2635073393595546,
+        "shift": 0.0
+      },
+      "level": "role-tier",
+      "predictor": "anchor",
+      "n": 3,
+      "locked": false
+    },
+    {
+      "field": "/tools/1/power",
+      "stat": "swing_damage",
+      "value": 36.41783722816022,
+      "source": "derived",
+      "band": {
+        "p10": 15.192917369308601,
+        "median": 27.964586846543003,
+        "p90": 27.964586846543003,
+        "p50": 1.1509303357904133,
+        "p80": 1.2635073393595546,
+        "shift": 0.0
+      },
+      "level": "role-tier",
+      "predictor": "anchor",
+      "n": 3,
+      "locked": false
+    },
+    {
+      "field": "/tools/0/cooldownTime",
+      "stat": "cooldown",
+      "value": 2.6400171972437216,
+      "source": "anchor",
+      "band": {
+        "p10": 2.18893760539629,
+        "median": 2.6,
+        "p90": 2.76822934232715,
+        "p50": 1.1556472881789197,
+        "p80": 1.2379590681227037,
+        "shift": 0.0
+      },
+      "level": "role-tier",
+      "predictor": "anchor",
+      "n": 3,
+      "locked": false
+    },
+    {
+      "field": "/tools/1/cooldownTime",
+      "stat": "cooldown",
+      "value": 2.6400171972437216,
+      "source": "anchor",
+      "band": {
+        "p10": 2.18893760539629,
+        "median": 2.6,
+        "p90": 2.76822934232715,
+        "p50": 1.1556472881789197,
+        "p80": 1.2379590681227037,
+        "shift": 0.0
+      },
+      "level": "role-tier",
+      "predictor": "anchor",
+      "n": 3,
+      "locked": false
+    },
+    {
+      "field": "/mass",
+      "stat": "mass",
+      "value": 2.0,
+      "source": "quantile",
+      "band": {
+        "p10": 1.3599999999999999,
+        "median": 2.0,
+        "p90": 2.0,
+        "p50": 1.2726869667184948,
+        "p80": 1.8578340908059403,
+        "shift": 0.0
+      },
+      "level": "role-tier",
+      "predictor": "quantile",
+      "n": 3,
+      "locked": false
+    },
+    {
+      "field": "/workToMake",
+      "stat": "work",
+      "level": "role-tier",
+      "predictor": "anchor",
+      "n": 3,
+      "locked": false
+    }
+  ],
+  "estimate": {
+    "classLabel": "based on 3 items of role blunt at Ultra",
+    "level": "role-tier",
+    "classN": 3,
+    "strength": 13.794545454545457,
+    "strengthPercentile": 0.6666666666666666,
+    "anchors": [
+      {
+        "id": "MeleeWeapon_Zeushammer",
+        "label": "zeushammer",
+        "strength": 13.794545454545455,
+        "tier": 4,
+        "role": "blunt",
+        "stats": {
+          "ap": 0.41946880269814496,
+          "cooldown": 2.8102866779089375,
+          "dps": 9.950795079507952,
+          "fight_dps": 9.818181818181818,
+          "market_value": 2000.0,
+          "mass": 2.0,
+          "swing_damage": 27.964586846543003,
+          "tools": 2.0,
+          "work": 1.0
+        }
+      },
+      {
+        "id": "MeleeWeapon_ZeusHammerBladelink",
+        "label": "persona zeushammer",
+        "strength": 18.504878048780483,
+        "tier": 4,
+        "role": "blunt",
+        "stats": {
+          "ap": 0.41946880269814496,
+          "cooldown": 2.086172006745363,
+          "dps": 13.404736884649584,
+          "fight_dps": 13.17073170731707,
+          "market_value": 3000.0,
+          "mass": 2.0,
+          "swing_damage": 27.964586846543003,
+          "tools": 2.0,
+          "work": 1.0
+        }
+      },
+      {
+        "id": "MeleeWeapon_Warhammer",
+        "label": "warhammer",
+        "strength": 8.644591346153845,
+        "tier": 1,
+        "role": "blunt",
+        "stats": {
+          "ap": 0.2686468330134357,
+          "cooldown": 2.5999999999999996,
+          "dps": 6.88838033367784,
+          "fight_dps": 6.826923076923077,
+          "market_value": 364.8,
+          "mass": 5.0,
+          "swing_damage": 17.90978886756238,
+          "tools": 2.0,
+          "work": 18000.0
+        }
+      }
+    ],
+    "notes": []
+  },
+  "diagnostics": [
+    {
+      "code": "design.accepted-missing",
+      "severity": "info",
+      "message": "work to make is not set; the definition this one was cloned from does not set it either",
+      "field": "/workToMake",
+      "args": {
+        "label": "work to make"
+      }
+    },
+    {
+      "code": "design.accepted-missing",
+      "severity": "info",
+      "message": "stuff categories and count, or a cost list is not set; the definition this one was cloned from does not set it either",
+      "field": "/stuff",
+      "args": {
+        "label": "stuff categories and count, or a cost list"
+      }
+    },
+    {
+      "code": "design.pool-thin",
+      "severity": "info",
+      "message": "only 3 reference items stand behind the bands",
+      "field": "",
+      "args": {
+        "count": "3"
+      }
+    }
+  ]
+}

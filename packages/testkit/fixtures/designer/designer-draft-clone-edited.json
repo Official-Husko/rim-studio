@@ -1,0 +1,140 @@
+{
+  "schemaVersion": 1,
+  "kind": "ranged",
+  "calibration": "anchored",
+  "spec": {
+    "kind": "ranged",
+    "identity": {
+      "defName": "TM_Fixture",
+      "label": "fixture rifle",
+      "description": "An ancient pattern bolt-action rifle. With its long range, and low fire rate, it is unlikely to drive animals to revenge, which makes it a favorite weapon for hunting.",
+      "modPrefix": ""
+    },
+    "parent": {
+      "defName": "BaseHumanMakeableGun",
+      "inheritedStats": {
+        "Beauty": -3,
+        "DeteriorationRate": 2,
+        "Flammability": 0.5,
+        "MaxHitPoints": 100,
+        "SellPriceFactor": 0.2
+      }
+    },
+    "techLevel": "industrial",
+    "role": "sniper",
+    "mass": {
+      "value": 3.5,
+      "source": "anchor"
+    },
+    "workToMake": {
+      "value": 12000,
+      "source": "anchor"
+    },
+    "costList": [
+      {
+        "defName": "Steel",
+        "count": 60
+      },
+      {
+        "defName": "ComponentIndustrial",
+        "count": 3
+      }
+    ],
+    "researchPrerequisite": "Gunsmithing",
+    "weaponTags": [
+      "Gun"
+    ],
+    "tradeTags": [
+      "WeaponRanged"
+    ],
+    "weaponClasses": [
+      "Ranged",
+      "LongShots"
+    ],
+    "texturePath": "Things/Item/Equipment/WeaponRanged/BoltActionRifle",
+    "graphicClass": "Graphic_Single",
+    "tools": [
+      {
+        "label": "stock",
+        "capacities": [
+          "Blunt"
+        ],
+        "power": {
+          "value": 9,
+          "source": "anchor"
+        },
+        "cooldownTime": {
+          "value": 2,
+          "source": "anchor"
+        }
+      },
+      {
+        "label": "barrel",
+        "capacities": [
+          "Blunt",
+          "Poke"
+        ],
+        "power": {
+          "value": 9,
+          "source": "anchor"
+        },
+        "cooldownTime": {
+          "value": 2,
+          "source": "anchor"
+        }
+      }
+    ],
+    "ranged": {
+      "verbClass": "Verb_Shoot",
+      "damage": {
+        "value": 22,
+        "source": "typed"
+      },
+      "range": {
+        "value": 36.9,
+        "source": "anchor"
+      },
+      "warmup": {
+        "value": 1.7,
+        "source": "anchor"
+      },
+      "cooldown": {
+        "value": 1.5,
+        "source": "anchor"
+      },
+      "accuracy": {
+        "touch": {
+          "value": 0.65,
+          "source": "anchor"
+        },
+        "short": {
+          "value": 0.8,
+          "source": "anchor"
+        },
+        "medium": {
+          "value": 0.9,
+          "source": "anchor"
+        },
+        "long": {
+          "value": 0.8,
+          "source": "anchor"
+        }
+      },
+      "projectile": {
+        "mode": "reference",
+        "def": "Bullet_BoltActionRifle"
+      },
+      "soundCast": "Shot_BoltActionRifle",
+      "soundCastTail": "GunTail_Heavy",
+      "muzzleFlashScale": 9
+    },
+    "previewQuality": "normal"
+  },
+  "anchors": [
+    {
+      "defName": "Gun_BoltActionRifle",
+      "label": "bolt-action rifle"
+    }
+  ],
+  "clonedFrom": "Gun_BoltActionRifle"
+}

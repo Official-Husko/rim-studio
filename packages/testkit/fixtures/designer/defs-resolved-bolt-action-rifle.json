@@ -1,0 +1,707 @@
+{
+  "defType": "Verse.ThingDef",
+  "defName": "Gun_BoltActionRifle",
+  "modId": "Ludeon.RimWorld",
+  "file": "Defs/ThingDefs_Misc/Weapons/RangedIndustrial.xml",
+  "tree": {
+    "tag": "ThingDef",
+    "attrs": [
+      [
+        "ParentName",
+        "BaseHumanMakeableGun"
+      ],
+      [
+        "Name",
+        "Gun_BoltActionRifle"
+      ]
+    ],
+    "children": [
+      {
+        "tag": "thingClass",
+        "attrs": [],
+        "children": [
+          "ThingWithComps"
+        ]
+      },
+      {
+        "tag": "category",
+        "attrs": [],
+        "children": [
+          "Item"
+        ]
+      },
+      {
+        "tag": "drawerType",
+        "attrs": [],
+        "children": [
+          "MapMeshOnly"
+        ]
+      },
+      {
+        "tag": "drawGUIOverlay",
+        "attrs": [],
+        "children": [
+          "true"
+        ]
+      },
+      {
+        "tag": "altitudeLayer",
+        "attrs": [],
+        "children": [
+          "Item"
+        ]
+      },
+      {
+        "tag": "alwaysHaulable",
+        "attrs": [],
+        "children": [
+          "true"
+        ]
+      },
+      {
+        "tag": "tickerType",
+        "attrs": [],
+        "children": [
+          "Never"
+        ]
+      },
+      {
+        "tag": "equipmentType",
+        "attrs": [],
+        "children": [
+          "Primary"
+        ]
+      },
+      {
+        "tag": "useHitPoints",
+        "attrs": [],
+        "children": [
+          "true"
+        ]
+      },
+      {
+        "tag": "pathCost",
+        "attrs": [],
+        "children": [
+          "14"
+        ]
+      },
+      {
+        "tag": "selectable",
+        "attrs": [],
+        "children": [
+          "true"
+        ]
+      },
+      {
+        "tag": "rotatable",
+        "attrs": [],
+        "children": [
+          "false"
+        ]
+      },
+      {
+        "tag": "statBases",
+        "attrs": [],
+        "children": [
+          {
+            "tag": "MaxHitPoints",
+            "attrs": [],
+            "children": [
+              "100"
+            ]
+          },
+          {
+            "tag": "Flammability",
+            "attrs": [],
+            "children": [
+              "0.5"
+            ]
+          },
+          {
+            "tag": "DeteriorationRate",
+            "attrs": [],
+            "children": [
+              "2"
+            ]
+          },
+          {
+            "tag": "Beauty",
+            "attrs": [],
+            "children": [
+              "-3"
+            ]
+          },
+          {
+            "tag": "SellPriceFactor",
+            "attrs": [],
+            "children": [
+              "0.20"
+            ]
+          },
+          {
+            "tag": "WorkToMake",
+            "attrs": [],
+            "children": [
+              "12000"
+            ]
+          },
+          {
+            "tag": "Mass",
+            "attrs": [],
+            "children": [
+              "3.5"
+            ]
+          },
+          {
+            "tag": "AccuracyTouch",
+            "attrs": [],
+            "children": [
+              "0.65"
+            ]
+          },
+          {
+            "tag": "AccuracyShort",
+            "attrs": [],
+            "children": [
+              "0.80"
+            ]
+          },
+          {
+            "tag": "AccuracyMedium",
+            "attrs": [],
+            "children": [
+              "0.90"
+            ]
+          },
+          {
+            "tag": "AccuracyLong",
+            "attrs": [],
+            "children": [
+              "0.80"
+            ]
+          },
+          {
+            "tag": "RangedWeapon_Cooldown",
+            "attrs": [],
+            "children": [
+              "1.5"
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "comps",
+        "attrs": [],
+        "children": [
+          {
+            "tag": "li",
+            "attrs": [
+              [
+                "Class",
+                "CompProperties_Forbiddable"
+              ]
+            ],
+            "children": []
+          },
+          {
+            "tag": "li",
+            "attrs": [],
+            "children": [
+              {
+                "tag": "compClass",
+                "attrs": [],
+                "children": [
+                  "CompEquippable"
+                ]
+              }
+            ]
+          },
+          {
+            "tag": "li",
+            "attrs": [
+              [
+                "Class",
+                "CompProperties_Styleable"
+              ]
+            ],
+            "children": []
+          },
+          {
+            "tag": "li",
+            "attrs": [
+              [
+                "Class",
+                "CompProperties_Art"
+              ]
+            ],
+            "children": [
+              {
+                "tag": "nameMaker",
+                "attrs": [],
+                "children": [
+                  "NamerArtWeaponGun"
+                ]
+              },
+              {
+                "tag": "descriptionMaker",
+                "attrs": [],
+                "children": [
+                  "ArtDescription_WeaponGun"
+                ]
+              },
+              {
+                "tag": "minQualityForArtistic",
+                "attrs": [],
+                "children": [
+                  "Excellent"
+                ]
+              }
+            ]
+          },
+          {
+            "tag": "li",
+            "attrs": [],
+            "children": [
+              {
+                "tag": "compClass",
+                "attrs": [],
+                "children": [
+                  "CompQuality"
+                ]
+              }
+            ]
+          },
+          {
+            "tag": "li",
+            "attrs": [
+              [
+                "Class",
+                "CompProperties_Biocodable"
+              ]
+            ],
+            "children": []
+          }
+        ]
+      },
+      {
+        "tag": "graphicData",
+        "attrs": [],
+        "children": [
+          {
+            "tag": "onGroundRandomRotateAngle",
+            "attrs": [],
+            "children": [
+              "35"
+            ]
+          },
+          {
+            "tag": "texPath",
+            "attrs": [],
+            "children": [
+              "Things/Item/Equipment/WeaponRanged/BoltActionRifle"
+            ]
+          },
+          {
+            "tag": "graphicClass",
+            "attrs": [],
+            "children": [
+              "Graphic_Single"
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "allowedArchonexusCount",
+        "attrs": [],
+        "children": [
+          "1"
+        ]
+      },
+      {
+        "tag": "techLevel",
+        "attrs": [],
+        "children": [
+          "Industrial"
+        ]
+      },
+      {
+        "tag": "smeltable",
+        "attrs": [],
+        "children": [
+          "true"
+        ]
+      },
+      {
+        "tag": "relicChance",
+        "attrs": [],
+        "children": [
+          "1"
+        ]
+      },
+      {
+        "tag": "thingCategories",
+        "attrs": [],
+        "children": [
+          {
+            "tag": "li",
+            "attrs": [],
+            "children": [
+              "WeaponsRanged"
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "weaponClasses",
+        "attrs": [],
+        "children": [
+          {
+            "tag": "li",
+            "attrs": [],
+            "children": [
+              "Ranged"
+            ]
+          },
+          {
+            "tag": "li",
+            "attrs": [],
+            "children": [
+              "LongShots"
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "inspectorTabs",
+        "attrs": [],
+        "children": [
+          {
+            "tag": "li",
+            "attrs": [],
+            "children": [
+              "ITab_Art"
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "recipeMaker",
+        "attrs": [],
+        "children": [
+          {
+            "tag": "workSpeedStat",
+            "attrs": [],
+            "children": [
+              "GeneralLaborSpeed"
+            ]
+          },
+          {
+            "tag": "workSkill",
+            "attrs": [],
+            "children": [
+              "Crafting"
+            ]
+          },
+          {
+            "tag": "effectWorking",
+            "attrs": [],
+            "children": [
+              "Smith"
+            ]
+          },
+          {
+            "tag": "soundWorking",
+            "attrs": [],
+            "children": [
+              "Recipe_Smith"
+            ]
+          },
+          {
+            "tag": "recipeUsers",
+            "attrs": [],
+            "children": [
+              {
+                "tag": "li",
+                "attrs": [],
+                "children": [
+                  "TableMachining"
+                ]
+              }
+            ]
+          },
+          {
+            "tag": "unfinishedThingDef",
+            "attrs": [],
+            "children": [
+              "UnfinishedGun"
+            ]
+          },
+          {
+            "tag": "researchPrerequisite",
+            "attrs": [],
+            "children": [
+              "Gunsmithing"
+            ]
+          },
+          {
+            "tag": "skillRequirements",
+            "attrs": [],
+            "children": [
+              {
+                "tag": "Crafting",
+                "attrs": [],
+                "children": [
+                  "5"
+                ]
+              }
+            ]
+          },
+          {
+            "tag": "displayPriority",
+            "attrs": [],
+            "children": [
+              "415"
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "weaponTags",
+        "attrs": [],
+        "children": [
+          {
+            "tag": "li",
+            "attrs": [],
+            "children": [
+              "Gun"
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "tradeTags",
+        "attrs": [],
+        "children": [
+          {
+            "tag": "li",
+            "attrs": [],
+            "children": [
+              "WeaponRanged"
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "defName",
+        "attrs": [],
+        "children": [
+          "Gun_BoltActionRifle"
+        ]
+      },
+      {
+        "tag": "label",
+        "attrs": [],
+        "children": [
+          "bolt-action rifle"
+        ]
+      },
+      {
+        "tag": "description",
+        "attrs": [],
+        "children": [
+          "An ancient pattern bolt-action rifle. With its long range, and low fire rate, it is unlikely to drive animals to revenge, which makes it a favorite weapon for hunting."
+        ]
+      },
+      {
+        "tag": "soundInteract",
+        "attrs": [],
+        "children": [
+          "Interact_Rifle"
+        ]
+      },
+      {
+        "tag": "costList",
+        "attrs": [],
+        "children": [
+          {
+            "tag": "Steel",
+            "attrs": [],
+            "children": [
+              "60"
+            ]
+          },
+          {
+            "tag": "ComponentIndustrial",
+            "attrs": [],
+            "children": [
+              "3"
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "verbs",
+        "attrs": [],
+        "children": [
+          {
+            "tag": "li",
+            "attrs": [],
+            "children": [
+              {
+                "tag": "verbClass",
+                "attrs": [],
+                "children": [
+                  "Verb_Shoot"
+                ]
+              },
+              {
+                "tag": "hasStandardCommand",
+                "attrs": [],
+                "children": [
+                  "true"
+                ]
+              },
+              {
+                "tag": "defaultProjectile",
+                "attrs": [],
+                "children": [
+                  "Bullet_BoltActionRifle"
+                ]
+              },
+              {
+                "tag": "warmupTime",
+                "attrs": [],
+                "children": [
+                  "1.7"
+                ]
+              },
+              {
+                "tag": "range",
+                "attrs": [],
+                "children": [
+                  "36.9"
+                ]
+              },
+              {
+                "tag": "soundCast",
+                "attrs": [],
+                "children": [
+                  "Shot_BoltActionRifle"
+                ]
+              },
+              {
+                "tag": "soundCastTail",
+                "attrs": [],
+                "children": [
+                  "GunTail_Heavy"
+                ]
+              },
+              {
+                "tag": "muzzleFlashScale",
+                "attrs": [],
+                "children": [
+                  "9"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "tools",
+        "attrs": [],
+        "children": [
+          {
+            "tag": "li",
+            "attrs": [],
+            "children": [
+              {
+                "tag": "label",
+                "attrs": [],
+                "children": [
+                  "stock"
+                ]
+              },
+              {
+                "tag": "capacities",
+                "attrs": [],
+                "children": [
+                  {
+                    "tag": "li",
+                    "attrs": [],
+                    "children": [
+                      "Blunt"
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "power",
+                "attrs": [],
+                "children": [
+                  "9"
+                ]
+              },
+              {
+                "tag": "cooldownTime",
+                "attrs": [],
+                "children": [
+                  "2"
+                ]
+              }
+            ]
+          },
+          {
+            "tag": "li",
+            "attrs": [],
+            "children": [
+              {
+                "tag": "label",
+                "attrs": [],
+                "children": [
+                  "barrel"
+                ]
+              },
+              {
+                "tag": "capacities",
+                "attrs": [],
+                "children": [
+                  {
+                    "tag": "li",
+                    "attrs": [],
+                    "children": [
+                      "Blunt"
+                    ]
+                  },
+                  {
+                    "tag": "li",
+                    "attrs": [],
+                    "children": [
+                      "Poke"
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "power",
+                "attrs": [],
+                "children": [
+                  "9"
+                ]
+              },
+              {
+                "tag": "cooldownTime",
+                "attrs": [],
+                "children": [
+                  "2"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "patchEvents": []
+}

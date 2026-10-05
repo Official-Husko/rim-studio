@@ -1,0 +1,171 @@
+{
+  "entry": {
+    "id": "d-fd873fdae4",
+    "defName": "TM_Fixture",
+    "label": "fixture rifle",
+    "kind": "ranged",
+    "updatedAtMs": 1791187014067,
+    "draft": {
+      "schemaVersion": 2,
+      "kind": "ranged",
+      "calibration": "anchored",
+      "spec": {
+        "kind": "ranged",
+        "identity": {
+          "defName": "TM_Fixture",
+          "label": "fixture rifle",
+          "description": "An ancient pattern bolt-action rifle. With its long range, and low fire rate, it is unlikely to drive animals to revenge, which makes it a favorite weapon for hunting.",
+          "modPrefix": ""
+        },
+        "parent": {
+          "defName": "BaseHumanMakeableGun",
+          "inheritedStats": {
+            "Beauty": -3.0,
+            "DeteriorationRate": 2.0,
+            "Flammability": 0.5,
+            "MaxHitPoints": 100.0,
+            "SellPriceFactor": 0.2
+          },
+          "inheritedTechLevel": "industrial"
+        },
+        "techLevel": "industrial",
+        "role": "sniper",
+        "mass": {
+          "value": 3.5,
+          "source": "anchor"
+        },
+        "workToMake": {
+          "value": 12000.0,
+          "source": "anchor"
+        },
+        "costList": [
+          {
+            "defName": "Steel",
+            "count": 60.0
+          },
+          {
+            "defName": "ComponentIndustrial",
+            "count": 3.0
+          }
+        ],
+        "weaponClasses": [
+          "LongShots"
+        ],
+        "texturePath": "Things/Item/Equipment/WeaponRanged/BoltActionRifle",
+        "graphicClass": "Graphic_Single",
+        "tools": [
+          {
+            "label": "stock",
+            "capacities": [
+              "Blunt"
+            ],
+            "power": {
+              "value": 9.0,
+              "source": "anchor"
+            },
+            "cooldownTime": {
+              "value": 2.0,
+              "source": "anchor"
+            }
+          },
+          {
+            "label": "barrel",
+            "capacities": [
+              "Blunt",
+              "Poke"
+            ],
+            "power": {
+              "value": 9.0,
+              "source": "anchor"
+            },
+            "cooldownTime": {
+              "value": 2.0,
+              "source": "anchor"
+            }
+          }
+        ],
+        "ranged": {
+          "verbClass": "Verb_Shoot",
+          "damage": {
+            "value": 18.0,
+            "source": "anchor"
+          },
+          "range": {
+            "value": 36.9,
+            "source": "anchor"
+          },
+          "warmup": {
+            "value": 1.7,
+            "source": "anchor"
+          },
+          "cooldown": {
+            "value": 1.5,
+            "source": "anchor"
+          },
+          "accuracy": {
+            "touch": {
+              "value": 0.65,
+              "source": "anchor"
+            },
+            "short": {
+              "value": 0.8,
+              "source": "anchor"
+            },
+            "medium": {
+              "value": 0.9,
+              "source": "anchor"
+            },
+            "long": {
+              "value": 0.8,
+              "source": "anchor"
+            }
+          },
+          "projectile": {
+            "mode": "inline",
+            "def": {
+              "defName": "Bullet_TM_Fixture",
+              "label": "bolt-action rifle bullet",
+              "parent": "BaseBullet",
+              "damageDef": "Bullet",
+              "texturePath": "Things/Projectile/Bullet_big",
+              "graphicClass": "Graphic_Single",
+              "speed": {
+                "value": 70.0,
+                "source": "anchor"
+              },
+              "stoppingPower": {
+                "value": 1.5,
+                "source": "anchor"
+              },
+              "omitDefaults": [
+                "armorPenetrationBase"
+              ],
+              "copiedFrom": "Bullet_BoltActionRifle"
+            }
+          },
+          "soundCast": "Shot_BoltActionRifle",
+          "soundCastTail": "GunTail_Heavy",
+          "muzzleFlashScale": 9.0
+        },
+        "previewQuality": "normal",
+        "soundInteract": "Interact_Rifle",
+        "recipe": {
+          "skillRequirements": {
+            "Crafting": 5
+          },
+          "displayPriority": 415.0
+        }
+      },
+      "anchors": [
+        {
+          "defName": "Gun_BoltActionRifle",
+          "label": "bolt-action rifle"
+        }
+      ],
+      "clonedFrom": "Gun_BoltActionRifle"
+    }
+  },
+  "notes": [
+    "the weapon has its own projectile Bullet_TM_Fixture, copied from Bullet_BoltActionRifle; its damage, speed and graphic are written to your mod and the damage you set here is the one the file holds"
+  ]
+}

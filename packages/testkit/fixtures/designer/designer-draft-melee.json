@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "kind": "melee",
+  "calibration": "quiz",
+  "spec": {
+    "kind": "melee",
+    "identity": {
+      "defName": "TM_Sword",
+      "label": "test sword",
+      "description": "",
+      "modPrefix": ""
+    },
+    "previewQuality": "normal",
+    "tools": [
+      {
+        "label": "blade",
+        "capacities": [
+          "Cut"
+        ],
+        "power": {
+          "value": 18,
+          "source": "typed"
+        },
+        "cooldownTime": {
+          "value": 2,
+          "source": "typed"
+        }
+      }
+    ]
+  }
+}

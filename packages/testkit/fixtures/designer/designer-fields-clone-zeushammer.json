@@ -1,0 +1,140 @@
+{
+  "entry": {
+    "id": "d-d5969c4f95",
+    "defName": "TM_Hammer",
+    "label": "fixture hammer",
+    "kind": "melee",
+    "updatedAtMs": 1791187014156,
+    "draft": {
+      "schemaVersion": 2,
+      "kind": "melee",
+      "calibration": "anchored",
+      "spec": {
+        "kind": "melee",
+        "identity": {
+          "defName": "TM_Hammer",
+          "label": "fixture hammer",
+          "description": "A warhammer with an embedded EMP capacitor. Upon impact, it blasts the target with an EMP burst in addition to the physical damage.",
+          "modPrefix": ""
+        },
+        "parent": {
+          "defName": "MeleeWeaponUltratech",
+          "inheritedStats": {
+            "Beauty": -3.0,
+            "DeteriorationRate": 2.0,
+            "Flammability": 1.0,
+            "MarketValue": 2000.0,
+            "Mass": 2.0,
+            "MaxHitPoints": 100.0,
+            "SellPriceFactor": 0.2
+          },
+          "inheritedTechLevel": "ultra"
+        },
+        "techLevel": "ultra",
+        "role": "blunt",
+        "mass": {
+          "value": 2.0,
+          "source": "anchor"
+        },
+        "weaponClasses": [
+          "MeleeBlunt"
+        ],
+        "texturePath": "Things/Item/Equipment/WeaponMelee/ZeusHammer",
+        "graphicClass": "Graphic_Single",
+        "tools": [
+          {
+            "label": "handle",
+            "capacities": [
+              "Poke"
+            ],
+            "power": {
+              "value": 15.0,
+              "source": "anchor"
+            },
+            "cooldownTime": {
+              "value": 2.0,
+              "source": "anchor"
+            }
+          },
+          {
+            "label": "head",
+            "capacities": [
+              "Blunt"
+            ],
+            "power": {
+              "value": 31.0,
+              "source": "anchor"
+            },
+            "cooldownTime": {
+              "value": 3.0,
+              "source": "anchor"
+            },
+            "extraMeleeDamages": [
+              {
+                "def": "EMP",
+                "amount": 9.0
+              }
+            ],
+            "extra": [
+              {
+                "tag": "labelUsedInLogging",
+                "attrs": [],
+                "children": [
+                  "false"
+                ]
+              }
+            ]
+          }
+        ],
+        "previewQuality": "normal",
+        "soundInteract": "Interact_ZeusHammer",
+        "extraFields": [
+          {
+            "tag": "meleeHitSound",
+            "attrs": [],
+            "children": [
+              "MeleeHit_ZeusHammer"
+            ]
+          },
+          {
+            "tag": "equippedAngleOffset",
+            "attrs": [],
+            "children": [
+              "-65"
+            ]
+          },
+          {
+            "tag": "relicChance",
+            "attrs": [],
+            "children": [
+              "3"
+            ]
+          },
+          {
+            "tag": "smeltable",
+            "attrs": [],
+            "children": [
+              "false"
+            ]
+          }
+        ],
+        "acceptedMissing": [
+          "/stuff",
+          "/workToMake"
+        ]
+      },
+      "anchors": [
+        {
+          "defName": "MeleeWeapon_Zeushammer",
+          "label": "zeushammer"
+        }
+      ],
+      "clonedFrom": "MeleeWeapon_Zeushammer"
+    }
+  },
+  "notes": [
+    "fields the designer does not model are carried as written: meleeHitSound, equippedAngleOffset, relicChance, smeltable, tools.labelUsedInLogging",
+    "MeleeWeapon_Zeushammer has no work to make; the designer needs one before the clone can be written",
+    "MeleeWeapon_Zeushammer has no cost list and no stuff (it cannot be crafted); the designer needs one of them before the clone can be written"
+  ]
+}

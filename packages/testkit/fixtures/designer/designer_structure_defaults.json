@@ -1,0 +1,64 @@
+{
+  "draft": {
+    "schemaVersion": 1,
+    "kind": "melee",
+    "calibration": "quiz",
+    "spec": {
+      "kind": "melee",
+      "identity": {
+        "defName": "TM_Sword",
+        "label": "test sword",
+        "description": "",
+        "modPrefix": ""
+      },
+      "parent": {
+        "defName": "BaseMeleeWeapon_Sharp_Quality",
+        "inheritedStats": {
+          "Beauty": -3,
+          "DeteriorationRate": 2,
+          "Flammability": 1,
+          "MaxHitPoints": 100,
+          "SellPriceFactor": 0.2
+        }
+      },
+      "stuff": {
+        "categories": [
+          "Metallic",
+          "Woody"
+        ],
+        "count": {
+          "value": 50,
+          "source": "suggested"
+        }
+      },
+      "tools": [
+        {
+          "label": "blade",
+          "capacities": [
+            "Cut"
+          ],
+          "power": {
+            "value": 18,
+            "source": "typed"
+          },
+          "cooldownTime": {
+            "value": 2,
+            "source": "typed"
+          }
+        }
+      ],
+      "previewQuality": "normal"
+    }
+  },
+  "reference": {
+    "defName": "MeleeWeapon_Gladius",
+    "label": "gladius"
+  },
+  "filled": [
+    "/parent",
+    "/stuff"
+  ],
+  "notes": [
+    "the parent, projectile, cost list and stuff were copied from gladius (MeleeWeapon_Gladius), the nearest reference weapon by the numbers of the draft; they are suggestions, not typed values, so check them before writing"
+  ]
+}

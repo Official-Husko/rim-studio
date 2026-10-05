@@ -1,0 +1,414 @@
+{
+  "kind": "melee",
+  "classLabel": "all melee weapons",
+  "total": 17,
+  "offset": 0,
+  "items": [
+    {
+      "index": 0,
+      "defName": "MeleeWeapon_PsyfocusStaff",
+      "label": "eltex staff",
+      "tier": "ultra",
+      "role": "blunt",
+      "strength": 5.4461538461538455,
+      "stats": {
+        "ap": 0.18,
+        "cooldown": 2.6,
+        "dps": 4.615384615384615,
+        "fight_dps": 4.615384615384615,
+        "market_value": 2000,
+        "mass": 1.2,
+        "swing_damage": 12,
+        "tools": 1,
+        "work": 1
+      }
+    },
+    {
+      "index": 1,
+      "defName": "MeleeWeapon_BreachAxe",
+      "label": "breach axe",
+      "tier": "neolithic",
+      "role": "blunt",
+      "strength": 7.0441875,
+      "stats": {
+        "ap": 0.12920103092783505,
+        "cooldown": 1.7422680412371134,
+        "dps": 4.94378698224852,
+        "fight_dps": 6.3,
+        "market_value": 118,
+        "mass": 1.1,
+        "swing_damage": 8.61340206185567,
+        "tools": 3,
+        "work": 5000
+      }
+    },
+    {
+      "index": 2,
+      "defName": "MeleeWeapon_Club",
+      "label": "club",
+      "tier": "neolithic",
+      "role": "blunt",
+      "strength": 7.59421875,
+      "stats": {
+        "ap": 0.18806859205776172,
+        "cooldown": 2,
+        "dps": 6.268953068592058,
+        "fight_dps": 6.375,
+        "market_value": 84.32,
+        "mass": 2,
+        "swing_damage": 12.537906137184116,
+        "tools": 2,
+        "work": 1200
+      }
+    },
+    {
+      "index": 3,
+      "defName": "MeleeWeapon_Axe",
+      "label": "axe",
+      "tier": "medieval",
+      "role": "blade",
+      "strength": 8.116874999999999,
+      "stats": {
+        "ap": 0.2011764705882353,
+        "cooldown": 2,
+        "dps": 6.705882352941177,
+        "fight_dps": 6.75,
+        "market_value": 125.2,
+        "mass": 1.5,
+        "swing_damage": 13.411764705882353,
+        "tools": 2,
+        "work": 7000
+      }
+    },
+    {
+      "index": 4,
+      "defName": "MeleeWeapon_Ikwa",
+      "label": "ikwa",
+      "tier": "neolithic",
+      "role": "blade",
+      "strength": 8.116874999999999,
+      "stats": {
+        "ap": 0.20117647058823526,
+        "cooldown": 2,
+        "dps": 6.705882352941177,
+        "fight_dps": 6.75,
+        "market_value": 118,
+        "mass": 1.1,
+        "swing_damage": 13.411764705882353,
+        "tools": 4,
+        "work": 5000
+      }
+    },
+    {
+      "index": 5,
+      "defName": "MeleeWeapon_Mace",
+      "label": "mace",
+      "tier": "medieval",
+      "role": "blunt",
+      "strength": 8.487754687499999,
+      "stats": {
+        "ap": 0.21064275245045647,
+        "cooldown": 2,
+        "dps": 7.021425081681883,
+        "fight_dps": 7.012499999999999,
+        "market_value": 121.6,
+        "mass": 1.25,
+        "swing_damage": 14.042850163363767,
+        "tools": 2,
+        "work": 6000
+      }
+    },
+    {
+      "index": 6,
+      "defName": "MeleeWeapon_Knife",
+      "label": "knife",
+      "tier": "neolithic",
+      "role": "blade",
+      "strength": 8.505192307692308,
+      "stats": {
+        "ap": 0.17718274111675128,
+        "cooldown": 1.8172588832487309,
+        "dps": 6.500000000000001,
+        "fight_dps": 7.230769230769231,
+        "market_value": 66.48,
+        "mass": 0.5,
+        "swing_damage": 11.812182741116752,
+        "tools": 3,
+        "work": 1800
+      }
+    },
+    {
+      "index": 7,
+      "defName": "MeleeWeapon_Warhammer",
+      "label": "warhammer",
+      "tier": "medieval",
+      "role": "blunt",
+      "strength": 8.644591346153845,
+      "stats": {
+        "ap": 0.2686468330134357,
+        "cooldown": 2.5999999999999996,
+        "dps": 6.88838033367784,
+        "fight_dps": 6.826923076923077,
+        "market_value": 364.8,
+        "mass": 5,
+        "swing_damage": 17.90978886756238,
+        "tools": 2,
+        "work": 18000
+      }
+    },
+    {
+      "index": 8,
+      "defName": "MeleeWeapon_Gladius",
+      "label": "gladius",
+      "tier": "medieval",
+      "role": "blade",
+      "strength": 8.64796875,
+      "stats": {
+        "ap": 0.22565767284991567,
+        "cooldown": 2,
+        "dps": 7.521922428330523,
+        "fight_dps": 7.125,
+        "market_value": 143.2,
+        "mass": 0.85,
+        "swing_damage": 15.043844856661046,
+        "tools": 3,
+        "work": 12000
+      }
+    },
+    {
+      "index": 9,
+      "defName": "MeleeWeapon_PlasmaSword",
+      "label": "plasmasword",
+      "tier": "ultra",
+      "role": "blade",
+      "strength": 9.80548469387755,
+      "stats": {
+        "ap": 0.29605263157894735,
+        "cooldown": 2.515789473684211,
+        "dps": 7.845188284518827,
+        "fight_dps": 7.653061224489796,
+        "market_value": 2000,
+        "mass": 2,
+        "swing_damage": 19.736842105263158,
+        "tools": 3,
+        "work": 1
+      }
+    },
+    {
+      "index": 10,
+      "defName": "MeleeWeapon_LongSword",
+      "label": "longsword",
+      "tier": "medieval",
+      "role": "blade",
+      "strength": 10.287244897959184,
+      "stats": {
+        "ap": 0.3300658472344161,
+        "cooldown": 2.557330992098332,
+        "dps": 8.604435594616863,
+        "fight_dps": 7.959183673469387,
+        "market_value": 264.8,
+        "mass": 2,
+        "swing_damage": 22.004389815627743,
+        "tools": 3,
+        "work": 18000
+      }
+    },
+    {
+      "index": 11,
+      "defName": "MeleeWeapon_Spear",
+      "label": "spear",
+      "tier": "neolithic",
+      "role": "piercing",
+      "strength": 11.225721153846154,
+      "stats": {
+        "ap": 0.3810957324106113,
+        "cooldown": 2.6000000000000005,
+        "dps": 7.346730547422587,
+        "fight_dps": 7.884615384615384,
+        "market_value": 193.2,
+        "mass": 2,
+        "swing_damage": 19.10149942329873,
+        "tools": 3,
+        "work": 12000
+      }
+    },
+    {
+      "index": 12,
+      "defName": "MeleeWeapon_Zeushammer",
+      "label": "zeushammer",
+      "tier": "ultra",
+      "role": "blunt",
+      "strength": 13.794545454545455,
+      "stats": {
+        "ap": 0.41946880269814496,
+        "cooldown": 2.8102866779089375,
+        "dps": 9.950795079507952,
+        "fight_dps": 9.818181818181818,
+        "market_value": 2000,
+        "mass": 2,
+        "swing_damage": 27.964586846543003,
+        "tools": 2,
+        "work": 1
+      }
+    },
+    {
+      "index": 13,
+      "defName": "MeleeWeapon_PlasmaSwordBladelink",
+      "label": "persona plasmasword",
+      "tier": "ultra",
+      "role": "blade",
+      "strength": 13.895230263157895,
+      "stats": {
+        "ap": 0.3252329450915141,
+        "cooldown": 1.9520798668885193,
+        "dps": 11.107228094101602,
+        "fight_dps": 10.657894736842106,
+        "market_value": 3000,
+        "mass": 2,
+        "swing_damage": 21.682196339434277,
+        "tools": 3,
+        "work": 1
+      }
+    },
+    {
+      "index": 14,
+      "defName": "MeleeWeapon_ZeusHammerBladelink",
+      "label": "persona zeushammer",
+      "tier": "ultra",
+      "role": "blunt",
+      "strength": 18.504878048780483,
+      "stats": {
+        "ap": 0.41946880269814496,
+        "cooldown": 2.086172006745363,
+        "dps": 13.404736884649584,
+        "fight_dps": 13.17073170731707,
+        "market_value": 3000,
+        "mass": 2,
+        "swing_damage": 27.964586846543003,
+        "tools": 2,
+        "work": 1
+      }
+    },
+    {
+      "index": 15,
+      "defName": "MeleeWeapon_MonoSword",
+      "label": "monosword",
+      "tier": "ultra",
+      "role": "blade",
+      "strength": 19.689473684210526,
+      "stats": {
+        "ap": 0.8256241032998566,
+        "cooldown": 1.9586800573888092,
+        "dps": 12.078083797245824,
+        "fight_dps": 11.447368421052632,
+        "market_value": 2000,
+        "mass": 2,
+        "swing_damage": 23.657101865136298,
+        "tools": 3,
+        "work": 1
+      }
+    },
+    {
+      "index": 16,
+      "defName": "MeleeWeapon_MonoSwordBladelink",
+      "label": "persona monosword",
+      "tier": "ultra",
+      "role": "blade",
+      "strength": 24.99375,
+      "stats": {
+        "ap": 0.8352808988764044,
+        "cooldown": 1.6,
+        "dps": 16.032303370786515,
+        "fight_dps": 14.53125,
+        "market_value": 3000,
+        "mass": 2,
+        "swing_damage": 25.651685393258425,
+        "tools": 3,
+        "work": 1
+      }
+    }
+  ],
+  "pools": [
+    {
+      "stat": "ap",
+      "n": 17,
+      "min": 0.12920103092783505,
+      "p10": 0.17887309644670052,
+      "median": 0.2686468330134357,
+      "p90": 0.5819309229388298,
+      "max": 0.8352808988764044
+    },
+    {
+      "stat": "cooldown",
+      "n": 17,
+      "min": 1.6,
+      "p10": 1.7872625464440839,
+      "median": 2,
+      "p90": 2.6,
+      "max": 2.8102866779089375
+    },
+    {
+      "stat": "dps",
+      "n": 17,
+      "min": 4.615384615384615,
+      "p10": 5.7388866340546425,
+      "median": 7.346730547422587,
+      "p90": 12.60874503220733,
+      "max": 16.032303370786515
+    },
+    {
+      "stat": "fight_dps",
+      "n": 17,
+      "min": 4.615384615384615,
+      "p10": 6.345,
+      "median": 7.230769230769231,
+      "p90": 12.136713735558407,
+      "max": 14.53125
+    },
+    {
+      "stat": "market_value",
+      "n": 17,
+      "min": 66.48,
+      "p10": 104.52799999999999,
+      "median": 264.8,
+      "p90": 3000,
+      "max": 3000
+    },
+    {
+      "stat": "mass",
+      "n": 17,
+      "min": 0.5,
+      "p10": 1,
+      "median": 2,
+      "p90": 2,
+      "max": 5
+    },
+    {
+      "stat": "swing_damage",
+      "n": 17,
+      "min": 8.61340206185567,
+      "p10": 11.924873096446701,
+      "median": 17.90978886756238,
+      "p90": 26.576845974572258,
+      "max": 27.964586846543003
+    },
+    {
+      "stat": "tools",
+      "n": 17,
+      "min": 1,
+      "p10": 2,
+      "median": 3,
+      "p90": 3,
+      "max": 4
+    },
+    {
+      "stat": "work",
+      "n": 17,
+      "min": 1,
+      "p10": 1,
+      "median": 1800,
+      "p90": 14400.000000000002,
+      "max": 18000
+    }
+  ]
+}

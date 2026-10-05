@@ -1,0 +1,402 @@
+{
+  "readouts": [
+    {
+      "key": "cycle-time",
+      "group": "ranged",
+      "unit": "seconds",
+      "value": 3.2,
+      "steps": [
+        {
+          "label": "warmup",
+          "value": 1.7
+        },
+        {
+          "label": "warmup plus cooldown",
+          "value": 3.2
+        },
+        {
+          "label": "burst gaps",
+          "value": 0.0
+        },
+        {
+          "label": "cycle time",
+          "value": 3.2
+        }
+      ]
+    },
+    {
+      "key": "dps",
+      "group": "ranged",
+      "unit": "damage-per-second",
+      "value": 6.875,
+      "steps": [
+        {
+          "label": "damage per burst",
+          "value": 22.0
+        },
+        {
+          "label": "cycle time",
+          "value": 3.2
+        },
+        {
+          "label": "damage per second",
+          "value": 6.875
+        }
+      ]
+    },
+    {
+      "key": "hit-dps-12",
+      "group": "ranged",
+      "unit": "damage-per-second",
+      "value": 5.5
+    },
+    {
+      "key": "hit-dps-25",
+      "group": "ranged",
+      "unit": "damage-per-second",
+      "value": 6.1875
+    },
+    {
+      "key": "implied-ap",
+      "group": "ranged",
+      "unit": "fraction",
+      "value": 0.32999999999999996
+    },
+    {
+      "key": "strength-index",
+      "group": "ranged",
+      "unit": "number",
+      "value": 4.508255614800353
+    },
+    {
+      "key": "market-value",
+      "group": "economy",
+      "unit": "silver",
+      "value": 255.0,
+      "steps": [
+        {
+          "label": "ingredients",
+          "value": 210.0
+        },
+        {
+          "label": "stuff",
+          "value": 0.0
+        },
+        {
+          "label": "work",
+          "value": 43.199999999999996
+        },
+        {
+          "label": "base value",
+          "value": 253.2
+        }
+      ]
+    }
+  ],
+  "suggestions": [
+    {
+      "field": "/ranged/damage",
+      "stat": "damage",
+      "value": 22.0,
+      "source": "typed",
+      "level": "tier",
+      "predictor": "median",
+      "n": 12,
+      "locked": true
+    },
+    {
+      "field": "/ranged/warmup",
+      "stat": "warmup",
+      "value": 1.05,
+      "source": "class-median",
+      "band": {
+        "p10": 0.32,
+        "median": 1.05,
+        "p90": 2.43,
+        "p50": 1.5430334996209192,
+        "p80": 2.8380793119255063,
+        "shift": 0.0
+      },
+      "level": "tier",
+      "predictor": "median",
+      "n": 12,
+      "locked": false
+    },
+    {
+      "field": "/ranged/cooldown",
+      "stat": "cooldown",
+      "value": 1.5,
+      "source": "class-median",
+      "band": {
+        "p10": 1.025,
+        "median": 1.5,
+        "p90": 1.695,
+        "p50": 1.098385912556796,
+        "p80": 1.6,
+        "shift": 0.0
+      },
+      "level": "tier",
+      "predictor": "median",
+      "n": 12,
+      "locked": false
+    },
+    {
+      "field": "/ranged/range",
+      "stat": "range",
+      "value": 40.61393702166255,
+      "source": "anchor",
+      "band": {
+        "p10": 16.3,
+        "median": 25.9,
+        "p90": 36.3,
+        "p50": 1.1450812425488122,
+        "p80": 1.300202727576831,
+        "shift": 0.0
+      },
+      "level": "tier",
+      "predictor": "anchor",
+      "n": 12,
+      "locked": false
+    },
+    {
+      "field": "/ranged/burstCount",
+      "stat": "burst",
+      "value": 3.0,
+      "source": "class-median",
+      "band": {
+        "p10": 1.0,
+        "median": 3.0,
+        "p90": 5.700000000000001,
+        "p50": 1.0,
+        "p80": 1.1486983549970358,
+        "shift": 0.0
+      },
+      "level": "tier",
+      "predictor": "median",
+      "n": 12,
+      "locked": false
+    },
+    {
+      "field": "/ranged/ticksBetweenBurstShots",
+      "stat": "ticks_between",
+      "value": 11.0,
+      "source": "class-median",
+      "band": {
+        "p10": 7.0,
+        "median": 10.5,
+        "p90": 15.0,
+        "p50": 1.0,
+        "p80": 1.218259337378822,
+        "shift": 0.0
+      },
+      "level": "tier",
+      "predictor": "median",
+      "n": 12,
+      "locked": false
+    },
+    {
+      "field": "/ranged/accuracy/touch",
+      "stat": "touch",
+      "value": 0.571723646288102,
+      "source": "anchor",
+      "band": {
+        "p10": 0.41000000000000003,
+        "median": 0.625,
+        "p90": 0.845,
+        "p50": 1.0736643949045037,
+        "p80": 1.2514106874159494,
+        "shift": 0.0
+      },
+      "level": "tier",
+      "predictor": "anchor",
+      "n": 12,
+      "locked": false
+    },
+    {
+      "field": "/ranged/accuracy/short",
+      "stat": "short",
+      "value": 0.7496677219591854,
+      "source": "anchor",
+      "band": {
+        "p10": 0.496,
+        "median": 0.7,
+        "p90": 0.795,
+        "p50": 1.0998947210604504,
+        "p80": 1.1317255026744075,
+        "shift": 0.0
+      },
+      "level": "tier",
+      "predictor": "anchor",
+      "n": 12,
+      "locked": false
+    },
+    {
+      "field": "/ranged/accuracy/medium",
+      "stat": "medium",
+      "value": 0.8905665006812421,
+      "source": "anchor",
+      "band": {
+        "p10": 0.35,
+        "median": 0.55,
+        "p90": 0.869,
+        "p50": 1.182757860410578,
+        "p80": 1.3855415290098398,
+        "shift": 0.0
+      },
+      "level": "tier",
+      "predictor": "anchor",
+      "n": 12,
+      "locked": false
+    },
+    {
+      "field": "/ranged/accuracy/long",
+      "stat": "long",
+      "value": 0.8477765256973674,
+      "source": "anchor",
+      "band": {
+        "p10": 0.182,
+        "median": 0.42500000000000004,
+        "p90": 0.784,
+        "p50": 1.2253997305427997,
+        "p80": 1.4068387757126097,
+        "shift": 0.0
+      },
+      "level": "tier",
+      "predictor": "anchor",
+      "n": 12,
+      "locked": false
+    },
+    {
+      "field": "/mass",
+      "stat": "mass",
+      "value": 3.744275900009049,
+      "source": "anchor",
+      "band": {
+        "p10": 1.51,
+        "median": 3.5,
+        "p90": 8.100000000000001,
+        "p50": 1.1428882390111295,
+        "p80": 1.6388355873416256,
+        "shift": 0.0
+      },
+      "level": "tier",
+      "predictor": "anchor",
+      "n": 12,
+      "locked": false
+    },
+    {
+      "field": "/workToMake",
+      "stat": "work",
+      "level": "tier",
+      "predictor": "quantile",
+      "n": 12,
+      "locked": false
+    }
+  ],
+  "estimate": {
+    "classLabel": "based on 12 items at Industrial (widened from role and tier: fewer than 3 items qualify)",
+    "level": "tier",
+    "classN": 12,
+    "strength": 3.51430949500185,
+    "strengthPercentile": 0.5416666666666666,
+    "anchors": [
+      {
+        "id": "Gun_BoltActionRifle",
+        "label": "bolt-action rifle",
+        "strength": 3.5143094950018505,
+        "tier": 2,
+        "role": "sniper",
+        "stats": {
+          "ap": 0.27,
+          "burst": 1.0,
+          "cooldown": 1.5,
+          "damage": 18.0,
+          "dps": 5.625,
+          "long": 0.8,
+          "market_value": 253.2,
+          "mass": 3.5,
+          "medium": 0.9,
+          "range": 36.9,
+          "short": 0.8,
+          "speed": 70.0,
+          "ticks_between": 15.0,
+          "touch": 0.65,
+          "warmup": 1.7,
+          "work": 12000.0
+        }
+      },
+      {
+        "id": "Gun_SniperRifle",
+        "label": "sniper rifle",
+        "strength": 3.4805351090116163,
+        "tier": 2,
+        "role": "sniper",
+        "stats": {
+          "ap": 0.375,
+          "burst": 1.0,
+          "cooldown": 1.5,
+          "damage": 25.0,
+          "dps": 5.0,
+          "long": 0.9,
+          "market_value": 532.0,
+          "mass": 4.0,
+          "medium": 0.88,
+          "range": 44.9,
+          "short": 0.7,
+          "speed": 100.0,
+          "ticks_between": 15.0,
+          "touch": 0.5,
+          "warmup": 3.5,
+          "work": 45000.0
+        }
+      },
+      {
+        "id": "Gun_HellcatRifle",
+        "label": "hellcat rifle",
+        "strength": 3.709466024353194,
+        "tier": 2,
+        "role": "rifle",
+        "stats": {
+          "ap": 0.15,
+          "burst": 3.0,
+          "cooldown": 1.7,
+          "damage": 10.0,
+          "dps": 9.574468085106384,
+          "long": 0.55,
+          "market_value": 497.0,
+          "mass": 3.5,
+          "medium": 0.65,
+          "range": 26.9,
+          "short": 0.7,
+          "speed": 70.0,
+          "ticks_between": 10.0,
+          "touch": 0.6,
+          "warmup": 1.1,
+          "work": 40000.0
+        }
+      }
+    ],
+    "notes": []
+  },
+  "diagnostics": [
+    {
+      "code": "design.duplicate-capacity",
+      "severity": "warning",
+      "message": "tool barrel lists 2 capacities; the stat panel counts its attack once per capacity",
+      "field": "/tools/1/capacities",
+      "args": {
+        "count": "2",
+        "tool": "barrel"
+      }
+    },
+    {
+      "code": "design.pool-thin",
+      "severity": "info",
+      "message": "only 12 reference items stand behind the bands",
+      "field": "",
+      "args": {
+        "count": "12"
+      }
+    }
+  ]
+}

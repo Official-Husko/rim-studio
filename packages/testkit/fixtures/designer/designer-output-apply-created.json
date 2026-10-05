@@ -1,0 +1,240 @@
+{
+  "planId": "e82b27f9f69db4ede0c82dac6b9027e5",
+  "written": [
+    {
+      "path": "Defs/ThingDefs_Misc/Weapons/RangedIndustrial/Gun_OutRifle.xml",
+      "action": "create",
+      "bytes": 2635,
+      "verified": true
+    },
+    {
+      "path": "Compat/CombatExtended/Patches/outmodtwo_Weapons_Ranged.xml",
+      "action": "create",
+      "bytes": 2784,
+      "verified": true
+    },
+    {
+      "path": "LoadFolders.xml",
+      "action": "create",
+      "bytes": 173,
+      "verified": true
+    }
+  ],
+  "unchanged": [],
+  "dryApplyOk": true,
+  "diagnostics": [
+    {
+      "code": "ce.derived-value",
+      "severity": "info",
+      "message": "/ce/bulk = 9.506 was taken from the Combat Extended suggestion: predicted (Ratio) from 4 of the converted weapons in the library, rated rough, typical error about 33 percent; check it",
+      "field": "/ce/bulk",
+      "args": {
+        "how": "taken from the Combat Extended suggestion: predicted (Ratio) from 4 of the converted weapons in the library, rated rough, typical error about 33 percent; check it",
+        "value": "9.506"
+      }
+    },
+    {
+      "code": "ce.derived-value",
+      "severity": "info",
+      "message": "/ce/swayFactor = 1.275 was taken from the Combat Extended suggestion: predicted (Median) from 4 of the converted weapons in the library, rated rough, typical error about 20 percent; check it",
+      "field": "/ce/swayFactor",
+      "args": {
+        "how": "taken from the Combat Extended suggestion: predicted (Median) from 4 of the converted weapons in the library, rated rough, typical error about 20 percent; check it",
+        "value": "1.275"
+      }
+    },
+    {
+      "code": "ce.derived-value",
+      "severity": "info",
+      "message": "/ce/sightsEfficiency = 1.3 was taken from the Combat Extended suggestion: predicted (Median) from 4 of the converted weapons in the library, rated rough, typical error about 15 percent; check it",
+      "field": "/ce/sightsEfficiency",
+      "args": {
+        "how": "taken from the Combat Extended suggestion: predicted (Median) from 4 of the converted weapons in the library, rated rough, typical error about 15 percent; check it",
+        "value": "1.3"
+      }
+    },
+    {
+      "code": "ce.derived-value",
+      "severity": "info",
+      "message": "/ce/recoilAmount = 1.77 was taken from the Combat Extended suggestion: predicted (Median) from 4 of the converted weapons in the library, rated rough, typical error about 19 percent; check it",
+      "field": "/ce/recoilAmount",
+      "args": {
+        "how": "taken from the Combat Extended suggestion: predicted (Median) from 4 of the converted weapons in the library, rated rough, typical error about 19 percent; check it",
+        "value": "1.77"
+      }
+    },
+    {
+      "code": "ce.derived-value",
+      "severity": "info",
+      "message": "/ce/reloadTime = 4 was taken from the Combat Extended suggestion: predicted (Median) from 4 of the converted weapons in the library, rated rough, typical error about 20 percent; check it",
+      "field": "/ce/reloadTime",
+      "args": {
+        "how": "taken from the Combat Extended suggestion: predicted (Median) from 4 of the converted weapons in the library, rated rough, typical error about 20 percent; check it",
+        "value": "4"
+      }
+    },
+    {
+      "code": "ce.derived-value",
+      "severity": "info",
+      "message": "/ce/defaultProjectile = Bullet_303British_FMJ_SB was taken from the Combat Extended suggestion: the first projectile of the ammo set",
+      "field": "/ce/defaultProjectile",
+      "args": {
+        "how": "taken from the Combat Extended suggestion: the first projectile of the ammo set",
+        "value": "Bullet_303British_FMJ_SB"
+      }
+    },
+    {
+      "code": "design.duplicate-capacity",
+      "severity": "warning",
+      "message": "tool barrel lists 2 capacities; the stat panel counts its attack once per capacity",
+      "field": "/tools/1/capacities",
+      "args": {
+        "count": "2",
+        "tool": "barrel"
+      }
+    },
+    {
+      "code": "design.texture-shared",
+      "severity": "info",
+      "message": "Out rifle uses the texture Things/Item/Equipment/WeaponRanged/BoltActionRifle; the art is not copied, so it must exist in the game or in your mod (your own art goes to Textures/Things/Item/Equipment/WeaponRanged/Gun_OutRifle.png)",
+      "field": "/texturePath",
+      "args": {
+        "file": "Textures/Things/Item/Equipment/WeaponRanged/Gun_OutRifle.png",
+        "label": "Out rifle",
+        "path": "Things/Item/Equipment/WeaponRanged/BoltActionRifle"
+      }
+    },
+    {
+      "code": "design.texture-shared",
+      "severity": "info",
+      "message": "bolt-action rifle bullet uses the texture Things/Projectile/Bullet_big; the art is not copied, so it must exist in the game or in your mod (your own art goes to Textures/Things/Projectile/Bullet_Gun_OutRifle.png)",
+      "field": "/ranged/projectile/def/texturePath",
+      "args": {
+        "file": "Textures/Things/Projectile/Bullet_Gun_OutRifle.png",
+        "label": "bolt-action rifle bullet",
+        "path": "Things/Projectile/Bullet_big"
+      }
+    },
+    {
+      "code": "ce.derived-value",
+      "severity": "info",
+      "message": "tool 1 linkedBodyPartsGroup = Stock was the group of the 10 converted tools named stock in the library",
+      "field": "tool 1 linkedBodyPartsGroup",
+      "args": {
+        "how": "the group of the 10 converted tools named stock in the library",
+        "value": "Stock"
+      }
+    },
+    {
+      "code": "ce.derived-value",
+      "severity": "info",
+      "message": "tool 1 chanceFactor = 1.5 was the pick weight of the 10 converted tools named stock in the library",
+      "field": "tool 1 chanceFactor",
+      "args": {
+        "how": "the pick weight of the 10 converted tools named stock in the library",
+        "value": "1.5"
+      }
+    },
+    {
+      "code": "ce.derived-value",
+      "severity": "info",
+      "message": "tool 2 linkedBodyPartsGroup = Barrel was the group of the 10 converted tools named barrel in the library",
+      "field": "tool 2 linkedBodyPartsGroup",
+      "args": {
+        "how": "the group of the 10 converted tools named barrel in the library",
+        "value": "Barrel"
+      }
+    },
+    {
+      "code": "ce.derived-value",
+      "severity": "info",
+      "message": "tool 2 capacities = Blunt was the capacities of the 10 converted tools named barrel in the library",
+      "field": "tool 2 capacities",
+      "args": {
+        "how": "the capacities of the 10 converted tools named barrel in the library",
+        "value": "Blunt"
+      }
+    },
+    {
+      "code": "ce.derived-value",
+      "severity": "info",
+      "message": "tool 3 label = muzzle was a new tool for Poke taken from barrel, as 14 converted tools do",
+      "field": "tool 3 label",
+      "args": {
+        "how": "a new tool for Poke taken from barrel, as 14 converted tools do",
+        "value": "muzzle"
+      }
+    },
+    {
+      "code": "ce.derived-value",
+      "severity": "info",
+      "message": "mass = 3.5 was predicted (Identity) from 18 of the converted weapons in the library, rated reliable, typical error about 12 percent; check it",
+      "field": "mass",
+      "args": {
+        "how": "predicted (Identity) from 18 of the converted weapons in the library, rated reliable, typical error about 12 percent; check it",
+        "value": "3.5"
+      }
+    },
+    {
+      "code": "ce.derived-value",
+      "severity": "info",
+      "message": "range = 44.38 was predicted (Ratio) from 4 of the converted weapons in the library, rated rough, typical error about 31 percent; check it",
+      "field": "range",
+      "args": {
+        "how": "predicted (Ratio) from 4 of the converted weapons in the library, rated rough, typical error about 31 percent; check it",
+        "value": "44.38"
+      }
+    },
+    {
+      "code": "ce.derived-value",
+      "severity": "info",
+      "message": "warmup = 1.148 was predicted (Ratio) from 4 of the converted weapons in the library, rated rough, typical error about 31 percent; check it",
+      "field": "warmup",
+      "args": {
+        "how": "predicted (Ratio) from 4 of the converted weapons in the library, rated rough, typical error about 31 percent; check it",
+        "value": "1.148"
+      }
+    },
+    {
+      "code": "ce.derived-value",
+      "severity": "info",
+      "message": "cooldown = 0.835 was predicted (Median) from 4 of the converted weapons in the library, rated reliable, typical error about 9 percent; check it",
+      "field": "cooldown",
+      "args": {
+        "how": "predicted (Median) from 4 of the converted weapons in the library, rated reliable, typical error about 9 percent; check it",
+        "value": "0.835"
+      }
+    },
+    {
+      "code": "ce.about-suggestion",
+      "severity": "hint",
+      "message": "About file: add loadAfter ceteam.combatextended (Combat Extended)",
+      "field": "",
+      "args": {
+        "suggestion": "add loadAfter ceteam.combatextended (Combat Extended)"
+      }
+    },
+    {
+      "code": "ce.not-checked",
+      "severity": "info",
+      "message": "CEP010 was not checked: the type table of the installed Combat Extended was not supplied",
+      "field": "",
+      "args": {
+        "reason": "the type table of the installed Combat Extended was not supplied",
+        "rule": "CEP010",
+        "ruleId": "CEP010"
+      }
+    },
+    {
+      "code": "ce.not-checked",
+      "severity": "info",
+      "message": "CEP015 was not checked: the field tables of the installed Combat Extended were not supplied",
+      "field": "",
+      "args": {
+        "reason": "the field tables of the installed Combat Extended were not supplied",
+        "rule": "CEP015",
+        "ruleId": "CEP015"
+      }
+    }
+  ]
+}

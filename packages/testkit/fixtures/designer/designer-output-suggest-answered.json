@@ -1,0 +1,500 @@
+{
+  "kind": "ranged",
+  "defName": "Gun_OutRifle",
+  "available": true,
+  "toggleOn": true,
+  "classLabel": "based on the 4 nearest of 20 converted weapons",
+  "pool": 20,
+  "fields": [
+    {
+      "field": "/ce/bulk",
+      "label": "CE bulk",
+      "required": true,
+      "status": "derived",
+      "value": 9.506,
+      "source": {
+        "kind": "predicted",
+        "predictor": "ratio",
+        "n": 4
+      },
+      "band": {
+        "p50": {
+          "low": 6.870419649401307,
+          "high": 13.152622490516192
+        },
+        "p80": {
+          "low": 5.551474139833109,
+          "high": 16.27748481283866
+        }
+      },
+      "rating": "rough",
+      "error": 0.3272530266282473
+    },
+    {
+      "field": "/ce/swayFactor",
+      "label": "CE sway factor",
+      "required": true,
+      "status": "derived",
+      "value": 1.275,
+      "source": {
+        "kind": "predicted",
+        "predictor": "median",
+        "n": 4
+      },
+      "band": {
+        "p50": {
+          "low": 1.0237226277372262,
+          "high": 1.5879545454545452
+        },
+        "p80": {
+          "low": 0.8186916773122592,
+          "high": 1.985637627753685
+        }
+      },
+      "rating": "rough",
+      "error": 0.19708029197080293
+    },
+    {
+      "field": "/ce/shotSpread",
+      "label": "CE shot spread",
+      "required": true,
+      "status": "held",
+      "held": 0.165,
+      "heldSource": {
+        "kind": "answered"
+      },
+      "rating": "unreliable",
+      "error": 0.3,
+      "reference": 0.115
+    },
+    {
+      "field": "/ce/sightsEfficiency",
+      "label": "CE sights efficiency",
+      "required": false,
+      "status": "derived",
+      "value": 1.3,
+      "source": {
+        "kind": "predicted",
+        "predictor": "median",
+        "n": 4
+      },
+      "band": {
+        "p50": {
+          "low": 1.105,
+          "high": 1.5294117647058825
+        },
+        "p80": {
+          "low": 0.91,
+          "high": 1.8571428571428572
+        }
+      },
+      "rating": "rough",
+      "error": 0.15000000000000002
+    },
+    {
+      "field": "/ce/recoilAmount",
+      "label": "CE recoil",
+      "required": false,
+      "status": "derived",
+      "value": 1.77,
+      "source": {
+        "kind": "predicted",
+        "predictor": "median",
+        "n": 4
+      },
+      "band": {
+        "p50": {
+          "low": 1.4879108363381672,
+          "high": 2.10556971794778
+        },
+        "p80": {
+          "low": 1.1767970916524786,
+          "high": 2.662226157952794
+        }
+      },
+      "rating": "rough",
+      "error": 0.18958991174803663
+    },
+    {
+      "field": "/ce/magazineSize",
+      "label": "CE magazine size",
+      "required": true,
+      "status": "held",
+      "held": 7,
+      "heldSource": {
+        "kind": "answered"
+      },
+      "rating": "unreliable",
+      "error": 0.6207142857142858,
+      "reference": 3
+    },
+    {
+      "field": "/ce/reloadTime",
+      "label": "CE reload time",
+      "required": true,
+      "status": "derived",
+      "value": 4,
+      "source": {
+        "kind": "predicted",
+        "predictor": "median",
+        "n": 4
+      },
+      "band": {
+        "p50": {
+          "low": 3.1815796359028696,
+          "high": 5.028948456749697
+        },
+        "p80": {
+          "low": 2.695652173913044,
+          "high": 5.935483870967741
+        }
+      },
+      "rating": "rough",
+      "error": 0.2043367346938776
+    },
+    {
+      "field": "/ce/toolPenetration/stock/blunt",
+      "label": "Blunt penetration of the tool stock",
+      "required": true,
+      "status": "held",
+      "held": 2.56,
+      "heldSource": {
+        "kind": "answered"
+      },
+      "rating": "unreliable",
+      "error": 0.6434630278443666,
+      "reference": 2.56
+    },
+    {
+      "field": "/ce/toolPenetration/barrel/blunt",
+      "label": "Blunt penetration of the tool barrel",
+      "required": true,
+      "status": "held",
+      "held": 2.56,
+      "heldSource": {
+        "kind": "answered"
+      },
+      "rating": "unreliable",
+      "error": 0.6434630278443666,
+      "reference": 2.56
+    }
+  ],
+  "choices": [
+    {
+      "field": "/ce/ammoSet",
+      "label": "Which caliber (ammo set) does the weapon use?",
+      "kind": "choice",
+      "required": true,
+      "status": "held",
+      "held": "AmmoSet_303British_SB",
+      "candidates": [
+        {
+          "name": "AmmoSet_25x40mmGrenade",
+          "usedBy": 0,
+          "score": 0,
+          "firstDamage": 18
+        },
+        {
+          "name": "AmmoSet_280British",
+          "usedBy": 0,
+          "score": 0,
+          "firstDamage": 18
+        },
+        {
+          "name": "AmmoSet_3030Winchester",
+          "usedBy": 0,
+          "score": 0,
+          "firstDamage": 18
+        },
+        {
+          "name": "AmmoSet_303British_SB",
+          "usedBy": 0,
+          "score": 0,
+          "firstDamage": 18
+        },
+        {
+          "name": "AmmoSet_5656Spencer",
+          "usedBy": 0,
+          "score": 0,
+          "firstDamage": 18
+        },
+        {
+          "name": "AmmoSet_762x54mmR_SB",
+          "usedBy": 0,
+          "score": 0,
+          "firstDamage": 18
+        },
+        {
+          "name": "AmmoSet_8x50mmRLebel_SB",
+          "usedBy": 0,
+          "score": 0,
+          "firstDamage": 18
+        },
+        {
+          "name": "AmmoSet_PlasmaCellHeavy",
+          "usedBy": 0,
+          "score": 0,
+          "firstDamage": 18
+        },
+        {
+          "name": "AmmoSet_127x40mmUNSC",
+          "usedBy": 0,
+          "score": 0,
+          "firstDamage": 19
+        },
+        {
+          "name": "AmmoSet_25x59mmGrenade",
+          "usedBy": 0,
+          "score": 0,
+          "firstDamage": 19
+        },
+        {
+          "name": "AmmoSet_277Fury",
+          "usedBy": 0,
+          "score": 0,
+          "firstDamage": 19
+        },
+        {
+          "name": "AmmoSet_44Magnum_HV",
+          "usedBy": 0,
+          "score": 0,
+          "firstDamage": 19
+        }
+      ]
+    },
+    {
+      "field": "/ce/defaultProjectile",
+      "label": "Which projectile of the ammo set is the default?",
+      "kind": "choice",
+      "required": true,
+      "status": "derived",
+      "value": "Bullet_303British_FMJ_SB",
+      "source": {
+        "kind": "first-of-set"
+      },
+      "candidates": [
+        {
+          "name": "Bullet_303British_FMJ_SB",
+          "usedBy": 0,
+          "score": 0
+        },
+        {
+          "name": "Bullet_303British_AP_SB",
+          "usedBy": 0,
+          "score": 0
+        },
+        {
+          "name": "Bullet_303British_HP_SB",
+          "usedBy": 0,
+          "score": 0
+        },
+        {
+          "name": "Bullet_303British_Incendiary_SB",
+          "usedBy": 0,
+          "score": 0
+        },
+        {
+          "name": "Bullet_303British_HE_SB",
+          "usedBy": 0,
+          "score": 0
+        },
+        {
+          "name": "Bullet_303British_Sabot_SB",
+          "usedBy": 0,
+          "score": 0
+        }
+      ]
+    },
+    {
+      "field": "/ce/weaponTagClass",
+      "label": "Which weapon class tag does the weapon get?",
+      "kind": "choice",
+      "required": true,
+      "status": "held",
+      "held": "CE_AI_SR",
+      "candidates": [
+        {
+          "name": "CE_AI_BROOM",
+          "usedBy": 6,
+          "score": 0
+        },
+        {
+          "name": "CE_AI_AR",
+          "usedBy": 2,
+          "score": 0
+        },
+        {
+          "name": "CE_AI_SR",
+          "usedBy": 2,
+          "score": 0
+        },
+        {
+          "name": "CE_AI_LMG",
+          "usedBy": 1,
+          "score": 0
+        },
+        {
+          "name": "CE_AI_Rifle",
+          "usedBy": 1,
+          "score": 0
+        },
+        {
+          "name": "CE_AI_Suppressive",
+          "usedBy": 1,
+          "score": 0
+        },
+        {
+          "name": "CE_AI_AOE",
+          "usedBy": 0,
+          "score": 0
+        },
+        {
+          "name": "CE_AI_EMP",
+          "usedBy": 0,
+          "score": 0
+        },
+        {
+          "name": "CE_AI_Grenade",
+          "usedBy": 0,
+          "score": 0
+        },
+        {
+          "name": "CE_AI_Launcher",
+          "usedBy": 0,
+          "score": 0
+        },
+        {
+          "name": "CE_AI_SMOKE",
+          "usedBy": 0,
+          "score": 0
+        }
+      ]
+    },
+    {
+      "field": "/ce/oneHanded",
+      "label": "Is the weapon held in one hand?",
+      "kind": "flag",
+      "required": false,
+      "status": "held",
+      "held": "false",
+      "candidates": []
+    },
+    {
+      "field": "/ce/beltFed",
+      "label": "Is the weapon belt fed?",
+      "kind": "flag",
+      "required": false,
+      "status": "held",
+      "held": "false",
+      "candidates": []
+    }
+  ],
+  "patchNumbers": [
+    {
+      "field": "mass",
+      "label": "Mass in the patch",
+      "required": false,
+      "status": "derived",
+      "value": 3.5,
+      "source": {
+        "kind": "identity",
+        "n": 18
+      },
+      "band": {
+        "p50": {
+          "low": 3.1102073246521367,
+          "high": 3.938644187126693
+        },
+        "p80": {
+          "low": 2.367199627987107,
+          "high": 5.174890978846808
+        }
+      },
+      "rating": "reliable",
+      "error": 0.11723620410990532
+    },
+    {
+      "field": "range",
+      "label": "Range in the patch",
+      "required": false,
+      "status": "derived",
+      "value": 44.38,
+      "source": {
+        "kind": "predicted",
+        "predictor": "ratio",
+        "n": 4
+      },
+      "band": {
+        "p50": {
+          "low": 30.578049620291345,
+          "high": 64.41170789038814
+        },
+        "p80": {
+          "low": 25.222880065631387,
+          "high": 78.08721267654717
+        }
+      },
+      "rating": "rough",
+      "error": 0.31093683495439584
+    },
+    {
+      "field": "warmup",
+      "label": "Warmup in the patch",
+      "required": false,
+      "status": "derived",
+      "value": 1.148,
+      "source": {
+        "kind": "predicted",
+        "predictor": "ratio",
+        "n": 4
+      },
+      "band": {
+        "p50": {
+          "low": 0.8463229682073193,
+          "high": 1.5572116668316152
+        },
+        "p80": {
+          "low": 0.6476995132970718,
+          "high": 2.0347460094439414
+        }
+      },
+      "rating": "rough",
+      "error": 0.30734302875817154
+    },
+    {
+      "field": "cooldown",
+      "label": "Cooldown in the patch",
+      "required": false,
+      "status": "derived",
+      "value": 0.835,
+      "source": {
+        "kind": "predicted",
+        "predictor": "median",
+        "n": 4
+      },
+      "band": {
+        "p50": {
+          "low": 0.7651307554178549,
+          "high": 0.9112494760705703
+        },
+        "p80": {
+          "low": 0.554288857554425,
+          "high": 1.2578730214354708
+        }
+      },
+      "rating": "reliable",
+      "error": 0.08574263038548754
+    }
+  ],
+  "asks": {
+    "items": []
+  },
+  "missing": [
+    "/ce/bulk",
+    "/ce/swayFactor",
+    "/ce/reloadTime",
+    "/ce/defaultProjectile"
+  ],
+  "stillMissingAfterAccept": [],
+  "notes": []
+}

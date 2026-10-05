@@ -1,0 +1,93 @@
+{
+  "prompt": {
+    "id": "tier",
+    "question": {
+      "kind": "tier",
+      "options": [
+        {
+          "tier": 0,
+          "label": "Neolithic",
+          "count": 5
+        },
+        {
+          "tier": 1,
+          "label": "Medieval",
+          "count": 5
+        },
+        {
+          "tier": 4,
+          "label": "Ultra",
+          "count": 7
+        }
+      ]
+    },
+    "number": 1,
+    "aboutTotal": 6
+  },
+  "finished": false,
+  "answered": 0,
+  "estimate": {
+    "classLabel": "based on 17 items of this kind",
+    "level": "all",
+    "classN": 17,
+    "strength": 10.43055268967519,
+    "strengthPercentile": 0.5,
+    "anchors": [
+      {
+        "id": "MeleeWeapon_LongSword",
+        "label": "longsword",
+        "strength": 10.287244897959184,
+        "tier": 1,
+        "role": "blade",
+        "stats": {
+          "ap": 0.3300658472344161,
+          "cooldown": 2.557330992098332,
+          "dps": 8.604435594616863,
+          "fight_dps": 7.959183673469387,
+          "market_value": 264.8,
+          "mass": 2,
+          "swing_damage": 22.004389815627743,
+          "tools": 3,
+          "work": 18000
+        }
+      },
+      {
+        "id": "MeleeWeapon_PlasmaSword",
+        "label": "plasmasword",
+        "strength": 9.80548469387755,
+        "tier": 4,
+        "role": "blade",
+        "stats": {
+          "ap": 0.29605263157894735,
+          "cooldown": 2.515789473684211,
+          "dps": 7.845188284518827,
+          "fight_dps": 7.653061224489796,
+          "market_value": 2000,
+          "mass": 2,
+          "swing_damage": 19.736842105263158,
+          "tools": 3,
+          "work": 1
+        }
+      },
+      {
+        "id": "MeleeWeapon_Spear",
+        "label": "spear",
+        "strength": 11.225721153846154,
+        "tier": 0,
+        "role": "piercing",
+        "stats": {
+          "ap": 0.3810957324106113,
+          "cooldown": 2.6000000000000005,
+          "dps": 7.346730547422587,
+          "fight_dps": 7.884615384615384,
+          "market_value": 193.2,
+          "mass": 2,
+          "swing_damage": 19.10149942329873,
+          "tools": 3,
+          "work": 12000
+        }
+      }
+    ],
+    "notes": []
+  }
+}

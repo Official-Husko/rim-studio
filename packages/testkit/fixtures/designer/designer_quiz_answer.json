@@ -1,0 +1,140 @@
+{
+  "draft": {
+    "schemaVersion": 1,
+    "kind": "melee",
+    "calibration": "quiz",
+    "spec": {
+      "kind": "melee",
+      "identity": {
+        "defName": "TM_Sword",
+        "label": "test sword",
+        "description": "",
+        "modPrefix": ""
+      },
+      "techLevel": "medieval",
+      "mass": {
+        "value": 1.5,
+        "source": "suggested"
+      },
+      "tools": [
+        {
+          "label": "blade",
+          "capacities": [
+            "Cut"
+          ],
+          "power": {
+            "value": 18,
+            "source": "typed"
+          },
+          "cooldownTime": {
+            "value": 2,
+            "source": "typed"
+          }
+        }
+      ],
+      "previewQuality": "normal"
+    },
+    "answers": {
+      "tier": {
+        "seq": 0,
+        "answer": {
+          "kind": "tier",
+          "tier": 1
+        }
+      }
+    }
+  },
+  "step": {
+    "prompt": {
+      "id": "role",
+      "question": {
+        "kind": "role",
+        "options": [
+          {
+            "name": "blade",
+            "count": 9
+          },
+          {
+            "name": "blunt",
+            "count": 7
+          },
+          {
+            "name": "piercing",
+            "count": 1
+          }
+        ]
+      },
+      "number": 2,
+      "aboutTotal": 6
+    },
+    "finished": false,
+    "answered": 1,
+    "estimate": {
+      "classLabel": "based on 5 items at Medieval",
+      "level": "tier",
+      "classN": 5,
+      "strength": 8.806997377681522,
+      "strengthPercentile": 0.5,
+      "anchors": [
+        {
+          "id": "MeleeWeapon_Gladius",
+          "label": "gladius",
+          "strength": 8.64796875,
+          "tier": 1,
+          "role": "blade",
+          "stats": {
+            "ap": 0.22565767284991567,
+            "cooldown": 2,
+            "dps": 7.521922428330523,
+            "fight_dps": 7.125,
+            "market_value": 143.2,
+            "mass": 0.85,
+            "swing_damage": 15.043844856661046,
+            "tools": 3,
+            "work": 12000
+          }
+        },
+        {
+          "id": "MeleeWeapon_Warhammer",
+          "label": "warhammer",
+          "strength": 8.644591346153845,
+          "tier": 1,
+          "role": "blunt",
+          "stats": {
+            "ap": 0.2686468330134357,
+            "cooldown": 2.5999999999999996,
+            "dps": 6.88838033367784,
+            "fight_dps": 6.826923076923077,
+            "market_value": 364.8,
+            "mass": 5,
+            "swing_damage": 17.90978886756238,
+            "tools": 2,
+            "work": 18000
+          }
+        },
+        {
+          "id": "MeleeWeapon_Mace",
+          "label": "mace",
+          "strength": 8.487754687499999,
+          "tier": 1,
+          "role": "blunt",
+          "stats": {
+            "ap": 0.21064275245045647,
+            "cooldown": 2,
+            "dps": 7.021425081681883,
+            "fight_dps": 7.012499999999999,
+            "market_value": 121.6,
+            "mass": 1.25,
+            "swing_damage": 14.042850163363767,
+            "tools": 2,
+            "work": 6000
+          }
+        }
+      ],
+      "notes": []
+    },
+    "implied": {
+      "tier": "Medieval"
+    }
+  }
+}

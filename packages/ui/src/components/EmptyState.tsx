@@ -26,14 +26,14 @@ export function EmptyState({ title, description, action, icon, compact }: EmptyS
           <Icon name={icon} size={24} />
         </span>
       ) : null}
-      <h3
+      <h2
         class={cx(
           'font-display font-semibold tracking-display text-fg',
           compact ? 'text-title' : 'text-display',
         )}
       >
         {title}
-      </h3>
+      </h2>
       {description ? <p class="max-w-prose text-muted">{description}</p> : null}
       {action ? <div class="mt-1">{action}</div> : null}
     </div>

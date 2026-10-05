@@ -1,0 +1,232 @@
+{
+  "entry": {
+    "id": "d-ee78888294",
+    "defName": "TM_Beam",
+    "label": "fixture beam",
+    "kind": "ranged",
+    "updatedAtMs": 1791187014123,
+    "draft": {
+      "schemaVersion": 2,
+      "kind": "ranged",
+      "calibration": "anchored",
+      "spec": {
+        "kind": "ranged",
+        "identity": {
+          "defName": "TM_Beam",
+          "label": "fixture beam",
+          "description": "An ultratech weapon that emits gamma ray laser bursts in a rapid sequence. The tight gamma beams can pierce shields.",
+          "modPrefix": ""
+        },
+        "parent": {
+          "defName": "BaseHumanMakeableGun",
+          "inheritedStats": {
+            "Beauty": -3.0,
+            "DeteriorationRate": 2.0,
+            "Flammability": 0.5,
+            "MaxHitPoints": 100.0,
+            "SellPriceFactor": 0.2
+          }
+        },
+        "techLevel": "spacer",
+        "role": "heavy",
+        "mass": {
+          "value": 10.0,
+          "source": "anchor"
+        },
+        "workToMake": {
+          "value": 60000.0,
+          "source": "anchor"
+        },
+        "costList": [
+          {
+            "defName": "Plasteel",
+            "count": 40.0
+          },
+          {
+            "defName": "Steel",
+            "count": 30.0
+          },
+          {
+            "defName": "ComponentSpacer",
+            "count": 3.0
+          }
+        ],
+        "researchPrerequisite": "BeamWeapons",
+        "weaponTags": [
+          "GunHeavy",
+          "WeaponBeamRepeater"
+        ],
+        "weaponClasses": [
+          "RangedHeavy",
+          "Ultratech"
+        ],
+        "texturePath": "Things/Item/Equipment/WeaponRanged/BeamRepeater",
+        "graphicClass": "Graphic_Single",
+        "tools": [
+          {
+            "label": "barrels",
+            "capacities": [
+              "Blunt"
+            ],
+            "power": {
+              "value": 11.7,
+              "source": "anchor"
+            },
+            "cooldownTime": {
+              "value": 2.6,
+              "source": "anchor"
+            }
+          }
+        ],
+        "ranged": {
+          "verbClass": "Verb_Shoot",
+          "damage": {
+            "value": 5.0,
+            "source": "anchor"
+          },
+          "armorPenetration": {
+            "value": 0.5,
+            "source": "anchor"
+          },
+          "range": {
+            "value": 21.9,
+            "source": "anchor"
+          },
+          "burstCount": {
+            "value": 30,
+            "source": "anchor"
+          },
+          "ticksBetweenBurstShots": {
+            "value": 10.0,
+            "source": "anchor"
+          },
+          "warmup": {
+            "value": 4.0,
+            "source": "anchor"
+          },
+          "cooldown": {
+            "value": 3.0,
+            "source": "anchor"
+          },
+          "accuracy": {
+            "touch": {
+              "value": 0.65,
+              "source": "anchor"
+            },
+            "short": {
+              "value": 0.72,
+              "source": "anchor"
+            },
+            "medium": {
+              "value": 0.65,
+              "source": "anchor"
+            },
+            "long": {
+              "value": 0.6,
+              "source": "anchor"
+            }
+          },
+          "projectile": {
+            "mode": "inline",
+            "def": {
+              "defName": "Bullet_TM_Beam",
+              "label": "beam repeater laser",
+              "parent": "BaseBullet",
+              "damageDef": "BeamBypassShields",
+              "texturePath": "Things/Projectile/Bullet_Small",
+              "graphicClass": "Graphic_Single",
+              "extra": [
+                {
+                  "tag": "beamMoteDef",
+                  "attrs": [],
+                  "children": [
+                    "Mote_BeamRepeaterLaser"
+                  ]
+                },
+                {
+                  "tag": "beamStartOffset",
+                  "attrs": [],
+                  "children": [
+                    "0.5"
+                  ]
+                }
+              ],
+              "thingExtra": [
+                {
+                  "tag": "thingClass",
+                  "attrs": [],
+                  "children": [
+                    "Beam"
+                  ]
+                }
+              ],
+              "copiedFrom": "Bullet_BeamRepeater"
+            }
+          },
+          "soundCast": "Shot_BeamRepeater",
+          "soundCastTail": "GunTail_Medium",
+          "muzzleFlashScale": 9.0,
+          "verbExtra": [
+            {
+              "tag": "aimingChargeMote",
+              "attrs": [],
+              "children": [
+                "Mote_BeamRepeater_Charge"
+              ]
+            },
+            {
+              "tag": "aimingChargeMoteOffset",
+              "attrs": [],
+              "children": [
+                "1.07"
+              ]
+            }
+          ]
+        },
+        "previewQuality": "normal",
+        "soundInteract": "Interact_Rifle",
+        "recipe": {
+          "skillRequirements": {
+            "Crafting": 8
+          },
+          "displayPriority": 220.0,
+          "recipeUsers": [
+            "FabricationBench"
+          ]
+        },
+        "equippedStatOffsets": {
+          "MoveSpeed": -0.25
+        },
+        "extraFields": [
+          {
+            "tag": "thingSetMakerTags",
+            "attrs": [],
+            "children": [
+              {
+                "tag": "li",
+                "attrs": [],
+                "children": [
+                  "RewardStandardQualitySuper"
+                ]
+              }
+            ]
+          }
+        ],
+        "inheritReset": [
+          "recipeUsers"
+        ]
+      },
+      "anchors": [
+        {
+          "defName": "Gun_BeamRepeater",
+          "label": "beam repeater"
+        }
+      ],
+      "clonedFrom": "Gun_BeamRepeater"
+    }
+  },
+  "notes": [
+    "fields the designer does not model are carried as written: thingSetMakerTags, verbs.aimingChargeMote, verbs.aimingChargeMoteOffset",
+    "the weapon has its own projectile Bullet_TM_Beam, copied from Bullet_BeamRepeater; its damage, speed and graphic are written to your mod and the damage you set here is the one the file holds"
+  ]
+}

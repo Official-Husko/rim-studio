@@ -1,0 +1,288 @@
+{
+  "readouts": [
+    {
+      "key": "melee-swing-damage",
+      "group": "melee",
+      "unit": "number",
+      "value": 19.736842105263158
+    },
+    {
+      "key": "melee-swing-cooldown",
+      "group": "melee",
+      "unit": "seconds",
+      "value": 2.515789473684211
+    },
+    {
+      "key": "melee-dps",
+      "group": "melee",
+      "unit": "damage-per-second",
+      "value": 7.845188284518827
+    },
+    {
+      "key": "melee-ap",
+      "group": "melee",
+      "unit": "fraction",
+      "value": 0.29605263157894735
+    },
+    {
+      "key": "melee-fight-dps",
+      "group": "melee",
+      "unit": "damage-per-second",
+      "value": 7.653061224489796,
+      "steps": [
+        {
+          "label": "handle Blunt share",
+          "value": 0.25
+        },
+        {
+          "label": "point Stab share",
+          "value": 0.375
+        },
+        {
+          "label": "edge Cut share",
+          "value": 0.375
+        }
+      ]
+    },
+    {
+      "key": "strength-index",
+      "group": "melee",
+      "unit": "number",
+      "value": 9.80548469387755
+    },
+    {
+      "key": "market-value",
+      "group": "economy",
+      "unit": "silver"
+    }
+  ],
+  "suggestions": [
+    {
+      "field": "/tools/0/power",
+      "stat": "swing_damage",
+      "value": 23.534499435434483,
+      "source": "derived",
+      "band": {
+        "p10": 20.320448375514495,
+        "median": 22.669649102285288,
+        "p90": 25.053310334821788,
+        "p50": 1.1509303357904133,
+        "p80": 1.2635073393595546,
+        "shift": 0.0
+      },
+      "level": "role-tier",
+      "predictor": "anchor",
+      "n": 4,
+      "locked": false
+    },
+    {
+      "field": "/tools/1/power",
+      "stat": "swing_damage",
+      "value": 23.534499435434483,
+      "source": "derived",
+      "band": {
+        "p10": 20.320448375514495,
+        "median": 22.669649102285288,
+        "p90": 25.053310334821788,
+        "p50": 1.1509303357904133,
+        "p80": 1.2635073393595546,
+        "shift": 0.0
+      },
+      "level": "role-tier",
+      "predictor": "anchor",
+      "n": 4,
+      "locked": false
+    },
+    {
+      "field": "/tools/2/power",
+      "stat": "swing_damage",
+      "value": 23.534499435434483,
+      "source": "derived",
+      "band": {
+        "p10": 20.320448375514495,
+        "median": 22.669649102285288,
+        "p90": 25.053310334821788,
+        "p50": 1.1509303357904133,
+        "p80": 1.2635073393595546,
+        "shift": 0.0
+      },
+      "level": "role-tier",
+      "predictor": "anchor",
+      "n": 4,
+      "locked": false
+    },
+    {
+      "field": "/tools/0/cooldownTime",
+      "stat": "cooldown",
+      "value": 2.400136267626749,
+      "source": "anchor",
+      "band": {
+        "p10": 1.705623960066556,
+        "median": 1.9553799621386643,
+        "p90": 2.3486566487955907,
+        "p50": 1.1556472881789197,
+        "p80": 1.2379590681227037,
+        "shift": 0.0
+      },
+      "level": "role-tier",
+      "predictor": "anchor",
+      "n": 4,
+      "locked": false
+    },
+    {
+      "field": "/tools/1/cooldownTime",
+      "stat": "cooldown",
+      "value": 2.400136267626749,
+      "source": "anchor",
+      "band": {
+        "p10": 1.705623960066556,
+        "median": 1.9553799621386643,
+        "p90": 2.3486566487955907,
+        "p50": 1.1556472881789197,
+        "p80": 1.2379590681227037,
+        "shift": 0.0
+      },
+      "level": "role-tier",
+      "predictor": "anchor",
+      "n": 4,
+      "locked": false
+    },
+    {
+      "field": "/tools/2/cooldownTime",
+      "stat": "cooldown",
+      "value": 2.400136267626749,
+      "source": "anchor",
+      "band": {
+        "p10": 1.705623960066556,
+        "median": 1.9553799621386643,
+        "p90": 2.3486566487955907,
+        "p50": 1.1556472881789197,
+        "p80": 1.2379590681227037,
+        "shift": 0.0
+      },
+      "level": "role-tier",
+      "predictor": "anchor",
+      "n": 4,
+      "locked": false
+    },
+    {
+      "field": "/mass",
+      "stat": "mass",
+      "value": 2.0,
+      "source": "quantile",
+      "band": {
+        "p10": 2.0,
+        "median": 2.0,
+        "p90": 2.0,
+        "p50": 1.2726869667184948,
+        "p80": 1.8578340908059403,
+        "shift": 0.0
+      },
+      "level": "role-tier",
+      "predictor": "quantile",
+      "n": 4,
+      "locked": false
+    },
+    {
+      "field": "/workToMake",
+      "stat": "work",
+      "level": "role-tier",
+      "predictor": "anchor",
+      "n": 4,
+      "locked": false
+    }
+  ],
+  "estimate": {
+    "classLabel": "based on 4 items of role blade at Ultra",
+    "level": "role-tier",
+    "classN": 4,
+    "strength": 9.805484693877553,
+    "strengthPercentile": 0.25,
+    "anchors": [
+      {
+        "id": "MeleeWeapon_PlasmaSword",
+        "label": "plasmasword",
+        "strength": 9.80548469387755,
+        "tier": 4,
+        "role": "blade",
+        "stats": {
+          "ap": 0.29605263157894735,
+          "cooldown": 2.515789473684211,
+          "dps": 7.845188284518827,
+          "fight_dps": 7.653061224489796,
+          "market_value": 2000.0,
+          "mass": 2.0,
+          "swing_damage": 19.736842105263158,
+          "tools": 3.0,
+          "work": 1.0
+        }
+      },
+      {
+        "id": "MeleeWeapon_PlasmaSwordBladelink",
+        "label": "persona plasmasword",
+        "strength": 13.895230263157895,
+        "tier": 4,
+        "role": "blade",
+        "stats": {
+          "ap": 0.3252329450915141,
+          "cooldown": 1.9520798668885193,
+          "dps": 11.107228094101602,
+          "fight_dps": 10.657894736842106,
+          "market_value": 3000.0,
+          "mass": 2.0,
+          "swing_damage": 21.682196339434277,
+          "tools": 3.0,
+          "work": 1.0
+        }
+      },
+      {
+        "id": "MeleeWeapon_LongSword",
+        "label": "longsword",
+        "strength": 10.287244897959184,
+        "tier": 1,
+        "role": "blade",
+        "stats": {
+          "ap": 0.3300658472344161,
+          "cooldown": 2.557330992098332,
+          "dps": 8.604435594616863,
+          "fight_dps": 7.959183673469387,
+          "market_value": 264.8,
+          "mass": 2.0,
+          "swing_damage": 22.004389815627743,
+          "tools": 3.0,
+          "work": 18000.0
+        }
+      }
+    ],
+    "notes": []
+  },
+  "diagnostics": [
+    {
+      "code": "design.accepted-missing",
+      "severity": "info",
+      "message": "work to make is not set; the definition this one was cloned from does not set it either",
+      "field": "/workToMake",
+      "args": {
+        "label": "work to make"
+      }
+    },
+    {
+      "code": "design.accepted-missing",
+      "severity": "info",
+      "message": "stuff categories and count, or a cost list is not set; the definition this one was cloned from does not set it either",
+      "field": "/stuff",
+      "args": {
+        "label": "stuff categories and count, or a cost list"
+      }
+    },
+    {
+      "code": "design.pool-thin",
+      "severity": "info",
+      "message": "only 4 reference items stand behind the bands",
+      "field": "",
+      "args": {
+        "count": "4"
+      }
+    }
+  ]
+}

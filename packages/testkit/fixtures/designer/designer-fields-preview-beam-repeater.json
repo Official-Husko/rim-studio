@@ -1,0 +1,399 @@
+{
+  "readouts": [
+    {
+      "key": "cycle-time",
+      "group": "ranged",
+      "unit": "seconds",
+      "value": 11.833333333333332,
+      "steps": [
+        {
+          "label": "warmup",
+          "value": 4.0
+        },
+        {
+          "label": "warmup plus cooldown",
+          "value": 7.0
+        },
+        {
+          "label": "burst gaps",
+          "value": 4.833333333333333
+        },
+        {
+          "label": "cycle time",
+          "value": 11.833333333333332
+        }
+      ]
+    },
+    {
+      "key": "dps",
+      "group": "ranged",
+      "unit": "damage-per-second",
+      "value": 12.67605633802817,
+      "steps": [
+        {
+          "label": "damage per burst",
+          "value": 150.0
+        },
+        {
+          "label": "cycle time",
+          "value": 11.833333333333332
+        },
+        {
+          "label": "damage per second",
+          "value": 12.67605633802817
+        }
+      ]
+    },
+    {
+      "key": "hit-dps-12",
+      "group": "ranged",
+      "unit": "damage-per-second",
+      "value": 9.126760563380282
+    },
+    {
+      "key": "hit-dps-25",
+      "group": "ranged",
+      "unit": "damage-per-second",
+      "value": 8.23943661971831
+    },
+    {
+      "key": "implied-ap",
+      "group": "ranged",
+      "unit": "fraction",
+      "value": 0.5
+    },
+    {
+      "key": "strength-index",
+      "group": "ranged",
+      "unit": "number",
+      "value": 5.851393187316412
+    },
+    {
+      "key": "market-value",
+      "group": "economy",
+      "unit": "silver",
+      "value": 1235.0,
+      "steps": [
+        {
+          "label": "ingredients",
+          "value": 1017.0
+        },
+        {
+          "label": "stuff",
+          "value": 0.0
+        },
+        {
+          "label": "work",
+          "value": 216.0
+        },
+        {
+          "label": "base value",
+          "value": 1233.0
+        }
+      ]
+    }
+  ],
+  "suggestions": [
+    {
+      "field": "/ranged/damage",
+      "stat": "damage",
+      "value": 10.0,
+      "source": "class-median",
+      "band": {
+        "p10": 6.0,
+        "median": 10.0,
+        "p90": 11.6,
+        "p50": 1.2,
+        "p80": 1.737460147147469,
+        "shift": 0.0
+      },
+      "level": "role",
+      "predictor": "median",
+      "n": 3,
+      "locked": false
+    },
+    {
+      "field": "/ranged/warmup",
+      "stat": "warmup",
+      "value": 2.5,
+      "source": "class-median",
+      "band": {
+        "p10": 1.94,
+        "median": 2.5,
+        "p90": 3.7,
+        "p50": 1.5430334996209192,
+        "p80": 2.8380793119255063,
+        "shift": 0.0
+      },
+      "level": "role",
+      "predictor": "median",
+      "n": 3,
+      "locked": false
+    },
+    {
+      "field": "/ranged/cooldown",
+      "stat": "cooldown",
+      "value": 1.6,
+      "source": "class-median",
+      "band": {
+        "p10": 1.52,
+        "median": 1.6,
+        "p90": 2.7199999999999998,
+        "p50": 1.098385912556796,
+        "p80": 1.6,
+        "shift": 0.0
+      },
+      "level": "role",
+      "predictor": "median",
+      "n": 3,
+      "locked": false
+    },
+    {
+      "field": "/ranged/range",
+      "stat": "range",
+      "value": 24.292457840642548,
+      "source": "anchor",
+      "band": {
+        "p10": 22.7,
+        "median": 25.9,
+        "p90": 29.9,
+        "p50": 1.1450812425488122,
+        "p80": 1.300202727576831,
+        "shift": 0.0
+      },
+      "level": "role",
+      "predictor": "anchor",
+      "n": 3,
+      "locked": false
+    },
+    {
+      "field": "/ranged/burstCount",
+      "stat": "burst",
+      "value": 25.0,
+      "source": "class-median",
+      "band": {
+        "p10": 9.8,
+        "median": 25.0,
+        "p90": 29.0,
+        "p50": 1.0,
+        "p80": 1.1486983549970358,
+        "shift": 0.0
+      },
+      "level": "role",
+      "predictor": "median",
+      "n": 3,
+      "locked": false
+    },
+    {
+      "field": "/ranged/ticksBetweenBurstShots",
+      "stat": "ticks_between",
+      "value": 7.0,
+      "source": "class-median",
+      "band": {
+        "p10": 5.4,
+        "median": 7.0,
+        "p90": 9.4,
+        "p50": 1.0,
+        "p80": 1.218259337378822,
+        "shift": 0.0
+      },
+      "level": "role",
+      "predictor": "median",
+      "n": 3,
+      "locked": false
+    },
+    {
+      "field": "/ranged/accuracy/touch",
+      "stat": "touch",
+      "value": 0.4544044011104347,
+      "source": "anchor",
+      "band": {
+        "p10": 0.24000000000000002,
+        "median": 0.4,
+        "p90": 0.6000000000000001,
+        "p50": 1.0736643949045037,
+        "p80": 1.2514106874159494,
+        "shift": 0.0
+      },
+      "level": "role",
+      "predictor": "anchor",
+      "n": 3,
+      "locked": false
+    },
+    {
+      "field": "/ranged/accuracy/short",
+      "stat": "short",
+      "value": 0.5205801063235357,
+      "source": "anchor",
+      "band": {
+        "p10": 0.296,
+        "median": 0.48,
+        "p90": 0.6719999999999999,
+        "p50": 1.0998947210604504,
+        "p80": 1.1317255026744075,
+        "shift": 0.0
+      },
+      "level": "role",
+      "predictor": "anchor",
+      "n": 3,
+      "locked": false
+    },
+    {
+      "field": "/ranged/accuracy/medium",
+      "stat": "medium",
+      "value": 0.4839645715671665,
+      "source": "anchor",
+      "band": {
+        "p10": 0.27,
+        "median": 0.35,
+        "p90": 0.5900000000000001,
+        "p50": 1.182757860410578,
+        "p80": 1.3855415290098398,
+        "shift": 0.0
+      },
+      "level": "role",
+      "predictor": "anchor",
+      "n": 3,
+      "locked": false
+    },
+    {
+      "field": "/ranged/accuracy/long",
+      "stat": "long",
+      "value": 0.4135175296736483,
+      "source": "anchor",
+      "band": {
+        "p10": 0.196,
+        "median": 0.26,
+        "p90": 0.532,
+        "p50": 1.2253997305427997,
+        "p80": 1.4068387757126097,
+        "shift": 0.0
+      },
+      "level": "role",
+      "predictor": "anchor",
+      "n": 3,
+      "locked": false
+    },
+    {
+      "field": "/mass",
+      "stat": "mass",
+      "value": 9.85891516560191,
+      "source": "anchor",
+      "band": {
+        "p10": 8.8,
+        "median": 10.0,
+        "p90": 10.0,
+        "p50": 1.1428882390111295,
+        "p80": 1.6388355873416256,
+        "shift": 0.0
+      },
+      "level": "role",
+      "predictor": "anchor",
+      "n": 3,
+      "locked": false
+    },
+    {
+      "field": "/workToMake",
+      "stat": "work",
+      "level": "role",
+      "predictor": "quantile",
+      "n": 3,
+      "locked": false
+    }
+  ],
+  "estimate": {
+    "classLabel": "based on 3 items of role heavy (widened from role and tier: fewer than 3 items qualify)",
+    "level": "role",
+    "classN": 3,
+    "strength": 5.851393187316412,
+    "strengthPercentile": 0.5,
+    "anchors": [
+      {
+        "id": "Gun_BeamRepeater",
+        "label": "beam repeater",
+        "strength": 5.851393187316412,
+        "tier": 3,
+        "role": "heavy",
+        "stats": {
+          "ap": 0.5,
+          "burst": 30.0,
+          "cooldown": 3.0,
+          "damage": 5.0,
+          "dps": 12.67605633802817,
+          "long": 0.6,
+          "market_value": 1233.0,
+          "mass": 10.0,
+          "medium": 0.65,
+          "range": 21.9,
+          "short": 0.72,
+          "ticks_between": 10.0,
+          "touch": 0.65,
+          "warmup": 4.0,
+          "work": 60000.0
+        }
+      },
+      {
+        "id": "Gun_Minigun",
+        "label": "minigun",
+        "strength": 6.408034417244697,
+        "tier": 2,
+        "role": "heavy",
+        "stats": {
+          "ap": 0.15,
+          "burst": 25.0,
+          "cooldown": 1.5,
+          "damage": 10.0,
+          "dps": 41.666666666666664,
+          "long": 0.18,
+          "market_value": 1160.0,
+          "mass": 10.0,
+          "medium": 0.25,
+          "range": 30.9,
+          "short": 0.25,
+          "speed": 70.0,
+          "ticks_between": 5.0,
+          "touch": 0.2,
+          "warmup": 2.5,
+          "work": 60000.0
+        }
+      },
+      {
+        "id": "Gun_LMG",
+        "label": "LMG",
+        "strength": 4.30109732816839,
+        "tier": 2,
+        "role": "heavy",
+        "stats": {
+          "ap": 0.18,
+          "burst": 6.0,
+          "cooldown": 1.6,
+          "damage": 12.0,
+          "dps": 18.07531380753138,
+          "long": 0.26,
+          "market_value": 424.9,
+          "mass": 8.5,
+          "medium": 0.35,
+          "range": 25.9,
+          "short": 0.48,
+          "speed": 46.0,
+          "ticks_between": 7.0,
+          "touch": 0.4,
+          "warmup": 1.8,
+          "work": 34000.0
+        }
+      }
+    ],
+    "notes": []
+  },
+  "diagnostics": [
+    {
+      "code": "design.pool-thin",
+      "severity": "info",
+      "message": "only 3 reference items stand behind the bands",
+      "field": "",
+      "args": {
+        "count": "3"
+      }
+    }
+  ]
+}

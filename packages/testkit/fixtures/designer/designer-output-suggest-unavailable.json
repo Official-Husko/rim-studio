@@ -1,0 +1,17 @@
+{
+  "kind": "ranged",
+  "defName": "Gun_OutRifle",
+  "available": false,
+  "reason": "no Combat Extended data is loaded",
+  "toggleOn": false,
+  "pool": 0,
+  "fields": [],
+  "choices": [],
+  "patchNumbers": [],
+  "asks": {
+    "items": []
+  },
+  "missing": [],
+  "stillMissingAfterAccept": [],
+  "notes": []
+}

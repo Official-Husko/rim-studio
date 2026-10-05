@@ -76,6 +76,16 @@ describe('NumberField', () => {
     expect(onChange).toHaveBeenLastCalledWith(20);
   });
 
+  it('does not send the typed number a second time when the field loses focus', () => {
+    const onChange = vi.fn();
+    render(<Harness start={5} onChange={onChange} />);
+    const input = screen.getByRole('spinbutton');
+    fireEvent.input(input, { target: { value: '7' } });
+    expect(onChange).toHaveBeenCalledTimes(1);
+    fireEvent.blur(input);
+    expect(onChange).toHaveBeenCalledTimes(1);
+  });
+
   it('reports an empty field as undefined', () => {
     const onChange = vi.fn();
     render(<Harness start={5} onChange={onChange} />);

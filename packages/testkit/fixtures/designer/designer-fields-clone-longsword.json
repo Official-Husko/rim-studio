@@ -1,0 +1,157 @@
+{
+  "entry": {
+    "id": "d-719383684d",
+    "defName": "TM_Sword",
+    "label": "fixture sword",
+    "kind": "melee",
+    "updatedAtMs": 1791187014137,
+    "draft": {
+      "schemaVersion": 2,
+      "kind": "melee",
+      "calibration": "anchored",
+      "spec": {
+        "kind": "melee",
+        "identity": {
+          "defName": "TM_Sword",
+          "label": "fixture sword",
+          "description": "The ancient weapon of kings, the longsword can be used for slashing or stabbing.",
+          "modPrefix": ""
+        },
+        "parent": {
+          "defName": "BaseMeleeWeapon_Sharp_Quality",
+          "inheritedStats": {
+            "Beauty": -3.0,
+            "DeteriorationRate": 2.0,
+            "Flammability": 1.0,
+            "MaxHitPoints": 100.0,
+            "SellPriceFactor": 0.2
+          }
+        },
+        "techLevel": "medieval",
+        "role": "blade",
+        "mass": {
+          "value": 2.0,
+          "source": "anchor"
+        },
+        "workToMake": {
+          "value": 18000.0,
+          "source": "anchor"
+        },
+        "stuff": {
+          "categories": [
+            "Metallic",
+            "Woody"
+          ],
+          "count": {
+            "value": 100.0,
+            "source": "anchor"
+          }
+        },
+        "researchPrerequisite": "LongBlades",
+        "weaponTags": [
+          "MedievalMeleeAdvanced",
+          "LongSword"
+        ],
+        "texturePath": "Things/Item/Equipment/WeaponMelee/LongSword",
+        "graphicClass": "Graphic_Single",
+        "tools": [
+          {
+            "label": "handle",
+            "capacities": [
+              "Blunt"
+            ],
+            "power": {
+              "value": 9.0,
+              "source": "anchor"
+            },
+            "cooldownTime": {
+              "value": 2.0,
+              "source": "anchor"
+            }
+          },
+          {
+            "label": "point",
+            "capacities": [
+              "Stab"
+            ],
+            "power": {
+              "value": 23.0,
+              "source": "anchor"
+            },
+            "cooldownTime": {
+              "value": 2.6,
+              "source": "anchor"
+            }
+          },
+          {
+            "label": "edge",
+            "capacities": [
+              "Cut"
+            ],
+            "power": {
+              "value": 23.0,
+              "source": "anchor"
+            },
+            "cooldownTime": {
+              "value": 2.6,
+              "source": "anchor"
+            }
+          }
+        ],
+        "previewQuality": "normal",
+        "recipe": {
+          "skillRequirements": {
+            "Crafting": 5
+          },
+          "displayPriority": 420.0
+        },
+        "extraFields": [
+          {
+            "tag": "possessionCount",
+            "attrs": [],
+            "children": [
+              "1"
+            ]
+          },
+          {
+            "tag": "thingSetMakerTags",
+            "attrs": [],
+            "children": [
+              {
+                "tag": "li",
+                "attrs": [],
+                "children": [
+                  "RewardStandardQualitySuper"
+                ]
+              }
+            ]
+          },
+          {
+            "tag": "relicChance",
+            "attrs": [],
+            "children": [
+              "2"
+            ]
+          },
+          {
+            "tag": "equippedAngleOffset",
+            "attrs": [],
+            "children": [
+              "-65"
+            ]
+          }
+        ]
+      },
+      "anchors": [
+        {
+          "defName": "MeleeWeapon_LongSword",
+          "label": "longsword"
+        }
+      ],
+      "clonedFrom": "MeleeWeapon_LongSword"
+    }
+  },
+  "notes": [
+    "fields the designer does not model are carried as written: possessionCount, thingSetMakerTags, relicChance, equippedAngleOffset"
+  ]
+}

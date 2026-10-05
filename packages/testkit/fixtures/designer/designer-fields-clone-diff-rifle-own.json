@@ -1,0 +1,70 @@
+{
+  "source": "Gun_BoltActionRifle",
+  "sourceLabel": "bolt-action rifle",
+  "changes": [
+    {
+      "field": "/ranged/damage",
+      "label": "ranged damage",
+      "old": 18.0,
+      "new": 22.0
+    }
+  ],
+  "readouts": [
+    {
+      "key": "cycle-time",
+      "group": "ranged",
+      "unit": "seconds",
+      "old": 3.2,
+      "new": 3.2,
+      "delta": 0.0
+    },
+    {
+      "key": "dps",
+      "group": "ranged",
+      "unit": "damage-per-second",
+      "old": 5.625,
+      "new": 6.875,
+      "delta": 1.25
+    },
+    {
+      "key": "hit-dps-12",
+      "group": "ranged",
+      "unit": "damage-per-second",
+      "old": 4.5,
+      "new": 5.5,
+      "delta": 1.0
+    },
+    {
+      "key": "hit-dps-25",
+      "group": "ranged",
+      "unit": "damage-per-second",
+      "old": 5.0625,
+      "new": 6.1875,
+      "delta": 1.125
+    },
+    {
+      "key": "implied-ap",
+      "group": "ranged",
+      "unit": "fraction",
+      "old": 0.27,
+      "new": 0.32999999999999996,
+      "delta": 0.05999999999999994
+    },
+    {
+      "key": "strength-index",
+      "group": "ranged",
+      "unit": "number",
+      "old": 3.5143094950018505,
+      "new": 4.508255614800353,
+      "delta": 0.9939461197985024
+    },
+    {
+      "key": "market-value",
+      "group": "economy",
+      "unit": "silver",
+      "old": 255.0,
+      "new": 255.0,
+      "delta": 0.0
+    }
+  ]
+}

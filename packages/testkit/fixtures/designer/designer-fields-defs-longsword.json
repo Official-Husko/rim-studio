@@ -1,0 +1,717 @@
+{
+  "defType": "Verse.ThingDef",
+  "defName": "MeleeWeapon_LongSword",
+  "modId": "Ludeon.RimWorld",
+  "file": "Defs/ThingDefs_Misc/Weapons/MeleeMedieval.xml",
+  "tree": {
+    "tag": "ThingDef",
+    "attrs": [
+      [
+        "ParentName",
+        "BaseMeleeWeapon_Sharp_Quality"
+      ]
+    ],
+    "children": [
+      {
+        "tag": "thingClass",
+        "attrs": [],
+        "children": [
+          "ThingWithComps"
+        ]
+      },
+      {
+        "tag": "category",
+        "attrs": [],
+        "children": [
+          "Item"
+        ]
+      },
+      {
+        "tag": "drawerType",
+        "attrs": [],
+        "children": [
+          "MapMeshOnly"
+        ]
+      },
+      {
+        "tag": "drawGUIOverlay",
+        "attrs": [],
+        "children": [
+          "true"
+        ]
+      },
+      {
+        "tag": "altitudeLayer",
+        "attrs": [],
+        "children": [
+          "Item"
+        ]
+      },
+      {
+        "tag": "alwaysHaulable",
+        "attrs": [],
+        "children": [
+          "true"
+        ]
+      },
+      {
+        "tag": "tickerType",
+        "attrs": [],
+        "children": [
+          "Never"
+        ]
+      },
+      {
+        "tag": "equipmentType",
+        "attrs": [],
+        "children": [
+          "Primary"
+        ]
+      },
+      {
+        "tag": "useHitPoints",
+        "attrs": [],
+        "children": [
+          "true"
+        ]
+      },
+      {
+        "tag": "pathCost",
+        "attrs": [],
+        "children": [
+          "14"
+        ]
+      },
+      {
+        "tag": "selectable",
+        "attrs": [],
+        "children": [
+          "true"
+        ]
+      },
+      {
+        "tag": "rotatable",
+        "attrs": [],
+        "children": [
+          "false"
+        ]
+      },
+      {
+        "tag": "statBases",
+        "attrs": [],
+        "children": [
+          {
+            "tag": "MaxHitPoints",
+            "attrs": [],
+            "children": [
+              "100"
+            ]
+          },
+          {
+            "tag": "Flammability",
+            "attrs": [],
+            "children": [
+              "1.0"
+            ]
+          },
+          {
+            "tag": "DeteriorationRate",
+            "attrs": [],
+            "children": [
+              "2"
+            ]
+          },
+          {
+            "tag": "Beauty",
+            "attrs": [],
+            "children": [
+              "-3"
+            ]
+          },
+          {
+            "tag": "SellPriceFactor",
+            "attrs": [],
+            "children": [
+              "0.20"
+            ]
+          },
+          {
+            "tag": "WorkToMake",
+            "attrs": [],
+            "children": [
+              "18000"
+            ]
+          },
+          {
+            "tag": "Mass",
+            "attrs": [],
+            "children": [
+              "2"
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "comps",
+        "attrs": [],
+        "children": [
+          {
+            "tag": "li",
+            "attrs": [
+              [
+                "Class",
+                "CompProperties_Forbiddable"
+              ]
+            ],
+            "children": []
+          },
+          {
+            "tag": "li",
+            "attrs": [],
+            "children": [
+              {
+                "tag": "compClass",
+                "attrs": [],
+                "children": [
+                  "CompEquippable"
+                ]
+              }
+            ]
+          },
+          {
+            "tag": "li",
+            "attrs": [
+              [
+                "Class",
+                "CompProperties_Styleable"
+              ]
+            ],
+            "children": []
+          },
+          {
+            "tag": "li",
+            "attrs": [],
+            "children": [
+              {
+                "tag": "compClass",
+                "attrs": [],
+                "children": [
+                  "CompQuality"
+                ]
+              }
+            ]
+          },
+          {
+            "tag": "li",
+            "attrs": [
+              [
+                "Class",
+                "CompProperties_Art"
+              ]
+            ],
+            "children": [
+              {
+                "tag": "nameMaker",
+                "attrs": [],
+                "children": [
+                  "NamerArtWeaponMelee"
+                ]
+              },
+              {
+                "tag": "descriptionMaker",
+                "attrs": [],
+                "children": [
+                  "ArtDescription_WeaponMelee"
+                ]
+              },
+              {
+                "tag": "minQualityForArtistic",
+                "attrs": [],
+                "children": [
+                  "Excellent"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "graphicData",
+        "attrs": [],
+        "children": [
+          {
+            "tag": "onGroundRandomRotateAngle",
+            "attrs": [],
+            "children": [
+              "35"
+            ]
+          },
+          {
+            "tag": "texPath",
+            "attrs": [],
+            "children": [
+              "Things/Item/Equipment/WeaponMelee/LongSword"
+            ]
+          },
+          {
+            "tag": "graphicClass",
+            "attrs": [],
+            "children": [
+              "Graphic_Single"
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "allowedArchonexusCount",
+        "attrs": [],
+        "children": [
+          "1"
+        ]
+      },
+      {
+        "tag": "techLevel",
+        "attrs": [],
+        "children": [
+          "Medieval"
+        ]
+      },
+      {
+        "tag": "smeltable",
+        "attrs": [],
+        "children": [
+          "true"
+        ]
+      },
+      {
+        "tag": "burnableByRecipe",
+        "attrs": [],
+        "children": [
+          "true"
+        ]
+      },
+      {
+        "tag": "thingCategories",
+        "attrs": [],
+        "children": [
+          {
+            "tag": "li",
+            "attrs": [],
+            "children": [
+              "WeaponsMelee"
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "weaponClasses",
+        "attrs": [],
+        "children": [
+          {
+            "tag": "li",
+            "attrs": [],
+            "children": [
+              "Melee"
+            ]
+          },
+          {
+            "tag": "li",
+            "attrs": [],
+            "children": [
+              "MeleePiercer"
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "relicChance",
+        "attrs": [],
+        "children": [
+          "2"
+        ]
+      },
+      {
+        "tag": "recipeMaker",
+        "attrs": [],
+        "children": [
+          {
+            "tag": "workSpeedStat",
+            "attrs": [],
+            "children": [
+              "GeneralLaborSpeed"
+            ]
+          },
+          {
+            "tag": "workSkill",
+            "attrs": [],
+            "children": [
+              "Crafting"
+            ]
+          },
+          {
+            "tag": "effectWorking",
+            "attrs": [],
+            "children": [
+              "Smith"
+            ]
+          },
+          {
+            "tag": "soundWorking",
+            "attrs": [],
+            "children": [
+              "Recipe_Smith"
+            ]
+          },
+          {
+            "tag": "recipeUsers",
+            "attrs": [],
+            "children": [
+              {
+                "tag": "li",
+                "attrs": [],
+                "children": [
+                  "ElectricSmithy"
+                ]
+              },
+              {
+                "tag": "li",
+                "attrs": [],
+                "children": [
+                  "FueledSmithy"
+                ]
+              }
+            ]
+          },
+          {
+            "tag": "unfinishedThingDef",
+            "attrs": [],
+            "children": [
+              "UnfinishedWeapon"
+            ]
+          },
+          {
+            "tag": "defaultIngredientFilter",
+            "attrs": [],
+            "children": [
+              {
+                "tag": "categories",
+                "attrs": [],
+                "children": [
+                  {
+                    "tag": "li",
+                    "attrs": [],
+                    "children": [
+                      "Root"
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "disallowedThingDefs",
+                "attrs": [],
+                "children": [
+                  {
+                    "tag": "li",
+                    "attrs": [],
+                    "children": [
+                      "Silver"
+                    ]
+                  },
+                  {
+                    "tag": "li",
+                    "attrs": [],
+                    "children": [
+                      "Gold"
+                    ]
+                  },
+                  {
+                    "tag": "li",
+                    "attrs": [],
+                    "children": [
+                      "WoodLog"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "tag": "researchPrerequisite",
+            "attrs": [],
+            "children": [
+              "LongBlades"
+            ]
+          },
+          {
+            "tag": "skillRequirements",
+            "attrs": [],
+            "children": [
+              {
+                "tag": "Crafting",
+                "attrs": [],
+                "children": [
+                  "5"
+                ]
+              }
+            ]
+          },
+          {
+            "tag": "displayPriority",
+            "attrs": [],
+            "children": [
+              "420"
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "inspectorTabs",
+        "attrs": [],
+        "children": [
+          {
+            "tag": "li",
+            "attrs": [],
+            "children": [
+              "ITab_Art"
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "tradeTags",
+        "attrs": [],
+        "children": [
+          {
+            "tag": "li",
+            "attrs": [],
+            "children": [
+              "WeaponMelee"
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "defName",
+        "attrs": [],
+        "children": [
+          "MeleeWeapon_LongSword"
+        ]
+      },
+      {
+        "tag": "label",
+        "attrs": [],
+        "children": [
+          "longsword"
+        ]
+      },
+      {
+        "tag": "description",
+        "attrs": [],
+        "children": [
+          "The ancient weapon of kings, the longsword can be used for slashing or stabbing."
+        ]
+      },
+      {
+        "tag": "possessionCount",
+        "attrs": [],
+        "children": [
+          "1"
+        ]
+      },
+      {
+        "tag": "weaponTags",
+        "attrs": [],
+        "children": [
+          {
+            "tag": "li",
+            "attrs": [],
+            "children": [
+              "MedievalMeleeAdvanced"
+            ]
+          },
+          {
+            "tag": "li",
+            "attrs": [],
+            "children": [
+              "LongSword"
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "costStuffCount",
+        "attrs": [],
+        "children": [
+          "100"
+        ]
+      },
+      {
+        "tag": "thingSetMakerTags",
+        "attrs": [],
+        "children": [
+          {
+            "tag": "li",
+            "attrs": [],
+            "children": [
+              "RewardStandardQualitySuper"
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "equippedAngleOffset",
+        "attrs": [],
+        "children": [
+          "-65"
+        ]
+      },
+      {
+        "tag": "stuffCategories",
+        "attrs": [],
+        "children": [
+          {
+            "tag": "li",
+            "attrs": [],
+            "children": [
+              "Metallic"
+            ]
+          },
+          {
+            "tag": "li",
+            "attrs": [],
+            "children": [
+              "Woody"
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "tools",
+        "attrs": [],
+        "children": [
+          {
+            "tag": "li",
+            "attrs": [],
+            "children": [
+              {
+                "tag": "label",
+                "attrs": [],
+                "children": [
+                  "handle"
+                ]
+              },
+              {
+                "tag": "capacities",
+                "attrs": [],
+                "children": [
+                  {
+                    "tag": "li",
+                    "attrs": [],
+                    "children": [
+                      "Blunt"
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "power",
+                "attrs": [],
+                "children": [
+                  "9"
+                ]
+              },
+              {
+                "tag": "cooldownTime",
+                "attrs": [],
+                "children": [
+                  "2"
+                ]
+              }
+            ]
+          },
+          {
+            "tag": "li",
+            "attrs": [],
+            "children": [
+              {
+                "tag": "label",
+                "attrs": [],
+                "children": [
+                  "point"
+                ]
+              },
+              {
+                "tag": "capacities",
+                "attrs": [],
+                "children": [
+                  {
+                    "tag": "li",
+                    "attrs": [],
+                    "children": [
+                      "Stab"
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "power",
+                "attrs": [],
+                "children": [
+                  "23"
+                ]
+              },
+              {
+                "tag": "cooldownTime",
+                "attrs": [],
+                "children": [
+                  "2.6"
+                ]
+              }
+            ]
+          },
+          {
+            "tag": "li",
+            "attrs": [],
+            "children": [
+              {
+                "tag": "label",
+                "attrs": [],
+                "children": [
+                  "edge"
+                ]
+              },
+              {
+                "tag": "capacities",
+                "attrs": [],
+                "children": [
+                  {
+                    "tag": "li",
+                    "attrs": [],
+                    "children": [
+                      "Cut"
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "power",
+                "attrs": [],
+                "children": [
+                  "23"
+                ]
+              },
+              {
+                "tag": "cooldownTime",
+                "attrs": [],
+                "children": [
+                  "2.6"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "patchEvents": []
+}

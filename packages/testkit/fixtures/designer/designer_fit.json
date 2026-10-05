@@ -1,0 +1,272 @@
+{
+  "perStat": [
+    {
+      "stat": "ap",
+      "value": 0.32999999999999996,
+      "predicted": 0.15749999999999997,
+      "p50": {
+        "low": 0.10499999999999998,
+        "high": 0.23624999999999996
+      },
+      "p80": {
+        "low": 0.06299999999999999,
+        "high": 0.39374999999999993
+      },
+      "rank": {
+        "below": 11,
+        "equal": 0,
+        "total": 12
+      },
+      "level": "plausible",
+      "nearestReference": 0.375,
+      "defaultBand": true
+    },
+    {
+      "stat": "cooldown",
+      "value": 1.5,
+      "predicted": 1.5,
+      "p50": {
+        "low": 1,
+        "high": 2.25
+      },
+      "p80": {
+        "low": 0.6,
+        "high": 3.75
+      },
+      "rank": {
+        "below": 4,
+        "equal": 3,
+        "total": 12
+      },
+      "level": "typical",
+      "nearestReference": 1.5,
+      "defaultBand": true
+    },
+    {
+      "stat": "damage",
+      "value": 22,
+      "predicted": 12,
+      "p50": {
+        "low": 8,
+        "high": 18
+      },
+      "p80": {
+        "low": 4.8,
+        "high": 30
+      },
+      "rank": {
+        "below": 11,
+        "equal": 0,
+        "total": 12
+      },
+      "level": "plausible",
+      "nearestReference": 25,
+      "defaultBand": true
+    },
+    {
+      "stat": "dps",
+      "value": 6.875,
+      "predicted": 5.32750559988473,
+      "p50": {
+        "low": 3.5516703999231534,
+        "high": 7.991258399827094
+      },
+      "p80": {
+        "low": 2.131002239953892,
+        "high": 13.318763999711825
+      },
+      "rank": {
+        "below": 3,
+        "equal": 0,
+        "total": 12
+      },
+      "level": "typical",
+      "nearestReference": 6.31578947368421,
+      "defaultBand": true
+    },
+    {
+      "stat": "long",
+      "value": 0.8,
+      "predicted": 0.8477765256973674,
+      "p50": {
+        "low": 0.5651843504649116,
+        "high": 1.271664788546051
+      },
+      "p80": {
+        "low": 0.33911061027894696,
+        "high": 2.1194413142434185
+      },
+      "rank": {
+        "below": 10,
+        "equal": 1,
+        "total": 12
+      },
+      "level": "typical",
+      "nearestReference": 0.8,
+      "defaultBand": true
+    },
+    {
+      "stat": "mass",
+      "value": 3.5,
+      "predicted": 3.744275900009049,
+      "p50": {
+        "low": 2.496183933339366,
+        "high": 5.616413850013574
+      },
+      "p80": {
+        "low": 1.4977103600036197,
+        "high": 9.360689750022622
+      },
+      "rank": {
+        "below": 4,
+        "equal": 4,
+        "total": 12
+      },
+      "level": "typical",
+      "nearestReference": 3.5,
+      "defaultBand": true
+    },
+    {
+      "stat": "medium",
+      "value": 0.9,
+      "predicted": 0.8905665006812421,
+      "p50": {
+        "low": 0.5937110004541614,
+        "high": 1.3358497510218632
+      },
+      "p80": {
+        "low": 0.35622660027249686,
+        "high": 2.2264162517031054
+      },
+      "rank": {
+        "below": 11,
+        "equal": 1,
+        "total": 12
+      },
+      "level": "typical",
+      "nearestReference": 0.9,
+      "defaultBand": true
+    },
+    {
+      "stat": "range",
+      "value": 36.9,
+      "predicted": 40.61393702166255,
+      "p50": {
+        "low": 27.0759580144417,
+        "high": 60.920905532493826
+      },
+      "p80": {
+        "low": 16.24557480866502,
+        "high": 101.53484255415637
+      },
+      "rank": {
+        "below": 10,
+        "equal": 1,
+        "total": 12
+      },
+      "level": "typical",
+      "nearestReference": 36.9,
+      "defaultBand": true
+    },
+    {
+      "stat": "short",
+      "value": 0.8,
+      "predicted": 0.7496677219591854,
+      "p50": {
+        "low": 0.4997784813061236,
+        "high": 1.124501582938778
+      },
+      "p80": {
+        "low": 0.2998670887836742,
+        "high": 1.8741693048979635
+      },
+      "rank": {
+        "below": 10,
+        "equal": 1,
+        "total": 12
+      },
+      "level": "typical",
+      "nearestReference": 0.8,
+      "defaultBand": true
+    },
+    {
+      "stat": "touch",
+      "value": 0.65,
+      "predicted": 0.571723646288102,
+      "p50": {
+        "low": 0.3811490975254013,
+        "high": 0.857585469432153
+      },
+      "p80": {
+        "low": 0.2286894585152408,
+        "high": 1.429309115720255
+      },
+      "rank": {
+        "below": 6,
+        "equal": 1,
+        "total": 12
+      },
+      "level": "typical",
+      "nearestReference": 0.65,
+      "defaultBand": true
+    },
+    {
+      "stat": "warmup",
+      "value": 1.7,
+      "predicted": 1.05,
+      "p50": {
+        "low": 0.7000000000000001,
+        "high": 1.5750000000000002
+      },
+      "p80": {
+        "low": 0.42000000000000004,
+        "high": 2.625
+      },
+      "rank": {
+        "below": 8,
+        "equal": 1,
+        "total": 12
+      },
+      "level": "plausible",
+      "nearestReference": 1.7,
+      "defaultBand": true
+    },
+    {
+      "stat": "work",
+      "value": 12000,
+      "predicted": 27500,
+      "p50": {
+        "low": 18333.333333333332,
+        "high": 41250
+      },
+      "p80": {
+        "low": 11000,
+        "high": 68750
+      },
+      "rank": {
+        "below": 3,
+        "equal": 2,
+        "total": 12
+      },
+      "level": "plausible",
+      "nearestReference": 12000,
+      "defaultBand": true
+    }
+  ],
+  "typicality": 90.04784120524495,
+  "summary": {
+    "scored": 12,
+    "typical": 8,
+    "plausible": 4,
+    "unusual": 0,
+    "shareInP80": 1
+  },
+  "notices": {
+    "poolSize": 20,
+    "classLabel": "based on 12 items at Industrial (widened from role and tier: fewer than 3 items qualify)",
+    "classN": 12,
+    "rough": true,
+    "optimistic": false
+  },
+  "unscored": []
+}

@@ -1,0 +1,310 @@
+{
+  "readouts": [
+    {
+      "key": "melee-swing-damage",
+      "group": "melee",
+      "unit": "number",
+      "value": 22.004389815627743
+    },
+    {
+      "key": "melee-swing-cooldown",
+      "group": "melee",
+      "unit": "seconds",
+      "value": 2.557330992098332
+    },
+    {
+      "key": "melee-dps",
+      "group": "melee",
+      "unit": "damage-per-second",
+      "value": 8.604435594616863
+    },
+    {
+      "key": "melee-ap",
+      "group": "melee",
+      "unit": "fraction",
+      "value": 0.3300658472344161
+    },
+    {
+      "key": "melee-fight-dps",
+      "group": "melee",
+      "unit": "damage-per-second",
+      "value": 7.959183673469387,
+      "steps": [
+        {
+          "label": "handle Blunt share",
+          "value": 0.25
+        },
+        {
+          "label": "point Stab share",
+          "value": 0.375
+        },
+        {
+          "label": "edge Cut share",
+          "value": 0.375
+        }
+      ]
+    },
+    {
+      "key": "strength-index",
+      "group": "melee",
+      "unit": "number",
+      "value": 10.287244897959184
+    },
+    {
+      "key": "market-value",
+      "group": "economy",
+      "unit": "silver",
+      "value": 265.0,
+      "steps": [
+        {
+          "label": "ingredients",
+          "value": 0.0
+        },
+        {
+          "label": "stuff",
+          "value": 200.0
+        },
+        {
+          "label": "work",
+          "value": 64.8
+        },
+        {
+          "label": "base value",
+          "value": 264.8
+        }
+      ]
+    }
+  ],
+  "suggestions": [
+    {
+      "field": "/tools/0/power",
+      "stat": "swing_damage",
+      "value": 24.438750355927485,
+      "source": "derived",
+      "band": {
+        "p10": 13.738180736038093,
+        "median": 15.043844856661046,
+        "p90": 20.612280823834404,
+        "p50": 1.1509303357904133,
+        "p80": 1.2635073393595546,
+        "shift": 0.0
+      },
+      "level": "role-tier",
+      "predictor": "anchor",
+      "n": 3,
+      "locked": false
+    },
+    {
+      "field": "/tools/1/power",
+      "stat": "swing_damage",
+      "value": 24.438750355927485,
+      "source": "derived",
+      "band": {
+        "p10": 13.738180736038093,
+        "median": 15.043844856661046,
+        "p90": 20.612280823834404,
+        "p50": 1.1509303357904133,
+        "p80": 1.2635073393595546,
+        "shift": 0.0
+      },
+      "level": "role-tier",
+      "predictor": "anchor",
+      "n": 3,
+      "locked": false
+    },
+    {
+      "field": "/tools/2/power",
+      "stat": "swing_damage",
+      "value": 24.438750355927485,
+      "source": "derived",
+      "band": {
+        "p10": 13.738180736038093,
+        "median": 15.043844856661046,
+        "p90": 20.612280823834404,
+        "p50": 1.1509303357904133,
+        "p80": 1.2635073393595546,
+        "shift": 0.0
+      },
+      "level": "role-tier",
+      "predictor": "anchor",
+      "n": 3,
+      "locked": false
+    },
+    {
+      "field": "/tools/0/cooldownTime",
+      "stat": "cooldown",
+      "value": 2.3756361006605102,
+      "source": "anchor",
+      "band": {
+        "p10": 2.0,
+        "median": 2.0,
+        "p90": 2.4458647936786653,
+        "p50": 1.1556472881789197,
+        "p80": 1.2379590681227037,
+        "shift": 0.0
+      },
+      "level": "role-tier",
+      "predictor": "anchor",
+      "n": 3,
+      "locked": false
+    },
+    {
+      "field": "/tools/1/cooldownTime",
+      "stat": "cooldown",
+      "value": 2.3756361006605102,
+      "source": "anchor",
+      "band": {
+        "p10": 2.0,
+        "median": 2.0,
+        "p90": 2.4458647936786653,
+        "p50": 1.1556472881789197,
+        "p80": 1.2379590681227037,
+        "shift": 0.0
+      },
+      "level": "role-tier",
+      "predictor": "anchor",
+      "n": 3,
+      "locked": false
+    },
+    {
+      "field": "/tools/2/cooldownTime",
+      "stat": "cooldown",
+      "value": 2.3756361006605102,
+      "source": "anchor",
+      "band": {
+        "p10": 2.0,
+        "median": 2.0,
+        "p90": 2.4458647936786653,
+        "p50": 1.1556472881789197,
+        "p80": 1.2379590681227037,
+        "shift": 0.0
+      },
+      "level": "role-tier",
+      "predictor": "anchor",
+      "n": 3,
+      "locked": false
+    },
+    {
+      "field": "/mass",
+      "stat": "mass",
+      "value": 1.587719298245614,
+      "source": "quantile",
+      "band": {
+        "p10": 0.98,
+        "median": 1.5,
+        "p90": 1.9,
+        "p50": 1.2726869667184948,
+        "p80": 1.8578340908059403,
+        "shift": 0.0
+      },
+      "level": "role-tier",
+      "predictor": "quantile",
+      "n": 3,
+      "locked": false
+    },
+    {
+      "field": "/workToMake",
+      "stat": "work",
+      "level": "role-tier",
+      "predictor": "anchor",
+      "n": 3,
+      "locked": false
+    }
+  ],
+  "estimate": {
+    "classLabel": "based on 3 items of role blade at Medieval",
+    "level": "role-tier",
+    "classN": 3,
+    "strength": 10.287244897959184,
+    "strengthPercentile": 0.8333333333333334,
+    "anchors": [
+      {
+        "id": "MeleeWeapon_LongSword",
+        "label": "longsword",
+        "strength": 10.287244897959184,
+        "tier": 1,
+        "role": "blade",
+        "stats": {
+          "ap": 0.3300658472344161,
+          "cooldown": 2.557330992098332,
+          "dps": 8.604435594616863,
+          "fight_dps": 7.959183673469387,
+          "market_value": 264.8,
+          "mass": 2.0,
+          "swing_damage": 22.004389815627743,
+          "tools": 3.0,
+          "work": 18000.0
+        }
+      },
+      {
+        "id": "MeleeWeapon_Gladius",
+        "label": "gladius",
+        "strength": 8.64796875,
+        "tier": 1,
+        "role": "blade",
+        "stats": {
+          "ap": 0.22565767284991567,
+          "cooldown": 2.0,
+          "dps": 7.521922428330523,
+          "fight_dps": 7.125,
+          "market_value": 143.2,
+          "mass": 0.85,
+          "swing_damage": 15.043844856661046,
+          "tools": 3.0,
+          "work": 12000.0
+        }
+      },
+      {
+        "id": "MeleeWeapon_Knife",
+        "label": "knife",
+        "strength": 8.505192307692308,
+        "tier": 0,
+        "role": "blade",
+        "stats": {
+          "ap": 0.17718274111675128,
+          "cooldown": 1.8172588832487309,
+          "dps": 6.500000000000001,
+          "fight_dps": 7.230769230769231,
+          "market_value": 66.48,
+          "mass": 0.5,
+          "swing_damage": 11.812182741116752,
+          "tools": 3.0,
+          "work": 1800.0
+        }
+      }
+    ],
+    "notes": []
+  },
+  "diagnostics": [
+    {
+      "code": "design.extra-field-conflict",
+      "severity": "error",
+      "message": "the carried field label in the definition is also written from an input of the designer; remove one of them",
+      "field": "/extraFields/4",
+      "args": {
+        "name": "label",
+        "place": "the definition"
+      }
+    },
+    {
+      "code": "design.extra-field-invalid",
+      "severity": "error",
+      "message": "the carried field notli in comps cannot be written: a list entry must be an li element",
+      "field": "/comps/0",
+      "args": {
+        "name": "notli",
+        "place": "comps",
+        "reason": "a list entry must be an li element"
+      }
+    },
+    {
+      "code": "design.pool-thin",
+      "severity": "info",
+      "message": "only 3 reference items stand behind the bands",
+      "field": "",
+      "args": {
+        "count": "3"
+      }
+    }
+  ]
+}

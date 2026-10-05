@@ -46,7 +46,7 @@ describe('AppShell', () => {
     const { container } = renderWithProviders(<AppShell />);
     await waitFor(() => expect(screen.getByRole('heading', { name: 'Setup' })).toBeTruthy());
     fireEvent.click(screen.getByRole('link', { name: /Weapons/ }));
-    await waitFor(() => expect(screen.getByRole('heading', { name: 'Weapons' })).toBeTruthy());
+    await waitFor(() => expect(screen.getByText('No draft open')).toBeTruthy());
     expect(route.value).toBe('weapons');
     expect(screen.getByRole('link', { name: /Weapons/ }).getAttribute('aria-current')).toBe('page');
     expect(container.querySelectorAll('main > div[hidden]').length).toBe(1);

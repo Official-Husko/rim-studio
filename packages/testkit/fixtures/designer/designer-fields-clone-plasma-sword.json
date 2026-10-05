@@ -1,0 +1,153 @@
+{
+  "entry": {
+    "id": "d-b7c59b5fee",
+    "defName": "TM_Plasma",
+    "label": "fixture plasma",
+    "kind": "melee",
+    "updatedAtMs": 1791187014167,
+    "draft": {
+      "schemaVersion": 2,
+      "kind": "melee",
+      "calibration": "anchored",
+      "spec": {
+        "kind": "melee",
+        "identity": {
+          "defName": "TM_Plasma",
+          "label": "fixture plasma",
+          "description": "A metal-cored sword with a cutting edge. Plasma is wrapped around the core, held in place by an energy field. Targets are both sliced by the metal core, as well as burned or ignited by the plasma sheath.",
+          "modPrefix": ""
+        },
+        "parent": {
+          "defName": "MeleeWeaponUltratech",
+          "inheritedStats": {
+            "Beauty": -3.0,
+            "DeteriorationRate": 2.0,
+            "Flammability": 1.0,
+            "MarketValue": 2000.0,
+            "Mass": 2.0,
+            "MaxHitPoints": 100.0,
+            "SellPriceFactor": 0.2
+          },
+          "inheritedTechLevel": "ultra"
+        },
+        "techLevel": "ultra",
+        "role": "blade",
+        "mass": {
+          "value": 2.0,
+          "source": "anchor"
+        },
+        "weaponClasses": [
+          "MeleePiercer"
+        ],
+        "texturePath": "Things/Item/Equipment/WeaponMelee/PlasmaSword",
+        "graphicClass": "Graphic_Single",
+        "tools": [
+          {
+            "label": "handle",
+            "capacities": [
+              "Blunt"
+            ],
+            "power": {
+              "value": 12.0,
+              "source": "anchor"
+            },
+            "cooldownTime": {
+              "value": 2.0,
+              "source": "anchor"
+            }
+          },
+          {
+            "label": "point",
+            "capacities": [
+              "Stab"
+            ],
+            "power": {
+              "value": 21.0,
+              "source": "anchor"
+            },
+            "cooldownTime": {
+              "value": 2.6,
+              "source": "anchor"
+            },
+            "extraMeleeDamages": [
+              {
+                "def": "Flame",
+                "amount": 10.0,
+                "chance": 0.5
+              }
+            ]
+          },
+          {
+            "label": "edge",
+            "capacities": [
+              "Cut"
+            ],
+            "power": {
+              "value": 21.0,
+              "source": "anchor"
+            },
+            "cooldownTime": {
+              "value": 2.6,
+              "source": "anchor"
+            },
+            "extraMeleeDamages": [
+              {
+                "def": "Flame",
+                "amount": 10.0,
+                "chance": 0.5
+              }
+            ]
+          }
+        ],
+        "previewQuality": "normal",
+        "soundInteract": "Interact_PlasmaSword",
+        "extraFields": [
+          {
+            "tag": "meleeHitSound",
+            "attrs": [],
+            "children": [
+              "MeleeHit_PlasmaSword"
+            ]
+          },
+          {
+            "tag": "equippedAngleOffset",
+            "attrs": [],
+            "children": [
+              "-65"
+            ]
+          },
+          {
+            "tag": "relicChance",
+            "attrs": [],
+            "children": [
+              "3"
+            ]
+          },
+          {
+            "tag": "smeltable",
+            "attrs": [],
+            "children": [
+              "false"
+            ]
+          }
+        ],
+        "acceptedMissing": [
+          "/stuff",
+          "/workToMake"
+        ]
+      },
+      "anchors": [
+        {
+          "defName": "MeleeWeapon_PlasmaSword",
+          "label": "plasmasword"
+        }
+      ],
+      "clonedFrom": "MeleeWeapon_PlasmaSword"
+    }
+  },
+  "notes": [
+    "fields the designer does not model are carried as written: meleeHitSound, equippedAngleOffset, relicChance, smeltable",
+    "MeleeWeapon_PlasmaSword has no work to make; the designer needs one before the clone can be written",
+    "MeleeWeapon_PlasmaSword has no cost list and no stuff (it cannot be crafted); the designer needs one of them before the clone can be written"
+  ]
+}

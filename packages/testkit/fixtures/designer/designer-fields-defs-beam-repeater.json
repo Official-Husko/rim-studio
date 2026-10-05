@@ -1,0 +1,742 @@
+{
+  "defType": "Verse.ThingDef",
+  "defName": "Gun_BeamRepeater",
+  "modId": "Ludeon.RimWorld.Odyssey",
+  "file": "Defs/ThingDefs_Misc/Weapons/Ranged_Spacer.xml",
+  "tree": {
+    "tag": "ThingDef",
+    "attrs": [
+      [
+        "ParentName",
+        "BaseHumanMakeableGun"
+      ],
+      [
+        "Name",
+        "Gun_BeamRepeater"
+      ]
+    ],
+    "children": [
+      {
+        "tag": "thingClass",
+        "attrs": [],
+        "children": [
+          "ThingWithComps"
+        ]
+      },
+      {
+        "tag": "category",
+        "attrs": [],
+        "children": [
+          "Item"
+        ]
+      },
+      {
+        "tag": "drawerType",
+        "attrs": [],
+        "children": [
+          "MapMeshOnly"
+        ]
+      },
+      {
+        "tag": "drawGUIOverlay",
+        "attrs": [],
+        "children": [
+          "true"
+        ]
+      },
+      {
+        "tag": "altitudeLayer",
+        "attrs": [],
+        "children": [
+          "Item"
+        ]
+      },
+      {
+        "tag": "alwaysHaulable",
+        "attrs": [],
+        "children": [
+          "true"
+        ]
+      },
+      {
+        "tag": "tickerType",
+        "attrs": [],
+        "children": [
+          "Never"
+        ]
+      },
+      {
+        "tag": "equipmentType",
+        "attrs": [],
+        "children": [
+          "Primary"
+        ]
+      },
+      {
+        "tag": "useHitPoints",
+        "attrs": [],
+        "children": [
+          "true"
+        ]
+      },
+      {
+        "tag": "pathCost",
+        "attrs": [],
+        "children": [
+          "14"
+        ]
+      },
+      {
+        "tag": "selectable",
+        "attrs": [],
+        "children": [
+          "true"
+        ]
+      },
+      {
+        "tag": "rotatable",
+        "attrs": [],
+        "children": [
+          "false"
+        ]
+      },
+      {
+        "tag": "statBases",
+        "attrs": [],
+        "children": [
+          {
+            "tag": "MaxHitPoints",
+            "attrs": [],
+            "children": [
+              "100"
+            ]
+          },
+          {
+            "tag": "Flammability",
+            "attrs": [],
+            "children": [
+              "0.5"
+            ]
+          },
+          {
+            "tag": "DeteriorationRate",
+            "attrs": [],
+            "children": [
+              "2"
+            ]
+          },
+          {
+            "tag": "Beauty",
+            "attrs": [],
+            "children": [
+              "-3"
+            ]
+          },
+          {
+            "tag": "SellPriceFactor",
+            "attrs": [],
+            "children": [
+              "0.20"
+            ]
+          },
+          {
+            "tag": "WorkToMake",
+            "attrs": [],
+            "children": [
+              "60000"
+            ]
+          },
+          {
+            "tag": "Mass",
+            "attrs": [],
+            "children": [
+              "10"
+            ]
+          },
+          {
+            "tag": "AccuracyTouch",
+            "attrs": [],
+            "children": [
+              "0.65"
+            ]
+          },
+          {
+            "tag": "AccuracyShort",
+            "attrs": [],
+            "children": [
+              "0.72"
+            ]
+          },
+          {
+            "tag": "AccuracyMedium",
+            "attrs": [],
+            "children": [
+              "0.65"
+            ]
+          },
+          {
+            "tag": "AccuracyLong",
+            "attrs": [],
+            "children": [
+              "0.6"
+            ]
+          },
+          {
+            "tag": "RangedWeapon_Cooldown",
+            "attrs": [],
+            "children": [
+              "3"
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "comps",
+        "attrs": [],
+        "children": [
+          {
+            "tag": "li",
+            "attrs": [
+              [
+                "Class",
+                "CompProperties_Forbiddable"
+              ]
+            ],
+            "children": []
+          },
+          {
+            "tag": "li",
+            "attrs": [],
+            "children": [
+              {
+                "tag": "compClass",
+                "attrs": [],
+                "children": [
+                  "CompEquippable"
+                ]
+              }
+            ]
+          },
+          {
+            "tag": "li",
+            "attrs": [
+              [
+                "Class",
+                "CompProperties_Styleable"
+              ]
+            ],
+            "children": []
+          },
+          {
+            "tag": "li",
+            "attrs": [
+              [
+                "Class",
+                "CompProperties_Art"
+              ]
+            ],
+            "children": [
+              {
+                "tag": "nameMaker",
+                "attrs": [],
+                "children": [
+                  "NamerArtWeaponGun"
+                ]
+              },
+              {
+                "tag": "descriptionMaker",
+                "attrs": [],
+                "children": [
+                  "ArtDescription_WeaponGun"
+                ]
+              },
+              {
+                "tag": "minQualityForArtistic",
+                "attrs": [],
+                "children": [
+                  "Excellent"
+                ]
+              }
+            ]
+          },
+          {
+            "tag": "li",
+            "attrs": [],
+            "children": [
+              {
+                "tag": "compClass",
+                "attrs": [],
+                "children": [
+                  "CompQuality"
+                ]
+              }
+            ]
+          },
+          {
+            "tag": "li",
+            "attrs": [
+              [
+                "Class",
+                "CompProperties_Biocodable"
+              ]
+            ],
+            "children": []
+          }
+        ]
+      },
+      {
+        "tag": "graphicData",
+        "attrs": [],
+        "children": [
+          {
+            "tag": "onGroundRandomRotateAngle",
+            "attrs": [],
+            "children": [
+              "35"
+            ]
+          },
+          {
+            "tag": "texPath",
+            "attrs": [],
+            "children": [
+              "Things/Item/Equipment/WeaponRanged/BeamRepeater"
+            ]
+          },
+          {
+            "tag": "graphicClass",
+            "attrs": [],
+            "children": [
+              "Graphic_Single"
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "allowedArchonexusCount",
+        "attrs": [],
+        "children": [
+          "1"
+        ]
+      },
+      {
+        "tag": "techLevel",
+        "attrs": [],
+        "children": [
+          "Spacer"
+        ]
+      },
+      {
+        "tag": "smeltable",
+        "attrs": [],
+        "children": [
+          "true"
+        ]
+      },
+      {
+        "tag": "relicChance",
+        "attrs": [],
+        "children": [
+          "1"
+        ]
+      },
+      {
+        "tag": "thingCategories",
+        "attrs": [],
+        "children": [
+          {
+            "tag": "li",
+            "attrs": [],
+            "children": [
+              "WeaponsRanged"
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "weaponClasses",
+        "attrs": [],
+        "children": [
+          {
+            "tag": "li",
+            "attrs": [],
+            "children": [
+              "Ranged"
+            ]
+          },
+          {
+            "tag": "li",
+            "attrs": [],
+            "children": [
+              "RangedHeavy"
+            ]
+          },
+          {
+            "tag": "li",
+            "attrs": [],
+            "children": [
+              "Ultratech"
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "inspectorTabs",
+        "attrs": [],
+        "children": [
+          {
+            "tag": "li",
+            "attrs": [],
+            "children": [
+              "ITab_Art"
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "recipeMaker",
+        "attrs": [],
+        "children": [
+          {
+            "tag": "workSpeedStat",
+            "attrs": [],
+            "children": [
+              "GeneralLaborSpeed"
+            ]
+          },
+          {
+            "tag": "workSkill",
+            "attrs": [],
+            "children": [
+              "Crafting"
+            ]
+          },
+          {
+            "tag": "effectWorking",
+            "attrs": [],
+            "children": [
+              "Smith"
+            ]
+          },
+          {
+            "tag": "soundWorking",
+            "attrs": [],
+            "children": [
+              "Recipe_Smith"
+            ]
+          },
+          {
+            "tag": "recipeUsers",
+            "attrs": [],
+            "children": [
+              {
+                "tag": "li",
+                "attrs": [],
+                "children": [
+                  "FabricationBench"
+                ]
+              }
+            ]
+          },
+          {
+            "tag": "unfinishedThingDef",
+            "attrs": [],
+            "children": [
+              "UnfinishedGun"
+            ]
+          },
+          {
+            "tag": "researchPrerequisite",
+            "attrs": [],
+            "children": [
+              "BeamWeapons"
+            ]
+          },
+          {
+            "tag": "skillRequirements",
+            "attrs": [],
+            "children": [
+              {
+                "tag": "Crafting",
+                "attrs": [],
+                "children": [
+                  "8"
+                ]
+              }
+            ]
+          },
+          {
+            "tag": "displayPriority",
+            "attrs": [],
+            "children": [
+              "220"
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "weaponTags",
+        "attrs": [],
+        "children": [
+          {
+            "tag": "li",
+            "attrs": [],
+            "children": [
+              "Gun"
+            ]
+          },
+          {
+            "tag": "li",
+            "attrs": [],
+            "children": [
+              "GunHeavy"
+            ]
+          },
+          {
+            "tag": "li",
+            "attrs": [],
+            "children": [
+              "WeaponBeamRepeater"
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "tradeTags",
+        "attrs": [],
+        "children": [
+          {
+            "tag": "li",
+            "attrs": [],
+            "children": [
+              "WeaponRanged"
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "defName",
+        "attrs": [],
+        "children": [
+          "Gun_BeamRepeater"
+        ]
+      },
+      {
+        "tag": "label",
+        "attrs": [],
+        "children": [
+          "beam repeater"
+        ]
+      },
+      {
+        "tag": "description",
+        "attrs": [],
+        "children": [
+          "An ultratech weapon that emits gamma ray laser bursts in a rapid sequence. The tight gamma beams can pierce shields."
+        ]
+      },
+      {
+        "tag": "soundInteract",
+        "attrs": [],
+        "children": [
+          "Interact_Rifle"
+        ]
+      },
+      {
+        "tag": "thingSetMakerTags",
+        "attrs": [],
+        "children": [
+          {
+            "tag": "li",
+            "attrs": [],
+            "children": [
+              "RewardStandardQualitySuper"
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "costList",
+        "attrs": [],
+        "children": [
+          {
+            "tag": "Plasteel",
+            "attrs": [],
+            "children": [
+              "40"
+            ]
+          },
+          {
+            "tag": "Steel",
+            "attrs": [],
+            "children": [
+              "30"
+            ]
+          },
+          {
+            "tag": "ComponentSpacer",
+            "attrs": [],
+            "children": [
+              "3"
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "equippedStatOffsets",
+        "attrs": [],
+        "children": [
+          {
+            "tag": "MoveSpeed",
+            "attrs": [],
+            "children": [
+              "-0.25"
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "verbs",
+        "attrs": [],
+        "children": [
+          {
+            "tag": "li",
+            "attrs": [],
+            "children": [
+              {
+                "tag": "verbClass",
+                "attrs": [],
+                "children": [
+                  "Verb_Shoot"
+                ]
+              },
+              {
+                "tag": "hasStandardCommand",
+                "attrs": [],
+                "children": [
+                  "true"
+                ]
+              },
+              {
+                "tag": "defaultProjectile",
+                "attrs": [],
+                "children": [
+                  "Bullet_BeamRepeater"
+                ]
+              },
+              {
+                "tag": "warmupTime",
+                "attrs": [],
+                "children": [
+                  "4"
+                ]
+              },
+              {
+                "tag": "range",
+                "attrs": [],
+                "children": [
+                  "21.9"
+                ]
+              },
+              {
+                "tag": "burstShotCount",
+                "attrs": [],
+                "children": [
+                  "30"
+                ]
+              },
+              {
+                "tag": "ticksBetweenBurstShots",
+                "attrs": [],
+                "children": [
+                  "10"
+                ]
+              },
+              {
+                "tag": "soundCast",
+                "attrs": [],
+                "children": [
+                  "Shot_BeamRepeater"
+                ]
+              },
+              {
+                "tag": "soundCastTail",
+                "attrs": [],
+                "children": [
+                  "GunTail_Medium"
+                ]
+              },
+              {
+                "tag": "muzzleFlashScale",
+                "attrs": [],
+                "children": [
+                  "9"
+                ]
+              },
+              {
+                "tag": "aimingChargeMote",
+                "attrs": [],
+                "children": [
+                  "Mote_BeamRepeater_Charge"
+                ]
+              },
+              {
+                "tag": "aimingChargeMoteOffset",
+                "attrs": [],
+                "children": [
+                  "1.07"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "tools",
+        "attrs": [],
+        "children": [
+          {
+            "tag": "li",
+            "attrs": [],
+            "children": [
+              {
+                "tag": "label",
+                "attrs": [],
+                "children": [
+                  "barrels"
+                ]
+              },
+              {
+                "tag": "capacities",
+                "attrs": [],
+                "children": [
+                  {
+                    "tag": "li",
+                    "attrs": [],
+                    "children": [
+                      "Blunt"
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "power",
+                "attrs": [],
+                "children": [
+                  "11.7"
+                ]
+              },
+              {
+                "tag": "cooldownTime",
+                "attrs": [],
+                "children": [
+                  "2.6"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "patchEvents": []
+}
