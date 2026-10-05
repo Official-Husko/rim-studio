@@ -31,6 +31,9 @@ pub enum FileAction {
     UpdateRegion,
     /// The file exists and already holds exactly this content.
     Unchanged,
+    /// The file exists with other content and is replaced whole (a copied asset; the old bytes are backed
+    /// up first). Text files are never replaced whole, they use [`FileAction::UpdateRegion`].
+    Replace,
 }
 
 /// What a planned file is for. Gating tests and the apply step use it.
@@ -46,6 +49,9 @@ pub enum FileKind {
     LoadFolders,
     /// `About/About.xml`.
     About,
+    /// A binary asset (a texture or a sound clip) copied from a file on this machine. The plan holds the
+    /// source and its hash, never the bytes.
+    Copy,
 }
 
 /// A byte span replacement in an existing file.
@@ -90,6 +96,24 @@ pub struct SectionGroup {
     pub nodes: Vec<Node>,
 }
 
+/// The source of a [`FileKind::Copy`] file: what the toolkit read from the file the user pointed at.
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct CopyPlan {
+    /// The source path as written in the spec (absolute, or relative to the project root).
+    pub source: String,
+    /// SHA-256 of the source, 64 lower case hexadecimal characters. Apply refuses a source that changed.
+    pub sha256: String,
+    /// Size of the source in bytes.
+    pub bytes: u64,
+    /// Width in pixels, for an image.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub width: Option<u32>,
+    /// Height in pixels, for an image.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub height: Option<u32>,
+}
+
 /// One file of a plan.
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
@@ -115,6 +139,9 @@ pub struct PlannedFile {
     /// A unified diff against the file on disk, filled by the toolkit.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub diff: Option<String>,
+    /// For a [`FileKind::Copy`] file: where the bytes come from. Such a file has no tree.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub copy: Option<CopyPlan>,
 }
 
 impl PlannedFile {
@@ -135,6 +162,23 @@ impl PlannedFile {
             edits: Vec::new(),
             rendered: None,
             diff: None,
+            copy: None,
+        }
+    }
+
+    /// A binary file to be copied from `copy.source` to `path` (a texture or a sound clip).
+    #[must_use]
+    pub fn copy_file(path: impl Into<String>, copy: CopyPlan) -> Self {
+        Self {
+            path: path.into(),
+            kind: FileKind::Copy,
+            action: FileAction::Create,
+            tree: None,
+            sections: Vec::new(),
+            edits: Vec::new(),
+            rendered: None,
+            diff: None,
+            copy: Some(copy),
         }
     }
 

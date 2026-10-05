@@ -2,12 +2,14 @@
 //!
 //! - [`source`]: [`Sourced`] values, [`ValueSource`] and the rule that typed values are never overwritten.
 //! - [`spec`]: [`DesignSpec`] and its parts for ranged and melee weapons, plus the optional [`CePatchSpec`].
+//! - [`assets`]: texture imports and custom sounds, the inputs of the asset copy step.
 //! - [`carried`]: the recipe, tool extras and the raw fields a clone carries from its source.
 //! - [`draft`]: the [`Draft`] envelope with answers and anchors.
 //! - [`bridge`]: conversions into the inputs of the math modules.
 //!
 //! Everything here is plain data with `serde` support (camelCase fields, kebab-case enum strings) and no I/O.
 
+pub mod assets;
 pub mod bridge;
 pub mod carried;
 pub mod draft;
@@ -15,6 +17,7 @@ pub mod format;
 pub mod source;
 pub mod spec;
 
+pub use assets::{AssetImports, CustomSound, FloatRange, SoundImports, shot_sound_def_name};
 pub use bridge::{DEFAULT_BURST_COUNT, DEFAULT_TICKS_BETWEEN_SHOTS};
 pub use carried::{
     ExtraMeleeDamage, INHERIT_RESETTABLE, MODELLED_THING_FIELDS, RecipeSpec, SurpriseAttackSpec,

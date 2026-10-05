@@ -14,6 +14,7 @@ use serde::{Deserialize, Serialize};
 
 use rimstudio_core::tree::Node;
 
+use super::assets::{AssetImports, SoundImports};
 use super::carried::{ExtraMeleeDamage, RecipeSpec, SurpriseAttackSpec};
 use super::source::{OfferOutcome, Sourced, ValueSource, offer};
 
@@ -778,6 +779,12 @@ pub struct DesignSpec {
     /// an error: the written definition lacks it as the source does.
     #[serde(default, skip_serializing_if = "Vec::is_empty")]
     pub accepted_missing: Vec<String>,
+    /// Texture files to copy into the project (OPT). Absent by default.
+    #[serde(default, skip_serializing_if = "AssetImports::is_empty")]
+    pub assets: AssetImports,
+    /// Custom sounds made from clip files (OPT). Absent by default.
+    #[serde(default, skip_serializing_if = "SoundImports::is_empty")]
+    pub sounds: SoundImports,
 }
 
 impl DesignSpec {
@@ -825,6 +832,8 @@ impl DesignSpec {
             omit_defaults: Vec::new(),
             inherit_reset: Vec::new(),
             accepted_missing: Vec::new(),
+            assets: AssetImports::default(),
+            sounds: SoundImports::default(),
         }
     }
 

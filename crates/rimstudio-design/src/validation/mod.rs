@@ -9,9 +9,12 @@
 //! Diagnostics are `rimstudio_core::diag::Diagnostic` values; the JSON pointer of the field each concerns
 //! is in the `field` argument (see [`diagnostic_field`]) and is relative to the spec.
 
+pub mod asset_codes;
+pub mod assets;
 pub mod checks;
 pub mod codes;
 
+pub use assets::validate_assets;
 pub use checks::{
     DefLookup, MAX_PLAUSIBLE_MASS, MAX_PLAUSIBLE_RANGE, MAX_PLAUSIBLE_SECONDS, RefKind,
     validate_ce_patch, validate_draft, validate_refs, validate_spec, validate_vanilla,

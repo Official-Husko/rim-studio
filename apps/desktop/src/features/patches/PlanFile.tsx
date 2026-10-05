@@ -8,6 +8,7 @@ const ACTION = {
   create: 'patches.action.create',
   'update-region': 'patches.action.update-region',
   unchanged: 'patches.action.unchanged',
+  replace: 'patches.action.replace',
 } as const;
 
 const KIND = {
@@ -15,6 +16,7 @@ const KIND = {
   'ce-patch': 'patches.file-kind.ce-patch',
   'load-folders': 'patches.file-kind.load-folders',
   about: 'patches.file-kind.about',
+  copy: 'patches.file-kind.copy',
 } as const;
 
 export interface PlanFileProps {
@@ -45,7 +47,17 @@ export function PlanFile({ file }: PlanFileProps) {
           ]}
         />
       ) : null}
-      {view === 'diff' && file.diff ? (
+      {file.copy ? (
+        <p class="font-mono text-mono-small text-muted">
+          {file.copy.width && file.copy.height
+            ? t('patches.file.copy-image', {
+                source: file.copy.source,
+                width: String(file.copy.width),
+                height: String(file.copy.height),
+              })
+            : t('patches.file.copy-source', { source: file.copy.source })}
+        </p>
+      ) : view === 'diff' && file.diff ? (
         <DiffView diff={file.diff} label={t('patches.file.diff-label', { path: file.path })} />
       ) : (
         <CodeView

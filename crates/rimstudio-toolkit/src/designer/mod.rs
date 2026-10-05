@@ -19,9 +19,11 @@
 //! - `calibrate`: `designer_calibrate`, the calibration cache.
 //! - `drafts`: `designer_draft_save`, `_list` and `_delete`.
 //! - `dto`: conversions between engine types and DTOs.
+//! - `asset_info`: `designer_asset_info`, the facts of a texture or clip file the page offers to import.
 //! - `plan`, `apply`, `convert`: write plans, applying them and converting existing weapons.
 
 pub mod apply;
+pub mod asset_info;
 pub mod calibrate;
 pub mod ce;
 pub mod clone;
@@ -37,6 +39,7 @@ pub mod quiz;
 pub mod refs;
 
 pub use apply::{ApplyOptions, apply_built, apply_plan};
+pub use asset_info::asset_info;
 pub use calibrate::{CalibrationState, calibrate};
 pub use ce::{accept_for_plan, ce_suggest, suggestion_for};
 pub use clone::{clone_diff, clone_draft, structure_defaults};

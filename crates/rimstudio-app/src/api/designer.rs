@@ -6,14 +6,15 @@
 
 use rimstudio_ipc_types::designer::{
     ApplyReportDto, CalibrateResultDto, CeSuggestionDto, ConvertScanDto, DesignerApplyPlanRequest,
-    DesignerCalibrateRequest, DesignerCeSuggestRequest, DesignerCloneDiffRequest,
-    DesignerCloneDiffResponse, DesignerCloneRequest, DesignerCloneResponse,
-    DesignerConvertScanRequest, DesignerDraftDeleteRequest, DesignerDraftDeleteResponse,
-    DesignerDraftListRequest, DesignerDraftListResponse, DesignerDraftSaveRequest,
-    DesignerDraftSaveResponse, DesignerExportPlanRequest, DesignerFitRequest,
-    DesignerPreviewRequest, DesignerProjectileOwnRequest, DesignerProjectileOwnResponse,
-    DesignerQuizAnswerRequest, DesignerQuizAnswerResponse, DesignerQuizBackRequest,
-    DesignerQuizNextRequest, DesignerReferenceListRequest, DesignerStructureDefaultsRequest,
+    DesignerAssetInfoRequest, DesignerAssetInfoResponse, DesignerCalibrateRequest,
+    DesignerCeSuggestRequest, DesignerCloneDiffRequest, DesignerCloneDiffResponse,
+    DesignerCloneRequest, DesignerCloneResponse, DesignerConvertScanRequest,
+    DesignerDraftDeleteRequest, DesignerDraftDeleteResponse, DesignerDraftListRequest,
+    DesignerDraftListResponse, DesignerDraftSaveRequest, DesignerDraftSaveResponse,
+    DesignerExportPlanRequest, DesignerFitRequest, DesignerPreviewRequest,
+    DesignerProjectileOwnRequest, DesignerProjectileOwnResponse, DesignerQuizAnswerRequest,
+    DesignerQuizAnswerResponse, DesignerQuizBackRequest, DesignerQuizNextRequest,
+    DesignerReferenceListRequest, DesignerStructureDefaultsRequest,
     DesignerStructureDefaultsResponse, FitReportDto, PreviewDto, QuizStepDto, ReferenceListDto,
     WritePlanDto,
 };
@@ -256,4 +257,20 @@ pub fn designer_projectile_own(
 ) -> Result<DesignerProjectileOwnResponse, ApiError> {
     let d = ctx.workspace.designer_ctx(ctx)?;
     toolkit::projectile_own(&d, req).map_err(|e| ctx.toolkit_error(&e))
+}
+
+/// `designer_asset_info`: the facts of one texture or sound clip file the page offers to import: format by
+/// signature, size, SHA-256, dimensions or channels, a thumbnail data URL for a small PNG and the
+/// diagnostics of importing it. The file is read under the designer's size limits and never decoded; a
+/// link or a folder is refused. Read only.
+///
+/// # Errors
+/// `project.not-open` when `projectId` names no open project. A missing, refused or oversized file is a
+/// status of the answer.
+pub fn designer_asset_info(
+    ctx: &AppContext,
+    req: DesignerAssetInfoRequest,
+) -> Result<DesignerAssetInfoResponse, ApiError> {
+    let d = ctx.workspace.designer_ctx(ctx)?;
+    toolkit::asset_info(&d, req).map_err(|e| ctx.toolkit_error(&e))
 }

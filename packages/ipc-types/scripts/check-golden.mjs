@@ -13,9 +13,11 @@ const goldenDir = resolve(pkg, "../../crates/rimstudio-ipc-types/tests/golden");
 // Golden file name (without .json) to the TypeScript type its content has. Every golden file needs a row.
 const TYPES = {
   "api-error": "ApiError",
+  "asset-info": "DesignerAssetInfoResponse",
   "ce-suggestion": "CeSuggestionDto",
   "clone-diff": "DesignerCloneDiffResponse",
   "convert-scan": "ConvertScanDto",
+  "design-spec-assets": "DesignSpecDto",
   "design-spec-carried": "DesignSpecDto",
   "design-spec-melee-ce": "DesignSpecDto",
   "design-spec-ranged": "DesignSpecDto",
@@ -26,6 +28,7 @@ const TYPES = {
   "project-layout-check": "ProjectLayoutCheckDto",
   "project-tree": "ProjectTreeDto",
   "write-plan": "WritePlanDto",
+  "write-plan-assets": "WritePlanDto",
 };
 
 const files = readdirSync(goldenDir)

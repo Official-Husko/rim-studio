@@ -75,6 +75,21 @@ fn golden_write_plan() {
 }
 
 #[test]
+fn golden_write_plan_with_copied_assets() {
+    check("write-plan-assets", &common::asset_plan());
+}
+
+#[test]
+fn golden_design_spec_with_asset_imports() {
+    check("design-spec-assets", &common::asset_spec());
+}
+
+#[test]
+fn golden_asset_info() {
+    check("asset-info", &common::asset_info());
+}
+
+#[test]
 fn golden_convert_scan() {
     check("convert-scan", &common::convert_scan());
 }

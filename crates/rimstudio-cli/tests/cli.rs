@@ -192,7 +192,10 @@ fn call_runs_any_command_and_a_job() {
         .json();
     assert_eq!(pong["echo"], json!("hi"));
     let info = env.run(&["call", "app_get_info"]).expect(0).json();
-    assert_eq!(info["commandCount"], json!(43));
+    assert_eq!(
+        info["commandCount"],
+        json!(rimstudio_app::registry::ROUTES.len())
+    );
     env.select_install();
     let scan = env
         .run(&["call", "library_scan", r#"{"full":true}"#])

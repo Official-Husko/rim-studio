@@ -1,5 +1,6 @@
 //! The commands, one module per group, and the table that routes a parsed command to its module.
 
+pub(crate) mod assets;
 pub(crate) mod convert;
 pub(crate) mod defs;
 pub(crate) mod designer;
@@ -59,6 +60,7 @@ pub(crate) fn run_designer(s: &Session, command: &DesignerCmd) -> CliResult {
         DesignerCmd::Preview(args) => designer::preview(s, args),
         DesignerCmd::Diff(args) => designer::diff(s, args),
         DesignerCmd::Projectile(args) => designer::projectile(s, args),
+        DesignerCmd::Asset(args) => assets::run(s, args),
         DesignerCmd::CeSuggest(args) => designer::ce_suggest(s, args),
         DesignerCmd::Plan(args) => designer::plan(s, args),
         DesignerCmd::Apply(args) => designer::apply(s, args),

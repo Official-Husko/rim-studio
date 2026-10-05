@@ -1,0 +1,36 @@
+{
+  "planId": "b3-fedcba9876543210",
+  "files": [
+    {
+      "path": "Textures/Things/Item/Equipment/WeaponRanged/RS_TestRifle.png",
+      "kind": "copy",
+      "action": "create",
+      "rendered": "",
+      "bytes": 2048,
+      "copy": {
+        "source": "/home/rs/art/rifle.png",
+        "sha256": "9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08",
+        "bytes": 2048,
+        "width": 64,
+        "height": 64
+      }
+    },
+    {
+      "path": "Textures/Things/Projectile/RS_TestRifle_Bullet.png",
+      "kind": "copy",
+      "action": "replace",
+      "rendered": "",
+      "bytes": 512,
+      "copy": {
+        "source": "/home/rs/art/bullet.png",
+        "sha256": "9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08",
+        "bytes": 512,
+        "width": 64,
+        "height": 64,
+        "existingSha256": "2c26b46b68ffc68ff99b453c1d30413413422d706483bfa0f98a5e886266e7ae"
+      }
+    }
+  ],
+  "diagnostics": [],
+  "hasErrors": false
+}

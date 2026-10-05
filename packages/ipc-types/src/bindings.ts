@@ -264,9 +264,17 @@ bytes: number,
  */
 backupPath?: string, 
 /**
- * True when the file was read back and equals the rendering.
+ * True when the file was read back and equals the rendering (the hash of the source for a copy).
  */
-verified: boolean, };
+verified: boolean, 
+/**
+ * What the file is. Absent in reports of older builds.
+ */
+kind?: FileKindDto, 
+/**
+ * SHA-256 of the copied bytes, for a copied file.
+ */
+sha256?: string, };
 
 /**
  * Result of the `designer_apply_plan` job.
@@ -327,6 +335,29 @@ suggestion?: number, };
  * The kind of an ask.
  */
 export type AskKindDto = "choice" | "flag" | "number";
+
+/**
+ * The texture files of a design, as paths on this machine.
+ */
+export type AssetImportsDto = { 
+/**
+ * The PNG for the weapon, copied to the conventional place of the layout.
+ */
+texture?: string, 
+/**
+ * The PNG for the weapon's own projectile.
+ */
+projectileTexture?: string, };
+
+/**
+ * What a file is, by its signature.
+ */
+export type AssetKindDto = "png" | "wav" | "ogg" | "unknown";
+
+/**
+ * What `designer_asset_info` found at a path.
+ */
+export type AssetStatusDto = "found" | "missing" | "refused" | "too-large";
 
 /**
  * One bin of an interval question.
@@ -986,6 +1017,36 @@ diagnostics: Array<DiagnosticDto>, };
 export type ConvertStatusDto = "not-converted" | "already-ce" | "unsupported-kind" | "target-not-found";
 
 /**
+ * The source of a copied file in a plan.
+ */
+export type CopyPlanDto = { 
+/**
+ * The source path as written in the spec.
+ */
+source: string, 
+/**
+ * SHA-256 of the source, 64 lower case hexadecimal characters.
+ */
+sha256: string, 
+/**
+ * Size of the source in bytes.
+ */
+bytes: number, 
+/**
+ * Width in pixels, for an image.
+ */
+width?: number, 
+/**
+ * Height in pixels, for an image.
+ */
+height?: number, 
+/**
+ * SHA-256 of the file that is at the target now, when there is one and it differs (it is backed up
+ * before it is replaced).
+ */
+existingSha256?: string, };
+
+/**
  * One ingredient of the recipe.
  */
 export type CostEntryDto = { 
@@ -1050,6 +1111,35 @@ volumeHint?: VolumeHintDto,
  * Row colour. Absent means none.
  */
 colour?: string, };
+
+/**
+ * A custom sound: clip files and the settings of the sound definition made from them.
+ */
+export type CustomSoundDto = { 
+/**
+ * The def name of the sound. Absent derives `<DefName>_Shot` from the weapon.
+ */
+defName?: string, 
+/**
+ * The clip files to copy (WAV or Ogg), as paths on this machine. Omitted when empty.
+ */
+clips?: Array<string>, 
+/**
+ * Volume range in the game's scale (50 is the default). Absent writes none.
+ */
+volume?: FloatRangeDto, 
+/**
+ * Pitch range (1 is the clip's own pitch). Absent writes none.
+ */
+pitch?: FloatRangeDto, 
+/**
+ * Distance range in tiles in which the sound is heard. Absent writes none.
+ */
+distance?: FloatRangeDto, 
+/**
+ * How many instances may play at once. Absent writes none.
+ */
+maxSimultaneous?: number, };
 
 /**
  * Response of `defs_search`.
@@ -1314,7 +1404,15 @@ inheritReset?: Array<string>,
  * JSON pointers of required fields the source of a clone does not set either; they are not errors.
  * Omitted when empty.
  */
-acceptedMissing?: Array<string>, };
+acceptedMissing?: Array<string>, 
+/**
+ * Texture files to copy into the project. Omitted when none.
+ */
+assets?: AssetImportsDto, 
+/**
+ * Custom sounds made from clip files. Omitted when none.
+ */
+sounds?: SoundImportsDto, };
 
 /**
  * Request of the `designer_apply_plan` job.
@@ -1336,6 +1434,74 @@ backup: boolean,
  * Run the generated patch through the def engine on a scratch copy after writing.
  */
 dryApply: boolean, };
+
+/**
+ * Request of `designer_asset_info`.
+ */
+export type DesignerAssetInfoRequest = { 
+/**
+ * The file: absolute, or relative to the project root when `projectId` is given.
+ */
+path: string, 
+/**
+ * The open project a relative path is read against. Absent: the path must be absolute.
+ */
+projectId?: string, };
+
+/**
+ * Response of `designer_asset_info`: the facts of one file, read without decoding it.
+ */
+export type DesignerAssetInfoResponse = { 
+/**
+ * The path as asked.
+ */
+path: string, 
+/**
+ * What was found.
+ */
+status: AssetStatusDto, 
+/**
+ * The format by signature. Absent unless the file was read.
+ */
+kind?: AssetKindDto, 
+/**
+ * Size in bytes (saturated at the 32 bit limit).
+ */
+bytes?: number, 
+/**
+ * SHA-256 of the content. Absent unless the file was read.
+ */
+sha256?: string, 
+/**
+ * Width in pixels, for a PNG.
+ */
+width?: number, 
+/**
+ * Height in pixels, for a PNG.
+ */
+height?: number, 
+/**
+ * Number of channels, for a sound whose header says.
+ */
+channels?: number, 
+/**
+ * Sample rate, for a sound whose header says.
+ */
+sampleRate?: number, 
+/**
+ * Length in milliseconds, for a WAV.
+ */
+durationMs?: number, 
+/**
+ * A `data:image/png;base64,...` URL of the file itself, for a valid PNG up to 256 KiB, so the page can
+ * show a thumbnail without file access.
+ */
+preview?: string, 
+/**
+ * What the designer would say about the file as a texture or a clip: size and format problems as
+ * diagnostics. Omitted when there are none.
+ */
+diagnostics?: Array<DiagnosticDto>, };
 
 /**
  * Request of the `designer_calibrate` job.
@@ -2025,12 +2191,12 @@ chance?: number, };
 /**
  * What a plan does to a file.
  */
-export type FileActionDto = "create" | "update-region" | "unchanged";
+export type FileActionDto = "create" | "update-region" | "unchanged" | "replace";
 
 /**
  * What a planned file holds.
  */
-export type FileKindDto = "vanilla-defs" | "ce-patch" | "load-folders" | "about";
+export type FileKindDto = "vanilla-defs" | "ce-patch" | "load-folders" | "about" | "copy";
 
 /**
  * How well a stat fits.
@@ -2115,6 +2281,19 @@ unusual: number,
  * Share of stats inside the 80 percent band, zero to one.
  */
 shareInP80: number, };
+
+/**
+ * A closed range of numbers, written `min~max` in the game's files.
+ */
+export type FloatRangeDto = { 
+/**
+ * The lower end.
+ */
+min: number, 
+/**
+ * The upper end.
+ */
+max: number, };
 
 /**
  * What a probed folder looks like.
@@ -2898,9 +3077,13 @@ rendered: string,
  */
 diff?: string, 
 /**
- * Size of `rendered` in bytes.
+ * Size of `rendered` in bytes (the size of the source for a copied file, whose `rendered` is empty).
  */
-bytes: number, };
+bytes: number, 
+/**
+ * The source of a copied file. Absent for a text file.
+ */
+copy?: CopyPlanDto, };
 
 /**
  * Predictor behind a suggestion.
@@ -4116,6 +4299,15 @@ alternativeIdsSatisfyDependencies: boolean,
  * Check dependencies when sorting.
  */
 checkDependenciesOnSort: boolean, };
+
+/**
+ * The custom sounds of a design.
+ */
+export type SoundImportsDto = { 
+/**
+ * The sound of a shot. Replaces a typed or cloned `soundCast`.
+ */
+shot?: CustomSoundDto, };
 
 /**
  * One mod source.

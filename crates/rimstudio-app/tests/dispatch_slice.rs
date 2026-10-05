@@ -383,6 +383,37 @@ fn every_command_of_the_slice_dispatches_in_one_session() {
         json!({"draft": draft.clone(), "own": false}),
     );
     assert_eq!(nothing_to_point_back_at.code, "designer.invalid-draft");
+    // designer: the facts of a texture file offered for import
+    let art = tempfile::tempdir().unwrap();
+    let png_path = art.path().join("rifle.png");
+    std::fs::write(&png_path, rimstudio_design::assets::png::build_png(32, 32)).unwrap();
+    let asset = run.ok(
+        "designer_asset_info",
+        json!({"path": png_path.to_string_lossy()}),
+    );
+    assert_eq!(asset["status"], json!("found"), "{asset}");
+    assert_eq!(asset["kind"], json!("png"));
+    assert_eq!(
+        (asset["width"].as_u64(), asset["height"].as_u64()),
+        (Some(32), Some(32))
+    );
+    assert!(
+        asset["preview"]
+            .as_str()
+            .unwrap()
+            .starts_with("data:image/png;base64,")
+    );
+    let gone = run.ok(
+        "designer_asset_info",
+        json!({"path": art.path().join("gone.png").to_string_lossy()}),
+    );
+    assert_eq!(gone["status"], json!("missing"));
+    let no_project = run.err(
+        "designer_asset_info",
+        json!({"path": "rifle.png", "projectId": "p-nope"}),
+    );
+    assert_eq!(no_project.code, "project.not-open");
+
 
     // designer: vanilla plan and apply
     let request = json!({"projectId": pid.clone(), "draft": draft.clone()});

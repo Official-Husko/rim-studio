@@ -1,0 +1,122 @@
+{
+  "kind": "ranged",
+  "identity": {
+    "defName": "RS_TestRifle",
+    "label": "test rifle",
+    "description": "A fictional rifle.",
+    "modPrefix": "RS_"
+  },
+  "techLevel": "industrial",
+  "role": "rifle",
+  "mass": {
+    "value": 3.5,
+    "source": "typed"
+  },
+  "workToMake": {
+    "value": 11000.0,
+    "source": "suggested"
+  },
+  "costList": [
+    {
+      "defName": "RS_Steel",
+      "count": 40.0
+    }
+  ],
+  "stuff": {
+    "categories": [
+      "RS_Metallic"
+    ],
+    "count": {
+      "value": 20.0,
+      "source": "suggested"
+    }
+  },
+  "weaponTags": [
+    "RS_Gun"
+  ],
+  "extraStats": {
+    "RS_Stat": {
+      "value": 1.25,
+      "source": "typed"
+    }
+  },
+  "ranged": {
+    "damage": {
+      "value": 12.0,
+      "source": "typed"
+    },
+    "range": {
+      "value": 25.9,
+      "source": "anchor"
+    },
+    "burstCount": {
+      "value": 3,
+      "source": "answered"
+    },
+    "ticksBetweenBurstShots": {
+      "value": 9.0,
+      "source": "typed"
+    },
+    "warmup": {
+      "value": 1.5,
+      "source": "typed"
+    },
+    "cooldown": {
+      "value": 2.0,
+      "source": "typed"
+    },
+    "accuracy": {
+      "touch": {
+        "value": 0.9,
+        "source": "typed"
+      },
+      "short": {
+        "value": 0.8,
+        "source": "typed"
+      },
+      "medium": {
+        "value": 0.6,
+        "source": "typed"
+      }
+    },
+    "projectile": {
+      "mode": "inline",
+      "def": {
+        "defName": "RS_Bullet",
+        "label": "test bullet",
+        "speed": {
+          "value": 70.0,
+          "source": "typed"
+        }
+      }
+    },
+    "soundCast": "RS_Shot",
+    "muzzleFlashScale": 9.0
+  },
+  "previewQuality": "normal",
+  "assets": {
+    "texture": "/home/rs/art/rifle.png",
+    "projectileTexture": "/home/rs/art/bullet.png"
+  },
+  "sounds": {
+    "shot": {
+      "clips": [
+        "/home/rs/audio/shot_a.wav",
+        "/home/rs/audio/shot_b.ogg"
+      ],
+      "volume": {
+        "min": 34.5,
+        "max": 40.0
+      },
+      "pitch": {
+        "min": 0.95,
+        "max": 1.05
+      },
+      "distance": {
+        "min": 10.0,
+        "max": 60.0
+      },
+      "maxSimultaneous": 2
+    }
+  }
+}

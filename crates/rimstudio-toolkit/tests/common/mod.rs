@@ -43,6 +43,10 @@ pub fn types() -> Arc<TypeTable> {
             "Verse.DamageDef".to_owned(),
             TypeInfo::with_base("Verse.Def"),
         ),
+        (
+            "Verse.SoundDef".to_owned(),
+            TypeInfo::with_base("Verse.Def"),
+        ),
     ];
     list.push((
         "CombatExtended.AmmoSetDef".to_owned(),

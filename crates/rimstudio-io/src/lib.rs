@@ -15,6 +15,7 @@
 //! | [`store`] | [`Store`]: one typed JSONC file (settings) with migration, backup and verified writes |
 //! | [`collection`] | [`Collection`]: the in house JSON document database (no SQL) |
 //! | [`walk`], [`statkey`] | bounded parallel directory scans and change detection keys |
+//! | [`copy`], [`sha256`] | guarded, hash verified file copies for imported assets, and the in house SHA-256 |
 //! | [`guard`], [`fence`] | path validation against roots and the game write fence (I-05) |
 //! | [`real_fs`] | [`RealFs`], the real [`rimstudio_core::ports::FsProbe`] |
 //! | [`watch`], [`ignore_set`] | deferred, not part of 0.1.0 |
@@ -25,6 +26,7 @@
 pub mod atomic;
 pub mod backup;
 pub mod collection;
+pub mod copy;
 pub mod error;
 pub mod fence;
 pub mod guard;
@@ -34,6 +36,7 @@ pub mod migrate;
 pub mod real_fs;
 pub mod roots;
 pub mod schema;
+pub mod sha256;
 pub mod statkey;
 pub mod store;
 pub mod walk;

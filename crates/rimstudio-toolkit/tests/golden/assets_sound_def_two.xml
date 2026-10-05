@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- ====== RS_NewRifle_Shot ====== -->
+  <SoundDef>
+    <defName>RS_NewRifle_Shot</defName>
+    <context>MapOnly</context>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Weapons/RS_NewRifle_Shot/one</clipPath>
+          </li>
+        </grains>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <!-- ====== RS_OtherRifle_Shot ====== -->
+  <SoundDef>
+    <defName>RS_OtherRifle_Shot</defName>
+    <context>MapOnly</context>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Weapons/RS_OtherRifle_Shot/two</clipPath>
+          </li>
+        </grains>
+      </li>
+    </subSounds>
+  </SoundDef>
+</Defs>

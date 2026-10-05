@@ -624,6 +624,9 @@ pub(crate) enum DesignerCmd {
     /// Give a gun draft a projectile of its own (copied from the one it fires), or point it back at the
     /// shared one with `--shared`; the draft is saved.
     Projectile(ProjectileArgs),
+    /// Import a texture or a custom shot sound into a draft (`designer asset DRAFT --texture PNG`), or show
+    /// the facts of one file (`designer asset info PATH`). Files are copied when the draft is applied.
+    Asset(crate::cmd::assets::AssetArgs),
     /// Suggest the Combat Extended numbers of a draft from your own conversions; changes nothing.
     CeSuggest(DraftArgs),
     /// Show the files a draft would write, with diffs; writes nothing.

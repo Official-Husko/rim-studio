@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- ====== RS_NewRifle_Shot ====== -->
+  <SoundDef>
+    <defName>RS_NewRifle_Shot</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Weapons/RS_NewRifle_Shot/bang</clipPath>
+          </li>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Weapons/RS_NewRifle_Shot/crack</clipPath>
+          </li>
+        </grains>
+        <volumeRange>30~34</volumeRange>
+        <pitchRange>0.95~1.05</pitchRange>
+        <distRange>10~60</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+</Defs>

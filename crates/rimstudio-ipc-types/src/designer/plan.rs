@@ -6,6 +6,7 @@
 
 use serde::{Deserialize, Serialize};
 
+use super::assets::CopyPlanDto;
 use super::ce_suggest::AcceptSuggestionsDto;
 use super::convert::ConvertRequestDto;
 use super::draft::DraftDto;
@@ -22,6 +23,8 @@ pub enum FileActionDto {
     UpdateRegion,
     /// The rendering equals the file on disk.
     Unchanged,
+    /// The file exists with other content and is replaced whole (a copied asset); the old file is backed up.
+    Replace,
 }
 
 /// What a planned file holds.
@@ -37,6 +40,8 @@ pub enum FileKindDto {
     LoadFolders,
     /// `About.xml`.
     About,
+    /// A texture or a sound clip copied from a file on this machine.
+    Copy,
 }
 
 /// Request of `designer_export_plan`.
@@ -77,8 +82,12 @@ pub struct PlannedFileDto {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     #[cfg_attr(feature = "ts", ts(optional))]
     pub diff: Option<String>,
-    /// Size of `rendered` in bytes.
+    /// Size of `rendered` in bytes (the size of the source for a copied file, whose `rendered` is empty).
     pub bytes: u32,
+    /// The source of a copied file. Absent for a text file.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
+    pub copy: Option<CopyPlanDto>,
 }
 
 /// Response of `designer_export_plan`.
@@ -132,8 +141,16 @@ pub struct AppliedFileDto {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     #[cfg_attr(feature = "ts", ts(optional))]
     pub backup_path: Option<String>,
-    /// True when the file was read back and equals the rendering.
+    /// True when the file was read back and equals the rendering (the hash of the source for a copy).
     pub verified: bool,
+    /// What the file is. Absent in reports of older builds.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
+    pub kind: Option<FileKindDto>,
+    /// SHA-256 of the copied bytes, for a copied file.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
+    pub sha256: Option<String>,
 }
 
 /// Result of the `designer_apply_plan` job.

@@ -340,7 +340,10 @@ pub const REGISTRY: &[CodeInfo] = &[
 /// Looks a code up in the registry.
 #[must_use]
 pub fn lookup(code: &str) -> Option<&'static CodeInfo> {
-    REGISTRY.iter().find(|c| c.code == code)
+    REGISTRY
+        .iter()
+        .chain(super::asset_codes::ASSET_REGISTRY)
+        .find(|c| c.code == code)
 }
 
 #[cfg(test)]

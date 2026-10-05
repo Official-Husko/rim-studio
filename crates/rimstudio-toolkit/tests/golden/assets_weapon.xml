@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- ====== RS_NewBullet ====== -->
+  <ThingDef ParentName="RS_BaseBullet">
+    <defName>RS_NewBullet</defName>
+    <label>new bullet</label>
+    <graphicData>
+      <texPath>Things/Projectile/RS_NewBullet</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>RS_Damage</damageDef>
+      <damageAmountBase>12</damageAmountBase>
+    </projectile>
+  </ThingDef>
+  <!-- ====== RS_NewRifle ====== -->
+  <ThingDef ParentName="RS_BaseGun">
+    <defName>RS_NewRifle</defName>
+    <label>new rifle</label>
+    <techLevel>Industrial</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponRanged/RS_NewRifle</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <WorkToMake>9000</WorkToMake>
+      <Mass>3.5</Mass>
+      <AccuracyTouch>0.7</AccuracyTouch>
+      <AccuracyShort>0.75</AccuracyShort>
+      <AccuracyMedium>0.6</AccuracyMedium>
+      <AccuracyLong>0.45</AccuracyLong>
+      <RangedWeapon_Cooldown>1.5</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+      <RS_Steel>30</RS_Steel>
+    </costList>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>RS_NewBullet</defaultProjectile>
+        <warmupTime>1</warmupTime>
+        <range>28</range>
+        <soundCast>RS_NewRifle_Shot</soundCast>
+      </li>
+    </verbs>
+  </ThingDef>
+</Defs>

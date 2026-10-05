@@ -1344,6 +1344,10 @@ pub fn validate_refs(spec: &DesignSpec, lookup: &dyn DefLookup) -> Vec<Diagnosti
                 &r.sound_cast_tail,
             ),
         ] {
+            // a custom shot sound replaces whatever `soundCast` held, so the old name is not checked
+            if pointer == "/ranged/soundCast" && spec.sounds.shot.is_some() {
+                continue;
+            }
             if let Some(sound) = slot {
                 unresolved(RefKind::SoundDef, pointer.into(), label, sound);
             }
@@ -1394,6 +1398,14 @@ pub fn validate_refs(spec: &DesignSpec, lookup: &dyn DefLookup) -> Vec<Diagnosti
             &p.def_name,
             "a loaded def",
         );
+    }
+    if let Some(name) = crate::model::shot_sound_def_name(spec)
+        && lookup.contains(RefKind::SoundDef, &name) == Some(true)
+    {
+        out.push(super::asset_codes::SOUND_DUPLICATE.diagnostic(
+            "/sounds/shot/defName",
+            &[("value", &name), ("other", "a loaded def")],
+        ));
     }
     out
 }

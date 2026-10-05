@@ -617,6 +617,7 @@ pub fn write_plan() -> WritePlanDto {
                 rendered: "<Defs>\n  <ThingDef>\n    <defName>RS_TestRifle</defName>\n  </ThingDef>\n</Defs>\n".into(),
                 diff: None,
                 bytes: 76,
+                copy: None,
             },
             PlannedFileDto {
                 path: "LoadFolders.xml".into(),
@@ -625,10 +626,101 @@ pub fn write_plan() -> WritePlanDto {
                 rendered: "<loadFolders/>\n".into(),
                 diff: Some("@@ -1 +1 @@\n-<loadFolders></loadFolders>\n+<loadFolders/>\n".into()),
                 bytes: 15,
+                copy: None,
             },
         ],
         diagnostics: vec![diagnostic()],
         has_errors: false,
+    }
+}
+
+/// A spec that imports a texture and a custom shot sound.
+pub fn asset_spec() -> DesignSpecDto {
+    let mut spec = ranged_spec();
+    spec.assets = AssetImportsDto {
+        texture: Some("/home/rs/art/rifle.png".into()),
+        projectile_texture: Some("/home/rs/art/bullet.png".into()),
+    };
+    spec.sounds = SoundImportsDto {
+        shot: Some(CustomSoundDto {
+            def_name: None,
+            clips: vec![
+                "/home/rs/audio/shot_a.wav".into(),
+                "/home/rs/audio/shot_b.ogg".into(),
+            ],
+            volume: Some(FloatRangeDto {
+                min: 34.5,
+                max: 40.0,
+            }),
+            pitch: Some(FloatRangeDto {
+                min: 0.95,
+                max: 1.05,
+            }),
+            distance: Some(FloatRangeDto {
+                min: 10.0,
+                max: 60.0,
+            }),
+            max_simultaneous: Some(2),
+        }),
+    };
+    spec
+}
+
+/// A plan with a copied texture, a replaced one and a copied clip.
+pub fn asset_plan() -> WritePlanDto {
+    let copy = |source: &str, bytes: u32, existing: Option<&str>| CopyPlanDto {
+        source: source.into(),
+        sha256: "9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08".into(),
+        bytes,
+        width: Some(64),
+        height: Some(64),
+        existing_sha256: existing.map(str::to_owned),
+    };
+    WritePlanDto {
+        plan_id: "b3-fedcba9876543210".into(),
+        files: vec![
+            PlannedFileDto {
+                path: "Textures/Things/Item/Equipment/WeaponRanged/RS_TestRifle.png".into(),
+                kind: FileKindDto::Copy,
+                action: FileActionDto::Create,
+                rendered: String::new(),
+                diff: None,
+                bytes: 2048,
+                copy: Some(copy("/home/rs/art/rifle.png", 2048, None)),
+            },
+            PlannedFileDto {
+                path: "Textures/Things/Projectile/RS_TestRifle_Bullet.png".into(),
+                kind: FileKindDto::Copy,
+                action: FileActionDto::Replace,
+                rendered: String::new(),
+                diff: None,
+                bytes: 512,
+                copy: Some(copy(
+                    "/home/rs/art/bullet.png",
+                    512,
+                    Some("2c26b46b68ffc68ff99b453c1d30413413422d706483bfa0f98a5e886266e7ae"),
+                )),
+            },
+        ],
+        diagnostics: vec![],
+        has_errors: false,
+    }
+}
+
+pub fn asset_info() -> DesignerAssetInfoResponse {
+    DesignerAssetInfoResponse {
+        path: "/home/rs/art/rifle.png".into(),
+        status: AssetStatusDto::Found,
+        kind: Some(AssetKindDto::Png),
+        bytes: Some(2048),
+        sha256: Some("9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08".into()),
+        width: Some(64),
+        height: Some(64),
+        channels: None,
+        sample_rate: None,
+        duration_ms: None,
+        preview: Some("data:image/png;base64,iVBORw0KGgo=".into()),
+        diagnostics: vec![],
     }
 }
 
@@ -664,6 +756,8 @@ pub fn apply_report() -> ApplyReportDto {
             bytes: 76,
             backup_path: None,
             verified: true,
+            kind: None,
+            sha256: None,
         }],
         unchanged: vec!["About/About.xml".into()],
         dry_apply_ok: Some(true),
@@ -1357,6 +1451,16 @@ pub fn all_samples() -> Vec<(&'static str, Value)> {
     );
     add!("DesignerExportPlanRequest", export_request());
     add!("WritePlanDto", write_plan());
+    add!("WritePlanDto(assets)", asset_plan());
+    add!("DesignSpecDto(assets)", asset_spec());
+    add!("DesignerAssetInfoResponse", asset_info());
+    add!(
+        "DesignerAssetInfoRequest",
+        DesignerAssetInfoRequest {
+            path: "art/rifle.png".into(),
+            project_id: Some("p-1".into()),
+        }
+    );
     add!(
         "DesignerApplyPlanRequest",
         DesignerApplyPlanRequest {

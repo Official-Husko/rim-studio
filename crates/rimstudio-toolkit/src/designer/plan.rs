@@ -22,11 +22,13 @@ use rimstudio_design::ce::lint::{LintContext, LintFile, run_files};
 use rimstudio_design::ce::patchgen::{CeProjectState, export_ce_plan_with, gate_violations};
 use rimstudio_design::model::DesignSpec;
 use rimstudio_design::plan::{
-    FileAction, FileKind, PlanBuilder, PlannedFile, TextEdit, WritePlan, export_vanilla_plan,
+    CopyPlan, FileAction, FileKind, PlanBuilder, PlannedFile, TextEdit, WritePlan,
+    export_vanilla_plan_with,
 };
 use rimstudio_design::validation::{has_errors, validate_refs};
 use rimstudio_ipc_types::designer::{
-    DesignerExportPlanRequest, FileActionDto, FileKindDto, PlannedFileDto, WritePlanDto,
+    CopyPlanDto, DesignerExportPlanRequest, FileActionDto, FileKindDto, PlannedFileDto,
+    WritePlanDto,
 };
 use rimstudio_ipc_types::diagnostic::diagnostics_to_dtos;
 use rimstudio_workspace::project::ProjectRecord;
@@ -36,6 +38,7 @@ use super::convert::convert_plan;
 use super::ctx::{Ctx, Engine};
 use super::dto::{count, draft_from_dto};
 use crate::error::{ToolkitError, ToolkitResult};
+use crate::shared::assets::facts_of;
 use crate::shared::diff::unified_diff;
 use crate::shared::merge::{changed_span, merge_into, merge_load_folders, render_new};
 use crate::shared::projectfs::ProjectView;
@@ -70,6 +73,18 @@ pub struct BuiltFile {
     pub diff: Option<String>,
     /// The byte span edits that turn `previous` into `text`.
     pub edits: Vec<TextEdit>,
+    /// For a copied asset ([`FileKind::Copy`]): the source and what is at the target now. `text` is empty.
+    pub copy: Option<BuiltCopy>,
+}
+
+/// The copy part of a built file: where the bytes come from and what the target holds now.
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct BuiltCopy {
+    /// What the plan says about the source (path as written, hash, size, dimensions).
+    pub plan: CopyPlan,
+    /// SHA-256 of the file at the target at planning time, `None` when there is none. Apply refuses when
+    /// the target holds something else by then.
+    pub existing_sha256: Option<String>,
 }
 
 /// A plan with final texts, ready to show or to apply.
@@ -119,7 +134,18 @@ impl BuiltPlan {
                     action: action_dto(f.action),
                     rendered: f.text.clone(),
                     diff: f.diff.clone(),
-                    bytes: count(f.text.len()),
+                    bytes: match &f.copy {
+                        Some(c) => count(usize::try_from(c.plan.bytes).unwrap_or(usize::MAX)),
+                        None => count(f.text.len()),
+                    },
+                    copy: f.copy.as_ref().map(|c| CopyPlanDto {
+                        source: c.plan.source.clone(),
+                        sha256: c.plan.sha256.clone(),
+                        bytes: count(usize::try_from(c.plan.bytes).unwrap_or(usize::MAX)),
+                        width: c.plan.width,
+                        height: c.plan.height,
+                        existing_sha256: c.existing_sha256.clone().filter(|h| *h != c.plan.sha256),
+                    }),
                 })
                 .collect(),
             diagnostics: diagnostics_to_dtos(&self.diagnostics),
@@ -135,6 +161,7 @@ pub fn kind_dto(kind: FileKind) -> FileKindDto {
         FileKind::CePatch => FileKindDto::CePatch,
         FileKind::LoadFolders => FileKindDto::LoadFolders,
         FileKind::About => FileKindDto::About,
+        FileKind::Copy => FileKindDto::Copy,
         _ => FileKindDto::VanillaDefs,
     }
 }
@@ -146,6 +173,7 @@ pub fn action_dto(action: FileAction) -> FileActionDto {
         FileAction::Create => FileActionDto::Create,
         FileAction::UpdateRegion => FileActionDto::UpdateRegion,
         FileAction::Unchanged => FileActionDto::Unchanged,
+        FileAction::Replace => FileActionDto::Replace,
     }
 }
 
@@ -166,12 +194,15 @@ fn error_diag(code: &DiagCode, message: String) -> Diagnostic {
     Diagnostic::new(code.clone(), Severity::Error, message)
 }
 
+/// The write order: copied assets first (a definition never points at a file that is not there yet), then
+/// definitions, then patches, then `LoadFolders.xml`.
 fn write_rank(kind: FileKind) -> u8 {
     match kind {
-        FileKind::VanillaDefs => 0,
-        FileKind::CePatch => 1,
-        FileKind::LoadFolders => 2,
-        _ => 3,
+        FileKind::Copy => 0,
+        FileKind::VanillaDefs => 1,
+        FileKind::CePatch => 2,
+        FileKind::LoadFolders => 3,
+        _ => 4,
     }
 }
 
@@ -192,6 +223,12 @@ pub fn realize(
     let mut files: Vec<BuiltFile> = Vec::new();
     let mut scratch_defs: Vec<Node> = Vec::new();
     for file in &design.files {
+        if file.kind == FileKind::Copy {
+            if let Some(built) = realize_copy(writer, file, &mut diagnostics) {
+                files.push(built);
+            }
+            continue;
+        }
         if file.kind == FileKind::VanillaDefs
             && let Some(tree) = &file.tree
         {
@@ -250,6 +287,7 @@ pub fn realize(
             previous,
             diff,
             edits,
+            copy: None,
         });
     }
     files.sort_by(|a, b| {
@@ -266,7 +304,49 @@ pub fn realize(
     }
 }
 
-/// The content hash of a plan: path, kind, action and final text of every file, in write order.
+/// Builds the file of a planned copy: compares the hash of what is at the target with the source's.
+fn realize_copy(
+    writer: &GuardedWriter,
+    file: &PlannedFile,
+    diagnostics: &mut Vec<Diagnostic>,
+) -> Option<BuiltFile> {
+    let plan = file.copy.clone()?;
+    let existing = match writer.existing_file_hash(&file.path) {
+        Ok(e) => e.map(|(_, hash)| hash),
+        Err(e) => {
+            let diag = match e {
+                ToolkitError::PathRefused { .. } => error_diag(&PATH_REFUSED, e.to_string()),
+                _ => error_diag(
+                    &MERGE_FAILED,
+                    format!("{} cannot be compared and is left alone: {e}", file.path),
+                ),
+            };
+            diagnostics.push(diag.with_arg("path", &file.path));
+            return None;
+        }
+    };
+    let action = match &existing {
+        None => FileAction::Create,
+        Some(hash) if *hash == plan.sha256 => FileAction::Unchanged,
+        Some(_) => FileAction::Replace,
+    };
+    Some(BuiltFile {
+        path: file.path.clone(),
+        kind: FileKind::Copy,
+        action,
+        text: String::new(),
+        previous: None,
+        diff: None,
+        edits: Vec::new(),
+        copy: Some(BuiltCopy {
+            plan,
+            existing_sha256: existing,
+        }),
+    })
+}
+
+/// The content hash of a plan: path, kind, action and final text of every file, in write order. A copied
+/// file adds its source, the hash of the source and the hash of what is at the target.
 #[must_use]
 pub fn plan_id_of(files: &[BuiltFile]) -> String {
     let mut hasher = blake3::Hasher::new();
@@ -277,6 +357,14 @@ pub fn plan_id_of(files: &[BuiltFile]) -> String {
         hasher.update(&[0]);
         hasher.update(f.text.as_bytes());
         hasher.update(&[0]);
+        if let Some(c) = &f.copy {
+            hasher.update(c.plan.source.as_bytes());
+            hasher.update(&[0]);
+            hasher.update(c.plan.sha256.as_bytes());
+            hasher.update(&[0]);
+            hasher.update(c.existing_sha256.as_deref().unwrap_or("-").as_bytes());
+            hasher.update(&[0]);
+        }
     }
     hasher
         .finalize()
@@ -417,7 +505,8 @@ pub fn plan_design(
     if let Some(engine) = &engine {
         extra.extend(validate_refs(spec, &engine.lookup()));
     }
-    let vanilla = export_vanilla_plan(spec, &view.layout);
+    let facts = facts_of(spec, &view.root);
+    let vanilla = export_vanilla_plan_with(spec, &view.layout, &facts);
     let vanilla_ok = !vanilla.has_errors();
     extra.extend(vanilla.diagnostics.iter().cloned());
     for file in vanilla.files {

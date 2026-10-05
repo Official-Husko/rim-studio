@@ -18,6 +18,8 @@ import type {
   DefSearchRequest,
   DefsGetResolvedRequest,
   DesignerApplyPlanRequest,
+  DesignerAssetInfoRequest,
+  DesignerAssetInfoResponse,
   DesignerCalibrateRequest,
   DesignerCeSuggestRequest,
   DesignerCloneDiffRequest,
@@ -133,6 +135,7 @@ export interface CommandTable {
   designer_clone_diff: { kind: "query"; request: DesignerCloneDiffRequest; response: DesignerCloneDiffResponse };
   designer_structure_defaults: { kind: "query"; request: DesignerStructureDefaultsRequest; response: DesignerStructureDefaultsResponse };
   designer_projectile_own: { kind: "query"; request: DesignerProjectileOwnRequest; response: DesignerProjectileOwnResponse };
+  designer_asset_info: { kind: "query"; request: DesignerAssetInfoRequest; response: DesignerAssetInfoResponse };
 }
 
 export type CommandName = keyof CommandTable;
@@ -194,6 +197,7 @@ export const commands = {
   designerCloneDiff: { name: "designer_clone_diff", kind: "query" },
   designerStructureDefaults: { name: "designer_structure_defaults", kind: "query" },
   designerProjectileOwn: { name: "designer_projectile_own", kind: "query" },
+  designerAssetInfo: { name: "designer_asset_info", kind: "query" },
 } as const satisfies Record<string, CommandEntry>;
 
 /** Every wire name, in registry order. */
@@ -241,4 +245,5 @@ export const commandNames = [
   "designer_clone_diff",
   "designer_structure_defaults",
   "designer_projectile_own",
+  "designer_asset_info",
 ] as const satisfies readonly CommandName[];

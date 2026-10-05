@@ -24,6 +24,7 @@
 
 use rimstudio_core::diag::{DiagCode, Diagnostic, Severity};
 use rimstudio_core::jobs::{CancelToken, Progress, ProgressSink, ProgressUnit};
+use rimstudio_design::assets::{MAX_CLIP_BYTES, MAX_TEXTURE_BYTES};
 use rimstudio_design::ce::patchgen::dry_apply;
 use rimstudio_design::plan::{FileAction, FileKind};
 use rimstudio_ipc_types::designer::{AppliedFileDto, ApplyReportDto, DesignerApplyPlanRequest};
@@ -33,8 +34,9 @@ use rimstudio_xml::reader::parse_document;
 
 use super::ctx::Ctx;
 use super::dto::count;
-use super::plan::{BuiltPlan, action_dto, prepare, refusal};
+use super::plan::{BuiltCopy, BuiltFile, BuiltPlan, action_dto, kind_dto, prepare, refusal};
 use crate::error::{ToolkitError, ToolkitResult};
+use crate::shared::assets::resolve_source;
 use crate::shared::writer::{Expect, GuardedWriter};
 
 /// The diagnostic code of a job that stopped between files.
@@ -109,6 +111,52 @@ pub fn dry_run(
     let ok = run.is_clean() && diagnostics.is_empty();
     diagnostics.extend(run.diagnostics);
     Ok(Some(DryReport { ok, diagnostics }))
+}
+
+/// What one written file reports, for a text file and for a copy alike.
+struct WrittenFile {
+    bytes: u64,
+    backup: Option<camino::Utf8PathBuf>,
+    verified: bool,
+    sha256: Option<String>,
+}
+
+/// The size limit of a copied file by its target: clips (under `Sounds`) and textures differ.
+fn max_for(path: &str) -> u64 {
+    if path.split('/').any(|s| s == "Sounds") {
+        MAX_CLIP_BYTES
+    } else {
+        MAX_TEXTURE_BYTES
+    }
+}
+
+fn resolve_copy_source(writer: &GuardedWriter, source: &str) -> ToolkitResult<camino::Utf8PathBuf> {
+    resolve_source(source, Some(writer.root()))
+        .map_err(|reason| refusal(format!("the source {source} cannot be used: {reason}")))
+}
+
+/// Copies one planned asset into the project through the guarded writer.
+fn copy_one(
+    writer: &GuardedWriter,
+    file: &BuiltFile,
+    copy: &BuiltCopy,
+    backup: bool,
+) -> ToolkitResult<WrittenFile> {
+    let source = resolve_copy_source(writer, &copy.plan.source)?;
+    let report = writer.copy_in(
+        &file.path,
+        &source,
+        &copy.plan.sha256,
+        max_for(&file.path),
+        backup,
+        copy.existing_sha256.as_deref(),
+    )?;
+    Ok(WrittenFile {
+        bytes: report.bytes,
+        backup: report.backup,
+        verified: report.verified,
+        sha256: Some(report.sha256),
+    })
 }
 
 /// Refuses a plan whose paths collide: the same path twice, two paths that differ only by letter case (one
@@ -190,7 +238,26 @@ pub fn apply_built(
         .filter(|f| f.action != FileAction::Unchanged)
         .collect();
     for file in &pending {
-        writer.preflight(&file.path, Expect::Previous(file.previous.as_deref()))?;
+        match &file.copy {
+            Some(c) => writer.preflight_copy(&file.path, c.existing_sha256.as_deref())?,
+            None => writer.preflight(&file.path, Expect::Previous(file.previous.as_deref()))?,
+        }
+        if let Some(c) = &file.copy {
+            // the source must be readable and unchanged now, before anything is written
+            let source = resolve_copy_source(writer, &c.plan.source)?;
+            rimstudio_io::copy::read_source(&source, max_for(&file.path))
+                .map_err(|e| refusal(format!("{e}; plan again")))
+                .and_then(|read| {
+                    if read.sha256 == c.plan.sha256 {
+                        Ok(())
+                    } else {
+                        Err(refusal(format!(
+                            "{} changed since the plan was made; plan again",
+                            c.plan.source
+                        )))
+                    }
+                })?;
+        }
     }
     let total = pending.len() as u64;
     let mut written = Vec::new();
@@ -223,12 +290,22 @@ pub fn apply_built(
                 .with_unit(ProgressUnit::Files)
                 .with_detail(file.path.clone()),
         );
-        let result = writer.write_expecting(
-            &file.path,
-            &file.text,
-            options.backup,
-            Expect::Previous(file.previous.as_deref()),
-        );
+        let result = match &file.copy {
+            Some(c) => copy_one(writer, file, c, options.backup),
+            None => writer
+                .write_expecting(
+                    &file.path,
+                    &file.text,
+                    options.backup,
+                    Expect::Previous(file.previous.as_deref()),
+                )
+                .map(|r| WrittenFile {
+                    bytes: r.bytes as u64,
+                    backup: r.backup,
+                    verified: r.verified,
+                    sha256: None,
+                }),
+        };
         let report = match result {
             Ok(report) => report,
             Err(e) if !written.is_empty() => {
@@ -253,9 +330,11 @@ pub fn apply_built(
         written.push(AppliedFileDto {
             path: file.path.clone(),
             action: action_dto(file.action),
-            bytes: count(report.bytes),
+            bytes: count(usize::try_from(report.bytes).unwrap_or(usize::MAX)),
             backup_path: report.backup.map(|p| p.to_string()),
             verified: report.verified,
+            kind: Some(kind_dto(file.kind)),
+            sha256: report.sha256,
         });
     }
     progress.report(

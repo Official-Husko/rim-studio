@@ -13,6 +13,7 @@
 //! Extended file or class, even when the spec carries a CE patch: the CE plan is a separate function of the
 //! CE patch generator that adds its files to the same [`PlanBuilder`].
 
+pub mod assets;
 pub mod builder;
 pub mod layout;
 pub mod types;
@@ -20,8 +21,9 @@ pub mod vanilla;
 
 use rimstudio_core::tree::Node;
 
+use crate::assets::AssetFacts;
 use crate::model::{DesignSpec, ProjectileChoice};
-use crate::validation::{codes, has_errors, validate_vanilla};
+use crate::validation::{codes, has_errors, validate_assets, validate_vanilla};
 
 pub use crate::ce::patchgen::{
     CeProjectState, export_ce_plan, export_ce_plan_with, gate_violations,
@@ -29,7 +31,7 @@ pub use crate::ce::patchgen::{
 pub use builder::{PlanBuilder, is_safe_relative_path};
 pub use layout::{LayoutProfile, ProjectLayout, SoundFile, WeaponCategory, file_stem};
 pub use types::{
-    FileAction, FileKind, PlannedFile, SectionGroup, SectionHeader, TextEdit, WritePlan,
+    CopyPlan, FileAction, FileKind, PlannedFile, SectionGroup, SectionHeader, TextEdit, WritePlan,
 };
 pub use vanilla::{
     TEMPLATE_VANILLA_MELEE, TEMPLATE_VANILLA_RANGED, melee_def, projectile_def, ranged_def,
@@ -69,9 +71,27 @@ fn defs_root(defs: Vec<Node>) -> Node {
 ///   contains `CombatExtended` anywhere turns the plan into an error plan.
 #[must_use]
 pub fn export_vanilla_plan(spec: &DesignSpec, layout: &ProjectLayout) -> WritePlan {
+    export_vanilla_plan_with(spec, layout, &AssetFacts::new())
+}
+
+/// [`export_vanilla_plan`] with the facts of the source files the spec imports (textures and sound clips).
+///
+/// The toolkit reads the files and passes what it found; this function stays pure. A texture import sets
+/// the conventional `texPath` of the weapon (and of an own projectile) and adds a copy file
+/// ([`FileKind::Copy`]); a custom shot sound adds copy files for the clips, a `SoundDef` in the layout's
+/// sound definition file and sets `soundCast`. A spec without imports plans exactly what
+/// [`export_vanilla_plan`] plans. A source that is missing, damaged or over the limit is an error
+/// diagnostic and the plan has no files.
+#[must_use]
+pub fn export_vanilla_plan_with(
+    spec: &DesignSpec,
+    layout: &ProjectLayout,
+    facts: &AssetFacts,
+) -> WritePlan {
     let mut builder = PlanBuilder::new();
     let mut diagnostics = validate_vanilla(spec);
     diagnostics.extend(layout.validate());
+    diagnostics.extend(validate_assets(spec, facts));
     if has_errors(&diagnostics) {
         builder.extend_diagnostics(diagnostics);
         return builder.build();
@@ -79,6 +99,7 @@ pub fn export_vanilla_plan(spec: &DesignSpec, layout: &ProjectLayout) -> WritePl
 
     let def_name = spec.identity.def_name.as_str();
     let mut spec = spec.clone();
+    let import_files = assets::apply_imports(&mut spec, layout, facts, &mut diagnostics);
     if spec.texture_path.is_none() && !spec.omit_defaults.iter().any(|o| o == "texPath") {
         let reserved = layout.weapon_texture_path(spec.kind, def_name);
         diagnostics.push(codes::TEXTURE_RESERVED.diagnostic(
@@ -141,12 +162,13 @@ pub fn export_vanilla_plan(spec: &DesignSpec, layout: &ProjectLayout) -> WritePl
     }
     sections.push(SectionHeader::banner(defs.len(), def_name));
     defs.push(weapon_def(spec));
-    let files = vec![PlannedFile::new_file(
+    let mut files = vec![PlannedFile::new_file(
         layout.weapon_def_path(category, def_name),
         FileKind::VanillaDefs,
         defs_root(defs),
         sections,
     )];
+    files.extend(import_files);
 
     for file in &files {
         if let Some(tree) = &file.tree

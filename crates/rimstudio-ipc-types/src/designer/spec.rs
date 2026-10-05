@@ -9,6 +9,7 @@ use std::collections::BTreeMap;
 
 use serde::{Deserialize, Serialize};
 
+use super::assets::{AssetImportsDto, SoundImportsDto};
 use super::carried::{ExtraMeleeDamageDto, RawNodeDto, RecipeSpecDto, SurpriseAttackSpecDto};
 
 /// Where a number came from. The order is the replacement rank, `typed` highest.
@@ -599,6 +600,14 @@ pub struct DesignSpecDto {
     #[serde(default, skip_serializing_if = "Vec::is_empty")]
     #[cfg_attr(feature = "ts", ts(as = "Option<Vec<String>>", optional))]
     pub accepted_missing: Vec<String>,
+    /// Texture files to copy into the project. Omitted when none.
+    #[serde(default, skip_serializing_if = "AssetImportsDto::is_empty")]
+    #[cfg_attr(feature = "ts", ts(as = "Option<AssetImportsDto>", optional))]
+    pub assets: AssetImportsDto,
+    /// Custom sounds made from clip files. Omitted when none.
+    #[serde(default, skip_serializing_if = "SoundImportsDto::is_empty")]
+    #[cfg_attr(feature = "ts", ts(as = "Option<SoundImportsDto>", optional))]
+    pub sounds: SoundImportsDto,
 }
 
 impl DesignSpecDto {
@@ -642,6 +651,8 @@ impl DesignSpecDto {
             omit_defaults: Vec::new(),
             inherit_reset: Vec::new(),
             accepted_missing: Vec::new(),
+            assets: AssetImportsDto::default(),
+            sounds: SoundImportsDto::default(),
         }
     }
 

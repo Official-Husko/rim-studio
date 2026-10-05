@@ -5,6 +5,7 @@
 //! writes into a project; the project tool creates one with the same writer) lives here, in a module that
 //! belongs to no tool and is always compiled.
 //!
+//! - [`assets`]: reading the source files of imported textures and sound clips (no decoding).
 //! - [`diff`]: a small in house unified line diff.
 //! - [`writer`]: [`writer::GuardedWriter`], the only way the toolkit writes: a path must be a safe relative
 //!   path, inside the project root and outside the protected folders; every replaced file is backed up and
@@ -13,6 +14,7 @@
 //!   file layout of the project).
 //! - [`merge`]: byte span merging of generated sections and `LoadFolders.xml` entries into existing files.
 
+pub mod assets;
 pub mod diff;
 pub mod env;
 pub mod merge;
