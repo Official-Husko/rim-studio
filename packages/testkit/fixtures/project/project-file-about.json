@@ -1,0 +1,8 @@
+{
+  "path": "About/About.xml",
+  "role": "about",
+  "bytes": 542,
+  "text": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<ModMetaData>\r\n\t<name>Huskos's Gewehr 41</name>\r\n\t<author>Husko</author>\r\n\t<url>https://steamcommunity.com/sharedfiles/filedetails/?id=3019688356</url>\r\n\t<packageId>oh.weapons.gewehr41</packageId>\r\n\t<supportedVersions>\r\n\t\t<li>1.4</li>\r\n\t</supportedVersions>\r\n\t<description>Enjoy the rare and experimental Gewehr 41 in crisp 512px resolution and all known (to my knowledge) flavors!</description>\r\n\t<loadAfter>\r\n\t\t<li>Ludeon.RimWorld</li>\r\n\t\t<li>CETeam.CombatExtended</li>\r\n\t</loadAfter>\r\n</ModMetaData>",
+  "truncated": false,
+  "binary": false
+}

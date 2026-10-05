@@ -1,0 +1,8 @@
+{
+  "path": "Defs/ThingDefs_Misc/Weapons/RangedIndustrial.xml",
+  "role": "defs-weapons",
+  "bytes": 15349,
+  "text": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<Defs>\r\n\r\n  <!-- ================================= 7.92x57mm Mauser Bullet ==================================== -->\r\n  <ThingDef ParentName=\"BaseBullet\">\r\n    <defName>Bullet_MauserRifle</defName>\r\n    <label>7.92x57mm Mauser Bullet</label>\r\n    <projectile>\r\n      <damageDef>Bullet</damageDef>\r\n      <damageAmountBase>26</damageAmountBase>\r\n      <stoppingPower>1.7</stoppingPower>\r\n      <speed>88</speed>\r\n    </projectile>\r\n    <graphicData>\r\n      <texPath>Things/Projectile/Bullet_big</texPath>\r\n      <graphicClass>Graphic_Single</graphicClass>\r\n    </graphicData>\r\n  </ThingDef>\r\n\r\n  <!-- ================================= Gewehr 41 (m) ==================================== -->\r\n  <ThingDef ParentName=\"BaseHumanMakeableGun\">\r\n    <defName>OH_G41m</defName>\r\n    <label>Gewehr 41 (m)</label>\r\n    <description>The Gewehr 41 (m) stands as a product of Germany's aspirations for semi-automatic infantry rifles during World War II. It introduced a gas-operated system that facilitated automatic cycling of firing, extraction, and ejection processes. This innovation allowed for quicker follow-up shots compared to traditional bolt-action rifles. Despite this advancement, the rifle faced challenges in production due to its complex engineering, which limited its availability on the battlefield. Reliability issues stemming from the gas system furthe",
+  "truncated": true,
+  "binary": false
+}

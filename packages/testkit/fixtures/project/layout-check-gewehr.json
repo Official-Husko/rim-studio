@@ -1,0 +1,52 @@
+{
+  "projectId": "p-c36c596a",
+  "profile": "core-style",
+  "issues": [
+    {
+      "code": "layout.ce-outside-gate",
+      "severity": "warning",
+      "path": "Patches/ce_patch.xml",
+      "message": "The file uses Combat Extended classes outside the gated Combat Extended folder, so the game reports errors when Combat Extended is not active.",
+      "fix": {
+        "kind": "move-file",
+        "summary": "Move the file to Compat/CombatExtended/Patches/ce_patch.xml and gate that folder in LoadFolders.xml, or list Combat Extended as a required mod.",
+        "automatic": false,
+        "targets": [
+          "Compat/CombatExtended/Patches/ce_patch.xml"
+        ]
+      }
+    },
+    {
+      "code": "layout.missing-folder",
+      "severity": "info",
+      "path": "Defs/SoundDefs",
+      "message": "The standard folder Defs/SoundDefs does not exist.",
+      "fix": {
+        "kind": "create-folder",
+        "summary": "Create the empty folder Defs/SoundDefs.",
+        "automatic": true,
+        "targets": [
+          "Defs/SoundDefs"
+        ]
+      }
+    },
+    {
+      "code": "layout.missing-folder",
+      "severity": "info",
+      "path": "Sounds",
+      "message": "The standard folder Sounds does not exist.",
+      "fix": {
+        "kind": "create-folder",
+        "summary": "Create the empty folder Sounds.",
+        "automatic": true,
+        "targets": [
+          "Sounds"
+        ]
+      }
+    }
+  ],
+  "errors": 0,
+  "warnings": 1,
+  "infos": 2,
+  "autoFixable": 2
+}

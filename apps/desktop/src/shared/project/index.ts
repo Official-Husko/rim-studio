@@ -1,0 +1,22 @@
+// Public entry of shared/project: the current project and the recent list, shared by the Project,
+// Weapons and Patches pages and the top bar selector.
+export {
+  RECENT_LIMIT,
+  bumpProjectRevision,
+  clearRecent,
+  currentProject,
+  currentProjectPath,
+  forgetRecent,
+  getCurrentProject,
+  getCurrentProjectPath,
+  openProjectAt,
+  projectRevision,
+  recentProjects,
+  refOf,
+  resetProjectStore,
+  restoreCurrentProject,
+  setCurrentProject,
+  useCurrentProject,
+  type ProjectRef,
+  type RecentProject,
+} from './store';

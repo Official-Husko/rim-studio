@@ -1,4 +1,5 @@
 import { useEffect } from 'preact/hooks';
+import { ProjectSelector } from '~/features/project';
 import { AppShell } from './AppShell';
 import { ErrorBoundary } from './ErrorBoundary';
 import { startRouter } from './route';
@@ -8,7 +9,7 @@ export function App() {
   useEffect(() => startRouter(), []);
   return (
     <ErrorBoundary region="RimStudio">
-      <AppShell />
+      <AppShell projectSlot={<ProjectSelector />} />
     </ErrorBoundary>
   );
 }

@@ -1,3 +1,4 @@
+import type { ComponentChildren } from 'preact';
 import { useMemo, useRef, useState } from 'preact/hooks';
 import { cx } from '../cx';
 import { Icon, type IconName } from './Icon';
@@ -8,6 +9,10 @@ export interface TreeNode {
   icon?: IconName;
   /** A short role text drawn as a mono tag after the label (a def type, a folder role). */
   role?: string;
+  /** Content after the label: badges, counts, sizes. Not part of the row's accessible name test. */
+  trailing?: ComponentChildren;
+  /** A native tooltip text for the row. */
+  title?: string;
   children?: TreeNode[];
 }
 
@@ -138,6 +143,7 @@ export function Tree({
             aria-expanded={hasChildren ? (open ? 'true' : 'false') : undefined}
             aria-selected={selected ? 'true' : 'false'}
             tabIndex={current?.node.id === node.id ? 0 : -1}
+            title={node.title}
             style={`--lvl:${item.level - 1}`}
             onFocus={() => setFocusId(node.id)}
             onClick={() => onSelect?.(node.id)}
@@ -169,6 +175,9 @@ export function Tree({
               </span>
             ) : null}
             <span class="min-w-0 flex-1 truncate">{node.label}</span>
+            {node.trailing ? (
+              <span class="flex shrink-0 items-center gap-1.5">{node.trailing}</span>
+            ) : null}
             {node.role ? (
               <span class="font-mono text-mono-small text-faint">{node.role}</span>
             ) : null}

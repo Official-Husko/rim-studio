@@ -1,0 +1,478 @@
+{
+  "projectId": "p-c36c596a",
+  "profile": "core-style",
+  "weaponsFolder": "Defs/ThingDefs_Misc/Weapons",
+  "ceFolder": "Compat/CombatExtended",
+  "ceFolderExists": false,
+  "ceFolderLegacy": false,
+  "ceGated": false,
+  "root": {
+    "name": "[OH] Gewehr 41",
+    "path": "",
+    "kind": "folder",
+    "role": "content-root",
+    "bytes": 11382149,
+    "files": 27,
+    "issues": 3,
+    "children": [
+      {
+        "name": "About",
+        "path": "About",
+        "kind": "folder",
+        "role": "about",
+        "bytes": 413827,
+        "files": 5,
+        "issues": 0,
+        "children": [
+          {
+            "name": "About.md",
+            "path": "About/About.md",
+            "kind": "file",
+            "role": "about",
+            "bytes": 10055,
+            "files": 1,
+            "issues": 0,
+            "children": []
+          },
+          {
+            "name": "About.xml",
+            "path": "About/About.xml",
+            "kind": "file",
+            "role": "about",
+            "bytes": 542,
+            "files": 1,
+            "issues": 0,
+            "children": []
+          },
+          {
+            "name": "Manifest.xml",
+            "path": "About/Manifest.xml",
+            "kind": "file",
+            "role": "about",
+            "bytes": 621,
+            "files": 1,
+            "issues": 0,
+            "children": []
+          },
+          {
+            "name": "Preview.png",
+            "path": "About/Preview.png",
+            "kind": "file",
+            "role": "about",
+            "bytes": 402599,
+            "files": 1,
+            "issues": 0,
+            "children": []
+          },
+          {
+            "name": "PublishedFileId.txt",
+            "path": "About/PublishedFileId.txt",
+            "kind": "file",
+            "role": "about",
+            "bytes": 10,
+            "files": 1,
+            "issues": 0,
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "Config",
+        "path": "Config",
+        "kind": "folder",
+        "role": "other",
+        "bytes": 137,
+        "files": 1,
+        "issues": 0,
+        "children": [
+          {
+            "name": "rimstudio.project.json",
+            "path": "Config/rimstudio.project.json",
+            "kind": "file",
+            "role": "other",
+            "bytes": 137,
+            "files": 1,
+            "issues": 0,
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "Defs",
+        "path": "Defs",
+        "kind": "folder",
+        "role": "defs",
+        "bytes": 15349,
+        "files": 1,
+        "issues": 1,
+        "children": [
+          {
+            "name": "ThingDefs_Misc",
+            "path": "Defs/ThingDefs_Misc",
+            "kind": "folder",
+            "role": "defs",
+            "bytes": 15349,
+            "files": 1,
+            "issues": 0,
+            "children": [
+              {
+                "name": "Weapons",
+                "path": "Defs/ThingDefs_Misc/Weapons",
+                "kind": "folder",
+                "role": "defs-weapons",
+                "bytes": 15349,
+                "files": 1,
+                "issues": 0,
+                "children": [
+                  {
+                    "name": "RangedIndustrial.xml",
+                    "path": "Defs/ThingDefs_Misc/Weapons/RangedIndustrial.xml",
+                    "kind": "file",
+                    "role": "defs-weapons",
+                    "bytes": 15349,
+                    "files": 1,
+                    "issues": 0,
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Patches",
+        "path": "Patches",
+        "kind": "folder",
+        "role": "patches",
+        "bytes": 9141,
+        "files": 1,
+        "issues": 1,
+        "children": [
+          {
+            "name": "ce_patch.xml",
+            "path": "Patches/ce_patch.xml",
+            "kind": "file",
+            "role": "patches",
+            "bytes": 9141,
+            "files": 1,
+            "issues": 1,
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "Source",
+        "path": "Source",
+        "kind": "folder",
+        "role": "source",
+        "bytes": 9587200,
+        "files": 6,
+        "issues": 0,
+        "children": [
+          {
+            "name": "Gewehr41m.ai",
+            "path": "Source/Gewehr41m.ai",
+            "kind": "file",
+            "role": "source",
+            "bytes": 438577,
+            "files": 1,
+            "issues": 0,
+            "children": []
+          },
+          {
+            "name": "Gewehr41w.ai",
+            "path": "Source/Gewehr41w.ai",
+            "kind": "file",
+            "role": "source",
+            "bytes": 1142725,
+            "files": 1,
+            "issues": 0,
+            "children": []
+          },
+          {
+            "name": "Preview.png",
+            "path": "Source/Preview.png",
+            "kind": "file",
+            "role": "source",
+            "bytes": 687588,
+            "files": 1,
+            "issues": 0,
+            "children": []
+          },
+          {
+            "name": "References.pur",
+            "path": "Source/References.pur",
+            "kind": "file",
+            "role": "source",
+            "bytes": 1181829,
+            "files": 1,
+            "issues": 0,
+            "children": []
+          },
+          {
+            "name": "preview.jpg",
+            "path": "Source/preview.jpg",
+            "kind": "file",
+            "role": "source",
+            "bytes": 523501,
+            "files": 1,
+            "issues": 0,
+            "children": []
+          },
+          {
+            "name": "preview.xcf",
+            "path": "Source/preview.xcf",
+            "kind": "file",
+            "role": "source",
+            "bytes": 5612980,
+            "files": 1,
+            "issues": 0,
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "Textures",
+        "path": "Textures",
+        "kind": "folder",
+        "role": "textures",
+        "bytes": 1355540,
+        "files": 10,
+        "issues": 0,
+        "children": [
+          {
+            "name": "Things",
+            "path": "Textures/Things",
+            "kind": "folder",
+            "role": "textures",
+            "bytes": 1355540,
+            "files": 10,
+            "issues": 0,
+            "children": [
+              {
+                "name": "Item",
+                "path": "Textures/Things/Item",
+                "kind": "folder",
+                "role": "textures",
+                "bytes": 1355540,
+                "files": 10,
+                "issues": 0,
+                "children": [
+                  {
+                    "name": "Equipment",
+                    "path": "Textures/Things/Item/Equipment",
+                    "kind": "folder",
+                    "role": "textures",
+                    "bytes": 1355540,
+                    "files": 10,
+                    "issues": 0,
+                    "children": [
+                      {
+                        "name": "WeaponRanged",
+                        "path": "Textures/Things/Item/Equipment/WeaponRanged",
+                        "kind": "folder",
+                        "role": "textures",
+                        "bytes": 1355540,
+                        "files": 10,
+                        "issues": 0,
+                        "children": [
+                          {
+                            "name": "oh_g41m.dds",
+                            "path": "Textures/Things/Item/Equipment/WeaponRanged/oh_g41m.dds",
+                            "kind": "file",
+                            "role": "textures",
+                            "bytes": 262292,
+                            "files": 1,
+                            "issues": 0,
+                            "children": []
+                          },
+                          {
+                            "name": "oh_g41m.png",
+                            "path": "Textures/Things/Item/Equipment/WeaponRanged/oh_g41m.png",
+                            "kind": "file",
+                            "role": "textures",
+                            "bytes": 7884,
+                            "files": 1,
+                            "issues": 0,
+                            "children": []
+                          },
+                          {
+                            "name": "oh_g41w.dds",
+                            "path": "Textures/Things/Item/Equipment/WeaponRanged/oh_g41w.dds",
+                            "kind": "file",
+                            "role": "textures",
+                            "bytes": 262292,
+                            "files": 1,
+                            "issues": 0,
+                            "children": []
+                          },
+                          {
+                            "name": "oh_g41w.png",
+                            "path": "Textures/Things/Item/Equipment/WeaponRanged/oh_g41w.png",
+                            "kind": "file",
+                            "role": "textures",
+                            "bytes": 7394,
+                            "files": 1,
+                            "issues": 0,
+                            "children": []
+                          },
+                          {
+                            "name": "oh_g41w_25r.dds",
+                            "path": "Textures/Things/Item/Equipment/WeaponRanged/oh_g41w_25r.dds",
+                            "kind": "file",
+                            "role": "textures",
+                            "bytes": 262292,
+                            "files": 1,
+                            "issues": 0,
+                            "children": []
+                          },
+                          {
+                            "name": "oh_g41w_25r.png",
+                            "path": "Textures/Things/Item/Equipment/WeaponRanged/oh_g41w_25r.png",
+                            "kind": "file",
+                            "role": "textures",
+                            "bytes": 10068,
+                            "files": 1,
+                            "issues": 0,
+                            "children": []
+                          },
+                          {
+                            "name": "oh_g41w_25r_sniper.dds",
+                            "path": "Textures/Things/Item/Equipment/WeaponRanged/oh_g41w_25r_sniper.dds",
+                            "kind": "file",
+                            "role": "textures",
+                            "bytes": 262292,
+                            "files": 1,
+                            "issues": 0,
+                            "children": []
+                          },
+                          {
+                            "name": "oh_g41w_25r_sniper.png",
+                            "path": "Textures/Things/Item/Equipment/WeaponRanged/oh_g41w_25r_sniper.png",
+                            "kind": "file",
+                            "role": "textures",
+                            "bytes": 10640,
+                            "files": 1,
+                            "issues": 0,
+                            "children": []
+                          },
+                          {
+                            "name": "oh_g41w_sniper.dds",
+                            "path": "Textures/Things/Item/Equipment/WeaponRanged/oh_g41w_sniper.dds",
+                            "kind": "file",
+                            "role": "textures",
+                            "bytes": 262292,
+                            "files": 1,
+                            "issues": 0,
+                            "children": []
+                          },
+                          {
+                            "name": "oh_g41w_sniper.png",
+                            "path": "Textures/Things/Item/Equipment/WeaponRanged/oh_g41w_sniper.png",
+                            "kind": "file",
+                            "role": "textures",
+                            "bytes": 8094,
+                            "files": 1,
+                            "issues": 0,
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": ".gitignore",
+        "path": ".gitignore",
+        "kind": "file",
+        "role": "other",
+        "bytes": 8,
+        "files": 1,
+        "issues": 0,
+        "children": []
+      },
+      {
+        "name": "Credits.txt",
+        "path": "Credits.txt",
+        "kind": "file",
+        "role": "other",
+        "bytes": 230,
+        "files": 1,
+        "issues": 0,
+        "children": []
+      },
+      {
+        "name": "README.md",
+        "path": "README.md",
+        "kind": "file",
+        "role": "other",
+        "bytes": 717,
+        "files": 1,
+        "issues": 0,
+        "children": []
+      }
+    ]
+  },
+  "counts": {
+    "folders": 12,
+    "files": 27,
+    "bytes": 11382149,
+    "defFiles": 1,
+    "weaponDefs": 5,
+    "projectileDefs": 1,
+    "patchFiles": 1,
+    "textures": 10,
+    "sounds": 0
+  },
+  "issues": [
+    {
+      "code": "layout.ce-outside-gate",
+      "severity": "warning",
+      "path": "Patches/ce_patch.xml",
+      "message": "The file uses Combat Extended classes outside the gated Combat Extended folder, so the game reports errors when Combat Extended is not active.",
+      "fix": {
+        "kind": "move-file",
+        "summary": "Move the file to Compat/CombatExtended/Patches/ce_patch.xml and gate that folder in LoadFolders.xml, or list Combat Extended as a required mod.",
+        "automatic": false,
+        "targets": [
+          "Compat/CombatExtended/Patches/ce_patch.xml"
+        ]
+      }
+    },
+    {
+      "code": "layout.missing-folder",
+      "severity": "info",
+      "path": "Defs/SoundDefs",
+      "message": "The standard folder Defs/SoundDefs does not exist.",
+      "fix": {
+        "kind": "create-folder",
+        "summary": "Create the empty folder Defs/SoundDefs.",
+        "automatic": true,
+        "targets": [
+          "Defs/SoundDefs"
+        ]
+      }
+    },
+    {
+      "code": "layout.missing-folder",
+      "severity": "info",
+      "path": "Sounds",
+      "message": "The standard folder Sounds does not exist.",
+      "fix": {
+        "kind": "create-folder",
+        "summary": "Create the empty folder Sounds.",
+        "automatic": true,
+        "targets": [
+          "Sounds"
+        ]
+      }
+    }
+  ],
+  "truncated": false
+}

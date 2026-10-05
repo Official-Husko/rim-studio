@@ -91,4 +91,15 @@ describe('Tree', () => {
       screen.getAllByRole('treeitem').filter((n) => n.getAttribute('tabindex') === '0'),
     ).toHaveLength(1);
   });
+
+  it('draws trailing content and the title of a row', () => {
+    render(
+      <Tree
+        label="Files"
+        nodes={[{ id: 'a', label: 'Defs', trailing: <span>3 files</span>, title: 'Definitions' }]}
+      />,
+    );
+    expect(screen.getByText('3 files')).toBeTruthy();
+    expect(screen.getByRole('treeitem').getAttribute('title')).toBe('Definitions');
+  });
 });

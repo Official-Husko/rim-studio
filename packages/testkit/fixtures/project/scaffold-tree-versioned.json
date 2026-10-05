@@ -1,0 +1,391 @@
+{
+  "projectId": "p-6482dae1",
+  "profile": "rimstudio",
+  "contentFolder": "1.6",
+  "weaponsFolder": "1.6/Defs/ThingDefs_Misc/Weapons",
+  "ceFolder": "Compat/CombatExtended",
+  "ceFolderExists": false,
+  "ceFolderLegacy": false,
+  "ceGated": false,
+  "root": {
+    "name": "vers",
+    "path": "",
+    "kind": "folder",
+    "role": "content-root",
+    "bytes": 539,
+    "files": 2,
+    "issues": 0,
+    "children": [
+      {
+        "name": "1.5",
+        "path": "1.5",
+        "kind": "folder",
+        "role": "content-root",
+        "bytes": 0,
+        "files": 0,
+        "issues": 0,
+        "children": [
+          {
+            "name": "Defs",
+            "path": "1.5/Defs",
+            "kind": "folder",
+            "role": "defs",
+            "bytes": 0,
+            "files": 0,
+            "issues": 0,
+            "children": [
+              {
+                "name": "SoundDefs",
+                "path": "1.5/Defs/SoundDefs",
+                "kind": "folder",
+                "role": "defs-sounds",
+                "bytes": 0,
+                "files": 0,
+                "issues": 0,
+                "children": []
+              },
+              {
+                "name": "ThingDefs_Misc",
+                "path": "1.5/Defs/ThingDefs_Misc",
+                "kind": "folder",
+                "role": "defs",
+                "bytes": 0,
+                "files": 0,
+                "issues": 0,
+                "children": [
+                  {
+                    "name": "Weapons",
+                    "path": "1.5/Defs/ThingDefs_Misc/Weapons",
+                    "kind": "folder",
+                    "role": "defs-weapons",
+                    "bytes": 0,
+                    "files": 0,
+                    "issues": 0,
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Patches",
+            "path": "1.5/Patches",
+            "kind": "folder",
+            "role": "patches",
+            "bytes": 0,
+            "files": 0,
+            "issues": 0,
+            "children": []
+          },
+          {
+            "name": "Sounds",
+            "path": "1.5/Sounds",
+            "kind": "folder",
+            "role": "sounds",
+            "bytes": 0,
+            "files": 0,
+            "issues": 0,
+            "children": [
+              {
+                "name": "Weapons",
+                "path": "1.5/Sounds/Weapons",
+                "kind": "folder",
+                "role": "sounds",
+                "bytes": 0,
+                "files": 0,
+                "issues": 0,
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Textures",
+            "path": "1.5/Textures",
+            "kind": "folder",
+            "role": "textures",
+            "bytes": 0,
+            "files": 0,
+            "issues": 0,
+            "children": [
+              {
+                "name": "Things",
+                "path": "1.5/Textures/Things",
+                "kind": "folder",
+                "role": "textures",
+                "bytes": 0,
+                "files": 0,
+                "issues": 0,
+                "children": [
+                  {
+                    "name": "Item",
+                    "path": "1.5/Textures/Things/Item",
+                    "kind": "folder",
+                    "role": "textures",
+                    "bytes": 0,
+                    "files": 0,
+                    "issues": 0,
+                    "children": [
+                      {
+                        "name": "Equipment",
+                        "path": "1.5/Textures/Things/Item/Equipment",
+                        "kind": "folder",
+                        "role": "textures",
+                        "bytes": 0,
+                        "files": 0,
+                        "issues": 0,
+                        "children": [
+                          {
+                            "name": "WeaponMelee",
+                            "path": "1.5/Textures/Things/Item/Equipment/WeaponMelee",
+                            "kind": "folder",
+                            "role": "textures",
+                            "bytes": 0,
+                            "files": 0,
+                            "issues": 0,
+                            "children": []
+                          },
+                          {
+                            "name": "WeaponRanged",
+                            "path": "1.5/Textures/Things/Item/Equipment/WeaponRanged",
+                            "kind": "folder",
+                            "role": "textures",
+                            "bytes": 0,
+                            "files": 0,
+                            "issues": 0,
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Projectile",
+                    "path": "1.5/Textures/Things/Projectile",
+                    "kind": "folder",
+                    "role": "textures",
+                    "bytes": 0,
+                    "files": 0,
+                    "issues": 0,
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "1.6",
+        "path": "1.6",
+        "kind": "folder",
+        "role": "content-root",
+        "bytes": 0,
+        "files": 0,
+        "issues": 0,
+        "children": [
+          {
+            "name": "Defs",
+            "path": "1.6/Defs",
+            "kind": "folder",
+            "role": "defs",
+            "bytes": 0,
+            "files": 0,
+            "issues": 0,
+            "children": [
+              {
+                "name": "SoundDefs",
+                "path": "1.6/Defs/SoundDefs",
+                "kind": "folder",
+                "role": "defs-sounds",
+                "bytes": 0,
+                "files": 0,
+                "issues": 0,
+                "children": []
+              },
+              {
+                "name": "ThingDefs_Misc",
+                "path": "1.6/Defs/ThingDefs_Misc",
+                "kind": "folder",
+                "role": "defs",
+                "bytes": 0,
+                "files": 0,
+                "issues": 0,
+                "children": [
+                  {
+                    "name": "Weapons",
+                    "path": "1.6/Defs/ThingDefs_Misc/Weapons",
+                    "kind": "folder",
+                    "role": "defs-weapons",
+                    "bytes": 0,
+                    "files": 0,
+                    "issues": 0,
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Patches",
+            "path": "1.6/Patches",
+            "kind": "folder",
+            "role": "patches",
+            "bytes": 0,
+            "files": 0,
+            "issues": 0,
+            "children": []
+          },
+          {
+            "name": "Sounds",
+            "path": "1.6/Sounds",
+            "kind": "folder",
+            "role": "sounds",
+            "bytes": 0,
+            "files": 0,
+            "issues": 0,
+            "children": [
+              {
+                "name": "Weapons",
+                "path": "1.6/Sounds/Weapons",
+                "kind": "folder",
+                "role": "sounds",
+                "bytes": 0,
+                "files": 0,
+                "issues": 0,
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Textures",
+            "path": "1.6/Textures",
+            "kind": "folder",
+            "role": "textures",
+            "bytes": 0,
+            "files": 0,
+            "issues": 0,
+            "children": [
+              {
+                "name": "Things",
+                "path": "1.6/Textures/Things",
+                "kind": "folder",
+                "role": "textures",
+                "bytes": 0,
+                "files": 0,
+                "issues": 0,
+                "children": [
+                  {
+                    "name": "Item",
+                    "path": "1.6/Textures/Things/Item",
+                    "kind": "folder",
+                    "role": "textures",
+                    "bytes": 0,
+                    "files": 0,
+                    "issues": 0,
+                    "children": [
+                      {
+                        "name": "Equipment",
+                        "path": "1.6/Textures/Things/Item/Equipment",
+                        "kind": "folder",
+                        "role": "textures",
+                        "bytes": 0,
+                        "files": 0,
+                        "issues": 0,
+                        "children": [
+                          {
+                            "name": "WeaponMelee",
+                            "path": "1.6/Textures/Things/Item/Equipment/WeaponMelee",
+                            "kind": "folder",
+                            "role": "textures",
+                            "bytes": 0,
+                            "files": 0,
+                            "issues": 0,
+                            "children": []
+                          },
+                          {
+                            "name": "WeaponRanged",
+                            "path": "1.6/Textures/Things/Item/Equipment/WeaponRanged",
+                            "kind": "folder",
+                            "role": "textures",
+                            "bytes": 0,
+                            "files": 0,
+                            "issues": 0,
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Projectile",
+                    "path": "1.6/Textures/Things/Projectile",
+                    "kind": "folder",
+                    "role": "textures",
+                    "bytes": 0,
+                    "files": 0,
+                    "issues": 0,
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "About",
+        "path": "About",
+        "kind": "folder",
+        "role": "about",
+        "bytes": 359,
+        "files": 1,
+        "issues": 0,
+        "children": [
+          {
+            "name": "About.xml",
+            "path": "About/About.xml",
+            "kind": "file",
+            "role": "about",
+            "bytes": 359,
+            "files": 1,
+            "issues": 0,
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "Common",
+        "path": "Common",
+        "kind": "folder",
+        "role": "content-root",
+        "bytes": 0,
+        "files": 0,
+        "issues": 0,
+        "children": []
+      },
+      {
+        "name": "LoadFolders.xml",
+        "path": "LoadFolders.xml",
+        "kind": "file",
+        "role": "load-folders",
+        "bytes": 180,
+        "files": 1,
+        "issues": 0,
+        "children": []
+      }
+    ]
+  },
+  "counts": {
+    "folders": 32,
+    "files": 2,
+    "bytes": 539,
+    "defFiles": 0,
+    "weaponDefs": 0,
+    "projectileDefs": 0,
+    "patchFiles": 0,
+    "textures": 0,
+    "sounds": 0
+  },
+  "issues": [],
+  "truncated": false
+}

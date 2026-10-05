@@ -1,0 +1,14 @@
+{
+  "projectId": "p-5f74ff3a",
+  "name": "Pawbeans Arsenal",
+  "path": "/home/user/mods/Pawbeans Arsenal",
+  "packageId": "pawbeans.arsenal",
+  "supportedVersions": [
+    "1.6"
+  ],
+  "hasAbout": true,
+  "hasLoadFolders": false,
+  "hasCeGate": false,
+  "defFiles": 0,
+  "diagnostics": []
+}

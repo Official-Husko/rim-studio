@@ -1,0 +1,15 @@
+{
+  "projectId": "p-5f53fa51",
+  "name": "The Lone Wolf Weapon Package",
+  "path": "/home/user/mods/[OH] The Lone Wolf Weapon Package",
+  "packageId": "TLWWP.Base",
+  "supportedVersions": [
+    "1.2",
+    "1.3"
+  ],
+  "hasAbout": true,
+  "hasLoadFolders": false,
+  "hasCeGate": false,
+  "defFiles": 2,
+  "diagnostics": []
+}

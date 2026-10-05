@@ -1,0 +1,139 @@
+{
+  "projectId": "p-49f9a60d",
+  "profile": "rimstudio",
+  "weaponsFolder": "Defs/ThingDefs_Misc/Weapons",
+  "ceFolder": "Compat/CombatExtended",
+  "ceFolderExists": false,
+  "ceFolderLegacy": false,
+  "ceGated": false,
+  "root": {
+    "name": "bare",
+    "path": "",
+    "kind": "folder",
+    "role": "content-root",
+    "bytes": 359,
+    "files": 1,
+    "issues": 3,
+    "children": [
+      {
+        "name": "About",
+        "path": "About",
+        "kind": "folder",
+        "role": "about",
+        "bytes": 359,
+        "files": 1,
+        "issues": 0,
+        "children": [
+          {
+            "name": "About.xml",
+            "path": "About/About.xml",
+            "kind": "file",
+            "role": "about",
+            "bytes": 359,
+            "files": 1,
+            "issues": 0,
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "Defs",
+        "path": "Defs",
+        "kind": "folder",
+        "role": "defs",
+        "bytes": 0,
+        "files": 0,
+        "issues": 0,
+        "children": [
+          {
+            "name": "SoundDefs",
+            "path": "Defs/SoundDefs",
+            "kind": "folder",
+            "role": "defs-sounds",
+            "bytes": 0,
+            "files": 0,
+            "issues": 0,
+            "children": []
+          },
+          {
+            "name": "ThingDefs_Misc",
+            "path": "Defs/ThingDefs_Misc",
+            "kind": "folder",
+            "role": "defs",
+            "bytes": 0,
+            "files": 0,
+            "issues": 0,
+            "children": [
+              {
+                "name": "Weapons",
+                "path": "Defs/ThingDefs_Misc/Weapons",
+                "kind": "folder",
+                "role": "defs-weapons",
+                "bytes": 0,
+                "files": 0,
+                "issues": 0,
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "counts": {
+    "folders": 5,
+    "files": 1,
+    "bytes": 359,
+    "defFiles": 0,
+    "weaponDefs": 0,
+    "projectileDefs": 0,
+    "patchFiles": 0,
+    "textures": 0,
+    "sounds": 0
+  },
+  "issues": [
+    {
+      "code": "layout.missing-folder",
+      "severity": "info",
+      "path": "Patches",
+      "message": "The standard folder Patches does not exist.",
+      "fix": {
+        "kind": "create-folder",
+        "summary": "Create the empty folder Patches.",
+        "automatic": true,
+        "targets": [
+          "Patches"
+        ]
+      }
+    },
+    {
+      "code": "layout.missing-folder",
+      "severity": "info",
+      "path": "Sounds",
+      "message": "The standard folder Sounds does not exist.",
+      "fix": {
+        "kind": "create-folder",
+        "summary": "Create the empty folder Sounds.",
+        "automatic": true,
+        "targets": [
+          "Sounds"
+        ]
+      }
+    },
+    {
+      "code": "layout.missing-folder",
+      "severity": "info",
+      "path": "Textures",
+      "message": "The standard folder Textures does not exist.",
+      "fix": {
+        "kind": "create-folder",
+        "summary": "Create the empty folder Textures.",
+        "automatic": true,
+        "targets": [
+          "Textures"
+        ]
+      }
+    }
+  ],
+  "truncated": false
+}

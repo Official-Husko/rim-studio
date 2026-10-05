@@ -1,0 +1,832 @@
+{
+  "projectId": "p-1d505ce1",
+  "profile": "rimstudio",
+  "contentFolder": "1.6",
+  "weaponsFolder": "1.6/Defs/ThingDefs_Misc/Weapons",
+  "ceFolder": "Compat/CombatExtended",
+  "ceFolderExists": true,
+  "ceFolderLegacy": false,
+  "ceGated": true,
+  "root": {
+    "name": "full",
+    "path": "",
+    "kind": "folder",
+    "role": "content-root",
+    "bytes": 1014,
+    "files": 27,
+    "issues": 0,
+    "children": [
+      {
+        "name": "1.5",
+        "path": "1.5",
+        "kind": "folder",
+        "role": "content-root",
+        "bytes": 0,
+        "files": 10,
+        "issues": 0,
+        "children": [
+          {
+            "name": "Assemblies",
+            "path": "1.5/Assemblies",
+            "kind": "folder",
+            "role": "assemblies",
+            "bytes": 0,
+            "files": 1,
+            "issues": 0,
+            "children": [
+              {
+                "name": ".gitkeep",
+                "path": "1.5/Assemblies/.gitkeep",
+                "kind": "file",
+                "role": "assemblies",
+                "bytes": 0,
+                "files": 1,
+                "issues": 0,
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Compat",
+            "path": "1.5/Compat",
+            "kind": "folder",
+            "role": "ce-compat",
+            "bytes": 0,
+            "files": 1,
+            "issues": 0,
+            "children": [
+              {
+                "name": "CombatExtended",
+                "path": "1.5/Compat/CombatExtended",
+                "kind": "folder",
+                "role": "ce-compat",
+                "bytes": 0,
+                "files": 1,
+                "issues": 0,
+                "children": [
+                  {
+                    "name": "Patches",
+                    "path": "1.5/Compat/CombatExtended/Patches",
+                    "kind": "folder",
+                    "role": "ce-compat",
+                    "bytes": 0,
+                    "files": 1,
+                    "issues": 0,
+                    "children": [
+                      {
+                        "name": ".gitkeep",
+                        "path": "1.5/Compat/CombatExtended/Patches/.gitkeep",
+                        "kind": "file",
+                        "role": "ce-compat",
+                        "bytes": 0,
+                        "files": 1,
+                        "issues": 0,
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Defs",
+            "path": "1.5/Defs",
+            "kind": "folder",
+            "role": "defs",
+            "bytes": 0,
+            "files": 2,
+            "issues": 0,
+            "children": [
+              {
+                "name": "SoundDefs",
+                "path": "1.5/Defs/SoundDefs",
+                "kind": "folder",
+                "role": "defs-sounds",
+                "bytes": 0,
+                "files": 1,
+                "issues": 0,
+                "children": [
+                  {
+                    "name": ".gitkeep",
+                    "path": "1.5/Defs/SoundDefs/.gitkeep",
+                    "kind": "file",
+                    "role": "defs-sounds",
+                    "bytes": 0,
+                    "files": 1,
+                    "issues": 0,
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "ThingDefs_Misc",
+                "path": "1.5/Defs/ThingDefs_Misc",
+                "kind": "folder",
+                "role": "defs",
+                "bytes": 0,
+                "files": 1,
+                "issues": 0,
+                "children": [
+                  {
+                    "name": "Weapons",
+                    "path": "1.5/Defs/ThingDefs_Misc/Weapons",
+                    "kind": "folder",
+                    "role": "defs-weapons",
+                    "bytes": 0,
+                    "files": 1,
+                    "issues": 0,
+                    "children": [
+                      {
+                        "name": ".gitkeep",
+                        "path": "1.5/Defs/ThingDefs_Misc/Weapons/.gitkeep",
+                        "kind": "file",
+                        "role": "defs-weapons",
+                        "bytes": 0,
+                        "files": 1,
+                        "issues": 0,
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Languages",
+            "path": "1.5/Languages",
+            "kind": "folder",
+            "role": "languages",
+            "bytes": 0,
+            "files": 1,
+            "issues": 0,
+            "children": [
+              {
+                "name": "English",
+                "path": "1.5/Languages/English",
+                "kind": "folder",
+                "role": "languages",
+                "bytes": 0,
+                "files": 1,
+                "issues": 0,
+                "children": [
+                  {
+                    "name": "Keyed",
+                    "path": "1.5/Languages/English/Keyed",
+                    "kind": "folder",
+                    "role": "languages",
+                    "bytes": 0,
+                    "files": 1,
+                    "issues": 0,
+                    "children": [
+                      {
+                        "name": ".gitkeep",
+                        "path": "1.5/Languages/English/Keyed/.gitkeep",
+                        "kind": "file",
+                        "role": "languages",
+                        "bytes": 0,
+                        "files": 1,
+                        "issues": 0,
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Patches",
+            "path": "1.5/Patches",
+            "kind": "folder",
+            "role": "patches",
+            "bytes": 0,
+            "files": 1,
+            "issues": 0,
+            "children": [
+              {
+                "name": ".gitkeep",
+                "path": "1.5/Patches/.gitkeep",
+                "kind": "file",
+                "role": "patches",
+                "bytes": 0,
+                "files": 1,
+                "issues": 0,
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Sounds",
+            "path": "1.5/Sounds",
+            "kind": "folder",
+            "role": "sounds",
+            "bytes": 0,
+            "files": 1,
+            "issues": 0,
+            "children": [
+              {
+                "name": "Weapons",
+                "path": "1.5/Sounds/Weapons",
+                "kind": "folder",
+                "role": "sounds",
+                "bytes": 0,
+                "files": 1,
+                "issues": 0,
+                "children": [
+                  {
+                    "name": ".gitkeep",
+                    "path": "1.5/Sounds/Weapons/.gitkeep",
+                    "kind": "file",
+                    "role": "sounds",
+                    "bytes": 0,
+                    "files": 1,
+                    "issues": 0,
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Textures",
+            "path": "1.5/Textures",
+            "kind": "folder",
+            "role": "textures",
+            "bytes": 0,
+            "files": 3,
+            "issues": 0,
+            "children": [
+              {
+                "name": "Things",
+                "path": "1.5/Textures/Things",
+                "kind": "folder",
+                "role": "textures",
+                "bytes": 0,
+                "files": 3,
+                "issues": 0,
+                "children": [
+                  {
+                    "name": "Item",
+                    "path": "1.5/Textures/Things/Item",
+                    "kind": "folder",
+                    "role": "textures",
+                    "bytes": 0,
+                    "files": 2,
+                    "issues": 0,
+                    "children": [
+                      {
+                        "name": "Equipment",
+                        "path": "1.5/Textures/Things/Item/Equipment",
+                        "kind": "folder",
+                        "role": "textures",
+                        "bytes": 0,
+                        "files": 2,
+                        "issues": 0,
+                        "children": [
+                          {
+                            "name": "WeaponMelee",
+                            "path": "1.5/Textures/Things/Item/Equipment/WeaponMelee",
+                            "kind": "folder",
+                            "role": "textures",
+                            "bytes": 0,
+                            "files": 1,
+                            "issues": 0,
+                            "children": [
+                              {
+                                "name": ".gitkeep",
+                                "path": "1.5/Textures/Things/Item/Equipment/WeaponMelee/.gitkeep",
+                                "kind": "file",
+                                "role": "textures",
+                                "bytes": 0,
+                                "files": 1,
+                                "issues": 0,
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "name": "WeaponRanged",
+                            "path": "1.5/Textures/Things/Item/Equipment/WeaponRanged",
+                            "kind": "folder",
+                            "role": "textures",
+                            "bytes": 0,
+                            "files": 1,
+                            "issues": 0,
+                            "children": [
+                              {
+                                "name": ".gitkeep",
+                                "path": "1.5/Textures/Things/Item/Equipment/WeaponRanged/.gitkeep",
+                                "kind": "file",
+                                "role": "textures",
+                                "bytes": 0,
+                                "files": 1,
+                                "issues": 0,
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Projectile",
+                    "path": "1.5/Textures/Things/Projectile",
+                    "kind": "folder",
+                    "role": "textures",
+                    "bytes": 0,
+                    "files": 1,
+                    "issues": 0,
+                    "children": [
+                      {
+                        "name": ".gitkeep",
+                        "path": "1.5/Textures/Things/Projectile/.gitkeep",
+                        "kind": "file",
+                        "role": "textures",
+                        "bytes": 0,
+                        "files": 1,
+                        "issues": 0,
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "1.6",
+        "path": "1.6",
+        "kind": "folder",
+        "role": "content-root",
+        "bytes": 0,
+        "files": 10,
+        "issues": 0,
+        "children": [
+          {
+            "name": "Assemblies",
+            "path": "1.6/Assemblies",
+            "kind": "folder",
+            "role": "assemblies",
+            "bytes": 0,
+            "files": 1,
+            "issues": 0,
+            "children": [
+              {
+                "name": ".gitkeep",
+                "path": "1.6/Assemblies/.gitkeep",
+                "kind": "file",
+                "role": "assemblies",
+                "bytes": 0,
+                "files": 1,
+                "issues": 0,
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Compat",
+            "path": "1.6/Compat",
+            "kind": "folder",
+            "role": "ce-compat",
+            "bytes": 0,
+            "files": 1,
+            "issues": 0,
+            "children": [
+              {
+                "name": "CombatExtended",
+                "path": "1.6/Compat/CombatExtended",
+                "kind": "folder",
+                "role": "ce-compat",
+                "bytes": 0,
+                "files": 1,
+                "issues": 0,
+                "children": [
+                  {
+                    "name": "Patches",
+                    "path": "1.6/Compat/CombatExtended/Patches",
+                    "kind": "folder",
+                    "role": "ce-compat",
+                    "bytes": 0,
+                    "files": 1,
+                    "issues": 0,
+                    "children": [
+                      {
+                        "name": ".gitkeep",
+                        "path": "1.6/Compat/CombatExtended/Patches/.gitkeep",
+                        "kind": "file",
+                        "role": "ce-compat",
+                        "bytes": 0,
+                        "files": 1,
+                        "issues": 0,
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Defs",
+            "path": "1.6/Defs",
+            "kind": "folder",
+            "role": "defs",
+            "bytes": 0,
+            "files": 2,
+            "issues": 0,
+            "children": [
+              {
+                "name": "SoundDefs",
+                "path": "1.6/Defs/SoundDefs",
+                "kind": "folder",
+                "role": "defs-sounds",
+                "bytes": 0,
+                "files": 1,
+                "issues": 0,
+                "children": [
+                  {
+                    "name": ".gitkeep",
+                    "path": "1.6/Defs/SoundDefs/.gitkeep",
+                    "kind": "file",
+                    "role": "defs-sounds",
+                    "bytes": 0,
+                    "files": 1,
+                    "issues": 0,
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "ThingDefs_Misc",
+                "path": "1.6/Defs/ThingDefs_Misc",
+                "kind": "folder",
+                "role": "defs",
+                "bytes": 0,
+                "files": 1,
+                "issues": 0,
+                "children": [
+                  {
+                    "name": "Weapons",
+                    "path": "1.6/Defs/ThingDefs_Misc/Weapons",
+                    "kind": "folder",
+                    "role": "defs-weapons",
+                    "bytes": 0,
+                    "files": 1,
+                    "issues": 0,
+                    "children": [
+                      {
+                        "name": ".gitkeep",
+                        "path": "1.6/Defs/ThingDefs_Misc/Weapons/.gitkeep",
+                        "kind": "file",
+                        "role": "defs-weapons",
+                        "bytes": 0,
+                        "files": 1,
+                        "issues": 0,
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Languages",
+            "path": "1.6/Languages",
+            "kind": "folder",
+            "role": "languages",
+            "bytes": 0,
+            "files": 1,
+            "issues": 0,
+            "children": [
+              {
+                "name": "English",
+                "path": "1.6/Languages/English",
+                "kind": "folder",
+                "role": "languages",
+                "bytes": 0,
+                "files": 1,
+                "issues": 0,
+                "children": [
+                  {
+                    "name": "Keyed",
+                    "path": "1.6/Languages/English/Keyed",
+                    "kind": "folder",
+                    "role": "languages",
+                    "bytes": 0,
+                    "files": 1,
+                    "issues": 0,
+                    "children": [
+                      {
+                        "name": ".gitkeep",
+                        "path": "1.6/Languages/English/Keyed/.gitkeep",
+                        "kind": "file",
+                        "role": "languages",
+                        "bytes": 0,
+                        "files": 1,
+                        "issues": 0,
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Patches",
+            "path": "1.6/Patches",
+            "kind": "folder",
+            "role": "patches",
+            "bytes": 0,
+            "files": 1,
+            "issues": 0,
+            "children": [
+              {
+                "name": ".gitkeep",
+                "path": "1.6/Patches/.gitkeep",
+                "kind": "file",
+                "role": "patches",
+                "bytes": 0,
+                "files": 1,
+                "issues": 0,
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Sounds",
+            "path": "1.6/Sounds",
+            "kind": "folder",
+            "role": "sounds",
+            "bytes": 0,
+            "files": 1,
+            "issues": 0,
+            "children": [
+              {
+                "name": "Weapons",
+                "path": "1.6/Sounds/Weapons",
+                "kind": "folder",
+                "role": "sounds",
+                "bytes": 0,
+                "files": 1,
+                "issues": 0,
+                "children": [
+                  {
+                    "name": ".gitkeep",
+                    "path": "1.6/Sounds/Weapons/.gitkeep",
+                    "kind": "file",
+                    "role": "sounds",
+                    "bytes": 0,
+                    "files": 1,
+                    "issues": 0,
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Textures",
+            "path": "1.6/Textures",
+            "kind": "folder",
+            "role": "textures",
+            "bytes": 0,
+            "files": 3,
+            "issues": 0,
+            "children": [
+              {
+                "name": "Things",
+                "path": "1.6/Textures/Things",
+                "kind": "folder",
+                "role": "textures",
+                "bytes": 0,
+                "files": 3,
+                "issues": 0,
+                "children": [
+                  {
+                    "name": "Item",
+                    "path": "1.6/Textures/Things/Item",
+                    "kind": "folder",
+                    "role": "textures",
+                    "bytes": 0,
+                    "files": 2,
+                    "issues": 0,
+                    "children": [
+                      {
+                        "name": "Equipment",
+                        "path": "1.6/Textures/Things/Item/Equipment",
+                        "kind": "folder",
+                        "role": "textures",
+                        "bytes": 0,
+                        "files": 2,
+                        "issues": 0,
+                        "children": [
+                          {
+                            "name": "WeaponMelee",
+                            "path": "1.6/Textures/Things/Item/Equipment/WeaponMelee",
+                            "kind": "folder",
+                            "role": "textures",
+                            "bytes": 0,
+                            "files": 1,
+                            "issues": 0,
+                            "children": [
+                              {
+                                "name": ".gitkeep",
+                                "path": "1.6/Textures/Things/Item/Equipment/WeaponMelee/.gitkeep",
+                                "kind": "file",
+                                "role": "textures",
+                                "bytes": 0,
+                                "files": 1,
+                                "issues": 0,
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "name": "WeaponRanged",
+                            "path": "1.6/Textures/Things/Item/Equipment/WeaponRanged",
+                            "kind": "folder",
+                            "role": "textures",
+                            "bytes": 0,
+                            "files": 1,
+                            "issues": 0,
+                            "children": [
+                              {
+                                "name": ".gitkeep",
+                                "path": "1.6/Textures/Things/Item/Equipment/WeaponRanged/.gitkeep",
+                                "kind": "file",
+                                "role": "textures",
+                                "bytes": 0,
+                                "files": 1,
+                                "issues": 0,
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Projectile",
+                    "path": "1.6/Textures/Things/Projectile",
+                    "kind": "folder",
+                    "role": "textures",
+                    "bytes": 0,
+                    "files": 1,
+                    "issues": 0,
+                    "children": [
+                      {
+                        "name": ".gitkeep",
+                        "path": "1.6/Textures/Things/Projectile/.gitkeep",
+                        "kind": "file",
+                        "role": "textures",
+                        "bytes": 0,
+                        "files": 1,
+                        "issues": 0,
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "About",
+        "path": "About",
+        "kind": "folder",
+        "role": "about",
+        "bytes": 359,
+        "files": 1,
+        "issues": 0,
+        "children": [
+          {
+            "name": "About.xml",
+            "path": "About/About.xml",
+            "kind": "file",
+            "role": "about",
+            "bytes": 359,
+            "files": 1,
+            "issues": 0,
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "Common",
+        "path": "Common",
+        "kind": "folder",
+        "role": "content-root",
+        "bytes": 0,
+        "files": 1,
+        "issues": 0,
+        "children": [
+          {
+            "name": ".gitkeep",
+            "path": "Common/.gitkeep",
+            "kind": "file",
+            "role": "other",
+            "bytes": 0,
+            "files": 1,
+            "issues": 0,
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "Source",
+        "path": "Source",
+        "kind": "folder",
+        "role": "source",
+        "bytes": 0,
+        "files": 1,
+        "issues": 0,
+        "children": [
+          {
+            "name": "Art",
+            "path": "Source/Art",
+            "kind": "folder",
+            "role": "source",
+            "bytes": 0,
+            "files": 1,
+            "issues": 0,
+            "children": [
+              {
+                "name": ".gitkeep",
+                "path": "Source/Art/.gitkeep",
+                "kind": "file",
+                "role": "source",
+                "bytes": 0,
+                "files": 1,
+                "issues": 0,
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": ".gitignore",
+        "path": ".gitignore",
+        "kind": "file",
+        "role": "other",
+        "bytes": 198,
+        "files": 1,
+        "issues": 0,
+        "children": []
+      },
+      {
+        "name": "Credits.txt",
+        "path": "Credits.txt",
+        "kind": "file",
+        "role": "other",
+        "bytes": 23,
+        "files": 1,
+        "issues": 0,
+        "children": []
+      },
+      {
+        "name": "LoadFolders.xml",
+        "path": "LoadFolders.xml",
+        "kind": "file",
+        "role": "load-folders",
+        "bytes": 330,
+        "files": 1,
+        "issues": 0,
+        "children": []
+      },
+      {
+        "name": "README.md",
+        "path": "README.md",
+        "kind": "file",
+        "role": "other",
+        "bytes": 104,
+        "files": 1,
+        "issues": 0,
+        "children": []
+      }
+    ]
+  },
+  "counts": {
+    "folders": 48,
+    "files": 27,
+    "bytes": 1014,
+    "defFiles": 0,
+    "weaponDefs": 0,
+    "projectileDefs": 0,
+    "patchFiles": 0,
+    "textures": 6,
+    "sounds": 2
+  },
+  "issues": [],
+  "truncated": false
+}

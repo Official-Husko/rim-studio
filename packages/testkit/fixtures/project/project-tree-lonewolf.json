@@ -1,0 +1,1316 @@
+{
+  "projectId": "p-5f53fa51",
+  "profile": "flat",
+  "contentFolder": "Common",
+  "weaponsFolder": "Common/Defs/ThingsDef_Misc/Weapons",
+  "ceFolder": "Compat/CombatExtended",
+  "ceFolderExists": false,
+  "ceFolderLegacy": false,
+  "ceGated": false,
+  "root": {
+    "name": "[OH] The Lone Wolf Weapon Package",
+    "path": "",
+    "kind": "folder",
+    "role": "content-root",
+    "bytes": 31533348,
+    "files": 88,
+    "issues": 2,
+    "children": [
+      {
+        "name": "About",
+        "path": "About",
+        "kind": "folder",
+        "role": "about",
+        "bytes": 470322,
+        "files": 3,
+        "issues": 0,
+        "children": [
+          {
+            "name": "About.xml",
+            "path": "About/About.xml",
+            "kind": "file",
+            "role": "about",
+            "bytes": 667,
+            "files": 1,
+            "issues": 0,
+            "children": []
+          },
+          {
+            "name": "Manifest.xml",
+            "path": "About/Manifest.xml",
+            "kind": "file",
+            "role": "about",
+            "bytes": 610,
+            "files": 1,
+            "issues": 0,
+            "children": []
+          },
+          {
+            "name": "Preview.png",
+            "path": "About/Preview.png",
+            "kind": "file",
+            "role": "about",
+            "bytes": 469045,
+            "files": 1,
+            "issues": 0,
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "Common",
+        "path": "Common",
+        "kind": "folder",
+        "role": "content-root",
+        "bytes": 43584,
+        "files": 5,
+        "issues": 1,
+        "children": [
+          {
+            "name": "Defs",
+            "path": "Common/Defs",
+            "kind": "folder",
+            "role": "defs",
+            "bytes": 43584,
+            "files": 5,
+            "issues": 1,
+            "children": [
+              {
+                "name": "SoundDef",
+                "path": "Common/Defs/SoundDef",
+                "kind": "folder",
+                "role": "defs",
+                "bytes": 5271,
+                "files": 1,
+                "issues": 0,
+                "children": [
+                  {
+                    "name": "Weapon_Sounds.xml",
+                    "path": "Common/Defs/SoundDef/Weapon_Sounds.xml",
+                    "kind": "file",
+                    "role": "defs",
+                    "bytes": 5271,
+                    "files": 1,
+                    "issues": 0,
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "ThingsDef_Misc",
+                "path": "Common/Defs/ThingsDef_Misc",
+                "kind": "folder",
+                "role": "defs",
+                "bytes": 38313,
+                "files": 4,
+                "issues": 0,
+                "children": [
+                  {
+                    "name": "Weapons",
+                    "path": "Common/Defs/ThingsDef_Misc/Weapons",
+                    "kind": "folder",
+                    "role": "defs-weapons",
+                    "bytes": 38313,
+                    "files": 3,
+                    "issues": 0,
+                    "children": [
+                      {
+                        "name": "Melee.xml.unused",
+                        "path": "Common/Defs/ThingsDef_Misc/Weapons/Melee.xml.unused",
+                        "kind": "file",
+                        "role": "defs-weapons",
+                        "bytes": 7648,
+                        "files": 1,
+                        "issues": 0,
+                        "children": []
+                      },
+                      {
+                        "name": "Weapons_Ranged.xml",
+                        "path": "Common/Defs/ThingsDef_Misc/Weapons/Weapons_Ranged.xml",
+                        "kind": "file",
+                        "role": "defs-weapons",
+                        "bytes": 27693,
+                        "files": 1,
+                        "issues": 0,
+                        "children": []
+                      },
+                      {
+                        "name": "Weapons_Throwable.unused",
+                        "path": "Common/Defs/ThingsDef_Misc/Weapons/Weapons_Throwable.unused",
+                        "kind": "file",
+                        "role": "defs-weapons",
+                        "bytes": 2972,
+                        "files": 1,
+                        "issues": 0,
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Apparel_Name.xml.unused",
+                    "path": "Common/Defs/ThingsDef_Misc/Apparel_Name.xml.unused",
+                    "kind": "file",
+                    "role": "defs",
+                    "bytes": 0,
+                    "files": 1,
+                    "issues": 0,
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Patches",
+        "path": "Patches",
+        "kind": "folder",
+        "role": "patches",
+        "bytes": 57061,
+        "files": 2,
+        "issues": 1,
+        "children": [
+          {
+            "name": "CE_Patch.xml",
+            "path": "Patches/CE_Patch.xml",
+            "kind": "file",
+            "role": "patches",
+            "bytes": 57061,
+            "files": 1,
+            "issues": 1,
+            "children": []
+          },
+          {
+            "name": "Patches_For_CE_And_Others",
+            "path": "Patches/Patches_For_CE_And_Others",
+            "kind": "file",
+            "role": "patches",
+            "bytes": 0,
+            "files": 1,
+            "issues": 0,
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "Raw Assets",
+        "path": "Raw Assets",
+        "kind": "folder",
+        "role": "source",
+        "bytes": 24661090,
+        "files": 25,
+        "issues": 0,
+        "children": [
+          {
+            "name": "Adobe Illustrator Files",
+            "path": "Raw Assets/Adobe Illustrator Files",
+            "kind": "folder",
+            "role": "source",
+            "bytes": 22131398,
+            "files": 24,
+            "issues": 0,
+            "children": [
+              {
+                "name": "Billy",
+                "path": "Raw Assets/Adobe Illustrator Files/Billy",
+                "kind": "folder",
+                "role": "source",
+                "bytes": 4865910,
+                "files": 15,
+                "issues": 0,
+                "children": [
+                  {
+                    "name": "Grenades",
+                    "path": "Raw Assets/Adobe Illustrator Files/Billy/Grenades",
+                    "kind": "folder",
+                    "role": "source",
+                    "bytes": 2756928,
+                    "files": 3,
+                    "issues": 0,
+                    "children": [
+                      {
+                        "name": "hand-gernade.ai",
+                        "path": "Raw Assets/Adobe Illustrator Files/Billy/Grenades/hand-gernade.ai",
+                        "kind": "file",
+                        "role": "source",
+                        "bytes": 405773,
+                        "files": 1,
+                        "issues": 0,
+                        "children": []
+                      },
+                      {
+                        "name": "hand-grenade.dds",
+                        "path": "Raw Assets/Adobe Illustrator Files/Billy/Grenades/hand-grenade.dds",
+                        "kind": "file",
+                        "role": "source",
+                        "bytes": 1440148,
+                        "files": 1,
+                        "issues": 0,
+                        "children": []
+                      },
+                      {
+                        "name": "hand-grenade.png",
+                        "path": "Raw Assets/Adobe Illustrator Files/Billy/Grenades/hand-grenade.png",
+                        "kind": "file",
+                        "role": "source",
+                        "bytes": 911007,
+                        "files": 1,
+                        "issues": 0,
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Pistols",
+                    "path": "Raw Assets/Adobe Illustrator Files/Billy/Pistols",
+                    "kind": "folder",
+                    "role": "source",
+                    "bytes": 1059778,
+                    "files": 6,
+                    "issues": 0,
+                    "children": [
+                      {
+                        "name": "desert-eagle.ai",
+                        "path": "Raw Assets/Adobe Illustrator Files/Billy/Pistols/desert-eagle.ai",
+                        "kind": "file",
+                        "role": "source",
+                        "bytes": 386968,
+                        "files": 1,
+                        "issues": 0,
+                        "children": []
+                      },
+                      {
+                        "name": "desert-eagle.jpg",
+                        "path": "Raw Assets/Adobe Illustrator Files/Billy/Pistols/desert-eagle.jpg",
+                        "kind": "file",
+                        "role": "source",
+                        "bytes": 30870,
+                        "files": 1,
+                        "issues": 0,
+                        "children": []
+                      },
+                      {
+                        "name": "glock-17.ai",
+                        "path": "Raw Assets/Adobe Illustrator Files/Billy/Pistols/glock-17.ai",
+                        "kind": "file",
+                        "role": "source",
+                        "bytes": 327506,
+                        "files": 1,
+                        "issues": 0,
+                        "children": []
+                      },
+                      {
+                        "name": "glock-17.jpg",
+                        "path": "Raw Assets/Adobe Illustrator Files/Billy/Pistols/glock-17.jpg",
+                        "kind": "file",
+                        "role": "source",
+                        "bytes": 16274,
+                        "files": 1,
+                        "issues": 0,
+                        "children": []
+                      },
+                      {
+                        "name": "glock-19-suppressor.ai",
+                        "path": "Raw Assets/Adobe Illustrator Files/Billy/Pistols/glock-19-suppressor.ai",
+                        "kind": "file",
+                        "role": "source",
+                        "bytes": 290871,
+                        "files": 1,
+                        "issues": 0,
+                        "children": []
+                      },
+                      {
+                        "name": "glock-19-suppressor.jpg",
+                        "path": "Raw Assets/Adobe Illustrator Files/Billy/Pistols/glock-19-suppressor.jpg",
+                        "kind": "file",
+                        "role": "source",
+                        "bytes": 7289,
+                        "files": 1,
+                        "issues": 0,
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Rifles",
+                    "path": "Raw Assets/Adobe Illustrator Files/Billy/Rifles",
+                    "kind": "folder",
+                    "role": "source",
+                    "bytes": 468571,
+                    "files": 2,
+                    "issues": 0,
+                    "children": [
+                      {
+                        "name": "AK-47.ai",
+                        "path": "Raw Assets/Adobe Illustrator Files/Billy/Rifles/AK-47.ai",
+                        "kind": "file",
+                        "role": "source",
+                        "bytes": 330669,
+                        "files": 1,
+                        "issues": 0,
+                        "children": []
+                      },
+                      {
+                        "name": "ak-47.jpg",
+                        "path": "Raw Assets/Adobe Illustrator Files/Billy/Rifles/ak-47.jpg",
+                        "kind": "file",
+                        "role": "source",
+                        "bytes": 137902,
+                        "files": 1,
+                        "issues": 0,
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Shotguns",
+                    "path": "Raw Assets/Adobe Illustrator Files/Billy/Shotguns",
+                    "kind": "folder",
+                    "role": "source",
+                    "bytes": 580633,
+                    "files": 4,
+                    "issues": 0,
+                    "children": [
+                      {
+                        "name": "1024w",
+                        "path": "Raw Assets/Adobe Illustrator Files/Billy/Shotguns/1024w",
+                        "kind": "folder",
+                        "role": "source",
+                        "bytes": 226655,
+                        "files": 2,
+                        "issues": 0,
+                        "children": [
+                          {
+                            "name": "Asset 1.dds",
+                            "path": "Raw Assets/Adobe Illustrator Files/Billy/Shotguns/1024w/Asset 1.dds",
+                            "kind": "file",
+                            "role": "source",
+                            "bytes": 213140,
+                            "files": 1,
+                            "issues": 0,
+                            "children": []
+                          },
+                          {
+                            "name": "Asset 1.png",
+                            "path": "Raw Assets/Adobe Illustrator Files/Billy/Shotguns/1024w/Asset 1.png",
+                            "kind": "file",
+                            "role": "source",
+                            "bytes": 13515,
+                            "files": 1,
+                            "issues": 0,
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "name": "S4-Shotgun.jpg",
+                        "path": "Raw Assets/Adobe Illustrator Files/Billy/Shotguns/S4-Shotgun.jpg",
+                        "kind": "file",
+                        "role": "source",
+                        "bytes": 55954,
+                        "files": 1,
+                        "issues": 0,
+                        "children": []
+                      },
+                      {
+                        "name": "s4-shotgun.ai",
+                        "path": "Raw Assets/Adobe Illustrator Files/Billy/Shotguns/s4-shotgun.ai",
+                        "kind": "file",
+                        "role": "source",
+                        "bytes": 298024,
+                        "files": 1,
+                        "issues": 0,
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Husko",
+                "path": "Raw Assets/Adobe Illustrator Files/Husko",
+                "kind": "folder",
+                "role": "source",
+                "bytes": 17265488,
+                "files": 9,
+                "issues": 0,
+                "children": [
+                  {
+                    "name": "4096w",
+                    "path": "Raw Assets/Adobe Illustrator Files/Husko/4096w",
+                    "kind": "folder",
+                    "role": "source",
+                    "bytes": 8708261,
+                    "files": 6,
+                    "issues": 0,
+                    "children": [
+                      {
+                        "name": "Asset 24.dds",
+                        "path": "Raw Assets/Adobe Illustrator Files/Husko/4096w/Asset 24.dds",
+                        "kind": "file",
+                        "role": "source",
+                        "bytes": 3211412,
+                        "files": 1,
+                        "issues": 0,
+                        "children": []
+                      },
+                      {
+                        "name": "Asset 24.png",
+                        "path": "Raw Assets/Adobe Illustrator Files/Husko/4096w/Asset 24.png",
+                        "kind": "file",
+                        "role": "source",
+                        "bytes": 24196,
+                        "files": 1,
+                        "issues": 0,
+                        "children": []
+                      },
+                      {
+                        "name": "Asset 25.dds",
+                        "path": "Raw Assets/Adobe Illustrator Files/Husko/4096w/Asset 25.dds",
+                        "kind": "file",
+                        "role": "source",
+                        "bytes": 2703508,
+                        "files": 1,
+                        "issues": 0,
+                        "children": []
+                      },
+                      {
+                        "name": "Asset 25.png",
+                        "path": "Raw Assets/Adobe Illustrator Files/Husko/4096w/Asset 25.png",
+                        "kind": "file",
+                        "role": "source",
+                        "bytes": 32602,
+                        "files": 1,
+                        "issues": 0,
+                        "children": []
+                      },
+                      {
+                        "name": "Asset 26.dds",
+                        "path": "Raw Assets/Adobe Illustrator Files/Husko/4096w/Asset 26.dds",
+                        "kind": "file",
+                        "role": "source",
+                        "bytes": 2703508,
+                        "files": 1,
+                        "issues": 0,
+                        "children": []
+                      },
+                      {
+                        "name": "Asset 26.png",
+                        "path": "Raw Assets/Adobe Illustrator Files/Husko/4096w/Asset 26.png",
+                        "kind": "file",
+                        "role": "source",
+                        "bytes": 33035,
+                        "files": 1,
+                        "issues": 0,
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Grenades Package I.ai",
+                    "path": "Raw Assets/Adobe Illustrator Files/Husko/Grenades Package I.ai",
+                    "kind": "file",
+                    "role": "source",
+                    "bytes": 823885,
+                    "files": 1,
+                    "issues": 0,
+                    "children": []
+                  },
+                  {
+                    "name": "US Small Arms p. 53.URL",
+                    "path": "Raw Assets/Adobe Illustrator Files/Husko/US Small Arms p. 53.URL",
+                    "kind": "file",
+                    "role": "source",
+                    "bytes": 236,
+                    "files": 1,
+                    "issues": 0,
+                    "children": []
+                  },
+                  {
+                    "name": "Weapon Package I.ai",
+                    "path": "Raw Assets/Adobe Illustrator Files/Husko/Weapon Package I.ai",
+                    "kind": "file",
+                    "role": "source",
+                    "bytes": 7733106,
+                    "files": 1,
+                    "issues": 0,
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Photoshop Files",
+            "path": "Raw Assets/Photoshop Files",
+            "kind": "folder",
+            "role": "source",
+            "bytes": 2529692,
+            "files": 1,
+            "issues": 0,
+            "children": [
+              {
+                "name": "Preview.psd",
+                "path": "Raw Assets/Photoshop Files/Preview.psd",
+                "kind": "file",
+                "role": "source",
+                "bytes": 2529692,
+                "files": 1,
+                "issues": 0,
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Sounds",
+        "path": "Sounds",
+        "kind": "folder",
+        "role": "sounds",
+        "bytes": 877334,
+        "files": 6,
+        "issues": 0,
+        "children": [
+          {
+            "name": "Weapons",
+            "path": "Sounds/Weapons",
+            "kind": "folder",
+            "role": "sounds",
+            "bytes": 877334,
+            "files": 6,
+            "issues": 0,
+            "children": [
+              {
+                "name": "TLWWP_AK_47_Shot.wav",
+                "path": "Sounds/Weapons/TLWWP_AK_47_Shot.wav",
+                "kind": "file",
+                "role": "sounds",
+                "bytes": 73904,
+                "files": 1,
+                "issues": 0,
+                "children": []
+              },
+              {
+                "name": "TLWWP_Desert_Eagle_Shot.wav",
+                "path": "Sounds/Weapons/TLWWP_Desert_Eagle_Shot.wav",
+                "kind": "file",
+                "role": "sounds",
+                "bytes": 199410,
+                "files": 1,
+                "issues": 0,
+                "children": []
+              },
+              {
+                "name": "TLWWP_Glock_17_Shot.wav",
+                "path": "Sounds/Weapons/TLWWP_Glock_17_Shot.wav",
+                "kind": "file",
+                "role": "sounds",
+                "bytes": 224172,
+                "files": 1,
+                "issues": 0,
+                "children": []
+              },
+              {
+                "name": "TLWWP_S4_Shotgun_Shot.wav",
+                "path": "Sounds/Weapons/TLWWP_S4_Shotgun_Shot.wav",
+                "kind": "file",
+                "role": "sounds",
+                "bytes": 169422,
+                "files": 1,
+                "issues": 0,
+                "children": []
+              },
+              {
+                "name": "TLWWP_Thompson_Carbine_Shot.wav",
+                "path": "Sounds/Weapons/TLWWP_Thompson_Carbine_Shot.wav",
+                "kind": "file",
+                "role": "sounds",
+                "bytes": 150506,
+                "files": 1,
+                "issues": 0,
+                "children": []
+              },
+              {
+                "name": "TLWWP_Thompson_M1A1_Shot.wav",
+                "path": "Sounds/Weapons/TLWWP_Thompson_M1A1_Shot.wav",
+                "kind": "file",
+                "role": "sounds",
+                "bytes": 59920,
+                "files": 1,
+                "issues": 0,
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Textures",
+        "path": "Textures",
+        "kind": "folder",
+        "role": "textures",
+        "bytes": 5413614,
+        "files": 44,
+        "issues": 0,
+        "children": [
+          {
+            "name": "Things",
+            "path": "Textures/Things",
+            "kind": "folder",
+            "role": "textures",
+            "bytes": 5413614,
+            "files": 44,
+            "issues": 0,
+            "children": [
+              {
+                "name": "Armor",
+                "path": "Textures/Things/Armor",
+                "kind": "folder",
+                "role": "textures",
+                "bytes": 0,
+                "files": 0,
+                "issues": 0,
+                "children": []
+              },
+              {
+                "name": "Projectile",
+                "path": "Textures/Things/Projectile",
+                "kind": "folder",
+                "role": "textures",
+                "bytes": 415881,
+                "files": 6,
+                "issues": 0,
+                "children": [
+                  {
+                    "name": "Example.dds",
+                    "path": "Textures/Things/Projectile/Example.dds",
+                    "kind": "file",
+                    "role": "textures",
+                    "bytes": 65684,
+                    "files": 1,
+                    "issues": 0,
+                    "children": []
+                  },
+                  {
+                    "name": "Example.png",
+                    "path": "Textures/Things/Projectile/Example.png",
+                    "kind": "file",
+                    "role": "textures",
+                    "bytes": 6138,
+                    "files": 1,
+                    "issues": 0,
+                    "children": []
+                  },
+                  {
+                    "name": "Example_Rocket.dds",
+                    "path": "Textures/Things/Projectile/Example_Rocket.dds",
+                    "kind": "file",
+                    "role": "textures",
+                    "bytes": 65684,
+                    "files": 1,
+                    "issues": 0,
+                    "children": []
+                  },
+                  {
+                    "name": "Example_Rocket.png",
+                    "path": "Textures/Things/Projectile/Example_Rocket.png",
+                    "kind": "file",
+                    "role": "textures",
+                    "bytes": 7730,
+                    "files": 1,
+                    "issues": 0,
+                    "children": []
+                  },
+                  {
+                    "name": "TLWWP_RGD_5_Projectile.dds",
+                    "path": "Textures/Things/Projectile/TLWWP_RGD_5_Projectile.dds",
+                    "kind": "file",
+                    "role": "textures",
+                    "bytes": 262292,
+                    "files": 1,
+                    "issues": 0,
+                    "children": []
+                  },
+                  {
+                    "name": "TLWWP_RGD_5_Projectile.png",
+                    "path": "Textures/Things/Projectile/TLWWP_RGD_5_Projectile.png",
+                    "kind": "file",
+                    "role": "textures",
+                    "bytes": 8353,
+                    "files": 1,
+                    "issues": 0,
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "Weapon",
+                "path": "Textures/Things/Weapon",
+                "kind": "folder",
+                "role": "textures",
+                "bytes": 4997733,
+                "files": 38,
+                "issues": 0,
+                "children": [
+                  {
+                    "name": "Melee",
+                    "path": "Textures/Things/Weapon/Melee",
+                    "kind": "folder",
+                    "role": "textures",
+                    "bytes": 139268,
+                    "files": 4,
+                    "issues": 0,
+                    "children": [
+                      {
+                        "name": "Example.dds",
+                        "path": "Textures/Things/Weapon/Melee/Example.dds",
+                        "kind": "file",
+                        "role": "textures",
+                        "bytes": 65684,
+                        "files": 1,
+                        "issues": 0,
+                        "children": []
+                      },
+                      {
+                        "name": "Example.png",
+                        "path": "Textures/Things/Weapon/Melee/Example.png",
+                        "kind": "file",
+                        "role": "textures",
+                        "bytes": 4475,
+                        "files": 1,
+                        "issues": 0,
+                        "children": []
+                      },
+                      {
+                        "name": "Example_m.dds",
+                        "path": "Textures/Things/Weapon/Melee/Example_m.dds",
+                        "kind": "file",
+                        "role": "textures",
+                        "bytes": 65684,
+                        "files": 1,
+                        "issues": 0,
+                        "children": []
+                      },
+                      {
+                        "name": "Example_m.png",
+                        "path": "Textures/Things/Weapon/Melee/Example_m.png",
+                        "kind": "file",
+                        "role": "textures",
+                        "bytes": 3425,
+                        "files": 1,
+                        "issues": 0,
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Ranged",
+                    "path": "Textures/Things/Weapon/Ranged",
+                    "kind": "folder",
+                    "role": "textures",
+                    "bytes": 4497231,
+                    "files": 30,
+                    "issues": 0,
+                    "children": [
+                      {
+                        "name": "Launcher",
+                        "path": "Textures/Things/Weapon/Ranged/Launcher",
+                        "kind": "folder",
+                        "role": "textures",
+                        "bytes": 83835,
+                        "files": 2,
+                        "issues": 0,
+                        "children": [
+                          {
+                            "name": "Example.dds",
+                            "path": "Textures/Things/Weapon/Ranged/Launcher/Example.dds",
+                            "kind": "file",
+                            "role": "textures",
+                            "bytes": 65684,
+                            "files": 1,
+                            "issues": 0,
+                            "children": []
+                          },
+                          {
+                            "name": "Example.png",
+                            "path": "Textures/Things/Weapon/Ranged/Launcher/Example.png",
+                            "kind": "file",
+                            "role": "textures",
+                            "bytes": 18151,
+                            "files": 1,
+                            "issues": 0,
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "name": "MG",
+                        "path": "Textures/Things/Weapon/Ranged/MG",
+                        "kind": "folder",
+                        "role": "textures",
+                        "bytes": 81702,
+                        "files": 2,
+                        "issues": 0,
+                        "children": [
+                          {
+                            "name": "Example.dds",
+                            "path": "Textures/Things/Weapon/Ranged/MG/Example.dds",
+                            "kind": "file",
+                            "role": "textures",
+                            "bytes": 65684,
+                            "files": 1,
+                            "issues": 0,
+                            "children": []
+                          },
+                          {
+                            "name": "Example.png",
+                            "path": "Textures/Things/Weapon/Ranged/MG/Example.png",
+                            "kind": "file",
+                            "role": "textures",
+                            "bytes": 16018,
+                            "files": 1,
+                            "issues": 0,
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Pistol",
+                        "path": "Textures/Things/Weapon/Ranged/Pistol",
+                        "kind": "folder",
+                        "role": "textures",
+                        "bytes": 616117,
+                        "files": 6,
+                        "issues": 0,
+                        "children": [
+                          {
+                            "name": "Example.dds",
+                            "path": "Textures/Things/Weapon/Ranged/Pistol/Example.dds",
+                            "kind": "file",
+                            "role": "textures",
+                            "bytes": 65684,
+                            "files": 1,
+                            "issues": 0,
+                            "children": []
+                          },
+                          {
+                            "name": "Example.png",
+                            "path": "Textures/Things/Weapon/Ranged/Pistol/Example.png",
+                            "kind": "file",
+                            "role": "textures",
+                            "bytes": 8208,
+                            "files": 1,
+                            "issues": 0,
+                            "children": []
+                          },
+                          {
+                            "name": "TLWWP_Desert_Eagle.dds",
+                            "path": "Textures/Things/Weapon/Ranged/Pistol/TLWWP_Desert_Eagle.dds",
+                            "kind": "file",
+                            "role": "textures",
+                            "bytes": 262292,
+                            "files": 1,
+                            "issues": 0,
+                            "children": []
+                          },
+                          {
+                            "name": "TLWWP_Desert_Eagle.png",
+                            "path": "Textures/Things/Weapon/Ranged/Pistol/TLWWP_Desert_Eagle.png",
+                            "kind": "file",
+                            "role": "textures",
+                            "bytes": 9057,
+                            "files": 1,
+                            "issues": 0,
+                            "children": []
+                          },
+                          {
+                            "name": "TLWWP_Glock_17.dds",
+                            "path": "Textures/Things/Weapon/Ranged/Pistol/TLWWP_Glock_17.dds",
+                            "kind": "file",
+                            "role": "textures",
+                            "bytes": 262292,
+                            "files": 1,
+                            "issues": 0,
+                            "children": []
+                          },
+                          {
+                            "name": "TLWWP_Glock_17.png",
+                            "path": "Textures/Things/Weapon/Ranged/Pistol/TLWWP_Glock_17.png",
+                            "kind": "file",
+                            "role": "textures",
+                            "bytes": 8584,
+                            "files": 1,
+                            "issues": 0,
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Rifle",
+                        "path": "Textures/Things/Weapon/Ranged/Rifle",
+                        "kind": "folder",
+                        "role": "textures",
+                        "bytes": 890526,
+                        "files": 8,
+                        "issues": 0,
+                        "children": [
+                          {
+                            "name": "Example.dds",
+                            "path": "Textures/Things/Weapon/Ranged/Rifle/Example.dds",
+                            "kind": "file",
+                            "role": "textures",
+                            "bytes": 65684,
+                            "files": 1,
+                            "issues": 0,
+                            "children": []
+                          },
+                          {
+                            "name": "Example.png",
+                            "path": "Textures/Things/Weapon/Ranged/Rifle/Example.png",
+                            "kind": "file",
+                            "role": "textures",
+                            "bytes": 10038,
+                            "files": 1,
+                            "issues": 0,
+                            "children": []
+                          },
+                          {
+                            "name": "TLWWP_AK_47.dds",
+                            "path": "Textures/Things/Weapon/Ranged/Rifle/TLWWP_AK_47.dds",
+                            "kind": "file",
+                            "role": "textures",
+                            "bytes": 262292,
+                            "files": 1,
+                            "issues": 0,
+                            "children": []
+                          },
+                          {
+                            "name": "TLWWP_AK_47.png",
+                            "path": "Textures/Things/Weapon/Ranged/Rifle/TLWWP_AK_47.png",
+                            "kind": "file",
+                            "role": "textures",
+                            "bytes": 12508,
+                            "files": 1,
+                            "issues": 0,
+                            "children": []
+                          },
+                          {
+                            "name": "TLWWP_Eagle_Carbine.dds",
+                            "path": "Textures/Things/Weapon/Ranged/Rifle/TLWWP_Eagle_Carbine.dds",
+                            "kind": "file",
+                            "role": "textures",
+                            "bytes": 262292,
+                            "files": 1,
+                            "issues": 0,
+                            "children": []
+                          },
+                          {
+                            "name": "TLWWP_Eagle_Carbine.png",
+                            "path": "Textures/Things/Weapon/Ranged/Rifle/TLWWP_Eagle_Carbine.png",
+                            "kind": "file",
+                            "role": "textures",
+                            "bytes": 7934,
+                            "files": 1,
+                            "issues": 0,
+                            "children": []
+                          },
+                          {
+                            "name": "TLWWP_Volunteer_Carbine.dds",
+                            "path": "Textures/Things/Weapon/Ranged/Rifle/TLWWP_Volunteer_Carbine.dds",
+                            "kind": "file",
+                            "role": "textures",
+                            "bytes": 262292,
+                            "files": 1,
+                            "issues": 0,
+                            "children": []
+                          },
+                          {
+                            "name": "TLWWP_Volunteer_Carbine.png",
+                            "path": "Textures/Things/Weapon/Ranged/Rifle/TLWWP_Volunteer_Carbine.png",
+                            "kind": "file",
+                            "role": "textures",
+                            "bytes": 7486,
+                            "files": 1,
+                            "issues": 0,
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "name": "SMG",
+                        "path": "Textures/Things/Weapon/Ranged/SMG",
+                        "kind": "folder",
+                        "role": "textures",
+                        "bytes": 2481466,
+                        "files": 8,
+                        "issues": 0,
+                        "children": [
+                          {
+                            "name": "Example.dds",
+                            "path": "Textures/Things/Weapon/Ranged/SMG/Example.dds",
+                            "kind": "file",
+                            "role": "textures",
+                            "bytes": 1638548,
+                            "files": 1,
+                            "issues": 0,
+                            "children": []
+                          },
+                          {
+                            "name": "Example.png",
+                            "path": "Textures/Things/Weapon/Ranged/SMG/Example.png",
+                            "kind": "file",
+                            "role": "textures",
+                            "bytes": 29213,
+                            "files": 1,
+                            "issues": 0,
+                            "children": []
+                          },
+                          {
+                            "name": "TLWWP_M1921.dds",
+                            "path": "Textures/Things/Weapon/Ranged/SMG/TLWWP_M1921.dds",
+                            "kind": "file",
+                            "role": "textures",
+                            "bytes": 262292,
+                            "files": 1,
+                            "issues": 0,
+                            "children": []
+                          },
+                          {
+                            "name": "TLWWP_M1921.png",
+                            "path": "Textures/Things/Weapon/Ranged/SMG/TLWWP_M1921.png",
+                            "kind": "file",
+                            "role": "textures",
+                            "bytes": 9693,
+                            "files": 1,
+                            "issues": 0,
+                            "children": []
+                          },
+                          {
+                            "name": "TLWWP_M1A1.dds",
+                            "path": "Textures/Things/Weapon/Ranged/SMG/TLWWP_M1A1.dds",
+                            "kind": "file",
+                            "role": "textures",
+                            "bytes": 262292,
+                            "files": 1,
+                            "issues": 0,
+                            "children": []
+                          },
+                          {
+                            "name": "TLWWP_M1A1.png",
+                            "path": "Textures/Things/Weapon/Ranged/SMG/TLWWP_M1A1.png",
+                            "kind": "file",
+                            "role": "textures",
+                            "bytes": 8668,
+                            "files": 1,
+                            "issues": 0,
+                            "children": []
+                          },
+                          {
+                            "name": "TLWWP_Spitfire_Carbine.dds",
+                            "path": "Textures/Things/Weapon/Ranged/SMG/TLWWP_Spitfire_Carbine.dds",
+                            "kind": "file",
+                            "role": "textures",
+                            "bytes": 262292,
+                            "files": 1,
+                            "issues": 0,
+                            "children": []
+                          },
+                          {
+                            "name": "TLWWP_Spitfire_Carbine.png",
+                            "path": "Textures/Things/Weapon/Ranged/SMG/TLWWP_Spitfire_Carbine.png",
+                            "kind": "file",
+                            "role": "textures",
+                            "bytes": 8468,
+                            "files": 1,
+                            "issues": 0,
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Shotgun",
+                        "path": "Textures/Things/Weapon/Ranged/Shotgun",
+                        "kind": "folder",
+                        "role": "textures",
+                        "bytes": 343585,
+                        "files": 4,
+                        "issues": 0,
+                        "children": [
+                          {
+                            "name": "Example.dds",
+                            "path": "Textures/Things/Weapon/Ranged/Shotgun/Example.dds",
+                            "kind": "file",
+                            "role": "textures",
+                            "bytes": 65684,
+                            "files": 1,
+                            "issues": 0,
+                            "children": []
+                          },
+                          {
+                            "name": "Example.png",
+                            "path": "Textures/Things/Weapon/Ranged/Shotgun/Example.png",
+                            "kind": "file",
+                            "role": "textures",
+                            "bytes": 7658,
+                            "files": 1,
+                            "issues": 0,
+                            "children": []
+                          },
+                          {
+                            "name": "TLWWP_S4_Shotgun.dds",
+                            "path": "Textures/Things/Weapon/Ranged/Shotgun/TLWWP_S4_Shotgun.dds",
+                            "kind": "file",
+                            "role": "textures",
+                            "bytes": 262292,
+                            "files": 1,
+                            "issues": 0,
+                            "children": []
+                          },
+                          {
+                            "name": "TLWWP_S4_Shotgun.png",
+                            "path": "Textures/Things/Weapon/Ranged/Shotgun/TLWWP_S4_Shotgun.png",
+                            "kind": "file",
+                            "role": "textures",
+                            "bytes": 7951,
+                            "files": 1,
+                            "issues": 0,
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Throwable",
+                    "path": "Textures/Things/Weapon/Throwable",
+                    "kind": "folder",
+                    "role": "textures",
+                    "bytes": 361234,
+                    "files": 4,
+                    "issues": 0,
+                    "children": [
+                      {
+                        "name": "Example.dds",
+                        "path": "Textures/Things/Weapon/Throwable/Example.dds",
+                        "kind": "file",
+                        "role": "textures",
+                        "bytes": 65684,
+                        "files": 1,
+                        "issues": 0,
+                        "children": []
+                      },
+                      {
+                        "name": "Example.png",
+                        "path": "Textures/Things/Weapon/Throwable/Example.png",
+                        "kind": "file",
+                        "role": "textures",
+                        "bytes": 14409,
+                        "files": 1,
+                        "issues": 0,
+                        "children": []
+                      },
+                      {
+                        "name": "TLWWP_RGD_5.dds",
+                        "path": "Textures/Things/Weapon/Throwable/TLWWP_RGD_5.dds",
+                        "kind": "file",
+                        "role": "textures",
+                        "bytes": 262292,
+                        "files": 1,
+                        "issues": 0,
+                        "children": []
+                      },
+                      {
+                        "name": "TLWWP_RGD_5.png",
+                        "path": "Textures/Things/Weapon/Throwable/TLWWP_RGD_5.png",
+                        "kind": "file",
+                        "role": "textures",
+                        "bytes": 18849,
+                        "files": 1,
+                        "issues": 0,
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": ".gitignore",
+        "path": ".gitignore",
+        "kind": "file",
+        "role": "other",
+        "bytes": 15,
+        "files": 1,
+        "issues": 0,
+        "children": []
+      },
+      {
+        "name": "LICENSE.md",
+        "path": "LICENSE.md",
+        "kind": "file",
+        "role": "other",
+        "bytes": 10299,
+        "files": 1,
+        "issues": 0,
+        "children": []
+      },
+      {
+        "name": "README.md",
+        "path": "README.md",
+        "kind": "file",
+        "role": "other",
+        "bytes": 29,
+        "files": 1,
+        "issues": 0,
+        "children": []
+      }
+    ]
+  },
+  "counts": {
+    "folders": 34,
+    "files": 88,
+    "bytes": 31533348,
+    "defFiles": 2,
+    "weaponDefs": 9,
+    "projectileDefs": 5,
+    "patchFiles": 1,
+    "textures": 44,
+    "sounds": 6
+  },
+  "issues": [
+    {
+      "code": "layout.ce-outside-gate",
+      "severity": "warning",
+      "path": "Patches/CE_Patch.xml",
+      "message": "The file uses Combat Extended classes outside the gated Combat Extended folder, so the game reports errors when Combat Extended is not active.",
+      "fix": {
+        "kind": "move-file",
+        "summary": "Move the file to Common/Compat/CombatExtended/Patches/CE_Patch.xml and gate that folder in LoadFolders.xml, or list Combat Extended as a required mod.",
+        "automatic": false,
+        "targets": [
+          "Common/Compat/CombatExtended/Patches/CE_Patch.xml"
+        ]
+      }
+    },
+    {
+      "code": "layout.missing-folder",
+      "severity": "info",
+      "path": "Common/Defs/SoundDefs",
+      "message": "The standard folder Common/Defs/SoundDefs does not exist.",
+      "fix": {
+        "kind": "create-folder",
+        "summary": "Create the empty folder Common/Defs/SoundDefs.",
+        "automatic": true,
+        "targets": [
+          "Common/Defs/SoundDefs"
+        ]
+      }
+    }
+  ],
+  "truncated": false
+}

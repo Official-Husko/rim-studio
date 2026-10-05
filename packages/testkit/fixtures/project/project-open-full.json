@@ -1,0 +1,15 @@
+{
+  "projectId": "p-1d505ce1",
+  "name": "full",
+  "path": "/home/user/mods/full",
+  "packageId": "pawbeans.full",
+  "supportedVersions": [
+    "1.5",
+    "1.6"
+  ],
+  "hasAbout": true,
+  "hasLoadFolders": true,
+  "hasCeGate": true,
+  "defFiles": 0,
+  "diagnostics": []
+}

@@ -1,4 +1,7 @@
 import { lazyPage } from '~/shared/lazy';
 
-/** The only public entry of the project feature: its lazy page. A later task replaces the placeholder. */
+/** The lazy page of the project feature. */
 export const ProjectPage = lazyPage(() => import('./ProjectPage'));
+
+/** The project selector of the top bar; small, so it is not lazy. */
+export { ProjectSelector } from './ProjectSelector';
