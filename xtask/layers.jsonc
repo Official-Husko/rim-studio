@@ -1,0 +1,116 @@
+// Layer matrix and third party bans, read by `cargo xtask check-layers`.
+// Source of truth for the prose: docs/architecture/workspace-layout.md sections 4 and 5.
+// Changing this file needs a decision register entry (two person review once there are two maintainers).
+{
+  // Allowed values of [package.metadata.rimstudio] layer.
+  "layers": [
+    "l0-domain", "l1-infra", "l2-engine", "l2-service", "l3-feature",
+    "l4-app", "l4-shell", "l4-cli", "l4-sidecar", "contract", "support"
+  ],
+
+  // Row depends on the listed columns (normal and build dependencies).
+  // An edge between two crates of the same layer is allowed only through allowedSameLayer.
+  "allowed": {
+    "l0-domain":  [],
+    "l1-infra":   ["l0-domain"],
+    "l2-engine":  ["l0-domain"],
+    "l2-service": ["l0-domain", "l1-infra", "l2-engine"],
+    "l3-feature": ["l0-domain", "l1-infra", "l2-engine", "l2-service", "contract"],
+    "l4-app":     ["l0-domain", "l1-infra", "l2-engine", "l2-service", "l3-feature", "contract"],
+    "l4-shell":   ["l0-domain", "l4-app", "contract"],
+    "l4-cli":     ["l0-domain", "l4-app", "contract"],
+    "l4-sidecar": ["l0-domain", "contract"],
+    "contract":   ["l0-domain"],
+    "support":    ["l0-domain", "l1-infra", "contract"]
+  },
+
+  // [from, to] pairs inside one layer (section 4, same-layer exceptions).
+  "allowedSameLayer": [
+    ["rimstudio-defs", "rimstudio-xpath"],
+    ["rimstudio-sort", "rimstudio-rules"],
+    ["rimstudio-validate", "rimstudio-rules"],
+    ["rimstudio-validate", "rimstudio-defs"],
+    ["rimstudio-validate", "rimstudio-xpath"],
+    ["rimstudio-design", "rimstudio-defs"],
+    ["rimstudio-workspace", "rimstudio-library"]
+  ],
+
+  // Internal crates that any member may use as a dev-dependency.
+  "devAllowedInternal": ["rimstudio-testing"],
+
+  // Named bans. A dependency on a listed crate is a violation unless the member is in
+  // allowIn (any kind), in allowDevIn (dev-dependency only) or has a layer in allowLayers.
+  // Crates that do not exist yet are tolerated.
+  "bans": [
+    {
+      "id": "I-02",
+      "reason": "XML parsing lives only in rimstudio-xml",
+      "crates": ["quick-xml", "xml-rs", "roxmltree", "xmltree", "minidom", "serde-xml-rs",
+                 "xmlparser", "sxd-document", "sxd-xpath", "libxml"],
+      "allowIn": ["rimstudio-xml"]
+    },
+    {
+      "id": "I-01",
+      "reason": "tauri and its plugins only in the shell",
+      "crates": ["tauri"],
+      "prefixes": ["tauri-"],
+      "allowLayers": ["l4-shell"]
+    },
+    {
+      "id": "http",
+      "reason": "one HTTP client behind the dataset fetch adapter",
+      "crates": ["reqwest"],
+      "allowIn": ["rimstudio-datasets"]
+    },
+    {
+      "id": "D-031",
+      "reason": "reading a foreign database; only behind feature aux-db",
+      "crates": ["rusqlite"],
+      "allowIn": ["rimstudio-datasets"],
+      "requireOptionalFeature": "aux-db"
+    },
+    {
+      "id": "I-03",
+      "reason": "no SQL, YAML or binary formats for app data",
+      "crates": ["sqlx", "diesel", "serde_yaml", "serde_norway", "bincode", "rkyv", "postcard"],
+      "allowIn": []
+    },
+    {
+      "id": "D-037",
+      "reason": "differential test crates, dev-dependencies of rimstudio-steam only",
+      "crates": ["steamlocate", "keyvalues-parser"],
+      "allowDevIn": ["rimstudio-steam"]
+    },
+    {
+      "id": "confine-io",
+      "reason": "storage and watching live in rimstudio-io",
+      "crates": ["notify", "notify-debouncer-mini", "atomic-write-file", "jsonc-parser", "ignore", "same-file"],
+      "allowIn": ["rimstudio-io"]
+    },
+    {
+      "id": "I-11",
+      "reason": "operating system crates live in rimstudio-platform",
+      "crates": ["winreg", "junction", "sysinfo", "keyring"],
+      "allowIn": ["rimstudio-platform"]
+    },
+    {
+      "id": "I-15",
+      "reason": "Steamworks only in the helper sidecar",
+      "crates": ["steamworks"],
+      "allowIn": ["rimstudio-steam-helper"]
+    },
+    {
+      "id": "graph",
+      "reason": "graph algorithms only in rules and sort",
+      "crates": ["petgraph"],
+      "allowIn": ["rimstudio-rules", "rimstudio-sort"]
+    },
+    {
+      "id": "D-047",
+      "reason": "security, R10 or duplication",
+      "crates": ["tauri-plugin-fs", "tauri-plugin-store", "tauri-plugin-sql", "tauri-plugin-log",
+                 "tauri-plugin-shell", "git2", "self_update", "sentry"],
+      "allowIn": []
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+[package]
+name = "xtask"
+description = "Repository automation: layer checks, dependency checks, licence scans"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+publish.workspace = true
+
+[package.metadata.rimstudio]
+layer = "support"
+
+[lints]
+workspace = true
+
+[dependencies]
+anyhow.workspace = true
+serde.workspace = true
+serde_json.workspace = true

@@ -4,3 +4,28 @@
 CombatExtended-Development/
 RimCrow-main/
 RimSort-main/
+
+# build output and local tooling
+**/target/
+*.rs.bk
+*.log
+.env
+.env.*
+!.env.example
+
+# optional read only reference checkouts (step 0 of the roadmap moves them here)
+/reference/
+
+# frontend, once it exists
+node_modules/
+dist/
+
+# editor and OS noise
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+
+# scratch output from local lint runs
+lint_report.json

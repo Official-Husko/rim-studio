@@ -1,0 +1,98 @@
+# cargo-deny configuration for RimStudio.
+#
+# NOTE: cargo-deny is not installed on the machine this file was written on, so it has
+# never been run. Check it with `cargo deny check` after installing the tool
+# (`cargo install cargo-deny --locked`) and fix any key that the installed version rejects.
+#
+# Sources of the rules: docs/architecture/workspace-layout.md section 5 (third party
+# confinement) and docs/architecture/security-and-privacy.md section on supply chain.
+# The layer matrix and the named bans are also enforced without cargo-deny by
+# `cargo xtask check-layers`, which only looks at direct dependencies of workspace members.
+
+[graph]
+all-features = true
+
+[advisories]
+version = 2
+# Open advisories and yanked crates fail the build. Ignored ids need a dated reason here.
+yanked = "deny"
+ignore = []
+
+[licenses]
+version = 2
+confidence-threshold = 0.9
+# Permissive licences only. Anything not listed is denied, which keeps GPL, AGPL and
+# non-commercial licences out of the dependency tree by default.
+allow = [
+    "MIT",
+    "Apache-2.0",
+    "Apache-2.0 WITH LLVM-exception",
+    "BSD-2-Clause",
+    "BSD-3-Clause",
+    "ISC",
+    "Unicode-3.0",
+    "Zlib",
+    "CC0-1.0",   # needed by notify 8.2.0, whose only licence on crates.io is CC0-1.0
+    "MPL-2.0",   # file level copyleft: pending owner decision D-067, remove to forbid
+]
+
+# The workspace crates carry no licence field on purpose: the project licence is custom and
+# is added later (owner decision). Private (publish = false) crates are not checked.
+[licenses.private]
+ignore = true
+
+[bans]
+multiple-versions = "warn"
+wildcards = "deny"
+allow-wildcard-paths = true
+highlight = "all"
+
+# Each entry bans a crate everywhere except through the listed direct dependents.
+deny = [
+    # I-02: one XML stack. plist (pulled in by Tauri) uses it as well.
+    { crate = "quick-xml", wrappers = ["rimstudio-xml", "plist"] },
+    { crate = "roxmltree" },
+    { crate = "xml-rs" },
+    { crate = "xmltree" },
+    { crate = "minidom" },
+    { crate = "serde-xml-rs" },
+    { crate = "xmlparser" },
+    { crate = "sxd-document" },
+    { crate = "sxd-xpath" },
+    { crate = "libxml" },
+
+    # One HTTP client behind one fetch adapter (the Tauri updater brings it in transitively).
+    { crate = "reqwest", wrappers = ["rimstudio-datasets", "tauri-plugin-updater"] },
+
+    # D-031: reading RimSort's foreign database, only behind feature aux-db.
+    { crate = "rusqlite", wrappers = ["rimstudio-datasets"] },
+
+    # I-03: no SQL, YAML or binary formats for app owned data.
+    { crate = "sqlx" },
+    { crate = "diesel" },
+    { crate = "serde_yaml" },
+    { crate = "serde_norway" },
+    { crate = "bincode" },
+    { crate = "rkyv" },
+    { crate = "postcard" },
+
+    # Native TLS stacks: the project uses rustls only.
+    { crate = "openssl" },
+    { crate = "openssl-sys" },
+
+    # Duplication or security decisions (D-047, D-061).
+    { crate = "tauri-plugin-fs" },
+    { crate = "tauri-plugin-store" },
+    { crate = "tauri-plugin-sql" },
+    { crate = "tauri-plugin-log" },
+    { crate = "tauri-plugin-shell" },
+    { crate = "git2" },
+    { crate = "self_update" },
+    { crate = "sentry" },
+]
+
+[sources]
+unknown-registry = "deny"
+unknown-git = "deny"
+allow-registry = ["https://github.com/rust-lang/crates.io-index"]
+allow-git = []

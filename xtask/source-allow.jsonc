@@ -1,0 +1,54 @@
+// Allow lists for `cargo xtask check-source`. Paths are repository relative prefixes.
+// Test code (tests folders, tests.rs, trailing #[cfg(test)] modules) is always exempt.
+{
+  "rules": {
+    // I-11: operating system conditionals live in the platform crate only.
+    "cfg-target-os": { "paths": ["crates/rimstudio-platform/"] },
+
+    // I-05: file system writes go through rimstudio-io (the testing crate writes temp dirs).
+    "fs-write": { "paths": ["crates/rimstudio-io/", "crates/rimstudio-testing/"] },
+
+    // I-02: markup strings are built by the XML boundary crate only.
+    "xml-string": { "paths": ["crates/rimstudio-xml/"] },
+
+    // Only the headless CLI prints.
+    "print": { "paths": ["crates/rimstudio-cli/"] },
+
+    // IT-061: vanilla and Combat Extended identifiers only inside the optional CE module.
+    "vanilla-name": { "paths": ["crates/rimstudio-design/src/ce"] },
+    "ce-class": { "paths": ["crates/rimstudio-design/src/ce"] }
+  },
+
+  // Single line exceptions: { "rule": "...", "path": "prefix", "contains": "text on the line", "reason": "..." }
+  "lines": [
+    {
+      "rule": "xml-string",
+      "path": "crates/rimstudio-core/src/tree/node.rs",
+      "contains": "<{tag}>",
+      "reason": "error messages that name the element in angle brackets, not markup construction"
+    }
+  ],
+
+  // Documentation rules. Entries ending with a slash cover a folder.
+  "docs": {
+    // Files that must name the misnamed repository folder (step 0 of the roadmap renames it).
+    "rimforgeAllowedFiles": [
+      "CLAUDE.md",
+      "docs/README.md",
+      "docs/roadmap.md",
+      "docs/adr/0001-workspace-rename-and-naming.md",
+      "docs/architecture/decision-register.md",
+      "docs/architecture/overview.md",
+      "docs/architecture/workspace-layout.md",
+      "docs/status/0.1.0-backend.md",
+      "docs/research/"
+    ],
+    // Files that state the no-AI-mention rule itself, and research notes (evidence, never
+    // edited) that analyse reference projects with assistant features.
+    "aiMentionAllowedFiles": [
+      "CLAUDE.md",
+      "docs/README.md",
+      "docs/research/"
+    ]
+  }
+}
