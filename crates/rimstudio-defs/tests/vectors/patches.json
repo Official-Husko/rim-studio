@@ -1,0 +1,474 @@
+[
+ {
+  "name": "patch-add-order",
+  "doc": "Add appends by default; order Prepend keeps the order of the value children; a non-matching xpath fails.",
+  "game_version": "1.6.4871",
+  "mods": [
+   {
+    "id": "ludeon.rimworld",
+    "files": {
+     "Defs/a.xml": "<Defs><ThingDef><defName>D</defName><comps><li>a</li></comps></ThingDef></Defs>",
+     "Patches/p.xml": "<Patch><Operation Class=\"PatchOperationAdd\"><xpath>/Defs/ThingDef[defName=\"D\"]/comps</xpath><value><li>b</li></value></Operation><Operation Class=\"PatchOperationAdd\"><xpath>/Defs/ThingDef[defName=\"D\"]/comps</xpath><order>Prepend</order><value><li>p1</li><li>p2</li></value></Operation><Operation Class=\"PatchOperationAdd\"><xpath>/Defs/ThingDef[defName=\"D\"]</xpath><value><tags><li>t</li></tags></value></Operation><Operation Class=\"PatchOperationAdd\"><xpath>/Defs/ThingDef[defName=\"NoSuch\"]</xpath><value><x/></value></Operation></Patch>"
+    }
+   }
+  ],
+  "expect": {
+   "defs": {
+    "ThingDef/D": "<ThingDef><defName>D</defName><comps><li>p1</li><li>p2</li><li>a</li><li>b</li></comps><tags><li>t</li></tags></ThingDef>"
+   },
+   "patch_results": [
+    true,
+    true,
+    true,
+    false
+   ],
+   "diag": {
+    "patch_failed": 1
+   }
+  }
+ },
+ {
+  "name": "patch-insert-order",
+  "doc": "Insert with several value children REVERSES them in both orders: each copy is inserted directly before (Prepend, walking the value backwards) or directly after (Append, walking forwards) the target node.",
+  "game_version": "1.6.4871",
+  "mods": [
+   {
+    "id": "ludeon.rimworld",
+    "files": {
+     "Defs/a.xml": "<Defs><ThingDef><defName>D</defName><comps><li>a</li><li>b</li></comps></ThingDef></Defs>",
+     "Patches/p.xml": "<Patch><Operation Class=\"PatchOperationInsert\"><xpath>/Defs/ThingDef[defName=\"D\"]/comps/li[1]</xpath><value><li>x</li><li>y</li></value></Operation><Operation Class=\"PatchOperationInsert\"><xpath>/Defs/ThingDef[defName=\"D\"]/comps/li[last()]</xpath><order>Append</order><value><li>m</li><li>n</li></value></Operation></Patch>"
+    }
+   }
+  ],
+  "expect": {
+   "defs": {
+    "ThingDef/D": "<ThingDef><defName>D</defName><comps><li>y</li><li>x</li><li>a</li><li>b</li><li>n</li><li>m</li></comps></ThingDef>"
+   },
+   "patch_results": [
+    true,
+    true
+   ]
+  }
+ },
+ {
+  "name": "patch-replace-remove",
+  "doc": "Replace puts the value children where the node was; Remove deletes; both fail on no match.",
+  "game_version": "1.6.4871",
+  "mods": [
+   {
+    "id": "ludeon.rimworld",
+    "files": {
+     "Defs/a.xml": "<Defs><ThingDef><defName>D</defName><label>old</label><description>d</description><tags><li>1</li><li>2</li></tags></ThingDef></Defs>",
+     "Patches/p.xml": "<Patch><Operation Class=\"PatchOperationReplace\"><xpath>/Defs/ThingDef[defName=\"D\"]/label</xpath><value><label>new</label></value></Operation><Operation Class=\"PatchOperationReplace\"><xpath>/Defs/ThingDef[defName=\"D\"]/tags/li[1]</xpath><value><li>a</li><li>b</li></value></Operation><Operation Class=\"PatchOperationRemove\"><xpath>/Defs/ThingDef[defName=\"D\"]/description</xpath></Operation><Operation Class=\"PatchOperationRemove\"><xpath>/Defs/ThingDef[defName=\"D\"]/nothing</xpath></Operation></Patch>"
+    }
+   }
+  ],
+  "expect": {
+   "defs": {
+    "ThingDef/D": "<ThingDef><defName>D</defName><label>new</label><tags><li>a</li><li>b</li><li>2</li></tags></ThingDef>"
+   },
+   "patch_results": [
+    true,
+    true,
+    true,
+    false
+   ]
+  }
+ },
+ {
+  "name": "patch-replace-whole-def",
+  "doc": "A def node replaced by a patch loses its asset: provenance is empty and the def goes into the database after all mod defs ('Patches' source).",
+  "game_version": "1.6.4871",
+  "mods": [
+   {
+    "id": "ludeon.rimworld",
+    "files": {
+     "Defs/a.xml": "<Defs><ThingDef><defName>R</defName><label>old</label></ThingDef><ThingDef><defName>Z</defName></ThingDef></Defs>",
+     "Patches/p.xml": "<Patch><Operation Class=\"PatchOperationReplace\"><xpath>/Defs/ThingDef[defName=\"R\"]</xpath><value><ThingDef><defName>R</defName><label>replaced</label></ThingDef></value></Operation></Patch>"
+    }
+   }
+  ],
+  "expect": {
+   "defs": {
+    "ThingDef/R": "<ThingDef><defName>R</defName><label>replaced</label></ThingDef>"
+   },
+   "provenance": {
+    "ThingDef/R": {
+     "mod": null,
+     "file": null
+    }
+   },
+   "db_order": {
+    "ThingDef": [
+     "Z",
+     "R"
+    ]
+   }
+  }
+ },
+ {
+  "name": "patch-attribute-ops",
+  "doc": "AttributeAdd fails when the attribute exists, AttributeSet always succeeds (creates or overwrites), AttributeRemove fails when absent.",
+  "game_version": "1.6.4871",
+  "mods": [
+   {
+    "id": "ludeon.rimworld",
+    "files": {
+     "Defs/a.xml": "<Defs><ThingDef Name=\"N\" Abstract=\"False\"><defName>D</defName></ThingDef></Defs>",
+     "Patches/p.xml": "<Patch><Operation Class=\"PatchOperationAttributeAdd\"><xpath>/Defs/ThingDef[defName=\"D\"]</xpath><attribute>Tag</attribute><value>Foo</value></Operation><Operation Class=\"PatchOperationAttributeAdd\"><xpath>/Defs/ThingDef[defName=\"D\"]</xpath><attribute>Tag</attribute><value>Bar</value></Operation><Operation Class=\"PatchOperationAttributeSet\"><xpath>/Defs/ThingDef[defName=\"D\"]</xpath><attribute>Name</attribute><value>N2</value></Operation><Operation Class=\"PatchOperationAttributeSet\"><xpath>/Defs/ThingDef[defName=\"D\"]</xpath><attribute>Extra</attribute><value>e</value></Operation><Operation Class=\"PatchOperationAttributeRemove\"><xpath>/Defs/ThingDef[defName=\"D\"]</xpath><attribute>Abstract</attribute></Operation><Operation Class=\"PatchOperationAttributeRemove\"><xpath>/Defs/ThingDef[defName=\"D\"]</xpath><attribute>Nope</attribute></Operation></Patch>"
+    }
+   }
+  ],
+  "expect": {
+   "defs": {
+    "ThingDef/D": "<ThingDef Name=\"N2\" Tag=\"Foo\" Extra=\"e\"><defName>D</defName></ThingDef>"
+   },
+   "patch_results": [
+    true,
+    false,
+    true,
+    true,
+    true,
+    false
+   ]
+  }
+ },
+ {
+  "name": "patch-setname",
+  "doc": "SetName creates a new element with the same inner XML and DROPS all attributes.",
+  "game_version": "1.6.4871",
+  "mods": [
+   {
+    "id": "ludeon.rimworld",
+    "files": {
+     "Defs/a.xml": "<Defs><ThingDef><defName>D</defName><foo Class=\"X\" a=\"1\"><b/>text</foo></ThingDef></Defs>",
+     "Patches/p.xml": "<Patch><Operation Class=\"PatchOperationSetName\"><xpath>/Defs/ThingDef[defName=\"D\"]/foo</xpath><name>bar</name></Operation></Patch>"
+    }
+   }
+  ],
+  "expect": {
+   "defs": {
+    "ThingDef/D": "<ThingDef><defName>D</defName><bar><b/>text</bar></ThingDef>"
+   },
+   "patch_results": [
+    true
+   ]
+  }
+ },
+ {
+  "name": "patch-addmodextension",
+  "doc": "AddModExtension creates modExtensions at the END of the def when missing, otherwise appends to it.",
+  "game_version": "1.6.4871",
+  "mods": [
+   {
+    "id": "ludeon.rimworld",
+    "files": {
+     "Defs/a.xml": "<Defs><ThingDef><defName>D1</defName></ThingDef><ThingDef><defName>D2</defName><modExtensions><li Class=\"A\"/></modExtensions></ThingDef></Defs>",
+     "Patches/p.xml": "<Patch><Operation Class=\"PatchOperationAddModExtension\"><xpath>/Defs/ThingDef[starts-with(defName,\"D\")]</xpath><value><li Class=\"NewExt\"><v>1</v></li></value></Operation></Patch>"
+    }
+   }
+  ],
+  "expect": {
+   "defs": {
+    "ThingDef/D1": "<ThingDef><defName>D1</defName><modExtensions><li Class=\"NewExt\"><v>1</v></li></modExtensions></ThingDef>",
+    "ThingDef/D2": "<ThingDef><defName>D2</defName><modExtensions><li Class=\"A\"/><li Class=\"NewExt\"><v>1</v></li></modExtensions></ThingDef>"
+   },
+   "patch_results": [
+    true
+   ]
+  }
+ },
+ {
+  "name": "patch-conditional-test-sequence",
+  "doc": "Test, Conditional truth table and Sequence: a failing step stops the sequence but the steps before it stay applied (no rollback).",
+  "game_version": "1.6.4871",
+  "mods": [
+   {
+    "id": "ludeon.rimworld",
+    "files": {
+     "Defs/a.xml": "<Defs><ThingDef><defName>D</defName><label>x</label></ThingDef></Defs>",
+     "Patches/p.xml": "<Patch><Operation Class=\"PatchOperationTest\"><xpath>/Defs/ThingDef[defName=\"D\"]</xpath></Operation><Operation Class=\"PatchOperationTest\"><xpath>/Defs/ThingDef[defName=\"Q\"]</xpath></Operation><Operation Class=\"PatchOperationConditional\"><xpath>/Defs/ThingDef[defName=\"D\"]</xpath><match Class=\"PatchOperationAdd\"><xpath>/Defs/ThingDef[defName=\"D\"]</xpath><value><a>1</a></value></match><nomatch Class=\"PatchOperationAdd\"><xpath>/Defs/ThingDef[defName=\"D\"]</xpath><value><b>1</b></value></nomatch></Operation><Operation Class=\"PatchOperationConditional\"><xpath>/Defs/ThingDef[defName=\"Q\"]</xpath><match Class=\"PatchOperationAdd\"><xpath>/Defs/ThingDef[defName=\"D\"]</xpath><value><c>1</c></value></match><nomatch Class=\"PatchOperationAdd\"><xpath>/Defs/ThingDef[defName=\"D\"]</xpath><value><d>1</d></value></nomatch></Operation><Operation Class=\"PatchOperationConditional\"><xpath>/Defs/ThingDef[defName=\"D\"]</xpath></Operation><Operation Class=\"PatchOperationConditional\"><xpath>/Defs/ThingDef[defName=\"Q\"]</xpath><match Class=\"PatchOperationTest\"><xpath>/Defs/ThingDef[defName=\"D\"]</xpath></match></Operation><Operation Class=\"PatchOperationConditional\"><xpath>/Defs/ThingDef[defName=\"D\"]</xpath><nomatch Class=\"PatchOperationTest\"><xpath>/Defs/ThingDef[defName=\"D\"]</xpath></nomatch></Operation><Operation Class=\"PatchOperationSequence\"><operations><li Class=\"PatchOperationAdd\"><xpath>/Defs/ThingDef[defName=\"D\"]</xpath><value><s1>1</s1></value></li><li Class=\"PatchOperationTest\"><xpath>/Defs/ThingDef[defName=\"Q\"]</xpath></li><li Class=\"PatchOperationAdd\"><xpath>/Defs/ThingDef[defName=\"D\"]</xpath><value><s2>1</s2></value></li></operations></Operation></Patch>"
+    }
+   }
+  ],
+  "expect": {
+   "defs": {
+    "ThingDef/D": "<ThingDef><defName>D</defName><label>x</label><a>1</a><d>1</d><s1>1</s1></ThingDef>"
+   },
+   "patch_results": [
+    true,
+    false,
+    true,
+    true,
+    false,
+    true,
+    true,
+    false
+   ],
+   "diag": {
+    "patch_failed": 3
+   }
+  }
+ },
+ {
+  "name": "patch-success-modes",
+  "doc": "success=Invert / Always / Never rewrite the result after the work was done (Never still applies the change).",
+  "game_version": "1.6.4871",
+  "mods": [
+   {
+    "id": "ludeon.rimworld",
+    "files": {
+     "Defs/a.xml": "<Defs><ThingDef><defName>D</defName><label>x</label></ThingDef></Defs>",
+     "Patches/p.xml": "<Patch><Operation Class=\"PatchOperationAdd\"><xpath>/Defs/ThingDef[defName=\"D\"]</xpath><value><a>1</a></value><success>Invert</success></Operation><Operation Class=\"PatchOperationRemove\"><xpath>/Defs/ThingDef[defName=\"D\"]/zzz</xpath><success>Invert</success></Operation><Operation Class=\"PatchOperationRemove\"><xpath>/Defs/ThingDef[defName=\"D\"]/zzz</xpath><success>Always</success></Operation><Operation Class=\"PatchOperationAdd\"><xpath>/Defs/ThingDef[defName=\"D\"]</xpath><value><b>1</b></value><success>Never</success></Operation><Operation Class=\"PatchOperationTest\"><xpath>/Defs/ThingDef[defName=\"Q\"]</xpath><success>Always</success></Operation></Patch>"
+    }
+   }
+  ],
+  "expect": {
+   "defs": {
+    "ThingDef/D": "<ThingDef><defName>D</defName><label>x</label><a>1</a><b>1</b></ThingDef>"
+   },
+   "patch_results": [
+    false,
+    true,
+    true,
+    false,
+    true
+   ],
+   "diag": {
+    "patch_failed": 2
+   }
+  }
+ },
+ {
+  "name": "patch-findmod",
+  "doc": "FindMod matches the display NAME of an active mod (exact, case-sensitive), any entry is enough; a missing branch means success.",
+  "game_version": "1.6.4871",
+  "mods": [
+   {
+    "id": "ludeon.rimworld",
+    "files": {
+     "Defs/a.xml": "<Defs><ThingDef><defName>D</defName><label>x</label></ThingDef></Defs>"
+    }
+   },
+   {
+    "id": "test.a",
+    "files": {
+     "Patches/p.xml": "<Patch><Operation Class=\"PatchOperationFindMod\"><mods><li>Mod A</li></mods><match Class=\"PatchOperationAdd\"><xpath>/Defs/ThingDef[defName=\"D\"]</xpath><value><a>1</a></value></match></Operation><Operation Class=\"PatchOperationFindMod\"><mods><li>mod a</li></mods><match Class=\"PatchOperationAdd\"><xpath>/Defs/ThingDef[defName=\"D\"]</xpath><value><b>1</b></value></match><nomatch Class=\"PatchOperationAdd\"><xpath>/Defs/ThingDef[defName=\"D\"]</xpath><value><c>1</c></value></nomatch></Operation><Operation Class=\"PatchOperationFindMod\"><mods><li>Nope</li></mods><match Class=\"PatchOperationAdd\"><xpath>/Defs/ThingDef[defName=\"D\"]</xpath><value><z>1</z></value></match></Operation><Operation Class=\"PatchOperationFindMod\"><mods><li>Mod A</li></mods></Operation><Operation Class=\"PatchOperationFindMod\"><mods><li>Nope</li><li>Mod A</li></mods><match Class=\"PatchOperationAdd\"><xpath>/Defs/ThingDef[defName=\"D\"]</xpath><value><e>1</e></value></match></Operation></Patch>"
+    },
+    "name": "Mod A"
+   }
+  ],
+  "expect": {
+   "defs": {
+    "ThingDef/D": "<ThingDef><defName>D</defName><label>x</label><a>1</a><c>1</c><e>1</e></ThingDef>"
+   },
+   "patch_results": [
+    true,
+    true,
+    true,
+    true,
+    true
+   ]
+  }
+ },
+ {
+  "name": "patch-unknown-class",
+  "doc": "An unknown or missing Class becomes the base PatchOperation: it fails (and logs) but success=Always/Invert still applies; inside a Sequence it stops the sequence.",
+  "game_version": "1.6.4871",
+  "mods": [
+   {
+    "id": "ludeon.rimworld",
+    "files": {
+     "Defs/a.xml": "<Defs><ThingDef><defName>D</defName><label>x</label></ThingDef></Defs>",
+     "Patches/p.xml": "<Patch><Operation Class=\"Foo.CustomOp\"><xpath>/x</xpath></Operation><Operation Class=\"Foo.CustomOp\"><success>Always</success></Operation><Operation><xpath>/x</xpath></Operation><Operation Class=\"PatchOperationSequence\"><operations><li Class=\"PatchOperationAdd\"><xpath>/Defs/ThingDef[defName=\"D\"]</xpath><value><a>1</a></value></li><li Class=\"Foo.CustomOp\"/><li Class=\"PatchOperationAdd\"><xpath>/Defs/ThingDef[defName=\"D\"]</xpath><value><never>1</never></value></li></operations></Operation><Operation Class=\"PatchOperationSequence\"><operations><li Class=\"Foo.CustomOp\"><success>Always</success></li><li Class=\"PatchOperationAdd\"><xpath>/Defs/ThingDef[defName=\"D\"]</xpath><value><b>1</b></value></li></operations></Operation></Patch>"
+    }
+   }
+  ],
+  "expect": {
+   "defs": {
+    "ThingDef/D": "<ThingDef><defName>D</defName><label>x</label><a>1</a><b>1</b></ThingDef>"
+   },
+   "patch_results": [
+    false,
+    true,
+    false,
+    false,
+    true
+   ],
+   "diag": {
+    "patch_unknown_class": 4,
+    "patch_base_class": 5
+   }
+  }
+ },
+ {
+  "name": "patch-xpath-forms",
+  "doc": "XPath context is the document: relative 'Defs/...' works, '//' works, attribute nodes can be tested, text() nodes can be replaced.",
+  "game_version": "1.6.4871",
+  "mods": [
+   {
+    "id": "ludeon.rimworld",
+    "files": {
+     "Defs/a.xml": "<Defs><ThingDef Name=\"N\"><defName>D</defName><label>old</label><tags><li>t1</li></tags></ThingDef></Defs>",
+     "Patches/p.xml": "<Patch><Operation Class=\"PatchOperationReplace\"><xpath>Defs/ThingDef[defName=\"D\"]/label/text()</xpath><value>new</value></Operation><Operation Class=\"PatchOperationAdd\"><xpath>//ThingDef[defName=\"D\"]/tags</xpath><value><li>t2</li></value></Operation><Operation Class=\"PatchOperationTest\"><xpath>/Defs/ThingDef/@Name</xpath></Operation><Operation Class=\"PatchOperationRemove\"><xpath>/Defs/ThingDef[defName=\"D\"]/tags/li[text()=\"t1\"]</xpath></Operation><Operation Class=\"PatchOperationTest\"><xpath>Defs/ThingDef[@Name=\"N\" and defName=\"D\"]</xpath></Operation><Operation Class=\"PatchOperationRemove\"><xpath>//li[text()=\"zzz\"]</xpath></Operation></Patch>"
+    }
+   }
+  ],
+  "expect": {
+   "defs": {
+    "ThingDef/D": "<ThingDef Name=\"N\"><defName>D</defName><label>new</label><tags><li>t2</li></tags></ThingDef>"
+   },
+   "patch_results": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    false
+   ]
+  }
+ },
+ {
+  "name": "patch-order-across-mods",
+  "doc": "All Defs of all mods are merged BEFORE any patch runs (a patch can target a def of a later mod); patches then run mod by mod in load order, file by file.",
+  "game_version": "1.6.4871",
+  "mods": [
+   {
+    "id": "ludeon.rimworld",
+    "files": {
+     "Defs/a.xml": "<Defs><ThingDef><defName>D</defName></ThingDef></Defs>"
+    }
+   },
+   {
+    "id": "test.a",
+    "files": {
+     "Patches/p.xml": "<Patch><Operation Class=\"PatchOperationAdd\"><xpath>/Defs/ThingDef[defName=\"E\"]</xpath><value><fromA>1</fromA></value></Operation><Operation Class=\"PatchOperationTest\"><xpath>/Defs/ThingDef[defName=\"E\"]/fromB</xpath></Operation></Patch>"
+    }
+   },
+   {
+    "id": "test.b",
+    "files": {
+     "Defs/a.xml": "<Defs><ThingDef><defName>E</defName></ThingDef></Defs>",
+     "Patches/p.xml": "<Patch><Operation Class=\"PatchOperationAdd\"><xpath>/Defs/ThingDef[defName=\"E\"]</xpath><value><fromB>1</fromB></value></Operation><Operation Class=\"PatchOperationTest\"><xpath>/Defs/ThingDef[defName=\"E\"]/fromA</xpath></Operation></Patch>"
+    }
+   }
+  ],
+  "expect": {
+   "defs": {
+    "ThingDef/E": "<ThingDef><defName>E</defName><fromA>1</fromA><fromB>1</fromB></ThingDef>"
+   },
+   "patch_results": [
+    true,
+    false,
+    true,
+    true
+   ]
+  }
+ },
+ {
+  "name": "patch-created-nodes-have-no-mod",
+  "doc": "Nodes created by patches have no mod: as children they pick the null-mod parent first, else the LOWEST load order; as parents they are the fallback for mod children.",
+  "game_version": "1.6.4871",
+  "mods": [
+   {
+    "id": "ludeon.rimworld",
+    "files": {
+     "Defs/a.xml": "<Defs><ThingDef Name=\"P\" Abstract=\"True\"><label>core</label><x>core</x></ThingDef><ThingDef ParentName=\"PP\"><defName>UsesPatchParent</defName></ThingDef></Defs>"
+    }
+   },
+   {
+    "id": "test.a",
+    "files": {
+     "Defs/a.xml": "<Defs><ThingDef Name=\"P\" Abstract=\"True\"><x>a</x></ThingDef></Defs>"
+    }
+   },
+   {
+    "id": "test.b",
+    "files": {
+     "Defs/a.xml": "<Defs><ThingDef Name=\"P\" Abstract=\"True\"><x>b</x></ThingDef><ThingDef ParentName=\"P\"><defName>InB</defName></ThingDef></Defs>",
+     "Patches/p.xml": "<Patch><Operation Class=\"PatchOperationAdd\"><xpath>/Defs</xpath><value><ThingDef ParentName=\"P\"><defName>FromPatch</defName></ThingDef><ThingDef Name=\"PP\" Abstract=\"True\"><y>1</y></ThingDef></value></Operation></Patch>"
+    }
+   }
+  ],
+  "expect": {
+   "defs": {
+    "ThingDef/FromPatch": "<ThingDef ParentName=\"P\"><label>core</label><x>core</x><defName>FromPatch</defName></ThingDef>",
+    "ThingDef/InB": "<ThingDef ParentName=\"P\"><x>b</x><defName>InB</defName></ThingDef>",
+    "ThingDef/UsesPatchParent": "<ThingDef ParentName=\"PP\"><y>1</y><defName>UsesPatchParent</defName></ThingDef>"
+   },
+   "provenance": {
+    "ThingDef/FromPatch": {
+     "mod": null,
+     "file": null
+    }
+   },
+   "patch_results": [
+    true
+   ],
+   "db_order": {
+    "ThingDef": [
+     "UsesPatchParent",
+     "InB",
+     "FromPatch"
+    ]
+   }
+  }
+ },
+ {
+  "name": "patch-exceptions",
+  "doc": "Exceptions inside an operation (missing value, invalid or non-node-set xpath) are logged and the operation counts as failed; nested ones abort the enclosing Sequence.",
+  "game_version": "1.6.4871",
+  "mods": [
+   {
+    "id": "ludeon.rimworld",
+    "files": {
+     "Defs/a.xml": "<Defs><ThingDef><defName>D</defName></ThingDef></Defs>",
+     "Patches/p.xml": "<Patch><Operation Class=\"PatchOperationAdd\"><xpath>/Defs/ThingDef[defName=\"D\"]</xpath></Operation><Operation Class=\"PatchOperationSequence\"><operations><li Class=\"PatchOperationTest\"><xpath>/Defs/ThingDef[defName=\"D\"]</xpath></li><li Class=\"PatchOperationAdd\"><xpath>/Defs/ThingDef[defName=\"D\"]</xpath></li><li Class=\"PatchOperationAdd\"><xpath>/Defs/ThingDef[defName=\"D\"]</xpath><value><a>1</a></value></li></operations></Operation><Operation Class=\"PatchOperationTest\"><xpath>count(//ThingDef)</xpath></Operation><Operation Class=\"PatchOperationAdd\"><xpath>///</xpath><value><a/></value></Operation><Operation Class=\"PatchOperationRemove\"><xpath>/Defs/ThingDef[defName=\"D\"]/@x</xpath></Operation></Patch>"
+    }
+   }
+  ],
+  "expect": {
+   "defs": {
+    "ThingDef/D": "<ThingDef><defName>D</defName></ThingDef>"
+   },
+   "patch_results": [
+    false,
+    false,
+    false,
+    false,
+    false
+   ],
+   "diag": {
+    "patch_exception": 4,
+    "patch_failed": 1
+   }
+  }
+ },
+ {
+  "name": "patch-class-case-tolerance",
+  "doc": "Class names are matched case-insensitively (also with the Verse. prefix) and field names fall back to a case-insensitive match with an error.",
+  "game_version": "1.6.4871",
+  "mods": [
+   {
+    "id": "ludeon.rimworld",
+    "files": {
+     "Defs/a.xml": "<Defs><ThingDef><defName>D</defName></ThingDef></Defs>",
+     "Patches/p.xml": "<Patch><Operation Class=\"PatchOperationadd\"><xpath>/Defs/ThingDef[defName=\"D\"]</xpath><value><a>1</a></value></Operation><Operation Class=\"Verse.PatchOperationAdd\"><xpath>/Defs/ThingDef[defName=\"D\"]</xpath><value><b>1</b></value></Operation><Operation Class=\"PatchOperationAdd\"><xPath>/Defs/ThingDef[defName=\"D\"]</xPath><value><c>1</c></value></Operation></Patch>"
+    }
+   }
+  ],
+  "expect": {
+   "defs": {
+    "ThingDef/D": "<ThingDef><defName>D</defName><a>1</a><b>1</b><c>1</c></ThingDef>"
+   },
+   "patch_results": [
+    true,
+    true,
+    true
+   ],
+   "diag": {
+    "patch_field_case_mismatch": 1
+   }
+  }
+ }
+]

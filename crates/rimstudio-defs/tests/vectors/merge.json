@@ -1,0 +1,189 @@
+[
+ {
+  "name": "merge-load-order-and-override",
+  "doc": "Later mods override earlier defs with the same defName; the winner is appended, so database order changes.",
+  "game_version": "1.6.4871",
+  "mods": [
+   {
+    "id": "ludeon.rimworld",
+    "files": {
+     "Defs/a.xml": "<Defs><ThingDef><defName>A</defName><label>core</label></ThingDef><ThingDef><defName>B</defName></ThingDef></Defs>"
+    }
+   },
+   {
+    "id": "test.a",
+    "files": {
+     "Defs/b.xml": "<Defs><ThingDef><defName>A</defName><label>moda</label></ThingDef></Defs>"
+    }
+   }
+  ],
+  "expect": {
+   "defs": {
+    "ThingDef/A": "<ThingDef><defName>A</defName><label>moda</label></ThingDef>"
+   },
+   "provenance": {
+    "ThingDef/A": {
+     "mod": "test.a",
+     "file": "Defs/b.xml"
+    }
+   },
+   "db_order": {
+    "ThingDef": [
+     "B",
+     "A"
+    ]
+   },
+   "stats": {
+    "defs": 3,
+    "files": 2
+   }
+  }
+ },
+ {
+  "name": "duplicate-in-same-mod",
+  "doc": "Two defs with one defName inside ONE mod: the first stays, the second is skipped with an error. Files of a folder are visited in sorted order here (OS order in the game).",
+  "game_version": "1.6.4871",
+  "mods": [
+   {
+    "id": "test.a",
+    "files": {
+     "Defs/a.xml": "<Defs><ThingDef><defName>X</defName><label>first</label></ThingDef></Defs>",
+     "Defs/b.xml": "<Defs><ThingDef><defName>X</defName><label>second</label></ThingDef></Defs>"
+    }
+   }
+  ],
+  "expect": {
+   "defs": {
+    "ThingDef/X": "<ThingDef><defName>X</defName><label>first</label></ThingDef>"
+   },
+   "diag": {
+    "def_duplicate_in_mod": 1
+   },
+   "db_order": {
+    "ThingDef": [
+     "X"
+    ]
+   }
+  }
+ },
+ {
+  "name": "load-folders-and-version-folders",
+  "doc": "LoadFolders.xml (v1.6 with IfModActive, IfModNotActive, IfModActiveAll; later entries have priority and load first) and the version-folder fallbacks (closest older folder, Common, root; an exact 1.6 folder wins).",
+  "game_version": "1.6.4871",
+  "mods": [
+   {
+    "id": "ludeon.rimworld",
+    "files": {}
+   },
+   {
+    "id": "test.lf",
+    "files": {
+     "LoadFolders.xml": "<loadFolders><v1.5><li>1.5</li></v1.5><v1.6><li>/</li><li IfModActive=\"Ludeon.RimWorld.Royalty\">Royalty</li><li IfModNotActive=\"foo.bar, other.mod\">NoFoo</li><li IfModActiveAll=\"ludeon.rimworld, foo.bar\">NeedsBoth</li><li IfModActive=\"foo.bar\">NeedsFoo</li></v1.6></loadFolders>",
+     "Defs/root.xml": "<Defs><ThingDef><defName>R</defName></ThingDef></Defs>",
+     "Royalty/Defs/r.xml": "<Defs><ThingDef><defName>Roy</defName></ThingDef></Defs>",
+     "NoFoo/Defs/n.xml": "<Defs><ThingDef><defName>NoFoo</defName></ThingDef></Defs>",
+     "NeedsBoth/Defs/b.xml": "<Defs><ThingDef><defName>NB</defName></ThingDef></Defs>",
+     "NeedsFoo/Defs/f.xml": "<Defs><ThingDef><defName>NF</defName></ThingDef></Defs>",
+     "1.5/Defs/o.xml": "<Defs><ThingDef><defName>Old</defName></ThingDef></Defs>"
+    }
+   },
+   {
+    "id": "test.vf",
+    "files": {
+     "1.4/Defs/a.xml": "<Defs><ThingDef><defName>V14</defName></ThingDef></Defs>",
+     "1.5/Defs/a.xml": "<Defs><ThingDef><defName>V15</defName></ThingDef></Defs>",
+     "1.7/Defs/a.xml": "<Defs><ThingDef><defName>V17</defName></ThingDef></Defs>",
+     "Common/Defs/c.xml": "<Defs><ThingDef><defName>Com</defName></ThingDef></Defs>",
+     "Defs/r.xml": "<Defs><ThingDef><defName>Rt</defName></ThingDef></Defs>"
+    }
+   },
+   {
+    "id": "test.vf2",
+    "files": {
+     "1.6/Defs/a.xml": "<Defs><ThingDef><defName>V16</defName></ThingDef></Defs>",
+     "1.5/Defs/a.xml": "<Defs><ThingDef><defName>V15b</defName></ThingDef></Defs>",
+     "Defs/r.xml": "<Defs><ThingDef><defName>R2</defName></ThingDef></Defs>"
+    }
+   }
+  ],
+  "expect": {
+   "db_order": {
+    "ThingDef": [
+     "NoFoo",
+     "Roy",
+     "R",
+     "V15",
+     "Com",
+     "Rt",
+     "V16",
+     "R2"
+    ]
+   }
+  },
+  "extra_active_ids": [
+   "Ludeon.RimWorld.Royalty"
+  ]
+ },
+ {
+  "name": "file-dedup-between-folders",
+  "doc": "A file in a higher-priority load folder hides the same relative path in a lower one (no duplicate error); other files of the lower folder still load.",
+  "game_version": "1.6.4871",
+  "mods": [
+   {
+    "id": "test.dd",
+    "files": {
+     "LoadFolders.xml": "<loadFolders><v1.6><li>/</li><li>Over</li></v1.6></loadFolders>",
+     "Defs/x.xml": "<Defs><ThingDef><defName>X</defName><label>root</label></ThingDef></Defs>",
+     "Defs/sub/y.xml": "<Defs><ThingDef><defName>Y</defName></ThingDef></Defs>",
+     "Over/Defs/x.xml": "<Defs><ThingDef><defName>X</defName><label>over</label></ThingDef></Defs>"
+    }
+   }
+  ],
+  "expect": {
+   "defs": {
+    "ThingDef/X": "<ThingDef><defName>X</defName><label>over</label></ThingDef>"
+   },
+   "db_order": {
+    "ThingDef": [
+     "X",
+     "Y"
+    ]
+   },
+   "diag": {
+    "def_duplicate_in_mod": 0
+   }
+  }
+ },
+ {
+  "name": "defs-bad-root-parse-error-unknown-type",
+  "doc": "A root element other than Defs is an error but its children still load; an unparseable file is skipped; an element that is no Def type is skipped.",
+  "game_version": "1.6.4871",
+  "mods": [
+   {
+    "id": "test.a",
+    "files": {
+     "Defs/a.xml": "<Foo><ThingDef><defName>FooRoot</defName></ThingDef></Foo>",
+     "Defs/b.xml": "<Defs><ThingDef><defName>Broken</defName>",
+     "Defs/c.xml": "<Defs><!-- comment --><ThingDef><defName>Ok</defName></ThingDef><Bogus><defName>x</defName></Bogus></Defs>"
+    }
+   }
+  ],
+  "expect": {
+   "db_order": {
+    "ThingDef": [
+     "FooRoot",
+     "Ok"
+    ]
+   },
+   "diag": {
+    "defs_bad_root": 1,
+    "xml_parse_error": 1,
+    "defs_unknown_parse_failure": 1,
+    "def_unknown_type": 1
+   },
+   "stats": {
+    "defs": 2
+   }
+  }
+ }
+]

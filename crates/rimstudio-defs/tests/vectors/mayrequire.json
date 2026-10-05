@@ -1,0 +1,66 @@
+[
+ {
+  "name": "mayrequire-top-level",
+  "doc": "MayRequire (all of) and MayRequireAnyOf (any of) on top-level nodes: ids are trimmed and case-insensitive, an EMPTY MayRequire never matches, an unmet MayRequire on a parent keeps it from being registered.",
+  "game_version": "1.6.4871",
+  "mods": [
+   {
+    "id": "ludeon.rimworld",
+    "files": {
+     "Defs/a.xml": "<Defs><ThingDef MayRequire=\"x.y\"><defName>A</defName></ThingDef><ThingDef MayRequire=\"a.b\"><defName>B</defName></ThingDef><ThingDef MayRequire=\"X.Y, a.b\"><defName>C</defName></ThingDef><ThingDef MayRequireAnyOf=\"a.b, X.y\"><defName>Dd</defName></ThingDef><ThingDef MayRequireAnyOf=\"a.b,c.d\"><defName>E</defName></ThingDef><ThingDef MayRequire=\"\"><defName>F</defName></ThingDef><ThingDef MayRequire=\"x.y\" MayRequireAnyOf=\"a.b\"><defName>G</defName></ThingDef><ThingDef Name=\"PM\" Abstract=\"True\" MayRequire=\"a.b\"><label>pm</label></ThingDef><ThingDef ParentName=\"PM\"><defName>H</defName></ThingDef></Defs>"
+    }
+   },
+   {
+    "id": "x.y",
+    "files": {}
+   }
+  ],
+  "expect": {
+   "db_order": {
+    "ThingDef": [
+     "A",
+     "Dd",
+     "H"
+    ]
+   },
+   "diag": {
+    "inherit_missing_parent": 1
+   },
+   "stats": {
+    "may_require_skipped": 6,
+    "defs": 3
+   },
+   "defs": {
+    "ThingDef/H": "<ThingDef ParentName=\"PM\"><defName>H</defName></ThingDef>"
+   }
+  }
+ },
+ {
+  "name": "mayrequire-in-patch-lists",
+  "doc": "li entries of the `operations` and `mods` lists honour MayRequire / MayRequireAnyOf (skipped when unmet).",
+  "game_version": "1.6.4871",
+  "mods": [
+   {
+    "id": "ludeon.rimworld",
+    "files": {
+     "Defs/a.xml": "<Defs><ThingDef><defName>D</defName></ThingDef></Defs>",
+     "Patches/p.xml": "<Patch><Operation Class=\"PatchOperationSequence\"><operations><li Class=\"PatchOperationAdd\"><xpath>/Defs/ThingDef[defName=\"D\"]</xpath><value><a>1</a></value></li><li MayRequire=\"a.b\" Class=\"PatchOperationAdd\"><xpath>/Defs/ThingDef[defName=\"D\"]</xpath><value><b>1</b></value></li><li MayRequireAnyOf=\"x.y,a.b\" Class=\"PatchOperationAdd\"><xpath>/Defs/ThingDef[defName=\"D\"]</xpath><value><c>1</c></value></li></operations></Operation><Operation Class=\"PatchOperationFindMod\"><mods><li MayRequire=\"a.b\">Core</li><li>Nope</li></mods><match Class=\"PatchOperationAdd\"><xpath>/Defs/ThingDef[defName=\"D\"]</xpath><value><m>1</m></value></match><nomatch Class=\"PatchOperationAdd\"><xpath>/Defs/ThingDef[defName=\"D\"]</xpath><value><nm>1</nm></value></nomatch></Operation></Patch>"
+    },
+    "name": "Core"
+   },
+   {
+    "id": "x.y",
+    "files": {}
+   }
+  ],
+  "expect": {
+   "defs": {
+    "ThingDef/D": "<ThingDef><defName>D</defName><a>1</a><c>1</c><nm>1</nm></ThingDef>"
+   },
+   "patch_results": [
+    true,
+    true
+   ]
+  }
+ }
+]
