@@ -1,0 +1,167 @@
+{
+  "updated": "2026-10-10",
+  "release": {
+    "id": "0.1.0",
+    "title": "designer slice",
+    "summary": "Weapons editor for ranged and melee weapons; vanilla output, optional Combat Extended patches",
+    "scope": [
+      { "text": "Weapons editor: ranged and melee, math, quiz, fit meter", "state": "done" },
+      { "text": "Optional CE patch generator: new, convert, update, lint", "state": "done" },
+      { "text": "JSON document store for drafts and calibration caches", "state": "done" },
+      { "text": "Manager crate: settings, sources, detection", "state": "done" },
+      { "text": "CLI commands for all of it with JSON output", "state": "done" }
+    ],
+    "exit": [
+      { "text": "Fictional ranged and melee weapon: plan and files, byte equal", "state": "done" },
+      { "text": "CE off writes no CE file; on writes gated patch files", "state": "done" },
+      { "text": "Convert and update modes give a patch only reviewable diff", "state": "done" },
+      { "text": "Drafts survive a restart; a corrupt document is quarantined", "state": "done" },
+      { "text": "CLI runs on a fixture install; real install tests only read", "state": "done" },
+      { "text": "No game or CE value table in the repository (licence check)", "state": "partial" },
+      { "text": "fmt, clippy and tests clean in every crate", "state": "done" },
+      { "text": "Added check: a generated mod loads in RimWorld itself", "state": "open" }
+    ],
+    "extras": [
+      { "text": "Tauri desktop shell with live reload", "state": "done" },
+      { "text": "Temporary dark UI: Setup, Mod, Weapons, Patches", "state": "done" },
+      { "text": "Weapon wizard: every number from a category", "state": "done" },
+      { "text": "Texture and sound import; layout fixes with undo", "state": "done" },
+      { "text": "CE bows, weapon platforms and custom ammunition", "state": "done" },
+      { "text": "Mod page: create a mod, edit About and LoadFolders", "state": "done" },
+      { "text": "Test in game: link a mod into RimWorld's Mods folder", "state": "done" }
+    ]
+  },
+  "milestones": [
+    {
+      "id": "M0",
+      "title": "Skeleton",
+      "weeks": 2,
+      "needs": [],
+      "slice": true,
+      "items": [
+        { "text": "Virtual workspace; the folder keeps its name", "state": "done" },
+        { "text": "Member crates with layer tags (19 of 24 exist)", "state": "partial" },
+        { "text": "xtask checks: layers, source rules, docs; deny", "state": "done" },
+        { "text": "rimstudio-core: ids, node tree, ports, diagnostics", "state": "done" },
+        { "text": "Frontend skeleton (no dependency-cruiser or knip)", "state": "partial" },
+        { "text": "CI: Rust matrix written, never run; no frontend job", "state": "partial" },
+        { "text": "Docs index, glossary, invariants, ADRs", "state": "done" }
+      ]
+    },
+    {
+      "id": "M1",
+      "title": "Core engine",
+      "weeks": 6,
+      "needs": ["M0"],
+      "slice": true,
+      "items": [
+        { "text": "XML boundary: parse modes, byte spans, codecs", "state": "done" },
+        { "text": "IO: roots, JSON store, atomic writes, write fence", "state": "done" },
+        { "text": "Platform: Linux run, Windows and macOS compiled", "state": "partial" },
+        { "text": "XPath and def engine with vectors and corpus gates", "state": "done" },
+        { "text": "Steam: VDF reader, game locator, detection report", "state": "done" },
+        { "text": "Library: scanner, manifest cache, duplicates", "state": "done" },
+        { "text": "Command registry, job runner, CLI detect and scan", "state": "done" },
+        { "text": "Testing crate: fixture builders", "state": "done" }
+      ]
+    },
+    {
+      "id": "M2",
+      "title": "Manager MVP",
+      "weeks": 8,
+      "needs": ["M1"],
+      "slice": false,
+      "items": [
+        { "text": "Onboarding on the detection report (Setup page)", "state": "partial" },
+        { "text": "rules, sort, validate and datasets crates", "state": "open" },
+        { "text": "Manager: settings, sources, scan; no session or sort", "state": "partial" },
+        { "text": "Deploy: one project link; no link farm or ModsConfig", "state": "partial" },
+        { "text": "Manager lists, drag and drop, light theme", "state": "open" },
+        { "text": "Settings and onboarding screens (temporary UI)", "state": "partial" },
+        { "text": "rsimg scheme and thumbnail cache", "state": "open" }
+      ]
+    },
+    {
+      "id": "M3",
+      "title": "Manager v1",
+      "weeks": 6,
+      "needs": ["M2"],
+      "slice": false,
+      "items": [
+        { "text": "Profiles, list history, groups and notes", "state": "open" },
+        { "text": "Rule editor with surgical patch export", "state": "open" },
+        { "text": "Duplicate resolution UI and metadata editing", "state": "open" },
+        { "text": "Import from RimSort (read only aux-db)", "state": "open" },
+        { "text": "Player.log viewer with classification", "state": "open" },
+        { "text": "Bisect an active list", "state": "open" },
+        { "text": "Update checks, shortcut registry, settings search", "state": "open" },
+        { "text": "Game-style sort, implied order, list diff", "state": "open" }
+      ]
+    },
+    {
+      "id": "M4",
+      "title": "Toolkit foundation",
+      "weeks": 8,
+      "needs": ["M1", "M2"],
+      "slice": true,
+      "items": [
+        { "text": "Workspace: reference sets, def index, sessions", "state": "done" },
+        { "text": "Scaffolder, About and LoadFolders editors", "state": "done" },
+        { "text": "Dev launcher with flags", "state": "open" },
+        { "text": "Def Explorer: queries and resolved view (no UI)", "state": "partial" },
+        { "text": "Patch tester and conflict view", "state": "open" },
+        { "text": "Reference and missing texture checks (layout)", "state": "partial" },
+        { "text": "rimstudio-validate author lints, code registry", "state": "open" },
+        { "text": "Project UI built; CodeMirror, rich text open", "state": "partial" }
+      ]
+    },
+    {
+      "id": "M5",
+      "title": "Item designer",
+      "weeks": 8,
+      "needs": ["M4"],
+      "slice": true,
+      "items": [
+        { "text": "Math, fit meter, baseline, quiz, both modes", "state": "done" },
+        { "text": "Reference tables from the install, CE tables cached", "state": "done" },
+        { "text": "CE generator, update mode, CEP lint (2 rules idle)", "state": "partial" },
+        { "text": "Designer orchestration, write plans, gated CE files", "state": "done" },
+        { "text": "Designer UI: editor, wizard, asks (no charts)", "state": "partial" },
+        { "text": "Ranged weapons", "state": "done" },
+        { "text": "Melee weapons", "state": "done" },
+        { "text": "Apparel", "state": "open" }
+      ]
+    },
+    {
+      "id": "M6",
+      "title": "Workshop publishing",
+      "weeks": 5,
+      "needs": ["M4"],
+      "slice": false,
+      "items": [
+        { "text": "Spike S-04: private item through the user's Steam", "state": "open" },
+        { "text": "rimstudio-publish: staging, ignore rules, history", "state": "open" },
+        { "text": "Steam helper process, user's own Steam library", "state": "open" },
+        { "text": "Preflight checks and BBCode preview", "state": "open" },
+        { "text": "Workshop UI: plan, preflight, progress, history", "state": "open" },
+        { "text": "CLI publish plan and publish run", "state": "open" }
+      ]
+    },
+    {
+      "id": "M7",
+      "title": "Polish and release",
+      "weeks": 5,
+      "needs": ["M3", "M5", "M6"],
+      "slice": false,
+      "items": [
+        { "text": "Packaging: installers, AppImage, deb, rpm, updater", "state": "open" },
+        { "text": "Unsigned Windows notes; macOS notarisation path", "state": "open" },
+        { "text": "Steam Deck pass; Flatpak manifest", "state": "open" },
+        { "text": "Accessibility, performance and memory pass", "state": "open" },
+        { "text": "Final visual design from the design brief", "state": "open" },
+        { "text": "User and contribution guides; licence text", "state": "open" },
+        { "text": "Preact 11 promotion if the gate passes", "state": "open" }
+      ]
+    }
+  ]
+}

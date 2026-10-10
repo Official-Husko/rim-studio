@@ -2,7 +2,11 @@
 
 This roadmap orders the work from the empty repository to a first release and lists what follows. It defines eight milestones (M0 to M7), plus the early 0.1.0 designer slice that cuts across them (section 2.1), each with scope, testable exit criteria, the specs it implements, the spikes that must finish first, dependencies and risks, followed by the consolidated owner decisions and a risk register. Decisions are cited as D-nnn from the [decision register](architecture/decision-register.md) and as ADR numbers from the [ADR index](adr/README.md); requirements are R1 to R12.
 
-Status: draft | Last updated: 2026-10-04
+Status: draft | Last updated: 2026-10-10
+
+![Roadmap status: milestones M0 to M7 and the 0.1.0 release](roadmap.svg)
+
+The picture is generated: the state of every scope item is in [roadmap-status.json](roadmap-status.json), and `pnpm roadmap` redraws [roadmap.svg](roadmap.svg) from it.
 
 ## 1. Ordering principles
 
@@ -356,3 +360,4 @@ Likelihood and impact use low, medium and high. The owner of each mitigation is 
 1. At the end of each milestone, update this document: mark exit criteria met, record spike results with links, adjust sizes by the measured velocity.
 2. Open owner decisions are re-listed at each milestone boundary; a decision that blocks the next milestone is raised at the start of the previous one.
 3. Any change to the layer matrix, an invariant or a decision status goes through a new or superseding ADR, never a silent edit.
+4. The roadmap picture follows the work: when a scope item or an exit criterion changes state, edit `docs/roadmap-status.json`, run `pnpm roadmap` and commit the data and the picture together with the change. `pnpm roadmap:check` (part of `pnpm check`) fails when the picture is stale.

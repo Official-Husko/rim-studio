@@ -1,0 +1,335 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="2302" viewBox="0 0 1200 2302" role="img" aria-labelledby="roadmap-title roadmap-desc" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif">
+<title id="roadmap-title">RimStudio roadmap</title>
+<desc id="roadmap-desc">Roadmap status of 2026-10-10: 40% of the planned effort is done. M0 Skeleton 79%, M1 Core engine 94%, M2 Manager MVP 29%, M3 Manager v1 0%, M4 Toolkit foundation 44%, M5 Item designer 75%, M6 Workshop publishing 0%, M7 Polish and release 0%. Release 0.1.0: 6 of 8 checks met.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 Z" fill="#4a77a8"/></marker></defs>
+<rect width="1200" height="2302" fill="#081a31"/>
+<text x="32" y="60" font-size="32" font-weight="700" fill="#e8f2ff">RimStudio roadmap</text>
+<text x="32" y="90" font-size="14" fill="#9bb8d6">Status of 2026-10-10. Plan: docs/roadmap.md. Data: docs/roadmap-status.json.</text>
+<text x="1168" y="62" font-size="44" font-weight="700" fill="#4cc9f0" text-anchor="end">40%</text>
+<text x="1168" y="86" font-size="13" fill="#9bb8d6" text-anchor="end">of the planned effort is done</text>
+<text x="1168" y="104" font-size="12" fill="#6a8aab" text-anchor="end">weighted by size, 48 person-weeks in total</text>
+<circle cx="39" cy="124" r="6" fill="#3ddc97"/><path d="M36,124 L38.2,126.6 L42.4,121.4" fill="none" stroke="#081a31" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="52" y="129" font-size="12" fill="#9bb8d6">done</text>
+<circle cx="112.84" cy="124" r="5.2" fill="none" stroke="#ffc857" stroke-width="1.6"/><path d="M112.84,118.8 A5.2,5.2 0 0,0 112.84,129.2 Z" fill="#ffc857"/>
+<text x="125.84" y="129" font-size="12" fill="#9bb8d6">partly done or built as a temporary version</text>
+<circle cx="458.12" cy="124" r="5.2" fill="none" stroke="#6a8aab" stroke-width="1.6"/>
+<text x="471.12" y="129" font-size="12" fill="#9bb8d6">not started</text>
+<rect x="573.68" y="115" width="44" height="18" rx="9" fill="none" stroke="#4cc9f0" stroke-width="1.2"/>
+<text x="595.68" y="128" font-size="11" font-weight="600" fill="#4cc9f0" text-anchor="middle">0.1.0</text>
+<text x="627.68" y="129" font-size="12" fill="#9bb8d6">part of the 0.1.0 slice</text>
+<rect x="32" y="152" width="1136" height="476" rx="10" fill="#0d2440" stroke="#4cc9f0" stroke-width="1.5"/>
+<text x="56" y="192" font-size="22" font-weight="700" fill="#e8f2ff">Release 0.1.0: designer slice</text>
+<text x="56" y="218" font-size="13" fill="#9bb8d6">Weapons editor for ranged and melee weapons; vanilla output, optional Combat Extended patches</text>
+<rect x="844" y="180" width="300" height="12" rx="6" fill="#163457"/><rect x="844" y="180" width="243.8" height="12" rx="6" fill="#4cc9f0"/>
+<text x="1144" y="214" font-size="13" fill="#9bb8d6" text-anchor="end">81%: 6 of 8 checks met, 1 partly, 1 open</text>
+<text x="56" y="258" font-size="12" font-weight="700" fill="#9bb8d6">SCOPE</text>
+<circle cx="63" cy="274" r="6" fill="#3ddc97"/><path d="M60,274 L62.2,276.6 L66.4,271.4" fill="none" stroke="#081a31" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="80" y="278" font-size="13" fill="#e8f2ff">Weapons editor: ranged and melee, math, quiz, fit meter</text>
+<circle cx="63" cy="298" r="6" fill="#3ddc97"/><path d="M60,298 L62.2,300.6 L66.4,295.4" fill="none" stroke="#081a31" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="80" y="302" font-size="13" fill="#e8f2ff">Optional CE patch generator: new, convert, update, lint</text>
+<circle cx="63" cy="322" r="6" fill="#3ddc97"/><path d="M60,322 L62.2,324.6 L66.4,319.4" fill="none" stroke="#081a31" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="80" y="326" font-size="13" fill="#e8f2ff">JSON document store for drafts and calibration caches</text>
+<circle cx="63" cy="346" r="6" fill="#3ddc97"/><path d="M60,346 L62.2,348.6 L66.4,343.4" fill="none" stroke="#081a31" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="80" y="350" font-size="13" fill="#e8f2ff">Manager crate: settings, sources, detection</text>
+<circle cx="63" cy="370" r="6" fill="#3ddc97"/><path d="M60,370 L62.2,372.6 L66.4,367.4" fill="none" stroke="#081a31" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="80" y="374" font-size="13" fill="#e8f2ff">CLI commands for all of it with JSON output</text>
+<text x="56" y="412" font-size="12" font-weight="700" fill="#9bb8d6">EXIT CRITERIA</text>
+<circle cx="63" cy="428" r="6" fill="#3ddc97"/><path d="M60,428 L62.2,430.6 L66.4,425.4" fill="none" stroke="#081a31" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="80" y="432" font-size="13" fill="#e8f2ff">Fictional ranged and melee weapon: plan and files, byte equal</text>
+<circle cx="63" cy="452" r="6" fill="#3ddc97"/><path d="M60,452 L62.2,454.6 L66.4,449.4" fill="none" stroke="#081a31" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="80" y="456" font-size="13" fill="#e8f2ff">CE off writes no CE file; on writes gated patch files</text>
+<circle cx="63" cy="476" r="6" fill="#3ddc97"/><path d="M60,476 L62.2,478.6 L66.4,473.4" fill="none" stroke="#081a31" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="80" y="480" font-size="13" fill="#e8f2ff">Convert and update modes give a patch only reviewable diff</text>
+<circle cx="63" cy="500" r="6" fill="#3ddc97"/><path d="M60,500 L62.2,502.6 L66.4,497.4" fill="none" stroke="#081a31" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="80" y="504" font-size="13" fill="#e8f2ff">Drafts survive a restart; a corrupt document is quarantined</text>
+<circle cx="63" cy="524" r="6" fill="#3ddc97"/><path d="M60,524 L62.2,526.6 L66.4,521.4" fill="none" stroke="#081a31" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="80" y="528" font-size="13" fill="#e8f2ff">CLI runs on a fixture install; real install tests only read</text>
+<circle cx="63" cy="548" r="5.2" fill="none" stroke="#ffc857" stroke-width="1.6"/><path d="M63,542.8 A5.2,5.2 0 0,0 63,553.2 Z" fill="#ffc857"/>
+<text x="80" y="552" font-size="13" fill="#e8f2ff">No game or CE value table in the repository (licence check)</text>
+<circle cx="63" cy="572" r="6" fill="#3ddc97"/><path d="M60,572 L62.2,574.6 L66.4,569.4" fill="none" stroke="#081a31" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="80" y="576" font-size="13" fill="#e8f2ff">fmt, clippy and tests clean in every crate</text>
+<circle cx="63" cy="596" r="5.2" fill="none" stroke="#6a8aab" stroke-width="1.6"/>
+<text x="80" y="600" font-size="13" fill="#e8f2ff">Added check: a generated mod loads in RimWorld itself</text>
+<text x="624" y="258" font-size="12" font-weight="700" fill="#9bb8d6">BUILT BEYOND THE PLAN</text>
+<circle cx="631" cy="274" r="6" fill="#3ddc97"/><path d="M628,274 L630.2,276.6 L634.4,271.4" fill="none" stroke="#081a31" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="648" y="278" font-size="13" fill="#e8f2ff">Tauri desktop shell with live reload</text>
+<circle cx="631" cy="298" r="6" fill="#3ddc97"/><path d="M628,298 L630.2,300.6 L634.4,295.4" fill="none" stroke="#081a31" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="648" y="302" font-size="13" fill="#e8f2ff">Temporary dark UI: Setup, Mod, Weapons, Patches</text>
+<circle cx="631" cy="322" r="6" fill="#3ddc97"/><path d="M628,322 L630.2,324.6 L634.4,319.4" fill="none" stroke="#081a31" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="648" y="326" font-size="13" fill="#e8f2ff">Weapon wizard: every number from a category</text>
+<circle cx="631" cy="346" r="6" fill="#3ddc97"/><path d="M628,346 L630.2,348.6 L634.4,343.4" fill="none" stroke="#081a31" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="648" y="350" font-size="13" fill="#e8f2ff">Texture and sound import; layout fixes with undo</text>
+<circle cx="631" cy="370" r="6" fill="#3ddc97"/><path d="M628,370 L630.2,372.6 L634.4,367.4" fill="none" stroke="#081a31" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="648" y="374" font-size="13" fill="#e8f2ff">CE bows, weapon platforms and custom ammunition</text>
+<circle cx="631" cy="394" r="6" fill="#3ddc97"/><path d="M628,394 L630.2,396.6 L634.4,391.4" fill="none" stroke="#081a31" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="648" y="398" font-size="13" fill="#e8f2ff">Mod page: create a mod, edit About and LoadFolders</text>
+<circle cx="631" cy="418" r="6" fill="#3ddc97"/><path d="M628,418 L630.2,420.6 L634.4,415.4" fill="none" stroke="#081a31" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="648" y="422" font-size="13" fill="#e8f2ff">Test in game: link a mod into RimWorld's Mods folder</text>
+<text x="624" y="460" font-size="12" font-weight="700" fill="#9bb8d6">STILL OPEN FOR 0.1.0</text>
+<circle cx="631" cy="476" r="5.2" fill="none" stroke="#ffc857" stroke-width="1.6"/><path d="M631,470.8 A5.2,5.2 0 0,0 631,481.2 Z" fill="#ffc857"/>
+<text x="648" y="480" font-size="13" fill="#e8f2ff">No game or CE value table in the repository (licence check)</text>
+<circle cx="631" cy="500" r="5.2" fill="none" stroke="#6a8aab" stroke-width="1.6"/>
+<text x="648" y="504" font-size="13" fill="#e8f2ff">Added check: a generated mod loads in RimWorld itself</text>
+<text x="32" y="684" font-size="18" font-weight="700" fill="#e8f2ff">Milestones and their order</text>
+<path d="M240,747 L262,747" fill="none" stroke="#4a77a8" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M472,747 L494,747" fill="none" stroke="#4a77a8" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M704,747 L726,747" fill="none" stroke="#4a77a8" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M936,747 L958,747" fill="none" stroke="#4a77a8" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M368,786 V847 H494" fill="none" stroke="#4a77a8" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M600,786 V806" fill="none" stroke="#4a77a8" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M704,847 L726,847" fill="none" stroke="#4a77a8" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M600,886 V947 H726" fill="none" stroke="#4a77a8" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M936,847 H1064 V788" fill="none" stroke="#4a77a8" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M936,947 H1064 V847" fill="none" stroke="#4a77a8" stroke-width="2"/>
+<rect x="32" y="708" width="208" height="78" rx="8" fill="#0d2440" stroke="#1d4570" stroke-width="1.5"/>
+<rect x="32" y="716" width="5" height="62" rx="2.5" fill="#ffc857"/>
+<text x="50" y="736" font-size="18" font-weight="700" fill="#e8f2ff">M0</text>
+<text x="90" y="735" font-size="12" fill="#6a8aab">2 wk</text>
+<rect x="186" y="718" width="44" height="18" rx="9" fill="none" stroke="#4cc9f0" stroke-width="1.2"/>
+<text x="208" y="731" font-size="11" font-weight="600" fill="#4cc9f0" text-anchor="middle">0.1.0</text>
+<text x="50" y="756" font-size="14" fill="#e8f2ff">Skeleton</text>
+<rect x="50" y="767" width="140" height="8" rx="4" fill="#163457"/><rect x="50" y="767" width="110" height="8" rx="4" fill="#ffc857"/>
+<text x="228" y="775" font-size="13" font-weight="700" fill="#ffc857" text-anchor="end">79%</text>
+<rect x="264" y="708" width="208" height="78" rx="8" fill="#0d2440" stroke="#1d4570" stroke-width="1.5"/>
+<rect x="264" y="716" width="5" height="62" rx="2.5" fill="#ffc857"/>
+<text x="282" y="736" font-size="18" font-weight="700" fill="#e8f2ff">M1</text>
+<text x="322" y="735" font-size="12" fill="#6a8aab">6 wk</text>
+<rect x="418" y="718" width="44" height="18" rx="9" fill="none" stroke="#4cc9f0" stroke-width="1.2"/>
+<text x="440" y="731" font-size="11" font-weight="600" fill="#4cc9f0" text-anchor="middle">0.1.0</text>
+<text x="282" y="756" font-size="14" fill="#e8f2ff">Core engine</text>
+<rect x="282" y="767" width="140" height="8" rx="4" fill="#163457"/><rect x="282" y="767" width="131.3" height="8" rx="4" fill="#ffc857"/>
+<text x="460" y="775" font-size="13" font-weight="700" fill="#ffc857" text-anchor="end">94%</text>
+<rect x="496" y="708" width="208" height="78" rx="8" fill="#0d2440" stroke="#1d4570" stroke-width="1.5"/>
+<rect x="496" y="716" width="5" height="62" rx="2.5" fill="#ffc857"/>
+<text x="514" y="736" font-size="18" font-weight="700" fill="#e8f2ff">M2</text>
+<text x="554" y="735" font-size="12" fill="#6a8aab">8 wk</text>
+<text x="514" y="756" font-size="14" fill="#e8f2ff">Manager MVP</text>
+<rect x="514" y="767" width="140" height="8" rx="4" fill="#163457"/><rect x="514" y="767" width="40" height="8" rx="4" fill="#ffc857"/>
+<text x="692" y="775" font-size="13" font-weight="700" fill="#ffc857" text-anchor="end">29%</text>
+<rect x="728" y="708" width="208" height="78" rx="8" fill="#0d2440" stroke="#1d4570" stroke-width="1.5"/>
+<rect x="728" y="716" width="5" height="62" rx="2.5" fill="#6a8aab"/>
+<text x="746" y="736" font-size="18" font-weight="700" fill="#e8f2ff">M3</text>
+<text x="786" y="735" font-size="12" fill="#6a8aab">6 wk</text>
+<text x="746" y="756" font-size="14" fill="#e8f2ff">Manager v1</text>
+<rect x="746" y="767" width="140" height="8" rx="4" fill="#163457"/>
+<text x="924" y="775" font-size="13" font-weight="700" fill="#6a8aab" text-anchor="end">0%</text>
+<rect x="496" y="808" width="208" height="78" rx="8" fill="#0d2440" stroke="#1d4570" stroke-width="1.5"/>
+<rect x="496" y="816" width="5" height="62" rx="2.5" fill="#ffc857"/>
+<text x="514" y="836" font-size="18" font-weight="700" fill="#e8f2ff">M4</text>
+<text x="554" y="835" font-size="12" fill="#6a8aab">8 wk</text>
+<rect x="650" y="818" width="44" height="18" rx="9" fill="none" stroke="#4cc9f0" stroke-width="1.2"/>
+<text x="672" y="831" font-size="11" font-weight="600" fill="#4cc9f0" text-anchor="middle">0.1.0</text>
+<text x="514" y="856" font-size="14" fill="#e8f2ff">Toolkit foundation</text>
+<rect x="514" y="867" width="140" height="8" rx="4" fill="#163457"/><rect x="514" y="867" width="61.3" height="8" rx="4" fill="#ffc857"/>
+<text x="692" y="875" font-size="13" font-weight="700" fill="#ffc857" text-anchor="end">44%</text>
+<rect x="728" y="808" width="208" height="78" rx="8" fill="#0d2440" stroke="#1d4570" stroke-width="1.5"/>
+<rect x="728" y="816" width="5" height="62" rx="2.5" fill="#ffc857"/>
+<text x="746" y="836" font-size="18" font-weight="700" fill="#e8f2ff">M5</text>
+<text x="786" y="835" font-size="12" fill="#6a8aab">8 wk</text>
+<rect x="882" y="818" width="44" height="18" rx="9" fill="none" stroke="#4cc9f0" stroke-width="1.2"/>
+<text x="904" y="831" font-size="11" font-weight="600" fill="#4cc9f0" text-anchor="middle">0.1.0</text>
+<text x="746" y="856" font-size="14" fill="#e8f2ff">Item designer</text>
+<rect x="746" y="867" width="140" height="8" rx="4" fill="#163457"/><rect x="746" y="867" width="105" height="8" rx="4" fill="#ffc857"/>
+<text x="924" y="875" font-size="13" font-weight="700" fill="#ffc857" text-anchor="end">75%</text>
+<rect x="728" y="908" width="208" height="78" rx="8" fill="#0d2440" stroke="#1d4570" stroke-width="1.5"/>
+<rect x="728" y="916" width="5" height="62" rx="2.5" fill="#6a8aab"/>
+<text x="746" y="936" font-size="18" font-weight="700" fill="#e8f2ff">M6</text>
+<text x="786" y="935" font-size="12" fill="#6a8aab">5 wk</text>
+<text x="746" y="956" font-size="14" fill="#e8f2ff">Workshop publishing</text>
+<rect x="746" y="967" width="140" height="8" rx="4" fill="#163457"/>
+<text x="924" y="975" font-size="13" font-weight="700" fill="#6a8aab" text-anchor="end">0%</text>
+<rect x="960" y="708" width="208" height="78" rx="8" fill="#0d2440" stroke="#1d4570" stroke-width="1.5"/>
+<rect x="960" y="716" width="5" height="62" rx="2.5" fill="#6a8aab"/>
+<text x="978" y="736" font-size="18" font-weight="700" fill="#e8f2ff">M7</text>
+<text x="1018" y="735" font-size="12" fill="#6a8aab">5 wk</text>
+<text x="978" y="756" font-size="14" fill="#e8f2ff">Polish and release</text>
+<rect x="978" y="767" width="140" height="8" rx="4" fill="#163457"/>
+<text x="1156" y="775" font-size="13" font-weight="700" fill="#6a8aab" text-anchor="end">0%</text>
+<text x="32" y="836" font-size="13" fill="#9bb8d6">0.1.0 takes the parts it needs from M0, M1, M4 and M5</text>
+<text x="32" y="856" font-size="13" fill="#9bb8d6">and finishes the weapons half of the designer first.</text>
+<text x="32" y="888" font-size="13" fill="#9bb8d6">M6 needs M4 only, so it can move ahead of M5.</text>
+<text x="32" y="1030" font-size="18" font-weight="700" fill="#e8f2ff">Scope of each milestone</text>
+<rect x="32" y="1050" width="1136" height="136" rx="10" fill="#0d2440" stroke="#1d4570" stroke-width="1.5"/>
+<rect x="32" y="1060" width="5" height="116" rx="2.5" fill="#ffc857"/>
+<text x="56" y="1086" font-size="24" font-weight="700" fill="#ffc857">M0</text>
+<text x="56" y="1112" font-size="16" font-weight="600" fill="#e8f2ff">Skeleton</text>
+<text x="56" y="1134" font-size="12" fill="#9bb8d6">2 person-weeks</text>
+<text x="56" y="1152" font-size="12" fill="#9bb8d6">needs nothing</text>
+<rect x="56" y="1164" width="190" height="8" rx="4" fill="#163457"/><rect x="56" y="1164" width="149.3" height="8" rx="4" fill="#ffc857"/>
+<text x="256" y="1173" font-size="13" font-weight="700" fill="#ffc857">79%</text>
+<circle cx="339" cy="1080" r="6" fill="#3ddc97"/><path d="M336,1080 L338.2,1082.6 L342.4,1077.4" fill="none" stroke="#081a31" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="356" y="1084" font-size="13" fill="#e8f2ff">Virtual workspace; the folder keeps its name</text>
+<circle cx="339" cy="1104" r="5.2" fill="none" stroke="#ffc857" stroke-width="1.6"/><path d="M339,1098.8 A5.2,5.2 0 0,0 339,1109.2 Z" fill="#ffc857"/>
+<text x="356" y="1108" font-size="13" fill="#e8f2ff">Member crates with layer tags (19 of 24 exist)</text>
+<circle cx="339" cy="1128" r="6" fill="#3ddc97"/><path d="M336,1128 L338.2,1130.6 L342.4,1125.4" fill="none" stroke="#081a31" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="356" y="1132" font-size="13" fill="#e8f2ff">xtask checks: layers, source rules, docs; deny</text>
+<circle cx="339" cy="1152" r="6" fill="#3ddc97"/><path d="M336,1152 L338.2,1154.6 L342.4,1149.4" fill="none" stroke="#081a31" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="356" y="1156" font-size="13" fill="#e8f2ff">rimstudio-core: ids, node tree, ports, diagnostics</text>
+<circle cx="759" cy="1080" r="5.2" fill="none" stroke="#ffc857" stroke-width="1.6"/><path d="M759,1074.8 A5.2,5.2 0 0,0 759,1085.2 Z" fill="#ffc857"/>
+<text x="776" y="1084" font-size="13" fill="#e8f2ff">Frontend skeleton (no dependency-cruiser or knip)</text>
+<circle cx="759" cy="1104" r="5.2" fill="none" stroke="#ffc857" stroke-width="1.6"/><path d="M759,1098.8 A5.2,5.2 0 0,0 759,1109.2 Z" fill="#ffc857"/>
+<text x="776" y="1108" font-size="13" fill="#e8f2ff">CI: Rust matrix written, never run; no frontend job</text>
+<circle cx="759" cy="1128" r="6" fill="#3ddc97"/><path d="M756,1128 L758.2,1130.6 L762.4,1125.4" fill="none" stroke="#081a31" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="776" y="1132" font-size="13" fill="#e8f2ff">Docs index, glossary, invariants, ADRs</text>
+<rect x="32" y="1202" width="1136" height="136" rx="10" fill="#0d2440" stroke="#1d4570" stroke-width="1.5"/>
+<rect x="32" y="1212" width="5" height="116" rx="2.5" fill="#ffc857"/>
+<text x="56" y="1238" font-size="24" font-weight="700" fill="#ffc857">M1</text>
+<text x="56" y="1264" font-size="16" font-weight="600" fill="#e8f2ff">Core engine</text>
+<text x="56" y="1286" font-size="12" fill="#9bb8d6">6 person-weeks</text>
+<text x="56" y="1304" font-size="12" fill="#9bb8d6">needs M0</text>
+<rect x="56" y="1316" width="190" height="8" rx="4" fill="#163457"/><rect x="56" y="1316" width="178.1" height="8" rx="4" fill="#ffc857"/>
+<text x="256" y="1325" font-size="13" font-weight="700" fill="#ffc857">94%</text>
+<circle cx="339" cy="1232" r="6" fill="#3ddc97"/><path d="M336,1232 L338.2,1234.6 L342.4,1229.4" fill="none" stroke="#081a31" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="356" y="1236" font-size="13" fill="#e8f2ff">XML boundary: parse modes, byte spans, codecs</text>
+<circle cx="339" cy="1256" r="6" fill="#3ddc97"/><path d="M336,1256 L338.2,1258.6 L342.4,1253.4" fill="none" stroke="#081a31" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="356" y="1260" font-size="13" fill="#e8f2ff">IO: roots, JSON store, atomic writes, write fence</text>
+<circle cx="339" cy="1280" r="5.2" fill="none" stroke="#ffc857" stroke-width="1.6"/><path d="M339,1274.8 A5.2,5.2 0 0,0 339,1285.2 Z" fill="#ffc857"/>
+<text x="356" y="1284" font-size="13" fill="#e8f2ff">Platform: Linux run, Windows and macOS compiled</text>
+<circle cx="339" cy="1304" r="6" fill="#3ddc97"/><path d="M336,1304 L338.2,1306.6 L342.4,1301.4" fill="none" stroke="#081a31" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="356" y="1308" font-size="13" fill="#e8f2ff">XPath and def engine with vectors and corpus gates</text>
+<circle cx="759" cy="1232" r="6" fill="#3ddc97"/><path d="M756,1232 L758.2,1234.6 L762.4,1229.4" fill="none" stroke="#081a31" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="776" y="1236" font-size="13" fill="#e8f2ff">Steam: VDF reader, game locator, detection report</text>
+<circle cx="759" cy="1256" r="6" fill="#3ddc97"/><path d="M756,1256 L758.2,1258.6 L762.4,1253.4" fill="none" stroke="#081a31" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="776" y="1260" font-size="13" fill="#e8f2ff">Library: scanner, manifest cache, duplicates</text>
+<circle cx="759" cy="1280" r="6" fill="#3ddc97"/><path d="M756,1280 L758.2,1282.6 L762.4,1277.4" fill="none" stroke="#081a31" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="776" y="1284" font-size="13" fill="#e8f2ff">Command registry, job runner, CLI detect and scan</text>
+<circle cx="759" cy="1304" r="6" fill="#3ddc97"/><path d="M756,1304 L758.2,1306.6 L762.4,1301.4" fill="none" stroke="#081a31" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="776" y="1308" font-size="13" fill="#e8f2ff">Testing crate: fixture builders</text>
+<rect x="32" y="1354" width="1136" height="136" rx="10" fill="#0d2440" stroke="#1d4570" stroke-width="1.5"/>
+<rect x="32" y="1364" width="5" height="116" rx="2.5" fill="#ffc857"/>
+<text x="56" y="1390" font-size="24" font-weight="700" fill="#ffc857">M2</text>
+<text x="56" y="1416" font-size="16" font-weight="600" fill="#e8f2ff">Manager MVP</text>
+<text x="56" y="1438" font-size="12" fill="#9bb8d6">8 person-weeks</text>
+<text x="56" y="1456" font-size="12" fill="#9bb8d6">needs M1</text>
+<rect x="56" y="1468" width="190" height="8" rx="4" fill="#163457"/><rect x="56" y="1468" width="54.3" height="8" rx="4" fill="#ffc857"/>
+<text x="256" y="1477" font-size="13" font-weight="700" fill="#ffc857">29%</text>
+<circle cx="339" cy="1384" r="5.2" fill="none" stroke="#ffc857" stroke-width="1.6"/><path d="M339,1378.8 A5.2,5.2 0 0,0 339,1389.2 Z" fill="#ffc857"/>
+<text x="356" y="1388" font-size="13" fill="#e8f2ff">Onboarding on the detection report (Setup page)</text>
+<circle cx="339" cy="1408" r="5.2" fill="none" stroke="#6a8aab" stroke-width="1.6"/>
+<text x="356" y="1412" font-size="13" fill="#e8f2ff">rules, sort, validate and datasets crates</text>
+<circle cx="339" cy="1432" r="5.2" fill="none" stroke="#ffc857" stroke-width="1.6"/><path d="M339,1426.8 A5.2,5.2 0 0,0 339,1437.2 Z" fill="#ffc857"/>
+<text x="356" y="1436" font-size="13" fill="#e8f2ff">Manager: settings, sources, scan; no session or sort</text>
+<circle cx="339" cy="1456" r="5.2" fill="none" stroke="#ffc857" stroke-width="1.6"/><path d="M339,1450.8 A5.2,5.2 0 0,0 339,1461.2 Z" fill="#ffc857"/>
+<text x="356" y="1460" font-size="13" fill="#e8f2ff">Deploy: one project link; no link farm or ModsConfig</text>
+<circle cx="759" cy="1384" r="5.2" fill="none" stroke="#6a8aab" stroke-width="1.6"/>
+<text x="776" y="1388" font-size="13" fill="#e8f2ff">Manager lists, drag and drop, light theme</text>
+<circle cx="759" cy="1408" r="5.2" fill="none" stroke="#ffc857" stroke-width="1.6"/><path d="M759,1402.8 A5.2,5.2 0 0,0 759,1413.2 Z" fill="#ffc857"/>
+<text x="776" y="1412" font-size="13" fill="#e8f2ff">Settings and onboarding screens (temporary UI)</text>
+<circle cx="759" cy="1432" r="5.2" fill="none" stroke="#6a8aab" stroke-width="1.6"/>
+<text x="776" y="1436" font-size="13" fill="#e8f2ff">rsimg scheme and thumbnail cache</text>
+<rect x="32" y="1506" width="1136" height="136" rx="10" fill="#0d2440" stroke="#1d4570" stroke-width="1.5"/>
+<rect x="32" y="1516" width="5" height="116" rx="2.5" fill="#6a8aab"/>
+<text x="56" y="1542" font-size="24" font-weight="700" fill="#6a8aab">M3</text>
+<text x="56" y="1568" font-size="16" font-weight="600" fill="#e8f2ff">Manager v1</text>
+<text x="56" y="1590" font-size="12" fill="#9bb8d6">6 person-weeks</text>
+<text x="56" y="1608" font-size="12" fill="#9bb8d6">needs M2</text>
+<rect x="56" y="1620" width="190" height="8" rx="4" fill="#163457"/>
+<text x="256" y="1629" font-size="13" font-weight="700" fill="#6a8aab">0%</text>
+<circle cx="339" cy="1536" r="5.2" fill="none" stroke="#6a8aab" stroke-width="1.6"/>
+<text x="356" y="1540" font-size="13" fill="#e8f2ff">Profiles, list history, groups and notes</text>
+<circle cx="339" cy="1560" r="5.2" fill="none" stroke="#6a8aab" stroke-width="1.6"/>
+<text x="356" y="1564" font-size="13" fill="#e8f2ff">Rule editor with surgical patch export</text>
+<circle cx="339" cy="1584" r="5.2" fill="none" stroke="#6a8aab" stroke-width="1.6"/>
+<text x="356" y="1588" font-size="13" fill="#e8f2ff">Duplicate resolution UI and metadata editing</text>
+<circle cx="339" cy="1608" r="5.2" fill="none" stroke="#6a8aab" stroke-width="1.6"/>
+<text x="356" y="1612" font-size="13" fill="#e8f2ff">Import from RimSort (read only aux-db)</text>
+<circle cx="759" cy="1536" r="5.2" fill="none" stroke="#6a8aab" stroke-width="1.6"/>
+<text x="776" y="1540" font-size="13" fill="#e8f2ff">Player.log viewer with classification</text>
+<circle cx="759" cy="1560" r="5.2" fill="none" stroke="#6a8aab" stroke-width="1.6"/>
+<text x="776" y="1564" font-size="13" fill="#e8f2ff">Bisect an active list</text>
+<circle cx="759" cy="1584" r="5.2" fill="none" stroke="#6a8aab" stroke-width="1.6"/>
+<text x="776" y="1588" font-size="13" fill="#e8f2ff">Update checks, shortcut registry, settings search</text>
+<circle cx="759" cy="1608" r="5.2" fill="none" stroke="#6a8aab" stroke-width="1.6"/>
+<text x="776" y="1612" font-size="13" fill="#e8f2ff">Game-style sort, implied order, list diff</text>
+<rect x="32" y="1658" width="1136" height="136" rx="10" fill="#0d2440" stroke="#1d4570" stroke-width="1.5"/>
+<rect x="32" y="1668" width="5" height="116" rx="2.5" fill="#ffc857"/>
+<text x="56" y="1694" font-size="24" font-weight="700" fill="#ffc857">M4</text>
+<text x="56" y="1720" font-size="16" font-weight="600" fill="#e8f2ff">Toolkit foundation</text>
+<text x="56" y="1742" font-size="12" fill="#9bb8d6">8 person-weeks</text>
+<text x="56" y="1760" font-size="12" fill="#9bb8d6">needs M1, M2</text>
+<rect x="56" y="1772" width="190" height="8" rx="4" fill="#163457"/><rect x="56" y="1772" width="83.1" height="8" rx="4" fill="#ffc857"/>
+<text x="256" y="1781" font-size="13" font-weight="700" fill="#ffc857">44%</text>
+<circle cx="339" cy="1688" r="6" fill="#3ddc97"/><path d="M336,1688 L338.2,1690.6 L342.4,1685.4" fill="none" stroke="#081a31" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="356" y="1692" font-size="13" fill="#e8f2ff">Workspace: reference sets, def index, sessions</text>
+<circle cx="339" cy="1712" r="6" fill="#3ddc97"/><path d="M336,1712 L338.2,1714.6 L342.4,1709.4" fill="none" stroke="#081a31" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="356" y="1716" font-size="13" fill="#e8f2ff">Scaffolder, About and LoadFolders editors</text>
+<circle cx="339" cy="1736" r="5.2" fill="none" stroke="#6a8aab" stroke-width="1.6"/>
+<text x="356" y="1740" font-size="13" fill="#e8f2ff">Dev launcher with flags</text>
+<circle cx="339" cy="1760" r="5.2" fill="none" stroke="#ffc857" stroke-width="1.6"/><path d="M339,1754.8 A5.2,5.2 0 0,0 339,1765.2 Z" fill="#ffc857"/>
+<text x="356" y="1764" font-size="13" fill="#e8f2ff">Def Explorer: queries and resolved view (no UI)</text>
+<circle cx="759" cy="1688" r="5.2" fill="none" stroke="#6a8aab" stroke-width="1.6"/>
+<text x="776" y="1692" font-size="13" fill="#e8f2ff">Patch tester and conflict view</text>
+<circle cx="759" cy="1712" r="5.2" fill="none" stroke="#ffc857" stroke-width="1.6"/><path d="M759,1706.8 A5.2,5.2 0 0,0 759,1717.2 Z" fill="#ffc857"/>
+<text x="776" y="1716" font-size="13" fill="#e8f2ff">Reference and missing texture checks (layout)</text>
+<circle cx="759" cy="1736" r="5.2" fill="none" stroke="#6a8aab" stroke-width="1.6"/>
+<text x="776" y="1740" font-size="13" fill="#e8f2ff">rimstudio-validate author lints, code registry</text>
+<circle cx="759" cy="1760" r="5.2" fill="none" stroke="#ffc857" stroke-width="1.6"/><path d="M759,1754.8 A5.2,5.2 0 0,0 759,1765.2 Z" fill="#ffc857"/>
+<text x="776" y="1764" font-size="13" fill="#e8f2ff">Project UI built; CodeMirror, rich text open</text>
+<rect x="32" y="1810" width="1136" height="136" rx="10" fill="#0d2440" stroke="#1d4570" stroke-width="1.5"/>
+<rect x="32" y="1820" width="5" height="116" rx="2.5" fill="#ffc857"/>
+<text x="56" y="1846" font-size="24" font-weight="700" fill="#ffc857">M5</text>
+<text x="56" y="1872" font-size="16" font-weight="600" fill="#e8f2ff">Item designer</text>
+<text x="56" y="1894" font-size="12" fill="#9bb8d6">8 person-weeks</text>
+<text x="56" y="1912" font-size="12" fill="#9bb8d6">needs M4</text>
+<rect x="56" y="1924" width="190" height="8" rx="4" fill="#163457"/><rect x="56" y="1924" width="142.5" height="8" rx="4" fill="#ffc857"/>
+<text x="256" y="1933" font-size="13" font-weight="700" fill="#ffc857">75%</text>
+<circle cx="339" cy="1840" r="6" fill="#3ddc97"/><path d="M336,1840 L338.2,1842.6 L342.4,1837.4" fill="none" stroke="#081a31" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="356" y="1844" font-size="13" fill="#e8f2ff">Math, fit meter, baseline, quiz, both modes</text>
+<circle cx="339" cy="1864" r="6" fill="#3ddc97"/><path d="M336,1864 L338.2,1866.6 L342.4,1861.4" fill="none" stroke="#081a31" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="356" y="1868" font-size="13" fill="#e8f2ff">Reference tables from the install, CE tables cached</text>
+<circle cx="339" cy="1888" r="5.2" fill="none" stroke="#ffc857" stroke-width="1.6"/><path d="M339,1882.8 A5.2,5.2 0 0,0 339,1893.2 Z" fill="#ffc857"/>
+<text x="356" y="1892" font-size="13" fill="#e8f2ff">CE generator, update mode, CEP lint (2 rules idle)</text>
+<circle cx="339" cy="1912" r="6" fill="#3ddc97"/><path d="M336,1912 L338.2,1914.6 L342.4,1909.4" fill="none" stroke="#081a31" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="356" y="1916" font-size="13" fill="#e8f2ff">Designer orchestration, write plans, gated CE files</text>
+<circle cx="759" cy="1840" r="5.2" fill="none" stroke="#ffc857" stroke-width="1.6"/><path d="M759,1834.8 A5.2,5.2 0 0,0 759,1845.2 Z" fill="#ffc857"/>
+<text x="776" y="1844" font-size="13" fill="#e8f2ff">Designer UI: editor, wizard, asks (no charts)</text>
+<circle cx="759" cy="1864" r="6" fill="#3ddc97"/><path d="M756,1864 L758.2,1866.6 L762.4,1861.4" fill="none" stroke="#081a31" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="776" y="1868" font-size="13" fill="#e8f2ff">Ranged weapons</text>
+<circle cx="759" cy="1888" r="6" fill="#3ddc97"/><path d="M756,1888 L758.2,1890.6 L762.4,1885.4" fill="none" stroke="#081a31" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="776" y="1892" font-size="13" fill="#e8f2ff">Melee weapons</text>
+<circle cx="759" cy="1912" r="5.2" fill="none" stroke="#6a8aab" stroke-width="1.6"/>
+<text x="776" y="1916" font-size="13" fill="#e8f2ff">Apparel</text>
+<rect x="32" y="1962" width="1136" height="132" rx="10" fill="#0d2440" stroke="#1d4570" stroke-width="1.5"/>
+<rect x="32" y="1972" width="5" height="112" rx="2.5" fill="#6a8aab"/>
+<text x="56" y="1998" font-size="24" font-weight="700" fill="#6a8aab">M6</text>
+<text x="56" y="2024" font-size="16" font-weight="600" fill="#e8f2ff">Workshop publishing</text>
+<text x="56" y="2046" font-size="12" fill="#9bb8d6">5 person-weeks</text>
+<text x="56" y="2064" font-size="12" fill="#9bb8d6">needs M4</text>
+<rect x="56" y="2076" width="190" height="8" rx="4" fill="#163457"/>
+<text x="256" y="2085" font-size="13" font-weight="700" fill="#6a8aab">0%</text>
+<circle cx="339" cy="1992" r="5.2" fill="none" stroke="#6a8aab" stroke-width="1.6"/>
+<text x="356" y="1996" font-size="13" fill="#e8f2ff">Spike S-04: private item through the user's Steam</text>
+<circle cx="339" cy="2016" r="5.2" fill="none" stroke="#6a8aab" stroke-width="1.6"/>
+<text x="356" y="2020" font-size="13" fill="#e8f2ff">rimstudio-publish: staging, ignore rules, history</text>
+<circle cx="339" cy="2040" r="5.2" fill="none" stroke="#6a8aab" stroke-width="1.6"/>
+<text x="356" y="2044" font-size="13" fill="#e8f2ff">Steam helper process, user's own Steam library</text>
+<circle cx="759" cy="1992" r="5.2" fill="none" stroke="#6a8aab" stroke-width="1.6"/>
+<text x="776" y="1996" font-size="13" fill="#e8f2ff">Preflight checks and BBCode preview</text>
+<circle cx="759" cy="2016" r="5.2" fill="none" stroke="#6a8aab" stroke-width="1.6"/>
+<text x="776" y="2020" font-size="13" fill="#e8f2ff">Workshop UI: plan, preflight, progress, history</text>
+<circle cx="759" cy="2040" r="5.2" fill="none" stroke="#6a8aab" stroke-width="1.6"/>
+<text x="776" y="2044" font-size="13" fill="#e8f2ff">CLI publish plan and publish run</text>
+<rect x="32" y="2110" width="1136" height="136" rx="10" fill="#0d2440" stroke="#1d4570" stroke-width="1.5"/>
+<rect x="32" y="2120" width="5" height="116" rx="2.5" fill="#6a8aab"/>
+<text x="56" y="2146" font-size="24" font-weight="700" fill="#6a8aab">M7</text>
+<text x="56" y="2172" font-size="16" font-weight="600" fill="#e8f2ff">Polish and release</text>
+<text x="56" y="2194" font-size="12" fill="#9bb8d6">5 person-weeks</text>
+<text x="56" y="2212" font-size="12" fill="#9bb8d6">needs M3, M5, M6</text>
+<rect x="56" y="2224" width="190" height="8" rx="4" fill="#163457"/>
+<text x="256" y="2233" font-size="13" font-weight="700" fill="#6a8aab">0%</text>
+<circle cx="339" cy="2140" r="5.2" fill="none" stroke="#6a8aab" stroke-width="1.6"/>
+<text x="356" y="2144" font-size="13" fill="#e8f2ff">Packaging: installers, AppImage, deb, rpm, updater</text>
+<circle cx="339" cy="2164" r="5.2" fill="none" stroke="#6a8aab" stroke-width="1.6"/>
+<text x="356" y="2168" font-size="13" fill="#e8f2ff">Unsigned Windows notes; macOS notarisation path</text>
+<circle cx="339" cy="2188" r="5.2" fill="none" stroke="#6a8aab" stroke-width="1.6"/>
+<text x="356" y="2192" font-size="13" fill="#e8f2ff">Steam Deck pass; Flatpak manifest</text>
+<circle cx="339" cy="2212" r="5.2" fill="none" stroke="#6a8aab" stroke-width="1.6"/>
+<text x="356" y="2216" font-size="13" fill="#e8f2ff">Accessibility, performance and memory pass</text>
+<circle cx="759" cy="2140" r="5.2" fill="none" stroke="#6a8aab" stroke-width="1.6"/>
+<text x="776" y="2144" font-size="13" fill="#e8f2ff">Final visual design from the design brief</text>
+<circle cx="759" cy="2164" r="5.2" fill="none" stroke="#6a8aab" stroke-width="1.6"/>
+<text x="776" y="2168" font-size="13" fill="#e8f2ff">User and contribution guides; licence text</text>
+<circle cx="759" cy="2188" r="5.2" fill="none" stroke="#6a8aab" stroke-width="1.6"/>
+<text x="776" y="2192" font-size="13" fill="#e8f2ff">Preact 11 promotion if the gate passes</text>
+<text x="32" y="2276" font-size="12" fill="#6a8aab">Generated file. Edit docs/roadmap-status.json and run pnpm roadmap; pnpm roadmap:check fails when this picture is stale.</text>
+</svg>

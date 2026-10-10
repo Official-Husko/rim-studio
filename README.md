@@ -4,6 +4,10 @@ A cross-platform desktop app for RimWorld modders: a fast mod manager plus a mod
 
 Status: the 0.1.0 backend slice is built ([status](docs/status/0.1.0-backend.md)); the Tauri desktop shell runs the same UI with native dialogs and the backend in process ([ADR 0043](docs/adr/0043-tauri-desktop-shell.md)). A temporary browser UI, served by Vite and backed by a development bridge, lets you try the designer in a plain browser against your own install.
 
+![RimStudio roadmap: milestones M0 to M7 and the 0.1.0 release](docs/roadmap.svg)
+
+The picture is drawn from [docs/roadmap-status.json](docs/roadmap-status.json) by `pnpm roadmap` and shows how far each milestone has come; the plan behind it is [docs/roadmap.md](docs/roadmap.md).
+
 ## Quick start
 
 Requirements: a Rust toolchain, Node 24 or newer and pnpm 11.
@@ -49,6 +53,8 @@ Without the bridge, `pnpm dev:ui` starts only Vite. The app then shows recorded 
 | `pnpm tauri:build`                  | Debug build of the desktop app, no bundles                  |
 | `pnpm tauri:check`                  | cargo check and clippy for `rimstudio-shell`                |
 | `pnpm tauri:smoke`                  | Headless self test of the shell                             |
+| `pnpm roadmap`                      | Redraws `docs/roadmap.svg` from `docs/roadmap-status.json`  |
+| `pnpm roadmap:check`                | Fails when the roadmap picture is stale                     |
 | `pnpm format`                       | Prettier over the frontend sources                          |
 | `cargo test -p rimstudio-devserver` | The bridge tests (Rust side)                                |
 
