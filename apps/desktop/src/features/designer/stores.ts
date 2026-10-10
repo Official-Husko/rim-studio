@@ -4,6 +4,7 @@ import { createDraftsStore } from './drafts-store';
 import { createEditorStore } from './editor-store';
 import { createOutputStore } from './output-store';
 import { currentProject } from './project-source';
+import { createProjectWeaponsStore } from './project-weapons-store';
 import { createQuizStore } from './quiz-store';
 import { createReferenceStore } from './reference-store';
 import type { Scheduler } from './scheduler';
@@ -20,6 +21,7 @@ export function createDesigner(
     onSaved: drafts.upsert,
   });
   const reference = createReferenceStore();
+  const weapons = createProjectWeaponsStore({ projectId, drafts });
   const quiz = createQuizStore(editor);
   const assets = createAssetStore({ projectId });
   const output = createOutputStore({
@@ -32,6 +34,19 @@ export function createDesigner(
   async function select(entry: DraftEntryDto): Promise<void> {
     await editor.flush();
     quiz.close();
+    weapons.reloadError.value = undefined;
+    drafts.selectedId.value = entry.id;
+    editor.open(entry);
+  }
+
+  /**
+   * Show a weapon that was read from its file again. The open draft is the one that was replaced, so
+   * its unsaved edits are dropped: saving them first would write them over the content just read.
+   * Any other draft is selected the usual way, which saves the open one.
+   */
+  async function reopen(entry: DraftEntryDto): Promise<void> {
+    if (editor.entryId.peek() !== entry.id) return select(entry);
+    quiz.close();
     drafts.selectedId.value = entry.id;
     editor.open(entry);
   }
@@ -42,14 +57,27 @@ export function createDesigner(
     await drafts.remove(id);
   }
 
-  /** Forget the open draft and the list (the project changed). */
+  /** Forget the open draft, the list and the weapons of the project (the project changed). */
   function reset(): void {
     editor.close();
     quiz.close();
     drafts.reset();
+    weapons.reset();
   }
 
-  return { drafts, editor, reference, quiz, output, assets, select, remove, reset };
+  return {
+    drafts,
+    editor,
+    reference,
+    weapons,
+    quiz,
+    output,
+    assets,
+    select,
+    reopen,
+    remove,
+    reset,
+  };
 }
 
 export type Designer = ReturnType<typeof createDesigner>;

@@ -15,6 +15,20 @@ describe('CloneNotes', () => {
     expect(onDismiss).toHaveBeenCalled();
   });
 
+  it('takes the names of its group and of its dismiss button from the caller', () => {
+    renderWithProviders(
+      <CloneNotes
+        notes={['a note']}
+        onDismiss={() => undefined}
+        label="Notes about this weapon"
+        dismissLabel="Dismiss the weapon notes"
+      />,
+    );
+    expect(screen.getByLabelText('Notes about this weapon')).toBeTruthy();
+    expect(screen.getByRole('button', { name: 'Dismiss the weapon notes' })).toBeTruthy();
+    expect(screen.queryByRole('button', { name: 'Dismiss the clone notes' })).toBeNull();
+  });
+
   it('shows nothing without notes', () => {
     const { container } = renderWithProviders(
       <CloneNotes notes={[]} onDismiss={() => undefined} />,

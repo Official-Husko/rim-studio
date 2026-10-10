@@ -2,12 +2,15 @@ import { useEffect, useRef, useState } from 'preact/hooks';
 import type { DraftEntryDto, ItemKindDto, ReferenceItemDto } from 'rimstudio-ipc-types';
 import { EmptyState } from 'rimstudio-ui';
 import { t } from '~/shared/i18n';
+import { projectRevision } from '~/shared/project';
 import { DefinitionDialog } from './components/DefinitionDialog';
 import { DraftList } from './components/DraftList';
 import { Editor } from './components/editor/Editor';
+import { EditsFileBar } from './components/EditsFileBar';
 import { NewDraftDialog } from './components/NewDraftDialog';
 import { OutputPanel } from './components/output/OutputPanel';
 import { ProjectPrompt } from './components/ProjectPrompt';
+import { ProjectWeapons } from './components/ProjectWeapons';
 import { ArchetypeBar } from './components/wizard/ArchetypeBar';
 import { WeaponWizard } from './components/wizard/WeaponWizard';
 import { ReferenceBrowser } from './components/ReferenceBrowser';
@@ -37,7 +40,9 @@ export default function DesignerPage({ stores = designer }: DesignerPageProps) {
   const [dialog, setDialog] = useState<Dialog>(undefined);
   const [definition, setDefinition] = useState<string | undefined>(undefined);
   const [busy, setBusy] = useState(false);
-  const { drafts, editor, reference } = stores;
+  /** Counts the weapons read from their file again: the editor starts afresh on the new content. */
+  const [rereads, setRereads] = useState(0);
+  const { drafts, editor, reference, weapons } = stores;
 
   useEffect(() => {
     void reference.load();
@@ -55,8 +60,20 @@ export default function DesignerPage({ stores = designer }: DesignerPageProps) {
     // switching from one project to another drops the open draft; the first project keeps it
     if (previous.current !== undefined && previous.current !== projectId) stores.reset();
     previous.current = projectId;
-    if (projectId) void drafts.load();
-  }, [projectId, stores, drafts]);
+    if (projectId) {
+      void drafts.load();
+      void weapons.load();
+    }
+  }, [projectId, stores, drafts, weapons]);
+
+  // An apply (here or on another page) wrote files of the project: the weapons it defines may differ.
+  const revision = projectRevision.value;
+  const seenRevision = useRef(revision);
+  useEffect(() => {
+    if (seenRevision.current === revision) return;
+    seenRevision.current = revision;
+    if (projectId) void weapons.load();
+  }, [revision, projectId, weapons]);
 
   const finish = async (entry: DraftEntryDto | undefined): Promise<void> => {
     setBusy(false);
@@ -90,6 +107,24 @@ export default function DesignerPage({ stores = designer }: DesignerPageProps) {
     });
   };
 
+  /** Make a loaded weapon the open draft. The one already open keeps its unsaved edits. */
+  const showWeapon = (entry: DraftEntryDto): void => {
+    if (entry.id !== editor.entryId.peek()) void stores.select(entry);
+  };
+
+  /** Read the file of the open weapon again; the draft is replaced by what the file holds. */
+  const reloadWeapon = async (): Promise<void> => {
+    const current = editor.draft.peek();
+    const id = editor.entryId.peek();
+    if (!current || !id) return;
+    const defName = weapons.defNameOfDraft(id) ?? current.spec.identity.defName;
+    const entry = await weapons.open(defName, true);
+    // another draft may have been opened while the file was being read
+    if (!entry || editor.entryId.peek() !== id) return;
+    await stores.reopen(entry);
+    setRereads((count) => count + 1);
+  };
+
   const openDraft = editor.draft.value;
   return (
     <div class="flex h-full min-h-0">
@@ -99,15 +134,18 @@ export default function DesignerPage({ stores = designer }: DesignerPageProps) {
         aria-label={t('designer.region.left')}
       >
         {project ? (
-          <DraftList
-            store={drafts}
-            openId={editor.entryId.value}
-            openState={editor.saveState.value}
-            onOpen={(entry) => void stores.select(entry)}
-            onNew={(kind) => setDialog({ type: 'new', kind })}
-            onWizard={() => setDialog({ type: 'wizard' })}
-            onDelete={(entry) => void stores.remove(entry.id)}
-          />
+          <>
+            <DraftList
+              store={drafts}
+              openId={editor.entryId.value}
+              openState={editor.saveState.value}
+              onOpen={(entry) => void stores.select(entry)}
+              onNew={(kind) => setDialog({ type: 'new', kind })}
+              onWizard={() => setDialog({ type: 'wizard' })}
+              onDelete={(entry) => void stores.remove(entry.id)}
+            />
+            <ProjectWeapons store={weapons} openId={editor.entryId.value} onOpened={showWeapon} />
+          </>
         ) : (
           <ProjectPrompt onOpened={() => undefined} />
         )}
@@ -133,7 +171,15 @@ export default function DesignerPage({ stores = designer }: DesignerPageProps) {
                   onRetune={() => setDialog({ type: 'retune' })}
                 />
               ) : null}
-              <Editor key={editor.entryId.value} designer={stores} />
+              {openDraft.editsFile ? (
+                <EditsFileBar
+                  file={openDraft.editsFile}
+                  busy={weapons.opening.value !== undefined}
+                  error={weapons.reloadError.value}
+                  onReload={() => void reloadWeapon()}
+                />
+              ) : null}
+              <Editor key={`${editor.entryId.value}-${rereads}`} designer={stores} />
             </>
           ) : (
             <div class="p-6">

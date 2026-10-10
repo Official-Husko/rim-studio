@@ -40,7 +40,14 @@ export function IdentityPanel() {
   return (
     <Panel title={t('designer.panel.identity')} collapsible>
       <div class="grid grid-cols-1 gap-3 md:grid-cols-2">
-        <TextFieldRow pointer="/identity/defName" label={t('designer.field.defName')} keepEmpty />
+        <TextFieldRow
+          pointer="/identity/defName"
+          label={t('designer.field.defName')}
+          keepEmpty
+          {...(env.editsFile
+            ? { readOnly: true, help: t('designer.identity.nameKept') }
+            : {})}
+        />
         <TextFieldRow pointer="/identity/label" label={t('designer.field.label')} keepEmpty />
         <div class="md:col-span-2">
           <TextFieldRow

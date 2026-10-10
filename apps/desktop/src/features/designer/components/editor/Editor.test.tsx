@@ -9,6 +9,7 @@ import {
   importsDraft,
   installAssetTransport,
   manualScheduler,
+  openWeaponAnswer,
   settle,
   installTransport,
 } from '../../testSupport';
@@ -99,6 +100,19 @@ describe('Editor', () => {
     expect(screen.getByText('the clone shares a thing with its source')).toBeTruthy();
     fireEvent.click(screen.getByRole('button', { name: 'Dismiss the clone notes' }));
     expect(screen.queryByText('the clone shares a thing with its source')).toBeNull();
+  });
+
+  it('names the notes of a weapon loaded from the project as notes about the weapon', async () => {
+    installTransport();
+    const stores = createDesigner(() => 'p-1', manualScheduler().scheduler);
+    const entry = openWeaponAnswer().entry;
+    stores.editor.open(entry);
+    stores.drafts.notes.value = ['the projectile is defined next to the weapon'];
+    stores.drafts.notesFor.value = entry.id;
+    renderWithProviders(<Editor designer={stores} />);
+    expect(screen.getByLabelText('Notes about this weapon')).toBeTruthy();
+    fireEvent.click(screen.getByRole('button', { name: 'Dismiss the weapon notes' }));
+    expect(screen.queryByText('the projectile is defined next to the weapon')).toBeNull();
   });
 
   it('hides the notes of another draft', async () => {

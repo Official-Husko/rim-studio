@@ -2,6 +2,8 @@ import { createMockTransport, loadFixture, type MockHandler } from 'rimstudio-te
 import type {
   DesignSpecDto,
   DesignerCloneResponse,
+  DesignerOpenWeaponResponse,
+  DesignerProjectWeaponsResponse,
   DraftDto,
   DraftEntryDto,
 } from 'rimstudio-ipc-types';
@@ -50,6 +52,16 @@ export function ownCloneEntry(): DraftEntryDto {
     updatedAtMs: 1,
     draft,
   };
+}
+
+/** The answer of `designer_project_weapons`: a gun, a gun with a generated patch and a melee weapon. */
+export function projectWeaponsAnswer(): DesignerProjectWeaponsResponse {
+  return fixture<DesignerProjectWeaponsResponse>('designer_project_weapons');
+}
+
+/** The answer of `designer_open_weapon` for the first weapon of that list (its own projectile). */
+export function openWeaponAnswer(): DesignerOpenWeaponResponse {
+  return fixture<DesignerOpenWeaponResponse>('designer_open_weapon');
 }
 
 /** A recorded clone of a real weapon: designer-fields-clone-NAME. */

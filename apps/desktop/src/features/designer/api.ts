@@ -6,7 +6,9 @@ import type {
   DesignerCloneResponse,
   DesignerDraftListResponse,
   DesignerDraftSaveResponse,
+  DesignerOpenWeaponResponse,
   DesignerProjectileOwnResponse,
+  DesignerProjectWeaponsResponse,
   DesignerQuizAnswerResponse,
   DesignerStructureDefaultsResponse,
   DraftDto,
@@ -99,6 +101,27 @@ export function cloneWeapon(
     defName,
     ...(label === undefined ? {} : { label }),
     ...(ownProjectile === undefined ? {} : { ownProjectile }),
+  });
+}
+
+/** The weapons the open project defines in its own files, with a few numbers each. */
+export function projectWeapons(projectId: string): Promise<DesignerProjectWeaponsResponse> {
+  return callCommand('designer_project_weapons', { projectId });
+}
+
+/**
+ * Store a draft that edits a weapon of the project where it stands. A stored draft of the weapon
+ * is continued unless `reload` is true, which reads the file again and replaces its content.
+ */
+export function openWeapon(
+  projectId: string,
+  defName: string,
+  reload?: boolean,
+): Promise<DesignerOpenWeaponResponse> {
+  return callCommand('designer_open_weapon', {
+    projectId,
+    defName,
+    ...(reload === undefined ? {} : { reload }),
   });
 }
 

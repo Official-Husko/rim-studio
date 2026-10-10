@@ -1,0 +1,75 @@
+{
+  "weapons": [
+    {
+      "defName": "RS_Gun_Ranger",
+      "label": "ranger rifle",
+      "kind": "ranged",
+      "file": "Defs/ThingDefs_Weapons/RS_Weapons.xml",
+      "parent": "BaseHumanMakeableGun",
+      "techLevel": "Industrial",
+      "projectile": "RS_Bullet_Ranger",
+      "tags": [
+        "RS_Ranger"
+      ],
+      "weaponClasses": [
+        "Ranged",
+        "LongShots"
+      ],
+      "numbers": {
+        "damage": 16,
+        "range": 32.9,
+        "cooldown": 1.6,
+        "warmup": 1.1,
+        "mass": 3.2,
+        "burst": 1,
+        "marketValue": 410
+      },
+      "generatedPatch": false
+    },
+    {
+      "defName": "RS_Gun_Scatter",
+      "label": "scatter gun",
+      "kind": "ranged",
+      "file": "Defs/ThingDefs_Weapons/RS_Weapons.xml",
+      "parent": "BaseHumanMakeableGun",
+      "techLevel": "Industrial",
+      "projectile": "RS_Bullet_Scatter",
+      "tags": [
+        "RS_Scatter"
+      ],
+      "weaponClasses": [
+        "Ranged",
+        "ShortShots"
+      ],
+      "numbers": {
+        "damage": 9,
+        "range": 18.9,
+        "cooldown": 2.4,
+        "warmup": 0.9,
+        "mass": 3.6,
+        "burst": 1,
+        "marketValue": 365
+      },
+      "generatedPatch": true
+    },
+    {
+      "defName": "RS_Melee_Cleaver",
+      "label": "bone cleaver",
+      "kind": "melee",
+      "file": "Defs/ThingDefs_Weapons/RS_Melee.xml",
+      "parent": "BaseMeleeWeapon_Sharp",
+      "techLevel": "Neolithic",
+      "weaponClasses": [
+        "Melee"
+      ],
+      "numbers": {
+        "damage": 11,
+        "cooldown": 2,
+        "mass": 1.4,
+        "marketValue": 85
+      },
+      "generatedPatch": false
+    }
+  ],
+  "diagnostics": []
+}

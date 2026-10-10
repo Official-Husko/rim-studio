@@ -29,6 +29,29 @@ describe('IdentityPanel', () => {
     );
   });
 
+  it('keeps the name of a weapon that exists in the mod read only and says why', () => {
+    const env = { ...makeEnv(), editsFile: 'Defs/Guns.xml' };
+    renderWithProviders(
+      <WithEnv env={env}>
+        <IdentityPanel />
+      </WithEnv>,
+    );
+    expect((screen.getByLabelText(/Def name/) as HTMLInputElement).readOnly).toBe(true);
+    expect(screen.getByText(/keeps its name/)).toBeTruthy();
+    // the label stays editable
+    expect((screen.getByLabelText(/^Label/) as HTMLInputElement).readOnly).toBe(false);
+  });
+
+  it('lets a draft that is not edited in place rename itself', () => {
+    renderWithProviders(
+      <WithEnv env={makeEnv()}>
+        <IdentityPanel />
+      </WithEnv>,
+    );
+    expect((screen.getByLabelText(/Def name/) as HTMLInputElement).readOnly).toBe(false);
+    expect(screen.queryByText(/keeps its name/)).toBeNull();
+  });
+
   it('writes the tier and role the user picks', () => {
     const env = makeEnv({ roles: ['pistol', 'sniper'] });
     renderWithProviders(

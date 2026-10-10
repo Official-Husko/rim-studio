@@ -52,6 +52,7 @@ export function Editor({ designer }: EditorProps) {
     ownBusy: editor.ownBusy.value,
     projectileNotes: editor.projectileNotes.value,
     roles: reference.roles.value,
+    ...(draft.editsFile ? { editsFile: draft.editsFile } : {}),
   };
   const kind = draft.kind;
   const identity = draft.spec.identity;
@@ -90,7 +91,16 @@ export function Editor({ designer }: EditorProps) {
           </Banner>
         ) : null}
         {drafts.notesFor.value !== undefined && drafts.notesFor.value === editor.entryId.value ? (
-          <CloneNotes notes={drafts.notes.value} onDismiss={() => (drafts.notes.value = [])} />
+          <CloneNotes
+            notes={drafts.notes.value}
+            onDismiss={() => (drafts.notes.value = [])}
+            {...(draft.editsFile
+              ? {
+                  label: t('designer.weaponNotes.label'),
+                  dismissLabel: t('designer.weaponNotes.dismiss'),
+                }
+              : {})}
+          />
         ) : null}
         <StructureBanner suggestion={editor.structure.value} onApply={editor.applyStructure} />
         <ReadoutsPanel readouts={preview?.readouts} busy={editor.previewing.value} />

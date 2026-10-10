@@ -19,6 +19,11 @@ export interface FieldEnv {
   projectileNotes: readonly string[];
   /** Roles seen in the reference list, for the role picker. */
   roles: readonly string[];
+  /**
+   * The project file the weapon is edited in, for a weapon that exists in the mod: it keeps its name, so
+   * the name field is read only.
+   */
+  editsFile?: string;
 }
 
 export const FieldEnvContext = createContext<FieldEnv | undefined>(undefined);

@@ -1,0 +1,169 @@
+{
+  "entry": {
+    "id": "d-rs-ranger",
+    "defName": "RS_Gun_Ranger",
+    "label": "ranger rifle",
+    "kind": "ranged",
+    "updatedAtMs": 1791187014067,
+    "draft": {
+      "schemaVersion": 2,
+      "kind": "ranged",
+      "calibration": "simple",
+      "spec": {
+        "kind": "ranged",
+        "identity": {
+          "defName": "RS_Gun_Ranger",
+          "label": "ranger rifle",
+          "description": "A long barrelled rifle made for the scouts of the colony.",
+          "modPrefix": ""
+        },
+        "parent": {
+          "defName": "BaseHumanMakeableGun",
+          "inheritedStats": {
+            "Beauty": -3.0,
+            "DeteriorationRate": 2.0,
+            "Flammability": 0.5,
+            "MaxHitPoints": 100.0,
+            "SellPriceFactor": 0.2
+          },
+          "inheritedTechLevel": "industrial"
+        },
+        "techLevel": "industrial",
+        "mass": {
+          "value": 3.2,
+          "source": "typed"
+        },
+        "workToMake": {
+          "value": 11000.0,
+          "source": "typed"
+        },
+        "costList": [
+          {
+            "defName": "Steel",
+            "count": 55.0
+          },
+          {
+            "defName": "ComponentIndustrial",
+            "count": 3.0
+          }
+        ],
+        "weaponTags": [
+          "RS_Ranger"
+        ],
+        "weaponClasses": [
+          "Ranged",
+          "LongShots"
+        ],
+        "texturePath": "Things/Item/Equipment/WeaponRanged/RS_Ranger",
+        "graphicClass": "Graphic_Single",
+        "tools": [
+          {
+            "label": "stock",
+            "capacities": [
+              "Blunt"
+            ],
+            "power": {
+              "value": 9.0,
+              "source": "typed"
+            },
+            "cooldownTime": {
+              "value": 2.0,
+              "source": "typed"
+            }
+          },
+          {
+            "label": "barrel",
+            "capacities": [
+              "Blunt",
+              "Poke"
+            ],
+            "power": {
+              "value": 9.0,
+              "source": "typed"
+            },
+            "cooldownTime": {
+              "value": 2.0,
+              "source": "typed"
+            }
+          }
+        ],
+        "ranged": {
+          "verbClass": "Verb_Shoot",
+          "damage": {
+            "value": 16.0,
+            "source": "typed"
+          },
+          "range": {
+            "value": 32.9,
+            "source": "typed"
+          },
+          "warmup": {
+            "value": 1.1,
+            "source": "typed"
+          },
+          "cooldown": {
+            "value": 1.6,
+            "source": "typed"
+          },
+          "accuracy": {
+            "touch": {
+              "value": 0.65,
+              "source": "typed"
+            },
+            "short": {
+              "value": 0.8,
+              "source": "typed"
+            },
+            "medium": {
+              "value": 0.9,
+              "source": "typed"
+            },
+            "long": {
+              "value": 0.8,
+              "source": "typed"
+            }
+          },
+          "projectile": {
+            "mode": "inline",
+            "def": {
+              "defName": "RS_Bullet_Ranger",
+              "label": "ranger rifle bullet",
+              "parent": "BaseBullet",
+              "damageDef": "Bullet",
+              "texturePath": "Things/Projectile/Bullet_big",
+              "graphicClass": "Graphic_Single",
+              "speed": {
+                "value": 70.0,
+                "source": "typed"
+              },
+              "stoppingPower": {
+                "value": 1.5,
+                "source": "typed"
+              },
+              "omitDefaults": [
+                "armorPenetrationBase"
+              ]
+            }
+          },
+          "soundCast": "Shot_BoltActionRifle",
+          "soundCastTail": "GunTail_Heavy",
+          "muzzleFlashScale": 9.0
+        },
+        "previewQuality": "normal",
+        "soundInteract": "Interact_Rifle",
+        "recipe": {
+          "skillRequirements": {
+            "Crafting": 5
+          },
+          "displayPriority": 415.0
+        }
+      },
+      "editsFile": "Defs/ThingDefs_Weapons/RS_Weapons.xml"
+    }
+  },
+  "file": "Defs/ThingDefs_Weapons/RS_Weapons.xml",
+  "reused": false,
+  "notes": [
+    "the projectile RS_Bullet_Ranger is defined next to the weapon, so its damage and armor penetration are edited here and written back to it"
+  ]
+}

@@ -17,6 +17,8 @@ export interface TextFieldRowProps {
   keepEmpty?: boolean;
   help?: string;
   placeholder?: string;
+  /** The text is shown and cannot be changed (the name of a weapon that exists in the mod). */
+  readOnly?: boolean;
 }
 
 function readText(value: unknown, list: boolean): string {
@@ -37,6 +39,7 @@ export function TextFieldRow({
   keepEmpty,
   help,
   placeholder,
+  readOnly,
 }: TextFieldRowProps) {
   const env = useFieldEnv();
   const stored = readText(getAt(env.spec, pointer), list);
@@ -60,6 +63,7 @@ export function TextFieldRow({
         <TextField
           value={text}
           multiline={multiline}
+          {...(readOnly ? { readOnly } : {})}
           {...(placeholder ? { placeholder } : {})}
           onValueChange={(value) => {
             setText(value);
