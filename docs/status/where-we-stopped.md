@@ -20,7 +20,8 @@ The browser build and the desktop shell show the same pages. Start one of them:
 |---|---|---|
 | Browser | `pnpm install` once, then `pnpm dev` in the repository | Starts the development bridge and Vite; open `http://localhost:5173`. Needs a Rust toolchain; set `CARGO_TARGET_DIR` outside the repository. |
 | Desktop window | `pnpm tauri:dev` | Live reload for the UI and for Rust. Needs the Tauri system libraries (WebKitGTK on Linux). Its own target folder, `~/.cache/rimstudio-target-tauri`. |
-| Owner test copy | `~/rimstudio-test/run.sh` and `~/rimstudio-test/stop.sh` | A frozen copy of the verified tree with its own target folder; see section 7. |
+| VS Code debugger | F5 in the opened repository | The first configuration of `.vscode/launch.json`: Vite in the background, a debug build of the shell, the app under gdb (C/C++ extension). Stop other dev servers on port 5173 first. |
+| Owner test copy | `~/rimstudio-test/run.sh` and `~/rimstudio-test/stop.sh` | A copy of the tree with its own target folder; see section 7. |
 
 Then, in the app:
 
@@ -68,6 +69,9 @@ The follow up commits of the final pass come after `e73bb80`:
 | `4c5f372` | fix(project): keep the Mod page edits safe and the dialogs focused |
 | `30a21fa` | docs(status): record the final pass in the handoff note and the gates |
 | `9db909c` | docs(status): record the gate run of the final commit and the test copy |
+| `1509d66` | docs(status): list the last commits and the stopped watchdog in the note |
+| `4490b57` | build(vscode): launch the desktop app under a debugger with F5 |
+| `e838a86` | docs(roadmap): draw a roadmap picture from a status file |
 
 `git log --oneline 6e7a3fa..HEAD` is the authoritative list; a commit that only touches this note may come after these.
 
@@ -193,7 +197,8 @@ Apparel editor, the full mod manager (lists, sorting, profiles, validation), com
 3. **Disk watchdog.** A background loop named `disk-watchdog.sh` (in a session folder under `/tmp`) deletes `debug/incremental` and old test executables when `/home` drops under about 17 GB. It was stopped at the end of the session and is not needed while `/home` has room (more than 100 GB were free on 2026-10-10); if you start a long build session on a full disk, write a loop like it again.
 4. **Headless desktop runs.** Use your own Xvfb display, `env -u WAYLAND_DISPLAY GDK_BACKEND=x11 DISPLAY=:N`, and a temporary `RIMSTUDIO_DATA_BASE`; without that GTK opens a window on a Wayland desktop and writes into the real data folders.
 5. **Session notes.** `~/rimstudio-session-notes/2026-10-05/` (outside the repository, not part of the project) holds the task reports of the build rounds (`reports/`), the audit notes of the final pass (`audit/`, including the full list of screenshot findings), the commit messages and 99 screenshots of the final tree (`shots/final`) and 25 of the desktop shell (`shots/desktop-final`).
-6. **Pending processes.** Nothing from the build rounds runs except the development instance of the test copy. Other browsers and display servers on the machine are not part of this project.
+6. **Roadmap picture.** `docs/roadmap.svg` shows how far M0 to M7 and the 0.1.0 release have come (about 40 percent of the planned effort on 2026-10-10). It is drawn from `docs/roadmap-status.json` by `pnpm roadmap`; edit the data when a scope item, an exit criterion or a release check changes state, redraw, and commit both with the change (rule 10 of the project instructions). `pnpm roadmap:check` is part of `pnpm check`.
+7. **Pending processes.** Nothing from the build rounds runs except the development instance of the test copy. Other browsers and display servers on the machine are not part of this project.
 
 ## 8. Read next
 
