@@ -1,0 +1,65 @@
+{
+  // F5 starts the first configuration: the desktop app as a debug build under gdb (through the
+  // C/C++ extension, ms-vscode.cpptools; rust-gdb adds the Rust pretty printers). Vite serves the UI
+  // in the background, so edits of the frontend reload live; Rust edits need a new F5.
+  // Stop the development instance of the owner test copy first: both use port 5173.
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "RimStudio: desktop (debug)",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${userHome}/.cache/rimstudio-target-tauri/debug/rimstudio",
+      "args": [],
+      "cwd": "${workspaceFolder}",
+      "environment": [
+        // avoids blank windows on some GPU drivers (the same default as scripts/tauri.mjs)
+        { "name": "WEBKIT_DISABLE_DMABUF_RENDERER", "value": "1" },
+        { "name": "RUST_BACKTRACE", "value": "1" }
+        // To keep a debug session away from your real settings and drafts, uncomment:
+        // , { "name": "RIMSTUDIO_DATA_BASE", "value": "${userHome}/.cache/rimstudio-debug-data" }
+      ],
+      "stopAtEntry": false,
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "miDebuggerPath": "rust-gdb",
+      "setupCommands": [
+        { "description": "Pretty printing", "text": "-enable-pretty-printing", "ignoreFailures": true }
+      ],
+      "preLaunchTask": "rimstudio: desktop prelaunch",
+      "postDebugTask": "rimstudio: stop dev server"
+    },
+    {
+      "name": "RimStudio: desktop (live reload, no debugger)",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "pnpm tauri:dev",
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "name": "RimStudio: browser UI and bridge",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "pnpm dev",
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "name": "RimStudio: CLI (debug)",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${userHome}/.cache/rimstudio-target/debug/rimstudio-cli",
+      // edit the arguments: one array element per argument
+      "args": ["detect", "--json"],
+      "cwd": "${workspaceFolder}",
+      "environment": [{ "name": "RUST_BACKTRACE", "value": "1" }],
+      "stopAtEntry": false,
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "miDebuggerPath": "rust-gdb",
+      "setupCommands": [
+        { "description": "Pretty printing", "text": "-enable-pretty-printing", "ignoreFailures": true }
+      ],
+      "preLaunchTask": "rimstudio: cli build (debug)"
+    }
+  ]
+}

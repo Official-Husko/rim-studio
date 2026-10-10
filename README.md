@@ -29,6 +29,8 @@ pnpm tauri:dev               # window with live reload: Vite for the UI, cargo f
 
 `pnpm tauri:dev` needs the Tauri system libraries (on Linux WebKitGTK 4.1, libsoup 3 and GTK 3). It starts Vite (hot module reload of the UI), builds the shell and opens the window; an edit under `crates/rimstudio-*` rebuilds and restarts the app. The backend runs inside the app, so no bridge is needed. `RIMSTUDIO_DATA_BASE=/some/folder` puts the app's data folders under one folder, `RIMSTUDIO_DEV_PORT=5390` moves Vite to another port, and `CARGO_TARGET_DIR` defaults to `$HOME/.cache/rimstudio-target-tauri`. `pnpm tauri:build` makes a debug build without bundles, `pnpm tauri:check` runs cargo check and clippy for the shell, and `pnpm tauri:smoke` runs a headless self test (boot, a few commands, exit code 0 or 1; no display needed). Details are in section 18.11 of [docs/architecture/frontend-architecture.md](docs/architecture/frontend-architecture.md).
 
+To debug the desktop app in VS Code, open the folder and press F5: the first launch configuration starts Vite, builds the shell in debug and runs it under gdb (needs the C/C++ extension and `gdb`; stop any other dev server on port 5173 first). The other configurations of `.vscode/launch.json` start `pnpm tauri:dev`, `pnpm dev` or the CLI.
+
 Without the bridge, `pnpm dev:ui` starts only Vite. The app then shows recorded fixtures (the chip in the top bar reads "Mock data") and the component gallery works fully: `pnpm gallery` opens it.
 
 ## Commands

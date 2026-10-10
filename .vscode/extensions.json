@@ -1,0 +1,8 @@
+{
+  "recommendations": [
+    "ms-vscode.cpptools",
+    "rust-lang.rust-analyzer",
+    "tauri-apps.tauri-vscode",
+    "oxc.oxc-vscode"
+  ]
+}

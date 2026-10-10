@@ -1,0 +1,75 @@
+{
+  // Tasks behind the F5 launch configurations of launch.json. Linux and macOS; on Windows adapt the
+  // shell command of "rimstudio: shell build (debug)" (the target folder is set with CARGO_TARGET_DIR).
+  "version": "2.0.0",
+  "tasks": [
+    {
+      // Vite serves the UI on http://localhost:5173, where the debug build of the shell loads it
+      // (the build.devUrl of apps/desktop/src-tauri/tauri.conf.json). It keeps running in the
+      // background and is stopped by the task "rimstudio: stop dev server" when the debugging ends.
+      "label": "rimstudio: ui dev server",
+      "type": "shell",
+      "command": "pnpm --filter rimstudio-desktop dev",
+      "options": { "cwd": "${workspaceFolder}", "env": { "NO_COLOR": "1" } },
+      "isBackground": true,
+      "problemMatcher": {
+        "owner": "rimstudio-vite",
+        "pattern": { "regexp": "^\\s*(?:\\[vite\\]\\s*)?error:?\\s+(.*)$", "message": 1 },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "VITE v",
+          "endsPattern": "Local:\\s+http"
+        }
+      },
+      "presentation": { "reveal": "silent", "panel": "dedicated", "group": "rimstudio" }
+    },
+    {
+      // A plain cargo build is a dev build of the shell: the window loads the Vite server, and the
+      // binary lands where scripts/tauri.mjs puts it, ~/.cache/rimstudio-target-tauri.
+      "label": "rimstudio: shell build (debug)",
+      "type": "shell",
+      "command": "CARGO_TARGET_DIR=\"$HOME/.cache/rimstudio-target-tauri\" cargo build -p rimstudio-shell",
+      "options": { "cwd": "${workspaceFolder}" },
+      "problemMatcher": "$rustc",
+      "group": "build",
+      "presentation": { "reveal": "silent", "panel": "shared", "group": "rimstudio" }
+    },
+    {
+      "label": "rimstudio: desktop prelaunch",
+      "dependsOn": ["rimstudio: ui dev server", "rimstudio: shell build (debug)"],
+      "dependsOrder": "parallel",
+      "problemMatcher": []
+    },
+    {
+      "label": "rimstudio: stop dev server",
+      "type": "shell",
+      "command": "echo ${input:stopDevServer}",
+      "problemMatcher": [],
+      "presentation": { "reveal": "never" }
+    },
+    {
+      "label": "rimstudio: cli build (debug)",
+      "type": "shell",
+      "command": "CARGO_TARGET_DIR=\"$HOME/.cache/rimstudio-target\" cargo build -p rimstudio-cli",
+      "options": { "cwd": "${workspaceFolder}" },
+      "problemMatcher": "$rustc",
+      "group": "build"
+    },
+    {
+      "label": "rimstudio: roadmap picture",
+      "type": "shell",
+      "command": "pnpm roadmap",
+      "options": { "cwd": "${workspaceFolder}" },
+      "problemMatcher": []
+    }
+  ],
+  "inputs": [
+    {
+      // Ends the background Vite task by label (the usual way to stop a preLaunchTask server).
+      "id": "stopDevServer",
+      "type": "command",
+      "command": "workbench.action.tasks.terminate",
+      "args": "rimstudio: ui dev server"
+    }
+  ]
+}
