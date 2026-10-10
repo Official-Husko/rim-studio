@@ -66,8 +66,10 @@ The follow up commits of the final pass come after `e73bb80`:
 | `309f6bd` | docs(status): add the where we stopped note and refresh stale state |
 | `0ec687b` | feat(ui): add autofocus to TextField and a spoken label to tab badges |
 | `4c5f372` | fix(project): keep the Mod page edits safe and the dialogs focused |
+| `30a21fa` | docs(status): record the final pass in the handoff note and the gates |
+| `9db909c` | docs(status): record the gate run of the final commit and the test copy |
 
-`git log --oneline 6e7a3fa..HEAD` is the authoritative list; the commit that last touched this note comes after these.
+`git log --oneline 6e7a3fa..HEAD` is the authoritative list; a commit that only touches this note may come after these.
 
 ## 4. What was verified, and how
 
@@ -188,10 +190,10 @@ Apparel editor, the full mod manager (lists, sorting, profiles, validation), com
 
 1. **Build folders.** Always `export CARGO_TARGET_DIR=$HOME/.cache/rimstudio-target` before cargo in the repository (a forgotten export creates `target/` in the repository on the slow drive; delete it). The shell uses `~/.cache/rimstudio-target-tauri`, the owner test copy `~/.cache/rimstudio-target-stable`. The `debug/incremental` folders grow to tens of gigabytes; delete them when space is short. `/tmp` is RAM backed.
 2. **Owner test copy.** `~/rimstudio-test` is a git worktree of this repository, detached at `main` as of 2026-10-10, with the untracked `run.sh` and `stop.sh`, its own target folder and its own `node_modules`. A development instance of it was left running on port 5173 (`stop.sh` stops it, `run.sh` starts it). To bring it to a newer commit: stop it, `git -C ~/rimstudio-test checkout -f --detach main`, `pnpm install --frozen-lockfile`, start it. It reads the owner's real RimWorld install and writes only into the development data folder.
-3. **Disk watchdog.** A background loop named `disk-watchdog.sh` (in a session folder under `/tmp`) deletes `debug/incremental` and old test executables when `/home` drops under about 17 GB. It is not needed any more: find its process id with `pgrep -af disk-watchdog` and `kill` that id. It does not survive a reboot.
+3. **Disk watchdog.** A background loop named `disk-watchdog.sh` (in a session folder under `/tmp`) deletes `debug/incremental` and old test executables when `/home` drops under about 17 GB. It was stopped at the end of the session and is not needed while `/home` has room (more than 100 GB were free on 2026-10-10); if you start a long build session on a full disk, write a loop like it again.
 4. **Headless desktop runs.** Use your own Xvfb display, `env -u WAYLAND_DISPLAY GDK_BACKEND=x11 DISPLAY=:N`, and a temporary `RIMSTUDIO_DATA_BASE`; without that GTK opens a window on a Wayland desktop and writes into the real data folders.
 5. **Session notes.** `~/rimstudio-session-notes/2026-10-05/` (outside the repository, not part of the project) holds the task reports of the build rounds (`reports/`), the audit notes of the final pass (`audit/`, including the full list of screenshot findings), the commit messages and 99 screenshots of the final tree (`shots/final`) and 25 of the desktop shell (`shots/desktop-final`).
-6. **Pending processes.** Nothing from the build rounds runs except the development instance of the test copy and the watchdog above. Other browsers and display servers on the machine are not part of this project.
+6. **Pending processes.** Nothing from the build rounds runs except the development instance of the test copy. Other browsers and display servers on the machine are not part of this project.
 
 ## 8. Read next
 
