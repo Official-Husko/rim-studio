@@ -8,6 +8,8 @@ export interface TabItem {
   disabled?: boolean;
   /** A short count or status shown after the label. */
   badge?: string;
+  /** What the badge counts, read by assistive technology only ("unsaved changes" after a 2). */
+  badgeLabel?: string;
 }
 
 export interface TabsProps {
@@ -72,7 +74,12 @@ export function Tabs({ tabs, value, onValueChange, label, children }: TabsProps)
               )}
             >
               {t.label}
-              {t.badge ? <span class="font-mono text-mono-small text-faint">{t.badge}</span> : null}
+              {t.badge ? (
+                <span class="font-mono text-mono-small text-faint">
+                  {t.badge}
+                  {t.badgeLabel ? <span class="sr-only"> {t.badgeLabel}</span> : null}
+                </span>
+              ) : null}
             </button>
           );
         })}

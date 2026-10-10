@@ -19,6 +19,8 @@ export interface TextFieldProps {
   invalid?: boolean;
   disabled?: boolean;
   readOnly?: boolean;
+  /** Marks the field as the one a Dialog focuses when it opens (the Dialog looks for [autofocus]). */
+  autofocus?: boolean;
   onBlur?: () => void;
   onKeyDown?: (event: KeyboardEvent) => void;
 }
@@ -48,6 +50,7 @@ export function TextField(props: TextFieldProps) {
     'aria-label': props['aria-label'],
     'aria-describedby': field.describedBy,
     'aria-invalid': invalid ? ('true' as const) : undefined,
+    autofocus: props.autofocus ? true : undefined,
     onBlur: props.onBlur,
     onKeyDown: props.onKeyDown,
     class:

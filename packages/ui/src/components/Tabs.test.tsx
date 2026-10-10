@@ -21,6 +21,20 @@ function Harness() {
 }
 
 describe('Tabs', () => {
+  it('reads a badge with what it counts', () => {
+    render(
+      <Tabs
+        label="Mod"
+        tabs={[{ id: 'basics', label: 'Basics', badge: '2', badgeLabel: 'unsaved changes' }]}
+        value="basics"
+        onValueChange={() => {}}
+      >
+        {() => <p>Panel</p>}
+      </Tabs>,
+    );
+    expect(screen.getByRole('tab', { name: 'Basics 2 unsaved changes' })).toBeTruthy();
+  });
+
   it('has a tab list, tabs and a labelled panel', () => {
     render(<Harness />);
     expect(screen.getByRole('tablist', { name: 'Output' })).toBeTruthy();

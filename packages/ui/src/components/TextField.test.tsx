@@ -24,6 +24,13 @@ describe('TextField', () => {
     expect(input.readOnly).toBe(true);
   });
 
+  it('can be marked for a dialog to focus', () => {
+    render(<TextField aria-label="Name" autofocus value="" onValueChange={() => {}} />);
+    expect(screen.getByRole('textbox', { name: 'Name' }).hasAttribute('autofocus')).toBe(true);
+    render(<TextField aria-label="Other" value="" onValueChange={() => {}} />);
+    expect(screen.getByRole('textbox', { name: 'Other' }).hasAttribute('autofocus')).toBe(false);
+  });
+
   it('shows prefix and suffix content', () => {
     render(
       <TextField aria-label="Mass" value="1" prefix="~" suffix="kg" onValueChange={() => {}} />,
