@@ -100,17 +100,17 @@ const FONT = "system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Ar
 const CHAR = 0.58; // average glyph width as a fraction of the font size, kept on the wide side
 
 const C = {
-  bg: '#081a31',
-  panel: '#0d2440',
-  line: '#1d4570',
-  text: '#e8f2ff',
-  muted: '#9bb8d6',
-  faint: '#6a8aab',
-  track: '#163457',
-  accent: '#4cc9f0',
+  bg: '#050b14',
+  panel: '#0a1420',
+  line: '#1a2f4d',
+  text: '#e6edf7',
+  muted: '#9db1cc',
+  faint: '#7289a8',
+  track: '#12233b',
+  accent: '#4d8dff',
   done: '#3ddc97',
   partial: '#ffc857',
-  open: '#6a8aab',
+  open: '#7289a8',
   deferred: '#b48ead',
 };
 
@@ -288,7 +288,7 @@ function draw(data) {
     pos[m.id] = { x: M + cell[0] * (chipW + gapX), y: chipsTop + cell[1] * (chipH + gapY) };
   }
   const flowBottom = chipsTop + 3 * chipH + 2 * gapY;
-  const edgeColor = '#4a77a8';
+  const edgeColor = '#4a6fa5';
   const edge = (d) => `<path d="${d}" fill="none" stroke="${edgeColor}" stroke-width="2" marker-end="url(#arrow)"/>`;
   const right = (id) => ({ x: pos[id].x + chipW, y: pos[id].y + chipH / 2 });
   const left = (id) => ({ x: pos[id].x, y: pos[id].y + chipH / 2 });

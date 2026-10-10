@@ -93,7 +93,7 @@ Each screen needs its states as separate artboards (empty, loading, populated, e
 
 ### B1. Concept
 
-The application is a drafting table. The dark theme is a **cyanotype night**: deep blue paper, fine light-blue linework, white and pale-blue ink. The light theme is **vellum**: pale blue-white paper with blue ink. The vocabulary comes from engineering drawings: a ruled grid, registration marks at the corners of sheets, dimension lines with measured labels, a title block along the bottom edge, hatch for sections that are cut away or inactive, stamps for revision states, leader lines for callouts. These are used with discipline (see B5): the drawing language frames and annotates the work; it never competes with the lists and numbers the user came to read.
+The application is a drafting table. The dark theme is a **cyanotype night**: blue-black paper, fine blue linework, white and pale-blue ink, and a blue primary colour. The light theme is **vellum**: pale blue-white paper with blue ink. The vocabulary comes from engineering drawings: a ruled grid, registration marks at the corners of sheets, dimension lines with measured labels, a title block along the bottom edge, hatch for sections that are cut away or inactive, stamps for revision states, leader lines for callouts. These are used with discipline (see B5): the drawing language frames and annotates the work; it never competes with the lists and numbers the user came to read.
 
 **Dark and light parity.** Light is the same drawing on vellum, not a different design: identical layout, spacing, motif placement and icon set; only the colour tokens change. Texture strength is tuned per theme through `--rs-grid-*` and `--rs-hatch` (already set below), never by adding or removing a motif. Light replaces any glow-like effect by a line. The first-run grid, the hatch and the stamps must look equally quiet in both themes; if a motif is louder in one theme, adjust its token alpha, not its recipe.
 
@@ -105,32 +105,32 @@ All values are final unless the contrast column says otherwise. Contrast is meas
 
 | Token | Hex | Role | Contrast notes |
 |---|---|---|---|
-| `--rs-bg` | `#081A31` | Application ground | base |
-| `--rs-surface` | `#0D2440` | Panels, lists | base |
-| `--rs-surface-raised` | `#122E52` | Raised panels, headers, inputs | base |
-| `--rs-surface-hover` | `#193B68` | Hover and pressed surfaces | base |
-| `--rs-text` | `#E8F2FF` | Primary text | 15.5 on bg, 13.8 on surface, 10.0 on the hover surface |
-| `--rs-text-muted` | `#A9C3E3` | Secondary text | 9.7 on bg, 8.6 on surface, 6.2 on the hover surface |
-| `--rs-text-faint` | `#7F9FC8` | Tertiary text, units, hints | 6.4 on bg, 5.7 on surface, 5.0 on the raised surface; do not use on the hover surface |
-| `--rs-accent` | `#3FC8FF` | Primary action, selection, focus-adjacent | 9.1 on bg, 8.1 on surface |
-| `--rs-accent-contrast` | `#04223A` | Text on accent fills | 8.4 on accent |
-| `--rs-accent-tint` | accent at 10% on surface | Selected row fill (also bold name and a leading check or marker, never tint alone) | text 11.3, muted 7.0, faint 4.7, danger 4.6, rule-community 5.2 on it |
-| `--rs-warning` | `#FFB84D` | Warnings | 9.1 on surface |
-| `--rs-danger` | `#FF6B7A` | Error-severity problems and destructive actions only | 5.7 on surface, 5.0 on the raised surface; not on the hover surface |
-| `--rs-success` | `#58E0AD` | Success, "visible to game" | 9.4 on surface |
-| `--rs-info` | `#56B4E9` | Neutral information | 6.8 on surface |
-| `--rs-rule-about` | `#56B4E9` | Rule layer: the mod's own About file | 6.8 on surface |
-| `--rs-rule-community` | `#D98DBD` | Rule layer: community database | 6.3 on surface |
-| `--rs-rule-user` | `#4FD1A5` | Rule layer: the user's rules | 8.2 on surface |
-| `--rs-focus` | `#8BE3FF` | 2 px focus ring, 2 px offset | 12.1 on bg, 9.4 on the raised surface |
-| `--rs-border-subtle` | `#78BEFF` at 18% | Row separators, decorative rules | 1.5 on surface (decorative only) |
-| `--rs-border` | `#78BEFF` at 32% | Panel and card borders | 2.0 on surface |
-| `--rs-border-strong` | `#78BEFF` at 55% | Control borders, active dividers | 3.4 on surface, 3.2 on the raised surface (meets 3:1 for controls); on the hover surface it is 2.8, so a hovered control changes its border to `--rs-accent` instead |
-| `--rs-grid-minor` | `#78BEFF` at 6% | Canvas grid, 16 px | decorative |
-| `--rs-grid-major` | `#78BEFF` at 11% | Canvas grid, every 80 px | decorative |
-| `--rs-hatch` | `#78BEFF` at 22% | 135 degree hatch, 1 px lines every 6 px | decorative |
+| `--rs-bg` | `#050B14` | Application ground | base |
+| `--rs-surface` | `#0A1420` | Panels, lists | base |
+| `--rs-surface-raised` | `#0F1C2E` | Raised panels, headers, inputs | base |
+| `--rs-surface-hover` | `#17294A` | Hover and pressed surfaces | base |
+| `--rs-text` | `#E6EDF7` | Primary text | 16.7 on bg, 15.7 on surface, 12.3 on the hover surface |
+| `--rs-text-muted` | `#9DB1CC` | Secondary text | 9.0 on bg, 8.5 on surface, 6.6 on the hover surface |
+| `--rs-text-faint` | `#7289A8` | Tertiary text, units, hints | 5.5 on bg, 5.2 on surface, 4.8 on the raised surface; do not use on the hover surface |
+| `--rs-accent` | `#4D8DFF` | Primary action, selection, focus-adjacent (the blue of the product) | 6.2 on bg, 5.8 on surface |
+| `--rs-accent-contrast` | `#04101F` | Text on accent fills | 6.0 on accent |
+| `--rs-accent-tint` | accent at 10% on surface | Selected row fill (also bold name and a leading check or marker, never tint alone) | text 13.9, muted 7.5, faint 4.6, danger 5.9, rule-community 6.6 on it |
+| `--rs-warning` | `#FFB84D` | Warnings | 10.8 on surface |
+| `--rs-danger` | `#FF6B7A` | Error-severity problems and destructive actions only | 6.7 on surface, 6.2 on the raised surface; not on the hover surface |
+| `--rs-success` | `#58E0AD` | Success, "visible to game" | 11.2 on surface |
+| `--rs-info` | `#56B4E9` | Neutral information | 8.0 on surface |
+| `--rs-rule-about` | `#56B4E9` | Rule layer: the mod's own About file | 8.0 on surface |
+| `--rs-rule-community` | `#D98DBD` | Rule layer: community database | 7.5 on surface |
+| `--rs-rule-user` | `#4FD1A5` | Rule layer: the user's rules | 9.7 on surface |
+| `--rs-focus` | `#9CC2FF` | 2 px focus ring, 2 px offset | 10.9 on bg, 9.4 on the raised surface |
+| `--rs-border-subtle` | `#78A6F0` at 18% | Row separators, decorative rules | 1.4 on surface (decorative only) |
+| `--rs-border` | `#78A6F0` at 32% | Panel and card borders | 1.8 on surface |
+| `--rs-border-strong` | `#78A6F0` at 55% | Control borders, active dividers | 3.1 on surface, 3.0 on the raised surface (meets 3:1 for controls); on the hover surface it is 2.8, so a hovered control changes its border to `--rs-accent` instead |
+| `--rs-grid-minor` | `#78A6F0` at 6% | Canvas grid, 16 px | decorative |
+| `--rs-grid-major` | `#78A6F0` at 11% | Canvas grid, every 80 px | decorative |
+| `--rs-hatch` | `#78A6F0` at 22% | 135 degree hatch, 1 px lines every 6 px | decorative |
 
-Quality ladder (item designer previews), all on surface: awful `#8A94A6` (5.1), poor `#A8B3C4` (7.4), normal `#E8F2FF` (13.8), good `#6FE0A8` (9.6), excellent `#5BB8FF` (7.3), masterwork `#C79CFF` (7.2), legendary `#FFC15C` (9.7). Tokens `--rs-q-awful` to `--rs-q-legendary`. The ladder is always paired with the quality name.
+Quality ladder (item designer previews), all on surface: awful `#8A94A6` (6.1), poor `#A8B3C4` (8.7), normal `#E6EDF7` (15.7), good `#6FE0A8` (11.4), excellent `#5BB8FF` (8.6), masterwork `#C79CFF` (8.5), legendary `#FFC15C` (11.5). Tokens `--rs-q-awful` to `--rs-q-legendary`. The ladder is always paired with the quality name.
 
 **Light theme (vellum)**
 

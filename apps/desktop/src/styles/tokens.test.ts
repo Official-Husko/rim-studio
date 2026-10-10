@@ -27,35 +27,35 @@ function ratio(a: string, b: string): number {
 
 // [foreground, background, documented ratio] from docs/design/design-prompt.md B2 (dark theme).
 const PAIRS: Array<[string, string, number]> = [
-  ['--rs-text', '--rs-bg', 15.5],
-  ['--rs-text', '--rs-surface', 13.8],
-  ['--rs-text', '--rs-surface-hover', 10.0],
-  ['--rs-text-muted', '--rs-bg', 9.7],
-  ['--rs-text-muted', '--rs-surface', 8.6],
-  ['--rs-text-muted', '--rs-surface-hover', 6.2],
-  ['--rs-text-faint', '--rs-bg', 6.4],
-  ['--rs-text-faint', '--rs-surface', 5.7],
-  ['--rs-text-faint', '--rs-surface-raised', 5.0],
-  ['--rs-accent', '--rs-bg', 9.1],
-  ['--rs-accent', '--rs-surface', 8.1],
-  ['--rs-accent-contrast', '--rs-accent', 8.4],
-  ['--rs-warning', '--rs-surface', 9.1],
-  ['--rs-danger', '--rs-surface', 5.7],
-  ['--rs-danger', '--rs-surface-raised', 5.0],
-  ['--rs-success', '--rs-surface', 9.4],
-  ['--rs-info', '--rs-surface', 6.8],
-  ['--rs-rule-about', '--rs-surface', 6.8],
-  ['--rs-rule-community', '--rs-surface', 6.3],
-  ['--rs-rule-user', '--rs-surface', 8.2],
-  ['--rs-focus', '--rs-bg', 12.1],
+  ['--rs-text', '--rs-bg', 16.7],
+  ['--rs-text', '--rs-surface', 15.7],
+  ['--rs-text', '--rs-surface-hover', 12.3],
+  ['--rs-text-muted', '--rs-bg', 9.0],
+  ['--rs-text-muted', '--rs-surface', 8.5],
+  ['--rs-text-muted', '--rs-surface-hover', 6.6],
+  ['--rs-text-faint', '--rs-bg', 5.5],
+  ['--rs-text-faint', '--rs-surface', 5.2],
+  ['--rs-text-faint', '--rs-surface-raised', 4.8],
+  ['--rs-accent', '--rs-bg', 6.2],
+  ['--rs-accent', '--rs-surface', 5.8],
+  ['--rs-accent-contrast', '--rs-accent', 6.0],
+  ['--rs-warning', '--rs-surface', 10.8],
+  ['--rs-danger', '--rs-surface', 6.7],
+  ['--rs-danger', '--rs-surface-raised', 6.2],
+  ['--rs-success', '--rs-surface', 11.2],
+  ['--rs-info', '--rs-surface', 8.0],
+  ['--rs-rule-about', '--rs-surface', 8.0],
+  ['--rs-rule-community', '--rs-surface', 7.5],
+  ['--rs-rule-user', '--rs-surface', 9.7],
+  ['--rs-focus', '--rs-bg', 10.9],
   ['--rs-focus', '--rs-surface-raised', 9.4],
-  ['--rs-q-awful', '--rs-surface', 5.1],
-  ['--rs-q-poor', '--rs-surface', 7.4],
-  ['--rs-q-normal', '--rs-surface', 13.8],
-  ['--rs-q-good', '--rs-surface', 9.6],
-  ['--rs-q-excellent', '--rs-surface', 7.3],
-  ['--rs-q-masterwork', '--rs-surface', 7.2],
-  ['--rs-q-legendary', '--rs-surface', 9.7],
+  ['--rs-q-awful', '--rs-surface', 6.1],
+  ['--rs-q-poor', '--rs-surface', 8.7],
+  ['--rs-q-normal', '--rs-surface', 15.7],
+  ['--rs-q-good', '--rs-surface', 11.4],
+  ['--rs-q-excellent', '--rs-surface', 8.6],
+  ['--rs-q-masterwork', '--rs-surface', 8.5],
+  ['--rs-q-legendary', '--rs-surface', 11.5],
 ];
 
 describe('dark theme tokens', () => {
@@ -148,9 +148,9 @@ describe('dark theme tokens', () => {
   });
 
   it('uses the exact alpha values of the brief for the border and texture tokens', () => {
-    expect(css).toContain('--rs-border-subtle: #78beff2e');
-    expect(css).toContain('--rs-border: #78beff52');
-    expect(css).toContain('--rs-border-strong: #78beff8c');
+    expect(css).toContain('--rs-border-subtle: #78a6f02e');
+    expect(css).toContain('--rs-border: #78a6f052');
+    expect(css).toContain('--rs-border-strong: #78a6f08c');
   });
 });
 

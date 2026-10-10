@@ -1,7 +1,7 @@
 /*
   Design tokens: the only file (with its light sibling later) that may contain colour,
   length and font literals. Names follow docs/design/design-prompt.md B10.
-  Dark theme "cyanotype night" is the default. A light block "vellum" goes below as
+  Dark theme "cyanotype night" is the default: blue black paper and a blue primary. A light block "vellum" goes below as
   :root[data-theme="light"] { ... } with the same names; no component changes are needed.
 */
 @layer tokens {
@@ -10,19 +10,19 @@
     color-scheme: dark;
 
     /* surfaces */
-    --rs-bg: #081a31;
-    --rs-surface: #0d2440;
-    --rs-surface-raised: #122e52;
-    --rs-surface-hover: #193b68;
+    --rs-bg: #050b14;
+    --rs-surface: #0a1420;
+    --rs-surface-raised: #0f1c2e;
+    --rs-surface-hover: #17294a;
 
     /* text */
-    --rs-text: #e8f2ff;
-    --rs-text-muted: #a9c3e3;
-    --rs-text-faint: #7f9fc8;
+    --rs-text: #e6edf7;
+    --rs-text-muted: #9db1cc;
+    --rs-text-faint: #7289a8;
 
     /* accent and derived variants (a user accent only replaces --rs-accent) */
-    --rs-accent: #3fc8ff;
-    --rs-accent-contrast: #04223a;
+    --rs-accent: #4d8dff;
+    --rs-accent-contrast: #04101f;
     --rs-accent-hover: color-mix(in srgb, var(--rs-accent) 82%, white);
     --rs-accent-press: color-mix(in srgb, var(--rs-accent) 78%, black);
     --rs-accent-tint: color-mix(in srgb, var(--rs-accent) 10%, var(--rs-surface));
@@ -41,21 +41,21 @@
     /* quality ladder */
     --rs-q-awful: #8a94a6;
     --rs-q-poor: #a8b3c4;
-    --rs-q-normal: #e8f2ff;
+    --rs-q-normal: #e6edf7;
     --rs-q-good: #6fe0a8;
     --rs-q-excellent: #5bb8ff;
     --rs-q-masterwork: #c79cff;
     --rs-q-legendary: #ffc15c;
 
     /* focus, borders, blueprint texture (8 digit hex carries the alpha) */
-    --rs-focus: #8be3ff;
-    --rs-border-subtle: #78beff2e;
-    --rs-border: #78beff52;
-    --rs-border-strong: #78beff8c;
-    --rs-grid-minor: #78beff0f;
-    --rs-grid-major: #78beff1c;
-    --rs-hatch: #78beff38;
-    --rs-scrim: #081a31b3;
+    --rs-focus: #9cc2ff;
+    --rs-border-subtle: #78a6f02e;
+    --rs-border: #78a6f052;
+    --rs-border-strong: #78a6f08c;
+    --rs-grid-minor: #78a6f00f;
+    --rs-grid-major: #78a6f01c;
+    --rs-hatch: #78a6f038;
+    --rs-scrim: #050b14b3;
 
     /* diff and fit meter */
     --rs-diff-added: color-mix(in srgb, var(--rs-success) 16%, var(--rs-surface));
@@ -65,12 +65,12 @@
 
     /* sources */
     --rs-source-official: #c79cff;
-    --rs-source-install: #a9c3e3;
+    --rs-source-install: #9db1cc;
     --rs-source-workshop: #5bb8ff;
     --rs-source-custom: #ffc15c;
 
     /* group swatches and chart series */
-    --rs-group-1: #3fc8ff;
+    --rs-group-1: #4d8dff;
     --rs-group-2: #ffb84d;
     --rs-group-3: #58e0ad;
     --rs-group-4: #d98dbd;
@@ -78,12 +78,12 @@
     --rs-group-6: #ff8f6b;
     --rs-group-7: #e6e36a;
     --rs-group-8: #9fb4cf;
-    --rs-chart-1: #3fc8ff;
+    --rs-chart-1: #4d8dff;
     --rs-chart-2: #ffb84d;
     --rs-chart-3: #58e0ad;
     --rs-chart-4: #d98dbd;
     --rs-chart-5: #c79cff;
-    --rs-chart-6: #a9c3e3;
+    --rs-chart-6: #9db1cc;
   }
 
   /* Placeholder for the light theme (vellum): same names, other values. Not shipped yet.
