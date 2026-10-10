@@ -72,6 +72,11 @@ The follow up commits of the final pass come after `e73bb80`:
 | `1509d66` | docs(status): list the last commits and the stopped watchdog in the note |
 | `4490b57` | build(vscode): launch the desktop app under a debugger with F5 |
 | `e838a86` | docs(roadmap): draw a roadmap picture from a status file |
+| `8eda456` | docs(status): mention F5 and the roadmap picture in the note |
+| `6447586` | docs(licence): include RimWorld and Combat Extended data with attribution |
+| `055e47d` | feat(xtask): add check-licences for included game data |
+| `16699d7` | feat(desktop): show the notices from the top bar |
+| `b276295` | test(e2e): copy the committed mod trees instead of the live mods |
 
 `git log --oneline 6e7a3fa..HEAD` is the authoritative list; a commit that only touches this note may come after these.
 
@@ -81,7 +86,7 @@ The follow up commits of the final pass come after `e73bb80`:
 |---|---|
 | `cargo fmt --all --check`, `cargo clippy --workspace --all-targets -- -D warnings` | clean |
 | `cargo test --workspace` | 4,047 passed, 0 failed, 64 ignored (real install tests and benchmarks) |
-| `cargo run -p xtask -- check-all` | layers, source rules and docs: 0 findings |
+| `cargo run -p xtask -- check-all` | layers, source rules, docs and licences: 0 findings |
 | `cargo check --workspace --all-targets --target x86_64-pc-windows-gnu` | clean (compile only) |
 | `pnpm typecheck`, `pnpm lint`, `pnpm build`, `pnpm --filter rimstudio-ipc-types bindings:check`, the bindings drift test | clean, no lint warnings, 48 golden type files |
 | `pnpm test` | testkit 8, ui 133, desktop 1,104 |
