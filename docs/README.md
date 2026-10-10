@@ -2,7 +2,7 @@
 
 RimStudio is a planned cross-platform desktop application for RimWorld modders: a fast, intuitive mod manager (modelled on RimSort's feature set, compatible with the RimSort community rules datasets) and a modding toolkit (def explorer, patch tester, an item designer for weapons and apparel that writes vanilla definitions and can optionally generate a Combat Extended patch, and a Steam Workshop publisher), built as a Rust workspace with a Tauri 2, Preact, TypeScript and Tailwind frontend. This folder is the plan and its evidence: research notes with reproducible data, the architecture and project structure, decision records, feature specifications, and the written design brief for the visual design tool. The Cargo workspace skeleton exists under `crates/` and `xtask/` and the Rust backend of release 0.1.0 (the designer slice) is being implemented; progress is on the [0.1.0 backend status page](status/0.1.0-backend.md). The folder is still named `rimforge-studio`: renaming it to `rimstudio` and moving the reference checkouts into `reference/` are pending owner action.
 
-Status: draft | Last updated: 2026-10-04
+Status: draft | Last updated: 2026-10-10
 
 ## Start here
 
@@ -76,6 +76,7 @@ Requirement ids are stable and testable: MM (manager), GD (discovery), ST (setti
 | Document | Covers |
 |---|---|
 | [0.1.0 backend status](status/0.1.0-backend.md) | A living page: the requirement groups of release 0.1.0 with their state (planned, in progress, done, deferred) |
+| [where we stopped](status/where-we-stopped.md) | The handoff note for the next working session: what exists, how it was verified, where the work stopped and the open items in order |
 
 ### Design ([design/](design/))
 
