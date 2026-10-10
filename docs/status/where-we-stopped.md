@@ -8,7 +8,7 @@ This page is for the next working session. It says what exists, what was verifie
 
 1. **What exists.** The weapons editor of release 0.1.0 is built end to end: ranged and melee weapons, the math, the quiz and the fit meter, vanilla output by default, the optional Combat Extended (CE) patch generator (guns, bows, weapon platforms, under barrel units, custom ammunition), texture and sound import, the weapon wizard that proposes every number from a category, the Patches page (scan, questions, plan, apply, lint), layout fixes with undo, the Mod page (create a mod with the recommended tree, edit About.xml and LoadFolders.xml), a link of a mod into the game's `Mods` folder, a temporary dark UI over all of it, the Tauri desktop shell with live reload and the headless CLI.
 2. **State of the repository.** Branch `main`, 20 feature commits on top of `6e7a3fa` (section 3) plus the follow up commits of the final pass. Nothing is pushed and nothing is tagged. The folder is still named as it was (D-099); the GitHub repository is `rim-studio`.
-3. **Verified.** Every gate is green on the final tree (section 4): 4,046 Rust tests, 1,239 frontend unit tests, 52 Playwright tests (three full runs in a row, no failure), the Tauri shell check and its headless smoke test, the Windows compile check, the docs, layer and source checks.
+3. **Verified.** Every gate is green on the final tree (section 4): 4,046 Rust tests, 1,245 frontend unit tests, 52 Playwright tests (three full runs in a row, no failure), the Tauri shell check and its headless smoke test, the Windows compile check, the docs, layer and source checks.
 4. **Not verified.** A weapon made with the tool has never been loaded in RimWorld itself. Windows and macOS were never run (compile checks only). The desktop shell was driven under WebKitGTK for Setup, the Mod page tabs and the New mod window, not for the weapon wizard, the ammunition windows or the Patches page.
 5. **Next step.** The owner makes a test mod end to end (section 2) and starts the game with it. Everything after that is the backlog in section 6, ordered by how much it hurts.
 
@@ -57,7 +57,17 @@ All on `main`, oldest first, on top of `6e7a3fa chore(desktop): remove the unuse
 | `0dea565` | docs: specify the new features and the decisions behind them |
 | `e73bb80` | docs(status): record the shell, the new features and the results |
 
-The follow up commits of the final pass (a test tolerance, a few Mod page fixes, this note) come after `e73bb80`; `git log --oneline 6e7a3fa..HEAD` is the authoritative list.
+The follow up commits of the final pass come after `e73bb80`:
+
+| Commit | Header |
+|---|---|
+| `0f501c0` | test(design): bound the strength error by the whole number damage step |
+| `72aba82` | chore: ignore the build output of the research schema probe |
+| `309f6bd` | docs(status): add the where we stopped note and refresh stale state |
+| `0ec687b` | feat(ui): add autofocus to TextField and a spoken label to tab badges |
+| `4c5f372` | fix(project): keep the Mod page edits safe and the dialogs focused |
+
+`git log --oneline 6e7a3fa..HEAD` is the authoritative list; the commit that last touched this note comes after these.
 
 ## 4. What was verified, and how
 
@@ -68,7 +78,7 @@ The follow up commits of the final pass (a test tolerance, a few Mod page fixes,
 | `cargo run -p xtask -- check-all` | layers, source rules and docs: 0 findings |
 | `cargo check --workspace --all-targets --target x86_64-pc-windows-gnu` | clean (compile only) |
 | `pnpm typecheck`, `pnpm lint`, `pnpm build`, `pnpm --filter rimstudio-ipc-types bindings:check`, the bindings drift test | clean, no lint warnings, 48 golden type files |
-| `pnpm test` | testkit 8, ui 131, desktop 1,100 |
+| `pnpm test` | testkit 8, ui 133, desktop 1,104 |
 | `pnpm e2e` (Playwright, Firefox, the real bridge and the owner's install, temporary data) | 52 tests; three full runs in a row all green (2.9 to 3.2 minutes each) |
 | `pnpm tauri:check`, `pnpm tauri:smoke` | clean; the smoke test boots the app and lists 67 commands |
 | Desktop shell under WebKitGTK (Xvfb, production build, real install) | Setup (detect, native folder dialog, add folder, scan), Mod hub, New mod window, Basics edit and save, Versions and folders, Files and Layout tabs render and work like the Firefox pages; not covered: Test in game, the wizard, ammunition windows, Patches |
@@ -84,7 +94,7 @@ Flaky tests found and fixed in the final pass, all of them test or picker defect
 
 The session ended while three pieces of work were in flight. All three are finished or recorded:
 
-1. **The Mod page task** (create a mod with the recommended tree, edit its basics) was stopped before its own report. It was completed by hand and then audited against its original task card: every deliverable exists, is wired into the page, is translated and has unit and end to end tests. The audit found 13 small defects and gaps, listed in section 6.1.
+1. **The Mod page task** (create a mod with the recommended tree, edit its basics) was stopped before its own report. It was completed by hand and then audited against its original task card: every deliverable exists, is wired into the page, is translated and has unit and end to end tests. The audit found 13 small defects and gaps, listed in section 6.1; four of them (MP-2, MP-3, MP-8, MP-9) were fixed in the final pass.
 2. **The final QA task** was also stopped before its report. Its Playwright additions exist (specs 12 to 16, ammo, wizard, mod-basics), the gates were run by hand, the status page was updated. Not repeated: the live reload proof of the shell (a frontend edit and a Rust edit, each reverted); it was proven once before and the mechanism has not changed.
 3. **A read only audit run** (Mod page audit, QA audit with three repeated full e2e runs, a desktop shell run, four reviews of 99 screenshots) was cut off by the end of the session. Its notes survived and are summarized in section 6; the raw notes are in the session notes folder (section 7). Two of its planned outputs were never written: a consolidated open items list (this page replaces it) and an operating guide (section 2 and 7 replace it).
 
@@ -99,14 +109,14 @@ Severity words: major means wrong or misleading behaviour, minor means visible p
 | Id | Severity | Finding | Suggested fix |
 |---|---|---|---|
 | MP-1 | minor | Unsaved edits are lost without a warning when the person closes the mod, opens another or starts a new one (`ProjectPage.tsx`, `ModView.tsx`, `aboutStore.loadAbout`). Reopening the same mod silently restores the old draft, which is inconsistent. | A shared `confirmLeave()` before close, new, open and project switch while `pendingChanges` or `foldersPending` is above zero. |
-| MP-2 | minor | Adding a version folder drops unsaved LoadFolders edits silently (`VersionAddDialog.tsx` calls `loadFolders` without keeping the edits, and the add rewrites the file). | Disable the button while edits are pending, or keep the edits after the write. |
-| MP-3 | minor | A dialog opens with focus on the header Close button, not on the first field (`packages/ui` Dialog picks the first focusable). | Give the first field `autofocus` in New mod, Add a version folder and Review changes; Dialog already honours it. |
+| MP-2 | fixed | Adding a version folder drops unsaved LoadFolders edits silently (`VersionAddDialog.tsx` calls `loadFolders` without keeping the edits, and the add rewrites the file). | Fixed in `4c5f372`. |
+| MP-3 | fixed | A dialog opens with focus on the header Close button, not on the first field (`packages/ui` Dialog picks the first focusable). | Fixed in `4c5f372`. |
 | MP-4 | minor | The real bridge e2e does not cover the Preview.png import and removal, ByVersion blocks, a stale refusal on LoadFolders, or Discard on the Versions tab. | Extend `mod-basics.spec.ts`. |
 | MP-5 | nit | The test "a bad package id and a collision ... saving is still allowed" never asserts that Save is enabled. | Add the assertion or rename it. |
 | MP-6 | nit | No test of keyboard use of the new views (Escape closes the dialogs, focus returns to the opener, Tab order). | Add component tests. |
 | MP-7 | nit | The review step of the creation window lists paths only, not the text of the About.xml that will be written. | Return the text from `project_scaffold_preview` and show it in a code view. |
-| MP-8 | nit | The unsaved count on a tab is a bare number ("Basics 1") for a screen reader. | A visually hidden label on the badge. |
-| MP-9 | nit | `createStore.scheduleCheck` does not invalidate the token of an in-flight check, so Next can be enabled on a stale preview for up to 300 ms. | Increment the token when a new check is scheduled. |
+| MP-8 | fixed | The unsaved count on a tab is a bare number ("Basics 1") for a screen reader. | Fixed in `4c5f372`. |
+| MP-9 | fixed | `createStore.scheduleCheck` does not invalidate the token of an in-flight check, so Next can be enabled on a stale preview for up to 300 ms. | Fixed in `4c5f372`. |
 | MP-10 | nit | Dependency findings are keyed by form row index but blank rows are dropped from the preview, so pointers shift by one after a blank row; Move up and down remounts the row and loses focus. | Map visible index to kept index; key rows by a stable id. |
 | MP-11 | nit | A folder edit made while another is in flight is dropped (`applyFoldersOp` returns false when busy) and the add field is cleared before the result. | Queue the operations; clear the field only on success. |
 | MP-12 | nit | Picking the same dependency twice by typing the id is ignored without feedback; the new mod window needs scrolling inside the dialog at 1024 by 700. | Show a short note; consider a two column form. |
