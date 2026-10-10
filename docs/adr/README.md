@@ -43,7 +43,7 @@ Status values: accepted (decided, build on it), proposed (accepted for planning,
 | 0031 | [CI, packaging, updates and the app identifier](0031-ci-packaging-updates-and-identifier.md) | needs-owner | D-059, D-049, D-087 |
 | 0032 | [Publish sidecar protocol and the user's Steam library](0032-publish-sidecar-and-steam-library.md) | accepted | D-061, D-062, D-063, D-086 |
 | 0033 | [Item math and Combat Extended generator placement](0033-item-math-and-ce-generator.md) | accepted | D-064, D-065 |
-| 0034 | [Licence hygiene and reference-project rules](0034-licence-hygiene.md) | accepted | D-067, D-088 |
+| 0034 | [Licence hygiene and reference-project rules](0034-licence-hygiene.md) | accepted, in part superseded by 0059 | D-067, D-088 |
 | 0035 | [In house JSON database and the aux-db exception](0035-in-house-json-database.md) | accepted | D-083, D-031 |
 | 0036 | [Release 0.1.0 scope, backend first, and the minimal manager crate](0036-release-scope-and-backend-first.md) | accepted | D-084 |
 | 0037 | [Vanilla by default, Combat Extended as an optional patch](0037-vanilla-default-optional-ce-patch.md) | accepted | D-085, D-064, D-065 |
@@ -99,3 +99,4 @@ What is decided, in the active voice, with the names of crates, files and versio
 4. Changing a decision means adding a record that supersedes the old one and updating the register and the roadmap in the same change.
 5. Documents use no em dashes, no en dashes and no emojis.
 | 0058 | [Weapon archetypes](0058-weapon-archetypes.md) | accepted | D-200 to D-204, D-085 |
+| 0059 | [Attributed RimWorld and Combat Extended data](0059-attributed-game-and-combat-extended-data.md) | accepted | D-211, D-212, supersedes 0034 in part |

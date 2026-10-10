@@ -28,7 +28,7 @@ CE replaces vanilla combat with its own units and classes: armor in millimetres 
 | Rule | Consequence |
 | --- | --- |
 | R10, I-02, I-03 | The generator builds JSON node trees; XML text is produced only by `rimstudio-xml::render` (new files) and byte-span edits (existing files, D-013). Templates, presets and plans are JSON. |
-| R11, I-06, I-07 | No CE value, preset, ammo table or tag list is stored in the repository. The generator reads the user's installed CE at runtime. XML skeletons in the research folder are documentation and golden references only. Test vectors use fictional numbers. |
+| R11, I-06, I-07 | No CE value, preset, ammo table or tag list is embedded in the generator: it reads the user's installed CE at runtime. CE data that the repository holds (fixtures, goldens, research skeletons) is attributed in `NOTICE.md` ([ADR 0059](../adr/0059-attributed-game-and-combat-extended-data.md)). |
 | D-085 | The generator only produces optional patches. The designer always writes vanilla definitions; a CE patch is generated only when the user turns on the per item toggle (or runs the Convert flow), is never automatic even when CE is installed, goes into its own files in a gated folder and is never mixed into a vanilla definition. |
 | D-065 | The generator lives in `rimstudio-design::ce::patchgen`; orchestration and write plans in `rimstudio-toolkit::designer`. |
 | I-10 | Findings are diagnostics (`ce.*`), never errors, except structural impossibilities that block writing. |

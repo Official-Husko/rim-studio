@@ -40,7 +40,7 @@ The hybrid is a specification derived from two measured designs. It has not itse
 ## 2. Conventions, data sources and test vectors
 
 1. Units follow the game: seconds, tiles (vanilla) or cells (CE), kilograms, silver, ticks (60 per second). CE units are mm of rolled homogeneous armor (mm RHA) for sharp ratings and MPa for blunt ratings ([Combat Extended model](../research/combat-extended-model.md) section 5).
-2. Every number about the game comes from the user's install through the def engine at runtime (R11, invariant I-07): stat bases, stuff powers, quality factors, StatDef parts, body parts, ingredient prices, and for CE the user's resolved conversions and ammo sets. The repository holds no vanilla or CE value table. Quality factors, armor ratings of reference layers (the three used by the power index) and coverage numbers are read, not compiled in.
+2. Every number about the game comes from the user's install through the def engine at runtime (invariant I-07): stat bases, stuff powers, quality factors, StatDef parts, body parts, ingredient prices, and for CE the user's resolved conversions and ammo sets. The designer crates embed no vanilla or CE value table. Quality factors, armor ratings of reference layers (the three used by the power index) and coverage numbers are read, not compiled in.
 3. Test vectors use fictional numbers (a conformance rule of the architecture). Each vector below was computed with a small script during writing and cross-checked against the closed form; the install-backed checks (the revolver and assault rifle cycle, plate armor in steel, longsword and mace DPS from the vanilla notes) are `#[ignore]` tests that need `RIMSTUDIO_GAME_DIR` ([vanilla ranged](../research/vanilla-ranged-weapons-analysis.md), [vanilla melee](../research/vanilla-melee-weapons-analysis.md), [vanilla apparel](../research/vanilla-apparel-analysis.md)).
 4. Results are deterministic: the same inputs give byte-identical JSON at any thread count (invariant I-12). Medians and percentiles are in house: percentile uses linear interpolation between order statistics (position q x (n minus 1)).
 5. Errors are relative: abs(predicted minus true) divided by true, over items where the true value is positive.
@@ -298,7 +298,7 @@ Separately from the bands, a typicality score from 0 to 100 answers "does this i
 
 | situation | behaviour | measured |
 | --- | --- | --- |
-| CE not installed | the optional CE patch toggle is disabled with a reason; the vanilla designer is complete; no CE number exists anywhere in the product | by design (R11, D-085) |
+| CE not installed | the optional CE patch toggle is disabled with a reason; the vanilla designer is complete; no CE number is used in its output | by design (I-07, D-085) |
 | CE installed, fewer than 3 items in a class | pool widens along the chain and the label says so | CE ranged: 14 of 25 held-out items used the role pool, 4 role and tier, 7 group and tier |
 | half of the reference items missing | same code, thinner pools, wider bands | quiz mean median error 18 to 23 (vanilla ranged), 24 to 30 (melee), 27 to 34 (apparel), 16 to 23 (CE ranged), 32 to 36 (CE melee), 29 to 34 (CE apparel) |
 | careless answers (25 percent dropped, 15 percent one bin off, rival off by up to 2 ranks) | stored bands come from a noisy run | mean median error rises 0 to 5 points, still below the tier median |
@@ -381,7 +381,7 @@ Under noise no gap exceeds 6 points, so on measured error neither is decisive. T
 3. `loo::validate` over the research datasets (loaded through the def engine from an install, not from the repository) reproduces approach A's and B's simple and quiz numbers within 2 points when configured as those prototypes, which validates the port, then the hybrid is run: on each set's shared stats its mean median error must be at most 2 points above the better of the two prototypes, in ideal and in noisy mode. If it is not, the shipped default for that kind falls back to the better prototype's predictor set.
 4. Determinism: byte-identical calibration cache at 1 and 8 threads.
 5. The role assigner agrees with the research role table on at least 90 percent of items.
-6. With CE absent, a repository scan finds no CE value table, and the disabled CE patch toggle reports its reason (test: `design.ce-absent`).
+6. With CE absent, the designer uses no CE value, and the disabled CE patch toggle reports its reason (test: `design.ce-absent`).
 7. Held-out check when available: run the hybrid on the owner's own CE patches as a second pool; report the gap to the in-sample figures in the calibration README and tighten the stored bands if coverage at P80 drops below 0.70.
 
 ## 13. Owner decisions, conflicts and open points

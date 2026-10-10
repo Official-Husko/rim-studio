@@ -8,7 +8,7 @@ Status: draft, section 8 updated to the environment variables in use | Last upda
 
 1. **Test where the logic lives.** Business rules sit in pure crates (L0 and L2 engines), so most tests run without a filesystem, a webview or the network. A test that needs Tauri is a bug in the layering (I-01).
 2. **Ports make tests parallel.** No global mutable state in library crates (I-16) and every OS effect behind a port in `rimstudio-core::ports` (D-009) means every test builds its own `AppContext` from fakes and runs under `cargo nextest` in parallel with no shared lock.
-3. **Fixtures are generated, never copied.** Trees are built from code at test time (builders in `rimstudio-testing`) so that no RimWorld, Combat Extended (CE) or community dataset content enters the repository (R11, I-06, I-07). The only committed data is small, synthetic and language neutral.
+3. **Engine fixtures are generated.** Trees are built from code at test time (builders in `rimstudio-testing`) so that engine tests do not depend on game content and no community dataset enters the repository (I-06). Data recorded from a real install (UI fixtures, goldens of the designer, research data) is allowed in the declared sets and attributed in `NOTICE.md` (R11, I-07, ADR 0059).
 4. **Golden outputs are JSON.** R10 lists golden outputs among the things that are never XML, and I-12 says output is byte identical across thread counts, so a golden test compares JSON bytes.
 5. **Real data is opt-in.** Tests that read a real install, a real workshop folder or a real CE are `#[ignore]` and are enabled by environment variables. CI never needs them, the maintainer runs them locally, and the nightly job can run them on a prepared self-hosted machine if one exists (owner decision, section 12).
 6. **A failing test explains itself.** Vectors carry a `doc` sentence that the failure message prints; golden diffs print through `similar`; diagnostics are compared by stable code, not by message text.
@@ -246,18 +246,18 @@ Defined in `.github/workflows/ci.yml` (matrix windows-latest, macos-latest, ubun
 | `e2e` | Playwright with `mockIPC` plus gallery screenshots | Yes |
 | `perf` | `xtask bench-budgets` ratio gate | Warn, then blocking after calibration |
 | `audit` | `cargo deny check advisories` (covers cargo audit), `pnpm audit` | Advisories block; scheduled daily too |
-| `licence-hygiene` | `xtask check-licences`: no dataset file extensions under `crates/` or `apps/`, no value tables or real names from CE or vanilla in the tree, no files of reference projects outside `reference/`, no forbidden dash characters and no emoji in `docs/`, no use of the old folder name as a product name | Yes |
+| `licence-hygiene` | `xtask check-licences`: the notice names every source with its link and required text, every set of included RimWorld or CE data is declared and still matches files, data files that name game or CE definitions lie inside a set, no file of a reference project and no unlisted binary asset is tracked; `xtask check-docs` covers dashes, emoji and the old folder name | Yes |
 | `nightly` | WebdriverIO smoke on three OS, startup-time bench, proptest at 1,024 cases, optional corpus run on a self-hosted runner | No, files an issue on failure |
 
 Owner decision: whether to run a self-hosted runner holding a RimWorld install and workshop folder for the nightly corpus job.
 
 ## 13. Test data and licence policy
 
-1. No RimWorld file, vanilla value table, CE file or value, community dataset or real mod content is committed (R11, I-06, I-07). Fixtures are generated from code or are hand-written with invented names and numbers.
+1. No community dataset and no code, art or audio of RimWorld or Combat Extended is committed (R11, I-06). Data of RimWorld and Combat Extended may be committed when it is attributed: fixtures recorded from a real install, goldens and research data sit in the sets of `xtask/third-party.jsonc` and are named in `NOTICE.md` (ADR 0059, I-07). Engine vectors are hand-written with invented names and numbers wherever the test does not need real ones.
 2. Reference projects (RimSort, RimCrow, CombatExtended) are read-only concept references and live outside the build; no test reads them, and no fixture is derived from their files.
 3. Real-data tests read the user's files at run time, write nothing to them, and write results only to scratch. Their expected values are counts and hashes, never content.
 4. The XPath shape file holds expression shapes with literals collapsed; the research script that derived it is kept, the raw patches are not.
-5. `xtask check-licences` implements the scan listed in section 12 and its own tests: a deliberately bad fixture folder must make it fail (a test of the test).
+5. `xtask check-licences` implements the scan listed in section 12 and its own tests: a notice without a source, a set that matches nothing, an undeclared data file, a tracked reference file and an unlisted asset must each make it fail (a test of the test).
 6. Test names, fixtures and docs describe the games and other tools in our own words; fixtures use fictional package ids with the prefix `fixture.`.
 7. Contributions that add a fixture state its origin in the pull request template (hand-written, generated, or derived and from what).
 
@@ -271,7 +271,7 @@ Owner decision: whether to run a self-hosted runner holding a RimWorld install a
 | I-04 | rules-in-rust | oxlint restriction on rule-shaped modules; sorting and validation suites run through `rimstudio-cli` with no webview |
 | I-05 | game-folder-fence | `RecordingFs` write-set tests over deploy, launch and ModsConfig scenarios; `GameWriteFence` refusal tests for every path outside the two allow lists; mod folders in fixtures hash-compared before and after |
 | I-06 | runtime-datasets | `xtask check-licences` extension scan; `FakeTransport` pipeline tests; test that a fresh checkout has no dataset under `crates/` or `apps/` |
-| I-07 | no-reference-data | `xtask check-licences` value-table scan; designer scenarios with CE absent; vectors reviewed for fictional numbers |
+| I-07 | attributed-reference-data | `xtask check-licences` notice, set and asset checks; designer scenarios with CE absent |
 | I-08 | no-feature-edges | `xtask check-layers` matrix; a fixture manifest with a feature edge must fail the check |
 | I-09 | one-registry | Registry parity test (CLI route or `ui-only` marker); capability file equals registry; shell compile; bindings drift |
 | I-10 | diagnostics-not-errors | Vanilla load zero-diagnostic test; damaged-fixture table (every damage yields diagnostics and a result); clippy `unwrap_used` and `expect_used` in libraries |

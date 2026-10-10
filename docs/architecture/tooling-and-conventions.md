@@ -109,7 +109,7 @@ The alias `cargo xtask` is defined in `.cargo/config.toml`; xtask needs only car
 | `check-layers` | Layer matrix over `cargo metadata` with guppy, tags, same-layer exceptions, feature-edge ban, path from `rimstudio-cli` to `tauri` | Data in `xtask/layers.jsonc` |
 | `check-cfg` | Greps `target_os`, `cfg(windows)`, `cfg(unix)` outside the allow list (I-11) | |
 | `check-deps` | Dev-only crates (`steamlocate`, `keyvalues-parser`), XML crates only in `rimstudio-xml`, no normal dependency on `rimstudio-testing`, banned telemetry crates | Complements `cargo deny` |
-| `check-licences` | Dataset extensions, value tables, reference project paths, old folder name used as product name | I-06, I-07, R11, R12 |
+| `check-licences` | Notice with the name, holder, link and required text of each source; declared sets of included RimWorld and CE data that still match files; data files that name game or CE definitions inside a set; no reference project path; no unlisted binary asset | I-06, I-07, R11 |
 | `check-docs` | Crate `//!` docs; first column of the crate catalog equals workspace members; every invariant is referenced by an enforcement entry; internal markdown links resolve; one H1 and the status line per document; no em dash, en dash or emoji in `docs/` | |
 | `check-tools` | Rust `ToolDescriptor` ids equal `apps/desktop/src/app/tools.ts` | D-066 |
 | `check-size` | Shell and file size limits; golden size cap | |

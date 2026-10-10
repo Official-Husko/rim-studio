@@ -50,7 +50,7 @@ Evidence base: [modding toolkit scope](../research/modding-toolkit-scope.md) sec
 Principles:
 
 1. Exact where the game is exact, honest where it is not. Cycle time, DPS, armor mitigation, price, coverage and meets-armor are formulas and are shown as results. Suggested values are labelled estimates with bands and a named source (anchor, class median, answer, typed).
-2. Every number about the game comes from the user's install at runtime (R11, I-07). The repository has no vanilla or CE value tables; test vectors are fictional.
+2. Every number about the game comes from the user's install at runtime (I-07). The designer crates embed no vanilla or CE value table; the engine test vectors are fictional, and recorded data in the repository is attributed (R11, ADR 0059).
 3. A suggestion never overwrites a typed value, and editing a value changes the meter, not the other values.
 4. Content problems are diagnostics, never errors (I-10); only structural impossibilities block writing.
 5. The designer writes only into a mod project and only through a write plan the user has seen (diff first, I-05 for the game folder: never touched).
@@ -60,7 +60,7 @@ Requirements:
 
 | id | requirement | acceptance |
 | --- | --- | --- |
-| IT-001 | The designer reads all reference values from the workspace's resolved defs; no vanilla or CE value table exists in the repository | repository scan test finds no value table; the designer opens against a fixture install built from fictional numbers |
+| IT-001 | The designer reads all reference values from the workspace's resolved defs; no vanilla or CE value table is embedded in the designer crates | the source scan finds no vanilla or CE definition name outside the CE module; the designer opens against a fixture install built from fictional numbers |
 | IT-002 | Every estimated value shows its source, band and pool label; exact results show no band | UI test on a fixture: estimated field has source chip and band, exact field has none |
 | IT-003 | Typed values are never overwritten by suggestions | property test: any sequence of answers leaves typed fields unchanged |
 | IT-004 | Writing is only through a reviewed write plan inside the project root | integration test: apply refuses a path outside the project root (RootGuard) |
@@ -459,7 +459,7 @@ Requirements:
 
 ## 9. What is disabled without Combat Extended
 
-With no CE install, no CE data is available, and no CE number exists anywhere in the product (R11):
+With no CE install, no CE data is available to the designer, and no CE number is used anywhere in its output (I-07):
 
 1. The toggle "Add a Combat Extended patch (optional)" and the Convert flow are disabled with the reason "no Combat Extended found" and a link to the settings page for the CE folder.
 2. The CE tab, the CE reference pools, the caliber and ammo set pickers, the meets-armor table, the CE weapon tag picker and the CE value ranges are absent.
@@ -467,7 +467,7 @@ With no CE install, no CE data is available, and no CE number exists anywhere in
 4. The vanilla designer, quiz, matrix, charts and writing are unaffected, and a vanilla design remains usable later as the twin when CE appears.
 5. If CE disappears after a draft was made, the draft stays editable; its CE tab shows the stored CE inputs read-only with the reason.
 
-Requirements: IT-060 (all of the above, one test per item with CE removed from the fixture); IT-061 (a repository scan test finds no CE value table, and the designer opens with a fixture install that has no CE).
+Requirements: IT-060 (all of the above, one test per item with CE removed from the fixture); IT-061 (the source scan finds no CE class string or vanilla definition name outside the CE module, and the designer opens with a fixture install that has no CE).
 
 ## 10. Architecture mapping
 
@@ -540,7 +540,7 @@ Test layers follow [testing strategy](../architecture/testing-strategy.md): next
 | Integration | flows A to D on a fixture workspace with fictional numbers; write plan applies; dry apply passes; RootGuard and fence refusals; no CE class outside the gated folder |
 | Install-backed (`#[ignore]`, `RIMSTUDIO_GAME_DIR`) | revolver and assault rifle cycle and DPS, plate armor in steel (sharp 0.81, value 460), longsword and mace DPS, CE meets-armor examples, one real CE conversion reads back identical values |
 | Frontend | component tests for list, form, slider, stepper, meter, matrix, preview; Playwright over mockIPC for flows A to D including back and skip; gallery screenshots in both themes; keyboard parity |
-| Architecture | xtask layer check (design depends only on core and defs; toolkit modules do not import each other); repository scan for value tables; XML dependency ban |
+| Architecture | xtask layer check (design depends only on core and defs; toolkit modules do not import each other); source scan for vanilla and CE names outside the CE module (`check-source`); attribution check (`check-licences`); XML dependency ban |
 
 Acceptance of the module as a whole:
 

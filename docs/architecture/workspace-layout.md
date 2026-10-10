@@ -361,7 +361,7 @@ Everything runs locally as `cargo xtask check` plus `pnpm check`, and in CI on e
 | Third party bans | `cargo deny check bans` with wrappers (section 5); `bans.workspace-dependencies` | a second XML crate, SQLite, YAML, a duplicate or unused workspace dependency entry | [rust crate research](../research/rust-crate-research.md) section 11.3 |
 | Dev-only crates | `xtask check-deps` | a member that declares its own dependency version instead of `workspace = true`; `steamlocate` or `keyvalues-parser` outside `[dev-dependencies]` of `rimstudio-steam`; an XML crate in any manifest but `rimstudio-xml`; a normal dependency on `rimstudio-testing` | D-037 |
 | Platform quarantine | `xtask check-cfg` greps `target_os`, `cfg(windows)`, `cfg(unix)` outside the allow list | any hit | I-11 |
-| Licences and R11 | `cargo deny check licenses` (dependency licences only); `xtask check-licences` scans for dataset extensions and value tables | a dataset or CE/vanilla table in the tree, an incompatible licence | I-06, I-07 |
+| Licences and R11 | `cargo deny check licenses` (dependency licences only); `xtask check-licences` verifies the attribution of included RimWorld and CE data, reference trees and binary assets | an incompatible licence, a data set or file without attribution, a tracked reference file or asset | I-06, I-07 |
 | Advisories | `cargo deny check advisories` (and `cargo audit`) | open advisory | [packaging research](../research/cross-platform-packaging-research.md) implication 12 |
 | Unused dependencies | `cargo machete` (or `cargo shear`) | unused dependency | |
 | Workspace lints | `[workspace.lints]` inherited by every member; `xtask check-layers` also fails a member without `lints.workspace = true` | missing opt in | |

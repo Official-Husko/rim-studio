@@ -37,6 +37,14 @@ To debug the desktop app in VS Code, open the folder and press F5: the first lau
 
 Without the bridge, `pnpm dev:ui` starts only Vite. The app then shows recorded fixtures (the chip in the top bar reads "Mock data") and the component gallery works fully: `pnpm gallery` opens it.
 
+## Notices
+
+RimStudio is independent and is not made, endorsed or supported by Ludeon Studios Inc. or by the Combat Extended team.
+
+Portions of the materials used to create this content/mod are trademarks and/or copyrighted works of Ludeon Studios Inc. All rights reserved by Ludeon. This content/mod is not official and is not endorsed by Ludeon.
+
+Data of RimWorld ([rimworldgame.com](https://rimworldgame.com/)) and of Combat Extended ([official project](https://github.com/CombatExtended-Continued/CombatExtended), used under CC BY-NC-SA 4.0) is included with attribution; [NOTICE.md](NOTICE.md) lists the sources and the included sets.
+
 ## Commands
 
 | Command                             | What it does                                                |
@@ -57,6 +65,7 @@ Without the bridge, `pnpm dev:ui` starts only Vite. The app then shows recorded 
 | `pnpm roadmap:check`                | Fails when the roadmap picture is stale                     |
 | `pnpm format`                       | Prettier over the frontend sources                          |
 | `cargo test -p rimstudio-devserver` | The bridge tests (Rust side)                                |
+| `cargo run -p xtask -- check-all`   | Layer, source, docs and licence checks (`check-licences` alone: attribution of included data) |
 
 Rust commands set `CARGO_TARGET_DIR` first when your default target folder is small, for example `export CARGO_TARGET_DIR=$HOME/.cache/rimstudio-target`.
 

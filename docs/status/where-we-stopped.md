@@ -174,14 +174,14 @@ Minor findings, by theme (the image names are in the session notes):
 6. **CEP010 and CEP015** are never checked because no caller supplies the Combat Extended type and field tables; the Combat Extended settings of the user's config folder are not read (OD-19).
 7. **Not converted**: grenades, launchers, turrets and apparel.
 8. **Windows and macOS**: only compile checks; junction creation and `Platform::file_id` are open; the shell's WebView2 behaviour is untested.
-9. **Fixtures hold real numbers** from the owner's install (allowed by D-100); the shipped binaries still carry no value table. Re-record the fixtures against the bridge when the DTOs change (`packages/testkit/fixtures`).
+9. **Fixtures hold real numbers** from the owner's install (D-100). Included RimWorld and Combat Extended data is attributed in `NOTICE.md` and verified by `cargo xtask check-licences` (D-211, ADR 0059); the production build bundles the fixtures for its offline mode and shows the notice in the top bar. Re-record the fixtures against the bridge when the DTOs change (`packages/testkit/fixtures`).
 10. **Settings card path** on the desktop shell shows `<dataDir>/config/settings.jsonc` while the file is in the config root (`SettingsCard.tsx`, found in the shell run).
 11. **The webview remembers the last project** across runs through local storage; a fresh data folder still starts with the old project open and registers it.
 12. **Doc drift**: the docs index still says the backend is being implemented and its status line is from 2026-10-04; check it against the status page when the next round starts.
 
 ### 6.5 Owner decisions still open
 
-1. The licence text (D-088); nothing depends on it.
+1. The licence text (D-088); and how the ShareAlike and NonCommercial terms of the included Combat Extended data fit with it (OD-20).
 2. Review the rating thresholds and plausibility numbers (D-095, the 0.6 to 2.5 window).
 3. Whether the temporary UI is kept as the base of the real UI or replaced by the visual design tool's output (`docs/design/design-prompt.md`).
 4. Whether the owner's Gewehr 41 and Lone Wolf mod copies in `crates/rimstudio-toolkit/tests/data/layout_fix` (stripped copies: About.xml, patch and definition files, placeholders for textures and sounds) may stay in the repository.

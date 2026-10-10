@@ -1,6 +1,6 @@
 # ADR 0034: Licence hygiene and reference-project rules
 
-Status: accepted | Last updated: 2026-10-04 | Register: D-067, D-088
+Status: accepted, in part superseded by [ADR 0059](0059-attributed-game-and-combat-extended-data.md) | Last updated: 2026-10-10 | Register: D-067, D-088
 
 ## Context
 
@@ -11,6 +11,10 @@ RimSort is GPL-3.0, RimCrow is MIT, Combat Extended is CC BY-NC-SA 4.0 and the c
 RimSort, RimCrow and Combat Extended are read-only concept references described in our own words; their trees move to `reference/` and are never copied from. `cargo deny` enforces a licence policy for dependencies and `xtask check-licences` plus the invariants no-reference-data and runtime-datasets check that no CE, vanilla or dataset tables enter the repository. The repository licence is custom and comes later: manifests carry no `license` field (the workspace package table has none and sets `publish = false`), there is no `LICENSE` file and no licence header until the owner supplies one, and `xtask check-licences` concerns dependency licences only.
 
 Practical rules: describe reference behaviour in our own words in docs and comments; never paste code, tables or data files from a reference tree; write test vectors with fictional numbers; fetch datasets at run time; and when unsure, ask before adding.
+
+## Update of 2026-10-10
+
+[ADR 0059](0059-attributed-game-and-combat-extended-data.md) lets data of RimWorld and Combat Extended be included with attribution, so the sentence about CE, vanilla and dataset tables above and the rejected alternative "Bundling datasets with attribution" no longer hold for those two projects. Everything else here stands: RimSort and RimCrow stay read only references, community datasets are fetched at run time, and the repository licence is custom and comes later.
 
 ## Consequences
 
