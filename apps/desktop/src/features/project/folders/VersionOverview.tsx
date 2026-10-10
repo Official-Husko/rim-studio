@@ -6,11 +6,13 @@ import { applyFoldersOp } from './folderStore';
 export interface VersionOverviewProps {
   data: ProjectLoadFoldersDto;
   disabled: boolean;
+  /** Unsaved changes of LoadFolders.xml: adding a version folder rewrites the file, so it waits for them. */
+  pending?: number;
   onAddFolder: () => void;
 }
 
 /** For each supported game version: does its folder exist, and does LoadFolders.xml have a block for it. */
-export function VersionOverview({ data, disabled, onAddFolder }: VersionOverviewProps) {
+export function VersionOverview({ data, disabled, pending = 0, onAddFolder }: VersionOverviewProps) {
   const blocked = new Set(data.blocks.map((b) => b.key));
   const rows = data.supportedVersions;
   return (
@@ -18,13 +20,18 @@ export function VersionOverview({ data, disabled, onAddFolder }: VersionOverview
       title={t('project.folders.overview')}
       framed
       actions={
-        <Button size="sm" icon="plus" onClick={onAddFolder}>
+        <Button size="sm" icon="plus" disabled={pending > 0} onClick={onAddFolder}>
           {t('project.folders.addVersion')}
         </Button>
       }
     >
       <div class="flex flex-col gap-2 p-3">
         <p class="m-0 text-small text-muted">{t('project.folders.overview.help')}</p>
+        {pending > 0 ? (
+          <p class="m-0 text-small text-warning" role="status">
+            {t('project.folders.addVersion.pending')}
+          </p>
+        ) : null}
         {rows.length === 0 ? (
           <p class="m-0 text-small text-faint">{t('project.folders.overview.none')}</p>
         ) : (

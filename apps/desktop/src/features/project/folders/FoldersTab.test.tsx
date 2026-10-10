@@ -115,6 +115,26 @@ describe('FoldersTab without a LoadFolders.xml', () => {
 });
 
 describe('FoldersTab version folder', () => {
+  it('waits for pending changes before a version folder is added', async () => {
+    await open('load-folders-get-versioned');
+    const add = (): HTMLButtonElement =>
+      screen.getByRole('button', { name: 'Add a version folder' }) as HTMLButtonElement;
+    expect(add().disabled).toBe(false);
+    const field = screen.getByRole('textbox', { name: 'Add a folder to 1.5' });
+    fireEvent.input(field, { target: { value: 'Extra' } });
+    fireEvent.keyDown(field, { key: 'Enter' });
+    await waitFor(() => expect(screen.getByText('1 unsaved change')).toBeTruthy());
+    expect(add().disabled).toBe(true);
+    expect(screen.getByText(/Save or discard your changes to LoadFolders.xml first/)).toBeTruthy();
+  });
+
+  it('puts the cursor in the game version when the dialog opens', async () => {
+    await open('load-folders-get-versioned');
+    fireEvent.click(screen.getByRole('button', { name: 'Add a version folder' }));
+    const dialog = await screen.findByRole('dialog', { name: 'Add a version folder' });
+    expect(document.activeElement).toBe(within(dialog).getByRole('textbox', { name: 'Game version' }));
+  });
+
   it('previews and creates a version folder', async () => {
     const transport = await open('load-folders-get-versioned');
     fireEvent.click(screen.getByRole('button', { name: 'Add a version folder' }));

@@ -69,7 +69,7 @@ export function IdentityStep() {
             ? { error: findingsFor(diagnostics, 'name')[0]?.message ?? '' }
             : {})}
         >
-          <TextField value={form.name} onValueChange={(name) => changeForm({ name })} />
+          <TextField autofocus value={form.name} onValueChange={(name) => changeForm({ name })} />
         </FormField>
       </div>
       <FormField label={t('project.new.author')}>

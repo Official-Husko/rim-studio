@@ -102,7 +102,7 @@ export function VersionAddDialog({ open, projectId, onClose }: VersionAddDialogP
           label={t('project.folders.addVersion.version')}
           help={t('project.folders.addVersion.help')}
         >
-          <TextField value={version} onValueChange={setVersion} placeholder="1.6" />
+          <TextField autofocus value={version} onValueChange={setVersion} placeholder="1.6" />
         </FormField>
         <Checkbox checked={standard} onCheckedChange={setStandard}>
           {t('project.folders.addVersion.standard')}

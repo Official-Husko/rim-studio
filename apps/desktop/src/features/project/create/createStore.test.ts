@@ -1,9 +1,12 @@
 import { waitFor } from '@testing-library/preact';
+import { loadFixture } from 'rimstudio-testkit';
+import type { ProjectScaffoldPreviewDto } from 'rimstudio-ipc-types';
 import { beforeEach, describe, expect, it } from 'vitest';
 import { installTransport } from '../testSupport';
 import {
   changeForm,
   changeParent,
+  createChecking,
   createForm,
   createFolders,
   createGameVersion,
@@ -13,6 +16,7 @@ import {
   goStep,
   identityReady,
   openCreate,
+  scheduleCheck,
   toggleVersion,
 } from './createStore';
 
@@ -40,6 +44,32 @@ describe('createStore', () => {
     await waitFor(() => expect(createPreview.value?.valid).toBe(true));
     await waitFor(() => expect(identityReady.value).toBe(true));
     expect(transport.calls.filter((c) => c.name === 'project_scaffold_preview')).toHaveLength(1);
+  });
+
+  it('drops the answer of a check that was in flight when the form changed', async () => {
+    const answers: Array<(value: ProjectScaffoldPreviewDto) => void> = [];
+    installTransport({
+      project_scaffold_preview: () =>
+        new Promise<ProjectScaffoldPreviewDto>((resolve) => {
+          answers.push(resolve);
+        }),
+    });
+    openCreate('/mods');
+    changeForm({ name: 'Arms Pack', author: 'Me' });
+    scheduleCheck(true);
+    await waitFor(() => expect(answers).toHaveLength(1));
+    // the person types again while the first answer is on its way
+    changeForm({ name: 'Arms Pack Two' });
+    answers[0]?.(loadFixture<ProjectScaffoldPreviewDto>('scaffold-preview-versioned'));
+    // long enough for the answer to be handled, short enough that the new check has not started
+    await new Promise((resolve) => setTimeout(resolve, 20));
+    expect(createPreview.value).toBeUndefined();
+    expect(createChecking.value).toBe(true);
+    expect(identityReady.value).toBe(false);
+    await waitFor(() => expect(answers).toHaveLength(2));
+    answers[1]?.(loadFixture<ProjectScaffoldPreviewDto>('scaffold-preview-versioned'));
+    await waitFor(() => expect(createChecking.value).toBe(false));
+    expect(createPreview.value).toBeDefined();
   });
 
   it('needs a folder to put the mod in', async () => {

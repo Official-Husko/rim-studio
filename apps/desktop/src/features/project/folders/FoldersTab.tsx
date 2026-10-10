@@ -11,6 +11,7 @@ import {
   foldersCreate,
   foldersError,
   foldersModel,
+  foldersPending,
   foldersShown,
   foldersState,
   loadFolders,
@@ -66,7 +67,12 @@ export function FoldersTab({ projectId }: FoldersTabProps) {
             {data.notEditableReason ?? t('project.basics.locked.body')}
           </Banner>
         ) : null}
-        <VersionOverview data={data} disabled={locked} onAddFolder={() => setAdding(true)} />
+        <VersionOverview
+          data={data}
+          disabled={locked}
+          pending={foldersPending.value}
+          onAddFolder={() => setAdding(true)}
+        />
         <FieldFindings items={fileLevel} />
         {showEditor ? (
           <>

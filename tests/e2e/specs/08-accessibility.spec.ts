@@ -30,7 +30,7 @@ test.describe('axe on pages with content', () => {
     await page.getByRole('tab', { name: 'Files' }).click();
     await expect(page.getByRole('tree')).toBeVisible();
     expect(describe(await axeViolations(page)), 'axe tree').toBe('');
-    await page.getByRole('tab', { name: /^Layout( [0-9]+)?$/ }).click();
+    await page.getByRole('tab', { name: /^Layout( [0-9]+( findings to review)?)?$/ }).click();
     expect(describe(await axeViolations(page)), 'axe layout').toBe('');
     await page.getByRole('button', { name: 'Layout guide' }).click();
     expect(describe(await axeViolations(page)), 'axe guide').toBe('');

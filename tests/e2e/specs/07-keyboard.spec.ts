@@ -67,7 +67,7 @@ test.describe('keyboard navigation of the main flows', () => {
     // the tabs of the workbench move with the arrow keys
     await page.getByRole('tab', { name: 'Files' }).focus();
     await page.keyboard.press('ArrowRight');
-    await expect(page.getByRole('tab', { name: /^Layout( [0-9]+)?$/ })).toBeFocused();
+    await expect(page.getByRole('tab', { name: /^Layout( [0-9]+( findings to review)?)?$/ })).toBeFocused();
   });
 
   test('weapons: clone a reference weapon without the mouse', async ({ page, env }) => {

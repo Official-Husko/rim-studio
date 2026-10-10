@@ -70,6 +70,8 @@ async function check(): Promise<void> {
 /** Ask the backend now (tests) or after the delay (typing). */
 export function scheduleCheck(immediate = false): void {
   if (timer !== undefined) clearTimeout(timer);
+  // an answer that is still on its way belongs to the values before this edit
+  token += 1;
   createChecking.value = true;
   if (immediate) void check();
   else timer = setTimeout(() => void check(), CHECK_DELAY_MS);

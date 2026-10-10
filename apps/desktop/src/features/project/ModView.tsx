@@ -42,18 +42,24 @@ export function ModView({ view, refreshing, onRefresh, onOpen, onNew, onClose }:
     {
       id: 'basics',
       label: t('project.tab.basics'),
-      ...(unsaved > 0 ? { badge: String(unsaved) } : {}),
+      ...(unsaved > 0
+        ? { badge: String(unsaved), badgeLabel: t('project.tab.badge.unsaved') }
+        : {}),
     },
     {
       id: 'folders',
       label: t('project.tab.folders'),
-      ...(folderEdits > 0 ? { badge: String(folderEdits) } : {}),
+      ...(folderEdits > 0
+        ? { badge: String(folderEdits), badgeLabel: t('project.tab.badge.unsaved') }
+        : {}),
     },
     { id: 'files', label: t('project.tab.file') },
     {
       id: 'layout',
       label: t('project.tab.layout'),
-      ...(view.check.issues.length > 0 ? { badge: String(view.check.issues.length) } : {}),
+      ...(view.check.issues.length > 0
+        ? { badge: String(view.check.issues.length), badgeLabel: t('project.tab.badge.issues') }
+        : {}),
     },
     { id: 'game', label: t('project.tab.game') },
   ];

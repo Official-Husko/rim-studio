@@ -22,7 +22,7 @@ test.describe('project: the layout fixes on copies of the owner mods', () => {
     await gotoRoute(page, env, '/project');
     await page.getByRole('tab', { name: 'Files' }).click();
     await expect(page.getByRole('tree')).toBeVisible();
-    await page.getByRole('tab', { name: /^Layout( [0-9]+)?$/ }).click();
+    await page.getByRole('tab', { name: /^Layout( [0-9]+( findings to review)?)?$/ }).click();
     const issues = page.getByRole('list', { name: 'Layout issues' });
     await expect(issues).toContainText('Patches/ce_patch.xml');
     await expect(issues).toContainText('Defs/SoundDefs');
@@ -75,7 +75,7 @@ test.describe('project: the layout fixes on copies of the owner mods', () => {
     await shot('layout-fix-tree');
 
     // History lists the journal and undoes it: every file and folder is back as it was
-    await page.getByRole('tab', { name: /^Layout( [0-9]+)?$/ }).click();
+    await page.getByRole('tab', { name: /^Layout( [0-9]+( findings to review)?)?$/ }).click();
     await page.getByRole('button', { name: 'History' }).click();
     const history = page.getByRole('dialog', { name: /Fix history/ });
     await expect(history.getByRole('list', { name: 'Applied fixes' })).toContainText('Can be undone');
@@ -95,7 +95,7 @@ test.describe('project: the layout fixes on copies of the owner mods', () => {
     await gotoRoute(page, env, '/project');
     await page.getByRole('tab', { name: 'Files' }).click();
     await expect(page.getByRole('tree')).toBeVisible();
-    await page.getByRole('tab', { name: /^Layout( [0-9]+)?$/ }).click();
+    await page.getByRole('tab', { name: /^Layout( [0-9]+( findings to review)?)?$/ }).click();
     await expect(page.getByRole('list', { name: 'Layout issues' })).toContainText('Patches/CE_Patch.xml');
     await shot('layout-fix-lonewolf-findings');
 
@@ -123,7 +123,7 @@ test.describe('project: the layout fixes on copies of the owner mods', () => {
     await page.setViewportSize({ width: 1024, height: 700 });
     await rememberProject(page, mod);
     await gotoRoute(page, env, '/project');
-    await page.getByRole('tab', { name: /^Layout( [0-9]+)?$/ }).click();
+    await page.getByRole('tab', { name: /^Layout( [0-9]+( findings to review)?)?$/ }).click();
     await shot('w1024-layout-findings');
     await page.getByRole('button', { name: 'Fix all safe' }).click();
     const dialog = page.getByRole('dialog', { name: 'Fix the layout' });

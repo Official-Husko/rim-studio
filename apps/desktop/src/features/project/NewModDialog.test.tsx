@@ -33,6 +33,13 @@ async function fillIdentity(): Promise<void> {
 }
 
 describe('NewModDialog identity step', () => {
+  it('puts the cursor in the mod name when the window opens', async () => {
+    installTransport(handlers);
+    renderWithProviders(<NewModDialog open onClose={() => undefined} />);
+    const dialog = await screen.findByRole('dialog', { name: 'New mod' });
+    expect(document.activeElement).toBe(within(dialog).getByRole('textbox', { name: /Mod name/ }));
+  });
+
   it('suggests the package id and the folder name from what is typed', async () => {
     installTransport(handlers);
     renderWithProviders(<NewModDialog open onClose={() => undefined} />);
