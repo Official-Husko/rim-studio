@@ -9,6 +9,15 @@ const ACTION = {
   'update-region': 'patches.action.update-region',
   unchanged: 'patches.action.unchanged',
   replace: 'patches.action.replace',
+  delete: 'patches.action.delete',
+} as const;
+
+const TONE = {
+  create: 'success',
+  'update-region': 'info',
+  unchanged: 'info',
+  replace: 'info',
+  delete: 'danger',
 } as const;
 
 const KIND = {
@@ -34,10 +43,10 @@ export function PlanFile({ file }: PlanFileProps) {
           {file.path}
         </code>
         <Badge tone="neutral">{t(KIND[file.kind])}</Badge>
-        <Badge tone={file.action === 'create' ? 'success' : 'info'}>{t(ACTION[file.action])}</Badge>
+        <Badge tone={TONE[file.action]}>{t(ACTION[file.action])}</Badge>
         <span class="font-mono text-mono-small text-muted">{formatBytes(file.bytes)}</span>
       </div>
-      {file.diff ? (
+      {file.diff && file.action !== 'delete' ? (
         <SegmentedControl
           label={t('patches.file.view', { path: file.path })}
           value={view}

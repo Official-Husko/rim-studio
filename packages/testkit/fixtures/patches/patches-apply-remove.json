@@ -1,0 +1,15 @@
+{
+  "planId": "8d3f61b0a47c52e9b1f0c7a6d4e2f193",
+  "written": [
+    {
+      "path": "Compat/CombatExtended/Patches/gewehr41_Weapons_Ranged.xml",
+      "action": "update-region",
+      "bytes": 471,
+      "backupPath": "/home/user/.local/share/rimstudio/project-backups/p-7c0418da/Compat__CombatExtended__Patches/gewehr41_Weapons_Ranged.xml/gewehr41_Weapons_Ranged.xml.20261010T213502114Z.bak",
+      "verified": true,
+      "kind": "ce-patch"
+    }
+  ],
+  "unchanged": [],
+  "diagnostics": []
+}

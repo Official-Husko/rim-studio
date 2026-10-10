@@ -24,6 +24,14 @@
         "cooldown": 0.8,
         "warmup": 0.9,
         "mass": 4.6
+      },
+      "existing": {
+        "origin": "rimstudio",
+        "file": "Compat/CombatExtended/Patches/gewehr41_Weapons_Ranged.xml",
+        "files": [
+          "Compat/CombatExtended/Patches/gewehr41_Weapons_Ranged.xml"
+        ],
+        "removable": true
       }
     },
     {
@@ -50,6 +58,11 @@
         "cooldown": 0.8,
         "warmup": 0.9,
         "mass": 4.6
+      },
+      "existing": {
+        "origin": "project",
+        "file": "Patches/ce_patch.xml",
+        "removable": false
       }
     },
     {
@@ -76,6 +89,11 @@
         "cooldown": 0.8,
         "warmup": 0.9,
         "mass": 4.7
+      },
+      "existing": {
+        "origin": "project",
+        "file": "Patches/ce_patch.xml",
+        "removable": false
       }
     },
     {
@@ -103,6 +121,11 @@
         "cooldown": 0.8,
         "warmup": 0.9,
         "mass": 4.8
+      },
+      "existing": {
+        "origin": "project",
+        "file": "Patches/ce_patch.xml",
+        "removable": false
       }
     },
     {
@@ -130,6 +153,11 @@
         "cooldown": 0.8,
         "warmup": 0.9,
         "mass": 4.7
+      },
+      "existing": {
+        "origin": "project",
+        "file": "Patches/ce_patch.xml",
+        "removable": false
       }
     }
   ],

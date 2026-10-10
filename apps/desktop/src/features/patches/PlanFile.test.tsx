@@ -77,4 +77,21 @@ describe('PlanFile', () => {
     );
     expect(screen.getByText('Copied from /audio/bang.wav')).toBeTruthy();
   });
+  it('says a deleted file is deleted and shows only what goes', () => {
+    render(
+      <PlanFile
+        file={{
+          ...created,
+          action: 'delete',
+          rendered: '',
+          bytes: 0,
+          diff: '--- a/x.xml\n+++ b/x.xml\n@@ -1,2 +0,0 @@\n-<Patch>\n-</Patch>\n',
+        }}
+      />,
+    );
+    expect(screen.getByText('File deleted')).toBeTruthy();
+    // there is no whole file after a deletion, so there is nothing to switch to
+    expect(screen.queryByRole('radiogroup')).toBeNull();
+    expect(screen.getByRole('region', { name: /Changes to Compat/ })).toBeTruthy();
+  });
 });

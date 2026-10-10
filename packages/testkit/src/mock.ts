@@ -9,3 +9,4 @@ export type {
   MockTransportOptions,
 } from './mockTransport';
 export { fixtureNames, hasFixture, loadFixture } from './fixtures';
+export { variantAnswer } from './variants';

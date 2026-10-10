@@ -7,5 +7,6 @@ export type {
   MockTransportOptions,
 } from './mockTransport';
 export { fixtureNames, hasFixture, loadFixture } from './fixtures';
+export { variantAnswer } from './variants';
 export { press, renderWithProviders } from './render';
 export type { RenderOptions } from './render';

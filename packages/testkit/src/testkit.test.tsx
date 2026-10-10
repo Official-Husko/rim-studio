@@ -5,6 +5,7 @@ import {
   loadFixture,
   mockError,
   renderWithProviders,
+  variantAnswer,
 } from './index';
 
 describe('fixtures', () => {
@@ -61,6 +62,62 @@ describe('mock transport', () => {
     t.emit({ type: 'job-finished', jobId: 'j', command: 'c', ok: true });
     expect(seen).toEqual(['job-finished']);
     expect(mockError('x.y', 'm').errorId).toMatch(/^e-/);
+  });
+});
+
+describe('request variants', () => {
+  const removal = (defName: string) => ({
+    projectId: 'p',
+    draft: {},
+    convert: { defName, answers: {}, remove: true },
+  });
+
+  it('answers the removal of a generated patch with a plan that cuts the weapon out of its file', async () => {
+    const t = createMockTransport();
+    const plan = (await t.call('designer_export_plan', removal('OH_G41m'))) as {
+      files: Array<{ action: string; diff: string }>;
+      hasErrors: boolean;
+    };
+    expect(plan.hasErrors).toBe(false);
+    expect(plan.files).toHaveLength(1);
+    expect(plan.files[0]?.action).toBe('update-region');
+    expect(plan.files[0]?.diff).toContain('-  <!-- ====== OH_G41m ======');
+  });
+
+  it('answers the removal of a weapon with no generated patch with the error of the backend', async () => {
+    const t = createMockTransport();
+    const plan = (await t.call('designer_export_plan', removal('OH_G41w'))) as {
+      files: unknown[];
+      diagnostics: Array<{ code: string }>;
+      hasErrors: boolean;
+    };
+    expect(plan.hasErrors).toBe(true);
+    expect(plan.files).toEqual([]);
+    expect(plan.diagnostics[0]?.code).toBe('designer.remove-nothing');
+  });
+
+  it('answers the apply of a removal with the report of the written file and its backup', async () => {
+    const t = createMockTransport();
+    const report = (await t.call('designer_apply_plan', {
+      planId: 'x',
+      request: removal('OH_G41m'),
+      backup: true,
+      dryApply: false,
+    })) as { written: Array<{ action: string; backupPath?: string }> };
+    expect(report.written[0]?.action).toBe('update-region');
+    expect(report.written[0]?.backupPath).toContain('project-backups');
+  });
+
+  it('leaves every other request to the handlers and the fixtures', async () => {
+    expect(variantAnswer('designer_export_plan', { convert: { defName: 'A', answers: {} } })).toBe(
+      undefined,
+    );
+    expect(variantAnswer('designer_apply_plan', { planId: 'x', request: {} })).toBe(undefined);
+    expect(variantAnswer('designer_convert_scan', removal('OH_G41m'))).toBe(undefined);
+    const t = createMockTransport({
+      handlers: { designer_export_plan: () => 'handler wins' },
+    });
+    expect(await t.call('designer_export_plan', removal('OH_G41m'))).toBe('handler wins');
   });
 });
 

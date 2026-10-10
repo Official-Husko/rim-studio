@@ -67,6 +67,46 @@ export function applyConversion(
 }
 
 /**
+ * The request that takes the generated patch of one weapon out of the project. The backend reads no answer
+ * for a removal, so the answers are the empty ones (the two flags are required by the type).
+ */
+function removalRequest(defName: string): ConvertRequestDto {
+  return {
+    defName,
+    answers: { overrides: { oneHanded: false, beltFed: false } },
+    remove: true,
+  };
+}
+
+/**
+ * The write plan that removes the generated patch of one weapon: the files that lose its sections, and
+ * the files that go because nothing else is in them. Reads the project and writes nothing.
+ */
+export function planRemoval(
+  projectId: string,
+  kind: ItemKindDto,
+  defName: string,
+): Promise<WritePlanDto> {
+  return planConversion(projectId, kind, removalRequest(defName));
+}
+
+/**
+ * Apply a reviewed removal. A job. The backend keeps a backup of every file it changes whatever the flag
+ * says and a removal has no dry apply, so the options are fixed.
+ */
+export function applyRemoval(
+  planId: string,
+  projectId: string,
+  kind: ItemKindDto,
+  defName: string,
+): Promise<ApplyReportDto> {
+  return applyConversion(planId, projectId, kind, removalRequest(defName), {
+    backup: true,
+    dryApply: false,
+  });
+}
+
+/**
  * The ranked caliber and weapon class choices for a weapon, from its kind and the weapon tags of the scan.
  * The request holds no damage, so the ranking is approximate.
  */

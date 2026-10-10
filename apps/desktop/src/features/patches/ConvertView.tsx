@@ -128,7 +128,9 @@ export function ConvertView({ project }: ConvertViewProps) {
         second={
           current ? (
             <DetailPane
-              key={current.defName}
+              // the first tab depends on the status: a weapon that changed status (its patch was removed
+              // or generated) is shown from the start, not on the tab of the status it had
+              key={`${current.defName}:${current.status}`}
               project={project}
               candidate={current}
               familySize={families.get(familyOf(current)) ?? 1}

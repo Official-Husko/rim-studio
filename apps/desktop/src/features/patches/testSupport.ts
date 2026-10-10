@@ -1,11 +1,17 @@
 import type { ProjectSummaryDto, WritePlanDto } from 'rimstudio-ipc-types';
-import { createMockTransport, loadFixture, type MockHandler } from 'rimstudio-testkit';
+import {
+  createMockTransport,
+  loadFixture,
+  variantAnswer,
+  type MockHandler,
+} from 'rimstudio-testkit';
 import { clearQueries, connection, setTransport } from '~/shared/ipc';
 import { resetProjectStore, setCurrentProject } from '~/shared/project';
 import { resetAnswers } from './answerStore';
 import { resetLint } from './lintStore';
 import { resetOptions } from './optionsStore';
 import { resetPlans } from './planStore';
+import { resetRemoval } from './removeStore';
 import { resetScan, includeConverted } from './scanStore';
 import { resetChoices } from './suggestStore';
 import { resetApply } from './applyStore';
@@ -16,13 +22,17 @@ export function patchesHandlers(): Record<string, MockHandler> {
     project_open: () => loadFixture('patches-project-plain'),
     designer_convert_scan: () => loadFixture('designer_convert_scan'),
     designer_export_plan: (request) => {
+      // the removal of a generated patch has its own recorded answers
+      const removal = variantAnswer('designer_export_plan', request);
+      if (removal) return removal.value;
       const convert = (request as { convert?: { answers?: { ammoSet?: string } } }).convert;
       return convert?.answers?.ammoSet
         ? loadFixture<WritePlanDto>('patches-plan-ready')
         : loadFixture<WritePlanDto>('patches-plan-open');
     },
     designer_ce_suggest: () => loadFixture('patches-suggest-ranged'),
-    designer_apply_plan: () => loadFixture('patches-apply-report'),
+    designer_apply_plan: (request) =>
+      variantAnswer('designer_apply_plan', request)?.value ?? loadFixture('patches-apply-report'),
     project_read_file: () => ({
       path: 'Defs/ThingDefs_Misc/Weapons/RangedIndustrial.xml',
       role: 'defs-weapons',
@@ -66,5 +76,6 @@ export function resetPage(): void {
   resetOptions();
   resetLint();
   resetApply();
+  resetRemoval();
   includeConverted.value = true;
 }

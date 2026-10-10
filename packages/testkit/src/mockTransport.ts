@@ -1,4 +1,5 @@
 import { loadFixture, hasFixture } from './fixtures';
+import { variantAnswer } from './variants';
 
 /** The ApiError envelope body of the bridge API (code, message, errorId, details). */
 export interface MockApiError {
@@ -56,7 +57,10 @@ export function mockError(
 
 const wait = (ms: number): Promise<void> => new Promise((resolve) => setTimeout(resolve, ms));
 
-/** A transport that serves handlers, then explicit responses, then fixtures by command name. */
+/**
+ * A transport that serves handlers, then explicit responses, then the fixture the request selects (a flag
+ * of the request can pick another one, see variants.ts), then fixtures by command name.
+ */
 export function createMockTransport(options: MockTransportOptions = {}): MockTransport {
   const subscribers = new Set<(event: MockBridgeEvent) => void>();
   const calls: Array<{ name: string; request: unknown }> = [];
@@ -71,6 +75,8 @@ export function createMockTransport(options: MockTransportOptions = {}): MockTra
       const handler = options.handlers?.[name];
       if (handler) return handler(request);
       if (options.responses && name in options.responses) return options.responses[name];
+      const variant = variantAnswer(name, request);
+      if (variant) return variant.value;
       if (hasFixture(name)) return loadFixture(name);
       throw mockError('ipc.unknown-command', `The mock transport has no response for ${name}.`);
     },

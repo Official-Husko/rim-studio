@@ -10,6 +10,8 @@ import { LintView } from './LintView';
 import { resetLint } from './lintStore';
 import { NoProject } from './NoProject';
 import { resetPlans } from './planStore';
+import { RemovePatchDialog } from './RemovePatchDialog';
+import { resetRemoval } from './removeStore';
 import { resetScan, runScan, scan } from './scanStore';
 import { resetChoices } from './suggestStore';
 import { PROJECT_MISSING } from './session';
@@ -36,6 +38,7 @@ export default function PatchesPage() {
     resetPlans();
     resetChoices();
     resetLint();
+    resetRemoval();
     if (project) void runScan(project);
     // oxlint-disable-next-line react-hooks/exhaustive-deps
   }, [project?.path]);
@@ -91,6 +94,7 @@ export default function PatchesPage() {
         </div>
       ) : null}
       {project ? <ApplyDialog project={project} /> : null}
+      {project ? <RemovePatchDialog project={project} /> : null}
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, it } from 'vitest';
 import { loadFixture } from 'rimstudio-testkit';
-import type { ProjectSummaryDto } from 'rimstudio-ipc-types';
+import type { ConvertScanDto, ProjectSummaryDto } from 'rimstudio-ipc-types';
 import {
   candidates,
   checked,
@@ -41,5 +41,30 @@ describe('scanStore', () => {
     expect(during.phase === 'loading' && during.data?.candidates.length).toBe(5);
     await again;
     expect(scan.value.phase).toBe('ready');
+  });
+  it('keeps the weapon in focus when a later scan lists it with another status', async () => {
+    // the scan after a removal lists the weapon as not converted: the person stays on the same weapon
+    let removed = false;
+    installTransport({
+      designer_convert_scan: () => {
+        const converted = loadFixture<ConvertScanDto>('patches-scan-converted');
+        const plain = loadFixture<ConvertScanDto>('designer_convert_scan');
+        const fresh = plain.candidates.find((c) => c.defName === 'OH_G41w');
+        if (!removed || !fresh) return converted;
+        return {
+          ...converted,
+          candidates: converted.candidates.map((c) => (c.defName === 'OH_G41w' ? fresh : c)),
+        };
+      },
+    });
+    const p = openFixtureProject('patches-project-converted');
+    const ref = { projectId: p.projectId, path: p.path, name: p.name };
+    await runScan(ref);
+    focused.value = 'OH_G41w';
+    expect(candidates().find((c) => c.defName === 'OH_G41w')?.status).toBe('already-ce');
+    removed = true;
+    await runScan(ref);
+    expect(focused.value).toBe('OH_G41w');
+    expect(candidates().find((c) => c.defName === 'OH_G41w')?.status).toBe('not-converted');
   });
 });

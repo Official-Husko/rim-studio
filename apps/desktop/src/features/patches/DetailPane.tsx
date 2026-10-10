@@ -7,9 +7,11 @@ import type { ProjectRef } from '~/shared/project';
 import { familyAnswers, ownAnswers } from './answerStore';
 import { devLink } from './devLinks';
 import { DefinitionView } from './DefinitionView';
+import { ExistingPatch } from './ExistingPatch';
 import { familyOf, isConvertible, projectileOf } from './model';
 import { PlanView } from './PlanView';
 import { loadPlan, plans } from './planStore';
+import { openRemoval, removalTarget } from './removeStore';
 import { OptionsForm } from './OptionsForm';
 import { QuestionsForm } from './QuestionsForm';
 import { chipsOf } from './candidateView';
@@ -52,9 +54,10 @@ export function DetailPane({ project, candidate, familySize }: DetailPaneProps) 
     if (!planned) return;
     const timer = setTimeout(() => void loadPlan(project, candidate), PLAN_DELAY_MS);
     return () => clearTimeout(timer);
-    // the plan is asked for again when the weapon, the project or the answers change
+    // the plan is asked for again when the weapon, the project or the answers change, and when the scan
+    // was repeated (a run changed the files and dropped the plans, so the weapon is a new object)
     // oxlint-disable-next-line react-hooks/exhaustive-deps
-  }, [candidate.defName, project.path, answersKey, planned]);
+  }, [candidate, project.path, answersKey, planned]);
 
   const projectile = projectileOf(candidate);
   const missing = convertible ? missingOf(candidate, entry?.plan?.diagnostics) : [];
@@ -121,6 +124,13 @@ export function DetailPane({ project, candidate, familySize }: DetailPaneProps) 
           ]}
         />
       </header>
+      {candidate.status === 'already-ce' && candidate.existing ? (
+        <ExistingPatch
+          existing={candidate.existing}
+          onRemove={() => void openRemoval(project, removalTarget(candidate, 'remove'))}
+          onReplace={() => void openRemoval(project, removalTarget(candidate, 'replace'))}
+        />
+      ) : null}
       {!planned ? (
         <Banner tone="warning">
           {candidate.status === 'unsupported-kind'
