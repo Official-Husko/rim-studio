@@ -90,7 +90,7 @@ describe('PatchesPage scan', () => {
       await screen.findByText('a weapon with a beam verb and no projectile is not supported'),
     ).toBeTruthy();
     expect(
-      screen.getByText('This weapon cannot be converted. The reason is given above.'),
+      screen.getByText(/the generator does not convert this kind of weapon|cannot be targeted/),
     ).toBeTruthy();
   });
 

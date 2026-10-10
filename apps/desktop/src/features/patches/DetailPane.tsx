@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'preact/hooks';
 import type { ConvertCandidateDto } from 'rimstudio-ipc-types';
 import { Banner, KeyValueList, Tabs } from 'rimstudio-ui';
-import { t } from '~/shared/i18n';
+import { MissingList } from '~/shared/ce';
+import { t, tn } from '~/shared/i18n';
 import type { ProjectRef } from '~/shared/project';
 import { familyAnswers, ownAnswers } from './answerStore';
 import { devLink } from './devLinks';
@@ -14,6 +15,7 @@ import { QuestionsForm } from './QuestionsForm';
 import { chipsOf } from './candidateView';
 import { StatusChip } from './StatusChip';
 import { TagChips } from './TagChips';
+import { focusAsk, missingOf } from './missing';
 import { loadChoices } from './suggestStore';
 
 export interface DetailPaneProps {
@@ -55,6 +57,7 @@ export function DetailPane({ project, candidate, familySize }: DetailPaneProps) 
   }, [candidate.defName, project.path, answersKey, planned]);
 
   const projectile = projectileOf(candidate);
+  const missing = convertible ? missingOf(candidate, entry?.plan?.diagnostics) : [];
   const open = entry?.plan
     ? entry.plan.diagnostics.filter((d) => d.code === 'designer.convert-needs-answer').length
     : undefined;
@@ -118,7 +121,25 @@ export function DetailPane({ project, candidate, familySize }: DetailPaneProps) 
           ]}
         />
       </header>
-      {!planned ? <Banner tone="warning">{t('patches.detail.not-convertible')}</Banner> : null}
+      {!planned ? (
+        <Banner tone="warning">
+          {candidate.status === 'unsupported-kind'
+            ? t('patches.detail.not-convertible.unsupported')
+            : t('patches.detail.not-convertible.target')}
+        </Banner>
+      ) : null}
+      {tab !== 'questions' && missing.length > 0 ? (
+        <MissingList
+          title={tn('patches.missing.title', missing.length)}
+          items={missing}
+          goLabel={t('patches.missing.go')}
+          onGoTo={(field) => {
+            setTab('questions');
+            focusAsk(field);
+          }}
+          footer={t('patches.missing.footer')}
+        />
+      ) : null}
       <Tabs tabs={tabs} value={tab} onValueChange={setTab} label={t('patches.detail.tabs')}>
         {(id) => (
           <div class="pt-3">

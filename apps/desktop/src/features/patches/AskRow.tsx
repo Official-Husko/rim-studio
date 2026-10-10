@@ -30,58 +30,60 @@ export function AskRow({ ask, value, from, options, rankNote, onChange }: AskRow
   const shared =
     from === 'family' ? <Chip kind="derived">{t('patches.ask.from-family')}</Chip> : null;
   return (
-    <FormField label={ask.label} {...(rankNote ? { help: rankNote } : {})}>
-      <div class="flex flex-col gap-2">
-        {ask.kind === 'choice' ? (
-          <Combobox
-            id={id}
-            aria-label={ask.label}
-            options={options}
-            value={typeof value === 'string' ? value : undefined}
-            onValueChange={onChange}
-            placeholder={t('patches.ask.choose')}
-            emptyText={t('patches.ask.no-match')}
-          />
-        ) : null}
-        {ask.kind === 'flag' ? (
-          <div class="self-start">
-            <SegmentedControl
-              label={ask.label}
-              value={typeof value === 'boolean' ? (value ? 'yes' : 'no') : ''}
-              onValueChange={(v) => onChange(v === 'yes')}
-              options={[
-                { value: 'yes', label: t('patches.ask.yes') },
-                { value: 'no', label: t('patches.ask.no') },
-              ]}
+    <div data-ask={ask.field}>
+      <FormField label={ask.label} {...(rankNote ? { help: rankNote } : {})}>
+        <div class="flex flex-col gap-2">
+          {ask.kind === 'choice' ? (
+            <Combobox
+              id={id}
+              aria-label={ask.label}
+              options={options}
+              value={typeof value === 'string' ? value : undefined}
+              onValueChange={onChange}
+              placeholder={t('patches.ask.choose')}
+              emptyText={t('patches.ask.no-match')}
             />
-          </div>
-        ) : null}
-        {ask.kind === 'number' ? (
-          <div class="flex flex-wrap items-center gap-2">
-            <div class="w-40">
-              <NumberField
-                id={id}
-                aria-label={ask.label}
-                value={typeof value === 'number' ? value : undefined}
-                onValueChange={onChange}
-                step={0.01}
-                {...(ask.suggestion !== undefined
-                  ? { placeholder: formatNumber(ask.suggestion, 3) }
-                  : {})}
+          ) : null}
+          {ask.kind === 'flag' ? (
+            <div class="self-start">
+              <SegmentedControl
+                label={ask.label}
+                value={typeof value === 'boolean' ? (value ? 'yes' : 'no') : ''}
+                onValueChange={(v) => onChange(v === 'yes')}
+                options={[
+                  { value: 'yes', label: t('patches.ask.yes') },
+                  { value: 'no', label: t('patches.ask.no') },
+                ]}
               />
             </div>
-            {ask.suggestion !== undefined && value === undefined ? (
-              <Button size="sm" variant="secondary" onClick={() => onChange(ask.suggestion)}>
-                {t('patches.ask.use-estimate', { value: formatNumber(ask.suggestion, 3) })}
-              </Button>
-            ) : null}
-          </div>
-        ) : null}
-        {shared}
-        {ask.reason && value === undefined ? (
-          <p class="m-0 text-small text-muted">{ask.reason}</p>
-        ) : null}
-      </div>
-    </FormField>
+          ) : null}
+          {ask.kind === 'number' ? (
+            <div class="flex flex-wrap items-center gap-2">
+              <div class="w-40">
+                <NumberField
+                  id={id}
+                  aria-label={ask.label}
+                  value={typeof value === 'number' ? value : undefined}
+                  onValueChange={onChange}
+                  step={0.01}
+                  {...(ask.suggestion !== undefined
+                    ? { placeholder: formatNumber(ask.suggestion, 3) }
+                    : {})}
+                />
+              </div>
+              {ask.suggestion !== undefined && value === undefined ? (
+                <Button size="sm" variant="secondary" onClick={() => onChange(ask.suggestion)}>
+                  {t('patches.ask.use-estimate', { value: formatNumber(ask.suggestion, 3) })}
+                </Button>
+              ) : null}
+            </div>
+          ) : null}
+          {shared}
+          {ask.reason && value === undefined ? (
+            <p class="m-0 text-small text-muted">{ask.reason}</p>
+          ) : null}
+        </div>
+      </FormField>
+    </div>
   );
 }

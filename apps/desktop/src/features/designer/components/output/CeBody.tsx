@@ -4,7 +4,7 @@ import { CeExtrasEditor } from '~/shared/ce';
 import { t } from '~/shared/i18n';
 import { getAt } from '../../model/pointer';
 import type { OutputStore } from '../../output-store';
-import { sourced } from '../../output-model';
+import { ceLabels, sourced } from '../../output-model';
 import { AmmoSetAsk } from './ce/AmmoSetAsk';
 import { CeChecklist } from './CeChecklist';
 import { CeChoiceRow } from './CeChoiceRow';
@@ -30,10 +30,7 @@ function Heading({ children }: { children: string }) {
 export function CeBody({ store, suggestion, spec, onGoTo }: CeBodyProps) {
   const accepted = new Set(store.accepted.value);
   const mode = store.acceptMode.value;
-  const labels = new Map<string, string>([
-    ...suggestion.fields.map((f) => [f.field, f.label] as const),
-    ...suggestion.choices.map((c) => [c.field, c.label] as const),
-  ]);
+  const labels = ceLabels(suggestion);
   const ammoSets = (
     suggestion.choices.find((c) => c.field === '/ce/ammoSet')?.candidates ?? []
   ).map((c) => ({ value: c.name, label: c.name }));

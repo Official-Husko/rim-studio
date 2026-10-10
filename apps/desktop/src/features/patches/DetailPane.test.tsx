@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from '@testing-library/preact';
+import { fireEvent, render, screen, within } from '@testing-library/preact';
 import { loadFixture } from 'rimstudio-testkit';
 import type { ConvertScanDto } from 'rimstudio-ipc-types';
 import { describe, expect, it } from 'vitest';
@@ -25,6 +25,27 @@ describe('DetailPane', () => {
       'true',
     );
     expect(screen.getByText('0 of 9 answered')).toBeTruthy();
+  });
+
+  it('lists what is missing on the other tabs and jumps to the question from there', async () => {
+    installTransport();
+    const p = openFixtureProject();
+    render(
+      <DetailPane
+        project={{ projectId: p.projectId, path: p.path, name: p.name }}
+        candidate={first}
+        familySize={1}
+      />,
+    );
+    // on the questions tab the form itself is the list
+    expect(screen.queryByRole('region', { name: /answers are missing/ })).toBeNull();
+    fireEvent.click(screen.getByRole('tab', { name: 'Definition' }));
+    const list = await screen.findByRole('region', { name: /9 answers are missing/ });
+    expect(list.textContent).toContain('Which caliber (ammo set) does the weapon use?');
+    fireEvent.click(within(list).getAllByRole('button', { name: 'Answer' })[0] as HTMLElement);
+    expect(screen.getByRole('tab', { name: /Questions/ }).getAttribute('aria-selected')).toBe(
+      'true',
+    );
   });
 
   it('shows the definition file on its tab', async () => {

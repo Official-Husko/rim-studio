@@ -2,7 +2,7 @@ import type { ConvertCandidateDto, FileActionDto, FileKindDto } from 'rimstudio-
 import { Banner, Switch } from 'rimstudio-ui';
 import { t, tn } from '~/shared/i18n';
 import { isReady, type ReviewItem } from './applyStore';
-import { splitDiagnostics } from './model';
+import { missingOf } from './missing';
 
 export interface ApplyReviewProps {
   items: readonly ReviewItem[];
@@ -41,9 +41,9 @@ export function fileRows(items: readonly ReviewItem[]): FileRow[] {
 
 function why(candidate: ConvertCandidateDto, item: ReviewItem): string {
   if (item.entry.phase === 'error') return item.entry.error?.message ?? '';
-  const open = item.entry.plan ? splitDiagnostics(item.entry.plan.diagnostics).open.length : 0;
-  return open > 0
-    ? tn('patches.plan.open', open)
+  const missing = missingOf(candidate, item.entry.plan?.diagnostics);
+  return item.entry.plan && missing.length > 0
+    ? t('patches.apply.missing', { items: missing.map((m) => m.label).join('; ') })
     : t('patches.apply.nothing-to-write', { name: candidate.defName });
 }
 

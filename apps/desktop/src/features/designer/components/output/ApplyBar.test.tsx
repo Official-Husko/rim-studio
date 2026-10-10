@@ -14,7 +14,7 @@ async function show(name: 'vanilla' | 'ce-on') {
   const setup = setupOutput();
   stop = setup.output.start();
   setup.editor.open(outputEntry(name));
-  renderWithProviders(<ApplyBar store={setup.output} />);
+  renderWithProviders(<ApplyBar store={setup.output} onGoTo={() => undefined} />);
   return setup;
 }
 
@@ -33,7 +33,9 @@ describe('ApplyBar', () => {
     await setup.flush();
     const button = screen.getByRole('button', { name: 'Apply to project' }) as HTMLButtonElement;
     expect(button.disabled).toBe(true);
-    expect(screen.getByText('Fix the 7 errors in the problems list before writing.')).toBeTruthy();
+    // the answers the plan waits for are named instead of counted
+    expect(screen.getByRole('region', { name: /answers are missing/ })).toBeTruthy();
+    expect(screen.getAllByRole('button', { name: 'Go to' }).length).toBeGreaterThan(0);
     fireEvent.click(button);
     expect(setup.output.apply.value.phase).toBe('idle');
   });

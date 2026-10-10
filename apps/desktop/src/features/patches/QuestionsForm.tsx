@@ -79,15 +79,16 @@ export function QuestionsForm({ candidate, familySize, project }: QuestionsFormP
         const note = rankNote(choice, options.filter((o) => o.hint !== undefined).length);
         if (ask.field === '/ce/ammoSet') {
           return (
-            <PatchAmmoAsk
-              key={ask.field}
-              candidate={candidate}
-              ask={ask}
-              scope={activeScope}
-              value={typeof value === 'string' ? value : undefined}
-              options={options}
-              project={project}
-            />
+            <div key={ask.field} data-ask={ask.field}>
+              <PatchAmmoAsk
+                candidate={candidate}
+                ask={ask}
+                scope={activeScope}
+                value={typeof value === 'string' ? value : undefined}
+                options={options}
+                project={project}
+              />
+            </div>
           );
         }
         return (

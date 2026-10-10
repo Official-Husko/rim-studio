@@ -44,7 +44,11 @@ describe('ApplyReview', () => {
     );
     expect(screen.getByText('1 weapon will be converted.')).toBeTruthy();
     expect(screen.getByText('1 weapon cannot be applied yet')).toBeTruthy();
-    expect(screen.getByText('9 questions are still open', { exact: false })).toBeTruthy();
+    // the weapon that is held back is told what it is missing, by the words of the questions
+    expect(
+      screen.getByText(/still missing: Which caliber \(ammo set\) does the weapon use\?/),
+    ).toBeTruthy();
+    expect(screen.getByText(/Which weapon class tag does the weapon get\?/)).toBeTruthy();
   });
 
   it('says every file is new when nothing is replaced', () => {

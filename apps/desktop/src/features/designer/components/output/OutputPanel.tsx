@@ -134,7 +134,7 @@ export function OutputPanel({
           ) : error ? null : (
             <EmptyState compact title={t('designer.output.planning')} />
           )}
-          <ApplyBar store={store} />
+          <ApplyBar store={store} onGoTo={goTo} />
         </div>
       </Panel>
       <CeSection store={store} spec={draft.spec} onGoTo={goTo} />

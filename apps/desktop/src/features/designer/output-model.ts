@@ -129,6 +129,14 @@ export function pendingAnswers(plan: WritePlanDto | undefined): DiagnosticDto[] 
   });
 }
 
+/** The words of each Combat Extended question by field pointer, as the suggestion asks them. */
+export function ceLabels(suggestion: CeSuggestionDto | undefined): Map<string, string> {
+  return new Map<string, string>([
+    ...(suggestion?.fields ?? []).map((f) => [f.field, f.label] as const),
+    ...(suggestion?.choices ?? []).map((c) => [c.field, c.label] as const),
+  ]);
+}
+
 /** The problems list: everything except the derived values and the lint, which have their own lists. */
 export function problemsOf(plan: WritePlanDto | undefined): DiagnosticDto[] {
   const order = { error: 0, warning: 1, info: 2, hint: 3 } as const;
