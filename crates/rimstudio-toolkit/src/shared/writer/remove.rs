@@ -5,7 +5,7 @@
 use rimstudio_io::backup::rotate;
 use rimstudio_io::remove::remove_regular_file;
 
-use super::{GuardedWriter, refused};
+use super::{Expect, GuardedWriter, refused};
 use crate::error::{ToolkitError, ToolkitResult};
 use rimstudio_io::error::StoreError;
 
@@ -29,7 +29,20 @@ impl GuardedWriter {
     /// A path refusal, [`ToolkitError::PathRefused`] when the entry is a folder or the file is read only, and
     /// [`ToolkitError::Store`] when the backup or the removal fails.
     pub fn remove_file(&self, rel: &str) -> ToolkitResult<RemoveReport> {
+        self.remove_expecting(rel, Expect::Any)
+    }
+
+    /// Like [`GuardedWriter::remove_file`], and refuses when the file does not hold the content the caller
+    /// planned against (`Expect::Previous`). The comparison is made again right before the file goes, so an
+    /// edit made by another program in between is never thrown away.
+    ///
+    /// # Errors
+    ///
+    /// As [`GuardedWriter::remove_file`], and [`ToolkitError::ApplyRefused`] for content that differs from
+    /// the expectation.
+    pub fn remove_expecting(&self, rel: &str, expect: Expect<'_>) -> ToolkitResult<RemoveReport> {
         let io = self.checked(rel)?.io;
+        self.check_expected(rel, &io, expect)?;
         let meta = match std::fs::metadata(io.as_std_path()) {
             Ok(m) => m,
             Err(e) if e.kind() == std::io::ErrorKind::NotFound => {
@@ -53,6 +66,7 @@ impl GuardedWriter {
         let report = rotate(&io, &self.backup_policy(rel), self.clock.as_ref())?;
         // last look before the file goes: the backup step took time
         let io = self.checked(rel)?.io;
+        self.check_expected(rel, &io, expect)?;
         let removed = remove_regular_file(&io)?;
         Ok(RemoveReport {
             rel: rel.to_owned(),

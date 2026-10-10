@@ -56,6 +56,7 @@ pub(crate) fn render_scan(v: &Value) -> String {
         "open questions",
         "family",
         "file",
+        "existing patch",
     ]);
     for c in arr_at(v, "/candidates") {
         t.row(vec![
@@ -65,6 +66,7 @@ pub(crate) fn render_scan(v: &Value) -> String {
             arr_at(c, "/asks").len().to_string(),
             str_at(c, "/family").to_owned(),
             str_at(c, "/file").to_owned(),
+            existing_text(c),
         ]);
     }
     out.push_str(&t.render());
@@ -105,6 +107,23 @@ pub(crate) fn render_scan(v: &Value) -> String {
         out.push_str(&render_diagnostics(diags));
     }
     out
+}
+
+/// The `existing patch` cell of a candidate: where its conversion comes from and whether `convert remove`
+/// can take it out. Empty for a weapon without a conversion.
+fn existing_text(candidate: &Value) -> String {
+    let Some(existing) = candidate.get("existing") else {
+        return String::new();
+    };
+    let mut text = str_at(existing, "/origin").to_owned();
+    let who = str_at(existing, "/modName");
+    if !who.is_empty() {
+        let _ = write!(text, " ({who})");
+    }
+    if bool_at(existing, "/removable") {
+        text.push_str(", removable");
+    }
+    text
 }
 
 /// True when two or more weapons with open questions share a family key.
@@ -360,6 +379,11 @@ pub(crate) fn run(s: &Session, cmd: &ConvertCmd) -> CliResult {
             }
             Ok(())
         }
+        ConvertCmd::Remove {
+            project: dir,
+            defs,
+            yes,
+        } => remove_all(s, dir, defs, *yes),
         ConvertCmd::Plan(target) => plan_all(s, target, false, true, true),
         ConvertCmd::Apply {
             target,
@@ -368,6 +392,73 @@ pub(crate) fn run(s: &Session, cmd: &ConvertCmd) -> CliResult {
             no_dry_apply,
         } => plan_all(s, target, *yes, !no_backup, !no_dry_apply),
     }
+}
+
+/// Plans the removal of the generated patch of each weapon and, with `write`, applies it. A removal always
+/// backs the files up and has no dry apply.
+fn remove_all(s: &Session, dir: &str, defs: &[String], write: bool) -> CliResult {
+    let summary = project::open(s, dir)?;
+    let root = str_at(&summary, "/path").to_owned();
+    let mut results: Vec<Value> = Vec::new();
+    let mut text = String::new();
+    let mut failed = false;
+    let mut error: Option<CliError> = None;
+    for name in defs {
+        let mut request = convert_request(&project_id(&summary), name, &json!({}), &[])?;
+        request["convert"]["remove"] = json!(true);
+        let plan = match s.call("designer_export_plan", request.clone()) {
+            Ok(r) => r.value,
+            Err(e) => {
+                error = Some(e.into());
+                break;
+            }
+        };
+        let _ = writeln!(text, "== {name}");
+        text.push_str(&render_plan(&plan, &root, false));
+        let plan_failed = bool_at(&plan, "/hasErrors");
+        failed |= plan_failed;
+        let mut entry = json!({"defName": name, "plan": plan});
+        if write && !plan_failed {
+            match s.call(
+                "designer_apply_plan",
+                json!({"planId": str_at(&plan, "/planId"), "request": request, "backup": true, "dryApply": false}),
+            ) {
+                Ok(r) => {
+                    text.push_str(&render_apply(&r.value, &root));
+                    note_apply_flags(s, &r.value);
+                    entry["report"] = r.value;
+                }
+                Err(e) => {
+                    error = Some(e.into());
+                    results.push(entry);
+                    break;
+                }
+            }
+        }
+        results.push(entry);
+        text.push('\n');
+    }
+    let doc = json!({"applied": write && !failed && error.is_none(), "results": results});
+    s.emit(&doc, || {
+        let mut out = text.clone();
+        if !write {
+            out.push_str("Nothing was written.");
+            if !failed {
+                out.push_str(" Run `convert remove` with --yes to remove exactly these sections.");
+            }
+            out.push('\n');
+        } else if failed {
+            out.push_str("No file was changed for the weapons that have errors.\n");
+        }
+        out
+    });
+    if let Some(e) = error {
+        return Err(e);
+    }
+    if failed {
+        return Err(CliError::Reported);
+    }
+    Ok(())
 }
 
 fn plan_all(
@@ -533,6 +624,21 @@ mod tests {
     #[test]
     fn a_question_without_an_estimate_shows_no_detail_lines() {
         assert_eq!(render_ask_detail(&json!({"label": "Ammo set"})), "");
+    }
+
+    #[test]
+    fn the_existing_patch_is_told_in_the_scan_table() {
+        assert_eq!(existing_text(&json!({"defName": "RS_G"})), "");
+        assert_eq!(
+            existing_text(&json!({"existing": {"origin": "rimstudio", "removable": true}})),
+            "rimstudio, removable"
+        );
+        assert_eq!(
+            existing_text(
+                &json!({"existing": {"origin": "foreign", "modName": "RS Mod", "removable": false}})
+            ),
+            "foreign (RS Mod)"
+        );
     }
 
     #[test]

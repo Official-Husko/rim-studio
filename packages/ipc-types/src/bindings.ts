@@ -2356,7 +2356,12 @@ weaponClasses?: Array<string>,
  * A few numbers of the resolved definition, for the table. Absent for a definition that is not a
  * listed weapon (an abstract base, an unresolved definition).
  */
-vanilla?: ConvertVanillaDto, };
+vanilla?: ConvertVanillaDto, 
+/**
+ * The conversion the weapon carries and where it comes from. Present only for a weapon whose status is
+ * `already-ce`.
+ */
+existing?: ExistingPatchDto, };
 
 /**
  * Counts of a scan.
@@ -2395,7 +2400,13 @@ answers: ConvertAnswersDto,
  * Answer groups, applied in order (a later group wins over an earlier one) beneath `answers`. Omitted
  * when empty.
  */
-groups?: Array<ConvertAnswerGroupDto>, };
+groups?: Array<ConvertAnswerGroupDto>, 
+/**
+ * Take the generated patch of this weapon out of the project instead of converting it: the plan lists
+ * the generated files that lose the sections of the weapon (a file that holds nothing else is deleted)
+ * and nothing else. The answers and groups are not read. Omitted when false.
+ */
+remove?: boolean, };
 
 /**
  * Result of the `designer_convert_scan` job.
@@ -4298,6 +4309,33 @@ anchors: Array<AnchorCardDto>,
 notes: Array<string>, };
 
 /**
+ * The conversion an already converted weapon carries and what can be done with it.
+ */
+export type ExistingPatchDto = { 
+/**
+ * Where the conversion comes from.
+ */
+origin: PatchOriginDto, 
+/**
+ * The project file that holds the conversion, relative to the project root. Absent for a patch of
+ * another mod or when the file could not be told.
+ */
+file?: string, 
+/**
+ * The name of the mod that converts the weapon, for the origin `foreign`.
+ */
+modName?: string, 
+/**
+ * The generated patch files of the project that hold sections of this weapon, relative to the project
+ * root, in path order. Removing the conversion changes or deletes exactly these. Omitted when empty.
+ */
+files?: Array<string>, 
+/**
+ * True when RimStudio can remove the conversion from the project: it is made of generated sections.
+ */
+removable: boolean, };
+
+/**
  * One extra damage of a melee attack.
  */
 export type ExtraMeleeDamageDto = { 
@@ -4330,7 +4368,7 @@ factor: number, };
 /**
  * What a plan does to a file.
  */
-export type FileActionDto = "create" | "update-region" | "unchanged" | "replace";
+export type FileActionDto = "create" | "update-region" | "unchanged" | "replace" | "delete";
 
 /**
  * What a planned file holds.
@@ -5752,6 +5790,11 @@ outcome: PatchOutcomeDto,
  * English fallback text. Absent when there is nothing to add.
  */
 message?: string, };
+
+/**
+ * Where the existing conversion of a weapon comes from.
+ */
+export type PatchOriginDto = "rimstudio" | "project" | "foreign" | "unknown";
 
 /**
  * What happened when a patch operation met the definition.

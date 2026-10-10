@@ -83,12 +83,20 @@ pub fn dry_run(
     writer: &GuardedWriter,
     plan: &BuiltPlan,
 ) -> ToolkitResult<Option<DryReport>> {
+    // a plan without definitions (the removal of a generated patch) has nothing to run a patch against
+    if plan.scratch_defs.is_empty() {
+        return Ok(None);
+    }
     let Some(engine) = ctx.engine().filter(|e| e.ce_available()) else {
         return Ok(None);
     };
     let mut patches = Vec::new();
     let mut diagnostics = Vec::new();
-    for file in plan.files.iter().filter(|f| f.kind == FileKind::CePatch) {
+    for file in plan
+        .files
+        .iter()
+        .filter(|f| f.kind == FileKind::CePatch && f.action != FileAction::Delete)
+    {
         let text = writer
             .read_text(&file.path)?
             .unwrap_or_else(|| file.text.clone());
@@ -156,6 +164,19 @@ fn copy_one(
         backup: report.backup,
         verified: report.verified,
         sha256: Some(report.sha256),
+    })
+}
+
+/// Removes one planned file through the guarded writer. The file is always backed up first (a removed
+/// generated patch can be brought back from the app data folder), whatever the backup option says: the
+/// option is about files that are replaced, and nothing of a removed file stays in the project.
+fn remove_one(writer: &GuardedWriter, file: &BuiltFile) -> ToolkitResult<WrittenFile> {
+    let report = writer.remove_expecting(&file.path, Expect::Previous(file.previous.as_deref()))?;
+    Ok(WrittenFile {
+        bytes: 0,
+        backup: report.backup,
+        verified: report.removed,
+        sha256: None,
     })
 }
 
@@ -292,6 +313,7 @@ pub fn apply_built(
         );
         let result = match &file.copy {
             Some(c) => copy_one(writer, file, c, options.backup),
+            None if file.action == FileAction::Delete => remove_one(writer, file),
             None => writer
                 .write_expecting(
                     &file.path,

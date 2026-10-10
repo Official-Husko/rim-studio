@@ -80,6 +80,46 @@ pub struct AskItemDto {
     pub suggestion: Option<f64>,
 }
 
+/// Where the existing conversion of a weapon comes from.
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
+#[serde(rename_all = "kebab-case")]
+pub enum PatchOriginDto {
+    /// A patch file of the project that RimStudio generated; its sections can be removed.
+    Rimstudio,
+    /// A patch or definition of the project that RimStudio did not generate; it is never changed.
+    Project,
+    /// A patch of another mod; it is never changed.
+    Foreign,
+    /// The source of the conversion could not be told.
+    Unknown,
+}
+
+/// The conversion an already converted weapon carries and what can be done with it.
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+#[cfg_attr(feature = "ts", derive(ts_rs::TS))]
+#[serde(rename_all = "camelCase")]
+pub struct ExistingPatchDto {
+    /// Where the conversion comes from.
+    pub origin: PatchOriginDto,
+    /// The project file that holds the conversion, relative to the project root. Absent for a patch of
+    /// another mod or when the file could not be told.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
+    pub file: Option<String>,
+    /// The name of the mod that converts the weapon, for the origin `foreign`.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
+    pub mod_name: Option<String>,
+    /// The generated patch files of the project that hold sections of this weapon, relative to the project
+    /// root, in path order. Removing the conversion changes or deletes exactly these. Omitted when empty.
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    #[cfg_attr(feature = "ts", ts(as = "Option<Vec<String>>", optional))]
+    pub files: Vec<String>,
+    /// True when RimStudio can remove the conversion from the project: it is made of generated sections.
+    pub removable: bool,
+}
+
 /// One weapon definition of the project.
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 #[cfg_attr(feature = "ts", derive(ts_rs::TS))]
@@ -121,6 +161,11 @@ pub struct ConvertCandidateDto {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     #[cfg_attr(feature = "ts", ts(optional))]
     pub vanilla: Option<ConvertVanillaDto>,
+    /// The conversion the weapon carries and where it comes from. Present only for a weapon whose status is
+    /// `already-ce`.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
+    pub existing: Option<ExistingPatchDto>,
 }
 
 /// The numbers of a weapon definition as the game loads it, read from the resolved definition (parents
@@ -266,4 +311,10 @@ pub struct ConvertRequestDto {
         ts(as = "Option<Vec<ConvertAnswerGroupDto>>", optional)
     )]
     pub groups: Vec<ConvertAnswerGroupDto>,
+    /// Take the generated patch of this weapon out of the project instead of converting it: the plan lists
+    /// the generated files that lose the sections of the weapon (a file that holds nothing else is deleted)
+    /// and nothing else. The answers and groups are not read. Omitted when false.
+    #[serde(default, skip_serializing_if = "std::ops::Not::not")]
+    #[cfg_attr(feature = "ts", ts(as = "Option<bool>", optional))]
+    pub remove: bool,
 }

@@ -153,6 +153,7 @@ fn convert_request(p: &Proj, def: &str, answers: ConvertAnswersDto) -> DesignerE
             def_name: def.into(),
             answers,
             groups: Vec::new(),
+            remove: false,
         }),
         ..request(p, &ranged())
     }
@@ -559,6 +560,7 @@ fn grouped_request(p: &Proj, def: &str, group: ConvertAnswerGroupDto) -> Designe
             def_name: def.into(),
             answers: ConvertAnswersDto::default(),
             groups: vec![group],
+            remove: false,
         }),
         ..request(p, &ranged())
     }

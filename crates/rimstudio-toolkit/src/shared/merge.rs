@@ -91,6 +91,134 @@ fn close_start(text: &str, root_end: usize) -> usize {
         .unwrap_or(root_end)
 }
 
+/// The byte offset where the section that starts with the comment at `pos` ends.
+///
+/// Outside `Defs` the section has no fixed length: it is the run of elements after the banner that mention
+/// the item's name (every generated operation does). An element that does not, such as an operation the
+/// person wrote by hand, ends the section and is kept; so does a comment between two elements (the banner of
+/// the next section). `limit` caps the number of elements (the nodes of a `Defs` section).
+fn section_end(
+    ed: &SpanEditor,
+    text: &str,
+    root_tag: &str,
+    pos: usize,
+    comment_end: usize,
+    item: &str,
+    limit: usize,
+) -> usize {
+    let root_path = format!("/{root_tag}");
+    let mut end = comment_end;
+    let mut count = 0usize;
+    if let Ok(kids) = ed.children(&root_path) {
+        for kid in kids {
+            let Ok(child) = ed.element(&kid.path) else {
+                continue;
+            };
+            if child.span.start < pos {
+                continue;
+            }
+            let gap = text.get(end..child.span.start).unwrap_or("");
+            if count >= limit || gap.contains("<!--") {
+                break;
+            }
+            if root_tag != "Defs"
+                && !item.is_empty()
+                && !text
+                    .get(child.span.clone())
+                    .is_some_and(|t| t.contains(item))
+            {
+                break;
+            }
+            end = child.span.end;
+            count += 1;
+        }
+    }
+    end
+}
+
+/// What taking the sections of one item out of a list file leaves.
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct SectionRemoval {
+    /// The text after the removal.
+    pub text: String,
+    /// How many sections were taken out.
+    pub removed: usize,
+    /// True when the root element holds no element any more (the file has nothing left to keep).
+    pub empty: bool,
+}
+
+/// The most sections of one item a removal takes out of one file (a guard against a loop).
+const MAX_SECTIONS: usize = 64;
+
+/// Takes every section of `item` (the `====== item ======` comment and the run of elements after it, see
+/// [`section_end`]) out of a list file with the root element `root_tag`, together with the lines they
+/// stood on. Every byte outside the sections stays as it was.
+///
+/// # Errors
+///
+/// A plain sentence when the existing text is not well formed or has another root element.
+pub fn remove_sections(
+    existing: &str,
+    root_tag: &str,
+    item: &str,
+) -> Result<SectionRemoval, String> {
+    let needle = format!("<!-- {BANNER} {item} {BANNER}");
+    let mut text = existing.to_owned();
+    let mut removed = 0usize;
+    while removed < MAX_SECTIONS {
+        let Some(pos) = text.find(&needle) else {
+            break;
+        };
+        let ed = open(&text)?;
+        if ed.root_tag() != root_tag {
+            return Err(format!(
+                "the existing file has the root element {} but a {root_tag} file is expected",
+                ed.root_tag()
+            ));
+        }
+        let comment_end = text
+            .get(pos..)
+            .and_then(|t| t.find("-->"))
+            .map_or(pos + needle.len(), |i| pos + i + 3);
+        let end = section_end(&ed, &text, root_tag, pos, comment_end, item, usize::MAX);
+        // the lines the section stood on go with it: the indentation before the comment and the line
+        // break after the last element
+        let head = text.get(..pos).unwrap_or("");
+        let start = match head.rfind('\n') {
+            Some(i) if head.get(i + 1..).is_some_and(|t| t.trim().is_empty()) => i + 1,
+            None if head.trim().is_empty() => 0,
+            _ => pos,
+        };
+        let tail = text.get(end..).unwrap_or("");
+        let after = tail.trim_start_matches([' ', '\t']);
+        let skipped = tail.len() - after.len();
+        let newline = if after.starts_with("\r\n") {
+            2
+        } else {
+            usize::from(after.starts_with('\n'))
+        };
+        let cut_end = if start < pos || newline > 0 {
+            end + skipped + newline
+        } else {
+            end
+        };
+        let mut out = String::with_capacity(text.len());
+        out.push_str(text.get(..start).unwrap_or(""));
+        out.push_str(text.get(cut_end..).unwrap_or(""));
+        open(&out)?;
+        text = out;
+        removed += 1;
+    }
+    let empty = open(&text)?
+        .element(&format!("/{root_tag}"))
+        .is_ok_and(|info| info.child_count == 0);
+    Ok(SectionRemoval {
+        text,
+        removed,
+        empty,
+    })
+}
+
 fn merge_group(text: &str, root_tag: &str, group: &SectionGroup) -> Result<String, String> {
     let ed = open(text)?;
     if ed.root_tag() != root_tag {
@@ -142,36 +270,8 @@ fn merge_group(text: &str, root_tag: &str, group: &SectionGroup) -> Result<Strin
             } else {
                 usize::MAX
             };
-            // outside `Defs` the section has no fixed length: it is the run of elements after the banner
-            // that mention the item's name (every generated operation does). An element that does not,
-            // such as an operation the person wrote by hand, ends the section and is kept.
             let item = key.trim_matches(|c: char| c == '=' || c == ' ');
-            let mut end = comment_end;
-            let mut count = 0usize;
-            if let Ok(kids) = ed.children(&root_path) {
-                for kid in kids {
-                    let Ok(child) = ed.element(&kid.path) else {
-                        continue;
-                    };
-                    if child.span.start < pos {
-                        continue;
-                    }
-                    let gap = text.get(end..child.span.start).unwrap_or("");
-                    if count >= limit || gap.contains("<!--") {
-                        break;
-                    }
-                    if root_tag != "Defs"
-                        && !item.is_empty()
-                        && !text
-                            .get(child.span.clone())
-                            .is_some_and(|t| t.contains(item))
-                    {
-                        break;
-                    }
-                    end = child.span.end;
-                    count += 1;
-                }
-            }
+            let end = section_end(&ed, text, root_tag, pos, comment_end, item, limit);
             let joined = lines.join(eol);
             let body = joined.trim_start();
             let mut out = String::with_capacity(text.len() + body.len());
@@ -444,6 +544,109 @@ mod tests {
         assert!(merged.contains("IfModActive=\"ceteam.combatextended\""));
         let again = merge_load_folders(&merged, &planned).unwrap();
         assert_eq!(again, merged, "merging twice changes nothing");
+    }
+
+    fn patch_text(eol: &str) -> String {
+        [
+            "<?xml version=\"1.0\" encoding=\"utf-8\"?>",
+            "<Patch>",
+            "  <!-- ====== RS_A ====== generated by RimStudio, draft RS_A -->",
+            "  <Operation Class=\"PatchOperationReplace\">",
+            "    <xpath>/Defs/ThingDef[defName=\"RS_A\"]/label</xpath>",
+            "  </Operation>",
+            "  <Operation Class=\"PatchOperationAdd\">",
+            "    <xpath>/Defs/ThingDef[defName=\"RS_A\"]/comps</xpath>",
+            "  </Operation>",
+            "  <!-- ====== RS_B ====== generated by RimStudio, draft RS_B -->",
+            "  <Operation Class=\"PatchOperationReplace\">",
+            "    <xpath>/Defs/ThingDef[defName=\"RS_B\"]/label</xpath>",
+            "  </Operation>",
+            "</Patch>",
+            "",
+        ]
+        .join(eol)
+    }
+
+    #[test]
+    fn a_section_goes_with_its_lines_and_the_rest_stays() {
+        let text = patch_text("\n");
+        let r = remove_sections(&text, "Patch", "RS_A").unwrap();
+        assert_eq!(r.removed, 1);
+        assert!(!r.empty);
+        assert!(!r.text.contains("RS_A"));
+        assert!(
+            r.text
+                .contains("<!-- ====== RS_B ====== generated by RimStudio, draft RS_B -->")
+        );
+        assert!(r.text.starts_with(
+            "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<Patch>\n  <!-- ====== RS_B"
+        ));
+        assert!(
+            !r.text.contains("\n\n"),
+            "no blank line is left behind: {}",
+            r.text
+        );
+        // the other section is byte identical
+        let tail = text.split("  <!-- ====== RS_B").nth(1).unwrap();
+        assert!(r.text.ends_with(tail));
+    }
+
+    #[test]
+    fn the_line_ending_of_the_file_is_kept() {
+        let text = patch_text("\r\n");
+        let r = remove_sections(&text, "Patch", "RS_B").unwrap();
+        assert_eq!(r.removed, 1);
+        assert!(!r.text.contains("RS_B"));
+        assert!(
+            !r.text.replace("\r\n", "").contains('\n'),
+            "no bare line feed appears"
+        );
+        assert!(r.text.ends_with("</Patch>\r\n"));
+    }
+
+    #[test]
+    fn the_last_section_leaves_an_empty_file() {
+        let one = remove_sections(&patch_text("\n"), "Patch", "RS_A").unwrap();
+        let none = remove_sections(&one.text, "Patch", "RS_B").unwrap();
+        assert_eq!(none.removed, 1);
+        assert!(none.empty);
+        assert!(none.text.contains("<Patch>") && !none.text.contains("Operation"));
+    }
+
+    #[test]
+    fn an_operation_a_person_added_after_a_section_is_kept() {
+        let text = patch_text("\n").replace(
+            "  <!-- ====== RS_B ======",
+            "  <Operation Class=\"PatchOperationRemove\">\n    <xpath>/Defs/ThingDef[defName=\"RS_Other\"]</xpath>\n  </Operation>\n  <!-- ====== RS_B ======",
+        );
+        let r = remove_sections(&text, "Patch", "RS_A").unwrap();
+        assert!(!r.text.contains("RS_A\""));
+        assert!(r.text.contains("PatchOperationRemove"), "{}", r.text);
+    }
+
+    #[test]
+    fn a_name_that_only_starts_like_another_is_not_removed() {
+        let text = patch_text("\n").replace("RS_B", "RS_AB");
+        let r = remove_sections(&text, "Patch", "RS_A").unwrap();
+        assert_eq!(r.removed, 1);
+        assert!(r.text.contains("RS_AB"));
+        let none = remove_sections(&r.text, "Patch", "RS_A").unwrap();
+        assert_eq!(none.removed, 0);
+        assert_eq!(none.text, r.text);
+    }
+
+    #[test]
+    fn a_file_with_another_root_or_broken_text_is_refused() {
+        let defs = "<Defs>\n  <!-- ====== RS_A ====== -->\n  <ThingDef/>\n</Defs>\n";
+        assert!(remove_sections(defs, "Patch", "RS_A").is_err());
+        assert!(
+            remove_sections(
+                "<Patch><!-- ====== RS_A ====== --><Operation>",
+                "Patch",
+                "RS_A"
+            )
+            .is_err()
+        );
     }
 
     #[test]

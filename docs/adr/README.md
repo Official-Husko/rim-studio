@@ -100,3 +100,4 @@ What is decided, in the active voice, with the names of crates, files and versio
 5. Documents use no em dashes, no en dashes and no emojis.
 | 0058 | [Weapon archetypes](0058-weapon-archetypes.md) | accepted | D-200 to D-204, D-085 |
 | 0059 | [Attributed RimWorld and Combat Extended data](0059-attributed-game-and-combat-extended-data.md) | accepted | D-211, D-212, supersedes 0034 in part |
+| 0060 | [Removing the generated patch of a weapon](0060-remove-generated-patch.md) | accepted | D-213 |

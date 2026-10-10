@@ -25,6 +25,9 @@ pub enum FileActionDto {
     Unchanged,
     /// The file exists with other content and is replaced whole (a copied asset); the old file is backed up.
     Replace,
+    /// The file is removed (the removal of a generated patch whose last section goes); the old file is
+    /// backed up.
+    Delete,
 }
 
 /// What a planned file holds.

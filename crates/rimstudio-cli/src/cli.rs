@@ -861,6 +861,20 @@ pub(crate) enum ConvertCmd {
     /// Show the patch files a conversion would write; writes nothing.
     #[command(after_long_help = CONVERT_ANSWERS_HELP)]
     Plan(ConvertTarget),
+    /// Take the patch RimStudio generated for a weapon out of the mod: its section goes from every
+    /// generated patch file and a file with nothing left is deleted. Without `--yes` it only prints the
+    /// plan. Patches you wrote by hand and patches of other mods are never changed.
+    Remove {
+        /// The mod project folder.
+        #[arg(long, value_name = "DIR")]
+        project: String,
+        /// A weapon definition whose generated patch is removed (repeatable).
+        #[arg(long = "def", value_name = "DEFNAME", required = true)]
+        defs: Vec<String>,
+        /// Write the change. Without it nothing is written.
+        #[arg(long)]
+        yes: bool,
+    },
     /// Write the conversion. Without `--yes` it only prints the plan.
     #[command(after_long_help = CONVERT_ANSWERS_HELP)]
     Apply {

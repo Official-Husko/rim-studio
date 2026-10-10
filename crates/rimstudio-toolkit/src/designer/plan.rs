@@ -37,6 +37,7 @@ use super::ce::accept_for_plan;
 use super::convert::convert_plan;
 use super::ctx::{Ctx, Engine};
 use super::dto::{count, draft_from_dto};
+use super::patch_remove::remove_plan;
 use crate::error::{ToolkitError, ToolkitResult};
 use crate::shared::assets::facts_of;
 use crate::shared::diff::unified_diff;
@@ -175,6 +176,7 @@ pub fn action_dto(action: FileAction) -> FileActionDto {
         FileAction::UpdateRegion => FileActionDto::UpdateRegion,
         FileAction::Unchanged => FileActionDto::Unchanged,
         FileAction::Replace => FileActionDto::Replace,
+        FileAction::Delete => FileActionDto::Delete,
     }
 }
 
@@ -537,6 +539,17 @@ pub fn prepare(ctx: &Ctx, req: &DesignerExportPlanRequest) -> ToolkitResult<Prep
     let (record, view) = ctx.env().view(&req.project_id)?;
     let writer = ctx.writer_for(&req.project_id, &view.root)?;
     let plan = match &req.convert {
+        // removing a generated patch needs the project only: no game install, no Combat Extended data
+        Some(convert) if convert.remove => {
+            let removal = remove_plan(&writer, &convert.def_name);
+            let plan_id = plan_id_of(&removal.files);
+            BuiltPlan {
+                files: removal.files,
+                diagnostics: removal.diagnostics,
+                plan_id,
+                scratch_defs: Vec::new(),
+            }
+        }
         Some(convert) => {
             let outcome = convert_plan(ctx, &record, &view, convert)?;
             let mut built = realize(&view, &writer, &outcome.plan, outcome.diagnostics);

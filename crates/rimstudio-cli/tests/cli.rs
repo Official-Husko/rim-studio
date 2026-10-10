@@ -1098,6 +1098,96 @@ fn convert_apply_writes_a_gated_patch_and_leaves_the_definitions_alone() {
 }
 
 #[test]
+fn convert_remove_takes_a_generated_patch_out_of_the_mod() {
+    let env = Env::new(true);
+    env.select_install();
+    let proj = env.mod_folder("RS_Conv", &[("Defs/Guns.xml", common::PROJECT_DEFS)]);
+    let p = path_str(&proj);
+    let mut apply = vec!["convert", "apply", "--project", p, "--all", "--yes"];
+    apply.extend(CONVERT_ANSWERS);
+    env.run(&apply).expect(3);
+    let patch = files_under(&proj)
+        .into_iter()
+        .find(|f| f.contains("Weapons_Ranged"))
+        .expect("the generated patch file");
+
+    // the scan says where the conversion comes from and that it can be removed
+    let scan = env
+        .run(&["--json", "convert", "scan", "--project", p])
+        .expect(0)
+        .json();
+    let existing = &scan["candidates"][0]["existing"];
+    assert_eq!(existing["origin"], json!("rimstudio"), "{scan}");
+    assert_eq!(existing["removable"], json!(true));
+    assert_eq!(existing["files"], json!([patch.clone()]));
+    let table = env
+        .run(&["convert", "scan", "--project", p])
+        .expect(0)
+        .stdout();
+    assert!(table.contains("rimstudio, removable"), "{table}");
+
+    // without --yes only the plan is printed
+    let before = files_under(&proj);
+    let planned = env
+        .run(&["convert", "remove", "--project", p, "--def", "RS_ProjGun"])
+        .expect(0)
+        .stdout();
+    assert!(planned.contains("Nothing was written"), "{planned}");
+    assert!(planned.contains("delete"), "{planned}");
+    assert_eq!(files_under(&proj), before);
+
+    // with --yes the file goes (the only section it held) and the weapon can be converted again
+    let done = env
+        .run(&[
+            "--json",
+            "convert",
+            "remove",
+            "--project",
+            p,
+            "--def",
+            "RS_ProjGun",
+            "--yes",
+        ])
+        .expect(0)
+        .json();
+    assert_eq!(done["applied"], json!(true), "{done}");
+    assert_eq!(
+        done["results"][0]["report"]["written"][0]["action"],
+        json!("delete")
+    );
+    assert!(!files_under(&proj).contains(&patch));
+    let after = env
+        .run(&["--json", "convert", "scan", "--project", p])
+        .expect(0)
+        .json();
+    assert_eq!(after["counts"]["notConverted"], json!(1), "{after}");
+    assert!(after["candidates"][0].get("existing").is_none());
+    assert_eq!(
+        std::fs::read_to_string(proj.join("Defs/Guns.xml")).unwrap(),
+        common::PROJECT_DEFS
+    );
+
+    // a second removal has nothing to remove
+    let run = env
+        .run(&[
+            "--json",
+            "convert",
+            "remove",
+            "--project",
+            p,
+            "--def",
+            "RS_ProjGun",
+            "--yes",
+        ])
+        .expect(1);
+    assert!(
+        run.stdout().contains("designer.remove-nothing"),
+        "{}",
+        run.stdout()
+    );
+}
+
+#[test]
 fn convert_needs_a_selection_and_reads_answers_from_a_file() {
     let env = Env::new(true);
     env.select_install();

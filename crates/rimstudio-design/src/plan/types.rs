@@ -34,6 +34,9 @@ pub enum FileAction {
     /// The file exists with other content and is replaced whole (a copied asset; the old bytes are backed
     /// up first). Text files are never replaced whole, they use [`FileAction::UpdateRegion`].
     Replace,
+    /// The file exists, holds nothing but the sections a removal takes out, and goes away (the old bytes
+    /// are backed up first). Only the removal of a generated patch plans it.
+    Delete,
 }
 
 /// What a planned file is for. Gating tests and the apply step use it.

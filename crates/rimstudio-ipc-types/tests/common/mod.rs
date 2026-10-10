@@ -596,6 +596,7 @@ pub fn convert_scan() -> ConvertScanDto {
                         suggestion: Some(1.25),
                     },
                 ],
+                existing: None,
             },
             ConvertCandidateDto {
                 def_name: "RS_Grenade".into(),
@@ -609,6 +610,7 @@ pub fn convert_scan() -> ConvertScanDto {
                 tags: vec![],
                 weapon_classes: vec![],
                 vanilla: None,
+                existing: None,
             },
         ],
         counts: ConvertCountsDto {
@@ -815,6 +817,7 @@ pub fn export_request() -> DesignerExportPlanRequest {
                 def_names: vec!["RS_OldRifle".into()],
                 answers: serde_json::json!({"weaponTagClass": "RS_CE_Class"}),
             }],
+            remove: false,
         }),
         accept_suggestions: Some(AcceptSuggestionsDto {
             fields: vec!["bulk".into()],
