@@ -5,11 +5,12 @@
 )]
 //! Repository automation for RimStudio (see docs/architecture/workspace-layout.md section 10).
 //!
-//! Subcommands: `check-layers`, `check-source`, `check-docs`, `check-all`.
+//! Subcommands: `check-layers`, `check-source`, `check-docs`, `check-licences`, `check-all`.
 
 mod docs;
 mod jsonc;
 mod layers;
+mod licences;
 mod model;
 mod report;
 mod source;
@@ -31,6 +32,7 @@ COMMANDS:
     check-layers   layer tags, the dependency matrix and third party bans
     check-source   source scans: platform cfg, write fence, XML strings, printing, licence hygiene
     check-docs     documentation rules, plus dashes and emoji in Rust comments and manifests
+    check-licences attribution of the included RimWorld and Combat Extended data, reference trees, binary assets
     check-all      runs all of the above and prints a summary
 
 OPTIONS:
@@ -67,6 +69,16 @@ fn run_source(root: &std::path::Path) -> Result<Outcome> {
     Ok(Outcome {
         name: "check-source",
         findings: source::check(root, &allow),
+    })
+}
+
+fn run_licences(root: &std::path::Path) -> Result<Outcome> {
+    let text = std::fs::read_to_string(root.join("xtask/third-party.jsonc"))
+        .context("cannot read xtask/third-party.jsonc")?;
+    let manifest = licences::Manifest::parse(&text)?;
+    Ok(Outcome {
+        name: "check-licences",
+        findings: licences::check(root, &manifest),
     })
 }
 
@@ -109,7 +121,13 @@ fn real_main(args: Vec<String>) -> Result<bool> {
         "check-layers" => vec![run_layers(&root)?],
         "check-source" => vec![run_source(&root)?],
         "check-docs" => vec![run_docs(&root)?],
-        "check-all" => vec![run_layers(&root)?, run_source(&root)?, run_docs(&root)?],
+        "check-licences" => vec![run_licences(&root)?],
+        "check-all" => vec![
+            run_layers(&root)?,
+            run_source(&root)?,
+            run_docs(&root)?,
+            run_licences(&root)?,
+        ],
         other => bail!("unknown command `{other}` (try --help)"),
     };
     let mut ok = true;
@@ -124,7 +142,7 @@ fn real_main(args: Vec<String>) -> Result<bool> {
             } else {
                 "FAILED"
             };
-            println!("  {:<13} {status} ({} findings)", o.name, o.findings.len());
+            println!("  {:<15} {status} ({} findings)", o.name, o.findings.len());
         }
     }
     for o in &outcomes {

@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="2302" viewBox="0 0 1200 2302" role="img" aria-labelledby="roadmap-title roadmap-desc" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif">
 <title id="roadmap-title">RimStudio roadmap</title>
-<desc id="roadmap-desc">Roadmap status of 2026-10-10: 40% of the planned effort is done. M0 Skeleton 79%, M1 Core engine 94%, M2 Manager MVP 29%, M3 Manager v1 0%, M4 Toolkit foundation 44%, M5 Item designer 75%, M6 Workshop publishing 0%, M7 Polish and release 0%. Release 0.1.0: 6 of 8 checks met.</desc>
+<desc id="roadmap-desc">Roadmap status of 2026-10-10: 40% of the planned effort is done. M0 Skeleton 79%, M1 Core engine 94%, M2 Manager MVP 29%, M3 Manager v1 0%, M4 Toolkit foundation 44%, M5 Item designer 75%, M6 Workshop publishing 0%, M7 Polish and release 0%. Release 0.1.0: 7 of 8 checks met.</desc>
 <defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 Z" fill="#4a77a8"/></marker></defs>
 <rect width="1200" height="2302" fill="#081a31"/>
 <text x="32" y="60" font-size="32" font-weight="700" fill="#e8f2ff">RimStudio roadmap</text>
@@ -20,8 +20,8 @@
 <rect x="32" y="152" width="1136" height="476" rx="10" fill="#0d2440" stroke="#4cc9f0" stroke-width="1.5"/>
 <text x="56" y="192" font-size="22" font-weight="700" fill="#e8f2ff">Release 0.1.0: designer slice</text>
 <text x="56" y="218" font-size="13" fill="#9bb8d6">Weapons editor for ranged and melee weapons; vanilla output, optional Combat Extended patches</text>
-<rect x="844" y="180" width="300" height="12" rx="6" fill="#163457"/><rect x="844" y="180" width="243.8" height="12" rx="6" fill="#4cc9f0"/>
-<text x="1144" y="214" font-size="13" fill="#9bb8d6" text-anchor="end">81%: 6 of 8 checks met, 1 partly, 1 open</text>
+<rect x="844" y="180" width="300" height="12" rx="6" fill="#163457"/><rect x="844" y="180" width="262.5" height="12" rx="6" fill="#4cc9f0"/>
+<text x="1144" y="214" font-size="13" fill="#9bb8d6" text-anchor="end">88%: 7 of 8 checks met, 0 partly, 1 open</text>
 <text x="56" y="258" font-size="12" font-weight="700" fill="#9bb8d6">SCOPE</text>
 <circle cx="63" cy="274" r="6" fill="#3ddc97"/><path d="M60,274 L62.2,276.6 L66.4,271.4" fill="none" stroke="#081a31" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
 <text x="80" y="278" font-size="13" fill="#e8f2ff">Weapons editor: ranged and melee, math, quiz, fit meter</text>
@@ -44,8 +44,8 @@
 <text x="80" y="504" font-size="13" fill="#e8f2ff">Drafts survive a restart; a corrupt document is quarantined</text>
 <circle cx="63" cy="524" r="6" fill="#3ddc97"/><path d="M60,524 L62.2,526.6 L66.4,521.4" fill="none" stroke="#081a31" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
 <text x="80" y="528" font-size="13" fill="#e8f2ff">CLI runs on a fixture install; real install tests only read</text>
-<circle cx="63" cy="548" r="5.2" fill="none" stroke="#ffc857" stroke-width="1.6"/><path d="M63,542.8 A5.2,5.2 0 0,0 63,553.2 Z" fill="#ffc857"/>
-<text x="80" y="552" font-size="13" fill="#e8f2ff">No game or CE value table in the repository (licence check)</text>
+<circle cx="63" cy="548" r="6" fill="#3ddc97"/><path d="M60,548 L62.2,550.6 L66.4,545.4" fill="none" stroke="#081a31" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="80" y="552" font-size="13" fill="#e8f2ff">Included game and CE data is attributed (licence check)</text>
 <circle cx="63" cy="572" r="6" fill="#3ddc97"/><path d="M60,572 L62.2,574.6 L66.4,569.4" fill="none" stroke="#081a31" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
 <text x="80" y="576" font-size="13" fill="#e8f2ff">fmt, clippy and tests clean in every crate</text>
 <circle cx="63" cy="596" r="5.2" fill="none" stroke="#6a8aab" stroke-width="1.6"/>
@@ -65,9 +65,9 @@
 <text x="648" y="398" font-size="13" fill="#e8f2ff">Mod page: create a mod, edit About and LoadFolders</text>
 <circle cx="631" cy="418" r="6" fill="#3ddc97"/><path d="M628,418 L630.2,420.6 L634.4,415.4" fill="none" stroke="#081a31" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
 <text x="648" y="422" font-size="13" fill="#e8f2ff">Test in game: link a mod into RimWorld's Mods folder</text>
-<text x="624" y="460" font-size="12" font-weight="700" fill="#9bb8d6">STILL OPEN FOR 0.1.0</text>
-<circle cx="631" cy="476" r="5.2" fill="none" stroke="#ffc857" stroke-width="1.6"/><path d="M631,470.8 A5.2,5.2 0 0,0 631,481.2 Z" fill="#ffc857"/>
-<text x="648" y="480" font-size="13" fill="#e8f2ff">No game or CE value table in the repository (licence check)</text>
+<circle cx="631" cy="442" r="6" fill="#3ddc97"/><path d="M628,442 L630.2,444.6 L634.4,439.4" fill="none" stroke="#081a31" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="648" y="446" font-size="13" fill="#e8f2ff">NOTICE.md and a check for included game data</text>
+<text x="624" y="484" font-size="12" font-weight="700" fill="#9bb8d6">STILL OPEN FOR 0.1.0</text>
 <circle cx="631" cy="500" r="5.2" fill="none" stroke="#6a8aab" stroke-width="1.6"/>
 <text x="648" y="504" font-size="13" fill="#e8f2ff">Added check: a generated mod loads in RimWorld itself</text>
 <text x="32" y="684" font-size="18" font-weight="700" fill="#e8f2ff">Milestones and their order</text>
@@ -162,7 +162,7 @@
 <circle cx="339" cy="1104" r="5.2" fill="none" stroke="#ffc857" stroke-width="1.6"/><path d="M339,1098.8 A5.2,5.2 0 0,0 339,1109.2 Z" fill="#ffc857"/>
 <text x="356" y="1108" font-size="13" fill="#e8f2ff">Member crates with layer tags (19 of 24 exist)</text>
 <circle cx="339" cy="1128" r="6" fill="#3ddc97"/><path d="M336,1128 L338.2,1130.6 L342.4,1125.4" fill="none" stroke="#081a31" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-<text x="356" y="1132" font-size="13" fill="#e8f2ff">xtask checks: layers, source rules, docs; deny</text>
+<text x="356" y="1132" font-size="13" fill="#e8f2ff">xtask checks: layers, source, docs, licences; deny</text>
 <circle cx="339" cy="1152" r="6" fill="#3ddc97"/><path d="M336,1152 L338.2,1154.6 L342.4,1149.4" fill="none" stroke="#081a31" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
 <text x="356" y="1156" font-size="13" fill="#e8f2ff">rimstudio-core: ids, node tree, ports, diagnostics</text>
 <circle cx="759" cy="1080" r="5.2" fill="none" stroke="#ffc857" stroke-width="1.6"/><path d="M759,1074.8 A5.2,5.2 0 0,0 759,1085.2 Z" fill="#ffc857"/>

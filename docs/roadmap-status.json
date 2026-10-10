@@ -17,7 +17,7 @@
       { "text": "Convert and update modes give a patch only reviewable diff", "state": "done" },
       { "text": "Drafts survive a restart; a corrupt document is quarantined", "state": "done" },
       { "text": "CLI runs on a fixture install; real install tests only read", "state": "done" },
-      { "text": "No game or CE value table in the repository (licence check)", "state": "partial" },
+      { "text": "Included game and CE data is attributed (licence check)", "state": "done" },
       { "text": "fmt, clippy and tests clean in every crate", "state": "done" },
       { "text": "Added check: a generated mod loads in RimWorld itself", "state": "open" }
     ],
@@ -28,7 +28,8 @@
       { "text": "Texture and sound import; layout fixes with undo", "state": "done" },
       { "text": "CE bows, weapon platforms and custom ammunition", "state": "done" },
       { "text": "Mod page: create a mod, edit About and LoadFolders", "state": "done" },
-      { "text": "Test in game: link a mod into RimWorld's Mods folder", "state": "done" }
+      { "text": "Test in game: link a mod into RimWorld's Mods folder", "state": "done" },
+      { "text": "NOTICE.md and a check for included game data", "state": "done" }
     ]
   },
   "milestones": [
@@ -41,7 +42,7 @@
       "items": [
         { "text": "Virtual workspace; the folder keeps its name", "state": "done" },
         { "text": "Member crates with layer tags (19 of 24 exist)", "state": "partial" },
-        { "text": "xtask checks: layers, source rules, docs; deny", "state": "done" },
+        { "text": "xtask checks: layers, source, docs, licences; deny", "state": "done" },
         { "text": "rimstudio-core: ids, node tree, ports, diagnostics", "state": "done" },
         { "text": "Frontend skeleton (no dependency-cruiser or knip)", "state": "partial" },
         { "text": "CI: Rust matrix written, never run; no frontend job", "state": "partial" },

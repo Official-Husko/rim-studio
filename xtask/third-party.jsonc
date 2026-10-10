@@ -1,0 +1,91 @@
+// Third party data that the repository includes, and the attribution it needs (R11, ADR 0059).
+//
+// `cargo xtask check-licences` reads this file and NOTICE.md. The owner states that the rights
+// holders of RimWorld and Combat Extended allow their data to be included and used when the source
+// is named and the official project is linked (D-211). "Data" means definitions, values, names,
+// tables and patch content. Art, audio and code of the two are not included.
+//
+// When a new set of such data enters the repository, add it to `sets` and to the table in
+// NOTICE.md; the check fails on a data file that names a game or Combat Extended definition
+// outside a set, on a set that matches no file, and on a source whose notice text is incomplete.
+{
+  // The file that names every source below with its link and required texts, and documents
+  // every set by id and path.
+  "notice": "NOTICE.md",
+
+  "sources": [
+    {
+      "id": "rimworld",
+      "name": "RimWorld",
+      "holder": "Ludeon Studios Inc.",
+      "link": "https://rimworldgame.com/",
+      // The disclaimer that the end user licence agreement of the game asks every work built on
+      // the game to display (EULA.txt in the game folder, section "Things you create using our
+      // software").
+      "required": [
+        "Portions of the materials used to create this content/mod are trademarks and/or copyrighted works of Ludeon Studios Inc. All rights reserved by Ludeon. This content/mod is not official and is not endorsed by Ludeon."
+      ]
+    },
+    {
+      "id": "combat-extended",
+      "name": "Combat Extended",
+      "holder": "CE Team",
+      "link": "https://github.com/CombatExtended-Continued/CombatExtended",
+      // The project is used under the Creative Commons licence its README names.
+      "required": [
+        "https://steamcommunity.com/sharedfiles/filedetails/?id=2890901044",
+        "Creative Commons Attribution-NonCommercial-ShareAlike 4.0",
+        "https://creativecommons.org/licenses/by-nc-sa/4.0/"
+      ]
+    }
+  ],
+
+  "sets": [
+    {
+      "id": "ui-fixtures",
+      "from": ["rimworld", "combat-extended"],
+      "paths": ["packages/testkit/fixtures/**"],
+      "what": "Answers of the development bridge recorded from a real install, with the weapon, ammunition and class data they carry; used by the UI tests, the component gallery and the offline mock mode"
+    },
+    {
+      "id": "research-data",
+      "from": ["rimworld", "combat-extended"],
+      "paths": ["docs/research/data/**"],
+      "what": "Tables, figures and scripts behind the research notes: definitions and values read from the game and from Combat Extended, and statistics computed from them; not part of any build"
+    },
+    {
+      "id": "engine-tests",
+      "from": ["rimworld", "combat-extended"],
+      "paths": ["crates/*/tests/**"],
+      "what": "Test vectors and golden outputs of the engines and the designer; patch outputs name definitions and classes of the two projects, and a few vectors are derived from real definitions"
+    },
+    {
+      "id": "ui-strings",
+      "from": ["rimworld", "combat-extended"],
+      "paths": ["apps/desktop/src/locales/**"],
+      "what": "Interface text that names definitions and classes of the two projects"
+    },
+    {
+      "id": "documents",
+      "from": ["rimworld", "combat-extended"],
+      "paths": ["docs/**", "README.md", "NOTICE.md"],
+      "what": "Specifications, design documents and research notes that quote names, values and tables (D-100)"
+    }
+  ],
+
+  // Reference projects are read for concepts and never copied: no tracked path may start with
+  // one of these folders (they are listed in .gitignore).
+  "referenceTrees": ["RimSort-main/", "RimCrow-main/", "CombatExtended-Development/", "reference/"],
+
+  // Data files that hold one of these markers must belong to a set. A name needs a capital letter
+  // after the prefix and no name character before it.
+  "scan": {
+    "extensions": ["json", "jsonc", "xml", "csv", "tsv", "txt"],
+    "prefixes": ["Gun_", "Bullet_", "Apparel_", "MeleeWeapon_", "Ammo_", "AmmoSet_"],
+    "contains": ["CombatExtended."]
+  },
+
+  // Binary assets (images, audio, libraries) that are the project's own. Any other tracked asset
+  // fails the check: game art, audio and code are not part of the permission.
+  "ownAssets": ["apps/desktop/src-tauri/icons/**", "docs/research/data/**/*.png"]
+}

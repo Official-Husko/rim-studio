@@ -463,7 +463,7 @@ pub(crate) fn check(root: &Path, allow: &DocsAllow) -> Vec<Finding> {
     let mut md: Vec<PathBuf> = walk(&root.join("docs"), &|p| {
         p.extension().is_some_and(|e| e == "md")
     });
-    for name in ["CLAUDE.md", "README.md"] {
+    for name in ["CLAUDE.md", "README.md", "NOTICE.md"] {
         if root.join(name).exists() {
             md.push(root.join(name));
         }
