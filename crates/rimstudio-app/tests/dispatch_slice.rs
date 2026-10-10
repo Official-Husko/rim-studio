@@ -313,6 +313,39 @@ fn every_command_of_the_slice_dispatches_in_one_session() {
         json!({"projectId": conv_id.clone(), "path": "Defs/Guns.xml"}),
     );
     assert!(s(&file, "text").contains("<Defs>"), "{file}");
+    // the weapons the project defines, and opening one as a draft that edits it where it stands
+    let weapons = run.ok(
+        "designer_project_weapons",
+        json!({"projectId": conv_id.clone()}),
+    );
+    let listed: Vec<&str> = weapons["weapons"]
+        .as_array()
+        .unwrap()
+        .iter()
+        .filter_map(|w| w["defName"].as_str())
+        .collect();
+    assert!(listed.contains(&"RS_ProjGun"), "{weapons}");
+    let open_weapon = run.ok(
+        "designer_open_weapon",
+        json!({"projectId": conv_id.clone(), "defName": "RS_ProjGun"}),
+    );
+    assert_eq!(open_weapon["file"], json!("Defs/Guns.xml"), "{open_weapon}");
+    assert_eq!(
+        open_weapon["entry"]["draft"]["editsFile"],
+        json!("Defs/Guns.xml")
+    );
+    assert_eq!(open_weapon["reused"], json!(false));
+    let open_again = run.ok(
+        "designer_open_weapon",
+        json!({"projectId": conv_id.clone(), "defName": "RS_ProjGun"}),
+    );
+    assert_eq!(open_again["reused"], json!(true));
+    assert_eq!(open_again["entry"]["id"], open_weapon["entry"]["id"]);
+    let no_such = run.err(
+        "designer_open_weapon",
+        json!({"projectId": conv_id.clone(), "defName": "RS_NoSuchGun"}),
+    );
+    assert_eq!(no_such.code, "designer.invalid-draft");
     let closed = run.ok("project_close", json!({"projectId": conv_id.clone()}));
     assert_eq!(closed["closed"], json!(true));
     run.ok("project_open", json!({"path": conv_root.as_str()}));

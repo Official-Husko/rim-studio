@@ -76,6 +76,11 @@ pub struct DraftDto {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     #[cfg_attr(feature = "ts", ts(optional))]
     pub archetype: Option<ArchetypeChoiceDto>,
+    /// The project file (relative to the project root) whose definition the draft edits in place: the plan
+    /// replaces the definition there instead of writing the layout's path. Omitted for a new weapon.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    #[cfg_attr(feature = "ts", ts(optional))]
+    pub edits_file: Option<String>,
 }
 
 impl DraftDto {
@@ -91,6 +96,7 @@ impl DraftDto {
             anchors: Vec::new(),
             cloned_from: None,
             archetype: None,
+            edits_file: None,
         }
     }
 }

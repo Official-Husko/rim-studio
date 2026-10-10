@@ -101,3 +101,4 @@ What is decided, in the active voice, with the names of crates, files and versio
 | 0058 | [Weapon archetypes](0058-weapon-archetypes.md) | accepted | D-200 to D-204, D-085 |
 | 0059 | [Attributed RimWorld and Combat Extended data](0059-attributed-game-and-combat-extended-data.md) | accepted | D-211, D-212, supersedes 0034 in part |
 | 0060 | [Removing the generated patch of a weapon](0060-remove-generated-patch.md) | accepted | D-213 |
+| 0061 | [Editing a weapon of the project where it stands](0061-edit-project-weapon-in-place.md) | accepted | D-214 |

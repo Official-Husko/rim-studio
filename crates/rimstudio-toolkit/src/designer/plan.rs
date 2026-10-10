@@ -32,6 +32,8 @@ use rimstudio_ipc_types::designer::{
 };
 use rimstudio_ipc_types::diagnostic::diagnostics_to_dtos;
 use rimstudio_workspace::project::ProjectRecord;
+use rimstudio_xml::modes::ParseMode;
+use rimstudio_xml::reader::parse_top_level;
 
 use super::ce::accept_for_plan;
 use super::convert::convert_plan;
@@ -56,6 +58,11 @@ pub const CONVERT_ASK: DiagCode = DiagCode::new("designer.convert-needs-answer")
 pub const CONVERT_DERIVED: DiagCode = DiagCode::new("designer.convert-derived");
 /// The diagnostic code of a Combat Extended block on a machine without Combat Extended.
 pub const CE_UNAVAILABLE: DiagCode = DiagCode::new("designer.ce-unavailable");
+/// The diagnostic code (error) of a draft that edits a weapon in a file that is not there any more.
+pub const EDITS_FILE_MISSING: DiagCode = DiagCode::new("designer.edits-file-missing");
+/// The diagnostic code (error) of a draft that edits a weapon where it stands but names another weapon than
+/// the file defines: a weapon that exists keeps its name.
+pub const EDITS_NAME_CHANGED: DiagCode = DiagCode::new("designer.edits-name-changed");
 
 /// One file of a built plan: the final text and what happens to the file.
 #[derive(Debug, Clone, PartialEq)]
@@ -529,6 +536,34 @@ pub fn plan_design(
     (builder.build(), extra)
 }
 
+/// True when the definition file `text` defines a thing called `name`. A file that cannot be read as
+/// definitions counts as defining it: the merge reports the real problem for such a file.
+fn defines(text: &str, name: &str) -> bool {
+    parse_top_level(text.as_bytes(), ParseMode::Tolerant, "Defs").map_or(true, |parsed| {
+        parsed
+            .nodes
+            .iter()
+            .any(|n| n.child_text("defName") == Some(name))
+    })
+}
+
+/// Points the definition file of an edited weapon at the project file the draft edits, so the merge edits
+/// the definition where it stands (a definition with the same name is brought to the meaning of the new one
+/// by small edits, everything else in the file is kept) instead of writing the layout's path and defining
+/// the weapon twice.
+fn redirect_to_edited_file(plan: &mut WritePlan, def_name: &str, file: &str) {
+    for planned in &mut plan.files {
+        let holds_weapon = planned.kind == FileKind::VanillaDefs
+            && planned.tree.as_ref().is_some_and(|t| {
+                t.elements()
+                    .any(|n| n.child_text("defName") == Some(def_name))
+            });
+        if holds_weapon {
+            planned.path = file.to_owned();
+        }
+    }
+}
+
 /// Builds the plan of a request against a prepared project.
 ///
 /// # Errors
@@ -564,8 +599,44 @@ pub fn prepare(ctx: &Ctx, req: &DesignerExportPlanRequest) -> ToolkitResult<Prep
                 Some(accept) => accept_for_plan(ctx, &draft.spec, accept),
                 None => (draft.spec.clone(), Vec::new()),
             };
-            let (plan, extra) = plan_design(ctx, &view, &spec);
+            let (mut plan, extra) = plan_design(ctx, &view, &spec);
             notes.extend(extra);
+            if let Some(file) = &draft.edits_file {
+                let held = writer.read_text(file);
+                let name = &spec.identity.def_name;
+                if matches!(&held, Ok(Some(text)) if !defines(text, name)) {
+                    // a second definition in the same file would share the projectile of the first and
+                    // break the saves and references of a weapon that exists: a copy is a clone
+                    notes.push(
+                        error_diag(
+                            &EDITS_NAME_CHANGED,
+                            format!(
+                                "{file} does not define {name}. A weapon that is edited where it stands \
+                                 keeps its name (renaming it breaks saved games and every reference to \
+                                 it); clone the weapon to make one with another name"
+                            ),
+                        )
+                        .with_arg("path", file)
+                        .with_arg("field", "/identity/defName"),
+                    );
+                } else if matches!(held, Ok(None)) {
+                    // writing the weapon to a new file would define it a second time next to wherever the
+                    // file went (a layout fix moves files), so the plan cannot be applied
+                    notes.push(
+                        error_diag(
+                            &EDITS_FILE_MISSING,
+                            format!(
+                                "{file} is the file this weapon is edited in and it is not there any \
+                                 more; read the weapon from the mod again before applying"
+                            ),
+                        )
+                        .with_arg("path", file)
+                        .with_arg("field", "/editsFile"),
+                    );
+                } else {
+                    redirect_to_edited_file(&mut plan, &spec.identity.def_name, file);
+                }
+            }
             realize(&view, &writer, &plan, notes)
         }
     };

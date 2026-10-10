@@ -63,6 +63,10 @@ pub mod wire {
         DesignerArchetypeProposeRequest,
     };
     pub use rimstudio_ipc_types::designer::{DesignerLintFilesRequest, DesignerLintFilesResult};
+    pub use rimstudio_ipc_types::designer::{
+        DesignerOpenWeaponRequest, DesignerOpenWeaponResponse, DesignerProjectWeaponsRequest,
+        DesignerProjectWeaponsResponse,
+    };
     pub use rimstudio_ipc_types::jobs::{CancelJobRequest, CancelJobResponse};
     pub use rimstudio_ipc_types::library::{
         DetectGetReportRequest, DetectGetReportResponse, DetectRunRequest,
@@ -336,6 +340,8 @@ macro_rules! for_each_command {
             query  designer_structure_defaults (ctx, req: DesignerStructureDefaultsRequest) -> DesignerStructureDefaultsResponse = $crate::api::designer::designer_structure_defaults;
             query  designer_projectile_own (ctx, req: DesignerProjectileOwnRequest) -> DesignerProjectileOwnResponse = $crate::api::designer::designer_projectile_own;
             query  designer_asset_info (ctx, req: DesignerAssetInfoRequest) -> DesignerAssetInfoResponse = $crate::api::designer::designer_asset_info;
+            query  designer_project_weapons (ctx, req: DesignerProjectWeaponsRequest) -> DesignerProjectWeaponsResponse = $crate::api::designer::designer_project_weapons;
+            action designer_open_weapon (ctx, req: DesignerOpenWeaponRequest) -> DesignerOpenWeaponResponse = $crate::api::designer::designer_open_weapon;
             query  designer_lint_files (ctx, req: DesignerLintFilesRequest) -> DesignerLintFilesResult = $crate::api::designer_lint::designer_lint_files;
             query  designer_archetype_catalog (ctx, req: DesignerArchetypeCatalogRequest) -> ArchetypeCatalogDto = $crate::api::designer_archetype::designer_archetype_catalog;
             query  designer_archetype_propose (ctx, req: DesignerArchetypeProposeRequest) -> ArchetypeProposalDto = $crate::api::designer_archetype::designer_archetype_propose;

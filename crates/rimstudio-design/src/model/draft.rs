@@ -112,6 +112,11 @@ pub struct Draft {
     /// never used it). It is intent, not numbers: the numbers live in the spec.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub archetype: Option<super::archetype::ArchetypeChoice>,
+    /// The project file (relative to the project root) whose definition of this weapon the draft edits in
+    /// place: the definition is replaced where it stands instead of being written to the layout's path
+    /// (additive: absent on older drafts and on drafts that describe a new weapon).
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub edits_file: Option<String>,
 }
 
 impl Draft {
@@ -132,6 +137,7 @@ impl Draft {
             anchors: Vec::new(),
             cloned_from: None,
             archetype: None,
+            edits_file: None,
         }
     }
 

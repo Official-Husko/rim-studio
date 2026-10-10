@@ -330,6 +330,7 @@ pub struct Ctx {
     calibration_memory: CalibrationMemory,
     env: ProjectEnv,
     project_sessions: Mutex<Option<ProjectSession>>,
+    vanilla_project_sessions: Mutex<Option<ProjectSession>>,
 }
 
 /// The cached session over the reference set plus the open project, see [`Ctx::project_session`].
@@ -338,6 +339,43 @@ struct ProjectSession {
     base_revision: u64,
     base_ce: bool,
     session: Arc<WorkspaceSession>,
+}
+
+/// The session over `base` plus the project folder, from the cache slot when it is still good: same
+/// folder, same reference revision and no changed file.
+fn cached_project_session(
+    slot: &Mutex<Option<ProjectSession>>,
+    base: &Arc<WorkspaceSession>,
+    base_ce: bool,
+    root: &Utf8Path,
+) -> ToolkitResult<Arc<WorkspaceSession>> {
+    let mut slot = slot.lock().unwrap_or_else(|p| p.into_inner());
+    if let Some(cached) = slot.as_ref()
+        && cached.root == root
+        && cached.base_revision == base.revision()
+        && cached.base_ce == base_ce
+        && !cached.session.is_stale()
+    {
+        return Ok(cached.session.clone());
+    }
+    let reference = base
+        .reference()
+        .with_project(root, &rimstudio_workspace::listing::DiskListing)?;
+    let mut input = OpenInput::new(reference)
+        .with_type_table(base.type_table())
+        .with_parse_cache(base.parse_cache());
+    input.custom_ops = rimstudio_design::ce::reader::custom_registry(
+        &rimstudio_design::ce::reader::CeClassNames::default(),
+        std::collections::BTreeMap::new(),
+    );
+    let session = Arc::new(WorkspaceSession::open_simple(input)?);
+    *slot = Some(ProjectSession {
+        root: root.to_path_buf(),
+        base_revision: base.revision(),
+        base_ce,
+        session: session.clone(),
+    });
+    Ok(session)
 }
 
 impl std::fmt::Debug for Ctx {
@@ -402,6 +440,7 @@ impl Ctx {
             calibration_memory: Mutex::new(Vec::new()),
             env,
             project_sessions: Mutex::new(None),
+            vanilla_project_sessions: Mutex::new(None),
         })
     }
 
@@ -420,6 +459,7 @@ impl Ctx {
             calibration_memory: Mutex::new(Vec::new()),
             env: self.env.clone(),
             project_sessions: Mutex::new(None),
+            vanilla_project_sessions: Mutex::new(None),
         }
     }
 
@@ -596,36 +636,31 @@ impl Ctx {
             .ok_or_else(|| ToolkitError::ReferenceUnavailable {
                 reason: "no game install is loaded".to_owned(),
             })?;
-        let mut slot = self
-            .project_sessions
-            .lock()
-            .unwrap_or_else(|p| p.into_inner());
-        if let Some(cached) = slot.as_ref()
-            && cached.root == root
-            && cached.base_revision == base.revision()
-            && cached.base_ce == self.ce_session.is_some()
-            && !cached.session.is_stale()
-        {
-            return Ok(cached.session.clone());
-        }
-        let reference = base
-            .reference()
-            .with_project(root, &rimstudio_workspace::listing::DiskListing)?;
-        let mut input = OpenInput::new(reference)
-            .with_type_table(base.type_table())
-            .with_parse_cache(base.parse_cache());
-        input.custom_ops = rimstudio_design::ce::reader::custom_registry(
-            &rimstudio_design::ce::reader::CeClassNames::default(),
-            std::collections::BTreeMap::new(),
-        );
-        let session = Arc::new(WorkspaceSession::open_simple(input)?);
-        *slot = Some(ProjectSession {
-            root: root.to_path_buf(),
-            base_revision: base.revision(),
-            base_ce: self.ce_session.is_some(),
-            session: session.clone(),
-        });
-        Ok(session)
+        cached_project_session(
+            &self.project_sessions,
+            base,
+            self.ce_session.is_some(),
+            root,
+        )
+    }
+
+    /// Like [`Ctx::project_session`], over the reference set without Combat Extended even when Combat
+    /// Extended is loaded: the definitions of the project as the base game loads them, with no conversion
+    /// patch applied. The designer reads an existing weapon of the project from it, so the numbers it shows
+    /// and edits are the vanilla ones.
+    ///
+    /// # Errors
+    ///
+    /// [`ToolkitError::ReferenceUnavailable`] without a session, [`ToolkitError::Workspace`] when the
+    /// project folder is not a mod.
+    pub fn vanilla_project_session(&self, root: &Utf8Path) -> ToolkitResult<Arc<WorkspaceSession>> {
+        let base = self
+            .session
+            .as_ref()
+            .ok_or_else(|| ToolkitError::ReferenceUnavailable {
+                reason: "no game install is loaded".to_owned(),
+            })?;
+        cached_project_session(&self.vanilla_project_sessions, base, false, root)
     }
 
     pub(crate) fn drafts(&self) -> &Collection<DraftRecord> {

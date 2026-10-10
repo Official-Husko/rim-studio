@@ -3,9 +3,10 @@
 //! A planned file carries a node tree and comment headers ([`PlannedFile::section_groups`]). A file that does
 //! not exist is rendered whole by `rimstudio-xml`. A file that exists is changed by splicing: the section of
 //! the design (found by its `====== Name ======` comment) is replaced in place, a definition with the same
-//! name is replaced as an element, and anything new is appended before the closing tag, in the indentation
-//! and line ending of the file. Every byte outside the changed span stays as it was (IT-053). `LoadFolders.xml`
-//! is edited with the entry functions of `rimstudio-xml`.
+//! name is brought to the meaning of the new one by small edits ([`super::merge_element`]: comments, the
+//! order of the members and the number format stay), and anything new is appended before the closing tag,
+//! in the indentation and line ending of the file. Every byte outside the changed span stays as it was
+//! (IT-053). `LoadFolders.xml` is edited with the entry functions of `rimstudio-xml`.
 //!
 //! All functions return `Err(reason)` with a plain sentence when the existing file cannot be merged (not
 //! well formed, another root element); the planner turns that into a diagnostic and plans nothing for it.
@@ -16,6 +17,8 @@ use rimstudio_design::plan::{PlannedFile, SectionGroup, TextEdit};
 use rimstudio_xml::edit::SpanEditor;
 use rimstudio_xml::load_folders::{add_entry, ensure_block};
 use rimstudio_xml::render::{RenderOpts, Section, render_list_file};
+
+use super::merge_element::replace_in_place;
 
 /// The marker that starts a section comment of RimStudio output.
 const BANNER: &str = "======";
@@ -303,7 +306,9 @@ fn merge_group(text: &str, root_tag: &str, group: &SectionGroup) -> Result<Strin
             });
             match found {
                 Some(path) => {
-                    ed.replace_element(&path, node).map_err(|e| e.to_string())?;
+                    // only what differs in meaning is edited: the comments, the order and the number
+                    // format of a definition a person wrote stay as they are
+                    replace_in_place(&mut ed, &path, node)?;
                 }
                 None => remaining.push(node),
             }

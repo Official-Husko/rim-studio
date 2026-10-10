@@ -300,6 +300,8 @@ fn every_row_is_in_the_table() {
         "defs_get_resolved",
         "designer_clone",
         "designer_clone_diff",
+        "designer_project_weapons",
+        "designer_open_weapon",
         "designer_structure_defaults",
         "designer_ce_suggest",
         "designer_quiz_back",

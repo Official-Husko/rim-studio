@@ -12,10 +12,11 @@ use rimstudio_ipc_types::designer::{
     DesignerCloneRequest, DesignerCloneResponse, DesignerConvertScanRequest,
     DesignerDraftDeleteRequest, DesignerDraftDeleteResponse, DesignerDraftListRequest,
     DesignerDraftListResponse, DesignerDraftSaveRequest, DesignerDraftSaveResponse,
-    DesignerExportPlanRequest, DesignerFitRequest, DesignerPreviewRequest,
-    DesignerProjectileOwnRequest, DesignerProjectileOwnResponse, DesignerQuizAnswerRequest,
-    DesignerQuizAnswerResponse, DesignerQuizBackRequest, DesignerQuizNextRequest,
-    DesignerReferenceListRequest, DesignerStructureDefaultsRequest,
+    DesignerExportPlanRequest, DesignerFitRequest, DesignerOpenWeaponRequest,
+    DesignerOpenWeaponResponse, DesignerPreviewRequest, DesignerProjectWeaponsRequest,
+    DesignerProjectWeaponsResponse, DesignerProjectileOwnRequest, DesignerProjectileOwnResponse,
+    DesignerQuizAnswerRequest, DesignerQuizAnswerResponse, DesignerQuizBackRequest,
+    DesignerQuizNextRequest, DesignerReferenceListRequest, DesignerStructureDefaultsRequest,
     DesignerStructureDefaultsResponse, FitReportDto, PreviewDto, QuizStepDto, ReferenceListDto,
     WritePlanDto,
 };
@@ -242,6 +243,36 @@ pub fn designer_clone(
 ) -> Result<DesignerCloneResponse, ApiError> {
     let d = ctx.workspace.designer_ctx(ctx)?;
     toolkit::clone_draft(&d, req).map_err(|e| ctx.toolkit_error(&e))
+}
+
+/// `designer_project_weapons`: the weapons the open project defines, with the numbers the Weapons tab
+/// shows. Reads the project, writes nothing.
+///
+/// # Errors
+/// `designer.invalid-draft` for a bad project id, `designer.project-not-open` for a project that is not
+/// open, `designer.reference-unavailable` without a game install.
+pub fn designer_project_weapons(
+    ctx: &AppContext,
+    req: DesignerProjectWeaponsRequest,
+) -> Result<DesignerProjectWeaponsResponse, ApiError> {
+    let d = ctx.workspace.designer_ctx(ctx)?;
+    toolkit::project_weapons(&d, req).map_err(|e| ctx.toolkit_error(&e))
+}
+
+/// `designer_open_weapon`: opens a weapon of the project as a stored draft that edits the definition where
+/// it stands; a stored draft of the weapon is continued unless `reload` is set. The Combat Extended block
+/// is absent and nothing is written to the project.
+///
+/// # Errors
+/// `designer.invalid-draft` for a bad id, a name the project does not define or a definition the designer
+/// does not model, `designer.reference-unavailable` without a game install, `design.invalid-input` for a
+/// definition that cannot be read, `io.write-failed` for a store problem.
+pub fn designer_open_weapon(
+    ctx: &AppContext,
+    req: DesignerOpenWeaponRequest,
+) -> Result<DesignerOpenWeaponResponse, ApiError> {
+    let d = ctx.workspace.designer_ctx(ctx)?;
+    toolkit::open_weapon(&d, req).map_err(|e| ctx.toolkit_error(&e))
 }
 
 /// `designer_clone_diff`: the changed fields of a clone against its source with the effect on the exact

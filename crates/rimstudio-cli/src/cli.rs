@@ -786,6 +786,27 @@ pub(crate) struct QuizArgs {
     pub(crate) answers: Option<String>,
 }
 
+/// `designer weapons` arguments.
+#[derive(Debug, Args)]
+pub(crate) struct WeaponsArgs {
+    /// The mod project folder.
+    #[arg(long, value_name = "DIR")]
+    pub(crate) project: String,
+}
+
+/// `designer open` arguments.
+#[derive(Debug, Args)]
+pub(crate) struct OpenArgs {
+    /// The definition name of the weapon, as the mod's own files name it.
+    pub(crate) def_name: String,
+    /// The mod project folder.
+    #[arg(long, value_name = "DIR")]
+    pub(crate) project: String,
+    /// Read the weapon from its file again and replace the stored draft of it.
+    #[arg(long)]
+    pub(crate) reload: bool,
+}
+
 /// The `drafts` commands.
 #[derive(Debug, Subcommand)]
 pub(crate) enum DraftsCmd {
@@ -941,6 +962,11 @@ pub(crate) enum DesignerCmd {
     },
     /// Create a draft in a project's draft store.
     New(NewArgs),
+    /// List the weapons a mod defines, with their numbers and file; changes nothing.
+    Weapons(WeaponsArgs),
+    /// Open a weapon the mod defines as a draft that edits it where it stands. A draft of the weapon that
+    /// exists is continued unless `--reload` reads the file again.
+    Open(OpenArgs),
     /// List the weapon archetypes (rifle/assault, smg/light, sword/long, ...) and what each takes.
     Archetypes(crate::cmd::archetype::ArchetypesArgs),
     /// Show every number of a weapon an archetype describes, each with its reason; changes nothing.

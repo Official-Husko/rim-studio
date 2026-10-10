@@ -47,7 +47,11 @@ import type {
   DesignerFitRequest,
   DesignerLintFilesRequest,
   DesignerLintFilesResult,
+  DesignerOpenWeaponRequest,
+  DesignerOpenWeaponResponse,
   DesignerPreviewRequest,
+  DesignerProjectWeaponsRequest,
+  DesignerProjectWeaponsResponse,
   DesignerProjectileOwnRequest,
   DesignerProjectileOwnResponse,
   DesignerQuizAnswerRequest,
@@ -199,6 +203,8 @@ export interface CommandTable {
   designer_structure_defaults: { kind: "query"; request: DesignerStructureDefaultsRequest; response: DesignerStructureDefaultsResponse };
   designer_projectile_own: { kind: "query"; request: DesignerProjectileOwnRequest; response: DesignerProjectileOwnResponse };
   designer_asset_info: { kind: "query"; request: DesignerAssetInfoRequest; response: DesignerAssetInfoResponse };
+  designer_project_weapons: { kind: "query"; request: DesignerProjectWeaponsRequest; response: DesignerProjectWeaponsResponse };
+  designer_open_weapon: { kind: "action"; request: DesignerOpenWeaponRequest; response: DesignerOpenWeaponResponse };
   designer_lint_files: { kind: "query"; request: DesignerLintFilesRequest; response: DesignerLintFilesResult };
   designer_archetype_catalog: { kind: "query"; request: DesignerArchetypeCatalogRequest; response: ArchetypeCatalogDto };
   designer_archetype_propose: { kind: "query"; request: DesignerArchetypeProposeRequest; response: ArchetypeProposalDto };
@@ -284,6 +290,8 @@ export const commands = {
   designerStructureDefaults: { name: "designer_structure_defaults", kind: "query" },
   designerProjectileOwn: { name: "designer_projectile_own", kind: "query" },
   designerAssetInfo: { name: "designer_asset_info", kind: "query" },
+  designerProjectWeapons: { name: "designer_project_weapons", kind: "query" },
+  designerOpenWeapon: { name: "designer_open_weapon", kind: "action" },
   designerLintFiles: { name: "designer_lint_files", kind: "query" },
   designerArchetypeCatalog: { name: "designer_archetype_catalog", kind: "query" },
   designerArchetypePropose: { name: "designer_archetype_propose", kind: "query" },
@@ -355,6 +363,8 @@ export const commandNames = [
   "designer_structure_defaults",
   "designer_projectile_own",
   "designer_asset_info",
+  "designer_project_weapons",
+  "designer_open_weapon",
   "designer_lint_files",
   "designer_archetype_catalog",
   "designer_archetype_propose",

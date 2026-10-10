@@ -3797,6 +3797,47 @@ readout: string, };
 export type DesignerModeDto = "simple" | "calibrated";
 
 /**
+ * Request of `designer_open_weapon`: start a draft that edits a weapon of the project where it stands.
+ */
+export type DesignerOpenWeaponRequest = { 
+/**
+ * The open project.
+ */
+projectId: string, 
+/**
+ * Definition name of the weapon, as the project's own files name it.
+ */
+defName: string, 
+/**
+ * Read the weapon from its file again and replace the stored draft of it. Absent or false continues
+ * the stored draft when there is one.
+ */
+reload?: boolean, };
+
+/**
+ * Response of `designer_open_weapon`.
+ */
+export type DesignerOpenWeaponResponse = { 
+/**
+ * The stored draft with its id. `edits_file` of the draft names the file the weapon lives in, every
+ * number is the one the definition holds and the Combat Extended block is absent.
+ */
+entry: DraftEntryDto, 
+/**
+ * The project file the definition is in.
+ */
+file: string, 
+/**
+ * True when a stored draft of this weapon was continued instead of read from the file again.
+ */
+reused: boolean, 
+/**
+ * Plain notes: fields of the definition the designer keeps as raw fields, a projectile that lives in
+ * another file, a definition that could not be read in full.
+ */
+notes?: Array<string>, };
+
+/**
  * Request of `designer_preview`.
  */
 export type DesignerPreviewRequest = { 
@@ -3804,6 +3845,28 @@ export type DesignerPreviewRequest = {
  * The draft state to preview.
  */
 draft: DraftDto, };
+
+/**
+ * Request of `designer_project_weapons`.
+ */
+export type DesignerProjectWeaponsRequest = { 
+/**
+ * The open project.
+ */
+projectId: string, };
+
+/**
+ * Response of `designer_project_weapons`.
+ */
+export type DesignerProjectWeaponsResponse = { 
+/**
+ * The weapons, ordered by definition name.
+ */
+weapons: Array<ProjectWeaponDto>, 
+/**
+ * Content problems found while reading the project (a definition file that cannot be read).
+ */
+diagnostics: Array<DiagnosticDto>, };
 
 /**
  * Request of `designer_projectile_own`: switch the own projectile of a draft on or off.
@@ -4163,7 +4226,12 @@ clonedFrom?: string,
 /**
  * What the user chose in the archetype dialog. Omitted for a draft that never used it.
  */
-archetype?: ArchetypeChoiceDto, };
+archetype?: ArchetypeChoiceDto, 
+/**
+ * The project file (relative to the project root) whose definition the draft edits in place: the plan
+ * replaces the definition there instead of writing the layout's path. Omitted for a new weapon.
+ */
+editsFile?: string, };
 
 /**
  * A stored draft with its listing fields.
@@ -7156,6 +7224,60 @@ addBlock: boolean,
  * Compute what would happen and write nothing.
  */
 dryRun: boolean, };
+
+/**
+ * One weapon definition of the project, with what the Weapons tab shows about it.
+ */
+export type ProjectWeaponDto = { 
+/**
+ * Definition name.
+ */
+defName: string, 
+/**
+ * Display label; empty when the definition has none.
+ */
+label: string, 
+/**
+ * Ranged or melee.
+ */
+kind: ItemKindDto, 
+/**
+ * The project file that holds the definition, relative to the project root.
+ */
+file: string, 
+/**
+ * The `ParentName` of the definition. Absent when it has none.
+ */
+parent?: string, 
+/**
+ * The tech level the definition resolves to. Absent when it gives none.
+ */
+techLevel?: string, 
+/**
+ * The projectile the shooting verb fires. Absent for a melee weapon.
+ */
+projectile?: string, 
+/**
+ * The weapon tags in definition order. Omitted when there are none.
+ */
+tags?: Array<string>, 
+/**
+ * The weapon classes in definition order. Omitted when there are none.
+ */
+weaponClasses?: Array<string>, 
+/**
+ * A few numbers of the definition as the game loads it: damage, range, cooldown, warm up, mass, burst
+ * and market value. A number the definition does not give is absent.
+ */
+numbers: ConvertVanillaDto, 
+/**
+ * True when a patch file that RimStudio generated holds a Combat Extended conversion of this weapon.
+ */
+generatedPatch: boolean, 
+/**
+ * The id of a stored draft that edits this weapon. Absent when there is none.
+ */
+draftId?: string, };
 
 /**
  * A reference to an existing projectile or an inline definition.

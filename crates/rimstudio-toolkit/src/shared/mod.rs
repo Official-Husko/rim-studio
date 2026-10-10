@@ -18,5 +18,6 @@ pub mod assets;
 pub mod diff;
 pub mod env;
 pub mod merge;
+pub mod merge_element;
 pub mod projectfs;
 pub mod writer;

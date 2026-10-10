@@ -20,6 +20,7 @@
 //! - [`archetype`]: weapon archetypes: the catalogue, the proposal of every number and its application.
 //! - [`assets`]: texture imports, custom sounds and `designer_asset_info`.
 //! - [`plan`]: the write plan and the apply report.
+//! - [`project_weapons`]: the weapons a project already has and opening one in the designer.
 
 pub mod archetype;
 pub mod assets;
@@ -35,6 +36,7 @@ pub mod fit;
 pub mod lint_files;
 pub mod plan;
 pub mod preview;
+pub mod project_weapons;
 pub mod quiz;
 pub mod reference;
 pub mod spec;
@@ -54,6 +56,7 @@ pub use fit::*;
 pub use lint_files::*;
 pub use plan::*;
 pub use preview::*;
+pub use project_weapons::*;
 pub use quiz::*;
 pub use reference::*;
 pub use spec::*;

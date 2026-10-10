@@ -18,6 +18,7 @@ pub(crate) mod project_link;
 pub(crate) mod scan;
 pub(crate) mod settings;
 pub(crate) mod sources;
+pub(crate) mod weapons;
 
 use crate::cli::{Command, DesignerCmd};
 use crate::error::CliResult;
@@ -67,6 +68,8 @@ pub(crate) fn run_designer(s: &Session, command: &DesignerCmd) -> CliResult {
             threads,
         } => designer::calibrate(s, *kind, *force, *threads),
         DesignerCmd::New(args) => designer::new_draft_cmd(s, args),
+        DesignerCmd::Weapons(args) => weapons::list(s, args),
+        DesignerCmd::Open(args) => weapons::open(s, args),
         DesignerCmd::Preview(args) => designer::preview(s, args),
         DesignerCmd::Diff(args) => designer::diff(s, args),
         DesignerCmd::Projectile(args) => designer::projectile(s, args),

@@ -45,6 +45,7 @@ pub mod own;
 pub mod patch_remove;
 pub mod plan;
 pub mod preview;
+pub mod project_weapons;
 pub mod quiz;
 pub mod refs;
 
@@ -64,5 +65,6 @@ pub use own::{derived_projectile_name, projectile_own};
 pub use patch_remove::{generated_sections, remove_plan};
 pub use plan::{BuiltPlan, export_plan};
 pub use preview::{preview, suggest_fill};
+pub use project_weapons::{open_weapon, project_weapons};
 pub use quiz::{quiz_answer, quiz_back, quiz_next};
 pub use refs::{reference_list, reference_list_ce};

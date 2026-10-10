@@ -1188,6 +1188,66 @@ fn convert_remove_takes_a_generated_patch_out_of_the_mod() {
 }
 
 #[test]
+fn weapons_lists_what_a_mod_defines_and_open_edits_one_where_it_stands() {
+    let env = Env::new(false);
+    env.select_install();
+    let proj = env.mod_folder("RS_Conv", &[("Defs/Guns.xml", common::PROJECT_DEFS)]);
+    let p = path_str(&proj);
+    let listed = env
+        .run(&["--json", "designer", "weapons", "--project", p])
+        .expect(0)
+        .json();
+    let names: Vec<&str> = listed["weapons"]
+        .as_array()
+        .unwrap()
+        .iter()
+        .filter_map(|w| w["defName"].as_str())
+        .collect();
+    assert!(names.contains(&"RS_ProjGun"), "{listed}");
+    let text = env
+        .run(&["designer", "weapons", "--project", p])
+        .expect(0)
+        .stdout();
+    assert!(
+        text.contains("RS_ProjGun") && text.contains("Defs/Guns.xml"),
+        "{text}"
+    );
+
+    let opened = env
+        .run(&["--json", "designer", "open", "RS_ProjGun", "--project", p])
+        .expect(0)
+        .json();
+    assert_eq!(opened["file"], json!("Defs/Guns.xml"), "{opened}");
+    assert_eq!(opened["reused"], json!(false));
+    let id = opened["entry"]["id"].as_str().unwrap().to_owned();
+    // the next call continues the same draft
+    let again = env
+        .run(&["--json", "designer", "open", "RS_ProjGun", "--project", p])
+        .expect(0)
+        .json();
+    assert_eq!(again["reused"], json!(true));
+    assert_eq!(again["entry"]["id"], json!(id));
+    // the plan replaces the definition in its own file and writes no second one
+    let plan = env
+        .run(&["--json", "plan", &id, "--project", p])
+        .expect(0)
+        .json();
+    let paths: Vec<&str> = plan["plan"]["files"]
+        .as_array()
+        .unwrap()
+        .iter()
+        .filter(|f| f["kind"] == json!("vanilla-defs"))
+        .filter_map(|f| f["path"].as_str())
+        .collect();
+    assert_eq!(paths, vec!["Defs/Guns.xml"], "{plan}");
+    // an unknown weapon is a failure with the code of the toolkit
+    let run = env
+        .run(&["--json", "designer", "open", "RS_NoSuch", "--project", p])
+        .expect(1);
+    assert_eq!(error_code(&run), "designer.invalid-draft");
+}
+
+#[test]
 fn convert_needs_a_selection_and_reads_answers_from_a_file() {
     let env = Env::new(true);
     env.select_install();

@@ -126,7 +126,7 @@ fn applied_name(def_name: &str, prefix: &str) -> String {
 
 /// The pointers of the required fields a clone lacks because its source lacks them. They are accepted: the
 /// clone is written without them, as the source is.
-fn missing_in_source(spec: &DesignSpec) -> Vec<String> {
+pub(super) fn missing_in_source(spec: &DesignSpec) -> Vec<String> {
     let mut out: Vec<String> = validate_vanilla(spec)
         .iter()
         .filter(|d| d.code.as_str() == "design.required-missing")
@@ -482,7 +482,7 @@ fn comparison_stats(kind: PoolKind) -> &'static [&'static str] {
 /// The distance is the root of the summed squared differences, each stat scaled by its spread in the pool;
 /// stats the draft or the item lacks are left out. Ties go to the smaller def name. `None` when the draft
 /// has no number to compare.
-fn nearest<'a>(
+pub(super) fn nearest<'a>(
     pool: &'a Pool,
     spec: &DesignSpec,
 ) -> Option<&'a rimstudio_design::classes::PoolItem> {
