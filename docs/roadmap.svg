@@ -67,9 +67,13 @@
 <text x="648" y="422" font-size="13" fill="#e6edf7">Test in game: link a mod into RimWorld's Mods folder</text>
 <circle cx="631" cy="442" r="6" fill="#3ddc97"/><path d="M628,442 L630.2,444.6 L634.4,439.4" fill="none" stroke="#050b14" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
 <text x="648" y="446" font-size="13" fill="#e6edf7">NOTICE.md and a check for included game data</text>
-<text x="624" y="484" font-size="12" font-weight="700" fill="#9db1cc">STILL OPEN FOR 0.1.0</text>
-<circle cx="631" cy="500" r="5.2" fill="none" stroke="#7289a8" stroke-width="1.6"/>
-<text x="648" y="504" font-size="13" fill="#e6edf7">Added check: a generated mod loads in RimWorld itself</text>
+<circle cx="631" cy="466" r="6" fill="#3ddc97"/><path d="M628,466 L630.2,468.6 L634.4,463.4" fill="none" stroke="#050b14" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="648" y="470" font-size="13" fill="#e6edf7">Remove or replace a generated Combat Extended patch</text>
+<circle cx="631" cy="490" r="6" fill="#3ddc97"/><path d="M628,490 L630.2,492.6 L634.4,487.4" fill="none" stroke="#050b14" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="648" y="494" font-size="13" fill="#e6edf7">Weapons tab: a mod's weapons, edited where they stand</text>
+<text x="624" y="532" font-size="12" font-weight="700" fill="#9db1cc">STILL OPEN FOR 0.1.0</text>
+<circle cx="631" cy="548" r="5.2" fill="none" stroke="#7289a8" stroke-width="1.6"/>
+<text x="648" y="552" font-size="13" fill="#e6edf7">Added check: a generated mod loads in RimWorld itself</text>
 <text x="32" y="684" font-size="18" font-weight="700" fill="#e6edf7">Milestones and their order</text>
 <path d="M240,747 L262,747" fill="none" stroke="#4a6fa5" stroke-width="2" marker-end="url(#arrow)"/>
 <path d="M472,747 L494,747" fill="none" stroke="#4a6fa5" stroke-width="2" marker-end="url(#arrow)"/>

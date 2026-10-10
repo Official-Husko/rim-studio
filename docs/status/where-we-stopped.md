@@ -1,14 +1,14 @@
 # Where we stopped
 
-Status: handoff note | Last updated: 2026-10-10 (the build work was done on 2026-10-05)
+Status: handoff note | Last updated: 2026-10-11 (the build work was done on 2026-10-05; the licence, theme and patch work of 2026-10-10 and 2026-10-11 is in sections 1 and 3)
 
 This page is for the next working session. It says what exists, what was verified and how, exactly where the work stopped, and what is left, in the order in which it is worth doing. It does not repeat the specification: the requirement groups, measured numbers and gate results live on the [0.1.0 backend status](0.1.0-backend.md) page, the architecture in [the overview](../architecture/overview.md), the file layout of a mod in [mod layout](../features/mod-layout.md).
 
 ## 1. In one page
 
-1. **What exists.** The weapons editor of release 0.1.0 is built end to end: ranged and melee weapons, the math, the quiz and the fit meter, vanilla output by default, the optional Combat Extended (CE) patch generator (guns, bows, weapon platforms, under barrel units, custom ammunition), texture and sound import, the weapon wizard that proposes every number from a category, the Patches page (scan, questions, plan, apply, lint), layout fixes with undo, the Mod page (create a mod with the recommended tree, edit About.xml and LoadFolders.xml), a link of a mod into the game's `Mods` folder, a temporary dark UI over all of it, the Tauri desktop shell with live reload and the headless CLI.
-2. **State of the repository.** Branch `main`, 20 feature commits on top of `6e7a3fa` (section 3) plus the follow up commits of the final pass. Nothing is pushed and nothing is tagged. The folder is still named as it was (D-099); the GitHub repository is `rim-studio`.
-3. **Verified.** Every gate is green on the final tree (section 4): 4,047 Rust tests, 1,245 frontend unit tests, 52 Playwright tests (three full runs in a row, no failure), the Tauri shell check and its headless smoke test, the Windows compile check, the docs, layer and source checks.
+1. **What exists.** The weapons editor of release 0.1.0 is built end to end: ranged and melee weapons, the math, the quiz and the fit meter, vanilla output by default, the optional Combat Extended (CE) patch generator (guns, bows, weapon platforms, under barrel units, custom ammunition), texture and sound import, the weapon wizard that proposes every number from a category, the Patches page (scan, questions, plan, apply, lint), layout fixes with undo, the Mod page (create a mod with the recommended tree, edit About.xml and LoadFolders.xml), a link of a mod into the game's `Mods` folder, a temporary dark UI (near black navy with a blue primary colour) over all of it, the Tauri desktop shell with live reload and the headless CLI. Since the build rounds: attributed game and Combat Extended data (`NOTICE.md`, `check-licences`), a list of what is missing before a patch can be generated, removal or replacement of a generated patch (Patches page, `convert remove`), and the weapons of a loaded mod in the Weapons tab with Load for editing a weapon where it stands (`designer weapons`, `designer open`).
+2. **State of the repository.** Branch `main`, 20 feature commits on top of `6e7a3fa` (section 3) plus the follow up commits of the final pass and of 2026-10-10 and 2026-10-11. Nothing is pushed and nothing is tagged. The folder is still named as it was (D-099); the GitHub repository is `rim-studio`.
+3. **Verified.** Every gate is green on the final tree (section 4): 4,098 Rust tests, 1,371 frontend unit tests, 55 Playwright tests (a full run after the last change; three in a row before the 2026-10-10 work, no failure), the Tauri shell check and its headless smoke test (69 commands), the Windows compile check, the docs, layer, source and licence checks.
 4. **Not verified.** A weapon made with the tool has never been loaded in RimWorld itself. Windows and macOS were never run (compile checks only). The desktop shell was driven under WebKitGTK for Setup, the Mod page tabs and the New mod window, not for the weapon wizard, the ammunition windows or the Patches page.
 5. **Next step.** The owner makes a test mod end to end (section 2) and starts the game with it. Everything after that is the backlog in section 6, ordered by how much it hurts.
 
@@ -27,8 +27,8 @@ Then, in the app:
 
 1. **Setup**: Detect, add the folder that holds your own mods (Add folder), Scan. The scan card shows loadable and custom only counts, duplicate package ids and whether Combat Extended is in the library.
 2. **Mod**: Create a new mod (name, author, package id, game versions, the optional folders; three steps, the last one lists every file), or open an existing mod folder. Basics edits About.xml, Versions and folders edits LoadFolders.xml, Layout checks and fixes the tree, Test in game links the mod into the game's `Mods` folder.
-3. **Weapons**: New weapon wizard (pick a type such as bolt action rifle, SMG or sword, describe rate of fire and calibre, read the numbers and their reasons, name it), or clone a reference weapon. Edit in the editor, read the plan, Apply to the project. Switch Combat Extended on only if you want the patch in its own gated folder.
-4. **Patches**: choose a mod, answer the questions of each weapon, read the plan, convert; Lint checks patch files.
+3. **Weapons**: New weapon wizard (pick a type such as bolt action rifle, SMG or sword, describe rate of fire and calibre, read the numbers and their reasons, name it), or clone a reference weapon, or Load a weapon the open mod already defines from the panel "This mod's weapons" (it is edited where it stands; the name stays). Edit in the editor, read the plan, Apply to the project. Switch Combat Extended on only if you want the patch in its own gated folder.
+4. **Patches**: choose a mod, answer the questions of each weapon (the page names what is still missing), read the plan, convert; Lint checks patch files. A weapon that is already converted shows where its conversion comes from; Remove patch and Replace patch take a RimStudio generated conversion out of the mod (one review, files backed up first).
 5. **Start RimWorld** with the mod enabled and look at the weapon in the game. This is the step nobody has done yet. Report what the game logs say; the checks in this repository cannot know.
 
 ## 3. The commits
@@ -77,6 +77,12 @@ The follow up commits of the final pass come after `e73bb80`:
 | `055e47d` | feat(xtask): add check-licences for included game data |
 | `16699d7` | feat(desktop): show the notices from the top bar |
 | `b276295` | test(e2e): copy the committed mod trees instead of the live mods |
+| `8074817` | feat(desktop): darker theme with a blue primary colour |
+| `2daec10` | feat(patches): say what is missing before a patch can be generated |
+| `fae8753` | feat(toolkit): remove the generated patch of a weapon from a project |
+| `3d00443` | feat(patches): remove or replace the existing patch of a weapon |
+| `7db862b` | feat(toolkit): list the weapons of a project and edit one where it stands |
+| `fa29d82` | feat(designer): load a weapon of the mod in the Weapons tab |
 
 `git log --oneline 6e7a3fa..HEAD` is the authoritative list; a commit that only touches this note may come after these.
 
@@ -85,13 +91,13 @@ The follow up commits of the final pass come after `e73bb80`:
 | Check | Result on the final tree |
 |---|---|
 | `cargo fmt --all --check`, `cargo clippy --workspace --all-targets -- -D warnings` | clean |
-| `cargo test --workspace` | 4,047 passed, 0 failed, 64 ignored (real install tests and benchmarks) |
+| `cargo test --workspace` | 4,098 passed, 0 failed, 64 ignored (real install tests and benchmarks) |
 | `cargo run -p xtask -- check-all` | layers, source rules, docs and licences: 0 findings |
 | `cargo check --workspace --all-targets --target x86_64-pc-windows-gnu` | clean (compile only) |
 | `pnpm typecheck`, `pnpm lint`, `pnpm build`, `pnpm --filter rimstudio-ipc-types bindings:check`, the bindings drift test | clean, no lint warnings, 48 golden type files |
-| `pnpm test` | testkit 8, ui 133, desktop 1,104 |
-| `pnpm e2e` (Playwright, Firefox, the real bridge and the owner's install, temporary data) | 52 tests; three full runs in a row all green (2.9 to 3.2 minutes each) |
-| `pnpm tauri:check`, `pnpm tauri:smoke` | clean; the smoke test boots the app and lists 67 commands |
+| `pnpm test` | testkit 12, ui 133, desktop 1,226 |
+| `pnpm e2e` (Playwright, Firefox, the real bridge and the owner's install, temporary data) | 55 tests, all green (3.6 minutes); the 52 of the build rounds were green three times in a row |
+| `pnpm tauri:check`, `pnpm tauri:smoke` | clean; the smoke test boots the app and lists 69 commands |
 | Desktop shell under WebKitGTK (Xvfb, production build, real install) | Setup (detect, native folder dialog, add folder, scan), Mod hub, New mod window, Basics edit and save, Versions and folders, Files and Layout tabs render and work like the Firefox pages; not covered: Test in game, the wizard, ammunition windows, Patches |
 
 Flaky tests found and fixed in the final pass, all of them test or picker defects and none a product defect:
@@ -182,7 +188,9 @@ Minor findings, by theme (the image names are in the session notes):
 9. **Fixtures hold real numbers** from the owner's install (D-100). Included RimWorld and Combat Extended data is attributed in `NOTICE.md` and verified by `cargo xtask check-licences` (D-211, ADR 0059); the production build bundles the fixtures for its offline mode and shows the notice in the top bar. Re-record the fixtures against the bridge when the DTOs change (`packages/testkit/fixtures`).
 10. **Settings card path** on the desktop shell shows `<dataDir>/config/settings.jsonc` while the file is in the config root (`SettingsCard.tsx`, found in the shell run).
 11. **The webview remembers the last project** across runs through local storage; a fresh data folder still starts with the old project open and registers it.
-12. **Doc drift**: the docs index still says the backend is being implemented and its status line is from 2026-10-04; check it against the status page when the next round starts.
+12. **Replace is two steps**: Replace patch removes the generated conversion and then lists the weapon as not converted; the questions are asked again and the earlier answers are not read back from the removed patch (answers typed in the session are kept). A conversion written by hand is never removed.
+13. **Project weapons**: a weapon is opened with the role of the nearest reference weapon, which may not be the one meant; a projectile defined in another file stays read only; a definition that a patch of the mod changes is read as its file writes it; a weapon that exists keeps its name (clone it to make another).
+14. **Doc drift**: the docs index still says the backend is being implemented and its status line is from 2026-10-04; check it against the status page when the next round starts.
 
 ### 6.5 Owner decisions still open
 

@@ -29,7 +29,9 @@
       { "text": "CE bows, weapon platforms and custom ammunition", "state": "done" },
       { "text": "Mod page: create a mod, edit About and LoadFolders", "state": "done" },
       { "text": "Test in game: link a mod into RimWorld's Mods folder", "state": "done" },
-      { "text": "NOTICE.md and a check for included game data", "state": "done" }
+      { "text": "NOTICE.md and a check for included game data", "state": "done" },
+      { "text": "Remove or replace a generated Combat Extended patch", "state": "done" },
+      { "text": "Weapons tab: a mod's weapons, edited where they stand", "state": "done" }
     ]
   },
   "milestones": [
