@@ -9,10 +9,12 @@ export interface TopBarProps {
   projectSlot?: ComponentChildren;
   tasksOpen: boolean;
   onToggleTasks: () => void;
+  /** Opens the notices: the attribution of the included RimWorld and Combat Extended data. */
+  onOpenNotices: () => void;
 }
 
 /** The top bar: product name, project selector slot, connection chip and the task centre button. */
-export function TopBar({ projectSlot, tasksOpen, onToggleTasks }: TopBarProps) {
+export function TopBar({ projectSlot, tasksOpen, onToggleTasks, onOpenNotices }: TopBarProps) {
   const running = runningCount.value;
   return (
     <header class="flex h-topbar shrink-0 items-center gap-4 border-b border-line bg-surface px-4">
@@ -29,6 +31,10 @@ export function TopBar({ projectSlot, tasksOpen, onToggleTasks }: TopBarProps) {
         )}
       </div>
       <ConnectionChip />
+      <Button size="sm" variant="ghost" onClick={onOpenNotices}>
+        <Icon name="info" />
+        {t('app.notices.open')}
+      </Button>
       <Button
         size="sm"
         variant={tasksOpen ? 'primary' : 'secondary'}

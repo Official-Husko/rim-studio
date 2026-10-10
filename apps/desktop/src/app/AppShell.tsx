@@ -6,6 +6,7 @@ import { FolderPickerHost } from '~/shared/platform';
 import { t } from '~/shared/i18n';
 import { ErrorBoundary } from './ErrorBoundary';
 import { NavRail } from './NavRail';
+import { NoticesDialog } from './NoticesDialog';
 import { TaskCentre } from './TaskCentre';
 import { ToastHost } from './ToastHost';
 import { TopBar } from './TopBar';
@@ -29,6 +30,7 @@ export function AppShell({ projectSlot }: AppShellProps) {
   const visited = useRef(new Set<string>());
   visited.current.add(active);
   const [tasksOpen, setTasksOpen] = useState(() => routeParams.value.get('tasks') === 'open');
+  const [noticesOpen, setNoticesOpen] = useState(false);
   const ready = transportKind.value !== 'none';
 
   return (
@@ -47,6 +49,7 @@ export function AppShell({ projectSlot }: AppShellProps) {
         projectSlot={projectSlot}
         tasksOpen={tasksOpen}
         onToggleTasks={() => setTasksOpen((open) => !open)}
+        onOpenNotices={() => setNoticesOpen(true)}
       />
       <div class="flex min-h-0 flex-1">
         <NavRail tools={tools} active={active} />
@@ -69,6 +72,7 @@ export function AppShell({ projectSlot }: AppShellProps) {
         </main>
         {tasksOpen ? <TaskCentre onClose={() => setTasksOpen(false)} /> : null}
       </div>
+      <NoticesDialog open={noticesOpen} onClose={() => setNoticesOpen(false)} />
       <FolderPickerHost />
       <ToastHost />
     </div>
